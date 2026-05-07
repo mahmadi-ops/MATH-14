@@ -161,6 +161,15 @@ var ptx_lunr_docs = [
   "number": "4.3",
   "title": "Transformation by Matrix Multiplication.",
   "body": " Transformation by Matrix Multiplication   Consider the matrix By matrix multiplication, maps vectors in into vectors in as shown below. Consider the vector , then the image of under the transformation defined by is given by:    "
+},
+{
+  "id": "section-4",
+  "level": "1",
+  "url": "section-4.html",
+  "type": "Section",
+  "number": "5",
+  "title": "Webwork",
+  "body": " Webwork  In this section, we will include samples of Webwork problems.    State whether the equation defines:    A hyperboloid of two sheets    A hyperboloid of one sheet    An ellipsoid    None of these    Enter number of statement that is correct:        This equation is the equation of a hyperboloid of one sheet.       "
 }
 ]
 

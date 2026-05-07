@@ -11,11 +11,11 @@
         </p>
       </answer>
     </static>
-    <rendering-data problemSource="A_Template_For_New_PreTeXt_Users/3_2.pg" origin="generated" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" passwd="anonymous" language="en-US"/>
+    <rendering-data problemSource="A_Template_For_My_Future_Notes/3_2.pg" origin="generated" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" passwd="anonymous" language="en-US"/>
     <pg><![CDATA[
 #############################################
 ###       Generated from PreTeXt source      
-###       on 2026-04-07T16:58:42Z       
+###       on 2026-05-07T17:00:40Z       
 ###   A recent stable commit (2022-07-01):   
 ### 6c761d3dba23af92cba35001c852aac04ae99a5f 
 ###                                          
@@ -92,11 +92,11 @@ ENDDOCUMENT();
       <solution><p><m>{2} + {4} = {6}\text{.}</m></p>
 </solution>
     </static>
-    <rendering-data problemSource="A_Template_For_New_PreTeXt_Users/3_3.pg" origin="generated" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" passwd="anonymous" language="en-US"/>
+    <rendering-data problemSource="A_Template_For_My_Future_Notes/3_3.pg" origin="generated" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" passwd="anonymous" language="en-US"/>
     <pg><![CDATA[
 #############################################
 ###       Generated from PreTeXt source      
-###       on 2026-04-07T16:58:42Z       
+###       on 2026-05-07T17:00:40Z       
 ###   A recent stable commit (2022-07-01):   
 ### 6c761d3dba23af92cba35001c852aac04ae99a5f 
 ###                                          
@@ -163,6 +163,125 @@ END_PGML
 
 BEGIN_PGML_SOLUTION
 [`[$a] + [$b] = [$c]\text{.}`]
+
+END_PGML_SOLUTION
+
+############################################################
+# End Problem
+############################################################
+
+ENDDOCUMENT();
+]]></pg>
+  </webwork-reps>
+  <webwork-reps version="2" webwork2_major_version="2" webwork2_minor_version="20" xml:id="extracted-webwork-3" ww-id="webwork-3">
+    <static seed="3">
+      <statement><p>State whether the equation <m>\left( \frac{x}{4} \right)^2 - \left( \frac{y}{2} \right)^2 + \left( \frac{z}{2} \right)^2=1</m> defines:</p>
+<p><ol label="1.">
+<li>
+<p>A hyperboloid of two sheets</p>
+</li>
+<li>
+<p>A hyperboloid of one sheet</p>
+</li>
+<li>
+<p>An ellipsoid</p>
+</li>
+<li>
+<p>None of these</p>
+</li>
+</ol></p>
+<p>Enter number of statement that is correct: <fillin characters="5" name="AnSwEr0001"/></p>
+</statement>
+      <answer>
+        <p>
+          <m>2</m>
+        </p>
+      </answer>
+      <solution><p>This equation is the equation of a hyperboloid of one sheet.</p>
+</solution>
+    </static>
+    <rendering-data problemSource="A_Template_For_My_Future_Notes/5-Webwork.pg" origin="generated" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" passwd="anonymous" language="en-US"/>
+    <pg><![CDATA[
+#############################################
+###       Generated from PreTeXt source      
+###       on 2026-05-07T17:00:40Z       
+###   A recent stable commit (2022-07-01):   
+### 6c761d3dba23af92cba35001c852aac04ae99a5f 
+###                                          
+###         https://pretextbook.org          
+###                                          
+#############################################
+## DBsubject()
+## DBchapter()
+## DBsection()
+## Level()
+## KEYWORDS()
+## TitleText1()
+## EditionText1()
+## AuthorText1()
+## Section1(not reported)
+## Author()
+## Institution()
+## Language(en-US)
+
+DOCUMENT();
+
+############################################################
+# Load Macros
+############################################################
+loadMacros(
+  "PGstandard.pl",
+  "PGML.pl",
+  "AnswerFormatHelp.pl",
+  "PGcourse.pl",
+);
+COMMENT('Authored in PreTeXt');
+
+############################################################
+# Header
+############################################################
+TEXT(beginproblem());
+
+############################################################
+# PG Setup Code
+############################################################
+    Context("LimitedNumeric");
+   $a=random(2,8,1);
+$b=random(2,8,1);
+$c=random(2,8,1);
+$ysign=list_random(0,1);
+$zsign=list_random(0,1);
+$sum=$ysign+$zsign+1;
+if ($ysign==0) {$ysign='-'};
+if ($ysign==1) {$ysign='+'};
+if ($zsign==0) {$zsign='-'};
+if ($zsign==1) {$zsign='+'};
+if($sum==1) {$ans='a hyperboloid of two sheets'};
+if($sum==2) {$ans='a hyperboloid of one sheet'};
+if($sum==3) {$ans='an ellipsoid'};
+
+############################################################
+# Body
+############################################################
+
+BEGIN_PGML
+State whether the equation [` \left( \frac{x}{[$a]} \right)^2 [$ysign] \left( \frac{y}{[$b]} \right)^2 [$zsign] \left( \frac{z}{[$c]} \right)^2=1 `] defines:
+
+1.  A hyperboloid of two sheets
+1.  A hyperboloid of one sheet
+1.  An ellipsoid
+1.  None of these   
+
+Enter number of statement that is correct: [_]{$sum}{5}
+
+END_PGML
+
+############################################################
+# Solution
+############################################################
+
+BEGIN_PGML_SOLUTION
+This equation is the equation of [$ans].
 
 END_PGML_SOLUTION
 
