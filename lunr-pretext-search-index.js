@@ -169,7 +169,16 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "5",
   "title": "Webwork",
-  "body": " Webwork  In this section, we will include samples of Webwork problems.    State whether the equation defines:    A hyperboloid of two sheets    A hyperboloid of one sheet    An ellipsoid    None of these    Enter number of statement that is correct:        This equation is the equation of a hyperboloid of one sheet.       "
+  "body": " Webwork  In this section, we will include samples of Webwork problems.    State whether the equation defines:    A hyperboloid of two sheets    A hyperboloid of one sheet    An ellipsoid    None of these    Enter number of statement that is correct:        This equation is the equation of a hyperboloid of one sheet.        "
+},
+{
+  "id": "mylabel",
+  "level": "2",
+  "url": "section-4.html#mylabel",
+  "type": "Checkpoint",
+  "number": "5.1",
+  "title": "",
+  "body": "  State whether the equation defines:    A hyperboloid of two sheets    A hyperboloid of one sheet    An ellipsoid    None of these    Enter number of statement that is correct:        This equation is the equation of a hyperboloid of one sheet.       "
 }
 ]
 
