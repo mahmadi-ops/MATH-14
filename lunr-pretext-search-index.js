@@ -169,16 +169,34 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "5",
   "title": "Webwork",
-  "body": " Webwork  In this section, we will include samples of Webwork problems.    State whether the equation defines:    A hyperboloid of two sheets    A hyperboloid of one sheet    An ellipsoid    None of these    Enter number of statement that is correct:        This equation is the equation of a hyperboloid of one sheet.          Ask Tutor    "
+  "body": " Webwork  In this section, we will include samples of Webwork problems.    State whether the equation defines:    A hyperboloid of two sheets    A hyperboloid of one sheet    An ellipsoid    None of these    Enter number of statement that is correct:        This equation is the equation of a hyperboloid of one sheet.         The rectangle inscribed in the ellipse.    The area of the rectangle is and the constraint is .       Find the maximum area of a rectangle which is inscribed in   The area of the rectangle is and the constraint is Due to the Lagrange Multiplier method, we have which gives the following vector equation:   This vector equation is equivalent to these two scalar equations:    We divide the above equations:   Then, we replace this equation into to get Hence, and and the maximum area is        "
 },
 {
-  "id": "mylabel",
+  "id": "FirstWebWork",
   "level": "2",
-  "url": "section-4.html#mylabel",
+  "url": "section-4.html#FirstWebWork",
   "type": "Checkpoint",
   "number": "5.1",
   "title": "",
   "body": "  State whether the equation defines:    A hyperboloid of two sheets    A hyperboloid of one sheet    An ellipsoid    None of these    Enter number of statement that is correct:        This equation is the equation of a hyperboloid of one sheet.       "
+},
+{
+  "id": "section-4-4",
+  "level": "2",
+  "url": "section-4.html#section-4-4",
+  "type": "Figure",
+  "number": "5.2",
+  "title": "",
+  "body": " The rectangle inscribed in the ellipse.    The area of the rectangle is and the constraint is .    "
+},
+{
+  "id": "SecondWebWork",
+  "level": "2",
+  "url": "section-4.html#SecondWebWork",
+  "type": "Checkpoint",
+  "number": "5.3",
+  "title": "",
+  "body": "  Find the maximum area of a rectangle which is inscribed in   The area of the rectangle is and the constraint is Due to the Lagrange Multiplier method, we have which gives the following vector equation:   This vector equation is equivalent to these two scalar equations:    We divide the above equations:   Then, we replace this equation into to get Hence, and and the maximum area is       "
 }
 ]
 
