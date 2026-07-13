@@ -16,12 +16,13 @@
 </docinfo>
 
   <article xml:id="shorttitlelowercase">
-    <title>A Template For My Future Notes</title>
+    <title>MATH 14: Calculus and Analytic Geometry IV</title>
     <xi:include href="frontmatter.ptx" />
     <xi:include href="introduction.ptx" />
+
     <xi:include href="section-arc-length.ptx" />
     <xi:include href="section-line-integrals.ptx"/>
-    <xi:include href="hw1-exercises.ptx"/>
+    <xi:include href="hw1-paragraphs.ptx"/>
   </article>
 
 </pretext>
