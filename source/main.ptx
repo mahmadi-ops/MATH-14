@@ -1,22 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <pretext xml:lang="en-US" xmlns:xi="http://www.w3.org/2001/XInclude">
 
- <docinfo>
+<docinfo>
   <macros>
     \newcommand{\deriv}[2]{\displaystyle \frac{d#1}{d#2}}
     \newcommand{\real}{\Bbb R}
     \newcommand{\R}{\mathbb{R}}
   </macros>
-  </docinfo>
+  <latex-image-preamble>
+   \usepackage{tikz}
+   \usetikzlibrary{arrows.meta}
+   \usepackage{pgfplots}
+   \pgfplotsset{compat=1.18}
+</latex-image-preamble>
+</docinfo>
 
   <article xml:id="shorttitlelowercase">
     <title>A Template For My Future Notes</title>
     <xi:include href="frontmatter.ptx" />
     <xi:include href="introduction.ptx" />
-    <xi:include href="section-1.ptx" />
-    <xi:include href="section-2.ptx" />
-    <xi:include href="Span.ptx" />
-    <xi:include href="Webwork.ptx" />
+    <xi:include href="section-arc-length.ptx" />
+    <xi:include href="section-line-integrals.ptx"/>
+    <xi:include href="hw1-exercises.ptx"/>
   </article>
 
 </pretext>

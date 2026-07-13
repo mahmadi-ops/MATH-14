@@ -1,0 +1,408 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Complementary Modules for MATH 14 -->
+<!-- Section: Line Integrals                                               -->
+<!--                                                                       -->
+<!-- Media wiring (relative to the PreTeXt source root):                   -->
+<!--   Manim videos : videos/*_1080p.mp4                                   -->
+<!--   TikZ figures : embedded inline inside <image><latex-image>          -->
+<!--                                                                       -->
+<!-- REQUIREMENT: the TikZ figures need this in <docinfo> of the main      -->
+<!-- file:                                                                 -->
+<!--   <latex-image-preamble>                                              -->
+<!--     \usepackage{tikz}                                                 -->
+<!--     \usetikzlibrary{arrows.meta}                                      -->
+<!--     \usepackage{pgfplots}                                             -->
+<!--     \pgfplotsset{compat=1.18}                                         -->
+<!--   </latex-image-preamble>                                             -->
+<!--                                                                       -->
+<!-- Accessibility: every image carries a <shortdescription> (alt text)    -->
+<!-- and a long <description> for screen readers.                          -->
+
+<section xml:id="sec-line-integrals">
+  <title>Line Integrals</title>
+
+  <introduction>
+    <p>
+      In this section we study line integrals of scalar functions. We
+      develop the idea through a concrete problem: finding the mass of a
+      curved wire when we know its density<mdash/>its mass per unit
+      length<mdash/>at every point. The strategy is the one behind every
+      integral: <em>chop the wire into tiny pieces, multiply the density of
+      each piece by its length, and add up the results</em>.
+    </p>
+  </introduction>
+
+  <!-- ================================================================= -->
+  <subsection xml:id="subsec-scalar-line-integrals">
+    <title>Line Integrals of Scalar Functions</title>
+
+    <p>
+      Suppose we would like to compute the mass of a wire that does not have
+      a trivial shape (such as a straight line). If the wire were straight
+      and its density constant, the mass would simply be density times
+      length. For a curved wire whose density
+      <m>\rho(x,y,z)</m> varies from point to point, neither shortcut is
+      available<mdash/>but we can recover the same simple rule on small
+      pieces.
+    </p>
+
+    <p>
+      Assume the wire is represented by a curve <m>C</m> in space,
+      parametrized by <m>t\in[a,b]</m>, as in
+      <xref ref="fig-wire-partition"/>. Divide the wire into <m>n</m> small
+      portions, and denote the length of the <m>k</m>th portion by
+      <m>\Delta s_k</m>. Pick a sample point <m>(x_k,y_k,z_k)</m> on this
+      portion. If the portion is short, the density is nearly constant along
+      it, so
+    </p>
+
+    <me>
+      \text{mass of the } k\text{th portion}
+        \approx \rho\left(x_k,y_k,z_k\right)\,\Delta s_k,
+    </me>
+
+    <p>
+      and summing over all portions,
+    </p>
+
+    <me>
+      \text{mass of the wire}
+        \approx \sum_{k=1}^{n} \rho\left(x_k,y_k,z_k\right)\,\Delta s_k.
+    </me>
+
+    <figure xml:id="fig-wire-partition">
+      <caption>
+        A wire represented by a curve <m>C</m> in space, parametrized by
+        <m>t\in[a,b]</m>. The <m>k</m>th portion (red) has length
+        <m>\Delta s_k</m> and contains the sample point
+        <m>(x_k,y_k,z_k)</m>, located by the position vector
+        <m>\mathbf{r}(t_k)</m>.
+      </caption>
+      <image xml:id="image-wire-partition" width="75%">
+        <shortdescription>
+          A curve in three-dimensional space with one small portion
+          highlighted and a position vector pointing to it from the origin.
+        </shortdescription>
+        <description>
+          <p>
+            A three-dimensional coordinate box with x and y running from
+            minus 1.3 to 1.3 and z from 0 to 1.7. A thick blue curve
+            labelled C rises through the box from a red point labelled t
+            equals a, at coordinates (1, 0, 0), to a red point labelled t
+            equals b near the top of the box. Partway along the curve a
+            short piece is drawn in thick red and labelled Delta s sub k; a
+            red point on this piece is labelled (x sub k, y sub k, z sub k).
+            A dotted red arrow labelled r of t sub k reaches from the origin
+            to that point.
+          </p>
+        </description>
+        <latex-image>
+          \begin{tikzpicture}
+          \begin{axis}[
+              width=11cm, view={115}{18},
+              xlabel={\(x\)}, ylabel={\(y\)}, zlabel={\(z\)},
+              xmin=-1.3, xmax=1.3, ymin=-1.3, ymax=1.3, zmin=0, zmax=1.7,
+              grid=major, grid style={gray!20}, clip=false,
+            ]
+            % the wire C, before and after the k-th portion
+            \addplot3[blue, very thick, domain=0:1.8, samples=80, samples y=0]
+                ({cos(deg(x))}, {sin(deg(x))}, {x/2});
+            \addplot3[blue, very thick, domain=2.0:3, samples=60, samples y=0]
+                ({cos(deg(x))}, {sin(deg(x))}, {x/2});
+            % the k-th portion, of length Delta s_k
+            \addplot3[red, line width=2.2pt, domain=1.8:2.0, samples=20, samples y=0]
+                ({cos(deg(x))}, {sin(deg(x))}, {x/2});
+            % position vector r(t_k) from the origin to the sample point
+            \addplot3[-&gt;, red, densely dotted, thick] coordinates {(0,0,0) (-0.3233,0.9463,0.95)};
+            % endpoints and sample point
+            \addplot3[only marks, mark=*, red, mark size=1.5pt] coordinates
+                {(1,0,0) (-0.98999,0.14112,1.5) (-0.3233,0.9463,0.95)};
+            \node[anchor=north west, xshift=8pt, yshift=-2pt] at (axis cs:1,0,0) {\(t=a\)};
+            \node[above left] at (axis cs:-0.98999,0.14112,1.5) {\(t=b\)};
+            \node[right=2pt] at (axis cs:-0.3233,0.9463,0.95) {\(\Delta s_k\)};
+            \node[left=2pt] at (axis cs:-0.3233,0.9463,0.98) {\((x_k,y_k,z_k)\)};
+            \node[right=2pt] at (axis cs:-0.16,0.47,0.475) {\(\mathbf r(t_k)\)};
+            \node[blue, right=5pt] at (axis cs:0.878,0.479,0.25) {\(C\)};
+          \end{axis}
+          \end{tikzpicture}
+        </latex-image>
+      </image>
+    </figure>
+
+    <p>
+      This is only an approximation, because the density is not actually
+      constant over each portion. How can we make the calculation exact? We
+      take the limit in which every portion becomes infinitely small, that
+      is, <m>\Delta s_k\to 0</m>, or equivalently <m>n\to\infty</m>:
+    </p>
+
+    <me>
+      \text{mass of the wire}
+        = \lim_{n\to\infty}\sum_{k=1}^{n}
+          \rho\left(x_k,y_k,z_k\right)\,\Delta s_k.
+    </me>
+
+    <p>
+      This limit is denoted by the integral
+    </p>
+
+    <me>
+      \text{mass of the wire} = \int_C \rho\left(x,y,z\right)\,ds,
+    </me>
+
+    <p>
+      read <q>the integral of <m>\rho</m> over the curve <m>C</m>.</q> The
+      process is animated in <xref ref="fig-wire-partition-video"/>: as the
+      partition refines, the sums settle down to the value of the integral.
+    </p>
+
+    <figure xml:id="fig-wire-partition-video">
+      <caption>
+        As the number of portions grows, the sum
+        <m>\sum_k \rho(x_k,y_k,z_k)\,\Delta s_k</m> converges to the line
+        integral <m>\int_C \rho\,ds</m>.
+      </caption>
+      <video xml:id="video-wire-partition" width="80%"
+             source="videos/wire_mass_partition_1080p.mp4"/>
+    </figure>
+
+    <p>
+      Our final task is to write the line element <m>ds</m> in terms of
+      <m>dt</m>, so the integral becomes an ordinary integral we can
+      evaluate. Exactly as in <xref ref="sec-arc-length"/>, the line element
+      is the length of an infinitesimal displacement in <m>\R^3</m>,
+      <me>ds=\sqrt{(dx)^2+(dy)^2+(dz)^2},</me>
+      and factoring out <m>dt</m> gives
+    </p>
+
+    <md>
+      <mrow>
+        \text{mass of the wire} \amp
+          = \int_C \rho\left(x(t),y(t),z(t)\right)\,\frac{ds}{dt}\,dt
+      </mrow>
+      <mrow>
+        \amp = \int_C \rho\left(x(t),y(t),z(t)\right)
+          \sqrt{\left(\frac{dx}{dt}\right)^2
+              + \left(\frac{dy}{dt}\right)^2
+              + \left(\frac{dz}{dt}\right)^2}\,dt.
+      </mrow>
+    </md>
+
+    <p>
+      The square root is exactly the length of the velocity vector
+    </p>
+
+    <me>
+      \mathbf{v}(t)=\mathbf{r}'(t)
+        =\left(\frac{dx}{dt}\right)\mathbf{i}
+        +\left(\frac{dy}{dt}\right)\mathbf{j}
+        +\left(\frac{dz}{dt}\right)\mathbf{k}
+        =\left\langle \frac{dx}{dt},\frac{dy}{dt},\frac{dz}{dt}\right\rangle,
+    </me>
+
+    <p>
+      so the formula takes the tidy form
+    </p>
+
+    <me>
+      \text{mass of the wire}
+        = \int_a^b \rho\left(x(t),y(t),z(t)\right)
+          \left\lVert\mathbf{r}'(t)\right\rVert\,dt.
+    </me>
+
+    <p>
+      There is nothing special about density here. In general, a
+      <term>scalar line integral</term> has the form
+    </p>
+
+    <me>
+      \int_C f\left(x(t),y(t),z(t)\right)\,ds
+        = \int_a^b f\left(x(t),y(t),z(t)\right)
+          \left\lVert\mathbf{r}'(t)\right\rVert\,dt,
+    </me>
+
+    <p>
+      where <m>f</m> is a scalar-valued function and the curve <m>C</m>
+      specifies the region of integration. Once the curve is parametrized in
+      terms of <m>t</m>, the region of integration translates to
+      <m>a\le t\le b</m>. In words:
+      <em>to compute a line integral, trade the geometric element
+      <m>ds</m> for the parameter element
+      <m>\lVert\mathbf{r}'(t)\rVert\,dt</m></em>.
+      Two sanity checks connect this to what we already know. Taking
+      <m>f=1</m> recovers the arc length
+      <m>\int_C ds=\int_a^b \lVert\mathbf{r}'(t)\rVert\,dt</m> of
+      <xref ref="sec-arc-length"/><mdash/>total length is the
+      <q>mass</q> of a wire of density one. And
+      <m>\lVert\mathbf{r}'(t)\rVert</m> is the speed
+      <m>\left|\mathbf{v}(t)\right|</m> from that section, so the factor
+      converts time spent into distance covered.
+    </p>
+  </subsection>
+
+  <!-- ================================================================= -->
+  <!-- EXAMPLE: helical wire. Statement only; solution separate.          -->
+  <example xml:id="ex-helix-wire">
+    <title>Mass and length of a helical wire</title>
+    <statement>
+      <p>
+        Consider a wire of length <m>l</m> and mass <m>m</m>. The wire is
+        helix-shaped, with its bottom end located at <m>(1,0,0)</m> and
+        parametric equation
+        <me>\mathbf{r}(t)=\langle \cos t,\ \sin t,\ t\rangle,\qquad t\ge 0.</me>
+        Its density (mass per unit length) is
+        <m>\rho(x,y,z)=4x^2y^2</m> kg/m. Assuming that
+        <m>m=\dfrac{\pi}{2\sqrt{2}}</m> kg, calculate the length <m>l</m> of
+        the wire.
+      </p>
+    </statement>
+
+    <solution>
+      <p>
+        The wire occupies the part of the helix with
+        <m>0\le t\le b</m>, where the upper limit <m>b</m> is unknown: it
+        marks where the wire ends. Our plan has two steps. First we use the
+        known mass in the formula
+        <men xml:id="eq-helix-mass">
+          m = \int_0^{b} \rho\left(x(t),y(t),z(t)\right)
+              \left\lVert\mathbf{r}'(t)\right\rVert\,dt
+        </men>
+        to find <m>b</m>; then the length is the arc length
+        <m>l=\int_0^b \lVert\mathbf{r}'(t)\rVert\,dt</m>.
+      </p>
+
+      <p>
+        First we find <m>\mathbf{r}'(t)</m> and its length:
+      </p>
+      <md>
+        <mrow>
+          \mathbf{r}'(t) \amp = \langle -\sin t,\ \cos t,\ 1\rangle,
+        </mrow>
+        <mrow>
+          \left\lVert\mathbf{r}'(t)\right\rVert \amp
+            = \sqrt{\sin^2 t+\cos^2 t+1}=\sqrt{2}.
+        </mrow>
+      </md>
+      <p>
+        Next we write the density along the curve in terms of <m>t</m>,
+        using the double-angle identity <m>2\sin t\cos t=\sin(2t)</m>:
+      </p>
+      <me>
+        \rho\left(x(t),y(t),z(t)\right)
+          = 4x^2y^2
+          = 4\cos^2 t\,\sin^2 t
+          = \left(2\sin t\cos t\right)^2
+          = \sin^2(2t).
+      </me>
+      <p>
+        Substituting into <xref ref="eq-helix-mass"/> and using the
+        half-angle identity
+        <m>\sin^2(2t)=\tfrac{1}{2}\bigl(1-\cos(4t)\bigr)</m>,
+      </p>
+      <md>
+        <mrow>
+          m \amp = \sqrt{2}\int_0^{b}\sin^2(2t)\,dt
+             = \frac{1}{\sqrt{2}}\int_0^{b}\bigl(1-\cos(4t)\bigr)\,dt
+        </mrow>
+        <mrow>
+          \amp = \frac{1}{\sqrt{2}}
+                 \left(t-\frac{1}{4}\sin(4t)\right)\bigg|_0^{b}
+             = \frac{1}{\sqrt{2}}
+                 \left(b-\frac{1}{4}\sin(4b)\right).
+        </mrow>
+      </md>
+      <p>
+        Setting this equal to the given mass
+        <m>m=\dfrac{\pi}{2\sqrt{2}}</m> and multiplying both sides by
+        <m>\sqrt{2}</m>,
+      </p>
+      <me>
+        b-\frac{1}{4}\sin(4b)=\frac{\pi}{2}
+        \quad\Longrightarrow\quad b=\frac{\pi}{2},
+      </me>
+      <p>
+        since <m>\sin(4\cdot\tfrac{\pi}{2})=\sin(2\pi)=0</m>. (This solution
+        is the only one: the left-hand side has derivative
+        <m>1-\cos(4b)\ge 0</m>, so it is increasing and crosses the value
+        <m>\pi/2</m> exactly once.)
+      </p>
+
+      <p>
+        The length of the wire is then the arc length from <m>t=0</m> to
+        <m>t=\pi/2</m>. Because the speed is the constant <m>\sqrt{2}</m>,
+      </p>
+      <me>
+        l=\int_0^{\pi/2}\left\lVert\mathbf{r}'(t)\right\rVert\,dt
+         =\sqrt{2}\int_0^{\pi/2}dt
+         =\frac{\pi}{\sqrt{2}}\approx 2.22 \text{ meters}.
+      </me>
+      <p>
+        The wire<mdash/>a quarter turn of the helix from <m>(1,0,0)</m> up
+        to <m>(0,1,\pi/2)</m><mdash/>is shown in
+        <xref ref="fig-helix-wire"/>, and the accumulation of its mass is
+        animated in <xref ref="fig-helix-wire-video"/>.
+      </p>
+
+      <figure xml:id="fig-helix-wire">
+        <caption>
+          The helical wire <m>\mathbf{r}(t)=\langle\cos t,\sin t,t\rangle</m>
+          for <m>0\le t\le \pi/2</m>, from its bottom end <m>(1,0,0)</m> to
+          its top end <m>(0,1,\pi/2)</m>. The dashed gray curve is its
+          shadow on the plane <m>z=0</m>.
+        </caption>
+        <image xml:id="image-helix-wire" width="70%">
+          <shortdescription>
+            A quarter turn of a helix rising from the point (1,0,0) to the
+            point (0,1,pi over 2), with its shadow on the floor.
+          </shortdescription>
+          <description>
+            <p>
+              A three-dimensional coordinate box with x and y running from
+              minus 1.2 to 1.2 and z from 0 to 1.8. A thick blue curve, one
+              quarter turn of a helix, starts at a red point on the floor
+              labelled (1, 0, 0), t equals 0, and climbs steadily as it
+              curves, ending at a red point labelled (0, 1, pi over 2), t
+              equals pi over 2, about 1.57 units above the floor. A dashed
+              gray quarter circle on the floor of the box shows the curve's
+              shadow.
+            </p>
+          </description>
+          <latex-image>
+            \begin{tikzpicture}
+            \begin{axis}[
+                width=10cm, view={115}{20},
+                xlabel={\(x\)}, ylabel={\(y\)}, zlabel={\(z\)},
+                xmin=-1.2, xmax=1.2, ymin=-1.2, ymax=1.2, zmin=0, zmax=1.8,
+                grid=major, grid style={gray!20}, clip=false,
+              ]
+              % shadow on the ground z=0
+              \addplot3[gray!50, dashed, thin, domain=0:90, samples=60, samples y=0]
+                  ({cos(x)}, {sin(x)}, {0});
+              % the helix-shaped wire
+              \addplot3[blue, very thick, domain=0:90, samples=80, samples y=0]
+                  ({cos(x)}, {sin(x)}, {pi*x/180});
+              % endpoints
+              \addplot3[only marks, mark=*, red, mark size=1.6pt] coordinates
+                  {(1,0,0) (0,1,1.5708)};
+              \node[anchor=south west, xshift=5pt, yshift=2pt] at (axis cs:1,0,0) {\((1,0,0),\ t=0\)};
+              \node[above left=1pt] at (axis cs:0,1,1.5708) {\((0,1,\pi/2),\ t=\pi/2\)};
+            \end{axis}
+            \end{tikzpicture}
+          </latex-image>
+        </image>
+      </figure>
+
+      <figure xml:id="fig-helix-wire-video">
+        <caption>
+          A point traverses the helical wire while the accumulated mass
+          <m>\int_0^t \rho\,\lVert\mathbf{r}'\rVert\,d\tau</m> grows to
+          <m>\dfrac{\pi}{2\sqrt{2}}\approx 1.11</m> kg over the length
+          <m>\dfrac{\pi}{\sqrt{2}}\approx 2.22</m> m.
+        </caption>
+        <video xml:id="video-helix-wire" width="85%"
+               source="videos/helix_wire_mass_1080p.mp4"/>
+      </figure>
+    </solution>
+  </example>
+
+</section>
