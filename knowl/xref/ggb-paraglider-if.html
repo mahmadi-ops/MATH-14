@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math"
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "_static/pretext/js"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script type="text/javascript" src="https://cdn.geogebra.org/apps/deployggb.js"></script>
+</head>
+<body class="ptx-content ignore-math">
+<div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\deriv}[2]{\displaystyle \frac{d#1}{d#2}}
+\newcommand{\real}{\Bbb R}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div style="aspect-ratio: 1.333333333333333;">
+<script>var ggb_ggb__paraglider__slate_onload = function(ggb_ggb__paraglider__slate_applet) {
+ggb_ggb__paraglider__slate_applet.setRounding("2");
+ggb_ggb__paraglider__slate_applet.
+ggb_ggb__paraglider__slate_applet.// --- geometry ---
+ggb_ggb__paraglider__slate_applet.evalCommand('t=Slider(0,9,0.01)');
+ggb_ggb__paraglider__slate_applet.setValue('t',4.5);
+ggb_ggb__paraglider__slate_applet.evalCommand('path=Curve(u*cos(u),u*sin(u),9*sqrt(8)-sqrt(8)/3*u^(3/2),u,0,9)');
+ggb_ggb__paraglider__slate_applet.evalCommand('traveled=Curve(u*cos(u),u*sin(u),9*sqrt(8)-sqrt(8)/3*u^(3/2),u,0,t)');
+ggb_ggb__paraglider__slate_applet.evalCommand('P=(t*cos(t),t*sin(t),9*sqrt(8)-sqrt(8)/3*t^(3/2))');
+ggb_ggb__paraglider__slate_applet.evalCommand('vvec=Vector(P,P+(cos(t)-t*sin(t),sin(t)+t*cos(t),-sqrt(2)*sqrt(t)))');
+ggb_ggb__paraglider__slate_applet.evalCommand('A=(0,0,9*sqrt(8))');
+ggb_ggb__paraglider__slate_applet.evalCommand('B=(9*cos(9),9*sin(9),0)');
+ggb_ggb__paraglider__slate_applet.// distance readout: Round() is unavailable via evalCommand, so we use global
+ggb_ggb__paraglider__slate_applet.// setRounding (above) + plain concatenation. Text takes no 3D-point anchor
+ggb_ggb__paraglider__slate_applet.// (that makes the command fail), so it uses the default screen position.
+ggb_ggb__paraglider__slate_applet.evalCommand('dist=t^2/2+t');
+ggb_ggb__paraglider__slate_applet.evalCommand('sText=Text("distance travelled  s(t) = "+dist)');
+ggb_ggb__paraglider__slate_applet.
+ggb_ggb__paraglider__slate_applet.// --- styling ---
+ggb_ggb__paraglider__slate_applet.setColor('path',180,180,180);
+ggb_ggb__paraglider__slate_applet.setLineThickness('path',3);
+ggb_ggb__paraglider__slate_applet.setColor('traveled',0,102,204);
+ggb_ggb__paraglider__slate_applet.setLineThickness('traveled',5);
+ggb_ggb__paraglider__slate_applet.setColor('P',255,102,0);
+ggb_ggb__paraglider__slate_applet.setPointSize('P',6);
+ggb_ggb__paraglider__slate_applet.setColor('vvec',0,153,0);
+ggb_ggb__paraglider__slate_applet.setLineThickness('vvec',4);
+ggb_ggb__paraglider__slate_applet.setColor('A',204,0,0);
+ggb_ggb__paraglider__slate_applet.setPointSize('A',5);
+ggb_ggb__paraglider__slate_applet.setColor('B',204,0,0);
+ggb_ggb__paraglider__slate_applet.setPointSize('B',5);
+ggb_ggb__paraglider__slate_applet.setColor('sText',0,102,204);
+ggb_ggb__paraglider__slate_applet.
+ggb_ggb__paraglider__slate_applet.// --- labels (silent JS-API; ShowLabel via evalCommand is unsupported here) ---
+ggb_ggb__paraglider__slate_applet.setLabelVisible('path',false);
+ggb_ggb__paraglider__slate_applet.setLabelVisible('traveled',false);
+ggb_ggb__paraglider__slate_applet.setLabelVisible('P',false);
+ggb_ggb__paraglider__slate_applet.setLabelVisible('vvec',false);
+ggb_ggb__paraglider__slate_applet.setCaption('A','start');
+ggb_ggb__paraglider__slate_applet.setLabelStyle('A',3);
+ggb_ggb__paraglider__slate_applet.setCaption('B','ground');
+ggb_ggb__paraglider__slate_applet.setLabelStyle('B',3);
+ggb_ggb__paraglider__slate_applet.
+ggb_ggb__paraglider__slate_applet.// --- frame the 3D view so the whole spiral (z up to ~25.5) is visible ---
+ggb_ggb__paraglider__slate_applet.// WARNING: the 6-argument (3D) setCoordSystem is unreliable when called from a
+ggb_ggb__paraglider__slate_applet.// slate script in this GeoGebra build -- the applet applies its standard 3D
+ggb_ggb__paraglider__slate_applet.// view on load and the script often cannot override it, leaving the spiral
+ggb_ggb__paraglider__slate_applet.// off-screen. We reassert a few times as a best effort. If the paraglider
+ggb_ggb__paraglider__slate_applet.// still loads showing only the axes, the reliable fix is to author this
+ggb_ggb__paraglider__slate_applet.// construction as a .ggb (its saved coordSystem stores the camera) and embed
+ggb_ggb__paraglider__slate_applet.// that instead of scripting the view.
+ggb_ggb__paraglider__slate_applet.setCoordSystem(-10, 10, -10, 10, -1, 27);
+ggb_ggb__paraglider__slate_applet.setTimeout(function(){ setCoordSystem(-10, 10, -10, 10, -1, 27); }, 800);
+ggb_ggb__paraglider__slate_applet.setTimeout(function(){ setCoordSystem(-10, 10, -10, 10, -1, 27); }, 2000);
+listeners(ggb_ggb__paraglider__slate_applet)};
+var ggb_ggb__paraglider__slate_params = {
+perspective:"T",
+width:420,
+height:315,
+appletOnLoad:ggb_ggb__paraglider__slate_onload};
+new Promise((resolve, reject) => {
+var ggb_ggb__paraglider__slate = new GGBApplet(ggb_ggb__paraglider__slate_params, true);
+resolve(ggb_ggb__paraglider__slate);})
+.then((ggb_ggb__paraglider__slate) => {
+window.onload = function() { ggb_ggb__paraglider__slate.inject('ggb-paraglider-slate-container'); }
+},
+(error) => {console.log('GGB applet load failure.', error)});
+</script><div style="line-height: 0;"><div class="geogebra-applet" id="ggb-paraglider-slate-container" style="width:420px; height:315px; display: block; "></div></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="arc-length-curve-figure" viewBox="0 0 410 410">
+  <defs>
+    <clipPath id="arc-length-curve-clipPath-0">
+      <rect x="5.0" y="5.0" width="400.0" height="400.0"/>
+    </clipPath>
+    <clipPath id="arc-length-curve-clipPath-1">
+      <rect x="5.0" y="5.0" width="400.0" height="400.0"/>
+    </clipPath>
+    <marker id="arc-length-curve-arrow-head-end-3_None_24_60-blue" markerWidth="13.5" markerHeight="12.0" markerUnits="userSpaceOnUse" orient="auto-start-reverse" refX="9.8" refY="6.0">
+      <path d="M 13.5 6.0L 0.0 12.0L 2.6 7.5L 2.6 4.5L 0.0 0.0Z" fill="blue" stroke="none"/>
+    </marker>
+    <marker id="arc-length-curve-arrow-head-end-3_None_24_60-blue-outline" markerWidth="17.5" markerHeight="16.0" markerUnits="userSpaceOnUse" orient="auto-start-reverse" refX="11.8" refY="8.0">
+      <path d="M 16.3 9.8 L 2.8 15.8 A 2 2 0 0 1 0.0 14.0 L 0.0 2.0 A 2 2 0 0 1 2.8 0.2 L 16.3 6.2 A 2 2 0 0 1 16.3 9.8 Z" fill="white" stroke="none"/>
+    </marker>
+  </defs>
+  <g id="arc-length-curve-curve-C">
+    <path id="arc-length-curve-path-0" d="M 321.0 236.9 L 319.7 233.9 L 318.3 231.0 L 316.9 228.1 L 315.5 225.2 L 314.1 222.4 L 312.6 219.5 L 311.1 216.7 L 309.5 213.8 L 307.9 211.0 L 306.3 208.3 L 304.7 205.5 L 303.0 202.7 L 301.3 200.0 L 299.6 197.3 L 297.8 194.6 L 296.0 191.9 L 294.2 189.3 L 292.3 186.6 L 290.4 184.0 L 288.5 181.4 L 286.6 178.9 L 284.6 176.3 L 282.6 173.8 L 280.6 171.3 L 278.6 168.8 L 276.5 166.3 L 274.4 163.9 L 272.3 161.5 L 270.1 159.1 L 267.9 156.7 L 265.7 154.4 L 263.5 152.1 L 261.2 149.8 L 259.0 147.5 L 256.6 145.2 L 254.3 143.0 L 252.0 140.8 L 249.6 138.7 L 247.2 136.5 L 244.7 134.4 L 242.3 132.3 L 239.8 130.3 L 237.3 128.2 L 234.8 126.2 L 232.3 124.2 L 229.7 122.3 L 227.1 120.4 L 224.5 118.5 L 221.9 116.6 L 219.2 114.8 L 216.6 113.0 L 213.9 111.2 L 211.2 109.5 L 208.5 107.7 L 205.7 106.1 L 203.0 104.4 L 200.2 102.8 L 197.4 101.2 L 194.6 99.6 L 191.7 98.1 L 188.9 96.6 L 186.0 95.1 L 183.1 93.7 L 180.2 92.3 L 177.3 90.9 L 174.4 89.5 L 171.5 88.2 L 168.5 87.0 L 165.5 85.7 L 162.6 84.5 L 159.6 83.3 L 156.6 82.2 L 153.5 81.1 L 150.5 80.0 L 147.5 78.9 L 144.4 77.9 L 141.3 76.9 L 138.3 76.0 L 135.2 75.1 L 132.1 74.2 L 129.0 73.4 L 125.9 72.5 L 122.7 71.8 L 119.6 71.0 L 116.5 70.3 L 113.3 69.7 L 110.1 69.0 L 107.0 68.4 L 103.8 67.8 L 100.6 67.3 L 97.5 66.8 L 94.3 66.4 L 91.1 65.9 L 87.9 65.5 L 84.7 65.2 L 81.5 64.9 L 78.3 64.6 L 75.1 64.3 L 71.9 64.1 L 68.6 63.9 M 225.2 119.0 L 222.6 117.1 L 220.0 115.3 L 217.3 113.5 L 214.6 111.7 L 211.9 109.9" stroke="blue" stroke-width="3" fill="none" clip-path="url(#arc-length-curve-clipPath-1)" marker-end="url(#arc-length-curve-arrow-head-end-3_None_24_60-blue)"/>
+    <g id="arc-length-curve-label-0" transform="translate(215.4,86.3) translate(0.0,-13.2)">
+      <g id="arc-length-curve-g-0">
+        <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -0.400px" width="13.752px" height="13.160px" role="img" focusable="false" viewBox="0 -705 760 727" x="0.0" y="0.0">
+          <defs>
+            <path id="arc-length-curve-MJX-2-TEX-I-1D436" d="M50 252Q50 367 117 473T286 641T490 704Q580 704 633 653Q642 643 648 636T656 626L657 623Q660 623 684 649Q691 655 699 663T715 679T725 690L740 705H746Q760 705 760 698Q760 694 728 561Q692 422 692 421Q690 416 687 415T669 413H653Q647 419 647 422Q647 423 648 429T650 449T651 481Q651 552 619 605T510 659Q484 659 454 652T382 628T299 572T226 479Q194 422 175 346T156 222Q156 108 232 58Q280 24 350 24Q441 24 512 92T606 240Q610 253 612 255T628 257Q648 257 648 248Q648 243 647 239Q618 132 523 55T319 -22Q206 -22 128 53T50 252Z"/>
+          </defs>
+          <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+            <g data-mml-node="math">
+              <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple" data-semantic-id="0" data-semantic-speech="upper C">
+                <use data-c="1D436" xlink:href="#arc-length-curve-MJX-2-TEX-I-1D436"/>
+              </g>
+            </g>
+          </g>
+        </svg>
+      </g>
+    </g>
+  </g>
+  <g id="arc-length-curve-point-A">
+    <circle id="arc-length-curve-circle-0" cx="321.0" cy="236.9" r="4" stroke="red" stroke-width="2" fill="red"/>
+    <g id="arc-length-curve-label-1" transform="translate(331.0,244.9) translate(0.0,-0.0)">
+      <rect x="-6" y="-6" width="52.248" height="24.816000000000003" stroke="none" fill="white"/>
+      <g id="arc-length-curve-g-1">
+        <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -1.488px" width="40.248px" height="12.816px" role="img" focusable="false" viewBox="0 -626 2223.6 708" x="0.0" y="0.0">
+          <defs>
+            <path id="arc-length-curve-MJX-3-TEX-I-1D461" d="M26 385Q19 392 19 395Q19 399 22 411T27 425Q29 430 36 430T87 431H140L159 511Q162 522 166 540T173 566T179 586T187 603T197 615T211 624T229 626Q247 625 254 615T261 596Q261 589 252 549T232 470L222 433Q222 431 272 431H323Q330 424 330 420Q330 398 317 385H210L174 240Q135 80 135 68Q135 26 162 26Q197 26 230 60T283 144Q285 150 288 151T303 153H307Q322 153 322 145Q322 142 319 133Q314 117 301 95T267 48T216 6T155 -11Q125 -11 98 4T59 56Q57 64 57 83V101L92 241Q127 382 128 383Q128 385 77 385H26Z"/>
+            <path id="arc-length-curve-MJX-3-TEX-N-3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"/>
+            <path id="arc-length-curve-MJX-3-TEX-I-1D44E" d="M33 157Q33 258 109 349T280 441Q331 441 370 392Q386 422 416 422Q429 422 439 414T449 394Q449 381 412 234T374 68Q374 43 381 35T402 26Q411 27 422 35Q443 55 463 131Q469 151 473 152Q475 153 483 153H487Q506 153 506 144Q506 138 501 117T481 63T449 13Q436 0 417 -8Q409 -10 393 -10Q359 -10 336 5T306 36L300 51Q299 52 296 50Q294 48 292 46Q233 -10 172 -10Q117 -10 75 30T33 157ZM351 328Q351 334 346 350T323 385T277 405Q242 405 210 374T160 293Q131 214 119 129Q119 126 119 118T118 106Q118 61 136 44T179 26Q217 26 254 59T298 110Q300 114 325 217T351 328Z"/>
+          </defs>
+          <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+            <g data-mml-node="math" data-semantic-type="relseq" data-semantic-role="equality" data-semantic-id="3" data-semantic-children="0,2" data-semantic-content="1" data-semantic-speech="t equals a">
+              <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple" data-semantic-id="0" data-semantic-parent="3" data-semantic-speech="t">
+                <use data-c="1D461" xlink:href="#arc-length-curve-MJX-3-TEX-I-1D461"/>
+              </g>
+              <g data-mml-node="mo" data-semantic-type="relation" data-semantic-role="equality" data-semantic-id="1" data-semantic-parent="3" data-semantic-operator="relseq,=" data-semantic-speech="equals" transform="translate(638.8,0)">
+                <use data-c="3D" xlink:href="#arc-length-curve-MJX-3-TEX-N-3D"/>
+              </g>
+              <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple" data-semantic-id="2" data-semantic-parent="3" data-semantic-speech="a" transform="translate(1694.6,0)">
+                <use data-c="1D44E" xlink:href="#arc-length-curve-MJX-3-TEX-I-1D44E"/>
+              </g>
+            </g>
+          </g>
+        </svg>
+      </g>
+    </g>
+  </g>
+  <g id="arc-length-curve-point-B">
+    <circle id="arc-length-curve-circle-1" cx="68.6" cy="63.9" r="4" stroke="red" stroke-width="2" fill="red"/>
+    <g id="arc-length-curve-label-2" transform="translate(58.6,55.9) translate(-38.4,-14.0)">
+      <rect x="-6" y="-6" width="50.432" height="26.048000000000002" stroke="none" fill="white"/>
+      <g id="arc-length-curve-g-2">
+        <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -1.488px" width="38.432px" height="14.048px" role="img" focusable="false" viewBox="0 -694 2123.6 776" x="0.0" y="0.0">
+          <defs>
+            <path id="arc-length-curve-MJX-4-TEX-I-1D461" d="M26 385Q19 392 19 395Q19 399 22 411T27 425Q29 430 36 430T87 431H140L159 511Q162 522 166 540T173 566T179 586T187 603T197 615T211 624T229 626Q247 625 254 615T261 596Q261 589 252 549T232 470L222 433Q222 431 272 431H323Q330 424 330 420Q330 398 317 385H210L174 240Q135 80 135 68Q135 26 162 26Q197 26 230 60T283 144Q285 150 288 151T303 153H307Q322 153 322 145Q322 142 319 133Q314 117 301 95T267 48T216 6T155 -11Q125 -11 98 4T59 56Q57 64 57 83V101L92 241Q127 382 128 383Q128 385 77 385H26Z"/>
+            <path id="arc-length-curve-MJX-4-TEX-N-3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"/>
+            <path id="arc-length-curve-MJX-4-TEX-I-1D44F" d="M73 647Q73 657 77 670T89 683Q90 683 161 688T234 694Q246 694 246 685T212 542Q204 508 195 472T180 418L176 399Q176 396 182 402Q231 442 283 442Q345 442 383 396T422 280Q422 169 343 79T173 -11Q123 -11 82 27T40 150V159Q40 180 48 217T97 414Q147 611 147 623T109 637Q104 637 101 637H96Q86 637 83 637T76 640T73 647ZM336 325V331Q336 405 275 405Q258 405 240 397T207 376T181 352T163 330L157 322L136 236Q114 150 114 114Q114 66 138 42Q154 26 178 26Q211 26 245 58Q270 81 285 114T318 219Q336 291 336 325Z"/>
+          </defs>
+          <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+            <g data-mml-node="math" data-semantic-type="relseq" data-semantic-role="equality" data-semantic-id="3" data-semantic-children="0,2" data-semantic-content="1" data-semantic-speech="t equals b">
+              <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple" data-semantic-id="0" data-semantic-parent="3" data-semantic-speech="t">
+                <use data-c="1D461" xlink:href="#arc-length-curve-MJX-4-TEX-I-1D461"/>
+              </g>
+              <g data-mml-node="mo" data-semantic-type="relation" data-semantic-role="equality" data-semantic-id="1" data-semantic-parent="3" data-semantic-operator="relseq,=" data-semantic-speech="equals" transform="translate(638.8,0)">
+                <use data-c="3D" xlink:href="#arc-length-curve-MJX-4-TEX-N-3D"/>
+              </g>
+              <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple" data-semantic-id="2" data-semantic-parent="3" data-semantic-speech="b" transform="translate(1694.6,0)">
+                <use data-c="1D44F" xlink:href="#arc-length-curve-MJX-4-TEX-I-1D44F"/>
+              </g>
+            </g>
+          </g>
+        </svg>
+      </g>
+    </g>
+  </g>
+</svg>
