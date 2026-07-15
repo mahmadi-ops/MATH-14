@@ -22,6 +22,7 @@
     <xi:include href="section-arc-length.ptx" />
     <xi:include href="section-line-integrals.ptx"/>
     <xi:include href="section-vector-fields.ptx"/>
+    <xi:include href="conservative-fields.ptx" />
     <xi:include href="hw1-exercises.ptx"/>
   </article>
 

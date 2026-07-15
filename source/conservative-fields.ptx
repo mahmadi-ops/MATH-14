@@ -1,0 +1,1042 @@
+<?xml version="1.0" encoding="utf-8"?>
+<section xml:id="section-conservative-fields" xmlns:xi="http://www.w3.org/2001/XInclude">
+<title>Path Independence, Conservative Fields, and Potential Functions</title>
+
+<p>
+Before we begin discussing the actual topic of today's lecture, we will
+need to study a particular type of a vector field known as a
+<em>gradient field</em>.
+</p>
+
+<!-- ================================================================ -->
+<subsection xml:id="sec-gradient-fields">
+<title>Gradient Fields</title>
+
+<definition xml:id="def-gradient-field">
+<title>Gradient Field</title>
+<statement>
+<p>
+The <term>gradient field</term> of a differentiable function
+<m>f(x,y,z)</m> is the field of gradient vectors
+</p>
+
+<men xml:id="eq-gradient-field">
+\nabla f = \frac{\partial f}{\partial x}\mathbf i
++ \frac{\partial f}{\partial y}\mathbf j
++ \frac{\partial f}{\partial z}\mathbf k.
+</men>
+</statement>
+</definition>
+
+<p>
+At each point <m>(x,y,z)</m>, the gradient field gives a vector pointing
+in the direction of greatest increase of <m>f</m>. Let us emphasize that
+even though the function <m>f</m> is a scalar-valued function, its
+gradient is a vector-valued one by definition. As an example, see
+<xref ref="fig-gradient-field-tikz"/>.
+</p>
+
+<figure xml:id="fig-gradient-field-tikz">
+<caption>
+The surface <m>z = f(x,y) = x^2 + y^2</m> together with its gradient
+field <m>\nabla f = 2x\,\mathbf i + 2y\,\mathbf j</m>, drawn in the
+<m>xy</m>-plane. The gradient vectors point radially away from the
+origin, the direction of steepest ascent, and grow longer as we move
+away from the origin.
+</caption>
+<image width="75%">
+<description>
+An upward-opening paraboloid, the graph of z equals x squared plus y
+squared, drawn as a translucent blue surface. In the x y plane below
+it, blue arrows of the gradient field point radially outward from the
+origin, growing longer at points farther from the origin.
+</description>
+<latex-image>
+<![CDATA[\begin{tikzpicture}[line join=round, line cap=round]
+  % Okabe-Ito colorblind-safe palette
+  \definecolor{oiblue}{RGB}{0,114,178}
+  \definecolor{oivermillion}{RGB}{213,94,0}
+  \definecolor{oigreen}{RGB}{0,158,115}
+  \definecolor{oiyellow}{RGB}{240,228,66}
+  \definecolor{oipurple}{RGB}{204,121,167}
+  \begin{axis}[
+      view={115}{22},
+      width=13cm,
+      axis lines=center,
+      axis line style={-latex, black!75, line width=0.7pt},
+      xlabel={$x$}, ylabel={$y$}, zlabel={$z$},
+      label style={font=\large},
+      ticks=none,
+      xmin=-3.4, xmax=3.4, ymin=-3.4, ymax=3.4, zmin=0, zmax=5.4,
+      clip=false,
+    ]
+    % ---- gradient field 2x i + 2y j in the xy-plane ----
+    % arrows at radii .6, 1.2, 1.8, 2.4; length scaled by 0.22*r
+    \foreach \ang in {0,30,...,330}{
+      \foreach \rr in {0.6,1.2,1.8,2.4}{
+        \edef\tmp{\noexpand\draw[-{Latex[length=1.6mm]}, oiblue,
+            line width=0.9pt]
+          (axis cs:{\rr*cos(\ang)},{\rr*sin(\ang)},0) --
+          (axis cs:{(\rr+0.44*\rr)*cos(\ang)},{(\rr+0.44*\rr)*sin(\ang)},0);}
+        \tmp}}
+    % ---- surface: paraboloid z = (x^2 + y^2)/2 (scaled for display) ----
+    \addplot3[surf, shader=interp,
+              point meta={z},
+              colormap={softz}{color=(oiblue!12!white) color=(oiblue!45!white)},
+              opacity=0.55, fill opacity=0.55,
+              domain=0:360, samples=61,
+              y domain=0:2.1, samples y=25,
+              z buffer=sort, forget plot]
+      ({y*cos(x)}, {y*sin(x)}, {y^2});
+    % light parallels (circles) for shape cues
+    \foreach \rr in {0.7,1.2,1.7,2.1}{
+      \edef\tmp{\noexpand\addplot3[black!25, line width=0.35pt, domain=0:360,
+          samples=97, samples y=0, forget plot]
+        ({\rr*cos(x)}, {\rr*sin(x)}, {\rr*\rr});}\tmp}
+    % labels (placed relative to the picture, away from the axes)
+    \node[font=\large, anchor=north west] at (axis description cs:0.0,0.97)
+      {$z = f(x,y) = x^2 + y^2$};
+    \node[oiblue, font=\small, anchor=south east]
+      at (axis description cs:1.0,0.04)
+      {$\nabla f = 2x\,\mathbf i + 2y\,\mathbf j$};
+  \end{axis}
+\end{tikzpicture}]]>
+</latex-image>
+</image>
+</figure>
+
+<p>
+In <xref ref="fig-gradient-field-tikz"/>, you see the scalar-valued
+function <m>z = f(x,y) = x^2 + y^2</m>, which is a function on
+<m>\R^2</m>, and according to the above definition, its gradient is
+</p>
+
+<men xml:id="eq-gradient-paraboloid">
+\nabla f = \frac{\partial f}{\partial x}\mathbf i
++ \frac{\partial f}{\partial y}\mathbf j
+= 2x\,\mathbf i + 2y\,\mathbf j.
+</men>
+
+<p>
+The gradient field is visualized in the <m>xy</m>-plane and the value of
+the function <m>f(x,y) = x^2 + y^2</m> at each point <m>(x,y)</m> is
+plotted on the <m>z</m>-axis. Intuitively, the gradient of a function
+<m>f(x,y)</m> at a point <m>(x_0,y_0)</m> is a vector pointing in the
+direction of the steepest slope.
+</p>
+
+</subsection>
+
+<!-- ================================================================ -->
+<subsection xml:id="sec-conservative-definitions">
+<title>Path Independence and Some Basic Definitions</title>
+
+<p>
+In previous lectures, we saw that the line integral of a vector field
+depends on the path in general. Then, the natural question to ask is:
+</p>
+
+<blockquote>
+<p>
+<em>What are the conditions under which the line integral of a vector
+field <m>\mathbf F</m> from point <m>A</m> to point <m>B</m> is
+independent of the curve <m>C</m> taken to go from <m>A</m> to
+<m>B</m>?</em>
+</p>
+</blockquote>
+
+<p>
+To answer this question, we will need some concepts and therefore we
+begin by explaining them.
+</p>
+
+<remark xml:id="remark-smooth-curve">
+<title>Reminder</title>
+<p>
+A <term>smooth curve</term> has no sharp corners or cusps; when the
+tangent vector turns, it does so continuously.
+</p>
+</remark>
+
+<definition xml:id="def-conservative-concepts">
+<title>Open, Connected, and Simply Connected Regions; Conservative Fields</title>
+<statement>
+<p>
+<ul>
+<li>
+<p>
+A region <m>D</m> is <term>open</term> if for every point <m>P</m> in
+<m>D</m> there is a disk with center <m>P</m> that lies entirely in
+<m>D</m>, which means that <m>D</m> doesn't contain any of its boundary
+points.
+</p>
+</li>
+<li>
+<p>
+Consider an open region <m>D</m> in space and a vector field
+<m>\mathbf F</m>. If the result of the line integral
+<m>\int_C \mathbf F\cdot d\mathbf r</m> from <m>A</m> to <m>B</m> is the
+same for all possible paths inside <m>D</m>, then the line integral
+<m>\int_C \mathbf F\cdot d\mathbf r</m> is said to be
+<term>path-independent</term> inside <m>D</m> and the field
+<m>\mathbf F</m> is said to be <term>conservative</term> on <m>D</m>.
+</p>
+</li>
+<li>
+<p>
+If a vector field <m>\mathbf F</m> can be written as
+<m>\mathbf F = \nabla f</m>, where <m>f</m> is a scalar-valued function,
+then <m>f</m> is a <term>potential function</term>.
+</p>
+</li>
+<li>
+<p>
+<term>Piecewise smooth</term> curves are curves that are made up of
+finitely many smooth pieces.
+</p>
+</li>
+<li>
+<p>
+An open region <m>D</m> is said to be <term>connected</term> if any two
+points in <m>D</m> can be joined by a smooth curve that lies in the
+region.
+</p>
+</li>
+<li>
+<p>
+<m>D</m> is <term>simply connected</term>, which means that every loop
+in <m>D</m> can be contracted to a point in <m>D</m> without ever
+leaving <m>D</m>. (See <xref ref="fig-simply-connected-prefigure"/>.)
+</p>
+</li>
+</ul>
+</p>
+</statement>
+</definition>
+
+<figure xml:id="fig-simply-connected-prefigure">
+<caption>
+On the left, a simply connected region: every loop can be contracted to
+a point without leaving the region. On the right, a region that is not
+simply connected: the loop <m>C_1</m> encircles a hole and cannot be
+contracted to a point while staying inside the region.
+</caption>
+<sidebyside widths="48% 48%">
+<image>
+<prefigure xmlns="https://prefigure.org" label="prefigure-simply-connected">
+<diagram dimensions="(300,260)" margins="10">
+<definition>blob(t) = ((1.5 + 0.55*sin(2*t) + 0.3*cos(3*t))*cos(t) + 0.2,
+(1.2 + 0.45*cos(2*t) + 0.25*sin(3*t))*sin(t) + 0.4)</definition>
+<coordinates bbox="(-2.9,-2.2,2.9,2.8)">
+<axes at="sc-axes" xlabel="x" ylabel="y" decorations="no" arrows="1"/>
+<parametric-curve at="sc-region" function="blob" domain="(0,2*pi)"
+    closed="yes" fill="#f4e3c1" stroke="#56B4E9" thickness="2"/>
+<label at="sc-label" anchor="(1.5,-1.75)" alignment="s">
+Simply connected
+</label>
+</coordinates>
+<annotations>
+<annotation ref="figure" text="A blob shaped region in the x y plane with no holes, filled in tan with a light blue boundary. The region is labeled simply connected.">
+  <annotation ref="sc-region" text="A blob shaped region with no holes. Any loop drawn inside this region can be contracted to a point without leaving the region."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+<image>
+<prefigure xmlns="https://prefigure.org" label="prefigure-not-simply-connected">
+<diagram dimensions="(300,260)" margins="10">
+<definition>blob(t) = ((1.9 + 0.4*sin(2*t))*cos(t),
+(1.25 + 0.3*cos(3*t))*sin(t) + 0.3)</definition>
+<coordinates bbox="(-2.9,-2.2,2.9,2.8)">
+<axes at="nsc-axes" xlabel="x" ylabel="y" decorations="no" arrows="1"/>
+<parametric-curve at="nsc-region" function="blob" domain="(0,2*pi)"
+    closed="yes" fill="#f4e3c1" stroke="#56B4E9" thickness="2"/>
+<circle at="nsc-hole1" center="(-0.7,0.4)" radius="0.32" fill="white"
+    stroke="#56B4E9" thickness="2"/>
+<circle at="nsc-hole2" center="(1.1,0.5)" radius="0.28" fill="white"
+    stroke="#56B4E9" thickness="2"/>
+<circle at="nsc-loop" center="(-0.7,0.4)" radius="0.62" fill="none"
+    stroke="#D55E00" thickness="2"/>
+<vector at="nsc-loop-arrow" v="(-0.28,0)" tail="(-0.56,1.02)"
+    stroke="#D55E00" thickness="2"/>
+<label at="nsc-loop-label" anchor="(-0.7,-0.45)" alignment="s"
+    color="#D55E00"><m>C_1</m></label>
+<label at="nsc-label" anchor="(1.5,-1.7)" alignment="s">
+Not simply connected
+</label>
+</coordinates>
+<annotations>
+<annotation ref="figure" text="A blob shaped region in the x y plane containing two white holes. A vermillion loop labeled C 1 encircles the left hole, so it cannot be contracted to a point without leaving the region.">
+  <annotation ref="nsc-region" text="A blob shaped region filled in tan with a light blue boundary."/>
+  <annotation ref="nsc-hole1" text="A hole in the region: a white disk that does not belong to the region."/>
+  <annotation ref="nsc-hole2" text="A second hole in the region."/>
+  <annotation ref="nsc-loop" text="A vermillion loop labeled C 1 that encircles the left hole. Contracting this loop to a point would force it to cross the hole and leave the region, so the region is not simply connected."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</sidebyside>
+</figure>
+
+</subsection>
+
+<!-- ================================================================ -->
+<subsection xml:id="sec-ftli">
+<title>Line Integrals in Conservative Fields</title>
+
+<p>
+Next, we will study the line integrals of conservative fields. As you
+will recognize, if you think of the gradient of a vector field as its
+derivative, then the fundamental theorem of line integrals makes a
+similar statement for vector-valued functions as the one made for
+definite integrals of scalar-valued functions, i.e., the one that you
+learned in MATH 12 and you know as FTC II.
+</p>
+
+<theorem xml:id="thm-ftli">
+<title>Fundamental Theorem of Line Integrals</title>
+<statement>
+<p>
+Let <m>C</m> be a smooth curve joining the point <m>A</m> to the point
+<m>B</m> in the plane or in space and parametrized by
+<m>\mathbf r(t)</m>. Let <m>f</m> be a differentiable function with a
+continuous gradient vector <m>\mathbf F = \nabla f</m> on a domain
+<m>D</m> containing <m>C</m>. Then
+</p>
+
+<men xml:id="eq-ftli">
+\int_C \mathbf F\cdot d\mathbf r = f(B) - f(A).
+</men>
+</statement>
+<proof>
+<p>
+Assuming that the curve <m>C</m> is parametrised as
+<m>\mathbf r(t) = x(t)\mathbf i + y(t)\mathbf j + z(t)\mathbf k</m>, we
+have
+<m>\mathbf v(t) = \dfrac{d\mathbf r}{dt}
+= \dfrac{dx}{dt}\mathbf i + \dfrac{dy}{dt}\mathbf j
++ \dfrac{dz}{dt}\mathbf k</m>
+and we can rewrite the line integral as
+</p>
+
+<md xml:id="eq-ftli-proof">
+<mrow>
+\int_C \mathbf F(x(t),y(t),z(t))\cdot d\mathbf r
+\amp= \int_a^b \nabla f\cdot\frac{d\mathbf r}{dt}\,dt
+</mrow>
+<mrow>
+\amp= \int_a^b
+\left(\frac{\partial f}{\partial x}\mathbf i
++ \frac{\partial f}{\partial y}\mathbf j
++ \frac{\partial f}{\partial z}\mathbf k\right)\cdot
+\left(\frac{dx}{dt}\mathbf i + \frac{dy}{dt}\mathbf j
++ \frac{dz}{dt}\mathbf k\right)dt
+</mrow>
+<mrow>
+\amp= \int_a^b
+\left(\frac{\partial f}{\partial x}\frac{dx}{dt}
++ \frac{\partial f}{\partial y}\frac{dy}{dt}
++ \frac{\partial f}{\partial z}\frac{dz}{dt}\right)dt
+</mrow>
+<mrow>
+\amp= \int_a^b \frac{df}{dt}\,dt
+= \int_a^b df = f(b) - f(a).
+</mrow>
+</md>
+</proof>
+</theorem>
+
+<p>
+In <xref ref="fig-ftli-region-tikz"/>, the boundary of the region
+<m>D</m> is marked as dotted and the curve <m>C</m> is in red. According
+to the fundamental theorem, the line integral of a conservative vector
+field <m>\mathbf F</m> can be easily calculated by calculating the
+values of its corresponding potential function <m>f</m> at the beginning
+(point <m>A</m>) and end (point <m>B</m>) of the curve <m>C</m>.
+</p>
+
+<figure xml:id="fig-ftli-region-tikz">
+<caption>
+A smooth curve <m>C</m> joining <m>A(x_1,y_1,z_1)</m> to
+<m>B(x_2,y_2,z_2)</m> inside an open region <m>D</m> in space, whose
+boundary is drawn dotted. For a conservative field
+<m>\mathbf F = \nabla f</m>, the line integral along <m>C</m> equals
+<m>f(B) - f(A)</m>, no matter how <m>C</m> winds from <m>A</m> to
+<m>B</m>.
+</caption>
+<image width="70%">
+<description>
+Three coordinate axes in space with a dotted oval marking the boundary
+of a region D. Inside the region, a red curve C winds from the point A
+with coordinates x 1 comma y 1 comma z 1 to the point B with
+coordinates x 2 comma y 2 comma z 2.
+</description>
+<latex-image>
+<![CDATA[\begin{tikzpicture}[line join=round, line cap=round]
+  % Okabe-Ito colorblind-safe palette
+  \definecolor{oiblue}{RGB}{0,114,178}
+  \definecolor{oivermillion}{RGB}{213,94,0}
+  \definecolor{oigreen}{RGB}{0,158,115}
+  \definecolor{oipurple}{RGB}{204,121,167}
+  \begin{axis}[
+      view={115}{20},
+      width=12cm,
+      axis lines=center,
+      axis line style={-latex, black!75, line width=0.7pt},
+      xlabel={$x$}, ylabel={$y$}, zlabel={$z$},
+      label style={font=\large},
+      ticks=none,
+      xmin=-0.4, xmax=2.6, ymin=-0.5, ymax=2.9, zmin=-0.2, zmax=2.6,
+      clip=false,
+    ]
+    % ---- dotted boundary of the region D (a tilted closed curve) ----
+    \addplot3[black, dotted, line width=1.3pt, domain=0:360, samples=121,
+        samples y=0, forget plot]
+      ({1.15 + 1.35*cos(x)}, {1.3 + 1.55*sin(x)},
+       {1.15 + 0.45*sin(x) + 0.35*cos(2*x)});
+    \node[anchor=south, font=\large] at (axis cs:1.6,2.3,0.55) {$D$};
+    % ---- the curve C from A to B (a gentle S-curve, in red/vermillion) ----
+    \addplot3[oivermillion, line width=1.7pt, -{Latex[length=2.2mm]},
+        domain=0:1, samples=81, samples y=0, forget plot]
+      ({0.9 + 0.5*x + 0.45*sin(360*x)},
+       {0.15 + 2.45*x},
+       {0.6 + 1.1*x});
+    \node[oivermillion, anchor=south, font=\large]
+      at (axis cs:1.05,1.5,1.45) {$C$};
+    % ---- endpoints ----
+    \addplot3[only marks, mark=*, mark size=1.8pt, color=oiblue,
+        forget plot] coordinates {(0.9,0.15,0.6) (1.4,2.6,1.7)};
+    \node[anchor=north, font=\small] at (axis cs:0.9,0.15,0.4)
+      {$A(x_1,y_1,z_1)$};
+    \node[anchor=south west, font=\small] at (axis cs:1.42,2.62,1.78)
+      {$B(x_2,y_2,z_2)$};
+  \end{axis}
+\end{tikzpicture}]]>
+</latex-image>
+</image>
+</figure>
+
+<p>
+The central idea of the theorem<mdash/>that only the endpoints
+matter<mdash/>is animated in <xref ref="fig-ftli-video"/>.
+</p>
+
+<figure xml:id="fig-ftli-video">
+<caption>
+Animation of the fundamental theorem of line integrals for the field
+<m>\mathbf F = \nabla f</m> with
+<m>f(x,y,z) = 1/\sqrt{x^2+y^2+z^2}</m>. Two different curves join
+<m>(1,0,0)</m> to <m>(1,0,2\pi)</m>: the helix <m>C_1</m> and the
+straight segment <m>C_2</m>. The accumulated value of each line
+integral is tracked as the paths are traced, and both integrals arrive
+at the same value <m>f(B) - f(A) = \frac{1}{\sqrt{1+4\pi^2}} - 1</m>.
+</caption>
+<video xml:id="video-ftli-path-independence"
+       source="videos/ftli_path_independence_1080p.mp4"
+       width="70%" aspect="16:9"/>
+</figure>
+
+<p>
+In the next example, we will see how we can use the above theorem.
+</p>
+
+<example xml:id="example-ftli-helix">
+<title>Example I</title>
+<statement>
+<p>
+Consider the scalar-valued function
+<m>f(x,y,z) = \dfrac{1}{\sqrt{x^2 + y^2 + z^2}}</m>.
+</p>
+
+<p>
+<ol marker="A.">
+<li>
+<p>
+Calculate the gradient vector field
+<m>\mathbf F(x,y,z) = \nabla f</m>.
+</p>
+</li>
+<li>
+<p>
+Evaluate the line integral of the vector field
+<m>\mathbf F(x,y,z) = \nabla f</m> over the curve <m>C_1</m>
+parametrized as
+<m>\mathbf r(t) = \cos(t)\mathbf i + \sin(t)\mathbf j + t\mathbf k</m>
+from <m>(1,0,0)</m> to <m>(1,0,2\pi)</m>.
+</p>
+</li>
+<li>
+<p>
+What is the result of <m>\int_{C_2} \mathbf F\cdot d\mathbf r</m> from
+<m>(1,0,0)</m> to <m>(1,0,2\pi)</m> where <m>C_2</m> is the line
+connecting the two points?
+</p>
+</li>
+</ol>
+</p>
+</statement>
+</example>
+
+<solution>
+<p>
+<em>A.</em> We compute the three partial derivatives of
+<m>f(x,y,z) = \left(x^2+y^2+z^2\right)^{-1/2}</m>:
+</p>
+
+<md>
+<mrow>
+\mathbf F(x,y,z) = \nabla f
+\amp= \frac{\partial f}{\partial x}\mathbf i
++ \frac{\partial f}{\partial y}\mathbf j
++ \frac{\partial f}{\partial z}\mathbf k
+</mrow>
+<mrow>
+\amp= -\left(\frac{x}{\left(x^2+y^2+z^2\right)^{3/2}}\right)\mathbf i
+- \left(\frac{y}{\left(x^2+y^2+z^2\right)^{3/2}}\right)\mathbf j
+- \left(\frac{z}{\left(x^2+y^2+z^2\right)^{3/2}}\right)\mathbf k.
+</mrow>
+</md>
+
+<p>
+<em>B.</em> Of course, one way would be to calculate the line integral
+using the vector field calculated in part A (as we used to do); however,
+<xref ref="thm-ftli"/> provides us with a much more efficient way of
+calculating the line integral as follows:
+</p>
+
+<men xml:id="eq-ftli-helix-value">
+\int_{C_1} \mathbf F(x(t),y(t),z(t))\cdot d\mathbf r
+= f(1,0,2\pi) - f(1,0,0)
+= \frac{1}{\sqrt{1 + 4\pi^2}} - 1.
+</men>
+
+<p>
+<em>C.</em> The result is the same as part B, since the vector field
+<m>\mathbf F(x,y,z) = \nabla f</m> is a conservative field, which means
+that the result of the line integral is independent of the chosen path.
+Note that the line integral is calculated from <m>(1,0,0)</m> to
+<m>(1,0,2\pi)</m> in both cases. The two curves <m>C_1</m> and
+<m>C_2</m> are shown in <xref ref="fig-helix-segment-tikz"/>.
+</p>
+</solution>
+
+<figure xml:id="fig-helix-segment-tikz">
+<caption>
+The two paths of <xref ref="example-ftli-helix"/> joining
+<m>(1,0,0)</m> to <m>(1,0,2\pi)</m>: the helix <m>C_1</m>, parametrized
+by <m>\mathbf r(t) = \cos(t)\mathbf i + \sin(t)\mathbf j + t\mathbf k</m>,
+and the straight segment <m>C_2</m>. Since <m>\mathbf F = \nabla f</m>
+is conservative, both line integrals equal
+<m>\frac{1}{\sqrt{1+4\pi^2}} - 1</m>.
+</caption>
+<image width="75%">
+<description>
+Three coordinate axes in space showing a blue helix that winds once
+around the z axis, climbing from the point one comma zero comma zero up
+to the point one comma zero comma two pi, and a vertical vermillion
+segment joining the same two points directly. Both endpoints are
+marked and labeled.
+</description>
+<latex-image>
+<![CDATA[\begin{tikzpicture}[line join=round, line cap=round]
+  % Okabe-Ito colorblind-safe palette
+  \definecolor{oiblue}{RGB}{0,114,178}
+  \definecolor{oivermillion}{RGB}{213,94,0}
+  \definecolor{oigreen}{RGB}{0,158,115}
+  \begin{axis}[
+      view={115}{16},
+      width=12.5cm,
+      axis lines=center,
+      axis line style={-latex, black!75, line width=0.7pt},
+      xlabel={$x$}, ylabel={$y$}, zlabel={$z$},
+      label style={font=\large},
+      ticks=none,
+      xmin=-1.4, xmax=1.5, ymin=-1.5, ymax=1.5, zmin=0, zmax=7.2,
+      clip=false,
+      legend style={
+        at={(1.02,1.04)}, anchor=north east,
+        font=\small,
+        draw=black!35, rounded corners=2pt,
+        fill=white, fill opacity=0.92, text opacity=1,
+        inner sep=6pt, row sep=3pt,
+      },
+      legend cell align=left,
+      legend image post style={line width=1.6pt, sharp plot},
+    ]
+    % ---- helix C1: (cos t, sin t, t), t in [0, 2pi] ----
+    \addplot3[oiblue, line width=1.7pt, -{Latex[length=2.2mm]},
+        domain=0:360, samples=121, samples y=0]
+      ({cos(x)}, {sin(x)}, {2*pi*x/360});
+    \addlegendentry{$C_1$: helix $\mathbf r(t)=\cos t\,\mathbf i+\sin t\,\mathbf j+t\,\mathbf k$}
+    % ---- segment C2 from (1,0,0) to (1,0,2pi) ----
+    \addplot3[oivermillion, line width=1.7pt, -{Latex[length=2.2mm]},
+        samples y=0] coordinates {(1,0,0) (1,0,6.28318)};
+    \addlegendentry{$C_2$: straight segment}
+    % ---- dashed guide circle in the xy-plane ----
+    \addplot3[black!30, dashed, line width=0.6pt, domain=0:360,
+        samples=97, samples y=0, forget plot]
+      ({cos(x)}, {sin(x)}, 0);
+    % ---- endpoints ----
+    \addplot3[only marks, mark=*, mark size=1.9pt, color=black,
+        forget plot] coordinates {(1,0,0) (1,0,6.28318)};
+    \node[anchor=west, font=\small] at (axis cs:1.06,0,-0.35)
+      {$(1,0,0)$};
+    \node[oigreen, anchor=south west, font=\small]
+      at (axis cs:1.02,0,6.5) {$(1,0,2\pi)$};
+  \end{axis}
+\end{tikzpicture}]]>
+</latex-image>
+</image>
+</figure>
+
+</subsection>
+
+<!-- ================================================================ -->
+<subsection xml:id="sec-potential-function">
+<title>Finding a Potential Function</title>
+
+<example xml:id="example-potential-function">
+<title>Example II</title>
+<statement>
+<p>
+Consider the vector field
+<m>\mathbf F = yz\,\mathbf i + xz\,\mathbf j + (xy + 2z)\mathbf k</m>.
+</p>
+
+<p>
+<ol marker="A.">
+<li>
+<p>
+Find a function <m>f</m> such that <m>\mathbf F = \nabla f</m>.
+</p>
+</li>
+<li>
+<p>
+Use the solution of part (A) to calculate the line integral from
+<m>(1,0,-2)</m> to <m>(4,6,3)</m>.
+</p>
+</li>
+</ol>
+</p>
+</statement>
+</example>
+
+<solution>
+<p>
+<em>A.</em> Writing
+<m>\mathbf F = yz\,\mathbf i + xz\,\mathbf j + (xy+2z)\mathbf k
+= \left\langle \dfrac{\partial f}{\partial x},\,
+\dfrac{\partial f}{\partial y},\, \dfrac{\partial f}{\partial z}
+\right\rangle</m>,
+we match the components one at a time; the three steps are summarized
+in <xref ref="fig-potential-steps-prefigure"/>.
+</p>
+
+<p>
+<em>Step I.</em> Since <m>\dfrac{\partial f}{\partial x} = yz</m>, we
+integrate with respect to <m>x</m> (here <m>x</m> is the variable and
+<m>y</m> and <m>z</m> are constants), so
+</p>
+
+<men xml:id="eq-potential-step1">
+f(x,y,z) = xyz + g(y,z),
+</men>
+
+<p>
+where the constant of integration <m>g(y,z)</m> is allowed to depend on
+<m>y</m> and <m>z</m>.
+</p>
+
+<p>
+<em>Step II.</em> Since <m>\dfrac{\partial f}{\partial y} = xz</m>, we
+differentiate <xref ref="eq-potential-step1"/> with respect to
+<m>y</m>:
+</p>
+
+<md>
+<mrow>
+\frac{\partial}{\partial y}\Big(xyz + g(y,z)\Big)
+= xz + \frac{\partial g}{\partial y} = xz
+\quad\Rightarrow\quad
+\frac{\partial g}{\partial y} = 0,
+</mrow>
+</md>
+
+<p>
+so <m>g</m> does <em>not</em> depend on <m>y</m>, and we can write
+<m>g(y,z) = h(z)</m>; that is,
+</p>
+
+<men xml:id="eq-potential-step2">
+f(x,y,z) = xyz + h(z).
+</men>
+
+<p>
+<em>Step III.</em> Since <m>\dfrac{\partial f}{\partial z} = xy + 2z</m>,
+we differentiate <xref ref="eq-potential-step2"/> with respect to
+<m>z</m>:
+</p>
+
+<md>
+<mrow>
+\frac{\partial}{\partial z}\Big(xyz + h(z)\Big)
+= xy + \frac{dh}{dz} = xy + 2z
+\quad\Rightarrow\quad
+\frac{dh}{dz} = 2z
+\quad\Rightarrow\quad
+h(z) = z^2 + C.
+</mrow>
+</md>
+
+<p>
+Putting the three steps together, we conclude
+</p>
+
+<men xml:id="eq-potential-answer">
+f(x,y,z) = xyz + z^2 + C.
+</men>
+
+<p>
+<em>B.</em> By <xref ref="thm-ftli"/>, with <m>A(1,0,-2)</m> and
+<m>B(4,6,3)</m>,
+</p>
+
+<md>
+<mrow>
+\int_C \mathbf F\cdot d\mathbf r
+\amp= f(4,6,3) - f(1,0,-2)
+</mrow>
+<mrow>
+\amp= \big((4)(6)(3) + 3^2\big) - \big((1)(0)(-2) + (-2)^2\big)
+= 81 - 4 = 77.
+</mrow>
+</md>
+</solution>
+
+<figure xml:id="fig-potential-steps-prefigure">
+<caption>
+The three-step cascade for building the potential function of
+<m>\mathbf F = yz\,\mathbf i + xz\,\mathbf j + (xy+2z)\mathbf k</m>.
+Each component of <m>\mathbf F</m> pins down one more piece of
+<m>f</m>, shrinking the unknown <q>constant of integration</q> from
+<m>g(y,z)</m> to <m>h(z)</m> to the true constant <m>C</m>.
+</caption>
+<image width="85%">
+<prefigure xmlns="https://prefigure.org" label="prefigure-potential-steps">
+<diagram dimensions="(460,300)" margins="10">
+<coordinates bbox="(0,0,10,7.2)">
+<rectangle at="ps-box1" lower-left="(0.4,5.4)" dimensions="(4.1,1.4)"
+    stroke="#0072B2" fill="#dbeaf7" thickness="2"/>
+<label at="ps-eq1" anchor="(2.45,6.1)" alignment="c">
+<m>\dfrac{\partial f}{\partial x} = yz</m>
+</label>
+<vector at="ps-arrow1" v="(2.4,0)" tail="(4.7,6.1)" stroke="#009E73"
+    thickness="2"/>
+<label at="ps-arrow1-label" anchor="(5.9,6.35)" alignment="n"
+    color="#009E73">integrate in <m>x</m></label>
+<rectangle at="ps-box1b" lower-left="(7.3,5.4)" dimensions="(2.4,1.4)"
+    stroke="#0072B2" fill="white" thickness="2"/>
+<label at="ps-eq1b" anchor="(8.5,6.1)" alignment="c">
+<m>xyz + g(y,z)</m>
+</label>
+<rectangle at="ps-box2" lower-left="(0.4,3.1)" dimensions="(4.1,1.4)"
+    stroke="#0072B2" fill="#dbeaf7" thickness="2"/>
+<label at="ps-eq2" anchor="(2.45,3.8)" alignment="c">
+<m>\dfrac{\partial f}{\partial y} = xz</m>
+</label>
+<vector at="ps-arrow2" v="(2.4,0)" tail="(4.7,3.8)" stroke="#009E73"
+    thickness="2"/>
+<label at="ps-arrow2-label" anchor="(5.9,4.05)" alignment="n"
+    color="#009E73"><m>\partial g/\partial y = 0</m></label>
+<rectangle at="ps-box2b" lower-left="(7.3,3.1)" dimensions="(2.4,1.4)"
+    stroke="#0072B2" fill="white" thickness="2"/>
+<label at="ps-eq2b" anchor="(8.5,3.8)" alignment="c">
+<m>xyz + h(z)</m>
+</label>
+<rectangle at="ps-box3" lower-left="(0.4,0.8)" dimensions="(4.1,1.4)"
+    stroke="#0072B2" fill="#dbeaf7" thickness="2"/>
+<label at="ps-eq3" anchor="(2.45,1.5)" alignment="c">
+<m>\dfrac{\partial f}{\partial z} = xy + 2z</m>
+</label>
+<vector at="ps-arrow3" v="(2.4,0)" tail="(4.7,1.5)" stroke="#009E73"
+    thickness="2"/>
+<label at="ps-arrow3-label" anchor="(5.9,1.75)" alignment="n"
+    color="#009E73"><m>h'(z) = 2z</m></label>
+<rectangle at="ps-box3b" lower-left="(7.3,0.8)" dimensions="(2.4,1.4)"
+    stroke="#D55E00" fill="#fbe3d0" thickness="2"/>
+<label at="ps-eq3b" anchor="(8.5,1.5)" alignment="c">
+<m>xyz + z^2 + C</m>
+</label>
+</coordinates>
+<annotations>
+<annotation ref="figure" text="A flow diagram with three rows, one for each component of the vector field. Each row starts with a partial derivative condition in a blue box and ends with an updated formula for f. Row one: partial f partial x equals y z leads, by integrating in x, to x y z plus g of y and z. Row two: partial f partial y equals x z forces partial g partial y equals zero, giving x y z plus h of z. Row three: partial f partial z equals x y plus 2 z forces h prime of z equals 2 z, giving the final answer x y z plus z squared plus C in a vermillion box.">
+  <annotation ref="ps-box1" text="Step one. The x component of F says partial f partial x equals y z."/>
+  <annotation ref="ps-box1b" text="Integrating in x gives f equals x y z plus g of y and z, where the constant of integration may depend on y and z."/>
+  <annotation ref="ps-box2" text="Step two. The y component of F says partial f partial y equals x z."/>
+  <annotation ref="ps-box2b" text="Differentiating in y shows g does not depend on y, so f equals x y z plus h of z."/>
+  <annotation ref="ps-box3" text="Step three. The z component of F says partial f partial z equals x y plus 2 z."/>
+  <annotation ref="ps-box3b" text="Solving h prime of z equals 2 z gives h equals z squared plus C, so f equals x y z plus z squared plus C."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+
+</subsection>
+
+<!-- ================================================================ -->
+<subsection xml:id="sec-conservative-gradient">
+<title>Conservative Fields are Gradient Fields</title>
+
+<theorem xml:id="thm-conservative-gradient">
+<title>Conservative Fields are Gradient Fields</title>
+<statement>
+<p>
+Let <m>\mathbf F = M\mathbf i + N\mathbf j + P\mathbf k</m> be a vector
+field whose components are continuous throughout an open connected
+region <m>D</m> in space. Then <m>\mathbf F</m> is conservative if and
+only if <m>\mathbf F</m> is a gradient field <m>\nabla f</m> for a
+differentiable function <m>f</m>.
+</p>
+</statement>
+</theorem>
+
+<p>
+The content of <xref ref="thm-conservative-gradient"/>, combined with
+<xref ref="thm-ftli"/> and the definition of path independence, can be
+organized into the following square of equivalent statements:
+</p>
+
+<md>
+<mrow>
+\text{there exists a potential } f \text{ with } \mathbf F = \nabla f
+\quad\amp\Longleftrightarrow\quad
+\mathbf F \text{ is a conservative field}
+</mrow>
+<mrow>
+\Big\Updownarrow\qquad\qquad\qquad \amp \qquad\qquad\qquad\Big\Updownarrow
+</mrow>
+<mrow>
+\text{for any path } C:\
+\int_C \mathbf F\cdot d\mathbf r = f(B) - f(A)
+\quad\amp\Longleftrightarrow\quad
+\int_C \mathbf F\cdot d\mathbf r \text{ is path-independent}
+</mrow>
+</md>
+
+<p>
+Path independence means that all of the paths in
+<xref ref="fig-path-independence-prefigure"/> give the same value of the
+line integral: if <m>\mathbf F</m> is conservative, then
+</p>
+
+<men xml:id="eq-three-paths">
+\int_{C_1} \mathbf F\cdot d\mathbf r
+= \int_{C_2} \mathbf F\cdot d\mathbf r
+= \int_{C_3} \mathbf F\cdot d\mathbf r
+= f(B) - f(A).
+</men>
+
+<figure xml:id="fig-path-independence-prefigure">
+<caption>
+Three different paths <m>C_1</m>, <m>C_2</m>, and <m>C_3</m> joining
+<m>A</m> to <m>B</m>. For a conservative field, all three line
+integrals have the same value <m>f(B) - f(A)</m>.
+</caption>
+<image width="55%">
+<prefigure xmlns="https://prefigure.org" label="prefigure-path-independence">
+<diagram dimensions="(340,280)" margins="10">
+<definition>c1(t) = (4*t - 1.6*t*(1-t), 3*t - 3.4*t*(1-t))</definition>
+<definition>c2(t) = (4*t, 3*t)</definition>
+<definition>c3(t) = (4*t - 3.4*t*(1-t), 3*t + 3.2*t*(1-t))</definition>
+<coordinates bbox="(-1.3,-1.2,5.3,4.6)">
+<parametric-curve at="pi-c1" function="c1" domain="(0,1)"
+    stroke="#0072B2" thickness="3" arrows="1"/>
+<parametric-curve at="pi-c2" function="c2" domain="(0,1)"
+    stroke="#009E73" thickness="3" arrows="1"/>
+<parametric-curve at="pi-c3" function="c3" domain="(0,1)"
+    stroke="#D55E00" thickness="3" arrows="1"/>
+<point at="pi-A" p="(0,0)" fill="black" alignment="sw">
+<m>A</m>
+</point>
+<point at="pi-B" p="(4,3)" fill="black" alignment="ne">
+<m>B</m>
+</point>
+<label at="pi-c1-label" anchor="(2.4,0.55)" alignment="se"
+    color="#0072B2"><m>C_1</m></label>
+<label at="pi-c2-label" anchor="(1.7,1.35)" alignment="nw"
+    color="#009E73"><m>C_2</m></label>
+<label at="pi-c3-label" anchor="(0.75,2.05)" alignment="nw"
+    color="#D55E00"><m>C_3</m></label>
+</coordinates>
+<annotations>
+<annotation ref="figure" text="Two points A and B in the plane joined by three different curves. C 1 bows below the straight path, C 2 is the straight segment from A to B, and C 3 bows above. Arrows on all three curves point from A to B.">
+  <annotation ref="pi-A" text="The starting point A of all three paths."/>
+  <annotation ref="pi-B" text="The ending point B of all three paths."/>
+  <annotation ref="pi-c1" text="The path C 1, drawn in blue, bowing below the straight segment."/>
+  <annotation ref="pi-c2" text="The path C 2, the straight segment from A to B, drawn in green."/>
+  <annotation ref="pi-c3" text="The path C 3, drawn in vermillion, bowing above the straight segment."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+
+</subsection>
+
+<!-- ================================================================ -->
+<subsection xml:id="sec-loop-property">
+<title>The Loop Property of Conservative Fields</title>
+
+<theorem xml:id="thm-loop-property">
+<title>Loop Property of Conservative Fields</title>
+<statement>
+<p>
+The following statements are equivalent.
+</p>
+
+<p>
+<ol>
+<li>
+<p>
+<m>\oint_C \mathbf F\cdot d\mathbf r = 0</m> around every loop (that
+is, closed curve <m>C</m>) in <m>D</m>.
+</p>
+</li>
+<li>
+<p>
+The field <m>\mathbf F</m> is conservative on <m>D</m>.
+</p>
+</li>
+</ol>
+</p>
+</statement>
+<proof>
+<p>
+We prove that (2) implies (1); the reverse direction runs the same
+computation backwards. We assume that <m>\mathbf F</m> is conservative.
+Then, as shown in <xref ref="fig-loop-split-prefigure"/>, we can think
+about any loop as <m>C = C_1 \cup C_2</m>, where <m>C_1</m> goes from
+<m>A</m> to <m>B</m> and <m>C_2</m> returns from <m>B</m> to <m>A</m>.
+Reversing the orientation of <m>C_2</m> produces the curve
+<m>-C_2</m>, and <m>C_1</m> and <m>-C_2</m> both connect <m>A</m> to
+<m>B</m>. Since <m>\mathbf F</m> is conservative, path independence
+gives
+<m>\int_{C_1} \mathbf F\cdot d\mathbf r
+= \int_{-C_2} \mathbf F\cdot d\mathbf r</m>,
+and therefore
+</p>
+
+<md xml:id="eq-loop-computation">
+<mrow>
+\oint_C \mathbf F\cdot d\mathbf r
+\amp= \int_{C_1} \mathbf F\cdot d\mathbf r
++ \int_{C_2} \mathbf F\cdot d\mathbf r
+</mrow>
+<mrow>
+\amp= \int_{-C_2} \mathbf F\cdot d\mathbf r
++ \int_{C_2} \mathbf F\cdot d\mathbf r
+</mrow>
+<mrow>
+\amp= -\int_{C_2} \mathbf F\cdot d\mathbf r
++ \int_{C_2} \mathbf F\cdot d\mathbf r
+</mrow>
+<mrow>
+\amp= 0.
+</mrow>
+</md>
+
+<p>
+Hence <m>\oint_C \mathbf F\cdot d\mathbf r = 0</m> for any loop
+<m>C</m>.
+</p>
+</proof>
+</theorem>
+
+<figure xml:id="fig-loop-split-prefigure">
+<caption>
+On the left, a loop <m>C</m> is split into two pieces:
+<m>C_1</m> from <m>A</m> to <m>B</m> and <m>C_2</m> from <m>B</m> back
+to <m>A</m>, so <m>C = C_1 \cup C_2</m>. On the right, the orientation
+of <m>C_2</m> is reversed to produce <m>-C_2</m>; now <m>C_1</m> and
+<m>-C_2</m> both connect <m>A</m> to <m>B</m>, and path independence
+forces the two integrals to agree.
+</caption>
+<sidebyside widths="48% 48%">
+<image>
+<prefigure xmlns="https://prefigure.org" label="prefigure-loop-split">
+<diagram dimensions="(300,260)" margins="10">
+<definition>top(t) = (2*cos(t), 1.35*sin(t) + 0.12*sin(2*t))</definition>
+<definition>bot(t) = (2*cos(t), 1.35*sin(t) - 0.1*sin(2*t))</definition>
+<coordinates bbox="(-3.1,-2.4,3.1,2.4)">
+<parametric-curve at="ls-c1" function="top" domain="(0,pi)"
+    stroke="#0072B2" thickness="3" arrows="1"/>
+<parametric-curve at="ls-c2" function="bot" domain="(pi,2*pi)"
+    stroke="#CC79A7" thickness="3" arrows="1"/>
+<point at="ls-A" p="(2,0)" fill="black" alignment="e">
+<m>A</m>
+</point>
+<point at="ls-B" p="(-2,0)" fill="black" alignment="w">
+<m>B</m>
+</point>
+<label at="ls-c1-label" anchor="(-0.9,1.55)" alignment="n"
+    color="#0072B2"><m>C_1</m></label>
+<label at="ls-c2-label" anchor="(1.75,-1.05)" alignment="se"
+    color="#CC79A7"><m>C_2</m></label>
+<label at="ls-eq" anchor="(0,-1.85)" alignment="s">
+<m>C = C_1 \cup C_2</m>
+</label>
+</coordinates>
+<annotations>
+<annotation ref="figure" text="An oval loop through the points A on the right and B on the left. The upper half, labeled C 1, is drawn in blue and runs counterclockwise from A to B. The lower half, labeled C 2, is drawn in reddish purple and continues from B back to A, closing the loop.">
+  <annotation ref="ls-c1" text="The piece C 1 of the loop, running from A to B along the top."/>
+  <annotation ref="ls-c2" text="The piece C 2 of the loop, running from B back to A along the bottom, so the loop is the union of C 1 and C 2."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+<image>
+<prefigure xmlns="https://prefigure.org" label="prefigure-loop-reversed">
+<diagram dimensions="(300,260)" margins="10">
+<definition>top(t) = (2*cos(t), 1.35*sin(t) + 0.12*sin(2*t))</definition>
+<definition>botrev(t) = (2*cos(-t), 1.35*sin(-t) + 0.1*sin(2*t))</definition>
+<coordinates bbox="(-3.1,-2.4,3.1,2.4)">
+<parametric-curve at="lr-c1" function="top" domain="(0,pi)"
+    stroke="#0072B2" thickness="3" arrows="1"/>
+<parametric-curve at="lr-negc2" function="botrev" domain="(0,pi)"
+    stroke="#009E73" thickness="3" arrows="1"/>
+<point at="lr-A" p="(2,0)" fill="black" alignment="e">
+<m>A</m>
+</point>
+<point at="lr-B" p="(-2,0)" fill="black" alignment="w">
+<m>B</m>
+</point>
+<label at="lr-c1-label" anchor="(-0.9,1.55)" alignment="n"
+    color="#0072B2"><m>C_1</m></label>
+<label at="lr-negc2-label" anchor="(1.75,-1.05)" alignment="se"
+    color="#009E73"><m>-C_2</m></label>
+<label at="lr-eq" anchor="(0,-1.85)" alignment="s">
+<m>\int_{C_1}\mathbf F\cdot d\mathbf r
+= \int_{-C_2}\mathbf F\cdot d\mathbf r</m>
+</label>
+</coordinates>
+<annotations>
+<annotation ref="figure" text="The same oval through A and B, but now both halves run from A to B. The upper half C 1 is drawn in blue and the lower half, relabeled minus C 2 and drawn in green, has its arrow reversed so that it also runs from A to B. Since both curves connect A to B, path independence makes the two line integrals equal.">
+  <annotation ref="lr-c1" text="The piece C 1, still running from A to B along the top."/>
+  <annotation ref="lr-negc2" text="The reversed piece minus C 2, drawn in green, now running from A to B along the bottom. C 1 and minus C 2 both connect A to B."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</sidebyside>
+</figure>
+
+</subsection>
+
+</section>
