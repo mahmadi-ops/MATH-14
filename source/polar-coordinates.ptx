@@ -1,0 +1,731 @@
+<?xml version="1.0" encoding="utf-8"?>
+<section xml:id="section-polar-coordinates" xmlns:xi="http://www.w3.org/2001/XInclude">
+<title>Polar Coordinates and Graphing Polar Equations</title>
+
+<p>
+Usually we use Cartesian coordinates, which are directed distances from
+two perpendicular axes. Here we will study a new coordinate system,
+called the <term>polar coordinate system</term>, which is more
+convenient for many purposes such as finding the volume of some
+objects.
+</p>
+
+<!-- ================================================================ -->
+<subsection xml:id="sec-polar-definition">
+<title>The Polar Coordinate System</title>
+
+<p>
+Similar to the Cartesian coordinate system, we need two real numbers to
+specify the location of a point <m>P</m> in the <m>xy</m>-plane. The
+first one is the directed distance from the origin and it is shown by
+<m>r</m> in <xref ref="fig-polar-point-prefigure"/>. The second one is
+the directed angle <m>\theta</m>, and an angle is positive if measured
+in the counterclockwise direction from the polar axis and negative in
+the clockwise direction. The ordered pair <m>(r,\theta)</m> represents
+the location of a point <m>P</m> in the polar coordinate system.
+</p>
+
+<figure xml:id="fig-polar-point-prefigure">
+<caption>
+A point <m>P(r,\theta)</m> in the polar coordinate system: <m>r</m> is
+the directed distance from the origin <m>O</m>, and <m>\theta</m> is
+the directed angle measured counterclockwise from the polar axis.
+</caption>
+<image width="60%">
+<prefigure xmlns="https://prefigure.org" label="prefigure-polar-point">
+<diagram dimensions="(360,240)" margins="10">
+<definition>arc(t) = (0.55*cos(t), 0.55*sin(t))</definition>
+<coordinates bbox="(-0.5,-0.4,3.4,2.2)">
+<line at="pp-axis" endpoints="((0,0),(3.1,0))" stroke="black"
+    thickness="2"/>
+<vector at="pp-axis-arrow" v="(0.15,0)" tail="(3.05,0)" stroke="black"
+    thickness="2"/>
+<line at="pp-ray" endpoints="((0,0),(2.6,1.5))" stroke="#0072B2"
+    thickness="3"/>
+<parametric-curve at="pp-arc" function="arc" domain="(0,0.523)"
+    stroke="#CC79A7" thickness="2"/>
+<point at="pp-O" p="(0,0)" fill="black" alignment="w">
+<m>O</m>
+</point>
+<point at="pp-P" p="(2.6,1.5)" fill="#0072B2" alignment="ne">
+<m>P(r,\theta)</m>
+</point>
+<label at="pp-r" anchor="(1.25,0.9)" alignment="nw" color="#0072B2">
+<m>r</m>
+</label>
+<label at="pp-theta" anchor="(0.68,0.22)" alignment="e"
+    color="#CC79A7"><m>\theta</m></label>
+<label at="pp-polar-axis" anchor="(2.0,-0.1)" alignment="s">
+polar axis
+</label>
+<label at="pp-x" anchor="(3.15,-0.1)" alignment="s">
+<m>x</m>
+</label>
+</coordinates>
+<annotations>
+<annotation ref="figure" text="A horizontal ray from the origin O, labeled polar axis, pointing in the positive x direction. A blue segment of length r goes from O to the point P with polar coordinates r comma theta, and a small reddish purple arc marks the angle theta between the polar axis and the segment.">
+  <annotation ref="pp-ray" text="The segment of directed length r from the origin O to the point P."/>
+  <annotation ref="pp-arc" text="The directed angle theta, measured counterclockwise from the polar axis."/>
+  <annotation ref="pp-P" text="The point P with polar coordinates r comma theta."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+
+<p>
+<xref ref="fig-polar-negative-r-prefigure"/> demonstrates the meaning
+of negative <m>r</m>. Note that the polar pair <m>(-r,\theta)</m> is
+the same as <m>(r,\theta+\pi)</m>.
+</p>
+
+<figure xml:id="fig-polar-negative-r-prefigure">
+<caption>
+The meaning of negative <m>r</m>: the point <m>(-r,\theta)</m> lies on
+the ray opposite to the ray of angle <m>\theta</m>, so
+<m>(-r,\theta)</m> is the same point as <m>(r,\theta+\pi)</m>.
+</caption>
+<image width="60%">
+<prefigure xmlns="https://prefigure.org" label="prefigure-polar-negative-r">
+<diagram dimensions="(360,260)" margins="10">
+<definition>arc1(t) = (0.5*cos(t), 0.5*sin(t))</definition>
+<definition>arc2(t) = (0.72*cos(t), 0.72*sin(t))</definition>
+<coordinates bbox="(-3.0,-1.7,2.9,1.9)">
+<line at="nr-axis" endpoints="((0,0),(2.6,0))" stroke="black"
+    thickness="2"/>
+<vector at="nr-axis-arrow" v="(0.15,0)" tail="(2.55,0)" stroke="black"
+    thickness="2"/>
+<line at="nr-ray" endpoints="((0,0),(2.2,1.35))" stroke="black"
+    thickness="2"/>
+<line at="nr-opposite" endpoints="((0,0),(-1.9,-1.17))"
+    stroke="#56B4E9" thickness="2" dash="6 4"/>
+<parametric-curve at="nr-arc1" function="arc1" domain="(0,0.55)"
+    stroke="#CC79A7" thickness="2"/>
+<parametric-curve at="nr-arc2" function="arc2" domain="(0,3.69)"
+    stroke="#CC79A7" thickness="2"/>
+<point at="nr-O" p="(0,0)" fill="black" alignment="se">
+<m>O</m>
+</point>
+<point at="nr-P" p="(2.2,1.35)" fill="#0072B2" alignment="ne">
+<m>(r,\theta)</m>
+</point>
+<point at="nr-negP" p="(-1.9,-1.17)" fill="#0072B2" alignment="sw">
+<m>(-r,\theta)</m>
+</point>
+<label at="nr-theta" anchor="(0.62,0.18)" alignment="e"
+    color="#CC79A7"><m>\theta</m></label>
+<label at="nr-thetapi" anchor="(-0.55,0.75)" alignment="nw"
+    color="#CC79A7"><m>\theta+\pi</m></label>
+</coordinates>
+<annotations>
+<annotation ref="figure" text="A ray from the origin at angle theta with the point r comma theta marked on it, and the dashed opposite ray at angle theta plus pi with the point negative r comma theta marked on it. Two reddish purple arcs mark the angles theta and theta plus pi.">
+  <annotation ref="nr-ray" text="The ray at angle theta, containing the point with positive first coordinate r."/>
+  <annotation ref="nr-opposite" text="The dashed opposite ray, at angle theta plus pi. The point negative r comma theta lies on this ray, at distance r from the origin."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+
+<p>
+In polar coordinates, a point has many representations. For example, in
+<xref ref="fig-polar-representations-prefigure"/> you can see two
+different representations, <m>\left(1,\tfrac{13\pi}{4}\right)</m> and
+<m>\left(-1,\tfrac{\pi}{4}\right)</m>, of the same point; the pairs
+<m>\left(1,\tfrac{5\pi}{4}\right)</m> and
+<m>\left(1,-\tfrac{3\pi}{4}\right)</m> locate it as well. In general, a
+point denoted by <m>(r,\theta)</m> can also be represented by
+<m>(r,\theta + 2n\pi)</m> or <m>(-r,\theta + (2n+1)\pi)</m>, where
+<m>n</m> is any integer.
+</p>
+
+<figure xml:id="fig-polar-representations-prefigure">
+<caption>
+Two of the many polar representations of the same point. On the left,
+<m>\left(1,\tfrac{13\pi}{4}\right)</m>: the angle wraps around once
+before landing on the third-quadrant ray. On the right,
+<m>\left(-1,\tfrac{\pi}{4}\right)</m>: the negative <m>r</m> places
+the point on the ray opposite to the angle
+<m>\tfrac{\pi}{4}</m>. The pairs <m>\left(1,\tfrac{5\pi}{4}\right)</m>
+and <m>\left(1,-\tfrac{3\pi}{4}\right)</m> give the same point too.
+</caption>
+<sidebyside widths="48% 48%">
+<image>
+<prefigure xmlns="https://prefigure.org" label="prefigure-polar-rep1">
+<diagram dimensions="(280,240)" margins="10">
+<definition>arc(t) = ((0.38 + 0.045*t)*cos(t), (0.38 + 0.045*t)*sin(t))</definition>
+<coordinates bbox="(-1.9,-1.7,2.4,1.7)">
+<line at="rp1-axis" endpoints="((0,0),(2.1,0))" stroke="black"
+    thickness="2"/>
+<vector at="rp1-arrow" v="(0.15,0)" tail="(2.05,0)" stroke="black"
+    thickness="2"/>
+<line at="rp1-ray" endpoints="((0,0),(-0.7071,-0.7071))"
+    stroke="#56B4E9" thickness="2"/>
+<parametric-curve at="rp1-arc" function="arc" domain="(0,10.21)"
+    stroke="#CC79A7" thickness="1.5"/>
+<point at="rp1-O" p="(0,0)" fill="black" alignment="ne">
+<m>O</m>
+</point>
+<point at="rp1-P" p="(-0.7071,-0.7071)" fill="#0072B2" alignment="sw">
+<m>\left(1,\tfrac{13\pi}{4}\right)</m>
+</point>
+<label at="rp1-angle" anchor="(-1.15,0.9)" alignment="nw"
+    color="#CC79A7"><m>\tfrac{13\pi}{4}</m></label>
+</coordinates>
+<annotations>
+<annotation ref="figure" text="The polar axis with a spiral arc winding counterclockwise through more than a full turn, ending at the ray in the third quadrant where the point one comma thirteen pi over four is marked at distance one from the origin.">
+  <annotation ref="rp1-arc" text="The angle thirteen pi over four, which winds around more than one full turn before reaching the third quadrant ray."/>
+  <annotation ref="rp1-P" text="The point at distance one along the final ray."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+<image>
+<prefigure xmlns="https://prefigure.org" label="prefigure-polar-rep2">
+<diagram dimensions="(280,240)" margins="10">
+<definition>arc(t) = (0.5*cos(t), 0.5*sin(t))</definition>
+<coordinates bbox="(-1.9,-1.7,2.4,1.7)">
+<line at="rp2-axis" endpoints="((0,0),(2.1,0))" stroke="black"
+    thickness="2"/>
+<vector at="rp2-arrow" v="(0.15,0)" tail="(2.05,0)" stroke="black"
+    thickness="2"/>
+<line at="rp2-ray" endpoints="((0,0),(1.06,1.06))" stroke="black"
+    thickness="2"/>
+<line at="rp2-opposite" endpoints="((0,0),(-0.7071,-0.7071))"
+    stroke="#56B4E9" thickness="2" dash="6 4"/>
+<parametric-curve at="rp2-arc" function="arc" domain="(0,0.785)"
+    stroke="#CC79A7" thickness="2"/>
+<point at="rp2-O" p="(0,0)" fill="black" alignment="s">
+<m>O</m>
+</point>
+<point at="rp2-P" p="(-0.7071,-0.7071)" fill="#0072B2" alignment="sw">
+<m>\left(-1,\tfrac{\pi}{4}\right)</m>
+</point>
+<label at="rp2-angle" anchor="(0.62,0.3)" alignment="e"
+    color="#CC79A7"><m>\tfrac{\pi}{4}</m></label>
+</coordinates>
+<annotations>
+<annotation ref="figure" text="The polar axis with a solid ray at angle pi over four in the first quadrant, and its dashed opposite ray in the third quadrant. The point negative one comma pi over four is marked on the dashed opposite ray at distance one from the origin.">
+  <annotation ref="rp2-ray" text="The ray at angle pi over four."/>
+  <annotation ref="rp2-opposite" text="The dashed opposite ray. Because r equals negative one, the point lies here, at distance one from the origin."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</sidebyside>
+</figure>
+
+</subsection>
+
+<!-- ================================================================ -->
+<subsection xml:id="sec-polar-cartesian-relation">
+<title>Relation Between Polar and Cartesian Coordinates</title>
+
+<figure xml:id="fig-polar-cartesian-prefigure">
+<caption>
+The common origin and initial ray of the polar and Cartesian systems.
+For a point <m>P(x,y) = P(r,\theta)</m>, the right triangle with legs
+<m>x</m> and <m>y</m> and hypotenuse <m>r</m> relates the two
+coordinate systems.
+</caption>
+<image width="60%">
+<prefigure xmlns="https://prefigure.org" label="prefigure-polar-cartesian">
+<diagram dimensions="(360,300)" margins="10">
+<definition>arc(t) = (0.5*cos(t), 0.5*sin(t))</definition>
+<definition>unitcircle(t) = (1.7*cos(t), 1.7*sin(t))</definition>
+<coordinates bbox="(-2.3,-2.2,2.9,2.5)">
+<axes at="pc-axes" xlabel="x" ylabel="y" decorations="no" arrows="1"/>
+<parametric-curve at="pc-circle" function="unitcircle"
+    domain="(0,2*pi)" stroke="#bbbbbb" thickness="1"/>
+<line at="pc-r" endpoints="((0,0),(1.45,0.89))" stroke="#CC79A7"
+    thickness="3"/>
+<line at="pc-x" endpoints="((0,0),(1.45,0))" stroke="#E69F00"
+    thickness="3"/>
+<line at="pc-y" endpoints="((1.45,0),(1.45,0.89))" stroke="#E69F00"
+    thickness="3"/>
+<parametric-curve at="pc-arc" function="arc" domain="(0,0.55)"
+    stroke="#CC79A7" thickness="2"/>
+<point at="pc-P" p="(1.45,0.89)" fill="#0072B2" alignment="n">
+<m>P(x,y) = P(r,\theta)</m>
+</point>
+<label at="pc-r-label" anchor="(0.6,0.52)" alignment="nw"
+    color="#CC79A7"><m>r</m></label>
+<label at="pc-x-label" anchor="(0.75,-0.08)" alignment="s"
+    color="#E69F00"><m>x</m></label>
+<label at="pc-y-label" anchor="(1.53,0.42)" alignment="e"
+    color="#E69F00"><m>y</m></label>
+<label at="pc-theta" anchor="(0.62,0.16)" alignment="e"
+    color="#CC79A7"><m>\theta</m></label>
+<label at="pc-initial" anchor="(2.0,-0.35)" alignment="s">
+<m>\theta = 0,\ r \ge 0</m>
+</label>
+<label at="pc-ray" anchor="(-0.15,2.15)" alignment="w">
+Ray <m>\theta = \tfrac{\pi}{2}</m>
+</label>
+<label at="pc-origin" anchor="(-0.7,-0.35)" alignment="sw">
+Common origin
+</label>
+</coordinates>
+<annotations>
+<annotation ref="figure" text="Cartesian axes with a gray circle centered at the origin. A point P in the first quadrant is labeled both P of x and y and P of r and theta. A reddish purple segment of length r joins the origin to P, and orange segments of lengths x and y form the legs of the right triangle. A small arc marks the angle theta at the origin.">
+  <annotation ref="pc-r" text="The hypotenuse of the right triangle: the polar distance r from the common origin to P."/>
+  <annotation ref="pc-x" text="The horizontal leg: the Cartesian coordinate x, equal to r cosine theta."/>
+  <annotation ref="pc-y" text="The vertical leg: the Cartesian coordinate y, equal to r sine theta."/>
+  <annotation ref="pc-arc" text="The angle theta between the initial ray and the segment from the origin to P."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+
+<p>
+From <xref ref="fig-polar-cartesian-prefigure"/>, you can see that for
+a given <m>(r,\theta)</m>, we uniquely have
+<m>(x,y) = (r\cos(\theta),\ r\sin(\theta))</m>. If we are given a pair
+<m>(x,y)</m>, there are two options for the directed distance
+<m>r</m>: a positive and a negative value. However, for a given
+<m>(x,y) \ne (0,0)</m>, there is a unique <m>\theta \in [0,2\pi)</m>
+that satisfies the first and second equations below.
+</p>
+
+<assemblage xml:id="assemblage-polar-cartesian-equations">
+<title>Equations Relating Polar and Cartesian Coordinates</title>
+<p>
+<me>
+x = r\cos\theta, \qquad
+y = r\sin\theta, \qquad
+r^2 = x^2 + y^2, \qquad
+\tan\theta = \frac{y}{x}
+</me>
+</p>
+</assemblage>
+
+<p>
+Furthermore, all the other representations of a point can be found from
+these two using <m>(r,\theta + 2n\pi)</m> and
+<m>(-r,\theta + (2n+1)\pi)</m>, where <m>n</m> is any integer.
+</p>
+
+</subsection>
+
+<!-- ================================================================ -->
+<subsection xml:id="sec-polar-to-cartesian-example">
+<title>Replacing Polar Equations by Cartesian Equations</title>
+
+<example xml:id="example-polar-to-cartesian">
+<title>Example I</title>
+<statement>
+<p>
+Replace the following polar equations by equivalent Cartesian
+equations.
+</p>
+
+<p>
+<ol marker="A.">
+<li><p><m>r = 1</m></p></li>
+<li><p><m>\theta = \pi/4</m></p></li>
+<li><p><m>r^2\cos\theta\sin\theta = 4</m></p></li>
+<li><p><m>r = 1 + 2r\cos\theta</m></p></li>
+</ol>
+</p>
+</statement>
+</example>
+
+<solution>
+<p>
+The four curves are shown in
+<xref ref="fig-polar-to-cartesian-prefigure"/>.
+</p>
+
+<p>
+<ol marker="A.">
+<li>
+<p>
+This is the circle <m>x^2 + y^2 = 1</m>.
+</p>
+</li>
+<li>
+<p>
+This is the line <m>y = x</m>.
+</p>
+</li>
+<li>
+<p>
+We re-write <m>r^2\cos\theta\sin\theta = 4</m> as
+<m>(r\cos\theta)(r\sin\theta) = 4</m>, which then gives us
+<m>xy = 4</m>.
+</p>
+</li>
+<li>
+<p>
+Using <m>r = \sqrt{x^2+y^2}</m> and <m>r\cos\theta = x</m>:
+<md>
+<mrow>
+r = 1 + 2r\cos\theta
+\amp\Rightarrow \sqrt{x^2+y^2} = 1 + 2x
+\Rightarrow x^2 + y^2 = 1 + 4x + 4x^2
+</mrow>
+<mrow>
+\amp\Rightarrow y^2 - 3x^2 - 4x - 1 = 0.
+</mrow>
+</md>
+</p>
+</li>
+</ol>
+</p>
+</solution>
+
+<figure xml:id="fig-polar-to-cartesian-prefigure">
+<caption>
+The four curves of <xref ref="example-polar-to-cartesian"/>. From left
+to right: the circle <m>r = 1</m>, i.e., <m>x^2+y^2=1</m>; the line
+<m>\theta = \pi/4</m>, i.e., <m>y = x</m>; the hyperbola
+<m>r^2\cos\theta\sin\theta = 4</m>, i.e., <m>xy = 4</m>; and the conic
+<m>r = 1+2r\cos\theta</m>, i.e., <m>y^2 - 3x^2 - 4x - 1 = 0</m>.
+</caption>
+<sidebyside widths="23% 23% 23% 23%">
+<image>
+<prefigure xmlns="https://prefigure.org" label="prefigure-p2c-circle">
+<diagram dimensions="(170,170)" margins="5">
+<definition>c(t) = (cos(t), sin(t))</definition>
+<coordinates bbox="(-1.7,-2.1,1.7,1.7)">
+<axes at="cc-axes" decorations="no" arrows="1"/>
+<parametric-curve at="cc-circle" function="c" domain="(0,2*pi)"
+    stroke="#0072B2" thickness="3"/>
+<label at="cc-label" anchor="(0,-1.45)" alignment="s">
+<m>x^2+y^2=1</m>
+</label>
+</coordinates>
+<annotations>
+<annotation ref="figure" text="The unit circle centered at the origin, the graph of the polar equation r equals one.">
+  <annotation ref="cc-circle" text="The circle of radius one centered at the origin."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+<image>
+<prefigure xmlns="https://prefigure.org" label="prefigure-p2c-line">
+<diagram dimensions="(170,170)" margins="5">
+<coordinates bbox="(-1.7,-2.1,1.7,1.7)">
+<axes at="ll-axes" decorations="no" arrows="1"/>
+<line at="ll-line" endpoints="((-1.35,-1.35),(1.35,1.35))"
+    stroke="#0072B2" thickness="3"/>
+<label at="ll-label" anchor="(0,-1.45)" alignment="s">
+<m>y = x</m>
+</label>
+</coordinates>
+<annotations>
+<annotation ref="figure" text="The line y equals x through the origin, the graph of the polar equation theta equals pi over four.">
+  <annotation ref="ll-line" text="The line through the origin at forty five degrees."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+<image>
+<prefigure xmlns="https://prefigure.org" label="prefigure-p2c-hyperbola">
+<diagram dimensions="(170,170)" margins="5">
+<definition>b1(t) = (t, 4/t)</definition>
+<definition>b2(t) = (-t, -4/t)</definition>
+<coordinates bbox="(-8.5,-8.5,8.5,8.5)">
+<axes at="hh-axes" decorations="no" arrows="1"/>
+<parametric-curve at="hh-b1" function="b1" domain="(0.55,8)"
+    stroke="#0072B2" thickness="3"/>
+<parametric-curve at="hh-b2" function="b2" domain="(0.55,8)"
+    stroke="#0072B2" thickness="3"/>
+<label at="hh-label" anchor="(0,-7.4)" alignment="s">
+<m>xy = 4</m>
+</label>
+</coordinates>
+<annotations>
+<annotation ref="figure" text="The hyperbola x y equals four with branches in the first and third quadrants.">
+  <annotation ref="hh-b1" text="The branch in the first quadrant."/>
+  <annotation ref="hh-b2" text="The branch in the third quadrant."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+<image>
+<prefigure xmlns="https://prefigure.org" label="prefigure-p2c-conic">
+<diagram dimensions="(170,170)" margins="5">
+<definition>br1(t) = (cos(t)/(1-2*cos(t)), sin(t)/(1-2*cos(t)))</definition>
+<coordinates bbox="(-2.6,-3.3,2.6,2.6)">
+<axes at="qq-axes" decorations="no" arrows="1"/>
+<parametric-curve at="qq-b1" function="br1" domain="(1.25,5.03)"
+    stroke="#0072B2" thickness="3"/>
+<parametric-curve at="qq-b2" function="br1" domain="(-0.85,0.85)"
+    stroke="#0072B2" thickness="3"/>
+<label at="qq-label" anchor="(0,-2.45)" alignment="s">
+<m>y^2-3x^2-4x-1=0</m>
+</label>
+</coordinates>
+<annotations>
+<annotation ref="figure" text="A hyperbola with two branches opening left and right, the graph of the polar equation r equals one plus two r cosine theta.">
+  <annotation ref="qq-b1" text="One branch of the conic."/>
+  <annotation ref="qq-b2" text="The other branch of the conic."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</sidebyside>
+</figure>
+
+<p>
+Next, we would like to learn about graphing polar equations. We will
+begin by analyzing symmetries of polar equations.
+</p>
+
+</subsection>
+
+<!-- ================================================================ -->
+<subsection xml:id="sec-polar-symmetries">
+<title>Symmetries</title>
+
+<paragraphs xml:id="par-symmetry-x-axis">
+<title>Symmetry about the <m>x</m>-axis</title>
+
+<p>
+Note that a graph is symmetric about the <m>x</m>-axis if for every
+point <m>(r,\theta)</m> on the graph, there exists a point with the
+coordinates <m>(r,-\theta)</m> on the graph as well. As an example,
+consider the equation <m>r = 1 + \cos\theta</m>. Assuming that
+<m>(r,\theta)</m> is a point on the graph of this equation, so is
+<m>(r,-\theta)</m>, simply because <m>\cos(-\theta) = \cos\theta</m>.
+Let us plot its graph by computing some of the points as shown in
+<xref ref="table-cardioid-points"/>; the graph, with these points
+marked, is shown in <xref ref="fig-cardioid-prefigure"/>, and the
+process of sweeping <m>\theta</m> to trace the graph is animated in
+<xref ref="fig-cardioid-video"/>.
+</p>
+
+<table xml:id="table-cardioid-points">
+<title>Some points on the graph of <m>r = 1 + \cos\theta</m></title>
+<tabular halign="center">
+<row header="yes" bottom="minor">
+<cell><m>\theta</m></cell>
+<cell><m>0</m></cell>
+<cell><m>\pi/3</m></cell>
+<cell><m>\pi/2</m></cell>
+<cell><m>2\pi/3</m></cell>
+<cell><m>\pi</m></cell>
+</row>
+<row>
+<cell><m>r = 1+\cos\theta</m></cell>
+<cell><m>2</m></cell>
+<cell><m>3/2</m></cell>
+<cell><m>1</m></cell>
+<cell><m>1/2</m></cell>
+<cell><m>0</m></cell>
+</row>
+</tabular>
+</table>
+
+<figure xml:id="fig-cardioid-prefigure">
+<caption>
+The cardioid <m>r = 1 + \cos\theta</m>. The marked points correspond
+to the values in <xref ref="table-cardioid-points"/>. Since
+<m>\cos(-\theta) = \cos\theta</m>, the graph is symmetric about the
+<m>x</m>-axis.
+</caption>
+<image width="65%">
+<prefigure xmlns="https://prefigure.org" label="prefigure-cardioid">
+<diagram dimensions="(360,320)" margins="10">
+<definition>card(t) = ((1+cos(t))*cos(t), (1+cos(t))*sin(t))</definition>
+<definition>ring1(t) = (0.5*cos(t), 0.5*sin(t))</definition>
+<definition>ring2(t) = (cos(t), sin(t))</definition>
+<definition>ring3(t) = (1.5*cos(t), 1.5*sin(t))</definition>
+<definition>ring4(t) = (2*cos(t), 2*sin(t))</definition>
+<coordinates bbox="(-2.5,-2.3,2.7,2.3)">
+<parametric-curve at="cd-ring1" function="ring1" domain="(0,2*pi)"
+    stroke="#dddddd" thickness="1"/>
+<parametric-curve at="cd-ring2" function="ring2" domain="(0,2*pi)"
+    stroke="#dddddd" thickness="1"/>
+<parametric-curve at="cd-ring3" function="ring3" domain="(0,2*pi)"
+    stroke="#dddddd" thickness="1"/>
+<parametric-curve at="cd-ring4" function="ring4" domain="(0,2*pi)"
+    stroke="#dddddd" thickness="1"/>
+<line at="cd-diag1" endpoints="((-1.55,-1.55),(1.55,1.55))"
+    stroke="#dddddd" thickness="1"/>
+<line at="cd-diag2" endpoints="((-1.55,1.55),(1.55,-1.55))"
+    stroke="#dddddd" thickness="1"/>
+<axes at="cd-axes" xlabel="x" ylabel="y" decorations="no" arrows="1"/>
+<parametric-curve at="cd-curve" function="card" domain="(0,2*pi)"
+    stroke="#0072B2" thickness="3"/>
+<point at="cd-p0" p="(2,0)" fill="#D55E00" alignment="ne"/>
+<point at="cd-p60" p="(0.75,1.299)" fill="#D55E00" alignment="ne"/>
+<point at="cd-p90" p="(0,1)" fill="#D55E00" alignment="ne"/>
+<point at="cd-p120" p="(-0.25,0.433)" fill="#D55E00" alignment="nw"/>
+<point at="cd-p180" p="(0,0)" fill="#D55E00" alignment="sw"/>
+<label at="cd-eq" anchor="(-2.4,1.6)" alignment="e"
+    color="#0072B2"><m>r = 1+\cos(\theta)</m></label>
+<label at="cd-r1" anchor="(0.5,0.06)" alignment="n">
+<m>\tfrac12</m>
+</label>
+<label at="cd-r2" anchor="(1.02,0.06)" alignment="n">
+<m>1</m>
+</label>
+<label at="cd-r4" anchor="(2.02,0.06)" alignment="n">
+<m>2</m>
+</label>
+</coordinates>
+<annotations>
+<annotation ref="figure" text="A polar grid with concentric gray circles of radii one half, one, three halves and two. The cardioid r equals one plus cosine theta is drawn in blue: a heart shaped curve, widest at the point two comma zero on the positive x axis, closing to a cusp at the origin on the negative x axis side. Five vermillion points mark the table values at theta equal to zero, pi over three, pi over two, two pi over three, and pi.">
+  <annotation ref="cd-curve" text="The cardioid r equals one plus cosine theta, symmetric about the x axis."/>
+  <annotation ref="cd-p0" text="The point at theta equals zero, where r equals two."/>
+  <annotation ref="cd-p90" text="The point at theta equals pi over two, where r equals one."/>
+  <annotation ref="cd-p180" text="The point at theta equals pi, where r equals zero: the cusp at the origin."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+
+<figure xml:id="fig-cardioid-video">
+<caption>
+Animation of graphing the polar equation <m>r = 1 + \cos\theta</m>. A
+ray at angle <m>\theta</m> rotates counterclockwise while the distance
+<m>r = 1+\cos\theta</m> along the ray is recomputed; the traced point
+sweeps out the cardioid, hitting the values of
+<xref ref="table-cardioid-points"/> along the way.
+</caption>
+<video xml:id="video-cardioid-trace"
+       source="videos/cardioid_trace_1080p.mp4"
+       width="70%" aspect="16:9"/>
+</figure>
+</paragraphs>
+
+<paragraphs xml:id="par-symmetry-y-axis">
+<title>Symmetry about the <m>y</m>-axis</title>
+
+<p>
+For every point <m>(r,\theta)</m> on the graph, there exists a point
+with the coordinates <m>(-r,-\theta)</m> or <m>(r,\pi-\theta)</m> on
+the graph. As an example, consider <m>r = 1 - \sin(\theta)</m>, which
+is shown in <xref ref="fig-cardioid-y-prefigure"/>: since
+<m>\sin(\pi - \theta) = \sin\theta</m>, the graph is symmetric about
+the <m>y</m>-axis.
+</p>
+
+<figure xml:id="fig-cardioid-y-prefigure">
+<caption>
+The cardioid <m>r = 1 - \sin\theta</m>, symmetric about the
+<m>y</m>-axis.
+</caption>
+<image width="65%">
+<prefigure xmlns="https://prefigure.org" label="prefigure-cardioid-y">
+<diagram dimensions="(360,320)" margins="10">
+<definition>card(t) = ((1-sin(t))*cos(t), (1-sin(t))*sin(t))</definition>
+<definition>ring1(t) = (0.5*cos(t), 0.5*sin(t))</definition>
+<definition>ring2(t) = (cos(t), sin(t))</definition>
+<definition>ring3(t) = (1.5*cos(t), 1.5*sin(t))</definition>
+<definition>ring4(t) = (2*cos(t), 2*sin(t))</definition>
+<coordinates bbox="(-2.5,-2.4,2.7,2.2)">
+<parametric-curve at="cy-ring1" function="ring1" domain="(0,2*pi)"
+    stroke="#dddddd" thickness="1"/>
+<parametric-curve at="cy-ring2" function="ring2" domain="(0,2*pi)"
+    stroke="#dddddd" thickness="1"/>
+<parametric-curve at="cy-ring3" function="ring3" domain="(0,2*pi)"
+    stroke="#dddddd" thickness="1"/>
+<parametric-curve at="cy-ring4" function="ring4" domain="(0,2*pi)"
+    stroke="#dddddd" thickness="1"/>
+<line at="cy-diag1" endpoints="((-1.55,-1.55),(1.55,1.55))"
+    stroke="#dddddd" thickness="1"/>
+<line at="cy-diag2" endpoints="((-1.55,1.55),(1.55,-1.55))"
+    stroke="#dddddd" thickness="1"/>
+<axes at="cy-axes" xlabel="x" ylabel="y" decorations="no" arrows="1"/>
+<parametric-curve at="cy-curve" function="card" domain="(0,2*pi)"
+    stroke="#0072B2" thickness="3"/>
+<label at="cy-eq" anchor="(-2.4,1.35)" alignment="e"
+    color="#0072B2"><m>r = 1-\sin(\theta)</m></label>
+<label at="cy-r1" anchor="(0.5,0.06)" alignment="n">
+<m>\tfrac12</m>
+</label>
+<label at="cy-r2" anchor="(1.02,0.06)" alignment="n">
+<m>1</m>
+</label>
+<label at="cy-r4" anchor="(2.02,0.06)" alignment="n">
+<m>2</m>
+</label>
+</coordinates>
+<annotations>
+<annotation ref="figure" text="A polar grid with concentric gray circles. The cardioid r equals one minus sine theta is drawn in blue: a heart shaped curve pointing downward, widest at the bottom where theta equals three pi over two and r equals two, with a cusp at the origin at the top where theta equals pi over two. The curve is symmetric about the y axis.">
+  <annotation ref="cy-curve" text="The cardioid r equals one minus sine theta, symmetric about the y axis."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+</paragraphs>
+
+<paragraphs xml:id="par-symmetry-origin">
+<title>Symmetry about the origin</title>
+
+<p>
+If the point <m>(r,\theta)</m> is on the graph, then the point
+<m>(-r,\theta)</m> or <m>(r,\theta+\pi)</m> lies on the graph as well.
+As an example, <m>r^2 = \sin\theta</m>, shown in
+<xref ref="fig-origin-symmetry-prefigure"/>, is symmetric about the
+origin: its graph consists of the two branches
+<m>r = \sqrt{\sin\theta}</m> and <m>r = -\sqrt{\sin\theta}</m>, and
+replacing <m>r</m> by <m>-r</m> leaves the equation unchanged.
+</p>
+
+<figure xml:id="fig-origin-symmetry-prefigure">
+<caption>
+The graph of <m>r^2 = \sin\theta</m>, made of the branch
+<m>r = \sqrt{\sin\theta}</m> (in blue) and the branch
+<m>r = -\sqrt{\sin\theta}</m> (in vermillion). Since replacing
+<m>r</m> by <m>-r</m> does not change the equation, the graph is
+symmetric about the origin.
+</caption>
+<image width="65%">
+<prefigure xmlns="https://prefigure.org" label="prefigure-origin-symmetry">
+<diagram dimensions="(360,340)" margins="10">
+<definition>pos(t) = (sqrt(sin(t))*cos(t), sqrt(sin(t))*sin(t))</definition>
+<definition>neg(t) = (-sqrt(sin(t))*cos(t), -sqrt(sin(t))*sin(t))</definition>
+<definition>ring1(t) = (0.5*cos(t), 0.5*sin(t))</definition>
+<definition>ring2(t) = (cos(t), sin(t))</definition>
+<coordinates bbox="(-1.5,-1.45,1.7,1.45)">
+<parametric-curve at="os-ring1" function="ring1" domain="(0,2*pi)"
+    stroke="#dddddd" thickness="1"/>
+<parametric-curve at="os-ring2" function="ring2" domain="(0,2*pi)"
+    stroke="#dddddd" thickness="1"/>
+<line at="os-diag1" endpoints="((-0.9,-0.9),(0.9,0.9))"
+    stroke="#dddddd" thickness="1"/>
+<line at="os-diag2" endpoints="((-0.9,0.9),(0.9,-0.9))"
+    stroke="#dddddd" thickness="1"/>
+<axes at="os-axes" xlabel="x" ylabel="y" decorations="no" arrows="1"/>
+<parametric-curve at="os-pos" function="pos" domain="(0.001,3.14)"
+    stroke="#0072B2" thickness="3"/>
+<parametric-curve at="os-neg" function="neg" domain="(0.001,3.14)"
+    stroke="#D55E00" thickness="3"/>
+<label at="os-pos-label" anchor="(-1.45,0.8)" alignment="e"
+    color="#0072B2"><m>r = \sqrt{\sin\theta}</m></label>
+<label at="os-neg-label" anchor="(1.62,-0.85)" alignment="w"
+    color="#D55E00"><m>r = -\sqrt{\sin\theta}</m></label>
+</coordinates>
+<annotations>
+<annotation ref="figure" text="A polar grid with two gray circles of radii one half and one. Two petal shaped loops: a blue loop above the x axis, the branch r equals the square root of sine theta, and a vermillion loop below the x axis, the branch r equals negative the square root of sine theta. Together they form a graph symmetric about the origin.">
+  <annotation ref="os-pos" text="The branch r equals the positive square root of sine theta, a loop above the x axis."/>
+  <annotation ref="os-neg" text="The branch r equals the negative square root of sine theta, a loop below the x axis, the reflection of the blue loop through the origin."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+</paragraphs>
+
+</subsection>
+
+</section>

@@ -1,0 +1,585 @@
+<?xml version="1.0" encoding="utf-8"?>
+<section xml:id="section-double-integrals-general-regions" xmlns:xi="http://www.w3.org/2001/XInclude">
+<title>Double Integrals Over General Regions and Area by Double Integration</title>
+
+<p>
+Here we will generalize our last session's discussion about double
+integrals and how they can be used to evaluate volumes. Last session we
+restricted ourselves to shapes with rectangular base. Today we will
+look at more general shapes for the base.
+</p>
+
+<!-- ================================================================ -->
+<subsection xml:id="sec-general-regions-case1">
+<title>Case I: Regions of the Form <m>R = \{(x,y) : a \le x \le b,\ f_2(x) \le y \le f_1(x)\}</m></title>
+
+<example xml:id="example-case1-vertical">
+<title>Example I</title>
+<statement>
+<p>
+Calculate the following double integral,
+</p>
+
+<men>
+\iint_R \left(2xy + 1\right)\,dx\,dy
+</men>
+
+<p>
+where
+<m>R = \{(x,y) : 0 \le x \le 1,\ (-2x^2+2x) \le y \le (x^3+1)\}</m>.
+</p>
+</statement>
+</example>
+
+<solution>
+<p>
+The region <m>R</m> is shown in
+<xref ref="fig-case1-region-prefigure"/>. Since for each fixed
+<m>x</m> the variable <m>y</m> runs from the lower curve
+<m>f_2(x) = -2x^2+2x</m> to the upper curve <m>f_1(x) = x^3+1</m>, we
+integrate along the green vertical strips first. We can re-write the
+integral as
+</p>
+
+<md>
+<mrow>
+\int_0^1\!\!\int_{-2x^2+2x}^{x^3+1}
+\left(2xy+1\right)\,dy\,dx
+\amp= \int_0^1\left(\Big.\left(xy^2 + y\right)
+\Big|_{-2x^2+2x}^{x^3+1}\right)dx
+</mrow>
+<mrow>
+\amp= \int_0^1\Big[\left(x(x^3+1)^2 + x^3 + 1\right)
+- \left(x(-2x^2+2x)^2 - 2x^2 + 2x\right)\Big]\,dx
+</mrow>
+<mrow>
+\amp= \int_0^1\Big[\left(x^7 + 2x^4 + x + x^3 + 1\right)
+- \left(4x^5 - 8x^4 + 4x^3 - 2x^2 + 2x\right)\Big]\,dx
+</mrow>
+<mrow>
+\amp= \left.\left(\frac{x^8}{8} + \frac{2}{5}x^5 + \frac{x^2}{2}
++ \frac{x^4}{4} + x - \frac{2}{3}x^6 + \frac{8}{5}x^5 - x^4
++ \frac{2}{3}x^3 - x^2\right)\right|_0^1
+</mrow>
+<mrow>
+\amp= \frac{15}{8}.
+</mrow>
+</md>
+</solution>
+
+<figure xml:id="fig-case1-region-prefigure">
+<caption>
+The region <m>R</m> of <xref ref="example-case1-vertical"/>, bounded
+above by <m>f_1(x) = x^3 + 1</m> and below by
+<m>f_2(x) = -2x^2 + 2x</m> for <m>0 \le x \le 1</m>. For each fixed
+<m>x</m>, the inner integral runs along a vertical strip from the
+lower curve to the upper curve.
+</caption>
+<image width="70%">
+<prefigure xmlns="https://prefigure.org" label="prefigure-case1-region">
+<diagram dimensions="(380,300)" margins="10">
+<definition>f1(t) = (t, t^3 + 1)</definition>
+<definition>f2(t) = (t, -2*t^2 + 2*t)</definition>
+<definition>f1sc(t) = t^3 + 1</definition>
+<definition>f2sc(t) = -2*t^2 + 2*t</definition>
+<coordinates bbox="(-0.35,-0.4,1.45,2.45)">
+<axes at="c1-axes" xlabel="x" ylabel="y" decorations="no" arrows="1"/>
+<area-between-curves at="c1-region" function1="f2sc" function2="f1sc"
+    domain="(0,1)" fill="#d3e8d3" stroke="none"/>
+<line at="c1-strip1" endpoints="((0.25,0.375),(0.25,1.0156))"
+    stroke="#009E73" thickness="3"/>
+<line at="c1-strip2" endpoints="((0.5,0.5),(0.5,1.125))"
+    stroke="#009E73" thickness="3"/>
+<line at="c1-strip3" endpoints="((0.75,0.375),(0.75,1.4219))"
+    stroke="#009E73" thickness="3"/>
+<line at="c1-left" endpoints="((0,0),(0,1))" stroke="black"
+    thickness="2" dash="6 4"/>
+<line at="c1-right" endpoints="((1,0),(1,2))" stroke="black"
+    thickness="2" dash="6 4"/>
+<parametric-curve at="c1-f1" function="f1" domain="(0,1)"
+    stroke="#0072B2" thickness="3"/>
+<parametric-curve at="c1-f2" function="f2" domain="(0,1)"
+    stroke="#D55E00" thickness="3"/>
+<label at="c1-f1-label" anchor="(0.42,1.35)" alignment="nw"
+    color="#0072B2"><m>f_1(x) = x^3 + 1</m></label>
+<label at="c1-f2-label" anchor="(0.52,0.28)" alignment="s"
+    color="#D55E00"><m>f_2(x) = -2x^2 + 2x</m></label>
+<point at="c1-x0" p="(0,0)" fill="black" alignment="sw">
+<m>0</m>
+</point>
+<point at="c1-x1" p="(1,0)" fill="black" alignment="se">
+<m>1</m>
+</point>
+</coordinates>
+<annotations>
+<annotation ref="figure" text="The region between two curves above the interval from zero to one on the x axis. The upper boundary, drawn in blue, is f 1 of x equals x cubed plus one, rising from one to two. The lower boundary, drawn in vermillion, is f 2 of x equals negative two x squared plus two x, an arch from zero up to one half and back to zero. The region between them is shaded light green with three vertical green strips.">
+  <annotation ref="c1-f1" text="The upper boundary f 1 of x equals x cubed plus 1, drawn in blue."/>
+  <annotation ref="c1-f2" text="The lower boundary f 2 of x equals negative 2 x squared plus 2 x, drawn in vermillion."/>
+  <annotation ref="c1-region" text="The region R, shaded in light green."/>
+  <annotation ref="c1-strip2" text="A typical vertical strip at a fixed x. The inner integral in y runs along this strip from the lower curve to the upper curve."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+
+</subsection>
+
+<!-- ================================================================ -->
+<subsection xml:id="sec-general-regions-case2">
+<title>Case II: Regions of the Form <m>R = \{(x,y) : c \le y \le d,\ g_1(y) \le x \le g_2(y)\}</m></title>
+
+<example xml:id="example-case2-horizontal">
+<title>Example II</title>
+<statement>
+<p>
+Calculate the following double integral,
+</p>
+
+<men>
+\iint_R x^2 y\,dx\,dy
+</men>
+
+<p>
+where
+<m>R = \{(x,y) : 0.1 \le y \le 0.5,\ y^2 \le x \le y^{1/3}\}</m>.
+</p>
+</statement>
+</example>
+
+<solution>
+<p>
+The region <m>R</m> is shown in
+<xref ref="fig-case2-region-prefigure"/>. This time, for each fixed
+<m>y</m>, the variable <m>x</m> runs along a horizontal strip from
+<m>g_1(y) = y^2</m> to <m>g_2(y) = y^{1/3}</m>, so we integrate with
+respect to <m>x</m> first:
+</p>
+
+<md>
+<mrow>
+\int_{0.1}^{0.5}\!\!\int_{y^2}^{y^{1/3}} x^2 y\,dx\,dy
+\amp= \int_{0.1}^{0.5}
+\left[\left.\left(\frac{1}{3}x^3 y\right)\right|_{y^2}^{y^{1/3}}
+\right]dy
+= \frac{1}{3}\int_{0.1}^{0.5}\left(y^2 - y^7\right)dy
+</mrow>
+<mrow>
+\amp= \frac{1}{3}\left.\left(\frac{y^3}{3}
+- \frac{y^8}{8}\right)\right|_{0.1}^{0.5}
+= 0.013615.
+</mrow>
+</md>
+</solution>
+
+<figure xml:id="fig-case2-region-prefigure">
+<caption>
+The region <m>R</m> of <xref ref="example-case2-horizontal"/>, bounded
+on the left by <m>g_1(y) = y^2</m> and on the right by
+<m>g_2(y) = y^{1/3}</m> for <m>0.1 \le y \le 0.5</m>. For each fixed
+<m>y</m>, the inner integral runs along a horizontal strip from the
+left curve to the right curve.
+</caption>
+<image width="70%">
+<prefigure xmlns="https://prefigure.org" label="prefigure-case2-region">
+<diagram dimensions="(380,300)" margins="10">
+<definition>g1(t) = (t^2, t)</definition>
+<definition>g2(t) = (t^(1/3), t)</definition>
+<coordinates bbox="(-0.12,-0.09,1.22,0.68)">
+<axes at="c2-axes" xlabel="x" ylabel="y" decorations="no" arrows="1"/>
+<polygon at="c2-region" fill="#d3e8d3" stroke="none" closed="yes"
+    points="((0.01,0.1),(0.01361,0.1167),(0.01778,0.1333),(0.0225,0.15),(0.02778,0.1667),(0.03361,0.1833),(0.04,0.2),(0.04694,0.2167),(0.05444,0.2333),(0.0625,0.25),(0.07111,0.2667),(0.08028,0.2833),(0.09,0.3),(0.1003,0.3167),(0.1111,0.3333),(0.1225,0.35),(0.1344,0.3667),(0.1469,0.3833),(0.16,0.4),(0.1736,0.4167),(0.1878,0.4333),(0.2025,0.45),(0.2178,0.4667),(0.2336,0.4833),(0.25,0.5),(0.7937,0.5),(0.7848,0.4833),(0.7757,0.4667),(0.7663,0.45),(0.7567,0.4333),(0.7469,0.4167),(0.7368,0.4),(0.7264,0.3833),(0.7157,0.3667),(0.7047,0.35),(0.6934,0.3333),(0.6816,0.3167),(0.6694,0.3),(0.6568,0.2833),(0.6437,0.2667),(0.63,0.25),(0.6156,0.2333),(0.6006,0.2167),(0.5848,0.2),(0.5681,0.1833),(0.5503,0.1667),(0.5313,0.15),(0.5109,0.1333),(0.4886,0.1167),(0.4642,0.1))"/>
+<line at="c2-strip1" endpoints="((0.04,0.2),(0.585,0.2))"
+    stroke="#009E73" thickness="3"/>
+<line at="c2-strip2" endpoints="((0.09,0.3),(0.669,0.3))"
+    stroke="#009E73" thickness="3"/>
+<line at="c2-strip3" endpoints="((0.16,0.4),(0.737,0.4))"
+    stroke="#009E73" thickness="3"/>
+<line at="c2-bottom" endpoints="((0.01,0.1),(0.464,0.1))"
+    stroke="black" thickness="2" dash="6 4"/>
+<line at="c2-top" endpoints="((0.25,0.5),(0.794,0.5))"
+    stroke="black" thickness="2" dash="6 4"/>
+<parametric-curve at="c2-g1" function="g1" domain="(0.1,0.5)"
+    stroke="#D55E00" thickness="3"/>
+<parametric-curve at="c2-g2" function="g2" domain="(0.1,0.5)"
+    stroke="#0072B2" thickness="3"/>
+<label at="c2-g1-label" anchor="(0.02,0.56)" alignment="ne"
+    color="#D55E00"><m>g_1(y) = y^2</m></label>
+<label at="c2-g2-label" anchor="(0.72,0.22)" alignment="se"
+    color="#0072B2"><m>g_2(y) = y^{1/3}</m></label>
+<label at="c2-top-label" anchor="(0.52,0.54)" alignment="n">
+<m>y = 0.5</m>
+</label>
+<label at="c2-bottom-label" anchor="(0.24,0.06)" alignment="s">
+<m>y = 0.1</m>
+</label>
+</coordinates>
+<annotations>
+<annotation ref="figure" text="A region between two curves for y between zero point one and zero point five. The left boundary, drawn in vermillion, is g 1 of y equals y squared. The right boundary, drawn in blue, is g 2 of y equals the cube root of y. The region between them is shaded light green with three horizontal green strips, and dashed lines mark y equals zero point one and y equals zero point five.">
+  <annotation ref="c2-g1" text="The left boundary g 1 of y equals y squared, drawn in vermillion."/>
+  <annotation ref="c2-g2" text="The right boundary g 2 of y equals y to the one third, drawn in blue."/>
+  <annotation ref="c2-region" text="The region R, shaded in light green."/>
+  <annotation ref="c2-strip2" text="A typical horizontal strip at a fixed y. The inner integral in x runs along this strip from the left curve to the right curve."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+
+<p>
+The idea behind both cases<mdash/>sweeping a strip across the
+region while the inner integral measures the length of the
+strip<mdash/>is animated in <xref ref="fig-strip-sweep-video"/>.
+</p>
+
+<figure xml:id="fig-strip-sweep-video">
+<caption>
+Animation of iterated integration over a general region. For the
+region of <xref ref="example-case1-vertical"/>, a vertical strip at
+position <m>x</m> has height <m>f_1(x) - f_2(x)</m>; as the strip
+sweeps from <m>x = 0</m> to <m>x = 1</m>, the outer integral
+accumulates the strip contributions, arriving at
+<m>\iint_R (2xy+1)\,dA = \frac{15}{8}</m>.
+</caption>
+<video xml:id="video-strip-sweep"
+       source="videos/strip_sweep_1080p.mp4"
+       width="70%" aspect="16:9"/>
+</figure>
+
+</subsection>
+
+<!-- ================================================================ -->
+<subsection xml:id="sec-tetrahedron-volume">
+<title>Volume of a Tetrahedron</title>
+
+<example xml:id="example-tetrahedron">
+<title>Example III</title>
+<statement>
+<p>
+Find the volume of the tetrahedron bounded by the planes
+<m>x + 2y + z = 2</m>, <m>x = 2y</m>, <m>x = 0</m> and <m>z = 0</m>.
+</p>
+</statement>
+</example>
+
+<solution>
+<p>
+<xref ref="fig-tetrahedron-tikz"/> shows the tetrahedron <m>T</m>
+bounded by the planes <m>x + 2y + z = 2</m>, <m>x = 2y</m>,
+<m>x = 0</m> and <m>z = 0</m>. To find the volume of the tetrahedron
+<m>T</m>, we first need to figure out the region of integration.
+<xref ref="fig-tetrahedron-base-prefigure"/> shows the region of
+integration, i.e., the base of the tetrahedron. Therefore, our region
+of integration is
+</p>
+
+<men xml:id="eq-tetrahedron-region">
+R = \left\{(x,y) : 0 \le x \le 1,\
+\frac{x}{2} \le y \le \left(1 - \frac{x}{2}\right)\right\}.
+</men>
+
+<p>
+For the volume <m>V</m> of the tetrahedron, we integrate the height
+<m>z = 2 - x - 2y</m> of the top plane over <m>R</m>:
+</p>
+
+<md>
+<mrow>
+V \amp= \iint_R (2 - x - 2y)\,dx\,dy
+= \int_0^1\!\!\int_{x/2}^{1 - x/2} (2 - x - 2y)\,dy\,dx
+</mrow>
+<mrow>
+\amp= \int_0^1\left[\left.\left(2y - xy - y^2\right)
+\right|_{y=x/2}^{y=1-x/2}\right]dx
+</mrow>
+<mrow>
+\amp= \int_0^1\left(2\left(1-\frac{x}{2}\right)
+- x\left(1-\frac{x}{2}\right)
+- \left(1-\frac{x}{2}\right)^2
+- 2\left(\frac{x}{2}\right) + x\left(\frac{x}{2}\right)
++ \left(\frac{x}{2}\right)^2\right)dx
+</mrow>
+<mrow>
+\amp= \int_0^1\left(x^2 - 2x + 1\right)dx
+= \left.\left(\frac{x^3}{3} - x^2 + x\right)\right|_0^1
+= \frac{1}{3}.
+</mrow>
+</md>
+</solution>
+
+<figure xml:id="fig-tetrahedron-tikz">
+<caption>
+The tetrahedron <m>T</m> bounded by the planes <m>x + 2y + z = 2</m>
+(slanted face), <m>x = 2y</m> (vertical face through the
+<m>z</m>-axis), <m>x = 0</m> (the <m>yz</m>-plane) and <m>z = 0</m>
+(the base). Its vertices are <m>(0,0,0)</m>, <m>(0,0,2)</m>,
+<m>(0,1,0)</m> and <m>\left(1,\tfrac12,0\right)</m>.
+</caption>
+<image width="65%">
+<description>
+Three coordinate axes in space with a tetrahedron drawn in translucent
+blue. One vertex is at the origin, one at height two on the z axis,
+one at zero one zero on the y axis, and one at the point one comma one
+half comma zero. The slanted face x plus two y plus z equals two and
+the vertical face x equals two y are labeled with arrows.
+</description>
+<latex-image>
+<![CDATA[\begin{tikzpicture}[line join=round, line cap=round]
+  % Okabe-Ito colorblind-safe palette
+  \definecolor{oiblue}{RGB}{0,114,178}
+  \definecolor{oivermillion}{RGB}{213,94,0}
+  \begin{axis}[
+      view={115}{18},
+      width=11.5cm,
+      axis lines=center,
+      axis line style={-latex, black!75, line width=0.7pt},
+      xlabel={$x$}, ylabel={$y$}, zlabel={$z$},
+      label style={font=\large},
+      ticks=none,
+      xmin=0, xmax=1.5, ymin=0, ymax=1.5, zmin=0, zmax=2.4,
+      clip=false,
+    ]
+    % vertices: O(0,0,0), A(0,0,2), B(0,1,0), C(1,0.5,0)
+    % ---- back face x = 0 : O, A, B ----
+    \fill[oiblue, opacity=0.15]
+      (axis cs:0,0,0) -- (axis cs:0,0,2) -- (axis cs:0,1,0) -- cycle;
+    % ---- base z = 0 : O, B, C ----
+    \fill[oiblue, opacity=0.22]
+      (axis cs:0,0,0) -- (axis cs:0,1,0) -- (axis cs:1,0.5,0) -- cycle;
+    % ---- face x = 2y : O, A, C ----
+    \fill[oiblue, opacity=0.32]
+      (axis cs:0,0,0) -- (axis cs:0,0,2) -- (axis cs:1,0.5,0) -- cycle;
+    % ---- slanted face x + 2y + z = 2 : A, B, C ----
+    \fill[oiblue, opacity=0.45]
+      (axis cs:0,0,2) -- (axis cs:0,1,0) -- (axis cs:1,0.5,0) -- cycle;
+    % ---- edges ----
+    \draw[oiblue!70!black, line width=1.0pt]
+      (axis cs:0,0,0) -- (axis cs:0,0,2)
+      (axis cs:0,0,0) -- (axis cs:0,1,0)
+      (axis cs:0,0,0) -- (axis cs:1,0.5,0)
+      (axis cs:0,0,2) -- (axis cs:0,1,0)
+      (axis cs:0,0,2) -- (axis cs:1,0.5,0)
+      (axis cs:0,1,0) -- (axis cs:1,0.5,0);
+    % ---- vertices and labels ----
+    \addplot3[only marks, mark=*, mark size=1.6pt, color=black,
+        forget plot] coordinates {(0,0,2) (0,1,0) (1,0.5,0)};
+    \node[anchor=west, font=\small] at (axis cs:0.02,0.06,2.05)
+      {$(0,0,2)$};
+    \node[anchor=south west, font=\small] at (axis cs:0,1.03,0.08)
+      {$(0,1,0)$};
+    \node[anchor=north, font=\small] at (axis cs:1.05,0.5,-0.1)
+      {$\left(1,\tfrac12,0\right)$};
+    \node[anchor=south east, font=\small] at (axis cs:0.02,-0.04,-0.02)
+      {$0$};
+    \node[font=\large] at (axis cs:0.28,0.55,0.35) {$T$};
+    % ---- face labels with arrows ----
+    \draw[-{Latex}, black!70, line width=0.7pt]
+      (axis cs:0.75,0.15,1.4) -- (axis cs:0.42,0.35,0.9);
+    \node[anchor=south, font=\small] at (axis cs:0.75,0.15,1.42)
+      {$x = 2y$};
+    \draw[-{Latex}, black!70, line width=0.7pt]
+      (axis cs:0.45,1.05,1.35) -- (axis cs:0.3,0.62,1.0);
+    \node[anchor=south, font=\small] at (axis cs:0.45,1.05,1.37)
+      {$x + 2y + z = 2$};
+  \end{axis}
+\end{tikzpicture}]]>
+</latex-image>
+</image>
+</figure>
+
+<figure xml:id="fig-tetrahedron-base-prefigure">
+<caption>
+The region of integration for <xref ref="example-tetrahedron"/>: the
+base of the tetrahedron in the <m>xy</m>-plane, bounded below by
+<m>y = x/2</m> and above by <m>x + 2y = 2</m> (or <m>y = 1 - x/2</m>)
+for <m>0 \le x \le 1</m>. A typical vertical strip is drawn in blue.
+</caption>
+<image width="60%">
+<prefigure xmlns="https://prefigure.org" label="prefigure-tetrahedron-base">
+<diagram dimensions="(360,280)" margins="10">
+<definition>top(t) = (t, 1 - t/2)</definition>
+<definition>bot(t) = (t, t/2)</definition>
+<definition>topsc(t) = 1 - t/2</definition>
+<definition>botsc(t) = t/2</definition>
+<coordinates bbox="(-0.35,-0.35,1.75,1.5)">
+<axes at="tb-axes" xlabel="x" ylabel="y" decorations="no" arrows="1"/>
+<area-between-curves at="tb-region" function1="botsc" function2="topsc"
+    domain="(0,1)" fill="#fbe3d0" stroke="none"/>
+<parametric-curve at="tb-top" function="top" domain="(0,1)"
+    stroke="#D55E00" thickness="3"/>
+<parametric-curve at="tb-bot" function="bot" domain="(0,1)"
+    stroke="#D55E00" thickness="3"/>
+<line at="tb-left" endpoints="((0,0),(0,1))" stroke="#D55E00"
+    thickness="3"/>
+<vector at="tb-strip" v="(0,0.4)" tail="(0.4,0.2)" stroke="#0072B2"
+    thickness="3"/>
+<point at="tb-corner" p="(1,0.5)" fill="black" alignment="e">
+<m>\left(1,\tfrac12\right)</m>
+</point>
+<point at="tb-one" p="(0,1)" fill="black" alignment="w">
+<m>1</m>
+</point>
+<label at="tb-top-label" anchor="(0.55,1.05)" alignment="ne">
+<m>x + 2y = 2 \text{ (or } y = 1 - x/2)</m>
+</label>
+<label at="tb-bot-label" anchor="(0.75,0.22)" alignment="se">
+<m>y = x/2</m>
+</label>
+<label at="tb-origin" anchor="(-0.06,-0.06)" alignment="sw">
+<m>0</m>
+</label>
+</coordinates>
+<annotations>
+<annotation ref="figure" text="A triangle in the x y plane with vertices at the origin, at zero comma one on the y axis, and at one comma one half. The upper edge is the line x plus two y equals two, the lower edge is the line y equals x over two, and the left edge lies on the y axis. The triangle is shaded tan and a blue vertical strip is drawn at x equals zero point four.">
+  <annotation ref="tb-region" text="The base of the tetrahedron: the region of integration R, shaded tan."/>
+  <annotation ref="tb-top" text="The upper boundary, the line x plus 2 y equals 2, that is, y equals one minus x over two."/>
+  <annotation ref="tb-bot" text="The lower boundary, the line y equals x over 2."/>
+  <annotation ref="tb-strip" text="A typical vertical strip at a fixed x, running from y equals x over 2 up to y equals 1 minus x over 2."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+
+</subsection>
+
+<!-- ================================================================ -->
+<subsection xml:id="sec-area-by-double-integration">
+<title>Area by Double Integration</title>
+
+<p>
+In the previous session, we talked about finding the double integral of
+the form <m>\iint_R f(x,y)\,dx\,dy</m> and how it corresponds to the
+volume of an object with base <m>R</m> and height <m>z = f(x,y)</m>.
+This session, we will look at a special case of this double integral,
+which corresponds to the area of region <m>R</m>:
+</p>
+
+<men xml:id="eq-area-by-double-integration">
+\text{Area of region } R = \iint_R dx\,dy = \iint_R dA.
+</men>
+
+<example xml:id="example-area-double-integration">
+<title>Example IV</title>
+<statement>
+<p>
+Calculate the area of the region <m>R</m> shown in
+<xref ref="fig-area-region-prefigure"/>, bounded on the right by
+<m>x = y - y^3</m>, on the left by <m>x = -1</m>, and by the parabola
+<m>y = (x+1)^2</m>.
+</p>
+</statement>
+</example>
+
+<solution>
+<p>
+We split the region <m>R</m> into two regions <m>R_1</m> and
+<m>R_2</m> as follows:
+</p>
+
+<md>
+<mrow>
+R_1 \amp= \{(x,y) : -1 \le y \le 0,\ -1 \le x \le y - y^3\},
+</mrow>
+<mrow>
+R_2 \amp= \{(x,y) : 0 \le y \le 1,\ \sqrt{y} - 1 \le x \le y - y^3\}.
+</mrow>
+</md>
+
+<p>
+Note that on <m>R_2</m>, the left boundary is the parabola
+<m>y = (x+1)^2</m>, solved for <m>x</m> as <m>x = \sqrt{y} - 1</m>.
+Then
+</p>
+
+<md>
+<mrow>
+\text{Area} \amp= \iint_R dx\,dy
+= \iint_{R_1} dx\,dy + \iint_{R_2} dx\,dy
+</mrow>
+<mrow>
+\amp= \int_{-1}^{0}\!\!\int_{-1}^{y-y^3} dx\,dy
++ \int_{0}^{1}\!\!\int_{\sqrt y - 1}^{y-y^3} dx\,dy
+</mrow>
+<mrow>
+\amp= \int_{-1}^{0}\left(y - y^3 + 1\right)dy
++ \int_{0}^{1}\left(y - y^3 - \sqrt y + 1\right)dy
+</mrow>
+<mrow>
+\amp= \int_{-1}^{1}\left(y - y^3 + 1\right)dy
+- \int_{0}^{1}\sqrt y\,dy
+</mrow>
+<mrow>
+\amp= \left.\left(\frac{y^2}{2} - \frac{y^4}{4} + y\right)
+\right|_{-1}^{1}
+- \left.\left(\frac{2}{3}y^{3/2}\right)\right|_0^1
+= 2 - \frac{2}{3} = \frac{4}{3}.
+</mrow>
+</md>
+</solution>
+
+<figure xml:id="fig-area-region-prefigure">
+<caption>
+The region of <xref ref="example-area-double-integration"/>, split
+into <m>R_1</m> (below the <m>x</m>-axis) and <m>R_2</m> (above it).
+Both subregions share the right boundary <m>x = y - y^3</m>; the left
+boundary is the vertical line <m>x = -1</m> for <m>R_1</m> and the
+parabola <m>y = (x+1)^2</m> for <m>R_2</m>.
+</caption>
+<image width="65%">
+<prefigure xmlns="https://prefigure.org" label="prefigure-area-region">
+<diagram dimensions="(360,320)" margins="10">
+<definition>right(t) = (t - t^3, t)</definition>
+<definition>leftR1(t) = (-1, t)</definition>
+<definition>leftR2(t) = (sqrt(t) - 1, t)</definition>
+<coordinates bbox="(-1.7,-1.45,1.1,1.55)">
+<axes at="ar-axes" xlabel="x" ylabel="y" decorations="no" arrows="1"/>
+<polygon at="ar-r1" fill="#fbe3d0" stroke="none" closed="yes"
+    points="((-1,-1),(-1,0),(0,0),(-0.04159,-0.04167),(-0.08275,-0.08333),(-0.123,-0.125),(-0.162,-0.1667),(-0.1993,-0.2083),(-0.2344,-0.25),(-0.2669,-0.2917),(-0.2963,-0.3333),(-0.3223,-0.375),(-0.3443,-0.4167),(-0.3621,-0.4583),(-0.375,-0.5),(-0.3827,-0.5417),(-0.3848,-0.5833),(-0.3809,-0.625),(-0.3704,-0.6667),(-0.3529,-0.7083),(-0.3281,-0.75),(-0.2955,-0.7917),(-0.2546,-0.8333),(-0.2051,-0.875),(-0.1464,-0.9167),(-0.0782,-0.9583),(0,-1))"/>
+<polygon at="ar-r2" fill="#d3e8d3" stroke="none" closed="yes"
+    points="((-1,0),(-0.7959,0.04167),(-0.7113,0.08333),(-0.6464,0.125),(-0.5918,0.1667),(-0.5436,0.2083),(-0.5,0.25),(-0.4599,0.2917),(-0.4226,0.3333),(-0.3876,0.375),(-0.3545,0.4167),(-0.323,0.4583),(-0.2929,0.5),(-0.264,0.5417),(-0.2362,0.5833),(-0.2094,0.625),(-0.1835,0.6667),(-0.1584,0.7083),(-0.134,0.75),(-0.1102,0.7917),(-0.08713,0.8333),(-0.06459,0.875),(-0.04257,0.9167),(-0.02105,0.9583),(0,1),(0.0782,0.9583),(0.1464,0.9167),(0.2051,0.875),(0.2546,0.8333),(0.2955,0.7917),(0.3281,0.75),(0.3529,0.7083),(0.3704,0.6667),(0.3809,0.625),(0.3848,0.5833),(0.3827,0.5417),(0.375,0.5),(0.3621,0.4583),(0.3443,0.4167),(0.3223,0.375),(0.2963,0.3333),(0.2669,0.2917),(0.2344,0.25),(0.1993,0.2083),(0.162,0.1667),(0.123,0.125),(0.08275,0.08333),(0.04159,0.04167),(0,0))"/>
+<parametric-curve at="ar-right" function="right" domain="(-1,1)"
+    stroke="#0072B2" thickness="3"/>
+<parametric-curve at="ar-left2" function="leftR2" domain="(0,1)"
+    stroke="#D55E00" thickness="3"/>
+<line at="ar-left1" endpoints="((-1,-1),(-1,0))" stroke="#0072B2"
+    thickness="3"/>
+<line at="ar-bottom" endpoints="((-1,-1),(0,-1))" stroke="#0072B2"
+    thickness="3"/>
+<label at="ar-right-label" anchor="(0.45,1.15)" alignment="ne"
+    color="#0072B2"><m>x = y - y^3</m></label>
+<label at="ar-left2-label" anchor="(-1.62,1.05)" alignment="e"
+    color="#D55E00"><m>y = (x+1)^2</m></label>
+<label at="ar-r1-label" anchor="(-0.55,-0.55)" alignment="c">
+<m>R_1</m>
+</label>
+<label at="ar-r2-label" anchor="(-0.18,0.55)" alignment="c">
+<m>R_2</m>
+</label>
+<point at="ar-minus1" p="(-1,0)" fill="black" alignment="nw">
+<m>-1</m>
+</point>
+<point at="ar-y-minus1" p="(0,-1)" fill="black" alignment="se">
+<m>-1</m>
+</point>
+</coordinates>
+<annotations>
+<annotation ref="figure" text="A region in the plane split into two parts. R 1, shaded tan, lies between y equals negative one and y equals zero, bounded on the left by the vertical line x equals negative one and on the right by the curve x equals y minus y cubed. R 2, shaded light green, lies between y equals zero and y equals one, bounded on the left by the parabola y equals the square of x plus one and on the right by the same curve x equals y minus y cubed.">
+  <annotation ref="ar-right" text="The right boundary of both subregions: the cubic curve x equals y minus y cubed, drawn in blue."/>
+  <annotation ref="ar-left2" text="The left boundary of R 2: the parabola y equals the square of x plus 1, drawn in vermillion, which solved for x is x equals square root of y minus 1."/>
+  <annotation ref="ar-left1" text="The left boundary of R 1: the vertical line x equals negative 1."/>
+  <annotation ref="ar-r1" text="The subregion R 1, below the x axis, shaded tan."/>
+  <annotation ref="ar-r2" text="The subregion R 2, above the x axis, shaded light green."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+
+</subsection>
+
+</section>

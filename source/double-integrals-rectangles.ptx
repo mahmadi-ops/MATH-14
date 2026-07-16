@@ -1,0 +1,669 @@
+<?xml version="1.0" encoding="utf-8"?>
+<section xml:id="section-double-integrals-rectangles" xmlns:xi="http://www.w3.org/2001/XInclude">
+<title>Double and Iterated Integrals Over Rectangles</title>
+
+<p>
+Before we begin discussing the actual topic of today's lecture, we will
+briefly remind ourselves of the concept of area under a function and its
+relation with definite integrals.
+</p>
+
+<!-- ================================================================ -->
+<subsection xml:id="sec-area-under-curve-reminder">
+<title>Reminder: Area Under <m>y = f(x)</m> from <m>x = a</m> to <m>x = b</m></title>
+
+<p>
+As shown in <xref ref="fig-riemann-1d-prefigure"/>, to calculate the
+area under <m>y = f(x)</m> from <m>x = a</m> to <m>x = b</m>, we divide
+the interval <m>(a,b)</m> into <m>n</m> subintervals and then let the
+number of subintervals (which is the same as the number of rectangles)
+approach infinity:
+</p>
+
+<men xml:id="eq-area-limit">
+\text{Area} = \lim_{n\to\infty}
+\Big[\Delta x\, f(x_1^*) + \Delta x\, f(x_2^*)
++ \cdots + \Delta x\, f(x_n^*)\Big].
+</men>
+
+<p>
+We also learned that the definite integral of <m>f(x)</m> from
+<m>x = a</m> to <m>x = b</m> is equal to this area:
+</p>
+
+<men xml:id="eq-definite-integral-limit">
+\int_{x=a}^{x=b} f(x)\,dx
+= \lim_{\Delta x\to 0}\sum_{i=1}^{n} f(x_i^*)\,\Delta x.
+</men>
+
+<figure xml:id="fig-riemann-1d-prefigure">
+<caption>
+The area under <m>y = f(x)</m> from <m>x = a</m> to <m>x = b</m>,
+approximated by <m>n = 8</m> rectangles of width <m>\Delta x</m>. The
+height of the <m>i</m>-th rectangle is <m>f(x_i^*)</m>, where
+<m>x_i^*</m> is a sample point in the <m>i</m>-th subinterval. As
+<m>n \to \infty</m>, the total area of the rectangles approaches the
+area under the curve.
+</caption>
+<image width="80%">
+<prefigure xmlns="https://prefigure.org" label="prefigure-riemann-1d">
+<diagram dimensions="(420,280)" margins="10">
+<definition>f(t) = (t, 0.15*(t-1)*(t-3)*(t-5) + 2.5)</definition>
+<coordinates bbox="(-0.5,-0.8,5.4,3.8)">
+<axes at="r1-axes" xlabel="x" ylabel="y" decorations="no" arrows="1"/>
+<rectangle at="r1-rect1" lower-left="(0.5,0)" dimensions="(0.5,2.141)"
+    stroke="#0072B2" fill="#f4e3c1" thickness="1"/>
+<rectangle at="r1-rect2" lower-left="(1.0,0)" dimensions="(0.5,2.746)"
+    stroke="#0072B2" fill="#f4e3c1" thickness="1"/>
+<rectangle at="r1-rect3" lower-left="(1.5,0)" dimensions="(0.5,2.957)"
+    stroke="#0072B2" fill="#f4e3c1" thickness="1"/>
+<rectangle at="r1-rect4" lower-left="(2.0,0)" dimensions="(0.5,2.887)"
+    stroke="#0072B2" fill="#f4e3c1" thickness="1"/>
+<rectangle at="r1-rect5" lower-left="(2.5,0)" dimensions="(0.5,2.648)"
+    stroke="#0072B2" fill="#f4e3c1" thickness="1"/>
+<rectangle at="r1-rect6" lower-left="(3.0,0)" dimensions="(0.5,2.352)"
+    stroke="#0072B2" fill="#f4e3c1" thickness="1"/>
+<rectangle at="r1-rect7" lower-left="(3.5,0)" dimensions="(0.5,2.113)"
+    stroke="#0072B2" fill="#f4e3c1" thickness="1"/>
+<rectangle at="r1-rect8" lower-left="(4.0,0)" dimensions="(0.5,2.043)"
+    stroke="#0072B2" fill="#f4e3c1" thickness="1"/>
+<parametric-curve at="r1-curve" function="f" domain="(0.35,4.65)"
+    stroke="#D55E00" thickness="3"/>
+<point at="r1-a" p="(0.5,0)" fill="black" alignment="s">
+<m>a</m>
+</point>
+<point at="r1-b" p="(4.5,0)" fill="black" alignment="s">
+<m>b</m>
+</point>
+<label at="r1-dx" anchor="(2.25,3.25)" alignment="n" color="#0072B2">
+<m>\Delta x</m>
+</label>
+<line at="r1-dx-left" endpoints="((2.0,3.05),(2.0,2.887))"
+    stroke="#0072B2" thickness="1" dash="4 3"/>
+<line at="r1-dx-right" endpoints="((2.5,3.05),(2.5,2.887))"
+    stroke="#0072B2" thickness="1" dash="4 3"/>
+<label at="r1-fxi" anchor="(3.25,1.15)" alignment="c">
+<m>f(x_i^*)</m>
+</label>
+<label at="r1-flabel" anchor="(4.05,3.15)" alignment="ne"
+    color="#D55E00"><m>y = f(x)</m></label>
+</coordinates>
+<annotations>
+<annotation ref="figure" text="The graph of a wavy function y equals f of x above the interval from a to b on the x axis. The area under the curve is approximated by eight tan rectangles of equal width delta x, whose tops nearly follow the curve.">
+  <annotation ref="r1-curve" text="The curve y equals f of x, drawn in vermillion."/>
+  <annotation ref="r1-rect4" text="A typical rectangle. Its width is delta x and its height is f of x i star, the value of f at a sample point in the i-th subinterval."/>
+  <annotation ref="r1-a" text="The left endpoint a of the interval."/>
+  <annotation ref="r1-b" text="The right endpoint b of the interval."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+
+</subsection>
+
+<!-- ================================================================ -->
+<subsection xml:id="sec-double-integrals-rectangles">
+<title>Double Integrals Over Rectangles</title>
+
+<p>
+As we will see, double integrals can be interpreted geometrically as
+the volume under a surface <m>z = f(x,y)</m>. As an example, consider
+the surface <m>z = x^2 + y + 5</m>, which is shown in
+<xref ref="fig-volume-one-box-tikz"/>. To estimate the volume under
+this surface and over the region
+</p>
+
+<men xml:id="eq-region-R">
+R : \{(x,y) : 0 \le x \le 2,\ 0 \le y \le 2\},
+</men>
+
+<p>
+we can use the point <m>(1,1)</m> in the middle to find the height of
+the blue cuboid and come up with a very bad estimate of the desired
+volume.
+</p>
+
+<figure xml:id="fig-volume-one-box-tikz">
+<caption>
+A first, very rough estimate of the volume under
+<m>z = x^2 + y + 5</m> over the square <m>R = [0,2]\times[0,2]</m>: a
+single cuboid whose height <m>f(1,1) = 7</m> is sampled at the center
+of the square, giving the estimate
+<m>V \approx f(1,1)\,\Delta A = 7\cdot 4 = 28</m>.
+</caption>
+<image width="75%">
+<description>
+Three coordinate axes in space with the surface z equals x squared
+plus y plus 5 drawn as a translucent blue mesh above the square with
+corners zero zero and two two in the x y plane. A single translucent
+blue cuboid of height seven rises from the square, and its flat top
+crosses the curved surface.
+</description>
+<latex-image>
+<![CDATA[\begin{tikzpicture}[line join=round, line cap=round]
+  % Okabe-Ito colorblind-safe palette
+  \definecolor{oiblue}{RGB}{0,114,178}
+  \definecolor{oivermillion}{RGB}{213,94,0}
+  \definecolor{oigreen}{RGB}{0,158,115}
+  \begin{axis}[
+      view={115}{20},
+      width=12.5cm,
+      axis lines=center,
+      axis line style={-latex, black!75, line width=0.7pt},
+      xlabel={$x$}, ylabel={$y$}, zlabel={$z$},
+      label style={font=\large},
+      ticks=none,
+      xmin=0, xmax=2.6, ymin=0, ymax=2.6, zmin=0, zmax=12.5,
+      clip=false,
+    ]
+    % ---- back faces of the cuboid (drawn first) ----
+    \fill[oiblue, opacity=0.10]
+      (axis cs:0,0,0) -- (axis cs:2,0,0)
+      -- (axis cs:2,0,7) -- (axis cs:0,0,7) -- cycle;
+    \fill[oiblue, opacity=0.10]
+      (axis cs:0,0,0) -- (axis cs:0,2,0)
+      -- (axis cs:0,2,7) -- (axis cs:0,0,7) -- cycle;
+    % ---- surface z = x^2 + y + 5 ----
+    \addplot3[surf, shader=faceted, faceted color=black!55,
+              point meta={z},
+              colormap={softz}{color=(oiblue!18!white) color=(oiblue!55!white)},
+              opacity=0.85, fill opacity=0.85,
+              domain=0:2, samples=17,
+              y domain=0:2, samples y=17,
+              z buffer=sort, forget plot]
+      (x, y, {x^2 + y + 5});
+    % ---- front faces and top of the cuboid ----
+    \fill[oiblue, opacity=0.13]
+      (axis cs:2,0,0) -- (axis cs:2,2,0)
+      -- (axis cs:2,2,7) -- (axis cs:2,0,7) -- cycle;
+    \fill[oiblue, opacity=0.13]
+      (axis cs:0,2,0) -- (axis cs:2,2,0)
+      -- (axis cs:2,2,7) -- (axis cs:0,2,7) -- cycle;
+    \fill[oiblue, opacity=0.22]
+      (axis cs:0,0,7) -- (axis cs:2,0,7)
+      -- (axis cs:2,2,7) -- (axis cs:0,2,7) -- cycle;
+    \draw[oiblue, line width=1.0pt]
+      (axis cs:0,0,7) -- (axis cs:2,0,7) -- (axis cs:2,2,7)
+      -- (axis cs:0,2,7) -- cycle;
+    \draw[oiblue, line width=1.0pt]
+      (axis cs:2,0,0) -- (axis cs:2,0,7)
+      (axis cs:2,2,0) -- (axis cs:2,2,7)
+      (axis cs:0,2,0) -- (axis cs:0,2,7)
+      (axis cs:0,0,0) -- (axis cs:0,0,7);
+    % ---- sample point ----
+    \addplot3[only marks, mark=*, mark size=1.8pt, color=oivermillion,
+        forget plot] coordinates {(1,1,7)};
+    \node[oivermillion, anchor=south west, font=\small]
+      at (axis cs:1.05,1.05,7.15) {$f(1,1) = 7$};
+    \node[anchor=south east, font=\small] at (axis cs:1,1,-1.7)
+      {$(1,1)$};
+    \addplot3[black!60, dashed, line width=0.6pt, samples y=0,
+        forget plot] coordinates {(1,1,0) (1,1,7)};
+    \addplot3[only marks, mark=*, mark size=1.4pt, color=black,
+        forget plot] coordinates {(1,1,0)};
+    % ---- labels ----
+    \node[font=\large, anchor=north west] at (axis description cs:0.0,0.98)
+      {$z = x^2 + y + 5$};
+    \node[anchor=north, font=\small] at (axis cs:2.05,1.0,-0.6)
+      {$R = [0,2]\times[0,2]$};
+  \end{axis}
+\end{tikzpicture}]]>
+</latex-image>
+</image>
+</figure>
+
+<p>
+We can improve the estimate by splitting the region into more squares.
+For instance, we can split the region into four squares to achieve a
+better approximation for the desired volume, as shown in
+<xref ref="fig-volume-four-boxes-tikz"/>. Similar to finding the area
+under <m>f(x)</m>, if we let the number of splittings go to infinity,
+our estimation becomes exact, i.e., we find the exact desired volume.
+The refinement process is animated in <xref ref="fig-riemann-boxes-video"/>.
+</p>
+
+<figure xml:id="fig-volume-four-boxes-tikz">
+<caption>
+Splitting <m>R</m> into four squares improves the estimate. Each cuboid
+uses the value of <m>f</m> at the center of its square:
+<m>f\!\left(\tfrac12,\tfrac12\right) = 5.75</m>,
+<m>f\!\left(\tfrac12,\tfrac32\right) = 6.75</m>,
+<m>f\!\left(\tfrac32,\tfrac12\right) = 7.75</m>, and
+<m>f\!\left(\tfrac32,\tfrac32\right) = 8.75</m>, giving
+<m>V \approx (5.75 + 6.75 + 7.75 + 8.75)\cdot 1 = 29</m>.
+</caption>
+<image width="75%">
+<description>
+The same surface z equals x squared plus y plus 5 above the unit
+square, now with four cuboids of different heights and colors, one
+over each quarter of the square. The tops of the cuboids hug the
+surface more closely than the single cuboid did.
+</description>
+<latex-image>
+<![CDATA[\begin{tikzpicture}[line join=round, line cap=round]
+  % Okabe-Ito colorblind-safe palette
+  \definecolor{oiblue}{RGB}{0,114,178}
+  \definecolor{oivermillion}{RGB}{213,94,0}
+  \definecolor{oigreen}{RGB}{0,158,115}
+  \definecolor{oiyellow}{RGB}{240,228,66}
+  \begin{axis}[
+      view={115}{20},
+      width=12.5cm,
+      axis lines=center,
+      axis line style={-latex, black!75, line width=0.7pt},
+      xlabel={$x$}, ylabel={$y$}, zlabel={$z$},
+      label style={font=\large},
+      ticks=none,
+      xmin=0, xmax=2.6, ymin=0, ymax=2.6, zmin=0, zmax=12.5,
+      clip=false,
+    ]
+    % ---- four cuboids, heights at the centers of the four squares ----
+    % (x in [0,1], y in [0,1]): f(0.5,0.5) = 5.75  (blue)
+    % (x in [0,1], y in [1,2]): f(0.5,1.5) = 6.75  (green)
+    % (x in [1,2], y in [0,1]): f(1.5,0.5) = 7.75  (vermillion)
+    % (x in [1,2], y in [1,2]): f(1.5,1.5) = 8.75  (yellow)
+    % back cuboids first
+    \fill[oiblue, opacity=0.35]
+      (axis cs:1,0,0) -- (axis cs:1,1,0)
+      -- (axis cs:1,1,5.75) -- (axis cs:1,0,5.75) -- cycle;
+    \fill[oiblue, opacity=0.55]
+      (axis cs:0,0,5.75) -- (axis cs:1,0,5.75)
+      -- (axis cs:1,1,5.75) -- (axis cs:0,1,5.75) -- cycle;
+    \draw[oiblue, line width=0.9pt]
+      (axis cs:0,0,5.75) -- (axis cs:1,0,5.75) -- (axis cs:1,1,5.75)
+      -- (axis cs:0,1,5.75) -- cycle;
+    \draw[oiblue, line width=0.7pt]
+      (axis cs:1,0,0) -- (axis cs:1,0,5.75)
+      (axis cs:0,0,0) -- (axis cs:0,0,5.75)
+      (axis cs:1,1,0) -- (axis cs:1,1,5.75)
+      (axis cs:0,1,0) -- (axis cs:0,1,5.75);
+    \fill[oigreen, opacity=0.35]
+      (axis cs:1,1,0) -- (axis cs:1,2,0)
+      -- (axis cs:1,2,6.75) -- (axis cs:1,1,6.75) -- cycle;
+    \fill[oigreen, opacity=0.35]
+      (axis cs:0,2,0) -- (axis cs:1,2,0)
+      -- (axis cs:1,2,6.75) -- (axis cs:0,2,6.75) -- cycle;
+    \fill[oigreen, opacity=0.55]
+      (axis cs:0,1,6.75) -- (axis cs:1,1,6.75)
+      -- (axis cs:1,2,6.75) -- (axis cs:0,2,6.75) -- cycle;
+    \draw[oigreen, line width=0.9pt]
+      (axis cs:0,1,6.75) -- (axis cs:1,1,6.75) -- (axis cs:1,2,6.75)
+      -- (axis cs:0,2,6.75) -- cycle;
+    \draw[oigreen, line width=0.7pt]
+      (axis cs:1,1,0) -- (axis cs:1,1,6.75)
+      (axis cs:0,1,0) -- (axis cs:0,1,6.75)
+      (axis cs:1,2,0) -- (axis cs:1,2,6.75)
+      (axis cs:0,2,0) -- (axis cs:0,2,6.75);
+    % ---- surface ----
+    \addplot3[surf, shader=faceted, faceted color=black!35,
+              point meta={z},
+              colormap={softz}{color=(oiblue!8!white) color=(oiblue!25!white)},
+              opacity=0.30, fill opacity=0.30,
+              domain=0:2, samples=17,
+              y domain=0:2, samples y=17,
+              z buffer=sort, forget plot]
+      (x, y, {x^2 + y + 5});
+    % front cuboids
+    \fill[oivermillion, opacity=0.30]
+      (axis cs:2,0,0) -- (axis cs:2,1,0)
+      -- (axis cs:2,1,7.75) -- (axis cs:2,0,7.75) -- cycle;
+    \fill[oivermillion, opacity=0.55]
+      (axis cs:1,0,7.75) -- (axis cs:2,0,7.75)
+      -- (axis cs:2,1,7.75) -- (axis cs:1,1,7.75) -- cycle;
+    \draw[oivermillion, line width=0.9pt]
+      (axis cs:1,0,7.75) -- (axis cs:2,0,7.75) -- (axis cs:2,1,7.75)
+      -- (axis cs:1,1,7.75) -- cycle;
+    \draw[oivermillion, line width=0.7pt]
+      (axis cs:2,0,0) -- (axis cs:2,0,7.75)
+      (axis cs:1,0,0) -- (axis cs:1,0,7.75)
+      (axis cs:2,1,0) -- (axis cs:2,1,7.75)
+      (axis cs:1,1,0) -- (axis cs:1,1,7.75);
+    \fill[oiyellow, opacity=0.40]
+      (axis cs:2,1,0) -- (axis cs:2,2,0)
+      -- (axis cs:2,2,8.75) -- (axis cs:2,1,8.75) -- cycle;
+    \fill[oiyellow, opacity=0.40]
+      (axis cs:1,2,0) -- (axis cs:2,2,0)
+      -- (axis cs:2,2,8.75) -- (axis cs:1,2,8.75) -- cycle;
+    \fill[oiyellow, opacity=0.70]
+      (axis cs:1,1,8.75) -- (axis cs:2,1,8.75)
+      -- (axis cs:2,2,8.75) -- (axis cs:1,2,8.75) -- cycle;
+    \draw[oiyellow!60!black, line width=0.9pt]
+      (axis cs:1,1,8.75) -- (axis cs:2,1,8.75) -- (axis cs:2,2,8.75)
+      -- (axis cs:1,2,8.75) -- cycle;
+    \draw[oiyellow!60!black, line width=0.7pt]
+      (axis cs:2,1,0) -- (axis cs:2,1,8.75)
+      (axis cs:1,1,0) -- (axis cs:1,1,8.75)
+      (axis cs:2,2,0) -- (axis cs:2,2,8.75)
+      (axis cs:1,2,0) -- (axis cs:1,2,8.75);
+    % ---- grid lines on the base ----
+    \draw[black!50, line width=0.5pt]
+      (axis cs:0,0,0) -- (axis cs:2,0,0) -- (axis cs:2,2,0)
+      -- (axis cs:0,2,0) -- cycle
+      (axis cs:1,0,0) -- (axis cs:1,2,0)
+      (axis cs:0,1,0) -- (axis cs:2,1,0);
+    % ---- labels ----
+    \node[font=\large, anchor=north west] at (axis description cs:0.0,0.98)
+      {$z = x^2 + y + 5$};
+  \end{axis}
+\end{tikzpicture}]]>
+</latex-image>
+</image>
+</figure>
+
+<p>
+In the Riemann sum notation, the approximation of the volume using
+<m>n</m> small rectangles is
+</p>
+
+<men xml:id="eq-riemann-sum-2d">
+\text{Volume} \approx \sum_{j=1}^{m}\sum_{i=1}^{n}
+f(x_i, y_j)\,\Delta A_{ij}
+= \sum_{j=1}^{m}\sum_{i=1}^{n} f(x_i, y_j)\,\Delta x_i\,\Delta y_j,
+</men>
+
+<p>
+and the exact volume is
+</p>
+
+<men xml:id="eq-riemann-limit-2d">
+\text{Volume} = \lim_{m\to\infty}\lim_{n\to\infty}
+\sum_{j=1}^{m}\sum_{i=1}^{n} f(x_i, y_j)\,\Delta x_i\,\Delta y_j.
+</men>
+
+<p>
+The result of the above limit is defined as <term>the double integral
+over a rectangular region</term> and is denoted as
+</p>
+
+<men xml:id="eq-double-integral-notation">
+\iint_R f(x,y)\,dA
+\quad\text{or}\quad
+\iint_R f(x,y)\,dx\,dy.
+</men>
+
+<p>
+For instance, in the example above, we have
+</p>
+
+<md>
+<mrow>
+\text{Volume} \amp= \iint_R f(x,y)\,dA
+\ \text{ or }\ \iint_R f(x,y)\,dx\,dy
+</mrow>
+<mrow>
+\amp= \int_0^2\!\!\int_0^2 \left(x^2 + y + 5\right)\,dx\,dy.
+</mrow>
+</md>
+
+<p>
+Next, we will study how to calculate such integrals.
+</p>
+
+<figure xml:id="fig-riemann-boxes-video">
+<caption>
+Animation of the Riemann-sum definition of the double integral. The
+region <m>R = [0,2]\times[0,2]</m> is split into <m>1</m>, then
+<m>4</m>, then <m>16</m>, then <m>64</m> squares, and a cuboid is
+built over each square with height sampled at its center. The
+displayed estimate approaches the exact volume
+<m>\iint_R (x^2+y+5)\,dA = \frac{88}{3} \approx 29.33</m>.
+</caption>
+<video xml:id="video-riemann-boxes"
+       source="videos/riemann_boxes_1080p.mp4"
+       width="70%" aspect="16:9"/>
+</figure>
+
+</subsection>
+
+<!-- ================================================================ -->
+<subsection xml:id="sec-iterated-integrals">
+<title>Calculating Double Integrals as Iterated Integrals</title>
+
+<example xml:id="example-iterated-rectangle">
+<title>Example I</title>
+<statement>
+<p>
+Calculate the double integral
+<m>\displaystyle\int_0^2\!\!\int_0^2 \left(x^2 + y + 5\right)\,dx\,dy</m>.
+</p>
+</statement>
+</example>
+
+<solution>
+<p>
+To calculate the double integral
+</p>
+
+<men>
+\int_0^2\!\!\int_0^2 \left(x^2 + y + 5\right)\,dx\,dy
+</men>
+
+<p>
+we first use FTC II to integrate with respect to <m>x</m>:
+</p>
+
+<men>
+\int_0^2 \left(x^2 + y + 5\right)dx
+= \left.\left(\frac{x^3}{3} + xy + 5x\right)\right|_0^2
+= \frac{8}{3} + 2y + 10 = 2y + \frac{38}{3},
+</men>
+
+<p>
+which gives us a function of <m>y</m>, and then we integrate it with
+respect to <m>y</m>:
+</p>
+
+<men>
+\int_0^2 \left(2y + \frac{38}{3}\right)dy
+= \left.\left(y^2 + \frac{38}{3}y\right)\right|_0^2
+= 4 + \frac{76}{3} = \frac{88}{3}.
+</men>
+</solution>
+
+<p>
+In calculating double integrals, the following theorem can be very
+useful.
+</p>
+
+<theorem xml:id="thm-fubini">
+<title>Fubini's Theorem (First Form)</title>
+<statement>
+<p>
+If <m>f(x,y)</m> is continuous throughout the rectangular region
+<m>R: a \le x \le b,\ c \le y \le d</m>, then
+</p>
+
+<men xml:id="eq-fubini">
+\iint_R f(x,y)\,dA
+= \int_c^d\!\!\int_a^b f(x,y)\,dx\,dy
+= \int_a^b\!\!\int_c^d f(x,y)\,dy\,dx.
+</men>
+</statement>
+</theorem>
+
+<p>
+Therefore, if the integrand satisfies the conditions mentioned in the
+above theorem, we can change the order of integration. For the previous
+example, we can first integrate over <m>y</m>:
+</p>
+
+<men>
+\int_0^2 \left(x^2 + y + 5\right)dy
+= \left.\left(x^2 y + \frac{y^2}{2} + 5y\right)\right|_0^2
+= 2x^2 + 12.
+</men>
+
+<p>
+Then, we integrate this function of <m>x</m>:
+</p>
+
+<men>
+\int_0^2 \left(2x^2 + 12\right)dx
+= \left.\left(\frac{2}{3}x^3 + 12x\right)\right|_0^2
+= \frac{16}{3} + 24 = \frac{88}{3},
+</men>
+
+<p>
+which gives us the same result, i.e.,
+<m>\displaystyle\int_0^2\!\!\int_0^2 \left(x^2+y+5\right)dx\,dy
+= \frac{88}{3}</m>.
+</p>
+
+</subsection>
+
+<!-- ================================================================ -->
+<subsection xml:id="sec-iterated-integral-substitution">
+<title>An Iterated Integral Requiring Substitution and Integration by Parts</title>
+
+<example xml:id="example-iterated-substitution">
+<title>Example II</title>
+<statement>
+<p>
+Calculate the double integral
+<m>\displaystyle\int_0^2\!\!\int_0^1 \frac{x}{1+xy}\,dx\,dy</m>.
+</p>
+</statement>
+</example>
+
+<solution>
+<p>
+Using <term>Fubini's theorem</term>, we first integrate over <m>y</m>,
+which means that <m>x</m> is considered to be a constant. As our
+<term>substitution</term>, we choose <m>u = 1 + xy</m> and
+<m>du = x\,dy</m>:
+</p>
+
+<men>
+\int \frac{x}{1+xy}\,dy = \int\frac{du}{u}
+= \ln|u| + C = \ln|1+xy| + C,
+</men>
+
+<men>
+\int_0^2 \frac{x}{1+xy}\,dy
+= \Big.\ln|1+xy|\Big|_{y=0}^{y=2}
+= \ln|1+2x| - \ln(1) = \ln|1+2x|.
+</men>
+
+<p>
+Next, we integrate <m>\ln(1+2x)</m> with respect to <m>x</m> using the
+method of <term>integration by parts</term>
+<m>\left(\int u\,dv = uv - \int v\,du\right)</m>. We make the
+following choices for the integration by parts:
+</p>
+
+<md>
+<mrow>
+u = \ln(1+2x) \amp\Rightarrow du = \frac{2}{1+2x}\,dx,
+</mrow>
+<mrow>
+dv = dx \amp\Rightarrow v = x.
+</mrow>
+</md>
+
+<p>
+Therefore,
+</p>
+
+<md>
+<mrow>
+\int \ln(1+2x)\,dx
+\amp= x\ln(1+2x) - \int\frac{2x}{1+2x}\,dx
+</mrow>
+<mrow>
+\amp= x\ln(1+2x) - \int\frac{1+2x-1}{1+2x}\,dx
+</mrow>
+<mrow>
+\amp= x\ln(1+2x) - \int\left(1 - \frac{1}{1+2x}\right)dx
+</mrow>
+<mrow>
+\amp= x\ln(1+2x) - x + \frac{1}{2}\ln(1+2x) + C,
+</mrow>
+</md>
+
+<p>
+and hence
+</p>
+
+<md>
+<mrow>
+\int_0^2\!\!\int_0^1 \frac{x}{1+xy}\,dx\,dy
+\amp= \int_0^1 \ln|1+2x|\,dx
+</mrow>
+<mrow>
+\amp= \left.\left(x\ln(1+2x) - x
++ \frac{1}{2}\ln(1+2x)\right)\right|_0^1
+= \frac{3}{2}\ln(3) - 1.
+</mrow>
+</md>
+
+<p>
+The surface <m>z = \dfrac{x}{1+xy}</m> whose volume over
+<m>[0,1]\times[0,2]</m> we just computed is shown in
+<xref ref="fig-substitution-surface-tikz"/>.
+</p>
+</solution>
+
+<figure xml:id="fig-substitution-surface-tikz">
+<caption>
+The surface <m>z = \dfrac{x}{1+xy}</m> over the rectangle
+<m>0 \le x \le 1</m>, <m>0 \le y \le 2</m>. The double integral of
+<xref ref="example-iterated-substitution"/> is the volume between this
+surface and the shaded base rectangle, and equals
+<m>\frac{3}{2}\ln 3 - 1 \approx 0.648</m>.
+</caption>
+<image width="75%">
+<description>
+Three coordinate axes in space with a curved surface over the
+rectangle zero to one in x and zero to two in y. The surface rises
+from height zero along the y z plane to height one at the corner x
+equals one, y equals zero, and slopes downward as y increases. The
+base rectangle in the x y plane is shaded.
+</description>
+<latex-image>
+<![CDATA[\begin{tikzpicture}[line join=round, line cap=round]
+  % Okabe-Ito colorblind-safe palette
+  \definecolor{oiblue}{RGB}{0,114,178}
+  \definecolor{oivermillion}{RGB}{213,94,0}
+  \begin{axis}[
+      view={115}{22},
+      width=12.5cm,
+      axis lines=center,
+      axis line style={-latex, black!75, line width=0.7pt},
+      xlabel={$x$}, ylabel={$y$}, zlabel={$z$},
+      label style={font=\large},
+      ticks=none,
+      xmin=0, xmax=1.35, ymin=0, ymax=2.6, zmin=0, zmax=1.35,
+      clip=false,
+    ]
+    % ---- shaded base rectangle ----
+    \fill[oivermillion, opacity=0.18]
+      (axis cs:0,0,0) -- (axis cs:1,0,0)
+      -- (axis cs:1,2,0) -- (axis cs:0,2,0) -- cycle;
+    \draw[oivermillion, line width=0.9pt]
+      (axis cs:0,0,0) -- (axis cs:1,0,0) -- (axis cs:1,2,0)
+      -- (axis cs:0,2,0) -- cycle;
+    % ---- surface z = x/(1+xy) ----
+    \addplot3[surf, shader=faceted, faceted color=black!40,
+              point meta={z},
+              colormap={softz}{color=(oiblue!10!white) color=(oiblue!38!white)},
+              opacity=0.55, fill opacity=0.55,
+              domain=0:1, samples=16,
+              y domain=0:2, samples y=16,
+              z buffer=sort, forget plot]
+      (x, y, {x/(1+x*y)});
+    % ---- labels ----
+    \node[font=\large, anchor=north west] at (axis description cs:0.0,0.98)
+      {$z = \dfrac{x}{1+xy}$};
+    \node[oivermillion, anchor=north, font=\small]
+      at (axis cs:0.75,1.3,-0.12) {$R = [0,1]\times[0,2]$};
+  \end{axis}
+\end{tikzpicture}]]>
+</latex-image>
+</image>
+</figure>
+
+</subsection>
+
+</section>
