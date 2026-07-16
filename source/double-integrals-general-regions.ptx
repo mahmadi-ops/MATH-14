@@ -20,9 +20,9 @@ look at more general shapes for the base.
 Calculate the following double integral,
 </p>
 
-<men>
+<me>
 \iint_R \left(2xy + 1\right)\,dx\,dy
-</men>
+</me>
 
 <p>
 where
@@ -137,9 +137,9 @@ lower curve to the upper curve.
 Calculate the following double integral,
 </p>
 
-<men>
+<me>
 \iint_R x^2 y\,dx\,dy
-</men>
+</me>
 
 <p>
 where
@@ -275,10 +275,10 @@ integration, i.e., the base of the tetrahedron. Therefore, our region
 of integration is
 </p>
 
-<men xml:id="eq-tetrahedron-region">
+<me>
 R = \left\{(x,y) : 0 \le x \le 1,\
 \frac{x}{2} \le y \le \left(1 - \frac{x}{2}\right)\right\}.
-</men>
+</me>
 
 <p>
 For the volume <m>V</m> of the tetrahedron, we integrate the height
@@ -317,7 +317,7 @@ The tetrahedron <m>T</m> bounded by the planes <m>x + 2y + z = 2</m>
 (the base). Its vertices are <m>(0,0,0)</m>, <m>(0,0,2)</m>,
 <m>(0,1,0)</m> and <m>\left(1,\tfrac12,0\right)</m>.
 </caption>
-<image width="65%">
+<image width="75%">
 <description>
 Three coordinate axes in space with a tetrahedron drawn in translucent
 blue. One vertex is at the origin, one at height two on the z axis,
@@ -331,8 +331,8 @@ the vertical face x equals two y are labeled with arrows.
   \definecolor{oiblue}{RGB}{0,114,178}
   \definecolor{oivermillion}{RGB}{213,94,0}
   \begin{axis}[
-      view={115}{18},
-      width=11.5cm,
+      view={97}{20},
+      width=12.5cm,
       axis lines=center,
       axis line style={-latex, black!75, line width=0.7pt},
       xlabel={$x$}, ylabel={$y$}, zlabel={$z$},
@@ -398,51 +398,130 @@ for <m>0 \le x \le 1</m>. A typical vertical strip is drawn in blue.
 </caption>
 <image width="60%">
 <prefigure xmlns="https://prefigure.org" label="prefigure-tetrahedron-base">
-<diagram dimensions="(360,280)" margins="10">
+<diagram dimensions="(460,300)" margins="10">
 <definition>top(t) = (t, 1 - t/2)</definition>
 <definition>bot(t) = (t, t/2)</definition>
 <definition>topsc(t) = 1 - t/2</definition>
 <definition>botsc(t) = t/2</definition>
-<coordinates bbox="(-0.35,-0.35,1.75,1.5)">
+<coordinates bbox="(-0.35,-0.55,2.75,1.55)">
 <axes at="tb-axes" xlabel="x" ylabel="y" decorations="no" arrows="1"/>
 <area-between-curves at="tb-region" function1="botsc" function2="topsc"
     domain="(0,1)" fill="#fbe3d0" stroke="none"/>
+<vector at="tb-strip" v="(0,1.85)" tail="(0.4,-0.45)" stroke="#D55E00"
+    thickness="3"/>
 <parametric-curve at="tb-top" function="top" domain="(0,1)"
-    stroke="#D55E00" thickness="3"/>
+    stroke="#0072B2" thickness="3"/>
 <parametric-curve at="tb-bot" function="bot" domain="(0,1)"
-    stroke="#D55E00" thickness="3"/>
-<line at="tb-left" endpoints="((0,0),(0,1))" stroke="#D55E00"
+    stroke="#009E73" thickness="3"/>
+<line at="tb-left" endpoints="((0,0),(0,1))" stroke="#555555"
     thickness="3"/>
-<vector at="tb-strip" v="(0,0.4)" tail="(0.4,0.2)" stroke="#0072B2"
-    thickness="3"/>
+<point at="tb-upper" p="(0.4,0.8)" fill="#0072B2"/>
+<point at="tb-lower" p="(0.4,0.2)" fill="#009E73"/>
 <point at="tb-corner" p="(1,0.5)" fill="black" alignment="e">
 <m>\left(1,\tfrac12\right)</m>
 </point>
 <point at="tb-one" p="(0,1)" fill="black" alignment="w">
 <m>1</m>
 </point>
-<label at="tb-top-label" anchor="(0.55,1.05)" alignment="ne">
-<m>x + 2y = 2 \text{ (or } y = 1 - x/2)</m>
+<label at="tb-top-label" anchor="(0.02,1.18)" alignment="ne"
+    color="#0072B2">
+<m>x + 2y = 2</m>
 </label>
-<label at="tb-bot-label" anchor="(0.75,0.22)" alignment="se">
+<label at="tb-bot-label" anchor="(0.78,0.24)" alignment="se"
+    color="#009E73">
 <m>y = x/2</m>
 </label>
 <label at="tb-origin" anchor="(-0.06,-0.06)" alignment="sw">
 <m>0</m>
 </label>
+<rectangle at="tb-legend" lower-left="(1.38,0.55)" dimensions="(1.32,0.75)"
+    stroke="black" fill="white" thickness="1"/>
+<point at="tb-leg-upper" p="(1.5,1.1)" fill="#0072B2"/>
+<label at="tb-leg-upper-label" anchor="(1.58,1.1)" alignment="e"
+    color="#0072B2">upper bound for <m>y</m></label>
+<point at="tb-leg-lower" p="(1.5,0.75)" fill="#009E73"/>
+<label at="tb-leg-lower-label" anchor="(1.58,0.75)" alignment="e"
+    color="#009E73">lower bound for <m>y</m></label>
 </coordinates>
 <annotations>
-<annotation ref="figure" text="A triangle in the x y plane with vertices at the origin, at zero comma one on the y axis, and at one comma one half. The upper edge is the line x plus two y equals two, the lower edge is the line y equals x over two, and the left edge lies on the y axis. The triangle is shaded tan and a blue vertical strip is drawn at x equals zero point four.">
+<annotation ref="figure" text="A triangle in the x y plane with vertices at the origin, at zero comma one on the y axis, and at one comma one half. The upper edge, in blue, is the line x plus two y equals two; the lower edge, in green, is the line y equals x over two; the left edge lies on the y axis. A vermillion vertical arrow at x equals zero point four runs from the very bottom of the graph to near the top, crossing the lower edge at a green point and the upper edge at a blue point. A legend box explains that the blue point is the upper bound for y and the green point is the lower bound for y.">
   <annotation ref="tb-region" text="The base of the tetrahedron: the region of integration R, shaded tan."/>
-  <annotation ref="tb-top" text="The upper boundary, the line x plus 2 y equals 2, that is, y equals one minus x over two."/>
-  <annotation ref="tb-bot" text="The lower boundary, the line y equals x over 2."/>
-  <annotation ref="tb-strip" text="A typical vertical strip at a fixed x, running from y equals x over 2 up to y equals 1 minus x over 2."/>
+  <annotation ref="tb-strip" text="A vertical arrow at a fixed x, running from below the region to above it. It enters the region at the lower bound and leaves it at the upper bound."/>
+  <annotation ref="tb-lower" text="The green intersection point with the line y equals x over 2: the lower bound for y."/>
+  <annotation ref="tb-upper" text="The blue intersection point with the line x plus 2 y equals 2: the upper bound for y."/>
+  <annotation ref="tb-legend" text="Legend: the blue point marks the upper bound for y and the green point marks the lower bound for y."/>
 </annotation>
 </annotations>
 </diagram>
 </prefigure>
 </image>
 </figure>
+
+<remark xml:id="remark-reverse-order">
+<title>Why not integrate in the reverse order?</title>
+<p>
+We could also try to integrate with respect to <m>x</m> first, using
+horizontal strips. However, as the figure below shows, the right end of
+a horizontal strip depends on where the strip is: for
+<m>y \le \tfrac12</m> the strip ends on the line <m>x = 2y</m>, while
+for <m>y \ge \tfrac12</m> it ends on the line <m>x + 2y = 2</m> (that
+is, <m>x = 2 - 2y</m>). We would therefore have to split the region
+into two pieces and evaluate two double integrals, so integrating with
+respect to <m>y</m> first is the more efficient choice here.
+</p>
+
+<sidebyside width="60%">
+<image>
+<prefigure xmlns="https://prefigure.org" label="prefigure-tetrahedron-base-reverse">
+<diagram dimensions="(420,300)" margins="10">
+<definition>top(t) = (t, 1 - t/2)</definition>
+<definition>bot(t) = (t, t/2)</definition>
+<definition>topsc(t) = 1 - t/2</definition>
+<definition>botsc(t) = t/2</definition>
+<coordinates bbox="(-0.5,-0.4,2.3,1.55)">
+<axes at="rv-axes" xlabel="x" ylabel="y" decorations="no" arrows="1"/>
+<area-between-curves at="rv-region" function1="botsc" function2="topsc"
+    domain="(0,1)" fill="#fbe3d0" stroke="none"/>
+<vector at="rv-strip1" v="(1.35,0)" tail="(-0.4,0.3)" stroke="#D55E00"
+    thickness="3"/>
+<vector at="rv-strip2" v="(1.25,0)" tail="(-0.4,0.75)" stroke="#CC79A7"
+    thickness="3"/>
+<line at="rv-split" endpoints="((0,0.5),(1.15,0.5))" stroke="black"
+    thickness="2" dash="6 4"/>
+<parametric-curve at="rv-top" function="top" domain="(0,1)"
+    stroke="#0072B2" thickness="3"/>
+<parametric-curve at="rv-bot" function="bot" domain="(0,1)"
+    stroke="#009E73" thickness="3"/>
+<line at="rv-left" endpoints="((0,0),(0,1))" stroke="#555555"
+    thickness="3"/>
+<point at="rv-end1" p="(0.6,0.3)" fill="#009E73"/>
+<point at="rv-end2" p="(0.5,0.75)" fill="#0072B2"/>
+<point at="rv-corner" p="(1,0.5)" fill="black" alignment="e">
+<m>\left(1,\tfrac12\right)</m>
+</point>
+<label at="rv-split-label" anchor="(0.06,0.47)" alignment="se">
+<m>y = \tfrac12</m>
+</label>
+<label at="rv-top-label" anchor="(0.02,1.18)" alignment="ne"
+    color="#0072B2"><m>x = 2 - 2y</m></label>
+<label at="rv-bot-label" anchor="(0.72,0.2)" alignment="se"
+    color="#009E73"><m>x = 2y</m></label>
+<label at="rv-origin" anchor="(-0.06,-0.06)" alignment="sw">
+<m>0</m>
+</label>
+</coordinates>
+<annotations>
+<annotation ref="figure" text="The same triangular region with two horizontal arrows. A vermillion arrow at height y equals zero point three crosses the region and its right end lies on the green line x equals two y. A reddish purple arrow at height y equals zero point seven five crosses the region and its right end lies on the blue line x equals two minus two y. A dashed line at y equals one half separates the two cases.">
+  <annotation ref="rv-strip1" text="A horizontal strip below y equals one half. Its right end lies on the line x equals 2 y."/>
+  <annotation ref="rv-strip2" text="A horizontal strip above y equals one half. Its right end lies on the line x equals 2 minus 2 y."/>
+  <annotation ref="rv-split" text="The dashed line y equals one half where the right boundary changes from one line to the other, forcing a split into two integrals."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</sidebyside>
+</remark>
 
 </subsection>
 
@@ -458,9 +537,9 @@ This session, we will look at a special case of this double integral,
 which corresponds to the area of region <m>R</m>:
 </p>
 
-<men xml:id="eq-area-by-double-integration">
+<me>
 \text{Area of region } R = \iint_R dx\,dy = \iint_R dA.
-</men>
+</me>
 
 <example xml:id="example-area-double-integration">
 <title>Example IV</title>
@@ -475,6 +554,7 @@ Calculate the area of the region <m>R</m> shown in
 </example>
 
 <solution>
+<title>Method 1</title>
 <p>
 We split the region <m>R</m> into two regions <m>R_1</m> and
 <m>R_2</m> as follows:
@@ -520,6 +600,96 @@ Then
 </mrow>
 </md>
 </solution>
+
+<solution>
+<title>Method 2 (using symmetry)</title>
+<p>
+The curve <m>x = y - y^3</m> is <em>odd</em>: rotating it by
+<m>180^\circ</m> about the origin maps it onto itself. As shown in
+<xref ref="fig-area-symmetry-prefigure"/>, this rotation carries the
+piece <m>A</m> that the curve cuts <em>out of</em> the unit square
+<m>[-1,0]\times[-1,0]</m> exactly onto the piece <m>A</m> that the
+curve adds <em>to the right of</em> the <m>y</m>-axis for
+<m>0 \le y \le 1</m>. These two pieces therefore have the same area,
+and swapping one for the other turns the region into the unit square
+(of area <m>1</m>) together with the strip between the parabola
+<m>y = (x+1)^2</m> and the <m>y</m>-axis. Hence
+</p>
+
+<md>
+<mrow>
+\text{Area} \amp= \underbrace{1}_{\text{square}}
++ \underbrace{\int_0^1 \big(0 - (\sqrt y - 1)\big)\,dy}_{\text{strip}}
+= 1 + \int_0^1\left(1 - \sqrt y\right)dy
+</mrow>
+<mrow>
+\amp= 1 + \left.\left(y - \frac{2}{3}y^{3/2}\right)\right|_0^1
+= 1 + \frac{1}{3} = \frac{4}{3}.
+</mrow>
+</md>
+</solution>
+
+<figure xml:id="fig-area-symmetry-prefigure">
+<caption>
+Method 2: since <m>x = y - y^3</m> is odd, the piece <m>A</m> removed
+from the unit square (below the <m>x</m>-axis) is congruent to the
+piece <m>A</m> added to the right of the <m>y</m>-axis (above it).
+The area is therefore the area of the square, <m>1</m>, plus the area
+<m>\frac13</m> of the green strip between the parabola
+<m>y = (x+1)^2</m> and the <m>y</m>-axis.
+</caption>
+<image width="65%">
+<prefigure xmlns="https://prefigure.org" label="prefigure-area-symmetry">
+<diagram dimensions="(360,320)" margins="10">
+<definition>right(t) = (t - t^3, t)</definition>
+<definition>leftR2(t) = (sqrt(t) - 1, t)</definition>
+<coordinates bbox="(-1.7,-1.45,1.1,1.55)">
+<axes at="as-axes" xlabel="x" ylabel="y" decorations="no" arrows="1"/>
+<rectangle at="as-square" lower-left="(-1,-1)" dimensions="(1,1)"
+    stroke="none" fill="#f4e3c1"/>
+<polygon at="as-lobeA" fill="#f5c6bc" stroke="none" closed="yes"
+    points="((0,0),(-0.04159,-0.04167),(-0.08275,-0.08333),(-0.123,-0.125),(-0.162,-0.1667),(-0.1993,-0.2083),(-0.2344,-0.25),(-0.2669,-0.2917),(-0.2963,-0.3333),(-0.3223,-0.375),(-0.3443,-0.4167),(-0.3621,-0.4583),(-0.375,-0.5),(-0.3827,-0.5417),(-0.3848,-0.5833),(-0.3809,-0.625),(-0.3704,-0.6667),(-0.3529,-0.7083),(-0.3281,-0.75),(-0.2955,-0.7917),(-0.2546,-0.8333),(-0.2051,-0.875),(-0.1464,-0.9167),(-0.0782,-0.9583),(0,-1))"/>
+<polygon at="as-lobeB" fill="#f5c6bc" stroke="none" closed="yes"
+    points="((0,0),(0.04159,0.04167),(0.08275,0.08333),(0.123,0.125),(0.162,0.1667),(0.1993,0.2083),(0.2344,0.25),(0.2669,0.2917),(0.2963,0.3333),(0.3223,0.375),(0.3443,0.4167),(0.3621,0.4583),(0.375,0.5),(0.3827,0.5417),(0.3848,0.5833),(0.3809,0.625),(0.3704,0.6667),(0.3529,0.7083),(0.3281,0.75),(0.2955,0.7917),(0.2546,0.8333),(0.2051,0.875),(0.1464,0.9167),(0.0782,0.9583),(0,1))"/>
+<polygon at="as-strip" fill="#d3e8d3" stroke="none" closed="yes"
+    points="((-1,0),(-0.7959,0.04167),(-0.7113,0.08333),(-0.6464,0.125),(-0.5918,0.1667),(-0.5436,0.2083),(-0.5,0.25),(-0.4599,0.2917),(-0.4226,0.3333),(-0.3876,0.375),(-0.3545,0.4167),(-0.323,0.4583),(-0.2929,0.5),(-0.264,0.5417),(-0.2362,0.5833),(-0.2094,0.625),(-0.1835,0.6667),(-0.1584,0.7083),(-0.134,0.75),(-0.1102,0.7917),(-0.08713,0.8333),(-0.06459,0.875),(-0.04257,0.9167),(-0.02105,0.9583),(0,1),(0,0))"/>
+<parametric-curve at="as-right" function="right" domain="(-1,1)"
+    stroke="#0072B2" thickness="3"/>
+<parametric-curve at="as-left2" function="leftR2" domain="(0,1)"
+    stroke="#D55E00" thickness="3"/>
+<line at="as-left1" endpoints="((-1,-1),(-1,0))" stroke="#555555"
+    thickness="2"/>
+<line at="as-bottom" endpoints="((-1,-1),(0,-1))" stroke="#555555"
+    thickness="2"/>
+<label at="as-square-label" anchor="(-0.72,-0.55)" alignment="c">
+<m>\text{area } 1</m>
+</label>
+<label at="as-lobeA-label" anchor="(-0.29,-0.6)" alignment="c">
+<m>A</m>
+</label>
+<label at="as-lobeB-label" anchor="(0.29,0.6)" alignment="c">
+<m>A</m>
+</label>
+<label at="as-strip-label" anchor="(-0.42,0.3)" alignment="c">
+<m>\tfrac13</m>
+</label>
+<label at="as-right-label" anchor="(0.45,1.15)" alignment="ne"
+    color="#0072B2"><m>x = y - y^3</m></label>
+<label at="as-left2-label" anchor="(-1.62,1.05)" alignment="e"
+    color="#D55E00"><m>y = (x+1)^2</m></label>
+</coordinates>
+<annotations>
+<annotation ref="figure" text="The same region as before, decomposed for the symmetry argument. The unit square with corners at negative one comma negative one and zero comma zero is shaded tan and labeled area 1. Two congruent pink pieces, both labeled A, sit between the blue cubic curve and the y axis: one inside the square below the x axis, one to the right of the y axis above it. Rotating the picture one hundred eighty degrees about the origin maps one piece onto the other. A green strip labeled one third lies between the vermillion parabola and the y axis.">
+  <annotation ref="as-square" text="The unit square, of area one."/>
+  <annotation ref="as-lobeA" text="The piece A that the cubic curve cuts out of the square."/>
+  <annotation ref="as-lobeB" text="The congruent piece A that the cubic curve adds to the right of the y axis. It has the same area as the removed piece, by the one hundred eighty degree rotation symmetry of the odd curve."/>
+  <annotation ref="as-strip" text="The strip between the parabola and the y axis, of area one third."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
 
 <figure xml:id="fig-area-region-prefigure">
 <caption>

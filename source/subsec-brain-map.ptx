@@ -13,6 +13,7 @@
     bridges, trading an integral over a boundary for an integral over the
     region, surface, or solid it bounds; and each multiple integral carries
     its coordinate substitutions. Follow the gold lines.
+    For comfortable reading, <url href="external/brain-map.html" visual="">open the map full size in a new tab</url>.
   </p>
 
   <interactive xml:id="brain-map" iframe="brain-map.html" width="100%" aspect="16:9">

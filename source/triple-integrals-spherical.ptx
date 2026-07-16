@@ -1,0 +1,832 @@
+<?xml version="1.0" encoding="utf-8"?>
+<section xml:id="section-triple-integrals-spherical" xmlns:xi="http://www.w3.org/2001/XInclude">
+<title>Triple Integrals in Spherical Coordinates</title>
+
+<p>
+Today, we will study yet another useful coordinate system in three
+dimensions, which is known as the <em>spherical coordinate system</em>.
+It simplifies the evaluation of triple integrals over regions bounded
+by spheres or cones.
+</p>
+
+<!-- ================================================================ -->
+<subsection xml:id="sec-spherical-coordinates">
+<title>Spherical Coordinates</title>
+
+<p>
+The spherical coordinates can be best explained in a figure. Consider
+the point <m>P</m> with spherical coordinates
+<m>(\rho,\theta,\phi)</m> shown in
+<xref ref="fig-spherical-point-tikz"/>.
+</p>
+
+<p>
+<ol>
+<li>
+<p>
+<m>\rho</m> is the distance of the point <m>P</m> from the origin
+(<m>\rho \ge 0</m>).
+</p>
+</li>
+<li>
+<p>
+<m>\theta</m> is the angle the projection of
+<m>\overrightarrow{OP}</m> makes with the positive <m>x</m>-axis. This
+is the same as what we had in cylindrical coordinates
+(<m>0 \le \theta \le 2\pi</m>).
+</p>
+</li>
+<li>
+<p>
+<m>\phi</m> is the angle between <m>\overrightarrow{OP}</m> and the
+positive <m>z</m>-axis (<m>0 \le \phi \le \pi</m>).
+</p>
+</li>
+</ol>
+</p>
+
+<figure xml:id="fig-spherical-point-tikz">
+<caption>
+A point <m>P(\rho,\theta,\phi)</m> in spherical coordinates:
+<m>\rho</m> is the distance from the origin, <m>\theta</m> is the
+usual polar angle of the projection into the <m>xy</m>-plane, and
+<m>\phi</m> is the angle between <m>\overrightarrow{OP}</m> and the
+positive <m>z</m>-axis.
+</caption>
+<image width="60%">
+<description>
+Three coordinate axes in space. A segment of length rho runs from the
+origin to a point P above the x y plane. The angle phi is marked
+between the positive z axis and the segment, and the angle theta is
+marked in the x y plane between the positive x axis and the dashed
+projection of the segment. A dashed vertical line connects P to its
+projection.
+</description>
+<latex-image>
+<![CDATA[\begin{tikzpicture}[line join=round, line cap=round]
+  % Okabe-Ito colorblind-safe palette
+  \definecolor{oiblue}{RGB}{0,114,178}
+  \definecolor{oivermillion}{RGB}{213,94,0}
+  \definecolor{oipurple}{RGB}{204,121,167}
+  \begin{axis}[
+      view={125}{20},
+      width=11cm,
+      axis lines=center,
+      axis line style={-latex, black!75, line width=0.7pt},
+      xlabel={$x$}, ylabel={$y$}, zlabel={$z$},
+      label style={font=\large},
+      ticks=none,
+      xmin=0, xmax=2.1, ymin=0, ymax=2.3, zmin=0, zmax=2.3,
+      clip=false,
+    ]
+    % rho segment
+    \draw[oivermillion, line width=1.5pt]
+      (axis cs:0,0,0) -- (axis cs:1.15,1.2,1.5);
+    % projection
+    \draw[black!60, dashed, line width=0.8pt]
+      (axis cs:0,0,0) -- (axis cs:1.15,1.2,0)
+      (axis cs:1.15,1.2,0) -- (axis cs:1.15,1.2,1.5);
+    % angle theta in xy-plane
+    \draw[oipurple, line width=1.0pt, -{Latex[length=1.6mm]}]
+      (axis cs:0.5,0,0) .. controls (axis cs:0.52,0.28,0) ..
+      (axis cs:0.34,0.36,0);
+    % angle phi from z-axis
+    \draw[oiblue, line width=1.0pt, -{Latex[length=1.6mm]}]
+      (axis cs:0,0,0.75) .. controls (axis cs:0.3,0.28,0.72) ..
+      (axis cs:0.42,0.44,0.55);
+    % point
+    \addplot3[only marks, mark=*, mark size=1.7pt, color=oivermillion,
+        forget plot] coordinates {(1.15,1.2,1.5)};
+    % labels
+    \node[oivermillion, anchor=south, font=\small]
+      at (axis cs:1.15,1.2,1.58) {$P(\rho,\theta,\phi)$};
+    \node[oivermillion, anchor=south east, font=\small]
+      at (axis cs:0.52,0.62,0.82) {$\rho$};
+    \node[oipurple, anchor=west, font=\small]
+      at (axis cs:0.56,0.2,0.1) {$\theta$};
+    \node[oiblue, anchor=south west, font=\small]
+      at (axis cs:0.18,0.3,0.78) {$\phi$};
+    \node[anchor=south east, font=\small] at (axis cs:0.0,-0.05,0.02)
+      {$O$};
+  \end{axis}
+\end{tikzpicture}]]>
+</latex-image>
+</image>
+</figure>
+
+<assemblage xml:id="assemblage-spherical-equations">
+<title>Equations Relating Spherical Coordinates to Cartesian and Cylindrical Coordinates</title>
+<p>
+<me>
+r = \rho\sin\phi, \qquad
+x = r\cos\theta = \rho\sin\phi\cos\theta,
+</me>
+<me>
+z = \rho\cos\phi, \qquad
+y = r\sin\theta = \rho\sin\phi\sin\theta,
+</me>
+<me>
+\rho = \sqrt{x^2 + y^2 + z^2} = \sqrt{r^2 + z^2}.
+</me>
+</p>
+</assemblage>
+
+<p>
+Spheres and cones have particularly simple equations in spherical
+coordinates. For a sphere centered at the origin with radius <m>R</m>,
+we have
+</p>
+
+<md>
+<mrow>
+x^2 + y^2 + z^2 = R^2
+\amp\Rightarrow
+(\rho\sin\phi\cos\theta)^2 + (\rho\sin\phi\sin\theta)^2
++ (\rho\cos\phi)^2 = R^2
+</mrow>
+<mrow>
+\amp\Rightarrow
+\rho^2\left(\cos^2\theta + \sin^2\theta\right)\sin^2\phi
++ \rho^2\cos^2\phi = R^2
+</mrow>
+<mrow>
+\amp\Rightarrow
+\rho^2\sin^2\phi + \rho^2\cos^2\phi = R^2
+\Rightarrow \rho^2 = R^2 \Rightarrow \rho = R.
+</mrow>
+</md>
+
+<example xml:id="example-spherical-shifted-sphere">
+<title>Example I</title>
+<statement>
+<p>
+Find the equation of the sphere <m>x^2 + y^2 + (z-1)^2 = 1</m> in
+spherical coordinates.
+</p>
+</statement>
+</example>
+
+<solution>
+<p>
+Substituting the spherical expressions for <m>x</m>, <m>y</m>, and
+<m>z</m>:
+</p>
+
+<md>
+<mrow>
+x^2 + y^2 + (z-1)^2 = 1
+\amp\Rightarrow
+(\rho\sin\phi\cos\theta)^2 + (\rho\sin\phi\sin\theta)^2
++ (\rho\cos\phi - 1)^2 = 1
+</mrow>
+<mrow>
+\amp\Rightarrow
+\rho^2\left(\cos^2\theta + \sin^2\theta\right)\sin^2\phi
++ \rho^2\cos^2\phi - 2\rho\cos\phi + 1 = 1
+</mrow>
+<mrow>
+\amp\Rightarrow
+\rho^2\sin^2\phi + \rho^2\cos^2\phi - 2\rho\cos\phi = 0
+</mrow>
+<mrow>
+\amp\Rightarrow
+\rho^2 = 2\rho\cos\phi
+\Rightarrow \rho = 2\cos\phi.
+</mrow>
+</md>
+</solution>
+
+<example xml:id="example-spherical-cones">
+<title>Example II</title>
+<statement>
+<p>
+What are the equations of the two cones
+<m>z = \sqrt{x^2+y^2}</m> and <m>z = -\sqrt{x^2+y^2}</m> in spherical
+coordinates?
+</p>
+</statement>
+</example>
+
+<solution>
+<p>
+The upper cone makes a <m>45^\circ</m> angle with the positive
+<m>z</m>-axis, so every point on it has <m>\phi = \pi/4</m>; likewise
+the lower cone is <m>\phi = 3\pi/4</m>. (Algebraically:
+<m>\rho\cos\phi = \rho\sin\phi</m> forces <m>\tan\phi = 1</m>.)
+</p>
+</solution>
+
+<assemblage xml:id="assemblage-conversion-formulas">
+<title>Coordinate Conversion Formulas</title>
+<p>
+<md>
+<mrow>
+\text{Cylindrical to rectangular:}\quad
+\amp x = r\cos\theta, \quad y = r\sin\theta, \quad z = z
+</mrow>
+<mrow>
+\text{Spherical to rectangular:}\quad
+\amp x = \rho\sin\phi\cos\theta, \quad
+y = \rho\sin\phi\sin\theta, \quad z = \rho\cos\phi
+</mrow>
+<mrow>
+\text{Spherical to cylindrical:}\quad
+\amp r = \rho\sin\phi, \quad z = \rho\cos\phi, \quad \theta = \theta
+</mrow>
+</md>
+The corresponding formulas for <m>dV</m> in triple integrals:
+<me>
+dV = dx\,dy\,dz
+= dz\ r\,dr\,d\theta
+= \rho^2\sin\phi\ d\rho\,d\phi\,d\theta.
+</me>
+</p>
+</assemblage>
+
+</subsection>
+
+<!-- ================================================================ -->
+<subsection xml:id="sec-spherical-integration">
+<title>Integration in Spherical Coordinates</title>
+
+<p>
+The volume element <m>dV</m> in spherical coordinates is illustrated
+in <xref ref="fig-spherical-element-tikz"/>: a spherical wedge with
+radial side <m>d\rho</m>, one arc side <m>\rho\,d\phi</m>, and the
+other arc side <m>\rho\sin\phi\,d\theta</m>, so
+</p>
+
+<me>
+dV = \rho^2\sin\phi\ d\rho\,d\phi\,d\theta.
+</me>
+
+<figure xml:id="fig-spherical-element-tikz">
+<caption>
+The spherical volume element (spherical wedge). Its three mutually
+perpendicular sides have lengths <m>d\rho</m>, <m>\rho\,d\phi</m>, and
+<m>\rho\sin\phi\,d\theta</m>, so
+<m>dV = \rho^2\sin\phi\,d\rho\,d\phi\,d\theta</m>.
+</caption>
+<image width="60%">
+<description>
+Three coordinate axes in space with a small curved block at distance
+rho from the origin, in the direction given by the angles phi and
+theta. Its edges are labeled d rho, rho d phi, and rho sine phi d
+theta, and dashed lines connect it to the origin and the z axis.
+</description>
+<latex-image>
+<![CDATA[\begin{tikzpicture}[line join=round, line cap=round]
+  % Okabe-Ito colorblind-safe palette
+  \definecolor{oiblue}{RGB}{0,114,178}
+  \definecolor{oivermillion}{RGB}{213,94,0}
+  \begin{axis}[
+      view={125}{20},
+      width=11cm,
+      axis lines=center,
+      axis line style={-latex, black!75, line width=0.7pt},
+      xlabel={$x$}, ylabel={$y$}, zlabel={$z$},
+      label style={font=\large},
+      ticks=none,
+      xmin=0, xmax=2.2, ymin=0, ymax=2.4, zmin=0, zmax=2.2,
+      clip=false,
+    ]
+    % wedge between rho=1.7..2.0, phi=48..62, theta=32..50 (degrees)
+    % param point: (rho sin(phi) cos(th), rho sin(phi) sin(th), rho cos(phi))
+    % dashed guides from origin
+    \draw[black!55, dashed, line width=0.7pt]
+      (axis cs:0,0,0) -- (axis cs:{1.7*sin(48)*cos(32)},{1.7*sin(48)*sin(32)},{1.7*cos(48)})
+      (axis cs:0,0,0) -- (axis cs:{1.7*sin(62)*cos(32)},{1.7*sin(62)*sin(32)},{1.7*cos(62)})
+      (axis cs:0,0,0) -- (axis cs:{1.7*sin(48)*cos(50)},{1.7*sin(48)*sin(50)},{1.7*cos(48)});
+    % inner face (rho = 1.7)
+    \fill[oiblue, opacity=0.30]
+      (axis cs:{1.7*sin(48)*cos(32)},{1.7*sin(48)*sin(32)},{1.7*cos(48)})
+      \foreach \p in {52,56,...,62} { -- (axis cs:{1.7*sin(\p)*cos(32)},{1.7*sin(\p)*sin(32)},{1.7*cos(\p)}) }
+      \foreach \p in {62,58,...,48} { -- (axis cs:{1.7*sin(\p)*cos(50)},{1.7*sin(\p)*sin(50)},{1.7*cos(\p)}) }
+      -- cycle;
+    % outer face (rho = 2.0)
+    \fill[oiblue, opacity=0.45]
+      (axis cs:{2.0*sin(48)*cos(32)},{2.0*sin(48)*sin(32)},{2.0*cos(48)})
+      \foreach \p in {52,56,...,62} { -- (axis cs:{2.0*sin(\p)*cos(32)},{2.0*sin(\p)*sin(32)},{2.0*cos(\p)}) }
+      \foreach \p in {62,58,...,48} { -- (axis cs:{2.0*sin(\p)*cos(50)},{2.0*sin(\p)*sin(50)},{2.0*cos(\p)}) }
+      -- cycle;
+    % side face at theta = 32
+    \fill[oiblue, opacity=0.22]
+      (axis cs:{1.7*sin(48)*cos(32)},{1.7*sin(48)*sin(32)},{1.7*cos(48)})
+      \foreach \p in {52,56,...,62} { -- (axis cs:{1.7*sin(\p)*cos(32)},{1.7*sin(\p)*sin(32)},{1.7*cos(\p)}) }
+      \foreach \p in {62,58,...,48} { -- (axis cs:{2.0*sin(\p)*cos(32)},{2.0*sin(\p)*sin(32)},{2.0*cos(\p)}) }
+      -- cycle;
+    % top face at phi = 48
+    \fill[oiblue, opacity=0.38]
+      (axis cs:{1.7*sin(48)*cos(32)},{1.7*sin(48)*sin(32)},{1.7*cos(48)})
+      \foreach \t in {36,40,...,50} { -- (axis cs:{1.7*sin(48)*cos(\t)},{1.7*sin(48)*sin(\t)},{1.7*cos(48)}) }
+      \foreach \t in {50,46,...,32} { -- (axis cs:{2.0*sin(48)*cos(\t)},{2.0*sin(48)*sin(\t)},{2.0*cos(48)}) }
+      -- cycle;
+    % edges (arcs along phi at theta = 32)
+    \addplot3[oiblue!70!black, line width=0.9pt, domain=48:62,
+        samples=9, samples y=0, forget plot]
+      ({1.7*sin(x)*cos(32)}, {1.7*sin(x)*sin(32)}, {1.7*cos(x)});
+    \addplot3[oiblue!70!black, line width=0.9pt, domain=48:62,
+        samples=9, samples y=0, forget plot]
+      ({2.0*sin(x)*cos(32)}, {2.0*sin(x)*sin(32)}, {2.0*cos(x)});
+    % edges (arcs along theta at phi = 48)
+    \addplot3[oiblue!70!black, line width=0.9pt, domain=32:50,
+        samples=9, samples y=0, forget plot]
+      ({1.7*sin(48)*cos(x)}, {1.7*sin(48)*sin(x)}, {1.7*cos(48)});
+    \addplot3[oiblue!70!black, line width=0.9pt, domain=32:50,
+        samples=9, samples y=0, forget plot]
+      ({2.0*sin(48)*cos(x)}, {2.0*sin(48)*sin(x)}, {2.0*cos(48)});
+    \draw[oiblue!70!black, line width=0.9pt]
+      (axis cs:{1.7*sin(48)*cos(32)},{1.7*sin(48)*sin(32)},{1.7*cos(48)})
+      -- (axis cs:{2.0*sin(48)*cos(32)},{2.0*sin(48)*sin(32)},{2.0*cos(48)})
+      (axis cs:{1.7*sin(62)*cos(32)},{1.7*sin(62)*sin(32)},{1.7*cos(62)})
+      -- (axis cs:{2.0*sin(62)*cos(32)},{2.0*sin(62)*sin(32)},{2.0*cos(62)});
+    % labels
+    \node[anchor=west, font=\small]
+      at (axis cs:{2.02*sin(55)*cos(32)},{2.02*sin(55)*sin(32)},{2.02*cos(55)})
+      {$d\rho$};
+    \node[anchor=south west, font=\small]
+      at (axis cs:{1.85*sin(44)*cos(40)},{1.85*sin(44)*sin(40)},{1.85*cos(44)})
+      {$\rho\sin\phi\,d\theta$};
+    \node[anchor=north, font=\small]
+      at (axis cs:{1.85*sin(64)*cos(30)},{1.85*sin(64)*sin(30)},{1.85*cos(64)})
+      {$\rho\,d\phi$};
+    \node[oivermillion, anchor=north east, font=\small]
+      at (axis cs:{0.85*sin(55)*cos(41)},{0.85*sin(55)*sin(41)},{0.85*cos(55)})
+      {$\rho$};
+  \end{axis}
+\end{tikzpicture}]]>
+</latex-image>
+</image>
+</figure>
+
+<p>
+Then, the triple integral over a region <m>D</m> described in
+spherical coordinates by
+<m>\alpha\le\theta\le\beta</m>,
+<m>\phi_{\min}\le\phi\le\phi_{\max}</m>, and
+<m>g_1(\phi,\theta)\le\rho\le g_2(\phi,\theta)</m> can be converted
+into spherical coordinates as follows:
+</p>
+
+<me>
+\iiint_D f(x,y,z)\,dV
+= \int_{\alpha}^{\beta}\!\!\int_{\phi_{\min}}^{\phi_{\max}}
+\!\!\int_{g_1(\theta,\phi)}^{g_2(\theta,\phi)}
+f\!\left(\rho\sin\phi\cos\theta,\ \rho\sin\phi\sin\theta,\
+\rho\cos\phi\right)\rho^2\sin\phi\ d\rho\,d\phi\,d\theta.
+</me>
+
+</subsection>
+
+<!-- ================================================================ -->
+<subsection xml:id="sec-spherical-icecream">
+<title>The Ice Cream Cone</title>
+
+<example xml:id="example-spherical-icecream">
+<title>Example III</title>
+<statement>
+<p>
+Find the volume of the <q>ice cream cone</q> <m>D</m> cut from the
+solid sphere <m>\rho \le 1</m> by the cone <m>\phi = \pi/3</m>.
+</p>
+</statement>
+</example>
+
+<solution>
+<p>
+We begin by plotting the ice cream cone
+(<xref ref="fig-icecream-tikz"/>). Next, we identify the region of
+integration, which will provide us with the integration limits:
+</p>
+
+<me>
+D = \left\{(\rho,\theta,\phi) : 0\le\theta\le 2\pi,\
+0\le\phi\le\frac{\pi}{3},\ 0\le\rho\le 1\right\}.
+</me>
+
+<p>
+Thus the volume of the ice cream cone can be evaluated as follows:
+</p>
+
+<md>
+<mrow>
+V = \iiint_D \rho^2\sin\phi\ d\rho\,d\phi\,d\theta
+\amp= \int_0^{2\pi}\!\!\int_0^{\pi/3}\!\!\int_0^1
+\rho^2\sin\phi\ d\rho\,d\phi\,d\theta
+</mrow>
+<mrow>
+\amp= \int_0^{2\pi}\!\!\int_0^{\pi/3}
+\left[\frac{\rho^3}{3}\right]_0^1 \sin\phi\ d\phi\,d\theta
+= \int_0^{2\pi}\!\!\int_0^{\pi/3}
+\frac13\sin\phi\ d\phi\,d\theta
+</mrow>
+<mrow>
+\amp= \int_0^{2\pi}\left[-\frac13\cos\phi\right]_0^{\pi/3} d\theta
+= \int_0^{2\pi}\left(-\frac16 + \frac13\right)d\theta
+= \frac16(2\pi) = \frac{\pi}{3}.
+</mrow>
+</md>
+</solution>
+
+<figure xml:id="fig-icecream-tikz">
+<caption>
+The <q>ice cream cone</q> of
+<xref ref="example-spherical-icecream"/>: the region inside the
+sphere <m>\rho = 1</m> and above the cone <m>\phi = \pi/3</m>. Its
+volume is <m>\frac{\pi}{3}</m>.
+</caption>
+<image width="60%">
+<description>
+Three coordinate axes in space with an ice cream cone shaped solid: a
+cone with vertex at the origin opening upward at sixty degrees from
+the z axis, capped by a dome which is part of the unit sphere. The
+circle where the cone meets the sphere is drawn.
+</description>
+<latex-image>
+<![CDATA[\begin{tikzpicture}[line join=round, line cap=round]
+  % Okabe-Ito colorblind-safe palette
+  \definecolor{oiblue}{RGB}{0,114,178}
+  \definecolor{oivermillion}{RGB}{213,94,0}
+  \definecolor{oigreen}{RGB}{0,158,115}
+  \begin{axis}[
+      view={125}{18},
+      width=11cm,
+      axis lines=center,
+      axis line style={-latex, black!75, line width=0.7pt},
+      xlabel={$x$}, ylabel={$y$}, zlabel={$z$},
+      label style={font=\large},
+      ticks=none,
+      xmin=-1.15, xmax=1.35, ymin=-1.15, ymax=1.45, zmin=0, zmax=1.5,
+      clip=false,
+    ]
+    % cone: phi = pi/3, rho from 0 to 1: r = z tan(60), z up to cos(60)=0.5
+    \addplot3[surf, shader=interp,
+              colormap={softk}{color=(oigreen!12!white) color=(oigreen!42!white)},
+              opacity=0.45, fill opacity=0.45,
+              domain=0:360, samples=37,
+              y domain=0:0.5, samples y=7,
+              z buffer=sort, forget plot]
+      ({y*1.7320508*cos(x)}, {y*1.7320508*sin(x)}, {y});
+    % spherical cap: rho=1, phi from 0 to 60
+    \addplot3[surf, shader=faceted, faceted color=black!35,
+              point meta={z},
+              colormap={softz}{color=(oiblue!12!white) color=(oiblue!42!white)},
+              opacity=0.55, fill opacity=0.55,
+              domain=0:360, samples=37,
+              y domain=0:60, samples y=9,
+              z buffer=sort, forget plot]
+      ({sin(y)*cos(x)}, {sin(y)*sin(x)}, {cos(y)});
+    % rim circle: phi = 60 on the sphere (radius sin60, height cos60)
+    \addplot3[oivermillion, line width=1.3pt, domain=0:360, samples=73,
+        samples y=0, forget plot]
+      ({0.8660254*cos(x)}, {0.8660254*sin(x)}, {0.5});
+    % labels
+    \node[oiblue, anchor=south west, font=\small]
+      at (axis cs:0.45,0.72,0.95) {Sphere $\rho = 1$};
+    \node[oigreen!60!black, anchor=west, font=\small]
+      at (axis cs:0.72,0.72,0.22) {Cone $\phi = \tfrac{\pi}{3}$};
+    \node[font=\large] at (axis cs:-0.35,-0.5,1.02) {$D$};
+  \end{axis}
+\end{tikzpicture}]]>
+</latex-image>
+</image>
+</figure>
+
+<p>
+How the spherical description of the ice cream cone
+works<mdash/>the angle <m>\phi</m> sweeping from the <m>z</m>-axis
+down to the cone while <m>\rho</m> reaches out to the
+sphere<mdash/>is animated in <xref ref="fig-spherical-video"/>.
+</p>
+
+<figure xml:id="fig-spherical-video">
+<caption>
+Animation of spherical coordinates and the ice cream cone. A ray from
+the origin at angles <m>(\theta,\phi)</m> carries the point
+<m>P(\rho,\theta,\phi)</m>; sweeping <m>\theta</m> spins the ray
+around the <m>z</m>-axis, sweeping <m>\phi</m> tilts it away from the
+axis, and restricting <m>0\le\rho\le 1</m>,
+<m>0\le\phi\le\pi/3</m> fills out the ice cream cone of
+<xref ref="example-spherical-icecream"/>.
+</caption>
+<video xml:id="video-spherical-icecream"
+       source="videos/spherical_icecream_1080p.mp4"
+       width="70%" aspect="16:9"/>
+</figure>
+
+</subsection>
+
+<!-- ================================================================ -->
+<subsection xml:id="sec-spherical-shifted-example">
+<title>Converting a Triple Integral to Spherical Coordinates</title>
+
+<example xml:id="example-spherical-convert">
+<title>Example IV</title>
+<statement>
+<p>
+Calculate the triple integral below by converting it to spherical
+coordinates:
+</p>
+
+<me>
+\int_{-2}^{2}\!\!\int_{-\sqrt{4-x^2}}^{\sqrt{4-x^2}}
+\!\!\int_{2-\sqrt{4-x^2-y^2}}^{2+\sqrt{4-x^2-y^2}}
+\left(x^2+y^2+z^2\right)^{3/2} dz\,dy\,dx.
+</me>
+</statement>
+</example>
+
+<solution>
+<p>
+We begin by converting the integration limits and the integrand to
+spherical coordinates. The limits describe the solid sphere
+<m>x^2 + y^2 + (z-2)^2 = 4</m> of radius <m>2</m> centered at
+<m>(0,0,2)</m>, shown in <xref ref="fig-shifted-sphere-tikz"/>:
+</p>
+
+<md>
+<mrow>
+z = 2 \pm\sqrt{4-x^2-y^2}
+\amp\Rightarrow
+\rho\cos\phi = 2 \pm\sqrt{4 - \rho^2\sin^2\phi}
+</mrow>
+<mrow>
+\amp\Rightarrow
+(\rho\cos\phi - 2)^2 = 4 - \rho^2\sin^2\phi
+</mrow>
+<mrow>
+\amp\Rightarrow
+\rho^2 = 4\rho\cos\phi
+\Rightarrow \rho = 4\cos\phi.
+</mrow>
+</md>
+
+<p>
+Note that <m>z = 2+\sqrt{4-x^2-y^2}</m> is the upper hemisphere and
+<m>z = 2-\sqrt{4-x^2-y^2}</m> is the lower hemisphere. In spherical
+coordinates the solid is <m>0\le\rho\le 4\cos\phi</m>,
+<m>0\le\phi\le\frac{\pi}{2}</m>, <m>0\le\theta\le 2\pi</m>, and the
+integrand is
+<m>\left(x^2+y^2+z^2\right)^{3/2} = \left(\rho^2\right)^{3/2}
+= \rho^3</m>. Thus:
+</p>
+
+<md>
+<mrow>
+\int_0^{2\pi}\!\!\int_0^{\pi/2}\!\!\int_0^{4\cos\phi}
+\left(\rho^2\right)^{3/2}\rho^2\sin\phi\ d\rho\,d\phi\,d\theta
+\amp= \int_0^{2\pi}\!\!\int_0^{\pi/2}\!\!\int_0^{4\cos\phi}
+\rho^5\sin\phi\ d\rho\,d\phi\,d\theta
+</mrow>
+<mrow>
+\amp= \frac{4^6}{6}\int_0^{2\pi}\!\!\int_0^{\pi/2}
+\cos^6\phi\,\sin\phi\ d\phi\,d\theta
+</mrow>
+<mrow>
+\amp= -\frac{4^6}{42}\int_0^{2\pi}
+\Big[\cos^7\phi\Big]_0^{\pi/2}\,d\theta
+= \frac{4096\pi}{21}.
+</mrow>
+</md>
+</solution>
+
+<figure xml:id="fig-shifted-sphere-tikz">
+<caption>
+The sphere <m>x^2 + y^2 + (z-2)^2 = 4</m> of
+<xref ref="example-spherical-convert"/>, which in spherical
+coordinates is <m>\rho = 4\cos\phi</m>. It sits on the
+<m>xy</m>-plane, touching the origin.
+</caption>
+<image width="55%">
+<description>
+Three coordinate axes in space with a sphere of radius two centered on
+the z axis at height two, so it touches the origin from above. A
+dashed vertical diameter runs from the origin to the north pole at
+height four.
+</description>
+<latex-image>
+<![CDATA[\begin{tikzpicture}[line join=round, line cap=round]
+  % Okabe-Ito colorblind-safe palette
+  \definecolor{oiblue}{RGB}{0,114,178}
+  \definecolor{oivermillion}{RGB}{213,94,0}
+  \begin{axis}[
+      view={125}{15},
+      width=10cm,
+      axis lines=center,
+      axis line style={-latex, black!75, line width=0.7pt},
+      xlabel={$x$}, ylabel={$y$}, zlabel={$z$},
+      label style={font=\large},
+      ticks=none,
+      xmin=-2.3, xmax=2.6, ymin=-2.3, ymax=2.7, zmin=0, zmax=4.6,
+      clip=false,
+    ]
+    % sphere rho = 4 cos(phi): center (0,0,2), radius 2
+    \addplot3[surf, shader=faceted, faceted color=black!30,
+              point meta={z},
+              colormap={softz}{color=(oiblue!12!white) color=(oiblue!45!white)},
+              opacity=0.5, fill opacity=0.5,
+              domain=0:360, samples=31,
+              y domain=0:180, samples y=17,
+              z buffer=sort, forget plot]
+      ({2*sin(y)*cos(x)}, {2*sin(y)*sin(x)}, {2 + 2*cos(y)});
+    % equator
+    \addplot3[oiblue, line width=1.0pt, domain=0:360, samples=73,
+        samples y=0, forget plot]
+      ({2*cos(x)}, {2*sin(x)}, 2);
+    % dashed diameter
+    \draw[black!60, dashed, line width=0.8pt]
+      (axis cs:0,0,0) -- (axis cs:0,0,4);
+    \addplot3[only marks, mark=*, mark size=1.5pt, color=black,
+        forget plot] coordinates {(0,0,0) (0,0,2) (0,0,4)};
+    % labels
+    \node[font=\large, anchor=north west] at (axis description cs:0.0,0.98)
+      {$x^2 + y^2 + (z-2)^2 = 4$};
+    \node[oivermillion, font=\large, anchor=north west]
+      at (axis description cs:0.0,0.88) {$\rho = 4\cos\phi$};
+    \node[anchor=west, font=\small] at (axis cs:0.12,0.12,4.12)
+      {$(0,0,4)$};
+    \node[anchor=west, font=\small] at (axis cs:0.15,0.18,2.08)
+      {$(0,0,2)$};
+  \end{axis}
+\end{tikzpicture}]]>
+</latex-image>
+</image>
+</figure>
+
+</subsection>
+
+<!-- ================================================================ -->
+<subsection xml:id="sec-spherical-rewrite">
+<title>Re-Writing an Integral in Spherical and Cylindrical Coordinates</title>
+
+<example xml:id="example-spherical-rewrite">
+<title>Example V</title>
+<statement>
+<p>
+Re-write (do not evaluate) the following integral in
+<em>spherical</em> and <em>cylindrical</em> coordinates:
+</p>
+
+<me>
+\int_{-1}^{1}\!\!\int_{-\sqrt{1-x^2}}^{0}
+\!\!\int_{\sqrt{x^2+y^2}}^{1}
+\left(x^2+y^2\right) dz\,dy\,dx.
+</me>
+</statement>
+</example>
+
+<solution>
+<p>
+The <m>xy</m>-projection is the lower half disk
+<m>y \le 0</m>, <m>x^2+y^2\le 1</m> (shown in
+<xref ref="fig-halfdisk-prefigure"/>), so
+<m>\pi \le \theta \le 2\pi</m> and <m>0 \le r \le 1</m>. In
+<m>z</m>, the solid runs from the cone <m>z = \sqrt{x^2+y^2}</m>
+(that is, <m>z = r</m>) up to the plane <m>z = 1</m>; the solid is
+shown in <xref ref="fig-cone-plane-tikz"/>. Since
+<m>x^2 + y^2 = r^2</m>, the cylindrical form is
+</p>
+
+<me>
+\int_{\pi}^{2\pi}\!\!\int_0^1\!\!\int_r^1 r^2\, r\,dz\,dr\,d\theta.
+</me>
+
+<p>
+For the spherical form, the cone is <m>\phi = \pi/4</m>, and the
+plane <m>z = 1</m> becomes <m>\rho\cos\phi = 1</m>, that is,
+<m>\rho = \sec\phi</m>. With
+<m>x^2 + y^2 = r^2 = \rho^2\sin^2\phi</m>, we get
+</p>
+
+<me>
+\int_{\pi}^{2\pi}\!\!\int_0^{\pi/4}\!\!\int_0^{\sec\phi}
+\left(\rho^2\sin^2\phi\right)\rho^2\sin\phi\
+d\rho\,d\phi\,d\theta.
+</me>
+</solution>
+
+<figure xml:id="fig-halfdisk-prefigure">
+<caption>
+The <m>xy</m>-projection of the solid in
+<xref ref="example-spherical-rewrite"/>: the lower half of the unit
+disk, described by <m>\pi\le\theta\le 2\pi</m>, <m>0\le r\le 1</m>.
+</caption>
+<image width="45%">
+<prefigure xmlns="https://prefigure.org" label="prefigure-halfdisk">
+<diagram dimensions="(320,215)" margins="10">
+<definition>arc(t) = (cos(t), sin(t))</definition>
+<coordinates bbox="(-1.5,-1.35,1.5,0.65)">
+<axes at="hd-axes" xlabel="x" ylabel="y" decorations="no" arrows="1"/>
+<polygon at="hd-region" fill="#f5c6bc" stroke="none" closed="yes"
+    points="((1,0),(0.9877,-0.1564),(0.9511,-0.309),(0.891,-0.454),(0.809,-0.5878),(0.7071,-0.7071),(0.5878,-0.809),(0.454,-0.891),(0.309,-0.9511),(0.1564,-0.9877),(0,-1),(-0.1564,-0.9877),(-0.309,-0.9511),(-0.454,-0.891),(-0.5878,-0.809),(-0.7071,-0.7071),(-0.809,-0.5878),(-0.891,-0.454),(-0.9511,-0.309),(-0.9877,-0.1564),(-1,0))"/>
+<parametric-curve at="hd-arc" function="arc" domain="(pi,2*pi)"
+    stroke="#D55E00" thickness="3"/>
+<line at="hd-diam" endpoints="((-1,0),(1,0))" stroke="#555555"
+    thickness="2"/>
+<label at="hd-eq" anchor="(0.72,-0.85)" alignment="se"
+    color="#D55E00"><m>y = -\sqrt{1-x^2}</m></label>
+<point at="hd-1" p="(1,0)" fill="black" alignment="ne">
+<m>1</m>
+</point>
+<point at="hd-m1" p="(-1,0)" fill="black" alignment="nw">
+<m>-1</m>
+</point>
+</coordinates>
+<annotations>
+<annotation ref="figure" text="The lower half of the unit disk, below the x axis, shaded light red. Its curved boundary y equals negative square root of one minus x squared is drawn in vermillion.">
+  <annotation ref="hd-region" text="The projection: the lower half of the unit disk, where theta runs from pi to two pi."/>
+  <annotation ref="hd-arc" text="The lower half of the unit circle."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+
+<figure xml:id="fig-cone-plane-tikz">
+<caption>
+The solid of <xref ref="example-spherical-rewrite"/>: over the lower
+half disk, between the cone <m>z = \sqrt{x^2+y^2}</m> (spherical
+<m>\phi = \pi/4</m>) and the plane <m>z = 1</m> (spherical
+<m>\rho = \sec\phi</m>).
+</caption>
+<image width="60%">
+<description>
+Three coordinate axes in space with a half cone opening upward from
+the origin at forty five degrees, over the half of the plane with y
+negative, capped above by the flat half disk in the plane z equals
+one. The straight edge of the cap lies over the x axis.
+</description>
+<latex-image>
+<![CDATA[\begin{tikzpicture}[line join=round, line cap=round]
+  % Okabe-Ito colorblind-safe palette
+  \definecolor{oiblue}{RGB}{0,114,178}
+  \definecolor{oivermillion}{RGB}{213,94,0}
+  \definecolor{oigreen}{RGB}{0,158,115}
+  \begin{axis}[
+      view={35}{18},
+      width=11cm,
+      axis lines=center,
+      axis line style={-latex, black!75, line width=0.7pt},
+      xlabel={$x$}, ylabel={$y$}, zlabel={$z$},
+      label style={font=\large},
+      ticks=none,
+      xmin=-1.3, xmax=1.5, ymin=-1.5, ymax=1.3, zmin=0, zmax=1.6,
+      clip=false,
+    ]
+    % half cone z = r over theta in [180,360]
+    \addplot3[surf, shader=interp,
+              colormap={softk}{color=(oigreen!12!white) color=(oigreen!42!white)},
+              opacity=0.45, fill opacity=0.45,
+              domain=180:360, samples=25,
+              y domain=0:1, samples y=7,
+              z buffer=sort, forget plot]
+      ({y*cos(x)}, {y*sin(x)}, {y});
+    % top half disk z = 1
+    \fill[oiblue, opacity=0.35]
+      (axis cs:1,0,1)
+      \foreach \a in {350,340,...,180} { -- (axis cs:{cos(\a)},{sin(\a)},1) }
+      -- cycle;
+    \draw[oiblue, line width=1.2pt]
+      (axis cs:1,0,1)
+      \foreach \a in {350,340,...,180} { -- (axis cs:{cos(\a)},{sin(\a)},1) }
+      -- cycle;
+    % cone edge lines
+    \draw[oigreen!60!black, line width=1.0pt]
+      (axis cs:0,0,0) -- (axis cs:1,0,1)
+      (axis cs:0,0,0) -- (axis cs:-1,0,1);
+    % projection half disk (dashed)
+    \draw[oivermillion, line width=1.0pt, dashed]
+      (axis cs:1,0,0)
+      \foreach \a in {350,340,...,180} { -- (axis cs:{cos(\a)},{sin(\a)},0) }
+      -- cycle;
+    % labels
+    \node[oiblue, anchor=west, font=\small]
+      at (axis cs:0.42,-0.95,1.22) {$z = 1$};
+    \node[oigreen!60!black, anchor=west, font=\small]
+      at (axis cs:0.35,-0.75,0.35) {$z = \sqrt{x^2+y^2}$};
+    \node[oivermillion, anchor=north, font=\small]
+      at (axis cs:0.1,-1.15,-0.12) {projection};
+  \end{axis}
+\end{tikzpicture}]]>
+</latex-image>
+</image>
+</figure>
+
+<exercise xml:id="exercise-spherical-volume">
+<statement>
+<p>
+Calculate the volume of the region inside <m>\rho = 2\cos\phi</m> and
+below <m>z = \sqrt{x^2+y^2}</m>.
+</p>
+</statement>
+<answer>
+<p>
+<m>\dfrac{\pi}{3}</m>.
+</p>
+</answer>
+</exercise>
+
+</subsection>
+
+</section>

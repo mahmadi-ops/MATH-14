@@ -1,0 +1,629 @@
+<?xml version="1.0" encoding="utf-8"?>
+<section xml:id="section-triple-integrals-rectangular" xmlns:xi="http://www.w3.org/2001/XInclude">
+<title>Triple Integrals in Rectangular Coordinates</title>
+
+<p>
+Previously, we learned how to calculate double integrals and how to use
+them to calculate volumes. Today, we will learn triple integrals in
+Cartesian coordinates, which can also be used to evaluate volumes of
+solids, along with other applications that we will learn.
+</p>
+
+<!-- ================================================================ -->
+<subsection xml:id="sec-triple-integral-meaning">
+<title>What Does a Triple Integral Mean?</title>
+
+<p>
+An important application comes first: the mass of a block <m>B</m>
+with variable density (mass per unit volume) <m>\rho(x,y,z)</m> is
+</p>
+
+<me>
+M = \iiint_B \rho(x,y,z)\,dV.
+</me>
+
+<p>
+More generally, a <term>triple integral</term> has the form
+<m>\iiint_E f(x,y,z)\,dV</m>, defined by chopping the solid <m>E</m>
+into tiny blocks of volume
+<m>\Delta V = \Delta x\,\Delta y\,\Delta z</m>, sampling <m>f</m> in
+each block, and passing to the limit. A natural question is: what does
+<m>\iiint_E dV</m> mean? We can think of it as summing the volumes of
+the tiny blocks <m>\Delta V</m>, hence
+</p>
+
+<me>
+\text{Volume of } E = \iiint_E dV.
+</me>
+
+</subsection>
+
+<!-- ================================================================ -->
+<subsection xml:id="sec-triple-case1">
+<title>Case I: <m>E = \{(x,y,z) : a \le x \le b,\ g_1(x) \le y \le g_2(x),\ u_1(x,y) \le z \le u_2(x,y)\}</m></title>
+
+<p>
+The first case that we will study is the case where the region of
+integration is of the form
+</p>
+
+<me>
+E = \{(x,y,z) : a \le x \le b,\ g_1(x) \le y \le g_2(x),\
+u_1(x,y) \le z \le u_2(x,y)\},
+</me>
+
+<p>
+so <m>E</m> lies between the surfaces <m>z = u_1(x,y)</m> and
+<m>z = u_2(x,y)</m> over a projection <m>D</m> in the
+<m>xy</m>-plane, and
+</p>
+
+<me>
+\iiint_E f(x,y,z)\,dV
+= \int_a^b\!\!\int_{g_1(x)}^{g_2(x)}\!\!\int_{u_1(x,y)}^{u_2(x,y)}
+f(x,y,z)\,dz\,dy\,dx.
+</me>
+
+<example xml:id="example-triple-tetrahedron">
+<title>Example I</title>
+<statement>
+<p>
+Calculate the triple integral
+<m>\displaystyle\iiint_E z\,dx\,dy\,dz</m>, where <m>E</m> is the
+tetrahedron shown in <xref ref="fig-triple-tetra-tikz"/>, bounded by
+the coordinate planes and the plane <m>z = 1 - x - y</m>.
+</p>
+</statement>
+</example>
+
+<solution>
+<p>
+Let us begin by describing the projection <m>D</m> (shown in
+<xref ref="fig-triple-tetra-base-prefigure"/>) and the region
+<m>E</m>:
+</p>
+
+<md>
+<mrow>
+D \amp= \{(x,y) : 0 \le x \le 1,\ 0 \le y \le -x+1\},
+</mrow>
+<mrow>
+E \amp= \{(x,y,z) : 0 \le x \le 1,\ 0 \le y \le -x+1,\
+0 \le z \le 1-x-y\}.
+</mrow>
+</md>
+
+<p>
+We then calculate the triple integral as follows:
+</p>
+
+<md>
+<mrow>
+\iiint_E z\,dV
+\amp= \int_0^1\!\!\int_0^{1-x}\!\!\int_0^{1-x-y} z\,dz\,dy\,dx
+= \int_0^1\!\!\int_0^{1-x}
+\left[\frac{z^2}{2}\right]_{z=0}^{z=1-x-y} dy\,dx
+</mrow>
+<mrow>
+\amp= \frac12\int_0^1\!\!\int_0^{1-x}(1-x-y)^2\,dy\,dx
+= \frac12\int_0^1
+\left[-\frac{(1-x-y)^3}{3}\right]_{y=0}^{y=1-x} dx
+</mrow>
+<mrow>
+\amp= \frac16\int_0^1 (1-x)^3\,dx
+= \frac16\left[-\frac{(1-x)^4}{4}\right]_0^1
+= \frac{1}{24}.
+</mrow>
+</md>
+</solution>
+
+<figure xml:id="fig-triple-tetra-tikz">
+<caption>
+The tetrahedron <m>E</m> of <xref ref="example-triple-tetrahedron"/>,
+bounded by the three coordinate planes and the plane
+<m>z = 1 - x - y</m>. Its projection into the <m>xy</m>-plane is the
+triangle <m>D</m>.
+</caption>
+<image width="70%">
+<description>
+Three coordinate axes in space with a tetrahedron whose vertices are
+the origin and the three points one zero zero, zero one zero, and zero
+zero one. The slanted face is the plane z equals one minus x minus y.
+The base triangle D in the x y plane is shaded.
+</description>
+<latex-image>
+<![CDATA[\begin{tikzpicture}[line join=round, line cap=round]
+  % Okabe-Ito colorblind-safe palette
+  \definecolor{oiblue}{RGB}{0,114,178}
+  \definecolor{oivermillion}{RGB}{213,94,0}
+  \begin{axis}[
+      view={120}{22},
+      width=11.5cm,
+      axis lines=center,
+      axis line style={-latex, black!75, line width=0.7pt},
+      xlabel={$x$}, ylabel={$y$}, zlabel={$z$},
+      label style={font=\large},
+      ticks=none,
+      xmin=0, xmax=1.45, ymin=0, ymax=1.45, zmin=0, zmax=1.35,
+      clip=false,
+    ]
+    % base triangle D
+    \fill[oivermillion, opacity=0.25]
+      (axis cs:0,0,0) -- (axis cs:1,0,0) -- (axis cs:0,1,0) -- cycle;
+    % faces
+    \fill[oiblue, opacity=0.15]
+      (axis cs:0,0,0) -- (axis cs:0,0,1) -- (axis cs:0,1,0) -- cycle;
+    \fill[oiblue, opacity=0.25]
+      (axis cs:0,0,0) -- (axis cs:1,0,0) -- (axis cs:0,0,1) -- cycle;
+    \fill[oiblue, opacity=0.42]
+      (axis cs:1,0,0) -- (axis cs:0,1,0) -- (axis cs:0,0,1) -- cycle;
+    \draw[oiblue!70!black, line width=1.0pt]
+      (axis cs:0,0,0) -- (axis cs:1,0,0)
+      (axis cs:0,0,0) -- (axis cs:0,1,0)
+      (axis cs:0,0,0) -- (axis cs:0,0,1)
+      (axis cs:1,0,0) -- (axis cs:0,1,0)
+      (axis cs:1,0,0) -- (axis cs:0,0,1)
+      (axis cs:0,1,0) -- (axis cs:0,0,1);
+    % labels
+    \addplot3[only marks, mark=*, mark size=1.5pt, color=black,
+        forget plot] coordinates {(1,0,0) (0,1,0) (0,0,1)};
+    \node[anchor=north, font=\small] at (axis cs:1.06,0,-0.07)
+      {$(1,0,0)$};
+    \node[anchor=west, font=\small] at (axis cs:0,1.05,0.07)
+      {$(0,1,0)$};
+    \node[anchor=south east, font=\small] at (axis cs:0,-0.02,1.03)
+      {$(0,0,1)$};
+    \node[font=\large] at (axis cs:0.2,0.24,0.33) {$E$};
+    \node[oivermillion, font=\small] at (axis cs:0.42,0.42,-0.02)
+      {$D$};
+    \draw[-{Latex}, black!70, line width=0.7pt]
+      (axis cs:0.75,0.75,0.75) -- (axis cs:0.42,0.42,0.36);
+    \node[anchor=south, font=\small] at (axis cs:0.75,0.75,0.77)
+      {$z = 1 - x - y$};
+  \end{axis}
+\end{tikzpicture}]]>
+</latex-image>
+</image>
+</figure>
+
+<figure xml:id="fig-triple-tetra-base-prefigure">
+<caption>
+The projection <m>D</m> of the tetrahedron into the
+<m>xy</m>-plane: the triangle <m>0 \le x \le 1</m>,
+<m>0 \le y \le 1 - x</m>. A vertical arrow at a fixed <m>(x,y)</m> in
+<m>D</m> corresponds to the inner <m>z</m>-integration from
+<m>z = 0</m> up to <m>z = 1-x-y</m>.
+</caption>
+<image width="50%">
+<prefigure xmlns="https://prefigure.org" label="prefigure-triple-tetra-base">
+<diagram dimensions="(320,290)" margins="10">
+<coordinates bbox="(-0.3,-0.3,1.5,1.35)">
+<axes at="tt-axes" xlabel="x" ylabel="y" decorations="no" arrows="1"/>
+<polygon at="tt-D" fill="#fbe3d0" stroke="none" closed="yes"
+    points="((0,0),(1,0),(0,1))"/>
+<line at="tt-hyp" endpoints="((1,0),(0,1))" stroke="#0072B2"
+    thickness="3"/>
+<line at="tt-leg1" endpoints="((0,0),(1,0))" stroke="#555555"
+    thickness="2"/>
+<line at="tt-leg2" endpoints="((0,0),(0,1))" stroke="#555555"
+    thickness="2"/>
+<point at="tt-1" p="(1,0)" fill="black" alignment="s">
+<m>1</m>
+</point>
+<point at="tt-1y" p="(0,1)" fill="black" alignment="w">
+<m>1</m>
+</point>
+<label at="tt-D-label" anchor="(0.28,0.28)" alignment="c">
+<m>D</m>
+</label>
+<label at="tt-hyp-label" anchor="(0.62,0.62)" alignment="ne"
+    color="#0072B2"><m>y = 1 - x</m></label>
+<label at="tt-O" anchor="(-0.06,-0.06)" alignment="sw">
+<m>0</m>
+</label>
+</coordinates>
+<annotations>
+<annotation ref="figure" text="A right triangle in the x y plane with legs along the axes from zero to one and hypotenuse y equals one minus x, drawn in blue. The triangle is shaded tan and labeled D.">
+  <annotation ref="tt-D" text="The projection D of the tetrahedron: the triangle with vertices at the origin, one comma zero, and zero comma one."/>
+  <annotation ref="tt-hyp" text="The hypotenuse y equals one minus x."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+
+<p>
+The role of the projection <m>D</m> and of the inner
+<m>z</m>-integration<mdash/>a column rising from <m>D</m> through the
+solid<mdash/>is animated in <xref ref="fig-triple-column-video"/>.
+</p>
+
+<figure xml:id="fig-triple-column-video">
+<caption>
+Animation of iterated triple integration for
+<xref ref="example-triple-order"/>. The solid is projected onto the
+triangle <m>D</m> in the <m>xy</m>-plane; at each point of <m>D</m> a
+column runs from <m>z = 0</m> up to the surface <m>z = 1 - x^2</m>
+(the inner integral), and the column then sweeps across <m>D</m> (the
+two outer integrals).
+</caption>
+<video xml:id="video-triple-column"
+       source="videos/triple_column_1080p.mp4"
+       width="70%" aspect="16:9"/>
+</figure>
+
+</subsection>
+
+<!-- ================================================================ -->
+<subsection xml:id="sec-triple-case2">
+<title>Case II: <m>E = \{(x,y,z) : h_1(y) \le x \le h_2(y),\ c \le y \le d,\ u_1(x,y) \le z \le u_2(x,y)\}</m></title>
+
+<p>
+The second case is entirely similar, but the projection <m>D</m> is
+described with horizontal strips:
+</p>
+
+<me>
+E = \{(x,y,z) : h_1(y) \le x \le h_2(y),\ c \le y \le d,\
+u_1(x,y) \le z \le u_2(x,y)\},
+</me>
+
+<p>
+and the corresponding iterated integral is
+<m>\displaystyle\int_c^d\!\!\int_{h_1(y)}^{h_2(y)}
+\!\!\int_{u_1(x,y)}^{u_2(x,y)} f\,dz\,dx\,dy</m>. In fact, by
+projecting into the <m>xz</m>- or <m>yz</m>-plane instead, a triple
+integral can be set up in six different orders of integration; the
+next example illustrates three of them.
+</p>
+
+<example xml:id="example-triple-order">
+<title>Example II</title>
+<statement>
+<p>
+Set up the triple integrals below whose value gives the volume of the
+region <m>R</m> of <xref ref="fig-triple-wedge-tikz"/>, bounded by
+the cylinder <m>z = 1 - x^2</m>, the plane <m>y = 1 - x</m>, and the
+coordinate planes. Then, evaluate two out of the three integrals.
+</p>
+
+<p>
+<ol marker="A.">
+<li><p><m>\iiint_R dz\,dx\,dy</m></p></li>
+<li><p><m>\iiint_R dy\,dx\,dz</m></p></li>
+<li><p><m>\iiint_R dx\,dy\,dz</m></p></li>
+</ol>
+</p>
+
+<p>
+<em>Question:</em> How many more triple integrals can you think of for
+computing such a volume? (Three more; six in total.)
+</p>
+</statement>
+</example>
+
+<solution>
+<title>Part A</title>
+<p>
+For the order <m>dz\,dx\,dy</m>, we project into the
+<m>xy</m>-plane (the triangle on the left in
+<xref ref="fig-triple-projections-prefigure"/>):
+<m>0 \le y \le 1</m>, <m>0 \le x \le 1-y</m>, and the 3D figure gives
+<m>0 \le z \le 1 - x^2</m>. Hence
+</p>
+
+<md>
+<mrow>
+\int_{y=0}^{1}\!\!\int_{x=0}^{1-y}\!\!\int_{z=0}^{1-x^2}
+dz\,dx\,dy
+\amp= \int_0^1\!\!\int_0^{1-y}\left(1 - x^2\right)dx\,dy
+= \int_0^1\left[x - \frac{x^3}{3}\right]_{x=0}^{x=1-y} dy
+</mrow>
+<mrow>
+\amp= \int_0^1\left[(1-y) - \frac{(1-y)^3}{3}\right]dy
+= \left[y - \frac{y^2}{2} + \frac{(1-y)^4}{12}\right]_0^1
+</mrow>
+<mrow>
+\amp= \left(1 - \frac12\right) - \frac{1}{12} = \frac{5}{12}.
+</mrow>
+</md>
+</solution>
+
+<solution>
+<title>Part B</title>
+<p>
+For the order <m>dy\,dx\,dz</m>, we project into the
+<m>xz</m>-plane (the middle region in
+<xref ref="fig-triple-projections-prefigure"/>): <m>0 \le z \le 1</m>,
+<m>0 \le x \le \sqrt{1-z}</m>, and the 3D figure gives the limits of
+the last variable: <m>0 \le y \le 1-x</m>. Hence
+</p>
+
+<md>
+<mrow>
+\int_{z=0}^{1}\!\!\int_{x=0}^{\sqrt{1-z}}\!\!\int_{y=0}^{1-x}
+dy\,dx\,dz
+\amp= \int_0^1\!\!\int_0^{\sqrt{1-z}}(1-x)\,dx\,dz
+= \int_0^1\left[x - \frac{x^2}{2}\right]_{x=0}^{x=\sqrt{1-z}} dz
+</mrow>
+<mrow>
+\amp= \int_0^1\left[(1-z)^{1/2} - \tfrac12(1-z)\right]dz
+= \left[-\tfrac23(1-z)^{3/2}
++ \tfrac14(1-z)^2\right]_0^1
+</mrow>
+<mrow>
+\amp= 0 - \left(-\frac23 + \frac14\right) = \frac{5}{12}.
+</mrow>
+</md>
+</solution>
+
+<solution>
+<title>Part C</title>
+<p>
+For the order <m>dx\,dy\,dz</m>, we project into the
+<m>yz</m>-plane (the region on the right in
+<xref ref="fig-triple-projections-prefigure"/>). This time the
+projection must be split by the curve <m>z = 1-(1-y)^2</m> into
+</p>
+
+<md>
+<mrow>
+R_1 \amp= \{(y,z) : 0 \le y \le 1,\ 0 \le z \le 1-(1-y)^2\},
+</mrow>
+<mrow>
+R_2 \amp= \{(y,z) : 0 \le y \le 1,\ 1-(1-y)^2 \le z \le 1\},
+</mrow>
+</md>
+
+<p>
+with <m>0 \le x \le 1-y</m> on <m>R_1</m> (the plane is reached
+first) and <m>0 \le x \le \sqrt{1-z}</m> on <m>R_2</m> (the cylinder
+is reached first). Hence
+</p>
+
+<md>
+<mrow>
+\iiint_R dx\,dy\,dz
+\amp= \int_{y=0}^{1}\!\!\int_{z=0}^{1-(1-y)^2}
+\!\!\int_{x=0}^{1-y} dx\,dz\,dy
++ \int_{y=0}^{1}\!\!\int_{z=1-(1-y)^2}^{1}
+\!\!\int_{x=0}^{\sqrt{1-z}} dx\,dz\,dy
+</mrow>
+<mrow>
+\amp= \frac14 + \frac16 = \frac{5}{12}.
+</mrow>
+</md>
+</solution>
+
+<figure xml:id="fig-triple-wedge-tikz">
+<caption>
+The solid <m>R</m> of <xref ref="example-triple-order"/>, bounded by
+the parabolic cylinder <m>z = 1 - x^2</m>, the vertical plane
+<m>y = 1 - x</m>, and the coordinate planes.
+</caption>
+<image width="70%">
+<description>
+Three coordinate axes in space with a solid bounded above by the
+parabolic cylinder z equals one minus x squared, on the side by the
+vertical plane y equals one minus x, and by the coordinate planes. The
+curved top descends from height one at the z axis to zero at x equals
+one.
+</description>
+<latex-image>
+<![CDATA[\begin{tikzpicture}[line join=round, line cap=round]
+  % Okabe-Ito colorblind-safe palette
+  \definecolor{oiblue}{RGB}{0,114,178}
+  \definecolor{oivermillion}{RGB}{213,94,0}
+  \begin{axis}[
+      view={120}{22},
+      width=11.5cm,
+      axis lines=center,
+      axis line style={-latex, black!75, line width=0.7pt},
+      xlabel={$x$}, ylabel={$y$}, zlabel={$z$},
+      label style={font=\large},
+      ticks=none,
+      xmin=0, xmax=1.5, ymin=0, ymax=1.5, zmin=0, zmax=1.35,
+      clip=false,
+    ]
+    % base triangle
+    \fill[oivermillion, opacity=0.22]
+      (axis cs:0,0,0) -- (axis cs:1,0,0) -- (axis cs:0,1,0) -- cycle;
+    % back face x = 0 (square 0<=y<=1, 0<=z<=1)
+    \fill[oiblue, opacity=0.13]
+      (axis cs:0,0,0) -- (axis cs:0,1,0) -- (axis cs:0,1,1)
+      -- (axis cs:0,0,1) -- cycle;
+    % front face y = 0: region under z = 1-x^2
+    \fill[oiblue, opacity=0.28]
+      (axis cs:0,0,0) -- (axis cs:1,0,0)
+      \foreach \t in {0.95,0.9,...,0.0} {
+        -- (axis cs:\t,0,{1 - \t*\t})
+      } -- cycle;
+    % slanted plane y = 1 - x: strip under the cylinder
+    \fill[oiblue, opacity=0.38]
+      (axis cs:1,0,0) -- (axis cs:0,1,0) -- (axis cs:0,1,1)
+      \foreach \t in {0.05,0.1,...,1.0} {
+        -- (axis cs:\t,{1-\t},{1 - \t*\t})
+      } -- cycle;
+    % cylinder top z = 1 - x^2 over the triangle
+    \addplot3[surf, shader=faceted, faceted color=black!45,
+              point meta={z},
+              colormap={softz}{color=(oiblue!15!white) color=(oiblue!45!white)},
+              opacity=0.6, fill opacity=0.6,
+              domain=0:1, samples=13,
+              y domain=0:1, samples y=9,
+              z buffer=sort, forget plot]
+      (x, {y*(1-x)}, {1 - x^2});
+    % edges
+    \draw[oiblue!70!black, line width=1.0pt]
+      (axis cs:0,0,1) -- (axis cs:0,1,1);
+    \addplot3[oiblue!70!black, line width=1.0pt, domain=0:1,
+        samples=25, samples y=0, forget plot]
+      (x, 0, {1 - x^2});
+    \addplot3[oiblue!70!black, line width=1.0pt, domain=0:1,
+        samples=25, samples y=0, forget plot]
+      (x, {1 - x}, {1 - x^2});
+    % labels
+    \node[font=\large, anchor=north west] at (axis description cs:0.0,0.98)
+      {$z = 1 - x^2$};
+    \node[anchor=west, font=\small] at (axis cs:0.72,0.62,0.05)
+      {$y = 1 - x$};
+    \addplot3[only marks, mark=*, mark size=1.4pt, color=black,
+        forget plot] coordinates {(0,0,1) (1,0,0) (0,1,0)};
+    \node[anchor=south east, font=\small] at (axis cs:0,-0.02,1.02)
+      {$1$};
+    \node[anchor=north, font=\small] at (axis cs:1.07,0,-0.06)
+      {$1$};
+    \node[anchor=west, font=\small] at (axis cs:0,1.06,0.06)
+      {$1$};
+  \end{axis}
+\end{tikzpicture}]]>
+</latex-image>
+</image>
+</figure>
+
+<figure xml:id="fig-triple-projections-prefigure">
+<caption>
+The three projections of the solid <m>R</m>. Left: into the
+<m>xy</m>-plane (order <m>dz\,dx\,dy</m>). Middle: into the
+<m>xz</m>-plane (order <m>dy\,dx\,dz</m>). Right: into the
+<m>yz</m>-plane (order <m>dx\,dy\,dz</m>), which the curve
+<m>z = 1-(1-y)^2</m> splits into <m>R_1</m> and <m>R_2</m>.
+</caption>
+<sidebyside widths="31% 31% 31%">
+<image>
+<prefigure xmlns="https://prefigure.org" label="prefigure-proj-xy">
+<diagram dimensions="(210,200)" margins="10">
+<coordinates bbox="(-0.3,-0.3,1.45,1.35)">
+<axes at="pxy-axes" xlabel="x" ylabel="y" decorations="no" arrows="1"/>
+<polygon at="pxy-D" fill="#fbe3d0" stroke="none" closed="yes"
+    points="((0,0),(1,0),(0,1))"/>
+<line at="pxy-hyp" endpoints="((1,0),(0,1))" stroke="#0072B2"
+    thickness="3"/>
+<label at="pxy-label" anchor="(0.6,0.6)" alignment="ne"
+    color="#0072B2"><m>y = 1-x</m></label>
+<point at="pxy-1" p="(1,0)" fill="black" alignment="s">
+<m>1</m>
+</point>
+<point at="pxy-1y" p="(0,1)" fill="black" alignment="w">
+<m>1</m>
+</point>
+</coordinates>
+<annotations>
+<annotation ref="figure" text="The x y projection: a right triangle with legs from zero to one along both axes and hypotenuse y equals one minus x.">
+  <annotation ref="pxy-D" text="The triangular projection into the x y plane."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+<image>
+<prefigure xmlns="https://prefigure.org" label="prefigure-proj-xz">
+<diagram dimensions="(210,200)" margins="10">
+<definition>par(t) = (t, 1 - t^2)</definition>
+<coordinates bbox="(-0.3,-0.3,1.45,1.35)">
+<axes at="pxz-axes" xlabel="x" ylabel="z" decorations="no" arrows="1"/>
+<polygon at="pxz-D" fill="#fbe3d0" stroke="none" closed="yes"
+    points="((0,0),(1,0),(0.995,0.00997),(0.98,0.0396),(0.95,0.0975),(0.9,0.19),(0.85,0.2775),(0.8,0.36),(0.75,0.4375),(0.7,0.51),(0.65,0.5775),(0.6,0.64),(0.55,0.6975),(0.5,0.75),(0.45,0.7975),(0.4,0.84),(0.35,0.8775),(0.3,0.91),(0.25,0.9375),(0.2,0.96),(0.15,0.9775),(0.1,0.99),(0.05,0.9975),(0,1))"/>
+<parametric-curve at="pxz-par" function="par" domain="(0,1)"
+    stroke="#0072B2" thickness="3"/>
+<label at="pxz-label" anchor="(0.68,0.72)" alignment="ne"
+    color="#0072B2"><m>z = 1-x^2</m></label>
+<point at="pxz-1" p="(1,0)" fill="black" alignment="s">
+<m>1</m>
+</point>
+<point at="pxz-1z" p="(0,1)" fill="black" alignment="w">
+<m>1</m>
+</point>
+</coordinates>
+<annotations>
+<annotation ref="figure" text="The x z projection: the region under the parabola z equals one minus x squared in the first quadrant.">
+  <annotation ref="pxz-D" text="The projection into the x z plane, bounded above by the parabola."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+<image>
+<prefigure xmlns="https://prefigure.org" label="prefigure-proj-yz">
+<diagram dimensions="(210,200)" margins="10">
+<definition>cur(t) = (t, 1 - (1-t)^2)</definition>
+<coordinates bbox="(-0.3,-0.3,1.45,1.35)">
+<axes at="pyz-axes" xlabel="y" ylabel="z" decorations="no" arrows="1"/>
+<rectangle at="pyz-D" lower-left="(0,0)" dimensions="(1,1)"
+    fill="#fbe3d0" stroke="#555555" thickness="1"/>
+<parametric-curve at="pyz-cur" function="cur" domain="(0,1)"
+    stroke="#0072B2" thickness="3"/>
+<label at="pyz-R1" anchor="(0.62,0.3)" alignment="c">
+<m>R_1</m>
+</label>
+<label at="pyz-R2" anchor="(0.28,0.82)" alignment="c">
+<m>R_2</m>
+</label>
+<label at="pyz-label" anchor="(0.98,0.55)" alignment="se"
+    color="#0072B2"><m>z = 1-(1-y)^2</m></label>
+<point at="pyz-1" p="(1,0)" fill="black" alignment="s">
+<m>1</m>
+</point>
+<point at="pyz-1z" p="(0,1)" fill="black" alignment="w">
+<m>1</m>
+</point>
+</coordinates>
+<annotations>
+<annotation ref="figure" text="The y z projection: the unit square split by the curve z equals one minus the square of one minus y into a lower region R 1 and an upper region R 2.">
+  <annotation ref="pyz-D" text="The unit square projection into the y z plane."/>
+  <annotation ref="pyz-cur" text="The curve z equals one minus the square of one minus y, which separates R 1 from R 2 and forces the split into two integrals."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</sidebyside>
+</figure>
+
+</subsection>
+
+<!-- ================================================================ -->
+<subsection xml:id="sec-triple-mass">
+<title>Mass With Variable Density</title>
+
+<example xml:id="example-triple-mass">
+<title>Example III</title>
+<statement>
+<p>
+Assume that the density (mass per unit volume) is given by
+<m>\rho(x,y,z) = x</m>. Evaluate the mass <m>M</m> of the solid
+<m>R</m> of <xref ref="fig-triple-wedge-tikz"/>.
+</p>
+</statement>
+</example>
+
+<solution>
+<p>
+Using <m>M = \iiint_R \rho(x,y,z)\,dV</m> with the same limits as in
+Part A of <xref ref="example-triple-order"/>:
+</p>
+
+<md>
+<mrow>
+M \amp= \int_{y=0}^{1}\!\!\int_{x=0}^{1-y}\!\!\int_{z=0}^{1-x^2}
+x\,dz\,dx\,dy
+= \int_0^1\!\!\int_0^{1-y} x\left(1 - x^2\right)dx\,dy
+</mrow>
+<mrow>
+\amp= \int_0^1\left[\frac{x^2}{2}
+- \frac{x^4}{4}\right]_{x=0}^{x=1-y} dy
+= \int_0^1\left[\frac{(1-y)^2}{2}
+- \frac{(1-y)^4}{4}\right]dy
+</mrow>
+<mrow>
+\amp= \left[-\frac{(1-y)^3}{6}
++ \frac{(1-y)^5}{20}\right]_0^1
+= \frac16 - \frac1{20} = \frac{7}{60}.
+</mrow>
+</md>
+</solution>
+
+</subsection>
+
+</section>
