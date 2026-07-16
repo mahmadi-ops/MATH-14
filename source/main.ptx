@@ -27,6 +27,7 @@
     <xi:include href="double-integrals-general-regions.ptx" />
     <xi:include href="polar-coordinates.ptx" />
     <xi:include href="hw1-exercises.ptx"/>
+    <xi:include href="subsec-brain-map.ptx" />
   </article>
 
 </pretext>

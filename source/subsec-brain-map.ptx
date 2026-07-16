@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Brain map: the integrals of vector calculus.
+     Drop into source/sections/ (or wherever your section fragments live) and
+     pull it in with  <xi:include href="sections/subsec-brain-map.ptx"/>.
+     Requires assets/brain-map.html (external dir) and the qrcode stub
+     generated-assets/qrcode/brain-map-url.xml. -->
+<section xml:id="subsec-brain-map" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Brain map: the integrals of vector calculus</title>
+
+  <p>
+    The map below gathers every integral of the chapter on one page.
+    Parametrization feeds the line integrals; the five theorems act as
+    bridges, trading an integral over a boundary for an integral over the
+    region, surface, or solid it bounds; and each multiple integral carries
+    its coordinate substitutions. Follow the gold lines.
+  </p>
+
+  <interactive xml:id="brain-map" iframe="brain-map.html" width="100%" aspect="16:9">
+    <static>
+      <p>Interactive brain map of the chapter's integrals (view in the HTML version).</p>
+    </static>
+  </interactive>
+
+</section>
