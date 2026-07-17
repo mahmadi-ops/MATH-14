@@ -1,0 +1,57 @@
+<diagram>
+  <annotations>
+    <annotation id="prefigure-curl-circulation-figure" speech2="The same blue rectangle in the same gray vector field, but now the pink arrows point along the sides, tracing a counterclockwise loop: rightward along the bottom, up the right side, leftward along the top, and down the left side.">
+      <grouped>prefigure-curl-circulation-figure</grouped>
+      <position>1</position>
+      <children>
+        <active>prefigure-curl-circulation-cf-rect</active>
+        <active>prefigure-curl-circulation-cf-bottom</active>
+        <active>prefigure-curl-circulation-cf-right</active>
+        <active>prefigure-curl-circulation-cf-top</active>
+        <active>prefigure-curl-circulation-cf-left</active>
+      </children>
+      <components>
+        <active>prefigure-curl-circulation-cf-rect</active>
+        <active>prefigure-curl-circulation-cf-bottom</active>
+        <active>prefigure-curl-circulation-cf-right</active>
+        <active>prefigure-curl-circulation-cf-top</active>
+        <active>prefigure-curl-circulation-cf-left</active>
+      </components>
+    </annotation>
+    <annotation id="prefigure-curl-circulation-cf-rect" speech2="The rectangle around which we measure the counterclockwise circulation.">
+      <active>prefigure-curl-circulation-cf-rect</active>
+      <position>1</position>
+      <parents>
+        <grouped>prefigure-curl-circulation-figure</grouped>
+      </parents>
+    </annotation>
+    <annotation id="prefigure-curl-circulation-cf-bottom" speech2="Along the bottom the direction of travel is i, and F dot i is positive: the field pushes with the loop.">
+      <active>prefigure-curl-circulation-cf-bottom</active>
+      <position>2</position>
+      <parents>
+        <grouped>prefigure-curl-circulation-figure</grouped>
+      </parents>
+    </annotation>
+    <annotation id="prefigure-curl-circulation-cf-right" speech2="Up the right side the direction of travel is j, and F dot j is positive.">
+      <active>prefigure-curl-circulation-cf-right</active>
+      <position>3</position>
+      <parents>
+        <grouped>prefigure-curl-circulation-figure</grouped>
+      </parents>
+    </annotation>
+    <annotation id="prefigure-curl-circulation-cf-top" speech2="Along the top the direction of travel is negative i, and F dot negative i is negative: the field pushes against the loop.">
+      <active>prefigure-curl-circulation-cf-top</active>
+      <position>4</position>
+      <parents>
+        <grouped>prefigure-curl-circulation-figure</grouped>
+      </parents>
+    </annotation>
+    <annotation id="prefigure-curl-circulation-cf-left" speech2="Down the left side the direction of travel is negative j, and F dot negative j is negative.">
+      <active>prefigure-curl-circulation-cf-left</active>
+      <position>5</position>
+      <parents>
+        <grouped>prefigure-curl-circulation-figure</grouped>
+      </parents>
+    </annotation>
+  </annotations>
+</diagram>

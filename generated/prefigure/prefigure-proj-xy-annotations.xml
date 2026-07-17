@@ -1,0 +1,21 @@
+<diagram>
+  <annotations>
+    <annotation id="prefigure-proj-xy-figure" speech2="The x y projection: a right triangle with legs from zero to one along both axes and hypotenuse y equals one minus x.">
+      <grouped>prefigure-proj-xy-figure</grouped>
+      <position>1</position>
+      <children>
+        <active>prefigure-proj-xy-pxy-D</active>
+      </children>
+      <components>
+        <active>prefigure-proj-xy-pxy-D</active>
+      </components>
+    </annotation>
+    <annotation id="prefigure-proj-xy-pxy-D" speech2="The triangular projection into the x y plane.">
+      <active>prefigure-proj-xy-pxy-D</active>
+      <position>1</position>
+      <parents>
+        <grouped>prefigure-proj-xy-figure</grouped>
+      </parents>
+    </annotation>
+  </annotations>
+</diagram>
