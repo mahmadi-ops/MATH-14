@@ -1,0 +1,30 @@
+<p>
+Use the three sliders to build the volume element one edge at a time.
+The <m>dr</m> slider sets the radial thickness of the block, the
+<m>d\theta</m> slider opens its angular width, and the <m>dz</m> slider
+raises its height. Start with all three small, then increase them in
+turn. The edges controlled by <m>dr</m> and <m>dz</m> are straight
+segments of exactly those lengths, but the edge swept out by
+<m>d\theta</m> is a circular arc of length <m>r\,d\theta</m><mdash/>it
+grows in proportion to the block's distance <m>r</m> from the
+<m>z</m>-axis. Slide <m>d\theta</m> alone and watch that curved edge
+lengthen while the radial and vertical edges stay fixed.
+</p>
+
+<p>
+Up close the block is essentially a rectangular box with edge lengths
+<m>dr</m>, <m>r\,d\theta</m>, and <m>dz</m>, so multiplying the three
+edges gives
+</p>
+
+<me>
+dV = dr \cdot r\,d\theta \cdot dz = r\,dr\,d\theta\,dz.
+</me>
+
+<p>
+The extra factor of <m>r</m><mdash/>the one feature that separates the
+cylindrical volume element from an ordinary <m>dx\,dy\,dz</m>
+box<mdash/>comes entirely from that arc-length edge. Set <m>r</m> near
+zero and the block nearly collapses; move it outward and the same
+angular sweep <m>d\theta</m> encloses far more volume.
+</p>

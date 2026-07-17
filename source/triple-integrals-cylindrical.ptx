@@ -38,7 +38,7 @@ A point <m>P(r,\theta,z)</m> in cylindrical coordinates:
 <m>(r,\theta,0)</m> into the <m>xy</m>-plane, and <m>z</m> is its
 usual height.
 </caption>
-<image width="60%">
+<image width="80%">
 <description>
 Three coordinate axes in space. A point P is shown above the x y
 plane. A segment of length r runs from the origin to the projection of
@@ -111,6 +111,35 @@ dV = r\,dr\,d\theta\,dz,
 <p>
 which can be seen in <xref ref="fig-cylindrical-element-tikz"/>.
 </p>
+
+<interactive geogebra="qjpb9re8"
+             width="80%" aspect="60:49"
+             material-width="600" material-height="490">
+<instructions>
+<p>
+Use the three sliders to build the volume element one edge at a time.
+The <m>dr</m> slider sets the radial thickness of the block, the
+<m>d\theta</m> slider opens its angular width, and the <m>dz</m> slider
+raises its height. Start with all three small, then increase them in
+turn. The edges controlled by <m>dr</m> and <m>dz</m> are straight
+segments of exactly those lengths, but the edge swept out by
+<m>d\theta</m> is a circular arc of length <m>r\,d\theta</m><mdash/>it
+grows in proportion to the block's distance <m>r</m> from the
+<m>z</m>-axis. Slide <m>d\theta</m> alone and watch that curved edge
+lengthen while the radial and vertical edges stay fixed.
+</p>
+
+<p>
+Up close the block is essentially a rectangular box with edge lengths
+<m>dr</m>, <m>r\,d\theta</m>, and <m>dz</m>, so multiplying the three
+edges gives:
+<me>
+dV = dr \cdot r\,d\theta \cdot dz = r\,dr\,d\theta\,dz.
+</me>
+</p>
+
+</instructions>
+</interactive>
 
 <figure xml:id="fig-cylindrical-element-tikz">
 <caption>
@@ -307,8 +336,11 @@ m = \iiint_E K\sqrt{x^2+y^2}\,dV
 <mrow>
 \amp= \int_0^{2\pi}\!\!\int_0^1
 Kr^2\left[4 - \left(1 - r^2\right)\right]dr\,d\theta
-= K\int_0^{2\pi}\!d\theta\int_0^1\left(3r^2 + r^4\right)dr
 </mrow>
+<mrow>
+\amp= K\int_0^{2\pi}\!d\theta\int_0^1\left(3r^2 + r^4\right)dr
+</mrow>
+
 <mrow>
 \amp= 2\pi K\left[r^3 + \frac{r^5}{5}\right]_0^1
 = \frac{12\pi K}{5}.

@@ -1087,7 +1087,104 @@ rectangle sweep out its image, and <q>Clear Traces</q> to start over.
 </instructions>
 </interactive>
 </statement>
+<solution xml:id="solution-watching-substitution">
+<p>
+<em>Reading off the <m>uv</m>-rectangle.</em> The transformation is
+already solved for <m>x</m> and <m>y</m>, so we can translate the
+description of <m>E</m> directly. Since <m>x = u^2/4</m> with
+<m>u \ge 0</m>, we have <m>u = 2\sqrt{x}</m>, and therefore
+</p>
+
+<me>
+1 \le x \le 4 \quad\Longrightarrow\quad 2 \le u \le 4.
+</me>
+
+<p>
+For the <m>y</m>-bounds, note that <m>\sqrt{x} = u/2</m>, so the curves
+<m>y = \tfrac12\sqrt{x}</m> and <m>y = \tfrac52\sqrt{x}</m> become
+<m>y = u/4</m> and <m>y = 5u/4</m>. Since <m>y = uv/4</m>, dividing these
+inequalities by <m>u/4 &gt; 0</m> gives
+</p>
+
+<me>
+\tfrac12\sqrt{x} \le y \le \tfrac52\sqrt{x}
+\quad\Longrightarrow\quad 1 \le v \le 5.
+</me>
+
+<p>
+Thus the region <m>E</m> is the image of the rectangle with constant
+limits
+</p>
+
+<me>
+S = \{ (u,v) : 2 \le u \le 4,\ 1 \le v \le 5 \},
+</me>
+
+<p>
+which is exactly the rectangle the interactive carries onto <m>E</m>.
+This settles the graph in the <m>uv</m>-plane: it is the axis-aligned
+box <m>[2,4]\times[1,5]</m>.
+</p>
+
+<p>
+<em>The Jacobian.</em> Because the transformation is given in the
+direction <m>x = x(u,v)</m>, <m>y = y(u,v)</m>, we compute
+<m>\partial(x,y)/\partial(u,v)</m> directly:
+</p>
+
+<me>
+\frac{\partial(x,y)}{\partial(u,v)}
+= \begin{vmatrix}
+x_u \amp x_v \\
+y_u \amp y_v
+\end{vmatrix}
+= \begin{vmatrix}
+u/2 \amp 0 \\
+v/4 \amp u/4
+\end{vmatrix}
+= \frac{u}{2}\cdot\frac{u}{4} - 0 = \frac{u^2}{8}.
+</me>
+
+<p>
+On <m>S</m> we have <m>u \ge 2 &gt; 0</m>, so
+<m>\left| \partial(x,y)/\partial(u,v) \right| = u^2/8</m>.
+</p>
+
+<p>
+<em>The integrand.</em> With <m>x = u^2/4</m> and <m>y = uv/4</m>,
+</p>
+
+<me>
+\frac{x}{y^2}
+= \frac{u^2/4}{(uv/4)^2}
+= \frac{u^2/4}{u^2 v^2/16}
+= \frac{4}{v^2}.
+</me>
+
+<p>
+<em>Evaluating.</em> Applying <xref ref="eq-sub-2d"/>, the integral
+separates into a product of single-variable integrals:
+</p>
+
+<md>
+<mrow>\iint_E \frac{x}{y^2}\, dx\, dy
+\amp= \iint_S \frac{4}{v^2}\cdot\frac{u^2}{8}\, du\, dv
+= \frac12 \int_1^5 \int_2^4 \frac{u^2}{v^2}\, du\, dv</mrow>
+<mrow>\amp= \frac12 \left( \int_2^4 u^2\, du \right)
+\left( \int_1^5 \frac{dv}{v^2} \right)
+= \frac12 \cdot \frac{56}{3} \cdot \frac{4}{5}
+= \frac{112}{15}.</mrow>
+</md>
+
+<p>
+The awkward <m>\sqrt{x}</m>-limits in the <m>xy</m>-plane have become the
+constant limits of a rectangle, and the integrand collapses to a
+function of <m>v</m> alone.
+</p>
+</solution>
+
 </activity>
+
 
 </subsection>
 
