@@ -179,6 +179,7 @@ field <m>-y\,\mathbf{i} + x\,\mathbf{j}</m>.
 </description>
 <latex-image>
 <![CDATA[\begin{tikzpicture}[line join=round, line cap=round]
+  \tikzset{lbl/.style={fill=white, fill opacity=0.82, text opacity=1, inner sep=2.5pt, rounded corners=2pt}}
   \definecolor{oiblue}{RGB}{0,114,178}
   % ---- left: radial field ----
   \begin{axis}[
@@ -199,9 +200,9 @@ field <m>-y\,\mathbf{i} + x\,\mathbf{j}</m>.
           \edef\tmp{\noexpand\draw[-latex, oiblue, line width=0.8pt]
             (axis cs:\px,\py,\pz)
             -- (axis cs:{\px*1.38},{\py*1.38},{\pz*1.38});}\tmp}}}
-    \node[font=\small, oiblue, anchor=south] at (axis cs:0,0,1.85)
+    \node[lbl, font=\small, text=oiblue, anchor=south] at (axis cs:0,0,1.85)
       {$\mathbf{F} = x\,\mathbf{i} + y\,\mathbf{j} + z\,\mathbf{k}$};
-    \node[font=\small, anchor=north] at (axis cs:0,0,-1.8)
+    \node[lbl, font=\small, anchor=north] at (axis cs:0,0,-1.8)
       {$\nabla \cdot \mathbf{F} = 3$};
   \end{axis}
   % ---- right: rotational field ----
@@ -222,9 +223,9 @@ field <m>-y\,\mathbf{i} + x\,\mathbf{j}</m>.
         \edef\tmp{\noexpand\draw[-latex, oiblue, line width=0.8pt]
           (axis cs:{cos(\aa)},{sin(\aa)},\pz)
           -- (axis cs:{cos(\aa)-0.42*sin(\aa)},{sin(\aa)+0.42*cos(\aa)},\pz);}\tmp}}
-    \node[font=\small, oiblue, anchor=south] at (axis cs:0,0,1.85)
+    \node[lbl, font=\small, text=oiblue, anchor=south] at (axis cs:0,0,1.85)
       {$\mathbf{F} = -y\,\mathbf{i} + x\,\mathbf{j}$};
-    \node[font=\small, anchor=north] at (axis cs:0,0,-1.8)
+    \node[lbl, font=\small, anchor=north] at (axis cs:0,0,-1.8)
       {$\nabla \cdot \mathbf{F} = 0$};
   \end{axis}
 \end{tikzpicture}]]>
@@ -326,6 +327,7 @@ every direction and growing with distance from the origin.
 </description>
 <latex-image>
 <![CDATA[\begin{tikzpicture}[line join=round, line cap=round]
+  \tikzset{lbl/.style={fill=white, fill opacity=0.82, text opacity=1, inner sep=2.5pt, rounded corners=2pt}}
   \definecolor{oivermillion}{RGB}{213,94,0}
   \begin{axis}[
       view={115}{18},
@@ -361,7 +363,7 @@ every direction and growing with distance from the origin.
       (axis cs:0,0,0.75) -- (axis cs:0,0,1.35);
     \draw[-latex, oivermillion, line width=0.9pt]
       (axis cs:0,0,-0.75) -- (axis cs:0,0,-1.35);
-    \node[font=\normalsize, oivermillion, anchor=west]
+    \node[lbl, font=\normalsize, text=oivermillion, anchor=west]
       at (axis cs:1.35,1.3,0.9)
       {$\mathbf{F} = x\,\mathbf{i} + y\,\mathbf{j} + z\,\mathbf{k}$};
   \end{axis}

@@ -77,6 +77,7 @@ and a leader line labels its mass
 </description>
 <latex-image>
 <![CDATA[\begin{tikzpicture}[line join=round, line cap=round]
+  \tikzset{lbl/.style={fill=white, fill opacity=0.82, text opacity=1, inner sep=2.5pt, rounded corners=2pt}}
   % Okabe-Ito colorblind-safe palette
   \definecolor{oigreen}{RGB}{0,158,115}
   \definecolor{oipurple}{RGB}{204,121,167}
@@ -125,14 +126,14 @@ and a leader line labels its mass
       (axis cs:{\cx+\hs},{\cy+\hs},{\cz+\hs}) --
       (axis cs:{\cx-\hs},{\cy+\hs},{\cz+\hs}) -- cycle;
     % ---- labels ----
-    \node[font=\large] at (axis cs:-1.7,-0.4,3.1) {$D$};
+    \node[lbl, font=\large] at (axis cs:-1.7,-0.4,3.1) {$D$};
     \draw[black!70, line width=0.5pt]
       (axis cs:{\cx},{\cy+\hs},{\cz+\hs}) -- (axis cs:1.6,2.0,3.7);
-    \node[font=\normalsize, anchor=west] at (axis cs:1.6,2.0,3.7)
+    \node[lbl, font=\normalsize, anchor=west] at (axis cs:1.6,2.0,3.7)
       {$\Delta m_k = \delta(x_k,y_k,z_k)\,\Delta V_k$};
     \draw[black!70, line width=0.5pt]
       (axis cs:{\cx},{\cy+\hs},{\cz-\hs}) -- (axis cs:1.2,2.3,1.9);
-    \node[font=\normalsize, anchor=west] at (axis cs:1.2,2.3,1.9)
+    \node[lbl, font=\normalsize, anchor=west] at (axis cs:1.2,2.3,1.9)
       {$(x_k, y_k, z_k)$};
   \end{axis}
 \end{tikzpicture}]]>
@@ -264,6 +265,7 @@ mass.
 </description>
 <latex-image>
 <![CDATA[\begin{tikzpicture}[line join=round, line cap=round]
+  \tikzset{lbl/.style={fill=white, fill opacity=0.82, text opacity=1, inner sep=2.5pt, rounded corners=2pt}}
   % Okabe-Ito colorblind-safe palette
   \definecolor{oigreen}{RGB}{0,158,115}
   \definecolor{oiblue}{RGB}{0,114,178}
@@ -315,19 +317,19 @@ mass.
       (axis cs:0,0,0) -- (axis cs:0,0,4);
     % ---- center of mass ----
     \fill[oimagenta] (axis cs:0,0,1.3333) circle (2.6pt);
-    \node[font=\normalsize, anchor=west, oimagenta]
+    \node[lbl, font=\normalsize, anchor=west, text=oimagenta]
       at (axis cs:0.15,0.55,1.55) {c.m. $\left(0,0,\tfrac{4}{3}\right)$};
     % ---- labels ----
     \draw[black!70, line width=0.5pt]
       (axis cs:{1.35*cos(35)},{1.35*sin(35)},{4-1.35^2}) -- (axis cs:1.9,2.5,3.4);
-    \node[font=\normalsize, anchor=west] at (axis cs:1.9,2.5,3.4)
+    \node[lbl, font=\normalsize, anchor=west] at (axis cs:1.9,2.5,3.4)
       {$z = 4 - x^2 - y^2$};
     \draw[black!70, line width=0.5pt]
       (axis cs:{2*cos(320)},{2*sin(320)},0) -- (axis cs:1.4,-2.75,0.75);
-    \node[font=\normalsize, anchor=east] at (axis cs:1.4,-2.75,0.75)
+    \node[lbl, font=\normalsize, anchor=east] at (axis cs:1.4,-2.75,0.75)
       {$x^2 + y^2 = 4$};
-    \node[font=\large] at (axis cs:1.15,1.5,0) {$R$};
-    \node[font=\normalsize] at (axis cs:-0.3,-0.25,0) {$0$};
+    \node[lbl, font=\large] at (axis cs:1.15,1.5,0) {$R$};
+    \node[lbl, font=\normalsize] at (axis cs:-0.3,-0.25,0) {$0$};
   \end{axis}
 \end{tikzpicture}]]>
 </latex-image>
@@ -477,13 +479,14 @@ over <m>0 \le x \le 1</m>, with its centroid at
 <graph at="cb-square" function="g" domain="(-0.2,1.22)" stroke="red"
        thickness="2.5"/>
 <point at="cb-origin" p="(0,0)" fill="black" size="3"/>
-<point at="cb-one" p="(1,1)" fill="black" size="3" alignment="se">
+<point at="cb-one" clear-background="yes" background-margin="3" p="(1,1)" fill="black" size="3" alignment="se">
 <m>(1,1)</m>
 </point>
-<point at="cb-centroid" p="(0.45,0.45)" fill="maroon" size="4"
-       alignment="se">
+<point at="cb-centroid" p="(0.45,0.45)" fill="maroon" size="4"/>
+<label at="cb-centroid-label" anchor="(0.5,0.4)" alignment="se"
+       clear-background="yes" background-margin="4">
 <m>\left(\frac{9}{20},\frac{9}{20}\right)</m>
-</point>
+</label>
 <label at="cb-sqrt-label" anchor="(1.5,0.72)" alignment="sw"
        color="blue">
 <m>y=\sqrt{x}</m>
@@ -600,11 +603,11 @@ is marked in maroon.
 <parametric-curve at="cd-cardioid" function="c" domain="(0,2*pi)"
                   closed="yes" fill="#9ecfff" stroke="blue"
                   thickness="2.5"/>
-<point at="cd-centroid" p="(0.8333,0)" fill="maroon" size="4"
+<point at="cd-centroid" clear-background="yes" background-margin="3" p="(0.8333,0)" fill="maroon" size="4"
        alignment="ne">
 <m>\left(\frac{5}{6},0\right)</m>
 </point>
-<label at="cd-curve-label" anchor="(1.55,-1.05)" alignment="se"
+<label at="cd-curve-label" clear-background="yes" background-margin="4" anchor="(1.55,-1.05)" alignment="se"
        color="blue">
 <m>r=1+\cos(\theta)</m>
 </label>

@@ -38,19 +38,19 @@ the outward components of <m>\mathbf{F}</m> on each side.
               spacings="((0.7,1.1,5.9),(0.3,1.0,4.0))" stroke="#bbbbbb"/>
 <polygon closed="yes" at="df-rect" points="((1.2,1.0),(4.8,1.0),(4.8,3.2),(1.2,3.2))"
          stroke="#2b9ad6" thickness="2.5" fill="none"/>
-<point at="df-corner-bl" p="(1.2,1.0)" fill="#d02090" size="3"
+<point at="df-corner-bl" clear-background="yes" background-margin="3" p="(1.2,1.0)" fill="#d02090" size="3"
        alignment="sw">
 <m>(x,y)</m>
 </point>
-<point at="df-corner-br" p="(4.8,1.0)" fill="#2b9ad6" size="3"
+<point at="df-corner-br" clear-background="yes" background-margin="3" p="(4.8,1.0)" fill="#2b9ad6" size="3"
        alignment="se">
 <m>(x+\Delta x, y)</m>
 </point>
-<point at="df-corner-tl" p="(1.2,3.2)" fill="#2b9ad6" size="3"
+<point at="df-corner-tl" clear-background="yes" background-margin="3" p="(1.2,3.2)" fill="#2b9ad6" size="3"
        alignment="nw">
 <m>(x, y+\Delta y)</m>
 </point>
-<point at="df-corner-tr" p="(4.8,3.2)" fill="#2b9ad6" size="3"
+<point at="df-corner-tr" clear-background="yes" background-margin="3" p="(4.8,3.2)" fill="#2b9ad6" size="3"
        alignment="ne">
 <m>(x+\Delta x, y+\Delta y)</m>
 </point>
@@ -62,25 +62,25 @@ the outward components of <m>\mathbf{F}</m> on each side.
       stroke="#e05090" thickness="3"/>
 <line at="df-left" p1="(1.2,2.1)" p2="(0.65,2.1)" arrows="1"
       stroke="#e05090" thickness="3"/>
-<label at="df-top-label" anchor="(3.05,3.85)" alignment="e">
+<label at="df-top-label" clear-background="yes" background-margin="4" anchor="(3.05,3.85)" alignment="e">
 <m>\mathbf{F}\cdot\mathbf{j}\gt 0</m>
 </label>
-<label at="df-bottom-label" anchor="(3.05,0.4)" alignment="e">
+<label at="df-bottom-label" clear-background="yes" background-margin="4" anchor="(3.05,0.4)" alignment="e">
 <m>\mathbf{F}\cdot(-\mathbf{j})\mathrel{\unicode{x3C}} 0</m>
 </label>
-<label at="df-right-label" anchor="(5.45,2.3)" alignment="ne">
+<label at="df-right-label" clear-background="yes" background-margin="4" anchor="(5.45,2.3)" alignment="ne">
 <m>\mathbf{F}\cdot\mathbf{i}\gt 0</m>
 </label>
-<label at="df-left-label" anchor="(0.55,2.35)" alignment="nw">
+<label at="df-left-label" clear-background="yes" background-margin="4" anchor="(0.55,2.35)" alignment="nw">
 <m>\mathbf{F}\cdot(-\mathbf{i})\mathrel{\unicode{x3C}} 0</m>
 </label>
-<label at="df-A" anchor="(3.0,2.35)" alignment="c">
+<label at="df-A" clear-background="yes" background-margin="4" anchor="(3.0,2.35)" alignment="c">
 <m>A</m>
 </label>
-<label at="df-dx" anchor="(3.0,0.05)" alignment="s">
+<label at="df-dx" clear-background="yes" background-margin="4" anchor="(3.0,0.05)" alignment="s">
 <m>\Delta x</m>
 </label>
-<label at="df-dy" anchor="(5.95,2.1)" alignment="e">
+<label at="df-dy" clear-background="yes" background-margin="4" anchor="(5.95,2.1)" alignment="e">
 <m>\Delta y</m>
 </label>
 </coordinates>
@@ -335,19 +335,19 @@ direction of travel.
               spacings="((0.7,1.1,5.9),(0.3,1.0,4.0))" stroke="#bbbbbb"/>
 <polygon closed="yes" at="cf-rect" points="((1.2,1.0),(4.8,1.0),(4.8,3.2),(1.2,3.2))"
          stroke="#2b9ad6" thickness="2.5" fill="none"/>
-<point at="cf-corner-bl" p="(1.2,1.0)" fill="#d02090" size="3"
+<point at="cf-corner-bl" clear-background="yes" background-margin="3" p="(1.2,1.0)" fill="#d02090" size="3"
        alignment="sw">
 <m>(x,y)</m>
 </point>
-<point at="cf-corner-br" p="(4.8,1.0)" fill="#2b9ad6" size="3"
+<point at="cf-corner-br" clear-background="yes" background-margin="3" p="(4.8,1.0)" fill="#2b9ad6" size="3"
        alignment="se">
 <m>(x+\Delta x, y)</m>
 </point>
-<point at="cf-corner-tl" p="(1.2,3.2)" fill="#2b9ad6" size="3"
+<point at="cf-corner-tl" clear-background="yes" background-margin="3" p="(1.2,3.2)" fill="#2b9ad6" size="3"
        alignment="nw">
 <m>(x, y+\Delta y)</m>
 </point>
-<point at="cf-corner-tr" p="(4.8,3.2)" fill="#2b9ad6" size="3"
+<point at="cf-corner-tr" clear-background="yes" background-margin="3" p="(4.8,3.2)" fill="#2b9ad6" size="3"
        alignment="ne">
 <m>(x+\Delta x, y+\Delta y)</m>
 </point>
@@ -359,25 +359,25 @@ direction of travel.
       stroke="#e05090" thickness="3"/>
 <line at="cf-left" p1="(1.2,2.3)" p2="(1.2,1.75)" arrows="1"
       stroke="#e05090" thickness="3"/>
-<label at="cf-top-label" anchor="(3.05,3.85)" alignment="e">
+<label at="cf-top-label" clear-background="yes" background-margin="4" anchor="(3.05,3.85)" alignment="e">
 <m>\mathbf{F}\cdot(-\mathbf{i})\mathrel{\unicode{x3C}} 0</m>
 </label>
-<label at="cf-bottom-label" anchor="(3.05,0.4)" alignment="e">
+<label at="cf-bottom-label" clear-background="yes" background-margin="4" anchor="(3.05,0.4)" alignment="e">
 <m>\mathbf{F}\cdot\mathbf{i}\gt 0</m>
 </label>
-<label at="cf-right-label" anchor="(5.45,2.3)" alignment="ne">
+<label at="cf-right-label" clear-background="yes" background-margin="4" anchor="(5.45,2.3)" alignment="ne">
 <m>\mathbf{F}\cdot\mathbf{j}\gt 0</m>
 </label>
-<label at="cf-left-label" anchor="(0.55,2.35)" alignment="nw">
+<label at="cf-left-label" clear-background="yes" background-margin="4" anchor="(0.55,2.35)" alignment="nw">
 <m>\mathbf{F}\cdot(-\mathbf{j})\mathrel{\unicode{x3C}} 0</m>
 </label>
-<label at="cf-A" anchor="(3.0,2.35)" alignment="c">
+<label at="cf-A" clear-background="yes" background-margin="4" anchor="(3.0,2.35)" alignment="c">
 <m>A</m>
 </label>
-<label at="cf-dx" anchor="(3.0,0.05)" alignment="s">
+<label at="cf-dx" clear-background="yes" background-margin="4" anchor="(3.0,0.05)" alignment="s">
 <m>\Delta x</m>
 </label>
-<label at="cf-dy" anchor="(5.95,2.1)" alignment="e">
+<label at="cf-dy" clear-background="yes" background-margin="4" anchor="(5.95,2.1)" alignment="e">
 <m>\Delta y</m>
 </label>
 </coordinates>
@@ -795,15 +795,15 @@ positive (counterclockwise) circulation around <m>C</m>.
       stroke="#d02090" thickness="3"/>
 <line at="gc-T2" p1="(-0.9,-0.436)" p2="(-0.62,-1.056)" arrows="1"
       stroke="#d02090" thickness="3"/>
-<label at="gc-T1-label" anchor="(1.05,1.0)" alignment="e"
+<label at="gc-T1-label" clear-background="yes" background-margin="4" anchor="(1.05,1.0)" alignment="e"
        color="#d02090">
 <m>\mathbf{T}</m>
 </label>
-<label at="gc-T2-label" anchor="(-1.15,-1.05)" alignment="w"
+<label at="gc-T2-label" clear-background="yes" background-margin="4" anchor="(-1.15,-1.05)" alignment="w"
        color="#d02090">
 <m>\mathbf{T}</m>
 </label>
-<label at="gc-C-label" anchor="(0.62,-0.95)" alignment="se"
+<label at="gc-C-label" clear-background="yes" background-margin="4" anchor="(0.62,-0.95)" alignment="se"
        color="#00b0c0">
 <m>C</m>
 </label>

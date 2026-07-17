@@ -78,6 +78,7 @@ plate, makes an angle <m>\theta</m> with the velocity arrows.
 </description>
 <latex-image>
 <![CDATA[\begin{tikzpicture}[line join=round, line cap=round]
+  \tikzset{lbl/.style={fill=white, fill opacity=0.82, text opacity=1, inner sep=2.5pt, rounded corners=2pt}}
   \definecolor{oiblue}{RGB}{0,114,178}
   \definecolor{oimagenta}{RGB}{204,0,119}
   \begin{axis}[
@@ -100,21 +101,21 @@ plate, makes an angle <m>\theta</m> with the velocity arrows.
     \fill[oiblue!35, draw=oiblue, line width=1.2pt, fill opacity=0.75]
       (axis cs:-1.1,-0.7,0.6) -- (axis cs:1.1,-0.7,0.6)
       -- (axis cs:1.1,0.7,-0.6) -- (axis cs:-1.1,0.7,-0.6) -- cycle;
-    \node[font=\large, oiblue] at (axis cs:-0.7,-0.35,0.35) {$S$};
+    \node[lbl, font=\large, text=oiblue] at (axis cs:-0.7,-0.35,0.35) {$S$};
     % normal vector at the plate center (n ~ (0, 0.65, 0.76))
     \draw[-latex, oimagenta, line width=1.6pt]
       (axis cs:0,0,0) -- (axis cs:0,0.85,0.99);
-    \node[font=\normalsize, oimagenta, anchor=south]
+    \node[lbl, font=\normalsize, text=oimagenta, anchor=south]
       at (axis cs:0,0.9,1.05) {$\mathbf{n} = \hat{\mathbf{n}}\,A$};
     % one bold velocity arrow from plate center (direction (0,1,0.35))
     \draw[-latex, black!75, line width=1.6pt]
       (axis cs:0,0,0) -- (axis cs:0,1.3,0.455);
-    \node[font=\normalsize, anchor=west]
+    \node[lbl, font=\normalsize, anchor=west]
       at (axis cs:0,1.35,0.45) {$\mathbf{v}_0$};
     % angle arc between n and v0 (both start at plate center)
     \draw[black!60, line width=0.8pt]
       (axis cs:0,0.36,0.42) to[bend left=25] (axis cs:0,0.55,0.19);
-    \node[font=\small] at (axis cs:0,0.58,0.42) {$\theta$};
+    \node[lbl, font=\small] at (axis cs:0,0.58,0.42) {$\theta$};
   \end{axis}
 \end{tikzpicture}]]>
 </latex-image>
@@ -345,6 +346,7 @@ perpendicular to both.
 </description>
 <latex-image>
 <![CDATA[\begin{tikzpicture}[line join=round, line cap=round]
+  \tikzset{lbl/.style={fill=white, fill opacity=0.82, text opacity=1, inner sep=2.5pt, rounded corners=2pt}}
   \definecolor{oiblue}{RGB}{0,114,178}
   \definecolor{oivermillion}{RGB}{213,94,0}
   \definecolor{oigreen}{RGB}{0,158,115}
@@ -381,28 +383,28 @@ perpendicular to both.
     % position vector from origin
     \draw[-latex, black!80, line width=1.1pt]
       (axis cs:0,0,0) -- (axis cs:0.5792,0.4056,0.7071);
-    \node[font=\small, anchor=north, black!80]
+    \node[lbl, font=\small, anchor=north, text=black!80]
       at (axis cs:0.34,0.18,0.38) {$\mathbf{r}(\theta,\varphi)$};
     % r_theta = sinphi*(-sin t, cos t, 0) = 0.7071*(-0.5736,0.8192,0)
     \draw[-latex, oiblue, line width=1.5pt]
       (axis cs:0.5792,0.4056,0.7071)
       -- (axis cs:{0.5792-0.45*0.4056},{0.4056+0.45*0.5793},0.7071);
-    \node[font=\normalsize, oiblue, anchor=west]
+    \node[lbl, font=\normalsize, text=oiblue, anchor=west]
       at (axis cs:0.42,0.72,0.72) {$\mathbf{r}_\theta$};
     % r_phi = (cosphi cos t, cosphi sin t, -sinphi)
     %       = (0.7071*0.8192, 0.7071*0.5736, -0.7071)
     \draw[-latex, oivermillion, line width=1.5pt]
       (axis cs:0.5792,0.4056,0.7071)
       -- (axis cs:{0.5792+0.45*0.5793},{0.4056+0.45*0.4056},{0.7071-0.45*0.7071});
-    \node[font=\normalsize, oivermillion, anchor=west]
+    \node[lbl, font=\normalsize, text=oivermillion, anchor=west]
       at (axis cs:0.85,0.62,0.42) {$\mathbf{r}_\varphi$};
     % outward normal at the point (radial direction)
     \draw[-latex, oigreen!70!black, line width=1.6pt]
       (axis cs:0.5792,0.4056,0.7071)
       -- (axis cs:{0.5792*1.55},{0.4056*1.55},{0.7071*1.55});
-    \node[font=\normalsize, oigreen!70!black, anchor=south west]
+    \node[lbl, font=\normalsize, text=oigreen!70!black, anchor=south west]
       at (axis cs:0.9,0.63,1.1) {$\hat{\mathbf{n}}$};
-    \node[font=\small] at (axis cs:0.72,0.62,0.66) {$\Delta\sigma$};
+    \node[lbl, font=\small] at (axis cs:0.72,0.62,0.66) {$\Delta\sigma$};
   \end{axis}
 \end{tikzpicture}]]>
 </latex-image>
@@ -532,6 +534,7 @@ the axis.
 </description>
 <latex-image>
 <![CDATA[\begin{tikzpicture}[line join=round, line cap=round]
+  \tikzset{lbl/.style={fill=white, fill opacity=0.82, text opacity=1, inner sep=2.5pt, rounded corners=2pt}}
   \definecolor{oiblue}{RGB}{0,114,178}
   \definecolor{oimagenta}{RGB}{204,0,119}
   \definecolor{oiteal}{RGB}{0,158,115}
@@ -565,13 +568,13 @@ the axis.
     \fill[black] (axis cs:0,1,0.2) circle (1.4pt);
     \draw[-latex, oimagenta, line width=1.6pt]
       (axis cs:0,1,0.2) -- (axis cs:0,2.0,0.2);
-    \node[font=\normalsize, oimagenta, anchor=south]
+    \node[lbl, font=\normalsize, text=oimagenta, anchor=south]
       at (axis cs:0,1.85,0.32) {$\mathbf{n}_1$};
     \draw[-latex, oiteal!80!black, line width=1.6pt]
       (axis cs:0,1,0.2) -- (axis cs:0,0.15,0.2);
-    \node[font=\normalsize, oiteal!80!black, anchor=south]
+    \node[lbl, font=\normalsize, text=oiteal!80!black, anchor=south]
       at (axis cs:0,0.42,0.34) {$\mathbf{n}_2$};
-    \node[font=\normalsize, oiblue] at (axis cs:-1.0,-0.85,1.0)
+    \node[lbl, font=\normalsize, text=oiblue] at (axis cs:-1.0,-0.85,1.0)
       {$x^2+y^2=1$};
   \end{axis}
 \end{tikzpicture}]]>
@@ -886,6 +889,7 @@ give the closed surface its positive, outward orientation.
 </description>
 <latex-image>
 <![CDATA[\begin{tikzpicture}[line join=round, line cap=round]
+  \tikzset{lbl/.style={fill=white, fill opacity=0.82, text opacity=1, inner sep=2.5pt, rounded corners=2pt}}
   \definecolor{oiblue}{RGB}{0,114,178}
   \definecolor{oimagenta}{RGB}{204,0,119}
   \begin{axis}[
@@ -927,8 +931,8 @@ give the closed surface its positive, outward orientation.
         (axis cs:{0.55*cos(\tt)},{0.55*sin(\tt)},{0})
         -- (axis cs:{0.55*cos(\tt)},{0.55*sin(\tt)},{-0.5});}\tmp}
     % labels
-    \node[font=\normalsize, oiblue] at (axis cs:-0.95,-0.8,0.85) {$S_1$};
-    \node[font=\normalsize] at (axis cs:-0.35,0.5,0.06) {$S_2$};
+    \node[lbl, font=\normalsize, text=oiblue] at (axis cs:-0.95,-0.8,0.85) {$S_1$};
+    \node[lbl, font=\normalsize] at (axis cs:-0.35,0.5,0.06) {$S_2$};
   \end{axis}
 \end{tikzpicture}]]>
 </latex-image>
