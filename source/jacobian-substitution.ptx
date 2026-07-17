@@ -798,6 +798,7 @@ and the top face, at height <m>z = 1</m>, is shifted one unit in
 </description>
 <latex-image>
 <![CDATA[\begin{tikzpicture}[line join=round, line cap=round]
+  \tikzset{lbl/.style={fill=white, fill opacity=0.82, text opacity=1, inner sep=2.5pt, rounded corners=2pt}}
   \definecolor{oicrimson}{RGB}{165,30,55}
   \begin{axis}[
       view={115}{18},
@@ -835,15 +836,15 @@ and the top face, at height <m>z = 1</m>, is shifted one unit in
     % ---- labels ----
     \draw[black!70, line width=0.5pt]
       (axis cs:0.5,0.5,0.5) -- (axis cs:-0.35,0.4,1.15);
-    \node[font=\normalsize, anchor=east] at (axis cs:-0.35,0.4,1.15)
+    \node[lbl, font=\normalsize, anchor=east] at (axis cs:-0.35,0.4,1.15)
       {$y-z=0$};
     \draw[black!70, line width=0.5pt]
       (axis cs:0.5,3.5,0.5) -- (axis cs:0.4,3.6,1.55);
-    \node[font=\normalsize, anchor=south] at (axis cs:0.4,3.6,1.55)
+    \node[lbl, font=\normalsize, anchor=south] at (axis cs:0.4,3.6,1.55)
       {$y-z=3$};
-    \node[font=\normalsize, anchor=north west] at (axis cs:1.25,1.5,-0.08)
+    \node[lbl, font=\normalsize, anchor=north west] at (axis cs:1.25,1.5,-0.08)
       {$x=1$};
-    \node[font=\normalsize, anchor=south west] at (axis cs:0.1,2.5,1.05)
+    \node[lbl, font=\normalsize, anchor=south west] at (axis cs:0.1,2.5,1.05)
       {$z=1$};
   \end{axis}
 \end{tikzpicture}]]>
@@ -952,6 +953,7 @@ and green.
 </description>
 <latex-image>
 <![CDATA[\begin{tikzpicture}[line join=round, line cap=round]
+  \tikzset{lbl/.style={fill=white, fill opacity=0.82, text opacity=1, inner sep=2.5pt, rounded corners=2pt}}
   \definecolor{oiblue}{RGB}{0,114,178}
   \definecolor{oigreen}{RGB}{0,158,115}
   \definecolor{oivermillion}{RGB}{213,94,0}
@@ -976,14 +978,14 @@ and green.
     \addplot3[black!30, line width=0.4pt, domain=0:360, samples=73,
         samples y=0, forget plot]
       ({cos(x)}, {sin(x)}, {0});
-    \node[font=\normalsize, anchor=south] at (axis cs:0,0,1.15)
+    \node[lbl, font=\normalsize, anchor=south] at (axis cs:0,0,1.15)
       {$u^2+v^2+w^2=1$};
-    \node[font=\large] at (axis cs:-1.05,-0.75,-0.95) {$S$};
+    \node[lbl, font=\large] at (axis cs:-1.05,-0.75,-0.95) {$S$};
   \end{axis}
   % ---- arrow ----
   \draw[-latex, black!75, line width=1pt] (5.6,2.6) -- (7.4,2.6)
     node[midway, above, font=\small] {$T$};
-  \node[font=\small, anchor=north] at (6.5,2.45)
+  \node[lbl, font=\small, anchor=north] at (6.5,2.45)
     {$(au,bv,cw)$};
   % ---- ellipsoid ----
   \begin{axis}[
@@ -1008,14 +1010,14 @@ and green.
       ({2.4*cos(x)}, {1.55*sin(x)}, {0});
     % semi-axes
     \draw[oivermillion, line width=1.4pt] (axis cs:0,0,0) -- (axis cs:2.4,0,0)
-      node[pos=0.6, below, font=\small, sloped] {$a$};
+      node[lbl, pos=0.6, below, font=\small, sloped] {$a$};
     \draw[oiblue, line width=1.4pt] (axis cs:0,0,0) -- (axis cs:0,1.55,0)
-      node[pos=0.65, below, font=\small] {$b$};
+      node[lbl, pos=0.65, below, font=\small] {$b$};
     \draw[oigreen!60!black, line width=1.4pt] (axis cs:0,0,0) -- (axis cs:0,0,1.05)
-      node[pos=0.7, left, font=\small] {$c$};
-    \node[font=\normalsize, anchor=south] at (axis cs:0,0,1.3)
+      node[lbl, pos=0.7, left, font=\small] {$c$};
+    \node[lbl, font=\normalsize, anchor=south] at (axis cs:0,0,1.3)
       {$\dfrac{x^2}{a^2}+\dfrac{y^2}{b^2}+\dfrac{z^2}{c^2}=1$};
-    \node[font=\large] at (axis cs:-1.5,0.9,-0.75) {$E$};
+    \node[lbl, font=\large] at (axis cs:-1.5,0.9,-0.75) {$E$};
   \end{axis}
 \end{tikzpicture}]]>
 </latex-image>
