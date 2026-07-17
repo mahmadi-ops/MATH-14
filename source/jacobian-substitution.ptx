@@ -1074,14 +1074,12 @@ corner and adjust its dimensions until its image is exactly the region
 <m>uv</m>-limits.
 </p>
 
-<interactive xml:id="interactive-jacobian-geogebra"
-             platform="geogebra" width="100%" aspect="1:1">
-<slate surface="geogebra" source="geogebra/jacobian-uv-transformation.ggb"
-       aspect="1:1"/>
+  <interactive geogebra="bvcz6sbs"
+             width="100%" aspect="11:10"
+             material-width="618" material-height="559">
 <instructions>
 <p>
-Drag the corner point of the blue rectangle in the <m>uv</m>-plane and
-use the <q>Dimensions</q> sliders to change its length and width; the
+Use the <q>Dimensions</q> sliders to change its length and width; the
 shaded region in the <m>xy</m>-plane is its image under
 <m>x = u^2/4</m>, <m>y = uv/4</m>. Press <q>Animation</q> to watch the
 rectangle sweep out its image, and <q>Clear Traces</q> to start over.
