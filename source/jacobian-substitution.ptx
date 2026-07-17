@@ -1026,4 +1026,71 @@ and green.
 
 </subsection>
 
+<!-- ================================================================ -->
+<subsection xml:id="sec-jacobian-activity">
+<title>Activity: Watching a Substitution Transform a Region</title>
+
+<activity xml:id="activity-jacobian-geogebra">
+<title>From a Rectangle to a Curved Region</title>
+<statement>
+<p>
+Use the transformation
+</p>
+
+<me>
+x = \frac{u^2}{4}, \qquad y = \frac{uv}{4}
+</me>
+
+<p>
+to compute
+</p>
+
+<me>
+\iint_E \frac{x}{y^2}\, dx\, dy,
+</me>
+
+<p>
+where
+</p>
+
+<me>
+E = \left\{ (x,y) \in \R^2 : 1 \le x \le 4,\
+\frac{1}{2}\sqrt{x} \le y \le \frac{5}{2}\sqrt{x} \right\}.
+</me>
+
+<p>
+Also, make sure to graph the region of integration in the
+<m>uv</m>-plane. <em>Note: choose a suitable substitution such that the
+limits of integration are numbers as opposed to functions.</em>
+</p>
+
+<p>
+The interactive below shows exactly this transformation at work: a
+rectangle in the <m>uv</m>-plane (left) is carried by
+<m>T(u,v) = \left( \tfrac{u^2}{4}, \tfrac{uv}{4} \right)</m> onto a
+curved region in the <m>xy</m>-plane (right). Drag the rectangle's
+corner and adjust its dimensions until its image is exactly the region
+<m>E</m>, and use what you see to read off the constant
+<m>uv</m>-limits.
+</p>
+
+<interactive xml:id="interactive-jacobian-geogebra"
+             platform="geogebra" width="100%" aspect="1:1">
+<slate surface="geogebra" source="geogebra/jacobian-uv-transformation.ggb"
+       aspect="1:1"/>
+<instructions>
+<p>
+Drag the corner point of the blue rectangle in the <m>uv</m>-plane and
+use the <q>Dimensions</q> sliders to change its length and width; the
+shaded region in the <m>xy</m>-plane is its image under
+<m>x = u^2/4</m>, <m>y = uv/4</m>. Press <q>Animation</q> to watch the
+rectangle sweep out its image, and <q>Clear Traces</q> to start over.
+</p>
+</instructions>
+</interactive>
+</statement>
+</activity>
+
+</subsection>
+
 </section>
