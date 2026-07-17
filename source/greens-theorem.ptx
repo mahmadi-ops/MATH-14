@@ -1,0 +1,1154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<section xml:id="section-greens-theorem" xmlns:xi="http://www.w3.org/2001/XInclude">
+<title>Green's Theorem in the Plane</title>
+
+<introduction>
+<p>
+Before we learn about Green's theorem, we will need to learn about two
+operations on vector fields: <term>curl</term> and
+<term>divergence</term>. We begin by studying divergence.
+</p>
+</introduction>
+
+<!-- ================================================================ -->
+<subsection xml:id="sec-divergence">
+<title>Divergence</title>
+
+<p>
+Consider a vector field
+<m>\mathbf{F}(x,y) = M(x,y)\,\mathbf{i} + N(x,y)\,\mathbf{j}</m> to be
+the velocity field of a fluid. How can we find the net flow rate of the
+gas through the boundaries of a rectangle shown in
+<xref ref="fig-div-flux"/>?
+</p>
+
+<figure xml:id="fig-div-flux">
+<caption>
+The flux of the field <m>\mathbf{F} = M\,\mathbf{i} + N\,\mathbf{j}</m>
+through the four sides of a small rectangle with corner <m>(x,y)</m>,
+width <m>\Delta x</m>, and height <m>\Delta y</m>. The pink arrows show
+the outward components of <m>\mathbf{F}</m> on each side.
+</caption>
+<image width="70%">
+<prefigure xmlns="https://prefigure.org" label="prefigure-div-flux">
+<diagram dimensions="(400,300)" margins="10">
+<definition>field(x,y) = (0.4*x + 0.25, 0.32*y + 0.18)</definition>
+<coordinates bbox="(-1.7,-0.6,7.9,4.6)">
+<vector-field at="df-field" function="field"
+              spacings="((0.7,1.1,5.9),(0.3,1.0,4.0))" stroke="#bbbbbb"/>
+<polygon closed="yes" at="df-rect" points="((1.2,1.0),(4.8,1.0),(4.8,3.2),(1.2,3.2))"
+         stroke="#2b9ad6" thickness="2.5" fill="none"/>
+<point at="df-corner-bl" p="(1.2,1.0)" fill="#d02090" size="3"
+       alignment="sw">
+<m>(x,y)</m>
+</point>
+<point at="df-corner-br" p="(4.8,1.0)" fill="#2b9ad6" size="3"
+       alignment="se">
+<m>(x+\Delta x, y)</m>
+</point>
+<point at="df-corner-tl" p="(1.2,3.2)" fill="#2b9ad6" size="3"
+       alignment="nw">
+<m>(x, y+\Delta y)</m>
+</point>
+<point at="df-corner-tr" p="(4.8,3.2)" fill="#2b9ad6" size="3"
+       alignment="ne">
+<m>(x+\Delta x, y+\Delta y)</m>
+</point>
+<line at="df-top" p1="(3.0,3.2)" p2="(3.0,3.75)" arrows="1"
+      stroke="#e05090" thickness="3"/>
+<line at="df-bottom" p1="(3.0,1.0)" p2="(3.0,0.45)" arrows="1"
+      stroke="#e05090" thickness="3"/>
+<line at="df-right" p1="(4.8,2.1)" p2="(5.35,2.1)" arrows="1"
+      stroke="#e05090" thickness="3"/>
+<line at="df-left" p1="(1.2,2.1)" p2="(0.65,2.1)" arrows="1"
+      stroke="#e05090" thickness="3"/>
+<label at="df-top-label" anchor="(3.05,3.85)" alignment="e">
+<m>\mathbf{F}\cdot\mathbf{j}\gt 0</m>
+</label>
+<label at="df-bottom-label" anchor="(3.05,0.4)" alignment="e">
+<m>\mathbf{F}\cdot(-\mathbf{j})\mathrel{\unicode{x3C}} 0</m>
+</label>
+<label at="df-right-label" anchor="(5.45,2.3)" alignment="ne">
+<m>\mathbf{F}\cdot\mathbf{i}\gt 0</m>
+</label>
+<label at="df-left-label" anchor="(0.55,2.35)" alignment="nw">
+<m>\mathbf{F}\cdot(-\mathbf{i})\mathrel{\unicode{x3C}} 0</m>
+</label>
+<label at="df-A" anchor="(3.0,2.35)" alignment="c">
+<m>A</m>
+</label>
+<label at="df-dx" anchor="(3.0,0.05)" alignment="s">
+<m>\Delta x</m>
+</label>
+<label at="df-dy" anchor="(5.95,2.1)" alignment="e">
+<m>\Delta y</m>
+</label>
+</coordinates>
+<annotations>
+<annotation ref="figure" text="A blue rectangle with corner x comma y, width delta x, and height delta y, sitting in a gray vector field that points up and to the right. Pink arrows at the middle of each side show the outward component of the field: positive through the top and right sides, negative through the bottom and left sides.">
+  <annotation ref="df-rect" text="The rectangle with area A equals delta x delta y through whose boundary we measure the net flux."/>
+  <annotation ref="df-top" text="On the top side the outward direction is j, and F dot j is positive: fluid leaves through the top."/>
+  <annotation ref="df-right" text="On the right side the outward direction is i, and F dot i is positive: fluid leaves through the right."/>
+  <annotation ref="df-bottom" text="On the bottom side the outward direction is negative j, and F dot negative j is negative: fluid enters through the bottom."/>
+  <annotation ref="df-left" text="On the left side the outward direction is negative i, and F dot negative i is negative: fluid enters through the left."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+
+<p>
+Let us evaluate the flux through each side, assuming the field is
+nearly constant along each side:
+</p>
+
+<md>
+<mrow>\text{Top:} \amp\quad
+\mathbf{F}(x, y+\Delta y) \cdot \mathbf{j}\, \Delta x
+= N(x, y+\Delta y)\, \Delta x</mrow>
+<mrow>\text{Bottom:} \amp\quad
+\mathbf{F}(x, y) \cdot (-\mathbf{j})\, \Delta x
+= -N(x, y)\, \Delta x</mrow>
+<mrow>\text{Right:} \amp\quad
+\mathbf{F}(x+\Delta x, y) \cdot \mathbf{i}\, \Delta y
+= M(x+\Delta x, y)\, \Delta y</mrow>
+<mrow>\text{Left:} \amp\quad
+\mathbf{F}(x, y) \cdot (-\mathbf{i})\, \Delta y
+= -M(x, y)\, \Delta y.</mrow>
+</md>
+
+<p>
+The net flow rate is approximately
+</p>
+
+<me>
+\left( \frac{\partial M}{\partial x} + \frac{\partial N}{\partial y}
+\right) \Delta x\, \Delta y.
+</me>
+
+<p>
+Note that this is an approximation, since we are assuming the velocity
+field has a constant value along each side of the rectangle. The
+<term>flux density</term> can be calculated as follows:
+</p>
+
+<me>
+\text{Flux density}
+= \frac{\text{net flux through the rectangle}}
+{\text{area of the rectangle}}
+= \frac{\left( \frac{\partial M}{\partial x}
++ \frac{\partial N}{\partial y} \right) \Delta x \Delta y}
+{\Delta x \Delta y}
+= \frac{\partial M}{\partial x} + \frac{\partial N}{\partial y}.
+</me>
+
+<p>
+Note that, in the limit that <m>\Delta x</m> and <m>\Delta y</m>
+approach <m>0</m>, the above equation represents to what extent a gas
+is expanding or compressing at each point. This quantity is known as
+the <term>divergence</term>, and it is denoted by
+<m>\operatorname{div} \mathbf{F}</m>. Watch the construction in
+<xref ref="fig-div-video"/>.
+</p>
+
+<definition xml:id="def-divergence">
+<statement>
+<p>
+The divergence of the vector field
+<m>\mathbf{F}(x,y) = M(x,y)\,\mathbf{i} + N(x,y)\,\mathbf{j}</m> is
+defined as
+</p>
+
+<men xml:id="eq-div-def">
+\operatorname{div} \mathbf{F} = \nabla \cdot \mathbf{F}
+= \frac{\partial M}{\partial x} + \frac{\partial N}{\partial y},
+</men>
+
+<p>
+where <m>\nabla = \dfrac{\partial}{\partial x}\,\mathbf{i}
++ \dfrac{\partial}{\partial y}\,\mathbf{j}</m>.
+</p>
+</statement>
+</definition>
+
+<figure xml:id="fig-div-video">
+<caption>
+The net flux of <m>\mathbf{F}</m> out of a small rectangle, divided by
+its area, converges to the divergence
+<m>\partial M/\partial x + \partial N/\partial y</m> as the rectangle
+shrinks.
+</caption>
+<video xml:id="video-divergence"
+       source="videos/divergence_flux_1080p.mp4"
+       width="70%" aspect="16:9"/>
+</figure>
+
+<example xml:id="example-divergence-fields">
+<title>Computing and Interpreting Divergence</title>
+<statement>
+<p>
+The vector fields below represent the velocity field of a gas.
+Calculate the divergence in each case and explain what it means
+physically.
+</p>
+
+<p>
+<ol marker="A.">
+<li>
+<p>
+<m>\mathbf{F}(x,y) = 2x\,\mathbf{i} + 2y\,\mathbf{j}</m>
+</p>
+</li>
+<li>
+<p>
+<m>\mathbf{F}(x,y) = \dfrac{-y}{x^2+y^2}\,\mathbf{i}
++ \dfrac{x}{x^2+y^2}\,\mathbf{j}</m>
+</p>
+</li>
+</ol>
+</p>
+</statement>
+</example>
+
+<solution xml:id="solution-divergence-fields">
+<p>
+<em>Part A.</em> Using <xref ref="eq-div-def"/>,
+</p>
+
+<me>
+\nabla \cdot \mathbf{F}
+= \left( \frac{\partial}{\partial x}\,\mathbf{i}
++ \frac{\partial}{\partial y}\,\mathbf{j} \right)
+\cdot \left( 2x\,\mathbf{i} + 2y\,\mathbf{j} \right)
+= 2 + 2 = 4 \gt 0.
+</me>
+
+<p>
+Note that for every point on the <m>xy</m>-plane we have found that
+<m>\nabla \cdot \mathbf{F} \gt 0</m>, which means that the gas is
+expanding, since there is a positive flux density at every point
+<m>(x,y)</m>. The field is shown on the left in
+<xref ref="fig-div-fields"/>.
+</p>
+
+<p>
+<em>Part B.</em> Again by <xref ref="eq-div-def"/>,
+</p>
+
+<me>
+\nabla \cdot \mathbf{F}
+= \frac{\partial}{\partial x} \left( \frac{-y}{x^2+y^2} \right)
++ \frac{\partial}{\partial y} \left( \frac{x}{x^2+y^2} \right)
+= \frac{2xy}{(x^2+y^2)^2} - \frac{2xy}{(x^2+y^2)^2} = 0.
+</me>
+
+<p>
+Note that for every point on the <m>xy</m>-plane we have found that
+<m>\nabla \cdot \mathbf{F} = 0</m>, which means that the gas is neither
+expanding nor compressing. This rotating field is shown on the right in
+<xref ref="fig-div-fields"/>.
+</p>
+</solution>
+
+<figure xml:id="fig-div-fields">
+<caption>
+Left: the field <m>2x\,\mathbf{i} + 2y\,\mathbf{j}</m> flows away from
+the origin; its divergence is <m>4</m> at every point (the gas
+expands). Right: the field <m>\dfrac{-y\,\mathbf{i} +
+x\,\mathbf{j}}{x^2+y^2}</m> circulates around the origin; its
+divergence is <m>0</m> (the gas neither expands nor compresses).
+</caption>
+<sidebyside widths="46% 46%" valign="middle">
+<image>
+<prefigure xmlns="https://prefigure.org" label="prefigure-div-field-A">
+<diagram dimensions="(280,280)" margins="10">
+<definition>fieldA(x,y) = (2*x, 2*y)</definition>
+<coordinates bbox="(-3.4,-3.4,3.4,3.4)">
+<axes at="dfa-axes" xlabel="x" ylabel="y" decorations="no" arrows="1"/>
+<vector-field at="dfa-field" function="fieldA"
+              spacings="((-3,1,3),(-3,1,3))" stroke="#2b6cb0"/>
+</coordinates>
+<annotations>
+<annotation ref="figure" text="The vector field 2 x i plus 2 y j. All arrows point radially away from the origin and grow longer farther from it. The divergence is 4 at every point: the gas expands.">
+  <annotation ref="dfa-field" text="Arrows pointing radially outward from the origin, longer as the distance grows."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+<image>
+<prefigure xmlns="https://prefigure.org" label="prefigure-div-field-B">
+<diagram dimensions="(280,280)" margins="10">
+<definition>fieldB(x,y) = (-y/(x^2 + y^2 + 0.2), x/(x^2 + y^2 + 0.2))</definition>
+<coordinates bbox="(-3.4,-3.4,3.4,3.4)">
+<axes at="dfb-axes" xlabel="x" ylabel="y" decorations="no" arrows="1"/>
+<vector-field at="dfb-field" function="fieldB"
+              spacings="((-3,1,3),(-3,1,3))" stroke="#2b6cb0"/>
+</coordinates>
+<annotations>
+<annotation ref="figure" text="The vector field negative y i plus x j, divided by x squared plus y squared. Arrows circulate counterclockwise around the origin, shorter as the distance grows. The divergence is 0 at every point.">
+  <annotation ref="dfb-field" text="Arrows circulating counterclockwise around the origin, weaker farther away."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</sidebyside>
+</figure>
+
+</subsection>
+
+<!-- ================================================================ -->
+<subsection xml:id="sec-curl">
+<title>Curl</title>
+
+<p>
+Again, let us consider a vector field
+<m>\mathbf{F}(x,y) = M(x,y)\,\mathbf{i} + N(x,y)\,\mathbf{j}</m> to be
+the velocity field of a fluid. This time we are interested in answering
+this question: how can we figure out the <term>circulation
+density</term> of the fluid at any point on the <m>xy</m>-plane?
+</p>
+
+<p>
+To answer this question, we compute the flow rates of the vector field
+<m>\mathbf{F}</m> <em>along</em> the sides of the rectangle
+(counterclockwise), as in <xref ref="fig-curl-circulation"/>, and then
+we take the limit as <m>\Delta x, \Delta y \to 0</m> to find the
+circulation density at a point in the <m>xy</m>-plane.
+</p>
+
+<figure xml:id="fig-curl-circulation">
+<caption>
+The counterclockwise circulation of
+<m>\mathbf{F} = M\,\mathbf{i} + N\,\mathbf{j}</m> around the rectangle:
+along each side we take the component of <m>\mathbf{F}</m> in the
+direction of travel.
+</caption>
+<image width="70%">
+<prefigure xmlns="https://prefigure.org" label="prefigure-curl-circulation">
+<diagram dimensions="(400,300)" margins="10">
+<definition>field(x,y) = (0.4*x + 0.25, 0.32*y + 0.18)</definition>
+<coordinates bbox="(-1.7,-0.6,7.9,4.6)">
+<vector-field at="cf-field" function="field"
+              spacings="((0.7,1.1,5.9),(0.3,1.0,4.0))" stroke="#bbbbbb"/>
+<polygon closed="yes" at="cf-rect" points="((1.2,1.0),(4.8,1.0),(4.8,3.2),(1.2,3.2))"
+         stroke="#2b9ad6" thickness="2.5" fill="none"/>
+<point at="cf-corner-bl" p="(1.2,1.0)" fill="#d02090" size="3"
+       alignment="sw">
+<m>(x,y)</m>
+</point>
+<point at="cf-corner-br" p="(4.8,1.0)" fill="#2b9ad6" size="3"
+       alignment="se">
+<m>(x+\Delta x, y)</m>
+</point>
+<point at="cf-corner-tl" p="(1.2,3.2)" fill="#2b9ad6" size="3"
+       alignment="nw">
+<m>(x, y+\Delta y)</m>
+</point>
+<point at="cf-corner-tr" p="(4.8,3.2)" fill="#2b9ad6" size="3"
+       alignment="ne">
+<m>(x+\Delta x, y+\Delta y)</m>
+</point>
+<line at="cf-top" p1="(3.2,3.2)" p2="(2.65,3.2)" arrows="1"
+      stroke="#e05090" thickness="3"/>
+<line at="cf-bottom" p1="(2.8,1.0)" p2="(3.35,1.0)" arrows="1"
+      stroke="#e05090" thickness="3"/>
+<line at="cf-right" p1="(4.8,1.9)" p2="(4.8,2.45)" arrows="1"
+      stroke="#e05090" thickness="3"/>
+<line at="cf-left" p1="(1.2,2.3)" p2="(1.2,1.75)" arrows="1"
+      stroke="#e05090" thickness="3"/>
+<label at="cf-top-label" anchor="(3.05,3.85)" alignment="e">
+<m>\mathbf{F}\cdot(-\mathbf{i})\mathrel{\unicode{x3C}} 0</m>
+</label>
+<label at="cf-bottom-label" anchor="(3.05,0.4)" alignment="e">
+<m>\mathbf{F}\cdot\mathbf{i}\gt 0</m>
+</label>
+<label at="cf-right-label" anchor="(5.45,2.3)" alignment="ne">
+<m>\mathbf{F}\cdot\mathbf{j}\gt 0</m>
+</label>
+<label at="cf-left-label" anchor="(0.55,2.35)" alignment="nw">
+<m>\mathbf{F}\cdot(-\mathbf{j})\mathrel{\unicode{x3C}} 0</m>
+</label>
+<label at="cf-A" anchor="(3.0,2.35)" alignment="c">
+<m>A</m>
+</label>
+<label at="cf-dx" anchor="(3.0,0.05)" alignment="s">
+<m>\Delta x</m>
+</label>
+<label at="cf-dy" anchor="(5.95,2.1)" alignment="e">
+<m>\Delta y</m>
+</label>
+</coordinates>
+<annotations>
+<annotation ref="figure" text="The same blue rectangle in the same gray vector field, but now the pink arrows point along the sides, tracing a counterclockwise loop: rightward along the bottom, up the right side, leftward along the top, and down the left side.">
+  <annotation ref="cf-rect" text="The rectangle around which we measure the counterclockwise circulation."/>
+  <annotation ref="cf-bottom" text="Along the bottom the direction of travel is i, and F dot i is positive: the field pushes with the loop."/>
+  <annotation ref="cf-right" text="Up the right side the direction of travel is j, and F dot j is positive."/>
+  <annotation ref="cf-top" text="Along the top the direction of travel is negative i, and F dot negative i is negative: the field pushes against the loop."/>
+  <annotation ref="cf-left" text="Down the left side the direction of travel is negative j, and F dot negative j is negative."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+
+<p>
+We begin by computing the flow rates along each edge, i.e. top, bottom,
+left, and right:
+</p>
+
+<md>
+<mrow>\text{Top:} \amp\quad
+\mathbf{F}(x, y+\Delta y) \cdot (-\mathbf{i})\, \Delta x
+= -M(x, y+\Delta y)\, \Delta x</mrow>
+<mrow>\text{Bottom:} \amp\quad
+\mathbf{F}(x, y) \cdot \mathbf{i}\, \Delta x
+= M(x, y)\, \Delta x</mrow>
+<mrow>\text{Right:} \amp\quad
+\mathbf{F}(x+\Delta x, y) \cdot \mathbf{j}\, \Delta y
+= N(x+\Delta x, y)\, \Delta y</mrow>
+<mrow>\text{Left:} \amp\quad
+\mathbf{F}(x, y) \cdot (-\mathbf{j})\, \Delta y
+= -N(x, y)\, \Delta y.</mrow>
+</md>
+
+<p>
+Then we sum up the flow across the parallel edges:
+</p>
+
+<md>
+<mrow>\text{Top and bottom:} \amp\quad
+-\big( M(x, y+\Delta y) - M(x,y) \big) \Delta x
+\approx -\left( \frac{\partial M}{\partial y}\, \Delta y \right)
+\Delta x</mrow>
+<mrow>\text{Right and left:} \amp\quad
+\big( N(x+\Delta x, y) - N(x,y) \big) \Delta y
+\approx \left( \frac{\partial N}{\partial x}\, \Delta x \right)
+\Delta y.</mrow>
+</md>
+
+<p>
+Finally, after summing the flow rates above and taking the limit as
+<m>\Delta x, \Delta y \to 0</m>, for the circulation density we get
+</p>
+
+<me>
+\frac{\text{circulation around rectangle}}{\text{rectangle area}}
+\approx \frac{\partial N}{\partial x} - \frac{\partial M}{\partial y}.
+</me>
+
+<p>
+This quantity is denoted by
+<m>\operatorname{curl} \mathbf{F} \cdot \mathbf{k}</m> and is known as
+the <term><m>k</m>-component of curl</term>.
+</p>
+
+<definition xml:id="def-curl-k">
+<statement>
+<p>
+The <m>k</m>-component of the curl of the vector field
+<m>\mathbf{F}(x,y) = M(x,y)\,\mathbf{i} + N(x,y)\,\mathbf{j}</m> is
+</p>
+
+<men xml:id="eq-curl-def">
+\operatorname{curl} \mathbf{F} \cdot \mathbf{k}
+= \frac{\partial N}{\partial x} - \frac{\partial M}{\partial y}.
+</men>
+</statement>
+</definition>
+
+<p>
+To find out the circulation density at a point in the
+<m>xy</m>-plane, you can imagine a <term>paddle wheel</term> whose axis
+goes through the point of interest. Then the <m>k</m>-component of curl
+is positive if the fluid flow causes the paddle wheel to rotate
+counterclockwise, and it is negative if it turns clockwise. The
+animation in <xref ref="fig-curl-video"/> shows both behaviors.
+</p>
+
+<figure xml:id="fig-curl-video">
+<caption>
+The counterclockwise circulation of <m>\mathbf{F}</m> around a small
+rectangle, divided by its area, converges to the <m>k</m>-component of
+curl. A paddle wheel placed in the fluid spins counterclockwise where
+the curl is positive.
+</caption>
+<video xml:id="video-curl"
+       source="videos/curl_circulation_1080p.mp4"
+       width="70%" aspect="16:9"/>
+</figure>
+
+<example xml:id="example-curl-fields">
+<title>Computing and Interpreting Curl</title>
+<statement>
+<p>
+The vector fields below represent the velocity field of a fluid.
+Calculate the curl in each case and explain what it means physically.
+</p>
+
+<p>
+<ol marker="A.">
+<li>
+<p>
+<m>\mathbf{F}(x,y) = 2x\,\mathbf{i} + 2y\,\mathbf{j}</m>
+</p>
+</li>
+<li>
+<p>
+<m>\mathbf{F}(x,y) = -2y\,\mathbf{i} + 2x\,\mathbf{j}</m>
+</p>
+</li>
+</ol>
+</p>
+</statement>
+</example>
+
+<solution xml:id="solution-curl-fields">
+<p>
+<em>Part A.</em> In this case we have <m>M = 2x</m> and <m>N = 2y</m>,
+and hence by <xref ref="eq-curl-def"/>,
+</p>
+
+<me>
+\operatorname{curl} \mathbf{F} \cdot \mathbf{k}
+= \frac{\partial N}{\partial x} - \frac{\partial M}{\partial y}
+= 0 - 0 = 0.
+</me>
+
+<p>
+This means that if we place the paddle wheel at any point
+<m>(x,y)</m>, the fluid flow will not rotate it: the radial field on
+the left of <xref ref="fig-curl-fields"/> has no circulation.
+</p>
+
+<p>
+<em>Part B.</em> In this case we have <m>M = -2y</m> and
+<m>N = 2x</m>, and hence
+</p>
+
+<me>
+\operatorname{curl} \mathbf{F} \cdot \mathbf{k}
+= \frac{\partial N}{\partial x} - \frac{\partial M}{\partial y}
+= 2 + 2 = 4.
+</me>
+
+<p>
+This means that if we place the paddle wheel at any point
+<m>(x,y)</m>, we see that the fluid flow causes it to rotate in the
+counterclockwise direction, since the <m>k</m>-component of curl is
+positive. See the right of <xref ref="fig-curl-fields"/>.
+</p>
+</solution>
+
+<figure xml:id="fig-curl-fields">
+<caption>
+Left: the radial field <m>2x\,\mathbf{i} + 2y\,\mathbf{j}</m> has
+<m>\operatorname{curl}\mathbf{F}\cdot\mathbf{k} = 0</m>: a paddle wheel
+does not spin. Right: the rotational field
+<m>-2y\,\mathbf{i} + 2x\,\mathbf{j}</m> has
+<m>\operatorname{curl}\mathbf{F}\cdot\mathbf{k} = 4</m>: a paddle wheel
+spins counterclockwise everywhere.
+</caption>
+<sidebyside widths="46% 46%" valign="middle">
+<image>
+<prefigure xmlns="https://prefigure.org" label="prefigure-curl-field-A">
+<diagram dimensions="(280,280)" margins="10">
+<definition>fieldA(x,y) = (2*x, 2*y)</definition>
+<coordinates bbox="(-3.4,-3.4,3.4,3.4)">
+<axes at="cfa-axes" xlabel="x" ylabel="y" decorations="no" arrows="1"/>
+<vector-field at="cfa-field" function="fieldA"
+              spacings="((-3,1,3),(-3,1,3))" stroke="#2b6cb0"/>
+</coordinates>
+<annotations>
+<annotation ref="figure" text="The radial vector field 2 x i plus 2 y j, arrows pointing away from the origin. Its curl is zero: the flow does not rotate a paddle wheel.">
+  <annotation ref="cfa-field" text="Arrows pointing radially outward; no rotation anywhere."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+<image>
+<prefigure xmlns="https://prefigure.org" label="prefigure-curl-field-B">
+<diagram dimensions="(280,280)" margins="10">
+<definition>fieldB(x,y) = (-2*y, 2*x)</definition>
+<coordinates bbox="(-3.4,-3.4,3.4,3.4)">
+<axes at="cfb-axes" xlabel="x" ylabel="y" decorations="no" arrows="1"/>
+<vector-field at="cfb-field" function="fieldB"
+              spacings="((-3,1,3),(-3,1,3))" stroke="#2b6cb0"/>
+</coordinates>
+<annotations>
+<annotation ref="figure" text="The rotational vector field negative 2 y i plus 2 x j. Arrows circulate counterclockwise around the origin, longer farther out. Its curl is 4 everywhere: a paddle wheel spins counterclockwise.">
+  <annotation ref="cfb-field" text="Arrows circulating counterclockwise around the origin, growing with distance."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</sidebyside>
+</figure>
+
+</subsection>
+
+<!-- ================================================================ -->
+<subsection xml:id="sec-greens-theorem-forms">
+<title>The Two Forms of Green's Theorem</title>
+
+<p>
+Next we state Green's theorem in 2D<fn>Note that we only cover Green's
+theorem in 2D; however, you should know that this theorem can be
+generalized to 3D, and in that case it is known as Stokes'
+theorem.</fn>, in two forms. The first form relates the outward flux
+across a simple<fn>A curve in the <m>xy</m>-plane is
+<term>simple</term> if it does not cross itself.</fn> closed curve
+<m>C</m> and the double integral of the divergence over the region
+<m>R</m> bounded by the curve <m>C</m>.
+</p>
+
+<theorem xml:id="thm-green-normal">
+<title>Green's Theorem (Flux-Divergence or Normal Form)</title>
+<statement>
+<p>
+Let <m>C</m> be a piecewise smooth, simple closed curve enclosing a
+region <m>R</m> in the plane. Let
+<m>\mathbf{F} = M\,\mathbf{i} + N\,\mathbf{j}</m> be a vector field
+with <m>M</m> and <m>N</m> having continuous first partial derivatives
+in an open region containing <m>R</m>. Then the outward flux of
+<m>\mathbf{F}</m> across <m>C</m> equals the double integral of
+<m>\operatorname{div} \mathbf{F}</m> over the region <m>R</m> enclosed
+by <m>C</m>:
+</p>
+
+<men xml:id="eq-green-normal">
+\underbrace{\oint_C \mathbf{F} \cdot \mathbf{n}\, ds
+= \oint_C M\, dy - N\, dx}_{\text{outward flux through the boundary}}
+= \underbrace{\iint_R \left( \frac{\partial M}{\partial x}
++ \frac{\partial N}{\partial y} \right) dx\, dy}_{\text{double integral
+of divergence over } R}.
+</men>
+</statement>
+</theorem>
+
+<p>
+The second form of Green's theorem connects the counterclockwise
+circulation of a vector field around a simple closed curve <m>C</m>
+and the double integral of the <m>\mathbf{k}</m>-component of the curl
+of the field over the region <m>R</m> enclosed by the curve.
+</p>
+
+<theorem xml:id="thm-green-tangential">
+<title>Green's Theorem (Circulation-Curl or Tangential Form)</title>
+<statement>
+<p>
+Let <m>C</m> be a piecewise smooth, simple closed curve enclosing a
+region <m>R</m> in the plane. Let
+<m>\mathbf{F} = M\,\mathbf{i} + N\,\mathbf{j}</m> be a vector field
+with <m>M</m> and <m>N</m> having continuous first partial derivatives
+in an open region containing <m>R</m>. Then the counterclockwise
+circulation of <m>\mathbf{F}</m> around <m>C</m> equals the double
+integral of <m>(\operatorname{curl} \mathbf{F}) \cdot \mathbf{k}</m>
+over <m>R</m>:
+</p>
+
+<men xml:id="eq-green-tangential">
+\underbrace{\oint_C \mathbf{F} \cdot \mathbf{T}\, ds
+= \oint_C M\, dx + N\, dy}_{\text{counterclockwise circulation}}
+= \underbrace{\iint_R \left( \frac{\partial N}{\partial x}
+- \frac{\partial M}{\partial y} \right) dx\, dy}_{\text{double integral
+of curl} \,\cdot\, \mathbf{k} \text{ over } R}.
+</men>
+</statement>
+</theorem>
+
+<example xml:id="example-green-circle">
+<title>Verifying Both Forms on the Unit Circle</title>
+<statement>
+<p>
+Assume that the vector field
+<m>\mathbf{F}(x,y) = (x - y)\,\mathbf{i} + x\,\mathbf{j}</m> and the
+closed curve <m>C</m> is the unit circle centered at the origin.
+Convince yourself of the two forms of Green's theorem by applying them
+to this example.
+</p>
+</statement>
+</example>
+
+<solution xml:id="solution-green-circle">
+<p>
+We begin by noticing that the unit circle can be parametrized as
+</p>
+
+<me>
+C: \quad \mathbf{r}(t) = (\cos t)\,\mathbf{i} + (\sin t)\,\mathbf{j},
+\qquad 0 \le t \le 2\pi.
+</me>
+
+<p>
+After substituting the parametrized equations <m>x(t) = \cos t</m> and
+<m>y(t) = \sin t</m> into the vector field, we get
+<m>\mathbf{F} = (\cos t - \sin t)\,\mathbf{i} + (\cos t)\,\mathbf{j}</m>,
+and thus
+</p>
+
+<md>
+<mrow>M = \cos t - \sin t, \amp\qquad dx = d(\cos t) = -\sin t\, dt,</mrow>
+<mrow>N = \cos t, \amp\qquad dy = d(\sin t) = \cos t\, dt,</mrow>
+</md>
+
+<p>
+with the partial derivatives
+</p>
+
+<me>
+\frac{\partial M}{\partial x} = 1, \qquad
+\frac{\partial M}{\partial y} = -1, \qquad
+\frac{\partial N}{\partial x} = 1, \qquad
+\frac{\partial N}{\partial y} = 0.
+</me>
+
+<p>
+For the first form of Green's theorem,
+<xref ref="eq-green-normal"/>, we have
+</p>
+
+<md>
+<mrow>\oint_C M\, dy - N\, dx
+\amp= \int_0^{2\pi} (\cos t - \sin t)(\cos t\, dt)
+- (\cos t)(-\sin t\, dt)</mrow>
+<mrow>\amp= \int_0^{2\pi} \cos^2 t\, dt = \pi,</mrow>
+</md>
+
+<p>
+while the double integral gives the same value:
+</p>
+
+<me>
+\iint_R \left( \frac{\partial M}{\partial x}
++ \frac{\partial N}{\partial y} \right) dx\, dy
+= \iint_R (1 + 0)\, dx\, dy
+= \text{area inside the unit circle} = \pi.
+</me>
+
+<p>
+Whereas the second form of Green's theorem,
+<xref ref="eq-green-tangential"/>, can be verified as follows:
+</p>
+
+<md>
+<mrow>\oint_C M\, dx + N\, dy
+\amp= \int_0^{2\pi} (\cos t - \sin t)(-\sin t\, dt)
++ (\cos t)(\cos t\, dt)</mrow>
+<mrow>\amp= \int_0^{2\pi} (-\sin t \cos t + 1)\, dt = 2\pi,</mrow>
+</md>
+
+<p>
+and
+</p>
+
+<me>
+\iint_R \left( \frac{\partial N}{\partial x}
+- \frac{\partial M}{\partial y} \right) dx\, dy
+= \iint_R \big( 1 - (-1) \big)\, dx\, dy
+= 2 \iint_R dx\, dy = 2\pi.
+</me>
+
+<p>
+The field and the curve are shown in <xref ref="fig-green-circle"/>;
+note that the field has a positive (counterclockwise) circulation,
+which we calculated above to be <m>2\pi</m>. Watch both computations
+side by side in <xref ref="fig-green-circle-video"/>.
+</p>
+</solution>
+
+<figure xml:id="fig-green-circle-video">
+<caption>
+Both forms of Green's theorem verified for
+<m>\mathbf{F} = (x-y)\,\mathbf{i} + x\,\mathbf{j}</m> on the unit
+circle: the outward flux equals <m>\pi</m> and the counterclockwise
+circulation equals <m>2\pi</m>.
+</caption>
+<video xml:id="video-green-circle"
+       source="videos/green_unit_circle_1080p.mp4"
+       width="70%" aspect="16:9"/>
+</figure>
+
+<figure xml:id="fig-green-circle">
+<caption>
+The vector field <m>\mathbf{F}(x,y) = (x-y)\,\mathbf{i} +
+x\,\mathbf{j}</m> and the unit circle <m>C</m>. The field has a
+positive (counterclockwise) circulation around <m>C</m>.
+</caption>
+<image width="55%">
+<prefigure xmlns="https://prefigure.org" label="prefigure-green-circle">
+<diagram dimensions="(300,300)" margins="10">
+<definition>field(x,y) = (x - y, x)</definition>
+<definition>circ(t) = (cos(t), sin(t))</definition>
+<coordinates bbox="(-2.3,-2.3,2.3,2.3)">
+<axes at="gc-axes" xlabel="x" ylabel="y" decorations="no" arrows="1"/>
+<vector-field at="gc-field" function="field"
+              spacings="((-2,0.8,2),(-2,0.8,2))" stroke="#2b6cb0"/>
+<parametric-curve at="gc-circle" function="circ" domain="(0,2*pi)"
+                  closed="yes" stroke="#00b0c0" thickness="3"/>
+<line at="gc-T1" p1="(0.9,0.436)" p2="(0.62,1.056)" arrows="1"
+      stroke="#d02090" thickness="3"/>
+<line at="gc-T2" p1="(-0.9,-0.436)" p2="(-0.62,-1.056)" arrows="1"
+      stroke="#d02090" thickness="3"/>
+<label at="gc-T1-label" anchor="(1.05,1.0)" alignment="e"
+       color="#d02090">
+<m>\mathbf{T}</m>
+</label>
+<label at="gc-T2-label" anchor="(-1.15,-1.05)" alignment="w"
+       color="#d02090">
+<m>\mathbf{T}</m>
+</label>
+<label at="gc-C-label" anchor="(0.62,-0.95)" alignment="se"
+       color="#00b0c0">
+<m>C</m>
+</label>
+</coordinates>
+<annotations>
+<annotation ref="figure" text="The vector field x minus y comma x drawn as blue arrows swirling counterclockwise, with the unit circle C drawn in teal. Two pink tangent vectors T on the circle show the direction of travel; the field tends to point with them, giving a positive circulation.">
+  <annotation ref="gc-field" text="The vector field x minus y comma x, which swirls counterclockwise around the plane."/>
+  <annotation ref="gc-circle" text="The unit circle C, traversed counterclockwise."/>
+  <annotation ref="gc-T1" text="A unit tangent vector T on the circle; the field has a positive component along it."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+
+<example xml:id="example-green-diamond">
+<title>A Line Integral via Green's Theorem and Substitution</title>
+<statement>
+<p>
+Evaluate the line integral
+</p>
+
+<me>
+\oint_C \frac{dx}{x+y} - \frac{dy}{x+y},
+</me>
+
+<p>
+where <m>C</m> is the boundary of the square with vertices
+<m>(1,0)</m>, <m>(2,1)</m>, <m>(1,2)</m>, and <m>(0,1)</m>, shown in
+<xref ref="fig-green-diamond"/>. Make suitable substitutions in your
+integral to make the limits of integration numbers as opposed to
+functions.
+</p>
+</statement>
+</example>
+
+<solution xml:id="solution-green-diamond">
+<p>
+In this example we have
+</p>
+
+<me>
+M(x,y) = \frac{1}{x+y}, \qquad N(x,y) = \frac{-1}{x+y},
+</me>
+
+<p>
+and thus
+</p>
+
+<me>
+\frac{\partial N}{\partial x} - \frac{\partial M}{\partial y}
+= \frac{1}{(x+y)^2} - \frac{-1}{(x+y)^2}
+= \frac{2}{(x+y)^2}.
+</me>
+
+<p>
+Then we can use the tangential form of Green's theorem,
+<xref ref="eq-green-tangential"/>, to evaluate the line integral:
+</p>
+
+<me>
+\oint_C M\, dx + N\, dy
+= \iint_R \left( \frac{\partial N}{\partial x}
+- \frac{\partial M}{\partial y} \right) dx\, dy
+= \iint_R \frac{2}{(x+y)^2}\, dx\, dy.
+</me>
+
+<p>
+The region <m>R</m> is the square bounded by the four lines
+<m>y = x + 1</m>, <m>y = x - 1</m>, <m>y = -x + 1</m>, and
+<m>y = -x + 3</m>, so the natural substitution uses the boundary
+expressions:
+</p>
+
+<me>
+u = x + y, \qquad v = y - x,
+</me>
+
+<p>
+under which the region becomes the rectangle
+<m>1 \le u \le 3</m>, <m>-1 \le v \le 1</m>. Solving for <m>x</m> and
+<m>y</m> gives <m>x = \tfrac{u-v}{2}</m>, <m>y = \tfrac{u+v}{2}</m>,
+so the Jacobian is
+</p>
+
+<me>
+\frac{\partial(x,y)}{\partial(u,v)}
+= \begin{vmatrix}
+\tfrac{1}{2} \amp -\tfrac{1}{2} \\
+\tfrac{1}{2} \amp \tfrac{1}{2}
+\end{vmatrix}
+= \frac{1}{2}.
+</me>
+
+<p>
+Therefore
+</p>
+
+<md>
+<mrow>\iint_R \frac{2}{(x+y)^2}\, dx\, dy
+\amp= \int_{-1}^{1} \int_1^3 \frac{2}{u^2} \cdot \frac{1}{2}\,
+du\, dv
+= \int_{-1}^{1} \left[ -\frac{1}{u} \right]_1^3 dv</mrow>
+<mrow>\amp= \int_{-1}^{1} \frac{2}{3}\, dv = \frac{4}{3}.</mrow>
+</md>
+
+<p>
+Green's theorem converted the line integral into a double integral,
+and the substitution<mdash/>exactly the technique of the previous
+section<mdash/>made its limits constant. See
+<xref ref="fig-green-diamond-video"/> for the animation.
+</p>
+</solution>
+
+<figure xml:id="fig-green-diamond-video">
+<caption>
+Green's theorem turns the line integral around the tilted square into
+a double integral of <m>2/(x+y)^2</m>, and the substitution
+<m>u = x+y</m>, <m>v = y-x</m> straightens the square into a rectangle
+with constant limits.
+</caption>
+<video xml:id="video-green-diamond"
+       source="videos/green_diamond_1080p.mp4"
+       width="70%" aspect="16:9"/>
+</figure>
+
+<figure xml:id="fig-green-diamond">
+<caption>
+The square <m>C</m> with vertices <m>(1,0)</m>, <m>(2,1)</m>,
+<m>(1,2)</m>, <m>(0,1)</m> (left) and the corresponding rectangle
+<m>1 \le u \le 3</m>, <m>-1 \le v \le 1</m> under <m>u = x+y</m>,
+<m>v = y-x</m> (right).
+</caption>
+<sidebyside widths="48% 44%" valign="middle">
+<image>
+<prefigure xmlns="https://prefigure.org" label="prefigure-green-diamond">
+<diagram dimensions="(300,280)" margins="10">
+<coordinates bbox="(-0.85,-0.7,3.25,2.75)">
+<grid-axes at="gd-grid" xlabel="x" ylabel="y"/>
+<polygon closed="yes" at="gd-square" points="((1,0),(2,1),(1,2),(0,1))"
+         fill="#9ecfff" stroke="#2b6cb0" thickness="2.5"/>
+<label at="gd-l1" anchor="(0.3,2.1)" alignment="nw" color="#2b6cb0">
+<m>y=x+1</m>
+</label>
+<label at="gd-l2" anchor="(1.95,1.7)" alignment="ne" color="#2b6cb0">
+<m>y=-x+3</m>
+</label>
+<label at="gd-l3" anchor="(0.12,0.3)" alignment="s" color="#2b6cb0">
+<m>y=-x+1</m>
+</label>
+<label at="gd-l4" anchor="(1.9,0.3)" alignment="s" color="#2b6cb0">
+<m>y=x-1</m>
+</label>
+<label at="gd-R" anchor="(1,1)" alignment="c">
+<m>R</m>
+</label>
+<label at="gd-C" anchor="(1.28,1.95)" alignment="ne" color="#2b6cb0">
+<m>C</m>
+</label>
+</coordinates>
+<annotations>
+<annotation ref="figure" text="A square rotated 45 degrees, with vertices at 1 comma 0, 2 comma 1, 1 comma 2, and 0 comma 1, shaded light blue. Its four edges lie on the lines y equals x plus 1, y equals minus x plus 3, y equals x minus 1, and y equals minus x plus 1.">
+  <annotation ref="gd-square" text="The region R enclosed by the tilted square C. On this region x plus y runs from 1 to 3, so the integrand is defined everywhere."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+<image>
+<prefigure xmlns="https://prefigure.org" label="prefigure-green-diamond-R">
+<diagram dimensions="(280,280)" margins="10">
+<coordinates bbox="(-0.8,-2,3.9,2)">
+<grid-axes at="gr-grid" xlabel="u" ylabel="v"/>
+<polygon closed="yes" at="gr-rect" points="((1,-1),(3,-1),(3,1),(1,1))"
+         fill="#9ecfff" stroke="#2b6cb0" thickness="2.5"/>
+<label at="gr-R" anchor="(2,0)" alignment="c">
+<m>R'</m>
+</label>
+</coordinates>
+<annotations>
+<annotation ref="figure" text="The rectangle in the u v plane from u equals 1 to 3 and v equals negative 1 to 1, shaded light blue. It is the image of the tilted square under u equals x plus y, v equals y minus x.">
+  <annotation ref="gr-rect" text="The rectangle with constant limits, 1 to 3 in u and negative 1 to 1 in v."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</sidebyside>
+</figure>
+
+</subsection>
+
+<!-- ================================================================ -->
+<subsection xml:id="sec-component-test-alternative">
+<title>An Alternative Form of the Component Test for Conservative Fields</title>
+
+<p>
+Recall the component test for conservative fields:
+</p>
+
+<assemblage xml:id="reminder-component-test">
+<title>Reminder: Component Test for Conservative Fields</title>
+<p>
+Let <m>\mathbf{F} = M(x,y,z)\,\mathbf{i} + N(x,y,z)\,\mathbf{j}
++ P(x,y,z)\,\mathbf{k}</m> be a field on a connected and simply
+connected domain whose component functions have continuous first
+partial derivatives. Then <m>\mathbf{F}</m> is conservative if and only
+if
+</p>
+
+<me>
+\frac{\partial P}{\partial y} = \frac{\partial N}{\partial z}, \qquad
+\frac{\partial M}{\partial z} = \frac{\partial P}{\partial x},
+\qquad \text{and} \qquad
+\frac{\partial N}{\partial x} = \frac{\partial M}{\partial y}.
+</me>
+</assemblage>
+
+<p>
+The three equalities above are equivalent to
+<m>\nabla \times \mathbf{F} = \mathbf{0}</m>, since
+</p>
+
+<me>
+\nabla \times \mathbf{F} =
+\begin{vmatrix}
+\mathbf{i} \amp \mathbf{j} \amp \mathbf{k} \\
+\dfrac{\partial}{\partial x} \amp \dfrac{\partial}{\partial y} \amp
+\dfrac{\partial}{\partial z} \\
+M \amp N \amp P
+\end{vmatrix}
+= \left( \frac{\partial P}{\partial y} - \frac{\partial N}{\partial z}
+\right) \mathbf{i}
++ \left( \frac{\partial M}{\partial z} - \frac{\partial P}{\partial x}
+\right) \mathbf{j}
++ \left( \frac{\partial N}{\partial x} - \frac{\partial M}{\partial y}
+\right) \mathbf{k}.
+</me>
+
+<p>
+So to check whether a vector field is conservative or not, we can check
+whether its curl is zero or not.
+</p>
+
+<example xml:id="example-conservative-green">
+<title>Conservative Fields and Green's Theorem</title>
+<statement>
+<p>
+Consider the line integral
+<m>\displaystyle \oint_C 4x^3 y\, dx + x^4\, dy</m>.
+</p>
+
+<p>
+<ol marker="A.">
+<li>
+<p>
+As you know, the vector form of a line integral is
+<m>\displaystyle \oint_C \mathbf{F} \cdot d\mathbf{r}</m>. Write down
+the vector field <m>\mathbf{F}</m> for the above line integral.
+</p>
+</li>
+<li>
+<p>
+Is this vector field a conservative field? Use the component test to
+answer.
+</p>
+</li>
+<li>
+<p>
+Using Green's theorem, confirm your answer to part B.
+</p>
+</li>
+</ol>
+</p>
+</statement>
+</example>
+
+<solution xml:id="solution-conservative-green">
+<p>
+<em>Part A.</em> The vector field is
+</p>
+
+<me>
+\mathbf{F}(x,y) = M(x,y)\,\mathbf{i} + N(x,y)\,\mathbf{j}
+= 4x^3 y\,\mathbf{i} + x^4\,\mathbf{j}.
+</me>
+
+<p>
+<em>Part B.</em> Treating <m>\mathbf{F}</m> as a field in space with
+<m>P = 0</m>,
+</p>
+
+<me>
+\nabla \times \mathbf{F} =
+\begin{vmatrix}
+\mathbf{i} \amp \mathbf{j} \amp \mathbf{k} \\
+\dfrac{\partial}{\partial x} \amp \dfrac{\partial}{\partial y} \amp
+\dfrac{\partial}{\partial z} \\
+M \amp N \amp 0
+\end{vmatrix}
+= \left( \frac{\partial N}{\partial x}
+- \frac{\partial M}{\partial y} \right) \mathbf{k}
+= \left( \frac{\partial}{\partial x}(x^4)
+- \frac{\partial}{\partial y}(4x^3 y) \right) \mathbf{k}
+= \left( 4x^3 - 4x^3 \right)\mathbf{k} = \mathbf{0},
+</me>
+
+<p>
+and hence the vector field is conservative.
+</p>
+
+<p>
+<em>Part C.</em> Using the tangential form of Green's theorem,
+<xref ref="eq-green-tangential"/>, for any simple closed curve
+<m>C</m> enclosing a region <m>D</m>:
+</p>
+
+<md>
+<mrow>\oint_C 4x^3 y\, dx + x^4\, dy
+\amp= \iint_D \left( \frac{\partial N}{\partial x}
+- \frac{\partial M}{\partial y} \right) dx\, dy</mrow>
+<mrow>\amp= \iint_D \left( \frac{\partial}{\partial x}(x^4)
+- \frac{\partial}{\partial y}(4x^3 y) \right) dx\, dy = 0.</mrow>
+</md>
+
+<p>
+The circulation of a conservative field around <em>every</em> closed
+curve vanishes, which confirms part B. The animation in
+<xref ref="fig-conservative-video"/> shows the field and several closed
+loops, all with zero circulation.
+</p>
+</solution>
+
+<figure xml:id="fig-conservative-video">
+<caption>
+The conservative field <m>4x^3 y\,\mathbf{i} + x^4\,\mathbf{j} =
+\nabla(x^4 y)</m> has zero curl, so by Green's theorem its circulation
+around every closed curve is zero.
+</caption>
+<video xml:id="video-conservative"
+       source="videos/conservative_zero_1080p.mp4"
+       width="70%" aspect="16:9"/>
+</figure>
+
+</subsection>
+
+</section>

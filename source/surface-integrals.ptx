@@ -1,0 +1,940 @@
+<?xml version="1.0" encoding="utf-8"?>
+<section xml:id="section-surface-integrals" xmlns:xi="http://www.w3.org/2001/XInclude">
+<title>Surface Integrals: Flux Through a Surface</title>
+
+<introduction>
+<p>
+How much fluid crosses a surface per unit time? For a flat surface in a
+constant velocity field the answer is a single dot product; for a curved
+surface in a varying field it is a <term>surface integral</term>. In
+this section we build the surface integral in three steps: we learn how
+to parametrize a surface, how to use the parametrization to find a
+normal vector, and how to combine the two to compute the flux of a
+vector field.
+</p>
+</introduction>
+
+<!-- ================================================================ -->
+<subsection xml:id="sec-flux-flat">
+<title>Flux Through a Flat Surface</title>
+
+<p>
+Suppose water flows with constant velocity <m>\mathbf{v}_0</m> through
+a flat surface <m>S</m> of area <m>A</m> that is perpendicular to the
+flow. In one second, the block of water that passes through <m>S</m>
+has volume <m>A \lVert \mathbf{v}_0 \rVert</m>, so
+</p>
+
+<me>
+\text{flow rate} = (\text{velocity})(\text{area})
+= \lVert \mathbf{v}_0 \rVert\, A,
+</me>
+
+<p>
+measured in units of
+<m>\frac{\text{m}}{\text{s}} \cdot \text{m}^2
+= \frac{\text{m}^3}{\text{s}}</m>. If instead the surface is tilted, so
+that the flow meets it at an angle <m>\theta</m> away from the normal
+direction, only the component of the velocity perpendicular to the
+surface pushes water through it, and the flow rate picks up a factor of
+<m>\cos\theta</m>:
+</p>
+
+<me>
+\text{flow rate} = A \lVert \mathbf{v}_0 \rVert \cos\theta
+= \mathbf{v}_0 \cdot \mathbf{n} = \mathbf{v}_0 \cdot (\hat{\mathbf{n}}\, A),
+</me>
+
+<p>
+where <m>\hat{\mathbf{n}}</m> is the unit normal to the surface and
+<m>\mathbf{n} = \hat{\mathbf{n}}\, A</m> is the normal vector whose
+length equals the area of <m>S</m>, as in
+<xref ref="fig-flux-plate"/>. Note that the flow rate is the dot
+product of the vector field whose flux we wish to compute and the
+normal vector <m>\mathbf{n}</m> whose length is equal to the surface
+area of <m>S</m>.
+</p>
+
+<figure xml:id="fig-flux-plate">
+<caption>
+A tilted plate <m>S</m> of area <m>A</m> in a uniform flow
+<m>\mathbf{v}_0</m>. Only the component of <m>\mathbf{v}_0</m> along
+the normal <m>\mathbf{n}</m> carries fluid through the plate, so the
+flow rate is <m>A \lVert \mathbf{v}_0 \rVert \cos\theta =
+\mathbf{v}_0 \cdot \mathbf{n}</m>.
+</caption>
+<image xml:id="image-flux-plate" width="70%">
+<shortdescription>
+A tilted plate in a uniform flow, with its normal vector and the angle
+between the normal and the velocity marked.
+</shortdescription>
+<description>
+<p>
+A blue parallelogram-shaped plate <m>S</m> stands tilted in a uniform
+flow of parallel gray velocity arrows <m>\mathbf{v}_0</m> pointing up
+and to the right. A magenta arrow <m>\mathbf{n}</m>, normal to the
+plate, makes an angle <m>\theta</m> with the velocity arrows.
+</p>
+</description>
+<latex-image>
+<![CDATA[\begin{tikzpicture}[line join=round, line cap=round]
+  \definecolor{oiblue}{RGB}{0,114,178}
+  \definecolor{oimagenta}{RGB}{204,0,119}
+  \begin{axis}[
+      view={115}{18},
+      width=11.5cm,
+      axis lines=none,
+      axis equal image,
+      xmin=-2.2, xmax=2.6, ymin=-2.6, ymax=3.2, zmin=-1.4, zmax=2.6,
+      clip=false,
+    ]
+    % uniform flow arrows (direction (0,1,0.35), normalized-ish)
+    \foreach \xx/\zz in {-1.4/-0.9, -1.4/0.1, -1.4/1.1, 0/-0.9, 0/0.1,
+                         0/1.1, 1.4/-0.9, 1.4/0.1, 1.4/1.1}{
+      \edef\tmp{\noexpand\draw[-latex, black!35, line width=0.9pt]
+        (axis cs:\zz,-2.2,\xx) -- (axis cs:\zz,-0.9,{\xx+0.45});}\tmp
+      \edef\tmp{\noexpand\draw[-latex, black!35, line width=0.9pt]
+        (axis cs:\zz,0.6,{\xx+0.55}) -- (axis cs:\zz,1.9,{\xx+1.0});}\tmp}
+    % the plate: a parallelogram with normal in the y-z plane, tilted
+    % plate spanned by u=(1,0,0) and w=(0,0.5,0.9)(scaled)
+    \fill[oiblue!35, draw=oiblue, line width=1.2pt, fill opacity=0.75]
+      (axis cs:-1.1,-0.7,0.6) -- (axis cs:1.1,-0.7,0.6)
+      -- (axis cs:1.1,0.7,-0.6) -- (axis cs:-1.1,0.7,-0.6) -- cycle;
+    \node[font=\large, oiblue] at (axis cs:-0.7,-0.35,0.35) {$S$};
+    % normal vector at the plate center (n ~ (0, 0.65, 0.76))
+    \draw[-latex, oimagenta, line width=1.6pt]
+      (axis cs:0,0,0) -- (axis cs:0,0.85,0.99);
+    \node[font=\normalsize, oimagenta, anchor=south]
+      at (axis cs:0,0.9,1.05) {$\mathbf{n} = \hat{\mathbf{n}}\,A$};
+    % one bold velocity arrow from plate center (direction (0,1,0.35))
+    \draw[-latex, black!75, line width=1.6pt]
+      (axis cs:0,0,0) -- (axis cs:0,1.3,0.455);
+    \node[font=\normalsize, anchor=west]
+      at (axis cs:0,1.35,0.45) {$\mathbf{v}_0$};
+    % angle arc between n and v0 (both start at plate center)
+    \draw[black!60, line width=0.8pt]
+      (axis cs:0,0.36,0.42) to[bend left=25] (axis cs:0,0.55,0.19);
+    \node[font=\small] at (axis cs:0,0.58,0.42) {$\theta$};
+  \end{axis}
+\end{tikzpicture}]]>
+</latex-image>
+</image>
+</figure>
+
+<p>
+Our goal is to generalize the above scenario in two respects: (I) we
+generalize the surface <m>S</m> (not just a plane), and (II) we
+generalize the vector field (not just a constant). To achieve this
+goal, we will need to learn: (I) how to parametrize a surface
+<m>S</m>; (II) how to use the parametrization of <m>S</m> to find the
+normal vector <m>\mathbf{n}</m>; and (III) how to use (I) and (II) to
+compute the flux of a vector field. Watch
+<xref ref="fig-flux-plate-video"/> for the flat-plate picture.
+</p>
+
+<figure xml:id="fig-flux-plate-video">
+<caption>
+Flow through a flat plate: perpendicular flow carries volume
+<m>\lVert \mathbf{v}_0 \rVert A</m> per second, and tilting the plate
+by an angle <m>\theta</m> reduces the flow rate to
+<m>A \lVert \mathbf{v}_0 \rVert \cos\theta = \mathbf{v}_0 \cdot
+\mathbf{n}</m>.
+</caption>
+<video xml:id="video-flux-plate"
+       source="videos/flux_flat_plate_1080p.mp4"
+       width="70%" aspect="16:9"/>
+</figure>
+
+</subsection>
+
+<!-- ================================================================ -->
+<subsection xml:id="sec-parametric-surfaces">
+<title>Parametric Surfaces</title>
+
+<p>
+Recall how we parametrize curves in the <m>xy</m>-plane: the parabola
+<m>y = x^2</m> is traced by
+<m>\mathbf{r}(t) = \langle t, t^2 \rangle</m> for <m>t \in \R</m>;
+only one parameter is needed. A surface is two-dimensional, so its
+parametrization needs <em>two</em> parameters.
+</p>
+
+<example xml:id="example-parametric-surfaces">
+<title>Parametrizing Surfaces</title>
+<statement>
+<p>
+Find parametric representations for each of the following surfaces.
+</p>
+
+<p>
+<ol marker="A.">
+<li>
+<p>
+<m>z = x^2 + y^2</m>
+</p>
+</li>
+<li>
+<p>
+<m>x^2 + y^2 + z^2 = 4</m>
+</p>
+</li>
+<li>
+<p>
+<m>x^2 + y^2 = 1</m>
+</p>
+</li>
+</ol>
+</p>
+</statement>
+</example>
+
+<solution xml:id="solution-parametric-surfaces">
+<p>
+<em>Part A.</em> The constraint is <m>z = x^2 + y^2</m>. Starting from
+the position vector <m>\mathbf{r} = \langle x, y, z \rangle</m> of an
+arbitrary point and imposing the constraint, we get
+</p>
+
+<me>
+\mathbf{r}(x,y) = \langle x,\, y,\, x^2 + y^2 \rangle,
+\qquad x, y \in \R,
+</me>
+
+<p>
+the position vector of a point <m>(x,y,z)</m> located on the
+paraboloid; the two parameters are <m>x</m> and <m>y</m> themselves.
+In <term>cylindrical coordinates</term> the same paraboloid is
+</p>
+
+<me>
+\mathbf{r}(r,\theta)
+= \langle r\cos\theta,\, r\sin\theta,\, r^2 \rangle,
+\qquad 0 \le r \lt \infty, \quad 0 \le \theta \le 2\pi.
+</me>
+
+<p>
+In <term>spherical coordinates</term>, substituting
+<m>x = \rho\sin\varphi\cos\theta</m>,
+<m>y = \rho\sin\varphi\sin\theta</m>, <m>z = \rho\cos\varphi</m> into
+<m>z = x^2 + y^2</m> gives
+<m>\rho\cos\varphi = \rho^2\sin^2\varphi</m>, so
+<m>\rho = \cot\varphi\csc\varphi</m> on the surface, and
+</p>
+
+<me>
+\mathbf{r}(\theta,\varphi)
+= \langle \cot\varphi\cos\theta,\, \cot\varphi\sin\theta,\,
+\cot^2\varphi \rangle,
+\qquad 0 \lt \varphi \le \frac{\pi}{2}, \quad 0 \le \theta \le 2\pi.
+</me>
+
+<p>
+<em>Part B.</em> The surface <m>x^2 + y^2 + z^2 = 4</m> is a sphere of
+radius <m>2</m>, so spherical coordinates with <m>\rho = 2</m> give
+</p>
+
+<me>
+\mathbf{r}(\theta,\varphi)
+= \langle 2\sin\varphi\cos\theta,\, 2\sin\varphi\sin\theta,\,
+2\cos\varphi \rangle,
+\qquad 0 \le \varphi \le \pi, \quad 0 \le \theta \le 2\pi.
+</me>
+
+<p>
+<em>Part C.</em> The surface <m>x^2 + y^2 = 1</m> is a cylinder of
+radius <m>1</m> around the <m>z</m>-axis. The angle <m>\theta</m>
+parametrizes the circle and <m>z</m> is free:
+</p>
+
+<me>
+\mathbf{r}(\theta,z) = \langle \cos\theta,\, \sin\theta,\, z \rangle,
+\qquad 0 \le \theta \le 2\pi, \quad z \in \R.
+</me>
+
+<p>
+In each case, two parameters sweep out the two-dimensional surface;
+see <xref ref="fig-parametric-surfaces-video"/>.
+</p>
+</solution>
+
+<figure xml:id="fig-parametric-surfaces-video">
+<caption>
+Parametrizing the paraboloid <m>z = x^2 + y^2</m>, the sphere of
+radius <m>2</m>, and the cylinder <m>x^2 + y^2 = 1</m>: two parameters
+sweep out coordinate grids on each surface.
+</caption>
+<video xml:id="video-parametric-surfaces"
+       source="videos/parametric_surfaces_1080p.mp4"
+       width="70%" aspect="16:9"/>
+</figure>
+
+</subsection>
+
+<!-- ================================================================ -->
+<subsection xml:id="sec-surface-normal">
+<title>The Normal Vector to a Surface</title>
+
+<p>
+Consider the unit sphere <m>x^2 + y^2 + z^2 = 1</m> with its spherical
+parametrization
+</p>
+
+<me>
+\mathbf{r}(\theta,\varphi)
+= \langle \sin\varphi\cos\theta,\, \sin\varphi\sin\theta,\,
+\cos\varphi \rangle.
+</me>
+
+<p>
+Our goal is to find the normal <m>\mathbf{n}</m> to the sphere at every
+point on its surface. Holding one parameter fixed and varying the
+other produces two tangent vectors,
+</p>
+
+<me>
+\mathbf{r}_\varphi = \frac{\partial \mathbf{r}}{\partial \varphi}
+= \lim_{\Delta\varphi \to 0}
+\frac{\mathbf{r}(\theta, \varphi + \Delta\varphi)
+- \mathbf{r}(\theta,\varphi)}{\Delta\varphi},
+\qquad
+\mathbf{r}_\theta = \frac{\partial \mathbf{r}}{\partial \theta}
+= \lim_{\Delta\theta \to 0}
+\frac{\mathbf{r}(\theta + \Delta\theta, \varphi)
+- \mathbf{r}(\theta,\varphi)}{\Delta\theta},
+</me>
+
+<p>
+so that the two edges of a small coordinate patch on the sphere are
+approximately <m>\mathbf{r}_\varphi\, \Delta\varphi</m> and
+<m>\mathbf{r}_\theta\, \Delta\theta</m>, as in
+<xref ref="fig-sphere-patch"/>. Their cross product is perpendicular
+to the patch, so it gives a normal vector, and its length gives the
+area of the patch:
+</p>
+
+<men xml:id="eq-normal-patch">
+\mathbf{n} \approx (\mathbf{r}_\varphi \times \mathbf{r}_\theta)\,
+\Delta\varphi\, \Delta\theta,
+\qquad
+\Delta\sigma \approx \lVert \mathbf{r}_\varphi \times
+\mathbf{r}_\theta \rVert\, \Delta\varphi\, \Delta\theta.
+</men>
+
+<figure xml:id="fig-sphere-patch">
+<caption>
+A small coordinate patch on the unit sphere. The tangent vectors
+<m>\mathbf{r}_\theta</m> and <m>\mathbf{r}_\varphi</m> span the patch,
+and their cross product points along the outward normal
+<m>\hat{\mathbf{n}}</m>.
+</caption>
+<image xml:id="image-sphere-patch" width="80%">
+<shortdescription>
+A wireframe piece of a sphere with two tangent vectors and the normal
+vector drawn at a point.
+</shortdescription>
+<description>
+<p>
+A wireframe octant of the unit sphere. At a point
+<m>\mathbf{r}(\theta,\varphi)</m> on the surface, a blue tangent
+vector <m>\mathbf{r}_\theta</m> points east along a parallel, a red
+tangent vector <m>\mathbf{r}_\varphi</m> points south along a
+meridian, a small shaded patch <m>\Delta\sigma</m> lies between them,
+and a green arrow <m>\hat{\mathbf{n}}</m> points radially outward,
+perpendicular to both.
+</p>
+</description>
+<latex-image>
+<![CDATA[\begin{tikzpicture}[line join=round, line cap=round]
+  \definecolor{oiblue}{RGB}{0,114,178}
+  \definecolor{oivermillion}{RGB}{213,94,0}
+  \definecolor{oigreen}{RGB}{0,158,115}
+  \begin{axis}[
+      view={115}{18},
+      width=12cm,
+      axis lines=center,
+      axis equal image,
+      axis line style={-latex, black!75, line width=0.7pt},
+      xlabel={$x$}, ylabel={$y$}, zlabel={$z$},
+      label style={font=\large},
+      ticks=none,
+      xmin=0, xmax=1.5, ymin=0, ymax=1.5, zmin=0, zmax=1.35,
+      clip=false,
+    ]
+    % wireframe octant of the unit sphere
+    \foreach \pp in {10,20,...,80}{
+      \edef\tmp{\noexpand\addplot3[black!30, line width=0.4pt,
+          domain=0:90, samples=37, samples y=0, forget plot]
+        ({sin(\pp)*cos(x)}, {sin(\pp)*sin(x)}, {cos(\pp)});}\tmp}
+    \foreach \tt in {0,15,...,90}{
+      \edef\tmp{\noexpand\addplot3[black!30, line width=0.4pt,
+          domain=0:90, samples=37, samples y=0, forget plot]
+        ({sin(x)*cos(\tt)}, {sin(x)*sin(\tt)}, {cos(x)});}\tmp}
+    % the patch between theta=35..55, phi=45..65 (shaded)
+    \addplot3[surf, shader=flat, color=black!45, opacity=0.5,
+              fill opacity=0.5,
+              domain=35:55, samples=8, y domain=45:65, samples y=8,
+              z buffer=sort, forget plot]
+      ({sin(y)*cos(x)}, {sin(y)*sin(x)}, {cos(y)});
+    % base point at theta=35, phi=45
+    % r = (sin45 cos35, sin45 sin35, cos45) = (0.5792,0.4056,0.7071)
+    \fill[black] (axis cs:0.5792,0.4056,0.7071) circle (1.4pt);
+    % position vector from origin
+    \draw[-latex, black!80, line width=1.1pt]
+      (axis cs:0,0,0) -- (axis cs:0.5792,0.4056,0.7071);
+    \node[font=\small, anchor=north, black!80]
+      at (axis cs:0.34,0.18,0.38) {$\mathbf{r}(\theta,\varphi)$};
+    % r_theta = sinphi*(-sin t, cos t, 0) = 0.7071*(-0.5736,0.8192,0)
+    \draw[-latex, oiblue, line width=1.5pt]
+      (axis cs:0.5792,0.4056,0.7071)
+      -- (axis cs:{0.5792-0.45*0.4056},{0.4056+0.45*0.5793},0.7071);
+    \node[font=\normalsize, oiblue, anchor=west]
+      at (axis cs:0.42,0.72,0.72) {$\mathbf{r}_\theta$};
+    % r_phi = (cosphi cos t, cosphi sin t, -sinphi)
+    %       = (0.7071*0.8192, 0.7071*0.5736, -0.7071)
+    \draw[-latex, oivermillion, line width=1.5pt]
+      (axis cs:0.5792,0.4056,0.7071)
+      -- (axis cs:{0.5792+0.45*0.5793},{0.4056+0.45*0.4056},{0.7071-0.45*0.7071});
+    \node[font=\normalsize, oivermillion, anchor=west]
+      at (axis cs:0.85,0.62,0.42) {$\mathbf{r}_\varphi$};
+    % outward normal at the point (radial direction)
+    \draw[-latex, oigreen!70!black, line width=1.6pt]
+      (axis cs:0.5792,0.4056,0.7071)
+      -- (axis cs:{0.5792*1.55},{0.4056*1.55},{0.7071*1.55});
+    \node[font=\normalsize, oigreen!70!black, anchor=south west]
+      at (axis cs:0.9,0.63,1.1) {$\hat{\mathbf{n}}$};
+    \node[font=\small] at (axis cs:0.72,0.62,0.66) {$\Delta\sigma$};
+  \end{axis}
+\end{tikzpicture}]]>
+</latex-image>
+</image>
+</figure>
+
+<p>
+Let us carry out this computation for the sphere. The tangent vectors
+are
+</p>
+
+<md>
+<mrow>\mathbf{r}_\varphi \amp= \langle \cos\varphi\cos\theta,\,
+\cos\varphi\sin\theta,\, -\sin\varphi \rangle,</mrow>
+<mrow>\mathbf{r}_\theta \amp= \langle -\sin\varphi\sin\theta,\,
+\sin\varphi\cos\theta,\, 0 \rangle,</mrow>
+</md>
+
+<p>
+and their cross product is
+</p>
+
+<md>
+<mrow>\mathbf{r}_\varphi \times \mathbf{r}_\theta
+\amp= \begin{vmatrix}
+\mathbf{i} \amp \mathbf{j} \amp \mathbf{k} \\
+\cos\varphi\cos\theta \amp \cos\varphi\sin\theta \amp -\sin\varphi \\
+-\sin\varphi\sin\theta \amp \sin\varphi\cos\theta \amp 0
+\end{vmatrix}</mrow>
+<mrow>\amp= \left( \sin^2\varphi\cos\theta \right)\mathbf{i}
++ \left( \sin^2\varphi\sin\theta \right)\mathbf{j}
++ \cos\varphi\sin\varphi
+\underbrace{\left( \cos^2\theta + \sin^2\theta \right)}_{=1}\mathbf{k}</mrow>
+<mrow>\amp= \sin\varphi\, \langle \sin\varphi\cos\theta,\,
+\sin\varphi\sin\theta,\, \cos\varphi \rangle
+= \sin\varphi\, \langle x, y, z \rangle.</mrow>
+</md>
+
+<p>
+Normalizing, and using the fact that <m>x^2 + y^2 + z^2 = \rho^2 = 1</m>
+on the sphere,
+</p>
+
+<me>
+\hat{\mathbf{n}}
+= \frac{\sin\varphi\, \langle x,y,z \rangle}
+{\sin\varphi\, \sqrt{x^2 + y^2 + z^2}}
+= \langle x, y, z \rangle
+= \langle \sin\varphi\cos\theta,\, \sin\varphi\sin\theta,\,
+\cos\varphi \rangle:
+</me>
+
+<p>
+the unit normal to the sphere at a point is simply the position vector
+of that point<mdash/>it points radially outward, as expected. The
+animation in <xref ref="fig-surface-normal-video"/> builds this
+construction step by step.
+</p>
+
+<figure xml:id="fig-surface-normal-video">
+<caption>
+The tangent vectors <m>\mathbf{r}_\theta</m> and
+<m>\mathbf{r}_\varphi</m> span a small patch of the sphere; their
+cross product <m>\mathbf{r}_\varphi \times \mathbf{r}_\theta =
+\sin\varphi\, \langle x,y,z \rangle</m> is normal to the surface and
+its length measures the patch area.
+</caption>
+<video xml:id="video-surface-normal"
+       source="videos/surface_normal_1080p.mp4"
+       width="70%" aspect="16:9"/>
+</figure>
+
+</subsection>
+
+<!-- ================================================================ -->
+<subsection xml:id="sec-oriented-surfaces">
+<title>Oriented Surfaces</title>
+
+<p>
+For a <term>closed surface</term>, that is, a surface that is the
+boundary of a solid region <m>E</m>, the convention is that the
+<term>positive orientation</term> is the one for which the normal
+vectors point <em>outward</em> from <m>E</m>, and inward-pointing
+normals give the negative orientation.
+</p>
+
+<example xml:id="example-cylinder-orientation">
+<title>Two Orientations of a Cylinder</title>
+<statement>
+<p>
+Consider the cylinder <m>x^2 + y^2 = 1</m>. Describe its two possible
+orientations.
+</p>
+</statement>
+</example>
+
+<solution xml:id="solution-cylinder-orientation">
+<p>
+The normal vector <m>\mathbf{n}_1</m> can be described as the vector
+orthogonal to the curved surface of the cylinder pointing outward (or
+pointing away from the <m>z</m>-axis), whereas the normal vector
+<m>\mathbf{n}_2</m> points inward (or toward the <m>z</m>-axis), as in
+<xref ref="fig-cylinder-normals"/>. The two orientations are opposite:
+<m>\mathbf{n}_1 = -\mathbf{n}_2</m>.
+</p>
+</solution>
+
+<figure xml:id="fig-cylinder-normals">
+<caption>
+The cylinder <m>x^2 + y^2 = 1</m> with its two possible orientations:
+<m>\mathbf{n}_1</m> points away from the <m>z</m>-axis and
+<m>\mathbf{n}_2 = -\mathbf{n}_1</m> points toward it.
+</caption>
+<image xml:id="image-cylinder-normals" width="55%">
+<shortdescription>
+A cylinder around the vertical axis with an outward normal arrow and
+an inward normal arrow at the same point.
+</shortdescription>
+<description>
+<p>
+A translucent cylinder of radius one around the <m>z</m>-axis. At a
+point on its curved surface, a magenta arrow <m>\mathbf{n}_1</m>
+points horizontally away from the axis, and a teal arrow
+<m>\mathbf{n}_2</m> points from the same point horizontally toward
+the axis.
+</p>
+</description>
+<latex-image>
+<![CDATA[\begin{tikzpicture}[line join=round, line cap=round]
+  \definecolor{oiblue}{RGB}{0,114,178}
+  \definecolor{oimagenta}{RGB}{204,0,119}
+  \definecolor{oiteal}{RGB}{0,158,115}
+  \begin{axis}[
+      view={115}{18},
+      width=9.5cm,
+      axis lines=center,
+      axis equal image,
+      axis line style={-latex, black!75, line width=0.7pt},
+      xlabel={$x$}, ylabel={$y$}, zlabel={$z$},
+      label style={font=\large},
+      ticks=none,
+      xmin=-1.6, xmax=1.6, ymin=-2.6, ymax=2.6, zmin=-1.5, zmax=1.9,
+      clip=false,
+    ]
+    % cylinder surface
+    \addplot3[surf, shader=interp,
+              point meta={cos(x)},
+              colormap={softb}{color=(oiblue!10!white) color=(oiblue!38!white)},
+              opacity=0.5, fill opacity=0.5,
+              domain=0:360, samples=49,
+              y domain=-1.2:1.4, samples y=2,
+              z buffer=sort, forget plot]
+      ({cos(x)}, {sin(x)}, {y});
+    % rims
+    \addplot3[oiblue!60, line width=0.8pt, domain=0:360, samples=73,
+        samples y=0, forget plot] ({cos(x)}, {sin(x)}, {1.4});
+    \addplot3[oiblue!60, line width=0.8pt, domain=0:360, samples=73,
+        samples y=0, forget plot] ({cos(x)}, {sin(x)}, {-1.2});
+    % normals at the point (0,1,0.2)
+    \fill[black] (axis cs:0,1,0.2) circle (1.4pt);
+    \draw[-latex, oimagenta, line width=1.6pt]
+      (axis cs:0,1,0.2) -- (axis cs:0,2.0,0.2);
+    \node[font=\normalsize, oimagenta, anchor=south]
+      at (axis cs:0,1.85,0.32) {$\mathbf{n}_1$};
+    \draw[-latex, oiteal!80!black, line width=1.6pt]
+      (axis cs:0,1,0.2) -- (axis cs:0,0.15,0.2);
+    \node[font=\normalsize, oiteal!80!black, anchor=south]
+      at (axis cs:0,0.42,0.34) {$\mathbf{n}_2$};
+    \node[font=\normalsize, oiblue] at (axis cs:-1.0,-0.85,1.0)
+      {$x^2+y^2=1$};
+  \end{axis}
+\end{tikzpicture}]]>
+</latex-image>
+</image>
+</figure>
+
+</subsection>
+
+<!-- ================================================================ -->
+<subsection xml:id="sec-surface-integral-def">
+<title>The Surface Integral of a Vector Field</title>
+
+<p>
+The following definition should be compared to the definition of the
+line integral of a vector field <m>\mathbf{F}</m> along a curve
+<m>C</m>, i.e. <m>\int_C \mathbf{F} \cdot \mathbf{T}\, ds</m>, where
+<m>\mathbf{T}</m> was defined as the unit tangent vector to the curve
+<m>C</m>. For a surface, the unit tangent is replaced by the unit
+normal.
+</p>
+
+<definition xml:id="def-surface-integral">
+<statement>
+<p>
+If <m>\mathbf{F}</m> is a continuous vector field defined on an
+oriented surface <m>S</m> with unit normal vector
+<m>\hat{\mathbf{n}}</m>, then the <term>surface integral of
+<m>\mathbf{F}</m> over <m>S</m></term> is
+</p>
+
+<men xml:id="eq-flux-def">
+\iint_S \mathbf{F} \cdot d\mathbf{S}
+= \iint_S \mathbf{F} \cdot \hat{\mathbf{n}}\, d\sigma.
+</men>
+
+<p>
+This integral is also called the <term>flux</term> of
+<m>\mathbf{F}</m> across <m>S</m>.
+</p>
+</statement>
+</definition>
+
+<remark xml:id="remark-flux-param">
+<p>
+If the surface <m>S</m> is parametrized with respect to <m>u</m> and
+<m>v</m>, we can write the unit normal vector as
+<m>\hat{\mathbf{n}} = \dfrac{\mathbf{r}_u \times \mathbf{r}_v}
+{\lVert \mathbf{r}_u \times \mathbf{r}_v \rVert}</m>, which can be
+combined with the fact that
+<m>d\sigma = \lVert \mathbf{r}_u \times \mathbf{r}_v \rVert\,
+du\, dv</m> (from <xref ref="eq-normal-patch"/>) to write the surface
+integral as
+</p>
+
+<men xml:id="eq-flux-param">
+\iint_S \mathbf{F} \cdot \hat{\mathbf{n}}\, d\sigma
+= \iint_R \mathbf{F} \cdot (\mathbf{r}_u \times \mathbf{r}_v)\,
+du\, dv,
+</men>
+
+<p>
+where <m>R</m> is the region of the parameters in the
+<m>uv</m>-plane. The normalizing length cancels against the area
+factor, which is what makes this formula so computable.
+</p>
+</remark>
+
+<p>
+For instance, if the vector field <m>\mathbf{F}</m> is the velocity
+field of a fluid, then the surface integral of <m>\mathbf{F}</m> over
+the surface <m>S</m> is the net rate at which fluid is crossing
+<m>S</m> in the chosen positive direction. As another example, if the
+vector field <m>\mathbf{F}</m> represents the electric field due to a
+charged particle such as an electron, then the surface integral of
+<m>\mathbf{F}</m> over the surface <m>S</m> corresponds to the flux of
+the electric field through the surface <m>S</m>.
+</p>
+
+<example xml:id="example-sphere-flux">
+<title>Flux Across the Unit Sphere</title>
+<statement>
+<p>
+Find the flux of the vector field
+<m>\mathbf{F}(x,y,z) = z\,\mathbf{i} + y\,\mathbf{j} +
+x\,\mathbf{k}</m> across the unit sphere
+<m>x^2 + y^2 + z^2 = 1</m>.
+</p>
+</statement>
+</example>
+
+<solution xml:id="solution-sphere-flux">
+<p>
+We begin by remembering that a sphere of radius one centered at the
+origin can be parametrized as
+</p>
+
+<me>
+x = \sin\varphi\cos\theta, \qquad
+y = \sin\varphi\sin\theta, \qquad
+z = \cos\varphi,
+</me>
+
+<p>
+where <m>0 \le \theta \le 2\pi</m> and <m>0 \le \varphi \le \pi</m>.
+This means that we can use the formula for surface integrals,
+<xref ref="eq-flux-param"/>, to compute the flux. From the previous
+subsection,
+</p>
+
+<me>
+\mathbf{r}_\varphi \times \mathbf{r}_\theta
+= \sin^2\varphi\cos\theta\,\mathbf{i}
++ \sin^2\varphi\sin\theta\,\mathbf{j}
++ \sin\varphi\cos\varphi\,\mathbf{k},
+</me>
+
+<p>
+which points outward. Substituting the parametrization into
+<m>\mathbf{F}</m>,
+</p>
+
+<me>
+\mathbf{F}(\theta,\varphi)
+= \cos\varphi\,\mathbf{i} + \sin\varphi\sin\theta\,\mathbf{j}
++ \sin\varphi\cos\theta\,\mathbf{k},
+</me>
+
+<p>
+so the integrand is
+</p>
+
+<me>
+\mathbf{F} \cdot (\mathbf{r}_\varphi \times \mathbf{r}_\theta)
+= 2\sin^2\varphi\cos\varphi\cos\theta + \sin^3\varphi\sin^2\theta.
+</me>
+
+<p>
+Now we integrate over the parameter region:
+</p>
+
+<md>
+<mrow>\iint_S \mathbf{F} \cdot \hat{\mathbf{n}}\, d\sigma
+\amp= \int_0^{2\pi}\!\! \int_0^{\pi}
+\left( 2\sin^2\varphi\cos\varphi\cos\theta
++ \sin^3\varphi\sin^2\theta \right) d\varphi\, d\theta</mrow>
+<mrow>\amp= 2 \int_0^{\pi} \sin^2\varphi\cos\varphi\, d\varphi
+\underbrace{\int_0^{2\pi} \cos\theta\, d\theta}_{=0}
++ \int_0^{\pi} \sin^3\varphi\, d\varphi
+\int_0^{2\pi} \sin^2\theta\, d\theta</mrow>
+<mrow>\amp= 0 + \left( \frac{4}{3} \right)(\pi)
+= \frac{4\pi}{3}.</mrow>
+</md>
+
+<p>
+See <xref ref="fig-sphere-flux-video"/> for the animation of the field
+crossing the sphere.
+</p>
+</solution>
+
+<figure xml:id="fig-sphere-flux-video">
+<caption>
+The flux of <m>\mathbf{F} = z\,\mathbf{i} + y\,\mathbf{j} +
+x\,\mathbf{k}</m> across the unit sphere equals
+<m>\tfrac{4\pi}{3}</m>.
+</caption>
+<video xml:id="video-sphere-flux"
+       source="videos/sphere_flux_1080p.mp4"
+       width="70%" aspect="16:9"/>
+</figure>
+
+<example xml:id="example-paraboloid-flux">
+<title>Flux Across a Closed Surface</title>
+<statement>
+<p>
+Evaluate the surface integral
+<m>\displaystyle \iint_S \mathbf{F} \cdot \hat{\mathbf{n}}\,
+d\sigma</m>, where
+<m>\mathbf{F}(x,y,z) = y\,\mathbf{i} + x\,\mathbf{j} +
+z\,\mathbf{k}</m> and the surface <m>S</m> is the boundary of the
+solid region <m>E</m> enclosed by the paraboloid
+<m>z = 1 - x^2 - y^2</m> and the plane <m>z = 0</m>.
+</p>
+</statement>
+</example>
+
+<solution xml:id="solution-paraboloid-flux">
+<p>
+The closed surface <m>S</m> consists of two pieces, shown in
+<xref ref="fig-paraboloid-flux"/>: the paraboloid cap <m>S_1</m> and
+the unit disk <m>S_2</m> in the plane <m>z = 0</m>. With the positive
+(outward) orientation, the normal on <m>S_1</m> must point up and away
+from the solid, while the normal on <m>S_2</m> must point straight
+down.
+</p>
+
+<p>
+For the paraboloid we use the graph parametrization
+<m>\mathbf{r}(x,y) = x\,\mathbf{i} + y\,\mathbf{j} +
+(1 - x^2 - y^2)\,\mathbf{k}</m>, whose normal is
+</p>
+
+<me>
+\mathbf{n}_1 = \mathbf{r}_x \times \mathbf{r}_y =
+\begin{vmatrix}
+\mathbf{i} \amp \mathbf{j} \amp \mathbf{k} \\
+1 \amp 0 \amp -2x \\
+0 \amp 1 \amp -2y
+\end{vmatrix}
+= 2x\,\mathbf{i} + 2y\,\mathbf{j} + \mathbf{k}.
+</me>
+
+<p>
+Note that the <m>z</m>-component of this normal vector is positive, so
+it points upward and outward from the solid, as required. For the
+disk in the <m>xy</m>-plane we can write
+<m>\mathbf{r}(x,y) = x\,\mathbf{i} + y\,\mathbf{j}</m>, which gives
+<m>\mathbf{r}_x \times \mathbf{r}_y = \mathbf{k}</m>; this points
+upward, and to make it point downward (outward from the solid) we
+merely need to multiply by minus one to get
+<m>\mathbf{n}_2 = -\mathbf{k}</m>. Finally, the surface integral is
+evaluated using <xref ref="eq-flux-param"/>, split over the two
+pieces:
+</p>
+
+<me>
+\iint_S \mathbf{F} \cdot \hat{\mathbf{n}}\, d\sigma
+= \iint_{S_1} \mathbf{F} \cdot \hat{\mathbf{n}}\, d\sigma
++ \iint_{S_2} \mathbf{F} \cdot \hat{\mathbf{n}}\, d\sigma.
+</me>
+
+<p>
+On <m>S_1</m>, with <m>R</m> the unit disk in the <m>xy</m>-plane,
+</p>
+
+<md>
+<mrow>\iint_{S_1} \mathbf{F} \cdot \hat{\mathbf{n}}\, d\sigma
+\amp= \iint_R (y\,\mathbf{i} + x\,\mathbf{j} + z\,\mathbf{k})
+\cdot (2x\,\mathbf{i} + 2y\,\mathbf{j} + \mathbf{k})\, dx\, dy</mrow>
+<mrow>\amp= \iint_R \left( 4xy + z \right) dx\, dy
+= \iint_R \left( 4xy + 1 - x^2 - y^2 \right) dx\, dy,</mrow>
+</md>
+
+<p>
+and <m>\iint_R 4xy\, dA = 0</m> by symmetry (the integrand is odd in
+<m>x</m>), so switching to polar coordinates,
+</p>
+
+<me>
+\iint_{S_1} \mathbf{F} \cdot \hat{\mathbf{n}}\, d\sigma
+= \int_0^{2\pi}\!\! \int_0^1 (1 - r^2)\, r\, dr\, d\theta
+= 2\pi \left( \frac{1}{2} - \frac{1}{4} \right) = \frac{\pi}{2}.
+</me>
+
+<p>
+On <m>S_2</m> we have <m>z = 0</m>, so
+</p>
+
+<me>
+\iint_{S_2} \mathbf{F} \cdot \hat{\mathbf{n}}\, d\sigma
+= \iint_R (y\,\mathbf{i} + x\,\mathbf{j}) \cdot (-\mathbf{k})\,
+dx\, dy = 0.
+</me>
+
+<p>
+Adding the two pieces,
+</p>
+
+<me>
+\iint_S \mathbf{F} \cdot \hat{\mathbf{n}}\, d\sigma
+= \frac{\pi}{2} + 0 = \frac{\pi}{2}.
+</me>
+
+<p>
+The animation in <xref ref="fig-paraboloid-flux-video"/> walks through
+both pieces of the surface.
+</p>
+</solution>
+
+<figure xml:id="fig-paraboloid-flux-video">
+<caption>
+The closed surface made of the paraboloid cap <m>S_1</m> and the disk
+<m>S_2</m>, with outward normals: the flux of
+<m>\mathbf{F} = y\,\mathbf{i} + x\,\mathbf{j} + z\,\mathbf{k}</m>
+through it equals <m>\pi/2</m>.
+</caption>
+<video xml:id="video-paraboloid-flux"
+       source="videos/paraboloid_flux_1080p.mp4"
+       width="70%" aspect="16:9"/>
+</figure>
+
+<figure xml:id="fig-paraboloid-flux">
+<caption>
+The boundary <m>S</m> of the solid enclosed by
+<m>z = 1 - x^2 - y^2</m> and <m>z = 0</m>: the cap <m>S_1</m> with
+upward-and-outward normals, and the disk <m>S_2</m> with downward
+normals.
+</caption>
+<image xml:id="image-paraboloid-flux" width="75%">
+<shortdescription>
+A paraboloid dome over a disk, with outward normal arrows on the dome
+and downward normal arrows on the disk.
+</shortdescription>
+<description>
+<p>
+A translucent blue dome, the paraboloid <m>z = 1 - x^2 - y^2</m>,
+labeled <m>S_1</m>, sits over the unit disk in the <m>xy</m>-plane,
+labeled <m>S_2</m>. Magenta arrows on the dome point up and outward,
+and magenta arrows below the disk point straight down: together they
+give the closed surface its positive, outward orientation.
+</p>
+</description>
+<latex-image>
+<![CDATA[\begin{tikzpicture}[line join=round, line cap=round]
+  \definecolor{oiblue}{RGB}{0,114,178}
+  \definecolor{oimagenta}{RGB}{204,0,119}
+  \begin{axis}[
+      view={115}{18},
+      width=11.5cm,
+      axis lines=center,
+      axis equal image,
+      axis line style={-latex, black!75, line width=0.7pt},
+      xlabel={$x$}, ylabel={$y$}, zlabel={$z$},
+      label style={font=\large},
+      ticks=none,
+      xmin=-1.6, xmax=1.6, ymin=-1.9, ymax=1.9, zmin=-0.7, zmax=1.7,
+      clip=false,
+    ]
+    % paraboloid cap
+    \addplot3[surf, shader=interp,
+              point meta={z},
+              colormap={softb}{color=(oiblue!22!white) color=(oiblue!60!white)},
+              opacity=0.6, fill opacity=0.6,
+              domain=0:360, samples=49,
+              y domain=0:1, samples y=17,
+              z buffer=sort, forget plot]
+      ({y*cos(x)}, {y*sin(x)}, {1 - y^2});
+    % rim
+    \addplot3[oiblue, line width=1.2pt, domain=0:360, samples=73,
+        samples y=0, forget plot] ({cos(x)}, {sin(x)}, {0});
+    % outward normals on the cap: n = (2x, 2y, 1) scaled
+    \foreach \tt in {20,110,200,290}{
+      \edef\tmp{\noexpand\draw[-latex, oimagenta, line width=1.3pt]
+        (axis cs:{0.7*cos(\tt)},{0.7*sin(\tt)},{0.51})
+        -- (axis cs:{0.7*cos(\tt)+0.32*1.4*cos(\tt)},
+            {0.7*sin(\tt)+0.32*1.4*sin(\tt)},{0.51+0.32});}\tmp}
+    % apex normal (straight up)
+    \draw[-latex, oimagenta, line width=1.3pt]
+      (axis cs:0,0,1) -- (axis cs:0,0,1.45);
+    % downward normals under the disk
+    \foreach \tt in {45,165,285}{
+      \edef\tmp{\noexpand\draw[-latex, oimagenta, line width=1.3pt]
+        (axis cs:{0.55*cos(\tt)},{0.55*sin(\tt)},{0})
+        -- (axis cs:{0.55*cos(\tt)},{0.55*sin(\tt)},{-0.5});}\tmp}
+    % labels
+    \node[font=\normalsize, oiblue] at (axis cs:-0.95,-0.8,0.85) {$S_1$};
+    \node[font=\normalsize] at (axis cs:-0.35,0.5,0.06) {$S_2$};
+  \end{axis}
+\end{tikzpicture}]]>
+</latex-image>
+</image>
+</figure>
+
+</subsection>
+
+</section>

@@ -30,8 +30,14 @@
     <xi:include href="triple-integrals-rectangular.ptx" />
     <xi:include href="triple-integrals-cylindrical.ptx" />
     <xi:include href="triple-integrals-spherical.ptx" />
+    <xi:include href="mass-center-of-mass.ptx" />
+    <xi:include href="jacobian-substitution.ptx" />
+    <xi:include href="greens-theorem.ptx" />
+    <xi:include href="surface-integrals.ptx" />
+    <xi:include href="divergence-theorem.ptx" />
     <xi:include href="hw1-exercises.ptx"/>
     <xi:include href="subsec-brain-map.ptx" />
+    
 
   </article>
 
