@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//Users/mehdi/Desktop/**)",
+      "Bash(ls /Users)"
+    ]
+  }
+}
