@@ -1012,10 +1012,121 @@ x y z u v w\\
       <title>Positive, negative, or zero?</title>
       <statement>
         <p>
-          In <xref ref="fig-two-paths-field"/>, determine whether the work
+          In <xref ref="fig-two-paths-curves"/>, determine whether the work
           done by the force field along the two paths <m>C_1</m> and
           <m>C_2</m> is positive, negative, or zero.
         </p>
+
+        <figure xml:id="fig-two-paths-curves">
+          <caption>
+            The two closed paths of
+            <xref ref="fig-two-paths-field"/> in the radial field
+            <xref ref="eq-radial-field"/>: the ellipse <m>C_1</m> and the
+            circle <m>C_2</m>. Notice the orientation of each curve.
+          </caption>
+          <image xml:id="image-two-paths-curves" width="65%">
+            <shortdescription>
+              An ellipse and a circle centred at the origin, drawn in a field
+              of arrows that point away from the origin, each curve carrying
+              an arrowhead that gives its direction of travel.
+            </shortdescription>
+            <description>
+              <p>
+                The plane with x and y from minus 5 to 5, filled with blue
+                arrows that point straight away from the origin and grow
+                longer with the distance from it. A green ellipse crosses the
+                x axis at plus and minus three and the y axis at plus and
+                minus one; its arrowhead, just above the origin, points in the
+                negative x direction, so the ellipse is traversed
+                counterclockwise. A black circle of radius two is centred at
+                the origin; its arrowhead, in the upper right, points down and
+                to the right, so the circle is traversed clockwise. A red dot
+                marks the origin, where the field is the zero vector.
+              </p>
+            </description>
+            <prefigure xmlns="https://prefigure.org" label="two-paths-curves">
+              <diagram dimensions="(400,400)" margins="5">
+                <definition>F(x,y) = (0.22*x, 0.22*y)</definition>
+                <definition>c1(t) = (3*cos(t), sin(t))</definition>
+                <definition>c2(t) = (2*cos(t), -2*sin(t))</definition>
+                <coordinates bbox="(-5.4,-5.4,5.4,5.4)" aspect-ratio="1">
+                  <grid-axes xlabel="x" ylabel="y"/>
+
+                  <group at="field">
+                    <repeat parameter="i=-4..4">
+                      <repeat parameter="j=-4..4">
+                        <vector v="F(i,j)" tail="(i,j)" stroke="blue"
+                                thickness="2"/>
+                      </repeat>
+                    </repeat>
+                  </group>
+
+                  <group at="c2">
+                    <parametric-curve function="c2" domain="(0,2*pi)"
+                                      closed="yes" stroke="black"
+                                      thickness="3" arrows="1"
+                                      arrow-location="5.24"/>
+                    <label anchor="(-1.45,-1.45)" alignment="sw"
+                           clear-background="yes">
+                      <m>C_2</m>
+                    </label>
+                  </group>
+
+                  <group at="c1">
+                    <parametric-curve function="c1" domain="(0,2*pi)"
+                                      closed="yes" stroke="#009E73"
+                                      thickness="3" arrows="1"
+                                      arrow-location="1.35"/>
+                    <label anchor="(-3.15,0.5)" alignment="nw"
+                           color="#009E73" clear-background="yes">
+                      <m>C_1</m>
+                    </label>
+                  </group>
+
+                  <group at="origin">
+                    <point p="(0,0)" size="4.5" stroke="red" fill="red"/>
+                  </group>
+                </coordinates>
+
+                <annotations>
+                  <annotation ref="figure"
+                              text="Two closed paths drawn in the radial field
+                                    F of x and y equals the vector x, y, whose
+                                    arrows all point straight away from the
+                                    origin and grow with the distance from it.
+                                    Each path carries one arrowhead showing
+                                    the direction in which it is traversed">
+                    <annotation ref="grid" text="The coordinate grid"/>
+                    <annotation ref="axes" text="The coordinate axes"/>
+                    <annotation ref="field"
+                                text="The grid of field vectors, each pointing
+                                      radially outward with length
+                                      proportional to the distance from the
+                                      origin"/>
+                    <annotation ref="c1"
+                                text="The path C 1, an ellipse crossing the x
+                                      axis at plus and minus three and the y
+                                      axis at plus and minus one. Its
+                                      arrowhead sits just above the origin and
+                                      points in the negative x direction, so C
+                                      1 is traversed counterclockwise"
+                                sonify="yes"/>
+                    <annotation ref="c2"
+                                text="The path C 2, a circle of radius two
+                                      centred at the origin. Its arrowhead
+                                      sits in the upper right and points down
+                                      and to the right, so C 2 is traversed
+                                      clockwise"
+                                sonify="yes"/>
+                    <annotation ref="origin"
+                                text="The origin, where the field is the zero
+                                      vector"/>
+                  </annotation>
+                </annotations>
+              </diagram>
+            </prefigure>
+          </image>
+        </figure>
       </statement>
       <answer>
         <p>
