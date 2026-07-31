@@ -16,6 +16,9 @@
 <!--     \pgfplotsset{compat=1.18}                                         -->
 <!--   </latex-image-preamble>                                             -->
 <!--                                                                       -->
+<!-- Notation: vectors are written with angle brackets, <a,b>, and their   -->
+<!-- lengths with double bars, ||v||.                                      -->
+<!--                                                                       -->
 <!-- Accessibility: every image carries a <shortdescription> (alt text)    -->
 <!-- and a long <description> for screen readers.                          -->
 
@@ -38,63 +41,85 @@
     <title>Arc Length in 2D</title>
 
     <p>
-      Imagine that at time <m>t=a</m> an object starts moving from an initial
-      point <m>A</m> and at time <m>t=b</m> it reaches the final point
-      <m>B</m>. During this period the object traces out a smooth curve
-      <m>C</m> in the plane, as shown in <xref ref="fig-arc-length-curve"/>.
-      How can we calculate the distance the object has travelled?
+      <term>Goal.</term> Compute the arc length <m>S</m> of a curve using
+      its parametrized form. Imagine that at time <m>t=a</m> an object
+      starts moving from an initial point <m>A</m> and at time <m>t=b</m>
+      it reaches the final point <m>B</m>. During this period the object
+      traces out a smooth curve <m>C</m> in the plane. Throughout this
+      section we illustrate the construction on the closed curve of
+      <xref ref="fig-arc-length-curve"/>, a circle traversed once
+      counterclockwise, so that the object returns to where it began and
+      <m>A</m> and <m>B</m> are the same point. How can we calculate the
+      distance the object has travelled?
     </p>
 
     <figure xml:id="fig-arc-length-curve">
       <caption>
         A smooth curve <m>C</m> traced by a moving object, from the starting
         point <m>A</m> at time <m>t=a</m> to the ending point <m>B</m> at
-        time <m>t=b</m>.
+        time <m>t=b</m>. Here <m>C</m> is closed, so the object returns to
+        its starting point and <m>A=B</m>.
       </caption>
-      <image xml:id="image-arc-length-curve" width="55%">
+      <image xml:id="image-arc-length-curve" width="65%">
+        <shortdescription>
+          A circle labelled C on a pair of coordinate axes, with an arrow
+          giving the direction of travel and the start and end point marked.
+        </shortdescription>
         <description>
-          A curve labelled C rises from a red point marked t equals a at the
-          lower right to a red point marked t equals b at the upper left, with
-          an arrow indicating the direction of increasing time.
+          <p>
+            A circle of radius three, labelled C, is drawn on a pair of
+            coordinate axes with equally scaled x and y directions. An
+            arrowhead on the curve shows that the object travels
+            counterclockwise. A single red dot on the positive x
+            axis, where the circle crosses it, marks both the starting point
+            A, reached at time t equals a, and the ending point B, reached at
+            time t equals b, since the object returns to where it began after
+            going once around.
+          </p>
         </description>
         <prefigure label="arc-length-curve" xmlns="https://prefigure.org">
-          <diagram dimensions="(400,400)" margins="5">
-            <definition>C(t)=(3*cos(t), 3*sin(t))</definition>
-            <definition>A=C(0.42)</definition>
-            <definition>B=C(1.52)</definition>
+          <!-- Shares its dimensions, margins and bbox with
+               fig-arc-length-chords so the two figures show the same curve
+               at the same scale. aspect-ratio="1" keeps the x and y
+               directions equally scaled, so the circle is round. -->
+          <diagram dimensions="(469,417)" margins="5">
+            <definition>R = 3</definition>
+            <definition>C(t) = (R*cos(t), R*sin(t))</definition>
+            <definition>Start = C(0)</definition>
 
-            <coordinates bbox="[-0.5,-0.5,3.6,3.6]">
+            <coordinates bbox="(-4.6,-4.3,5.9,5.0)" aspect-ratio="1">
+              <axes at="ax" xlabel="x" ylabel="y" decorations="no" arrows="1"/>
+
               <group at="curve-C">
-                <parametric-curve function="C" domain="(0.42,1.52)" stroke="blue"
-                                  thickness="3" arrows="1" arrow-location="1.0"/>
-                <label anchor="C(1.05)" alignment="ne" offset="(12,12)">
+                <parametric-curve function="C" domain="(0,2*pi)" stroke="black"
+                                  thickness="3" arrows="1" arrow-location="pi/2"/>
+                <label anchor="C(2.6)" alignment="nw" offset="(-6,6)">
                   <m>C</m>
                 </label>
               </group>
 
-              <group at="point-A">
-                <point p="A" size="4" stroke="red" fill="red"/>
-                <label anchor="A" alignment="se" offset="(6,-4)" clear-background="yes">
-                  <m>t=a</m>
+              <group at="start-end">
+                <point p="Start" size="4.5" stroke="red" fill="red"/>
+                <label anchor="(R,0.5)" alignment="e" offset="(8,0)" color="red"
+                       clear-background="yes">
+                  <m>A=B</m>
                 </label>
-              </group>
-
-              <group at="point-B">
-                <point p="B" size="4" stroke="red" fill="red"/>
-                <label anchor="B" alignment="nw" offset="(-6,4)" clear-background="yes">
-                  <m>t=b</m>
+                <label anchor="(R,-0.5)" alignment="e" offset="(8,0)" color="red"
+                       clear-background="yes">
+                  <m>t=a,\ t=b</m>
                 </label>
               </group>
             </coordinates>
 
             <annotations>
               <annotation ref="figure"
-                          text="A smooth curve C traced by a moving object from the starting point A at time t equals a to the ending point B at time t equals b">
+                          text="A smooth closed curve C, drawn as a circle of radius three, traced by a moving object that starts at the point A at time t equals a and returns to it as the point B at time t equals b">
+                <annotation ref="ax" text="The coordinate axes, equally scaled"/>
                 <annotation ref="curve-C"
-                            text="The curve C, traversed in the direction of increasing time from A to B"
+                            text="The curve C, traversed counterclockwise in the direction of increasing time"
                             sonify="yes"/>
-                <annotation ref="point-A" text="The starting point A, reached at time t equals a"/>
-                <annotation ref="point-B" text="The ending point B, reached at time t equals b"/>
+                <annotation ref="start-end"
+                            text="The point where the journey begins and ends: the starting point A at time t equals a and the ending point B at time t equals b"/>
               </annotation>
             </annotations>
           </diagram>
@@ -103,53 +128,251 @@
     </figure>
 
     <p>
-      The idea is to measure the curve one tiny piece at a time. Over a very
-      short time interval the object moves a small amount <m>dx</m>
-      horizontally and <m>dy</m> vertically, so by the Pythagorean theorem it
-      covers a tiny arc of length
-      <me>ds=\sqrt{dx^2+dy^2}.</me>
-      Adding up all these tiny lengths from <m>A</m> to <m>B</m><mdash/>that
-      is, integrating<mdash/>gives the total length of the curve:
-    </p>
+      The strategy is to replace the curve by a chain of straight segments
+      whose lengths we already know how to compute. Partition the time
+      interval into <m>n</m> pieces,
+      <m>a=t_0\lt t_1\lt\cdots\lt t_n=b</m>, mark the corresponding points
+      on the curve, and join consecutive ones by chords, as in
+      <xref ref="fig-arc-length-chords"/>. Over the <m>k</m>-th step the
+      object is displaced <m>\Delta x_k</m> horizontally and
+      <m>\Delta y_k</m> vertically, so by the Pythagorean theorem the
+      <m>k</m>-th chord length <m>\Delta s_k</m> satisfies
 
     <me>
-      \int_A^B ds = \int_A^B \sqrt{dx^2+dy^2}.
+      \left(\Delta s_k\right)^{2}
+        = \left(\Delta x_k\right)^{2} + \left(\Delta y_k\right)^{2}.
     </me>
+    </p>
+
+    <figure xml:id="fig-arc-length-chords">
+      <caption>
+        Approximating the length of a curve <m>C</m> by an inscribed
+        polygon with <m>n</m> sides. The <m>k</m>-th chord joins the point
+        reached at time <m>t_{k-1}</m> to the point reached at time
+        <m>t_k</m>; its length <m>\Delta s_k</m> is the hypotenuse of a
+        right triangle with legs <m>\Delta x_k</m> and <m>\Delta y_k</m>.
+        The corresponding time step is
+        <m>\Delta t_k=t_k-t_{k-1}</m>.
+      </caption>
+      <image xml:id="image-arc-length-chords" width="65%">
+        <shortdescription>
+          A closed curve with an inscribed dashed polygon; one chord is
+          highlighted together with its horizontal and vertical legs,
+          labelled delta x sub k and delta y sub k.
+        </shortdescription>
+        <description>
+          <p>
+            A circle of radius three, labelled C, is drawn on a pair of
+            coordinate axes. Inside it a dashed green polygon with nine
+            equal sides is inscribed, its vertices marked by small green
+            dots lying on the curve; these are the points reached at the
+            partition times. In the upper right of the circle one side of
+            the polygon is drawn as a thick solid green chord and labelled
+            delta s sub k. Its two endpoints are marked in red
+            and labelled t sub k minus one, the lower right endpoint, and
+            t sub k, the upper left endpoint. A dashed orange horizontal
+            segment labelled delta x sub k runs from beneath t sub k across
+            to t sub k minus one, and a dotted blue vertical segment
+            labelled delta y sub k runs from the right end of that
+            horizontal segment up to t sub k, so that the chord is the
+            hypotenuse of a right triangle. A small square marks the right
+            angle where the two legs meet. Above the figure a red note
+            reads delta t sub k equals t sub k minus t sub k minus one.
+          </p>
+        </description>
+        <prefigure label="arc-length-chords" xmlns="https://prefigure.org">
+          <!-- Shares its dimensions, margins and bbox with
+               fig-arc-length-curve so the two figures show the same curve
+               at the same scale. aspect-ratio="1" keeps the x and y
+               directions equally scaled, so the circle is round. -->
+          <diagram dimensions="(469,417)" margins="5">
+            <definition>R = 3</definition>
+            <definition>N = 9</definition>
+            <definition>V(k) = (R*cos(2*pi*k/N), R*sin(2*pi*k/N))</definition>
+            <definition>Pprev = V(1)</definition>
+            <definition>Pk = V(2)</definition>
+            <definition>Q = (Pk[0], Pprev[1])</definition>
+            <definition>Mx = ((Pprev[0]+Pk[0])/2, Pprev[1])</definition>
+            <definition>My = (Pk[0], (Pprev[1]+Pk[1])/2)</definition>
+            <definition>Ms = ((Pprev[0]+Pk[0])/2, (Pprev[1]+Pk[1])/2)</definition>
+            <definition>sq = 0.25</definition>
+
+            <coordinates bbox="(-4.6,-4.3,5.9,5.0)" aspect-ratio="1">
+              <axes at="ax" xlabel="x" ylabel="y" decorations="no" arrows="1"/>
+
+              <group at="curve-C">
+                <circle center="(0,0)" radius="R" stroke="black" thickness="3"/>
+                <label anchor="(R*cos(2.6), R*sin(2.6))" alignment="nw" offset="(-6,6)">
+                  <m>C</m>
+                </label>
+              </group>
+
+              <group at="inscribed-polygon">
+                <polygon parameter="k=0..8" points="V(k)" closed="yes"
+                         stroke="#009E73" thickness="2" dash="7 5"/>
+                <repeat parameter="k=0..8">
+                  <point p="V(k)" size="3.5" stroke="#009E73" fill="#009E73"/>
+                </repeat>
+              </group>
+
+              <group at="chord">
+                <line endpoints="(Pprev, Pk)" stroke="#009E73" thickness="4"/>
+                <label anchor="Ms" alignment="ne" offset="(6,6)" color="#009E73">
+                  <m>\Delta s_k</m>
+                </label>
+              </group>
+
+              <group at="legs">
+                <line endpoints="(Q, Pprev)" stroke="#D55E00" thickness="2" dash="5 4"/>
+                <line endpoints="(Q, Pk)" stroke="#0072B2" thickness="2" dash="2 4"/>
+                <polygon points="[(Q[0]+sq, Q[1]), (Q[0]+sq, Q[1]+sq), (Q[0], Q[1]+sq)]"
+                         closed="no" stroke="black" thickness="1.5"/>
+                <label anchor="Mx" alignment="s" offset="(0,-6)" color="#D55E00"
+                       clear-background="yes">
+                  <m>\Delta x_k</m>
+                </label>
+                <label anchor="My" alignment="w" offset="(-16,0)" color="#0072B2"
+                       clear-background="yes">
+                  <m>\Delta y_k</m>
+                </label>
+              </group>
+
+              <group at="nodes">
+                <point p="Pprev" size="4.5" stroke="red" fill="red"/>
+                <point p="Pk" size="4.5" stroke="red" fill="red"/>
+                <label anchor="Pprev" alignment="e" offset="(8,-2)" color="red"
+                       clear-background="yes">
+                  <m>t_{k-1}</m>
+                </label>
+                <label anchor="Pk" alignment="nw" offset="(-4,6)" color="red"
+                       clear-background="yes">
+                  <m>t_k</m>
+                </label>
+              </group>
+
+              <label at="dt-note" anchor="(0.9,4.5)" alignment="e" color="red">
+                <m>\Delta t_k = t_k - t_{k-1}</m>
+              </label>
+            </coordinates>
+
+            <annotations>
+              <annotation ref="figure"
+                          text="A curve C approximated by an inscribed polygon with nine sides. One side, the k-th chord, is highlighted together with its horizontal leg delta x sub k and its vertical leg delta y sub k">
+                <annotation ref="ax" text="The coordinate axes"/>
+                <annotation ref="curve-C"
+                            text="The curve C whose length we want to measure, drawn here as a circle of radius three"
+                            sonify="yes"/>
+                <annotation ref="inscribed-polygon"
+                            text="The inscribed polygon whose nine vertices are the points reached at the partition times t sub 0 through t sub n"/>
+                <annotation ref="chord"
+                            text="The k-th chord, of length delta s sub k, joining the point at time t sub k minus one to the point at time t sub k"/>
+                <annotation ref="legs"
+                            text="The legs of the right triangle under the k-th chord: a horizontal leg of length delta x sub k and a vertical leg of length delta y sub k, meeting at a right angle"/>
+                <annotation ref="nodes"
+                            text="The endpoints of the k-th chord, reached at times t sub k minus one and t sub k"/>
+                <annotation ref="dt-note"
+                            text="A note recording the k-th time step, delta t sub k equals t sub k minus t sub k minus one"/>
+              </annotation>
+            </annotations>
+          </diagram>
+        </prefigure>
+      </image>
+    </figure>
 
     <p>
-      To turn this into a formula we can compute, suppose the curve <m>C</m>
-      is parametrized as <m>(x(t),y(t))</m> for <m>a\le t\le b</m>, or
-      equivalently in vector form
-      <m>\mathbf{r}(t)=x(t)\,\mathbf{i}+y(t)\,\mathbf{j}</m>. Factoring
-      <m>dt</m> out of the square root converts the integral into an ordinary
-      integral over time:
-    </p>
+      We approximate the arc length <m>S</m> by summing <m>\Delta s_k</m>
+      as <m>k</m> changes from <m>1</m> to the number of divisions
+      <m>n</m>:
 
     <me>
-      \int_A^B ds
-        = \int_a^b \sqrt{\left(\frac{dx}{dt}\right)^2
-                       + \left(\frac{dy}{dt}\right)^2}\,dt
-        = \int_a^b \left|\mathbf{v}(t)\right|\,dt,
+      S \approx \sum_{k=1}^{n}\Delta s_k
+        = \sum_{k=1}^{n}
+          \sqrt{\left(\Delta x_k\right)^{2}+\left(\Delta y_k\right)^{2}}.
     </me>
+    </p>
 
     <p>
-      where in the last step we recognized the velocity vector
-    </p>
+      The inscribed polygon hugs the curve more and more closely as the
+      chords get shorter, so we recover the exact length in the limit:
 
-    <me>
-      \mathbf{v}(t)=\frac{d\mathbf{r}(t)}{dt}
-        =\left(\frac{dx(t)}{dt},\frac{dy(t)}{dt}\right),
-    </me>
+    <md>
+      <mrow>
+        S \amp = \lim_{n\to\infty}\sum_{k=1}^{n}\Delta s_k
+             = \lim_{n\to\infty}\sum_{k=1}^{n}
+               \sqrt{\left(\Delta x_k\right)^{2}+\left(\Delta y_k\right)^{2}}
+      </mrow>
+      <mrow>
+        S \amp = \int_C ds
+             = \int_C \sqrt{\left(dx\right)^{2}+\left(dy\right)^{2}}.
+      </mrow>
+    </md>
+    </p>
 
     <p>
-      whose length is the object's speed:
-    </p>
+      This is a fine formula, but it is not yet something we can evaluate:
+      there is no variable of integration. To bring the parameter <m>t</m>
+      into the picture, we divide and multiply by
+      <m>\Delta t_k=t_k-t_{k-1}</m>:
 
     <me>
-      \left|\mathbf{v}(t)\right|
-        =\sqrt{\left(\frac{dx}{dt}\right)^2
-             + \left(\frac{dy}{dt}\right)^2}.
+      S \approx \sum_{k=1}^{n}\Delta s_k
+        = \sum_{k=1}^{n}
+          \sqrt{\left(\frac{\Delta x_k}{\Delta t_k}\right)^{2}
+              + \left(\frac{\Delta y_k}{\Delta t_k}\right)^{2}}\;
+          \Delta t_k.
     </me>
+    </p>
+
+    <p>
+      We then take <m>\lim\limits_{n\to\infty}</m> to find the exact arc
+      length. Each difference quotient turns into a derivative, and the
+      sum turns into an integral over time:
+
+    <md>
+      <mrow>
+        S \amp = \lim_{n\to\infty}\sum_{k=1}^{n}
+               \sqrt{\left(\frac{\Delta x_k}{\Delta t_k}\right)^{2}
+                   + \left(\frac{\Delta y_k}{\Delta t_k}\right)^{2}}\;
+               \Delta t_k
+      </mrow>
+      <mrow>
+        \amp = \int_{t=a}^{t=b}
+               \sqrt{\left(\frac{dx}{dt}\right)^{2}
+                   + \left(\frac{dy}{dt}\right)^{2}}\,dt
+             = \int_{t=a}^{t=b}
+               \left\lVert\mathbf{v}(t)\right\rVert\,dt,
+      </mrow>
+    </md>
+    </p>
+
+    <p>
+      where in the last step we recognized the square root as the length of
+      the velocity vector, that is, as the object's speed.
+    </p>
+
+    <assemblage xml:id="assemblage-arc-length-2d-results">
+      <title>Results</title>
+      <p>
+        Let a plane curve <m>C</m> be parametrized by
+        <m>\mathbf{r}(t)=\left\langle x(t),\,y(t)\right\rangle</m> for
+        <m>a\le t\le b</m>. Then
+
+      <me>
+        S = \int_C ds
+          = \int_{t=a}^{t=b}\left\lVert\mathbf{v}(t)\right\rVert\,dt,
+      </me>
+      </p>
+      <p>
+        where
+
+      <me>
+        \mathbf{v}(t)=\frac{d\mathbf{r}}{dt}
+          =\left\langle \frac{dx}{dt},\ \frac{dy}{dt}\right\rangle,
+        \qquad
+        ds = \left\lVert\mathbf{v}(t)\right\rVert\,dt.
+      </me>
+      </p>
+    </assemblage>
 
     <p>
       In words: <em>arc length is the integral of speed over time</em>. This
@@ -177,22 +400,27 @@
     <solution>
       <p>
         We can parametrize the quarter circle as
-        <me>\mathbf{r}(t)=(\cos t,\sin t),\qquad 0\le t\le\frac{\pi}{2}.</me>
+        <me>\mathbf{r}(t)=\left\langle\cos t,\ \sin t\right\rangle,
+            \qquad 0\le t\le\frac{\pi}{2}.</me>
         Differentiating, the velocity vector and its length are
-      </p>
+
       <md>
-        <mrow>\mathbf{v}(t) \amp = (-\sin t,\ \cos t),</mrow>
-        <mrow>\left|\mathbf{v}(t)\right| \amp
+        <mrow>\mathbf{v}(t) \amp
+              = \left\langle-\sin t,\ \cos t\right\rangle,</mrow>
+        <mrow>\left\lVert\mathbf{v}(t)\right\rVert \amp
               = \sqrt{\sin^2 t+\cos^2 t}=1.</mrow>
       </md>
+      </p>
       <p>
         The speed is constant and equal to <m>1</m>, so the arc length is
         simply the elapsed time:
-      </p>
+
       <me>
-        \int_C ds = \int_0^{\pi/2}\left|\mathbf{v}(t)\right|\,dt
-                  = \int_0^{\pi/2} 1\,dt = \frac{\pi}{2},
+        S = \int_C ds
+          = \int_0^{\pi/2}\left\lVert\mathbf{v}(t)\right\rVert\,dt
+          = \int_0^{\pi/2} 1\,dt = \frac{\pi}{2},
       </me>
+      </p>
       <p>
         as expected. Notice a useful by-product: because the speed is
         <m>1</m>, the arc length swept out up to time <m>t</m> is
@@ -204,9 +432,10 @@
 
       <figure xml:id="fig-quarter-circle-video">
         <caption>
-          The point <m>\mathbf{r}(t)=(\cos t,\sin t)</m> sweeps out the
-          quarter circle as <m>t</m> increases from <m>0</m> to
-          <m>\pi/2</m>; the accumulated arc length <m>s(t)=t</m> reaches
+          The point
+          <m>\mathbf{r}(t)=\left\langle\cos t,\ \sin t\right\rangle</m>
+          sweeps out the quarter circle as <m>t</m> increases from <m>0</m>
+          to <m>\pi/2</m>; the accumulated arc length <m>s(t)=t</m> reaches
           <m>\pi/2\approx 1.5708</m>.
         </caption>
         <video xml:id="video-quarter-circle" width="80%"
@@ -215,16 +444,19 @@
 
       <figure xml:id="fig-quarter-circle-prefigure">
         <caption>
-          The quarter circle <m>\mathbf{r}(t)=(\cos t,\sin t)</m> with the
-          position vector (orange) and the unit velocity vector
+          The quarter circle
+          <m>\mathbf{r}(t)=\left\langle\cos t,\ \sin t\right\rangle</m> with
+          the position vector (orange) and the unit velocity vector
           <m>\mathbf{v}(t)</m> (green), which is tangent to the curve.
         </caption>
         <image xml:id="image-quarter-circle-arclength" width="60%">
           <description>
-            A quarter of the unit circle from the point one comma zero to the
-            point zero comma one on a coordinate grid, with an orange position
-            vector from the origin to a point on the arc and a green unit
-            velocity vector tangent to the arc at that point.
+            <p>
+              A quarter of the unit circle from the point one comma zero to
+              the point zero comma one on a coordinate grid, with an orange
+              position vector from the origin to a point on the arc and a
+              green unit velocity vector tangent to the arc at that point.
+            </p>
           </description>
           <prefigure label="quarter-circle-arclength" xmlns="https://prefigure.org">
             <diagram dimensions="(400,400)" margins="5">
@@ -334,7 +566,7 @@
                   node[pos=0.55, above left=-2pt] {\(\mathbf r(t)\)};
               % moving point
               \fill[red] (0.6216,0.7833) circle (0.9pt);
-              % unit velocity vector v(t) = (-sin t, cos t)
+              % unit velocity vector v(t), components -sin t and cos t
               \draw[-&gt;, green!55!black, thick] (0.6216,0.7833) -- ++(-0.7833,0.6216)
                   node[pos=0.6, above right=-2pt] {\(\mathbf v(t)\)};
               % arc-length readout
@@ -352,31 +584,41 @@
 
     <p>
       The formulas above generalize to motion in space with no new ideas:
-      the tiny arc simply picks up a third term,
-      <m>ds=\sqrt{dx^2+dy^2+dz^2}</m>. For a space curve
-      <m>\mathbf{r}(t)=\bigl(x(t),y(t),z(t)\bigr)</m> we therefore have
-    </p>
+      the <m>k</m>-th chord simply picks up a third leg, so
+      <m>\left(\Delta s_k\right)^{2}
+         = \left(\Delta x_k\right)^{2}+\left(\Delta y_k\right)^{2}
+          +\left(\Delta z_k\right)^{2}</m>
+      and in the limit <m>ds=\sqrt{(dx)^2+(dy)^2+(dz)^2}</m>. For a space
+      curve
+      <m>\mathbf{r}(t)=\left\langle x(t),\,y(t),\,z(t)\right\rangle</m> we
+      therefore have
 
     <md>
       <mrow>
-        \int_A^B ds \amp
-          = \int_a^b \sqrt{\left(\frac{dx}{dt}\right)^2
-                         + \left(\frac{dy}{dt}\right)^2
-                         + \left(\frac{dz}{dt}\right)^2}\,dt
-          = \int_a^b \left|\mathbf{v}(t)\right|\,dt,
+        S \amp
+          = \int_C ds
+          = \int_{t=a}^{t=b} \sqrt{\left(\frac{dx}{dt}\right)^{2}
+                         + \left(\frac{dy}{dt}\right)^{2}
+                         + \left(\frac{dz}{dt}\right)^{2}}\,dt
+      </mrow>
+      <mrow>
+        \amp = \int_{t=a}^{t=b}
+               \left\lVert\mathbf{v}(t)\right\rVert\,dt,
       </mrow>
       <mrow>
         \mathbf{v}(t) \amp
           = \frac{d\mathbf{r}(t)}{dt}
-          = \left(\frac{dx(t)}{dt},\frac{dy(t)}{dt},\frac{dz(t)}{dt}\right),
+          = \left\langle \frac{dx}{dt},\ \frac{dy}{dt},\
+                         \frac{dz}{dt}\right\rangle,
       </mrow>
       <mrow>
-        \left|\mathbf{v}(t)\right| \amp
-          = \sqrt{\left(\frac{dx}{dt}\right)^2
-                + \left(\frac{dy}{dt}\right)^2
-                + \left(\frac{dz}{dt}\right)^2}.
+        \left\lVert\mathbf{v}(t)\right\rVert \amp
+          = \sqrt{\left(\frac{dx}{dt}\right)^{2}
+                + \left(\frac{dy}{dt}\right)^{2}
+                + \left(\frac{dz}{dt}\right)^{2}}.
       </mrow>
     </md>
+    </p>
 
     <p>
       As in the plane, arc length is still the integral of speed over time.
@@ -391,8 +633,8 @@
       <p>
         The position of a paraglider at time <m>t</m> is
         <me>
-          \mathbf{r}(t)=\left(t\cos t,\ t\sin t,\
-            9\sqrt{8}-\frac{\sqrt{8}}{3}\,t^{3/2}\right).
+          \mathbf{r}(t)=\left\langle t\cos t,\ t\sin t,\
+            9\sqrt{8}-\frac{\sqrt{8}}{3}\,t^{3/2}\right\rangle.
         </me>
         Assuming that the paraglider begins at time <m>t=0</m>:
       </p>
@@ -419,9 +661,17 @@
       <p>
         <term>Part A.</term> The paraglider reaches the ground when the
         <m>z</m>-coordinate vanishes:
-        <me>9\sqrt{8}-\frac{\sqrt{8}}{3}\,t^{3/2}=0
-            \quad\Longrightarrow\quad t^{3/2}=27
-            \quad\Longrightarrow\quad t=27^{2/3}=9.</me>
+        <md>
+          <mrow>
+            9\sqrt{8}-\frac{\sqrt{8}}{3}\,t^{3/2} \amp = 0
+          </mrow>
+          <mrow>
+            \Longrightarrow\quad t^{3/2} \amp = 27
+          </mrow>
+          <mrow>
+            \Longrightarrow\quad t \amp = 27^{2/3}=9.
+          </mrow>
+        </md>
         So it takes <m>9</m> units of time to land.
       </p>
 
@@ -431,30 +681,37 @@
         <m>\deriv{}{t}\left(-\frac{\sqrt{8}}{3}t^{3/2}\right)
            =-\frac{\sqrt{8}}{3}\cdot\frac{3}{2}\,t^{1/2}
            =-\frac{\sqrt{8}}{2}\,t^{1/2}=-\sqrt{2}\,t^{1/2}</m>. Hence
+
+      <md>
+        <mrow>
+          \mathbf{v}(t) \amp = \frac{d\mathbf{r}(t)}{dt}
+        </mrow>
+        <mrow>
+          \amp = \left\langle \cos t-t\sin t,\ \sin t+t\cos t,\
+                                -\sqrt{2}\,t^{1/2}\right\rangle.
+        </mrow>
+      </md>
       </p>
-      <me>
-        \mathbf{v}(t)=\frac{d\mathbf{r}(t)}{dt}
-          =\Bigl(\cos t-t\sin t,\ \sin t+t\cos t,\ -\sqrt{2}\,t^{1/2}\Bigr).
-      </me>
       <p>
         Its length simplifies neatly: the cross terms
         <m>\pm 2t\sin t\cos t</m> cancel, the squared sines and cosines
         combine, and the last component contributes
         <m>(-\sqrt{2}\,t^{1/2})^2=2t</m>:
-      </p>
+
       <md>
         <mrow>
-          \left|\mathbf{v}(t)\right| \amp
+          \left\lVert\mathbf{v}(t)\right\rVert \amp
             = \sqrt{(\cos t-t\sin t)^2+(\sin t+t\cos t)^2+2t}
         </mrow>
         <mrow>
-          \amp = \sqrt{\cos^2 t+t^2\sin^2 t-2t\sin t\cos t
-                     + \sin^2 t+t^2\cos^2 t+2t\sin t\cos t+2t}
+          \amp = \sqrt{\left(\cos^2 t+\sin^2 t\right)
+                     + t^2\left(\sin^2 t+\cos^2 t\right) + 2t}
         </mrow>
         <mrow>
           \amp = \sqrt{t^2+2t+1}=\sqrt{(t+1)^2}=t+1,
         </mrow>
       </md>
+      </p>
       <p>
         where the last equality uses <m>t+1&gt;0</m>. So the paraglider's
         speed grows linearly: it starts at <m>1</m> and reaches <m>10</m> at
@@ -465,28 +722,34 @@
         <term>Part C.</term> The distance travelled is the arc length of the
         path, that is, speed integrated over the <m>9</m> units of flight
         time:
+
+      <md>
+        <mrow>
+          S \amp = \int_0^{9}\left\lVert\mathbf{v}(t)\right\rVert\,dt
+               = \int_0^{9}(t+1)\,dt
+        </mrow>
+        <mrow>
+          \amp = \left[\frac{t^2}{2}+t\right]_0^{9}
+               = \frac{81}{2}+9=49.5.
+        </mrow>
+      </md>
       </p>
-      <me>
-        s=\int_0^{9}\left|\mathbf{v}(t)\right|\,dt
-         =\int_0^{9}(t+1)\,dt
-         =\left[\frac{t^2}{2}+t\right]_0^{9}
-         =\frac{81}{2}+9=49.5.
-      </me>
       <p>
         The descending spiral, together with its endpoints
-        <m>\langle 0,0,9\sqrt{8}\rangle</m> and
-        <m>\langle 9\cos 9,\,9\sin 9,\,0\rangle</m>, is animated in
-        <xref ref="fig-paraglider-video"/> and shown in
+        <m>\left\langle 0,0,9\sqrt{8}\right\rangle</m> and
+        <m>\left\langle 9\cos 9,\,9\sin 9,\,0\right\rangle</m>, is animated
+        in <xref ref="fig-paraglider-video"/> and shown in
         <xref ref="fig-paraglider-tikz"/>.
       </p>
 
       <figure xml:id="fig-paraglider-video">
         <caption>
           The paraglider spirals down from
-          <m>\langle 0,0,9\sqrt{8}\rangle</m> to
-          <m>\langle 9\cos 9,\,9\sin 9,\,0\rangle</m>. Because the speed is
-          <m>\left|\mathbf{v}(t)\right|=t+1</m>, the total distance travelled
-          is <m>s=49.5</m>.
+          <m>\left\langle 0,0,9\sqrt{8}\right\rangle</m> to
+          <m>\left\langle 9\cos 9,\,9\sin 9,\,0\right\rangle</m>. Because
+          the speed is
+          <m>\left\lVert\mathbf{v}(t)\right\rVert=t+1</m>, the total
+          distance travelled is <m>S=49.5</m>.
         </caption>
         <video xml:id="video-paraglider" width="85%"
                source="videos/paraglider_arclength_1080p.mp4"/>
@@ -494,8 +757,9 @@
 
       <figure xml:id="fig-paraglider-tikz">
         <caption>
-          The paraglider's path from <m>\langle 0,0,9\sqrt{8}\rangle</m>
-          down to <m>\langle 9\cos 9,\,9\sin 9,\,0\rangle</m>. The dashed
+          The paraglider's path from
+          <m>\left\langle 0,0,9\sqrt{8}\right\rangle</m> down to
+          <m>\left\langle 9\cos 9,\,9\sin 9,\,0\right\rangle</m>. The dashed
           gray curve is the path's shadow on the ground <m>z=0</m>.
         </caption>
         <image xml:id="image-paraglider-tikz" width="75%">
@@ -507,12 +771,14 @@
             <p>
               A three-dimensional coordinate box with x and y running from
               minus 10 to 10 and z from 0 to 27. A thick blue spiral starts
-              at a red point labelled start, at coordinates (0, 0, 9 root 8),
-              about 25.5 units above the origin. The spiral winds outward and
-              downward, its radius growing as it descends, making roughly one
-              and a half turns before landing at a red point labelled ground,
-              at coordinates (9 cosine 9, 9 sine 9, 0). A dashed gray spiral
-              on the floor of the box shows the path's shadow on the ground.
+              at a red point labelled start, at the position vector with
+              components 0, 0, and 9 root 8, about 25.5 units above the
+              origin. The spiral winds outward and downward, its radius
+              growing as it descends, making roughly one and a half turns
+              before landing at a red point labelled ground, at the position
+              vector with components 9 cosine 9, 9 sine 9, and 0. A dashed
+              gray spiral on the floor of the box shows the path's shadow on
+              the ground.
             </p>
           </description>
           <latex-image>
@@ -532,8 +798,10 @@
               % start and end points
               \addplot3[only marks, mark=*, red, mark size=1.6pt] coordinates
                   {(0,0,25.4558) (-8.2003,3.7091,0)};
-              \node[above right] at (axis cs:0,0,25.4558) {start \((0,0,9\sqrt{8})\)};
-              \node[below] at (axis cs:-8.2003,3.7091,0) {ground \((9\cos 9,\ 9\sin 9,\ 0)\)};
+              \node[above right] at (axis cs:0,0,25.4558)
+                  {start \(\left\langle 0,0,9\sqrt{8}\right\rangle\)};
+              \node[below] at (axis cs:-8.2003,3.7091,0)
+                  {ground \(\left\langle 9\cos 9,\ 9\sin 9,\ 0\right\rangle\)};
             \end{axis}
             \end{tikzpicture}
           </latex-image>
@@ -541,5 +809,499 @@
       </figure>
     </solution>
   </example>
+
+  <!-- ================================================================= -->
+  <!-- ACTIVITY: where a plane slices a cone. Three tasks: parametrize,   -->
+  <!-- arc length between P and Q, arc-length function from the vertex.   -->
+  <subsection xml:id="subsec-cone-plane-activity">
+    <title>Activity: Where a Plane Slices a Cone</title>
+
+  <activity xml:id="activity-cone-plane-arc-length">
+    <title>Where a Plane Slices a Cone</title>
+
+    <introduction>
+      <p>
+        Let <m>S_1</m> be the upper half of a circular cone and let
+        <m>S_2</m> be a slanted plane:
+
+      <md>
+        S_1 : \ z^2 = x^2 + y^2, \quad z \ge 0,
+        \qquad\qquad S_2 : \ z = x + 1 .
+      </md>
+      </p>
+      <p>
+        Let <m>C = S_1 \cap S_2</m> be their curve of intersection, shown in
+        <xref ref="fig-cone-plane"/>.
+      </p>
+
+      <figure xml:id="fig-cone-plane">
+        <caption>
+          The cone <m>z^2 = x^2 + y^2</m> with <m>z \ge 0</m>, the plane
+          <m>z = x+1</m>, and the curve <m>C</m> where they meet. The darker
+          portion is the arc from <m>P(0,-1,1)</m> to <m>Q(0,1,1)</m>.
+        </caption>
+        <image xml:id="image-cone-plane" width="78%">
+          <shortdescription>
+            An upward-opening cone cut by a slanted plane, with the parabola
+            along which they meet drawn on the surfaces.
+          </shortdescription>
+          <description>
+            <p>
+              A three-dimensional plot showing the upper nappe of a circular
+              cone opening upward from the origin, a slanted plane cutting
+              through it, and the parabola along which the two surfaces meet.
+              The vertex of the parabola is marked V at its lowest point, and
+              the points P and Q, where the parabola crosses the plane x
+              equals zero, are marked on either side of the vertex.
+            </p>
+          </description>
+          <latex-image>
+            \begin{tikzpicture}
+            \begin{axis}[
+                width=12cm, view={125}{18},
+                x dir=reverse, y dir=reverse,
+                xlabel={\(x\)}, ylabel={\(y\)}, zlabel={\(z\)},
+                xmin=-3.2, xmax=3.2, ymin=-3.2, ymax=3.2, zmin=0, zmax=3.4,
+                grid=major, grid style={gray!20},
+              ]
+              % the upper nappe of the cone, as (u cos v, u sin v, u)
+              \addplot3[surf, shader=flat, opacity=0.35, draw=gray!45,
+                        colormap={conegray}{color=(gray!20) color=(gray!55)},
+                        domain=0:3.2, y domain=0:2*pi,
+                        samples=18, samples y=48]
+                  ({x*cos(deg(y))}, {x*sin(deg(y))}, {x});
+              % the plane z = x+1
+              \draw[blue!55, fill=blue!25, fill opacity=0.35]
+                  (axis cs:-1,-3.2,0) -- (axis cs:-1,3.2,0)
+                  -- (axis cs:2.4,3.2,3.4) -- (axis cs:2.4,-3.2,3.4) -- cycle;
+              % the curve of intersection C
+              \addplot3[red, very thick, domain=-2.3:2.3,
+                        samples=200, samples y=0]
+                  ({(x^2-1)/2}, {x}, {(x^2+1)/2});
+              % the arc of C from P to Q
+              \addplot3[red!55!black, ultra thick, domain=-1:1,
+                        samples=80, samples y=0]
+                  ({(x^2-1)/2}, {x}, {(x^2+1)/2});
+              % the vertex and the two endpoints
+              \addplot3[only marks, mark=*, black, mark size=1.4pt]
+                  coordinates {(-0.5,0,0.5) (0,-1,1) (0,1,1)};
+              \node[below left] at (axis cs:-0.5,0,0.5) {\(V\)};
+              \node[right] at (axis cs:0,-1,1) {\(P\)};
+              \node[left]  at (axis cs:0,1,1)  {\(Q\)};
+            \end{axis}
+            \end{tikzpicture}
+          </latex-image>
+        </image>
+      </figure>
+    </introduction>
+
+    <!-- ............................................................... -->
+    <task xml:id="task-cone-plane-parametrize">
+      <statement>
+        <p>
+          Show that every point of <m>C</m> satisfies <m>y^2 = 2x + 1</m>, and
+          use this to find a vector parametrization
+          <m>\mathbf{r}(t) = \left\langle x(t),\,y(t),\,z(t)\right\rangle</m>
+          of <m>C</m>. Then verify directly that your <m>\mathbf{r}(t)</m>
+          lies on <em>both</em> surfaces for every <m>t</m>.
+        </p>
+        <p>
+          <em>Suggestion.</em> Use <m>y</m> itself as the parameter, and say
+          why that is smarter than using <m>x</m>.
+        </p>
+      </statement>
+
+      <solution>
+        <p>
+          A point lies on <m>C</m> exactly when it satisfies both equations at
+          once. Substituting <m>z = x+1</m> from the plane into the equation of
+          the cone eliminates <m>z</m>:
+
+        <md>
+          <mrow>
+            (x+1)^2 \amp = x^2 + y^2
+          </mrow>
+          <mrow>
+            \Longrightarrow\quad x^2 + 2x + 1 \amp = x^2 + y^2
+          </mrow>
+          <mrow>
+            \Longrightarrow\quad \amp \boxed{\,y^2 = 2x+1\,} .
+          </mrow>
+        </md>
+        </p>
+        <p>
+          So the shadow of <m>C</m> in the <m>xy</m>-plane is the parabola
+          <m>y^2 = 2x+1</m>, that is, <m>x = \frac{y^2-1}{2}</m>
+          (<xref ref="fig-cone-plane-shadow"/>). Solving for <m>x</m> rather
+          than for <m>y</m> is the key move: <m>x</m> is a
+          <em>single-valued</em> function of <m>y</m>, so taking <m>y = t</m>
+          as the parameter captures the whole curve at once, whereas
+          parametrizing by <m>x</m> would force the two branches
+          <m>y = \pm\sqrt{2x+1}</m> and split the problem in half. Since
+          <m>z = x+1</m>,
+
+        <md>
+          \mathbf{r}(t) = \left\langle \frac{t^2-1}{2},\ \ t,\ \
+          \frac{t^2+1}{2} \right\rangle , \qquad t \in \R .
+        </md>
+        </p>
+
+        <figure xml:id="fig-cone-plane-shadow">
+          <caption>
+            The shadow of <m>C</m> in the <m>xy</m>-plane is the parabola
+            <m>y^2 = 2x+1</m>, with vertex <m>V</m>. The darker arc is the
+            projection of the piece of <m>C</m> that runs from <m>P</m> to
+            <m>Q</m>.
+          </caption>
+          <image xml:id="image-cone-plane-shadow" width="60%">
+            <shortdescription>
+              A parabola opening to the right on a coordinate grid, with its
+              vertex and the arc between the points (0,-1) and (0,1) marked.
+            </shortdescription>
+            <description>
+              <p>
+                The shadow of the curve C in the xy-plane: a parabola opening
+                to the right with vertex V at the point minus one half, zero.
+                The arc between the points (0,-1) and (0,1), the shadow of the
+                piece of C from P to Q, is drawn more thickly.
+              </p>
+            </description>
+            <prefigure xmlns="https://prefigure.org"
+                       label="cone-plane-shadow-parabola">
+              <diagram dimensions="(320,300)" margins="5">
+                <definition>p(t) = ((t^2-1)/2, t)</definition>
+                <coordinates bbox="(-1.3,-2.4,2.4,2.4)">
+                  <grid-axes xlabel="x" ylabel="y"/>
+                  <parametric-curve at="curve" function="p"
+                                    domain="(-2.2,2.2)"
+                                    stroke="red" thickness="2"/>
+                  <parametric-curve at="arc" function="p"
+                                    domain="(-1,1)"
+                                    stroke="darkred" thickness="4"/>
+                  <point p="(-0.5,0)" alignment="nw">
+                    <m>V</m>
+                  </point>
+                  <point p="(0,1)" alignment="ne">
+                    <m>(0,1)</m>
+                  </point>
+                  <point p="(0,-1)" alignment="se">
+                    <m>(0,-1)</m>
+                  </point>
+                  <label anchor="(1.15,-1.75)" alignment="ne">
+                    <m>y^2 = 2x+1</m>
+                  </label>
+                </coordinates>
+
+                <annotations>
+                  <annotation ref="figure"
+                              text="The shadow of the curve C in the xy-plane,
+                                    a parabola opening to the right with
+                                    vertex at the point (-1/2, 0)">
+                    <annotation ref="curve"
+                                text="The parabola y squared equals 2x plus 1"
+                                sonify="yes"/>
+                    <annotation ref="arc"
+                                text="The arc of the parabola between the
+                                      points (0,-1) and (0,1), the shadow of
+                                      the piece of C from P to Q"/>
+                  </annotation>
+                </annotations>
+              </diagram>
+            </prefigure>
+          </image>
+        </figure>
+
+        <p>
+          <em>Check on <m>S_1</m>:</em>
+
+        <md>
+          <mrow>
+            x^2 + y^2 \amp = \frac{t^4 - 2t^2 + 1}{4} + t^2
+                          = \frac{t^4 + 2t^2 + 1}{4}
+          </mrow>
+          <mrow>
+            \amp = \left( \frac{t^2+1}{2} \right)^{2} = z^2 ,
+          </mrow>
+        </md>
+        </p>
+        <p>
+          and <m>z = \frac{t^2+1}{2} \gt 0</m> for all <m>t</m>, so the entire
+          curve lies on the upper nappe <m>z \ge 0</m>.
+          <em>Check on <m>S_2</m>:</em>
+          <m>z - x = \frac{t^2+1}{2} - \frac{t^2-1}{2} = 1</m>, so
+          <m>z = x+1</m>.
+        </p>
+      </solution>
+    </task>
+
+    <!-- ............................................................... -->
+    <task xml:id="task-cone-plane-arc-length">
+      <statement>
+        <p>
+          The curve <m>C</m> crosses the plane <m>x = 0</m> at the two points
+          <m>P(0,-1,1)</m> and <m>Q(0,1,1)</m>. Set up the arc-length integral
+          for the piece of <m>C</m> joining <m>P</m> to <m>Q</m> and evaluate
+          it <em>exactly</em>. Then give a decimal approximation to four
+          places.
+        </p>
+      </statement>
+
+      <answer>
+        <p>
+          <md>
+            <mrow>
+              S \amp = \sqrt{3} + \frac{\sqrt{2}}{2}
+                       \ln\!\left( \sqrt{2} + \sqrt{3} \right)
+            </mrow>
+            <mrow>
+              \amp = \sqrt{3}
+                     + \frac{1}{\sqrt{2}}\sinh^{-1}\!\left(\sqrt{2}\right)
+                   \approx 2.5425 .
+            </mrow>
+          </md>
+        </p>
+      </answer>
+
+      <solution>
+        <p>
+          First locate the endpoints: <m>x = 0</m> means
+          <m>\frac{t^2-1}{2} = 0</m>, so <m>t = \pm 1</m>, giving
+          <m>\mathbf{r}(-1) = (0,-1,1) = P</m> and
+          <m>\mathbf{r}(1) = (0,1,1) = Q</m>. Differentiating
+          <m>\mathbf{r}</m> componentwise gives the velocity vector
+
+        <md>
+          <mrow>
+            \mathbf{v}(t) \amp = \left\langle t,\, 1,\, t \right\rangle ,
+          </mrow>
+          <mrow>
+            \left\lVert\mathbf{v}(t)\right\rVert \amp
+              = \sqrt{t^2 + 1 + t^2} = \sqrt{1 + 2t^2} .
+          </mrow>
+        </md>
+        </p>
+        <p>
+          Hence, using the evenness of the integrand,
+
+        <md>
+          <mrow>
+            S \amp = \int_{-1}^{1}
+                       \left\lVert\mathbf{v}(t)\right\rVert \, dt
+                   = \int_{-1}^{1} \sqrt{1+2t^2} \, dt
+          </mrow>
+          <mrow>
+            \amp = 2\int_{0}^{1} \sqrt{1+2t^2} \, dt .
+          </mrow>
+        </md>
+        </p>
+        <p>
+          The integrand is not quite of the form <m>\sqrt{a^2+u^2}</m>, so
+          first substitute <m>u = \sqrt{2}\,t</m>, <m>du = \sqrt{2}\,dt</m>,
+          which sends <m>t : 0 \to 1</m> to <m>u : 0 \to \sqrt{2}</m>:
+
+        <md>
+          <mrow>
+            S \amp = \frac{2}{\sqrt{2}}
+                     \int_{0}^{\sqrt{2}} \sqrt{1+u^2} \, du
+          </mrow>
+          <mrow>
+            \amp = \sqrt{2} \int_{0}^{\sqrt{2}} \sqrt{1+u^2} \, du .
+          </mrow>
+        </md>
+        </p>
+        <p>
+          Now evaluate <m>I = \int \sqrt{1+u^2}\,du</m>. Integrating by parts
+          against <m>1</m> reproduces the original integral, which lets us
+          solve for it: with <m>u^2 = (1+u^2) - 1</m> in the numerator,
+
+        <md>
+          <mrow>
+            I \amp = u\sqrt{1+u^2}
+                     - \int \frac{u^2}{\sqrt{1+u^2}} \, du
+          </mrow>
+          <mrow>
+            \amp = u\sqrt{1+u^2}
+                   - \int \frac{(1+u^2) - 1}{\sqrt{1+u^2}} \, du
+          </mrow>
+          <mrow>
+            \amp = u\sqrt{1+u^2} - I
+                   + \int \frac{du}{\sqrt{1+u^2}} .
+          </mrow>
+        </md>
+        </p>
+        <p>
+          The last integral is <m>\sinh^{-1} u</m>, so
+          <m>2I = u\sqrt{1+u^2} + \sinh^{-1} u</m>, that is,<fn>
+          The inverse hyperbolic sine is a logarithm in disguise. Setting
+          <m>w = \sinh y = \frac{e^{y} - e^{-y}}{2}</m> and multiplying
+          through by <m>2e^{y}</m> gives
+          <m>\left(e^{y}\right)^2 - 2we^{y} - 1 = 0</m>, a quadratic in
+          <m>e^{y}</m>. The quadratic formula gives
+          <m>e^{y} = w \pm \sqrt{w^2+1}</m>, and only the <m>+</m> sign keeps
+          <m>e^{y}</m> positive, so
+          <m>\sinh^{-1} w = y = \ln\!\left(w + \sqrt{1+w^2}\right)</m>.
+          </fn>
+
+        <md>
+          <mrow>
+            \int \sqrt{1+u^2} \, du \amp = \frac{u}{2}\sqrt{1+u^2}
+          </mrow>
+          <mrow>
+            \amp \quad + \frac{1}{2}
+                   \ln\!\left( u + \sqrt{1+u^2} \right) + C .
+          </mrow>
+        </md>
+        </p>
+        <p>
+          The substitution <m>u = \sinh w</m> gives the same antiderivative:
+          it turns the integral into <m>\int \cosh^2 w \, dw</m>. The
+          trigonometric substitution <m>u = \tan\theta</m> works too, but it
+          leads to <m>\int \sec^3\theta \, d\theta</m>, which needs the same
+          solve-for-<m>I</m> trick anyway.
+        </p>
+        <p>
+          Finally apply the limits. At <m>u = \sqrt{2}</m> we have
+          <m>\sqrt{1+u^2} = \sqrt{3}</m>, and everything vanishes at
+          <m>u = 0</m>:
+
+        <md>
+          <mrow>
+            S \amp = \sqrt{2}\left[ \frac{u}{2}\sqrt{1+u^2}
+                     + \frac{1}{2}\ln\!\left( u + \sqrt{1+u^2} \right)
+                     \right]_{0}^{\sqrt{2}}
+          </mrow>
+          <mrow>
+            \amp = \sqrt{2}\left[ \frac{\sqrt{2}}{2}\sqrt{3}
+                   + \frac{1}{2}\ln\!\left( \sqrt{2} + \sqrt{3} \right)
+                   \right]
+          </mrow>
+          <mrow>
+            \amp = \sqrt{3} + \frac{\sqrt{2}}{2}
+                   \ln\!\left( \sqrt{2} + \sqrt{3} \right)
+                 \approx 2.5425 .
+          </mrow>
+        </md>
+        </p>
+        <p>
+          Sanity check: the straight-line distance from <m>P</m> to <m>Q</m> is
+          <m>2</m>, and <m>2.5425 \gt 2</m>, as an arc must be.
+        </p>
+      </solution>
+    </task>
+
+    <!-- ............................................................... -->
+    <task xml:id="task-cone-plane-arc-length-function">
+      <statement>
+        <p>
+          The point <m>V\left(-\frac{1}{2},\, 0,\, \frac{1}{2}\right)</m> is
+          the vertex (the lowest point) of <m>C</m>. Find the arc-length
+          function <m>s(t)</m> measured from <m>V</m>, and use it to compute
+          the exact length of <m>C</m> from <m>V</m> to the point
+          <m>\left(\frac{3}{2},\, 2,\, \frac{5}{2}\right)</m>.
+        </p>
+      </statement>
+
+      <answer>
+        <p>
+          <md>
+            s(2) = 3 + \frac{\sqrt{2}}{2}\ln\!\left( 1 + \sqrt{2} \right)
+                 \approx 3.6232 .
+          </md>
+        </p>
+      </answer>
+
+      <solution>
+        <p>
+          The vertex <m>V</m> is <m>\mathbf{r}(0)</m>, so measuring arc length
+          from <m>V</m> means starting the integral at <m>0</m>:
+
+        <md>
+          <mrow>
+            s(t) \amp = \int_{0}^{t}
+                          \left\lVert\mathbf{v}(\tau)\right\rVert \, d\tau
+                      = \int_{0}^{t} \sqrt{1 + 2\tau^2} \, d\tau
+          </mrow>
+          <mrow>
+            \amp = \frac{t}{2}\sqrt{1+2t^2}
+                   + \frac{\sqrt{2}}{4}
+                     \ln\!\left( \sqrt{2}\,t + \sqrt{1+2t^2} \right) ,
+          </mrow>
+        </md>
+        </p>
+        <p>
+          which is also written
+
+        <md>
+          s(t) = \frac{t}{2}\sqrt{1+2t^2}
+                 + \frac{\sqrt{2}}{4}\sinh^{-1}\!\left(\sqrt{2}\,t\right) .
+        </md>
+        </p>
+        <p>
+          One can verify
+          <m>s'(t) = \sqrt{1+2t^2}
+             = \left\lVert\mathbf{v}(t)\right\rVert</m>, as it must be. The
+          point <m>\left(\frac{3}{2}, 2, \frac{5}{2}\right)</m> corresponds to
+          <m>t = 2</m>, since <m>y = t = 2</m> and then
+          <m>\frac{t^2-1}{2} = \frac{3}{2}</m> and
+          <m>\frac{t^2+1}{2} = \frac{5}{2}</m>. Therefore
+
+        <md>
+          <mrow>
+            s(2) \amp = \frac{2}{2}\sqrt{1+8}
+                        + \frac{\sqrt{2}}{4}
+                          \ln\!\left( 2\sqrt{2} + 3 \right)
+          </mrow>
+          <mrow>
+            \amp = 3 + \frac{\sqrt{2}}{4}
+                       \ln\!\left( 3 + 2\sqrt{2} \right) .
+          </mrow>
+        </md>
+        </p>
+        <p>
+          Because <m>3 + 2\sqrt{2} = \left( 1 + \sqrt{2} \right)^{2}</m>, the
+          logarithm halves:
+
+        <md>
+          s(2) = 3 + \frac{\sqrt{2}}{2}\ln\!\left( 1 + \sqrt{2} \right)
+               \approx 3.6232 .
+        </md>
+        </p>
+      </solution>
+    </task>
+  </activity>
+
+  <!-- ================================================================= -->
+  <remark xml:id="remark-cone-plane-instructor-notes">
+    <title>Instructor notes<mdash/>what to watch for</title>
+    <p>
+    <ul>
+      <li>
+        <p>
+          <term>Losing half the curve.</term> Students who write
+          <m>z = \sqrt{x^2+y^2}</m> and then square are fine, but those who
+          parametrize by <m>x</m> get <m>y = \pm\sqrt{2x+1}</m> and often keep
+          only the <m>+</m> branch<mdash/>losing the arc from <m>P</m> to
+          <m>V</m>. The check <m>z = \frac{t^2+1}{2} \gt 0</m> in the first
+          task is worth insisting on.
+        </p>
+      </li>
+      <li>
+        <p>
+          <term>Forgetting to verify.</term> The first task asks for a
+          substitution <em>and</em> a check; a parametrization that satisfies
+          only one of the two equations is a common error.
+        </p>
+      </li>
+      <li>
+        <p>
+          <term>Wrong endpoints.</term> In the arc-length task some students
+          integrate over <m>0 \le t \le 1</m> and forget the symmetric half,
+          getting exactly half the correct length.
+        </p>
+      </li>
+    </ul>
+    </p>
+  </remark>
+  </subsection>
 
 </section>

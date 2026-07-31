@@ -44,9 +44,13 @@
       <m>\R^2</m>: the function <m>\mathbf{F}</m> takes two real numbers
       <m>(x,y)</m> as its input and outputs a vector in <m>\R^2</m>. As an
       example, consider the following vector field:
-      <me>\mathbf{F}(x,y)=x\,\mathbf{i}+y\,\mathbf{j}.</me>
+      <md>
+        <mrow xml:id="eq-radial-field" number="yes">
+          \mathbf{F}(x,y)=\left\langle x,\ y\right\rangle.
+        </mrow>
+      </md>
       To visualize this vector field, imagine that at each point
-      <m>(x,y)</m> there is a vector <m>x\,\mathbf{i}+y\,\mathbf{j}</m>
+      <m>(x,y)</m> there is a vector <m>\left\langle x,\ y\right\rangle</m>
       attached. Physically, this vector could correspond to the velocity of
       an atom located at the point <m>(x,y)</m>. See
       <xref ref="fig-radial-field"/>.
@@ -54,7 +58,7 @@
 
     <figure xml:id="fig-radial-field">
       <caption>
-        The vector field <m>\mathbf{F}(x,y)=x\,\mathbf{i}+y\,\mathbf{j}</m>.
+        The vector field <m>\mathbf{F}(x,y)=\left\langle x,\ y\right\rangle</m>.
         Every arrow points directly away from the origin, and the arrows get
         longer as the distance from the origin grows.
       </caption>
@@ -72,119 +76,72 @@
             where the field is the zero vector.
           </p>
         </description>
-        <latex-image>
-          \begin{tikzpicture}
-          \begin{axis}[width=9cm, height=9cm, xlabel={\(x\)}, ylabel={\(y\)},
-              xmin=-5, xmax=5, ymin=-5, ymax=5, grid=major, grid style={gray!20}]
-            \addplot[blue, -{Stealth[length=4pt]}, quiver={u=\thisrow{u}, v=\thisrow{v}}]
-                table[row sep=\\] {%
-x y u v\\
--4 -4 -0.720 -0.720\\
--4 -3 -0.720 -0.540\\
--4 -2 -0.720 -0.360\\
--4 -1 -0.720 -0.180\\
--4 0 -0.720 0.000\\
--4 1 -0.720 0.180\\
--4 2 -0.720 0.360\\
--4 3 -0.720 0.540\\
--4 4 -0.720 0.720\\
--3 -4 -0.540 -0.720\\
--3 -3 -0.540 -0.540\\
--3 -2 -0.540 -0.360\\
--3 -1 -0.540 -0.180\\
--3 0 -0.540 0.000\\
--3 1 -0.540 0.180\\
--3 2 -0.540 0.360\\
--3 3 -0.540 0.540\\
--3 4 -0.540 0.720\\
--2 -4 -0.360 -0.720\\
--2 -3 -0.360 -0.540\\
--2 -2 -0.360 -0.360\\
--2 -1 -0.360 -0.180\\
--2 0 -0.360 0.000\\
--2 1 -0.360 0.180\\
--2 2 -0.360 0.360\\
--2 3 -0.360 0.540\\
--2 4 -0.360 0.720\\
--1 -4 -0.180 -0.720\\
--1 -3 -0.180 -0.540\\
--1 -2 -0.180 -0.360\\
--1 -1 -0.180 -0.180\\
--1 0 -0.180 0.000\\
--1 1 -0.180 0.180\\
--1 2 -0.180 0.360\\
--1 3 -0.180 0.540\\
--1 4 -0.180 0.720\\
-0 -4 0.000 -0.720\\
-0 -3 0.000 -0.540\\
-0 -2 0.000 -0.360\\
-0 -1 0.000 -0.180\\
-0 0 0.000 0.000\\
-0 1 0.000 0.180\\
-0 2 0.000 0.360\\
-0 3 0.000 0.540\\
-0 4 0.000 0.720\\
-1 -4 0.180 -0.720\\
-1 -3 0.180 -0.540\\
-1 -2 0.180 -0.360\\
-1 -1 0.180 -0.180\\
-1 0 0.180 0.000\\
-1 1 0.180 0.180\\
-1 2 0.180 0.360\\
-1 3 0.180 0.540\\
-1 4 0.180 0.720\\
-2 -4 0.360 -0.720\\
-2 -3 0.360 -0.540\\
-2 -2 0.360 -0.360\\
-2 -1 0.360 -0.180\\
-2 0 0.360 0.000\\
-2 1 0.360 0.180\\
-2 2 0.360 0.360\\
-2 3 0.360 0.540\\
-2 4 0.360 0.720\\
-3 -4 0.540 -0.720\\
-3 -3 0.540 -0.540\\
-3 -2 0.540 -0.360\\
-3 -1 0.540 -0.180\\
-3 0 0.540 0.000\\
-3 1 0.540 0.180\\
-3 2 0.540 0.360\\
-3 3 0.540 0.540\\
-3 4 0.540 0.720\\
-4 -4 0.720 -0.720\\
-4 -3 0.720 -0.540\\
-4 -2 0.720 -0.360\\
-4 -1 0.720 -0.180\\
-4 0 0.720 0.000\\
-4 1 0.720 0.180\\
-4 2 0.720 0.360\\
-4 3 0.720 0.540\\
-4 4 0.720 0.720\\
-};
-            \addplot[only marks, mark=*, red, mark size=1.2pt] coordinates {(0,0)};
-          \end{axis}
-          \end{tikzpicture}
-        </latex-image>
+        <prefigure xmlns="https://prefigure.org" label="radial-field">
+          <diagram dimensions="(400,400)" margins="5">
+            <definition>F(x,y) = (0.22*x, 0.22*y)</definition>
+            <coordinates bbox="(-5.4,-5.4,5.4,5.4)" aspect-ratio="1">
+              <grid-axes xlabel="x" ylabel="y"/>
+
+              <group at="field">
+                <repeat parameter="i=-4..4">
+                  <repeat parameter="j=-4..4">
+                    <vector v="F(i,j)" tail="(i,j)" stroke="blue"
+                            thickness="2"/>
+                  </repeat>
+                </repeat>
+              </group>
+
+              <group at="origin">
+                <point p="(0,0)" size="4.5" stroke="red" fill="red"/>
+              </group>
+            </coordinates>
+
+            <annotations>
+              <annotation ref="figure"
+                          text="The vector field F of x and y equals the
+                                vector x, y: at every point of a grid an
+                                arrow points straight away from the origin,
+                                growing longer with the distance from it">
+                <annotation ref="grid" text="The coordinate grid"/>
+                <annotation ref="axes" text="The coordinate axes"/>
+                <annotation ref="field"
+                            text="The grid of field vectors, each pointing
+                                  radially outward with length equal to the
+                                  distance from the origin"/>
+                <annotation ref="origin"
+                            text="The origin, where the field is the zero
+                                  vector"/>
+              </annotation>
+            </annotations>
+          </diagram>
+        </prefigure>
       </image>
     </figure>
 
     <p>
-      Note that the length of the vector <m>x\,\mathbf{i}+y\,\mathbf{j}</m>
-      is <m>\sqrt{x^2+y^2}</m>, the distance from the origin. This is why
+      Note that the length of the vector in
+      <xref ref="eq-radial-field"/> is <m>\sqrt{x^2+y^2}</m>, the distance
+      from the origin. This is why
       the blue arrows in <xref ref="fig-radial-field"/> grow in length as we
       move away from the origin along a straight line. Can we modify the
       vector field so that the length of the vectors is one at every point?
       The answer is yes: dividing the vector by its own length produces a
       unit vector, and hence the vector field
-      <me>\mathbf{F}(x,y)=\frac{x\,\mathbf{i}+y\,\mathbf{j}}{\sqrt{x^2+y^2}},</me>
-      when visualized, looks like <xref ref="fig-unit-radial-field"/>: the
+      <md>
+        <mrow xml:id="eq-unit-radial-field" number="yes">
+          \mathbf{F}(x,y)
+            =\frac{\left\langle x,\ y\right\rangle}{\sqrt{x^2+y^2}},
+        </mrow>
+      </md>
+      of <xref ref="eq-unit-radial-field"/>, when visualized, looks like
+      <xref ref="fig-unit-radial-field"/>: the
       directions are unchanged, but now all arrows have the same length.
     </p>
 
     <figure xml:id="fig-unit-radial-field">
       <caption>
         The normalized field
-        <m>\mathbf{F}(x,y)=\dfrac{x\,\mathbf{i}+y\,\mathbf{j}}{\sqrt{x^2+y^2}}</m>:
+        <m>\mathbf{F}(x,y)=\dfrac{\left\langle x,\ y\right\rangle}{\sqrt{x^2+y^2}}</m>:
         same directions as <xref ref="fig-radial-field"/>, but every arrow
         has length one.
       </caption>
@@ -201,115 +158,71 @@ x y u v\\
             red dot marks the origin, where the field is undefined.
           </p>
         </description>
-        <latex-image>
-          \begin{tikzpicture}
-          \begin{axis}[width=9cm, height=9cm, xlabel={\(x\)}, ylabel={\(y\)},
-              xmin=-5, xmax=5, ymin=-5, ymax=5, grid=major, grid style={gray!20}]
-            \addplot[blue, -{Stealth[length=4pt]}, quiver={u=\thisrow{u}, v=\thisrow{v}}]
-                table[row sep=\\] {%
-x y u v\\
--4 -4 -0.495 -0.495\\
--4 -3 -0.560 -0.420\\
--4 -2 -0.626 -0.313\\
--4 -1 -0.679 -0.170\\
--4 0 -0.700 0.000\\
--4 1 -0.679 0.170\\
--4 2 -0.626 0.313\\
--4 3 -0.560 0.420\\
--4 4 -0.495 0.495\\
--3 -4 -0.420 -0.560\\
--3 -3 -0.495 -0.495\\
--3 -2 -0.582 -0.388\\
--3 -1 -0.664 -0.221\\
--3 0 -0.700 0.000\\
--3 1 -0.664 0.221\\
--3 2 -0.582 0.388\\
--3 3 -0.495 0.495\\
--3 4 -0.420 0.560\\
--2 -4 -0.313 -0.626\\
--2 -3 -0.388 -0.582\\
--2 -2 -0.495 -0.495\\
--2 -1 -0.626 -0.313\\
--2 0 -0.700 0.000\\
--2 1 -0.626 0.313\\
--2 2 -0.495 0.495\\
--2 3 -0.388 0.582\\
--2 4 -0.313 0.626\\
--1 -4 -0.170 -0.679\\
--1 -3 -0.221 -0.664\\
--1 -2 -0.313 -0.626\\
--1 -1 -0.495 -0.495\\
--1 0 -0.700 0.000\\
--1 1 -0.495 0.495\\
--1 2 -0.313 0.626\\
--1 3 -0.221 0.664\\
--1 4 -0.170 0.679\\
-0 -4 0.000 -0.700\\
-0 -3 0.000 -0.700\\
-0 -2 0.000 -0.700\\
-0 -1 0.000 -0.700\\
-0 0 0.000 0.000\\
-0 1 0.000 0.700\\
-0 2 0.000 0.700\\
-0 3 0.000 0.700\\
-0 4 0.000 0.700\\
-1 -4 0.170 -0.679\\
-1 -3 0.221 -0.664\\
-1 -2 0.313 -0.626\\
-1 -1 0.495 -0.495\\
-1 0 0.700 0.000\\
-1 1 0.495 0.495\\
-1 2 0.313 0.626\\
-1 3 0.221 0.664\\
-1 4 0.170 0.679\\
-2 -4 0.313 -0.626\\
-2 -3 0.388 -0.582\\
-2 -2 0.495 -0.495\\
-2 -1 0.626 -0.313\\
-2 0 0.700 0.000\\
-2 1 0.626 0.313\\
-2 2 0.495 0.495\\
-2 3 0.388 0.582\\
-2 4 0.313 0.626\\
-3 -4 0.420 -0.560\\
-3 -3 0.495 -0.495\\
-3 -2 0.582 -0.388\\
-3 -1 0.664 -0.221\\
-3 0 0.700 0.000\\
-3 1 0.664 0.221\\
-3 2 0.582 0.388\\
-3 3 0.495 0.495\\
-3 4 0.420 0.560\\
-4 -4 0.495 -0.495\\
-4 -3 0.560 -0.420\\
-4 -2 0.626 -0.313\\
-4 -1 0.679 -0.170\\
-4 0 0.700 0.000\\
-4 1 0.679 0.170\\
-4 2 0.626 0.313\\
-4 3 0.560 0.420\\
-4 4 0.495 0.495\\
-};
-            \addplot[only marks, mark=*, red, mark size=1.2pt] coordinates {(0,0)};
-          \end{axis}
-          \end{tikzpicture}
-        </latex-image>
+        <prefigure xmlns="https://prefigure.org" label="unit-radial-field">
+          <diagram dimensions="(400,400)" margins="5">
+            <!-- the tiny constant keeps the origin, where the field is
+                 undefined, from dividing by zero -->
+            <definition>U(x,y) = (0.55*x/sqrt(x^2+y^2+0.0001),
+                                  0.55*y/sqrt(x^2+y^2+0.0001))</definition>
+            <coordinates bbox="(-5.4,-5.4,5.4,5.4)" aspect-ratio="1">
+              <grid-axes xlabel="x" ylabel="y"/>
+
+              <group at="field">
+                <repeat parameter="i=-4..4">
+                  <repeat parameter="j=-4..4">
+                    <vector v="U(i,j)" tail="(i,j)" stroke="blue"
+                            thickness="2"/>
+                  </repeat>
+                </repeat>
+              </group>
+
+              <group at="origin">
+                <point p="(0,0)" size="4.5" stroke="red" fill="red"/>
+              </group>
+            </coordinates>
+
+            <annotations>
+              <annotation ref="figure"
+                          text="The normalized field: at every point of a
+                                grid an arrow points straight away from the
+                                origin, and now every arrow has the same
+                                length">
+                <annotation ref="grid" text="The coordinate grid"/>
+                <annotation ref="axes" text="The coordinate axes"/>
+                <annotation ref="field"
+                            text="The grid of unit field vectors, all of the
+                                  same length, each pointing radially
+                                  outward"/>
+                <annotation ref="origin"
+                            text="The origin, where the field is undefined"/>
+              </annotation>
+            </annotations>
+          </diagram>
+        </prefigure>
       </image>
     </figure>
 
     <p>
       Our next example is a vector field which is a function on
       <m>\R^3</m>. Consider the following vector field:
-      <me>\mathbf{F}(x,y,z)
-          =\frac{-x\,\mathbf{i}-y\,\mathbf{j}-z\,\mathbf{k}}{\left(x^2+y^2+z^2\right)^{3/2}}
-          =-\frac{\mathbf{r}}{\left|\mathbf{r}\right|^3},
-          \qquad \mathbf{r}=x\,\mathbf{i}+y\,\mathbf{j}+z\,\mathbf{k}.</me>
+      <md>
+        <mrow>
+          \mathbf{F}(x,y,z) \amp
+            = \frac{\left\langle -x,\ -y,\ -z\right\rangle}
+                   {\left(x^2+y^2+z^2\right)^{3/2}}
+        </mrow>
+        <mrow xml:id="eq-gravity-field" number="yes">
+          \amp = -\frac{\mathbf{r}}{\left\lVert\mathbf{r}\right\rVert^3},
+                 \qquad
+                 \mathbf{r}=\left\langle x,\ y,\ z\right\rangle.
+        </mrow>
+      </md>
       This can, for instance, represent the gravitational field of a massive
       body located at the origin: every arrow points <em>toward</em> the
       origin, and since
-      <m>\left|\mathbf{F}\right|
-         =\left|\mathbf{r}\right|/\left|\mathbf{r}\right|^3
-         =1/\left|\mathbf{r}\right|^2</m>,
+      <m>\left\lVert\mathbf{F}\right\rVert
+         =\left\lVert\mathbf{r}\right\rVert/\left\lVert\mathbf{r}\right\rVert^3
+         =1/\left\lVert\mathbf{r}\right\rVert^2</m>,
       the pull weakens with the square of the distance<mdash/>the
       inverse-square law. See <xref ref="fig-gravity-field"/>. We will meet
       this field again in <xref ref="ex-helix-gravity"/>.
@@ -318,7 +231,7 @@ x y u v\\
     <figure xml:id="fig-gravity-field">
       <caption>
         The gravitational field
-        <m>\mathbf{F}=-\mathbf{r}/\left|\mathbf{r}\right|^3</m>. All arrows
+        <m>\mathbf{F}=-\mathbf{r}/\left\lVert\mathbf{r}\right\rVert^3</m>. All arrows
         point toward the origin and shrink with the square of the distance.
       </caption>
       <image xml:id="image-gravity-field" width="70%">
@@ -341,7 +254,7 @@ x y u v\\
               xlabel={\(x\)}, ylabel={\(y\)}, zlabel={\(z\)},
               xmin=-0.7, xmax=0.7, ymin=-0.7, ymax=0.7, zmin=-0.7, zmax=0.7,
               grid=major, grid style={gray!20}]
-            \addplot3[blue, -{Stealth[length=3.5pt]},
+            \addplot3[blue, line width=1.2pt, -{Stealth[length=5pt]},
                 quiver={u=\thisrow{u}, v=\thisrow{v}, w=\thisrow{w}}]
                 table[row sep=\\] {%
 x y z u v w\\
@@ -396,9 +309,12 @@ x y z u v w\\
 
     <figure xml:id="fig-work-reminder">
       <caption>
-        A box pulled through a displacement <m>\delta x</m> by a constant
-        force <m>\mathbf{F}</m> applied at an angle <m>\alpha</m>. Only the
-        component <m>\left|\mathbf{F}\right|\cos(\alpha)\,\mathbf{i}</m>
+        A box pulled by a constant force <m>\mathbf{F}</m> applied at an
+        angle <m>\alpha</m>. The displacement <m>\delta x</m> is measured
+        below the ground line, from the centre of mass of the box in its
+        initial position to its centre of mass in the final position (the
+        faint box). Only the component
+        <m>\left\lVert\mathbf{F}\right\rVert\cos(\alpha)\,\mathbf{i}</m>
         along the motion does work.
       </caption>
       <image xml:id="image-work-reminder" width="80%">
@@ -413,46 +329,110 @@ x y z u v w\\
             to the right from the top of the box, making an angle alpha with
             the horizontal; a small arc marks the angle. A shorter blue
             horizontal arrow labelled the magnitude of F times cosine alpha,
-            times i, shows the horizontal component of the force. A dotted
-            line labelled delta x runs to the right, ending at a faint
-            second box marking the final position.
+            times i, shows the horizontal component of the force. A faint
+            second box to the right marks the final position. The centre of
+            each box is marked with a dot, and a dashed vertical line drops
+            from each centre to a dashed double-headed arrow drawn below the
+            ground line and labelled delta x, so the displacement is
+            measured from one centre of mass to the other.
           </p>
         </description>
-        <latex-image>
-          \begin{tikzpicture}[&gt;={Stealth[length=6pt]}, scale=1.1]
-            % ground
-            \draw[-&gt;] (-0.5,0) -- (6.3,0);
-            % box at start and (faint) at end
-            \draw[thick, fill=gray!20] (0.3,0) rectangle +(0.5,0.6);
-            \draw[gray!60, fill=gray!8] (4.9,0) rectangle +(0.5,0.6);
-            % force at angle alpha
-            \draw[-&gt;, red, very thick] (0.55,0.6) -- +(50:1.8)
-                node[above right=-2pt] {\(\mathbf F\)};
-            % horizontal component
-            \draw[-&gt;, blue, thick] (0.55,0.6) -- +(1.16,0)
-                node[below right=-1pt] {\(|\mathbf F|\cos(\alpha)\,\mathbf i\)};
-            % angle
-            \draw (1.15,0.6) arc[start angle=0, end angle=50, radius=0.6];
-            \node at (1.5,0.93) {\(\alpha\)};
-            % displacement
-            \draw[densely dotted, green!45!black, very thick] (0.85,1.0) -- (4.9,1.0)
-                node[midway, above] {\(\delta x\)};
-          \end{tikzpicture}
-        </latex-image>
+        <prefigure xmlns="https://prefigure.org" label="work-reminder">
+          <diagram dimensions="(560,300)" margins="5">
+            <coordinates bbox="(-0.8,-1.7,6.7,3.0)" aspect-ratio="1">
+              <group at="ground">
+                <line endpoints="((-0.5,0), (6.3,0))" stroke="black"
+                      thickness="2" arrows="1"/>
+              </group>
+
+              <group at="boxes">
+                <rectangle lower-left="(0.3,0)" dimensions="(0.5,0.6)"
+                           stroke="black" fill="#d9d9d9" thickness="2"/>
+                <rectangle lower-left="(4.9,0)" dimensions="(0.5,0.6)"
+                           stroke="#b3b3b3" fill="#f2f2f2" thickness="2"/>
+              </group>
+
+              <group at="force">
+                <vector v="(1.157,1.379)" tail="(0.55,0.6)" stroke="red"
+                        thickness="3" arrow-width="6"/>
+                <label anchor="(1.78,2.02)" alignment="e" color="red">
+                  <m>\mathbf{F}</m>
+                </label>
+                <arc center="(0.55,0.6)" radius="0.62" range="(0,50)"
+                     stroke="black" thickness="1"/>
+                <label anchor="(1.58,1.02)" alignment="c">
+                  <m>\alpha</m>
+                </label>
+              </group>
+
+              <group at="component">
+                <vector v="(1.157,0)" tail="(0.55,0.6)" stroke="blue"
+                        thickness="3" arrow-width="6"/>
+                <label anchor="(1.80,0.30)" alignment="e" color="blue">
+                  <m>\left\lVert\mathbf{F}\right\rVert\cos(\alpha)\,\mathbf{i}</m>
+                </label>
+              </group>
+
+              <group at="displacement">
+                <point p="(0.55,0.3)" size="3.5" stroke="black" fill="black"/>
+                <point p="(5.15,0.3)" size="3.5" stroke="#8c8c8c"
+                       fill="#8c8c8c"/>
+                <line endpoints="((0.55,0.3), (0.55,-0.85))" stroke="#8c8c8c"
+                      thickness="1" dash="4 3"/>
+                <line endpoints="((5.15,0.3), (5.15,-0.85))" stroke="#8c8c8c"
+                      thickness="1" dash="4 3"/>
+                <line endpoints="((0.55,-0.68), (5.15,-0.68))"
+                      stroke="#009E73" thickness="3" dash="7 4" arrows="2"/>
+                <label anchor="(2.85,-1.2)" alignment="c" color="#009E73">
+                  <m>\delta x</m>
+                </label>
+              </group>
+            </coordinates>
+
+            <annotations>
+              <annotation ref="figure"
+                          text="A box on the ground pulled by a force applied
+                                at an angle alpha, with the displacement
+                                measured from one centre of mass to the
+                                other">
+                <annotation ref="ground" text="The ground the box slides on"/>
+                <annotation ref="boxes"
+                            text="The box in its initial position and, faintly,
+                                  in its final position"/>
+                <annotation ref="force"
+                            text="The force F, applied at an angle alpha to
+                                  the direction of motion"/>
+                <annotation ref="component"
+                            text="The component of the force along the
+                                  motion, the magnitude of F times cosine
+                                  alpha"/>
+                <annotation ref="displacement"
+                            text="The displacement delta x, measured below the
+                                  ground line from the centre of mass of the
+                                  box in its initial position to its centre of
+                                  mass in the final position"/>
+              </annotation>
+            </annotations>
+          </diagram>
+        </prefigure>
       </image>
     </figure>
 
     <p>
       The amount of work done by the force is equal to the magnitude of the
       force in the direction of motion,
-      <m>\left|\mathbf{F}\right|\cos(\alpha)</m>, multiplied by the amount
+      <m>\left\lVert\mathbf{F}\right\rVert\cos(\alpha)</m>, multiplied by the amount
       of displacement <m>\delta x</m>:
-      <me>\text{Work}
-          =\left|\mathbf{F}\right|\cos(\alpha)\times\delta x
-          =\mathbf{F}\cdot\left(\delta x\,\mathbf{i}\right).</me>
+      <md>
+        <mrow xml:id="eq-work-constant" number="yes">
+          \text{Work}
+            =\left\lVert\mathbf{F}\right\rVert\cos(\alpha)\times\delta x
+            =\mathbf{F}\cdot\left(\delta x\,\mathbf{i}\right).
+        </mrow>
+      </md>
       The last equality holds because the motion is in the
       <m>+x</m>-direction, which lets us rewrite
-      <m>\left|\mathbf{F}\right|\cos(\alpha)\times\delta x</m> as the dot
+      <m>\left\lVert\mathbf{F}\right\rVert\cos(\alpha)\times\delta x</m> as the dot
       product <m>\mathbf{F}\cdot(\delta x\,\mathbf{i})</m>. This dot-product
       form is the one that generalizes: <em>work is the dot product of the
       force with the displacement</em>.
@@ -468,7 +448,7 @@ x y z u v w\\
       is acting on an object and causing it to move along a curved
       trajectory from an initial point to a final point. Neither the force
       nor the direction of motion is constant anymore, so we cannot apply
-      the formula above directly. Instead, we reuse the strategy of
+      <xref ref="eq-work-constant"/> directly. Instead, we reuse the strategy of
       <xref ref="sec-line-integrals"/>: calculate the work on small subarcs
       of the trajectory, where force and direction are nearly constant, and
       then sum up. <xref ref="fig-work-subarc"/> shows one such subarc.
@@ -497,29 +477,74 @@ x y z u v w\\
             direction of motion.
           </p>
         </description>
-        <latex-image>
-          \begin{tikzpicture}[&gt;={Stealth[length=6pt]}, scale=2.2]
-            % axes
-            \draw[-&gt;] (-0.2,0) -- (2.6,0) node[right] {\(x\)};
-            \draw[-&gt;] (0,-0.2) -- (0,2.9) node[above] {\(y\)};
-            % trajectory y = 0.5 + 0.5 x^2
-            \draw[blue, very thick] plot[domain=0:2, samples=60] (\x, {0.5+0.5*\x*\x});
-            \fill[red] (0,0.5) circle (1pt);
-            \fill[red] (2,2.5) circle (1pt);
-            % the k-th subarc, slightly emphasized
-            \draw[red!70!black, line width=2.2pt]
-                plot[domain=0.42:0.62, samples=12] (\x, {0.5+0.5*\x*\x});
-            \node[below right=0pt] at (0.75,0.75) {\(\Delta s_k\)};
-            % sample point
-            \fill[black] (0.52,0.635) circle (1.4pt);
-            % force vector at the sample point
-            \draw[-&gt;, red, very thick] (0.52,0.635) -- +(0.30,0.85)
-                node[above left=-2pt] {\(\mathbf F(x_k,y_k)\)};
-            % unit tangent vector: curve slope = x = 0.52
-            \draw[-&gt;, green!50!black, very thick] (0.52,0.635) -- +(0.62,0.32)
-                node[below right=-2pt] {\(\mathbf T_k\)};
-          \end{tikzpicture}
-        </latex-image>
+        <prefigure xmlns="https://prefigure.org" label="work-subarc">
+          <diagram dimensions="(400,420)" margins="5">
+            <definition>q(t) = (t, 0.5+0.5*t^2)</definition>
+            <definition>tk = 0.52</definition>
+            <coordinates bbox="(-0.35,-0.35,3.1,3.2)" aspect-ratio="1">
+              <axes at="ax" xlabel="x" ylabel="y" decorations="no"
+                    arrows="1"/>
+
+              <group at="curve">
+                <parametric-curve function="q" domain="(0,2)" stroke="blue"
+                                  thickness="3"/>
+              </group>
+
+              <group at="ends">
+                <point p="q(0)" size="4" stroke="red" fill="red"/>
+                <point p="q(2)" size="4" stroke="red" fill="red"/>
+              </group>
+
+              <group at="subarc">
+                <parametric-curve function="q" domain="(0.34,0.74)"
+                                  stroke="deeppink" thickness="8"/>
+                <label anchor="(0.55,0.30)" alignment="center" color="deeppink">
+                  <m>\Delta s_k</m>
+                </label>
+                <line endpoints="((0.55,0.40), (0.55,0.58))"
+                      stroke="deeppink" thickness="1"/>
+              </group>
+
+              <group at="vectors">
+                <point p="q(tk)" size="4" stroke="black" fill="black"/>
+                <vector v="(0.42,1.19)" tail="q(tk)" stroke="red"
+                        thickness="3" arrow-width="6"/>
+                <label anchor="(0.94,1.86)" alignment="nw" color="red">
+                  <m>\mathbf{F}(x_k,y_k)</m>
+                </label>
+                <vector v="(0.78,0.41)" tail="q(tk)" stroke="#009E73"
+                        thickness="3" arrow-width="6"/>
+                <label anchor="(1.32,1.03)" alignment="e" offset="(6,-4)"
+                       color="#009E73">
+                  <m>\mathbf{T}_k</m>
+                </label>
+              </group>
+            </coordinates>
+
+            <annotations>
+              <annotation ref="figure"
+                          text="A curved trajectory with one short subarc
+                                highlighted, carrying the force vector and the
+                                unit tangent vector at a sample point">
+                <annotation ref="ax" text="The coordinate axes"/>
+                <annotation ref="curve"
+                            text="The trajectory of the object"
+                            sonify="yes"/>
+                <annotation ref="ends"
+                            text="The initial and final points of the
+                                  trajectory"/>
+                <annotation ref="subarc"
+                            text="The kth subarc, of length delta s sub k,
+                                  drawn in pink"/>
+                <annotation ref="vectors"
+                            text="At a sample point of that subarc, the force
+                                  F of x sub k, y sub k and the unit tangent
+                                  vector T sub k, which gives the direction of
+                                  motion"/>
+              </annotation>
+            </annotations>
+          </diagram>
+        </prefigure>
       </image>
     </figure>
 
@@ -530,29 +555,58 @@ x y z u v w\\
       the <m>k</m>th subarc is
       <m>\mathbf{F}(x_k,y_k)\cdot\mathbf{T}_k\,\Delta s_k</m>. Therefore the
       work done over the whole curve can be approximated as
-      <me>W\approx\sum_{k=1}^{n}\mathbf{F}(x_k,y_k)\cdot\mathbf{T}_k\,\Delta s_k.</me>
-      Finally, to find the exact amount of work we take the limit as the
-      number of subarcs approaches infinity:
-      <me>W=\lim_{n\to\infty}\sum_{k=1}^{n}
-          \mathbf{F}(x_k,y_k)\cdot\mathbf{T}_k\,\Delta s_k
-          =\int_C \mathbf{F}\cdot\mathbf{T}\,ds,</me>
+      <md>
+        <mrow xml:id="eq-work-sum" number="yes">
+          W\approx\sum_{k=1}^{n}
+            \mathbf{F}(x_k,y_k)\cdot\mathbf{T}_k\,\Delta s_k.
+        </mrow>
+      </md>
+      Finally, to find the exact amount of work we take the limit of
+      <xref ref="eq-work-sum"/> as the number of subarcs approaches
+      infinity:
+      <md>
+        <mrow>
+          W \amp =\lim_{n\to\infty}\sum_{k=1}^{n}
+                  \mathbf{F}(x_k,y_k)\cdot\mathbf{T}_k\,\Delta s_k
+        </mrow>
+        <mrow xml:id="eq-work-Tds" number="yes">
+          \amp =\int_C \mathbf{F}\cdot\mathbf{T}\,ds,
+        </mrow>
+      </md>
       where <m>\mathbf{T}</m> is the unit tangent vector of the curve. Since
-      <me>\mathbf{T}=\frac{\mathbf{v}}{\left|\mathbf{v}\right|}
-          =\frac{\frac{d\mathbf{r}}{dt}}{\frac{ds}{dt}}
-          =\frac{d\mathbf{r}}{ds},</me>
-      the combination <m>\mathbf{T}\,ds</m> is simply <m>d\mathbf{r}</m>,
-      and we arrive at the compact form
-      <me>W=\int_C \mathbf{F}\cdot\mathbf{T}\,ds
-          =\int_C \mathbf{F}\cdot d\mathbf{r}.</me>
+      <md>
+        <mrow xml:id="eq-unit-tangent" number="yes">
+          \mathbf{T}=\frac{\mathbf{v}}{\left\lVert\mathbf{v}\right\rVert}
+            =\frac{\frac{d\mathbf{r}}{dt}}{\frac{ds}{dt}}
+            =\frac{d\mathbf{r}}{ds},
+        </mrow>
+      </md>
+      the combination <m>\mathbf{T}\,ds</m> in
+      <xref ref="eq-work-Tds"/> is simply <m>d\mathbf{r}</m> by
+      <xref ref="eq-unit-tangent"/>, and we arrive at the compact form
+      <md>
+        <mrow xml:id="eq-work-dr" number="yes">
+          W=\int_C \mathbf{F}\cdot\mathbf{T}\,ds
+            =\int_C \mathbf{F}\cdot d\mathbf{r}.
+        </mrow>
+      </md>
     </p>
 
     <p>
       In practice, once the curve is parametrized by
-      <m>\mathbf{r}(t)</m> for <m>a\le t\le b</m>, the recipe is
-      <me>\int_C \mathbf{F}\cdot d\mathbf{r}
-          =\int_a^b \mathbf{F}\bigl(\mathbf{r}(t)\bigr)\cdot
-           \frac{d\mathbf{r}}{dt}\,dt
-          =\int_a^b \mathbf{F}\bigl(\mathbf{r}(t)\bigr)\cdot\mathbf{v}(t)\,dt:</me>
+      <m>\mathbf{r}(t)</m> for <m>a\le t\le b</m>,
+      <xref ref="eq-work-dr"/> becomes
+      <md>
+        <mrow>
+          \int_C \mathbf{F}\cdot d\mathbf{r} \amp
+            =\int_a^b \mathbf{F}\bigl(\mathbf{r}(t)\bigr)\cdot
+             \frac{d\mathbf{r}}{dt}\,dt
+        </mrow>
+        <mrow xml:id="eq-work-parametrized" number="yes">
+          \amp =\int_a^b \mathbf{F}\bigl(\mathbf{r}(t)\bigr)
+                 \cdot\mathbf{v}(t)\,dt :
+        </mrow>
+      </md>
       evaluate the field along the curve, dot it with the velocity, and
       integrate over time. Work was our motivation, but any vector field
       <m>\mathbf{F}</m> can be integrated over a curve <m>C</m> in this
@@ -563,7 +617,7 @@ x y z u v w\\
     <figure xml:id="fig-work-video">
       <caption>
         As the object moves through the field
-        <m>\mathbf{F}=x\,\mathbf{i}+y\,\mathbf{j}</m> along the trajectory,
+        <m>\mathbf{F}=\left\langle x,\ y\right\rangle</m> along the trajectory,
         the work <m>W=\int_C\mathbf{F}\cdot d\mathbf{r}</m> accumulates
         moment by moment from the tangential component of the force.
       </caption>
@@ -574,14 +628,18 @@ x y z u v w\\
     <p>
       There is a third, frequently used way to write the same integral.
       Assume the vector field has components
-      <m>\mathbf{F}(x,y,z)=M(x,y,z)\,\mathbf{i}+N(x,y,z)\,\mathbf{j}
-         +P(x,y,z)\,\mathbf{k}</m>. Since
-      <m>d\mathbf{r}=dx\,\mathbf{i}+dy\,\mathbf{j}+dz\,\mathbf{k}</m>,
+      <m>\mathbf{F}(x,y,z)=\left\langle M(x,y,z),\ N(x,y,z),\
+         P(x,y,z)\right\rangle</m>. Since
+      <m>d\mathbf{r}=\left\langle dx,\ dy,\ dz\right\rangle</m>,
       expanding the dot product gives the <term>differential form</term> of
       the line integral:
-      <me>\int_C \mathbf{F}\cdot d\mathbf{r}
-          =\int_C M\,dx+N\,dy+P\,dz.</me>
-      All three notations<mdash/><m>\int_C\mathbf{F}\cdot\mathbf{T}\,ds</m>,
+      <md>
+        <mrow xml:id="eq-work-differential" number="yes">
+          \int_C \mathbf{F}\cdot d\mathbf{r}
+            =\int_C M\,dx+N\,dy+P\,dz.
+        </mrow>
+      </md>
+      All three notations<mdash/><xref ref="eq-work-Tds"/>,
       <m>\int_C\mathbf{F}\cdot d\mathbf{r}</m>, and
       <m>\int_C M\,dx+N\,dy+P\,dz</m><mdash/>mean exactly the same thing.
     </p>
@@ -594,49 +652,68 @@ x y z u v w\\
     <statement>
       <p>
         Calculate the work done by the force
-        <me>\mathbf{F}(x,y,z)=(y-x^2)\,\mathbf{i}+(z-y^2)\,\mathbf{j}
-            +(x-z^2)\,\mathbf{k}</me>
+        <md>
+          \mathbf{F}(x,y,z)=\left\langle y-x^2,\ z-y^2,\ x-z^2\right\rangle
+        </md>
         over the curve <m>C</m>:
-        <me>\mathbf{r}(t)=t\,\mathbf{i}+t^2\,\mathbf{j}+t^3\,\mathbf{k}</me>
+        <md>
+          \mathbf{r}(t)=\left\langle t,\ t^2,\ t^3\right\rangle
+        </md>
         from <m>(0,0,0)</m> to <m>(1,1,1)</m>.
       </p>
     </statement>
 
     <solution>
       <p>
-        The curve, shown in <xref ref="fig-twisted-cubic"/>, runs from
-        <m>\mathbf{r}(0)=(0,0,0)</m> to <m>\mathbf{r}(1)=(1,1,1)</m>, so the
+        We use <xref ref="eq-work-parametrized"/>. The curve, shown in
+        <xref ref="fig-twisted-cubic"/>, runs from
+        <m>\mathbf{r}(0)=\left\langle 0,0,0\right\rangle</m> to
+        <m>\mathbf{r}(1)=\left\langle 1,1,1\right\rangle</m>, so the
         parameter interval is <m>0\le t\le 1</m>. We begin by writing the
         force in terms of the parameter <m>t</m>, substituting
         <m>x=t</m>, <m>y=t^2</m>, <m>z=t^3</m>:
       </p>
       <md>
-        <mrow>\mathbf{F} \amp = (y-x^2)\,\mathbf{i}+(z-y^2)\,\mathbf{j}
-              +(x-z^2)\,\mathbf{k}</mrow>
-        <mrow>\amp = (t^2-t^2)\,\mathbf{i}+(t^3-t^4)\,\mathbf{j}
-              +(t-t^6)\,\mathbf{k}</mrow>
-        <mrow>\amp = (t^3-t^4)\,\mathbf{j}+(t-t^6)\,\mathbf{k},</mrow>
+        <mrow>
+          \mathbf{F} \amp = \left\langle y-x^2,\ z-y^2,\ x-z^2\right\rangle
+        </mrow>
+        <mrow>
+          \amp = \left\langle t^2-t^2,\ t^3-t^4,\ t-t^6\right\rangle
+        </mrow>
+        <mrow>
+          \amp = \left\langle 0,\ t^3-t^4,\ t-t^6\right\rangle,
+        </mrow>
       </md>
       <p>
-        where the <m>\mathbf{i}</m>-component vanishes identically along
+        where the first component vanishes identically along
         this particular curve. The velocity vector is
-        <me>\mathbf{v}(t)=\frac{d\mathbf{r}}{dt}
-            =\mathbf{i}+2t\,\mathbf{j}+3t^2\,\mathbf{k}.</me>
+        <md>
+          \mathbf{v}(t)=\frac{d\mathbf{r}}{dt}
+            =\left\langle 1,\ 2t,\ 3t^2\right\rangle.
+        </md>
         Finally, the amount of work is
       </p>
       <md>
-        <mrow>W \amp = \int_C\mathbf{F}\cdot d\mathbf{r}
-              =\int_0^1\Bigl((t^3-t^4)\,\mathbf{j}+(t-t^6)\,\mathbf{k}\Bigr)
-               \cdot\Bigl(\mathbf{i}+2t\,\mathbf{j}+3t^2\,\mathbf{k}\Bigr)\,dt</mrow>
-        <mrow>\amp = \int_0^1\left(2t^4-2t^5+3t^3-3t^8\right)dt
-              =\frac{2}{5}-\frac{1}{3}+\frac{3}{4}-\frac{1}{3}
-              =\frac{29}{60}.</mrow>
+        <mrow>
+          W \amp = \int_C\mathbf{F}\cdot d\mathbf{r}
+        </mrow>
+        <mrow>
+          \amp =\int_0^1\left\langle 0,\ t^3-t^4,\ t-t^6\right\rangle
+                 \cdot\left\langle 1,\ 2t,\ 3t^2\right\rangle\,dt
+        </mrow>
+        <mrow>
+          \amp = \int_0^1\left(2t^4-2t^5+3t^3-3t^8\right)dt
+        </mrow>
+        <mrow>
+          \amp = \frac{2}{5}-\frac{1}{3}+\frac{3}{4}-\frac{1}{3}
+               = \frac{29}{60}.
+        </mrow>
       </md>
 
       <figure xml:id="fig-twisted-cubic">
         <caption>
           The twisted cubic
-          <m>\mathbf{r}(t)=t\,\mathbf{i}+t^2\,\mathbf{j}+t^3\,\mathbf{k}</m>,
+          <m>\mathbf{r}(t)=\left\langle t,\ t^2,\ t^3\right\rangle</m>,
           <m>0\le t\le 1</m>, from the origin to <m>(1,1,1)</m>. The dashed
           gray curve is its shadow on the plane <m>z=0</m>.
         </caption>
@@ -661,7 +738,8 @@ x y z u v w\\
                 xlabel={\(x\)}, ylabel={\(y\)}, zlabel={\(z\)},
                 xmin=0, xmax=1.1, ymin=0, ymax=1.1, zmin=0, zmax=1.1,
                 grid=major, grid style={gray!20}, clip=false]
-              \addplot3[gray!50, dashed, thin, domain=0:1, samples=60, samples y=0]
+              \addplot3[gray!65, dashed, line width=1.3pt, domain=0:1,
+                        samples=60, samples y=0]
                   ({x}, {x^2}, {0});
               \addplot3[blue, very thick, domain=0:1, samples=80, samples y=0]
                   ({x}, {x^2}, {x^3});
@@ -685,9 +763,17 @@ x y z u v w\\
     <statement>
       <p>
         Calculate the line integral
-        <me>\int_C \frac{-x}{\left(x^2+y^2+z^2\right)^{3/2}}\,dx
-            +\frac{-y}{\left(x^2+y^2+z^2\right)^{3/2}}\,dy
-            +\frac{-z}{\left(x^2+y^2+z^2\right)^{3/2}}\,dz</me>
+        <md>
+          <mrow>
+            \int_C \amp \frac{-x}{\left(x^2+y^2+z^2\right)^{3/2}}\,dx
+          </mrow>
+          <mrow>
+            \amp +\frac{-y}{\left(x^2+y^2+z^2\right)^{3/2}}\,dy
+          </mrow>
+          <mrow>
+            \amp +\frac{-z}{\left(x^2+y^2+z^2\right)^{3/2}}\,dz
+          </mrow>
+        </md>
         over the curve
         <m>\mathbf{r}(t)=\langle\cos t,\ \sin t,\ t\rangle</m> from
         <m>(1,0,0)</m> to <m>(1,0,2\pi)</m>.
@@ -697,12 +783,13 @@ x y z u v w\\
     <solution>
       <p>
         This integral is in the differential form
-        <m>\int_C M\,dx+N\,dy+P\,dz</m> with
+        <xref ref="eq-work-differential"/> with
         <m>\mathbf{F}=\langle M,N,P\rangle</m>, and we recognize the field:
         <me>\mathbf{F}
             =\frac{\langle -x,\,-y,\,-z\rangle}{\left(x^2+y^2+z^2\right)^{3/2}}
-            =-\frac{\mathbf{r}}{\left|\mathbf{r}\right|^3},</me>
-        the gravitational field of <xref ref="fig-gravity-field"/>. The
+            =-\frac{\mathbf{r}}{\left\lVert\mathbf{r}\right\rVert^3},</me>
+        the gravitational field <xref ref="eq-gravity-field"/>, drawn in
+        <xref ref="fig-gravity-field"/>. The
         curve is a helix that climbs one full turn, from <m>(1,0,0)</m> at
         <m>t=0</m> to <m>(1,0,2\pi)</m> at <m>t=2\pi</m>; see
         <xref ref="fig-helix-gravity"/>.
@@ -729,12 +816,20 @@ x y z u v w\\
         <m>\tfrac{du}{2}=t\,dt</m>,
       </p>
       <md>
-        <mrow>\int_C M\,dx+N\,dy+P\,dz
-              \amp = \int_{t=0}^{t=2\pi}\frac{-t}{\left(1+t^2\right)^{3/2}}\,dt
-              = -\frac{1}{2}\int_{u=1}^{u=1+4\pi^2} u^{-3/2}\,du</mrow>
-        <mrow>\amp = \left(-\frac{1}{2}\right)(-2)\,
-              \frac{1}{\sqrt{u}}\Bigg|_{u=1}^{u=1+4\pi^2}
-              = \frac{1}{\sqrt{1+4\pi^2}}-1\approx -0.84.</mrow>
+        <mrow>
+          \int_C M\,dx+N\,dy+P\,dz \amp
+            = \int_{t=0}^{t=2\pi}\frac{-t}{\left(1+t^2\right)^{3/2}}\,dt
+        </mrow>
+        <mrow>
+          \amp = -\frac{1}{2}\int_{u=1}^{u=1+4\pi^2} u^{-3/2}\,du
+        </mrow>
+        <mrow>
+          \amp = \left(-\frac{1}{2}\right)(-2)\,
+                 \frac{1}{\sqrt{u}}\Bigg|_{u=1}^{u=1+4\pi^2}
+        </mrow>
+        <mrow>
+          \amp = \frac{1}{\sqrt{1+4\pi^2}}-1\approx -0.84.
+        </mrow>
       </md>
       <p>
         The work is negative, and the picture explains why: the
@@ -748,8 +843,11 @@ x y z u v w\\
         <caption>
           The helix <m>\mathbf{r}(t)=\langle\cos t,\sin t,t\rangle</m>,
           <m>0\le t\le 2\pi</m>, climbing through the gravitational field
-          <m>\mathbf{F}=-\mathbf{r}/\left|\mathbf{r}\right|^3</m> (orange
-          arrows, direction only).
+          <m>\mathbf{F}=-\mathbf{r}/\left\lVert\mathbf{r}\right\rVert^3</m>
+          (orange arrows, direction only). At the same three points the
+          velocity <m>\mathbf{v}</m> is drawn in green: at every one of
+          them the field leans away from the direction of travel, which is
+          why the work comes out negative.
         </caption>
         <image xml:id="image-helix-gravity" width="70%">
           <shortdescription>
@@ -765,7 +863,11 @@ x y z u v w\\
               point labelled (1,0,2 pi), t equals 2 pi, directly above it. A
               dashed gray unit circle on the floor is the helix's shadow.
               Three orange arrows attached to points of the helix, labelled
-              F, point inward and downward, toward the origin.
+              F, point inward and downward, toward the origin. At the same
+              three points three green arrows, labelled v, point along the
+              helix in the direction of travel, upward and around; each
+              green arrow makes an obtuse angle with the orange one beside
+              it.
             </p>
           </description>
           <latex-image>
@@ -780,8 +882,9 @@ x y z u v w\\
               % the helix, one full turn
               \addplot3[blue, very thick, domain=0:360, samples=140, samples y=0]
                   ({cos(x)}, {sin(x)}, {pi*x/90/2});
-              % a few field vectors F = -r/|r|^3 along the curve (direction only)
-              \addplot3[orange, thick, -{Stealth[length=4pt]},
+              % a few field vectors F = -r/|r|^3 along the curve
+              % (direction only), and the velocity at the same points
+              \addplot3[orange, line width=1.5pt, -{Stealth[length=5pt]},
                   quiver={u=\thisrow{u}, v=\thisrow{v}, w=\thisrow{w}}]
                   table[row sep=\\] {%
 x y z u v w\\
@@ -789,11 +892,23 @@ x y z u v w\\
 -1 0 3.1416 0.24 0 -0.76\\
 0 -1 4.7124 0 0.17 -0.78\\
 };
+              \addplot3[green!55!black, line width=1.5pt,
+                  -{Stealth[length=5pt]},
+                  quiver={u=\thisrow{u}, v=\thisrow{v}, w=\thisrow{w}}]
+                  table[row sep=\\] {%
+x y z u v w\\
+0 1 1.5708 -0.55 0 0.55\\
+-1 0 3.1416 0 -0.55 0.55\\
+0 -1 4.7124 0.55 0 0.55\\
+};
               \addplot3[only marks, mark=*, red, mark size=1.6pt] coordinates
                   {(1,0,0) (1,0,6.2832)};
               \node[anchor=west, xshift=10pt, yshift=4pt] at (axis cs:1,0,0) {\((1,0,0),\ t=0\)};
               \node[anchor=south west, xshift=4pt] at (axis cs:1,0,6.2832) {\((1,0,2\pi),\ t=2\pi\)};
-              \node[orange, anchor=east] at (axis cs:-1.05,0,2.4) {\(\mathbf F\)};
+              \node[orange, anchor=east] at (axis cs:-1.4,-0.3,2.55)
+                  {\(\mathbf F\)};
+              \node[green!55!black, anchor=west]
+                  at (axis cs:0.15,-1.05,5.5) {\(\mathbf v\)};
             \end{axis}
             \end{tikzpicture}
           </latex-image>
@@ -813,5 +928,135 @@ x y z u v w\\
       </figure>
     </solution>
   </example>
+
+  <!-- ================================================================= -->
+  <!-- Interactive exploration: the GeoGebra applet "VF-Fig1"             -->
+  <!-- (geogebra.org/m/e2m6kghr), 599 x 488.                              -->
+  <subsection xml:id="subsec-work-exploration">
+    <title>Exploring the Work Integral</title>
+
+    <p>
+      The applet below carries every ingredient of
+      <xref ref="eq-work-parametrized"/> at once: a curve <m>C</m>
+      parametrized by <m>\mathbf{r}(t)</m>, the velocity
+      <m>\mathbf{v}(t)=d\mathbf{r}/dt</m> tangent to it, and a force field
+      <m>\mathbf{F}</m> evaluated at the moving point. Work out what the
+      integrand <m>\mathbf{F}\cdot\mathbf{v}</m> is doing before you
+      compute anything.
+    </p>
+
+    <figure xml:id="fig-work-geogebra">
+      <caption>
+        A point climbs the curve <m>C</m> while the force field
+        <m>\mathbf{F}</m> and the velocity <m>\mathbf{v}</m> are drawn at
+        its current position. The work is the accumulated
+        <m>\mathbf{F}\cdot\mathbf{v}</m>, so the angle between the two
+        arrows is what decides its sign.
+      </caption>
+      <interactive geogebra="e2m6kghr"
+                   width="100%" aspect="599:488"
+                   material-width="599" material-height="488">
+        <instructions>
+          <p>
+            Drag the slider to move the point along the curve <m>C</m>, and
+            watch the two arrows attached to it: <m>\mathbf{F}</m>, the
+            force the field exerts there, and <m>\mathbf{v}</m>, the
+            velocity, which is tangent to <m>C</m> and points in the
+            direction of travel. Rotate the picture by dragging the
+            background if you want to see the configuration from another
+            angle.
+          </p>
+          <p>
+            At each position, ask yourself whether the angle between
+            <m>\mathbf{F}</m> and <m>\mathbf{v}</m> is acute, obtuse, or
+            right<mdash/>that is, whether <m>\mathbf{F}\cdot\mathbf{v}</m>
+            is positive, negative, or zero<mdash/>and whether the answer
+            changes as the point climbs. That single observation settles the
+            sign of <m>\int_C\mathbf{F}\cdot d\mathbf{r}</m> without any
+            integration.
+          </p>
+        </instructions>
+      </interactive>
+    </figure>
+
+    <p>
+      The next question asks you to read off the sign of a work integral
+      from a picture alone, with no computation. The field in
+      <xref ref="fig-two-paths-field"/> is the radial field
+      <xref ref="eq-radial-field"/> we started the section with, and the two
+      paths are closed curves centred at the origin.
+    </p>
+
+    <figure xml:id="fig-two-paths-field">
+      <caption>
+        Two closed paths <m>C_1</m> and <m>C_2</m> in a force field. The
+        arrows on the curves give their orientation, and the sliders change
+        the shape of <m>C_1</m>.
+      </caption>
+      <interactive geogebra="arkzz25s"
+                   width="100%" aspect="758:475"
+                   material-width="758" material-height="475">
+        <instructions>
+          <p>
+            Notice the orientation of each curve. Drag the points on a curve
+            to change where it starts, and use the sliders to reshape
+            <m>C_1</m>. At any point of either curve, compare the direction
+            of the field arrow there with the direction in which the curve
+            is being traversed.
+          </p>
+        </instructions>
+      </interactive>
+    </figure>
+
+    <exercise xml:id="q-work-sign-two-paths">
+      <title>Positive, negative, or zero?</title>
+      <statement>
+        <p>
+          In <xref ref="fig-two-paths-field"/>, determine whether the work
+          done by the force field along the two paths <m>C_1</m> and
+          <m>C_2</m> is positive, negative, or zero.
+        </p>
+      </statement>
+      <answer>
+        <p>
+          Zero along both paths<mdash/>but for two different reasons.
+        </p>
+      </answer>
+      <solution>
+        <p>
+          The field is <m>\mathbf{F}=\left\langle x,\ y\right\rangle</m>,
+          which at every point aims straight away from the origin.
+        </p>
+        <p>
+          <term>The circle <m>C_2</m>.</term> A circle centred at the origin
+          keeps a constant distance from it, so the direction of travel is
+          everywhere perpendicular to the outward direction:
+          <m>\mathbf{F}\cdot\mathbf{T}=0</m> at <em>every</em> point of the
+          curve. The integrand of <xref ref="eq-work-Tds"/> vanishes
+          identically, so the work is zero. Reversing the orientation
+          changes nothing<mdash/>zero either way.
+        </p>
+        <p>
+          <term>The ellipse <m>C_1</m>.</term> Here the integrand does
+          <em>not</em> vanish: on the stretches where the curve moves away
+          from the origin the field pushes it along and
+          <m>\mathbf{F}\cdot\mathbf{T}\gt 0</m>, while on the stretches
+          where it moves back inward
+          <m>\mathbf{F}\cdot\mathbf{T}\lt 0</m>. Over one full circuit the
+          curve returns to where it started, so the outward stretches and
+          the inward stretches cancel exactly and the total is again zero.
+          Reversing the orientation swaps which stretches are positive, and
+          the total is still zero.
+        </p>
+        <p>
+          The second argument is the more powerful one: it never used the
+          particular shape of <m>C_1</m>, only that the path is closed and
+          that how much the field pushes depends solely on the distance from
+          the origin. That is the property of a <em>conservative</em> field,
+          which is the subject of the next section.
+        </p>
+      </solution>
+    </exercise>
+  </subsection>
 
 </section>

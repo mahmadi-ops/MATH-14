@@ -29,6 +29,7 @@
     <title>MATH 14: Calculus and Analytic Geometry IV</title>
     <xi:include href="frontmatter.ptx" />
     <xi:include href="introduction.ptx" />
+    <xi:include href="section-parametrization.ptx" />
     <xi:include href="section-arc-length.ptx" />
     <xi:include href="section-line-integrals.ptx"/>
     <xi:include href="section-vector-fields.ptx"/>

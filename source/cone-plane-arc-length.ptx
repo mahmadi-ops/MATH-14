@@ -1,0 +1,393 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Where a Plane Slices a Cone
+    A curve of intersection and its arc length.
+
+    The 3-D surface plot is a raster image (cone-plane-3d.png); the 2-D shadow
+    diagram is authored in PreFigure and lives inside the solution to Task 1.
+-->
+
+<pretext xml:lang="en-US">
+
+  <docinfo>
+    <macros>
+      \newcommand{\vecr}{\mathbf{r}}
+      \newcommand{\vecv}{\mathbf{v}}
+      \newcommand{\norm}[1]{\left\|#1\right\|}
+    </macros>
+  </docinfo>
+
+  <article xml:id="article-cone-plane-arc-length">
+    <title>Where a Plane Slices a Cone</title>
+    <subtitle>A curve of intersection and its arc length</subtitle>
+
+    <section xml:id="section-problem-and-solution">
+      <title>Problem and solution</title>
+
+    <exercise xml:id="exercise-cone-plane-arc-length">
+
+      <introduction>
+        <p>
+          Let <m>S_1</m> be the upper half of a circular cone and let
+          <m>S_2</m> be a slanted plane:
+        </p>
+        <md>S_1 : \ z^2 = x^2 + y^2, \quad z \ge 0, \qquad\qquad S_2 : \ z = x + 1 .</md>
+        <p>
+          Let <m>C = S_1 \cap S_2</m> be their curve of intersection, shown in
+          <xref ref="figure-cone-plane"/>.
+        </p>
+
+        <figure xml:id="figure-cone-plane">
+          <caption>
+            The cone <m>z^2 = x^2 + y^2</m> with <m>z \ge 0</m>, the plane
+            <m>z = x+1</m>, and the curve <m>C</m> where they meet. The darker
+            portion is the arc from <m>P(0,-1,1)</m> to <m>Q(0,1,1)</m>.
+          </caption>
+          <image source="cone-plane-3d.png" width="78%">
+            <description>
+              A three-dimensional plot showing the upper nappe of a circular
+              cone opening upward from the origin, a slanted plane cutting
+              through it, and the parabola along which the two surfaces meet.
+              The vertex of the parabola is marked V at its lowest point, and
+              the points P and Q, where the parabola crosses the plane x equals
+              zero, are marked on either side of the vertex.
+            </description>
+          </image>
+        </figure>
+      </introduction>
+
+      <!-- ============================================================ -->
+      <task xml:id="task-parametrize">
+        <statement>
+          <p>
+            Show that every point of <m>C</m> satisfies <m>y^2 = 2x + 1</m>, and
+            use this to find a vector parametrization
+            <m>\vecr(t) = \langle x(t),\, y(t),\, z(t) \rangle</m> of <m>C</m>.
+            Then verify directly that your <m>\vecr(t)</m> lies on <em>both</em>
+            surfaces for every <m>t</m>.
+          </p>
+          <p>
+            <em>Suggestion.</em> Use <m>y</m> itself as the parameter, and say
+            why that is smarter than using <m>x</m>.
+          </p>
+        </statement>
+
+        <solution>
+          <p>
+            A point lies on <m>C</m> exactly when it satisfies both equations at
+            once. Substituting <m>z = x+1</m> from the plane into the equation of
+            the cone eliminates <m>z</m>:
+          </p>
+          <md>
+            (x+1)^2 = x^2 + y^2
+            \ \Longrightarrow\ x^2 + 2x + 1 = x^2 + y^2
+            \ \Longrightarrow\ \boxed{\,y^2 = 2x+1\,} .
+          </md>
+          <p>
+            So the shadow of <m>C</m> in the <m>xy</m>-plane is the parabola
+            <m>y^2 = 2x+1</m>, that is, <m>x = \frac{y^2-1}{2}</m>
+            (<xref ref="figure-shadow"/>). Solving for <m>x</m> rather than for
+            <m>y</m> is the key move: <m>x</m> is a <em>single-valued</em>
+            function of <m>y</m>, so taking <m>y = t</m> as the parameter
+            captures the whole curve at once, whereas parametrizing by <m>x</m>
+            would force the two branches <m>y = \pm\sqrt{2x+1}</m> and split the
+            problem in half. Since <m>z = x+1</m>,
+          </p>
+          <md>
+            \vecr(t) = \left\langle \frac{t^2-1}{2},\ \ t,\ \ \frac{t^2+1}{2}
+            \right\rangle , \qquad t \in \mathbb{R} .
+          </md>
+
+          <figure xml:id="figure-shadow">
+            <caption>
+              The shadow of <m>C</m> in the <m>xy</m>-plane is the parabola
+              <m>y^2 = 2x+1</m>, with vertex <m>V</m>. The darker arc is the
+              projection of the piece of <m>C</m> that runs from <m>P</m> to
+              <m>Q</m>.
+            </caption>
+            <image width="60%">
+              <prefigure xmlns="https://prefigure.org"
+                         label="prefigure-shadow-parabola">
+                <diagram dimensions="(320,300)" margins="5">
+                  <definition>p(t) = ((t^2-1)/2, t)</definition>
+                  <coordinates bbox="(-1.3,-2.4,2.4,2.4)">
+                    <grid-axes xlabel="x" ylabel="y"/>
+                    <parametric-curve at="curve" function="p"
+                                      domain="(-2.2,2.2)"
+                                      stroke="red" thickness="2"/>
+                    <parametric-curve at="arc" function="p"
+                                      domain="(-1,1)"
+                                      stroke="darkred" thickness="4"/>
+                    <point p="(-0.5,0)" alignment="nw">
+                      <m>V</m>
+                    </point>
+                    <point p="(0,1)" alignment="ne">
+                      <m>(0,1)</m>
+                    </point>
+                    <point p="(0,-1)" alignment="se">
+                      <m>(0,-1)</m>
+                    </point>
+                    <label anchor="(1.15,-1.75)" alignment="ne">
+                      <m>y^2 = 2x+1</m>
+                    </label>
+                  </coordinates>
+
+                  <annotations>
+                    <annotation ref="figure"
+                                text="The shadow of the curve C in the xy-plane,
+                                      a parabola opening to the right with
+                                      vertex at the point (-1/2, 0)">
+                      <annotation ref="curve"
+                                  text="The parabola y squared equals 2x plus 1"
+                                  sonify="yes"/>
+                      <annotation ref="arc"
+                                  text="The arc of the parabola between the
+                                        points (0,-1) and (0,1), the shadow of
+                                        the piece of C from P to Q"/>
+                    </annotation>
+                  </annotations>
+                </diagram>
+              </prefigure>
+            </image>
+          </figure>
+
+          <p>
+            <em>Check on <m>S_1</m>:</em>
+          </p>
+          <md>
+            <mrow>
+              x^2 + y^2 \amp = \frac{t^4 - 2t^2 + 1}{4} + t^2
+                            = \frac{t^4 + 2t^2 + 1}{4}
+            </mrow>
+            <mrow>
+              \amp = \left( \frac{t^2+1}{2} \right)^{2} = z^2 ,
+            </mrow>
+          </md>
+          <p>
+            and <m>z = \frac{t^2+1}{2} \gt 0</m> for all <m>t</m>, so the entire
+            curve lies on the upper nappe <m>z \ge 0</m>.
+            <em>Check on <m>S_2</m>:</em>
+            <m>z - x = \frac{t^2+1}{2} - \frac{t^2-1}{2} = 1</m>, so
+            <m>z = x+1</m>.
+          </p>
+        </solution>
+      </task>
+
+      <!-- ============================================================ -->
+      <task xml:id="task-arc-length">
+        <statement>
+          <p>
+            The curve <m>C</m> crosses the plane <m>x = 0</m> at the two points
+            <m>P(0,-1,1)</m> and <m>Q(0,1,1)</m>. Set up the arc-length integral
+            for the piece of <m>C</m> joining <m>P</m> to <m>Q</m> and evaluate
+            it <em>exactly</em>. Then give a decimal approximation to four
+            places.
+          </p>
+        </statement>
+
+        <answer>
+          <p>
+            <md>
+              L = \sqrt{3} + \frac{\sqrt{2}}{2}
+                  \ln\!\left( \sqrt{2} + \sqrt{3} \right)
+                = \sqrt{3} + \frac{1}{\sqrt{2}}\sinh^{-1}\!\left(\sqrt{2}\right)
+                \approx 2.5425 .
+            </md>
+          </p>
+        </answer>
+
+        <solution>
+          <p>
+            First locate the endpoints: <m>x = 0</m> means
+            <m>\frac{t^2-1}{2} = 0</m>, so <m>t = \pm 1</m>, giving
+            <m>\vecr(-1) = (0,-1,1) = P</m> and <m>\vecr(1) = (0,1,1) = Q</m>.
+            Differentiating <m>\vecr</m> componentwise gives the velocity vector
+          </p>
+          <md>
+            \vecv(t) = \langle t,\, 1,\, t \rangle , \qquad
+            \norm{\vecv(t)} = \sqrt{t^2 + 1 + t^2} = \sqrt{1 + 2t^2} .
+          </md>
+          <p>
+            Hence, using the evenness of the integrand,
+          </p>
+          <md>
+            L = \int_{-1}^{1} \norm{\vecv(t)} \, dt
+              = \int_{-1}^{1} \sqrt{1+2t^2} \, dt
+              = 2\int_{0}^{1} \sqrt{1+2t^2} \, dt .
+          </md>
+          <p>
+            The integrand is not quite of the form <m>\sqrt{a^2+u^2}</m>, so
+            first substitute <m>u = \sqrt{2}\,t</m>, <m>du = \sqrt{2}\,dt</m>,
+            which sends <m>t : 0 \to 1</m> to <m>u : 0 \to \sqrt{2}</m>:
+          </p>
+          <md>
+            L = \frac{2}{\sqrt{2}} \int_{0}^{\sqrt{2}} \sqrt{1+u^2} \, du
+              = \sqrt{2} \int_{0}^{\sqrt{2}} \sqrt{1+u^2} \, du .
+          </md>
+          <p>
+            Now evaluate <m>I = \int \sqrt{1+u^2}\,du</m>. Integrating by parts
+            against <m>1</m> reproduces the original integral, which lets us
+            solve for it: with <m>u^2 = (1+u^2) - 1</m> in the numerator,
+          </p>
+          <md>
+            <mrow>
+              I \amp = u\sqrt{1+u^2}
+                       - \int \frac{u^2}{\sqrt{1+u^2}} \, du
+            </mrow>
+            <mrow>
+              \amp = u\sqrt{1+u^2}
+                     - \int \frac{(1+u^2) - 1}{\sqrt{1+u^2}} \, du
+            </mrow>
+            <mrow>
+              \amp = u\sqrt{1+u^2} - I
+                     + \int \frac{du}{\sqrt{1+u^2}} .
+            </mrow>
+          </md>
+          <p>
+            The last integral is <m>\sinh^{-1} u</m>, so
+            <m>2I = u\sqrt{1+u^2} + \sinh^{-1} u</m>, that is,<fn>
+            The inverse hyperbolic sine is a logarithm in disguise. Setting
+            <m>w = \sinh y = \frac{e^{y} - e^{-y}}{2}</m> and multiplying
+            through by <m>2e^{y}</m> gives
+            <m>\left(e^{y}\right)^2 - 2we^{y} - 1 = 0</m>, a quadratic in
+            <m>e^{y}</m>. The quadratic formula gives
+            <m>e^{y} = w \pm \sqrt{w^2+1}</m>, and only the <m>+</m> sign keeps
+            <m>e^{y}</m> positive, so
+            <m>\sinh^{-1} w = y = \ln\!\left(w + \sqrt{1+w^2}\right)</m>.
+            </fn>
+          </p>
+          <md>
+            \int \sqrt{1+u^2} \, du
+              = \frac{u}{2}\sqrt{1+u^2}
+                + \frac{1}{2}\ln\!\left( u + \sqrt{1+u^2} \right) + C .
+          </md>
+          <p>
+            The substitution <m>u = \sinh w</m> gives the same antiderivative:
+            it turns the integral into <m>\int \cosh^2 w \, dw</m>. The trigonometric
+            substitution <m>u = \tan\theta</m> works too, but it leads to
+            <m>\int \sec^3\theta \, d\theta</m>, which needs the same
+            solve-for-<m>I</m> trick anyway.
+          </p>
+          <p>
+            Finally apply the limits. At <m>u = \sqrt{2}</m> we have
+            <m>\sqrt{1+u^2} = \sqrt{3}</m>, and everything vanishes at
+            <m>u = 0</m>:
+          </p>
+          <md>
+            <mrow>
+              L \amp = \sqrt{2}\left[ \frac{u}{2}\sqrt{1+u^2}
+                       + \frac{1}{2}\ln\!\left( u + \sqrt{1+u^2} \right)
+                       \right]_{0}^{\sqrt{2}}
+            </mrow>
+            <mrow>
+              \amp = \sqrt{2}\left[ \frac{\sqrt{2}}{2}\sqrt{3}
+                     + \frac{1}{2}\ln\!\left( \sqrt{2} + \sqrt{3} \right)
+                     \right]
+                   = \sqrt{3} + \frac{\sqrt{2}}{2}
+                     \ln\!\left( \sqrt{2} + \sqrt{3} \right)
+                   \approx 2.5425 .
+            </mrow>
+          </md>
+          <p>
+            Sanity check: the straight-line distance from <m>P</m> to <m>Q</m> is
+            <m>2</m>, and <m>2.5425 \gt 2</m>, as an arc must be.
+          </p>
+        </solution>
+      </task>
+
+      <!-- ============================================================ -->
+      <task xml:id="task-arc-length-function">
+        <statement>
+          <p>
+            The point <m>V\left(-\frac{1}{2},\, 0,\, \frac{1}{2}\right)</m> is
+            the vertex (the lowest point) of <m>C</m>. Find the arc-length
+            function <m>s(t)</m> measured from <m>V</m>, and use it to compute
+            the exact length of <m>C</m> from <m>V</m> to the point
+            <m>\left(\frac{3}{2},\, 2,\, \frac{5}{2}\right)</m>.
+          </p>
+        </statement>
+
+        <answer>
+          <p>
+            <md>
+              s(2) = 3 + \frac{\sqrt{2}}{2}\ln\!\left( 1 + \sqrt{2} \right)
+                   \approx 3.6232 .
+            </md>
+          </p>
+        </answer>
+
+        <solution>
+          <p>
+            The vertex <m>V</m> is <m>\vecr(0)</m>, so measuring arc length from
+            <m>V</m> means starting the integral at <m>0</m>:
+          </p>
+          <md>
+            s(t) = \int_{0}^{t} \norm{\vecv(\tau)} \, d\tau
+                 = \int_{0}^{t} \sqrt{1 + 2\tau^2} \, d\tau
+                 = \frac{t}{2}\sqrt{1+2t^2}
+                   + \frac{\sqrt{2}}{4}
+                     \ln\!\left( \sqrt{2}\,t + \sqrt{1+2t^2} \right) ,
+          </md>
+          <p>
+            which is also written
+            <m>s(t) = \frac{t}{2}\sqrt{1+2t^2}
+              + \frac{\sqrt{2}}{4}\sinh^{-1}\!\left(\sqrt{2}\,t\right)</m>.
+            One can verify <m>s'(t) = \sqrt{1+2t^2} = \norm{\vecv(t)}</m>, as it
+            must be. The point <m>\left(\frac{3}{2}, 2, \frac{5}{2}\right)</m>
+            corresponds to <m>t = 2</m>, since <m>y = t = 2</m> and then
+            <m>\frac{t^2-1}{2} = \frac{3}{2}</m> and
+            <m>\frac{t^2+1}{2} = \frac{5}{2}</m>. Therefore
+          </p>
+          <md>
+            s(2) = \frac{2}{2}\sqrt{1+8}
+                   + \frac{\sqrt{2}}{4}\ln\!\left( 2\sqrt{2} + 3 \right)
+                 = 3 + \frac{\sqrt{2}}{4}\ln\!\left( 3 + 2\sqrt{2} \right) .
+          </md>
+          <p>
+            Because <m>3 + 2\sqrt{2} = \left( 1 + \sqrt{2} \right)^{2}</m>, the
+            logarithm halves:
+          </p>
+          <md>
+            s(2) = 3 + \frac{\sqrt{2}}{2}\ln\!\left( 1 + \sqrt{2} \right)
+                 \approx 3.6232 .
+          </md>
+        </solution>
+      </task>
+
+    </exercise>
+
+    <!-- ============================================================ -->
+    <remark xml:id="remark-instructor-notes">
+      <title>Instructor notes<mdash/>what to watch for</title>
+      <ul>
+        <li>
+          <p>
+            <term>Losing half the curve.</term> Students who write
+            <m>z = \sqrt{x^2+y^2}</m> and then square are fine, but those who
+            parametrize by <m>x</m> get <m>y = \pm\sqrt{2x+1}</m> and often keep
+            only the <m>+</m> branch<mdash/>losing the arc from <m>P</m> to
+            <m>V</m>. The check <m>z = \frac{t^2+1}{2} \gt 0</m> in the first
+            task is worth insisting on.
+          </p>
+        </li>
+        <li>
+          <p>
+            <term>Forgetting to verify.</term> The first task asks for a
+            substitution <em>and</em> a check; a parametrization that satisfies
+            only one of the two equations is a common error.
+          </p>
+        </li>
+        <li>
+          <p>
+            <term>Wrong endpoints.</term> In the arc-length task some students
+            integrate over <m>0 \le t \le 1</m> and forget the symmetric half,
+            getting exactly half the correct length.
+          </p>
+        </li>
+      </ul>
+    </remark>
+
+    </section>
+  </article>
+</pretext>

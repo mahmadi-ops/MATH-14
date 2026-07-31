@@ -2,7 +2,12 @@
   "permissions": {
     "allow": [
       "Read(//Users/mehdi/Desktop/**)",
-      "Bash(ls /Users)"
+      "Bash(ls /Users)",
+      "Bash(python -c ' *)",
+      "Bash(timeout 900 pretext generate -x image-cone-plane)",
+      "Bash(timeout 900 pretext generate -x image-cone-plane-shadow)",
+      "Bash(sed -i 's/view={125}{18},/view={125}{18}, y dir=reverse,/' probe.tex)",
+      "Bash(timeout 300 pdflatex -interaction=nonstopmode probe.tex)"
     ]
   }
 }

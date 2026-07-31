@@ -42,8 +42,9 @@
       and its density constant, the mass would simply be density times
       length. For a curved wire whose density
       <m>\rho(x,y,z)</m> varies from point to point, neither shortcut is
-      available<mdash/>but we can recover the same simple rule on small
-      pieces.
+      available<mdash/>but we can approximate mass of small portions 
+      of the wire by treating each as if it were straight and had constant
+      density.
     </p>
 
     <p>
@@ -54,75 +55,111 @@
       <m>\Delta s_k</m>. Pick a sample point <m>(x_k,y_k,z_k)</m> on this
       portion. If the portion is short, the density is nearly constant along
       it, so
-    </p>
 
-    <me>
-      \text{mass of the } k\text{th portion}
-        \approx \rho\left(x_k,y_k,z_k\right)\,\Delta s_k,
-    </me>
+    <md>
+      <mrow xml:id="eq-mass-portion" number="yes">
+        \text{mass of the } k\text{th portion}
+          \approx \rho\left(x_k,y_k,z_k\right)\,\Delta s_k,
+      </mrow>
+    </md>
+    </p>
 
     <p>
-      and summing over all portions,
-    </p>
+      and summing <xref ref="eq-mass-portion"/> over all portions,
 
-    <me>
-      \text{mass of the wire}
-        \approx \sum_{k=1}^{n} \rho\left(x_k,y_k,z_k\right)\,\Delta s_k.
-    </me>
+    <md>
+      <mrow xml:id="eq-mass-sum" number="yes">
+        \text{mass of the wire}
+          \approx \sum_{k=1}^{n} \rho\left(x_k,y_k,z_k\right)\,\Delta s_k.
+      </mrow>
+    </md>
+    </p>
 
     <figure xml:id="fig-wire-partition">
       <caption>
         A wire represented by a curve <m>C</m> in space, parametrized by
-        <m>t\in[a,b]</m>. The <m>k</m>th portion (red) has length
+        <m>t\in[a,b]</m> and cut into <m>n=7</m> portions by the partition
+        points (black dots). The <m>k</m>th portion (black) has length
         <m>\Delta s_k</m> and contains the sample point
         <m>(x_k,y_k,z_k)</m>, located by the position vector
-        <m>\mathbf{r}(t_k)</m>.
+        <m>\mathbf{r}(t_k)</m>. The red chords form the inscribed polygon
+        that approximates <m>C</m>; here its total length falls about
+        <m>3\%</m> short of the length of <m>C</m>.
       </caption>
-      <image xml:id="image-wire-partition" width="75%">
+      <image xml:id="image-wire-partition" width="70%">
         <shortdescription>
-          A curve in three-dimensional space with one small portion
-          highlighted and a position vector pointing to it from the origin.
+          A helical wire cut into eight portions by dots, with the inscribed
+          polygon of red chords, one portion highlighted in black, and a
+          position vector reaching from the origin to a sample point on it.
         </shortdescription>
         <description>
           <p>
-            A three-dimensional coordinate box with x and y running from
-            minus 1.3 to 1.3 and z from 0 to 1.7. A thick blue curve
-            labelled C rises through the box from a red point labelled t
-            equals a, at coordinates (1, 0, 0), to a red point labelled t
-            equals b near the top of the box. Partway along the curve a
-            short piece is drawn in thick red and labelled Delta s sub k; a
-            red point on this piece is labelled (x sub k, y sub k, z sub k).
-            A dotted red arrow labelled r of t sub k reaches from the origin
-            to that point.
+            A helical wire rising counterclockwise around the vertical axis
+            from its lower end, marked t equals a, to its upper end, marked t
+            equals b. Eight dots cut the wire into seven portions, and a
+            straight red chord joins the ends of each portion, so the chords
+            form a polygon inscribed in the wire that visibly cuts inside
+            every bend. One portion on the near side is drawn in thick black
+            and labeled with its length, delta s sub k; a dot inside it is the
+            sample point, and a dashed green arrow runs to that dot from the
+            origin, labeled r of t sub k equals the vector with components x
+            sub k, y sub k, z sub k.
           </p>
         </description>
         <latex-image>
           \begin{tikzpicture}
           \begin{axis}[
-              width=11cm, view={115}{18},
+              width=11cm, view={115}{20},
               xlabel={\(x\)}, ylabel={\(y\)}, zlabel={\(z\)},
-              xmin=-1.3, xmax=1.3, ymin=-1.3, ymax=1.3, zmin=0, zmax=1.7,
+              xmin=-1.35, xmax=1.35, ymin=-1.35, ymax=1.35, zmin=0, zmax=2.1,
               grid=major, grid style={gray!20}, clip=false,
+              % labels sit on a light background so they stay legible where
+              % they pass near the grid
+              label style={font=\Large}, tick label style={font=\normalsize},
+              every node/.append style={fill=white, fill opacity=0.75,
+                                        text opacity=1, inner sep=1pt,
+                                        font=\Large},
             ]
-            % the wire C, before and after the k-th portion
-            \addplot3[blue, very thick, domain=0:1.8, samples=80, samples y=0]
-                ({cos(deg(x))}, {sin(deg(x))}, {x/2});
-            \addplot3[blue, very thick, domain=2.0:3, samples=60, samples y=0]
-                ({cos(deg(x))}, {sin(deg(x))}, {x/2});
-            % the k-th portion, of length Delta s_k
-            \addplot3[red, line width=2.2pt, domain=1.8:2.0, samples=20, samples y=0]
-                ({cos(deg(x))}, {sin(deg(x))}, {x/2});
-            % position vector r(t_k) from the origin to the sample point
-            \addplot3[-&gt;, red, densely dotted, thick] coordinates {(0,0,0) (-0.3233,0.9463,0.95)};
-            % endpoints and sample point
-            \addplot3[only marks, mark=*, red, mark size=1.5pt] coordinates
-                {(1,0,0) (-0.98999,0.14112,1.5) (-0.3233,0.9463,0.95)};
-            \node[anchor=north west, xshift=8pt, yshift=-2pt] at (axis cs:1,0,0) {\(t=a\)};
-            \node[above left] at (axis cs:-0.98999,0.14112,1.5) {\(t=b\)};
-            \node[right=2pt] at (axis cs:-0.3233,0.9463,0.95) {\(\Delta s_k\)};
-            \node[left=2pt] at (axis cs:-0.3233,0.9463,0.98) {\((x_k,y_k,z_k)\)};
-            \node[right=2pt] at (axis cs:-0.16,0.47,0.475) {\(\mathbf r(t_k)\)};
-            \node[blue, right=5pt] at (axis cs:0.878,0.479,0.25) {\(C\)};
+            % the wire C: a helix of pitch 0.3 per radian
+            \addplot3[blue, very thick, domain=0:360, samples=200, samples y=0]
+                ({cos(x)}, {sin(x)}, {0.3*pi*x/180});
+            % the inscribed polygon: seven chords joining the partition points
+            \addplot3[red, line width=1.1pt] coordinates {
+                (1,0,0) (0.62349,0.78183,0.26928) (-0.22252,0.97493,0.53856)
+                (-0.90097,0.43388,0.80784) (-0.90097,-0.43388,1.07712)
+                (-0.22252,-0.97493,1.34640) (0.62349,-0.78183,1.61568)
+                (1,0,1.88496)};
+            % the kth portion of the wire
+            \addplot3[black, line width=2.4pt, domain=102.857:154.286,
+                      samples=40, samples y=0]
+                ({cos(x)}, {sin(x)}, {0.3*pi*x/180});
+            % the partition points
+            \addplot3[only marks, mark=*, black, mark size=1.7pt] coordinates {
+                (1,0,0) (0.62349,0.78183,0.26928) (-0.22252,0.97493,0.53856)
+                (-0.90097,0.43388,0.80784) (-0.90097,-0.43388,1.07712)
+                (-0.22252,-0.97493,1.34640) (0.62349,-0.78183,1.61568)
+                (1,0,1.88496)};
+            % the position vector to the sample point
+            \addplot3[-{Stealth[length=3.5mm]}, green!55!black,
+                      densely dashed, line width=1.6pt]
+                coordinates {(0,0,0) (-0.62349,0.78183,0.67320)};
+            \addplot3[only marks, mark=*, green!55!black, mark size=2pt]
+                coordinates {(-0.62349,0.78183,0.67320)};
+            % label placement: each direction and offset below was checked
+            % against the projected curves so that no two labels, and no
+            % label and curve, overlap
+            \node[left=8pt] at (axis cs:1,0,0) {\(t=a\)};
+            \node[above right=6pt] at (axis cs:1,0,1.88496) {\(t=b\)};
+            \node[blue, below right=9pt]
+                at (axis cs:0.28366,-0.95892,1.5) {\(C\)};
+            \node[above right=6pt] at (axis cs:-0.62349,0.78183,0.67320)
+                {\(\Delta s_k\)};
+            \addplot3[only marks, mark=*, black, mark size=1.7pt]
+                coordinates {(0,0,0)};
+            \node[above left=5pt] at (axis cs:0,0,0) {\(O\)};
+            \node[green!55!black, above left=2pt, xshift=14pt, yshift=12pt]
+                at (axis cs:-0.31175,0.39092,0.33660)
+                {\(\mathbf{r}(t_k)=\langle x_k,\, y_k,\, z_k\rangle\)};
           \end{axis}
           \end{tikzpicture}
         </latex-image>
@@ -130,40 +167,51 @@
     </figure>
 
     <p>
-      This is only an approximation, because the density is not actually
-      constant over each portion. How can we make the calculation exact? We
-      take the limit in which every portion becomes infinitely small, that
-      is, <m>\Delta s_k\to 0</m>, or equivalently <m>n\to\infty</m>:
+      The estimate <xref ref="eq-mass-sum"/> is only an approximation,
+      because the density is not actually constant over each portion. How can
+      we make the calculation exact? We take the limit in which every portion
+      becomes infinitely small, that is, <m>\Delta s_k\to 0</m>, or
+      equivalently <m>n\to\infty</m>:
+
+    <md>
+      <mrow xml:id="eq-mass-limit" number="yes">
+        \text{mass of the wire}
+          = \lim_{n\to\infty}\sum_{k=1}^{n}
+            \rho\left(x_k,y_k,z_k\right)\,\Delta s_k.
+      </mrow>
+    </md>
     </p>
 
-    <me>
-      \text{mass of the wire}
-        = \lim_{n\to\infty}\sum_{k=1}^{n}
-          \rho\left(x_k,y_k,z_k\right)\,\Delta s_k.
-    </me>
-
     <p>
-      This limit is denoted by the integral
+      The limit in <xref ref="eq-mass-limit"/> is denoted by the integral
+
+    <md>
+      <mrow xml:id="eq-mass-line-integral" number="yes">
+        \text{mass of the wire} = \int_C \rho\left(x,y,z\right)\,ds,
+      </mrow>
+    </md>
     </p>
 
-    <me>
-      \text{mass of the wire} = \int_C \rho\left(x,y,z\right)\,ds,
-    </me>
-
     <p>
-      read <q>the integral of <m>\rho</m> over the curve <m>C</m>.</q> The
+       which is read as <q>the line integral of <m>\rho</m> over the curve <m>C</m>.</q> The
       process is animated in <xref ref="fig-wire-partition-video"/>: as the
       partition refines, the sums settle down to the value of the integral.
     </p>
 
     <figure xml:id="fig-wire-partition-video">
       <caption>
-        As the number of portions grows, the sum
-        <m>\sum_k \rho(x_k,y_k,z_k)\,\Delta s_k</m> converges to the line
-        integral <m>\int_C \rho\,ds</m>.
+        The construction above, on the wire <m>C</m> of
+        <xref ref="fig-wire-partition"/>: the wire is cut
+        into <m>n</m> portions, and the <m>k</m>th of them, of length
+        <m>\Delta s_k</m>, carries a sample point
+        <m>(x_k,y_k,z_k)</m>, so its mass is about
+        <m>\rho(x_k,y_k,z_k)\,\Delta s_k</m>. As <m>n</m> grows the
+        portions shrink, and the sum
+        <m>\sum_k \rho(x_k,y_k,z_k)\,\Delta s_k</m> settles down to the
+        line integral <m>\int_C \rho\,ds</m>.
       </caption>
       <video xml:id="video-wire-partition" width="80%"
-             source="videos/wire_mass_partition_1080p.mp4"/>
+             source="videos/wire_partition_refine_1080p.mp4"/>
     </figure>
 
     <p>
@@ -171,9 +219,17 @@
       <m>dt</m>, so the integral becomes an ordinary integral we can
       evaluate. Exactly as in <xref ref="sec-arc-length"/>, the line element
       is the length of an infinitesimal displacement in <m>\R^3</m>,
-      <me>ds=\sqrt{(dx)^2+(dy)^2+(dz)^2},</me>
-      and factoring out <m>dt</m> gives
+
+    <md>
+      <mrow xml:id="eq-line-element" number="yes">
+        ds=\sqrt{(dx)^2+(dy)^2+(dz)^2},
+      </mrow>
+    </md>
     </p>
+
+    <p>
+      so substituting <xref ref="eq-line-element"/> into
+      <xref ref="eq-mass-line-integral"/> and factoring out <m>dt</m> gives
 
     <md>
       <mrow>
@@ -182,44 +238,61 @@
       </mrow>
       <mrow>
         \amp = \int_C \rho\left(x(t),y(t),z(t)\right)
+      </mrow>
+      <mrow xml:id="eq-mass-dt" number="yes">
+        \amp \qquad\qquad \times
           \sqrt{\left(\frac{dx}{dt}\right)^2
               + \left(\frac{dy}{dt}\right)^2
               + \left(\frac{dz}{dt}\right)^2}\,dt.
       </mrow>
     </md>
-
-    <p>
-      The square root is exactly the length of the velocity vector
     </p>
 
-    <me>
-      \mathbf{v}(t)=\mathbf{r}'(t)
-        =\left(\frac{dx}{dt}\right)\mathbf{i}
-        +\left(\frac{dy}{dt}\right)\mathbf{j}
-        +\left(\frac{dz}{dt}\right)\mathbf{k}
-        =\left\langle \frac{dx}{dt},\frac{dy}{dt},\frac{dz}{dt}\right\rangle,
-    </me>
-
     <p>
-      so the formula takes the tidy form
+      The square root in <xref ref="eq-mass-dt"/> is exactly the length of the
+      velocity vector
+
+    <md>
+      <mrow>
+        \mathbf{v}(t) \amp = \frac{d\mathbf{r}(t)}{dt}
+      </mrow>
+      <mrow>
+        \amp = \left(\frac{dx}{dt}\right)\mathbf{i}
+             + \left(\frac{dy}{dt}\right)\mathbf{j}
+             + \left(\frac{dz}{dt}\right)\mathbf{k}
+      </mrow>
+      <mrow xml:id="eq-velocity" number="yes">
+        \amp = \left\langle \frac{dx}{dt},\ \frac{dy}{dt},\
+                              \frac{dz}{dt}\right\rangle,
+      </mrow>
+    </md>
     </p>
 
-    <me>
-      \text{mass of the wire}
-        = \int_a^b \rho\left(x(t),y(t),z(t)\right)
-          \left\lVert\mathbf{r}'(t)\right\rVert\,dt.
-    </me>
+    <p>
+      so <xref ref="eq-velocity"/> turns <xref ref="eq-mass-dt"/> into the
+      tidy form
+
+    <md>
+      <mrow xml:id="eq-mass-speed" number="yes">
+        \text{mass of the wire}
+          = \int_a^b \rho\left(x(t),y(t),z(t)\right)
+            \left\lVert\mathbf{v}(t)\right\rVert\,dt.
+      </mrow>
+    </md>
+    </p>
 
     <p>
       There is nothing special about density here. In general, a
       <term>scalar line integral</term> has the form
-    </p>
 
-    <me>
-      \int_C f\left(x(t),y(t),z(t)\right)\,ds
-        = \int_a^b f\left(x(t),y(t),z(t)\right)
-          \left\lVert\mathbf{r}'(t)\right\rVert\,dt,
-    </me>
+    <md>
+      <mrow xml:id="eq-scalar-line-integral" number="yes">
+        \int_C f\left(x(t),y(t),z(t)\right)\,ds
+          = \int_a^b f\left(x(t),y(t),z(t)\right)
+            \left\lVert\mathbf{v}(t)\right\rVert\,dt,
+      </mrow>
+    </md>
+    </p>
 
     <p>
       where <m>f</m> is a scalar-valued function and the curve <m>C</m>
@@ -228,15 +301,15 @@
       <m>a\le t\le b</m>. In words:
       <em>to compute a line integral, trade the geometric element
       <m>ds</m> for the parameter element
-      <m>\lVert\mathbf{r}'(t)\rVert\,dt</m></em>.
+      <m>\lVert\mathbf{v}(t)\rVert\,dt</m></em>.
       Two sanity checks connect this to what we already know. Taking
-      <m>f=1</m> recovers the arc length
-      <m>\int_C ds=\int_a^b \lVert\mathbf{r}'(t)\rVert\,dt</m> of
+      <m>f=1</m> in <xref ref="eq-scalar-line-integral"/> recovers the arc
+      length
+      <m>\int_C ds=\int_a^b \lVert\mathbf{v}(t)\rVert\,dt</m> of
       <xref ref="sec-arc-length"/><mdash/>total length is the
       <q>mass</q> of a wire of density one. And
-      <m>\lVert\mathbf{r}'(t)\rVert</m> is the speed
-      <m>\left|\mathbf{v}(t)\right|</m> from that section, so the factor
-      converts time spent into distance covered.
+      <m>\lVert\mathbf{v}(t)\rVert</m> is exactly the speed from that
+      section, so the factor converts time spent into distance covered.
     </p>
   </subsection>
 
@@ -249,7 +322,12 @@
         Consider a wire of length <m>l</m> and mass <m>m</m>. The wire is
         helix-shaped, with its bottom end located at <m>(1,0,0)</m> and
         parametric equation
-        <me>\mathbf{r}(t)=\langle \cos t,\ \sin t,\ t\rangle,\qquad t\ge 0.</me>
+
+      <md>
+        <mrow xml:id="eq-helix-param" number="yes">
+          \mathbf{r}(t)=\langle \cos t,\ \sin t,\ t\rangle,\qquad t\ge 0.
+        </mrow>
+      </md>
         Its density (mass per unit length) is
         <m>\rho(x,y,z)=4x^2y^2</m> kg/m. Assuming that
         <m>m=\dfrac{\pi}{2\sqrt{2}}</m> kg, calculate the length <m>l</m> of
@@ -262,43 +340,51 @@
         The wire occupies the part of the helix with
         <m>0\le t\le b</m>, where the upper limit <m>b</m> is unknown: it
         marks where the wire ends. Our plan has two steps. First we use the
-        known mass in the formula
-        <men xml:id="eq-helix-mass">
-          m = \int_0^{b} \rho\left(x(t),y(t),z(t)\right)
-              \left\lVert\mathbf{r}'(t)\right\rVert\,dt
-        </men>
+        known mass in <xref ref="eq-mass-speed"/>, which for this wire reads
+        <md>
+          <mrow xml:id="eq-helix-mass" number="yes">
+            m = \int_0^{b} \rho\left(x(t),y(t),z(t)\right)
+                \left\lVert\mathbf{v}(t)\right\rVert\,dt
+          </mrow>
+        </md>
         to find <m>b</m>; then the length is the arc length
-        <m>l=\int_0^b \lVert\mathbf{r}'(t)\rVert\,dt</m>.
+        <m>l=\int_0^b \lVert\mathbf{v}(t)\rVert\,dt</m>.
       </p>
 
       <p>
-        First we find <m>\mathbf{r}'(t)</m> and its length:
-      </p>
+        Differentiating <xref ref="eq-helix-param"/> gives
+        <m>\mathbf{v}(t)</m> and its length:
+
       <md>
         <mrow>
-          \mathbf{r}'(t) \amp = \langle -\sin t,\ \cos t,\ 1\rangle,
+          \mathbf{v}(t) \amp = \langle -\sin t,\ \cos t,\ 1\rangle,
         </mrow>
-        <mrow>
-          \left\lVert\mathbf{r}'(t)\right\rVert \amp
+        <mrow xml:id="eq-helix-speed" number="yes">
+          \left\lVert\mathbf{v}(t)\right\rVert \amp
             = \sqrt{\sin^2 t+\cos^2 t+1}=\sqrt{2}.
         </mrow>
       </md>
+      </p>
       <p>
         Next we write the density along the curve in terms of <m>t</m>,
         using the double-angle identity <m>2\sin t\cos t=\sin(2t)</m>:
+
+      <md>
+        <mrow>
+          \rho\left(x(t),y(t),z(t)\right) \amp
+            = 4x^2y^2 = 4\cos^2 t\,\sin^2 t
+        </mrow>
+        <mrow xml:id="eq-helix-density" number="yes">
+          \amp = \left(2\sin t\cos t\right)^2 = \sin^2(2t).
+        </mrow>
+      </md>
       </p>
-      <me>
-        \rho\left(x(t),y(t),z(t)\right)
-          = 4x^2y^2
-          = 4\cos^2 t\,\sin^2 t
-          = \left(2\sin t\cos t\right)^2
-          = \sin^2(2t).
-      </me>
       <p>
-        Substituting into <xref ref="eq-helix-mass"/> and using the
-        half-angle identity
+        Substituting <xref ref="eq-helix-speed"/> and
+        <xref ref="eq-helix-density"/> into <xref ref="eq-helix-mass"/> and
+        using the half-angle identity
         <m>\sin^2(2t)=\tfrac{1}{2}\bigl(1-\cos(4t)\bigr)</m>,
-      </p>
+
       <md>
         <mrow>
           m \amp = \sqrt{2}\int_0^{b}\sin^2(2t)\,dt
@@ -307,19 +393,25 @@
         <mrow>
           \amp = \frac{1}{\sqrt{2}}
                  \left(t-\frac{1}{4}\sin(4t)\right)\bigg|_0^{b}
-             = \frac{1}{\sqrt{2}}
+        </mrow>
+        <mrow xml:id="eq-helix-mass-b" number="yes">
+          \amp = \frac{1}{\sqrt{2}}
                  \left(b-\frac{1}{4}\sin(4b)\right).
         </mrow>
       </md>
+      </p>
       <p>
-        Setting this equal to the given mass
+        Setting <xref ref="eq-helix-mass-b"/> equal to the given mass
         <m>m=\dfrac{\pi}{2\sqrt{2}}</m> and multiplying both sides by
         <m>\sqrt{2}</m>,
+
+      <md>
+        <mrow xml:id="eq-helix-b" number="yes">
+          b-\frac{1}{4}\sin(4b)=\frac{\pi}{2}
+          \quad\Longrightarrow\quad b=\frac{\pi}{2},
+        </mrow>
+      </md>
       </p>
-      <me>
-        b-\frac{1}{4}\sin(4b)=\frac{\pi}{2}
-        \quad\Longrightarrow\quad b=\frac{\pi}{2},
-      </me>
       <p>
         since <m>\sin(4\cdot\tfrac{\pi}{2})=\sin(2\pi)=0</m>. (This solution
         is the only one: the left-hand side has derivative
@@ -328,14 +420,21 @@
       </p>
 
       <p>
-        The length of the wire is then the arc length from <m>t=0</m> to
-        <m>t=\pi/2</m>. Because the speed is the constant <m>\sqrt{2}</m>,
+        With <m>b=\pi/2</m> from <xref ref="eq-helix-b"/>, the length of the
+        wire is the arc length from <m>t=0</m> to <m>t=\pi/2</m>. Because the
+        speed in <xref ref="eq-helix-speed"/> is the constant <m>\sqrt{2}</m>,
+
+      <md>
+        <mrow>
+          l \amp = \int_0^{\pi/2}
+                     \left\lVert\mathbf{v}(t)\right\rVert\,dt
+                 = \sqrt{2}\int_0^{\pi/2}dt
+        </mrow>
+        <mrow xml:id="eq-helix-length" number="yes">
+          \amp = \frac{\pi}{\sqrt{2}}\approx 2.22 \text{ meters}.
+        </mrow>
+      </md>
       </p>
-      <me>
-        l=\int_0^{\pi/2}\left\lVert\mathbf{r}'(t)\right\rVert\,dt
-         =\sqrt{2}\int_0^{\pi/2}dt
-         =\frac{\pi}{\sqrt{2}}\approx 2.22 \text{ meters}.
-      </me>
       <p>
         The wire<mdash/>a quarter turn of the helix from <m>(1,0,0)</m> up
         to <m>(0,1,\pi/2)</m><mdash/>is shown in
@@ -395,7 +494,7 @@
       <figure xml:id="fig-helix-wire-video">
         <caption>
           A point traverses the helical wire while the accumulated mass
-          <m>\int_0^t \rho\,\lVert\mathbf{r}'\rVert\,d\tau</m> grows to
+          <m>\int_0^t \rho\,\lVert\mathbf{v}\rVert\,d\tau</m> grows to
           <m>\dfrac{\pi}{2\sqrt{2}}\approx 1.11</m> kg over the length
           <m>\dfrac{\pi}{\sqrt{2}}\approx 2.22</m> m.
         </caption>
@@ -404,5 +503,940 @@
       </figure>
     </solution>
   </example>
+
+  <!-- ================================================================= -->
+  <!-- EXAMPLE: the spiralling wire, from the companion GeoGebra activity -->
+  <example xml:id="ex-spiral-wire">
+    <title>A wire whose density is read off the picture</title>
+    <statement>
+      <p>
+        A wire of length <m>40</m> meters is parametrized as
+
+      <md>
+        <mrow xml:id="eq-spiral-wire" number="yes">
+          \mathbf{r}(t) = \left\langle t\cos(t),\ t\sin(t),\
+            \frac{2\sqrt{2}}{3}\,t^{3/2} \right\rangle ,
+        </mrow>
+      </md>
+      </p>
+      <p>
+        where <m>x(t)</m>, <m>y(t)</m> and <m>z(t)</m> are in meters and
+        <m>t</m> is in seconds. Assume that the mass density at a point
+        <m>P</m> of the wire is
+
+      <md>
+        \rho = \frac{1}{d+1} \quad \text{kg/m} ,
+      </md>
+      </p>
+      <p>
+        where <m>d</m> is the distance from <m>P</m> to the
+        <m>z</m>-axis.
+      </p>
+      <p>
+        The wire is graphed in <xref ref="fig-spiral-wire"/>. Note that there
+        is a piece of information that has to be extracted from the graph.
+        Calculate the mass of the wire.
+      </p>
+    </statement>
+
+    <solution>
+      <p>
+        <term>What the graph supplies.</term> Equation
+        <xref ref="eq-spiral-wire"/> is a formula for every <m>t</m>, but a
+        wire is a finite piece of that curve, and the formula alone does not
+        say which piece. <xref ref="fig-spiral-wire"/> does: the wire starts
+        at the origin, and <m>\mathbf{r}(t) = \mathbf{0}</m> exactly when
+        <m>t=0</m>. So the wire is the piece <m>0 \le t \le b</m>, and the
+        unknown upper limit <m>b</m> is what the given length will pin down.
+      </p>
+
+      <p>
+        <term>Speed.</term> Differentiating <xref ref="eq-spiral-wire"/>, the
+        first two components by the product rule and the third by the power
+        rule,
+
+      <md>
+        <mrow>
+          \mathbf{v}(t) \amp = \left\langle \cos t - t\sin t,\
+            \sin t + t\cos t,\ \sqrt{2}\,t^{1/2} \right\rangle ,
+        </mrow>
+        <mrow>
+          \left\lVert\mathbf{v}(t)\right\rVert \amp
+            = \sqrt{\left(\cos t - t\sin t\right)^2
+                  + \left(\sin t + t\cos t\right)^2 + 2t}
+        </mrow>
+        <mrow>
+          \amp = \sqrt{1 + t^2 + 2t} = \sqrt{(t+1)^2} = t+1 ,
+        </mrow>
+      </md>
+      </p>
+      <p>
+        where the cross terms <m>\pm 2t\sin t\cos t</m> cancelled and
+        <m>t+1 \gt 0</m>.
+      </p>
+
+      <p>
+        <term>The upper limit.</term> The length of the wire is the arc
+        length from <m>t=0</m> to <m>t=b</m>, and we are told it is
+        <m>40</m>:
+
+      <md>
+        40 = \int_0^b \left\lVert\mathbf{v}(t)\right\rVert \, dt
+           = \int_0^b (t+1)\,dt
+           = \frac{b^2}{2} + b .
+      </md>
+      </p>
+      <p>
+        So <m>b^2 + 2b - 80 = (b+10)(b-8) = 0</m>, and since <m>b \gt 0</m>
+        the wire ends at <m>b = 8</m> seconds.
+      </p>
+
+      <p>
+        <term>The density along the wire.</term> The distance from a point
+        to the <m>z</m>-axis is <m>\sqrt{x^2+y^2}</m>, and along this curve
+
+      <md>
+        <mrow>
+          d \amp = \sqrt{x(t)^2 + y(t)^2}
+                 = \sqrt{t^2\cos^2 t + t^2\sin^2 t} = t ,
+        </mrow>
+        <mrow>
+          \text{so} \quad \rho \amp = \frac{1}{t+1} .
+        </mrow>
+      </md>
+      </p>
+
+      <p>
+        <term>The mass.</term> Now everything collapses: the density is
+        exactly the reciprocal of the speed, so the two factors in
+        <xref ref="eq-mass-speed"/> cancel,
+
+      <md>
+        <mrow>
+          M \amp = \int_0^{8} \rho\left(x(t),y(t),z(t)\right)
+                     \left\lVert\mathbf{v}(t)\right\rVert\,dt
+        </mrow>
+        <mrow>
+          \amp = \int_0^{8} \frac{1}{t+1}\,(t+1)\,dt
+               = \int_0^{8} dt = 8 .
+        </mrow>
+      </md>
+      </p>
+      <p>
+        The wire has mass <m>8</m> kilograms. The cancellation is worth a
+        second look: <m>\rho\,ds = \rho \left\lVert\mathbf{v}\right\rVert dt
+        = dt</m> here, so this wire carries exactly one kilogram for every
+        second of parameter<mdash/>it is heavy and slow near the origin,
+        light and fast far from the <m>z</m>-axis, and the two effects
+        balance perfectly.
+      </p>
+
+      <figure xml:id="fig-spiral-wire">
+        <caption>
+          The wire <xref ref="eq-spiral-wire"/>, spiralling outward and
+          upward from the origin. The dashed gray curve is its shadow on the
+          plane <m>z=0</m>. The graph is what tells us the wire starts at
+          <m>t=0</m>.
+        </caption>
+        <image xml:id="image-spiral-wire" width="70%">
+          <shortdescription>
+            A wire spiralling outward and upward from the origin, with its
+            shadow on the ground.
+          </shortdescription>
+          <description>
+            <p>
+              A three-dimensional coordinate box with x and y running from
+              minus 8.5 to 8.5 and z from 0 to 22. A thick blue curve starts
+              at a red point at the origin, marked t equals 0, and spirals
+              outward and upward, making a little more than one full turn
+              around the vertical axis while climbing, its radius growing
+              steadily, until it ends high above the floor. A dashed gray
+              spiral on the floor of the box shows the curve's shadow.
+            </p>
+          </description>
+          <latex-image>
+            \begin{tikzpicture}
+            \begin{axis}[
+                width=11cm, view={120}{18},
+                xlabel={\(x\)}, ylabel={\(y\)}, zlabel={\(z\)},
+                xmin=-8.5, xmax=8.5, ymin=-8.5, ymax=8.5, zmin=0, zmax=22,
+                grid=major, grid style={gray!20}, clip=false,
+                label style={font=\Large},
+                tick label style={font=\normalsize},
+                every node/.append style={font=\Large},
+              ]
+              % the shadow of the wire on the ground z=0
+              \addplot3[gray!65, dashed, line width=1.3pt, domain=0:458.37,
+                        samples=300, samples y=0]
+                  ({pi*x/180*cos(x)}, {pi*x/180*sin(x)}, {0});
+              % the wire itself
+              \addplot3[blue, very thick, domain=0:458.37,
+                        samples=300, samples y=0]
+                  ({pi*x/180*cos(x)}, {pi*x/180*sin(x)},
+                   {0.942809*(pi*x/180)^1.5});
+              % the starting point, which the graph is there to reveal
+              \addplot3[only marks, mark=*, red, mark size=1.8pt]
+                  coordinates {(0,0,0)};
+              \node[below right=1pt] at (axis cs:0,0,0) {\(t=0\)};
+            \end{axis}
+            \end{tikzpicture}
+          </latex-image>
+        </image>
+      </figure>
+    </solution>
+  </example>
+
+  <!-- ================================================================= -->
+  <!-- Concept questions, ported from the companion GeoGebra activity     -->
+  <!-- "Line Integrals of Scalar Functions" (geogebra.org/m/af8gede2).    -->
+  <subsection xml:id="subsec-line-integral-questions">
+    <title>Concept Check</title>
+
+    <p>
+      This last part of the section is not about computing anything new. It
+      is about <em>reviewing</em> the concepts we have just built. Everything 
+      below refers
+      to the two applications developed so far using line integrals, in particular 
+      the length <m>L</m> of a wire and its mass <m>M</m>,
+
+    <md>
+      <mrow xml:id="eq-question-length" number="yes">
+        L \amp = \int_C ds
+             = \int_{t=a}^{t=b}\left\lVert\mathbf{v}(t)\right\rVert\,dt ,
+      </mrow>
+      <mrow>
+        M \amp = \int_C \rho\left(x,y,z\right) ds
+      </mrow>
+      <mrow xml:id="eq-question-mass" number="yes">
+        \amp = \int_{t=a}^{t=b} \rho\left(x(t),y(t),z(t)\right)
+                 \left\lVert\mathbf{v}(t)\right\rVert\,dt ,
+      </mrow>
+    </md>
+    </p>
+
+    <p>
+      where <xref ref="eq-question-mass"/> is
+      <xref ref="eq-mass-speed"/> again and
+      <xref ref="eq-question-length"/> is the case <m>\rho = 1</m>. Assume
+      throughout that the thickness of the wire can be ignored.
+    </p>
+
+    <exercise xml:id="q-line-integral-symbols">
+      <title>Reading the two formulas</title>
+      <statement>
+        <p>
+          In <xref ref="eq-question-length"/> and
+          <xref ref="eq-question-mass"/>, what do <m>a</m>, <m>b</m>,
+          <m>t</m>, <m>C</m>, <m>dt</m>, <m>\mathbf{v}</m> and
+          <m>\rho(x,y,z)</m> represent?
+        </p>
+      </statement>
+      <answer>
+        <p>
+          <m>t</m> is the parameter along the curve, which we usually read as
+          time, and <m>a</m> and <m>b</m> are its initial and final values,
+          so the wire is traced once as <m>t</m> runs from <m>a</m> to
+          <m>b</m>. The curve <m>C</m> is the wire itself: it is the region
+          of integration, and once the wire is parametrized that region
+          becomes the interval <m>a \le t \le b</m>. The symbol <m>dt</m> is
+          the element of that parameter interval. The vector
+          <m>\mathbf{v}(t) = \mathbf{r}'(t)</m> is the velocity of the point
+          tracing the wire, so <m>\left\lVert\mathbf{v}(t)\right\rVert</m> is
+          its speed and the factor that converts time spent into distance
+          covered. Finally <m>\rho(x,y,z)</m> is the linear mass density,
+          the mass per unit length at the point <m>(x,y,z)</m> of the wire.
+        </p>
+      </answer>
+    </exercise>
+
+    <exercise xml:id="q-ds-dr">
+      <title>The two line elements</title>
+      <statement>
+        <p>
+          Take two nearby points of the wire, the ones reached at the
+          parameter values <m>t_{k-1}</m> and <m>t_k</m>. Write
+          <m>\Delta \mathbf{r}
+          = \mathbf{r}(t_k) - \mathbf{r}(t_{k-1})</m> for the displacement
+          from the first to the second, and <m>\Delta s_k</m> for the length
+          of the piece of wire joining them. Intuitively speaking, what do
+          <m>ds</m> and <m>d\mathbf{r}</m> represent, and what happens to
+          <m>\Delta s_k</m> and <m>\Delta \mathbf{r}</m> in the limit that
+          produces them?
+        </p>
+      </statement>
+      <answer>
+        <p>
+          Both describe an infinitesimal step along the wire, but one is a
+          number and the other is a vector.
+          <m>d\mathbf{r} = \mathbf{v}(t)\,dt</m> is the
+          <em>displacement</em> of that step: it records how far the point
+          moves <em>and in which direction</em>. Its length is the scalar
+          <m>ds = \left\lVert d\mathbf{r} \right\rVert
+             = \left\lVert\mathbf{v}(t)\right\rVert\,dt</m>, the
+          <em>arc length</em> of the step<mdash/>how much wire the step uses
+          up, with no direction attached. Scalar line integrals are built
+          from <m>ds</m>; the vector element <m>d\mathbf{r}</m> is what we
+          will need later, for work integrals.
+        </p>
+        <figure xml:id="fig-ds-dr">
+          <caption>
+            Two nearby points of a curve <m>C</m>, at the parameter values
+            <m>t_{k-1}</m> and <m>t_k</m>. The straight arrow is the
+            displacement <m>\Delta \mathbf{r}
+            = \mathbf{r}(t_k) - \mathbf{r}(t_{k-1})</m>; the thick piece of
+            curve joining the same two points has length <m>\Delta s_k</m>. The
+            chord is straight and the arc is not, so the two differ<mdash/>but
+            less and less as the points come together.
+          </caption>
+          <image xml:id="image-ds-dr" width="65%">
+            <shortdescription>
+              A curve with two nearby points, their position vectors from the
+              origin, the chord vector between them, and the arc joining them.
+            </shortdescription>
+            <description>
+              <p>
+                A smooth curve rises across the first quadrant. Two points on it,
+                reached at the parameter values t sub k minus one and t sub k,
+                are joined to the origin by two thin position vectors, labeled r
+                of t sub k minus one and r of t sub k. A green arrow runs
+                straight from the first point to the second and is labeled delta
+                r, the difference of the two position vectors. The piece of curve
+                between the same two points is drawn thickly in orange and
+                labeled delta s sub k. The straight arrow cuts across inside the
+                bend of the curve, so it is visibly shorter than the arc.
+              </p>
+            </description>
+            <prefigure xmlns="https://prefigure.org" label="ds-dr">
+              <diagram dimensions="(440,360)" margins="5">
+                <definition>c(t) = (2.9*cos(t), 1.7*sin(t))</definition>
+                <definition>t1 = 0.32</definition>
+                <definition>t2 = 1.18</definition>
+                <definition>P = c(t1)</definition>
+                <definition>Q = c(t2)</definition>
+                <definition>D = (Q[0]-P[0], Q[1]-P[1])</definition>
+                <definition>M = ((P[0]+Q[0])/2, (P[1]+Q[1])/2)</definition>
+                <coordinates bbox="(-0.55,-0.5,3.7,2.7)" aspect-ratio="1">
+                  <axes at="ax" xlabel="x" ylabel="y" decorations="no" arrows="1"/>
+
+                  <group at="curve">
+                    <parametric-curve function="c" domain="(0.05,1.45)"
+                                      stroke="blue" thickness="2"/>
+                    <label anchor="c(1.42)" alignment="nw" offset="(-8,6)"
+                           color="blue">
+                      <m>C</m>
+                    </label>
+                  </group>
+
+                  <group at="arc">
+                    <parametric-curve function="c" domain="(t1,t2)"
+                                      stroke="#d55e00" thickness="5"/>
+                    <label anchor="c((t1+t2)/2)" alignment="ne" offset="(10,8)"
+                           color="#d55e00">
+                      <m>\Delta s_k</m>
+                    </label>
+                  </group>
+
+                  <group at="chord">
+                    <vector v="D" tail="P" stroke="#009E73" thickness="2"
+                            arrow-width="8"/>
+                    <label anchor="M" alignment="sw" offset="(-10,-10)"
+                           color="#009E73">
+                      <m>\Delta \mathbf{r}</m>
+                    </label>
+                  </group>
+
+                  <group at="positions">
+                    <vector v="P" tail="(0,0)" stroke="#7a1a99" thickness="2"
+                            arrow-width="8"/>
+                    <vector v="Q" tail="(0,0)" stroke="#7a1a99" thickness="2"
+                            arrow-width="8"/>
+                    <point p="P" size="4" stroke="black" fill="black"/>
+                    <point p="Q" size="4" stroke="black" fill="black"/>
+                    <label anchor="0.55*P" alignment="se" offset="(4,-10)"
+                           color="#7a1a99">
+                      <m>\mathbf{r}(t_{k-1})</m>
+                    </label>
+                    <label anchor="0.55*Q" alignment="nw" offset="(-8,8)"
+                           color="#7a1a99">
+                      <m>\mathbf{r}(t_k)</m>
+                    </label>
+                    <label anchor="P" alignment="se" offset="(8,-6)">
+                      <m>t_{k-1}</m>
+                    </label>
+                    <label anchor="Q" alignment="ne" offset="(6,6)">
+                      <m>t_k</m>
+                    </label>
+                  </group>
+                </coordinates>
+
+                <annotations>
+                  <annotation ref="figure"
+                              text="Two nearby points on a curve, with their
+                                    position vectors, the straight displacement
+                                    between them, and the arc joining them">
+                    <annotation ref="ax" text="The coordinate axes"/>
+                    <annotation ref="curve" text="The curve C" sonify="yes"/>
+                    <annotation ref="arc"
+                                text="The piece of the curve between the two
+                                      points, of length delta s sub k"/>
+                    <annotation ref="chord"
+                                text="The displacement delta r, a straight arrow
+                                      from the first point to the second"/>
+                    <annotation ref="positions"
+                                text="The position vectors of the two points,
+                                      drawn from the origin"/>
+                  </annotation>
+                </annotations>
+              </diagram>
+            </prefigure>
+          </image>
+        </figure>
+
+        <p>
+          The limit is the passage from <xref ref="fig-ds-dr"/> to those
+          two symbols. Write <m>\Delta t_k = t_k - t_{k-1}</m>. Dividing the displacement
+          by <m>\Delta t_k</m> gives a difference quotient, and letting the
+          two points come together turns it into the derivative:
+
+        <md>
+          <mrow>
+            \frac{\Delta \mathbf{r}}{\Delta t_k}
+              \amp = \frac{\mathbf{r}(t_k)-\mathbf{r}(t_{k-1})}
+                          {\Delta t_k}
+          </mrow>
+          <mrow>
+            \amp \ \xrightarrow[\ \Delta t_k \to 0\ ]{}\
+              \mathbf{r}'(t) = \mathbf{v}(t) ,
+          </mrow>
+          <mrow>
+            \text{so} \quad \Delta \mathbf{r} \amp
+              \ \longrightarrow\ d\mathbf{r} = \mathbf{v}(t)\,dt .
+          </mrow>
+        </md>
+        </p>
+        <p>
+          The arc does the same thing one step behind. In
+          <xref ref="fig-ds-dr"/> the chord cuts across the bend, so
+          <m>\left\lVert\Delta\mathbf{r}\right\rVert
+             \lt \Delta s_k</m>; but as the two points close in, the piece
+          of curve between them becomes indistinguishable from the straight
+          chord, in the sense that their ratio tends to <m>1</m>:
+
+        <md>
+          <mrow>
+            \frac{\Delta s_k}{\left\lVert\Delta\mathbf{r}\right\rVert}
+              \amp \ \longrightarrow\ 1 ,
+          </mrow>
+          <mrow>
+            \text{so} \quad \Delta s_k \amp \ \longrightarrow\ ds
+          </mrow>
+          <mrow>
+            \amp = \left\lVert d\mathbf{r}\right\rVert
+                 = \left\lVert\mathbf{v}(t)\right\rVert\,dt .
+          </mrow>
+        </md>
+        </p>
+        <p>
+          That last equality is exactly the substitution that makes a line
+          integral computable, and it is what
+          <xref ref="eq-line-element"/> records: trading the geometric
+          element <m>ds</m> for <m>\left\lVert\mathbf{v}(t)\right\rVert
+          \,dt</m> is the same move as replacing the arc by its chord in
+          <xref ref="fig-ds-dr"/> and then shrinking it.
+        </p>
+      </answer>
+    </exercise>
+
+    <exercise xml:id="q-units">
+      <title>Units</title>
+      <statement>
+        <p>
+          If we use meters and kilograms as the units of length and mass
+          respectively, then what will the units of <m>\rho(x,y,z)</m> and
+          <m>ds</m> be?
+        </p>
+      </statement>
+      <answer>
+        <p>
+          <m>ds</m> is a length, so it is measured in meters
+          (<m>\text{m}</m>), and <m>\rho</m> is a mass per unit length, so it
+          is measured in kilograms per meter
+          (<m>\text{kg}/\text{m}</m>). The product
+          <m>\rho\,ds</m> is then measured in kilograms, as a contribution to
+          a mass must be.
+        </p>
+      </answer>
+    </exercise>
+
+    <exercise xml:id="q-integrand">
+      <title>What is being integrated?</title>
+      <statement>
+        <p>
+          In the above applications of line integrals of scalar functions
+          <m>\int_C f(x,y,z)\,ds</m>, what is the scalar function that is
+          being integrated (the integrand) along the wire?
+        </p>
+      </statement>
+      <answer>
+        <p>
+          For the mass <xref ref="eq-question-mass"/> the integrand is the
+          density, <m>f = \rho</m>. For the length
+          <xref ref="eq-question-length"/> the integrand is the constant
+          function <m>f = 1</m>: the length is the <q>mass</q> of a wire of
+          density one.
+        </p>
+      </answer>
+    </exercise>
+
+    <figure xml:id="fig-square-circle-wires">
+      <caption>
+        Two wires: the circle of radius <m>2</m> centered at the origin, and
+        the square inscribed in it, whose vertices
+        <m>\left(\pm\sqrt{2},\pm\sqrt{2}\right)</m> lie on the circle.
+      </caption>
+      <image xml:id="image-square-circle-wires" width="55%">
+        <shortdescription>
+          A circle of radius two centered at the origin with a square
+          inscribed in it, the square's four vertices lying on the circle.
+        </shortdescription>
+        <description>
+          <p>
+            A coordinate grid showing two closed curves. The first is a
+            circle of radius two centered at the origin, passing through the
+            marked point two comma zero. The second is a square inscribed in
+            that circle, with horizontal and vertical sides and with its four
+            vertices, at plus or minus root two in each coordinate, lying on
+            the circle. The square's sides therefore cut across the inside of
+            the circle.
+          </p>
+        </description>
+        <prefigure xmlns="https://prefigure.org" label="square-circle-wires">
+          <diagram dimensions="(360,360)" margins="5">
+            <definition>R = 2</definition>
+            <definition>h = 1.4142135624</definition>
+            <coordinates bbox="(-2.9,-2.9,2.9,2.9)" aspect-ratio="1">
+              <grid-axes xlabel="x" ylabel="y"/>
+
+              <group at="circle-wire">
+                <circle center="(0,0)" radius="R" stroke="blue"
+                        thickness="3"/>
+                <label anchor="(0,-R)" alignment="sw" offset="(-10,-6)"
+                       color="blue" clear-background="yes">
+                  <m>x^2+y^2=4</m>
+                </label>
+              </group>
+
+              <group at="square-wire">
+                <polygon points="[(h,h), (-h,h), (-h,-h), (h,-h)]"
+                         closed="yes" stroke="#009E73" thickness="3"/>
+                <label anchor="(-h,h)" alignment="nw" offset="(-6,6)"
+                       color="#009E73" clear-background="yes">
+                  <m>\left(-\sqrt{2},\sqrt{2}\right)</m>
+                </label>
+              </group>
+
+              <group at="marks">
+                <point p="(R,0)" size="4.5" stroke="black" fill="black"/>
+                <label anchor="(R,0)" alignment="ne" offset="(6,6)"
+                       clear-background="yes">
+                  <m>(2,0)</m>
+                </label>
+                <point p="(h,h)" size="4" stroke="#009E73" fill="#009E73"/>
+                <label anchor="(h,h)" alignment="ne" offset="(6,4)"
+                       color="#009E73" clear-background="yes">
+                  <m>\left(\sqrt{2},\sqrt{2}\right)</m>
+                </label>
+              </group>
+            </coordinates>
+
+            <annotations>
+              <annotation ref="figure"
+                          text="A circle of radius two centered at the origin
+                                together with the square inscribed in it,
+                                whose four vertices lie on the circle">
+                <annotation ref="grid" text="The coordinate grid"/>
+                <annotation ref="axes" text="The coordinate axes"/>
+                <annotation ref="circle-wire"
+                            text="The circular wire, the circle of radius two
+                                  centered at the origin"
+                            sonify="yes"/>
+                <annotation ref="square-wire"
+                            text="The square-shaped wire inscribed in the
+                                  circle, with horizontal and vertical sides
+                                  of length two root two"/>
+                <annotation ref="marks"
+                            text="The point two comma zero on the circle and
+                                  the vertex root two comma root two shared by
+                                  the square and the circle"/>
+              </annotation>
+            </annotations>
+          </diagram>
+        </prefigure>
+      </image>
+    </figure>
+
+    <exercise xml:id="q-circular-wire-mass">
+      <title>A mass with no parametrization</title>
+      <statement>
+        <p>
+          Assume that the density of the circular wire in
+          <xref ref="fig-square-circle-wires"/> is given by
+          <m>\rho(x,y) = \dfrac{1}{x^2+y^2+1}</m>. <em>Without
+          parametrizing</em>, find its mass.
+        </p>
+      </statement>
+      <answer>
+        <p>
+          <m>M = \dfrac{4\pi}{5} \approx 2.51</m>.
+        </p>
+      </answer>
+      <solution>
+        <p>
+          Every point of the wire lies on the circle of radius <m>2</m>, so
+          <m>x^2+y^2 = 4</m> <em>along the curve</em>, and the density is not
+          really varying at all:
+
+        <md>
+          \rho(x,y) = \frac{1}{x^2+y^2+1} = \frac{1}{4+1} = \frac{1}{5}
+          \qquad \text{at every point of } C .
+        </md>
+        </p>
+        <p>
+          A constant comes out of the integral, and what is left is the
+          length <xref ref="eq-question-length"/> of the wire, namely the
+          circumference <m>2\pi(2) = 4\pi</m>:
+
+        <md>
+          <mrow>
+            M \amp = \int_C \rho \, ds = \frac{1}{5}\int_C ds
+          </mrow>
+          <mrow>
+            \amp = \frac{1}{5}\left(4\pi\right) = \frac{4\pi}{5}
+                 \approx 2.51 .
+          </mrow>
+        </md>
+        </p>
+        <p>
+          This is the one situation in which a line integral needs no
+          parametrization: when the integrand is constant on the curve, the
+          integral is that constant times the length.
+        </p>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="q-radius-independence">
+      <title>Does the radius matter?</title>
+      <statement>
+        <p>
+          Assume that the mass density of a circular wire of radius <m>R</m>
+          centered at the origin is given by
+          <m>\rho(x,y) = \dfrac{1}{\sqrt{x^2+y^2}}</m>. Which statement is correct?
+        </p>
+        <ol marker="A.">
+          <li>
+            <p>
+            The mass of the wire is independent of its radius <m>R</m>.
+            </p>
+          </li>
+          <li>
+            <p>The mass of the wire increases as <m>R</m> increases.</p>
+          </li>
+          <li>
+            <p>The mass of the wire decreases as <m>R</m> decreases.</p>
+          </li>
+        </ol>
+      </statement>
+      <answer>
+        <p>
+          Only option A.
+        </p>
+      </answer>
+      <solution>
+        <p>
+          On the circle of radius <m>R</m> we have
+          <m>\sqrt{x^2+y^2} = R</m>, so <m>\rho = 1/R</m> is constant along
+          the wire and
+
+        <md>
+          M = \int_C \rho\, ds = \frac{1}{R}\int_C ds
+            = \frac{1}{R}\left(2\pi R\right) = 2\pi ,
+        </md>
+        </p>
+        <p>
+          independently of <m>R</m>. Only option A is correct.
+        </p>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="q-square-vs-circle-mass">
+      <title>Which wire is heavier?</title>
+      <statement>
+        <p>
+          Assume that the density of the square-shaped wire and of the
+          circular wire graphed in
+          <xref ref="fig-square-circle-wires"/> is given by
+          <m>\rho(x,y) = x^2+y^2</m>. Then, without parametrizing the curves,
+          choose the correct option below. Which statement is correct?
+        </p>
+        <ol marker="A.">
+          <li>
+            <p>The circular wire is heavier.</p>
+          </li>
+          <li>
+            <p>The square-shaped wire is heavier.</p>
+          </li>
+          <li>
+            <p>The two wires have the same mass.</p>
+          </li>
+        </ol>
+      </statement>
+      <answer>
+        <p>
+          Only option A.
+        </p>
+      </answer>
+      <solution>
+        <p>
+          <term>The circle.</term> Here <m>\rho(x,y) = x^2+y^2</m> is the
+          square of the distance to the origin, and on a circle of radius
+          <m>R</m> centered at the origin that distance never changes. So
+          <m>\rho = R^2</m> is constant along the wire, it comes out of the
+          integral, and what is left is the circumference:
+
+        <md>
+          <mrow>
+            M_{\text{circle}} \amp = \int_{\text{circle}}
+              \left(x^2+y^2\right) ds
+              = \int_{\text{circle}} R^2 \, ds
+          </mrow>
+          <mrow>
+            \amp = R^2 \left(2\pi R\right) = 2\pi R^3
+          </mrow>
+          <mrow>
+            \amp = 2\pi (2)^3 = 16\pi \approx 50.265 .
+          </mrow>
+        </md>
+        </p>
+        <p>
+          <term>The square.</term> We do not need its mass exactly<mdash/>an
+          upper bound is enough. The square is inscribed in the circle, so
+          every one of its points lies inside or on the circle, which is to
+          say
+
+        <md>
+          x^2+y^2 \le R^2 \qquad \text{on the square.}
+        </md>
+        </p>
+        <p>
+          Replacing the integrand by that upper bound, and using that the
+          square has side <m>R\sqrt{2} = 2\sqrt{2}</m> and hence perimeter
+          <m>\int_{\text{square}} ds = 8\sqrt{2}</m>,
+
+        <md>
+          <mrow>
+            M_{\text{square}} \amp \lt \int_{\text{square}} R^2 \, ds
+              = R^2 \int_{\text{square}} ds
+          </mrow>
+          <mrow>
+            \amp = (2)^2 \left(8\sqrt{2}\right)
+                 = 32\sqrt{2} \approx 45.255 .
+          </mrow>
+        </md>
+        </p>
+        <p>
+          The inequality is strict because <m>x^2+y^2 \lt R^2</m> everywhere
+          on the square except at its four vertices. So the square weighs
+          less than <m>45.3</m> while the circle weighs <m>50.3</m>: the
+          circular wire is heavier, and neither integral had to be
+          parametrized. Only option A is correct.
+        </p>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="q-charge-symmetry">
+      <title>A charged wire</title>
+      <statement>
+        <p>
+          Assume that the charge density of the square-shaped wire and of the
+          circular wire graphed in
+          <xref ref="fig-square-circle-wires"/> is given by
+          <m>\rho(x,y) = \left|x\right| - \left|y\right|</m>. Then, without
+          parametrizing the curves, choose the correct option(s) below.
+          Select all that apply.
+        </p>
+        <ol marker="A.">
+          <li>
+            <p>The circular wire is negatively charged.</p>
+          </li>
+          <li>
+            <p>The square-shaped wire is positively charged.</p>
+          </li>
+          <li>
+            <p>
+            In both cases (square and circular wires) the amount of
+            positive charge is equal to the amount of negative charge.
+            </p>
+          </li>
+        </ol>
+      </statement>
+      <answer>
+        <p>
+          Option C is correct.
+        </p>
+      </answer>
+      <solution>
+        <p>
+          Let us focus on the quarter of each wire lying where <m>x \ge 0</m>
+          and <m>y \ge 0</m>, so that the absolute values disappear and
+
+        <md>
+          \rho(x,y) = \left|x\right| - \left|y\right| = x - y .
+        </md>
+        </p>
+        <p>
+          The line <m>y = x</m> cuts that quarter into two halves, as in
+          <xref ref="fig-charge-quarter"/>. Below the line we have
+          <m>x \gt y</m>, so <m>\rho \gt 0</m> there and the wire carries
+          positive charge; above it <m>x \lt y</m>, so <m>\rho \lt 0</m> and
+          the charge is negative.
+        </p>
+        <p>
+          Now reflect in the line <m>y=x</m>, that is, interchange <m>x</m>
+          and <m>y</m>. This reflection carries each of the two shapes onto
+          itself and it does not change lengths, so it matches the lower half
+          of the quarter with the upper half piece for piece. On
+          corresponding pieces the density is exactly opposite,
+
+        <md>
+          \rho(y,x) = y - x = -\left(x-y\right) = -\rho(x,y) ,
+        </md>
+        </p>
+        <p>
+          so the positive charge on the half below the line is exactly
+          cancelled by the negative charge on the half above it: this quarter
+          of each wire is neutral. The same argument applies to the other
+          three quarters, where the line of reflection is
+          <m>y = \pm x</m> and the density is again <m>\pm(|x|-|y|)</m>.
+          Adding up the four quarters,
+
+        <md>
+          \int_C \left(\left|x\right| - \left|y\right|\right) ds = 0
+        </md>
+        </p>
+        <p>
+          for both the square and the circle. Neither wire is charged
+          overall: each carries exactly as much positive as negative charge.
+          Option C is correct.
+        </p>
+
+        <figure xml:id="fig-charge-quarter">
+          <caption>
+            The quarter of each wire in the first quadrant, where
+            <m>\rho = x-y</m>. Below the line <m>y=x</m> we have
+            <m>x \geq y</m>, so the density is positive; above it
+            <m>y \geq x</m> and the density is negative; and reflecting in that line matches
+            the two halves of each wire piece for piece while reversing the
+            sign of <m>\rho</m>.
+          </caption>
+          <image xml:id="image-charge-quarter" width="55%">
+            <shortdescription>
+              The first-quadrant quarter of the circular and square wires,
+              split by the line y equals x into a region of positive density
+              and a region of negative density.
+            </shortdescription>
+            <description>
+              <p>
+                The first quadrant of a coordinate grid. A quarter of the
+                circle of radius two runs from the point two comma zero on
+                the x axis up to the point zero comma two on the y axis. The
+                corner of the inscribed square is drawn as two straight
+                segments, one going up the vertical line x equals root two
+                and one going left along the horizontal line y equals root
+                two, meeting at the vertex root two comma root two, which
+                lies on the circle. A dashed line y equals x runs from the
+                origin out through that vertex, cutting both wires into two
+                halves. The region below the dashed line is labeled x greater
+                than y, so the density is positive; the region above it is
+                labeled x less than y, so the density is negative.
+              </p>
+            </description>
+            <prefigure xmlns="https://prefigure.org" label="charge-quarter">
+              <diagram dimensions="(360,360)" margins="5">
+                <definition>R = 2</definition>
+                <definition>h = 1.4142135624</definition>
+                <definition>q(t) = (R*cos(t), R*sin(t))</definition>
+                <coordinates bbox="(-0.35,-0.35,2.75,2.75)" aspect-ratio="1">
+                  <grid-axes xlabel="x" ylabel="y"/>
+
+                  <group at="circle-wire">
+                    <parametric-curve function="q" domain="(0,pi/2)"
+                                      stroke="blue" thickness="3"/>
+                  </group>
+
+                  <group at="square-wire">
+                    <polygon points="[(h,0), (h,h), (0,h)]" closed="no"
+                             stroke="#009E73" thickness="3"/>
+                  </group>
+
+                  <group at="split">
+                    <line endpoints="((0,0), (2.6,2.6))" stroke="black"
+                          thickness="2" dash="6 4"/>
+                    <label anchor="(2.35,2.5)" alignment="nw" offset="(-4,4)"
+                           clear-background="yes">
+                      <m>y=x</m>
+                    </label>
+                  </group>
+
+                  <!-- NB: a "\lt" in a PreFigure label is fatal.  MathJax
+                       writes the rendered "<" into an attribute of its HTML
+                       output and PreFigure then parses that output with an
+                       XML parser, which rejects it ("problem placing the
+                       labels").  "\gt", "\geq" and "\leq" are all safe, so
+                       the two half-planes are described with those. -->
+                  <group at="signs">
+                    <label anchor="(2.35,0.72)" alignment="c"
+                           clear-background="yes">
+                      <m>\rho \geq 0</m>
+                    </label>
+                    <label anchor="(0.72,2.35)" alignment="c"
+                           clear-background="yes">
+                      <m>\rho \leq 0</m>
+                    </label>
+                  </group>
+                </coordinates>
+
+                <annotations>
+                  <annotation ref="figure"
+                              text="The first-quadrant quarter of the circular
+                                    and square wires, split by the line y
+                                    equals x into a positive and a negative
+                                    part">
+                    <annotation ref="grid" text="The coordinate grid"/>
+                    <annotation ref="axes" text="The coordinate axes"/>
+                    <annotation ref="circle-wire"
+                                text="The quarter of the circular wire of
+                                      radius two"
+                                sonify="yes"/>
+                    <annotation ref="square-wire"
+                                text="The corner of the square wire, two
+                                      straight sides meeting at the vertex
+                                      root two comma root two"/>
+                    <annotation ref="split"
+                                text="The line y equals x, which splits each
+                                      wire into a half where the density is
+                                      positive and a half where it is
+                                      negative"/>
+                    <annotation ref="signs"
+                                text="The labels marking where the density is
+                                      positive and where it is negative"/>
+                  </annotation>
+                </annotations>
+              </diagram>
+            </prefigure>
+          </image>
+        </figure>
+      </solution>
+    </exercise>
+  </subsection>
 
 </section>
