@@ -265,7 +265,10 @@ can write:
 <mrow>
 \amp= \int_0^{\pi}
 \Big[r^3\cos\theta + r^4\sin^2\theta\Big]_{r=1}^{r=2}\,d\theta
-= \int_0^{\pi}\left(7\cos\theta + 15\sin^2\theta\right)d\theta
+</mrow>
+<mrow>
+\amp= \int_0^{\pi}\left(7\cos\theta
++ 15\sin^2\theta\right)d\theta
 </mrow>
 <mrow>
 \amp= \int_0^{\pi}\left[7\cos\theta
@@ -465,13 +468,17 @@ Therefore,
 V = \iint_D \left(x^2 + y^2\right)dA
 \amp= \int_{-\pi/2}^{\pi/2}\!\!\int_0^{2\cos\theta}
 r^2\, r\,dr\,d\theta
-= \int_{-\pi/2}^{\pi/2}
+</mrow>
+<mrow>
+\amp= \int_{-\pi/2}^{\pi/2}
 \left[\frac{r^4}{4}\right]_0^{2\cos\theta} d\theta
 </mrow>
 <mrow>
 \amp= 4\int_{-\pi/2}^{\pi/2}\cos^4\theta\,d\theta
 = 8\int_0^{\pi/2}\cos^4\theta\,d\theta
-= 8\int_0^{\pi/2}\left(\frac{1+\cos 2\theta}{2}\right)^{2} d\theta
+</mrow>
+<mrow>
+\amp= 8\int_0^{\pi/2}\left(\frac{1+\cos 2\theta}{2}\right)^{2} d\theta
 </mrow>
 <mrow>
 \amp= 2\int_0^{\pi/2}\left[1 + 2\cos 2\theta
@@ -480,7 +487,9 @@ r^2\, r\,dr\,d\theta
 <mrow>
 \amp= 2\left[\tfrac32\theta + \sin 2\theta
 + \tfrac18\sin 4\theta\right]_0^{\pi/2}
-= 2\left(\frac{3}{2}\right)\left(\frac{\pi}{2}\right)
+</mrow>
+<mrow>
+\amp= 2\left(\frac{3}{2}\right)\left(\frac{\pi}{2}\right)
 = \frac{3\pi}{2}.
 </mrow>
 </md>
@@ -898,11 +907,17 @@ binding constraint and the ray leaves at <m>r=1</m>; outside that range
 the cylinder is, and the ray leaves at <m>r = 2\sin\theta</m>. Using the
 symmetry about the <m>y</m>-axis,
 </p>
-<me>
-V = 2\int_0^{\pi/6}\!\!\int_0^{2\sin\theta} 2\sqrt{1-r^2}\;r\,dr\,d\theta
-  + \int_{\pi/6}^{5\pi/6}\!\!\int_0^{1} 2\sqrt{1-r^2}\;r\,dr\,d\theta
-  \approx 1.693 .
-</me>
+<md>
+<mrow>
+V \amp= 2\int_0^{\pi/6}\!\!\int_0^{2\sin\theta}
+2\sqrt{1-r^2}\;r\,dr\,d\theta
+</mrow>
+<mrow>
+\amp\quad + \int_{\pi/6}^{5\pi/6}\!\!\int_0^{1}
+2\sqrt{1-r^2}\;r\,dr\,d\theta
+\ \approx\ 1.693 .
+</mrow>
+</md>
 <p>
 Compare the region of integration here with the one in
 <xref ref="q-di-cylinder-sphere"/>: the same set, described by two

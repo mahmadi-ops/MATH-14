@@ -330,7 +330,10 @@ and we can rewrite the line integral as
 \amp= \int_a^b
 \left(\frac{\partial f}{\partial x}\mathbf i
 + \frac{\partial f}{\partial y}\mathbf j
-+ \frac{\partial f}{\partial z}\mathbf k\right)\cdot
++ \frac{\partial f}{\partial z}\mathbf k\right)
+</mrow>
+<mrow>
+\amp\qquad \cdot
 \left(\frac{dx}{dt}\mathbf i + \frac{dy}{dt}\mathbf j
 + \frac{dz}{dt}\mathbf k\right)dt
 </mrow>
@@ -493,9 +496,11 @@ connecting the two points?
 + \frac{\partial f}{\partial z}\mathbf k
 </mrow>
 <mrow>
-\amp= -\left(\frac{x}{\left(x^2+y^2+z^2\right)^{3/2}}\right)\mathbf i
-- \left(\frac{y}{\left(x^2+y^2+z^2\right)^{3/2}}\right)\mathbf j
-- \left(\frac{z}{\left(x^2+y^2+z^2\right)^{3/2}}\right)\mathbf k.
+\amp= -\frac{x}{\left(x^2+y^2+z^2\right)^{3/2}}\,\mathbf i
+- \frac{y}{\left(x^2+y^2+z^2\right)^{3/2}}\,\mathbf j
+</mrow>
+<mrow>
+\amp\quad - \frac{z}{\left(x^2+y^2+z^2\right)^{3/2}}\,\mathbf k.
 </mrow>
 </md>
 
@@ -506,11 +511,15 @@ using the vector field calculated in part A (as we used to do); however,
 calculating the line integral as follows:
 </p>
 
-<men xml:id="eq-ftli-helix-value">
+<md>
+<mrow xml:id="eq-ftli-helix-value" number="yes">
 \int_{C_1} \mathbf F(x(t),y(t),z(t))\cdot d\mathbf r
-= f(1,0,2\pi) - f(1,0,0)
-= \frac{1}{\sqrt{1 + 4\pi^2}} - 1.
-</men>
+\amp= f(1,0,2\pi) - f(1,0,0)
+</mrow>
+<mrow>
+\amp= \frac{1}{\sqrt{1 + 4\pi^2}} - 1.
+</mrow>
+</md>
 
 <p>
 <em>C.</em> The result is the same as part B, since the vector field
@@ -682,9 +691,10 @@ we differentiate <xref ref="eq-potential-step2"/> with respect to
 <md>
 <mrow>
 \frac{\partial}{\partial z}\Big(xyz + h(z)\Big)
-= xy + \frac{dh}{dz} = xy + 2z
-\quad\Rightarrow\quad
-\frac{dh}{dz} = 2z
+\amp= xy + \frac{dh}{dz} = xy + 2z
+</mrow>
+<mrow>
+\amp\Rightarrow\quad \frac{dh}{dz} = 2z
 \quad\Rightarrow\quad
 h(z) = z^2 + C.
 </mrow>
@@ -812,15 +822,14 @@ organized into the following square of equivalent statements:
 
 <md>
 <mrow>
-\text{there exists a potential } f \text{ with } \mathbf F = \nabla f
+\mathbf F = \nabla f \text{ for some } f
 \quad\amp\Longleftrightarrow\quad
-\mathbf F \text{ is a conservative field}
+\mathbf F \text{ is conservative}
 </mrow>
 <mrow>
 \Big\Updownarrow\qquad\qquad\qquad \amp \qquad\qquad\qquad\Big\Updownarrow
 </mrow>
 <mrow>
-\text{for any path } C:\
 \int_C \mathbf F\cdot d\mathbf r = f(B) - f(A)
 \quad\amp\Longleftrightarrow\quad
 \int_C \mathbf F\cdot d\mathbf r \text{ is path-independent}

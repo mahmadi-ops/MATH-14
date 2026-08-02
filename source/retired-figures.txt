@@ -243,3 +243,211 @@ surface more closely than the single cuboid did.
 </latex-image>
 </image>
 </figure>
+
+----------------------------------------------------------------------
+
+Figure 12.2, retired from source/triple-integrals-cylindrical.ptx
+(2026-08-02): the TikZ drawing of the cylindrical volume element.  Held
+here rather than commented out in place because its TikZ code contains
+"--", which an XML comment cannot hold.  The sentence "which can be seen
+in Figure 12.2." was removed with it.
+
+<figure xml:id="fig-cylindrical-element-tikz">
+<caption>
+The cylindrical volume element: a polar rectangle of area
+<m>r\,dr\,d\theta</m> (with sides <m>dr</m> and <m>r\,d\theta</m>)
+extruded through a height <m>dz</m>, so
+<m>dV = r\,dz\,dr\,d\theta</m>.
+</caption>
+<image width="60%">
+<description>
+A small curved block sitting at distance r from the z axis. Its base
+is a polar rectangle with radial side d r and arc side r d theta, and
+its height is d z. Dashed lines connect it to the z axis.
+</description>
+<latex-image>
+<![CDATA[\begin{tikzpicture}[line join=round, line cap=round]
+  % Okabe-Ito colorblind-safe palette
+  \definecolor{oiblue}{RGB}{0,114,178}
+  \definecolor{oivermillion}{RGB}{213,94,0}
+  \begin{axis}[
+      view={125}{22},
+      width=11cm,
+      axis lines=center,
+      axis line style={-latex, black!75, line width=0.7pt},
+      xlabel={$x$}, ylabel={$y$}, zlabel={$z$},
+      label style={font=\large},
+      ticks=none,
+      xmin=0, xmax=2.3, ymin=0, ymax=2.4, zmin=0, zmax=1.9,
+      clip=false,
+    ]
+    % dashed rays to the element (base at r=1.5..1.9, theta=32..52 deg)
+    \draw[black!55, dashed, line width=0.7pt]
+      (axis cs:0,0,0) -- (axis cs:{1.5*cos(32)},{1.5*sin(32)},0)
+      (axis cs:0,0,0) -- (axis cs:{1.5*cos(52)},{1.5*sin(52)},0)
+      (axis cs:0,0,1.0) -- (axis cs:{1.5*cos(32)},{1.5*sin(32)},1.0)
+      (axis cs:0,0,1.0) -- (axis cs:{1.5*cos(52)},{1.5*sin(52)},1.0);
+    % ---- the element: bottom face ----
+    \fill[oiblue, opacity=0.30]
+      (axis cs:{1.5*cos(32)},{1.5*sin(32)},0)
+      \foreach \a in {36,40,...,52} { -- (axis cs:{1.5*cos(\a)},{1.5*sin(\a)},0) }
+      \foreach \a in {52,48,...,32} { -- (axis cs:{1.9*cos(\a)},{1.9*sin(\a)},0) }
+      -- cycle;
+    % outer wall
+    \fill[oiblue, opacity=0.40]
+      (axis cs:{1.9*cos(32)},{1.9*sin(32)},0)
+      \foreach \a in {36,40,...,52} { -- (axis cs:{1.9*cos(\a)},{1.9*sin(\a)},0) }
+      \foreach \a in {52,48,...,32} { -- (axis cs:{1.9*cos(\a)},{1.9*sin(\a)},1.0) }
+      -- cycle;
+    % side wall at theta = 32
+    \fill[oiblue, opacity=0.22]
+      (axis cs:{1.5*cos(32)},{1.5*sin(32)},0)
+      -- (axis cs:{1.9*cos(32)},{1.9*sin(32)},0)
+      -- (axis cs:{1.9*cos(32)},{1.9*sin(32)},1.0)
+      -- (axis cs:{1.5*cos(32)},{1.5*sin(32)},1.0) -- cycle;
+    % top face
+    \fill[oiblue, opacity=0.5]
+      (axis cs:{1.5*cos(32)},{1.5*sin(32)},1.0)
+      \foreach \a in {36,40,...,52} { -- (axis cs:{1.5*cos(\a)},{1.5*sin(\a)},1.0) }
+      \foreach \a in {52,48,...,32} { -- (axis cs:{1.9*cos(\a)},{1.9*sin(\a)},1.0) }
+      -- cycle;
+    % edges (arcs)
+    \addplot3[oiblue!70!black, line width=0.9pt, domain=32:52,
+        samples=11, samples y=0, forget plot]
+      ({1.5*cos(x)}, {1.5*sin(x)}, 0);
+    \addplot3[oiblue!70!black, line width=0.9pt, domain=32:52,
+        samples=11, samples y=0, forget plot]
+      ({1.9*cos(x)}, {1.9*sin(x)}, 0);
+    \addplot3[oiblue!70!black, line width=0.9pt, domain=32:52,
+        samples=11, samples y=0, forget plot]
+      ({1.5*cos(x)}, {1.5*sin(x)}, 1.0);
+    \addplot3[oiblue!70!black, line width=0.9pt, domain=32:52,
+        samples=11, samples y=0, forget plot]
+      ({1.9*cos(x)}, {1.9*sin(x)}, 1.0);
+    \draw[oiblue!70!black, line width=0.9pt]
+      (axis cs:{1.5*cos(32)},{1.5*sin(32)},0) -- (axis cs:{1.5*cos(32)},{1.5*sin(32)},1.0)
+      (axis cs:{1.9*cos(32)},{1.9*sin(32)},0) -- (axis cs:{1.9*cos(32)},{1.9*sin(32)},1.0)
+      (axis cs:{1.5*cos(52)},{1.5*sin(52)},0) -- (axis cs:{1.5*cos(52)},{1.5*sin(52)},1.0)
+      (axis cs:{1.9*cos(52)},{1.9*sin(52)},0) -- (axis cs:{1.9*cos(52)},{1.9*sin(52)},1.0);
+    % labels
+    \node[anchor=north, font=\small]
+      at (axis cs:{1.72*cos(30)},{1.72*sin(30)},-0.06) {$dr$};
+    \node[anchor=west, font=\small]
+      at (axis cs:{1.95*cos(42)},{1.95*sin(42)},0.5) {$dz$};
+    \node[anchor=south west, font=\small]
+      at (axis cs:{1.9*cos(54)},{1.9*sin(54)},-0.28) {$r\,d\theta$};
+    \node[anchor=north east, font=\small]
+      at (axis cs:{0.75*cos(42)},{0.75*sin(42)},-0.02) {$r$};
+    \node[anchor=south, font=\small]
+      at (axis cs:0.35,0.28,0.02) {$d\theta$};
+  \end{axis}
+\end{tikzpicture}]]>
+</latex-image>
+</image>
+</figure>
+
+----------------------------------------------------------------------
+
+Figure 13.4, replaced in source/triple-integrals-spherical.ptx
+(2026-08-02) by the GeoGebra applet tkybvufd.  The TikZ drawing it
+replaced is below; the figure kept its xml:id and caption, so the
+cross-reference to it still resolves.
+
+<figure xml:id="fig-spherical-element-tikz">
+<caption>
+The spherical volume element (spherical wedge). Its three mutually
+perpendicular sides have lengths <m>d\rho</m>, <m>\rho\,d\phi</m>, and
+<m>\rho\sin\phi\,d\theta</m>, so
+<m>dV = \rho^2\sin\phi\,d\rho\,d\phi\,d\theta</m>.
+</caption>
+<image width="60%">
+<description>
+Three coordinate axes in space with a small curved block at distance
+rho from the origin, in the direction given by the angles phi and
+theta. Its edges are labeled d rho, rho d phi, and rho sine phi d
+theta, and dashed lines connect it to the origin and the z axis.
+</description>
+<latex-image>
+<![CDATA[\begin{tikzpicture}[line join=round, line cap=round]
+  % Okabe-Ito colorblind-safe palette
+  \definecolor{oiblue}{RGB}{0,114,178}
+  \definecolor{oivermillion}{RGB}{213,94,0}
+  \begin{axis}[
+      view={125}{20},
+      width=11cm,
+      axis lines=center,
+      axis line style={-latex, black!75, line width=0.7pt},
+      xlabel={$x$}, ylabel={$y$}, zlabel={$z$},
+      label style={font=\large},
+      ticks=none,
+      xmin=0, xmax=2.2, ymin=0, ymax=2.4, zmin=0, zmax=2.2,
+      clip=false,
+    ]
+    % wedge between rho=1.7..2.0, phi=48..62, theta=32..50 (degrees)
+    % param point: (rho sin(phi) cos(th), rho sin(phi) sin(th), rho cos(phi))
+    % dashed guides from origin
+    \draw[black!55, dashed, line width=0.7pt]
+      (axis cs:0,0,0) -- (axis cs:{1.7*sin(48)*cos(32)},{1.7*sin(48)*sin(32)},{1.7*cos(48)})
+      (axis cs:0,0,0) -- (axis cs:{1.7*sin(62)*cos(32)},{1.7*sin(62)*sin(32)},{1.7*cos(62)})
+      (axis cs:0,0,0) -- (axis cs:{1.7*sin(48)*cos(50)},{1.7*sin(48)*sin(50)},{1.7*cos(48)});
+    % inner face (rho = 1.7)
+    \fill[oiblue, opacity=0.30]
+      (axis cs:{1.7*sin(48)*cos(32)},{1.7*sin(48)*sin(32)},{1.7*cos(48)})
+      \foreach \p in {52,56,...,62} { -- (axis cs:{1.7*sin(\p)*cos(32)},{1.7*sin(\p)*sin(32)},{1.7*cos(\p)}) }
+      \foreach \p in {62,58,...,48} { -- (axis cs:{1.7*sin(\p)*cos(50)},{1.7*sin(\p)*sin(50)},{1.7*cos(\p)}) }
+      -- cycle;
+    % outer face (rho = 2.0)
+    \fill[oiblue, opacity=0.45]
+      (axis cs:{2.0*sin(48)*cos(32)},{2.0*sin(48)*sin(32)},{2.0*cos(48)})
+      \foreach \p in {52,56,...,62} { -- (axis cs:{2.0*sin(\p)*cos(32)},{2.0*sin(\p)*sin(32)},{2.0*cos(\p)}) }
+      \foreach \p in {62,58,...,48} { -- (axis cs:{2.0*sin(\p)*cos(50)},{2.0*sin(\p)*sin(50)},{2.0*cos(\p)}) }
+      -- cycle;
+    % side face at theta = 32
+    \fill[oiblue, opacity=0.22]
+      (axis cs:{1.7*sin(48)*cos(32)},{1.7*sin(48)*sin(32)},{1.7*cos(48)})
+      \foreach \p in {52,56,...,62} { -- (axis cs:{1.7*sin(\p)*cos(32)},{1.7*sin(\p)*sin(32)},{1.7*cos(\p)}) }
+      \foreach \p in {62,58,...,48} { -- (axis cs:{2.0*sin(\p)*cos(32)},{2.0*sin(\p)*sin(32)},{2.0*cos(\p)}) }
+      -- cycle;
+    % top face at phi = 48
+    \fill[oiblue, opacity=0.38]
+      (axis cs:{1.7*sin(48)*cos(32)},{1.7*sin(48)*sin(32)},{1.7*cos(48)})
+      \foreach \t in {36,40,...,50} { -- (axis cs:{1.7*sin(48)*cos(\t)},{1.7*sin(48)*sin(\t)},{1.7*cos(48)}) }
+      \foreach \t in {50,46,...,32} { -- (axis cs:{2.0*sin(48)*cos(\t)},{2.0*sin(48)*sin(\t)},{2.0*cos(48)}) }
+      -- cycle;
+    % edges (arcs along phi at theta = 32)
+    \addplot3[oiblue!70!black, line width=0.9pt, domain=48:62,
+        samples=9, samples y=0, forget plot]
+      ({1.7*sin(x)*cos(32)}, {1.7*sin(x)*sin(32)}, {1.7*cos(x)});
+    \addplot3[oiblue!70!black, line width=0.9pt, domain=48:62,
+        samples=9, samples y=0, forget plot]
+      ({2.0*sin(x)*cos(32)}, {2.0*sin(x)*sin(32)}, {2.0*cos(x)});
+    % edges (arcs along theta at phi = 48)
+    \addplot3[oiblue!70!black, line width=0.9pt, domain=32:50,
+        samples=9, samples y=0, forget plot]
+      ({1.7*sin(48)*cos(x)}, {1.7*sin(48)*sin(x)}, {1.7*cos(48)});
+    \addplot3[oiblue!70!black, line width=0.9pt, domain=32:50,
+        samples=9, samples y=0, forget plot]
+      ({2.0*sin(48)*cos(x)}, {2.0*sin(48)*sin(x)}, {2.0*cos(48)});
+    \draw[oiblue!70!black, line width=0.9pt]
+      (axis cs:{1.7*sin(48)*cos(32)},{1.7*sin(48)*sin(32)},{1.7*cos(48)})
+      -- (axis cs:{2.0*sin(48)*cos(32)},{2.0*sin(48)*sin(32)},{2.0*cos(48)})
+      (axis cs:{1.7*sin(62)*cos(32)},{1.7*sin(62)*sin(32)},{1.7*cos(62)})
+      -- (axis cs:{2.0*sin(62)*cos(32)},{2.0*sin(62)*sin(32)},{2.0*cos(62)});
+    % labels
+    \node[anchor=west, font=\small]
+      at (axis cs:{2.02*sin(55)*cos(32)},{2.02*sin(55)*sin(32)},{2.02*cos(55)})
+      {$d\rho$};
+    \node[anchor=south west, font=\small]
+      at (axis cs:{1.85*sin(44)*cos(40)},{1.85*sin(44)*sin(40)},{1.85*cos(44)})
+      {$\rho\sin\phi\,d\theta$};
+    \node[anchor=north, font=\small]
+      at (axis cs:{1.85*sin(64)*cos(30)},{1.85*sin(64)*sin(30)},{1.85*cos(64)})
+      {$\rho\,d\phi$};
+    \node[oivermillion, anchor=north east, font=\small]
+      at (axis cs:{0.85*sin(55)*cos(41)},{0.85*sin(55)*sin(41)},{0.85*cos(55)})
+      {$\rho$};
+  \end{axis}
+\end{tikzpicture}]]>
+</latex-image>
+</image>
+</figure>

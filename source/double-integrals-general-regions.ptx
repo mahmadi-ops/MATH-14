@@ -50,15 +50,22 @@ integral as
 </mrow>
 <mrow>
 \amp= \int_0^1\Big[\left(x(x^3+1)^2 + x^3 + 1\right)
-- \left(x(-2x^2+2x)^2 - 2x^2 + 2x\right)\Big]\,dx
+</mrow>
+<mrow>
+\amp\qquad - \left(x(-2x^2+2x)^2 - 2x^2 + 2x\right)\Big]\,dx
 </mrow>
 <mrow>
 \amp= \int_0^1\Big[\left(x^7 + 2x^4 + x + x^3 + 1\right)
-- \left(4x^5 - 8x^4 + 4x^3 - 2x^2 + 2x\right)\Big]\,dx
+</mrow>
+<mrow>
+\amp\qquad - \left(4x^5 - 8x^4 + 4x^3 - 2x^2 + 2x\right)\Big]\,dx
 </mrow>
 <mrow>
 \amp= \left.\left(\frac{x^8}{8} + \frac{2}{5}x^5 + \frac{x^2}{2}
-+ \frac{x^4}{4} + x - \frac{2}{3}x^6 + \frac{8}{5}x^5 - x^4
++ \frac{x^4}{4} + x\right.\right.
+</mrow>
+<mrow>
+\amp\qquad \left.\left. - \frac{2}{3}x^6 + \frac{8}{5}x^5 - x^4
 + \frac{2}{3}x^3 - x^2\right)\right|_0^1
 </mrow>
 <mrow>
@@ -288,7 +295,9 @@ For the volume <m>V</m> of the tetrahedron, we integrate the height
 <md>
 <mrow>
 V \amp= \iint_R (2 - x - 2y)\,dx\,dy
-= \int_0^1\!\!\int_{x/2}^{1 - x/2} (2 - x - 2y)\,dy\,dx
+</mrow>
+<mrow>
+\amp= \int_0^1\!\!\int_{x/2}^{1 - x/2} (2 - x - 2y)\,dy\,dx
 </mrow>
 <mrow>
 \amp= \int_0^1\left[\left.\left(2y - xy - y^2\right)
@@ -297,8 +306,11 @@ V \amp= \iint_R (2 - x - 2y)\,dx\,dy
 <mrow>
 \amp= \int_0^1\left(2\left(1-\frac{x}{2}\right)
 - x\left(1-\frac{x}{2}\right)
-- \left(1-\frac{x}{2}\right)^2
-- 2\left(\frac{x}{2}\right) + x\left(\frac{x}{2}\right)
+- \left(1-\frac{x}{2}\right)^2\right.
+</mrow>
+<mrow>
+\amp\qquad \left. - 2\left(\frac{x}{2}\right)
++ x\left(\frac{x}{2}\right)
 + \left(\frac{x}{2}\right)^2\right)dx
 </mrow>
 <mrow>

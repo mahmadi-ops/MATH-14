@@ -105,12 +105,8 @@ coordinates is <m>r\,dr\,d\theta</m>; stacking it through a height
 </p>
 
 <me>
-dV = r\,dr\,d\theta\,dz,
+dV = r\,dr\,d\theta\,dz.
 </me>
-
-<p>
-which can be seen in <xref ref="fig-cylindrical-element-tikz"/>.
-</p>
 
 <interactive geogebra="qjpb9re8"
              width="80%" aspect="60:49"
@@ -140,100 +136,6 @@ dV = dr \cdot r\,d\theta \cdot dz = r\,dr\,d\theta\,dz.
 
 </instructions>
 </interactive>
-
-<figure xml:id="fig-cylindrical-element-tikz">
-<caption>
-The cylindrical volume element: a polar rectangle of area
-<m>r\,dr\,d\theta</m> (with sides <m>dr</m> and <m>r\,d\theta</m>)
-extruded through a height <m>dz</m>, so
-<m>dV = r\,dz\,dr\,d\theta</m>.
-</caption>
-<image width="60%">
-<description>
-A small curved block sitting at distance r from the z axis. Its base
-is a polar rectangle with radial side d r and arc side r d theta, and
-its height is d z. Dashed lines connect it to the z axis.
-</description>
-<latex-image>
-<![CDATA[\begin{tikzpicture}[line join=round, line cap=round]
-  % Okabe-Ito colorblind-safe palette
-  \definecolor{oiblue}{RGB}{0,114,178}
-  \definecolor{oivermillion}{RGB}{213,94,0}
-  \begin{axis}[
-      view={125}{22},
-      width=11cm,
-      axis lines=center,
-      axis line style={-latex, black!75, line width=0.7pt},
-      xlabel={$x$}, ylabel={$y$}, zlabel={$z$},
-      label style={font=\large},
-      ticks=none,
-      xmin=0, xmax=2.3, ymin=0, ymax=2.4, zmin=0, zmax=1.9,
-      clip=false,
-    ]
-    % dashed rays to the element (base at r=1.5..1.9, theta=32..52 deg)
-    \draw[black!55, dashed, line width=0.7pt]
-      (axis cs:0,0,0) -- (axis cs:{1.5*cos(32)},{1.5*sin(32)},0)
-      (axis cs:0,0,0) -- (axis cs:{1.5*cos(52)},{1.5*sin(52)},0)
-      (axis cs:0,0,1.0) -- (axis cs:{1.5*cos(32)},{1.5*sin(32)},1.0)
-      (axis cs:0,0,1.0) -- (axis cs:{1.5*cos(52)},{1.5*sin(52)},1.0);
-    % ---- the element: bottom face ----
-    \fill[oiblue, opacity=0.30]
-      (axis cs:{1.5*cos(32)},{1.5*sin(32)},0)
-      \foreach \a in {36,40,...,52} { -- (axis cs:{1.5*cos(\a)},{1.5*sin(\a)},0) }
-      \foreach \a in {52,48,...,32} { -- (axis cs:{1.9*cos(\a)},{1.9*sin(\a)},0) }
-      -- cycle;
-    % outer wall
-    \fill[oiblue, opacity=0.40]
-      (axis cs:{1.9*cos(32)},{1.9*sin(32)},0)
-      \foreach \a in {36,40,...,52} { -- (axis cs:{1.9*cos(\a)},{1.9*sin(\a)},0) }
-      \foreach \a in {52,48,...,32} { -- (axis cs:{1.9*cos(\a)},{1.9*sin(\a)},1.0) }
-      -- cycle;
-    % side wall at theta = 32
-    \fill[oiblue, opacity=0.22]
-      (axis cs:{1.5*cos(32)},{1.5*sin(32)},0)
-      -- (axis cs:{1.9*cos(32)},{1.9*sin(32)},0)
-      -- (axis cs:{1.9*cos(32)},{1.9*sin(32)},1.0)
-      -- (axis cs:{1.5*cos(32)},{1.5*sin(32)},1.0) -- cycle;
-    % top face
-    \fill[oiblue, opacity=0.5]
-      (axis cs:{1.5*cos(32)},{1.5*sin(32)},1.0)
-      \foreach \a in {36,40,...,52} { -- (axis cs:{1.5*cos(\a)},{1.5*sin(\a)},1.0) }
-      \foreach \a in {52,48,...,32} { -- (axis cs:{1.9*cos(\a)},{1.9*sin(\a)},1.0) }
-      -- cycle;
-    % edges (arcs)
-    \addplot3[oiblue!70!black, line width=0.9pt, domain=32:52,
-        samples=11, samples y=0, forget plot]
-      ({1.5*cos(x)}, {1.5*sin(x)}, 0);
-    \addplot3[oiblue!70!black, line width=0.9pt, domain=32:52,
-        samples=11, samples y=0, forget plot]
-      ({1.9*cos(x)}, {1.9*sin(x)}, 0);
-    \addplot3[oiblue!70!black, line width=0.9pt, domain=32:52,
-        samples=11, samples y=0, forget plot]
-      ({1.5*cos(x)}, {1.5*sin(x)}, 1.0);
-    \addplot3[oiblue!70!black, line width=0.9pt, domain=32:52,
-        samples=11, samples y=0, forget plot]
-      ({1.9*cos(x)}, {1.9*sin(x)}, 1.0);
-    \draw[oiblue!70!black, line width=0.9pt]
-      (axis cs:{1.5*cos(32)},{1.5*sin(32)},0) -- (axis cs:{1.5*cos(32)},{1.5*sin(32)},1.0)
-      (axis cs:{1.9*cos(32)},{1.9*sin(32)},0) -- (axis cs:{1.9*cos(32)},{1.9*sin(32)},1.0)
-      (axis cs:{1.5*cos(52)},{1.5*sin(52)},0) -- (axis cs:{1.5*cos(52)},{1.5*sin(52)},1.0)
-      (axis cs:{1.9*cos(52)},{1.9*sin(52)},0) -- (axis cs:{1.9*cos(52)},{1.9*sin(52)},1.0);
-    % labels
-    \node[anchor=north, font=\small]
-      at (axis cs:{1.72*cos(30)},{1.72*sin(30)},-0.06) {$dr$};
-    \node[anchor=west, font=\small]
-      at (axis cs:{1.95*cos(42)},{1.95*sin(42)},0.5) {$dz$};
-    \node[anchor=south west, font=\small]
-      at (axis cs:{1.9*cos(54)},{1.9*sin(54)},-0.28) {$r\,d\theta$};
-    \node[anchor=north east, font=\small]
-      at (axis cs:{0.75*cos(42)},{0.75*sin(42)},-0.02) {$r$};
-    \node[anchor=south, font=\small]
-      at (axis cs:0.35,0.28,0.02) {$d\theta$};
-  \end{axis}
-\end{tikzpicture}]]>
-</latex-image>
-</image>
-</figure>
 
 <p>
 Now suppose our goal is to integrate over a region <m>E</m> described
@@ -452,6 +354,294 @@ floor <m>z = 1 - r^2</m>; a column at <m>(r,\theta)</m> runs from
        source="videos/cylindrical_column_1080p.mp4"
        width="70%" aspect="16:9"/>
 </figure>
+
+</subsection>
+
+<subsection xml:id="subsec-cylindrical-questions">
+<title>Concept Check</title>
+
+<p>
+Each part below describes a solid by the surfaces that bound it. Set up a
+triple integral in cylindrical coordinates that gives its volume: the work
+is all in the limits, and <m>dV = r\,dz\,dr\,d\theta</m> supplies the
+rest. Try each part from the description alone<mdash/>the solution shows
+the solid, so you can check whether the picture in your head was the right
+one.
+</p>
+
+<exercise xml:id="q-cylindrical-volumes">
+<title>Eight volumes in cylindrical coordinates</title>
+<introduction>
+<p>
+Set up triple integrals, in cylindrical coordinates, which give the volume
+of each of the following regions.
+</p>
+</introduction>
+<task xml:id="task-cyl-a">
+<statement>
+<p>
+The volume of the region bounded above by the paraboloid <m>z = 5-x^2-y^2</m>, below
+by the plane <m>z=0</m>, and on the side by the cylinder
+<m>x^2+y^2=4</m>.
+</p>
+</statement>
+<solution>
+<p>
+The bounding surfaces are the ones drawn in <xref ref="fig-cyl-a"/>, and
+in cylindrical coordinates
+</p>
+<me>
+V = \int_0^{2\pi}\!\!\int_0^{2}\!\!\int_0^{\,5-r^2} r\,dz\,dr\,d\theta
+  = 2\pi\int_0^2 \left(5r - r^3\right)dr = 12\pi .
+</me>
+<p>
+The cylinder is <m>r=2</m> and the paraboloid is <m>z = 5-r^2</m>;
+they meet at <m>z=1</m>, which is where the wall of the cylinder
+stops.
+</p>
+<figure xml:id="fig-cyl-a">
+<caption>
+The solid of part (a).
+</caption>
+<interactive geogebra="p4fvbdxf"
+             width="100%" aspect="500:500" design-width="500"
+             material-width="500" material-height="500"
+             shift-drag-zoom="yes" reset-icon="yes"/>
+</figure>
+</solution>
+</task>
+<task xml:id="task-cyl-b">
+<statement>
+<p>
+The volume of the region bounded below by the paraboloid
+<m>z = \frac14\left(x^2+y^2\right)</m> and above by the plane
+<m>z=1</m>.
+</p>
+</statement>
+<solution>
+<p>
+The bounding surfaces are the ones drawn in <xref ref="fig-cyl-b"/>, and
+in cylindrical coordinates
+</p>
+<me>
+V = \int_0^{2\pi}\!\!\int_0^{2}\!\!\int_{r^2/4}^{1} r\,dz\,dr\,d\theta
+  = 2\pi\int_0^2 \left(r - \frac{r^3}{4}\right)dr = 2\pi .
+</me>
+<p>
+The paraboloid is <m>z = r^2/4</m>, and it meets <m>z=1</m> at
+<m>r=2</m>, which fixes the outer limit of <m>r</m>.
+</p>
+<figure xml:id="fig-cyl-b">
+<caption>
+The solid of part (b).
+</caption>
+<interactive geogebra="djjefngs"
+             width="100%" aspect="500:500" design-width="500"
+             material-width="500" material-height="500"
+             shift-drag-zoom="yes" reset-icon="yes"/>
+</figure>
+</solution>
+</task>
+<task xml:id="task-cyl-c">
+<statement>
+<p>
+The volume of the region bounded above by the paraboloid
+<m>z = \frac14\left(x^2+y^2\right)</m>, below by the plane <m>z=0</m>,
+and on the side by the cylinder <m>x^2+y^2=4</m>.
+</p>
+</statement>
+<solution>
+<p>
+The bounding surfaces are the ones drawn in <xref ref="fig-cyl-c"/>, and
+in cylindrical coordinates
+</p>
+<me>
+V = \int_0^{2\pi}\!\!\int_0^{2}\!\!\int_0^{\,r^2/4} r\,dz\,dr\,d\theta
+  = 2\pi\int_0^2 \frac{r^3}{4}\,dr = 2\pi .
+</me>
+<p>
+This solid and the one of <xref ref="task-cyl-b"/> together fill the
+cylinder <m>r \le 2</m>, <m>0 \le z \le 1</m>, whose volume is
+<m>4\pi</m><mdash/>which is why both answers are <m>2\pi</m>.
+</p>
+<figure xml:id="fig-cyl-c">
+<caption>
+The solid of part (c).
+</caption>
+<interactive geogebra="v4vbftuh"
+             width="100%" aspect="500:500" design-width="500"
+             material-width="500" material-height="500"
+             shift-drag-zoom="yes" reset-icon="yes"/>
+</figure>
+</solution>
+</task>
+<task xml:id="task-cyl-d">
+<statement>
+<p>
+The volume of the region bounded below by the lower half of the sphere
+<m>x^2+y^2+(z-1)^2=4</m> and above by the plane <m>z=1</m>.
+</p>
+</statement>
+<solution>
+<p>
+The bounding surfaces are the ones drawn in <xref ref="fig-cyl-d"/>, and
+in cylindrical coordinates
+</p>
+<me>
+V = \int_0^{2\pi}\!\!\int_0^{2}\!\!\int_{1-\sqrt{4-r^2}}^{1}
+      r\,dz\,dr\,d\theta
+  = 2\pi\int_0^2 r\sqrt{4-r^2}\,dr = \frac{16\pi}{3} .
+</me>
+<p>
+The sphere has center <m>(0,0,1)</m> and radius <m>2</m>, so its lower
+half is <m>z = 1-\sqrt{4-r^2}</m> and the answer is the volume
+<m>\frac23\pi(2)^3</m> of a hemisphere of radius <m>2</m>.
+</p>
+<figure xml:id="fig-cyl-d">
+<caption>
+The solid of part (d).
+</caption>
+<interactive geogebra="xunfqxxr"
+             width="100%" aspect="500:500" design-width="500"
+             material-width="500" material-height="500"
+             shift-drag-zoom="yes" reset-icon="yes"/>
+</figure>
+</solution>
+</task>
+<task xml:id="task-cyl-e">
+<statement>
+<p>
+The volume of the region bounded by the cone <m>z^2 = \frac14\left(x^2+y^2\right)</m>
+and the planes <m>z=1</m> and <m>z=-1</m>.
+</p>
+</statement>
+<solution>
+<p>
+The bounding surfaces are the ones drawn in <xref ref="fig-cyl-e"/>, and
+in cylindrical coordinates
+</p>
+<me>
+V = 2\int_0^{2\pi}\!\!\int_0^{2}\!\!\int_{r/2}^{1} r\,dz\,dr\,d\theta
+  = 4\pi\int_0^2 \left(r - \frac{r^2}{2}\right)dr = \frac{8\pi}{3} .
+</me>
+<p>
+The cone is <m>z = \pm r/2</m>, and a point lies inside its upper half
+when <m>z \ge r/2</m>. The solid is two cones of radius <m>2</m> and
+height <m>1</m>, each of volume <m>\frac13\pi(2)^2(1)</m>.
+</p>
+<figure xml:id="fig-cyl-e">
+<caption>
+The solid of part (e).
+</caption>
+<interactive geogebra="p45dyezj"
+             width="100%" aspect="500:500" design-width="500"
+             material-width="500" material-height="500"
+             shift-drag-zoom="yes" reset-icon="yes"/>
+</figure>
+</solution>
+</task>
+<task xml:id="task-cyl-f">
+<statement>
+<p>
+The volume of the region bounded by the hyperboloid of one sheet
+<m>x^2+y^2-z^2=4</m> and the planes <m>z=3</m> and <m>z=-3</m>.
+</p>
+</statement>
+<solution>
+<p>
+The bounding surfaces are the ones drawn in <xref ref="fig-cyl-f"/>, and
+in cylindrical coordinates
+</p>
+<me>
+V = \int_0^{2\pi}\!\!\int_{-3}^{3}\!\!\int_0^{\sqrt{z^2+4}}
+      r\,dr\,dz\,d\theta
+  = \pi\int_{-3}^{3}\left(z^2+4\right)dz = 42\pi .
+</me>
+<p>
+Here it pays to integrate <m>r</m> first: the wall is
+<m>r = \sqrt{z^2+4}</m>, one formula for every <m>z</m>, while slicing
+the other way would take two pieces. The waist has radius <m>2</m> and
+the caps radius <m>\sqrt{13}</m>.
+</p>
+<figure xml:id="fig-cyl-f">
+<caption>
+The solid of part (f).
+</caption>
+<interactive geogebra="zpr8xcup"
+             width="100%" aspect="500:500" design-width="500"
+             material-width="500" material-height="500"
+             shift-drag-zoom="yes" reset-icon="yes"/>
+</figure>
+</solution>
+</task>
+<task xml:id="task-cyl-g">
+<statement>
+<p>
+The volume of the region bounded by the cone <m>z^2 = \frac14\left(x^2+y^2\right)</m>
+and the planes <m>z=2</m> and <m>z=-1</m>.
+</p>
+</statement>
+<solution>
+<p>
+The bounding surfaces are the ones drawn in <xref ref="fig-cyl-g"/>, and
+in cylindrical coordinates
+</p>
+<me>
+V = \int_0^{2\pi}\!\!\int_{0}^{2}\!\!\int_0^{2z} r\,dr\,dz\,d\theta
+    + \int_0^{2\pi}\!\!\int_{-1}^{0}\!\!\int_0^{-2z} r\,dr\,dz\,d\theta
+  = 12\pi .
+</me>
+<p>
+The same cone as in <xref ref="task-cyl-e"/>, cut at different heights:
+a piece of radius <m>4</m> and height <m>2</m> and one of radius
+<m>2</m> and height <m>1</m>, of volumes <m>\frac{32\pi}{3}</m> and
+<m>\frac{4\pi}{3}</m>.
+</p>
+<figure xml:id="fig-cyl-g">
+<caption>
+The solid of part (g).
+</caption>
+<interactive geogebra="ckvwwrqq"
+             width="100%" aspect="500:500" design-width="500"
+             material-width="500" material-height="500"
+             shift-drag-zoom="yes" reset-icon="yes"/>
+</figure>
+</solution>
+</task>
+<task xml:id="task-cyl-h">
+<statement>
+<p>
+The volume of the region bounded above by the cone <m>z = 5-\sqrt{x^2+y^2}</m>, below
+by the plane <m>z=0</m>, and on the side by the cylinder
+<m>x^2+y^2=4</m>.
+</p>
+</statement>
+<solution>
+<p>
+The bounding surfaces are the ones drawn in <xref ref="fig-cyl-h"/>, and
+in cylindrical coordinates
+</p>
+<me>
+V = \int_0^{2\pi}\!\!\int_0^{2}\!\!\int_0^{\,5-r} r\,dz\,dr\,d\theta
+  = 2\pi\int_0^2 \left(5r - r^2\right)dr = \frac{44\pi}{3} .
+</me>
+<p>
+The cone is <m>z = 5-r</m>, which is <m>3</m> at the wall <m>r=2</m>.
+Compare <xref ref="task-cyl-a"/>: the same picture with <m>5-r</m> in
+place of <m>5-r^2</m>.
+</p>
+<figure xml:id="fig-cyl-h">
+<caption>
+The solid of part (h).
+</caption>
+<interactive geogebra="ubfxfene"
+             width="100%" aspect="500:500" design-width="500"
+             material-width="500" material-height="500"
+             shift-drag-zoom="yes" reset-icon="yes"/>
+</figure>
+</solution>
+</task>
+</exercise>
 
 </subsection>
 

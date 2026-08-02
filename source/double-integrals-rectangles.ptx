@@ -360,11 +360,15 @@ To calculate the double integral
 we first use FTC II to integrate with respect to <m>x</m>:
 </p>
 
-<me>
+<md>
+<mrow>
 \int_0^2 \left(x^2 + y + 5\right)dx
-= \left.\left(\frac{x^3}{3} + xy + 5x\right)\right|_0^2
-= \frac{8}{3} + 2y + 10 = 2y + \frac{38}{3},
-</me>
+\amp= \left.\left(\frac{x^3}{3} + xy + 5x\right)\right|_0^2
+</mrow>
+<mrow>
+\amp= \frac{8}{3} + 2y + 10 = 2y + \frac{38}{3},
+</mrow>
+</md>
 
 <p>
 which gives us a function of <m>y</m>, and then we integrate it with
@@ -510,7 +514,9 @@ and hence
 <mrow>
 \amp= \left.\left(x\ln(1+2x) - x
 + \frac{1}{2}\ln(1+2x)\right)\right|_0^1
-= \frac{3}{2}\ln(3) - 1.
+</mrow>
+<mrow>
+\amp= \frac{3}{2}\ln(3) - 1.
 </mrow>
 </md>
 

@@ -40,17 +40,23 @@ the tiny blocks <m>\Delta V</m>, hence
 
 <!-- ================================================================ -->
 <subsection xml:id="sec-triple-case1">
-<title>Case I: <m>E = \{(x,y,z) : a \le x \le b,\ g_1(x) \le y \le g_2(x),\ u_1(x,y) \le z \le u_2(x,y)\}</m></title>
+<title>Case I: <m>E = \{(x,y,z) : a \le x \le b,</m>
+<m>g_1(x) \le y \le g_2(x),</m>
+<m>u_1(x,y) \le z \le u_2(x,y)\}</m></title>
 
 <p>
 The first case that we will study is the case where the region of
 integration is of the form
 </p>
 
-<me>
-E = \{(x,y,z) : a \le x \le b,\ g_1(x) \le y \le g_2(x),\
-u_1(x,y) \le z \le u_2(x,y)\},
-</me>
+<md>
+<mrow>
+E = \{(x,y,z) : \amp a \le x \le b,\ g_1(x) \le y \le g_2(x),
+</mrow>
+<mrow>
+\amp u_1(x,y) \le z \le u_2(x,y)\},
+</mrow>
+</md>
 
 <p>
 so <m>E</m> lies between the surfaces <m>z = u_1(x,y)</m> and
@@ -106,7 +112,9 @@ We then calculate the triple integral as follows:
 </mrow>
 <mrow>
 \amp= \frac12\int_0^1\!\!\int_0^{1-x}(1-x-y)^2\,dy\,dx
-= \frac12\int_0^1
+</mrow>
+<mrow>
+\amp= \frac12\int_0^1
 \left[-\frac{(1-x-y)^3}{3}\right]_{y=0}^{y=1-x} dx
 </mrow>
 <mrow>
@@ -257,17 +265,23 @@ two outer integrals).
 
 <!-- ================================================================ -->
 <subsection xml:id="sec-triple-case2">
-<title>Case II: <m>E = \{(x,y,z) : h_1(y) \le x \le h_2(y),\ c \le y \le d,\ u_1(x,y) \le z \le u_2(x,y)\}</m></title>
+<title>Case II: <m>E = \{(x,y,z) : h_1(y) \le x \le h_2(y),</m>
+<m>c \le y \le d,</m>
+<m>u_1(x,y) \le z \le u_2(x,y)\}</m></title>
 
 <p>
 The second case is entirely similar, but the projection <m>D</m> is
 described with horizontal strips:
 </p>
 
-<me>
-E = \{(x,y,z) : h_1(y) \le x \le h_2(y),\ c \le y \le d,\
-u_1(x,y) \le z \le u_2(x,y)\},
-</me>
+<md>
+<mrow>
+E = \{(x,y,z) : \amp h_1(y) \le x \le h_2(y),\ c \le y \le d,
+</mrow>
+<mrow>
+\amp u_1(x,y) \le z \le u_2(x,y)\},
+</mrow>
+</md>
 
 <p>
 and the corresponding iterated integral is
@@ -318,11 +332,15 @@ For the order <m>dz\,dx\,dy</m>, we project into the
 \int_{y=0}^{1}\!\!\int_{x=0}^{1-y}\!\!\int_{z=0}^{1-x^2}
 dz\,dx\,dy
 \amp= \int_0^1\!\!\int_0^{1-y}\left(1 - x^2\right)dx\,dy
-= \int_0^1\left[x - \frac{x^3}{3}\right]_{x=0}^{x=1-y} dy
+</mrow>
+<mrow>
+\amp= \int_0^1\left[x - \frac{x^3}{3}\right]_{x=0}^{x=1-y} dy
 </mrow>
 <mrow>
 \amp= \int_0^1\left[(1-y) - \frac{(1-y)^3}{3}\right]dy
-= \left[y - \frac{y^2}{2} + \frac{(1-y)^4}{12}\right]_0^1
+</mrow>
+<mrow>
+\amp= \left[y - \frac{y^2}{2} + \frac{(1-y)^4}{12}\right]_0^1
 </mrow>
 <mrow>
 \amp= \left(1 - \frac12\right) - \frac{1}{12} = \frac{5}{12}.
@@ -345,11 +363,15 @@ the last variable: <m>0 \le y \le 1-x</m>. Hence
 \int_{z=0}^{1}\!\!\int_{x=0}^{\sqrt{1-z}}\!\!\int_{y=0}^{1-x}
 dy\,dx\,dz
 \amp= \int_0^1\!\!\int_0^{\sqrt{1-z}}(1-x)\,dx\,dz
-= \int_0^1\left[x - \frac{x^2}{2}\right]_{x=0}^{x=\sqrt{1-z}} dz
+</mrow>
+<mrow>
+\amp= \int_0^1\left[x - \frac{x^2}{2}\right]_{x=0}^{x=\sqrt{1-z}} dz
 </mrow>
 <mrow>
 \amp= \int_0^1\left[(1-z)^{1/2} - \tfrac12(1-z)\right]dz
-= \left[-\tfrac23(1-z)^{3/2}
+</mrow>
+<mrow>
+\amp= \left[-\tfrac23(1-z)^{3/2}
 + \tfrac14(1-z)^2\right]_0^1
 </mrow>
 <mrow>
@@ -387,7 +409,9 @@ is reached first). Hence
 \iiint_R dx\,dy\,dz
 \amp= \int_{y=0}^{1}\!\!\int_{z=0}^{1-(1-y)^2}
 \!\!\int_{x=0}^{1-y} dx\,dz\,dy
-+ \int_{y=0}^{1}\!\!\int_{z=1-(1-y)^2}^{1}
+</mrow>
+<mrow>
+\amp\quad + \int_{y=0}^{1}\!\!\int_{z=1-(1-y)^2}^{1}
 \!\!\int_{x=0}^{\sqrt{1-z}} dx\,dz\,dy
 </mrow>
 <mrow>
