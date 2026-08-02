@@ -263,6 +263,34 @@ arrows point.
 </figure>
 
 <p>
+Why is the theorem true? The animation in
+<xref ref="fig-stokes-proof-idea-video"/> tells the story without any
+algebra. Chop <m>S</m> into tiny, nearly flat patches; on each one,
+<m>(\nabla \times \mathbf{F}) \cdot \hat{\mathbf{n}}</m> is the
+circulation of <m>\mathbf{F}</m> per unit area, so the patch contributes
+<m>(\nabla \times \mathbf{F}) \cdot \hat{\mathbf{n}}\,\Delta\sigma</m> of
+circulation. Add up the patches: every interior edge is shared by two of
+them and travelled in opposite directions, so the interior cancels
+completely and only the boundary <m>C</m> survives. Shrinking the patches
+turns the sum into the flux integral, and <xref ref="eq-stokes"/> falls
+out.
+</p>
+
+<figure xml:id="fig-stokes-proof-idea-video">
+<caption>
+The ideas behind the proof of Stokes' theorem, for
+<m>\mathbf{F} = \langle M,N,P \rangle</m>:
+<m>(\nabla \times \mathbf{F}) \cdot \hat{\mathbf{n}}</m> is circulation
+per unit area, the surface is chopped into tiny, nearly flat patches,
+every interior edge is travelled twice in opposite directions and
+cancels, and only the boundary <m>C</m> survives. A flat surface
+recovers Green's theorem, as in <xref ref="remark-stokes-green"/>.
+</caption>
+<video xml:id="video-stokes-proof-idea" width="85%"
+       source="videos/stokes_proof_idea_1080p.mp4"/>
+</figure>
+
+<p>
 The theorem is most useful when one of the two sides is much easier than
 the other. Reading it from left to right replaces an awkward line
 integral by a flux integral, as in <xref ref="example-stokes-cylinder"/>;
