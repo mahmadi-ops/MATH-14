@@ -1,0 +1,500 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- MATH 14 - HW1, online version: the same four problems as the written    -->
+<!-- Homework 1, rebuilt as auto-graded exercises.                           -->
+<!--                                                                         -->
+<!-- Each blank is a <var/> in the statement, matched in order by a <var> in  -->
+<!-- <setup>.  The first <condition> of a var is the correct answer; the      -->
+<!-- others catch a likely mistake and explain it.  Runestone scores every    -->
+<!-- blank on its own, so students keep the credit for the parts they get     -->
+<!-- right.  (This is the "fillin-basic" flavour, which renders inline in a   -->
+<!-- plain HTML build; the newer <fillin>/<evaluation> flavour needs the      -->
+<!-- dynamic runtime and shows an empty box without it.)                      -->
+<exercises xml:id="exercises-hw1-online" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Homework 1, Online Version</title>
+
+  <introduction>
+    <p>
+      Sections: 13.1 Curves in Space and 13.3 Arc Length in Space. These are
+      the four problems of <xref ref="exercises-hw1" text="title"/> again, in a form you
+      can submit and have checked here.
+    </p>
+    <p>
+      Each problem below has several answer boxes, and <em>every box is
+      graded separately</em>: a box you fill in correctly earns its credit
+      even if another box in the same problem is wrong. Press
+      <q>Check Me</q> to submit; you may check as often as you like.
+    </p>
+    <p>
+      <term>How to type your answers.</term>
+    </p>
+    <ul>
+      <li>
+        <p>
+          <term>Numbers.</term> Type a decimal number and nothing else: no
+          units, no <m>=</m> sign, no <m>\pi</m>. Give at least three
+          decimal places (for instance <c>132.008</c>, not <c>132</c> and
+          not <c>42pi</c>). Answers are accepted within a small tolerance,
+          so a little rounding is fine.
+        </p>
+      </li>
+      <li>
+        <p>
+          <term>Expressions.</term> Type only the expression itself, not
+          <c>z(t) =</c>. Write products with <c>*</c> and powers with
+          <c>^</c>, and write functions with parentheses:
+          <c>cos(t)</c>, <c>sin(t)</c>, <c>ln(t)</c>, <c>sqrt(t)</c>. So the
+          expression <m>4\cos^2(t)</m> is typed <c>4cos(t)^2</c>. Spaces are
+          ignored.
+        </p>
+      </li>
+    </ul>
+  </introduction>
+
+  <!-- =================================================================== -->
+  <exercise xml:id="ex-hw1o-parametrize-intersection">
+    <title>Parametrizing a Curve of Intersection</title>
+    <statement>
+      <p>
+        The curve <m>C</m> is the intersection of the cylinder
+        <m>x^2 + y^2 = 1</m> and the surface <m>z = 4x^2</m>. Parametrize
+        <m>C</m> by filling in the three components below, using the
+        standard parametrization of the unit circle for the shadow of
+        <m>C</m> in the <m>xy</m>-plane.
+      </p>
+      <p><m>x(t) =</m> <var width="14"/></p>
+      <p><m>y(t) =</m> <var width="14"/></p>
+      <p><m>z(t) =</m> <var width="14"/></p>
+      <p>
+        The parameter <m>t</m> runs from <m>0</m> to <var width="8"/>,
+        which traces <m>C</m> exactly once.
+      </p>
+    </statement>
+    <setup>
+      <var case="insensitive">
+        <condition string="cos\s*\(\s*t\s*\)">
+          <feedback><p>Correct.</p></feedback>
+        </condition>
+        <condition string="sin\s*\(\s*t\s*\)">
+          <feedback>
+            <p>
+              That is a valid choice too, but then <m>y</m> and <m>z</m>
+              have to change to match. Use <m>x=\cos(t)</m> here.
+            </p>
+          </feedback>
+        </condition>
+      </var>
+      <var case="insensitive">
+        <condition string="sin\s*\(\s*t\s*\)">
+          <feedback><p>Correct.</p></feedback>
+        </condition>
+      </var>
+      <var case="insensitive">
+        <condition string="4\s*\*?\s*(cos\s*\(\s*t\s*\)\s*\^\s*2|cos\s*\^\s*2\s*\(\s*t\s*\))">
+          <feedback><p>Correct.</p></feedback>
+        </condition>
+        <condition string="4\s*\*?\s*(sin\s*\(\s*t\s*\)\s*\^\s*2|sin\s*\^\s*2\s*\(\s*t\s*\))">
+          <feedback>
+            <p>
+              Careful: the surface is <m>z=4x^2</m>, so substitute the
+              <m>x</m>-component, not the <m>y</m>-component.
+            </p>
+          </feedback>
+        </condition>
+        <condition string="cos\s*\(\s*t\s*\)\s*\^\s*2">
+          <feedback>
+            <p>Close<mdash/>you dropped the factor of <m>4</m>.</p>
+          </feedback>
+        </condition>
+      </var>
+      <var>
+        <condition number="6.283" tolerance="0.005">
+          <feedback><p>Correct: one full trip around the cylinder.</p></feedback>
+        </condition>
+        <condition number="3.142" tolerance="0.005">
+          <feedback>
+            <p>
+              Half a turn only covers half of <m>C</m>; the shadow is the
+              whole unit circle.
+            </p>
+          </feedback>
+        </condition>
+      </var>
+    </setup>
+    <solution>
+      <p>
+        The shadow of <m>C</m> in the <m>xy</m>-plane is the unit circle, so
+        take <m>x=\cos(t)</m>, <m>y=\sin(t)</m> with
+        <m>0 \le t \le 2\pi \approx 6.283</m>. Substituting into
+        <m>z=4x^2</m> gives <m>z = 4\cos^2(t)</m>, so
+
+      <md>
+        \mathbf{r}(t)=\left\langle \cos(t),\ \sin(t),\ 4\cos^2(t)
+        \right\rangle, \qquad 0 \le t \le 2\pi .
+      </md>
+      </p>
+    </solution>
+  </exercise>
+
+  <!-- =================================================================== -->
+  <exercise xml:id="ex-hw1o-helix">
+    <title>How Much Wire Is in a Spring?</title>
+    <statement>
+      <p>
+        A helix of radius <m>R</m> and height <m>H</m> that makes <m>N</m>
+        turns can be parametrized as
+      </p>
+
+      <md>
+        \mathbf{r}(t)=\left\langle R\cos(t),\ R\sin(t),\ c\,t\right\rangle ,
+        \qquad 0 \le t \le T .
+      </md>
+
+      <p>
+        <term>(a)</term> For spring <term>A</term> of the figure below
+        (radius <m>7</m> cm, height <m>4</m> cm, <m>3</m> turns), the
+        constant is <m>c =</m> <var width="8"/>
+        and the parameter runs up to <m>T =</m> <var width="8"/>.
+      </p>
+      <p>
+        <term>(b)</term> Compute the length of each spring, in centimetres.
+      </p>
+      <p>Length of spring A: <var width="10"/> cm.</p>
+      <p>Length of spring B: <var width="10"/> cm.</p>
+      <p>
+        Which spring uses more wire? Type a single letter, <c>A</c> or
+        <c>B</c>: <var width="4"/>
+      </p>
+    <figure>
+      <caption>Which spring uses more wire?</caption>
+      <image width="80%">
+        <latex-image>
+          <![CDATA[\begin{tikzpicture}[scale=0.32, line cap=round]
+%% Spring A: 3 turns, radius 7, height 4
+\begin{scope}
+  % wire: outline pass then white core pass
+  \draw[line width=3.2pt, black!55]
+    plot[domain=90:1170, samples=700, smooth]
+    ({7*sin(\x)}, {1.6*cos(\x) + 4*(\x-90)/1080});
+  \draw[line width=1.8pt, white]
+    plot[domain=90:1170, samples=700, smooth]
+    ({7*sin(\x)}, {1.6*cos(\x) + 4*(\x-90)/1080});
+  % height marker
+  \draw[dashed, black!70] (0,1.6) -- (9.3,1.6);
+  \draw[dashed, black!70] (0,5.6) -- (9.3,5.6);
+  \draw[<->, black!70] (8.8,1.6) -- (8.8,5.6)
+    node[midway, right, black] {\small $4$ cm};
+  % caption labels
+  \node[align=center] at (0,-4.2) {\small $3$ turns, radius $7$ cm};
+  \node at (0,-5.8) {\small (A)};
+\end{scope}
+%% Spring B: 5 turns, radius 4, height 3
+\begin{scope}[xshift=21cm]
+  \draw[line width=3.2pt, black!55]
+    plot[domain=90:1890, samples=900, smooth]
+    ({4*sin(\x)}, {1.0*cos(\x) + 3*(\x-90)/1800});
+  \draw[line width=1.8pt, white]
+    plot[domain=90:1890, samples=900, smooth]
+    ({4*sin(\x)}, {1.0*cos(\x) + 3*(\x-90)/1800});
+  \draw[dashed, black!70] (0,1.0) -- (6.3,1.0);
+  \draw[dashed, black!70] (0,4.0) -- (6.3,4.0);
+  \draw[<->, black!70] (5.8,1.0) -- (5.8,4.0)
+    node[midway, right, black] {\small $3$ cm};
+  \node[align=center] at (0,-4.2) {\small $5$ turns, radius $4$ cm};
+  \node at (0,-5.8) {\small (B)};
+\end{scope}
+\end{tikzpicture}]]>
+        </latex-image>
+      </image>
+    </figure>
+    </statement>
+    <setup>
+      <var>
+        <condition number="0.2122" tolerance="0.002">
+          <feedback><p>Correct: <m>c = H/(2\pi N)</m>.</p></feedback>
+        </condition>
+        <condition number="1.3333" tolerance="0.002">
+          <feedback>
+            <p>
+              That is <m>H/N</m>, the rise per turn. One turn is
+              <m>2\pi</m> units of <m>t</m>, not one.
+            </p>
+          </feedback>
+        </condition>
+      </var>
+      <var>
+        <condition number="18.850" tolerance="0.01">
+          <feedback><p>Correct: <m>T = 2\pi N</m>.</p></feedback>
+        </condition>
+        <condition number="6.283" tolerance="0.01">
+          <feedback><p>That is one turn; this spring makes three.</p></feedback>
+        </condition>
+      </var>
+      <var>
+        <condition number="132.008" tolerance="0.05">
+          <feedback><p>Correct.</p></feedback>
+        </condition>
+        <condition number="131.947" tolerance="0.02">
+          <feedback>
+            <p>
+              That is <m>2\pi N R</m>, the shadow circle travelled three
+              times. You still have to account for the climb <m>H</m>.
+            </p>
+          </feedback>
+        </condition>
+      </var>
+      <var>
+        <condition number="125.700" tolerance="0.05">
+          <feedback><p>Correct.</p></feedback>
+        </condition>
+        <condition number="125.664" tolerance="0.02">
+          <feedback>
+            <p>
+              That is <m>2\pi N R</m> alone; the height still has to be
+              included.
+            </p>
+          </feedback>
+        </condition>
+      </var>
+      <var case="insensitive">
+        <condition string="a">
+          <feedback>
+            <p>
+              Correct: <m>132.0 \gt 125.7</m>, so spring A uses more wire,
+              even though it has fewer turns.
+            </p>
+          </feedback>
+        </condition>
+        <condition string="b">
+          <feedback>
+            <p>
+              Spring B has more turns, but each is much smaller in radius.
+              Compare the two lengths you computed.
+            </p>
+          </feedback>
+        </condition>
+      </var>
+    </setup>
+    <solution>
+      <p>
+        The height <m>H</m> is gained over <m>N</m> turns, that is, over
+        <m>T = 2\pi N</m> units of <m>t</m>, so <m>c = H/(2\pi N)</m>. For
+        spring A, <m>c = 4/(6\pi) \approx 0.212</m> and
+        <m>T = 6\pi \approx 18.850</m>.
+      </p>
+      <p>
+        The speed is constant,
+        <m>\left\lVert\mathbf{v}\right\rVert = \sqrt{R^2 + c^2}</m>, so
+
+      <md>
+        L = \int_0^{2\pi N}\sqrt{R^2+c^2}\,dt
+          = \sqrt{\left(2\pi N R\right)^2 + H^2}.
+      </md>
+      </p>
+      <p>
+        Spring A gives <m>\sqrt{(42\pi)^2+4^2}\approx 132.008</m> cm and
+        spring B gives <m>\sqrt{(40\pi)^2+3^2}\approx 125.700</m> cm, so
+        <term>A</term> uses more wire. Notice how little the height
+        contributes: the wire is almost all winding.
+      </p>
+    </solution>
+  </exercise>
+
+  <!-- =================================================================== -->
+  <exercise xml:id="ex-hw1o-tangent-line">
+    <title>Tangent Line to a Space Curve</title>
+    <statement>
+      <p>Consider the curve</p>
+
+      <md>
+        \mathbf{r}(t) = \left\langle \ln(t),\, \frac{t-1}{t+2},\,
+        t\ln(t) \right\rangle
+      </md>
+
+      <p>and the point <m>P(0,0,0)</m> on it.</p>
+      <p>
+        The parameter value at <m>P</m> is <m>t_0 =</m> <var width="6"/>.
+      </p>
+      <p>
+        The tangent line at <m>P</m> has direction vector
+        <m>\mathbf{r}\,'(t_0) = \langle</m> <var width="6"/>,
+        <var width="6"/>, <var width="6"/> <m>\rangle</m>.
+      </p>
+    </statement>
+    <setup>
+      <var>
+        <condition number="1" tolerance="0.001">
+          <feedback><p>Correct: <m>\ln(t)=0</m> forces <m>t=1</m>.</p></feedback>
+        </condition>
+        <condition number="0" tolerance="0.001">
+          <feedback>
+            <p>
+              At <m>t=0</m> the curve is not even defined, since
+              <m>\ln(t)</m> needs <m>t\gt 0</m>. Solve <m>\ln(t)=0</m>
+              instead.
+            </p>
+          </feedback>
+        </condition>
+      </var>
+      <var>
+        <condition number="1" tolerance="0.005">
+          <feedback><p>Correct: <m>1/t = 1</m> at <m>t=1</m>.</p></feedback>
+        </condition>
+      </var>
+      <var>
+        <condition number="0.3333" tolerance="0.005">
+          <feedback>
+            <p>Correct: the quotient rule gives <m>3/(t+2)^2 = 1/3</m>.</p>
+          </feedback>
+        </condition>
+        <condition number="0.1111" tolerance="0.005">
+          <feedback>
+            <p>
+              Check the numerator in the quotient rule: it is
+              <m>(t+2)-(t-1)=3</m>, not <m>1</m>.
+            </p>
+          </feedback>
+        </condition>
+      </var>
+      <var>
+        <condition number="1" tolerance="0.005">
+          <feedback>
+            <p>Correct: <m>\ln(t)+1 = 1</m> at <m>t=1</m>.</p>
+          </feedback>
+        </condition>
+        <condition number="0" tolerance="0.005">
+          <feedback>
+            <p>
+              The product rule gives <m>\ln(t)+1</m>, and at <m>t=1</m>
+              that is <m>0+1</m>.
+            </p>
+          </feedback>
+        </condition>
+      </var>
+    </setup>
+    <solution>
+      <p>
+        The point <m>P</m> is reached when <m>\ln(t)=0</m>, that is, at
+        <m>t_0=1</m>; the other two components vanish there as well.
+        Differentiating,
+
+      <md>
+        \mathbf{r}\,'(t) = \left\langle \frac{1}{t},\
+          \frac{3}{(t+2)^2},\ \ln(t)+1 \right\rangle ,
+      </md>
+      </p>
+      <p>
+        so <m>\mathbf{r}\,'(1)=\left\langle 1,\ \tfrac13,\ 1\right\rangle</m>
+        and the tangent line is
+
+      <md>
+        \left\langle x,y,z\right\rangle
+          = s\left\langle 1,\ \tfrac13,\ 1 \right\rangle ,
+        \qquad s \in \R .
+      </md>
+      </p>
+    </solution>
+  </exercise>
+
+  <!-- =================================================================== -->
+  <exercise xml:id="ex-hw1o-location">
+    <title>Where Is the Object After Travelling 15?</title>
+    <statement>
+      <p>The path of an object is</p>
+
+      <md>
+        \mathbf{r}(t) = \left\langle 12t,\, 8t^{3/2},\, 3t^2 \right\rangle ,
+        \qquad t \ge 0,
+      </md>
+
+      <p>
+        starting at the origin. Find where it is after travelling a distance
+        of <m>15</m>.
+      </p>
+      <p>Its speed at <m>t=0</m> is <var width="6"/>.</p>
+      <p>
+        The object has travelled a distance of <m>15</m> at time
+        <m>t =</m> <var width="6"/>.
+      </p>
+      <p>
+        At that moment it is at the point <m>\langle</m> <var width="6"/>,
+        <var width="6"/>, <var width="6"/> <m>\rangle</m>.
+      </p>
+    </statement>
+    <setup>
+      <var>
+        <condition number="12" tolerance="0.01">
+          <feedback>
+            <p>
+              Correct:
+              <m>\left\lVert\mathbf{v}(t)\right\rVert=6(t+2)</m>, which is
+              <m>12</m> at <m>t=0</m>.
+            </p>
+          </feedback>
+        </condition>
+        <condition number="0" tolerance="0.01">
+          <feedback>
+            <p>
+              The object is at the origin at <m>t=0</m>, but it is not at
+              rest: only the <m>y</m><ndash/> and <m>z</m>-components of
+              the velocity vanish there.
+            </p>
+          </feedback>
+        </condition>
+      </var>
+      <var>
+        <condition number="1" tolerance="0.005">
+          <feedback><p>Correct: <m>3t^2+12t=15</m> gives <m>t=1</m>.</p></feedback>
+        </condition>
+        <condition number="1.25" tolerance="0.005">
+          <feedback>
+            <p>
+              That is <m>15</m> divided by the speed at <m>t=0</m>. The
+              speed is not constant, so the distance must be integrated.
+            </p>
+          </feedback>
+        </condition>
+      </var>
+      <var>
+        <condition number="12" tolerance="0.01">
+          <feedback><p>Correct.</p></feedback>
+        </condition>
+      </var>
+      <var>
+        <condition number="8" tolerance="0.01">
+          <feedback><p>Correct.</p></feedback>
+        </condition>
+      </var>
+      <var>
+        <condition number="3" tolerance="0.01">
+          <feedback><p>Correct.</p></feedback>
+        </condition>
+      </var>
+    </setup>
+    <solution>
+      <p>
+        Differentiating,
+        <m>\mathbf{v}(t)=\left\langle 12,\ 12t^{1/2},\ 6t\right\rangle</m>,
+        and the speed collapses to a perfect square:
+
+      <md>
+        \left\lVert\mathbf{v}(t)\right\rVert
+          = \sqrt{144+144t+36t^2}
+          = \sqrt{36(t+2)^2} = 6(t+2).
+      </md>
+      </p>
+      <p>
+        Hence the distance travelled by time <m>t</m> is
+
+      <md>
+        s(t)=\int_0^{t} 6(\tau+2)\,d\tau = 3t^2+12t ,
+      </md>
+      </p>
+      <p>
+        and <m>3t^2+12t=15</m> gives <m>t^2+4t-5=(t+5)(t-1)=0</m>, so
+        <m>t=1</m>. The object is then at
+        <m>\mathbf{r}(1)=\left\langle 12,\ 8,\ 3\right\rangle</m>.
+      </p>
+    </solution>
+  </exercise>
+
+</exercises>

@@ -646,4 +646,342 @@ computable, via the substitution <m>u = r^2</m>:
 
 </subsection>
 
+<subsection xml:id="subsec-polar-questions">
+<title>Concept Check</title>
+
+<p>
+Each question below asks for a <em>setup</em> in polar coordinates. Recall
+that <m>x = r\cos\theta</m>, <m>y = r\sin\theta</m> and
+<m>dA = r\,dr\,d\theta</m>, so that
+</p>
+
+<me>
+\iint_R f(x,y)\,dx\,dy
+  = \iint_R f\left(r\cos\theta, r\sin\theta\right) r\,dr\,d\theta .
+</me>
+
+<p>
+The work is almost entirely in the limits: which values of <m>\theta</m>
+sweep the region, and for each such <m>\theta</m>, between which two
+values of <m>r</m> does the ray at that angle enter and leave the region.
+Two of the figures below carry a slider for <m>\theta</m> so you can watch
+the ray move.
+</p>
+
+<exercise xml:id="q-polar-three-areas">
+<title>Three areas</title>
+<statement>
+<p>
+Set up <term>three</term> (not more than three) integrals that correspond
+to the following areas graphed in <xref ref="fig-polar-two-areas"/>:
+</p>
+<ol>
+<li><p>the red-colored area,</p></li>
+<li><p>the blue-colored area,</p></li>
+<li><p>the sum of the areas in (1) and (2).</p></li>
+</ol>
+</statement>
+<answer>
+<p>
+Both regions are swept by the rays with <m>0 \le \theta \le \pi/3</m>: the
+lower limit is the positive <m>x</m>-axis and the upper limit is the line
+<m>y = \sqrt3\,x</m>. The vertical line <m>x = 1</m> is
+<m>r\cos\theta = 1</m>, that is <m>r = \sec\theta</m>, and the two arcs
+are <m>r = 1</m> and <m>r = 2</m>. Along a ray, the red region runs from
+the unit circle out to the line <m>x = 1</m>, and the blue region takes
+over from there out to the circle of radius <m>2</m>:
+</p>
+<md>
+<mrow>
+A_{\text{red}} \amp = \int_0^{\pi/3}\!\!\int_1^{\sec\theta} r\,dr\,d\theta
+  = \frac{\sqrt3}{2} - \frac{\pi}{6} \approx 0.342 ,
+</mrow>
+<mrow>
+A_{\text{blue}} \amp = \int_0^{\pi/3}\!\!\int_{\sec\theta}^{2}
+  r\,dr\,d\theta = \frac{2\pi}{3} - \frac{\sqrt3}{2} \approx 1.228 ,
+</mrow>
+<mrow>
+A_{\text{red}} + A_{\text{blue}} \amp
+  = \int_0^{\pi/3}\!\!\int_1^{2} r\,dr\,d\theta = \frac{\pi}{2} .
+</mrow>
+</md>
+<p>
+The third integral is the point of the question: adding the two regions
+removes the line <m>x = 1</m> from the picture, and what is left is the
+annular sector between <m>r=1</m> and <m>r=2</m> over
+<m>0 \le \theta \le \pi/3</m>, whose area is
+<m>\frac12\left(2^2-1^2\right)\cdot\frac{\pi}{3} = \frac{\pi}{2}</m>. It
+is a good check on the first two: <m>0.342 + 1.228 = 1.571 = \pi/2</m>.
+</p>
+</answer>
+</exercise>
+
+<figure xml:id="fig-polar-two-areas">
+<caption>
+Figure (1): two regions between the circles <m>r=1</m> and <m>r=2</m>,
+cut apart by the vertical line <m>x=1</m> and swept by the angles
+<m>0 \le \theta \le \pi/3</m>. The line <m>y=\sqrt3\,x</m> is the ray
+<m>\theta = \pi/3</m>, and it meets <m>x=1</m> exactly on the outer
+circle.
+</caption>
+<image width="90%">
+<prefigure xmlns="https://prefigure.org" label="prefigure-polar-two-areas">
+<diagram dimensions="(500,290)" margins="8">
+<definition>inner(t) = (cos(t), sin(t))</definition>
+<definition>outer(t) = (2*cos(t), 2*sin(t))</definition>
+<coordinates bbox="(-2.45,-0.5,2.75,2.4)">
+<polygon at="pa-red" closed="yes" fill="#DBBBA6" stroke="none"
+    points="((1.0000,0.0000),(0.9996,0.0268),(0.9986,0.0537),(0.9968,0.0805),(0.9942,0.1072),(0.9910,0.1339),(0.9871,0.1604),(0.9824,0.1869),(0.9770,0.2132),(0.9709,0.2393),(0.9642,0.2653),(0.9567,0.2911),(0.9485,0.3167),(0.9397,0.3420),(0.9302,0.3671),(0.9200,0.3920),(0.9091,0.4165),(0.8976,0.4408),(0.8855,0.4647),(0.8727,0.4883),(0.8592,0.5116),(0.8452,0.5345),(0.8305,0.5570),(0.8153,0.5791),(0.7994,0.6007),(0.7830,0.6220),(0.7660,0.6428),(0.7485,0.6631),(0.7304,0.6830),(0.7118,0.7023),(0.6927,0.7212),(0.6731,0.7395),(0.6530,0.7573),(0.6324,0.7746),(0.6114,0.7913),(0.5900,0.8074),(0.5681,0.8230),(0.5458,0.8379),(0.5231,0.8523),(0.5000,0.8660),(1.0000,1.7321),(1.0000,0.0000))"/>
+<polygon at="pa-blue" closed="yes" fill="#D1F0FF" stroke="none"
+    points="((1.0000,0.0000),(2.0000,0.0000),(2.0000,0.0000),(1.9993,0.0537),(1.9971,0.1074),(1.9935,0.1609),(1.9885,0.2144),(1.9820,0.2677),(1.9741,0.3208),(1.9648,0.3737),(1.9540,0.4263),(1.9419,0.4786),(1.9283,0.5306),(1.9134,0.5822),(1.8971,0.6333),(1.8794,0.6840),(1.8603,0.7343),(1.8400,0.7839),(1.8182,0.8330),(1.7952,0.8816),(1.7709,0.9294),(1.7453,0.9767),(1.7185,1.0232),(1.6904,1.0689),(1.6611,1.1139),(1.6306,1.1581),(1.5989,1.2015),(1.5661,1.2440),(1.5321,1.2856),(1.4970,1.3262),(1.4609,1.3660),(1.4237,1.4047),(1.3854,1.4424),(1.3462,1.4791),(1.3060,1.5147),(1.2649,1.5492),(1.2228,1.5826),(1.1799,1.6149),(1.1361,1.6460),(1.0915,1.6759),(1.0461,1.7046),(1.0000,1.7321))"/>
+<axes at="pa-axes" xlabel="x" ylabel="y" decorations="no" arrows="1"/>
+<parametric-curve at="pa-inner" function="inner" domain="(0,pi)"
+    stroke="#555555" thickness="2"/>
+<parametric-curve at="pa-outer" function="outer" domain="(0,pi)"
+    stroke="#555555" thickness="2"/>
+<line at="pa-ray" endpoints="((-0.28,-0.485),(1.28,2.217))"
+    stroke="#333333" thickness="2"/>
+<line at="pa-x1" endpoints="((1,-0.4),(1,2.3))"
+    stroke="#777777" thickness="1.5" dash="5 4"/>
+<line at="pa-x2" endpoints="((2,-0.4),(2,2.3))"
+    stroke="#777777" thickness="1.5" dash="5 4"/>
+<point at="pa-C" p="(0.5,0.866)" fill="black" alignment="nw"/>
+<point at="pa-A" p="(1,1.732)" fill="black" alignment="nw">
+<m>\left(1,\sqrt3\right)</m>
+</point>
+<point at="pa-E" p="(1,0)" fill="black" alignment="sw"/>
+<point at="pa-F" p="(2,0)" fill="black" alignment="se"/>
+<label at="pa-ray-label" anchor="(1.30,2.21)" alignment="e"
+    color="#333333"><m>\theta = \pi/3</m></label>
+<label at="pa-inner-label" anchor="(-0.72,0.60)" alignment="w"
+    color="#555555"><m>r=1</m></label>
+<label at="pa-outer-label" anchor="(-1.45,1.30)" alignment="w"
+    color="#555555"><m>r=2</m></label>
+<label at="pa-x1-label" anchor="(1,-0.42)" alignment="s"
+    color="#777777"><m>x=1</m></label>
+<label at="pa-x2-label" anchor="(2,-0.42)" alignment="s"
+    color="#777777"><m>x=2</m></label>
+<label at="pa-red-label" anchor="(0.86,0.72)" alignment="center"><m>1</m></label>
+<label at="pa-blue-label" anchor="(1.45,0.45)" alignment="center"><m>2</m></label>
+</coordinates>
+<annotations>
+<annotation ref="figure" text="Two concentric semicircles of radius one and two centered at the origin, the line y equals the square root of three times x, and the vertical lines x equals one and x equals two. Between the two circles and below the line, region one is shaded red: it lies between the unit circle and the line x equals one. Region two is shaded blue: it lies between the line x equals one and the circle of radius two, above the x axis. The line through the origin meets the vertical line x equals one at the point one, square root of three, which is also on the outer circle.">
+  <annotation ref="pa-red" text="Region one, shaded red, bounded by the unit circle on the inside, the vertical line x equals one on the outside, the x axis below and the line y equals root three x above."/>
+  <annotation ref="pa-blue" text="Region two, shaded blue, bounded by the vertical line x equals one on the inside, the circle of radius two on the outside, and the x axis below."/>
+  <annotation ref="pa-inner" text="The circle r equals one."/>
+  <annotation ref="pa-outer" text="The circle r equals two."/>
+  <annotation ref="pa-ray" text="The line y equals root three x, that is the ray theta equals pi over three."/>
+  <annotation ref="pa-x1" text="The vertical line x equals one, which in polar coordinates is r equals secant theta."/>
+  <annotation ref="pa-x2" text="The vertical line x equals two."/>
+  <annotation ref="pa-A" text="The point one, square root of three, where the ray, the line x equals one and the outer circle all meet."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+
+<exercise xml:id="q-polar-rose-mass">
+<title>Mass of a piece of a rose</title>
+<statement>
+<p>
+Region <m>R</m> is the region <term>inside</term>
+<m>r=\cos(3\theta)</m> and <term>inside</term> <m>r=\frac12</m>. See
+<xref ref="fig-polar-rose-circle"/>. Set up a double integral for
+computing the mass of a planar object that occupies region <m>R</m> and
+whose density is given by
+<m>\rho(x,y)=\dfrac{1}{\sqrt{x^2+y^2}}</m>.
+</p>
+<p>
+<em>Hint</em>: note that as <m>\theta</m> varies, you may need to modify
+the limits of <m>r</m> accordingly.
+</p>
+</statement>
+<answer>
+<p>
+In polar coordinates the density is <m>\rho = 1/r</m>, and
+<m>dA = r\,dr\,d\theta</m>, so the two factors of <m>r</m> cancel and the
+integrand is <m>1</m>:
+</p>
+<me>
+M = \iint_R \frac{1}{\sqrt{x^2+y^2}}\,dA
+  = \iint_R \frac{1}{r}\; r\,dr\,d\theta
+  = \iint_R dr\,d\theta .
+</me>
+<p>
+Now the limits, which is where the hint bites. Take the petal around
+<m>\theta = 0</m>, which is traced for
+<m>-\frac{\pi}{6} \le \theta \le \frac{\pi}{6}</m>. Sliding the ray in
+<xref ref="fig-polar-rose-circle"/> shows what happens: near
+<m>\theta = 0</m> the petal is fatter than the circle, so the ray leaves
+<m>R</m> at <m>r=\frac12</m>, while near the edges of the petal it is
+thinner and the ray leaves at <m>r=\cos(3\theta)</m>. The changeover is
+where <m>\cos(3\theta) = \frac12</m>, that is
+<m>\theta = \pm\frac{\pi}{9}</m>. So for that petal
+</p>
+<me>
+M_{\text{petal}}
+ = \int_{-\pi/9}^{\pi/9}\!\!\int_0^{1/2} dr\,d\theta
+ + 2\int_{\pi/9}^{\pi/6}\!\!\int_0^{\cos(3\theta)} dr\,d\theta ,
+</me>
+<p>
+the factor <m>2</m> coming from the two symmetric ends of the petal. The
+three petals are congruent, so
+</p>
+<me>
+M = 3\,M_{\text{petal}}
+  = \frac{\pi}{3} + 2 - \sqrt3 \approx 1.315 .
+</me>
+</answer>
+</exercise>
+
+<figure xml:id="fig-polar-rose-circle">
+<caption>
+Figure (2): the rose <m>r=\cos(3\theta)</m> and the circle
+<m>r=\frac12</m>. Drag the slider to turn the ray of angle
+<m>\theta</m>; the dots mark where that ray crosses each curve, which is
+what fixes the limits of <m>r</m>.
+</caption>
+<interactive xml:id="int-polar-rose" platform="javascript" source="polar-widget.js"
+             width="100%" aspect="10:11">
+<slate surface="html">
+<div data-widget="rose" style="text-align:center;
+     font-family: var(--font-body, 'Open Sans', Helvetica, Arial, sans-serif);">
+<canvas width="460" height="460"
+        style="width:460px; max-width:100%; height:auto; border:1px solid #ddd;"></canvas>
+<div style="margin-top:0.6em; display:flex; align-items:center;
+            justify-content:center; gap:0.7em; flex-wrap:wrap;">
+<label for="rose-theta" style="font-family: var(--font-headings, 'PT Serif', Times, serif);
+       font-style:italic; font-size:1.2em;">&#952;</label>
+<input id="rose-theta" type="range" min="0" max="48" value="0" step="1"
+       style="width:60%; max-width:340px;"/>
+</div>
+<div class="pw-readout" style="margin-top:0.5em; line-height:1.5;"></div>
+</div>
+</slate>
+<instructions>
+<p>
+Drag the slider to change <m>\theta</m>, which moves in steps of
+<m>\pi/24</m>. The readout under the picture gives
+<m>\cos(3\theta)</m> for the current ray, and the upper limit of
+<m>r</m> for the region inside both curves: it is <m>\frac12</m> while
+the ray is near the middle of a petal, and <m>\cos(3\theta)</m> near the
+edges of a petal.
+</p>
+</instructions>
+</interactive>
+</figure>
+
+<exercise xml:id="q-polar-cylinder-sphere">
+<title>The ball and the cylinder again, in polar</title>
+<statement>
+<p>
+Set up a double integral (in polar coordinates) for computing the volume
+of the region bounded by the cylinder <m>x^2+(y-1)^2=1</m> and the sphere
+<m>x^2+y^2+z^2=1</m>. See <xref ref="fig-ws-cylinder-sphere"/>.
+</p>
+</statement>
+<answer>
+<p>
+This is <xref ref="q-di-cylinder-sphere"/> again, and it is the reason
+polar coordinates were worth developing. The height over a point of the
+region of integration is still <m>2\sqrt{1-x^2-y^2} = 2\sqrt{1-r^2}</m>.
+The two boundary circles are as friendly as they could be in polar form:
+the sphere gives <m>r=1</m>, and the cylinder <m>x^2+(y-1)^2=1</m>
+expands to <m>x^2+y^2 = 2y</m>, that is <m>r = 2\sin\theta</m>. They
+cross where <m>2\sin\theta = 1</m>, at <m>\theta = \frac{\pi}{6}</m> and
+<m>\theta = \frac{5\pi}{6}</m>.
+</p>
+<p>
+For <m>\frac{\pi}{6} \le \theta \le \frac{5\pi}{6}</m> the sphere is the
+binding constraint and the ray leaves at <m>r=1</m>; outside that range
+the cylinder is, and the ray leaves at <m>r = 2\sin\theta</m>. Using the
+symmetry about the <m>y</m>-axis,
+</p>
+<me>
+V = 2\int_0^{\pi/6}\!\!\int_0^{2\sin\theta} 2\sqrt{1-r^2}\;r\,dr\,d\theta
+  + \int_{\pi/6}^{5\pi/6}\!\!\int_0^{1} 2\sqrt{1-r^2}\;r\,dr\,d\theta
+  \approx 1.693 .
+</me>
+<p>
+Compare the region of integration here with the one in
+<xref ref="q-di-cylinder-sphere"/>: the same set, described by two
+circles instead of by a square root.
+</p>
+</answer>
+</exercise>
+
+<exercise xml:id="q-polar-cardioid-overlap">
+<title>The overlap of two cardioids</title>
+<statement>
+<p>
+Set up integral(s) for computing the area of the <term>overlap</term> of
+the two curves <m>r(\theta)=1+\cos\theta</m> and
+<m>r(\theta)=1+\sin\theta</m>. See
+<xref ref="fig-polar-cardioids"/>.
+</p>
+</statement>
+<answer>
+<p>
+A point lies in the overlap when its <m>r</m> is at most <em>both</em>
+<m>1+\cos\theta</m> and <m>1+\sin\theta</m>, so along each ray the region
+runs from <m>r=0</m> out to the smaller of the two. The two cardioids
+cross where <m>1+\cos\theta = 1+\sin\theta</m>, that is
+<m>\theta = \frac{\pi}{4}</m> and <m>\theta = \frac{5\pi}{4}</m>, and
+these are exactly the angles where the smaller of the two changes
+identity. Sliding the ray in <xref ref="fig-polar-cardioids"/> makes this
+visible: the readout shows which of the two radii is smaller.
+</p>
+<me>
+A = \int_{-3\pi/4}^{\pi/4}\!\!\int_0^{\,1+\sin\theta} r\,dr\,d\theta
+  + \int_{\pi/4}^{5\pi/4}\!\!\int_0^{\,1+\cos\theta} r\,dr\,d\theta .
+</me>
+<p>
+Each piece contributes the same amount, by the symmetry of the picture
+about the line <m>\theta = \frac{\pi}{4}</m>, and
+</p>
+<me>
+A = \frac{3\pi}{2} - 2\sqrt2 \approx 1.884 .
+</me>
+</answer>
+</exercise>
+
+<figure xml:id="fig-polar-cardioids">
+<caption>
+Figure (4): the cardioids <m>r=1+\cos\theta</m> and
+<m>r=1+\sin\theta</m>. Drag the slider to turn the ray of angle
+<m>\theta</m>; the overlap is what the ray reaches before it leaves the
+first of the two curves.
+</caption>
+<interactive xml:id="int-polar-cardioids" platform="javascript" source="polar-widget.js"
+             width="100%" aspect="10:11">
+<slate surface="html">
+<div data-widget="cardioids" style="text-align:center;
+     font-family: var(--font-body, 'Open Sans', Helvetica, Arial, sans-serif);">
+<canvas width="460" height="460"
+        style="width:460px; max-width:100%; height:auto; border:1px solid #ddd;"></canvas>
+<div style="margin-top:0.6em; display:flex; align-items:center;
+            justify-content:center; gap:0.7em; flex-wrap:wrap;">
+<label for="card-theta" style="font-family: var(--font-headings, 'PT Serif', Times, serif);
+       font-style:italic; font-size:1.2em;">&#952;</label>
+<input id="card-theta" type="range" min="0" max="48" value="0" step="1"
+       style="width:60%; max-width:340px;"/>
+</div>
+<div class="pw-readout" style="margin-top:0.5em; line-height:1.5;"></div>
+</div>
+</slate>
+<instructions>
+<p>
+Drag the slider to change <m>\theta</m>, which moves in steps of
+<m>\pi/24</m>. The readout gives both radii for the current ray and the smaller of the two, which is the upper limit of
+<m>r</m> for the overlap. Watch it swap from one curve to the other as
+the ray passes <m>\theta = \frac{\pi}{4}</m> and
+<m>\theta = \frac{5\pi}{4}</m>.
+</p>
+</instructions>
+</interactive>
+</figure>
+
+</subsection>
+
 </section>

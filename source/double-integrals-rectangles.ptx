@@ -123,9 +123,7 @@ area under the curve.
 <p>
 As we will see, double integrals can be interpreted geometrically as
 the volume under a surface <m>z = f(x,y)</m>. As an example, consider
-the surface <m>z = x^2 + y + 5</m>, which is shown in
-<xref ref="fig-volume-one-box-tikz"/>. To estimate the volume under
-this surface and over the region
+the surface <m>z = x^2 + y + 5</m> over the region
 </p>
 
 <me>
@@ -133,121 +131,87 @@ R : \{(x,y) : 0 \le x \le 2,\ 0 \le y \le 2\},
 </me>
 
 <p>
-we can use the point <m>(1,1)</m> in the middle to find the height of
-the blue cuboid and come up with a very bad estimate of the desired
-volume.
+drawn in <xref ref="fig-volume-solid-geogebra"/>. The solid we are after
+stands on top of <m>R</m> and stops at the surface: its floor is the
+shaded square <m>R</m> in the <m>xy</m>-plane, its ceiling is the piece
+of the surface lying directly above <m>R</m>, outlined in dashed black,
+and the dashed vertical segments above the four corners of <m>R</m> are
+its vertical edges. Computing the volume of that solid<mdash/>the volume
+on top of the region of integration and below the surface<mdash/>is the
+goal of this section. Its ceiling is curved, so no formula from solid
+geometry gives the answer, and we fall back on the idea of
+<xref ref="sec-area-under-curve-reminder"/>: estimate the volume with
+pieces whose volume we do know, then refine.
 </p>
 
-<figure xml:id="fig-volume-one-box-tikz">
+<figure xml:id="fig-volume-solid-geogebra">
+<caption>
+The volume this section sets out to compute: the solid above the region
+of integration <m>R = [0,2]\times[0,2]</m> and below the surface
+<m>z = x^2 + y + 5</m>. The shaded square is <m>R</m>, the dashed black
+curve is the outline of the top of the solid on the surface, and the
+dashed vertical segments are the edges of the solid above the four
+corners of <m>R</m>.
+</caption>
+<!-- the surface, the colours and the camera of the applet of
+     fig-double-integral-geogebra, with the boxes removed and the top
+     outline, the corner drops and the region of integration added -->
+<interactive platform="geogebra" width="100%" aspect="600:450">
+<slate surface="geogebra" source="geogebra/volume-solid.ggb"
+       aspect="600:450" material-width="600" material-height="450"/>
+<instructions>
+<p>
+Drag the background to rotate the picture and scroll to zoom. Rotating is
+worth doing here: from the opening angle the far half of the dashed
+outline lies behind the surface.
+</p>
+</instructions>
+</interactive>
+</figure>
+
+<p>
+To estimate that volume, we can use the point <m>(1,1)</m> in the middle
+to find the height of the cuboid and come up with a very bad estimate of
+the desired volume.
+</p>
+
+<figure xml:id="fig-volume-one-box-geogebra">
 <caption>
 A first, very rough estimate of the volume under
 <m>z = x^2 + y + 5</m> over the square <m>R = [0,2]\times[0,2]</m>: a
-single cuboid whose height <m>f(1,1) = 7</m> is sampled at the center
-of the square, giving the estimate
-<m>V \approx f(1,1)\,\Delta A = 7\cdot 4 = 28</m>.
+single cuboid whose height <m>f(1,1) = 7</m> is sampled at the center of
+the square, giving the estimate
+<m>V \approx f(1,1)\,\Delta A = 7\cdot 4 = 28</m>. Turn the picture
+around: seen from any direction, part of the box sticks out above the
+surface and part of the volume under the surface is left uncovered.
 </caption>
-<image width="75%">
-<description>
-Three coordinate axes in space with the surface z equals x squared
-plus y plus 5 drawn as a translucent blue mesh above the square with
-corners zero zero and two two in the x y plane. A single translucent
-blue cuboid of height seven rises from the square, and its flat top
-crosses the curved surface.
-</description>
-<latex-image>
-<![CDATA[\begin{tikzpicture}[line join=round, line cap=round]
-  % Okabe-Ito colorblind-safe palette
-  \definecolor{oiblue}{RGB}{0,114,178}
-  \definecolor{oivermillion}{RGB}{213,94,0}
-  \definecolor{oigreen}{RGB}{0,158,115}
-  \begin{axis}[
-      view={127}{27},
-      width=12.5cm,
-      axis lines=center,
-      axis line style={-latex, black!75, line width=0.7pt},
-      xlabel={$x$}, ylabel={$y$}, zlabel={$z$},
-      label style={font=\large},
-      ticks=none,
-      xmin=0, xmax=2.6, ymin=0, ymax=2.6, zmin=0, zmax=12.5,
-      clip=false,
-    ]
-    % ---- back faces of the cuboid (drawn first) ----
-    \fill[oiblue, opacity=0.10]
-      (axis cs:0,0,0) -- (axis cs:2,0,0)
-      -- (axis cs:2,0,7) -- (axis cs:0,0,7) -- cycle;
-    \fill[oiblue, opacity=0.10]
-      (axis cs:0,0,0) -- (axis cs:0,2,0)
-      -- (axis cs:0,2,7) -- (axis cs:0,0,7) -- cycle;
-    % ---- surface z = x^2 + y + 5 ----
-    \addplot3[surf, shader=faceted, faceted color=black!55,
-              point meta={z},
-              colormap={softz}{color=(oiblue!18!white) color=(oiblue!55!white)},
-              opacity=0.85, fill opacity=0.85,
-              domain=0:2, samples=17,
-              y domain=0:2, samples y=17,
-              z buffer=sort, forget plot]
-      (x, y, {x^2 + y + 5});
-    % ---- front faces and top of the cuboid ----
-    \fill[oiblue, opacity=0.13]
-      (axis cs:2,0,0) -- (axis cs:2,2,0)
-      -- (axis cs:2,2,7) -- (axis cs:2,0,7) -- cycle;
-    \fill[oiblue, opacity=0.13]
-      (axis cs:0,2,0) -- (axis cs:2,2,0)
-      -- (axis cs:2,2,7) -- (axis cs:0,2,7) -- cycle;
-    \fill[oiblue, opacity=0.22]
-      (axis cs:0,0,7) -- (axis cs:2,0,7)
-      -- (axis cs:2,2,7) -- (axis cs:0,2,7) -- cycle;
-    \draw[oiblue, line width=1.0pt]
-      (axis cs:0,0,7) -- (axis cs:2,0,7) -- (axis cs:2,2,7)
-      -- (axis cs:0,2,7) -- cycle;
-    \draw[oiblue, line width=1.0pt]
-      (axis cs:2,0,0) -- (axis cs:2,0,7)
-      (axis cs:2,2,0) -- (axis cs:2,2,7)
-      (axis cs:0,2,0) -- (axis cs:0,2,7)
-      (axis cs:0,0,0) -- (axis cs:0,0,7);
-    % ---- dashed drop lines from the four corners of the surface ----
-    \draw[black!55, dashed, line width=0.7pt]
-      (axis cs:0,0,5) -- (axis cs:0,0,0)
-      (axis cs:2,0,9) -- (axis cs:2,0,0)
-      (axis cs:0,2,7) -- (axis cs:0,2,0)
-      (axis cs:2,2,11) -- (axis cs:2,2,0);
-    \addplot3[only marks, mark=*, mark size=1.3pt, color=black!70,
-        forget plot] coordinates {(0,0,5) (2,0,9) (0,2,7) (2,2,11)};
-    % ---- sample point ----
-    \addplot3[only marks, mark=*, mark size=1.8pt, color=oivermillion,
-        forget plot] coordinates {(1,1,7)};
-    \draw[-{Latex[length=1.8mm]}, oivermillion, line width=0.8pt]
-      (axis cs:0.55,0.45,9.6) -- (axis cs:0.95,0.92,7.3);
-    \node[oivermillion, anchor=south, font=\small]
-      at (axis cs:0.55,0.45,9.7) {$f(1,1) = 7$};
-    \node[anchor=south east, font=\small] at (axis cs:1,1,-1.7)
-      {$(1,1)$};
-    \addplot3[black!60, dashed, line width=0.6pt, samples y=0,
-        forget plot] coordinates {(1,1,0) (1,1,7)};
-    \addplot3[only marks, mark=*, mark size=1.4pt, color=black,
-        forget plot] coordinates {(1,1,0)};
-    % ---- labels ----
-    \node[font=\large, anchor=north west] at (axis description cs:0.0,0.98)
-      {$z = x^2 + y + 5$};
-    \node[anchor=north, font=\small] at (axis cs:2.05,1.0,-0.6)
-      {$R = [0,2]\times[0,2]$};
-  \end{axis}
-\end{tikzpicture}]]>
-</latex-image>
-</image>
+<!-- the construction, and the colours, of the applet of
+     fig-double-integral-geogebra, held at one division in each
+     direction; sized to the text column so it is not scaled -->
+<interactive platform="geogebra" width="100%" aspect="600:450">
+<slate surface="geogebra" source="geogebra/one-box-estimate.ggb"
+       aspect="600:450" material-width="600" material-height="450"/>
+<instructions>
+<p>
+Drag the background to rotate the picture and scroll to zoom. The base of
+the box is all of <m>R</m>, and its height is the value of <m>f</m> at the
+center of <m>R</m>.
+</p>
+</instructions>
+</interactive>
 </figure>
 
 <p>
 We can improve the estimate by splitting the region into more squares.
 For instance, we can split the region into four squares to achieve a
 better approximation for the desired volume, as shown in
-<xref ref="fig-volume-four-boxes-tikz"/>. Similar to finding the area
+<xref ref="fig-volume-four-boxes-geogebra"/>. Similar to finding the area
 under <m>f(x)</m>, if we let the number of splittings go to infinity,
 our estimation becomes exact, i.e., we find the exact desired volume.
 The refinement process is animated in <xref ref="fig-riemann-boxes-video"/>.
 </p>
 
-<figure xml:id="fig-volume-four-boxes-tikz">
+<figure xml:id="fig-volume-four-boxes-geogebra">
 <caption>
 Splitting <m>R</m> into four squares improves the estimate. Each cuboid
 uses the value of <m>f</m> at the center of its square:
@@ -255,132 +219,53 @@ uses the value of <m>f</m> at the center of its square:
 <m>f\!\left(\tfrac12,\tfrac32\right) = 6.75</m>,
 <m>f\!\left(\tfrac32,\tfrac12\right) = 7.75</m>, and
 <m>f\!\left(\tfrac32,\tfrac32\right) = 8.75</m>, giving
-<m>V \approx (5.75 + 6.75 + 7.75 + 8.75)\cdot 1 = 29</m>.
+<m>V \approx (5.75 + 6.75 + 7.75 + 8.75)\cdot 1 = 29</m>. Turn the
+picture around: each box now has to match the surface over a quarter of
+<m>R</m> instead of over all of it, as the single box of
+<xref ref="fig-volume-one-box-geogebra"/> does.
 </caption>
-<image width="75%">
-<description>
-The same surface z equals x squared plus y plus 5 above the unit
-square, now with four cuboids of different heights and colors, one
-over each quarter of the square. The tops of the cuboids hug the
-surface more closely than the single cuboid did.
-</description>
-<latex-image>
-<![CDATA[\begin{tikzpicture}[line join=round, line cap=round]
-  % Okabe-Ito colorblind-safe palette
-  \definecolor{oiblue}{RGB}{0,114,178}
-  \definecolor{oivermillion}{RGB}{213,94,0}
-  \definecolor{oigreen}{RGB}{0,158,115}
-  \definecolor{oiyellow}{RGB}{240,228,66}
-  \begin{axis}[
-      view={127}{27},
-      width=12.5cm,
-      axis lines=center,
-      axis line style={-latex, black!75, line width=0.7pt},
-      xlabel={$x$}, ylabel={$y$}, zlabel={$z$},
-      label style={font=\large},
-      ticks=none,
-      xmin=0, xmax=2.6, ymin=0, ymax=2.6, zmin=0, zmax=12.5,
-      clip=false,
-    ]
-    % ---- four cuboids, heights at the centers of the four squares ----
-    % (x in [0,1], y in [0,1]): f(0.5,0.5) = 5.75  (blue)
-    % (x in [0,1], y in [1,2]): f(0.5,1.5) = 6.75  (green)
-    % (x in [1,2], y in [0,1]): f(1.5,0.5) = 7.75  (vermillion)
-    % (x in [1,2], y in [1,2]): f(1.5,1.5) = 8.75  (yellow)
-    % back cuboids first
-    \fill[oiblue, opacity=0.35]
-      (axis cs:1,0,0) -- (axis cs:1,1,0)
-      -- (axis cs:1,1,5.75) -- (axis cs:1,0,5.75) -- cycle;
-    \fill[oiblue, opacity=0.55]
-      (axis cs:0,0,5.75) -- (axis cs:1,0,5.75)
-      -- (axis cs:1,1,5.75) -- (axis cs:0,1,5.75) -- cycle;
-    \draw[oiblue, line width=0.9pt]
-      (axis cs:0,0,5.75) -- (axis cs:1,0,5.75) -- (axis cs:1,1,5.75)
-      -- (axis cs:0,1,5.75) -- cycle;
-    \draw[oiblue, line width=0.7pt]
-      (axis cs:1,0,0) -- (axis cs:1,0,5.75)
-      (axis cs:0,0,0) -- (axis cs:0,0,5.75)
-      (axis cs:1,1,0) -- (axis cs:1,1,5.75)
-      (axis cs:0,1,0) -- (axis cs:0,1,5.75);
-    \fill[oigreen, opacity=0.35]
-      (axis cs:1,1,0) -- (axis cs:1,2,0)
-      -- (axis cs:1,2,6.75) -- (axis cs:1,1,6.75) -- cycle;
-    \fill[oigreen, opacity=0.35]
-      (axis cs:0,2,0) -- (axis cs:1,2,0)
-      -- (axis cs:1,2,6.75) -- (axis cs:0,2,6.75) -- cycle;
-    \fill[oigreen, opacity=0.55]
-      (axis cs:0,1,6.75) -- (axis cs:1,1,6.75)
-      -- (axis cs:1,2,6.75) -- (axis cs:0,2,6.75) -- cycle;
-    \draw[oigreen, line width=0.9pt]
-      (axis cs:0,1,6.75) -- (axis cs:1,1,6.75) -- (axis cs:1,2,6.75)
-      -- (axis cs:0,2,6.75) -- cycle;
-    \draw[oigreen, line width=0.7pt]
-      (axis cs:1,1,0) -- (axis cs:1,1,6.75)
-      (axis cs:0,1,0) -- (axis cs:0,1,6.75)
-      (axis cs:1,2,0) -- (axis cs:1,2,6.75)
-      (axis cs:0,2,0) -- (axis cs:0,2,6.75);
-    % ---- surface ----
-    \addplot3[surf, shader=faceted, faceted color=black!50,
-              point meta={z},
-              colormap={softz}{color=(oiblue!15!white) color=(oiblue!45!white)},
-              opacity=0.60, fill opacity=0.60,
-              domain=0:2, samples=17,
-              y domain=0:2, samples y=17,
-              z buffer=sort, forget plot]
-      (x, y, {x^2 + y + 5});
-    % ---- dashed drop lines from the four corners of the surface ----
-    \draw[black!55, dashed, line width=0.7pt]
-      (axis cs:0,0,5) -- (axis cs:0,0,0)
-      (axis cs:2,0,9) -- (axis cs:2,0,0)
-      (axis cs:0,2,7) -- (axis cs:0,2,0)
-      (axis cs:2,2,11) -- (axis cs:2,2,0);
-    \addplot3[only marks, mark=*, mark size=1.3pt, color=black!70,
-        forget plot] coordinates {(0,0,5) (2,0,9) (0,2,7) (2,2,11)};
-    % front cuboids
-    \fill[oivermillion, opacity=0.30]
-      (axis cs:2,0,0) -- (axis cs:2,1,0)
-      -- (axis cs:2,1,7.75) -- (axis cs:2,0,7.75) -- cycle;
-    \fill[oivermillion, opacity=0.55]
-      (axis cs:1,0,7.75) -- (axis cs:2,0,7.75)
-      -- (axis cs:2,1,7.75) -- (axis cs:1,1,7.75) -- cycle;
-    \draw[oivermillion, line width=0.9pt]
-      (axis cs:1,0,7.75) -- (axis cs:2,0,7.75) -- (axis cs:2,1,7.75)
-      -- (axis cs:1,1,7.75) -- cycle;
-    \draw[oivermillion, line width=0.7pt]
-      (axis cs:2,0,0) -- (axis cs:2,0,7.75)
-      (axis cs:1,0,0) -- (axis cs:1,0,7.75)
-      (axis cs:2,1,0) -- (axis cs:2,1,7.75)
-      (axis cs:1,1,0) -- (axis cs:1,1,7.75);
-    \fill[oiyellow, opacity=0.40]
-      (axis cs:2,1,0) -- (axis cs:2,2,0)
-      -- (axis cs:2,2,8.75) -- (axis cs:2,1,8.75) -- cycle;
-    \fill[oiyellow, opacity=0.40]
-      (axis cs:1,2,0) -- (axis cs:2,2,0)
-      -- (axis cs:2,2,8.75) -- (axis cs:1,2,8.75) -- cycle;
-    \fill[oiyellow, opacity=0.70]
-      (axis cs:1,1,8.75) -- (axis cs:2,1,8.75)
-      -- (axis cs:2,2,8.75) -- (axis cs:1,2,8.75) -- cycle;
-    \draw[oiyellow!60!black, line width=0.9pt]
-      (axis cs:1,1,8.75) -- (axis cs:2,1,8.75) -- (axis cs:2,2,8.75)
-      -- (axis cs:1,2,8.75) -- cycle;
-    \draw[oiyellow!60!black, line width=0.7pt]
-      (axis cs:2,1,0) -- (axis cs:2,1,8.75)
-      (axis cs:1,1,0) -- (axis cs:1,1,8.75)
-      (axis cs:2,2,0) -- (axis cs:2,2,8.75)
-      (axis cs:1,2,0) -- (axis cs:1,2,8.75);
-    % ---- grid lines on the base ----
-    \draw[black!50, line width=0.5pt]
-      (axis cs:0,0,0) -- (axis cs:2,0,0) -- (axis cs:2,2,0)
-      -- (axis cs:0,2,0) -- cycle
-      (axis cs:1,0,0) -- (axis cs:1,2,0)
-      (axis cs:0,1,0) -- (axis cs:2,1,0);
-    % ---- labels ----
-    \node[font=\large, anchor=north west] at (axis description cs:0.0,0.98)
-      {$z = x^2 + y + 5$};
-  \end{axis}
-\end{tikzpicture}]]>
-</latex-image>
-</image>
+<!-- as fig-volume-one-box-geogebra: the construction and the colours of
+     the applet of fig-double-integral-geogebra, held at two divisions in
+     each direction -->
+<interactive platform="geogebra" width="100%" aspect="600:450">
+<slate surface="geogebra" source="geogebra/four-boxes-estimate.ggb"
+       aspect="600:450" material-width="600" material-height="450"/>
+<instructions>
+<p>
+Drag the background to rotate the picture and scroll to zoom. Each box
+stands on one of the four squares, and its height is the value of
+<m>f</m> at the center of that square.
+</p>
+</instructions>
+</interactive>
+</figure>
+
+<figure xml:id="fig-double-integral-geogebra">
+<caption>
+A Riemann sum for a double integral, to explore: the region of integration,
+the surface <m>z=f(x,y)</m>, and the grid of boxes built over it. Refining
+the grid drives the sum toward <m>\iint_R f(x,y)\,dA</m>.
+</caption>
+<!-- A 600 by 450 copy of the published material nfwgbjnu, with its 3D
+     view aimed exactly as in fig-volume-one-box-geogebra and
+     fig-volume-four-boxes-geogebra: same centre (1,1,5) and the same
+     three scales.  A published material cannot be re-aimed from the
+     page, so the file is served locally; the label of f is moved to the
+     lower right because the slider panel narrows the 3D pane. -->
+<interactive platform="geogebra" width="100%" aspect="600:450">
+<slate surface="geogebra" source="geogebra/riemann-sum-sliders.ggb"
+       aspect="600:450" material-width="600" material-height="450"/>
+<instructions>
+<p>
+Use the two sliders to set the number of divisions in the <m>x</m><ndash/>
+and <m>y</m>-directions. Each box of the grid contributes its base area times
+the height of the surface above it, and the sum of those volumes is the
+estimate of the double integral. Increase the number of divisions and watch
+the estimate settle down. Drag the background to rotate the picture and
+scroll to zoom.
+</p>
+</instructions>
+</interactive>
 </figure>
 
 <p>
@@ -658,7 +543,7 @@ base rectangle in the x y plane is shaded.
   \definecolor{oiblue}{RGB}{0,114,178}
   \definecolor{oivermillion}{RGB}{213,94,0}
   \begin{axis}[
-      view={115}{22},
+      view={105}{22},
       width=12.5cm,
       axis lines=center,
       axis line style={-latex, black!75, line width=0.7pt},
@@ -684,6 +569,12 @@ base rectangle in the x y plane is shaded.
               y domain=0:2, samples y=16,
               z buffer=sort, forget plot]
       (x, y, {x/(1+x*y)});
+    % ---- drops from the surface at (1,0) and (1,2) ----
+    \draw[black!55, dashed, line width=0.7pt]
+      (axis cs:1,0,1) -- (axis cs:1,0,0)
+      (axis cs:1,2,0.3333333) -- (axis cs:1,2,0);
+    \addplot3[only marks, mark=*, mark size=1.3pt, color=black!70,
+        forget plot] coordinates {(1,0,1) (1,2,0.3333333)};
     % ---- labels ----
     \node[font=\large, anchor=north west] at (axis description cs:0.0,0.98)
       {$z = \dfrac{x}{1+xy}$};
@@ -694,6 +585,219 @@ base rectangle in the x y plane is shaded.
 </latex-image>
 </image>
 </figure>
+
+</subsection>
+
+<subsection xml:id="subsec-double-integral-questions">
+<title>Concept Check</title>
+
+<p>
+The questions below are about <em>setting up</em> double integrals, not
+about evaluating them. Throughout, <m>R</m> is the square
+</p>
+
+<me>
+R = \left\{(x,y) \in \R^2 : -\tfrac12 \le x \le \tfrac12,\
+-\tfrac12 \le y \le \tfrac12\right\} .
+</me>
+
+<p>
+Each figure can be rotated: drag the background to turn it, and scroll to
+zoom. In the first three figures the light blue segments at the corners of
+<m>R</m> join the region of integration to the surface above it, the way
+the dashed drops do in <xref ref="fig-volume-solid-geogebra"/>.
+</p>
+
+<exercise xml:id="q-di-sphere-over-square">
+<title>A volume under a sphere</title>
+<statement>
+<p>
+Write down a double integral for computing the volume inside the sphere
+<m>x^2+y^2+z^2=1</m> and above the region <m>R</m>. See
+<xref ref="fig-ws-sphere-over-square"/>.
+</p>
+</statement>
+<answer>
+<p>
+Above <m>R</m> the sphere has upper half <m>z=\sqrt{1-x^2-y^2}</m>, and
+<m>R</m> lies well inside the unit disk, so that square root is defined
+on all of <m>R</m>. The solid is exactly the one of
+<xref ref="fig-volume-solid-geogebra"/> with a different ceiling, so
+</p>
+<me>
+V = \iint_R \sqrt{1-x^2-y^2}\,dA
+  = \int_{-1/2}^{1/2}\!\!\int_{-1/2}^{1/2}
+    \sqrt{1-x^2-y^2}\,dx\,dy .
+</me>
+</answer>
+</exercise>
+
+<figure xml:id="fig-ws-sphere-over-square">
+<caption>
+Figure (1): the part of the sphere <m>x^2+y^2+z^2=1</m> lying above the
+square <m>R</m>. The four light blue segments join the corners of
+<m>R</m> to the sphere above them.
+</caption>
+<interactive geogebra="ugutsgps"
+             width="100%" aspect="500:500" design-width="500"
+             material-width="500" material-height="500"
+             shift-drag-zoom="yes" reset-icon="yes">
+<instructions>
+<p>
+Drag the background to rotate the picture and scroll to zoom. The shaded
+square in the <m>xy</m>-plane is the region of integration <m>R</m>; the
+mesh above it is the piece of the sphere whose volume the integral adds
+up.
+</p>
+</instructions>
+</interactive>
+</figure>
+
+<exercise xml:id="q-di-signs">
+<title>Signs, without computing</title>
+<statement>
+<p>
+Assume that <m>R</m> is the square above and choose all the correct
+statements below. Remember to justify your answers. Note that
+<xref ref="fig-ws-plane-x"/> and <xref ref="fig-ws-plane-y-minus-x"/>
+are helpful in answering this question.
+</p>
+<ol marker="A.">
+<li><p><m>\displaystyle\iint_R x\,dA \gt 0</m></p></li>
+<li><p><m>\displaystyle\iint_R x\,dA = 0</m></p></li>
+<li><p><m>\displaystyle\iint_R x\,dA \lt 0</m></p></li>
+<li><p><m>\displaystyle\iint_R (y-x)\,dA = 0</m></p></li>
+<li><p><m>\displaystyle\iint_R (y-x)\,dA \lt 0</m></p></li>
+<li><p><m>\displaystyle\iint_R (y-x)\,dA \gt 0</m></p></li>
+</ol>
+</statement>
+<answer>
+<p>
+<term>B</term> and <term>D</term> are the correct statements.
+</p>
+<p>
+For <term>B</term>: the plane <m>z=x</m> of
+<xref ref="fig-ws-plane-x"/> lies above the <m>xy</m>-plane on the half
+of <m>R</m> where <m>x \gt 0</m> and the same distance below it on the
+half where <m>x \lt 0</m>, because <m>R</m> is symmetric about the line
+<m>x=0</m>. The two signed volumes cancel, so
+<m>\iint_R x\,dA = 0</m>. In symbols, replacing <m>x</m> by <m>-x</m>
+carries <m>R</m> to itself and changes the sign of the integrand.
+</p>
+<p>
+For <term>D</term>: the same argument applies to <m>y</m>, so
+<m>\iint_R y\,dA = 0</m> as well, and therefore
+</p>
+<me>
+\iint_R (y-x)\,dA = \iint_R y\,dA - \iint_R x\,dA = 0 - 0 = 0 .
+</me>
+<p>
+<xref ref="fig-ws-plane-y-minus-x"/> shows this directly: the plane
+<m>z=y-x</m> cuts <m>R</m> along the diagonal <m>y=x</m>, and the wedge
+above that diagonal is congruent to the wedge below it. Statements
+<term>A</term>, <term>C</term>, <term>E</term> and <term>F</term> all
+claim a nonzero sign, so all four are false.
+</p>
+</answer>
+</exercise>
+
+<figure xml:id="fig-ws-plane-x">
+<caption>
+Figure (2): the plane <m>z=x</m> over the square <m>R</m>, together with
+<m>R</m> itself in the <m>xy</m>-plane. Half of the plane lies above
+<m>R</m> and half below.
+</caption>
+<!-- a local copy of the published material bske5ega with the corner
+     drops added, in the style of the drops of figure (1) -->
+<interactive platform="geogebra" width="100%" aspect="500:500">
+<slate surface="geogebra" source="geogebra/dbl-fig2-plane-x.ggb"
+       aspect="500:500" material-width="500" material-height="500"/>
+<instructions>
+<p>
+Drag the background to rotate the picture and scroll to zoom. Turn it
+until you are looking along the <m>y</m>-axis: the part of the plane
+above <m>R</m> and the part below it are then mirror images.
+</p>
+</instructions>
+</interactive>
+</figure>
+
+<figure xml:id="fig-ws-plane-y-minus-x">
+<caption>
+Figure (3): the plane <m>z=y-x</m> over the square <m>R</m>. It meets the
+<m>xy</m>-plane along the diagonal <m>y=x</m> of <m>R</m>.
+</caption>
+<!-- a local copy of the published material bysjzehd with corner drops;
+     the other two corners of R lie on the plane, so they need none -->
+<interactive platform="geogebra" width="100%" aspect="500:500">
+<slate surface="geogebra" source="geogebra/dbl-fig3-plane-y-minus-x.ggb"
+       aspect="500:500" material-width="500" material-height="500"/>
+<instructions>
+<p>
+Drag the background to rotate the picture and scroll to zoom. The two
+light blue segments rise to the corners <m>(-\tfrac12,\tfrac12)</m> and
+<m>(\tfrac12,-\tfrac12)</m>, where <m>z=y-x</m> is <m>1</m> and
+<m>-1</m>; at the other two corners the plane meets the
+<m>xy</m>-plane.
+</p>
+</instructions>
+</interactive>
+</figure>
+
+<exercise xml:id="q-di-volume-plane-x">
+<title>The volume cut off by <m>z=x</m></title>
+<statement>
+<p>
+Write a double integral for computing the volume of the region bounded by
+the blue plane and the orange plane as graphed in
+<xref ref="fig-ws-plane-x"/>.
+</p>
+</statement>
+<answer>
+<p>
+The blue plane is the square <m>R</m> at height <m>z=0</m> and the orange
+plane is <m>z=x</m>. Volume is unsigned, so the integrand is the
+<em>distance</em> between the two planes, namely <m>|x|</m>:
+</p>
+<me>
+V = \iint_R |x|\,dA
+  = \int_{-1/2}^{1/2}\!\!\int_{-1/2}^{1/2} |x|\,dx\,dy
+  = 2\int_{-1/2}^{1/2}\!\!\int_{0}^{1/2} x\,dx\,dy
+  = \frac14 .
+</me>
+<p>
+Note how this differs from <xref ref="q-di-signs"/>: there the integrand
+was <m>x</m> and the answer was <m>0</m>, because the piece below the
+<m>xy</m>-plane counted negatively.
+</p>
+</answer>
+</exercise>
+
+<exercise xml:id="q-di-volume-plane-y-minus-x">
+<title>The volume cut off by <m>z=y-x</m></title>
+<statement>
+<p>
+Write a double integral for computing the volume of the region bounded by
+the blue plane and the orange plane as graphed in
+<xref ref="fig-ws-plane-y-minus-x"/>.
+</p>
+</statement>
+<answer>
+<p>
+As before the integrand is the distance between the two planes:
+</p>
+<me>
+V = \iint_R |y-x|\,dA
+  = \int_{-1/2}^{1/2}\!\!\int_{-1/2}^{1/2} |y-x|\,dx\,dy
+  = \frac13 .
+</me>
+<p>
+Splitting at the diagonal <m>y=x</m> removes the absolute value: by the
+symmetry noted in <xref ref="q-di-signs"/> the two halves contribute
+equally, so <m>V = 2\iint_{y \ge x} (y-x)\,dA</m>.
+</p>
+</answer>
+</exercise>
 
 </subsection>
 

@@ -581,6 +581,29 @@ The three projections of the solid <m>R</m>. Left: into the
 </sidebyside>
 </figure>
 
+<figure xml:id="fig-triple-wedge-geogebra">
+<caption>
+The solid <m>R</m> itself, to turn around: the triangular base
+<m>x+y \le 1</m> in the <m>xy</m>-plane, the surface <m>z = 1-x^2</m>
+that caps it, and the two edges of that cap above <m>y=0</m> and above
+<m>y=1-x</m>. The vertical plane slices the solid the way the innermost
+integral does.
+</caption>
+<interactive geogebra="gduzw7mn"
+             width="100%" aspect="500:500" design-width="500"
+             material-width="500" material-height="500"
+             shift-drag-zoom="yes" reset-icon="yes">
+<instructions>
+<p>
+Drag the background to rotate the picture and scroll to zoom. Compare
+what you see with the three flat pictures of
+<xref ref="fig-triple-projections-prefigure"/>: each of them is this
+solid seen along one of the three axes.
+</p>
+</instructions>
+</interactive>
+</figure>
+
 </subsection>
 
 <!-- ================================================================ -->
@@ -623,6 +646,274 @@ x\,dz\,dx\,dy
 </mrow>
 </md>
 </solution>
+
+</subsection>
+
+<subsection xml:id="subsec-triple-questions">
+<title>Concept Check</title>
+
+<p>
+The first five questions all concern the same solid <m>E</m>, the region
+bounded below by the paraboloid <m>z = x^2+y^2</m> and above by the upper
+half <m>z = 1+\sqrt{1-x^2-y^2}</m> of the sphere of radius <m>1</m>
+centered at <m>(0,0,1)</m>, drawn in
+<xref ref="fig-triple-paraboloid-sphere"/>. Four of them ask for a sign or
+a yes-or-no answer rather than a number: the point is to read the
+integrand on the region, not to integrate.
+</p>
+
+<p>
+It is worth locating <m>E</m> first. The two surfaces meet where
+<m>x^2+y^2 = 1+\sqrt{1-x^2-y^2}</m>; writing <m>u = x^2+y^2</m> this is
+<m>u-1 = \sqrt{1-u}</m>, hence <m>u^2 = u</m> and <m>u = 1</m>. So
+<m>E</m> sits over the unit disk <m>x^2+y^2 \le 1</m>, and for each
+<m>(x,y)</m> there, <m>z</m> runs from <m>x^2+y^2</m> up to
+<m>1+\sqrt{1-x^2-y^2}</m>.
+</p>
+
+<exercise xml:id="q-triple-sign-one">
+<title>The sign of an integral, without calculating</title>
+<statement>
+<p>
+<term>Without calculation</term>, decide whether the integral below is
+positive, negative, or zero. The region of integration <m>E</m> is the
+region bounded by <m>z=x^2+y^2</m> and
+<m>z=1+\sqrt{1-x^2-y^2}</m>. See
+<xref ref="fig-triple-paraboloid-sphere"/>.
+</p>
+<me>
+\iiint_E \left(z-\sqrt{1-x^2-y^2}-1\right) dV
+</me>
+<ol marker="A.">
+<li><p>Positive</p></li>
+<li><p>Negative</p></li>
+<li><p>Zero</p></li>
+</ol>
+<p>
+<em>Hint</em>: begin by determining the limits of integration.
+</p>
+</statement>
+<answer>
+<p>
+<term>B</term>, negative.
+</p>
+<p>
+The upper surface of <m>E</m> is <m>z = 1+\sqrt{1-x^2-y^2}</m>, so every
+point of <m>E</m> satisfies
+<m>z \le 1+\sqrt{1-x^2-y^2}</m>, that is
+</p>
+<me>
+z-\sqrt{1-x^2-y^2}-1 \le 0 .
+</me>
+<p>
+The integrand is exactly the (signed) vertical distance from a point of
+<m>E</m> up to the sphere, so it is never positive, and it vanishes only
+on the cap itself, a surface of zero volume. An integrand that is
+negative on the interior of the solid gives a negative integral.
+</p>
+</answer>
+</exercise>
+
+<exercise xml:id="q-triple-mass-density-one">
+<title>Could it be a mass density?</title>
+<statement>
+<p>
+Can the function <m>f(x,y,z)=z-\sqrt{1-x^2-y^2}-1</m> represent mass
+density (mass per unit volume) over the region <m>E</m>, which is graphed
+in <xref ref="fig-triple-paraboloid-sphere"/>?
+</p>
+<ol marker="A.">
+<li><p>Yes</p></li>
+<li><p>No</p></li>
+</ol>
+</statement>
+<answer>
+<p>
+<term>B</term>, no. Mass is never negative, so a mass density must
+satisfy <m>f \ge 0</m>. As we just saw, this <m>f</m> is negative
+throughout the interior of <m>E</m>. A region carrying it would have
+negative mass.
+</p>
+</answer>
+</exercise>
+
+<exercise xml:id="q-triple-charge-density">
+<title>Could it be a charge density?</title>
+<statement>
+<p>
+Can the function <m>f(x,y,z)=z-\sqrt{1-x^2-y^2}-1</m> represent charge
+density (charge per unit volume) over the region <m>E</m>, which is
+graphed in <xref ref="fig-triple-paraboloid-sphere"/>?
+</p>
+<ol marker="A.">
+<li><p>Yes</p></li>
+<li><p>No</p></li>
+</ol>
+</statement>
+<answer>
+<p>
+<term>A</term>, yes. Charge comes in both signs, so a charge density is
+free to be negative; there is nothing wrong with a body that is
+negatively charged everywhere. The triple integral of
+<xref ref="q-triple-sign-one"/> is then the total charge, and its
+negative sign says the body carries a net negative charge.
+</p>
+<p>
+This is the whole difference between the two questions: the mathematics
+is identical, and only the physical meaning of the sign changes.
+</p>
+</answer>
+</exercise>
+
+<exercise xml:id="q-triple-sign-two">
+<title>The sign of a second integral</title>
+<statement>
+<p>
+<term>Without calculation</term>, decide whether the integral below is
+positive, negative, or zero. The region of integration <m>E</m> is the
+region bounded by <m>z=x^2+y^2</m> and
+<m>z=1+\sqrt{1-x^2-y^2}</m>. See
+<xref ref="fig-triple-paraboloid-sphere"/>.
+</p>
+<me>
+\iiint_E \left(2-x^2-y^2\right) dV
+</me>
+<ol marker="A.">
+<li><p>Positive</p></li>
+<li><p>Negative</p></li>
+<li><p>Zero</p></li>
+</ol>
+</statement>
+<answer>
+<p>
+<term>A</term>, positive.
+</p>
+<p>
+The solid lies over the unit disk, so <m>x^2+y^2 \le 1</m> at every point
+of <m>E</m>, and therefore
+</p>
+<me>
+2-x^2-y^2 \ge 2-1 = 1 \gt 0 .
+</me>
+<p>
+The integrand is at least <m>1</m> on all of <m>E</m>, so the integral is
+positive<mdash/>in fact it is at least the volume of <m>E</m>. Note that
+no antiderivative was needed: only the projection of <m>E</m> onto the
+<m>xy</m>-plane.
+</p>
+</answer>
+</exercise>
+
+<exercise xml:id="q-triple-mass-density-two">
+<title>Could this one be a mass density?</title>
+<statement>
+<p>
+Can the function <m>f(x,y,z)=2-x^2-y^2</m> represent mass density (mass
+per unit volume) over the region <m>E</m>, which is graphed in
+<xref ref="fig-triple-paraboloid-sphere"/>?
+</p>
+<ol marker="A.">
+<li><p>Yes</p></li>
+<li><p>No</p></li>
+</ol>
+</statement>
+<answer>
+<p>
+<term>A</term>, yes. On <m>E</m> we have <m>1 \le 2-x^2-y^2 \le 2</m>, so
+<m>f</m> is positive there and can be read as a density: the solid is
+densest along its axis and lightest near the rim, where the two surfaces
+meet. Its mass would be the integral of
+<xref ref="q-triple-sign-two"/>.
+</p>
+<p>
+Beware of the phrase <q>over the region <m>E</m></q>. The same formula
+would not do on a larger region: outside the cylinder
+<m>x^2+y^2 = 2</m> it turns negative.
+</p>
+</answer>
+</exercise>
+
+<figure xml:id="fig-triple-paraboloid-sphere">
+<caption>
+Figure (3): the region of integration <m>E</m>, bounded below by the
+paraboloid <m>z=x^2+y^2</m> and above by
+<m>z=1+\sqrt{1-x^2-y^2}</m>. The two surfaces meet over the circle
+<m>x^2+y^2=1</m>.
+</caption>
+<interactive geogebra="snf5uec4"
+             width="100%" aspect="500:500" design-width="500"
+             material-width="500" material-height="500"
+             shift-drag-zoom="yes" reset-icon="yes">
+<instructions>
+<p>
+Drag the background to rotate the picture and scroll to zoom. Turning it
+until you look nearly along the <m>xy</m>-plane shows the two surfaces
+closing on each other at the rim, which is where
+<m>x^2+y^2=1</m>.
+</p>
+</instructions>
+</interactive>
+</figure>
+
+<exercise xml:id="q-triple-two-cylinders">
+<title>A volume between two cylinders</title>
+<statement>
+<p>
+Set up a triple integral for computing the volume of the region bounded by
+the two cylinders <m>y=x^2</m> and <m>y=\sqrt{x}</m> and the two planes
+<m>z=0</m> and <m>z=\frac13(x+y+1)</m>. See
+<xref ref="fig-triple-two-cylinders"/>.
+</p>
+</statement>
+<answer>
+<p>
+The two cylinders are vertical walls standing on the curves <m>y=x^2</m>
+and <m>y=\sqrt{x}</m> of the <m>xy</m>-plane, and those curves cross at
+<m>x=0</m> and <m>x=1</m>. Between them <m>\sqrt{x} \ge x^2</m>, so the
+shadow of the solid is
+</p>
+<me>
+D = \left\{(x,y) : 0 \le x \le 1,\ x^2 \le y \le \sqrt{x}\right\} ,
+</me>
+<p>
+which is the region of <xref ref="fig-triple-two-cylinders"/> lying
+between the two walls. The floor is <m>z=0</m> and the ceiling is the
+plane, so
+</p>
+<me>
+V = \int_{0}^{1}\!\!\int_{x^2}^{\sqrt{x}}\!\!\int_{0}^{\frac13(x+y+1)}
+    dz\,dy\,dx .
+</me>
+<p>
+Carrying it out is quick, since the innermost integral just returns the
+height of the ceiling:
+</p>
+<me>
+V = \frac13\int_{0}^{1}\!\!\int_{x^2}^{\sqrt{x}} (x+y+1)\,dy\,dx
+  = \frac{19}{90} \approx 0.211 .
+</me>
+</answer>
+</exercise>
+
+<figure xml:id="fig-triple-two-cylinders">
+<caption>
+Figure (4): the solid bounded by the cylinders <m>y=x^2</m> and
+<m>y=\sqrt{x}</m>, the plane <m>z=0</m>, and the plane
+<m>z=\frac13(x+y+1)</m>, whose two edges are drawn on the walls.
+</caption>
+<interactive geogebra="af2ud86q"
+             width="100%" aspect="600:600" design-width="600"
+             material-width="600" material-height="600"
+             shift-drag-zoom="yes" reset-icon="yes">
+<instructions>
+<p>
+Drag the background to rotate the picture and scroll to zoom. Looking
+straight down shows the region <m>D</m> between the two curves in the
+<m>xy</m>-plane, which is the shadow the triple integral is built over.
+</p>
+</instructions>
+</interactive>
+</figure>
 
 </subsection>
 

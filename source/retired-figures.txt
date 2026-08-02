@@ -1,0 +1,245 @@
+Figures retired from source/double-integrals-rectangles.ptx (2026-08-01).
+
+The two TikZ figures below were the static one-cuboid and four-cuboid
+pictures, replaced by the GeoGebra figures that preceded them; the detail
+of their captions was folded into those captions.  They are held here
+rather than commented out in place: their TikZ code is full of "--", which
+an XML comment cannot contain.  To restore one, paste it back into the
+section file.
+
+<figure xml:id="fig-volume-one-box-tikz">
+<caption>
+A first, very rough estimate of the volume under
+<m>z = x^2 + y + 5</m> over the square <m>R = [0,2]\times[0,2]</m>: a
+single cuboid whose height <m>f(1,1) = 7</m> is sampled at the center
+of the square, giving the estimate
+<m>V \approx f(1,1)\,\Delta A = 7\cdot 4 = 28</m>.
+</caption>
+<image width="75%">
+<description>
+Three coordinate axes in space with the surface z equals x squared
+plus y plus 5 drawn as a translucent blue mesh above the square with
+corners zero zero and two two in the x y plane. A single translucent
+blue cuboid of height seven rises from the square, and its flat top
+crosses the curved surface.
+</description>
+<latex-image>
+<![CDATA[\begin{tikzpicture}[line join=round, line cap=round]
+  % Okabe-Ito colorblind-safe palette
+  \definecolor{oiblue}{RGB}{0,114,178}
+  \definecolor{oivermillion}{RGB}{213,94,0}
+  \definecolor{oigreen}{RGB}{0,158,115}
+  \begin{axis}[
+      view={127}{27},
+      width=12.5cm,
+      axis lines=center,
+      axis line style={-latex, black!75, line width=0.7pt},
+      xlabel={$x$}, ylabel={$y$}, zlabel={$z$},
+      label style={font=\large},
+      ticks=none,
+      xmin=0, xmax=2.6, ymin=0, ymax=2.6, zmin=0, zmax=12.5,
+      clip=false,
+    ]
+    % ---- back faces of the cuboid (drawn first) ----
+    \fill[oiblue, opacity=0.10]
+      (axis cs:0,0,0) -- (axis cs:2,0,0)
+      -- (axis cs:2,0,7) -- (axis cs:0,0,7) -- cycle;
+    \fill[oiblue, opacity=0.10]
+      (axis cs:0,0,0) -- (axis cs:0,2,0)
+      -- (axis cs:0,2,7) -- (axis cs:0,0,7) -- cycle;
+    % ---- surface z = x^2 + y + 5 ----
+    \addplot3[surf, shader=faceted, faceted color=black!55,
+              point meta={z},
+              colormap={softz}{color=(oiblue!18!white) color=(oiblue!55!white)},
+              opacity=0.85, fill opacity=0.85,
+              domain=0:2, samples=17,
+              y domain=0:2, samples y=17,
+              z buffer=sort, forget plot]
+      (x, y, {x^2 + y + 5});
+    % ---- front faces and top of the cuboid ----
+    \fill[oiblue, opacity=0.13]
+      (axis cs:2,0,0) -- (axis cs:2,2,0)
+      -- (axis cs:2,2,7) -- (axis cs:2,0,7) -- cycle;
+    \fill[oiblue, opacity=0.13]
+      (axis cs:0,2,0) -- (axis cs:2,2,0)
+      -- (axis cs:2,2,7) -- (axis cs:0,2,7) -- cycle;
+    \fill[oiblue, opacity=0.22]
+      (axis cs:0,0,7) -- (axis cs:2,0,7)
+      -- (axis cs:2,2,7) -- (axis cs:0,2,7) -- cycle;
+    \draw[oiblue, line width=1.0pt]
+      (axis cs:0,0,7) -- (axis cs:2,0,7) -- (axis cs:2,2,7)
+      -- (axis cs:0,2,7) -- cycle;
+    \draw[oiblue, line width=1.0pt]
+      (axis cs:2,0,0) -- (axis cs:2,0,7)
+      (axis cs:2,2,0) -- (axis cs:2,2,7)
+      (axis cs:0,2,0) -- (axis cs:0,2,7)
+      (axis cs:0,0,0) -- (axis cs:0,0,7);
+    % ---- dashed drop lines from the four corners of the surface ----
+    \draw[black!55, dashed, line width=0.7pt]
+      (axis cs:0,0,5) -- (axis cs:0,0,0)
+      (axis cs:2,0,9) -- (axis cs:2,0,0)
+      (axis cs:0,2,7) -- (axis cs:0,2,0)
+      (axis cs:2,2,11) -- (axis cs:2,2,0);
+    \addplot3[only marks, mark=*, mark size=1.3pt, color=black!70,
+        forget plot] coordinates {(0,0,5) (2,0,9) (0,2,7) (2,2,11)};
+    % ---- sample point ----
+    \addplot3[only marks, mark=*, mark size=1.8pt, color=oivermillion,
+        forget plot] coordinates {(1,1,7)};
+    \draw[-{Latex[length=1.8mm]}, oivermillion, line width=0.8pt]
+      (axis cs:0.55,0.45,9.6) -- (axis cs:0.95,0.92,7.3);
+    \node[oivermillion, anchor=south, font=\small]
+      at (axis cs:0.55,0.45,9.7) {$f(1,1) = 7$};
+    \node[anchor=south east, font=\small] at (axis cs:1,1,-1.7)
+      {$(1,1)$};
+    \addplot3[black!60, dashed, line width=0.6pt, samples y=0,
+        forget plot] coordinates {(1,1,0) (1,1,7)};
+    \addplot3[only marks, mark=*, mark size=1.4pt, color=black,
+        forget plot] coordinates {(1,1,0)};
+    % ---- labels ----
+    \node[font=\large, anchor=north west] at (axis description cs:0.0,0.98)
+      {$z = x^2 + y + 5$};
+    \node[anchor=north, font=\small] at (axis cs:2.05,1.0,-0.6)
+      {$R = [0,2]\times[0,2]$};
+  \end{axis}
+\end{tikzpicture}]]>
+</latex-image>
+</image>
+</figure>
+
+----------------------------------------------------------------------
+
+<figure xml:id="fig-volume-four-boxes-tikz">
+<caption>
+Splitting <m>R</m> into four squares improves the estimate. Each cuboid
+uses the value of <m>f</m> at the center of its square:
+<m>f\!\left(\tfrac12,\tfrac12\right) = 5.75</m>,
+<m>f\!\left(\tfrac12,\tfrac32\right) = 6.75</m>,
+<m>f\!\left(\tfrac32,\tfrac12\right) = 7.75</m>, and
+<m>f\!\left(\tfrac32,\tfrac32\right) = 8.75</m>, giving
+<m>V \approx (5.75 + 6.75 + 7.75 + 8.75)\cdot 1 = 29</m>.
+</caption>
+<image width="75%">
+<description>
+The same surface z equals x squared plus y plus 5 above the unit
+square, now with four cuboids of different heights and colors, one
+over each quarter of the square. The tops of the cuboids hug the
+surface more closely than the single cuboid did.
+</description>
+<latex-image>
+<![CDATA[\begin{tikzpicture}[line join=round, line cap=round]
+  % Okabe-Ito colorblind-safe palette
+  \definecolor{oiblue}{RGB}{0,114,178}
+  \definecolor{oivermillion}{RGB}{213,94,0}
+  \definecolor{oigreen}{RGB}{0,158,115}
+  \definecolor{oiyellow}{RGB}{240,228,66}
+  \begin{axis}[
+      view={127}{27},
+      width=12.5cm,
+      axis lines=center,
+      axis line style={-latex, black!75, line width=0.7pt},
+      xlabel={$x$}, ylabel={$y$}, zlabel={$z$},
+      label style={font=\large},
+      ticks=none,
+      xmin=0, xmax=2.6, ymin=0, ymax=2.6, zmin=0, zmax=12.5,
+      clip=false,
+    ]
+    % ---- four cuboids, heights at the centers of the four squares ----
+    % (x in [0,1], y in [0,1]): f(0.5,0.5) = 5.75  (blue)
+    % (x in [0,1], y in [1,2]): f(0.5,1.5) = 6.75  (green)
+    % (x in [1,2], y in [0,1]): f(1.5,0.5) = 7.75  (vermillion)
+    % (x in [1,2], y in [1,2]): f(1.5,1.5) = 8.75  (yellow)
+    % back cuboids first
+    \fill[oiblue, opacity=0.35]
+      (axis cs:1,0,0) -- (axis cs:1,1,0)
+      -- (axis cs:1,1,5.75) -- (axis cs:1,0,5.75) -- cycle;
+    \fill[oiblue, opacity=0.55]
+      (axis cs:0,0,5.75) -- (axis cs:1,0,5.75)
+      -- (axis cs:1,1,5.75) -- (axis cs:0,1,5.75) -- cycle;
+    \draw[oiblue, line width=0.9pt]
+      (axis cs:0,0,5.75) -- (axis cs:1,0,5.75) -- (axis cs:1,1,5.75)
+      -- (axis cs:0,1,5.75) -- cycle;
+    \draw[oiblue, line width=0.7pt]
+      (axis cs:1,0,0) -- (axis cs:1,0,5.75)
+      (axis cs:0,0,0) -- (axis cs:0,0,5.75)
+      (axis cs:1,1,0) -- (axis cs:1,1,5.75)
+      (axis cs:0,1,0) -- (axis cs:0,1,5.75);
+    \fill[oigreen, opacity=0.35]
+      (axis cs:1,1,0) -- (axis cs:1,2,0)
+      -- (axis cs:1,2,6.75) -- (axis cs:1,1,6.75) -- cycle;
+    \fill[oigreen, opacity=0.35]
+      (axis cs:0,2,0) -- (axis cs:1,2,0)
+      -- (axis cs:1,2,6.75) -- (axis cs:0,2,6.75) -- cycle;
+    \fill[oigreen, opacity=0.55]
+      (axis cs:0,1,6.75) -- (axis cs:1,1,6.75)
+      -- (axis cs:1,2,6.75) -- (axis cs:0,2,6.75) -- cycle;
+    \draw[oigreen, line width=0.9pt]
+      (axis cs:0,1,6.75) -- (axis cs:1,1,6.75) -- (axis cs:1,2,6.75)
+      -- (axis cs:0,2,6.75) -- cycle;
+    \draw[oigreen, line width=0.7pt]
+      (axis cs:1,1,0) -- (axis cs:1,1,6.75)
+      (axis cs:0,1,0) -- (axis cs:0,1,6.75)
+      (axis cs:1,2,0) -- (axis cs:1,2,6.75)
+      (axis cs:0,2,0) -- (axis cs:0,2,6.75);
+    % ---- surface ----
+    \addplot3[surf, shader=faceted, faceted color=black!50,
+              point meta={z},
+              colormap={softz}{color=(oiblue!15!white) color=(oiblue!45!white)},
+              opacity=0.60, fill opacity=0.60,
+              domain=0:2, samples=17,
+              y domain=0:2, samples y=17,
+              z buffer=sort, forget plot]
+      (x, y, {x^2 + y + 5});
+    % ---- dashed drop lines from the four corners of the surface ----
+    \draw[black!55, dashed, line width=0.7pt]
+      (axis cs:0,0,5) -- (axis cs:0,0,0)
+      (axis cs:2,0,9) -- (axis cs:2,0,0)
+      (axis cs:0,2,7) -- (axis cs:0,2,0)
+      (axis cs:2,2,11) -- (axis cs:2,2,0);
+    \addplot3[only marks, mark=*, mark size=1.3pt, color=black!70,
+        forget plot] coordinates {(0,0,5) (2,0,9) (0,2,7) (2,2,11)};
+    % front cuboids
+    \fill[oivermillion, opacity=0.30]
+      (axis cs:2,0,0) -- (axis cs:2,1,0)
+      -- (axis cs:2,1,7.75) -- (axis cs:2,0,7.75) -- cycle;
+    \fill[oivermillion, opacity=0.55]
+      (axis cs:1,0,7.75) -- (axis cs:2,0,7.75)
+      -- (axis cs:2,1,7.75) -- (axis cs:1,1,7.75) -- cycle;
+    \draw[oivermillion, line width=0.9pt]
+      (axis cs:1,0,7.75) -- (axis cs:2,0,7.75) -- (axis cs:2,1,7.75)
+      -- (axis cs:1,1,7.75) -- cycle;
+    \draw[oivermillion, line width=0.7pt]
+      (axis cs:2,0,0) -- (axis cs:2,0,7.75)
+      (axis cs:1,0,0) -- (axis cs:1,0,7.75)
+      (axis cs:2,1,0) -- (axis cs:2,1,7.75)
+      (axis cs:1,1,0) -- (axis cs:1,1,7.75);
+    \fill[oiyellow, opacity=0.40]
+      (axis cs:2,1,0) -- (axis cs:2,2,0)
+      -- (axis cs:2,2,8.75) -- (axis cs:2,1,8.75) -- cycle;
+    \fill[oiyellow, opacity=0.40]
+      (axis cs:1,2,0) -- (axis cs:2,2,0)
+      -- (axis cs:2,2,8.75) -- (axis cs:1,2,8.75) -- cycle;
+    \fill[oiyellow, opacity=0.70]
+      (axis cs:1,1,8.75) -- (axis cs:2,1,8.75)
+      -- (axis cs:2,2,8.75) -- (axis cs:1,2,8.75) -- cycle;
+    \draw[oiyellow!60!black, line width=0.9pt]
+      (axis cs:1,1,8.75) -- (axis cs:2,1,8.75) -- (axis cs:2,2,8.75)
+      -- (axis cs:1,2,8.75) -- cycle;
+    \draw[oiyellow!60!black, line width=0.7pt]
+      (axis cs:2,1,0) -- (axis cs:2,1,8.75)
+      (axis cs:1,1,0) -- (axis cs:1,1,8.75)
+      (axis cs:2,2,0) -- (axis cs:2,2,8.75)
+      (axis cs:1,2,0) -- (axis cs:1,2,8.75);
+    % ---- grid lines on the base ----
+    \draw[black!50, line width=0.5pt]
+      (axis cs:0,0,0) -- (axis cs:2,0,0) -- (axis cs:2,2,0)
+      -- (axis cs:0,2,0) -- cycle
+      (axis cs:1,0,0) -- (axis cs:1,2,0)
+      (axis cs:0,1,0) -- (axis cs:2,1,0);
+    % ---- labels ----
+    \node[font=\large, anchor=north west] at (axis description cs:0.0,0.98)
+      {$z = x^2 + y + 5$};
+  \end{axis}
+\end{tikzpicture}]]>
+</latex-image>
+</image>
+</figure>

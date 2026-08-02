@@ -47,6 +47,7 @@
     <xi:include href="surface-integrals.ptx" />
     <xi:include href="divergence-theorem.ptx" />
     <xi:include href="hw1-exercises.ptx"/>
+    <xi:include href="hw1-online.ptx"/>
     <xi:include href="subsec-brain-map.ptx" />
     
 

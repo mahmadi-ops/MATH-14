@@ -217,9 +217,23 @@
                  \mathbf{r}=\left\langle x,\ y,\ z\right\rangle.
         </mrow>
       </md>
-      This can, for instance, represent the gravitational field of a massive
-      body located at the origin: every arrow points <em>toward</em> the
-      origin, and since
+      This field has the same dependence on <m>x</m>, <m>y</m> and <m>z</m>
+      as the gravitational force exerted by a massive body located at the
+      origin.<fn>
+      The gravitational force exerted by a mass <m>m_1</m> at the origin on
+      a mass <m>m_2</m> at the point <m>\mathbf{r}</m> is the
+      <term>gravitational force field</term>
+      <m>\mathbf{F}_{\text{grav}}
+         = -\dfrac{Gm_1m_2}{\left\lVert\mathbf{r}\right\rVert^3}\,
+           \mathbf{r}</m>,
+      where <m>G</m> is the gravitational constant and the minus sign makes
+      the force point back toward the origin. The field
+      <m>\mathbf{F}=-\mathbf{r}/\left\lVert\mathbf{r}\right\rVert^3</m>
+      studied here is that force with the constant <m>Gm_1m_2</m> stripped
+      off, so the two differ only by a positive factor and point the same
+      way at every point.
+      </fn>
+      Every arrow points <em>toward</em> the origin, and since
       <m>\left\lVert\mathbf{F}\right\rVert
          =\left\lVert\mathbf{r}\right\rVert/\left\lVert\mathbf{r}\right\rVert^3
          =1/\left\lVert\mathbf{r}\right\rVert^2</m>,
@@ -230,9 +244,11 @@
 
     <figure xml:id="fig-gravity-field">
       <caption>
-        The gravitational field
-        <m>\mathbf{F}=-\mathbf{r}/\left\lVert\mathbf{r}\right\rVert^3</m>. All arrows
-        point toward the origin and shrink with the square of the distance.
+        The field
+        <m>\mathbf{F}=-\mathbf{r}/\left\lVert\mathbf{r}\right\rVert^3</m>,
+        which depends on <m>x</m>, <m>y</m> and <m>z</m> exactly as the
+        gravitational force does. All arrows point toward the origin and
+        shrink with the square of the distance.
       </caption>
       <image xml:id="image-gravity-field" width="70%">
         <shortdescription>
@@ -468,9 +484,9 @@ x y z u v w\\
         </shortdescription>
         <description>
           <p>
-            A blue curve rises from a red point near the origin, bending
+            A black curve rises from a red point near the origin, bending
             upward to a red endpoint at the upper right. A short piece of
-            the curve, labelled Delta s sub k, is drawn thicker in dark red.
+            the curve, labelled Delta s sub k, is drawn thicker in blue.
             At a black point on this piece, a red arrow labelled F of (x sub
             k, y sub k) points steeply up and to the right, and a shorter
             green arrow labelled T sub k points along the curve in the
@@ -486,7 +502,7 @@ x y z u v w\\
                     arrows="1"/>
 
               <group at="curve">
-                <parametric-curve function="q" domain="(0,2)" stroke="blue"
+                <parametric-curve function="q" domain="(0,2)" stroke="black"
                                   thickness="3"/>
               </group>
 
@@ -497,12 +513,12 @@ x y z u v w\\
 
               <group at="subarc">
                 <parametric-curve function="q" domain="(0.34,0.74)"
-                                  stroke="deeppink" thickness="8"/>
-                <label anchor="(0.55,0.30)" alignment="center" color="deeppink">
+                                  stroke="blue" thickness="8"/>
+                <label anchor="(0.55,0.30)" alignment="center" color="blue">
                   <m>\Delta s_k</m>
                 </label>
                 <line endpoints="((0.55,0.40), (0.55,0.58))"
-                      stroke="deeppink" thickness="1"/>
+                      stroke="blue" thickness="1"/>
               </group>
 
               <group at="vectors">
@@ -535,7 +551,7 @@ x y z u v w\\
                                   trajectory"/>
                 <annotation ref="subarc"
                             text="The kth subarc, of length delta s sub k,
-                                  drawn in pink"/>
+                                  drawn in blue"/>
                 <annotation ref="vectors"
                             text="At a sample point of that subarc, the force
                                   F of x sub k, y sub k and the unit tangent
@@ -608,9 +624,67 @@ x y z u v w\\
         </mrow>
       </md>
       evaluate the field along the curve, dot it with the velocity, and
-      integrate over time. Work was our motivation, but any vector field
-      <m>\mathbf{F}</m> can be integrated over a curve <m>C</m> in this
-      fashion. <xref ref="fig-work-video"/> shows the accumulation of
+      integrate over time.
+    </p>
+
+    <p>
+      The applet below carries every ingredient of
+      <xref ref="eq-work-parametrized"/> at once: a curve <m>C</m>
+      parametrized by <m>\mathbf{r}(t)</m>, the velocity
+      <m>\mathbf{v}(t)=d\mathbf{r}/dt</m> tangent to it, and a force field
+      <m>\mathbf{F}</m> evaluated at the moving point. Work out what the
+      integrand <m>\mathbf{F}\cdot\mathbf{v}</m> is doing before you
+      compute anything.
+    </p>
+
+    <figure xml:id="fig-work-geogebra">
+      <caption>
+        A point climbs the curve <m>C</m> while the force field
+        <m>\mathbf{F}</m> and the velocity <m>\mathbf{v}</m> are drawn at
+        its current position. The work is the accumulated
+        <m>\mathbf{F}\cdot\mathbf{v}</m>, so the angle between the two
+        arrows is what decides its sign.
+      </caption>
+      <!-- shift-drag-zoom lets the reader pan and zoom, and rotate the
+           3-D view by dragging; reset-icon puts back the original view -->
+      <interactive geogebra="e2m6kghr"
+                   width="100%" aspect="599:488"
+                   material-width="599" material-height="488"
+                   shift-drag-zoom="yes" reset-icon="yes">
+        <instructions>
+          <p>
+            The slider <m>n</m> cuts the curve into <m>n</m> pieces and
+            joins the division points by straight chords<mdash/>the
+            partition behind <xref ref="eq-work-sum"/>. Increase <m>n</m>
+            and watch the chain of chords settle onto <m>C</m>.
+          </p>
+          <p>
+            Drag the slider <m>t</m> to move the point along the curve
+            <m>C</m>, and watch the two arrows attached to it:
+            <m>\mathbf{F}</m>, the force the field exerts there, and
+            <m>\mathbf{v}</m>, the velocity, which is tangent to <m>C</m>
+            and points in the direction of travel. Rotate the picture by
+            dragging the background if you want to see the configuration
+            from another angle.
+          </p>
+          <p>
+            At each position, ask yourself whether the angle between
+            <m>\mathbf{F}</m> and <m>\mathbf{v}</m> is acute, obtuse, or
+            right<mdash/>that is, whether <m>\mathbf{F}\cdot\mathbf{v}</m>
+            is positive, negative, or zero<mdash/>and whether the answer
+            changes as the point climbs.
+          </p>
+        </instructions>
+      </interactive>
+    </figure>
+
+    <p>
+      Work was our motivation, but any vector field <m>\mathbf{F}</m> can be
+      integrated over a curve <m>C</m> in this fashion; the number it
+      produces is also called the <term>circulation</term> of
+      <m>\mathbf{F}</m> along <m>C</m>, a name that becomes the usual one
+      when <m>C</m> is a closed curve.
+      <xref ref="fig-work-video"/> shows the accumulation of
       <m>\mathbf{F}\cdot\mathbf{T}\,ds</m> along a trajectory.
     </p>
 
@@ -756,10 +830,10 @@ x y z u v w\\
   </example>
 
   <!-- ================================================================= -->
-  <!-- EXAMPLE 2: the gravitational field along a helix (from the         -->
+  <!-- EXAMPLE 2: the inverse-square field along a helix (from the        -->
   <!-- handwritten notes of 01.17/01.22).                                 -->
   <example xml:id="ex-helix-gravity">
-    <title>Work done by the gravitational field along a helix</title>
+    <title>Work done by an inverse-square field along a helix</title>
     <statement>
       <p>
         Calculate the line integral
@@ -788,8 +862,9 @@ x y z u v w\\
         <me>\mathbf{F}
             =\frac{\langle -x,\,-y,\,-z\rangle}{\left(x^2+y^2+z^2\right)^{3/2}}
             =-\frac{\mathbf{r}}{\left\lVert\mathbf{r}\right\rVert^3},</me>
-        the gravitational field <xref ref="eq-gravity-field"/>, drawn in
-        <xref ref="fig-gravity-field"/>. The
+        the inverse-square field <xref ref="eq-gravity-field"/>, drawn in
+        <xref ref="fig-gravity-field"/>, which varies with position just as
+        the gravitational force does. The
         curve is a helix that climbs one full turn, from <m>(1,0,0)</m> at
         <m>t=0</m> to <m>(1,0,2\pi)</m> at <m>t=2\pi</m>; see
         <xref ref="fig-helix-gravity"/>.
@@ -833,7 +908,7 @@ x y z u v w\\
       </md>
       <p>
         The work is negative, and the picture explains why: the
-        gravitational field always points toward the origin, while the helix
+        field always points toward the origin, while the helix
         climbs steadily away from it, so the tangential component of the
         force opposes the motion at every instant. The accumulation of this
         negative work is animated in <xref ref="fig-helix-gravity-video"/>.
@@ -842,7 +917,7 @@ x y z u v w\\
       <figure xml:id="fig-helix-gravity">
         <caption>
           The helix <m>\mathbf{r}(t)=\langle\cos t,\sin t,t\rangle</m>,
-          <m>0\le t\le 2\pi</m>, climbing through the gravitational field
+          <m>0\le t\le 2\pi</m>, climbing through the field
           <m>\mathbf{F}=-\mathbf{r}/\left\lVert\mathbf{r}\right\rVert^3</m>
           (orange arrows, direction only). At the same three points the
           velocity <m>\mathbf{v}</m> is drawn in green: at every one of
@@ -917,7 +992,7 @@ x y z u v w\\
 
       <figure xml:id="fig-helix-gravity-video">
         <caption>
-          A particle climbs the helix through the gravitational field while
+          A particle climbs the helix through the field while
           the work <m>W(t)=\dfrac{1}{\sqrt{1+t^2}}-1</m> accumulates,
           reaching
           <m>\dfrac{1}{\sqrt{1+4\pi^2}}-1\approx -0.84</m> at the top: the
@@ -933,80 +1008,7 @@ x y z u v w\\
   <!-- Interactive exploration: the GeoGebra applet "VF-Fig1"             -->
   <!-- (geogebra.org/m/e2m6kghr), 599 x 488.                              -->
   <subsection xml:id="subsec-work-exploration">
-    <title>Exploring the Work Integral</title>
-
-    <p>
-      The applet below carries every ingredient of
-      <xref ref="eq-work-parametrized"/> at once: a curve <m>C</m>
-      parametrized by <m>\mathbf{r}(t)</m>, the velocity
-      <m>\mathbf{v}(t)=d\mathbf{r}/dt</m> tangent to it, and a force field
-      <m>\mathbf{F}</m> evaluated at the moving point. Work out what the
-      integrand <m>\mathbf{F}\cdot\mathbf{v}</m> is doing before you
-      compute anything.
-    </p>
-
-    <figure xml:id="fig-work-geogebra">
-      <caption>
-        A point climbs the curve <m>C</m> while the force field
-        <m>\mathbf{F}</m> and the velocity <m>\mathbf{v}</m> are drawn at
-        its current position. The work is the accumulated
-        <m>\mathbf{F}\cdot\mathbf{v}</m>, so the angle between the two
-        arrows is what decides its sign.
-      </caption>
-      <interactive geogebra="e2m6kghr"
-                   width="100%" aspect="599:488"
-                   material-width="599" material-height="488">
-        <instructions>
-          <p>
-            Drag the slider to move the point along the curve <m>C</m>, and
-            watch the two arrows attached to it: <m>\mathbf{F}</m>, the
-            force the field exerts there, and <m>\mathbf{v}</m>, the
-            velocity, which is tangent to <m>C</m> and points in the
-            direction of travel. Rotate the picture by dragging the
-            background if you want to see the configuration from another
-            angle.
-          </p>
-          <p>
-            At each position, ask yourself whether the angle between
-            <m>\mathbf{F}</m> and <m>\mathbf{v}</m> is acute, obtuse, or
-            right<mdash/>that is, whether <m>\mathbf{F}\cdot\mathbf{v}</m>
-            is positive, negative, or zero<mdash/>and whether the answer
-            changes as the point climbs. That single observation settles the
-            sign of <m>\int_C\mathbf{F}\cdot d\mathbf{r}</m> without any
-            integration.
-          </p>
-        </instructions>
-      </interactive>
-    </figure>
-
-    <p>
-      The next question asks you to read off the sign of a work integral
-      from a picture alone, with no computation. The field in
-      <xref ref="fig-two-paths-field"/> is the radial field
-      <xref ref="eq-radial-field"/> we started the section with, and the two
-      paths are closed curves centred at the origin.
-    </p>
-
-    <figure xml:id="fig-two-paths-field">
-      <caption>
-        Two closed paths <m>C_1</m> and <m>C_2</m> in a force field. The
-        arrows on the curves give their orientation, and the sliders change
-        the shape of <m>C_1</m>.
-      </caption>
-      <interactive geogebra="arkzz25s"
-                   width="100%" aspect="758:475"
-                   material-width="758" material-height="475">
-        <instructions>
-          <p>
-            Notice the orientation of each curve. Drag the points on a curve
-            to change where it starts, and use the sliders to reshape
-            <m>C_1</m>. At any point of either curve, compare the direction
-            of the field arrow there with the direction in which the curve
-            is being traversed.
-          </p>
-        </instructions>
-      </interactive>
-    </figure>
+    <title>Concept Check</title>
 
     <exercise xml:id="q-work-sign-two-paths">
       <title>Positive, negative, or zero?</title>
@@ -1019,8 +1021,7 @@ x y z u v w\\
 
         <figure xml:id="fig-two-paths-curves">
           <caption>
-            The two closed paths of
-            <xref ref="fig-two-paths-field"/> in the radial field
+            Two closed paths in the radial field
             <xref ref="eq-radial-field"/>: the ellipse <m>C_1</m> and the
             circle <m>C_2</m>. Notice the orientation of each curve.
           </caption>
@@ -1147,6 +1148,115 @@ x y z u v w\\
           identically, so the work is zero. Reversing the orientation
           changes nothing<mdash/>zero either way.
         </p>
+
+        <figure xml:id="fig-circle-perp">
+          <caption>
+            On a circle centred at the origin the field
+            <m>\mathbf{F}</m> (red) points straight out and the direction of
+            travel <m>\mathbf{T}</m> (green) runs around, so the two are
+            perpendicular at every point and
+            <m>\mathbf{F}\cdot\mathbf{T}=0</m> throughout.
+          </caption>
+          <image xml:id="image-circle-perp" width="60%">
+            <shortdescription>
+              A circle centred at the origin in a radial field, with the
+              field vector and the tangent vector drawn at four points and a
+              right angle marked between them.
+            </shortdescription>
+            <description>
+              <p>
+                A circle of radius two centred at the origin, drawn on a
+                coordinate grid over a sparse field of blue arrows that point
+                straight away from the origin. At each of four points of the
+                circle two arrows are attached: a red one pointing radially
+                outward, away from the origin, and a green one tangent to the
+                circle in the counterclockwise direction of travel. A small
+                square at each of those points marks the right angle between
+                the red and the green arrow.
+              </p>
+            </description>
+            <prefigure xmlns="https://prefigure.org" label="circle-perp">
+              <diagram dimensions="(400,400)" margins="5">
+                <definition>G(x,y) = (0.18*x, 0.18*y)</definition>
+                <definition>R = 2</definition>
+                <definition>k(t) = (R*cos(t), R*sin(t))</definition>
+                <definition>rad(t) = (0.85*cos(t), 0.85*sin(t))</definition>
+                <definition>tan(t) = (-0.85*sin(t), 0.85*cos(t))</definition>
+                <definition>sq = 0.28</definition>
+                <coordinates bbox="(-4.4,-4.4,4.4,4.4)" aspect-ratio="1">
+                  <grid-axes xlabel="x" ylabel="y"/>
+
+                  <group at="field">
+                    <repeat parameter="i=-2..2">
+                      <repeat parameter="j=-2..2">
+                        <vector v="G(1.6*i,1.6*j)" tail="(1.6*i,1.6*j)"
+                                stroke="#9dc3f7" thickness="1"/>
+                      </repeat>
+                    </repeat>
+                  </group>
+
+                  <group at="circle">
+                    <parametric-curve function="k" domain="(0,2*pi)"
+                                      stroke="black" thickness="3"
+                                      arrows="1" arrow-location="0.6"/>
+                  </group>
+
+                  <group at="vectors">
+                    <repeat parameter="m=0..3">
+                      <vector v="rad(pi/4+m*pi/2)" tail="k(pi/4+m*pi/2)"
+                              stroke="red" thickness="3"/>
+                      <vector v="tan(pi/4+m*pi/2)" tail="k(pi/4+m*pi/2)"
+                              stroke="#009E73" thickness="3"/>
+                      <polygon
+                        points="[k(pi/4+m*pi/2)+sq*(cos(pi/4+m*pi/2),sin(pi/4+m*pi/2)),
+                                 k(pi/4+m*pi/2)+sq*(cos(pi/4+m*pi/2),sin(pi/4+m*pi/2))+sq*(-sin(pi/4+m*pi/2),cos(pi/4+m*pi/2)),
+                                 k(pi/4+m*pi/2)+sq*(-sin(pi/4+m*pi/2),cos(pi/4+m*pi/2))]"
+                        closed="no" stroke="black" thickness="1.5"/>
+                    </repeat>
+                    <label anchor="k(pi/4)+rad(pi/4)" alignment="ne"
+                           offset="(4,4)" color="red">
+                      <m>\mathbf{F}</m>
+                    </label>
+                    <label anchor="k(pi/4)+tan(pi/4)" alignment="nw"
+                           offset="(-4,4)" color="#009E73">
+                      <m>\mathbf{T}</m>
+                    </label>
+                  </group>
+
+                  <group at="origin">
+                    <point p="(0,0)" size="4" stroke="red" fill="red"/>
+                  </group>
+                </coordinates>
+
+                <annotations>
+                  <annotation ref="figure"
+                              text="A circle centred at the origin in the
+                                    radial field. At four points of the circle
+                                    the field vector points straight out while
+                                    the direction of travel runs around the
+                                    circle, and a right angle is marked
+                                    between them">
+                    <annotation ref="grid" text="The coordinate grid"/>
+                    <annotation ref="axes" text="The coordinate axes"/>
+                    <annotation ref="field"
+                                text="The radial field, whose arrows point
+                                      away from the origin"/>
+                    <annotation ref="circle"
+                                text="The circle of radius two, traversed
+                                      counterclockwise"
+                                sonify="yes"/>
+                    <annotation ref="vectors"
+                                text="At four points of the circle, the
+                                      outward field vector F and the tangent
+                                      vector T, meeting at a right angle, so
+                                      that their dot product is zero"/>
+                    <annotation ref="origin" text="The origin"/>
+                  </annotation>
+                </annotations>
+              </diagram>
+            </prefigure>
+          </image>
+        </figure>
         <p>
           <term>The ellipse <m>C_1</m>.</term> Here the integrand does
           <em>not</em> vanish: on the stretches where the curve moves away
@@ -1159,13 +1269,163 @@ x y z u v w\\
           Reversing the orientation swaps which stretches are positive, and
           the total is still zero.
         </p>
-        <p>
-          The second argument is the more powerful one: it never used the
-          particular shape of <m>C_1</m>, only that the path is closed and
-          that how much the field pushes depends solely on the distance from
-          the origin. That is the property of a <em>conservative</em> field,
-          which is the subject of the next section.
-        </p>
+
+        <figure xml:id="fig-ellipse-cancel">
+          <caption>
+            On an ellipse the distance from the origin rises and falls. Along
+            the green stretches the curve moves outward and
+            <m>\mathbf{F}\cdot\mathbf{T}\gt 0</m>; along the orange stretches
+            it moves back inward and <m>\mathbf{F}\cdot\mathbf{T}\lt 0</m>.
+            At the four marked points the distance is momentarily stationary
+            and the integrand is zero. Over a full circuit the two kinds of
+            stretch cancel.
+          </caption>
+          <image xml:id="image-ellipse-cancel" width="60%">
+            <shortdescription>
+              An ellipse centred at the origin whose arcs are coloured
+              according to whether the motion carries the point away from the
+              origin or back toward it.
+            </shortdescription>
+            <description>
+              <p>
+                An ellipse centred at the origin, three units wide and one
+                unit tall, drawn over a sparse field of blue arrows pointing
+                away from the origin. The ellipse is traversed
+                counterclockwise. Its four quarters alternate in colour: the
+                two along which the point moves away from the origin are
+                green and marked with a plus, and the two along which it
+                moves back toward the origin are orange and marked with a
+                minus. At one green point and one orange point the outward
+                field vector and the tangent vector are drawn; at the green
+                point they make an acute angle, at the orange point an obtuse
+                one. Four black dots mark the ends of the axes, where the
+                distance from the origin stops changing.
+              </p>
+            </description>
+            <prefigure xmlns="https://prefigure.org" label="ellipse-cancel">
+              <diagram dimensions="(420,360)" margins="5">
+                <definition>G(x,y) = (0.18*x, 0.18*y)</definition>
+                <definition>e(t) = (3*cos(t), sin(t))</definition>
+                <definition>rade(t) = (0.75*3*cos(t)/sqrt(9*cos(t)^2+sin(t)^2),
+                                       0.75*sin(t)/sqrt(9*cos(t)^2+sin(t)^2))</definition>
+                <definition>tane(t) = (-0.75*3*sin(t)/sqrt(9*sin(t)^2+cos(t)^2),
+                                       0.75*cos(t)/sqrt(9*sin(t)^2+cos(t)^2))</definition>
+                <coordinates bbox="(-4.6,-3.4,4.6,3.4)" aspect-ratio="1">
+                  <grid-axes xlabel="x" ylabel="y"/>
+
+                  <group at="field">
+                    <repeat parameter="i=-2..2">
+                      <repeat parameter="j=-1..1">
+                        <vector v="G(1.8*i,1.8*j)" tail="(1.8*i,1.8*j)"
+                                stroke="#9dc3f7" thickness="1"/>
+                      </repeat>
+                    </repeat>
+                  </group>
+
+                  <group at="inward">
+                    <parametric-curve function="e" domain="(0,pi/2)"
+                                      stroke="#d55e00" thickness="4"
+                                      arrows="1" arrow-location="0.9"/>
+                    <parametric-curve function="e" domain="(pi,3*pi/2)"
+                                      stroke="#d55e00" thickness="4"
+                                      arrows="1" arrow-location="4.05"/>
+                    <label anchor="e(0.75)" alignment="ne" offset="(8,8)"
+                           color="#d55e00">
+                      <m>-</m>
+                    </label>
+                    <label anchor="e(3.9)" alignment="sw" offset="(-8,-8)"
+                           color="#d55e00">
+                      <m>-</m>
+                    </label>
+                  </group>
+
+                  <group at="outward">
+                    <parametric-curve function="e" domain="(pi/2,pi)"
+                                      stroke="#009E73" thickness="4"
+                                      arrows="1" arrow-location="2.25"/>
+                    <parametric-curve function="e" domain="(3*pi/2,2*pi)"
+                                      stroke="#009E73" thickness="4"
+                                      arrows="1" arrow-location="5.4"/>
+                    <label anchor="e(2.4)" alignment="nw" offset="(-8,8)"
+                           color="#009E73">
+                      <m>+</m>
+                    </label>
+                    <label anchor="e(5.5)" alignment="se" offset="(8,-8)"
+                           color="#009E73">
+                      <m>+</m>
+                    </label>
+                  </group>
+
+                  <group at="turning">
+                    <point p="e(0)" size="4" stroke="black" fill="black"/>
+                    <point p="e(pi/2)" size="4" stroke="black" fill="black"/>
+                    <point p="e(pi)" size="4" stroke="black" fill="black"/>
+                    <point p="e(3*pi/2)" size="4" stroke="black" fill="black"/>
+                  </group>
+
+                  <group at="vectors">
+                    <vector v="rade(3*pi/4)" tail="e(3*pi/4)" stroke="red"
+                            thickness="3"/>
+                    <vector v="tane(3*pi/4)" tail="e(3*pi/4)" stroke="#009E73"
+                            thickness="3"/>
+                    <vector v="rade(pi/4)" tail="e(pi/4)" stroke="red"
+                            thickness="3"/>
+                    <vector v="tane(pi/4)" tail="e(pi/4)" stroke="#d55e00"
+                            thickness="3"/>
+                    <label anchor="(-3.3,2.1)" alignment="center"
+                           color="#009E73">
+                      <m>\text{moving outward}</m>
+                    </label>
+                    <label anchor="(3.2,2.1)" alignment="center"
+                           color="#d55e00">
+                      <m>\text{moving inward}</m>
+                    </label>
+                  </group>
+
+                  <group at="origin">
+                    <point p="(0,0)" size="4" stroke="red" fill="red"/>
+                  </group>
+                </coordinates>
+
+                <annotations>
+                  <annotation ref="figure"
+                              text="An ellipse centred at the origin in the
+                                    radial field, with its quarters coloured
+                                    according to whether the motion carries
+                                    the point outward or back inward">
+                    <annotation ref="grid" text="The coordinate grid"/>
+                    <annotation ref="axes" text="The coordinate axes"/>
+                    <annotation ref="field"
+                                text="The radial field, whose arrows point
+                                      away from the origin"/>
+                    <annotation ref="outward"
+                                text="The two stretches along which the point
+                                      moves away from the origin, where the
+                                      dot product of the field with the
+                                      direction of travel is positive"
+                                sonify="yes"/>
+                    <annotation ref="inward"
+                                text="The two stretches along which the point
+                                      moves back toward the origin, where that
+                                      dot product is negative"
+                                sonify="yes"/>
+                    <annotation ref="turning"
+                                text="The four points at the ends of the axes,
+                                      where the distance from the origin stops
+                                      changing and the integrand is zero"/>
+                    <annotation ref="vectors"
+                                text="The field vector and the tangent vector
+                                      at one point of an outward stretch,
+                                      where they make an acute angle, and at
+                                      one point of an inward stretch, where
+                                      they make an obtuse angle"/>
+                    <annotation ref="origin" text="The origin"/>
+                  </annotation>
+                </annotations>
+              </diagram>
+            </prefigure>
+          </image>
+        </figure>
       </solution>
     </exercise>
   </subsection>

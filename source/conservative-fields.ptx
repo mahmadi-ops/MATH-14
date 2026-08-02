@@ -1039,4 +1039,304 @@ forces the two integrals to agree.
 
 </subsection>
 
+<!-- ==================================================================== -->
+<!-- Questions 4-6 of the companion GeoGebra activity, with the three      -->
+<!-- applets VF-fig 2, VF-fig 3 and VF-fig 4 (600 x 500).                  -->
+<subsection xml:id="sec-conservative-concept-check">
+<title>Concept Check</title>
+
+<p>
+The three questions below all use the applets that go with them. In each
+one, drag the slider to send the point along the curve and watch the field
+vector and the tangent vector move with it; the sign of their dot product is
+what the integral is accumulating. Every applet can be rotated by dragging
+the background and zoomed by scrolling.
+</p>
+
+<exercise xml:id="q-vf-helix-work">
+<title>Work Along the Helix, Two Ways</title>
+<statement>
+<p>
+For the field and path of <xref ref="fig-vf-helix-work"/>:
+</p>
+<ol>
+<li>
+<p>
+Use the parametrized path to compute the work done by the force field from
+point <m>A</m> to point <m>B</m>.
+</p>
+</li>
+<li>
+<p>
+Is it possible to use the fundamental theorem of line integrals
+<xref ref="eq-ftli"/> to compute that work? If so, use it to verify your
+answer to the previous part. Justify your answer fully.
+</p>
+</li>
+</ol>
+</statement>
+<answer>
+<p>
+The work is <m>0</m>, by either method.
+</p>
+</answer>
+<solution>
+<p>
+<term>Directly.</term> On the helix
+<m>\mathbf{r}(t)=\left\langle \cos t,\ \sin t,\ t/2\right\rangle</m> the
+point <m>A=(1,0,0)</m> is <m>t=0</m> and <m>B=(1,0,\pi)</m> is
+<m>t=2\pi</m>, since <m>z=t/2</m>. Along the curve
+</p>
+
+<md>
+<mrow>
+\mathbf{F}\bigl(\mathbf{r}(t)\bigr) \amp
+  = \left\langle -\cos t,\ \sin t,\ 0\right\rangle ,
+</mrow>
+<mrow>
+\mathbf{v}(t) \amp
+  = \left\langle -\sin t,\ \cos t,\ \tfrac12\right\rangle ,
+</mrow>
+<mrow>
+\mathbf{F}\cdot\mathbf{v} \amp
+  = \cos t\sin t + \sin t\cos t = \sin(2t).
+</mrow>
+</md>
+
+<p>
+Hence
+</p>
+
+<md>
+W = \int_0^{2\pi}\sin(2t)\,dt
+  = \left[-\tfrac12\cos(2t)\right]_0^{2\pi} = 0 .
+</md>
+
+<p>
+<term>By the fundamental theorem.</term> Yes, it applies. The field
+<m>\mathbf{F}=\left\langle -x,\ y,\ 0\right\rangle</m> is defined and
+smooth on all of <m>\R^3</m>, which is open and simply connected, and its
+mixed partials match:
+<m>\partial(-x)/\partial y = 0 = \partial(y)/\partial x</m>, and the
+<m>z</m>-component is <m>0</m> while neither of the others involves
+<m>z</m>. So <m>\mathbf{F}</m> is conservative, with potential
+</p>
+
+<md>
+f(x,y,z) = \frac{y^2-x^2}{2},
+\qquad \nabla f = \left\langle -x,\ y,\ 0\right\rangle .
+</md>
+
+<p>
+Therefore, by <xref ref="eq-ftli"/>,
+</p>
+
+<md>
+W = f(B) - f(A) = f(1,0,\pi) - f(1,0,0)
+  = \left(-\tfrac12\right) - \left(-\tfrac12\right) = 0 ,
+</md>
+
+<p>
+which agrees with the direct computation. The reason is visible in the
+picture: <m>A</m> and <m>B</m> differ only in <m>z</m>, and the potential
+does not involve <m>z</m> at all, so climbing costs nothing. The work
+gained on the stretches where <m>\mathbf{F}</m> and <m>\mathbf{v}</m> make
+an acute angle is given back exactly on the stretches where the angle is
+obtuse.
+</p>
+</solution>
+</exercise>
+
+<figure xml:id="fig-vf-helix-work">
+<caption>
+A point climbing the helix
+<m>\mathbf{r}(t)=\left\langle \cos t,\ \sin t,\ t/2\right\rangle</m> from
+<m>A</m> to <m>B</m>, through the force field
+<m>\mathbf{F}=\left\langle -x,\ y,\ 0\right\rangle</m>. The two arrows are
+<m>\mathbf{F}</m> at the moving point and the velocity <m>\mathbf{v}</m>.
+</caption>
+<interactive geogebra="arjpdtkt"
+             width="100%" aspect="600:500"
+             material-width="600" material-height="500"
+             shift-drag-zoom="yes" reset-icon="yes">
+<instructions>
+<p>
+Drag the slider <m>t</m> to move the point from <m>A</m> to <m>B</m> along
+the helix. At each position the applet draws the force
+<m>\mathbf{F}=\left\langle -x,y,0\right\rangle</m> acting there and the
+velocity <m>\mathbf{v}=d\mathbf{r}/dt</m>. Watch the angle between them: it
+is acute on some stretches and obtuse on others, so the work is being added
+on some parts of the trip and taken back on others.
+</p>
+</instructions>
+</interactive>
+</figure>
+
+<exercise xml:id="q-vf-segment">
+<title>A Line Integral Along a Segment</title>
+<statement>
+<p>
+Compute the line integral of the vector field along the line segment shown
+in <xref ref="fig-vf-segment"/>.
+</p>
+</statement>
+<answer>
+<p>
+<m>\displaystyle \int_C \mathbf{F}\cdot d\mathbf{r}
+  = 1 + \frac{4\sqrt2}{3} \approx 2.886 .</m>
+</p>
+</answer>
+<solution>
+<p>
+The field <m>\mathbf{F}=\tfrac13\left\langle z,\ z,\ x+y\right\rangle</m> is
+conservative: it is smooth on all of <m>\R^3</m> and
+</p>
+
+<md>
+<mrow>
+\frac{\partial}{\partial y}\left(\frac{z}{3}\right) \amp = 0
+  = \frac{\partial}{\partial x}\left(\frac{z}{3}\right),
+</mrow>
+<mrow>
+\frac{\partial}{\partial z}\left(\frac{z}{3}\right) \amp = \frac13
+  = \frac{\partial}{\partial x}\left(\frac{x+y}{3}\right)
+  = \frac{\partial}{\partial y}\left(\frac{x+y}{3}\right).
+</mrow>
+</md>
+
+<p>
+A potential is found by inspection:
+</p>
+
+<md>
+f(x,y,z) = \frac{(x+y)z}{3},
+\qquad
+\nabla f = \left\langle \frac{z}{3},\ \frac{z}{3},\
+  \frac{x+y}{3}\right\rangle = \mathbf{F} .
+</md>
+
+<p>
+So there is no need to parametrize the segment at all. By
+<xref ref="eq-ftli"/>, with <m>A=(0,1,-1)</m> and
+<m>B=(1,2\sqrt2,2)</m>,
+</p>
+
+<md>
+<mrow>
+\int_C \mathbf{F}\cdot d\mathbf{r} \amp = f(B)-f(A)
+  = \frac{\left(1+2\sqrt2\right)(2)}{3} - \frac{(0+1)(-1)}{3}
+</mrow>
+<mrow>
+\amp = \frac{2+4\sqrt2}{3} + \frac13
+     = 1 + \frac{4\sqrt2}{3} \approx 2.886 .
+</mrow>
+</md>
+</solution>
+</exercise>
+
+<figure xml:id="fig-vf-segment">
+<caption>
+The straight segment from <m>A=(0,1,-1)</m> to <m>B=(1,2\sqrt2,2)</m> in the
+field <m>\mathbf{F}=\tfrac13\left\langle z,\ z,\ x+y\right\rangle</m>, with
+<m>\mathbf{F}</m> and the unit tangent <m>\hat{\mathbf{T}}</m> drawn at the
+moving point.
+</caption>
+<!-- Served from a local copy of the material whose stored window is
+     458 + 142 = 600 wide by 500 high, so the narrow panel carrying the
+     slider is part of the layout.  (The published material stores a
+     1098 + 142 window, which loses the panel when squeezed to 600.) -->
+<interactive platform="geogebra" width="100%" aspect="600:500">
+<slate surface="geogebra" source="geogebra/vf-fig3-segment.ggb"
+       aspect="600:500" material-width="600" material-height="500"/>
+<instructions>
+<p>
+Drag the slider to move the point along the segment from <m>A</m> to
+<m>B</m>. The applet draws the field vector <m>\mathbf{F}</m> and the unit
+tangent <m>\hat{\mathbf{T}}</m> at that point, so what the integral
+accumulates is the length of the projection of <m>\mathbf{F}</m> onto
+<m>\hat{\mathbf{T}}</m>. Rotate the view to see how the segment sits
+relative to the field.
+</p>
+</instructions>
+</interactive>
+</figure>
+
+<exercise xml:id="q-vf-curve">
+<title>The Same Endpoints, a Wilder Path</title>
+<statement>
+<p>
+Compute the line integral of the vector field from point <m>A</m> to point
+<m>B</m> as shown in <xref ref="fig-vf-curve"/>, where the curve is
+parametrized as
+</p>
+
+<md>
+\mathbf{r}(t)=\left\langle \frac{\ln(t)}{\ln(2)},\ t^{3/2},\
+t\cos(\pi t)\right\rangle .
+</md>
+</statement>
+<answer>
+<p>
+<m>\displaystyle \int_C \mathbf{F}\cdot d\mathbf{r}
+  = 1 + \frac{4\sqrt2}{3} \approx 2.886</m>, exactly as in
+<xref ref="q-vf-segment"/>.
+</p>
+</answer>
+<solution>
+<p>
+First check the endpoints. At <m>t=1</m>,
+<m>\mathbf{r}(1)=\left\langle 0,\ 1,\ \cos\pi\right\rangle=(0,1,-1)=A</m>,
+and at <m>t=2</m>,
+<m>\mathbf{r}(2)=\left\langle 1,\ 2\sqrt2,\ 2\cos 2\pi\right\rangle
+=(1,2\sqrt2,2)=B</m>. So this curve joins the same two points as the
+segment of <xref ref="fig-vf-segment"/>.
+</p>
+<p>
+Computing <m>\int_C\mathbf{F}\cdot d\mathbf{r}</m> directly here would mean
+differentiating <m>t\cos(\pi t)</m> and <m>t^{3/2}</m> and integrating the
+resulting mess. There is no need: the field is the same conservative field
+as before, with the same potential <m>f=(x+y)z/3</m>, so the integral
+depends only on the endpoints:
+</p>
+
+<md>
+\int_C \mathbf{F}\cdot d\mathbf{r} = f(B) - f(A)
+  = 1 + \frac{4\sqrt2}{3} \approx 2.886 .
+</md>
+
+<p>
+This is the same number as in <xref ref="q-vf-segment"/>, and that is the
+whole point: for a conservative field the path between two points is
+irrelevant. A wildly complicated path and a straight segment cost exactly
+the same.
+</p>
+</solution>
+</exercise>
+
+<figure xml:id="fig-vf-curve">
+<caption>
+The same field <m>\mathbf{F}=\tfrac13\left\langle z,\ z,\ x+y\right\rangle</m>
+and the same endpoints as in <xref ref="fig-vf-segment"/>, but now joined by
+the curve
+<m>\mathbf{r}(t)=\left\langle \frac{\ln t}{\ln 2},\ t^{3/2},\
+t\cos(\pi t)\right\rangle</m>.
+</caption>
+<!-- as above: a local copy sized 459 + 141 by 500 -->
+<interactive platform="geogebra" width="100%" aspect="600:500">
+<slate surface="geogebra" source="geogebra/vf-fig4-curve.ggb"
+       aspect="600:500" material-width="600" material-height="500"/>
+<instructions>
+<p>
+Drag the slider to move the point along the curve from <m>A</m> to
+<m>B</m>, watching <m>\mathbf{F}</m> and the unit tangent
+<m>\hat{\mathbf{T}}</m> as before. Compare the shape of this path with the
+segment of <xref ref="fig-vf-segment"/>: the two share their endpoints and
+nothing else.
+</p>
+</instructions>
+</interactive>
+</figure>
+
+</subsection>
+
 </section>
