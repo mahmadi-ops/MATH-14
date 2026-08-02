@@ -200,7 +200,7 @@ class StokesProofIdea(ThreeDScene):
         self.play(Create(self.boundary), run_time=1.6)
 
         s_lab = MathTex(r"S", tex_template=TPL, color=INK, font_size=52)
-        s_lab.move_to(surf_pt(-1.3, 1.3) + np.array([0, 0, 0.55]))
+        s_lab.move_to(surf_pt(-1.75, -0.2) + np.array([0, 0, 0.5]))
         c_lab = MathTex(r"C=\partial S", tex_template=TPL, color=CURVE,
                         font_size=42)
         c_lab.move_to(surf_pt(0.2, -2.0) + np.array([0, -0.9, 0.05]))
@@ -264,7 +264,7 @@ class StokesProofIdea(ThreeDScene):
 
         # the local picture, as a card in screen space
         card = self.circulation_card()
-        card.to_edge(RIGHT, buff=0.9)
+        card.to_edge(RIGHT, buff=0.9).shift(UP * 0.85)
         self.add_fixed_in_frame_mobjects(card)
         self.play(FadeIn(card), run_time=1.0)
 
@@ -272,17 +272,17 @@ class StokesProofIdea(ThreeDScene):
             r"\oint_{\partial(\text{patch})}\mathbf{F}\cdot d\mathbf{r}"
             r"\;\approx\;\bigl[(\operatorname{curl}\mathbf{F})\cdot\mathbf{n}"
             r"\bigr]\,\Delta S",
-            edge=DOWN, size=44,
+            edge=DOWN, buff=0.55, size=40,
         )
         self.play(Write(local), run_time=1.6)
         note = self.caption(
             r"$(\operatorname{curl}\mathbf{F})\cdot\mathbf{n}$ is circulation"
             r" per unit area,",
             r"measured in the tangent plane of the patch.",
-            edge=DOWN, buff=1.55, size=38,
+            edge=DOWN, buff=2.15, size=38,
         )
         self.play(FadeIn(note))
-        self.wait(2.4)
+        self.wait(3.0)
         self.clear_fixed(note, local, card, head)
         self.play(FadeOut(patch), FadeOut(patch_loop), run_time=0.6)
 
@@ -410,15 +410,16 @@ class StokesProofIdea(ThreeDScene):
             edge=DOWN, size=38,
         )
         self.play(FadeIn(note2))
-        self.wait(1.6)
+        self.wait(2.0)
         self.play(FadeOut(whole["interior"]), run_time=1.6)
         self.play(whole["outer"].animate.set_stroke(color=CURVE, width=8),
                   run_time=1.0)
+        self.clear_fixed(note2, run_time=0.5)
         note3 = self.caption(r"Only the outer boundary survives.",
-                             edge=DOWN, buff=1.6, size=42)
+                             edge=DOWN, size=44)
         self.play(FadeIn(note3))
-        self.wait(1.8)
-        self.clear_fixed(note2, note3, whole["card"], head)
+        self.wait(2.2)
+        self.clear_fixed(note3, whole["card"], head)
 
     def two_patch_card(self):
         box = RoundedRectangle(width=8.0, height=4.2, corner_radius=0.15,
@@ -502,17 +503,18 @@ class StokesProofIdea(ThreeDScene):
             edge=DOWN, size=46,
         )
         self.play(Write(chain), run_time=1.4)
-        self.wait(1.6)
+        self.wait(2.2)
+        self.clear_fixed(chain, head, run_time=0.5)
 
         note = self.caption(
             r"Now let the patches shrink: the right-hand sum",
             r"becomes the surface integral, and Stokes' theorem falls out.",
-            edge=DOWN, buff=1.6, size=36,
+            edge=DOWN, size=38,
         )
         self.play(FadeIn(note))
         self.play(FadeOut(self.grid), run_time=1.2)
-        self.wait(1.4)
-        self.clear_fixed(note, chain, head)
+        self.wait(2.0)
+        self.clear_fixed(note)
 
         final = self.formula(
             r"\oint_C \mathbf{F}\cdot d\mathbf{r}"
