@@ -199,11 +199,13 @@ class StokesProofIdea(ThreeDScene):
         self.play(Create(self.surface), run_time=1.8)
         self.play(Create(self.boundary), run_time=1.6)
 
-        s_lab = MathTex(r"S", tex_template=TPL, color=INK, font_size=52)
-        s_lab.move_to(surf_pt(-1.75, -0.2) + np.array([0, 0, 0.5]))
+        # lifted well clear of the surface: a label level with it gets sorted
+        # behind the translucent fill and comes out grey
+        s_lab = MathTex(r"S", tex_template=TPL, color=INK, font_size=54)
+        s_lab.move_to(surf_pt(-1.75, -0.2) + np.array([0, 0, 1.0]))
         c_lab = MathTex(r"C=\partial S", tex_template=TPL, color=CURVE,
-                        font_size=42)
-        c_lab.move_to(surf_pt(0.2, -2.0) + np.array([0, -0.9, 0.05]))
+                        font_size=46)
+        c_lab.move_to(surf_pt(0.2, -2.0) + np.array([0, -1.05, 0.15]))
         for lab in (s_lab, c_lab):
             lab.rotate(90 * DEGREES, axis=RIGHT)
         self.play(FadeIn(s_lab), FadeIn(c_lab))
@@ -264,7 +266,7 @@ class StokesProofIdea(ThreeDScene):
 
         # the local picture, as a card in screen space
         card = self.circulation_card()
-        card.to_edge(RIGHT, buff=0.9).shift(UP * 0.85)
+        card.scale(0.82).to_edge(RIGHT, buff=0.8).shift(UP * 1.15)
         self.add_fixed_in_frame_mobjects(card)
         self.play(FadeIn(card), run_time=1.0)
 
