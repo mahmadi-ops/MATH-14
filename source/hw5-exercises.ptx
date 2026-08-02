@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- MATH 14 - HW5: polar coordinates and double integrals in polar form -->
-<exercises xml:id="exercises-hw5" xmlns:xi="http://www.w3.org/2001/XInclude">
+<section xml:id="sec-exercises-hw5" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Assignment 5</title>
 
   <introduction>
@@ -9,6 +9,8 @@
       <xref ref="section-double-integrals-polar-form" text="title"/>.
     </p>
   </introduction>
+
+  <exercises xml:id="exercises-hw5">
 
   <exercise xml:id="ex-hw5-rose">
     <introduction>
@@ -151,4 +153,5 @@
       </p>
     </statement>
   </exercise>
-</exercises>
+  </exercises>
+</section>

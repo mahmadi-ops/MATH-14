@@ -4,14 +4,12 @@
 <!-- pattern as hw1-online.ptx: a <var/> per blank in the statement, matched  -->
 <!-- in order by a <var> in <setup>, whose first <condition> is the correct   -->
 <!-- answer.  Every blank is graded on its own, so partial credit survives.   -->
-<exercises xml:id="exercises-hw9-online" xmlns:xi="http://www.w3.org/2001/XInclude">
+<section xml:id="sec-exercises-hw9-online" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Assignment 9, Online Version</title>
 
   <introduction>
     <p>
-      Section: <xref ref="section-greens-theorem" text="title"/>. These are the problems of
-      <xref ref="exercises-hw9" text="title"/> again, in a form you can
-      submit and have checked here.
+      Section: <xref ref="section-greens-theorem" text="title"/>. Work each problem, then type your answers into the boxes and have them checked here.
     </p>
     <p>
       Every answer box is graded separately, so a box you fill in correctly
@@ -27,20 +25,62 @@
     </p>
   </introduction>
 
+  <exercises xml:id="exercises-hw9-online">
+
+  <figure xml:id="fig-hw9o-staircase">
+    <caption>
+      The curve <m>C</m> of <xref ref="ex-hw9o-staircase"/>: a staircase of
+      ten unit steps from <m>(0,0)</m> to <m>(10,10)</m>, followed by the
+      horizontal segment back to <m>(0,10)</m>.
+    </caption>
+    <image width="70%">
+      <prefigure xmlns="https://prefigure.org" label="prefigure-hw9o-staircase">
+        <diagram dimensions="(360,340)" margins="10">
+          <coordinates bbox="(-1.6,-1.6,12.2,11.6)">
+            <axes at="hst-axes" xlabel="x" ylabel="y" decorations="no"
+                arrows="1"/>
+            <polygon at="hst-path" closed="no" stroke="#0072B2" thickness="2"
+                fill="none" points="((0,0),(1,0),(1,1),(2,1),(2,2),(3,2),(3,3),(4,3),(4,4),(5,4),(5,5),(6,5),(6,6),(7,6),(7,7),(8,7),(8,8),(9,8),(9,9),(10,9),(10,10),(0,10))"/>
+            <vector at="hst-a1" v="(0.9,0)" tail="(4.2,4)" stroke="#0072B2"
+                thickness="2"/>
+            <vector at="hst-a2" v="(-1.1,0)" tail="(5.6,10)" stroke="#0072B2"
+                thickness="2"/>
+            <point at="hst-start" p="(0,0)" fill="black" alignment="sw">
+              <m>(0,0)</m>
+            </point>
+            <point at="hst-corner" p="(10,10)" fill="black" alignment="se">
+              <m>(10,10)</m>
+            </point>
+            <point at="hst-end" p="(0,10)" fill="black" alignment="nw">
+              <m>(0,10)</m>
+            </point>
+          </coordinates>
+          <annotations>
+            <annotation ref="figure" text="A staircase path made of ten unit steps climbing from the origin to the point ten comma ten, each step going one unit to the right and then one unit up. From ten comma ten the path returns straight left along the line y equals ten to the point zero comma ten. Arrowheads show the direction of travel: rightward on the staircase and leftward on the top segment.">
+              <annotation ref="hst-path" text="The staircase path from the origin to ten comma ten and then back along y equals ten to zero comma ten."/>
+              <annotation ref="hst-a1" text="An arrowhead on the staircase pointing to the right, the direction of travel."/>
+              <annotation ref="hst-a2" text="An arrowhead on the top segment pointing to the left, the direction of travel back to zero comma ten."/>
+            </annotation>
+          </annotations>
+        </diagram>
+      </prefigure>
+    </image>
+  </figure>
+
   <exercise xml:id="ex-hw9o-staircase">
     <title>Work Along a Staircase</title>
     <statement>
       <p>
         For <m>\mathbf{F} = \left\langle x^3e^{x^2}+xe^x-y,\
         y^2-e^y+x \right\rangle</m> along the path of
-        <xref ref="fig-hw9-staircase"/>: the curl integrand
+        <xref ref="fig-hw9o-staircase"/>: the curl integrand
         <m>\frac{\partial N}{\partial x} -
         \frac{\partial M}{\partial y}</m> of <xref ref="eq-curl-def"/>
         equals <var width="6"/>.
       </p>
       <p>
-        The area enclosed by the staircase, the top segment and the
-        <m>y</m>-axis is <var width="8"/>, so the closed loop integral is
+        Closing the path into a simple closed curve encloses an area of
+        <var width="8"/>, so the integral around that closed curve is
         <var width="8"/>.
       </p>
       <p>The work along the given path is <var width="14"/>.</p>
@@ -95,7 +135,7 @@
     <title>A Fierce-Looking Integral Around a Circle</title>
     <statement>
       <p>
-        For the integral of <xref ref="ex-hw9-circle"/> around the unit
+        For the integral of <xref ref="ex-hw9o-circle"/> around the unit
         circle: after simplification
         <m>\frac{\partial N}{\partial x} -
         \frac{\partial M}{\partial y}</m> equals <var width="8"/> (in
@@ -224,4 +264,5 @@
       </p>
     </solution>
   </exercise>
-</exercises>
+  </exercises>
+</section>

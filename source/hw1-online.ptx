@@ -9,15 +9,13 @@
 <!-- right.  (This is the "fillin-basic" flavour, which renders inline in a   -->
 <!-- plain HTML build; the newer <fillin>/<evaluation> flavour needs the      -->
 <!-- dynamic runtime and shows an empty box without it.)                      -->
-<exercises xml:id="exercises-hw1-online" xmlns:xi="http://www.w3.org/2001/XInclude">
+<section xml:id="sec-exercises-hw1-online" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Assignment 1, Online Version</title>
 
   <introduction>
     <p>
       Sections: <xref ref="sec-parametrization" text="title"/> and
-      <xref ref="sec-arc-length" text="title"/>. These are
-      the four problems of <xref ref="exercises-hw1" text="title"/> again, in a form you
-      can submit and have checked here.
+      <xref ref="sec-arc-length" text="title"/>. Work each problem, then type your answers into the boxes and have them checked here.
     </p>
     <p>
       Each problem below has several answer boxes, and <em>every box is
@@ -50,6 +48,8 @@
       </li>
     </ul>
   </introduction>
+
+  <exercises xml:id="exercises-hw1-online">
 
   <!-- =================================================================== -->
   <exercise xml:id="ex-hw1o-parametrize-intersection">
@@ -498,4 +498,5 @@
     </solution>
   </exercise>
 
-</exercises>
+  </exercises>
+</section>

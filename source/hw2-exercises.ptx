@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- MATH 14 - HW2: line integrals of scalar functions -->
-<exercises xml:id="exercises-hw2" xmlns:xi="http://www.w3.org/2001/XInclude">
+<section xml:id="sec-exercises-hw2" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Assignment 2</title>
 
   <introduction>
@@ -8,6 +8,8 @@
       Section: <xref ref="sec-line-integrals" text="title"/>.
     </p>
   </introduction>
+
+  <exercises xml:id="exercises-hw2">
 
   <exercise xml:id="ex-hw2-quarter-circle">
     <statement>
@@ -166,3 +168,4 @@
     </image>
   </figure>
 </exercises>
+</section>

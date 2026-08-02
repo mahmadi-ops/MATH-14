@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- MATH 14 - HW7: spherical coordinates and substitution -->
-<exercises xml:id="exercises-hw7" xmlns:xi="http://www.w3.org/2001/XInclude">
+<section xml:id="sec-exercises-hw7" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Assignment 7</title>
 
   <introduction>
@@ -9,6 +9,8 @@
       and <xref ref="section-jacobian-substitution" text="title"/>.
     </p>
   </introduction>
+
+  <exercises xml:id="exercises-hw7">
 
   <exercise xml:id="ex-hw7-hemisphere">
     <statement>
@@ -61,4 +63,5 @@
       </p>
     </statement>
   </exercise>
-</exercises>
+  </exercises>
+</section>

@@ -4,14 +4,12 @@
 <!-- pattern as hw1-online.ptx: a <var/> per blank in the statement, matched  -->
 <!-- in order by a <var> in <setup>, whose first <condition> is the correct   -->
 <!-- answer.  Every blank is graded on its own, so partial credit survives.   -->
-<exercises xml:id="exercises-hw3-online" xmlns:xi="http://www.w3.org/2001/XInclude">
+<section xml:id="sec-exercises-hw3-online" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Assignment 3, Online Version</title>
 
   <introduction>
     <p>
-      Section: <xref ref="sec-vector-fields" text="title"/>. These are the problems of
-      <xref ref="exercises-hw3" text="title"/> again, in a form you can
-      submit and have checked here.
+      Section: <xref ref="sec-vector-fields" text="title"/>. Work each problem, then type your answers into the boxes and have them checked here.
     </p>
     <p>
       Every answer box is graded separately, so a box you fill in correctly
@@ -27,11 +25,54 @@
     </p>
   </introduction>
 
+  <exercises xml:id="exercises-hw3-online">
+
+  <figure xml:id="fig-hw3o-field">
+    <caption>
+      The vector field <m>\mathbf{F}</m> and the curve <m>C</m> of
+      <xref ref="ex-hw3o-sign"/>. The curve is traversed in the direction of
+      the arrowhead.
+    </caption>
+    <image width="70%">
+      <prefigure xmlns="https://prefigure.org" label="prefigure-hw3o-field">
+        <diagram dimensions="(380,320)" margins="10">
+          <definition>F(x,y) = (0.30*y, -0.30)</definition>
+          <definition>circle(t) = (1.5 + 1.05*cos(t), 1.35 + 1.05*sin(t))</definition>
+          <coordinates bbox="(-0.35,-0.35,3.35,2.95)">
+            <axes at="hf-axes" xlabel="x" ylabel="y" decorations="no" arrows="1"/>
+            <repeat at="hf-cols" parameter="i=0..6">
+              <repeat parameter="j=0..5">
+                <vector at="hf-v-((i))-((j))" v="F(0.45*i+0.15, 0.5*j+0.1)"
+                    tail="(0.45*i+0.15, 0.5*j+0.1)" stroke="#009E73"
+                    thickness="2"/>
+              </repeat>
+            </repeat>
+            <parametric-curve at="hf-C" function="circle" domain="(0,2*pi)"
+                stroke="#0072B2" thickness="3"/>
+            <vector at="hf-Cdir" v="(0.02,0.30)" tail="(2.54,1.15)"
+                stroke="#0072B2" thickness="3"/>
+            <label at="hf-Clabel" anchor="(1.5,1.35)" alignment="center"
+                color="#0072B2"><m>C</m></label>
+            <label at="hf-Flabel" anchor="(2.75,2.70)" alignment="e"
+                color="#009E73"><m>\mathbf{F}</m></label>
+          </coordinates>
+          <annotations>
+            <annotation ref="figure" text="A grid of green field vectors over the first quadrant, together with a blue circle. Near the x axis the field vectors point almost straight down and are short. Higher up they tilt to the right and grow longer, so the field is strongest across the top of the circle. The circle is traversed counterclockwise, and its right side carries an arrowhead pointing upward.">
+              <annotation ref="hf-C" text="The closed curve C, a circle, traversed in the direction of the arrowhead on its right side, counterclockwise."/>
+              <annotation ref="hf-Cdir" text="The arrowhead giving the direction of travel along C, pointing upward on the right side of the circle."/>
+              <annotation ref="hf-cols" text="The field vectors. They are short and nearly vertical near the x axis and grow longer and more tilted as y increases."/>
+            </annotation>
+          </annotations>
+        </diagram>
+      </prefigure>
+    </image>
+  </figure>
+
   <exercise xml:id="ex-hw3o-sign">
     <title>The Sign of a Line Integral</title>
     <statement>
       <p>
-        For the field and curve of <xref ref="fig-hw3-field"/>, is
+        For the field and curve of <xref ref="fig-hw3o-field"/>, is
         <m>\displaystyle\oint_C \mathbf{F} \cdot d\mathbf{r}</m>
         positive, negative, or zero? Type one word:
         <c>positive</c>, <c>negative</c>, or <c>zero</c>.
@@ -153,4 +194,5 @@
       </me>
     </solution>
   </exercise>
-</exercises>
+  </exercises>
+</section>

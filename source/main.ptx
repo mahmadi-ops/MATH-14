@@ -30,7 +30,7 @@
     <xi:include href="frontmatter.ptx" />
 
     <chapter xml:id="ch-curves-and-fields">
-      <title>Curves, Line Integrals, and Vector Fields</title>
+      <title>Line Integrals</title>
       <xi:include href="section-parametrization.ptx" />
       <xi:include href="section-arc-length.ptx" />
       <xi:include href="section-line-integrals.ptx" />
@@ -52,7 +52,7 @@
     </chapter>
 
     <chapter xml:id="ch-integral-theorems">
-      <title>The Integral Theorems of Vector Calculus</title>
+      <title>The Big Theorems</title>
       <xi:include href="greens-theorem.ptx" />
       <xi:include href="surface-integrals.ptx" />
       <xi:include href="stokes-theorem.ptx" />
@@ -62,22 +62,26 @@
     <chapter xml:id="ch-assignments">
       <title>Assignments</title>
       <xi:include href="hw1-exercises.ptx" />
-      <xi:include href="hw1-online.ptx" />
       <xi:include href="hw2-exercises.ptx" />
-      <xi:include href="hw2-online.ptx" />
       <xi:include href="hw3-exercises.ptx" />
-      <xi:include href="hw3-online.ptx" />
       <xi:include href="hw4-exercises.ptx" />
-      <xi:include href="hw4-online.ptx" />
       <xi:include href="hw5-exercises.ptx" />
-      <xi:include href="hw5-online.ptx" />
       <xi:include href="hw6-exercises.ptx" />
-      <xi:include href="hw6-online.ptx" />
       <xi:include href="hw7-exercises.ptx" />
-      <xi:include href="hw7-online.ptx" />
       <xi:include href="hw8-exercises.ptx" />
-      <xi:include href="hw8-online.ptx" />
       <xi:include href="hw9-exercises.ptx" />
+    </chapter>
+
+    <chapter xml:id="ch-online-assignments">
+      <title>Online Assignments</title>
+      <xi:include href="hw1-online.ptx" />
+      <xi:include href="hw2-online.ptx" />
+      <xi:include href="hw3-online.ptx" />
+      <xi:include href="hw4-online.ptx" />
+      <xi:include href="hw5-online.ptx" />
+      <xi:include href="hw6-online.ptx" />
+      <xi:include href="hw7-online.ptx" />
+      <xi:include href="hw8-online.ptx" />
       <xi:include href="hw9-online.ptx" />
     </chapter>
 

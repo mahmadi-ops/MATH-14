@@ -4,14 +4,12 @@
 <!-- pattern as hw1-online.ptx: a <var/> per blank in the statement, matched  -->
 <!-- in order by a <var> in <setup>, whose first <condition> is the correct   -->
 <!-- answer.  Every blank is graded on its own, so partial credit survives.   -->
-<exercises xml:id="exercises-hw6-online" xmlns:xi="http://www.w3.org/2001/XInclude">
+<section xml:id="sec-exercises-hw6-online" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Assignment 6, Online Version</title>
 
   <introduction>
     <p>
-      Sections: <xref ref="section-triple-integrals-rectangular" text="title"/> and <xref ref="section-triple-integrals-cylindrical" text="title"/>. These are the problems of
-      <xref ref="exercises-hw6" text="title"/> again, in a form you can
-      submit and have checked here.
+      Sections: <xref ref="section-triple-integrals-rectangular" text="title"/> and <xref ref="section-triple-integrals-cylindrical" text="title"/>. Work each problem, then type your answers into the boxes and have them checked here.
     </p>
     <p>
       Every answer box is graded separately, so a box you fill in correctly
@@ -27,24 +25,18 @@
     </p>
   </introduction>
 
+  <exercises xml:id="exercises-hw6-online">
+
   <exercise xml:id="ex-hw6o-cone-mass">
     <title>Mass of a Cone Along the x-Axis</title>
     <statement>
       <p>
-        The object is bounded by <m>x = \sqrt{y^2+z^2}</m> and
-        <m>x = 1</m>, with density <m>\rho = x</m>. Using cylindrical
-        coordinates about the <m>x</m>-axis
-        (<m>y = r\cos\theta</m>, <m>z = r\sin\theta</m>), the cone is
-        <m>x = </m> <var width="6"/>.
+        An object is bounded by <m>x = \sqrt{y^2+z^2}</m> and
+        <m>x = 1</m>, and its density is <m>\rho(x,y,z) = x</m>.
       </p>
       <p>The mass of the object is <var width="10"/>.</p>
     </statement>
     <setup>
-      <var case="insensitive">
-        <condition string="r">
-          <feedback><p>Correct.</p></feedback>
-        </condition>
-      </var>
       <var>
         <condition number="0.785" tolerance="0.005">
           <feedback><p>Correct: pi over four.</p></feedback>
@@ -84,10 +76,10 @@
         rectangular coordinates.
       </p>
       <p>
-        The upper limit of <m>z</m> becomes <var width="10"/>, the region
-        in the plane is bounded by <m>x = </m> <var width="6"/> and the
-        lines <m>y = \pm x</m>, and <m>x</m> runs from <m>0</m> to
-        <var width="6"/>.
+        In rectangular coordinates the innermost limit for <m>z</m>
+        becomes <var width="12"/>; for a fixed <m>x</m>, <m>y</m> runs from
+        <var width="8"/> to <var width="8"/>; and <m>x</m> runs from
+        <m>0</m> to <var width="6"/>.
       </p>
     </statement>
     <setup>
@@ -96,14 +88,19 @@
           <feedback><p>Correct: r squared times cosine of two theta is x squared minus y squared.</p></feedback>
         </condition>
       </var>
-      <var>
-        <condition number="1" tolerance="0.01">
-          <feedback><p>Correct: r = sec(theta) is the line x = 1.</p></feedback>
+      <var case="insensitive">
+        <condition string="-\s*x">
+          <feedback><p>Correct.</p></feedback>
+        </condition>
+      </var>
+      <var case="insensitive">
+        <condition string="x">
+          <feedback><p>Correct.</p></feedback>
         </condition>
       </var>
       <var>
         <condition number="1" tolerance="0.01">
-          <feedback><p>Correct.</p></feedback>
+          <feedback><p>Correct: r = sec(theta) is the line x = 1.</p></feedback>
         </condition>
       </var>
     </setup>
@@ -171,13 +168,14 @@
     <title>Volume Between a Hyperboloid and a Paraboloid</title>
     <statement>
       <p>
-        Find the volume bounded by <m>x^2+y^2-z^2+5 = 0</m> and
-        <m>x^2+y^2+z-1 = 0</m>. Eliminating <m>x^2+y^2</m> gives
-        <m>z^2 + z - 6 = 0</m>, whose relevant root is <m>z = </m>
-        <var width="6"/>, so the two surfaces meet over the circle of
-        radius <var width="6"/>.
+        Find the volume of the region bounded by
+        <m>x^2+y^2-z^2+5 = 0</m> and <m>x^2+y^2+z-1 = 0</m>.
       </p>
-      <p>The volume is <var width="10"/>.</p>
+      <p>
+        The two surfaces meet at <m>z = </m> <var width="6"/>, over the
+        circle of radius <var width="6"/>, and the volume is
+        <var width="10"/>.
+      </p>
     </statement>
     <setup>
       <var>
@@ -213,4 +211,5 @@
       </me>
     </solution>
   </exercise>
-</exercises>
+  </exercises>
+</section>

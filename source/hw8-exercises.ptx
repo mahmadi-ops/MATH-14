@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- MATH 14 - HW8: mass and center of mass -->
-<exercises xml:id="exercises-hw8" xmlns:xi="http://www.w3.org/2001/XInclude">
+<section xml:id="sec-exercises-hw8" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Assignment 8</title>
 
   <introduction>
@@ -8,6 +8,8 @@
       Section: <xref ref="section-mass-center-of-mass" text="title"/>.
     </p>
   </introduction>
+
+  <exercises xml:id="exercises-hw8">
 
   <exercise xml:id="ex-hw8-centroid">
     <statement>
@@ -106,4 +108,5 @@
       </p>
     </statement>
   </exercise>
-</exercises>
+  </exercises>
+</section>

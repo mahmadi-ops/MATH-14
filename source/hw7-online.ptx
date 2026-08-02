@@ -4,14 +4,12 @@
 <!-- pattern as hw1-online.ptx: a <var/> per blank in the statement, matched  -->
 <!-- in order by a <var> in <setup>, whose first <condition> is the correct   -->
 <!-- answer.  Every blank is graded on its own, so partial credit survives.   -->
-<exercises xml:id="exercises-hw7-online" xmlns:xi="http://www.w3.org/2001/XInclude">
+<section xml:id="sec-exercises-hw7-online" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Assignment 7, Online Version</title>
 
   <introduction>
     <p>
-      Sections: <xref ref="section-triple-integrals-spherical" text="title"/> and <xref ref="section-jacobian-substitution" text="title"/>. These are the problems of
-      <xref ref="exercises-hw7" text="title"/> again, in a form you can
-      submit and have checked here.
+      Sections: <xref ref="section-triple-integrals-spherical" text="title"/> and <xref ref="section-jacobian-substitution" text="title"/>. Work each problem, then type your answers into the boxes and have them checked here.
     </p>
     <p>
       Every answer box is graded separately, so a box you fill in correctly
@@ -27,15 +25,24 @@
     </p>
   </introduction>
 
+  <exercises xml:id="exercises-hw7-online">
+
   <exercise xml:id="ex-hw7o-hemisphere">
     <title>A Hemisphere in Spherical Coordinates</title>
     <statement>
       <p>
-        The region of integration is the half of the ball of radius
-        <var width="6"/> with <m>x \ge 0</m>, and the integrand
-        <m>\left(x^2+y^2+z^2\right)^{-1/2}</m> becomes <m>1/\rho</m>.
+        Evaluate
       </p>
-      <p>The value of the integral is <var width="12"/>.</p>
+      <me>
+        \int_{0}^{6}\!\!\int_{-\sqrt{36-x^2}}^{\sqrt{36-x^2}}\!\!
+        \int_{-\sqrt{36-x^2-z^2}}^{\sqrt{36-x^2-z^2}}
+        \frac{dy\,dz\,dx}{\left(x^2+y^2+z^2\right)^{1/2}} .
+      </me>
+      <p>
+        The solid of integration is half of a ball; its radius is
+        <var width="6"/>, and the value of the integral is
+        <var width="12"/>.
+      </p>
     </statement>
     <setup>
       <var>
@@ -112,11 +119,14 @@
     <title>Scaling a Double Integral</title>
     <statement>
       <p>
-        Given <m>\iint_D f\,dA = 3</m> on <m>x^2+y^2 \le 16</m>,
-        <m>E</m> the disk <m>x^2+y^2 \le 64</m>, and
-        <m>g(x,y) = 3f\left(\frac{x}{2},\frac{y}{2}\right)</m>: the
-        substitution <m>u = x/2</m>, <m>v = y/2</m> has Jacobian
-        <var width="6"/>, and
+        Suppose <m>\iint_D f\,dA = 3</m>, where <m>D</m> is the disk
+        <m>x^2+y^2 \le 16</m>. Let <m>E</m> be the disk
+        <m>x^2+y^2 \le 64</m> and
+        <m>g(x,y) = 3f\left(\frac{x}{2},\frac{y}{2}\right)</m>.
+      </p>
+      <p>
+        The change of variables carrying <m>E</m> onto <m>D</m> multiplies
+        areas by <var width="6"/>, and
         <m>\iint_E g\,dA = </m> <var width="8"/>.
       </p>
     </statement>
@@ -146,4 +156,5 @@
       </me>
     </solution>
   </exercise>
-</exercises>
+  </exercises>
+</section>

@@ -4,14 +4,12 @@
 <!-- pattern as hw1-online.ptx: a <var/> per blank in the statement, matched  -->
 <!-- in order by a <var> in <setup>, whose first <condition> is the correct   -->
 <!-- answer.  Every blank is graded on its own, so partial credit survives.   -->
-<exercises xml:id="exercises-hw8-online" xmlns:xi="http://www.w3.org/2001/XInclude">
+<section xml:id="sec-exercises-hw8-online" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Assignment 8, Online Version</title>
 
   <introduction>
     <p>
-      Section: <xref ref="section-mass-center-of-mass" text="title"/>. These are the problems of
-      <xref ref="exercises-hw8" text="title"/> again, in a form you can
-      submit and have checked here.
+      Section: <xref ref="section-mass-center-of-mass" text="title"/>. Work each problem, then type your answers into the boxes and have them checked here.
     </p>
     <p>
       Every answer box is graded separately, so a box you fill in correctly
@@ -27,11 +25,88 @@
     </p>
   </introduction>
 
+  <exercises xml:id="exercises-hw8-online">
+
+  <figure xml:id="fig-hw8o-solid">
+    <caption>
+      The solid of <xref ref="ex-hw8o-centroid"/>: the cone
+      <m>z = 1 + \sqrt{x^2+y^2}</m> capped by the plane <m>z = 2</m>,
+      sitting on the horizontal cylinder <m>x^2 + z^2 = 1</m> cut off by the
+      planes <m>y = \pm 1</m>.
+    </caption>
+    <image xml:id="image-hw8o-solid" width="65%">
+      <shortdescription>
+        A cone standing point-down on a horizontal cylinder lying along the
+        y axis.
+      </shortdescription>
+      <description>
+        <p>
+          A red cylinder of radius one lies on its side along the y axis,
+          cut off by the planes y equals plus and minus one. Above it, a red
+          cone opens upward from the point at height one on the z axis to a
+          disk of radius one in the plane z equals two.
+        </p>
+      </description>
+      <latex-image>
+        <![CDATA[\begin{tikzpicture}[line join=round, line cap=round]
+  \definecolor{oired}{RGB}{213,40,60}
+  \begin{axis}[
+      view={118}{16},
+      width=11.5cm,
+      axis lines=center,
+      axis line style={-latex, black!70, line width=0.7pt},
+      xlabel={$x$}, ylabel={$y$}, zlabel={$z$},
+      label style={font=\large},
+      ticks=none,
+      xmin=-2.2, xmax=2.2, ymin=-2.2, ymax=2.2, zmin=-1.4, zmax=3.2,
+      clip=false,
+    ]
+    % ---- the horizontal plane, for reference ----
+    \addplot3[surf, shader=flat, draw=black!12, fill=black!10,
+              opacity=0.45, fill opacity=0.45,
+              domain=-2:2, samples=2, y domain=-2:2, samples y=2,
+              forget plot]
+      (x, y, 0);
+    % ---- the cylinder x^2 + z^2 = 1, lying along y, cut at y = pm 1 ----
+    \addplot3[surf, shader=faceted, faceted color=oired!35,
+              colormap={cylr}{color=(oired!45!white) color=(oired!85!black)},
+              opacity=0.9, fill opacity=0.9,
+              domain=0:360, samples=44, y domain=-1:1, samples y=6,
+              z buffer=sort, forget plot]
+      ({cos(x)}, y, {sin(x)});
+    % ---- the cone z = 1 + sqrt(x^2+y^2), capped at z = 2 ----
+    \addplot3[surf, shader=faceted, faceted color=oired!30,
+              colormap={coner}{color=(oired!40!white) color=(oired!80!black)},
+              opacity=0.92, fill opacity=0.92,
+              domain=0:1, samples=16, y domain=0:360, samples y=44,
+              z buffer=sort, forget plot]
+      ({x*cos(y)}, {x*sin(y)}, {1 + x});
+    % ---- the cap of the cone ----
+    \addplot3[surf, shader=flat, draw=oired!55, fill=oired!45,
+              opacity=0.85, fill opacity=0.85,
+              domain=0:1, samples=12, y domain=0:360, samples y=44,
+              forget plot]
+      ({x*cos(y)}, {x*sin(y)}, 2);
+    % ---- labels ----
+    \node[oired, font=\large, anchor=west]
+      at (axis cs:0.55,1.15,2.55) {$z = 1+\sqrt{x^2+y^2}$};
+    \node[oired, font=\large, anchor=west]
+      at (axis cs:0.55,1.15,-1.15) {$x^2+z^2=1$};
+    \draw[black!55, line width=0.6pt] (axis cs:0,0,2) -- (axis cs:0.12,0,2);
+    \node[anchor=east, font=\small] at (axis cs:0,0,2) {$2$};
+    \draw[black!55, line width=0.6pt] (axis cs:0,0,3) -- (axis cs:0.12,0,3);
+    \node[anchor=east, font=\small] at (axis cs:0,0,3) {$3$};
+  \end{axis}
+\end{tikzpicture}]]>
+      </latex-image>
+    </image>
+  </figure>
+
   <exercise xml:id="ex-hw8o-centroid">
     <title>The Centroid of Cone Plus Cylinder</title>
     <statement>
       <p>
-        For the solid of <xref ref="fig-hw8-solid"/> with constant density
+        For the solid of <xref ref="fig-hw8o-solid"/> with constant density
         <m>\delta</m>: the mass of the cylinder is <m>m_1 = </m>
         <var width="8"/> times <m>\delta</m>, and the mass of the cone is
         <m>m_2 = </m> <var width="8"/> times <m>\delta</m>.
@@ -116,7 +191,7 @@
     <solution>
       <p>
         By symmetry the center of mass lies on the <m>x</m>-axis. From
-        <xref ref="ex-hw6-cone-mass"/>, <m>M = \pi/4</m>, and
+        <xref ref="ex-hw6o-cone-mass"/>, <m>M = \pi/4</m>, and
       </p>
       <me>
         M_{yz} = \int_0^1\!\!\int_0^{2\pi}\!\!\int_r^1
@@ -131,4 +206,5 @@
       </p>
     </solution>
   </exercise>
-</exercises>
+  </exercises>
+</section>

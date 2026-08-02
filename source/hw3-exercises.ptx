@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- MATH 14 - HW3: vector fields and line integrals -->
-<exercises xml:id="exercises-hw3" xmlns:xi="http://www.w3.org/2001/XInclude">
+<section xml:id="sec-exercises-hw3" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Assignment 3</title>
 
   <introduction>
@@ -8,6 +8,8 @@
       Section: <xref ref="sec-vector-fields" text="title"/>.
     </p>
   </introduction>
+
+  <exercises xml:id="exercises-hw3">
 
   <exercise xml:id="ex-hw3-sign">
     <statement>
@@ -125,4 +127,5 @@
       </p>
     </statement>
   </exercise>
-</exercises>
+  </exercises>
+</section>

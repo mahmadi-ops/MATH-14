@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- MATH 14 - HW4: conservative fields and double integrals -->
-<exercises xml:id="exercises-hw4" xmlns:xi="http://www.w3.org/2001/XInclude">
+<section xml:id="sec-exercises-hw4" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Assignment 4</title>
 
   <introduction>
@@ -10,6 +10,8 @@
       <xref ref="section-double-integrals-general-regions" text="title"/>.
     </p>
   </introduction>
+
+  <exercises xml:id="exercises-hw4">
 
   <exercise xml:id="ex-hw4-two-paths">
     <introduction>
@@ -231,4 +233,5 @@
       </p>
     </statement>
   </exercise>
-</exercises>
+  </exercises>
+</section>

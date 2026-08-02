@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- MATH 14 - HW6: triple integrals in rectangular and cylindrical coordinates -->
-<exercises xml:id="exercises-hw6" xmlns:xi="http://www.w3.org/2001/XInclude">
+<section xml:id="sec-exercises-hw6" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Assignment 6</title>
 
   <introduction>
@@ -9,6 +9,8 @@
       and <xref ref="section-triple-integrals-cylindrical" text="title"/>.
     </p>
   </introduction>
+
+  <exercises xml:id="exercises-hw6">
 
   <exercise xml:id="ex-hw6-cone-mass">
     <statement>
@@ -67,4 +69,5 @@
       </p>
     </statement>
   </exercise>
-</exercises>
+  </exercises>
+</section>
