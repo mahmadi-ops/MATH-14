@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- MATH 14 - HW2, online version: the same problems as the written       -->
+<!-- Assignment 2, rebuilt as auto-graded exercises.  Same "fillin-basic"     -->
+<!-- pattern as hw1-online.ptx: a <var/> per blank in the statement, matched  -->
+<!-- in order by a <var> in <setup>, whose first <condition> is the correct   -->
+<!-- answer.  Every blank is graded on its own, so partial credit survives.   -->
+<exercises xml:id="exercises-hw2-online" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Assignment 2, Online Version</title>
+
+  <introduction>
+    <p>
+      Section: <xref ref="sec-line-integrals" text="title"/>. These are the problems of
+      <xref ref="exercises-hw2" text="title"/> again, in a form you can
+      submit and have checked here.
+    </p>
+    <p>
+      Every answer box is graded separately, so a box you fill in correctly
+      earns its credit even if another box in the same problem is wrong.
+      Press <q>Check Me</q> to submit; you may check as often as you like.
+    </p>
+    <p>
+      <term>How to type your answers.</term> Numbers: a decimal number and
+      nothing else<mdash/>no units, no <m>=</m> sign, no <m>\pi</m>; give at
+      least three decimals (for instance <c>18.850</c>, not <c>6pi</c>).
+      Answers are accepted within a small tolerance. Words: type just the
+      word asked for, in lower case.
+    </p>
+  </introduction>
+
+  <exercise xml:id="ex-hw2o-quarter-circle">
+    <title>Mass of a Quarter-Circle Wire</title>
+    <statement>
+      <p>
+        A wire is the quarter circle of radius <m>1</m> centered at
+        <m>(a,0)</m>, <m>a \gt 0</m>, lying in the first quadrant relative
+        to its center, with density
+        <m>\rho(x,y) = \dfrac{18(x-a)y}{(x-a)^2+y^2}</m> kilograms per
+        meter.
+      </p>
+      <p>
+        Parametrizing by <m>x = \cos t + a</m>, <m>y = \sin t</m>, the
+        speed is <var width="6"/> and the density becomes
+        <m>9\sin(2t)</m>.
+      </p>
+      <p>The total mass of the wire is <var width="10"/> kilograms.</p>
+    </statement>
+    <setup>
+      <var>
+        <condition number="1" tolerance="0.001">
+          <feedback><p>Correct: the circle has radius one, so the speed is one.</p></feedback>
+        </condition>
+      </var>
+      <var>
+        <condition number="9" tolerance="0.01">
+          <feedback><p>Correct.</p></feedback>
+        </condition>
+        <condition number="4.5" tolerance="0.01">
+          <feedback><p>That is the value of the integral of 9 sin(2t) over half the range; check your limits.</p></feedback>
+        </condition>
+      </var>
+    </setup>
+    <solution>
+      <p>
+        With <m>\mathbf{r}(t) = \left\langle \cos t + a, \sin t
+        \right\rangle</m>, <m>0 \le t \le \pi/2</m>, the speed is
+        <m>\lVert \mathbf{v} \rVert = 1</m>, and
+        <m>(x-a)^2 + y^2 = 1</m>, so
+        <m>\rho = 18 \cos t \sin t = 9\sin(2t)</m>. Hence
+      </p>
+      <me>
+        M = \int_0^{\pi/2} 9\sin(2t)\,dt
+          = -\frac92\Big[\cos(2t)\Big]_0^{\pi/2} = 9 .
+      </me>
+      <p>The answer does not depend on <m>a</m>.</p>
+    </solution>
+  </exercise>
+
+  <exercise xml:id="ex-hw2o-segment">
+    <title>A Line Integral Along a Segment</title>
+    <statement>
+      <p>
+        Evaluate <m>\displaystyle\int_C (x-y+z-2)\,ds</m> along the
+        segment <m>x=t</m>, <m>y=1-t</m>, <m>z=1</m> from <m>(0,1,1)</m> to
+        <m>(1,0,1)</m>.
+      </p>
+      <p>Along the path, <m>x-y+z-2 = </m> <var width="10"/> (in terms of
+        <m>t</m>), the speed is <var width="8"/>, and the integral equals
+        <var width="10"/>.</p>
+    </statement>
+    <setup>
+      <var case="insensitive">
+        <condition string="2\s*\*?\s*t\s*-\s*2">
+          <feedback><p>Correct.</p></feedback>
+        </condition>
+      </var>
+      <var>
+        <condition number="1.414" tolerance="0.01">
+          <feedback><p>Correct: the speed is the square root of two.</p></feedback>
+        </condition>
+      </var>
+      <var>
+        <condition number="-1.414" tolerance="0.01">
+          <feedback><p>Correct.</p></feedback>
+        </condition>
+        <condition number="1.414" tolerance="0.01">
+          <feedback><p>Right size, wrong sign: the integrand 2t-2 is negative on the whole segment.</p></feedback>
+        </condition>
+      </var>
+    </setup>
+    <solution>
+      <p>
+        Here <m>x-y+z-2 = t-(1-t)+1-2 = 2t-2</m> and
+        <m>\mathbf{v} = \left\langle 1,-1,0 \right\rangle</m>, so
+        <m>\lVert \mathbf{v} \rVert = \sqrt2</m>, and <m>t</m> runs
+        from <m>0</m> to <m>1</m>:
+      </p>
+      <md>
+        <mrow>
+          \int_C (x-y+z-2)\,ds \amp = \sqrt2\int_0^1 (2t-2)\,dt
+        </mrow>
+        <mrow>
+          \amp = \sqrt2\Big[(t-1)^2\Big]_0^1 = -\sqrt2 \approx -1.414 .
+        </mrow>
+      </md>
+    </solution>
+  </exercise>
+
+  <exercise xml:id="ex-hw2o-square-path">
+    <title>Around the Unit Square</title>
+    <statement>
+      <p>
+        Evaluate <m>\displaystyle\int_C \frac{1}{x^2+y^2+1}\,ds</m>
+        over the boundary <m>C</m> of the unit square of
+        <xref ref="fig-hw2-square"/>.
+      </p>
+      <p>
+        The two sides lying on the axes each contribute <var width="10"/>,
+        and the two sides at distance one from an axis each contribute
+        <var width="10"/>.
+      </p>
+      <p>The whole integral equals <var width="10"/>.</p>
+    </statement>
+    <setup>
+      <var>
+        <condition number="0.785" tolerance="0.005">
+          <feedback><p>Correct: that is the arctangent of one.</p></feedback>
+        </condition>
+      </var>
+      <var>
+        <condition number="0.615" tolerance="0.005">
+          <feedback><p>Correct.</p></feedback>
+        </condition>
+      </var>
+      <var>
+        <condition number="2.441" tolerance="0.01">
+          <feedback><p>Correct.</p></feedback>
+        </condition>
+        <condition number="1.571" tolerance="0.01">
+          <feedback><p>That is only the two sides on the axes; add the other two.</p></feedback>
+        </condition>
+      </var>
+    </setup>
+    <solution>
+      <p>
+        On the side from <m>(0,0)</m> to <m>(1,0)</m>,
+        <m>f = 1/(t^2+1)</m> and <m>ds = dt</m>, giving
+        <m>\tan^{-1}(1) = \pi/4 \approx 0.785</m>; the side on the
+        <m>y</m>-axis gives the same. On each of the other two sides
+        <m>f = 1/(t^2+2)</m>, giving
+        <m>\frac{1}{\sqrt2}\tan^{-1}\left(\frac{1}{\sqrt2}\right)
+        \approx 0.615</m>. Adding,
+      </p>
+      <me>
+        \int_C f\,ds = \frac{\pi}{2}
+        + \sqrt2 \tan^{-1}\left(\frac{1}{\sqrt2}\right)
+        \approx 2.441 .
+      </me>
+      <p>
+        A line integral of a scalar function does not depend on the
+        direction of travel, and opposite sides of the square give equal
+        contributions.
+      </p>
+    </solution>
+  </exercise>
+
+  <exercise xml:id="ex-hw2o-wall">
+    <title>Area of a Curved Wall</title>
+    <statement>
+      <p>
+        Find the surface area of the wall of <xref ref="fig-hw2-wall"/>,
+        whose height is <m>f(x,y) = x^2-y^2+3</m> over the unit circle.
+      </p>
+      <p>
+        Along the unit circle the height simplifies to
+        <m>\cos(2t) + </m> <var width="6"/>, and the area is
+        <var width="10"/>.
+      </p>
+    </statement>
+    <setup>
+      <var>
+        <condition number="3" tolerance="0.001">
+          <feedback><p>Correct.</p></feedback>
+        </condition>
+      </var>
+      <var>
+        <condition number="18.850" tolerance="0.02">
+          <feedback><p>Correct: six pi.</p></feedback>
+        </condition>
+        <condition number="6" tolerance="0.01">
+          <feedback><p>That is the coefficient; multiply by the length of the circle.</p></feedback>
+        </condition>
+      </var>
+    </setup>
+    <solution>
+      <p>
+        With <m>\mathbf{r}(t) = \left\langle \cos t, \sin t
+        \right\rangle</m> the speed is <m>1</m> and
+      </p>
+      <me>
+        f = \cos^2 t - \sin^2 t + 3 = \cos(2t) + 3 ,
+      </me>
+      <p>so the area is</p>
+      <me>
+        \int_0^{2\pi} \left(\cos(2t)+3\right) dt = 6\pi \approx 18.850 .
+      </me>
+    </solution>
+  </exercise>
+</exercises>

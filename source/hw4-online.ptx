@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- MATH 14 - HW4, online version: the same problems as the written       -->
+<!-- Assignment 4, rebuilt as auto-graded exercises.  Same "fillin-basic"     -->
+<!-- pattern as hw1-online.ptx: a <var/> per blank in the statement, matched  -->
+<!-- in order by a <var> in <setup>, whose first <condition> is the correct   -->
+<!-- answer.  Every blank is graded on its own, so partial credit survives.   -->
+<exercises xml:id="exercises-hw4-online" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Assignment 4, Online Version</title>
+
+  <introduction>
+    <p>
+      Sections: <xref ref="section-conservative-fields" text="title"/>, <xref ref="section-double-integrals-rectangles" text="title"/>, and <xref ref="section-double-integrals-general-regions" text="title"/>. These are the problems of
+      <xref ref="exercises-hw4" text="title"/> again, in a form you can
+      submit and have checked here.
+    </p>
+    <p>
+      Every answer box is graded separately, so a box you fill in correctly
+      earns its credit even if another box in the same problem is wrong.
+      Press <q>Check Me</q> to submit; you may check as often as you like.
+    </p>
+    <p>
+      <term>How to type your answers.</term> Numbers: a decimal number and
+      nothing else<mdash/>no units, no <m>=</m> sign, no <m>\pi</m>; give at
+      least three decimals (for instance <c>18.850</c>, not <c>6pi</c>).
+      Answers are accepted within a small tolerance. Words: type just the
+      word asked for, in lower case.
+    </p>
+  </introduction>
+
+  <exercise xml:id="ex-hw4o-two-paths">
+    <title>Which Path Takes Less Work?</title>
+    <statement>
+      <p>
+        For the field of <xref ref="fig-hw4-paths"/>: over which path does
+        <m>\mathbf{F}</m> perform less work? Type <c>ADC</c> or
+        <c>ABC</c>.
+      </p>
+      <p>Answer: <var width="8"/></p>
+      <p>Is <m>\mathbf{F}</m> conservative? Type <c>yes</c> or <c>no</c>.</p>
+      <p>Answer: <var width="8"/></p>
+    </statement>
+    <setup>
+      <var case="insensitive">
+        <condition string="abc">
+          <feedback><p>Correct.</p></feedback>
+        </condition>
+        <condition string="adc">
+          <feedback><p>The other way round: along DC the field is longer than along AB, while the angle with the direction of travel is the same, so ADC does more work.</p></feedback>
+        </condition>
+      </var>
+      <var case="insensitive">
+        <condition string="no">
+          <feedback><p>Correct.</p></feedback>
+        </condition>
+        <condition string="yes">
+          <feedback><p>If it were conservative the two paths would give the same work, since they share their endpoints.</p></feedback>
+        </condition>
+      </var>
+    </setup>
+    <solution>
+      <p>
+        Both paths run along two sides of the square. The horizontal sides
+        <m>AD</m> and <m>BC</m> contribute the same, but the vertical side
+        <m>DC</m> sits where the field is longer than it is along
+        <m>AB</m>, and the angle between <m>\mathbf{F}</m> and
+        <m>\hat{\mathbf{T}}</m> is the same on both. Hence
+        <m>\int_{ADC} \gt \int_{ABC}</m>, so <m>ABC</m> is the path of
+        less work.
+      </p>
+      <p>
+        Because the two paths share their endpoints and give different
+        work, <m>\mathbf{F}</m> is <term>not</term> conservative: a
+        conservative field is path-independent.
+      </p>
+    </solution>
+  </exercise>
+
+  <exercise xml:id="ex-hw4o-density-shapes">
+    <title>Which Shapes Can Carry This Density?</title>
+    <statement>
+      <p>
+        With <m>\delta(x,y) = x^2-y^2</m> and the shapes of
+        <xref ref="fig-hw4-shapes"/>: type the numbers of the two shapes
+        that can carry <m>\delta</m> as a density, in increasing order and
+        separated by a comma (for instance <c>1,3</c>).
+      </p>
+      <p>Answer: <var width="8"/></p>
+      <p>Which of those two is heavier? Type its number.</p>
+      <p>Answer: <var width="6"/></p>
+    </statement>
+    <setup>
+      <var case="insensitive">
+        <condition string="2\s*,\s*4">
+          <feedback><p>Correct.</p></feedback>
+        </condition>
+        <condition string="1\s*,\s*3">
+          <feedback><p>Those are the shapes where the absolute value of y is at least the absolute value of x, so the density would be negative there.</p></feedback>
+        </condition>
+      </var>
+      <var case="insensitive">
+        <condition string="2">
+          <feedback><p>Correct.</p></feedback>
+        </condition>
+        <condition string="4">
+          <feedback><p>Compare the areas: the triangle has area r squared over two and the sector has area pi r squared over eight, which is smaller.</p></feedback>
+        </condition>
+      </var>
+    </setup>
+    <solution>
+      <p>
+        A density cannot be negative, so we need
+        <m>x^2 - y^2 \ge 0</m>, that is <m>|x| \ge |y|</m>. That holds on
+        shapes <m>2</m> and <m>4</m>, and fails on shapes <m>1</m> and
+        <m>3</m>.
+      </p>
+      <p>
+        Shape <m>2</m> is the triangle of area <m>r^2/2</m> and shape
+        <m>4</m> the sector of area <m>\pi r^2/8</m>. The triangle
+        contains the sector's range of radii and has the larger area, so
+        <m>\iint_{R_2}\delta\,dA \ge \iint_{R_4}\delta\,dA</m>: shape
+        <m>2</m> is heavier.
+      </p>
+    </solution>
+  </exercise>
+
+  <exercise xml:id="ex-hw4o-reverse-order">
+    <title>Reversing the Order of Integration</title>
+    <statement>
+      <p>
+        Rewrite <m>\displaystyle\int_0^5\!\!\int_{x/2}^{x}
+        f(x,y)\,dy\,dx</m> with the order reversed. The region splits at
+        <m>y = </m> <var width="6"/>.
+      </p>
+      <p>
+        For <m>0 \le y \le</m> that value, <m>x</m> runs from <m>y</m> to
+        <var width="8"/>; above it, <m>x</m> runs from <m>y</m> to
+        <var width="6"/>.
+      </p>
+    </statement>
+    <setup>
+      <var>
+        <condition number="2.5" tolerance="0.01">
+          <feedback><p>Correct: that is where y = x/2 meets x = 5.</p></feedback>
+        </condition>
+      </var>
+      <var case="insensitive">
+        <condition string="2\s*\*?\s*y">
+          <feedback><p>Correct.</p></feedback>
+        </condition>
+      </var>
+      <var>
+        <condition number="5" tolerance="0.01">
+          <feedback><p>Correct.</p></feedback>
+        </condition>
+      </var>
+    </setup>
+    <solution>
+      <p>
+        The region is bounded by <m>y = x/2</m> below, <m>y = x</m> above,
+        and <m>x = 5</m> on the right. Reading it in <m>y</m>-slices, the
+        left boundary is always <m>x = y</m>; the right boundary is
+        <m>x = 2y</m> until <m>2y = 5</m>, and <m>x = 5</m> after that:
+      </p>
+      <me>
+        \int_0^{5/2}\!\!\int_{y}^{2y} f\,dx\,dy
+        + \int_{5/2}^{5}\!\!\int_{y}^{5} f\,dx\,dy .
+      </me>
+    </solution>
+  </exercise>
+
+  <exercise xml:id="ex-hw4o-volume">
+    <title>A Volume Over a Triangle</title>
+    <statement>
+      <p>
+        Find the volume under <m>z = \sqrt{1-x^2}</m> and above the
+        triangle formed by <m>y=x</m>, <m>x=1</m>, and the <m>x</m>-axis.
+      </p>
+      <p>
+        After the inner integration the integrand is <var width="12"/> (in
+        terms of <m>x</m>), and the volume is <var width="10"/>.
+      </p>
+    </statement>
+    <setup>
+      <var case="insensitive">
+        <condition string="x\s*\*?\s*sqrt\s*\(\s*1\s*-\s*x\s*\^\s*2\s*\)">
+          <feedback><p>Correct.</p></feedback>
+        </condition>
+      </var>
+      <var>
+        <condition number="0.333" tolerance="0.005">
+          <feedback><p>Correct: one third.</p></feedback>
+        </condition>
+      </var>
+    </setup>
+    <solution>
+      <p>
+        The triangle is <m>0 \le x \le 1</m>, <m>0 \le y \le x</m>, so
+      </p>
+      <md>
+        <mrow>
+          V \amp = \int_0^1\!\!\int_0^x \sqrt{1-x^2}\,dy\,dx
+          = \int_0^1 x\sqrt{1-x^2}\,dx
+        </mrow>
+        <mrow>
+          \amp = \left[-\tfrac13\left(1-x^2\right)^{3/2}\right]_0^1
+          = \frac13 .
+        </mrow>
+      </md>
+    </solution>
+  </exercise>
+</exercises>

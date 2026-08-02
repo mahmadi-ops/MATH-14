@@ -1,0 +1,582 @@
+<?xml version="1.0" encoding="utf-8"?>
+<section xml:id="section-stokes-theorem" xmlns:xi="http://www.w3.org/2001/XInclude">
+<title>Stokes' Theorem</title>
+
+<introduction>
+<p>
+The circulation-curl form of Green's theorem,
+<xref ref="thm-green-tangential"/>, traded a circulation around a closed
+curve in the plane for a double integral of
+<m>(\operatorname{curl} \mathbf{F}) \cdot \mathbf{k}</m> over the region
+the curve encloses. Nothing in that statement really needs the region to
+be flat. If we bend the region up out of the plane into a surface
+<m>S</m> in space, keeping <m>C</m> as its boundary, the same exchange
+still works: the circulation of <m>\mathbf{F}</m> around <m>C</m> equals
+the flux of the curl of <m>\mathbf{F}</m> through <m>S</m>. That is
+<term>Stokes' theorem</term>, the promise made in the footnote of
+<xref ref="sec-greens-theorem-forms"/>.
+</p>
+
+<p>
+It completes the family. <xref ref="section-divergence-theorem"/> turned a
+flux integral over a <em>closed</em> surface into a triple integral of the
+divergence; Stokes' theorem turns a line integral around the
+<em>boundary</em> of an open surface into a surface integral of the curl.
+Both say the same kind of thing: what happens on the boundary of a piece
+is the accumulation, over the piece, of a derivative of the field.
+</p>
+</introduction>
+
+<!-- ================================================================ -->
+<subsection xml:id="sec-curl-3d">
+<title>Curl in Three Dimensions</title>
+
+<p>
+In <xref ref="sec-curl"/> we only needed the component of the curl along
+<m>\mathbf{k}</m>, because in the plane a paddle wheel can only spin about
+an axis perpendicular to the page. In space the axis can point anywhere,
+so the curl is a vector: it points along the axis the paddle wheel spins
+about, and its length is the circulation density about that axis.
+</p>
+
+<definition xml:id="def-curl-3d">
+<statement>
+<p>
+The <term>curl</term> of the vector field
+<m>\mathbf{F} = M\,\mathbf{i} + N\,\mathbf{j} + P\,\mathbf{k}</m>, whose
+components have continuous first partial derivatives, is
+</p>
+
+<md>
+<mrow xml:id="eq-curl-3d" number="yes">
+\operatorname{curl} \mathbf{F} = \nabla \times \mathbf{F}
+\amp = \begin{vmatrix}
+\mathbf{i} \amp \mathbf{j} \amp \mathbf{k} \\
+\dfrac{\partial}{\partial x} \amp \dfrac{\partial}{\partial y}
+\amp \dfrac{\partial}{\partial z} \\
+M \amp N \amp P
+\end{vmatrix}
+</mrow>
+<mrow>
+\amp = \left( \frac{\partial P}{\partial y}
+- \frac{\partial N}{\partial z} \right)\mathbf{i}
++ \left( \frac{\partial M}{\partial z}
+- \frac{\partial P}{\partial x} \right)\mathbf{j}
+</mrow>
+<mrow>
+\amp \qquad + \left( \frac{\partial N}{\partial x}
+- \frac{\partial M}{\partial y} \right)\mathbf{k}.
+</mrow>
+</md>
+</statement>
+</definition>
+
+<p>
+The <m>\mathbf{k}</m>-component of <xref ref="eq-curl-3d"/> is exactly the
+quantity <m>\dfrac{\partial N}{\partial x} - \dfrac{\partial M}{\partial y}</m>
+of <xref ref="eq-curl-def"/>, so the two-dimensional curl of
+<xref ref="sec-curl"/> was one component of this vector all along.
+</p>
+
+<example xml:id="example-curl-3d">
+<title>Computing a Curl</title>
+<statement>
+<p>
+Find <m>\nabla \times \mathbf{F}</m> for
+<m>\mathbf{F} = xz\,\mathbf{i} + xyz\,\mathbf{j} - y^2\,\mathbf{k}</m>.
+</p>
+</statement>
+</example>
+
+<solution xml:id="solution-curl-3d">
+<p>
+Here <m>M = xz</m>, <m>N = xyz</m>, and <m>P = -y^2</m>. Taking the
+three components of <xref ref="eq-curl-3d"/> in turn,
+</p>
+
+<md>
+<mrow>
+\frac{\partial P}{\partial y} - \frac{\partial N}{\partial z}
+\amp = -2y - xy,
+</mrow>
+<mrow>
+\frac{\partial M}{\partial z} - \frac{\partial P}{\partial x}
+\amp = x - 0 = x,
+</mrow>
+<mrow>
+\frac{\partial N}{\partial x} - \frac{\partial M}{\partial y}
+\amp = yz - 0 = yz,
+</mrow>
+</md>
+
+<p>
+so that
+</p>
+
+<me>
+\nabla \times \mathbf{F}
+= -(2y + xy)\,\mathbf{i} + x\,\mathbf{j} + yz\,\mathbf{k}.
+</me>
+</solution>
+
+<p>
+Two facts about the curl are worth recording, both of which we have
+already met in disguise. First, a field is conservative exactly when its
+curl vanishes: if <m>\mathbf{F} = \nabla f</m> then
+<m>\nabla \times \mathbf{F} = \mathbf{0}</m>, which is the three-variable
+version of the test in
+<xref ref="section-conservative-fields"/>. Second,
+<m>\nabla \cdot (\nabla \times \mathbf{F}) = 0</m>: a curl field has no
+divergence, so by <xref ref="thm-divergence"/> its flux through any closed
+surface is zero. We will use that second fact at the end of this section.
+</p>
+</subsection>
+
+<!-- ================================================================ -->
+<subsection xml:id="sec-stokes-theorem">
+<title>Stokes' Theorem</title>
+
+<p>
+Stokes' theorem needs the orientation of the surface and the direction of
+travel along its boundary to agree. The rule is the
+<term>right-hand rule</term>: if the thumb of your right hand points along
+the unit normal <m>\hat{\mathbf{n}}</m>, your fingers curl in the positive
+direction along the boundary curve <m>C</m>. Equivalently, walking along
+<m>C</m> with your head pointing in the direction of
+<m>\hat{\mathbf{n}}</m>, the surface is on your left. This is the
+orientation drawn in <xref ref="fig-stokes-orientation-tikz"/>; reversing
+<m>\hat{\mathbf{n}}</m> reverses the direction on <m>C</m> and changes the
+sign of both sides of the theorem.
+</p>
+
+<theorem xml:id="thm-stokes">
+<title>Stokes' Theorem</title>
+<statement>
+<p>
+Let <m>S</m> be a piecewise smooth oriented surface with unit normal
+field <m>\hat{\mathbf{n}}</m>, whose boundary is a piecewise smooth
+simple closed curve <m>C</m> traversed in the direction given by the
+right-hand rule. Let <m>\mathbf{F}</m> be a vector field whose
+components have continuous first partial derivatives on an open region
+containing <m>S</m>. Then the circulation of <m>\mathbf{F}</m> around
+<m>C</m> equals the flux of <m>\nabla \times \mathbf{F}</m> through
+<m>S</m>:
+</p>
+
+<men xml:id="eq-stokes">
+\underbrace{\oint_C \mathbf{F} \cdot d\mathbf{r}}_{\text{circulation
+around the boundary } C}
+= \underbrace{\iint_S (\nabla \times \mathbf{F}) \cdot
+\hat{\mathbf{n}}\, d\sigma}_{\text{flux of the curl through } S}.
+</men>
+</statement>
+</theorem>
+
+<remark xml:id="remark-stokes-green">
+<p>
+Green's theorem is the flat case. If <m>S</m> is a region <m>R</m> of the
+<m>xy</m>-plane with <m>\hat{\mathbf{n}} = \mathbf{k}</m>, then
+<m>d\sigma = dx\,dy</m> and
+<m>(\nabla \times \mathbf{F}) \cdot \mathbf{k}</m> is the
+<m>\mathbf{k}</m>-component of the curl, so <xref ref="eq-stokes"/>
+becomes <xref ref="eq-green-tangential"/> word for word.
+</p>
+</remark>
+
+<figure xml:id="fig-stokes-orientation-tikz">
+<caption>
+The orientation in <xref ref="thm-stokes"/>. The unit normal
+<m>\hat{\mathbf{n}}</m> and the direction of travel along the boundary
+<m>C</m> are related by the right-hand rule: with the thumb along
+<m>\hat{\mathbf{n}}</m>, the fingers curl the way <m>C</m> is traversed.
+</caption>
+<image xml:id="image-stokes-orientation" width="62%">
+<shortdescription>
+A curved cap of a surface in space with its boundary circle, arrows
+along the boundary, and a normal vector standing on the cap.
+</shortdescription>
+<description>
+<p>
+A translucent blue cap, like a piece of a sphere, sits above the
+horizontal plane. Its boundary is a closed curve drawn in vermillion
+with arrowheads showing the direction of travel, counterclockwise seen
+from above. A green arrow labeled n hat rises from the middle of the
+cap at a point off the axis, perpendicular to the cap there. With the
+right thumb along that normal, the fingers curl the way the boundary
+arrows point.
+</p>
+</description>
+<latex-image>
+<![CDATA[\begin{tikzpicture}[line join=round, line cap=round]
+  % Okabe-Ito colorblind-safe palette
+  \definecolor{oiblue}{RGB}{0,114,178}
+  \definecolor{oivermillion}{RGB}{213,94,0}
+  \definecolor{oigreen}{RGB}{0,158,115}
+  \begin{axis}[
+      view={120}{24},
+      width=11.5cm,
+      axis lines=center,
+      axis line style={-latex, black!70, line width=0.7pt},
+      xlabel={$x$}, ylabel={$y$}, zlabel={$z$},
+      label style={font=\large},
+      ticks=none,
+      xmin=-1.6, xmax=1.6, ymin=-1.6, ymax=1.6, zmin=0, zmax=2.0,
+      clip=false,
+    ]
+    % ---- the cap: z = 1.35 - 0.45(x^2 + y^2) over the unit disk ----
+    \addplot3[surf, shader=faceted, faceted color=black!35,
+              point meta={z},
+              colormap={capz}{color=(oiblue!12!white) color=(oiblue!45!white)},
+              opacity=0.72, fill opacity=0.72,
+              domain=0:1, samples=22,
+              y domain=0:360, samples y=42,
+              z buffer=sort, forget plot]
+      ({x*cos(y)}, {x*sin(y)}, {1.35 - 0.45*x^2});
+    % ---- the boundary curve C ----
+    \addplot3[oivermillion, line width=1.5pt, samples=120, samples y=0,
+              domain=0:360, forget plot]
+      ({cos(x)}, {sin(x)}, {0.9});
+    % arrowheads along C, pointing counterclockwise seen from above
+    % arrowheads written out: a \foreach variable is out of scope when
+    % pgfplots processes the collected path at \end{axis}
+    \draw[-{Latex[length=2.6mm]}, oivermillion, line width=1.5pt]
+      (axis cs:0.9703,0.2419,0.9) -- (axis cs:0.8988,0.4384,0.9);
+    \draw[-{Latex[length=2.6mm]}, oivermillion, line width=1.5pt]
+      (axis cs:-0.6947,0.7193,0.9) -- (axis cs:-0.8290,0.5592,0.9);
+    \draw[-{Latex[length=2.6mm]}, oivermillion, line width=1.5pt]
+      (axis cs:-0.2756,-0.9613,0.9) -- (axis cs:-0.0698,-0.9976,0.9);
+    \node[oivermillion, font=\large] at (axis cs:1.30,0.62,0.72) {$C$};
+    % ---- the unit normal, planted off the axis so that it is not
+    %      confused with the z-axis; it is perpendicular to the cap ----
+    \draw[-{Latex[length=3mm]}, oigreen, line width=1.3pt]
+      (axis cs:0.45,0.30,1.2184) -- (axis cs:0.6750,0.4500,1.7740);
+    \node[oigreen, font=\large, anchor=south west]
+      at (axis cs:0.7100,0.4700,1.7900) {$\hat{\mathbf{n}}$};
+    \addplot3[only marks, mark=*, mark size=1.1pt, color=oigreen,
+        forget plot] coordinates {(0.45,0.30,1.2184)};
+    % ---- labels ----
+    \node[oiblue, font=\large] at (axis cs:-0.95,0.62,1.28) {$S$};
+  \end{axis}
+\end{tikzpicture}]]>
+</latex-image>
+</image>
+</figure>
+
+<p>
+The theorem is most useful when one of the two sides is much easier than
+the other. Reading it from left to right replaces an awkward line
+integral by a flux integral, as in <xref ref="example-stokes-cylinder"/>;
+reading it from right to left replaces an awkward surface integral by a
+line integral around the boundary, as in
+<xref ref="example-stokes-paraboloid"/>.
+</p>
+
+<example xml:id="example-stokes-hemisphere">
+<title>Both Sides of Stokes' Theorem</title>
+<statement>
+<p>
+Verify <xref ref="eq-stokes"/> for the field
+<m>\mathbf{F} = -y\,\mathbf{i} + x\,\mathbf{j}</m> and the upper
+hemisphere <m>S</m> of <m>x^2 + y^2 + z^2 = 1</m>, oriented by its
+upward unit normal.
+</p>
+</statement>
+</example>
+
+<solution xml:id="solution-stokes-hemisphere">
+<p>
+The boundary of <m>S</m> is the unit circle <m>C</m> in the
+<m>xy</m>-plane. The right-hand rule with an upward normal makes
+<m>C</m> counterclockwise seen from above, so we parametrize it by
+<m>\mathbf{r}(t) = \cos t\,\mathbf{i} + \sin t\,\mathbf{j}</m>,
+<m>0 \le t \le 2\pi</m>. Along <m>C</m>,
+</p>
+
+<md>
+<mrow>
+\mathbf{F}\bigl(\mathbf{r}(t)\bigr)
+\amp = \left\langle -\sin t,\ \cos t,\ 0 \right\rangle ,
+</mrow>
+<mrow>
+\mathbf{r}'(t)
+\amp = \left\langle -\sin t,\ \cos t,\ 0 \right\rangle ,
+</mrow>
+<mrow>
+\mathbf{F} \cdot \mathbf{r}'
+\amp = \sin^2 t + \cos^2 t = 1 ,
+</mrow>
+</md>
+
+<p>
+so the circulation is
+</p>
+
+<me>
+\oint_C \mathbf{F} \cdot d\mathbf{r} = \int_0^{2\pi} 1\, dt = 2\pi .
+</me>
+
+<p>
+For the other side, <xref ref="eq-curl-3d"/> gives
+<m>\nabla \times \mathbf{F} = 2\,\mathbf{k}</m>, a constant field. On the
+hemisphere the outward unit normal is
+<m>\hat{\mathbf{n}} = x\,\mathbf{i} + y\,\mathbf{j} + z\,\mathbf{k}</m>,
+so <m>(\nabla \times \mathbf{F}) \cdot \hat{\mathbf{n}} = 2z</m> and
+</p>
+
+<me>
+\iint_S (\nabla \times \mathbf{F}) \cdot \hat{\mathbf{n}}\, d\sigma
+= \iint_S 2z\, d\sigma .
+</me>
+
+<p>
+Parametrizing the hemisphere as in
+<xref ref="section-surface-integrals"/> by
+<m>\mathbf{r}(\phi,\theta)</m> with
+<m>d\sigma = \sin\phi\, d\phi\, d\theta</m> and
+<m>z = \cos\phi</m>,
+</p>
+
+<md>
+<mrow>
+\iint_S 2z\, d\sigma
+\amp = \int_0^{2\pi}\!\!\int_0^{\pi/2}
+2\cos\phi \sin\phi\, d\phi\, d\theta
+</mrow>
+<mrow>
+\amp = \int_0^{2\pi} \Bigl[\sin^2\phi\Bigr]_0^{\pi/2} d\theta
+= \int_0^{2\pi} 1\, d\theta = 2\pi ,
+</mrow>
+</md>
+
+<p>
+which matches the circulation, as <xref ref="thm-stokes"/> promises.
+</p>
+</solution>
+
+<example xml:id="example-stokes-cylinder">
+<title>A Circulation That Is Easier as a Flux</title>
+<statement>
+<p>
+Evaluate <m>\oint_C \mathbf{F} \cdot d\mathbf{r}</m> for
+<m>\mathbf{F} = -y^2\,\mathbf{i} + x\,\mathbf{j} + z^2\,\mathbf{k}</m>,
+where <m>C</m> is the curve in which the plane <m>y + z = 2</m> cuts the
+cylinder <m>x^2 + y^2 = 1</m>, traversed counterclockwise when seen from
+above. The curve is drawn in
+<xref ref="fig-stokes-cylinder-tikz"/>.
+</p>
+</statement>
+</example>
+
+<solution xml:id="solution-stokes-cylinder">
+<p>
+Parametrizing <m>C</m> and integrating directly is possible but
+unpleasant. Instead take <m>S</m> to be the flat elliptical region that
+<m>C</m> bounds in the plane <m>y + z = 2</m>, that is the graph of
+<m>z = 2 - y</m> over the unit disk <m>R</m> in the
+<m>xy</m>-plane. For a graph <m>z = g(x,y)</m> with an upward normal,
+<xref ref="eq-flux-param"/> with <m>\mathbf{r}(x,y)</m> gives
+</p>
+
+<me>
+\hat{\mathbf{n}}\, d\sigma
+= \left\langle -g_x,\ -g_y,\ 1 \right\rangle dx\, dy
+= \left\langle 0,\ 1,\ 1 \right\rangle dx\, dy ,
+</me>
+
+<p>
+and an upward normal is the one the right-hand rule pairs with a
+counterclockwise <m>C</m>. From <xref ref="eq-curl-3d"/>,
+</p>
+
+<me>
+\nabla \times \mathbf{F}
+= \left\langle 0,\ 0,\ 1 + 2y \right\rangle ,
+</me>
+
+<p>
+so <m>(\nabla \times \mathbf{F}) \cdot \left\langle 0, 1, 1
+\right\rangle = 1 + 2y</m> and <xref ref="eq-stokes"/> turns the line
+integral into a double integral over the unit disk:
+</p>
+
+<md>
+<mrow>
+\oint_C \mathbf{F} \cdot d\mathbf{r}
+\amp = \iint_R \left(1 + 2y\right) dx\, dy
+</mrow>
+<mrow>
+\amp = \int_0^{2\pi}\!\!\int_0^{1}
+\left(1 + 2r\sin\theta\right) r\, dr\, d\theta = \pi .
+</mrow>
+</md>
+
+<p>
+The term <m>2y</m> integrates to zero because the disk is symmetric
+about <m>y = 0</m>, and what is left is the area <m>\pi</m> of the disk.
+</p>
+</solution>
+
+<figure xml:id="fig-stokes-cylinder-tikz">
+<caption>
+The curve <m>C</m> of <xref ref="example-stokes-cylinder"/>: the plane
+<m>y + z = 2</m> cuts the cylinder <m>x^2 + y^2 = 1</m> in an ellipse.
+The shaded elliptical region is the surface <m>S</m> used in the
+solution, and its shadow is the unit disk <m>R</m>.
+</caption>
+<image xml:id="image-stokes-cylinder" width="62%">
+<shortdescription>
+A vertical cylinder cut by a slanted plane, with the ellipse of
+intersection and its shadow on the horizontal plane.
+</shortdescription>
+<description>
+<p>
+A translucent vertical cylinder of radius one stands on the horizontal
+plane. A slanted plane cuts it in an ellipse drawn in vermillion, with
+arrowheads showing counterclockwise travel seen from above. The
+elliptical region inside the curve is shaded blue, and directly below
+it the unit disk in the x y plane is shaded gray as its shadow.
+</p>
+</description>
+<latex-image>
+<![CDATA[\begin{tikzpicture}[line join=round, line cap=round]
+  \definecolor{oiblue}{RGB}{0,114,178}
+  \definecolor{oivermillion}{RGB}{213,94,0}
+  \begin{axis}[
+      view={115}{18},
+      width=11.5cm,
+      axis lines=center,
+      axis line style={-latex, black!70, line width=0.7pt},
+      xlabel={$x$}, ylabel={$y$}, zlabel={$z$},
+      label style={font=\large},
+      ticks=none,
+      xmin=-1.5, xmax=1.5, ymin=-1.5, ymax=1.5, zmin=0, zmax=3.4,
+      clip=false,
+    ]
+    % ---- the unit disk R in the xy-plane (the shadow) ----
+    \addplot3[surf, shader=flat, draw=black!30, fill=black!12,
+              opacity=0.55, fill opacity=0.55,
+              domain=0:1, samples=14, y domain=0:360, samples y=40,
+              forget plot]
+      ({x*cos(y)}, {x*sin(y)}, 0);
+    % ---- the cylinder wall, up to the cutting plane ----
+    \addplot3[surf, shader=faceted, faceted color=black!25,
+              colormap={cylz}{color=(black!6!white) color=(black!18!white)},
+              opacity=0.35, fill opacity=0.35,
+              domain=0:360, samples=42, y domain=0:1, samples y=12,
+              z buffer=sort, forget plot]
+      ({cos(x)}, {sin(x)}, {y*(2 - sin(x))});
+    % ---- the elliptical region S in the plane y + z = 2 ----
+    \addplot3[surf, shader=flat, draw=oiblue!45, fill=oiblue!22,
+              opacity=0.75, fill opacity=0.75,
+              domain=0:1, samples=14, y domain=0:360, samples y=40,
+              forget plot]
+      ({x*cos(y)}, {x*sin(y)}, {2 - x*sin(y)});
+    % ---- the curve C ----
+    \addplot3[oivermillion, line width=1.5pt, samples=140, samples y=0,
+              domain=0:360, forget plot]
+      ({cos(x)}, {sin(x)}, {2 - sin(x)});
+    % arrowheads written out, as in fig-stokes-orientation-tikz
+    \draw[-{Latex[length=2.6mm]}, oivermillion, line width=1.5pt]
+      (axis cs:0.9135,0.4067,1.5933) -- (axis cs:0.8090,0.5878,1.4122);
+    \draw[-{Latex[length=2.6mm]}, oivermillion, line width=1.5pt]
+      (axis cs:-0.8090,0.5878,1.4122) -- (axis cs:-0.9135,0.4067,1.5933);
+    \draw[-{Latex[length=2.6mm]}, oivermillion, line width=1.5pt]
+      (axis cs:-0.1045,-0.9945,2.9945) -- (axis cs:0.1045,-0.9945,2.9945);
+    % ---- labels ----
+    \node[oivermillion, font=\large] at (axis cs:1.16,0.95,2.35) {$C$};
+    \node[oiblue, font=\large] at (axis cs:0,0,2.35) {$S$};
+    \node[font=\large, anchor=north] at (axis cs:0.15,0.95,-0.12) {$R$};
+    \node[font=\large, anchor=north west] at (axis description cs:0.0,0.99)
+      {$y + z = 2$};
+  \end{axis}
+\end{tikzpicture}]]>
+</latex-image>
+</image>
+</figure>
+</subsection>
+
+<!-- ================================================================ -->
+<subsection xml:id="sec-stokes-surface-independence">
+<title>Only the Boundary Matters</title>
+
+<p>
+The right-hand side of <xref ref="eq-stokes"/> mentions <m>S</m>, but the
+left-hand side does not. So if two oriented surfaces <m>S_1</m> and
+<m>S_2</m> share the same boundary curve <m>C</m>, with orientations that
+give the same direction on <m>C</m>, both flux integrals equal the same
+circulation:
+</p>
+
+<men xml:id="eq-stokes-independence">
+\iint_{S_1} (\nabla \times \mathbf{F}) \cdot \hat{\mathbf{n}}\, d\sigma
+= \oint_C \mathbf{F} \cdot d\mathbf{r}
+= \iint_{S_2} (\nabla \times \mathbf{F}) \cdot \hat{\mathbf{n}}\,
+d\sigma .
+</men>
+
+<p>
+This is the surface analogue of the path independence of
+<xref ref="section-conservative-fields"/>, and it has the same practical
+use: when a surface is unpleasant, trade it for any other surface with
+the same boundary. It also explains the identity
+<m>\nabla \cdot (\nabla \times \mathbf{F}) = 0</m> noted earlier. Gluing
+<m>S_1</m> and <m>S_2</m> along <m>C</m> makes a closed surface; the two
+flux integrals appear with opposite signs once both normals point
+outward, so the total flux of <m>\nabla \times \mathbf{F}</m> through any
+closed surface is zero.
+</p>
+
+<example xml:id="example-stokes-paraboloid">
+<title>Trading a Paraboloid for a Disk</title>
+<statement>
+<p>
+Evaluate
+<m>\displaystyle\iint_S (\nabla \times \mathbf{F}) \cdot
+\hat{\mathbf{n}}\, d\sigma</m> for
+<m>\mathbf{F} = y\,\mathbf{i} + z\,\mathbf{j} + x\,\mathbf{k}</m>,
+where <m>S</m> is the part of the paraboloid
+<m>z = 4 - x^2 - y^2</m> above the <m>xy</m>-plane, oriented upward.
+</p>
+</statement>
+</example>
+
+<solution xml:id="solution-stokes-paraboloid">
+<p>
+The boundary of <m>S</m> is the circle <m>x^2 + y^2 = 4</m> in the plane
+<m>z = 0</m>, and the upward orientation makes it counterclockwise seen
+from above. By <xref ref="eq-stokes-independence"/> we may replace the
+paraboloid by the flat disk <m>S_2</m> of radius <m>2</m> in the
+<m>xy</m>-plane, oriented upward, which has the same boundary. On that
+disk <m>\hat{\mathbf{n}} = \mathbf{k}</m> and <m>d\sigma = dx\,dy</m>.
+</p>
+
+<p>
+From <xref ref="eq-curl-3d"/>,
+<m>\nabla \times \mathbf{F} = -\mathbf{i} - \mathbf{j} -
+\mathbf{k}</m>, so
+<m>(\nabla \times \mathbf{F}) \cdot \mathbf{k} = -1</m> and
+</p>
+
+<me>
+\iint_S (\nabla \times \mathbf{F}) \cdot \hat{\mathbf{n}}\, d\sigma
+= \iint_{S_2} (-1)\, dx\, dy
+= -\left(\text{area of } S_2\right) = -4\pi .
+</me>
+
+<p>
+As a check, the circulation around the boundary gives the same number.
+With <m>\mathbf{r}(t) = 2\cos t\,\mathbf{i} + 2\sin t\,\mathbf{j}</m>
+and <m>z = 0</m> we have
+<m>\mathbf{F} = \left\langle 2\sin t,\ 0,\ 2\cos t \right\rangle</m> and
+<m>\mathbf{r}'(t) = \left\langle -2\sin t,\ 2\cos t,\ 0
+\right\rangle</m>, so
+</p>
+
+<me>
+\oint_C \mathbf{F} \cdot d\mathbf{r}
+= \int_0^{2\pi} \left(-4\sin^2 t\right) dt = -4\pi .
+</me>
+</solution>
+</subsection>
+
+</section>

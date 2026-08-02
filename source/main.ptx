@@ -25,32 +25,62 @@
 </latex-image-preamble>
 </docinfo>
 
-  <article xml:id="shorttitlelowercase">
+  <book xml:id="math14">
     <title>MATH 14: Calculus and Analytic Geometry IV</title>
     <xi:include href="frontmatter.ptx" />
-    <xi:include href="introduction.ptx" />
-    <xi:include href="section-parametrization.ptx" />
-    <xi:include href="section-arc-length.ptx" />
-    <xi:include href="section-line-integrals.ptx"/>
-    <xi:include href="section-vector-fields.ptx"/>
-    <xi:include href="conservative-fields.ptx" />
-    <xi:include href="double-integrals-rectangles.ptx" />
-    <xi:include href="double-integrals-general-regions.ptx" />
-    <xi:include href="polar-coordinates.ptx" />
-    <xi:include href="double-integrals-polar-form.ptx" />
-    <xi:include href="triple-integrals-rectangular.ptx" />
-    <xi:include href="triple-integrals-cylindrical.ptx" />
-    <xi:include href="triple-integrals-spherical.ptx" />
-    <xi:include href="mass-center-of-mass.ptx" />
-    <xi:include href="jacobian-substitution.ptx" />
-    <xi:include href="greens-theorem.ptx" />
-    <xi:include href="surface-integrals.ptx" />
-    <xi:include href="divergence-theorem.ptx" />
-    <xi:include href="hw1-exercises.ptx"/>
-    <xi:include href="hw1-online.ptx"/>
-    <xi:include href="subsec-brain-map.ptx" />
-    
 
-  </article>
+    <chapter xml:id="ch-curves-and-fields">
+      <title>Curves, Line Integrals, and Vector Fields</title>
+      <xi:include href="section-parametrization.ptx" />
+      <xi:include href="section-arc-length.ptx" />
+      <xi:include href="section-line-integrals.ptx" />
+      <xi:include href="section-vector-fields.ptx" />
+      <xi:include href="conservative-fields.ptx" />
+    </chapter>
+
+    <chapter xml:id="ch-multiple-integrals">
+      <title>Multiple Integrals</title>
+      <xi:include href="double-integrals-rectangles.ptx" />
+      <xi:include href="double-integrals-general-regions.ptx" />
+      <xi:include href="polar-coordinates.ptx" />
+      <xi:include href="double-integrals-polar-form.ptx" />
+      <xi:include href="triple-integrals-rectangular.ptx" />
+      <xi:include href="triple-integrals-cylindrical.ptx" />
+      <xi:include href="triple-integrals-spherical.ptx" />
+      <xi:include href="mass-center-of-mass.ptx" />
+      <xi:include href="jacobian-substitution.ptx" />
+    </chapter>
+
+    <chapter xml:id="ch-integral-theorems">
+      <title>The Integral Theorems of Vector Calculus</title>
+      <xi:include href="greens-theorem.ptx" />
+      <xi:include href="surface-integrals.ptx" />
+      <xi:include href="stokes-theorem.ptx" />
+      <xi:include href="divergence-theorem.ptx" />
+    </chapter>
+
+    <chapter xml:id="ch-assignments">
+      <title>Assignments</title>
+      <xi:include href="hw1-exercises.ptx" />
+      <xi:include href="hw1-online.ptx" />
+      <xi:include href="hw2-exercises.ptx" />
+      <xi:include href="hw2-online.ptx" />
+      <xi:include href="hw3-exercises.ptx" />
+      <xi:include href="hw3-online.ptx" />
+      <xi:include href="hw4-exercises.ptx" />
+      <xi:include href="hw4-online.ptx" />
+      <xi:include href="hw5-exercises.ptx" />
+      <xi:include href="hw5-online.ptx" />
+      <xi:include href="hw6-exercises.ptx" />
+      <xi:include href="hw6-online.ptx" />
+      <xi:include href="hw7-exercises.ptx" />
+      <xi:include href="hw7-online.ptx" />
+      <xi:include href="hw8-exercises.ptx" />
+      <xi:include href="hw8-online.ptx" />
+      <xi:include href="hw9-exercises.ptx" />
+      <xi:include href="hw9-online.ptx" />
+    </chapter>
+
+  </book>
 
 </pretext>

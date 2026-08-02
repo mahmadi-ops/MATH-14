@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- MATH 14 - HW6: triple integrals in rectangular and cylindrical coordinates -->
+<exercises xml:id="exercises-hw6" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Assignment 6</title>
+
+  <introduction>
+    <p>
+      Sections: <xref ref="section-triple-integrals-rectangular" text="title"/>
+      and <xref ref="section-triple-integrals-cylindrical" text="title"/>.
+    </p>
+  </introduction>
+
+  <exercise xml:id="ex-hw6-cone-mass">
+    <statement>
+      <p>
+        Consider an object bounded by <m>x = \sqrt{y^2+z^2}</m> and
+        <m>x = 1</m>. Suppose that the object's mass density function is
+        <m>\rho(x,y,z) = x</m>. Find the mass of the object.
+      </p>
+    </statement>
+  </exercise>
+
+  <exercise xml:id="ex-hw6-convert">
+    <statement>
+      <p>
+        Convert (do not evaluate) the following integral to rectangular
+        coordinates:
+      </p>
+      <me>
+        \int_{-\pi/4}^{\pi/4}\!\!\int_{0}^{\sec\theta}\!\!
+        \int_{0}^{r^2\cos(2\theta)} r\,dz\,dr\,d\theta .
+      </me>
+    </statement>
+  </exercise>
+
+  <exercise xml:id="ex-hw6-signs">
+    <introduction>
+      <p>
+        <term>Without calculating the integrals</term>, decide whether each
+        of the integrals below is positive, negative, or zero. Let <m>R</m>
+        be the solid bounded by <m>z = 1-x^2-y^2</m> and
+        <m>z = x^2+y^2</m>. Remember to justify your answers.
+      </p>
+    </introduction>
+    <task xml:id="task-hw6-sign-a">
+      <statement>
+        <p>
+          <m>\displaystyle\iiint_R \left(z + x^2 + y^2 - 1\right) dV</m>
+        </p>
+      </statement>
+    </task>
+    <task xml:id="task-hw6-sign-b">
+      <statement>
+        <p>
+          <m>\displaystyle\iiint_R \left(z - x^2 - y^2\right) dV</m>
+        </p>
+      </statement>
+    </task>
+  </exercise>
+
+  <exercise xml:id="ex-hw6-volume">
+    <statement>
+      <p>
+        Calculate the volume of the region bounded by
+        <m>x^2 + y^2 - z^2 + 5 = 0</m> and
+        <m>x^2 + y^2 + z - 1 = 0</m>.
+      </p>
+    </statement>
+  </exercise>
+</exercises>

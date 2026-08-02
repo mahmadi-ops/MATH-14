@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- MATH 14 - HW5: polar coordinates and double integrals in polar form -->
+<exercises xml:id="exercises-hw5" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Assignment 5</title>
+
+  <introduction>
+    <p>
+      Sections: <xref ref="section-polar-coordinates" text="title"/> and
+      <xref ref="section-double-integrals-polar-form" text="title"/>.
+    </p>
+  </introduction>
+
+  <exercise xml:id="ex-hw5-rose">
+    <introduction>
+      <p>
+        Consider the polar equation <m>r(\theta) = 1 + \sin(3\theta)</m>,
+        <m>\frac{\pi}{6} \le \theta \le \frac{5\pi}{6}</m>.
+      </p>
+    </introduction>
+    <task xml:id="task-hw5-symmetry">
+      <statement>
+        <p>
+          Determine the type of symmetry that its graph possesses.
+        </p>
+      </statement>
+    </task>
+    <task xml:id="task-hw5-sketch">
+      <statement>
+        <p>
+          Sketch its graph. Use the polar chart of
+          <xref ref="fig-hw5-polar-chart"/>.
+        </p>
+      </statement>
+    </task>
+    <task xml:id="task-hw5-area">
+      <statement>
+        <p>
+          Set up (do not evaluate) the integral necessary for computing the
+          area bounded by <m>r = 1 + \sin(3\theta)</m>,
+          <m>\frac{\pi}{6} \le \theta \le \frac{5\pi}{6}</m>.
+        </p>
+      </statement>
+    </task>
+  </exercise>
+
+  <figure xml:id="fig-hw5-polar-chart">
+    <caption>
+      A blank polar chart for <xref ref="task-hw5-sketch"/>. The circles are
+      <m>r = 0.5</m>, <m>1</m>, <m>1.5</m>, and <m>2</m>, and the spokes are
+      spaced <m>\pi/6</m> apart.
+    </caption>
+    <image width="70%">
+      <prefigure xmlns="https://prefigure.org" label="prefigure-hw5-chart">
+        <diagram dimensions="(340,340)" margins="10">
+          <definition>c1(t) = (0.5*cos(t), 0.5*sin(t))</definition>
+          <definition>c2(t) = (cos(t), sin(t))</definition>
+          <definition>c3(t) = (1.5*cos(t), 1.5*sin(t))</definition>
+          <definition>c4(t) = (2*cos(t), 2*sin(t))</definition>
+          <coordinates bbox="(-2.55,-2.55,2.55,2.55)">
+            <parametric-curve at="pc-c1" function="c1" domain="(0,2*pi)"
+                stroke="#bbbbbb" thickness="1"/>
+            <parametric-curve at="pc-c2" function="c2" domain="(0,2*pi)"
+                stroke="#bbbbbb" thickness="1"/>
+            <parametric-curve at="pc-c3" function="c3" domain="(0,2*pi)"
+                stroke="#bbbbbb" thickness="1"/>
+            <parametric-curve at="pc-c4" function="c4" domain="(0,2*pi)"
+                stroke="#888888" thickness="1"/>
+            <repeat at="pc-spokes" parameter="k=0..5">
+              <line at="pc-spoke-((k))"
+                  endpoints="((2*cos(pi*k/6), 2*sin(pi*k/6)),(-2*cos(pi*k/6), -2*sin(pi*k/6)))"
+                  stroke="#cccccc" thickness="1"/>
+            </repeat>
+            <label at="pc-t0" anchor="(2.12,0)" alignment="e"><m>0</m></label>
+            <label at="pc-t1" anchor="(1.84,1.06)" alignment="e">
+              <m>\pi/6</m>
+            </label>
+            <label at="pc-t2" anchor="(1.06,1.84)" alignment="ne">
+              <m>\pi/3</m>
+            </label>
+            <label at="pc-t3" anchor="(0,2.12)" alignment="n">
+              <m>\pi/2</m>
+            </label>
+            <label at="pc-t4" anchor="(-1.06,1.84)" alignment="nw">
+              <m>2\pi/3</m>
+            </label>
+            <label at="pc-t5" anchor="(-1.84,1.06)" alignment="w">
+              <m>5\pi/6</m>
+            </label>
+            <label at="pc-t6" anchor="(-2.12,0)" alignment="w"><m>\pi</m></label>
+            <label at="pc-t7" anchor="(-1.84,-1.06)" alignment="w">
+              <m>7\pi/6</m>
+            </label>
+            <label at="pc-t8" anchor="(-1.06,-1.84)" alignment="sw">
+              <m>4\pi/3</m>
+            </label>
+            <label at="pc-t9" anchor="(0,-2.12)" alignment="s">
+              <m>3\pi/2</m>
+            </label>
+            <label at="pc-t10" anchor="(1.06,-1.84)" alignment="se">
+              <m>5\pi/3</m>
+            </label>
+            <label at="pc-t11" anchor="(1.84,-1.06)" alignment="e">
+              <m>11\pi/6</m>
+            </label>
+            <label at="pc-r1" anchor="(0.08,0.5)" alignment="ne"
+                color="#666666"><m>0.5</m></label>
+            <label at="pc-r2" anchor="(0.08,1)" alignment="ne"
+                color="#666666"><m>1</m></label>
+            <label at="pc-r3" anchor="(0.08,1.5)" alignment="ne"
+                color="#666666"><m>1.5</m></label>
+            <label at="pc-r4" anchor="(0.08,2)" alignment="ne"
+                color="#666666"><m>2</m></label>
+          </coordinates>
+          <annotations>
+            <annotation ref="figure" text="A blank polar grid: four concentric circles of radii one half, one, one and a half and two, crossed by twelve spokes spaced pi over six apart. The spokes are labelled with their angles from zero around to eleven pi over six, and the circles are labelled with their radii along the positive y direction.">
+              <annotation ref="pc-c4" text="The outermost circle, of radius two."/>
+              <annotation ref="pc-spokes" text="The twelve spokes of the chart, spaced pi over six apart."/>
+            </annotation>
+          </annotations>
+        </diagram>
+      </prefigure>
+    </image>
+  </figure>
+
+  <exercise xml:id="ex-hw5-combine">
+    <statement>
+      <p>
+        Combine the following sum into one double integral. Do not evaluate
+        the integral.
+      </p>
+      <md>
+        <mrow>
+          \amp \int_{1/\sqrt2}^{1}\!\!\int_{\sqrt{1-x^2}}^{x} xy\,dy\,dx
+          + \int_{1}^{\sqrt2}\!\!\int_{0}^{x} xy\,dy\,dx
+        </mrow>
+        <mrow>
+          \amp \qquad + \int_{\sqrt2}^{2}\!\!\int_{0}^{\sqrt{4-x^2}}
+          xy\,dy\,dx
+        </mrow>
+      </md>
+    </statement>
+  </exercise>
+
+  <exercise xml:id="ex-hw5-two-circles">
+    <statement>
+      <p>
+        Compute the net mass of the planar object that occupies the region
+        bounded by <m>x^2 + y^2 = 2x</m> and <m>x^2 + y^2 = 2y</m>, and
+        whose mass density is given by
+        <m>\rho(x,y) = \dfrac{1}{x}</m>.
+      </p>
+    </statement>
+  </exercise>
+</exercises>

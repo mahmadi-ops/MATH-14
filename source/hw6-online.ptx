@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- MATH 14 - HW6, online version: the same problems as the written       -->
+<!-- Assignment 6, rebuilt as auto-graded exercises.  Same "fillin-basic"     -->
+<!-- pattern as hw1-online.ptx: a <var/> per blank in the statement, matched  -->
+<!-- in order by a <var> in <setup>, whose first <condition> is the correct   -->
+<!-- answer.  Every blank is graded on its own, so partial credit survives.   -->
+<exercises xml:id="exercises-hw6-online" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Assignment 6, Online Version</title>
+
+  <introduction>
+    <p>
+      Sections: <xref ref="section-triple-integrals-rectangular" text="title"/> and <xref ref="section-triple-integrals-cylindrical" text="title"/>. These are the problems of
+      <xref ref="exercises-hw6" text="title"/> again, in a form you can
+      submit and have checked here.
+    </p>
+    <p>
+      Every answer box is graded separately, so a box you fill in correctly
+      earns its credit even if another box in the same problem is wrong.
+      Press <q>Check Me</q> to submit; you may check as often as you like.
+    </p>
+    <p>
+      <term>How to type your answers.</term> Numbers: a decimal number and
+      nothing else<mdash/>no units, no <m>=</m> sign, no <m>\pi</m>; give at
+      least three decimals (for instance <c>18.850</c>, not <c>6pi</c>).
+      Answers are accepted within a small tolerance. Words: type just the
+      word asked for, in lower case.
+    </p>
+  </introduction>
+
+  <exercise xml:id="ex-hw6o-cone-mass">
+    <title>Mass of a Cone Along the x-Axis</title>
+    <statement>
+      <p>
+        The object is bounded by <m>x = \sqrt{y^2+z^2}</m> and
+        <m>x = 1</m>, with density <m>\rho = x</m>. Using cylindrical
+        coordinates about the <m>x</m>-axis
+        (<m>y = r\cos\theta</m>, <m>z = r\sin\theta</m>), the cone is
+        <m>x = </m> <var width="6"/>.
+      </p>
+      <p>The mass of the object is <var width="10"/>.</p>
+    </statement>
+    <setup>
+      <var case="insensitive">
+        <condition string="r">
+          <feedback><p>Correct.</p></feedback>
+        </condition>
+      </var>
+      <var>
+        <condition number="0.785" tolerance="0.005">
+          <feedback><p>Correct: pi over four.</p></feedback>
+        </condition>
+        <condition number="3.142" tolerance="0.01">
+          <feedback><p>That is pi; recheck the r-integration.</p></feedback>
+        </condition>
+      </var>
+    </setup>
+    <solution>
+      <p>
+        With <m>dV = r\,dr\,d\theta\,dx</m> and <m>r \le x \le 1</m>,
+      </p>
+      <md>
+        <mrow>
+          M \amp = \int_0^1\!\!\int_0^{2\pi}\!\!\int_r^1
+          x\,r\,dx\,d\theta\,dr
+          = (2\pi)\left(\tfrac12\right)\int_0^1 r\left(1-r^2\right) dr
+        </mrow>
+        <mrow>
+          \amp = \pi\left[\frac{r^2}{2} - \frac{r^4}{4}\right]_0^1
+          = \frac{\pi}{4} \approx 0.785 .
+        </mrow>
+      </md>
+    </solution>
+  </exercise>
+
+  <exercise xml:id="ex-hw6o-convert">
+    <title>From Cylindrical Back to Rectangular</title>
+    <statement>
+      <p>
+        Convert
+        <m>\displaystyle\int_{-\pi/4}^{\pi/4}\!\!\int_0^{\sec\theta}
+        \!\!\int_0^{r^2\cos(2\theta)} r\,dz\,dr\,d\theta</m> to
+        rectangular coordinates.
+      </p>
+      <p>
+        The upper limit of <m>z</m> becomes <var width="10"/>, the region
+        in the plane is bounded by <m>x = </m> <var width="6"/> and the
+        lines <m>y = \pm x</m>, and <m>x</m> runs from <m>0</m> to
+        <var width="6"/>.
+      </p>
+    </statement>
+    <setup>
+      <var case="insensitive">
+        <condition string="x\s*\^\s*2\s*-\s*y\s*\^\s*2">
+          <feedback><p>Correct: r squared times cosine of two theta is x squared minus y squared.</p></feedback>
+        </condition>
+      </var>
+      <var>
+        <condition number="1" tolerance="0.01">
+          <feedback><p>Correct: r = sec(theta) is the line x = 1.</p></feedback>
+        </condition>
+      </var>
+      <var>
+        <condition number="1" tolerance="0.01">
+          <feedback><p>Correct.</p></feedback>
+        </condition>
+      </var>
+    </setup>
+    <solution>
+      <p>
+        Since <m>r^2\cos(2\theta) = r^2\left(\cos^2\theta -
+        \sin^2\theta\right) = x^2 - y^2</m> and
+        <m>r = \sec\theta</m> is <m>r\cos\theta = 1</m>, that is
+        <m>x = 1</m>, the region in the plane is the triangle bounded by
+        <m>y = x</m>, <m>y = -x</m>, and <m>x = 1</m>. Hence
+      </p>
+      <me>
+        \int_0^1\!\!\int_{-x}^{x}\!\!\int_0^{x^2-y^2} dz\,dy\,dx .
+      </me>
+    </solution>
+  </exercise>
+
+  <exercise xml:id="ex-hw6o-signs">
+    <title>Two Signs, No Calculation</title>
+    <statement>
+      <p>
+        Let <m>R</m> be the solid between <m>z = x^2+y^2</m> and
+        <m>z = 1-x^2-y^2</m>. Type <c>positive</c>, <c>negative</c>, or
+        <c>zero</c> for each.
+      </p>
+      <p>
+        <m>\displaystyle\iiint_R \left(z+x^2+y^2-1\right) dV</m>:
+        <var width="12"/>
+      </p>
+      <p>
+        <m>\displaystyle\iiint_R \left(z-x^2-y^2\right) dV</m>:
+        <var width="12"/>
+      </p>
+    </statement>
+    <setup>
+      <var case="insensitive">
+        <condition string="negative">
+          <feedback><p>Correct.</p></feedback>
+        </condition>
+        <condition string="positive">
+          <feedback><p>On R we have z at most 1-x^2-y^2, so the integrand is at most zero.</p></feedback>
+        </condition>
+      </var>
+      <var case="insensitive">
+        <condition string="positive">
+          <feedback><p>Correct.</p></feedback>
+        </condition>
+        <condition string="negative">
+          <feedback><p>On R we have z at least x^2+y^2, so the integrand is at least zero.</p></feedback>
+        </condition>
+      </var>
+    </setup>
+    <solution>
+      <p>
+        On <m>R</m>, <m>x^2+y^2 \le z \le 1-x^2-y^2</m>. The right
+        inequality gives <m>z + x^2 + y^2 - 1 \le 0</m>, so the first
+        integral is <term>negative</term>; the left gives
+        <m>z - x^2 - y^2 \ge 0</m>, so the second is <term>positive</term>.
+        Each integrand vanishes only on one of the two bounding surfaces.
+      </p>
+    </solution>
+  </exercise>
+
+  <exercise xml:id="ex-hw6o-volume">
+    <title>Volume Between a Hyperboloid and a Paraboloid</title>
+    <statement>
+      <p>
+        Find the volume bounded by <m>x^2+y^2-z^2+5 = 0</m> and
+        <m>x^2+y^2+z-1 = 0</m>. Eliminating <m>x^2+y^2</m> gives
+        <m>z^2 + z - 6 = 0</m>, whose relevant root is <m>z = </m>
+        <var width="6"/>, so the two surfaces meet over the circle of
+        radius <var width="6"/>.
+      </p>
+      <p>The volume is <var width="10"/>.</p>
+    </statement>
+    <setup>
+      <var>
+        <condition number="-3" tolerance="0.01">
+          <feedback><p>Correct: z = 2 would need x^2+y^2 = -1, which is impossible.</p></feedback>
+        </condition>
+        <condition number="2" tolerance="0.01">
+          <feedback><p>That root gives x squared plus y squared equal to minus one, so it is rejected.</p></feedback>
+        </condition>
+      </var>
+      <var>
+        <condition number="2" tolerance="0.01">
+          <feedback><p>Correct.</p></feedback>
+        </condition>
+      </var>
+      <var>
+        <condition number="20.566" tolerance="0.05">
+          <feedback><p>Correct.</p></feedback>
+        </condition>
+      </var>
+    </setup>
+    <solution>
+      <p>
+        The surfaces are <m>z = \pm\sqrt{r^2+5}</m> and
+        <m>z = 1-r^2</m>. Setting <m>r^2 = z^2-5</m> equal to
+        <m>r^2 = 1-z</m> gives <m>z^2+z-6 = 0</m>, so <m>z = 2</m> or
+        <m>z = -3</m>; only <m>z = -3</m> is possible, and then
+        <m>r^2 = 4</m>. Therefore
+      </p>
+      <me>
+        V = \int_0^{2\pi}\!\!\int_0^2\!\!\int_{-\sqrt{r^2+5}}^{1-r^2}
+        r\,dz\,dr\,d\theta \approx 20.566 .
+      </me>
+    </solution>
+  </exercise>
+</exercises>

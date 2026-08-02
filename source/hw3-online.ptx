@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- MATH 14 - HW3, online version: the same problems as the written       -->
+<!-- Assignment 3, rebuilt as auto-graded exercises.  Same "fillin-basic"     -->
+<!-- pattern as hw1-online.ptx: a <var/> per blank in the statement, matched  -->
+<!-- in order by a <var> in <setup>, whose first <condition> is the correct   -->
+<!-- answer.  Every blank is graded on its own, so partial credit survives.   -->
+<exercises xml:id="exercises-hw3-online" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Assignment 3, Online Version</title>
+
+  <introduction>
+    <p>
+      Section: <xref ref="sec-vector-fields" text="title"/>. These are the problems of
+      <xref ref="exercises-hw3" text="title"/> again, in a form you can
+      submit and have checked here.
+    </p>
+    <p>
+      Every answer box is graded separately, so a box you fill in correctly
+      earns its credit even if another box in the same problem is wrong.
+      Press <q>Check Me</q> to submit; you may check as often as you like.
+    </p>
+    <p>
+      <term>How to type your answers.</term> Numbers: a decimal number and
+      nothing else<mdash/>no units, no <m>=</m> sign, no <m>\pi</m>; give at
+      least three decimals (for instance <c>18.850</c>, not <c>6pi</c>).
+      Answers are accepted within a small tolerance. Words: type just the
+      word asked for, in lower case.
+    </p>
+  </introduction>
+
+  <exercise xml:id="ex-hw3o-sign">
+    <title>The Sign of a Line Integral</title>
+    <statement>
+      <p>
+        For the field and curve of <xref ref="fig-hw3-field"/>, is
+        <m>\displaystyle\oint_C \mathbf{F} \cdot d\mathbf{r}</m>
+        positive, negative, or zero? Type one word:
+        <c>positive</c>, <c>negative</c>, or <c>zero</c>.
+      </p>
+      <p>Answer: <var width="12"/></p>
+    </statement>
+    <setup>
+      <var case="insensitive">
+        <condition string="negative">
+          <feedback><p>Correct.</p></feedback>
+        </condition>
+        <condition string="positive">
+          <feedback><p>Look again at where the field is strongest: along the top of C the field and the direction of travel make an obtuse angle.</p></feedback>
+        </condition>
+        <condition string="zero">
+          <feedback><p>The two halves do not cancel, because the field is stronger over the top half.</p></feedback>
+        </condition>
+      </var>
+    </setup>
+    <solution>
+      <p>
+        Along the bottom of <m>C</m> the field and the unit tangent make
+        acute angles, so <m>\mathbf{F} \cdot \hat{\mathbf{T}} \gt 0</m>
+        there; along the top they make obtuse angles, so
+        <m>\mathbf{F} \cdot \hat{\mathbf{T}} \lt 0</m>. The field is
+        longer<mdash/>stronger<mdash/>over the top half, so the negative
+        contribution wins and the integral is <term>negative</term>.
+      </p>
+    </solution>
+  </exercise>
+
+  <exercise xml:id="ex-hw3o-two-paths">
+    <title>Two Particles, Two Paths</title>
+    <statement>
+      <p>
+        With <m>\mathbf{F} = \left\langle y, x \right\rangle</m>, find
+        the work done from <m>(-1,1)</m> to <m>(1,1)</m> along the parabola
+        <m>C_1: y = 2x^2-1</m> and along <m>C_2</m>, the bottom half of
+        <m>x^2 + (y-1)^2 = 1</m>.
+      </p>
+      <p>Work along <m>C_1</m>: <var width="10"/> foot-pounds.</p>
+      <p>Work along <m>C_2</m>: <var width="10"/> foot-pounds.</p>
+    </statement>
+    <setup>
+      <var>
+        <condition number="2" tolerance="0.01">
+          <feedback><p>Correct.</p></feedback>
+        </condition>
+      </var>
+      <var>
+        <condition number="2" tolerance="0.01">
+          <feedback><p>Correct<mdash/>the same as along the parabola, which is worth thinking about.</p></feedback>
+        </condition>
+      </var>
+    </setup>
+    <solution>
+      <p>
+        On <m>C_1</m>, <m>\mathbf{r}(t) = \left\langle t, 2t^2-1
+        \right\rangle</m> with <m>-1 \le t \le 1</m>, so
+        <m>\mathbf{F} \cdot \mathbf{v} = 6t^2 - 1</m> and
+        <m>W = \int_{-1}^{1}(6t^2-1)\,dt = 2</m>.
+      </p>
+      <p>
+        On <m>C_2</m>, <m>\mathbf{r}(t) = \left\langle \cos t,
+        1+\sin t \right\rangle</m> with <m>\pi \le t \le 2\pi</m>,
+        so <m>\mathbf{F} \cdot \mathbf{v} = \cos(2t) - \sin t</m> and
+        <m>W = 2</m> again.
+      </p>
+      <p>
+        The two answers agree because
+        <m>\mathbf{F} = \nabla(xy)</m> is conservative<mdash/>revisit this
+        problem after <xref ref="section-conservative-fields" text="title"/>.
+      </p>
+    </solution>
+  </exercise>
+
+  <exercise xml:id="ex-hw3o-helix">
+    <title>A Line Integral Along a Helix</title>
+    <statement>
+      <p>
+        For the helix <m>\mathbf{r}(t) = \left\langle \cos t, \sin t,
+        t/2\pi \right\rangle</m>, <m>0 \le t \le 2\pi</m>, compute
+        <m>\displaystyle\int_C x\,dy - y\,dx + dz</m>.
+      </p>
+      <p>
+        The integrand <m>\mathbf{F} \cdot \mathbf{v}</m> is the constant
+        <var width="10"/>, and the integral equals <var width="10"/>.
+      </p>
+    </statement>
+    <setup>
+      <var>
+        <condition number="1.159" tolerance="0.005">
+          <feedback><p>Correct: one plus one over two pi.</p></feedback>
+        </condition>
+      </var>
+      <var>
+        <condition number="7.283" tolerance="0.01">
+          <feedback><p>Correct: two pi plus one.</p></feedback>
+        </condition>
+        <condition number="6.283" tolerance="0.01">
+          <feedback><p>That is two pi: you dropped the dz term.</p></feedback>
+        </condition>
+      </var>
+    </setup>
+    <solution>
+      <p>
+        The integral is <m>\int_C \mathbf{F} \cdot d\mathbf{r}</m> with
+        <m>\mathbf{F} = \left\langle -y, x, 1 \right\rangle</m>. Along
+        the helix <m>\mathbf{F} = \left\langle -\sin t, \cos t, 1
+        \right\rangle</m> and
+        <m>\mathbf{v} = \left\langle -\sin t, \cos t, \frac{1}{2\pi}
+        \right\rangle</m>, so
+        <m>\mathbf{F} \cdot \mathbf{v} = 1 + \frac{1}{2\pi}</m> and
+      </p>
+      <me>
+        \int_C x\,dy - y\,dx + dz
+        = \int_0^{2\pi}\left(1 + \frac{1}{2\pi}\right) dt
+        = 2\pi + 1 \approx 7.283 .
+      </me>
+    </solution>
+  </exercise>
+</exercises>

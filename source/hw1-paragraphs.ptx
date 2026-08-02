@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- MATH 14 - HW1 as an unnumbered <paragraphs> division -->
 <paragraphs xml:id="hw1" xmlns:xi="http://www.w3.org/2001/XInclude">
-  <title>Homework 1</title>
+  <title>Assignment 1</title>
 
   <p>
     Covers Sections 13.1 (Curves in Space) and 13.3 (Arc Length in Space).

@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- MATH 14 - HW4: conservative fields and double integrals -->
+<exercises xml:id="exercises-hw4" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Assignment 4</title>
+
+  <introduction>
+    <p>
+      Sections: <xref ref="section-conservative-fields" text="title"/>,
+      <xref ref="section-double-integrals-rectangles" text="title"/>, and
+      <xref ref="section-double-integrals-general-regions" text="title"/>.
+    </p>
+  </introduction>
+
+  <exercise xml:id="ex-hw4-two-paths">
+    <introduction>
+      <p>
+        The force field <m>\mathbf{F}</m> is shown by the arrows in
+        <xref ref="fig-hw4-paths"/>.
+      </p>
+    </introduction>
+    <task xml:id="task-hw4-less-work">
+      <statement>
+        <p>
+          Over which of the two paths, <m>ADC</m> or <m>ABC</m>, does
+          <m>\mathbf{F}</m> perform less work? Fully justify your answer.
+        </p>
+      </statement>
+    </task>
+    <task xml:id="task-hw4-conservative">
+      <statement>
+        <p>
+          Is <m>\mathbf{F}</m> a conservative field or not? Why?
+        </p>
+      </statement>
+    </task>
+  </exercise>
+
+  <figure xml:id="fig-hw4-paths">
+    <caption>
+      The vector field <m>\mathbf{F}</m> and the two paths <m>ADC</m> and
+      <m>ABC</m> of <xref ref="ex-hw4-two-paths"/>. Every field vector
+      points in the same direction; only their lengths change.
+    </caption>
+    <image width="70%">
+      <prefigure xmlns="https://prefigure.org" label="prefigure-hw4-paths">
+        <diagram dimensions="(360,320)" margins="10">
+          <definition>G(x,y) = (0.16*(1+x), 0.16*(1+x))</definition>
+          <coordinates bbox="(-0.3,-0.3,3.3,3.0)">
+            <axes at="hp-axes" xlabel="x" ylabel="y" decorations="no" arrows="1"/>
+            <repeat at="hp-cols" parameter="i=0..6">
+              <repeat parameter="j=0..5">
+                <vector at="hp-v-((i))-((j))" v="G(0.45*i+0.12, 0.5*j+0.12)"
+                    tail="(0.45*i+0.12, 0.5*j+0.12)" stroke="#56B4E9"
+                    thickness="2"/>
+              </repeat>
+            </repeat>
+            <polygon at="hp-square" closed="yes" stroke="#CC0079" thickness="3"
+                fill="none" points="((0.8,0.7),(2.4,0.7),(2.4,2.3),(0.8,2.3))"/>
+            <point at="hp-A" p="(0.8,0.7)" fill="black" alignment="sw">
+              <m>A</m>
+            </point>
+            <point at="hp-D" p="(2.4,0.7)" fill="black" alignment="se">
+              <m>D</m>
+            </point>
+            <point at="hp-C" p="(2.4,2.3)" fill="black" alignment="ne">
+              <m>C</m>
+            </point>
+            <point at="hp-B" p="(0.8,2.3)" fill="black" alignment="nw">
+              <m>B</m>
+            </point>
+          </coordinates>
+          <annotations>
+            <annotation ref="figure" text="A grid of light blue field vectors, all pointing up and to the right at the same angle, with lengths that grow as x increases. A magenta square is drawn with corners A at the lower left, D at the lower right, C at the upper right and B at the upper left, so the path A D C runs along the bottom and up the right side, while A B C runs up the left side and along the top.">
+              <annotation ref="hp-cols" text="The field vectors, all parallel and pointing up and to the right, growing longer toward the right of the picture."/>
+              <annotation ref="hp-square" text="The square whose corners are A, B, C and D; the two paths of the problem run along its sides."/>
+              <annotation ref="hp-A" text="The corner A, at the lower left."/>
+              <annotation ref="hp-D" text="The corner D, at the lower right; the path A D C passes through it."/>
+              <annotation ref="hp-C" text="The corner C, at the upper right."/>
+              <annotation ref="hp-B" text="The corner B, at the upper left; the path A B C passes through it."/>
+            </annotation>
+          </annotations>
+        </diagram>
+      </prefigure>
+    </image>
+  </figure>
+
+  <exercise xml:id="ex-hw4-density-shapes">
+    <introduction>
+      <p>
+        Consider the density function (mass per unit area)
+        <m>\delta(x,y) = x^2 - y^2</m> and the four shapes of
+        <xref ref="fig-hw4-shapes"/>, each of which is drawn with the same
+        <m>r \gt 0</m>.
+      </p>
+    </introduction>
+    <task xml:id="task-hw4-which-shapes">
+      <statement>
+        <p>
+          Choose the shapes in <xref ref="fig-hw4-shapes"/> that can
+          possess <m>\delta(x,y)</m> as their density function. Justify
+          your answers.
+        </p>
+      </statement>
+    </task>
+    <task xml:id="task-hw4-heavier">
+      <statement>
+        <p>
+          Determine which one of your choices in part (a) is the heavier
+          one. Why?
+        </p>
+      </statement>
+    </task>
+  </exercise>
+
+  <figure xml:id="fig-hw4-shapes">
+    <caption>
+      The four shapes of <xref ref="ex-hw4-density-shapes"/>. Shapes
+      <m>1</m> and <m>2</m> are triangles cut off by <m>y=r</m> and
+      <m>x=r</m>; shapes <m>3</m> and <m>4</m> are sectors of the circle
+      <m>x^2+y^2=r^2</m>. The dashed lines are <m>y=x</m> and
+      <m>y=-x</m>.
+    </caption>
+    <image width="85%">
+      <prefigure xmlns="https://prefigure.org" label="prefigure-hw4-shapes">
+        <diagram dimensions="(460,340)" margins="8">
+          <definition>arc3(t) = (2.6 + 1.3*cos(t), 4.6 + 1.3*sin(t))</definition>
+          <definition>arc4(t) = (7.4 + 1.3*cos(t), 4.6 + 1.3*sin(t))</definition>
+          <coordinates bbox="(0.2,-0.9,9.9,7.6)">
+            <!-- shape 1: above y = x, cut by y = r -->
+            <polygon at="hs1" closed="yes" fill="#c9c9c9" stroke="#555555"
+                thickness="2" points="((1.3,1.0),(2.6,2.3),(1.3,2.3))"/>
+            <line at="hs1-x" endpoints="((0.5,1.0),(3.4,1.0))" stroke="black"
+                thickness="1"/>
+            <line at="hs1-y" endpoints="((1.3,0.2),(1.3,2.9))" stroke="black"
+                thickness="1"/>
+            <line at="hs1-diag" endpoints="((1.3,1.0),(3.0,2.7))"
+                stroke="#777777" thickness="1" dash="4 3"/>
+            <line at="hs1-cut" endpoints="((0.9,2.3),(2.9,2.3))"
+                stroke="#777777" thickness="1" dash="4 3"/>
+            <label at="hs1-lab" anchor="(1.75,1.75)" alignment="center">
+              <m>1</m>
+            </label>
+            <label at="hs1-yr" anchor="(2.95,2.3)" alignment="e"
+                color="#555555"><m>y=r</m></label>
+            <label at="hs1-diaglab" anchor="(3.05,2.72)" alignment="ne"
+                color="#555555"><m>y=x</m></label>
+            <!-- shape 2: below y = x, cut by x = r -->
+            <polygon at="hs2" closed="yes" fill="#c9c9c9" stroke="#555555"
+                thickness="2" points="((6.1,1.0),(7.4,1.0),(7.4,2.3))"/>
+            <line at="hs2-x" endpoints="((5.3,1.0),(8.2,1.0))" stroke="black"
+                thickness="1"/>
+            <line at="hs2-y" endpoints="((6.1,0.2),(6.1,2.9))" stroke="black"
+                thickness="1"/>
+            <line at="hs2-diag" endpoints="((6.1,1.0),(7.8,2.7))"
+                stroke="#777777" thickness="1" dash="4 3"/>
+            <line at="hs2-cut" endpoints="((7.4,0.5),(7.4,2.6))"
+                stroke="#777777" thickness="1" dash="4 3"/>
+            <label at="hs2-lab" anchor="(7.0,1.45)" alignment="center">
+              <m>2</m>
+            </label>
+            <label at="hs2-xr" anchor="(7.45,0.45)" alignment="se"
+                color="#555555"><m>x=r</m></label>
+            <label at="hs2-diaglab" anchor="(7.85,2.72)" alignment="ne"
+                color="#555555"><m>y=x</m></label>
+            <!-- shape 3: the sector between y = x and the y-axis -->
+            <polygon at="hs3" closed="yes" fill="#c9c9c9" stroke="none"
+                points="((2.6,4.6),(3.52,5.52),(3.32,5.85),(3.06,6.09),(2.75,6.24),(2.6,5.9))"/>
+            <parametric-curve at="hs3-arc" function="arc3" domain="(pi/4,pi/2)"
+                stroke="#555555" thickness="2"/>
+            <line at="hs3-x" endpoints="((1.8,4.6),(4.7,4.6))" stroke="black"
+                thickness="1"/>
+            <line at="hs3-y" endpoints="((2.6,3.8),(2.6,6.7))" stroke="black"
+                thickness="1"/>
+            <line at="hs3-diag" endpoints="((2.6,4.6),(4.3,6.3))"
+                stroke="#777777" thickness="1" dash="4 3"/>
+            <label at="hs3-lab" anchor="(2.98,5.42)" alignment="center">
+              <m>3</m>
+            </label>
+            <label at="hs3-circ" anchor="(1.75,4.05)" alignment="e"
+                color="#555555"><m>x^2+y^2=r^2</m></label>
+            <label at="hs3-diaglab" anchor="(4.35,6.32)" alignment="ne"
+                color="#555555"><m>y=x</m></label>
+            <!-- shape 4: the sector between y = -x and the negative x-axis -->
+            <polygon at="hs4" closed="yes" fill="#c9c9c9" stroke="none"
+                points="((7.4,4.6),(6.1,4.6),(6.25,4.94),(6.48,5.22),(6.74,5.44),(7.4,4.6))"/>
+            <parametric-curve at="hs4-arc" function="arc4"
+                domain="(3*pi/4,pi)" stroke="#555555" thickness="2"/>
+            <line at="hs4-x" endpoints="((5.6,4.6),(8.5,4.6))" stroke="black"
+                thickness="1"/>
+            <line at="hs4-y" endpoints="((7.4,3.8),(7.4,6.7))" stroke="black"
+                thickness="1"/>
+            <line at="hs4-diag" endpoints="((7.4,4.6),(5.9,6.1))"
+                stroke="#777777" thickness="1" dash="4 3"/>
+            <label at="hs4-lab" anchor="(6.72,4.92)" alignment="center">
+              <m>4</m>
+            </label>
+            <label at="hs4-circ" anchor="(6.55,4.05)" alignment="e"
+                color="#555555"><m>x^2+y^2=r^2</m></label>
+            <label at="hs4-diaglab" anchor="(6.30,5.55)" alignment="sw"
+                color="#555555"><m>y=-x</m></label>
+          </coordinates>
+          <annotations>
+            <annotation ref="figure" text="Four small pictures, each with its own pair of axes. Shape one is the triangle lying above the line y equals x and below the line y equals r. Shape two is the triangle lying below y equals x and to the left of the line x equals r. Shape three is the sector of the circle of radius r between the line y equals x and the positive y axis. Shape four is the sector of the same circle between the line y equals minus x and the negative x axis.">
+              <annotation ref="hs1" text="Shape one, the triangle above the line y equals x, where the absolute value of y is at least the absolute value of x."/>
+              <annotation ref="hs2" text="Shape two, the triangle below the line y equals x, where the absolute value of x is at least the absolute value of y."/>
+              <annotation ref="hs3" text="Shape three, the circular sector between the line y equals x and the y axis, where the absolute value of y is at least the absolute value of x."/>
+              <annotation ref="hs4" text="Shape four, the circular sector between the line y equals minus x and the negative x axis, where the absolute value of x is at least the absolute value of y."/>
+            </annotation>
+          </annotations>
+        </diagram>
+      </prefigure>
+    </image>
+  </figure>
+
+  <exercise xml:id="ex-hw4-reverse-order">
+    <statement>
+      <p>
+        Rewrite the integral
+        <m>\displaystyle\int_0^5\!\!\int_{x/2}^{x} f(x,y)\,dy\,dx</m> with
+        the order of integration reversed.
+      </p>
+    </statement>
+  </exercise>
+
+  <exercise xml:id="ex-hw4-volume">
+    <statement>
+      <p>
+        Find the volume under the surface <m>z = \sqrt{1-x^2}</m> and above
+        the triangle formed by <m>y=x</m>, <m>x=1</m>, and the
+        <m>x</m>-axis.
+      </p>
+    </statement>
+  </exercise>
+</exercises>

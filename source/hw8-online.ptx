@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- MATH 14 - HW8, online version: the same problems as the written       -->
+<!-- Assignment 8, rebuilt as auto-graded exercises.  Same "fillin-basic"     -->
+<!-- pattern as hw1-online.ptx: a <var/> per blank in the statement, matched  -->
+<!-- in order by a <var> in <setup>, whose first <condition> is the correct   -->
+<!-- answer.  Every blank is graded on its own, so partial credit survives.   -->
+<exercises xml:id="exercises-hw8-online" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Assignment 8, Online Version</title>
+
+  <introduction>
+    <p>
+      Section: <xref ref="section-mass-center-of-mass" text="title"/>. These are the problems of
+      <xref ref="exercises-hw8" text="title"/> again, in a form you can
+      submit and have checked here.
+    </p>
+    <p>
+      Every answer box is graded separately, so a box you fill in correctly
+      earns its credit even if another box in the same problem is wrong.
+      Press <q>Check Me</q> to submit; you may check as often as you like.
+    </p>
+    <p>
+      <term>How to type your answers.</term> Numbers: a decimal number and
+      nothing else<mdash/>no units, no <m>=</m> sign, no <m>\pi</m>; give at
+      least three decimals (for instance <c>18.850</c>, not <c>6pi</c>).
+      Answers are accepted within a small tolerance. Words: type just the
+      word asked for, in lower case.
+    </p>
+  </introduction>
+
+  <exercise xml:id="ex-hw8o-centroid">
+    <title>The Centroid of Cone Plus Cylinder</title>
+    <statement>
+      <p>
+        For the solid of <xref ref="fig-hw8-solid"/> with constant density
+        <m>\delta</m>: the mass of the cylinder is <m>m_1 = </m>
+        <var width="8"/> times <m>\delta</m>, and the mass of the cone is
+        <m>m_2 = </m> <var width="8"/> times <m>\delta</m>.
+      </p>
+      <p>
+        The centroid lies on the <m>z</m>-axis at <m>z = </m>
+        <var width="8"/>.
+      </p>
+    </statement>
+    <setup>
+      <var>
+        <condition number="6.283" tolerance="0.01">
+          <feedback><p>Correct: two pi.</p></feedback>
+        </condition>
+      </var>
+      <var>
+        <condition number="1.047" tolerance="0.01">
+          <feedback><p>Correct: pi over three.</p></feedback>
+        </condition>
+      </var>
+      <var>
+        <condition number="0.25" tolerance="0.005">
+          <feedback><p>Correct: one quarter.</p></feedback>
+        </condition>
+      </var>
+    </setup>
+    <solution>
+      <p>
+        By symmetry the cylinder's own centroid is the origin, so only the
+        cone moves the answer. The cylinder has volume
+        <m>\pi(1)^2(2) = 2\pi</m> and the cone
+      </p>
+      <me>
+        m_2 = \delta\iint_R\left(1-\sqrt{x^2+y^2}\right) dA
+        = \delta\left(\tfrac12 - \tfrac13\right)(2\pi)
+        = \frac{\pi\delta}{3} .
+      </me>
+      <p>
+        The cone's own centroid sits at <m>z = 1 + \frac34 =
+        \frac74</m>, so with <m>M = 2\pi\delta + \frac{\pi\delta}{3}
+        = \frac{7\pi\delta}{3}</m>,
+      </p>
+      <me>
+        \overline{z} = \frac{m_2}{M}\cdot\frac74
+        = \frac{\pi\delta/3}{7\pi\delta/3}\cdot\frac74
+        = \frac14 ,
+      </me>
+      <p>
+        so the centroid is
+        <m>\left\langle 0, 0, \frac14 \right\rangle</m>.
+      </p>
+    </solution>
+  </exercise>
+
+  <exercise xml:id="ex-hw8o-center-of-mass">
+    <title>Center of Mass of the Cone</title>
+    <statement>
+      <p>
+        For the solid bounded by <m>x = \sqrt{y^2+z^2}</m> and
+        <m>x = 1</m> with <m>\rho(x) = x</m>: the mass is
+        <var width="8"/>, the moment <m>M_{yz}</m> is <var width="8"/>, and
+        the center of mass is at <m>x = </m> <var width="8"/>.
+      </p>
+    </statement>
+    <setup>
+      <var>
+        <condition number="0.785" tolerance="0.005">
+          <feedback><p>Correct: pi over four.</p></feedback>
+        </condition>
+      </var>
+      <var>
+        <condition number="0.628" tolerance="0.005">
+          <feedback><p>Correct: pi over five.</p></feedback>
+        </condition>
+      </var>
+      <var>
+        <condition number="0.8" tolerance="0.005">
+          <feedback><p>Correct: four fifths.</p></feedback>
+        </condition>
+      </var>
+    </setup>
+    <solution>
+      <p>
+        By symmetry the center of mass lies on the <m>x</m>-axis. From
+        <xref ref="ex-hw6-cone-mass"/>, <m>M = \pi/4</m>, and
+      </p>
+      <me>
+        M_{yz} = \int_0^1\!\!\int_0^{2\pi}\!\!\int_r^1
+        x^2\,r\,dx\,d\theta\,dr
+        = \frac{2\pi}{3}\int_0^1 r\left(1-r^3\right) dr
+        = \frac{\pi}{5} .
+      </me>
+      <p>
+        Hence <m>\overline{x} = \dfrac{\pi/5}{\pi/4} = \dfrac45</m>,
+        and the center of mass is
+        <m>\left\langle \frac45, 0, 0 \right\rangle</m>.
+      </p>
+    </solution>
+  </exercise>
+</exercises>

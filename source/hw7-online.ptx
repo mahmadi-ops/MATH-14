@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- MATH 14 - HW7, online version: the same problems as the written       -->
+<!-- Assignment 7, rebuilt as auto-graded exercises.  Same "fillin-basic"     -->
+<!-- pattern as hw1-online.ptx: a <var/> per blank in the statement, matched  -->
+<!-- in order by a <var> in <setup>, whose first <condition> is the correct   -->
+<!-- answer.  Every blank is graded on its own, so partial credit survives.   -->
+<exercises xml:id="exercises-hw7-online" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Assignment 7, Online Version</title>
+
+  <introduction>
+    <p>
+      Sections: <xref ref="section-triple-integrals-spherical" text="title"/> and <xref ref="section-jacobian-substitution" text="title"/>. These are the problems of
+      <xref ref="exercises-hw7" text="title"/> again, in a form you can
+      submit and have checked here.
+    </p>
+    <p>
+      Every answer box is graded separately, so a box you fill in correctly
+      earns its credit even if another box in the same problem is wrong.
+      Press <q>Check Me</q> to submit; you may check as often as you like.
+    </p>
+    <p>
+      <term>How to type your answers.</term> Numbers: a decimal number and
+      nothing else<mdash/>no units, no <m>=</m> sign, no <m>\pi</m>; give at
+      least three decimals (for instance <c>18.850</c>, not <c>6pi</c>).
+      Answers are accepted within a small tolerance. Words: type just the
+      word asked for, in lower case.
+    </p>
+  </introduction>
+
+  <exercise xml:id="ex-hw7o-hemisphere">
+    <title>A Hemisphere in Spherical Coordinates</title>
+    <statement>
+      <p>
+        The region of integration is the half of the ball of radius
+        <var width="6"/> with <m>x \ge 0</m>, and the integrand
+        <m>\left(x^2+y^2+z^2\right)^{-1/2}</m> becomes <m>1/\rho</m>.
+      </p>
+      <p>The value of the integral is <var width="12"/>.</p>
+    </statement>
+    <setup>
+      <var>
+        <condition number="6" tolerance="0.01">
+          <feedback><p>Correct.</p></feedback>
+        </condition>
+      </var>
+      <var>
+        <condition number="113.097" tolerance="0.05">
+          <feedback><p>Correct: thirty-six pi.</p></feedback>
+        </condition>
+        <condition number="226.195" tolerance="0.1">
+          <feedback><p>That is the whole ball; the limits give only the half with x at least zero.</p></feedback>
+        </condition>
+      </var>
+    </setup>
+    <solution>
+      <p>
+        The bounds describe the hemisphere <m>\rho \le 6</m>,
+        <m>x \ge 0</m>. Since <m>dV = \rho^2\sin\phi\,
+        d\rho\,d\phi\,d\theta</m> and the integrand is
+        <m>1/\rho</m>,
+      </p>
+      <md>
+        <mrow>
+          \int_{-\pi/2}^{\pi/2}\!\!\int_0^{\pi}\!\!\int_0^6
+          \rho \sin\phi \,d\rho\,d\phi\,d\theta
+          \amp = \pi \cdot \frac{6^2}{2}\cdot 2
+        </mrow>
+        <mrow>
+          \amp = 36\pi \approx 113.097 .
+        </mrow>
+      </md>
+    </solution>
+  </exercise>
+
+  <exercise xml:id="ex-hw7o-ellipse">
+    <title>The Area of a Slanted Ellipse</title>
+    <statement>
+      <p>
+        With <m>s = x+4y</m>, <m>t = y</m>, the Jacobian
+        <m>\left|\dfrac{\partial(x,y)}{\partial(s,t)}\right|</m>
+        equals <var width="6"/>, the ellipse becomes the unit disk in the
+        <m>st</m>-plane, and its area is <var width="10"/>.
+      </p>
+    </statement>
+    <setup>
+      <var>
+        <condition number="1" tolerance="0.01">
+          <feedback><p>Correct.</p></feedback>
+        </condition>
+      </var>
+      <var>
+        <condition number="3.142" tolerance="0.01">
+          <feedback><p>Correct: pi.</p></feedback>
+        </condition>
+      </var>
+    </setup>
+    <solution>
+      <p>
+        Inverting gives <m>x = s-4t</m>, <m>y = t</m>, so the Jacobian
+        determinant is <m>1</m> and <m>dx\,dy = ds\,dt</m>. Substituting,
+        <m>x^2+8xy+17y^2 = (s-4t)^2 + 8(s-4t)t + 17t^2 = s^2+t^2</m>, so
+        the region is the unit disk and
+      </p>
+      <me>
+        \text{Area} = \iint_R dx\,dy = \iint_T ds\,dt = \pi .
+      </me>
+    </solution>
+  </exercise>
+
+  <exercise xml:id="ex-hw7o-scaling">
+    <title>Scaling a Double Integral</title>
+    <statement>
+      <p>
+        Given <m>\iint_D f\,dA = 3</m> on <m>x^2+y^2 \le 16</m>,
+        <m>E</m> the disk <m>x^2+y^2 \le 64</m>, and
+        <m>g(x,y) = 3f\left(\frac{x}{2},\frac{y}{2}\right)</m>: the
+        substitution <m>u = x/2</m>, <m>v = y/2</m> has Jacobian
+        <var width="6"/>, and
+        <m>\iint_E g\,dA = </m> <var width="8"/>.
+      </p>
+    </statement>
+    <setup>
+      <var>
+        <condition number="4" tolerance="0.01">
+          <feedback><p>Correct: dx dy = 4 du dv.</p></feedback>
+        </condition>
+      </var>
+      <var>
+        <condition number="36" tolerance="0.05">
+          <feedback><p>Correct.</p></feedback>
+        </condition>
+        <condition number="9" tolerance="0.05">
+          <feedback><p>You applied the factor of three but not the area factor of four.</p></feedback>
+        </condition>
+      </var>
+    </setup>
+    <solution>
+      <p>
+        With <m>x = 2u</m>, <m>y = 2v</m> the Jacobian is <m>4</m>, and
+        <m>E</m> becomes <m>u^2+v^2 \le 16</m>, which is <m>D</m>. Hence
+      </p>
+      <me>
+        \iint_E g\,dA = 3\iint_D f(u,v)\,(4)\,du\,dv
+        = 12 \iint_D f\,dA = 12(3) = 36 .
+      </me>
+    </solution>
+  </exercise>
+</exercises>

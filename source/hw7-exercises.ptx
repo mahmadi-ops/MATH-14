@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- MATH 14 - HW7: spherical coordinates and substitution -->
+<exercises xml:id="exercises-hw7" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Assignment 7</title>
+
+  <introduction>
+    <p>
+      Sections: <xref ref="section-triple-integrals-spherical" text="title"/>
+      and <xref ref="section-jacobian-substitution" text="title"/>.
+    </p>
+  </introduction>
+
+  <exercise xml:id="ex-hw7-hemisphere">
+    <statement>
+      <p>
+        Evaluate the following integral:
+      </p>
+      <md>
+        <mrow>
+          \int_{0}^{6}\!\!\int_{-\sqrt{36-x^2}}^{\sqrt{36-x^2}}\!\!
+          \int_{-\sqrt{36-x^2-z^2}}^{\sqrt{36-x^2-z^2}}
+          \frac{1}{\left(x^2+y^2+z^2\right)^{1/2}}\;dy\,dz\,dx .
+        </mrow>
+      </md>
+    </statement>
+  </exercise>
+
+  <exercise xml:id="ex-hw7-convert">
+    <statement>
+      <p>
+        Convert (do not evaluate) the following integral to
+        <term>spherical</term> and <term>cylindrical</term> coordinates.
+        Which set of coordinates is the most efficient for evaluating this
+        integral?
+      </p>
+      <me>
+        \int_{0}^{1}\!\!\int_{0}^{\sqrt{1-x^2}}\!\!
+        \int_{-\sqrt{2-x^2-y^2}}^{-\sqrt{x^2+y^2}} dz\,dy\,dx
+      </me>
+    </statement>
+  </exercise>
+
+  <exercise xml:id="ex-hw7-ellipse">
+    <statement>
+      <p>
+        Use the change of variables <m>s = x + 4y</m>, <m>t = y</m> to find
+        the area of the region bounded by the ellipse
+        <m>x^2 + 8xy + 17y^2 = 1</m>.
+      </p>
+    </statement>
+  </exercise>
+
+  <exercise xml:id="ex-hw7-scaling">
+    <statement>
+      <p>
+        Suppose that <m>\displaystyle\iint_D f(x,y)\,dA = 3</m>, where
+        <m>D</m> is the disk <m>x^2 + y^2 \le 16</m>. Assuming that
+        <m>E</m> is the disk <m>x^2 + y^2 \le 64</m> and
+        <m>g(x,y) = 3f\left(\frac{x}{2}, \frac{y}{2}\right)</m>, evaluate
+        <m>\displaystyle\iint_E g(x,y)\,dA</m>.
+      </p>
+    </statement>
+  </exercise>
+</exercises>

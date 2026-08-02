@@ -599,8 +599,8 @@ spins counterclockwise everywhere.
 <p>
 Next we state Green's theorem in 2D<fn>Note that we only cover Green's
 theorem in 2D; however, you should know that this theorem can be
-generalized to 3D, and in that case it is known as Stokes'
-theorem.</fn>, in two forms. The first form relates the outward flux
+generalized to 3D, and in that case it is known as Stokes' theorem,
+which is <xref ref="section-stokes-theorem"/>.</fn>, in two forms. The first form relates the outward flux
 across a simple<fn>A curve in the <m>xy</m>-plane is
 <term>simple</term> if it does not cross itself.</fn> closed curve
 <m>C</m> and the double integral of the divergence over the region

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- MATH 14 - HW1, online version: the same four problems as the written    -->
-<!-- Homework 1, rebuilt as auto-graded exercises.                           -->
+<!-- Assignment 1, rebuilt as auto-graded exercises.                           -->
 <!--                                                                         -->
 <!-- Each blank is a <var/> in the statement, matched in order by a <var> in  -->
 <!-- <setup>.  The first <condition> of a var is the correct answer; the      -->
@@ -10,11 +10,12 @@
 <!-- plain HTML build; the newer <fillin>/<evaluation> flavour needs the      -->
 <!-- dynamic runtime and shows an empty box without it.)                      -->
 <exercises xml:id="exercises-hw1-online" xmlns:xi="http://www.w3.org/2001/XInclude">
-  <title>Homework 1, Online Version</title>
+  <title>Assignment 1, Online Version</title>
 
   <introduction>
     <p>
-      Sections: 13.1 Curves in Space and 13.3 Arc Length in Space. These are
+      Sections: <xref ref="sec-parametrization" text="title"/> and
+      <xref ref="sec-arc-length" text="title"/>. These are
       the four problems of <xref ref="exercises-hw1" text="title"/> again, in a form you
       can submit and have checked here.
     </p>

@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- MATH 14 - HW9, online version: the same problems as the written       -->
+<!-- Assignment 9, rebuilt as auto-graded exercises.  Same "fillin-basic"     -->
+<!-- pattern as hw1-online.ptx: a <var/> per blank in the statement, matched  -->
+<!-- in order by a <var> in <setup>, whose first <condition> is the correct   -->
+<!-- answer.  Every blank is graded on its own, so partial credit survives.   -->
+<exercises xml:id="exercises-hw9-online" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Assignment 9, Online Version</title>
+
+  <introduction>
+    <p>
+      Section: <xref ref="section-greens-theorem" text="title"/>. These are the problems of
+      <xref ref="exercises-hw9" text="title"/> again, in a form you can
+      submit and have checked here.
+    </p>
+    <p>
+      Every answer box is graded separately, so a box you fill in correctly
+      earns its credit even if another box in the same problem is wrong.
+      Press <q>Check Me</q> to submit; you may check as often as you like.
+    </p>
+    <p>
+      <term>How to type your answers.</term> Numbers: a decimal number and
+      nothing else<mdash/>no units, no <m>=</m> sign, no <m>\pi</m>; give at
+      least three decimals (for instance <c>18.850</c>, not <c>6pi</c>).
+      Answers are accepted within a small tolerance. Words: type just the
+      word asked for, in lower case.
+    </p>
+  </introduction>
+
+  <exercise xml:id="ex-hw9o-staircase">
+    <title>Work Along a Staircase</title>
+    <statement>
+      <p>
+        For <m>\mathbf{F} = \left\langle x^3e^{x^2}+xe^x-y,\
+        y^2-e^y+x \right\rangle</m> along the path of
+        <xref ref="fig-hw9-staircase"/>: the curl integrand
+        <m>\frac{\partial N}{\partial x} -
+        \frac{\partial M}{\partial y}</m> equals <var width="6"/>.
+      </p>
+      <p>
+        The area enclosed by the staircase, the top segment and the
+        <m>y</m>-axis is <var width="8"/>, so the closed loop integral is
+        <var width="8"/>.
+      </p>
+      <p>The work along the given path is <var width="14"/>.</p>
+    </statement>
+    <setup>
+      <var>
+        <condition number="2" tolerance="0.01">
+          <feedback><p>Correct.</p></feedback>
+        </condition>
+      </var>
+      <var>
+        <condition number="55" tolerance="0.5">
+          <feedback><p>Correct: fifty plus ten halves.</p></feedback>
+        </condition>
+      </var>
+      <var>
+        <condition number="110" tolerance="0.5">
+          <feedback><p>Correct: twice the area.</p></feedback>
+        </condition>
+      </var>
+      <var>
+        <condition number="-21582.1" tolerance="1">
+          <feedback><p>Correct.</p></feedback>
+        </condition>
+      </var>
+    </setup>
+    <solution>
+      <p>
+        Closing the path with the segment <m>C_3</m> down the
+        <m>y</m>-axis gives a simple closed curve, and
+        <m>\frac{\partial N}{\partial x} -
+        \frac{\partial M}{\partial y} = 1-(-1) = 2</m>, so by Green's
+        theorem the closed loop integral is <m>2 \times 55 = 110</m>,
+        where <m>55 = 50 + 10\left(\frac12\right)</m> is the enclosed
+        area.
+      </p>
+      <p>
+        On <m>C_3</m>, <m>x = 0</m> and <m>dx = 0</m>, so
+        <m>\int_{C_3}\mathbf{F}\cdot d\mathbf{r}
+        = \int_{10}^{0}\left(y^2-e^y\right) dy
+        = -\frac{1000}{3}-1+e^{10}</m>. Therefore
+      </p>
+      <me>
+        W = 110 + \frac{1000}{3} + 1 - e^{10}
+        = \frac{1333}{3} - e^{10} \approx -21582.1 .
+      </me>
+    </solution>
+  </exercise>
+
+  <exercise xml:id="ex-hw9o-circle">
+    <title>A Fierce-Looking Integral Around a Circle</title>
+    <statement>
+      <p>
+        For the integral of <xref ref="ex-hw9-circle"/> around the unit
+        circle: after simplification
+        <m>\frac{\partial N}{\partial x} -
+        \frac{\partial M}{\partial y}</m> equals <var width="8"/> (in
+        terms of <m>y</m>), and the integral equals <var width="10"/>.
+      </p>
+    </statement>
+    <setup>
+      <var case="insensitive">
+        <condition string="y\s*\^\s*2">
+          <feedback><p>Correct.</p></feedback>
+        </condition>
+      </var>
+      <var>
+        <condition number="0.785" tolerance="0.005">
+          <feedback><p>Correct: pi over four.</p></feedback>
+        </condition>
+      </var>
+    </setup>
+    <solution>
+      <p>
+        Differentiating, <m>\frac{\partial M}{\partial y}
+        = \frac{y}{\sqrt{x^2+y^2}}</m> and
+        <m>\frac{\partial N}{\partial x} = y\left(y +
+        \frac{1}{\sqrt{x^2+y^2}}\right)</m>, so their difference is
+        <m>y^2</m>. By Green's theorem,
+      </p>
+      <me>
+        \oint_C = \iint_R y^2\,dx\,dy
+        = \int_0^{2\pi}\!\!\int_0^1 r^3\sin^2\theta\,dr\,d\theta
+        = \frac{\pi}{4} .
+      </me>
+    </solution>
+  </exercise>
+
+  <exercise xml:id="ex-hw9o-flux">
+    <title>Outward Flux Across the Unit Circle</title>
+    <statement>
+      <p>
+        For <m>\mathbf{F} = \left\langle x+y, -xy \right\rangle</m>:
+        the flux density <m>\nabla \cdot \mathbf{F}</m> equals
+        <m>1 - </m> <var width="6"/>, and the outward flux across the unit
+        circle is <var width="10"/>.
+      </p>
+    </statement>
+    <setup>
+      <var case="insensitive">
+        <condition string="x">
+          <feedback><p>Correct.</p></feedback>
+        </condition>
+      </var>
+      <var>
+        <condition number="3.142" tolerance="0.01">
+          <feedback><p>Correct: pi.</p></feedback>
+        </condition>
+      </var>
+    </setup>
+    <solution>
+      <p>
+        Here <m>\nabla\cdot\mathbf{F} = 1 - x</m>, so by the flux form
+        of Green's theorem
+      </p>
+      <me>
+        \oint_C \mathbf{F}\cdot\hat{\mathbf{n}}\,ds
+        = \iint_R (1-x)\,dA
+        = \int_0^1\!\!\int_0^{2\pi}\left(1-r\cos\theta\right)
+        r\,d\theta\,dr = \pi ,
+      </me>
+      <p>
+        since the <m>x</m>-term integrates to zero by symmetry and what is
+        left is the area of the disk.
+      </p>
+    </solution>
+  </exercise>
+
+  <exercise xml:id="ex-hw9o-rose">
+    <title>Green\u2019s Theorem on One Petal</title>
+    <statement>
+      <p>
+        For <m>\displaystyle\oint_C \left(y^4-2y\right) dx
+        - \left(6x-4xy^3\right) dy</m> around one petal of
+        <m>r = \sin(2\theta)</m>:
+        <m>\frac{\partial N}{\partial x} -
+        \frac{\partial M}{\partial y}</m> equals <var width="6"/>.
+      </p>
+      <p>
+        The area of the petal is <var width="8"/>, so the line integral is
+        <var width="10"/>.
+      </p>
+    </statement>
+    <setup>
+      <var>
+        <condition number="-4" tolerance="0.01">
+          <feedback><p>Correct.</p></feedback>
+        </condition>
+      </var>
+      <var>
+        <condition number="0.3927" tolerance="0.002">
+          <feedback><p>Correct: pi over eight.</p></feedback>
+        </condition>
+      </var>
+      <var>
+        <condition number="-1.571" tolerance="0.01">
+          <feedback><p>Correct: minus pi over two.</p></feedback>
+        </condition>
+      </var>
+    </setup>
+    <solution>
+      <p>
+        With <m>M = y^4-2y</m> and <m>N = -(6x-4xy^3)</m>,
+        <m>\frac{\partial N}{\partial x} = -6+4y^3</m> and
+        <m>\frac{\partial M}{\partial y} = 4y^3-2</m>, so their
+        difference is <m>-4</m>. The petal has area
+      </p>
+      <me>
+        \int_0^{\pi/2}\!\!\int_0^{\sin 2\theta} r\,dr\,d\theta
+        = \int_0^{\pi/2}\frac{\sin^2(2\theta)}{2}\,d\theta
+        = \frac{\pi}{8} ,
+      </me>
+      <p>
+        so the integral is <m>(-4)\left(\frac{\pi}{8}\right)
+        = -\frac{\pi}{2}</m>. It is both the circulation of
+        <m>\mathbf{F}</m> around the petal and, read the other way, the
+        work done by <m>\mathbf{F}</m> on a particle going once around it.
+      </p>
+    </solution>
+  </exercise>
+</exercises>
