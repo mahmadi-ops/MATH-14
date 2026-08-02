@@ -217,7 +217,8 @@
     <p>
       Our final task is to write the line element <m>ds</m> in terms of
       <m>dt</m>, so the integral becomes an ordinary integral we can
-      evaluate. Exactly as in <xref ref="sec-arc-length"/>, the line element
+      evaluate. Exactly as in <xref ref="eq-line-element-2d"/> of
+      <xref ref="sec-arc-length"/>, the line element
       is the length of an infinitesimal displacement in <m>\R^3</m>,
 
     <md>
@@ -306,7 +307,7 @@
       <m>f=1</m> in <xref ref="eq-scalar-line-integral"/> recovers the arc
       length
       <m>\int_C ds=\int_a^b \lVert\mathbf{v}(t)\rVert\,dt</m> of
-      <xref ref="sec-arc-length"/><mdash/>total length is the
+      <xref ref="eq-arc-length-2d"/><mdash/>total length is the
       <q>mass</q> of a wire of density one. And
       <m>\lVert\mathbf{v}(t)\rVert</m> is exactly the speed from that
       section, so the factor converts time spent into distance covered.
@@ -717,7 +718,8 @@
     <p>
       where <xref ref="eq-question-mass"/> is
       <xref ref="eq-mass-speed"/> again and
-      <xref ref="eq-question-length"/> is the case <m>\rho = 1</m>. Assume
+      <xref ref="eq-question-length"/> is the case <m>\rho = 1</m><mdash/>the
+      arc length <xref ref="eq-arc-length-2d"/> once more. Assume
       throughout that the thickness of the wire can be ignored.
     </p>
 

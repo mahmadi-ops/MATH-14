@@ -542,16 +542,16 @@ respect to <m>y</m> first is the more efficient choice here.
 <title>Area by Double Integration</title>
 
 <p>
-In the previous session, we talked about finding the double integral of
-the form <m>\iint_R f(x,y)\,dx\,dy</m> and how it corresponds to the
+In the previous session, we talked about finding the double integral
+<xref ref="eq-double-integral-def"/> and how it corresponds to the
 volume of an object with base <m>R</m> and height <m>z = f(x,y)</m>.
 This session, we will look at a special case of this double integral,
 which corresponds to the area of region <m>R</m>:
 </p>
 
-<me>
+<men xml:id="eq-area-double-integral">
 \text{Area of region } R = \iint_R dx\,dy = \iint_R dA.
-</me>
+</men>
 
 <example xml:id="example-area-double-integration">
 <title>Example IV</title>
@@ -858,7 +858,8 @@ curve, and they are antipodal on the circle.
 Slice the region horizontally. For <m>-\frac{\pi}{2} \le y \le
 \frac{\pi}{2}</m> a slice runs from the circle on the left to the red
 curve on the right; above <m>y=\frac{\pi}{2}</m> it runs from the circle
-to the circle. Since area is <m>\iint_D dA</m>,
+to the circle. Since area is given by
+<xref ref="eq-area-double-integral"/>,
 </p>
 <md>
 <mrow>

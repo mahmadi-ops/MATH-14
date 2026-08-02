@@ -32,7 +32,8 @@ the point <m>P</m> with spherical coordinates
 <p>
 <m>\theta</m> is the angle the projection of
 <m>\overrightarrow{OP}</m> makes with the positive <m>x</m>-axis. This
-is the same as what we had in cylindrical coordinates
+is the same <m>\theta</m> as in cylindrical coordinates,
+<xref ref="eq-cyl-to-rect"/>
 (<m>0 \le \theta \le 2\pi</m>).
 </p>
 </li>
@@ -117,17 +118,19 @@ projection.
 <assemblage xml:id="assemblage-spherical-equations">
 <title>Equations Relating Spherical Coordinates to Cartesian and Cylindrical Coordinates</title>
 <p>
-<me>
+<md>
+<mrow xml:id="eq-spherical-to-rect" number="yes">
 r = \rho\sin\phi, \qquad
 x = r\cos\theta = \rho\sin\phi\cos\theta,
-</me>
-<me>
+</mrow>
+<mrow>
 z = \rho\cos\phi, \qquad
 y = r\sin\theta = \rho\sin\phi\sin\theta,
-</me>
-<me>
+</mrow>
+<mrow>
 \rho = \sqrt{x^2 + y^2 + z^2} = \sqrt{r^2 + z^2}.
-</me>
+</mrow>
+</md>
 </p>
 </assemblage>
 
@@ -168,7 +171,8 @@ spherical coordinates.
 
 <solution>
 <p>
-Substituting the spherical expressions for <m>x</m>, <m>y</m>, and
+Substituting the spherical expressions
+<xref ref="eq-spherical-to-rect"/> for <m>x</m>, <m>y</m>, and
 <m>z</m>:
 </p>
 
@@ -234,7 +238,8 @@ y = \rho\sin\phi\sin\theta, \quad z = \rho\cos\phi
 \amp r = \rho\sin\phi, \quad z = \rho\cos\phi, \quad \theta = \theta
 </mrow>
 </md>
-The corresponding formulas for <m>dV</m> in triple integrals:
+The corresponding formulas for <m>dV</m> in triple integrals (see
+<xref ref="eq-dv-cylindrical"/> and <xref ref="eq-dv-spherical"/>):
 <me>
 dV = dx\,dy\,dz
 = dz\ r\,dr\,d\theta
@@ -256,9 +261,9 @@ radial side <m>d\rho</m>, one arc side <m>\rho\,d\phi</m>, and the
 other arc side <m>\rho\sin\phi\,d\theta</m>, so
 </p>
 
-<me>
+<men xml:id="eq-dv-spherical">
 dV = \rho^2\sin\phi\ d\rho\,d\phi\,d\theta.
-</me>
+</men>
 
 <figure xml:id="fig-spherical-element-tikz">
 <caption>
@@ -300,13 +305,13 @@ spherical coordinates by
 into spherical coordinates as follows:
 </p>
 
-<me>
+<men xml:id="eq-triple-spherical">
 \iiint_D f(x,y,z)\,dV
 = \int_{\alpha}^{\beta}\!\!\int_{\phi_{\min}}^{\phi_{\max}}
 \!\!\int_{g_1(\theta,\phi)}^{g_2(\theta,\phi)}
 f\!\left(\rho\sin\phi\cos\theta,\ \rho\sin\phi\sin\theta,\
 \rho\cos\phi\right)\rho^2\sin\phi\ d\rho\,d\phi\,d\theta.
-</me>
+</men>
 
 </subsection>
 
@@ -337,7 +342,9 @@ D = \left\{(\rho,\theta,\phi) : 0\le\theta\le 2\pi,\
 </me>
 
 <p>
-Thus the volume of the ice cream cone can be evaluated as follows:
+Thus, by <xref ref="eq-volume-triple"/> and
+<xref ref="eq-triple-spherical"/>, the volume of the ice cream cone can
+be evaluated as follows:
 </p>
 
 <md>
@@ -500,7 +507,7 @@ coordinates the solid is <m>0\le\rho\le 4\cos\phi</m>,
 <m>0\le\phi\le\frac{\pi}{2}</m>, <m>0\le\theta\le 2\pi</m>, and the
 integrand is
 <m>\left(x^2+y^2+z^2\right)^{3/2} = \left(\rho^2\right)^{3/2}
-= \rho^3</m>. Thus:
+= \rho^3</m>. Thus <xref ref="eq-triple-spherical"/> gives:
 </p>
 
 <md>
@@ -616,7 +623,8 @@ The <m>xy</m>-projection is the lower half disk
 <m>z</m>, the solid runs from the cone <m>z = \sqrt{x^2+y^2}</m>
 (that is, <m>z = r</m>) up to the plane <m>z = 1</m>; the solid is
 shown in <xref ref="fig-cone-plane-tikz"/>. Since
-<m>x^2 + y^2 = r^2</m>, the cylindrical form is
+<m>x^2 + y^2 = r^2</m>, the cylindrical form
+<xref ref="eq-triple-cylindrical"/> is
 </p>
 
 <me>
@@ -627,7 +635,8 @@ shown in <xref ref="fig-cone-plane-tikz"/>. Since
 For the spherical form, the cone is <m>\phi = \pi/4</m>, and the
 plane <m>z = 1</m> becomes <m>\rho\cos\phi = 1</m>, that is,
 <m>\rho = \sec\phi</m>. With
-<m>x^2 + y^2 = r^2 = \rho^2\sin^2\phi</m>, we get
+<m>x^2 + y^2 = r^2 = \rho^2\sin^2\phi</m>,
+<xref ref="eq-triple-spherical"/> gives
 </p>
 
 <me>

@@ -108,7 +108,8 @@ origin, growing longer at points farther from the origin.
 <p>
 In <xref ref="fig-gradient-field-tikz"/>, you see the scalar-valued
 function <m>z = f(x,y) = x^2 + y^2</m>, which is a function on
-<m>\R^2</m>, and according to the above definition, its gradient is
+<m>\R^2</m>, and according to <xref ref="eq-gradient-field"/>, its
+gradient is
 </p>
 
 <men xml:id="eq-gradient-paraboloid">
@@ -442,7 +443,8 @@ at the same value <m>f(B) - f(A) = \frac{1}{\sqrt{1+4\pi^2}} - 1</m>.
 </figure>
 
 <p>
-In the next example, we will see how we can use the above theorem.
+In the next example, we will see how we can use
+<xref ref="thm-ftli"/>.
 </p>
 
 <example xml:id="example-ftli-helix">
@@ -506,7 +508,8 @@ connecting the two points?
 
 <p>
 <em>B.</em> Of course, one way would be to calculate the line integral
-using the vector field calculated in part A (as we used to do); however,
+using the vector field calculated in part A, exactly as was done in
+<xref ref="ex-helix-gravity"/>; however,
 <xref ref="thm-ftli"/> provides us with a much more efficient way of
 calculating the line integral as follows:
 </p>
@@ -522,7 +525,9 @@ calculating the line integral as follows:
 </md>
 
 <p>
-<em>C.</em> The result is the same as part B, since the vector field
+<em>C.</em> The result is the same as part B<mdash/>and it agrees with
+the direct computation <xref ref="eq-helix-gravity-work"/> of
+<xref ref="ex-helix-gravity"/><mdash/>since the vector field
 <m>\mathbf F(x,y,z) = \nabla f</m> is a conservative field, which means
 that the result of the line integral is independent of the chosen path.
 Note that the line integral is calculated from <m>(1,0,0)</m> to
@@ -1217,12 +1222,12 @@ conservative: it is smooth on all of <m>\R^3</m> and
 A potential is found by inspection:
 </p>
 
-<md>
+<men xml:id="eq-segment-potential">
 f(x,y,z) = \frac{(x+y)z}{3},
 \qquad
 \nabla f = \left\langle \frac{z}{3},\ \frac{z}{3},\
   \frac{x+y}{3}\right\rangle = \mathbf{F} .
-</md>
+</men>
 
 <p>
 So there is no need to parametrize the segment at all. By
@@ -1304,7 +1309,8 @@ segment of <xref ref="fig-vf-segment"/>.
 Computing <m>\int_C\mathbf{F}\cdot d\mathbf{r}</m> directly here would mean
 differentiating <m>t\cos(\pi t)</m> and <m>t^{3/2}</m> and integrating the
 resulting mess. There is no need: the field is the same conservative field
-as before, with the same potential <m>f=(x+y)z/3</m>, so the integral
+as before, with the same potential <xref ref="eq-segment-potential"/>,
+so the integral
 depends only on the endpoints:
 </p>
 

@@ -19,13 +19,14 @@ cylindrical coordinates to calculate a triple integral.
 Cylindrical coordinates <m>(r,\theta,z)</m> are the combination of
 polar coordinates <m>(r,\theta)</m> in the <m>xy</m>-plane and the
 <m>z</m>-coordinate of Cartesian coordinates; see
-<xref ref="fig-cylindrical-point-tikz"/>. Thus the relations between
+<xref ref="fig-cylindrical-point-tikz"/>. Thus, adding <m>z</m> to
+<xref ref="eq-polar-cartesian"/>, the relations between
 Cartesian and cylindrical coordinates are
 </p>
 
-<me>
+<men xml:id="eq-cyl-to-rect">
 x = r\cos\theta, \qquad y = r\sin\theta, \qquad z = z,
-</me>
+</men>
 
 <me>
 r^2 = x^2 + y^2, \qquad \tan\theta = \frac{y}{x}, \qquad z = z.
@@ -99,14 +100,15 @@ and a vertical segment of length z connects the projection to P.
 <p>
 Before calculating triple integrals in cylindrical coordinates, we
 need to figure out the volume element <m>dV</m> in this new set of
-coordinates. Remember that the area element <m>dA</m> in polar
+coordinates. Remember from <xref ref="eq-polar-area-element"/> that the
+area element <m>dA</m> in polar
 coordinates is <m>r\,dr\,d\theta</m>; stacking it through a height
 <m>dz</m> gives the cylindrical volume element
 </p>
 
-<me>
+<men xml:id="eq-dv-cylindrical">
 dV = r\,dr\,d\theta\,dz.
-</me>
+</men>
 
 <interactive geogebra="qjpb9re8"
              width="80%" aspect="60:49"
@@ -157,18 +159,18 @@ h_1(\theta) \le r \le h_2(\theta)\right\}.
 </me>
 
 <p>
-Then the integral
+Then the iterated integral <xref ref="eq-triple-iterated"/>, written as
 <m>\iiint_E f\,dV
-= \iint_D\big[\int_{u_1}^{u_2} f\,dz\big]dA</m> can be converted to
+= \iint_D\big[\int_{u_1}^{u_2} f\,dz\big]dA</m>, can be converted to
 cylindrical coordinates:
 </p>
 
-<me>
+<men xml:id="eq-triple-cylindrical">
 \iiint_E f(x,y,z)\,dV
 = \int_{\alpha}^{\beta}\!\!\int_{h_1(\theta)}^{h_2(\theta)}
 \!\!\int_{u_1(r\cos\theta,\,r\sin\theta)}^{u_2(r\cos\theta,\,r\sin\theta)}
 f(r\cos\theta,\ r\sin\theta,\ z)\ r\,dz\,dr\,d\theta.
-</me>
+</men>
 
 </subsection>
 
@@ -225,7 +227,8 @@ the axis of the cylinder, we have
 
 <p>
 and since <m>r = \sqrt{x^2+y^2}</m>, in cylindrical coordinates
-<m>\delta(r,\theta,z) = Kr</m>. Thus, we can compute the mass of the
+<m>\delta(r,\theta,z) = Kr</m>. Thus, by <xref ref="eq-mass-triple"/>
+and <xref ref="eq-triple-cylindrical"/>, we can compute the mass of the
 solid as follows:
 </p>
 
@@ -363,7 +366,7 @@ floor <m>z = 1 - r^2</m>; a column at <m>(r,\theta)</m> runs from
 <p>
 Each part below describes a solid by the surfaces that bound it. Set up a
 triple integral in cylindrical coordinates that gives its volume: the work
-is all in the limits, and <m>dV = r\,dz\,dr\,d\theta</m> supplies the
+is all in the limits, and <xref ref="eq-dv-cylindrical"/> supplies the
 rest. Try each part from the description alone<mdash/>the solution shows
 the solid, so you can check whether the picture in your head was the right
 one.

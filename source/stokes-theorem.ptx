@@ -123,8 +123,8 @@ so that
 Two facts about the curl are worth recording, both of which we have
 already met in disguise. First, a field is conservative exactly when its
 curl vanishes: if <m>\mathbf{F} = \nabla f</m> then
-<m>\nabla \times \mathbf{F} = \mathbf{0}</m>, which is the three-variable
-version of the test in
+<m>\nabla \times \mathbf{F} = \mathbf{0}</m>, which is the component
+test <xref ref="eq-component-test-3d"/> for the conservative fields of
 <xref ref="section-conservative-fields"/>. Second,
 <m>\nabla \cdot (\nabla \times \mathbf{F}) = 0</m>: a curl field has no
 divergence, so by <xref ref="thm-divergence"/> its flux through any closed
@@ -347,7 +347,8 @@ so the circulation is
 For the other side, <xref ref="eq-curl-3d"/> gives
 <m>\nabla \times \mathbf{F} = 2\,\mathbf{k}</m>, a constant field. On the
 hemisphere the outward unit normal is
-<m>\hat{\mathbf{n}} = x\,\mathbf{i} + y\,\mathbf{j} + z\,\mathbf{k}</m>,
+<m>\hat{\mathbf{n}} = x\,\mathbf{i} + y\,\mathbf{j} + z\,\mathbf{k}</m>
+by <xref ref="eq-sphere-unit-normal"/>,
 so <m>(\nabla \times \mathbf{F}) \cdot \hat{\mathbf{n}} = 2z</m> and
 </p>
 
@@ -357,10 +358,9 @@ so <m>(\nabla \times \mathbf{F}) \cdot \hat{\mathbf{n}} = 2z</m> and
 </me>
 
 <p>
-Parametrizing the hemisphere as in
-<xref ref="section-surface-integrals"/> by
-<m>\mathbf{r}(\phi,\theta)</m> with
-<m>d\sigma = \sin\phi\, d\phi\, d\theta</m> and
+Parametrizing the hemisphere by <xref ref="eq-sphere-param"/> with
+<m>d\sigma = \sin\phi\, d\phi\, d\theta</m> from
+<xref ref="eq-sphere-cross"/> and
 <m>z = \cos\phi</m>,
 </p>
 

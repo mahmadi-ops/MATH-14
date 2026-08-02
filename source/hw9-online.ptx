@@ -35,7 +35,8 @@
         y^2-e^y+x \right\rangle</m> along the path of
         <xref ref="fig-hw9-staircase"/>: the curl integrand
         <m>\frac{\partial N}{\partial x} -
-        \frac{\partial M}{\partial y}</m> equals <var width="6"/>.
+        \frac{\partial M}{\partial y}</m> of <xref ref="eq-curl-def"/>
+        equals <var width="6"/>.
       </p>
       <p>
         The area enclosed by the staircase, the top segment and the
@@ -72,7 +73,8 @@
         <m>y</m>-axis gives a simple closed curve, and
         <m>\frac{\partial N}{\partial x} -
         \frac{\partial M}{\partial y} = 1-(-1) = 2</m>, so by Green's
-        theorem the closed loop integral is <m>2 \times 55 = 110</m>,
+        theorem, <xref ref="eq-green-tangential"/>, the closed loop
+        integral is <m>2 \times 55 = 110</m>,
         where <m>55 = 50 + 10\left(\frac12\right)</m> is the enclosed
         area.
       </p>
@@ -119,6 +121,7 @@
         <m>\frac{\partial N}{\partial x} = y\left(y +
         \frac{1}{\sqrt{x^2+y^2}}\right)</m>, so their difference is
         <m>y^2</m>. By Green's theorem,
+        <xref ref="eq-green-tangential"/>,
       </p>
       <me>
         \oint_C = \iint_R y^2\,dx\,dy
@@ -133,7 +136,8 @@
     <statement>
       <p>
         For <m>\mathbf{F} = \left\langle x+y, -xy \right\rangle</m>:
-        the flux density <m>\nabla \cdot \mathbf{F}</m> equals
+        the flux density <m>\nabla \cdot \mathbf{F}</m> of
+        <xref ref="eq-flux-density"/> equals
         <m>1 - </m> <var width="6"/>, and the outward flux across the unit
         circle is <var width="10"/>.
       </p>
@@ -153,7 +157,7 @@
     <solution>
       <p>
         Here <m>\nabla\cdot\mathbf{F} = 1 - x</m>, so by the flux form
-        of Green's theorem
+        of Green's theorem, <xref ref="eq-green-normal"/>,
       </p>
       <me>
         \oint_C \mathbf{F}\cdot\hat{\mathbf{n}}\,ds

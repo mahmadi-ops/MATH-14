@@ -138,10 +138,10 @@
       <m>\Delta y_k</m> vertically, so by the Pythagorean theorem the
       <m>k</m>-th chord length <m>\Delta s_k</m> satisfies
 
-    <me>
+    <men xml:id="eq-chord-pythagoras">
       \left(\Delta s_k\right)^{2}
         = \left(\Delta x_k\right)^{2} + \left(\Delta y_k\right)^{2}.
-    </me>
+    </men>
     </p>
 
     <figure xml:id="fig-arc-length-chords">
@@ -357,20 +357,20 @@
         <m>\mathbf{r}(t)=\left\langle x(t),\,y(t)\right\rangle</m> for
         <m>a\le t\le b</m>. Then
 
-      <me>
+      <men xml:id="eq-arc-length-2d">
         S = \int_C ds
           = \int_{t=a}^{t=b}\left\lVert\mathbf{v}(t)\right\rVert\,dt,
-      </me>
+      </men>
       </p>
       <p>
         where
 
-      <me>
+      <men xml:id="eq-line-element-2d">
         \mathbf{v}(t)=\frac{d\mathbf{r}}{dt}
           =\left\langle \frac{dx}{dt},\ \frac{dy}{dt}\right\rangle,
         \qquad
         ds = \left\lVert\mathbf{v}(t)\right\rVert\,dt.
-      </me>
+      </men>
       </p>
     </assemblage>
 
@@ -389,7 +389,8 @@
     <title>Length of a quarter circle</title>
     <statement>
       <p>
-        Using the arc-length formula in 2D, calculate the length of a
+        Using the arc-length formula <xref ref="eq-arc-length-2d"/>,
+        calculate the length of a
         quarter circle of radius one. (We already know the answer: a full
         unit circle has circumference <m>2\pi</m>, so a quarter of it has
         length <m>\dfrac{\pi}{2}</m>. The point of this example is to see
@@ -583,8 +584,11 @@
     <title>Arc Length in 3D</title>
 
     <p>
-      The formulas above generalize to motion in space with no new ideas:
-      the <m>k</m>-th chord simply picks up a third leg, so
+      The formulas <xref ref="eq-arc-length-2d"/> and
+      <xref ref="eq-line-element-2d"/> generalize to motion in space with
+      no new ideas:
+      the <m>k</m>-th chord of <xref ref="eq-chord-pythagoras"/> simply
+      picks up a third leg, so
       <m>\left(\Delta s_k\right)^{2}
          = \left(\Delta x_k\right)^{2}+\left(\Delta y_k\right)^{2}
           +\left(\Delta z_k\right)^{2}</m>
@@ -594,7 +598,7 @@
       therefore have
 
     <md>
-      <mrow>
+      <mrow xml:id="eq-arc-length-3d" number="yes">
         S \amp
           = \int_C ds
           = \int_{t=a}^{t=b} \sqrt{\left(\frac{dx}{dt}\right)^{2}
@@ -719,7 +723,8 @@
       </p>
 
       <p>
-        <term>Part C.</term> The distance travelled is the arc length of the
+        <term>Part C.</term> The distance travelled is the arc length
+        <xref ref="eq-arc-length-3d"/> of the
         path, that is, speed integrated over the <m>9</m> units of flight
         time:
 
@@ -940,10 +945,10 @@
           <m>y = \pm\sqrt{2x+1}</m> and split the problem in half. Since
           <m>z = x+1</m>,
 
-        <md>
+        <men xml:id="eq-cone-plane-param">
           \mathbf{r}(t) = \left\langle \frac{t^2-1}{2},\ \ t,\ \
           \frac{t^2+1}{2} \right\rangle , \qquad t \in \R .
-        </md>
+        </men>
         </p>
 
         <figure xml:id="fig-cone-plane-shadow">
@@ -1040,6 +1045,7 @@
         <p>
           The curve <m>C</m> crosses the plane <m>x = 0</m> at the two points
           <m>P(0,-1,1)</m> and <m>Q(0,1,1)</m>. Set up the arc-length integral
+          <xref ref="eq-arc-length-3d"/>
           for the piece of <m>C</m> joining <m>P</m> to <m>Q</m> and evaluate
           it <em>exactly</em>. Then give a decimal approximation to four
           places.
@@ -1067,8 +1073,9 @@
           First locate the endpoints: <m>x = 0</m> means
           <m>\frac{t^2-1}{2} = 0</m>, so <m>t = \pm 1</m>, giving
           <m>\mathbf{r}(-1) = (0,-1,1) = P</m> and
-          <m>\mathbf{r}(1) = (0,1,1) = Q</m>. Differentiating
-          <m>\mathbf{r}</m> componentwise gives the velocity vector
+          <m>\mathbf{r}(1) = (0,1,1) = Q</m>. Differentiating the
+          parametrization <xref ref="eq-cone-plane-param"/> componentwise
+          gives the velocity vector
 
         <md>
           <mrow>
@@ -1143,7 +1150,7 @@
           </fn>
 
         <md>
-          <mrow>
+          <mrow xml:id="eq-sqrt-antiderivative" number="yes">
             \int \sqrt{1+u^2} \, du \amp = \frac{u}{2}\sqrt{1+u^2}
           </mrow>
           <mrow>
@@ -1212,8 +1219,10 @@
 
       <solution>
         <p>
-          The vertex <m>V</m> is <m>\mathbf{r}(0)</m>, so measuring arc length
-          from <m>V</m> means starting the integral at <m>0</m>:
+          The vertex <m>V</m> is <m>\mathbf{r}(0)</m> in
+          <xref ref="eq-cone-plane-param"/>, so measuring arc length
+          from <m>V</m> means starting the integral at <m>0</m> and
+          applying the antiderivative <xref ref="eq-sqrt-antiderivative"/>:
 
         <md>
           <mrow>

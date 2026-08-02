@@ -293,11 +293,11 @@ The result of the above limit is defined as <term>the double integral
 over a rectangular region</term> and is denoted as
 </p>
 
-<me>
+<men xml:id="eq-double-integral-def">
 \iint_R f(x,y)\,dA
 \quad\text{or}\quad
 \iint_R f(x,y)\,dx\,dy.
-</me>
+</men>
 
 <p>
 For instance, in the example above, we have
@@ -395,17 +395,18 @@ If <m>f(x,y)</m> is continuous throughout the rectangular region
 <m>R: a \le x \le b,\ c \le y \le d</m>, then
 </p>
 
-<me>
+<men xml:id="eq-fubini-rectangle">
 \iint_R f(x,y)\,dA
 = \int_c^d\!\!\int_a^b f(x,y)\,dx\,dy
 = \int_a^b\!\!\int_c^d f(x,y)\,dy\,dx.
-</me>
+</men>
 </statement>
 </theorem>
 
 <p>
-Therefore, if the integrand satisfies the conditions mentioned in the
-above theorem, we can change the order of integration. For the previous
+Therefore, if the integrand satisfies the conditions of
+<xref ref="thm-fubini"/>, we can change the order of integration as in
+<xref ref="eq-fubini-rectangle"/>. For the previous
 example, we can first integrate over <m>y</m>:
 </p>
 
@@ -449,7 +450,8 @@ Calculate the double integral
 
 <solution>
 <p>
-Using <term>Fubini's theorem</term>, we first integrate over <m>y</m>,
+Using Fubini's theorem, <xref ref="thm-fubini"/>, we first integrate
+over <m>y</m>,
 which means that <m>x</m> is considered to be a constant. As our
 <term>substitution</term>, we choose <m>u = 1 + xy</m> and
 <m>du = x\,dy</m>:
@@ -602,10 +604,10 @@ The questions below are about <em>setting up</em> double integrals, not
 about evaluating them. Throughout, <m>R</m> is the square
 </p>
 
-<me>
+<men xml:id="eq-concept-check-square">
 R = \left\{(x,y) \in \R^2 : -\tfrac12 \le x \le \tfrac12,\
 -\tfrac12 \le y \le \tfrac12\right\} .
-</me>
+</men>
 
 <p>
 Each figure can be rotated: drag the background to turn it, and scroll to
@@ -663,7 +665,8 @@ up.
 <title>Signs, without computing</title>
 <statement>
 <p>
-Assume that <m>R</m> is the square above and choose all the correct
+Assume that <m>R</m> is the square of
+<xref ref="eq-concept-check-square"/> and choose all the correct
 statements below. Remember to justify your answers. Note that
 <xref ref="fig-ws-plane-x"/> and <xref ref="fig-ws-plane-y-minus-x"/>
 are helpful in answering this question.

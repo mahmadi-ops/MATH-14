@@ -56,7 +56,8 @@
       <p>
         The bounds describe the hemisphere <m>\rho \le 6</m>,
         <m>x \ge 0</m>. Since <m>dV = \rho^2\sin\phi\,
-        d\rho\,d\phi\,d\theta</m> and the integrand is
+        d\rho\,d\phi\,d\theta</m> by <xref ref="eq-dv-spherical"/> and
+        the integrand is
         <m>1/\rho</m>,
       </p>
       <md>

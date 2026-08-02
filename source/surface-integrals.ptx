@@ -280,11 +280,11 @@ Consider the unit sphere <m>x^2 + y^2 + z^2 = 1</m> with its spherical
 parametrization
 </p>
 
-<me>
+<men xml:id="eq-sphere-param">
 \mathbf{r}(\theta,\varphi)
 = \langle \sin\varphi\cos\theta,\, \sin\varphi\sin\theta,\,
 \cos\varphi \rangle.
-</me>
+</men>
 
 <p>
 Our goal is to find the normal <m>\mathbf{n}</m> to the sphere at every
@@ -438,7 +438,8 @@ and their cross product is
 + \left( \sin^2\varphi\sin\theta \right)\mathbf{j}
 + \cos\varphi\sin\varphi
 \underbrace{\left( \cos^2\theta + \sin^2\theta \right)}_{=1}\mathbf{k}</mrow>
-<mrow>\amp= \sin\varphi\, \langle \sin\varphi\cos\theta,\,
+<mrow xml:id="eq-sphere-cross" number="yes">\amp= \sin\varphi\,
+\langle \sin\varphi\cos\theta,\,
 \sin\varphi\sin\theta,\, \cos\varphi \rangle
 = \sin\varphi\, \langle x, y, z \rangle.</mrow>
 </md>
@@ -448,14 +449,14 @@ Normalizing, and using the fact that <m>x^2 + y^2 + z^2 = \rho^2 = 1</m>
 on the sphere,
 </p>
 
-<me>
+<men xml:id="eq-sphere-unit-normal">
 \hat{\mathbf{n}}
 = \frac{\sin\varphi\, \langle x,y,z \rangle}
 {\sin\varphi\, \sqrt{x^2 + y^2 + z^2}}
 = \langle x, y, z \rangle
 = \langle \sin\varphi\cos\theta,\, \sin\varphi\sin\theta,\,
 \cos\varphi \rangle:
-</me>
+</men>
 
 <p>
 the unit normal to the sphere at a point is simply the position vector
@@ -668,7 +669,8 @@ x\,\mathbf{k}</m> across the unit sphere
 
 <solution xml:id="solution-sphere-flux">
 <p>
-We begin by remembering that a sphere of radius one centered at the
+We begin by recalling from <xref ref="eq-sphere-param"/> that a sphere
+of radius one centered at the
 origin can be parametrized as
 </p>
 
@@ -681,8 +683,8 @@ z = \cos\varphi,
 <p>
 where <m>0 \le \theta \le 2\pi</m> and <m>0 \le \varphi \le \pi</m>.
 This means that we can use the formula for surface integrals,
-<xref ref="eq-flux-param"/>, to compute the flux. From the previous
-subsection,
+<xref ref="eq-flux-param"/>, to compute the flux. From
+<xref ref="eq-sphere-cross"/>,
 </p>
 
 <me>

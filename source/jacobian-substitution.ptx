@@ -148,7 +148,8 @@ a region <m>D</m> in <m>xyz</m>-space,
 </men>
 
 <p>
-The above integrals should be compared to the single-variable
+The integrals <xref ref="eq-sub-2d"/> and <xref ref="eq-sub-3d"/>
+should be compared to the single-variable
 substitution <m>x = h(u)</m>:
 </p>
 
@@ -524,11 +525,11 @@ According to the inverse function theorem, the Jacobian we need is the
 reciprocal of this one:
 </p>
 
-<me>
+<men xml:id="eq-jacobian-reciprocal">
 \frac{\partial(x,y)}{\partial(u,v)}
 = \left( \frac{\partial(u,v)}{\partial(x,y)} \right)^{-1}
 = \frac{1}{2(x^2 + y^2)}.
-</me>
+</men>
 
 <p>
 Now apply <xref ref="eq-sub-2d"/>. The factor <m>x^2 + y^2</m> in the
@@ -721,8 +722,9 @@ S = \{ (u,v,w) : 0 \le u \le 1,\ 0 \le v \le 1,\ 0 \le w \le 3 \}.
 <p>
 Note that according to the inverse function theorem, the matrix inverse
 of the Jacobian matrix of an invertible function is the Jacobian matrix
-of the inverse function. Using <xref ref="eq-jacobian-3d"/> in the
-easy direction,
+of the inverse function, exactly as in
+<xref ref="eq-jacobian-reciprocal"/>. Using
+<xref ref="eq-jacobian-3d"/> in the easy direction,
 </p>
 
 <me>

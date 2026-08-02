@@ -35,10 +35,10 @@ the boxes gives a Riemann sum for the total mass, and letting the size
 of the boxes shrink to zero turns the sum into a triple integral:
 </p>
 
-<me>
+<men xml:id="eq-mass-3d">
 M = \lim_{n \to \infty} \sum_{k=1}^{n} \delta(x_k, y_k, z_k)\, \Delta V_k
   = \iiint_D \delta(x,y,z)\, dV.
-</me>
+</men>
 
 <p>
 Watch the construction unfold in <xref ref="fig-mass-element-video"/>.
@@ -188,9 +188,10 @@ remains to find <m>\bar{z} = M_{xy}/M</m> from
 
 <p>
 Because of the circular symmetry, we work in cylindrical coordinates,
-where the region is described by
+where <xref ref="eq-dv-cylindrical"/> applies and the region is
+described by
 <m>0 \le z \le 4 - r^2</m>, <m>0 \le r \le 2</m>, and
-<m>0 \le \theta \le 2\pi</m>. The mass is
+<m>0 \le \theta \le 2\pi</m>. By <xref ref="eq-mass-3d"/>, the mass is
 </p>
 
 <md>
@@ -358,15 +359,16 @@ As we saw in <xref ref="example-paraboloid-com"/>, a constant density
 <xref ref="eq-com-3d"/>, so the centroid depends only on the shape of
 the object. For a flat plate occupying a region <m>R</m> in the plane
 with density <m>\delta(x,y)</m> (mass per unit area), the same
-reasoning as before<mdash/>with double integrals in place of triple
-integrals<mdash/>gives the mass and first moments
+reasoning that gave <xref ref="eq-mass-3d"/> and
+<xref ref="eq-first-moments-3d"/><mdash/>with double integrals in place
+of triple integrals<mdash/>gives the mass and first moments
 </p>
 
-<me>
+<men xml:id="eq-first-moments-2d">
 M = \iint_R \delta\, dA, \qquad
 M_y = \iint_R x\, \delta\, dA, \qquad
 M_x = \iint_R y\, \delta\, dA,
-</me>
+</men>
 
 <p>
 where <m>M_y</m> is the moment about the <m>y</m>-axis and <m>M_x</m>
@@ -395,7 +397,8 @@ The two curves intersect where <m>\sqrt{x} = x^2</m>, that is, at
 <m>0 \le x \le 1</m> with <m>x^2 \le y \le \sqrt{x}</m>, as shown in
 <xref ref="fig-centroid-between-curves"/>. Since we are finding the
 centroid, we may take the constant density to be <m>\delta = 1</m>,
-in which case the mass is simply the area:
+in which case, by <xref ref="eq-first-moments-2d"/>, the mass is simply
+the area:
 </p>
 
 <me>
@@ -406,7 +409,8 @@ M = \int_0^1 \int_{x^2}^{\sqrt{x}} dy\, dx
 </me>
 
 <p>
-The moment about the <m>y</m>-axis is
+By <xref ref="eq-first-moments-2d"/>, the moment about the
+<m>y</m>-axis is
 </p>
 
 <me>
@@ -532,8 +536,9 @@ so <m>\bar{y} = 0</m> and we only need <m>\bar{x}</m>.
 </p>
 
 <p>
-Working in polar coordinates with <m>dA = r\, dr\, d\theta</m>, the mass
-is
+Working in polar coordinates with <m>dA = r\, dr\, d\theta</m> from
+<xref ref="eq-polar-area-element"/>, the mass
+<xref ref="eq-first-moments-2d"/> is
 </p>
 
 <md>
@@ -545,7 +550,8 @@ is
 </md>
 
 <p>
-Since <m>x = r\cos\theta</m>, the moment about the <m>y</m>-axis is
+Since <m>x = r\cos\theta</m> by <xref ref="eq-polar-cartesian"/>, the
+moment about the <m>y</m>-axis is
 </p>
 
 <md>

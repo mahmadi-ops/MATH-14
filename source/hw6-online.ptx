@@ -56,7 +56,9 @@
     </setup>
     <solution>
       <p>
-        With <m>dV = r\,dr\,d\theta\,dx</m> and <m>r \le x \le 1</m>,
+        With <m>dV = r\,dr\,d\theta\,dx</m> (the cylindrical volume element
+        <xref ref="eq-dv-cylindrical"/> about the <m>x</m>-axis) and
+        <m>r \le x \le 1</m>,
       </p>
       <md>
         <mrow>

@@ -126,7 +126,8 @@
         The three pieces together are the part of the annulus
         <m>1 \le r \le 2</m> lying between the <m>x</m>-axis and the line
         <m>y = x</m>. Since <m>xy = r^2\sin\theta\cos\theta</m> and
-        <m>dA = r\,dr\,d\theta</m>,
+        <m>dA = r\,dr\,d\theta</m> by
+        <xref ref="eq-polar-area-element"/>,
       </p>
       <me>
         \int_0^{\pi/4}\!\!\int_1^2 r^3 \sin\theta\cos\theta
@@ -167,7 +168,8 @@
         <m>r = 2\cos\theta</m>, meeting where
         <m>\theta = \pi/4</m>. With
         <m>\rho = \frac{1}{r\cos\theta}</m> and
-        <m>dA = r\,dr\,d\theta</m>,
+        <m>dA = r\,dr\,d\theta</m> by
+        <xref ref="eq-polar-area-element"/>,
       </p>
       <md>
         <mrow>

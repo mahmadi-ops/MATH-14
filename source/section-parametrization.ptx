@@ -898,9 +898,9 @@
       <m>x^2 = x+2</m> gives <m>x^2 - x - 2 = (x-2)(x+1) = 0</m>, so the
       paths meet at the two points
 
-    <md>
+    <men xml:id="eq-parabola-line-intersections">
       (-1,1) \qquad \text{and} \qquad (2,4).
-    </md>
+    </men>
     </p>
 
     <p>
@@ -934,7 +934,8 @@
           <term>Paths.</term> Eliminating the parameter, the first particle
           traces the parabola <m>y = x^2</m>. For the second, <m>x = -t</m>
           and <m>y = 2-t = 2+x</m>, so it traces the line <m>y = x+2</m>. As
-          computed above, the two paths intersect at <m>(-1,1)</m> and
+          computed in <xref ref="eq-parabola-line-intersections"/>, the
+          two paths intersect at <m>(-1,1)</m> and
           <m>(2,4)</m>.
         </p>
         <p>
@@ -1102,7 +1103,8 @@
           <m>y = 2t = x+2</m>, so it travels along the very same line
           <m>y = x+2</m> as before, only faster and in the opposite
           direction. The paths are therefore unchanged, and they still
-          intersect at <m>(-1,1)</m> and <m>(2,4)</m>.
+          intersect at the points <xref ref="eq-parabola-line-intersections"/>,
+          <m>(-1,1)</m> and <m>(2,4)</m>.
         </p>
         <p>
           <term>Collisions.</term> Now a collision requires a single <m>t</m>

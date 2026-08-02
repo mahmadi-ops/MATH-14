@@ -7,7 +7,7 @@ In the previous session, we talked about a new coordinate system known
 as polar coordinates. Today, we will use polar coordinates to calculate
 double integrals. As you will see, this set of coordinates can
 sometimes simplify our calculations. In Cartesian coordinates, double
-integrals are of the form
+integrals are of the form <xref ref="eq-double-integral-def"/>,
 </p>
 
 <me>
@@ -50,7 +50,7 @@ radius <m>r</m> and central angle <m>\theta</m> is
 - \tfrac12 r_{i-1}^2\,\Delta\theta
 = \tfrac12\left(r_i^2 - r_{i-1}^2\right)\Delta\theta
 </mrow>
-<mrow>
+<mrow xml:id="eq-polar-area-element" number="yes">
 \amp= \tfrac12\left(r_i + r_{i-1}\right)\left(r_i - r_{i-1}\right)
 \Delta\theta
 = r_i^*\,\Delta r\,\Delta\theta,
@@ -71,7 +71,7 @@ polar rectangle. Therefore,
 f\!\left(r_i^*\cos\theta_j^*,\ r_i^*\sin\theta_j^*\right)
 r_i^*\,\Delta r\,\Delta\theta
 </mrow>
-<mrow>
+<mrow xml:id="eq-polar-double-integral" number="yes">
 \amp= \iint_R f(r\cos\theta,\ r\sin\theta)\,r\,dr\,d\theta.
 </mrow>
 </md>
@@ -248,8 +248,8 @@ R = \{(r,\theta) : 1 \le r \le 2,\ 0 \le \theta \le \pi\}.
 </me>
 
 <p>
-Therefore, using <m>x = r\cos\theta</m> and <m>y = r\sin\theta</m>, we
-can write:
+Therefore, using <m>x = r\cos\theta</m> and <m>y = r\sin\theta</m> from
+<xref ref="eq-polar-cartesian"/>, we can write:
 </p>
 
 <md>
@@ -357,7 +357,8 @@ D = \left\{(r,\theta)\ \middle|\
 </me>
 
 <p>
-and hence we can evaluate its area as follows:
+and hence, by <xref ref="eq-area-double-integral"/>, we can evaluate
+its area as follows:
 </p>
 
 <md>
@@ -660,14 +661,11 @@ computable, via the substitution <m>u = r^2</m>:
 
 <p>
 Each question below asks for a <em>setup</em> in polar coordinates. Recall
-that <m>x = r\cos\theta</m>, <m>y = r\sin\theta</m> and
-<m>dA = r\,dr\,d\theta</m>, so that
+from <xref ref="eq-polar-cartesian"/> that <m>x = r\cos\theta</m>,
+<m>y = r\sin\theta</m>, and from <xref ref="eq-polar-area-element"/>
+that <m>dA = r\,dr\,d\theta</m>, so that the double integral takes the
+polar form <xref ref="eq-polar-double-integral"/>.
 </p>
-
-<me>
-\iint_R f(x,y)\,dx\,dy
-  = \iint_R f\left(r\cos\theta, r\sin\theta\right) r\,dr\,d\theta .
-</me>
 
 <p>
 The work is almost entirely in the limits: which values of <m>\theta</m>

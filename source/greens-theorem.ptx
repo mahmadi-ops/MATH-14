@@ -133,7 +133,7 @@ field has a constant value along each side of the rectangle. The
 <term>flux density</term> can be calculated as follows:
 </p>
 
-<me>
+<men xml:id="eq-flux-density">
 \text{Flux density}
 = \frac{\text{net flux through the rectangle}}
 {\text{area of the rectangle}}
@@ -141,11 +141,12 @@ field has a constant value along each side of the rectangle. The
 + \frac{\partial N}{\partial y} \right) \Delta x \Delta y}
 {\Delta x \Delta y}
 = \frac{\partial M}{\partial x} + \frac{\partial N}{\partial y}.
-</me>
+</men>
 
 <p>
 Note that, in the limit that <m>\Delta x</m> and <m>\Delta y</m>
-approach <m>0</m>, the above equation represents to what extent a gas
+approach <m>0</m>, <xref ref="eq-flux-density"/> represents to what
+extent a gas
 is expanding or compressing at each point. This quantity is known as
 the <term>divergence</term>, and it is denoted by
 <m>\operatorname{div} \mathbf{F}</m>. Watch the construction in
@@ -1015,20 +1016,21 @@ partial derivatives. Then <m>\mathbf{F}</m> is conservative if and only
 if
 </p>
 
-<me>
+<men xml:id="eq-component-test-3d">
 \frac{\partial P}{\partial y} = \frac{\partial N}{\partial z}, \qquad
 \frac{\partial M}{\partial z} = \frac{\partial P}{\partial x},
 \qquad \text{and} \qquad
 \frac{\partial N}{\partial x} = \frac{\partial M}{\partial y}.
-</me>
+</men>
 </assemblage>
 
 <p>
-The three equalities above are equivalent to
+The three equalities of <xref ref="eq-component-test-3d"/> are
+equivalent to
 <m>\nabla \times \mathbf{F} = \mathbf{0}</m>, since
 </p>
 
-<me>
+<men xml:id="eq-curl-cross-product">
 \nabla \times \mathbf{F} =
 \begin{vmatrix}
 \mathbf{i} \amp \mathbf{j} \amp \mathbf{k} \\
@@ -1042,7 +1044,7 @@ M \amp N \amp P
 \right) \mathbf{j}
 + \left( \frac{\partial N}{\partial x} - \frac{\partial M}{\partial y}
 \right) \mathbf{k}.
-</me>
+</men>
 
 <p>
 So to check whether a vector field is conservative or not, we can check
@@ -1068,8 +1070,8 @@ the vector field <m>\mathbf{F}</m> for the above line integral.
 </li>
 <li>
 <p>
-Is this vector field a conservative field? Use the component test to
-answer.
+Is this vector field a conservative field? Use the component test,
+<xref ref="eq-component-test-3d"/>, to answer.
 </p>
 </li>
 <li>
@@ -1094,7 +1096,7 @@ Using Green's theorem, confirm your answer to part B.
 
 <p>
 <em>Part B.</em> Treating <m>\mathbf{F}</m> as a field in space with
-<m>P = 0</m>,
+<m>P = 0</m> in <xref ref="eq-curl-cross-product"/>,
 </p>
 
 <me>

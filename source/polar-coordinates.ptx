@@ -196,18 +196,19 @@ a given <m>(r,\theta)</m>, we uniquely have
 <m>(x,y)</m>, there are two options for the directed distance
 <m>r</m>: a positive and a negative value. However, for a given
 <m>(x,y) \ne (0,0)</m>, there is a unique <m>\theta \in [0,2\pi)</m>
-that satisfies the first and second equations below.
+that satisfies the first two equations of
+<xref ref="eq-polar-cartesian"/>.
 </p>
 
 <assemblage xml:id="assemblage-polar-cartesian-equations">
 <title>Equations Relating Polar and Cartesian Coordinates</title>
 <p>
-<me>
+<men xml:id="eq-polar-cartesian">
 x = r\cos\theta, \qquad
 y = r\sin\theta, \qquad
 r^2 = x^2 + y^2, \qquad
 \tan\theta = \frac{y}{x}
-</me>
+</men>
 </p>
 </assemblage>
 
@@ -362,7 +363,8 @@ We re-write <m>r^2\cos\theta\sin\theta = 4</m> as
 </li>
 <li>
 <p>
-Using <m>r = \sqrt{x^2+y^2}</m> and <m>r\cos\theta = x</m>:
+Using <m>r = \sqrt{x^2+y^2}</m> and <m>r\cos\theta = x</m> from
+<xref ref="eq-polar-cartesian"/>:
 <md>
 <mrow>
 r = 1 + 2r\cos\theta

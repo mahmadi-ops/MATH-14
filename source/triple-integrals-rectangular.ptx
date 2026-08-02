@@ -18,9 +18,9 @@ An important application comes first: the mass of a block <m>B</m>
 with variable density (mass per unit volume) <m>\rho(x,y,z)</m> is
 </p>
 
-<me>
+<men xml:id="eq-mass-triple">
 M = \iiint_B \rho(x,y,z)\,dV.
-</me>
+</men>
 
 <p>
 More generally, a <term>triple integral</term> has the form
@@ -32,9 +32,9 @@ each block, and passing to the limit. A natural question is: what does
 the tiny blocks <m>\Delta V</m>, hence
 </p>
 
-<me>
+<men xml:id="eq-volume-triple">
 \text{Volume of } E = \iiint_E dV.
-</me>
+</men>
 
 </subsection>
 
@@ -64,11 +64,11 @@ so <m>E</m> lies between the surfaces <m>z = u_1(x,y)</m> and
 <m>xy</m>-plane, and
 </p>
 
-<me>
+<men xml:id="eq-triple-iterated">
 \iiint_E f(x,y,z)\,dV
 = \int_a^b\!\!\int_{g_1(x)}^{g_2(x)}\!\!\int_{u_1(x,y)}^{u_2(x,y)}
 f(x,y,z)\,dz\,dy\,dx.
-</me>
+</men>
 
 <example xml:id="example-triple-tetrahedron">
 <title>Example I</title>
@@ -270,7 +270,8 @@ two outer integrals).
 <m>u_1(x,y) \le z \le u_2(x,y)\}</m></title>
 
 <p>
-The second case is entirely similar, but the projection <m>D</m> is
+The second case is entirely similar to
+<xref ref="eq-triple-iterated"/>, but the projection <m>D</m> is
 described with horizontal strips:
 </p>
 
@@ -647,8 +648,8 @@ Assume that the density (mass per unit volume) is given by
 
 <solution>
 <p>
-Using <m>M = \iiint_R \rho(x,y,z)\,dV</m> with the same limits as in
-Part A of <xref ref="example-triple-order"/>:
+Using the mass formula <xref ref="eq-mass-triple"/> with the same
+limits as in Part A of <xref ref="example-triple-order"/>:
 </p>
 
 <md>
