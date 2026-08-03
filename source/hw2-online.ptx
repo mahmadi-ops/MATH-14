@@ -209,6 +209,9 @@
       of the unit square, traversed once as shown.
     </caption>
     <image width="55%">
+      <shortdescription>
+      The unit square traversed counterclockwise, arrowheads on all four sides.
+      </shortdescription>
       <prefigure xmlns="https://prefigure.org" label="prefigure-hw2o-square">
         <diagram dimensions="(300,280)" margins="12">
           <coordinates bbox="(-0.55,-0.55,1.6,1.5)">

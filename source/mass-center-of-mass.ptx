@@ -470,6 +470,9 @@ over <m>0 \le x \le 1</m>, with its centroid at
 <m>\left( \tfrac{9}{20}, \tfrac{9}{20} \right)</m>.
 </caption>
 <image width="55%">
+<shortdescription>
+The region between the square-root curve and the parabola, from 0 to 1.
+</shortdescription>
 <prefigure xmlns="https://prefigure.org" label="prefigure-centroid-between-curves">
 <diagram dimensions="(320,320)" margins="10">
 <definition>f(x) = sqrt(x)</definition>
@@ -601,6 +604,9 @@ the <m>x</m>-axis and its centroid <m>\left( \tfrac{5}{6}, 0 \right)</m>
 is marked in maroon.
 </caption>
 <image width="55%">
+<shortdescription>
+A cardioid symmetric about the x axis with shaded interior.
+</shortdescription>
 <prefigure xmlns="https://prefigure.org" label="prefigure-cardioid-centroid">
 <diagram dimensions="(360,300)" margins="10">
 <definition>c(t) = ((1 + cos(t))*cos(t), (1 + cos(t))*sin(t))</definition>

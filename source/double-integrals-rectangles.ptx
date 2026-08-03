@@ -46,6 +46,9 @@ height of the <m>i</m>-th rectangle is <m>f(x_i^*)</m>, where
 area under the curve.
 </caption>
 <image width="80%">
+<shortdescription>
+The area under a curve approximated by eight rectangles.
+</shortdescription>
 <prefigure xmlns="https://prefigure.org" label="prefigure-riemann-1d">
 <diagram dimensions="(420,280)" margins="10">
 <definition>f(t) = (t, 0.15*(t-1)*(t-3)*(t-5) + 2.5)</definition>

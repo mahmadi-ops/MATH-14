@@ -83,6 +83,9 @@ above by <m>f_1(x) = x^3 + 1</m> and below by
 lower curve to the upper curve.
 </caption>
 <image width="70%">
+<shortdescription>
+A region between an upper and a lower curve, with vertical strips.
+</shortdescription>
 <prefigure xmlns="https://prefigure.org" label="prefigure-case1-region">
 <diagram dimensions="(380,300)" margins="10">
 <definition>f1(t) = (t, t^3 + 1)</definition>
@@ -189,6 +192,9 @@ on the left by <m>g_1(y) = y^2</m> and on the right by
 left curve to the right curve.
 </caption>
 <image width="70%">
+<shortdescription>
+A region between a left and a right curve, with horizontal strips.
+</shortdescription>
 <prefigure xmlns="https://prefigure.org" label="prefigure-case2-region">
 <diagram dimensions="(380,300)" margins="10">
 <definition>g1(t) = (t^2, t)</definition>
@@ -412,6 +418,9 @@ base of the tetrahedron in the <m>xy</m>-plane, bounded below by
 for <m>0 \le x \le 1</m>. A typical vertical strip is drawn in blue.
 </caption>
 <image width="60%">
+<shortdescription>
+The triangular base of the tetrahedron in the x y plane.
+</shortdescription>
 <prefigure xmlns="https://prefigure.org" label="prefigure-tetrahedron-base">
 <diagram dimensions="(460,300)" margins="10">
 <definition>top(t) = (t, 1 - t/2)</definition>
@@ -487,6 +496,9 @@ respect to <m>y</m> first is the more efficient choice here.
 
 <sidebyside width="60%">
 <image>
+<shortdescription>
+The same triangle swept by horizontal arrows for the reversed order of integration.
+</shortdescription>
 <prefigure xmlns="https://prefigure.org" label="prefigure-tetrahedron-base-reverse">
 <diagram dimensions="(420,300)" margins="10">
 <definition>top(t) = (t, 1 - t/2)</definition>
@@ -654,6 +666,9 @@ The area is therefore the area of the square, <m>1</m>, plus the area
 <m>y = (x+1)^2</m> and the <m>y</m>-axis.
 </caption>
 <image width="65%">
+<shortdescription>
+The region decomposed into a unit square and two matching pieces.
+</shortdescription>
 <prefigure xmlns="https://prefigure.org" label="prefigure-area-symmetry">
 <diagram dimensions="(360,320)" margins="10">
 <definition>right(t) = (t - t^3, t)</definition>
@@ -715,6 +730,9 @@ boundary is the vertical line <m>x = -1</m> for <m>R_1</m> and the
 parabola <m>y = (x+1)^2</m> for <m>R_2</m>.
 </caption>
 <image width="65%">
+<shortdescription>
+A region split into two stacked parts R 1 and R 2.
+</shortdescription>
 <prefigure xmlns="https://prefigure.org" label="prefigure-area-region">
 <diagram dimensions="(360,320)" margins="10">
 <definition>right(t) = (t - t^3, t)</definition>
@@ -904,6 +922,9 @@ Figure (5): the region bounded by the blue arc of the circle
 diameter; the dashed arc is the rest of the circle.
 </caption>
 <image width="64%">
+<shortdescription>
+A tilted circle with solid and dashed halves bounding the shaded region.
+</shortdescription>
 <prefigure xmlns="https://prefigure.org" label="prefigure-arcsin-region">
 <diagram dimensions="(400,400)" margins="10">
 <definition>R = sqrt(1 + pi^2/4)</definition>

@@ -30,6 +30,9 @@ width <m>\Delta x</m>, and height <m>\Delta y</m>. The pink arrows show
 the outward components of <m>\mathbf{F}</m> on each side.
 </caption>
 <image width="70%">
+<shortdescription>
+A rectangle in a vector field with outward arrows through its four sides.
+</shortdescription>
 <prefigure xmlns="https://prefigure.org" label="prefigure-div-flux">
 <diagram dimensions="(400,300)" margins="10">
 <definition>field(x,y) = (0.4*x + 0.25, 0.32*y + 0.18)</definition>
@@ -262,6 +265,9 @@ divergence is <m>0</m> (the gas neither expands nor compresses).
 </caption>
 <sidebyside widths="46% 46%" valign="middle">
 <image>
+<shortdescription>
+A radial field with arrows pointing away from the origin.
+</shortdescription>
 <prefigure xmlns="https://prefigure.org" label="prefigure-div-field-A">
 <diagram dimensions="(280,280)" margins="10">
 <definition>fieldA(x,y) = (2*x, 2*y)</definition>
@@ -279,6 +285,9 @@ divergence is <m>0</m> (the gas neither expands nor compresses).
 </prefigure>
 </image>
 <image>
+<shortdescription>
+A rotational field circulating counterclockwise around the origin.
+</shortdescription>
 <prefigure xmlns="https://prefigure.org" label="prefigure-div-field-B">
 <diagram dimensions="(280,280)" margins="10">
 <definition>fieldB(x,y) = (-y/(x^2 + y^2 + 0.2), x/(x^2 + y^2 + 0.2))</definition>
@@ -328,6 +337,9 @@ along each side we take the component of <m>\mathbf{F}</m> in the
 direction of travel.
 </caption>
 <image width="70%">
+<shortdescription>
+A rectangle in a vector field with arrows tracing a counterclockwise loop along its sides.
+</shortdescription>
 <prefigure xmlns="https://prefigure.org" label="prefigure-curl-circulation">
 <diagram dimensions="(400,300)" margins="10">
 <definition>field(x,y) = (0.4*x + 0.25, 0.32*y + 0.18)</definition>
@@ -555,6 +567,9 @@ spins counterclockwise everywhere.
 </caption>
 <sidebyside widths="46% 46%" valign="middle">
 <image>
+<shortdescription>
+A radial field with arrows pointing away from the origin.
+</shortdescription>
 <prefigure xmlns="https://prefigure.org" label="prefigure-curl-field-A">
 <diagram dimensions="(280,280)" margins="10">
 <definition>fieldA(x,y) = (2*x, 2*y)</definition>
@@ -572,6 +587,9 @@ spins counterclockwise everywhere.
 </prefigure>
 </image>
 <image>
+<shortdescription>
+A rotational field circulating counterclockwise, arrows longer farther out.
+</shortdescription>
 <prefigure xmlns="https://prefigure.org" label="prefigure-curl-field-B">
 <diagram dimensions="(280,280)" margins="10">
 <definition>fieldB(x,y) = (-2*y, 2*x)</definition>
@@ -780,6 +798,9 @@ to right and the top curve right to left; on the two vertical sides
 <m>\oint_C M\,dx</m>.
 </caption>
 <image width="72%">
+<shortdescription>
+A region between an upper and a lower curve with a counterclockwise boundary.
+</shortdescription>
 <prefigure xmlns="https://prefigure.org" label="prefigure-green-proof">
 <diagram dimensions="(430,300)" margins="12">
 <definition>bottom(t) = (t, 0.55 + 0.30*sin(1.5*t - 0.6))</definition>
@@ -965,6 +986,9 @@ x\,\mathbf{j}</m> and the unit circle <m>C</m>. The field has a
 positive (counterclockwise) circulation around <m>C</m>.
 </caption>
 <image width="55%">
+<shortdescription>
+A swirling field with the unit circle and two tangent vectors.
+</shortdescription>
 <prefigure xmlns="https://prefigure.org" label="prefigure-green-circle">
 <diagram dimensions="(300,300)" margins="10">
 <definition>field(x,y) = (x - y, x)</definition>
@@ -1124,6 +1148,9 @@ The square <m>C</m> with vertices <m>(1,0)</m>, <m>(2,1)</m>,
 </caption>
 <sidebyside widths="48% 44%" valign="middle">
 <image>
+<shortdescription>
+A square rotated 45 degrees, shaded, with its four edge lines.
+</shortdescription>
 <prefigure xmlns="https://prefigure.org" label="prefigure-green-diamond">
 <diagram dimensions="(300,280)" margins="10">
 <coordinates bbox="(-0.85,-0.7,3.25,2.75)">
@@ -1158,6 +1185,9 @@ The square <m>C</m> with vertices <m>(1,0)</m>, <m>(2,1)</m>,
 </prefigure>
 </image>
 <image>
+<shortdescription>
+The rectangle in the u v plane that is the image of the tilted square.
+</shortdescription>
 <prefigure xmlns="https://prefigure.org" label="prefigure-green-diamond-R">
 <diagram dimensions="(280,280)" margins="10">
 <coordinates bbox="(-0.8,-2,3.9,2)">

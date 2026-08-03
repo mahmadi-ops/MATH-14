@@ -34,6 +34,9 @@
       points in the same direction; only their lengths change.
     </caption>
     <image width="70%">
+      <shortdescription>
+      A uniform slanted field with a square path from corner A to corner B.
+      </shortdescription>
       <prefigure xmlns="https://prefigure.org" label="prefigure-hw4o-paths">
         <diagram dimensions="(360,320)" margins="10">
           <definition>G(x,y) = (0.16*(1+x), 0.16*(1+x))</definition>
@@ -133,6 +136,9 @@
       <m>y=-x</m>.
     </caption>
     <image width="85%">
+      <shortdescription>
+      Four small pictures of candidate regions, each on its own axes.
+      </shortdescription>
       <prefigure xmlns="https://prefigure.org" label="prefigure-hw4o-shapes">
         <diagram dimensions="(460,340)" margins="8">
           <definition>arc3(t) = (2.6 + 1.3*cos(t), 4.6 + 1.3*sin(t))</definition>

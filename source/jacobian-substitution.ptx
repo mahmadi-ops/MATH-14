@@ -38,6 +38,9 @@ The transformation <m>T(u,v) = (f(u,v), g(u,v))</m> carries the region
 </caption>
 <sidebyside widths="46% 46%" valign="middle">
 <image>
+<shortdescription>
+A blob-shaped region S in the u v plane with a marked point.
+</shortdescription>
 <prefigure xmlns="https://prefigure.org" label="prefigure-uvplane-blob">
 <diagram dimensions="(300,300)" margins="10">
 <definition>blobS(t) = (1.55 + (1 + 0.22*sin(2*t))*cos(t), 1.7 + (0.78 + 0.1*cos(3*t))*sin(t))</definition>
@@ -64,6 +67,9 @@ The transformation <m>T(u,v) = (f(u,v), g(u,v))</m> carries the region
 </prefigure>
 </image>
 <image>
+<shortdescription>
+A blob-shaped region R in the x y plane with a marked point.
+</shortdescription>
 <prefigure xmlns="https://prefigure.org" label="prefigure-xyplane-blob">
 <diagram dimensions="(300,300)" margins="10">
 <definition>blobR(t) = (1.75 + (1.05 + 0.18*cos(2*t))*cos(t), 1.6 + (0.72 + 0.14*sin(3*t))*sin(t))</definition>
@@ -256,6 +262,9 @@ The rectangle <m>S = [0,3] \times [0,2]</m> in the <m>uv</m>-plane
 </caption>
 <sidebyside widths="46% 46%" valign="middle">
 <image>
+<shortdescription>
+The unit square R in the x y plane.
+</shortdescription>
 <prefigure xmlns="https://prefigure.org" label="prefigure-rect-R">
 <diagram dimensions="(280,280)" margins="10">
 <coordinates bbox="(-0.5,-0.5,3.6,2.9)">
@@ -275,6 +284,9 @@ The rectangle <m>S = [0,3] \times [0,2]</m> in the <m>uv</m>-plane
 </prefigure>
 </image>
 <image>
+<shortdescription>
+The rectangle S from the origin to (3,2) in the u v plane.
+</shortdescription>
 <prefigure xmlns="https://prefigure.org" label="prefigure-rect-S">
 <diagram dimensions="(280,280)" margins="10">
 <coordinates bbox="(-0.5,-0.5,3.6,2.9)">
@@ -399,6 +411,9 @@ corresponding rectangle <m>R = [6,10] \times [1,3]</m> in the
 </caption>
 <sidebyside widths="48% 44%" valign="middle">
 <image>
+<shortdescription>
+A parallelogram between two slanted lines and two horizontal lines.
+</shortdescription>
 <prefigure xmlns="https://prefigure.org" label="prefigure-parallelogram-D">
 <diagram dimensions="(300,240)" margins="10">
 <definition>l1(x) = (6 - x)/2</definition>
@@ -438,6 +453,9 @@ corresponding rectangle <m>R = [6,10] \times [1,3]</m> in the
 </prefigure>
 </image>
 <image>
+<shortdescription>
+The rectangle R in the u v plane, image of the parallelogram.
+</shortdescription>
 <prefigure xmlns="https://prefigure.org" label="prefigure-parallelogram-R">
 <diagram dimensions="(280,240)" margins="10">
 <coordinates bbox="(4.4,-0.8,11.5,5.8)">
@@ -572,6 +590,9 @@ and <m>xy = 1</m>, <m>xy = 4</m> (left) corresponds to the rectangle
 </caption>
 <sidebyside widths="46% 46%" valign="middle">
 <image>
+<shortdescription>
+A curved region bounded by two families of hyperbolas in the first quadrant.
+</shortdescription>
 <prefigure xmlns="https://prefigure.org" label="prefigure-curved-D">
 <diagram dimensions="(300,300)" margins="10">
 <definition>hyp(x,y) = x^2 - y^2</definition>
@@ -621,6 +642,9 @@ and <m>xy = 1</m>, <m>xy = 4</m> (left) corresponds to the rectangle
 </prefigure>
 </image>
 <image>
+<shortdescription>
+The rectangle R in the u v plane, image of the curved region.
+</shortdescription>
 <prefigure xmlns="https://prefigure.org" label="prefigure-curved-R">
 <diagram dimensions="(300,300)" margins="10">
 <coordinates bbox="(-4.3,-0.8,4.3,5.2)">

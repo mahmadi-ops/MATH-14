@@ -459,6 +459,9 @@
               green unit velocity vector tangent to the arc at that point.
             </p>
           </description>
+          <shortdescription>
+          A quarter of the unit circle with position and velocity vectors drawn.
+          </shortdescription>
           <prefigure label="quarter-circle-arclength" xmlns="https://prefigure.org">
             <diagram dimensions="(400,400)" margins="5">
               <definition>r(t)=(cos(t), sin(t))</definition>

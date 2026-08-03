@@ -1249,6 +1249,9 @@
       orientation. Note the direction of the arrows.
     </caption>
     <image width="55%">
+      <shortdescription>
+      A parallelogram anchored at the origin with arrows showing its boundary orientation.
+      </shortdescription>
       <prefigure xmlns="https://prefigure.org" label="prefigure-r4o-parallelogram">
         <diagram dimensions="(360,240)" margins="10">
           <coordinates bbox="(-0.8,-0.55,4.9,2.3)">

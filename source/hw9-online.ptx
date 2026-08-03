@@ -34,6 +34,9 @@
       horizontal segment back to <m>(0,10)</m>.
     </caption>
     <image width="70%">
+      <shortdescription>
+      A staircase of ten unit steps from the origin to (10,10), returning along the top.
+      </shortdescription>
       <prefigure xmlns="https://prefigure.org" label="prefigure-hw9o-staircase">
         <diagram dimensions="(360,340)" margins="10">
           <coordinates bbox="(-1.6,-1.6,12.2,11.6)">

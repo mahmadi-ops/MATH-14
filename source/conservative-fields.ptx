@@ -228,6 +228,9 @@ contracted to a point while staying inside the region.
 </caption>
 <sidebyside widths="48% 48%">
 <image>
+<shortdescription>
+A blob-shaped region with no holes.
+</shortdescription>
 <prefigure xmlns="https://prefigure.org" label="prefigure-simply-connected">
 <diagram dimensions="(300,260)" margins="10">
 <definition>blob(t) = ((1.5 + 0.55*sin(2*t) + 0.3*cos(3*t))*cos(t) + 0.2,
@@ -249,6 +252,9 @@ Simply connected
 </prefigure>
 </image>
 <image>
+<shortdescription>
+A blob-shaped region with two holes and a loop around one hole.
+</shortdescription>
 <prefigure xmlns="https://prefigure.org" label="prefigure-not-simply-connected">
 <diagram dimensions="(300,260)" margins="10">
 <definition>blob(t) = ((1.9 + 0.4*sin(2*t))*cos(t),
@@ -891,6 +897,9 @@ Each component of <m>\mathbf F</m> pins down one more piece of
 <m>g(y,z)</m> to <m>h(z)</m> to the true constant <m>C</m>.
 </caption>
 <image width="85%">
+<shortdescription>
+A three-row flow diagram building the potential function step by step.
+</shortdescription>
 <prefigure xmlns="https://prefigure.org" label="prefigure-potential-steps">
 <diagram dimensions="(460,300)" margins="10">
 <coordinates bbox="(0,0,10,7.2)">
@@ -1104,6 +1113,9 @@ Three different paths <m>C_1</m>, <m>C_2</m>, and <m>C_3</m> joining
 integrals have the same value <m>f(B) - f(A)</m>.
 </caption>
 <image width="55%">
+<shortdescription>
+Three different curves joining the points A and B.
+</shortdescription>
 <prefigure xmlns="https://prefigure.org" label="prefigure-path-independence">
 <diagram dimensions="(340,280)" margins="10">
 <definition>c1(t) = (4*t - 1.6*t*(1-t), 3*t - 3.4*t*(1-t))</definition>
@@ -1261,6 +1273,9 @@ forces the two integrals to agree.
 </caption>
 <sidebyside widths="48% 48%">
 <image>
+<shortdescription>
+An oval loop through A and B split into an upper and a lower half.
+</shortdescription>
 <prefigure xmlns="https://prefigure.org" label="prefigure-loop-split">
 <diagram dimensions="(300,260)" margins="10">
 <definition>top(t) = (2*cos(t), 1.35*sin(t) + 0.12*sin(2*t))</definition>
@@ -1294,6 +1309,9 @@ forces the two integrals to agree.
 </prefigure>
 </image>
 <image>
+<shortdescription>
+The same oval with the lower half reversed so both halves run from A to B.
+</shortdescription>
 <prefigure xmlns="https://prefigure.org" label="prefigure-loop-reversed">
 <diagram dimensions="(300,260)" margins="10">
 <definition>top(t) = (2*cos(t), 1.35*sin(t) + 0.12*sin(2*t))</definition>

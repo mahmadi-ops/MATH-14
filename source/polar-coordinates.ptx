@@ -35,6 +35,9 @@ counterclockwise from the positive <m>x</m>-axis. The two are related
 by <m>x = r\cos\theta</m> and <m>y = r\sin\theta</m>.
 </caption>
 <image width="65%">
+<shortdescription>
+A point P labeled in both Cartesian and polar coordinates, with r and theta marked.
+</shortdescription>
 <prefigure xmlns="https://prefigure.org" label="prefigure-polar-point">
 <diagram dimensions="(360,221)" margins="10">
 <definition>arc(t) = (0.55*cos(t), 0.55*sin(t))</definition>
@@ -90,6 +93,9 @@ the ray opposite to the ray of angle <m>\theta</m>, so
 <m>(-r,\theta)</m> is the same point as <m>(r,\theta+\pi)</m>.
 </caption>
 <image width="60%">
+<shortdescription>
+A ray at angle theta and its opposite ray, showing a point with negative r.
+</shortdescription>
 <prefigure xmlns="https://prefigure.org" label="prefigure-polar-negative-r">
 <diagram dimensions="(360,228)" margins="10">
 <definition>arc1(t) = (0.5*cos(t), 0.5*sin(t))</definition>
@@ -148,6 +154,9 @@ For a point <m>P(x,y) = P(r,\theta)</m>, the right triangle with legs
 coordinate systems.
 </caption>
 <image width="60%">
+<shortdescription>
+A point P on a circle labeled in both coordinate systems, with the right triangle of x, y, and r.
+</shortdescription>
 <prefigure xmlns="https://prefigure.org" label="prefigure-polar-cartesian">
 <diagram dimensions="(360,327)" margins="10">
 <definition>arc(t) = (0.5*cos(t), 0.5*sin(t))</definition>
@@ -244,6 +253,9 @@ and <m>\left(1,-\tfrac{3\pi}{4}\right)</m> give the same point too.
 </caption>
 <sidebyside widths="48% 48%">
 <image>
+<shortdescription>
+A spiral arc ending at the ray of angle thirteen pi over four.
+</shortdescription>
 <prefigure xmlns="https://prefigure.org" label="prefigure-polar-rep1">
 <diagram dimensions="(280,226)" margins="10">
 <definition>arc(t) = ((0.38 + 0.045*t)*cos(t), (0.38 + 0.045*t)*sin(t))</definition>
@@ -275,6 +287,9 @@ and <m>\left(1,-\tfrac{3\pi}{4}\right)</m> give the same point too.
 </prefigure>
 </image>
 <image>
+<shortdescription>
+A ray at angle pi over four with its dashed opposite ray and a negative r point.
+</shortdescription>
 <prefigure xmlns="https://prefigure.org" label="prefigure-polar-rep2">
 <diagram dimensions="(280,226)" margins="10">
 <definition>arc(t) = (0.5*cos(t), 0.5*sin(t))</definition>
@@ -391,6 +406,9 @@ to right: the circle <m>r = 1</m>, i.e., <m>x^2+y^2=1</m>; the line
 </caption>
 <sidebyside widths="23% 23% 23% 23%">
 <image>
+<shortdescription>
+The unit circle centered at the origin.
+</shortdescription>
 <prefigure xmlns="https://prefigure.org" label="prefigure-p2c-circle">
 <diagram dimensions="(170,188)" margins="5">
 <definition>c(t) = (cos(t), sin(t))</definition>
@@ -411,6 +429,9 @@ to right: the circle <m>r = 1</m>, i.e., <m>x^2+y^2=1</m>; the line
 </prefigure>
 </image>
 <image>
+<shortdescription>
+The line y equals x through the origin.
+</shortdescription>
 <prefigure xmlns="https://prefigure.org" label="prefigure-p2c-line">
 <diagram dimensions="(170,188)" margins="5">
 <coordinates bbox="(-1.7,-2.1,1.7,1.7)">
@@ -430,6 +451,9 @@ to right: the circle <m>r = 1</m>, i.e., <m>x^2+y^2=1</m>; the line
 </prefigure>
 </image>
 <image>
+<shortdescription>
+The hyperbola x y equals four.
+</shortdescription>
 <prefigure xmlns="https://prefigure.org" label="prefigure-p2c-hyperbola">
 <diagram dimensions="(170,170)" margins="5">
 <definition>b1(t) = (t, 4/t)</definition>
@@ -454,6 +478,9 @@ to right: the circle <m>r = 1</m>, i.e., <m>x^2+y^2=1</m>; the line
 </prefigure>
 </image>
 <image>
+<shortdescription>
+A hyperbola opening left and right.
+</shortdescription>
 <prefigure xmlns="https://prefigure.org" label="prefigure-p2c-conic">
 <diagram dimensions="(170,190)" margins="5">
 <definition>br1(t) = (cos(t)/(1-2*cos(t)), sin(t)/(1-2*cos(t)))</definition>
@@ -537,6 +564,9 @@ to the values in <xref ref="table-cardioid-points"/>. Since
 <m>x</m>-axis.
 </caption>
 <image width="65%">
+<shortdescription>
+The cardioid r equals one plus cosine theta on a polar grid.
+</shortdescription>
 <prefigure xmlns="https://prefigure.org" label="prefigure-cardioid">
 <diagram dimensions="(360,321)" margins="10">
 <definition>card(t) = ((1+cos(t))*cos(t), (1+cos(t))*sin(t))</definition>
@@ -623,6 +653,9 @@ The cardioid <m>r = 1 - \sin\theta</m>, symmetric about the
 <m>y</m>-axis.
 </caption>
 <image width="65%">
+<shortdescription>
+The cardioid r equals one minus sine theta, pointing downward, on a polar grid.
+</shortdescription>
 <prefigure xmlns="https://prefigure.org" label="prefigure-cardioid-y">
 <diagram dimensions="(360,321)" margins="10">
 <definition>card(t) = ((1-sin(t))*cos(t), (1-sin(t))*sin(t))</definition>
@@ -705,6 +738,9 @@ The graph of <m>r^2 = \sin\theta</m>, made of the branch
 symmetric about the origin.
 </caption>
 <image width="65%">
+<shortdescription>
+Two petal-shaped loops symmetric through the origin on a polar grid.
+</shortdescription>
 <prefigure xmlns="https://prefigure.org" label="prefigure-origin-symmetry">
 <diagram dimensions="(360,328)" margins="10">
 <definition>pos(t) = (sqrt(sin(t))*cos(t), sqrt(sin(t))*sin(t))</definition>

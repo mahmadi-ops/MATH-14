@@ -206,6 +206,9 @@ The projection <m>D</m> of the tetrahedron into the
 <m>z = 0</m> up to <m>z = 1-x-y</m>.
 </caption>
 <image width="50%">
+<shortdescription>
+The triangular projection D with legs on the coordinate axes.
+</shortdescription>
 <prefigure xmlns="https://prefigure.org" label="prefigure-triple-tetra-base">
 <diagram dimensions="(320,290)" margins="10">
 <coordinates bbox="(-0.3,-0.3,1.5,1.35)">
@@ -523,6 +526,9 @@ The three projections of the solid <m>R</m>. Left: into the
 </caption>
 <sidebyside widths="31% 31% 31%">
 <image>
+<shortdescription>
+The x y projection: a right triangle with hypotenuse y equals one minus x.
+</shortdescription>
 <prefigure xmlns="https://prefigure.org" label="prefigure-proj-xy">
 <diagram dimensions="(210,200)" margins="10">
 <coordinates bbox="(-0.3,-0.3,1.45,1.35)">
@@ -549,6 +555,9 @@ The three projections of the solid <m>R</m>. Left: into the
 </prefigure>
 </image>
 <image>
+<shortdescription>
+The x z projection: the region under a parabola.
+</shortdescription>
 <prefigure xmlns="https://prefigure.org" label="prefigure-proj-xz">
 <diagram dimensions="(210,200)" margins="10">
 <definition>par(t) = (t, 1 - t^2)</definition>
@@ -576,6 +585,9 @@ The three projections of the solid <m>R</m>. Left: into the
 </prefigure>
 </image>
 <image>
+<shortdescription>
+The y z projection: the unit square split into two regions by a curve.
+</shortdescription>
 <prefigure xmlns="https://prefigure.org" label="prefigure-proj-yz">
 <diagram dimensions="(210,200)" margins="10">
 <definition>cur(t) = (t, 1 - (1-t)^2)</definition>

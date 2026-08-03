@@ -87,6 +87,9 @@ polar rectangle <m>R_{ij}</m> has area
 </caption>
 <sidebyside widths="48% 48%">
 <image>
+<shortdescription>
+A washer-slice region between two radii and two angles.
+</shortdescription>
 <prefigure xmlns="https://prefigure.org" label="prefigure-polar-region">
 <diagram dimensions="(300,286)" margins="10">
 <definition>outer(t) = (2.4*cos(t), 2.4*sin(t))</definition>
@@ -135,6 +138,9 @@ polar rectangle <m>R_{ij}</m> has area
 </prefigure>
 </image>
 <image>
+<shortdescription>
+The washer slice divided into small polar rectangles, one highlighted.
+</shortdescription>
 <prefigure xmlns="https://prefigure.org" label="prefigure-polar-grid">
 <diagram dimensions="(300,286)" margins="10">
 <definition>a1(t) = (1.1*cos(t), 1.1*sin(t))</definition>
@@ -290,6 +296,9 @@ the annulus between the circles <m>x^2+y^2 = 1</m> and
 <m>1 \le r \le 2</m>, <m>0 \le \theta \le \pi</m>.
 </caption>
 <image width="60%">
+<shortdescription>
+The upper half of an annulus between radii one and two.
+</shortdescription>
 <prefigure xmlns="https://prefigure.org" label="prefigure-half-annulus">
 <diagram dimensions="(380,232)" margins="10">
 <definition>outer(t) = (2*cos(t), 2*sin(t))</definition>
@@ -389,6 +398,9 @@ The four-leaved rose <m>r = \cos(2\theta)</m>. The shaded loop
 <m>r = 0</m>.
 </caption>
 <image width="55%">
+<shortdescription>
+A four-leaved rose with one petal outlined and shaded.
+</shortdescription>
 <prefigure xmlns="https://prefigure.org" label="prefigure-rose">
 <diagram dimensions="(340,340)" margins="10">
 <definition>rose(t) = (cos(2*t)*cos(t), cos(2*t)*sin(t))</definition>
@@ -503,6 +515,9 @@ The base of the solid in <xref ref="example-polar-volume"/>: the disk
 <m>r = 2\cos\theta</m>.
 </caption>
 <image width="55%">
+<shortdescription>
+A disk of radius one centered at (1,0), passing through the origin.
+</shortdescription>
 <prefigure xmlns="https://prefigure.org" label="prefigure-shifted-disk">
 <diagram dimensions="(340,255)" margins="10">
 <definition>circ(t) = (1 + cos(t), sin(t))</definition>
@@ -735,6 +750,9 @@ cut apart by the vertical line <m>x=1</m> and swept by the angles
 circle.
 </caption>
 <image width="90%">
+<shortdescription>
+Two semicircles, a slanted line, and two vertical lines bounding two shaded regions.
+</shortdescription>
 <prefigure xmlns="https://prefigure.org" label="prefigure-polar-two-areas">
 <diagram dimensions="(500,290)" margins="8">
 <definition>inner(t) = (cos(t), sin(t))</definition>

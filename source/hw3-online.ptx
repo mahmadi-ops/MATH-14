@@ -34,6 +34,9 @@
       the arrowhead.
     </caption>
     <image width="70%">
+      <shortdescription>
+      A field over the first quadrant tilting from downward to rightward, with a blue circle.
+      </shortdescription>
       <prefigure xmlns="https://prefigure.org" label="prefigure-hw3o-field">
         <diagram dimensions="(380,320)" margins="10">
           <definition>F(x,y) = (0.30*y, -0.30)</definition>

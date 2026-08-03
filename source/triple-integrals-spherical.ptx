@@ -662,6 +662,9 @@ The <m>xy</m>-projection of the solid in
 disk, described by <m>\pi\le\theta\le 2\pi</m>, <m>0\le r\le 1</m>.
 </caption>
 <image width="45%">
+<shortdescription>
+The lower half of the unit disk, shaded.
+</shortdescription>
 <prefigure xmlns="https://prefigure.org" label="prefigure-halfdisk">
 <diagram dimensions="(320,215)" margins="10">
 <definition>arc(t) = (cos(t), sin(t))</definition>

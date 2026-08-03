@@ -34,6 +34,9 @@
       spaced <m>\pi/6</m> apart.
     </caption>
     <image width="70%">
+      <shortdescription>
+      A blank polar grid of four circles and twelve labeled spokes.
+      </shortdescription>
       <prefigure xmlns="https://prefigure.org" label="prefigure-hw5o-chart">
         <diagram dimensions="(340,340)" margins="10">
           <definition>c1(t) = (0.5*cos(t), 0.5*sin(t))</definition>
