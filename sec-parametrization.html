@@ -1,0 +1,1771 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Parametrization of Curves</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/ol-markers.css" rel="stylesheet" type="text/css">
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math"
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "_static/pretext/js"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="MATH 14: Calculus and Analytic Geometry IV">
+<meta property="book:author" content="Mehdi Ahmadi">
+<script src="_static/pretext/js/jquery.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '8.2.1';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.ed2cce180827a7ad.bundle.js"></script><script src="_static/prefix-926.5c7038c8ef173faf.bundle.js"></script><script src="_static/prefix-runestone.1f660864c47fc762.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-926.229729d09512acc9.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.8086b62682b271d1.css">
+<script src="_static/pretext/js/diagcess/diagcess.js"></script><script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script>
+</head>
+<body class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner"><div class="title-container">
+<h1 class="heading"><a href="math14.html"><span class="title">MATH 14: Calculus and Analytic Geometry IV</span></a></h1>
+<p class="byline">Mehdi Ahmadi</p>
+</div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
+</div>
+<h2 class="search-results-heading">Search Results: </h2>
+<div id="searchempty" class="searchempty"><span>No results.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div>
+<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="ch-curves-and-fields.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-curves-and-fields.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec-arc-length.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\deriv}[2]{\displaystyle \frac{d#1}{d#2}}
+\newcommand{\real}{\Bbb R}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth3 focused" data-preexpanded-levels="0" data-max-levels="3"><ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-frontmatter">
+<div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-abstract"><div class="toc-title-box"><a href="frontmatter.html#frontmatter-3" class="internal"><span class="title">Abstract</span></a></div></li>
+<li class="toc-item toc-preface"><div class="toc-title-box"><a href="intro.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-preface"><div class="toc-title-box"><a href="subsec-brain-map.html" class="internal"><span class="title">Brain map: the integrals of vector calculus</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="ch-curves-and-fields.html" class="internal"><span class="codenumber">1</span> <span class="title">Line Integrals</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section contains-active">
+<div class="toc-title-box"><a href="sec-parametrization.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Parametrization of Curves</span></a></div>
+<ul class="structural toc-item-list active">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-parametrization.html#subsec-parametric-equations" class="internal"><span class="codenumber">1.1.1</span> <span class="title">Parametric Equations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-parametrization.html#subsec-parametrizing-examples" class="internal"><span class="codenumber">1.1.2</span> <span class="title">Some Examples of Parametrizing Curves</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-parametrization.html#subsec-intersection-collision" class="internal"><span class="codenumber">1.1.3</span> <span class="title">Intersection Points versus Collision Points</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-parametrization.html#subsec-curves-in-space" class="internal"><span class="codenumber">1.1.4</span> <span class="title">Curves in Space and Vector Functions</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-arc-length.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Arc Length of a Curve</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-arc-length.html#subsec-arc-length-2d" class="internal"><span class="codenumber">1.2.1</span> <span class="title">Arc Length in 2D</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-arc-length.html#subsec-arc-length-3d" class="internal"><span class="codenumber">1.2.2</span> <span class="title">Arc Length in 3D</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-arc-length.html#subsec-cone-plane-activity" class="internal"><span class="codenumber">1.2.3</span> <span class="title">Activity: Where a Plane Slices a Cone</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-line-integrals.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Line Integrals</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-line-integrals.html#subsec-scalar-line-integrals" class="internal"><span class="codenumber">1.3.1</span> <span class="title">Line Integrals of Scalar Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-line-integrals.html#subsec-line-integral-questions" class="internal"><span class="codenumber">1.3.2</span> <span class="title">Concept Check</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-vector-fields.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Vector Fields and Line Integrals</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-vector-fields.html#subsec-vector-fields" class="internal"><span class="codenumber">1.4.1</span> <span class="title">Vector Fields</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-vector-fields.html#subsec-work-reminder" class="internal"><span class="codenumber">1.4.2</span> <span class="title">Work (Reminder)</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-vector-fields.html#subsec-work-force-field" class="internal"><span class="codenumber">1.4.3</span> <span class="title">Work of a Force Field</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-vector-fields.html#subsec-work-exploration" class="internal"><span class="codenumber">1.4.4</span> <span class="title">Concept Check</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="section-conservative-fields.html" class="internal"><span class="codenumber">1.5</span> <span class="title">Path Independence, Conservative Fields, and Potential Functions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-conservative-fields.html#sec-gradient-fields" class="internal"><span class="codenumber">1.5.1</span> <span class="title">Gradient Fields</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-conservative-fields.html#sec-conservative-definitions" class="internal"><span class="codenumber">1.5.2</span> <span class="title">Path Independence and Some Basic Definitions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-conservative-fields.html#sec-ftli" class="internal"><span class="codenumber">1.5.3</span> <span class="title">Line Integrals in Conservative Fields</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-conservative-fields.html#sec-potential-function" class="internal"><span class="codenumber">1.5.4</span> <span class="title">Finding a Potential Function</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-conservative-fields.html#sec-conservative-gradient" class="internal"><span class="codenumber">1.5.5</span> <span class="title">Conservative Fields are Gradient Fields</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-conservative-fields.html#sec-loop-property" class="internal"><span class="codenumber">1.5.6</span> <span class="title">The Loop Property of Conservative Fields</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-conservative-fields.html#sec-conservative-concept-check" class="internal"><span class="codenumber">1.5.7</span> <span class="title">Concept Check</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-multiple-integrals.html" class="internal"><span class="codenumber">2</span> <span class="title">Multiple Integrals</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="section-double-integrals-rectangles.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Double and Iterated Integrals Over Rectangles</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-double-integrals-rectangles.html#sec-area-under-curve-reminder" class="internal"><span class="codenumber">2.1.1</span> <span class="title">Reminder: Area Under <span class="process-math">\(y = f(x)\)</span> from <span class="process-math">\(x = a\)</span> to <span class="process-math">\(x = b\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-double-integrals-rectangles.html#sec-double-integrals-rectangles" class="internal"><span class="codenumber">2.1.2</span> <span class="title">Double Integrals Over Rectangles</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-double-integrals-rectangles.html#sec-iterated-integrals" class="internal"><span class="codenumber">2.1.3</span> <span class="title">Calculating Double Integrals as Iterated Integrals</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-double-integrals-rectangles.html#sec-iterated-integral-substitution" class="internal"><span class="codenumber">2.1.4</span> <span class="title">An Iterated Integral Requiring Substitution and Integration by Parts</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-double-integrals-rectangles.html#subsec-double-integral-questions" class="internal"><span class="codenumber">2.1.5</span> <span class="title">Concept Check</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="section-double-integrals-general-regions.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Double Integrals Over General Regions and Area by Double Integration</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-double-integrals-general-regions.html#sec-general-regions-case1" class="internal"><span class="codenumber">2.2.1</span> <span class="title">Case I: Regions of the Form <span class="process-math">\(R = \{(x,y) : a \le x \le b,\ f_2(x) \le y \le f_1(x)\}\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-double-integrals-general-regions.html#sec-general-regions-case2" class="internal"><span class="codenumber">2.2.2</span> <span class="title">Case II: Regions of the Form <span class="process-math">\(R = \{(x,y) : c \le y \le d,\ g_1(y) \le x \le g_2(y)\}\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-double-integrals-general-regions.html#sec-tetrahedron-volume" class="internal"><span class="codenumber">2.2.3</span> <span class="title">Volume of a Tetrahedron</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-double-integrals-general-regions.html#sec-area-by-double-integration" class="internal"><span class="codenumber">2.2.4</span> <span class="title">Area by Double Integration</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-double-integrals-general-regions.html#subsec-general-regions-questions" class="internal"><span class="codenumber">2.2.5</span> <span class="title">Concept Check</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="section-polar-coordinates.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Polar Coordinates and Graphing Polar Equations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-polar-coordinates.html#sec-polar-definition" class="internal"><span class="codenumber">2.3.1</span> <span class="title">The Polar Coordinate System</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-polar-coordinates.html#sec-polar-cartesian-relation" class="internal"><span class="codenumber">2.3.2</span> <span class="title">Relation Between Polar and Cartesian Coordinates</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-polar-coordinates.html#sec-polar-nonuniqueness" class="internal"><span class="codenumber">2.3.3</span> <span class="title">Non-Uniqueness of Polar Coordinates</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-polar-coordinates.html#sec-polar-to-cartesian-example" class="internal"><span class="codenumber">2.3.4</span> <span class="title">Replacing Polar Equations by Cartesian Equations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-polar-coordinates.html#sec-polar-symmetries" class="internal"><span class="codenumber">2.3.5</span> <span class="title">Symmetries</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="section-double-integrals-polar-form.html" class="internal"><span class="codenumber">2.4</span> <span class="title">Double Integrals in Polar Form</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-double-integrals-polar-form.html#sec-polar-double-integral" class="internal"><span class="codenumber">2.4.1</span> <span class="title">How Does a Double Integral Look in Polar Coordinates?</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-double-integrals-polar-form.html#sec-polar-annulus-example" class="internal"><span class="codenumber">2.4.2</span> <span class="title">Integrating Over a Half Annulus</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-double-integrals-polar-form.html#sec-polar-rose-example" class="internal"><span class="codenumber">2.4.3</span> <span class="title">Area Enclosed by One Loop of a Rose</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-double-integrals-polar-form.html#sec-polar-volume-example" class="internal"><span class="codenumber">2.4.4</span> <span class="title">A Volume Computed in Polar Coordinates</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-double-integrals-polar-form.html#sec-polar-gaussian-example" class="internal"><span class="codenumber">2.4.5</span> <span class="title">An Integral That Needs Polar Coordinates</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-double-integrals-polar-form.html#subsec-polar-questions" class="internal"><span class="codenumber">2.4.6</span> <span class="title">Concept Check</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="section-triple-integrals-rectangular.html" class="internal"><span class="codenumber">2.5</span> <span class="title">Triple Integrals in Rectangular Coordinates</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-triple-integrals-rectangular.html#sec-triple-integral-meaning" class="internal"><span class="codenumber">2.5.1</span> <span class="title">What Does a Triple Integral Mean?</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-triple-integrals-rectangular.html#sec-triple-case1" class="internal"><span class="codenumber">2.5.2</span> <span class="title">Case I: <span class="process-math">\(E = \{(x,y,z) : a \le x \le b,\)</span> <span class="process-math">\(g_1(x) \le y \le g_2(x),\)</span> <span class="process-math">\(u_1(x,y) \le z \le u_2(x,y)\}\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-triple-integrals-rectangular.html#sec-triple-case2" class="internal"><span class="codenumber">2.5.3</span> <span class="title">Case II: <span class="process-math">\(E = \{(x,y,z) : h_1(y) \le x \le h_2(y),\)</span> <span class="process-math">\(c \le y \le d,\)</span> <span class="process-math">\(u_1(x,y) \le z \le u_2(x,y)\}\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-triple-integrals-rectangular.html#sec-triple-mass" class="internal"><span class="codenumber">2.5.4</span> <span class="title">Mass With Variable Density</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-triple-integrals-rectangular.html#subsec-triple-questions" class="internal"><span class="codenumber">2.5.5</span> <span class="title">Concept Check</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="section-triple-integrals-cylindrical.html" class="internal"><span class="codenumber">2.6</span> <span class="title">Triple Integrals in Cylindrical Coordinates</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-triple-integrals-cylindrical.html#sec-cylindrical-coordinates" class="internal"><span class="codenumber">2.6.1</span> <span class="title">Cylindrical Coordinates</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-triple-integrals-cylindrical.html#sec-cylindrical-mass-example" class="internal"><span class="codenumber">2.6.2</span> <span class="title">The Mass of a Solid With Axial Symmetry</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-triple-integrals-cylindrical.html#subsec-cylindrical-questions" class="internal"><span class="codenumber">2.6.3</span> <span class="title">Concept Check</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="section-triple-integrals-spherical.html" class="internal"><span class="codenumber">2.7</span> <span class="title">Triple Integrals in Spherical Coordinates</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-triple-integrals-spherical.html#sec-spherical-coordinates" class="internal"><span class="codenumber">2.7.1</span> <span class="title">Spherical Coordinates</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-triple-integrals-spherical.html#sec-spherical-integration" class="internal"><span class="codenumber">2.7.2</span> <span class="title">Integration in Spherical Coordinates</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-triple-integrals-spherical.html#sec-spherical-icecream" class="internal"><span class="codenumber">2.7.3</span> <span class="title">The Ice Cream Cone</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-triple-integrals-spherical.html#sec-spherical-shifted-example" class="internal"><span class="codenumber">2.7.4</span> <span class="title">Converting a Triple Integral to Spherical Coordinates</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-triple-integrals-spherical.html#sec-spherical-rewrite" class="internal"><span class="codenumber">2.7.5</span> <span class="title">Re-Writing an Integral in Spherical and Cylindrical Coordinates</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="section-mass-center-of-mass.html" class="internal"><span class="codenumber">2.8</span> <span class="title">Applications: Mass and Center of Mass</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-mass-center-of-mass.html#sec-mass-3d-object" class="internal"><span class="codenumber">2.8.1</span> <span class="title">Finding the Center of Mass of a 3D Object</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-mass-center-of-mass.html#sec-centroid" class="internal"><span class="codenumber">2.8.2</span> <span class="title">Centroids</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="section-jacobian-substitution.html" class="internal"><span class="codenumber">2.9</span> <span class="title">Substitution in Multiple Integrals and the Jacobian Determinant</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-jacobian-substitution.html#sec-jacobian-determinant" class="internal"><span class="codenumber">2.9.1</span> <span class="title">The Jacobian Determinant</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-jacobian-substitution.html#sec-substitution-examples" class="internal"><span class="codenumber">2.9.2</span> <span class="title">Choosing a Transformation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-jacobian-substitution.html#sec-substitution-3d" class="internal"><span class="codenumber">2.9.3</span> <span class="title">Substitution in Triple Integrals</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-jacobian-substitution.html#sec-jacobian-activity" class="internal"><span class="codenumber">2.9.4</span> <span class="title">Activity: Watching a Substitution Transform a Region</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="section-surface-integrals.html" class="internal"><span class="codenumber">2.10</span> <span class="title">Surface Integrals: Flux Through a Surface</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-surface-integrals.html#sec-flux-flat" class="internal"><span class="codenumber">2.10.1</span> <span class="title">Flux Through a Flat Surface</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-surface-integrals.html#sec-parametric-surfaces" class="internal"><span class="codenumber">2.10.2</span> <span class="title">Parametric Surfaces</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-surface-integrals.html#sec-surface-normal" class="internal"><span class="codenumber">2.10.3</span> <span class="title">The Normal Vector to a Surface</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-surface-integrals.html#sec-oriented-surfaces" class="internal"><span class="codenumber">2.10.4</span> <span class="title">Oriented Surfaces</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-surface-integrals.html#sec-surface-integral-def" class="internal"><span class="codenumber">2.10.5</span> <span class="title">The Surface Integral of a Vector Field</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-integral-theorems.html" class="internal"><span class="codenumber">3</span> <span class="title">The Big Theorems</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="section-greens-theorem.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Green’s Theorem in the Plane</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-greens-theorem.html#sec-divergence" class="internal"><span class="codenumber">3.1.1</span> <span class="title">Divergence</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-greens-theorem.html#sec-curl" class="internal"><span class="codenumber">3.1.2</span> <span class="title">Curl</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-greens-theorem.html#sec-greens-theorem-forms" class="internal"><span class="codenumber">3.1.3</span> <span class="title">The Two Forms of Green’s Theorem</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-greens-theorem.html#sec-component-test-alternative" class="internal"><span class="codenumber">3.1.4</span> <span class="title">An Alternative Form of the Component Test for Conservative Fields</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="section-stokes-theorem.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Stokes’ Theorem</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-stokes-theorem.html#sec-curl-3d" class="internal"><span class="codenumber">3.2.1</span> <span class="title">Curl in Three Dimensions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-stokes-theorem.html#sec-stokes-theorem" class="internal"><span class="codenumber">3.2.2</span> <span class="title">Stokes’ Theorem</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-stokes-theorem.html#sec-stokes-surface-independence" class="internal"><span class="codenumber">3.2.3</span> <span class="title">Only the Boundary Matters</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="section-divergence-theorem.html" class="internal"><span class="codenumber">3.3</span> <span class="title">The Divergence Theorem</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-divergence-theorem.html#sec-divergence-3d" class="internal"><span class="codenumber">3.3.1</span> <span class="title">Divergence in 3D</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-divergence-theorem.html#sec-gauss-theorem" class="internal"><span class="codenumber">3.3.2</span> <span class="title">Gauss’s Divergence Theorem</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-assignments.html" class="internal"><span class="codenumber">4</span> <span class="title">Assignments</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-exercises-hw1.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Assignment 1</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-exercises-hw1.html#exercises-hw1" class="internal"><span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-exercises-hw2.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Assignment 2</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-exercises-hw2.html#exercises-hw2" class="internal"><span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-exercises-hw3.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Assignment 3</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-exercises-hw3.html#exercises-hw3" class="internal"><span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-exercises-hw4.html" class="internal"><span class="codenumber">4.4</span> <span class="title">Assignment 4</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-exercises-hw4.html#exercises-hw4" class="internal"><span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-exercises-hw5.html" class="internal"><span class="codenumber">4.5</span> <span class="title">Assignment 5</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-exercises-hw5.html#exercises-hw5" class="internal"><span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-exercises-hw6.html" class="internal"><span class="codenumber">4.6</span> <span class="title">Assignment 6</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-exercises-hw6.html#exercises-hw6" class="internal"><span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-exercises-hw7.html" class="internal"><span class="codenumber">4.7</span> <span class="title">Assignment 7</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-exercises-hw7.html#exercises-hw7" class="internal"><span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-exercises-hw8.html" class="internal"><span class="codenumber">4.8</span> <span class="title">Assignment 8</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-exercises-hw8.html#exercises-hw8" class="internal"><span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-exercises-hw9.html" class="internal"><span class="codenumber">4.9</span> <span class="title">Assignment 9</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-exercises-hw9.html#exercises-hw9" class="internal"><span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-online-assignments.html" class="internal"><span class="codenumber">5</span> <span class="title">Online Assignments</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-exercises-hw1-online.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Assignment 1, Online Version</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-exercises-hw1-online.html#exercises-hw1-online" class="internal"><span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-exercises-hw2-online.html" class="internal"><span class="codenumber">5.2</span> <span class="title">Assignment 2, Online Version</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-exercises-hw2-online.html#exercises-hw2-online" class="internal"><span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-exercises-hw3-online.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Assignment 3, Online Version</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-exercises-hw3-online.html#exercises-hw3-online" class="internal"><span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-exercises-hw4-online.html" class="internal"><span class="codenumber">5.4</span> <span class="title">Assignment 4, Online Version</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-exercises-hw4-online.html#exercises-hw4-online" class="internal"><span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-exercises-hw5-online.html" class="internal"><span class="codenumber">5.5</span> <span class="title">Assignment 5, Online Version</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-exercises-hw5-online.html#exercises-hw5-online" class="internal"><span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-exercises-hw6-online.html" class="internal"><span class="codenumber">5.6</span> <span class="title">Assignment 6, Online Version</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-exercises-hw6-online.html#exercises-hw6-online" class="internal"><span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-exercises-hw7-online.html" class="internal"><span class="codenumber">5.7</span> <span class="title">Assignment 7, Online Version</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-exercises-hw7-online.html#exercises-hw7-online" class="internal"><span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-exercises-hw8-online.html" class="internal"><span class="codenumber">5.8</span> <span class="title">Assignment 8, Online Version</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-exercises-hw8-online.html#exercises-hw8-online" class="internal"><span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-exercises-hw9-online.html" class="internal"><span class="codenumber">5.9</span> <span class="title">Assignment 9, Online Version</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-exercises-hw9-online.html#exercises-hw9-online" class="internal"><span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-review-problems.html" class="internal"><span class="codenumber">6</span> <span class="title">Review Problems</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-exercises-review4-online.html" class="internal"><span class="codenumber">6.1</span> <span class="title">Review Problems #4</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-exercises-review4-online.html#exercises-review4-online" class="internal"><span class="title">Exercises</span></a></div></li></ul>
+</li></ul>
+</li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-parametrization"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.1</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Parametrization of Curves</span>
+</h2>
+<article class="objectives goal-like" id="sec-parametrization-2"><h3 class="heading"><span class="type">Objectives</span></h3>
+<ul class="disc" id="sec-parametrization-2-1">
+<li id="sec-parametrization-2-1-1">
+<div class="para" id="sec-parametrization-2-1-1-1">Describe the motion of a point in the plane with a pair of parametric equations <span class="process-math">\(x=f(t)\)</span> and <span class="process-math">\(y=g(t)\text{,}\)</span> and understand the parameter <span class="process-math">\(t\)</span> as recording <em class="emphasis">when</em> the point visits each place on the curve.<div class="autopermalink" data-description="Paragraph"><a href="#sec-parametrization-2-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Objective"><a href="#sec-parametrization-2-1-1" title="Copy heading and permalink for Objective" aria-label="Copy heading and permalink for Objective">🔗</a></div>
+</li>
+<li id="sec-parametrization-2-1-2">
+<div class="para" id="sec-parametrization-2-1-2-1">Sketch a parametric curve from a table of values, and indicate the direction of increasing <span class="process-math">\(t\)</span> in which the curve is traced.<div class="autopermalink" data-description="Paragraph"><a href="#sec-parametrization-2-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Objective"><a href="#sec-parametrization-2-1-2" title="Copy heading and permalink for Objective" aria-label="Copy heading and permalink for Objective">🔗</a></div>
+</li>
+<li id="sec-parametrization-2-1-3">
+<div class="para" id="sec-parametrization-2-1-3-1">Find parametric equations for common curves, such as lines, circles, and ellipses, and eliminate the parameter to recover a Cartesian equation when possible.<div class="autopermalink" data-description="Paragraph"><a href="#sec-parametrization-2-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Objective"><a href="#sec-parametrization-2-1-3" title="Copy heading and permalink for Objective" aria-label="Copy heading and permalink for Objective">🔗</a></div>
+</li>
+<li id="sec-parametrization-2-1-4">
+<div class="para" id="sec-parametrization-2-1-4-1">Distinguish the <dfn class="terminology">intersection points</dfn> of two parametric curves from their <dfn class="terminology">collision points</dfn>, where two moving objects reach the same place at the same time.<div class="autopermalink" data-description="Paragraph"><a href="#sec-parametrization-2-1-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Objective"><a href="#sec-parametrization-2-1-4" title="Copy heading and permalink for Objective" aria-label="Copy heading and permalink for Objective">🔗</a></div>
+</li>
+<li id="sec-parametrization-2-1-5">
+<div class="para" id="sec-parametrization-2-1-5-1">Write a space curve as a vector function <span class="process-math">\(\mathbf{r}(t)\text{,}\)</span> and parametrize the curve in which two surfaces meet.<div class="autopermalink" data-description="Paragraph"><a href="#sec-parametrization-2-1-5-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Objective"><a href="#sec-parametrization-2-1-5" title="Copy heading and permalink for Objective" aria-label="Copy heading and permalink for Objective">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" data-description="Objectives 1.1"><a href="#sec-parametrization-2" title="Copy heading and permalink for Objectives 1.1" aria-label="Copy heading and permalink for Objectives 1.1">🔗</a></div></article><section class="introduction" id="sec-parametrization-3"><div class="para" id="sec-parametrization-3-1">Imagine that you would like to describe the motion of an object whose motion is confined to a plane. If you know how its Cartesian coordinates, <span class="process-math">\(x\)</span> and <span class="process-math">\(y\text{,}\)</span> change as time passes, you will be able to draw a curve that represents the trajectory of its motion. Mathematically, we will need two equations to demonstrate how the <span class="process-math">\(x\)</span>– and <span class="process-math">\(y\)</span>-coordinates evolve in time <span class="process-math">\(t\text{,}\)</span> which are known as the parametric equations. This section reviews that language and then extends it to curves in space, where it becomes the main tool for everything that follows.<div class="autopermalink" data-description="Paragraph"><a href="#sec-parametrization-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></section><section class="subsection" id="subsec-parametric-equations"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.1.1</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Parametric Equations</span>
+</h3>
+<article class="definition definition-like" id="def-parametric-equations"><h4 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.1.1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Parametric Equations.</span>
+</h4>
+<div class="para logical" id="def-parametric-equations-2-1">
+<div class="para">If <span class="process-math">\(x\)</span> and <span class="process-math">\(y\)</span> are given as functions of a third variable <span class="process-math">\(t\text{,}\)</span> called a <dfn class="terminology">parameter</dfn>, by</div>
+<div class="displaymath process-math" id="def-parametric-equations-2-1-5">
+\begin{gather}
+x = f(t), \qquad y = g(t),\tag{1.1.1}
+\end{gather}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#def-parametric-equations-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para" id="def-parametric-equations-2-2">then the points <span class="process-math">\((x,y) = \left(f(t),\,g(t)\right)\)</span> trace out a curve in the plane, called a <dfn class="terminology">parametric curve</dfn>. The equations <span class="process-math">\(x=f(t)\)</span> and <span class="process-math">\(y=g(t)\)</span> are the <dfn class="terminology">parametric equations</dfn> of the curve.<div class="autopermalink" data-description="Paragraph"><a href="#def-parametric-equations-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Definition 1.1.1: Parametric Equations"><a href="#def-parametric-equations" title="Copy heading and permalink for Definition 1.1.1: Parametric Equations" aria-label="Copy heading and permalink for Definition 1.1.1: Parametric Equations">🔗</a></div></article><div class="para" id="subsec-parametric-equations-3">As <span class="process-math">\(t\)</span> runs over its interval, the point <span class="process-math">\(\left(f(t),g(t)\right)\)</span> moves, and the trail it leaves behind is the curve. The parameter therefore carries more information than the picture does: it also records <em class="emphasis">when</em> the moving point is at each place, as in <a href="sec-parametrization.html#fig-trajectory" class="internal" title="Figure 1.1.2">Figure 1.1.2</a>.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-parametric-equations-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<figure class="figure figure-like" id="fig-trajectory"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;">
+<div class="ChemAccess-element" data-src="generated/prefigure/trajectory-diagcess.svg" data-cml="generated/prefigure/trajectory-annotations.xml"></div>
+<details><summary>Diagram Exploration Keyboard Controls</summary><div class="diagcess-navigation-controls"><table>
+<thead><tr>
+<th>Key</th>
+<th>Action</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Enter, A</td>
+<td>Activate keyboard driven exploration</td>
+</tr>
+<tr>
+<td>B</td>
+<td>Activate menu driven exploration</td>
+</tr>
+<tr>
+<td>Escape</td>
+<td>Leave exploration mode</td>
+</tr>
+<tr>
+<td>Cursor down</td>
+<td>Explore next lower level</td>
+</tr>
+<tr>
+<td>Cursor up</td>
+<td>Explore next upper level</td>
+</tr>
+<tr>
+<td>Cursor right</td>
+<td>Explore next element on level</td>
+</tr>
+<tr>
+<td>Cursor left</td>
+<td>Explore previous element on level</td>
+</tr>
+<tr>
+<td>X</td>
+<td>Toggle expert mode</td>
+</tr>
+<tr>
+<td>W</td>
+<td>Extra details if available</td>
+</tr>
+<tr>
+<td>Space</td>
+<td>Repeat speech</td>
+</tr>
+<tr>
+<td>M</td>
+<td>Activate step magnification</td>
+</tr>
+<tr>
+<td>Comma</td>
+<td>Activate direct magnification</td>
+</tr>
+<tr>
+<td>N</td>
+<td>Deactivate magnification</td>
+</tr>
+<tr>
+<td>Z</td>
+<td>Toggle subtitles</td>
+</tr>
+<tr>
+<td>C</td>
+<td>Cycle contrast settings</td>
+</tr>
+<tr>
+<td>T</td>
+<td>Monochrome colours</td>
+</tr>
+<tr>
+<td>L</td>
+<td>Toggle language (if available)</td>
+</tr>
+<tr>
+<td>K</td>
+<td>Kill current sound</td>
+</tr>
+<tr>
+<td>Y</td>
+<td>Stop sound output</td>
+</tr>
+<tr>
+<td>O</td>
+<td>Start and stop sonification</td>
+</tr>
+<tr>
+<td>P</td>
+<td>Repeat sonification output</td>
+</tr>
+</tbody>
+</table></div></details><details class="image-description" aria-live="polite"><summary title="details"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span></summary><div id="image-trajectory-description"><div class="para" id="image-trajectory-2-1">A smooth curve rises and falls across the first quadrant from a starting point A, reached at time t equals a, to an ending point B, reached at time t equals b. A single point on the curve is marked; dashed gray segments run from it straight down to the x axis, where the value is labeled f of t nought, and straight left to the y axis, where the value is labeled g of t nought. An arrow on the curve shows the direction of increasing t.<div class="autopermalink" data-description="Paragraph"><a href="#image-trajectory-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></div></details>
+</div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.1.2<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The trajectory of a moving point whose coordinates are given by the parametric equations <span class="process-math">\(x=f(t)\text{,}\)</span> <span class="process-math">\(y=g(t)\text{.}\)</span> At the instant <span class="process-math">\(t_0\)</span> the point is at <span class="process-math">\(\left(f(t_0),g(t_0)\right)\text{.}\)</span><div class="autopermalink" data-description="Figure 1.1.2"><a href="#fig-trajectory" title="Copy heading and permalink for Figure 1.1.2" aria-label="Copy heading and permalink for Figure 1.1.2">🔗</a></div></figcaption></figure><div class="para" id="subsec-parametric-equations-5">As an example, consider <span class="process-math">\(x = t\)</span> and <span class="process-math">\(y = t^2\text{.}\)</span> Let us calculate some of the points <span class="process-math">\((x,y)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-parametric-equations-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<figure class="table table-like" id="table-parabola-points"><figcaption><span class="type">Table</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.1.3<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Points on the curve <span class="process-math">\(x=t\text{,}\)</span> <span class="process-math">\(y=t^2\)</span><div class="autopermalink" data-description="Table 1.1.3: Points on the curve x=t y=t^2"><a href="#table-parabola-points" title="Copy heading and permalink for Table 1.1.3: Points on the curve x=t y=t^2" aria-label="Copy heading and permalink for Table 1.1.3: Points on the curve x=t y=t^2">🔗</a></div></figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr class="header-horizontal">
+<th scope="col" class="c m b1 r0 l1 t1 lines"><span class="process-math">\(t\)</span></th>
+<th scope="col" class="c m b1 r0 l0 t1 lines"><span class="process-math">\(-3\)</span></th>
+<th scope="col" class="c m b1 r0 l0 t1 lines"><span class="process-math">\(-2\)</span></th>
+<th scope="col" class="c m b1 r0 l0 t1 lines"><span class="process-math">\(-1\)</span></th>
+<th scope="col" class="c m b1 r0 l0 t1 lines"><span class="process-math">\(0\)</span></th>
+<th scope="col" class="c m b1 r0 l0 t1 lines"><span class="process-math">\(1\)</span></th>
+<th scope="col" class="c m b1 r0 l0 t1 lines"><span class="process-math">\(2\)</span></th>
+<th scope="col" class="c m b1 r0 l0 t1 lines"><span class="process-math">\(3\)</span></th>
+</tr>
+<tr>
+<td class="c m b0 r0 l1 t0 lines"><span class="process-math">\(x\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(-3\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(-2\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(-1\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(0\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(1\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(2\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(3\)</span></td>
+</tr>
+<tr>
+<td class="c m b0 r0 l1 t0 lines"><span class="process-math">\(y\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(9\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(4\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(1\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(0\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(1\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(4\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(9\)</span></td>
+</tr>
+</table></div></figure><div class="para" id="subsec-parametric-equations-7">Plotting these points and connecting them, we recognize the parabola <span class="process-math">\(y = x^2\text{,}\)</span> traced from left to right as <span class="process-math">\(t\)</span> increases from <span class="process-math">\(-3\)</span> to <span class="process-math">\(3\text{.}\)</span> See <a href="sec-parametrization.html#fig-parabola-parametric" class="internal" title="Figure 1.1.4">Figure 1.1.4</a>.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-parametric-equations-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<figure class="figure figure-like" id="fig-parabola-parametric"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;">
+<div class="ChemAccess-element" data-src="generated/prefigure/parabola-parametric-diagcess.svg" data-cml="generated/prefigure/parabola-parametric-annotations.xml"></div>
+<details><summary>Diagram Exploration Keyboard Controls</summary><div class="diagcess-navigation-controls"><table>
+<thead><tr>
+<th>Key</th>
+<th>Action</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Enter, A</td>
+<td>Activate keyboard driven exploration</td>
+</tr>
+<tr>
+<td>B</td>
+<td>Activate menu driven exploration</td>
+</tr>
+<tr>
+<td>Escape</td>
+<td>Leave exploration mode</td>
+</tr>
+<tr>
+<td>Cursor down</td>
+<td>Explore next lower level</td>
+</tr>
+<tr>
+<td>Cursor up</td>
+<td>Explore next upper level</td>
+</tr>
+<tr>
+<td>Cursor right</td>
+<td>Explore next element on level</td>
+</tr>
+<tr>
+<td>Cursor left</td>
+<td>Explore previous element on level</td>
+</tr>
+<tr>
+<td>X</td>
+<td>Toggle expert mode</td>
+</tr>
+<tr>
+<td>W</td>
+<td>Extra details if available</td>
+</tr>
+<tr>
+<td>Space</td>
+<td>Repeat speech</td>
+</tr>
+<tr>
+<td>M</td>
+<td>Activate step magnification</td>
+</tr>
+<tr>
+<td>Comma</td>
+<td>Activate direct magnification</td>
+</tr>
+<tr>
+<td>N</td>
+<td>Deactivate magnification</td>
+</tr>
+<tr>
+<td>Z</td>
+<td>Toggle subtitles</td>
+</tr>
+<tr>
+<td>C</td>
+<td>Cycle contrast settings</td>
+</tr>
+<tr>
+<td>T</td>
+<td>Monochrome colours</td>
+</tr>
+<tr>
+<td>L</td>
+<td>Toggle language (if available)</td>
+</tr>
+<tr>
+<td>K</td>
+<td>Kill current sound</td>
+</tr>
+<tr>
+<td>Y</td>
+<td>Stop sound output</td>
+</tr>
+<tr>
+<td>O</td>
+<td>Start and stop sonification</td>
+</tr>
+<tr>
+<td>P</td>
+<td>Repeat sonification output</td>
+</tr>
+</tbody>
+</table></div></details><details class="image-description" aria-live="polite"><summary title="details"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span></summary><div id="image-parabola-parametric-description"><div class="para" id="image-parabola-parametric-2-1">The parabola y equals x squared drawn on a coordinate grid for x between minus three and three. Seven dots on the curve mark the points obtained from the integer parameter values t equals minus three through three, namely minus three comma nine, minus two comma four, minus one comma one, the origin, one comma one, two comma four, and three comma nine. An arrowhead partway up the right branch shows that the curve is traced from left to right as t increases.<div class="autopermalink" data-description="Paragraph"><a href="#image-parabola-parametric-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></div></details>
+</div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.1.4<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The curve <span class="process-math">\(x = t\text{,}\)</span> <span class="process-math">\(y = t^2\)</span> is the parabola <span class="process-math">\(y = x^2\text{.}\)</span> The marked points correspond to the integer values <span class="process-math">\(t = -3, \dots, 3\)</span> from <a href="sec-parametrization.html#table-parabola-points" class="xref" data-knowl="./knowl/xref/table-parabola-points.html" data-reveal-label="Reveal" data-close-label="Close" title="Table 1.1.3: Points on the curve x=t y=t^2">Table 1.1.3</a>, and the arrow shows the direction of increasing <span class="process-math">\(t\text{.}\)</span><div class="autopermalink" data-description="Figure 1.1.4"><a href="#fig-parabola-parametric" title="Copy heading and permalink for Figure 1.1.4" aria-label="Copy heading and permalink for Figure 1.1.4">🔗</a></div></figcaption></figure><div class="para logical" id="subsec-parametric-equations-9">
+<div class="para">As our second example, consider the equation of the circle centered at <span class="process-math">\((0,0)\)</span> with unit radius,</div>
+<div class="displaymath process-math" id="subsec-parametric-equations-9-2">
+\begin{gather}
+x^2 + y^2 = 1.\tag{1.1.2}
+\end{gather}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-parametric-equations-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-parametric-equations-10">
+<div class="para">Here, we would like to parametrize <span class="process-math">\(x\)</span> and <span class="process-math">\(y\)</span> in terms of a single parameter <span class="process-math">\(t\)</span> in such a way that by varying the value of <span class="process-math">\(t\text{,}\)</span> we can reconstruct the circle <a href="sec-parametrization.html#subsec-parametric-equations-9-2" class="xref" data-knowl="./knowl/xref/eq-unit-circle.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.1.2">(1.1.2)</a>. Remember that <span class="process-math">\(\cos^2(t) + \sin^2(t) = 1\text{,}\)</span> so one way to achieve our goal is to write</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-unit-circle.html" id="subsec-parametric-equations-10-7">
+\begin{gather}
+x = \cos(t), \qquad y = \sin(t),\tag{1.1.3}
+\end{gather}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-parametric-equations-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-parametric-equations-11">where <span class="process-math">\(t \in [0, 2\pi)\text{.}\)</span> The parametrization is illustrated in <a href="sec-parametrization.html#fig-unit-circle-param" class="internal" title="Figure 1.1.5">Figure 1.1.5</a>.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-parametric-equations-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<figure class="figure figure-like" id="fig-unit-circle-param"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;">
+<div class="ChemAccess-element" data-src="generated/prefigure/unit-circle-param-diagcess.svg" data-cml="generated/prefigure/unit-circle-param-annotations.xml"></div>
+<details><summary>Diagram Exploration Keyboard Controls</summary><div class="diagcess-navigation-controls"><table>
+<thead><tr>
+<th>Key</th>
+<th>Action</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Enter, A</td>
+<td>Activate keyboard driven exploration</td>
+</tr>
+<tr>
+<td>B</td>
+<td>Activate menu driven exploration</td>
+</tr>
+<tr>
+<td>Escape</td>
+<td>Leave exploration mode</td>
+</tr>
+<tr>
+<td>Cursor down</td>
+<td>Explore next lower level</td>
+</tr>
+<tr>
+<td>Cursor up</td>
+<td>Explore next upper level</td>
+</tr>
+<tr>
+<td>Cursor right</td>
+<td>Explore next element on level</td>
+</tr>
+<tr>
+<td>Cursor left</td>
+<td>Explore previous element on level</td>
+</tr>
+<tr>
+<td>X</td>
+<td>Toggle expert mode</td>
+</tr>
+<tr>
+<td>W</td>
+<td>Extra details if available</td>
+</tr>
+<tr>
+<td>Space</td>
+<td>Repeat speech</td>
+</tr>
+<tr>
+<td>M</td>
+<td>Activate step magnification</td>
+</tr>
+<tr>
+<td>Comma</td>
+<td>Activate direct magnification</td>
+</tr>
+<tr>
+<td>N</td>
+<td>Deactivate magnification</td>
+</tr>
+<tr>
+<td>Z</td>
+<td>Toggle subtitles</td>
+</tr>
+<tr>
+<td>C</td>
+<td>Cycle contrast settings</td>
+</tr>
+<tr>
+<td>T</td>
+<td>Monochrome colours</td>
+</tr>
+<tr>
+<td>L</td>
+<td>Toggle language (if available)</td>
+</tr>
+<tr>
+<td>K</td>
+<td>Kill current sound</td>
+</tr>
+<tr>
+<td>Y</td>
+<td>Stop sound output</td>
+</tr>
+<tr>
+<td>O</td>
+<td>Start and stop sonification</td>
+</tr>
+<tr>
+<td>P</td>
+<td>Repeat sonification output</td>
+</tr>
+</tbody>
+</table></div></details><details class="image-description" aria-live="polite"><summary title="details"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span></summary><div id="image-unit-circle-param-description"><div class="para" id="image-unit-circle-param-2-1">The unit circle on a coordinate grid, traced counterclockwise as indicated by an arrowhead. Four dots mark the points reached at t equals zero, at one comma zero; t equals pi over two, at zero comma one; t equals pi, at minus one comma zero; and t equals three pi over two, at zero comma minus one. A fifth dot part way around the first quadrant marks a generic point cosine t nought, sine t nought, joined to the origin by a segment that makes the angle t nought with the positive x axis.<div class="autopermalink" data-description="Paragraph"><a href="#image-unit-circle-param-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></div></details>
+</div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.1.5<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Parametrizing the unit circle <span class="process-math">\(x^2+y^2=1\)</span> by <span class="process-math">\(x=\cos(t)\text{,}\)</span> <span class="process-math">\(y=\sin(t)\text{,}\)</span> <span class="process-math">\(t \in [0,2\pi)\text{.}\)</span> A generic point of the circle corresponds to the parameter value <span class="process-math">\(t_0\text{.}\)</span><div class="autopermalink" data-description="Figure 1.1.5"><a href="#fig-unit-circle-param" title="Copy heading and permalink for Figure 1.1.5" aria-label="Copy heading and permalink for Figure 1.1.5">🔗</a></div></figcaption></figure><details id="check-circle-other-parametrization" class="exercise exercise-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.1.6</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Question.</span>
+</h4></summary><article class="exercise exercise-like knowl__content"><div class="para" id="check-circle-other-parametrization-2-1">Can you think of another way to write a parametric form of the circle <span class="process-math">\(x^2 + y^2 = 1\text{?}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#check-circle-other-parametrization-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details id="check-circle-other-parametrization-3" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="hint solution-like knowl__content">
+<div class="para" id="check-circle-other-parametrization-3-1">Nothing forces the point to start at <span class="process-math">\((1,0)\text{,}\)</span> to travel counterclockwise, or to go around exactly once.<div class="autopermalink" data-description="Paragraph"><a href="#check-circle-other-parametrization-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Hint 1.1.6.1"><a href="#check-circle-other-parametrization-3" title="Copy heading and permalink for Hint 1.1.6.1" aria-label="Copy heading and permalink for Hint 1.1.6.1">🔗</a></div>
+</div></details><details id="check-circle-other-parametrization-4" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="answer solution-like knowl__content">
+<div class="para" id="check-circle-other-parametrization-4-1">For instance <span class="process-math">\(x = \sin(t)\text{,}\)</span> <span class="process-math">\(y = \cos(t)\text{,}\)</span> or <span class="process-math">\(x = \cos(2t)\text{,}\)</span> <span class="process-math">\(y = \sin(2t)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#check-circle-other-parametrization-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Answer 1.1.6.1"><a href="#check-circle-other-parametrization-4" title="Copy heading and permalink for Answer 1.1.6.1" aria-label="Copy heading and permalink for Answer 1.1.6.1">🔗</a></div>
+</div></details><details id="check-circle-other-parametrization-5" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="check-circle-other-parametrization-5-1">Taking <span class="process-math">\(x = \sin(t)\)</span> and <span class="process-math">\(y = \cos(t)\)</span> with <span class="process-math">\(t \in [0,2\pi)\)</span> gives the same circle, but starting at <span class="process-math">\((0,1)\)</span> and traced <em class="emphasis">clockwise</em>. Taking <span class="process-math">\(x = \cos(2t)\)</span> and <span class="process-math">\(y = \sin(2t)\)</span> with <span class="process-math">\(t \in [0,2\pi)\)</span> also gives the same circle, traced counterclockwise but <em class="emphasis">twice</em>. A curve has many parametrizations: the picture does not determine the schedule.<div class="autopermalink" data-description="Paragraph"><a href="#check-circle-other-parametrization-5-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 1.1.6.1"><a href="#check-circle-other-parametrization-5" title="Copy heading and permalink for Solution 1.1.6.1" aria-label="Copy heading and permalink for Solution 1.1.6.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Checkpoint 1.1.6: Question"><a href="#check-circle-other-parametrization" title="Copy heading and permalink for Checkpoint 1.1.6: Question" aria-label="Copy heading and permalink for Checkpoint 1.1.6: Question">🔗</a></div></article></details><div class="autopermalink" data-description="Subsection 1.1.1: Parametric Equations"><a href="#subsec-parametric-equations" title="Copy heading and permalink for Subsection 1.1.1: Parametric Equations" aria-label="Copy heading and permalink for Subsection 1.1.1: Parametric Equations">🔗</a></div></section><section class="subsection" id="subsec-parametrizing-examples"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.1.2</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Some Examples of Parametrizing Curves</span>
+</h3>
+<details id="ex-parametrizing-curves" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.1.7</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Parametrizing Curves.</span>
+</h4></summary><article class="example example-like knowl__content"><div class="para" id="ex-parametrizing-curves-2-1">Find the parametric equations corresponding to the following curves.<div class="autopermalink" data-description="Paragraph"><a href="#ex-parametrizing-curves-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <ol class="decimal" id="ex-parametrizing-curves-2-2">
+<li id="ex-parametrizing-curves-2-2-1">
+<div class="para" id="ex-parametrizing-curves-2-2-1-1">The line segment connecting the two points <span class="process-math">\((1,0)\)</span> and <span class="process-math">\((0,1)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-parametrizing-curves-2-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 1"><a href="#ex-parametrizing-curves-2-2-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="ex-parametrizing-curves-2-2-2">
+<div class="para" id="ex-parametrizing-curves-2-2-2-1">The ellipse <span class="process-math">\(\dfrac{x^2}{4} + \dfrac{y^2}{9} = 1\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-parametrizing-curves-2-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2"><a href="#ex-parametrizing-curves-2-2-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+<li id="ex-parametrizing-curves-2-2-3">
+<div class="para" id="ex-parametrizing-curves-2-2-3-1">The circle of radius <span class="process-math">\(2\)</span> centered at <span class="process-math">\((2,0)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-parametrizing-curves-2-2-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 3"><a href="#ex-parametrizing-curves-2-2-3" title="Copy heading and permalink for Item 3" aria-label="Copy heading and permalink for Item 3">🔗</a></div>
+</li>
+</ol>
+<div class="solutions"><details id="ex-parametrizing-curves-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para logical" id="ex-parametrizing-curves-3-1">
+<div class="para">
+<dfn class="terminology">Part A.</dfn> The segment lies on the line <span class="process-math">\(y = 1 - x\text{,}\)</span> so we may take</div>
+<div class="displaymath process-math" id="ex-parametrizing-curves-3-1-3">
+\begin{gather}
+x = t, \qquad y = 1 - t, \qquad 0 \le t \le 1.\tag{1.1.4}
+\end{gather}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-parametrizing-curves-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-parametrizing-curves-3-2">At <span class="process-math">\(t = 0\)</span> we are at the point <span class="process-math">\((0,1)\text{,}\)</span> and at <span class="process-math">\(t = 1\)</span> we arrive at the point <span class="process-math">\((1,0)\text{.}\)</span> See <a href="sec-parametrization.html#fig-segment-param" class="internal" title="Figure 1.1.8">Figure 1.1.8</a>.<div class="autopermalink" data-description="Paragraph"><a href="#ex-parametrizing-curves-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<figure class="figure figure-like" id="fig-segment-param"><div class="image-box" style="width: 55%; margin-left: 22.5%; margin-right: 22.5%;">
+<div class="ChemAccess-element" data-src="generated/prefigure/segment-param-diagcess.svg" data-cml="generated/prefigure/segment-param-annotations.xml"></div>
+<details><summary>Diagram Exploration Keyboard Controls</summary><div class="diagcess-navigation-controls"><table>
+<thead><tr>
+<th>Key</th>
+<th>Action</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Enter, A</td>
+<td>Activate keyboard driven exploration</td>
+</tr>
+<tr>
+<td>B</td>
+<td>Activate menu driven exploration</td>
+</tr>
+<tr>
+<td>Escape</td>
+<td>Leave exploration mode</td>
+</tr>
+<tr>
+<td>Cursor down</td>
+<td>Explore next lower level</td>
+</tr>
+<tr>
+<td>Cursor up</td>
+<td>Explore next upper level</td>
+</tr>
+<tr>
+<td>Cursor right</td>
+<td>Explore next element on level</td>
+</tr>
+<tr>
+<td>Cursor left</td>
+<td>Explore previous element on level</td>
+</tr>
+<tr>
+<td>X</td>
+<td>Toggle expert mode</td>
+</tr>
+<tr>
+<td>W</td>
+<td>Extra details if available</td>
+</tr>
+<tr>
+<td>Space</td>
+<td>Repeat speech</td>
+</tr>
+<tr>
+<td>M</td>
+<td>Activate step magnification</td>
+</tr>
+<tr>
+<td>Comma</td>
+<td>Activate direct magnification</td>
+</tr>
+<tr>
+<td>N</td>
+<td>Deactivate magnification</td>
+</tr>
+<tr>
+<td>Z</td>
+<td>Toggle subtitles</td>
+</tr>
+<tr>
+<td>C</td>
+<td>Cycle contrast settings</td>
+</tr>
+<tr>
+<td>T</td>
+<td>Monochrome colours</td>
+</tr>
+<tr>
+<td>L</td>
+<td>Toggle language (if available)</td>
+</tr>
+<tr>
+<td>K</td>
+<td>Kill current sound</td>
+</tr>
+<tr>
+<td>Y</td>
+<td>Stop sound output</td>
+</tr>
+<tr>
+<td>O</td>
+<td>Start and stop sonification</td>
+</tr>
+<tr>
+<td>P</td>
+<td>Repeat sonification output</td>
+</tr>
+</tbody>
+</table></div></details><details class="image-description" aria-live="polite"><summary title="details"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span></summary><div id="image-segment-param-description"><div class="para" id="image-segment-param-2-1">A straight segment on a coordinate grid joining the point zero comma one on the y axis to the point one comma zero on the x axis. Both endpoints are marked with dots and labeled with the parameter values t equals zero and t equals one, and an arrowhead on the segment points from the first toward the second.<div class="autopermalink" data-description="Paragraph"><a href="#image-segment-param-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></div></details>
+</div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.1.8<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Part A: the segment <span class="process-math">\(x = t\text{,}\)</span> <span class="process-math">\(y = 1-t\text{,}\)</span> <span class="process-math">\(0 \le t \le 1\text{,}\)</span> which starts at <span class="process-math">\((0,1)\)</span> when <span class="process-math">\(t=0\)</span> and ends at <span class="process-math">\((1,0)\)</span> when <span class="process-math">\(t=1\text{.}\)</span><div class="autopermalink" data-description="Figure 1.1.8"><a href="#fig-segment-param" title="Copy heading and permalink for Figure 1.1.8" aria-label="Copy heading and permalink for Figure 1.1.8">🔗</a></div></figcaption></figure><div class="para logical" id="ex-parametrizing-curves-3-4">
+<div class="para">
+<dfn class="terminology">Part B.</dfn> Guided by the unit circle <a href="sec-parametrization.html#subsec-parametric-equations-10-7" class="xref" data-knowl="./knowl/xref/eq-unit-circle-param.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.1.3">(1.1.3)</a>, we take</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-unit-circle-param.html" id="ex-parametrizing-curves-3-4-3">
+\begin{gather}
+x = 2\cos(t), \qquad y = 3\sin(t), \qquad 0 \le t \lt 2\pi.\tag{1.1.5}
+\end{gather}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-parametrizing-curves-3-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="ex-parametrizing-curves-3-5">
+<div class="para">To verify, note that</div>
+<div class="displaymath process-math" id="ex-parametrizing-curves-3-5-1">
+\begin{equation*}
+\frac{\left(2\cos t\right)^2}{4}
++ \frac{\left(3\sin t\right)^2}{9}
+= \cos^2 t + \sin^2 t = 1 .
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-parametrizing-curves-3-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-parametrizing-curves-3-6">See <a href="sec-parametrization.html#fig-ellipse-param" class="internal" title="Figure 1.1.9">Figure 1.1.9</a>.<div class="autopermalink" data-description="Paragraph"><a href="#ex-parametrizing-curves-3-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<figure class="figure figure-like" id="fig-ellipse-param"><div class="image-box" style="width: 55%; margin-left: 22.5%; margin-right: 22.5%;">
+<div class="ChemAccess-element" data-src="generated/prefigure/ellipse-param-diagcess.svg" data-cml="generated/prefigure/ellipse-param-annotations.xml"></div>
+<details><summary>Diagram Exploration Keyboard Controls</summary><div class="diagcess-navigation-controls"><table>
+<thead><tr>
+<th>Key</th>
+<th>Action</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Enter, A</td>
+<td>Activate keyboard driven exploration</td>
+</tr>
+<tr>
+<td>B</td>
+<td>Activate menu driven exploration</td>
+</tr>
+<tr>
+<td>Escape</td>
+<td>Leave exploration mode</td>
+</tr>
+<tr>
+<td>Cursor down</td>
+<td>Explore next lower level</td>
+</tr>
+<tr>
+<td>Cursor up</td>
+<td>Explore next upper level</td>
+</tr>
+<tr>
+<td>Cursor right</td>
+<td>Explore next element on level</td>
+</tr>
+<tr>
+<td>Cursor left</td>
+<td>Explore previous element on level</td>
+</tr>
+<tr>
+<td>X</td>
+<td>Toggle expert mode</td>
+</tr>
+<tr>
+<td>W</td>
+<td>Extra details if available</td>
+</tr>
+<tr>
+<td>Space</td>
+<td>Repeat speech</td>
+</tr>
+<tr>
+<td>M</td>
+<td>Activate step magnification</td>
+</tr>
+<tr>
+<td>Comma</td>
+<td>Activate direct magnification</td>
+</tr>
+<tr>
+<td>N</td>
+<td>Deactivate magnification</td>
+</tr>
+<tr>
+<td>Z</td>
+<td>Toggle subtitles</td>
+</tr>
+<tr>
+<td>C</td>
+<td>Cycle contrast settings</td>
+</tr>
+<tr>
+<td>T</td>
+<td>Monochrome colours</td>
+</tr>
+<tr>
+<td>L</td>
+<td>Toggle language (if available)</td>
+</tr>
+<tr>
+<td>K</td>
+<td>Kill current sound</td>
+</tr>
+<tr>
+<td>Y</td>
+<td>Stop sound output</td>
+</tr>
+<tr>
+<td>O</td>
+<td>Start and stop sonification</td>
+</tr>
+<tr>
+<td>P</td>
+<td>Repeat sonification output</td>
+</tr>
+</tbody>
+</table></div></details><details class="image-description" aria-live="polite"><summary title="details"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span></summary><div id="image-ellipse-param-description"><div class="para" id="image-ellipse-param-2-1">An ellipse on a coordinate grid, two units wide in the x direction and three units tall in the y direction, centered at the origin. Four dots mark the points reached at t equals zero, at two comma zero; t equals pi over two, at zero comma three; t equals pi, at minus two comma zero; and t equals three pi over two, at zero comma minus three. An arrowhead shows that the ellipse is traced counterclockwise.<div class="autopermalink" data-description="Paragraph"><a href="#image-ellipse-param-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></div></details>
+</div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.1.9<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Part B: the ellipse <span class="process-math">\(x = 2\cos(t)\text{,}\)</span> <span class="process-math">\(y = 3\sin(t)\text{,}\)</span> <span class="process-math">\(0 \le t \lt 2\pi\text{,}\)</span> traced counterclockwise.<div class="autopermalink" data-description="Figure 1.1.9"><a href="#fig-ellipse-param" title="Copy heading and permalink for Figure 1.1.9" aria-label="Copy heading and permalink for Figure 1.1.9">🔗</a></div></figcaption></figure><div class="para logical" id="ex-parametrizing-curves-3-8">
+<div class="para">
+<dfn class="terminology">Part C.</dfn> The equation of such a circle in Cartesian coordinates is <span class="process-math">\((x-2)^2 + y^2 = 4\text{,}\)</span> so we shift the standard parametrization of a circle of radius <span class="process-math">\(2\)</span> by <span class="process-math">\(2\)</span> units in the <span class="process-math">\(x\)</span>-direction:</div>
+<div class="displaymath process-math" id="ex-parametrizing-curves-3-8-6">
+\begin{gather}
+x = 2\cos(t) + 2, \qquad y = 2\sin(t), \qquad
+0 \le t \lt 2\pi.\tag{1.1.6}
+\end{gather}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-parametrizing-curves-3-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="ex-parametrizing-curves-3-9">
+<div class="para">To verify, note that</div>
+<div class="displaymath process-math" id="ex-parametrizing-curves-3-9-1">
+\begin{align*}
+\bigl(\left(2\cos t + 2\right) - 2\bigr)^2
++ \left(2\sin t\right)^2 \amp = 4\cos^2 t + 4\sin^2 t\\
+\amp = 4 .
+\end{align*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-parametrizing-curves-3-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-parametrizing-curves-3-10">See <a href="sec-parametrization.html#fig-shifted-circle-param" class="internal" title="Figure 1.1.10">Figure 1.1.10</a>.<div class="autopermalink" data-description="Paragraph"><a href="#ex-parametrizing-curves-3-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<figure class="figure figure-like" id="fig-shifted-circle-param"><div class="image-box" style="width: 55%; margin-left: 22.5%; margin-right: 22.5%;">
+<div class="ChemAccess-element" data-src="generated/prefigure/shifted-circle-param-diagcess.svg" data-cml="generated/prefigure/shifted-circle-param-annotations.xml"></div>
+<details><summary>Diagram Exploration Keyboard Controls</summary><div class="diagcess-navigation-controls"><table>
+<thead><tr>
+<th>Key</th>
+<th>Action</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Enter, A</td>
+<td>Activate keyboard driven exploration</td>
+</tr>
+<tr>
+<td>B</td>
+<td>Activate menu driven exploration</td>
+</tr>
+<tr>
+<td>Escape</td>
+<td>Leave exploration mode</td>
+</tr>
+<tr>
+<td>Cursor down</td>
+<td>Explore next lower level</td>
+</tr>
+<tr>
+<td>Cursor up</td>
+<td>Explore next upper level</td>
+</tr>
+<tr>
+<td>Cursor right</td>
+<td>Explore next element on level</td>
+</tr>
+<tr>
+<td>Cursor left</td>
+<td>Explore previous element on level</td>
+</tr>
+<tr>
+<td>X</td>
+<td>Toggle expert mode</td>
+</tr>
+<tr>
+<td>W</td>
+<td>Extra details if available</td>
+</tr>
+<tr>
+<td>Space</td>
+<td>Repeat speech</td>
+</tr>
+<tr>
+<td>M</td>
+<td>Activate step magnification</td>
+</tr>
+<tr>
+<td>Comma</td>
+<td>Activate direct magnification</td>
+</tr>
+<tr>
+<td>N</td>
+<td>Deactivate magnification</td>
+</tr>
+<tr>
+<td>Z</td>
+<td>Toggle subtitles</td>
+</tr>
+<tr>
+<td>C</td>
+<td>Cycle contrast settings</td>
+</tr>
+<tr>
+<td>T</td>
+<td>Monochrome colours</td>
+</tr>
+<tr>
+<td>L</td>
+<td>Toggle language (if available)</td>
+</tr>
+<tr>
+<td>K</td>
+<td>Kill current sound</td>
+</tr>
+<tr>
+<td>Y</td>
+<td>Stop sound output</td>
+</tr>
+<tr>
+<td>O</td>
+<td>Start and stop sonification</td>
+</tr>
+<tr>
+<td>P</td>
+<td>Repeat sonification output</td>
+</tr>
+</tbody>
+</table></div></details><details class="image-description" aria-live="polite"><summary title="details"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span></summary><div id="image-shifted-circle-param-description"><div class="para" id="image-shifted-circle-param-2-1">A circle of radius two on a coordinate grid, centered at the point two comma zero, which is marked with a cross. The circle passes through the origin on the left and through the point four comma zero on the right. A dot marks the starting point four comma zero, reached at t equals zero, and an arrowhead shows that the circle is traced counterclockwise.<div class="autopermalink" data-description="Paragraph"><a href="#image-shifted-circle-param-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></div></details>
+</div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.1.10<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Part C: the circle <span class="process-math">\(x = 2\cos(t)+2\text{,}\)</span> <span class="process-math">\(y = 2\sin(t)\text{,}\)</span> <span class="process-math">\(0 \le t \lt 2\pi\text{,}\)</span> of radius <span class="process-math">\(2\)</span> centered at <span class="process-math">\((2,0)\text{.}\)</span><div class="autopermalink" data-description="Figure 1.1.10"><a href="#fig-shifted-circle-param" title="Copy heading and permalink for Figure 1.1.10" aria-label="Copy heading and permalink for Figure 1.1.10">🔗</a></div></figcaption></figure><div class="autopermalink" data-description="Solution 1.1.7.1"><a href="#ex-parametrizing-curves-3" title="Copy heading and permalink for Solution 1.1.7.1" aria-label="Copy heading and permalink for Solution 1.1.7.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Example 1.1.7: Parametrizing Curves"><a href="#ex-parametrizing-curves" title="Copy heading and permalink for Example 1.1.7: Parametrizing Curves" aria-label="Copy heading and permalink for Example 1.1.7: Parametrizing Curves">🔗</a></div></article></details><div class="autopermalink" data-description="Subsection 1.1.2: Some Examples of Parametrizing Curves"><a href="#subsec-parametrizing-examples" title="Copy heading and permalink for Subsection 1.1.2: Some Examples of Parametrizing Curves" aria-label="Copy heading and permalink for Subsection 1.1.2: Some Examples of Parametrizing Curves">🔗</a></div></section><section class="subsection" id="subsec-intersection-collision"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.1.3</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Intersection Points versus Collision Points</span>
+</h3>
+<div class="para logical" id="subsec-intersection-collision-2">
+<div class="para">A parametrization carries more information than the curve it traces: it also records <em class="emphasis">when</em> the moving point visits each place on the curve. Because of this, there are two different questions we can ask about two parametric curves</div>
+<div class="displaymath process-math" id="subsec-intersection-collision-2-2">
+\begin{align*}
+\mathbf{r}_1(t) \amp = \left\langle f_1(t),\, g_1(t)\right\rangle,\\
+\mathbf{r}_2(t) \amp = \left\langle f_2(t),\, g_2(t)\right\rangle,
+\end{align*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-intersection-collision-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-intersection-collision-3">thought of as the trajectories of two particles.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-intersection-collision-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="definition definition-like" id="def-intersection-collision"><h4 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.1.11</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Intersection Points and Collision Points.</span>
+</h4>
+<div class="para logical" id="def-intersection-collision-2-1">
+<div class="para">A point <span class="process-math">\(P\)</span> is an <dfn class="terminology">intersection point</dfn> of the two curves if <span class="process-math">\(P\)</span> lies on both curves; that is, if there are parameter values <span class="process-math">\(t\)</span> and <span class="process-math">\(s\text{,}\)</span> not necessarily equal, with</div>
+<div class="displaymath process-math" id="def-intersection-collision-2-1-6">
+\begin{equation*}
+\mathbf{r}_1(t) = \overrightarrow{OP} = \mathbf{r}_2(s).
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#def-intersection-collision-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para logical" id="def-intersection-collision-2-2">
+<div class="para">A point <span class="process-math">\(P\)</span> is a <dfn class="terminology">collision point</dfn> of the two particles if both particles are at <span class="process-math">\(P\)</span> at the same time; that is, if there is a single value of <span class="process-math">\(t\)</span> with</div>
+<div class="displaymath process-math" id="def-intersection-collision-2-2-5">
+\begin{equation*}
+\mathbf{r}_1(t) = \mathbf{r}_2(t) = \overrightarrow{OP}.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#def-intersection-collision-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Definition 1.1.11: Intersection Points and Collision Points"><a href="#def-intersection-collision" title="Copy heading and permalink for Definition 1.1.11: Intersection Points and Collision Points" aria-label="Copy heading and permalink for Definition 1.1.11: Intersection Points and Collision Points">🔗</a></div></article><div class="para" id="subsec-intersection-collision-5">An intersection point is a statement about the two <em class="emphasis">paths</em>: they cross, like two roads on a map. A collision point is a statement about the two <em class="emphasis">motions</em>: the cars are at the crossroads at the same instant. Every collision point is automatically an intersection point, but, as the next two examples show, an intersection point need not be a collision point.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-intersection-collision-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-intersection-collision-6">In practice this dictates how we set up the equations.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-intersection-collision-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<ul class="disc" id="subsec-intersection-collision-7">
+<li id="subsec-intersection-collision-7-1">
+<div class="para" id="subsec-intersection-collision-7-1-1">To find <dfn class="terminology">intersection points</dfn>, give the two curves different parameter names and solve <span class="process-math">\(f_1(t) = f_2(s)\text{,}\)</span> <span class="process-math">\(g_1(t) = g_2(s)\)</span> for the pair <span class="process-math">\((t,s)\text{.}\)</span> Equivalently, eliminate the parameters and intersect the two Cartesian curves.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-intersection-collision-7-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#subsec-intersection-collision-7-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="subsec-intersection-collision-7-2">
+<div class="para" id="subsec-intersection-collision-7-2-1">To find <dfn class="terminology">collision points</dfn>, use the same parameter <span class="process-math">\(t\)</span> in both curves and solve <span class="process-math">\(f_1(t) = f_2(t)\text{,}\)</span> <span class="process-math">\(g_1(t) = g_2(t)\)</span> for <span class="process-math">\(t\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-intersection-collision-7-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#subsec-intersection-collision-7-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="para logical" id="subsec-intersection-collision-8">
+<div class="para">In the next two examples the two paths are always the same: the parabola <span class="process-math">\(y = x^2\)</span> and the line <span class="process-math">\(y = x+2\text{.}\)</span> Setting <span class="process-math">\(x^2 = x+2\)</span> gives <span class="process-math">\(x^2 - x - 2 = (x-2)(x+1) = 0\text{,}\)</span> so the paths meet at the two points</div>
+<div class="displaymath process-math" id="eq-parabola-line-intersections">
+\begin{equation}
+(-1,1) \qquad \text{and} \qquad (2,4).\tag{1.1.7}
+\end{equation}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-intersection-collision-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-intersection-collision-9">Only the schedule of the second particle will change.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-intersection-collision-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<details id="ex-paths-cross-no-collision" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.1.12</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">The paths cross, but the particles never meet.</span>
+</h4></summary><article class="example example-like knowl__content"><div class="para logical" id="ex-paths-cross-no-collision-2-1">
+<div class="para">Two particles move in the plane with position vectors</div>
+<div class="displaymath process-math" id="ex-paths-cross-no-collision-2-1-1">
+\begin{align*}
+\mathbf{r}_1(t) \amp = \left\langle t,\; t^2\right\rangle,\\
+\mathbf{r}_2(t) \amp = \left\langle -t,\; 2-t\right\rangle,
+\qquad t \in \R .
+\end{align*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-paths-cross-no-collision-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para" id="ex-paths-cross-no-collision-2-2">Find all intersection points of their paths, and all collision points of the particles.<div class="autopermalink" data-description="Paragraph"><a href="#ex-paths-cross-no-collision-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="ex-paths-cross-no-collision-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="ex-paths-cross-no-collision-3-1">
+<dfn class="terminology">Paths.</dfn> Eliminating the parameter, the first particle traces the parabola <span class="process-math">\(y = x^2\text{.}\)</span> For the second, <span class="process-math">\(x = -t\)</span> and <span class="process-math">\(y = 2-t = 2+x\text{,}\)</span> so it traces the line <span class="process-math">\(y = x+2\text{.}\)</span> As computed in <a href="sec-parametrization.html#eq-parabola-line-intersections" class="xref" data-knowl="./knowl/xref/eq-parabola-line-intersections.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.1.7">(1.1.7)</a>, the two paths intersect at <span class="process-math">\((-1,1)\)</span> and <span class="process-math">\((2,4)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-paths-cross-no-collision-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="ex-paths-cross-no-collision-3-2">
+<div class="para">
+<dfn class="terminology">Collisions.</dfn> A collision requires a single <span class="process-math">\(t\)</span> with</div>
+<div class="displaymath process-math" id="ex-paths-cross-no-collision-3-2-3">
+\begin{equation*}
+t = -t \qquad \text{and} \qquad t^2 = 2 - t .
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-paths-cross-no-collision-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-paths-cross-no-collision-3-3">The first equation forces <span class="process-math">\(t = 0\text{,}\)</span> but then <span class="process-math">\(t^2 = 0\)</span> while <span class="process-math">\(2 - t = 2\text{.}\)</span> There is no solution, so the particles never collide.<div class="autopermalink" data-description="Paragraph"><a href="#ex-paths-cross-no-collision-3-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-paths-cross-no-collision-3-4">We can see exactly how they miss each other. The first particle is at <span class="process-math">\((-1,1)\)</span> when <span class="process-math">\(t=-1\text{,}\)</span> while the second particle arrives there only at <span class="process-math">\(t=1\text{.}\)</span> Similarly, the first particle reaches <span class="process-math">\((2,4)\)</span> at <span class="process-math">\(t=2\text{,}\)</span> long after the second particle passed through it at <span class="process-math">\(t=-2\text{.}\)</span> Each intersection point is visited twice, but never simultaneously. See <a href="sec-parametrization.html#fig-intersection-no-collision" class="internal" title="Figure 1.1.13">Figure 1.1.13</a>.<div class="autopermalink" data-description="Paragraph"><a href="#ex-paths-cross-no-collision-3-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<figure class="figure figure-like" id="fig-intersection-no-collision"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;">
+<div class="ChemAccess-element" data-src="generated/prefigure/intersection-no-collision-diagcess.svg" data-cml="generated/prefigure/intersection-no-collision-annotations.xml"></div>
+<details><summary>Diagram Exploration Keyboard Controls</summary><div class="diagcess-navigation-controls"><table>
+<thead><tr>
+<th>Key</th>
+<th>Action</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Enter, A</td>
+<td>Activate keyboard driven exploration</td>
+</tr>
+<tr>
+<td>B</td>
+<td>Activate menu driven exploration</td>
+</tr>
+<tr>
+<td>Escape</td>
+<td>Leave exploration mode</td>
+</tr>
+<tr>
+<td>Cursor down</td>
+<td>Explore next lower level</td>
+</tr>
+<tr>
+<td>Cursor up</td>
+<td>Explore next upper level</td>
+</tr>
+<tr>
+<td>Cursor right</td>
+<td>Explore next element on level</td>
+</tr>
+<tr>
+<td>Cursor left</td>
+<td>Explore previous element on level</td>
+</tr>
+<tr>
+<td>X</td>
+<td>Toggle expert mode</td>
+</tr>
+<tr>
+<td>W</td>
+<td>Extra details if available</td>
+</tr>
+<tr>
+<td>Space</td>
+<td>Repeat speech</td>
+</tr>
+<tr>
+<td>M</td>
+<td>Activate step magnification</td>
+</tr>
+<tr>
+<td>Comma</td>
+<td>Activate direct magnification</td>
+</tr>
+<tr>
+<td>N</td>
+<td>Deactivate magnification</td>
+</tr>
+<tr>
+<td>Z</td>
+<td>Toggle subtitles</td>
+</tr>
+<tr>
+<td>C</td>
+<td>Cycle contrast settings</td>
+</tr>
+<tr>
+<td>T</td>
+<td>Monochrome colours</td>
+</tr>
+<tr>
+<td>L</td>
+<td>Toggle language (if available)</td>
+</tr>
+<tr>
+<td>K</td>
+<td>Kill current sound</td>
+</tr>
+<tr>
+<td>Y</td>
+<td>Stop sound output</td>
+</tr>
+<tr>
+<td>O</td>
+<td>Start and stop sonification</td>
+</tr>
+<tr>
+<td>P</td>
+<td>Repeat sonification output</td>
+</tr>
+</tbody>
+</table></div></details><details class="image-description" aria-live="polite"><summary title="details"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span></summary><div id="image-intersection-no-collision-description"><div class="para" id="image-intersection-no-collision-2-1">The parabola y equals x squared and the line y equals x plus two drawn on the same coordinate grid, crossing at the points minus one comma one and two comma four. Each crossing is marked with a dot and labeled with two different parameter values: at minus one comma one the first particle arrives at t equals minus one and the second at t equals one, and at two comma four the first arrives at t equals two and the second at t equals minus two.<div class="autopermalink" data-description="Paragraph"><a href="#image-intersection-no-collision-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></div></details>
+</div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.1.13<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The parabola <span class="process-math">\(C_1\)</span> and the line <span class="process-math">\(C_2\)</span> intersect at <span class="process-math">\((-1,1)\)</span> and <span class="process-math">\((2,4)\text{.}\)</span> At each of these points the two particles arrive at different times, so neither point is a collision point.<div class="autopermalink" data-description="Figure 1.1.13"><a href="#fig-intersection-no-collision" title="Copy heading and permalink for Figure 1.1.13" aria-label="Copy heading and permalink for Figure 1.1.13">🔗</a></div></figcaption></figure><div class="autopermalink" data-description="Solution 1.1.12.1"><a href="#ex-paths-cross-no-collision-3" title="Copy heading and permalink for Solution 1.1.12.1" aria-label="Copy heading and permalink for Solution 1.1.12.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Example 1.1.12: The paths cross, but the particles never meet"><a href="#ex-paths-cross-no-collision" title="Copy heading and permalink for Example 1.1.12: The paths cross, but the particles never meet" aria-label="Copy heading and permalink for Example 1.1.12: The paths cross, but the particles never meet">🔗</a></div></article></details><details id="ex-same-paths-collision" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.1.14</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">The same paths, a different schedule—now they collide.</span>
+</h4></summary><article class="example example-like knowl__content"><div class="para logical" id="ex-same-paths-collision-2-1">
+<div class="para">Keep the first particle, but re-schedule the second one:</div>
+<div class="displaymath process-math" id="ex-same-paths-collision-2-1-1">
+\begin{align*}
+\mathbf{r}_1(t) \amp = \left\langle t,\; t^2\right\rangle,\\
+\mathbf{r}_2(t) \amp = \left\langle 2t-2,\; 2t\right\rangle,
+\qquad t \in \R .
+\end{align*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-same-paths-collision-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para" id="ex-same-paths-collision-2-2">Find the intersection points of the paths and the collision points of the particles.<div class="autopermalink" data-description="Paragraph"><a href="#ex-same-paths-collision-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="ex-same-paths-collision-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="ex-same-paths-collision-3-1">
+<dfn class="terminology">Paths.</dfn> For the second particle, <span class="process-math">\(x = 2t-2\)</span> and <span class="process-math">\(y = 2t = x+2\text{,}\)</span> so it travels along the very same line <span class="process-math">\(y = x+2\)</span> as before, only faster and in the opposite direction. The paths are therefore unchanged, and they still intersect at the points <a href="sec-parametrization.html#eq-parabola-line-intersections" class="xref" data-knowl="./knowl/xref/eq-parabola-line-intersections.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.1.7">(1.1.7)</a>, <span class="process-math">\((-1,1)\)</span> and <span class="process-math">\((2,4)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-same-paths-collision-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="ex-same-paths-collision-3-2">
+<div class="para">
+<dfn class="terminology">Collisions.</dfn> Now a collision requires a single <span class="process-math">\(t\)</span> with</div>
+<div class="displaymath process-math" id="ex-same-paths-collision-3-2-3">
+\begin{equation*}
+t = 2t - 2 \qquad \text{and} \qquad t^2 = 2t .
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-same-paths-collision-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="ex-same-paths-collision-3-3">
+<div class="para">The first equation gives <span class="process-math">\(t = 2\text{,}\)</span> and this value does satisfy the second equation, since <span class="process-math">\(2^2 = 4 = 2\cdot 2\text{.}\)</span> Hence the particles do collide, at</div>
+<div class="displaymath process-math" id="ex-same-paths-collision-3-3-3">
+\begin{equation*}
+\mathbf{r}_1(2) = \mathbf{r}_2(2) = \left\langle 2,4\right\rangle, \qquad
+\text{at time } t = 2 .
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-same-paths-collision-3-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-same-paths-collision-3-4">The other intersection point is not a collision point: the first particle passes through <span class="process-math">\((-1,1)\)</span> at <span class="process-math">\(t=-1\text{,}\)</span> while the second particle passes through it at <span class="process-math">\(t = \tfrac12\text{.}\)</span> Two intersection points, but only one collision. See <a href="sec-parametrization.html#fig-collision" class="internal" title="Figure 1.1.15">Figure 1.1.15</a>.<div class="autopermalink" data-description="Paragraph"><a href="#ex-same-paths-collision-3-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<figure class="figure figure-like" id="fig-collision"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;">
+<div class="ChemAccess-element" data-src="generated/prefigure/collision-diagcess.svg" data-cml="generated/prefigure/collision-annotations.xml"></div>
+<details><summary>Diagram Exploration Keyboard Controls</summary><div class="diagcess-navigation-controls"><table>
+<thead><tr>
+<th>Key</th>
+<th>Action</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Enter, A</td>
+<td>Activate keyboard driven exploration</td>
+</tr>
+<tr>
+<td>B</td>
+<td>Activate menu driven exploration</td>
+</tr>
+<tr>
+<td>Escape</td>
+<td>Leave exploration mode</td>
+</tr>
+<tr>
+<td>Cursor down</td>
+<td>Explore next lower level</td>
+</tr>
+<tr>
+<td>Cursor up</td>
+<td>Explore next upper level</td>
+</tr>
+<tr>
+<td>Cursor right</td>
+<td>Explore next element on level</td>
+</tr>
+<tr>
+<td>Cursor left</td>
+<td>Explore previous element on level</td>
+</tr>
+<tr>
+<td>X</td>
+<td>Toggle expert mode</td>
+</tr>
+<tr>
+<td>W</td>
+<td>Extra details if available</td>
+</tr>
+<tr>
+<td>Space</td>
+<td>Repeat speech</td>
+</tr>
+<tr>
+<td>M</td>
+<td>Activate step magnification</td>
+</tr>
+<tr>
+<td>Comma</td>
+<td>Activate direct magnification</td>
+</tr>
+<tr>
+<td>N</td>
+<td>Deactivate magnification</td>
+</tr>
+<tr>
+<td>Z</td>
+<td>Toggle subtitles</td>
+</tr>
+<tr>
+<td>C</td>
+<td>Cycle contrast settings</td>
+</tr>
+<tr>
+<td>T</td>
+<td>Monochrome colours</td>
+</tr>
+<tr>
+<td>L</td>
+<td>Toggle language (if available)</td>
+</tr>
+<tr>
+<td>K</td>
+<td>Kill current sound</td>
+</tr>
+<tr>
+<td>Y</td>
+<td>Stop sound output</td>
+</tr>
+<tr>
+<td>O</td>
+<td>Start and stop sonification</td>
+</tr>
+<tr>
+<td>P</td>
+<td>Repeat sonification output</td>
+</tr>
+</tbody>
+</table></div></details><details class="image-description" aria-live="polite"><summary title="details"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span></summary><div id="image-collision-description"><div class="para" id="image-collision-2-1">The parabola y equals x squared and the line y equals x plus two crossing at minus one comma one and at two comma four. The point two comma four is drawn as a large highlighted dot and labeled as a collision point, reached by both particles at time t equals two, while the particles pass through minus one comma one at the different times t equals minus one and t equals one half.<div class="autopermalink" data-description="Paragraph"><a href="#image-collision-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></div></details>
+</div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.1.15<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The same two paths as in <a href="sec-parametrization.html#fig-intersection-no-collision" class="internal" title="Figure 1.1.13">Figure 1.1.13</a>. The point <span class="process-math">\((2,4)\)</span> is now a collision point, reached by both particles at <span class="process-math">\(t=2\text{,}\)</span> while <span class="process-math">\((-1,1)\)</span> remains an intersection point that is not a collision point.<div class="autopermalink" data-description="Figure 1.1.15"><a href="#fig-collision" title="Copy heading and permalink for Figure 1.1.15" aria-label="Copy heading and permalink for Figure 1.1.15">🔗</a></div></figcaption></figure><div class="autopermalink" data-description="Solution 1.1.14.1"><a href="#ex-same-paths-collision-3" title="Copy heading and permalink for Solution 1.1.14.1" aria-label="Copy heading and permalink for Solution 1.1.14.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Example 1.1.14: The same paths, a different schedule—now they collide"><a href="#ex-same-paths-collision" title="Copy heading and permalink for Example 1.1.14: The same paths, a different schedule—now they collide" aria-label="Copy heading and permalink for Example 1.1.14: The same paths, a different schedule—now they collide">🔗</a></div></article></details><article class="remark remark-like" id="remark-collision-vs-intersection"><h4 class="heading">
+<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.1.16</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Every collision is an intersection, but not conversely.</span>
+</h4>
+<div class="para" id="remark-collision-vs-intersection-2">If two particles collide at <span class="process-math">\(P\text{,}\)</span> then certainly <span class="process-math">\(P\)</span> lies on both paths, so every collision point is an intersection point. The converse fails: the paths may cross at a point that the two particles visit at different times. Changing the parametrization of a curve does not move the curve, but it can create or destroy collisions.<div class="autopermalink" data-description="Paragraph"><a href="#remark-collision-vs-intersection-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Remark 1.1.16: Every collision is an intersection, but not conversely"><a href="#remark-collision-vs-intersection" title="Copy heading and permalink for Remark 1.1.16: Every collision is an intersection, but not conversely" aria-label="Copy heading and permalink for Remark 1.1.16: Every collision is an intersection, but not conversely">🔗</a></div></article><details id="check-collision-both-points" class="exercise exercise-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.1.17</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4></summary><article class="exercise exercise-like knowl__content"><div class="para" id="check-collision-both-points-1-1">Keep <span class="process-math">\(\mathbf{r}_1(t) = \left\langle t,t^2\right\rangle\text{.}\)</span> Find a parametrization <span class="process-math">\(\mathbf{r}_2\)</span> of the line <span class="process-math">\(y = x+2\)</span> for which the two particles collide at <em class="emphasis">both</em> intersection points.<div class="autopermalink" data-description="Paragraph"><a href="#check-collision-both-points-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details id="check-collision-both-points-2" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="hint solution-like knowl__content">
+<div class="para" id="check-collision-both-points-2-1">Try to arrange that the second particle has the same <span class="process-math">\(x\)</span>-coordinate as the first one at every time <span class="process-math">\(t\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#check-collision-both-points-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Hint 1.1.17.1"><a href="#check-collision-both-points-2" title="Copy heading and permalink for Hint 1.1.17.1" aria-label="Copy heading and permalink for Hint 1.1.17.1">🔗</a></div>
+</div></details><details id="check-collision-both-points-3" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="answer solution-like knowl__content">
+<div class="para" id="check-collision-both-points-3-1">
+<span class="process-math">\(\mathbf{r}_2(t) = \left\langle t,\; t+2\right\rangle\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#check-collision-both-points-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Answer 1.1.17.1"><a href="#check-collision-both-points-3" title="Copy heading and permalink for Answer 1.1.17.1" aria-label="Copy heading and permalink for Answer 1.1.17.1">🔗</a></div>
+</div></details><details id="check-collision-both-points-4" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="check-collision-both-points-4-1">With <span class="process-math">\(\mathbf{r}_2(t) = \left\langle t, t+2\right\rangle\)</span> the collision equations become <span class="process-math">\(t = t\)</span> and <span class="process-math">\(t^2 = t+2\text{,}\)</span> that is, <span class="process-math">\((t-2)(t+1) = 0\text{.}\)</span> Thus <span class="process-math">\(t = -1\)</span> gives the collision at <span class="process-math">\((-1,1)\)</span> and <span class="process-math">\(t = 2\)</span> gives the collision at <span class="process-math">\((2,4)\text{:}\)</span> both intersection points are now collision points.<div class="autopermalink" data-description="Paragraph"><a href="#check-collision-both-points-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 1.1.17.1"><a href="#check-collision-both-points-4" title="Copy heading and permalink for Solution 1.1.17.1" aria-label="Copy heading and permalink for Solution 1.1.17.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Checkpoint 1.1.17"><a href="#check-collision-both-points" title="Copy heading and permalink for Checkpoint 1.1.17" aria-label="Copy heading and permalink for Checkpoint 1.1.17">🔗</a></div></article></details><div class="autopermalink" data-description="Subsection 1.1.3: Intersection Points versus Collision Points"><a href="#subsec-intersection-collision" title="Copy heading and permalink for Subsection 1.1.3: Intersection Points versus Collision Points" aria-label="Copy heading and permalink for Subsection 1.1.3: Intersection Points versus Collision Points">🔗</a></div></section><section class="subsection" id="subsec-curves-in-space"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.1.4</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Curves in Space and Vector Functions</span>
+</h3>
+<div class="para logical" id="subsec-curves-in-space-2">
+<div class="para">Assume that we are interested in describing the path of an object in space. To this aim, we can specify its location at each instant of time; that is, we can write its coordinates in <span class="process-math">\(\R^3\)</span> as</div>
+<div class="displaymath process-math" id="subsec-curves-in-space-2-2">
+\begin{gather}
+x = f(t), \qquad y = g(t), \qquad z = h(t).\tag{1.1.8}
+\end{gather}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-curves-in-space-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-curves-in-space-3">Here <span class="process-math">\(t\)</span> is the time parameter, which varies from some initial time <span class="process-math">\(t_i\)</span> to some final time <span class="process-math">\(t_f\text{,}\)</span> that is, <span class="process-math">\(t \in [t_i, t_f]\text{.}\)</span> Nothing has changed except the bookkeeping: where a plane curve needed the two equations <a href="sec-parametrization.html#def-parametric-equations-2-1-5" class="xref" data-knowl="./knowl/xref/eq-parametric-equations.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.1.1">(1.1.1)</a>, a space curve needs three.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-curves-in-space-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-curves-in-space-4">
+<div class="para">There is a second, more compact way to look at <a href="sec-parametrization.html#subsec-curves-in-space-2-2" class="xref" data-knowl="./knowl/xref/eq-space-parametric.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.1.8">(1.1.8)</a>, and it is the point of view we will use for the rest of the course. Instead of three separate coordinate equations, collect the coordinates into a single <dfn class="terminology">vector function</dfn> — a function whose input is a real number and whose output is a vector:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-space-parametric.html" id="subsec-curves-in-space-4-4">
+\begin{align}
+\mathbf{r}(t) \amp = \left\langle f(t),\ g(t),\ h(t)
+\right\rangle\notag\\
+\amp = f(t)\,\mathbf{i} + g(t)\,\mathbf{j} + h(t)\,\mathbf{k},
+\qquad t \in [t_i,t_f].\tag{1.1.9}
+\end{align}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-curves-in-space-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-curves-in-space-5">Think of <span class="process-math">\(\mathbf{r}(t)\)</span> as the <dfn class="terminology">position vector</dfn> of the moving object: an arrow drawn from the origin to the object’s location at time <span class="process-math">\(t\text{.}\)</span> As <span class="process-math">\(t\)</span> increases, the arrow swings around and changes length, and its <em class="emphasis">tip</em> sweeps out the curve. So a parametrization can be read in two equivalent ways.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-curves-in-space-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<ul class="disc" id="subsec-curves-in-space-6">
+<li id="subsec-curves-in-space-6-1">
+<div class="para" id="subsec-curves-in-space-6-1-1">
+<dfn class="terminology">Coordinatewise.</dfn> Three ordinary scalar functions <span class="process-math">\(f\text{,}\)</span> <span class="process-math">\(g\text{,}\)</span> <span class="process-math">\(h\)</span> of one variable, one for each coordinate, as in <a href="sec-parametrization.html#subsec-curves-in-space-2-2" class="xref" data-knowl="./knowl/xref/eq-space-parametric.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.1.8">(1.1.8)</a>.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-curves-in-space-6-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#subsec-curves-in-space-6-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="subsec-curves-in-space-6-2">
+<div class="para" id="subsec-curves-in-space-6-2-1">
+<dfn class="terminology">Vectorially.</dfn> One vector-valued function <span class="process-math">\(\mathbf{r}\)</span> of one variable, as in <a href="sec-parametrization.html#subsec-curves-in-space-4-4" class="xref" data-knowl="./knowl/xref/eq-vector-function.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.1.9">(1.1.9)</a>. The curve is the set of tips of the vectors <span class="process-math">\(\mathbf{r}(t)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-curves-in-space-6-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#subsec-curves-in-space-6-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="para" id="subsec-curves-in-space-7">The two descriptions carry exactly the same information, but the vector form is the more useful one: it lets us differentiate and integrate a whole motion at once, and <span class="process-math">\(\mathbf{r}'(t)\)</span> will turn out to be the velocity of the moving object. The same device works in the plane, where <span class="process-math">\(\mathbf{r}(t) = \left\langle f(t), g(t)\right\rangle\text{;}\)</span> the position vectors <span class="process-math">\(\mathbf{r}_1\)</span> and <span class="process-math">\(\mathbf{r}_2\)</span> of <a href="sec-parametrization.html#ex-paths-cross-no-collision" class="internal" title="Example 1.1.12: The paths cross, but the particles never meet">Example 1.1.12</a> were already written this way.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-curves-in-space-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<details id="ex-helix-space-curve" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.1.18</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">A helix.</span>
+</h4></summary><article class="example example-like knowl__content"><div class="para logical" id="ex-helix-space-curve-2-1">
+<div class="para">Consider the object whose coordinates are parametrized by</div>
+<div class="displaymath process-math" id="ex-helix-space-curve-2-1-1">
+\begin{align}
+x \amp = \cos(2t), \qquad y = \sin(2t),\notag\\
+z \amp = t, \qquad t \in [0,\pi].\tag{1.1.10}
+\end{align}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-helix-space-curve-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para" id="ex-helix-space-curve-2-2">Write the motion as a vector function and describe the path.<div class="autopermalink" data-description="Paragraph"><a href="#ex-helix-space-curve-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="ex-helix-space-curve-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para logical" id="ex-helix-space-curve-3-1">
+<div class="para">Collecting <a href="sec-parametrization.html#ex-helix-space-curve-2-1-1" class="xref" data-knowl="./knowl/xref/eq-helix-param-space.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.1.10">(1.1.10)</a> into a single vector function,</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-helix-param-space.html" id="ex-helix-space-curve-3-1-2">
+\begin{equation*}
+\mathbf{r}(t) = \left\langle \cos(2t),\ \sin(2t),\ t
+\right\rangle , \qquad 0 \le t \le \pi .
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-helix-space-curve-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-helix-space-curve-3-2">The first two coordinates satisfy <span class="process-math">\(x^2 + y^2 = 1\text{,}\)</span> so the shadow of the path on the <span class="process-math">\(xy\)</span>-plane is the unit circle, and as <span class="process-math">\(t\)</span> runs from <span class="process-math">\(0\)</span> to <span class="process-math">\(\pi\)</span> the angle <span class="process-math">\(2t\)</span> runs from <span class="process-math">\(0\)</span> to <span class="process-math">\(2\pi\text{:}\)</span> the shadow goes around exactly once. Meanwhile <span class="process-math">\(z = t\)</span> increases steadily, so the object climbs at a constant rate while circling. The path is therefore one full turn of a <dfn class="terminology">helix</dfn>, shown in <a href="sec-parametrization.html#fig-helix-space-curve" class="xref" data-knowl="./knowl/xref/fig-helix-space-curve.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 1.1.19">Figure 1.1.19</a>. The motion begins at <span class="process-math">\(\mathbf{r}(0) = \left\langle 1,0,0\right\rangle\)</span> at time <span class="process-math">\(t=0\)</span> and ends at <span class="process-math">\(\mathbf{r}(\pi) = \left\langle 1,0,\pi\right\rangle\)</span> at time <span class="process-math">\(t=\pi\text{,}\)</span> directly above the starting point.<div class="autopermalink" data-description="Paragraph"><a href="#ex-helix-space-curve-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<figure class="figure figure-like" id="fig-helix-space-curve"><div class="image-box" style="width: 70%; margin-left: 15%; margin-right: 15%;">
+<img src="generated/latex-image/image-helix-space-curve.svg" role="img" class="contained" alt="One turn of a helix rising above the unit circle, with the position vector drawn from the origin to a point on the curve."><details class="image-description" aria-live="polite"><summary title="details"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span></summary><div id="image-helix-space-curve-description"><div class="para" id="image-helix-space-curve-2-1">A three-dimensional coordinate box with x and y running from minus 1.3 to 1.3 and z from 0 to about 3.4. A thick blue curve spirals counterclockwise once around the vertical axis while climbing steadily, starting at a red point labeled (1,0,0) at time t equals zero on the floor of the box and ending at a red point labeled (1,0,pi) at time t equals pi, directly above the start. A dashed gray unit circle on the floor is the shadow of the path. A violet arrow labeled r of t runs from the origin to a point partway up the curve, illustrating the position vector whose tip traces the helix.<div class="autopermalink" data-description="Paragraph"><a href="#image-helix-space-curve-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></div></details>
+</div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.1.19<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>One turn of the helix <span class="process-math">\(\mathbf{r}(t) = \left\langle \cos(2t), \sin(2t), t
+\right\rangle\text{,}\)</span> <span class="process-math">\(0 \le t \le \pi\text{.}\)</span> The violet arrow is the position vector <span class="process-math">\(\mathbf{r}(t)\)</span> at <span class="process-math">\(t = 3\pi/8\text{;}\)</span> its tip rides along the curve as <span class="process-math">\(t\)</span> increases. The dashed gray circle is the shadow of the path on the plane <span class="process-math">\(z=0\text{.}\)</span><div class="autopermalink" data-description="Figure 1.1.19"><a href="#fig-helix-space-curve" title="Copy heading and permalink for Figure 1.1.19" aria-label="Copy heading and permalink for Figure 1.1.19">🔗</a></div></figcaption></figure><div class="autopermalink" data-description="Solution 1.1.18.1"><a href="#ex-helix-space-curve-3" title="Copy heading and permalink for Solution 1.1.18.1" aria-label="Copy heading and permalink for Solution 1.1.18.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Example 1.1.18: A helix"><a href="#ex-helix-space-curve" title="Copy heading and permalink for Example 1.1.18: A helix" aria-label="Copy heading and permalink for Example 1.1.18: A helix">🔗</a></div></article></details><div class="para" id="subsec-curves-in-space-9">There are situations in which a curve in space arises as the intersection of two surfaces. In the next two examples we turn such a description into a vector function <span class="process-math">\(\mathbf{r}(t)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-curves-in-space-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<details id="ex-cylinder-plane" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.1.20</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Where a plane cuts a cylinder.</span>
+</h4></summary><article class="example example-like knowl__content"><div class="para" id="ex-cylinder-plane-2-1">Find a vector function that represents the curve of intersection of the cylinder <span class="process-math">\(x^2 + y^2 = 1\)</span> and the plane <span class="process-math">\(y + z = 2\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-cylinder-plane-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="ex-cylinder-plane-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para logical" id="ex-cylinder-plane-3-1">
+<div class="para">As shown in <a href="sec-parametrization.html#fig-cylinder-plane" class="xref" data-knowl="./knowl/xref/fig-cylinder-plane.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 1.1.21">Figure 1.1.21</a>, the intersection of the two surfaces is an ellipse. Furthermore, its projection onto the <span class="process-math">\(xy\)</span>-plane is the circle <span class="process-math">\(x^2 + y^2 = 1\text{,}\)</span> and we already know its parametrization from <a href="sec-parametrization.html#subsec-parametric-equations-10-7" class="xref" data-knowl="./knowl/xref/eq-unit-circle-param.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.1.3">(1.1.3)</a>:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig-cylinder-plane.html ./knowl/xref/eq-unit-circle-param.html" id="ex-cylinder-plane-3-1-5">
+\begin{equation*}
+x(t) = \cos(t), \qquad y(t) = \sin(t).
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-cylinder-plane-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="ex-cylinder-plane-3-2">
+<div class="para">Then we use the fact that <span class="process-math">\(y + z = 2\)</span> and write <span class="process-math">\(z\)</span> in terms of <span class="process-math">\(t\text{:}\)</span>
+</div>
+<div class="displaymath process-math" id="ex-cylinder-plane-3-2-4">
+\begin{equation*}
+z(t) = 2 - y(t) = 2 - \sin(t).
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-cylinder-plane-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="ex-cylinder-plane-3-3">
+<div class="para">Hence the vector function representing the intersection of <span class="process-math">\(x^2+y^2=1\)</span> and <span class="process-math">\(y+z=2\)</span> is</div>
+<div class="displaymath process-math" id="ex-cylinder-plane-3-3-3">
+\begin{gather}
+\mathbf{r}(t) = \cos(t)\,\mathbf{i} + \sin(t)\,\mathbf{j}
++ \bigl(2 - \sin(t)\bigr)\,\mathbf{k},\tag{1.1.11}
+\end{gather}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-cylinder-plane-3-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-cylinder-plane-3-4">where <span class="process-math">\(0 \le t \le 2\pi\text{.}\)</span> As a check, the four points <span class="process-math">\(\mathbf{r}(0) = \left\langle 1,0,2\right\rangle\text{,}\)</span> <span class="process-math">\(\mathbf{r}(\pi/2) = \left\langle 0,1,1\right\rangle\text{,}\)</span> <span class="process-math">\(\mathbf{r}(\pi) = \left\langle -1,0,2\right\rangle\)</span> and <span class="process-math">\(\mathbf{r}(3\pi/2) = \left\langle 0,-1,3\right\rangle\)</span> all satisfy both equations.<div class="autopermalink" data-description="Paragraph"><a href="#ex-cylinder-plane-3-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<figure class="figure figure-like" id="fig-cylinder-plane"><div class="image-box" style="width: 70%; margin-left: 15%; margin-right: 15%;">
+<img src="generated/latex-image/image-cylinder-plane.svg" role="img" class="contained" alt="A vertical cylinder cut by a slanted plane, with the ellipse where they meet drawn on the surfaces."><details class="image-description" aria-live="polite"><summary title="details"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span></summary><div id="image-cylinder-plane-description"><div class="para" id="image-cylinder-plane-2-1">A three-dimensional plot showing a vertical circular cylinder of radius one standing on the xy-plane, and a slanted plane cutting through it. The two meet along a closed curve, an ellipse, drawn as a thick magenta loop and labeled C. Four points on the ellipse are marked, at (1,0,2), (0,1,1), (-1,0,2) and (0,-1,3). A violet arrow runs from the origin to a point on the ellipse, illustrating the position vector r of t.<div class="autopermalink" data-description="Paragraph"><a href="#image-cylinder-plane-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></div></details>
+</div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.1.21<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The cylinder <span class="process-math">\(x^2+y^2=1\text{,}\)</span> the plane <span class="process-math">\(y+z=2\text{,}\)</span> and the ellipse <span class="process-math">\(C\)</span> in which they meet. The violet arrow is the position vector <span class="process-math">\(\mathbf{r}(t)\)</span> of <a href="sec-parametrization.html#ex-cylinder-plane-3-3-3" class="xref" data-knowl="./knowl/xref/eq-cylinder-plane-param.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.1.11">(1.1.11)</a> at <span class="process-math">\(t=\pi/4\text{.}\)</span><div class="autopermalink" data-description="Figure 1.1.21"><a href="#fig-cylinder-plane" title="Copy heading and permalink for Figure 1.1.21" aria-label="Copy heading and permalink for Figure 1.1.21">🔗</a></div></figcaption></figure><div class="autopermalink" data-description="Solution 1.1.20.1"><a href="#ex-cylinder-plane-3" title="Copy heading and permalink for Solution 1.1.20.1" aria-label="Copy heading and permalink for Solution 1.1.20.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Example 1.1.20: Where a plane cuts a cylinder"><a href="#ex-cylinder-plane" title="Copy heading and permalink for Example 1.1.20: Where a plane cuts a cylinder" aria-label="Copy heading and permalink for Example 1.1.20: Where a plane cuts a cylinder">🔗</a></div></article></details><details id="ex-two-surfaces" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.1.22</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Where two curved surfaces meet.</span>
+</h4></summary><article class="example example-like knowl__content"><div class="para logical" id="ex-two-surfaces-2-1">
+<div class="para">Parametrize the intersection of the surfaces</div>
+<div class="displaymath process-math" id="ex-two-surfaces-2-1-1">
+\begin{equation*}
+z = \sqrt{1 + x^2 + y^2}
+\qquad \text{and} \qquad
+z = \sqrt{4 - 4x^2 - y^2} .
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-two-surfaces-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="ex-two-surfaces-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para logical" id="ex-two-surfaces-3-1">
+<div class="para">On the intersection the two expressions for <span class="process-math">\(z\)</span> agree. Squaring both sides of</div>
+<div class="displaymath process-math" id="ex-two-surfaces-3-1-2">
+\begin{equation*}
+\sqrt{1 + x^2 + y^2} = \sqrt{4 - 4x^2 - y^2}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-two-surfaces-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="ex-two-surfaces-3-2">
+<div class="para">gives <span class="process-math">\(1 + x^2 + y^2 = 4 - 4x^2 - y^2\text{,}\)</span> that is,</div>
+<div class="displaymath process-math" id="ex-two-surfaces-3-2-2">
+\begin{align}
+5x^2 + 2y^2 \amp = 3,\notag\\
+\text{or} \quad
+\left(\frac{x}{\sqrt{3/5}}\right)^{2}
++ \left(\frac{y}{\sqrt{3/2}}\right)^{2} \amp = 1 .\tag{1.1.12}
+\end{align}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-two-surfaces-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="ex-two-surfaces-3-3">
+<div class="para">Notice that <span class="process-math">\(z\)</span> has disappeared: equation <a href="sec-parametrization.html#ex-two-surfaces-3-2-2" class="xref" data-knowl="./knowl/xref/eq-two-surfaces-shadow.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.1.12">(1.1.12)</a> describes the shadow of the intersection curve in the <span class="process-math">\(xy\)</span>-plane, and it is an ellipse. Parametrizing it exactly as in <a href="sec-parametrization.html#ex-parametrizing-curves-3-4-3" class="xref" data-knowl="./knowl/xref/eq-ellipse-param.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.1.5">(1.1.5)</a>,</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-two-surfaces-shadow.html ./knowl/xref/eq-ellipse-param.html" id="ex-two-surfaces-3-3-5">
+\begin{align*}
+x(t) \amp = \sqrt{\tfrac{3}{5}}\,\cos(t),\\
+y(t) \amp = \sqrt{\tfrac{3}{2}}\,\sin(t), \qquad
+0 \le t \le 2\pi .
+\end{align*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-two-surfaces-3-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="ex-two-surfaces-3-4">
+<div class="para">Plugging these into either of the two original equations, say <span class="process-math">\(z = \sqrt{1+x^2+y^2}\text{,}\)</span> recovers the missing coordinate:</div>
+<div class="displaymath process-math" id="ex-two-surfaces-3-4-2">
+\begin{equation*}
+z(t) = \sqrt{1 + \tfrac{3}{5}\cos^2(t)
++ \tfrac{3}{2}\sin^2(t)} .
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-two-surfaces-3-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="ex-two-surfaces-3-5">
+<div class="para">Hence the curve of intersection, shown in <a href="sec-parametrization.html#fig-two-surfaces" class="xref" data-knowl="./knowl/xref/fig-two-surfaces.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 1.1.23">Figure 1.1.23</a>, is</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig-two-surfaces.html" id="ex-two-surfaces-3-5-2">
+\begin{align}
+\mathbf{r}(t) \amp = \Bigl\langle
+\sqrt{\tfrac{3}{5}}\,\cos(t),\ \
+\sqrt{\tfrac{3}{2}}\,\sin(t),\notag\\
+\amp \qquad\quad
+\sqrt{1 + \tfrac{3}{5}\cos^2(t) + \tfrac{3}{2}\sin^2(t)}
+\Bigr\rangle ,\tag{1.1.13}
+\end{align}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-two-surfaces-3-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-two-surfaces-3-6">for <span class="process-math">\(0 \le t \le 2\pi\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-two-surfaces-3-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<figure class="figure figure-like" id="fig-two-surfaces"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;">
+<img src="generated/latex-image/image-two-surfaces.svg" role="img" class="contained" alt="A bowl-shaped surface and a dome overlapping, with the closed curve where they meet drawn on them."><details class="image-description" aria-live="polite"><summary title="details"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span></summary><div id="image-two-surfaces-description"><div class="para" id="image-two-surfaces-2-1">A three-dimensional plot showing two surfaces. The first, in blue, is the upper sheet of a hyperboloid opening upward from its lowest point at height one above the origin. The second, in red, is a dome, the upper half of an ellipsoid, reaching height two above the origin. The two surfaces cross along a closed curve, drawn in black, which loops around the vertical axis at heights between about 1.26 and 1.58. A dashed ellipse on the floor of the box shows the shadow of that curve.<div class="autopermalink" data-description="Paragraph"><a href="#image-two-surfaces-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></div></details>
+</div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.1.23<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The upper sheet of <span class="process-math">\(z = \sqrt{1+x^2+y^2}\)</span> (blue) and the dome <span class="process-math">\(z = \sqrt{4-4x^2-y^2}\)</span> (red) meet along the closed curve <a href="sec-parametrization.html#ex-two-surfaces-3-5-2" class="xref" data-knowl="./knowl/xref/eq-two-surfaces-param.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.1.13">(1.1.13)</a>, drawn in black. Its shadow in the plane <span class="process-math">\(z=0\)</span> is the dashed ellipse <a href="sec-parametrization.html#ex-two-surfaces-3-2-2" class="xref" data-knowl="./knowl/xref/eq-two-surfaces-shadow.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.1.12">(1.1.12)</a>.<div class="autopermalink" data-description="Figure 1.1.23"><a href="#fig-two-surfaces" title="Copy heading and permalink for Figure 1.1.23" aria-label="Copy heading and permalink for Figure 1.1.23">🔗</a></div></figcaption></figure><div class="autopermalink" data-description="Solution 1.1.22.1"><a href="#ex-two-surfaces-3" title="Copy heading and permalink for Solution 1.1.22.1" aria-label="Copy heading and permalink for Solution 1.1.22.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Example 1.1.22: Where two curved surfaces meet"><a href="#ex-two-surfaces" title="Copy heading and permalink for Example 1.1.22: Where two curved surfaces meet" aria-label="Copy heading and permalink for Example 1.1.22: Where two curved surfaces meet">🔗</a></div></article></details><div class="autopermalink" data-description="Subsection 1.1.4: Curves in Space and Vector Functions"><a href="#subsec-curves-in-space" title="Copy heading and permalink for Subsection 1.1.4: Curves in Space and Vector Functions" aria-label="Copy heading and permalink for Subsection 1.1.4: Curves in Space and Vector Functions">🔗</a></div></section><div class="autopermalink" data-description="Section 1.1: Parametrization of Curves"><a href="#sec-parametrization" title="Copy heading and permalink for Section 1.1: Parametrization of Curves" aria-label="Copy heading and permalink for Section 1.1: Parametrization of Curves">🔗</a></div></section></div>
+<div id="ptx-content-footer" class="ptx-content-footer">
+<a class="previous-button button" href="ch-curves-and-fields.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-arc-length.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
+</div>
+<script>diagcess.Base.init()</script>
+</body>
+</html>

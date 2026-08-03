@@ -103,6 +103,7 @@
   <line id="prefigure-green-circle-gc-T1" x1="218.7" y1="131.6" x2="200.4" y2="91.1" stroke="#d02090" stroke-width="3" fill="none" marker-end="url(#prefigure-green-circle-arrow-head-end-3_None_24_60-hd02090)"/>
   <line id="prefigure-green-circle-gc-T2" x1="101.3" y1="188.4" x2="119.6" y2="228.9" stroke="#d02090" stroke-width="3" fill="none" marker-end="url(#prefigure-green-circle-arrow-head-end-3_None_24_60-hd02090)"/>
   <g id="prefigure-green-circle-gc-T1-label" transform="translate(232.5,94.8) translate(0.0,-6.1)">
+    <rect x="-4" y="-4" width="22.48" height="20.216" stroke="none" fill="white"/>
     <g id="prefigure-green-circle-g-2">
       <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: 0.000px; color:#d02090" width="14.480px" height="12.216px" role="img" focusable="false" viewBox="0 -675 800 675" x="0.0" y="0.0">
         <defs>
@@ -121,6 +122,7 @@
     </g>
   </g>
   <g id="prefigure-green-circle-gc-T2-label" transform="translate(81.0,228.5) translate(-14.5,-6.1)">
+    <rect x="-4" y="-4" width="22.48" height="20.216" stroke="none" fill="white"/>
     <g id="prefigure-green-circle-g-3">
       <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: 0.000px; color:#d02090" width="14.480px" height="12.216px" role="img" focusable="false" viewBox="0 -675 800 675" x="0.0" y="0.0">
         <defs>
@@ -139,6 +141,7 @@
     </g>
   </g>
   <g id="prefigure-green-circle-gc-C-label" transform="translate(204.4,226.0) translate(0.0,-0.0)">
+    <rect x="-4" y="-4" width="21.752000000000002" height="21.16" stroke="none" fill="white"/>
     <g id="prefigure-green-circle-g-4">
       <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -0.400px; color:#00b0c0" width="13.752px" height="13.160px" role="img" focusable="false" viewBox="0 -705 760 727" x="0.0" y="0.0">
         <defs>

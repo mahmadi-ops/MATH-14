@@ -191,6 +191,7 @@
   <circle id="prefigure-centroid-between-curves-cb-origin" cx="68.9" cy="271.1" r="3" stroke="black" stroke-width="2" fill="black"/>
   <g id="prefigure-centroid-between-curves-cb-one">
     <g transform="translate(241.4,106.6) translate(0.0,-0.0)">
+      <rect x="-3" y="-3" width="46.232" height="24.096" stroke="none" fill="white"/>
       <g id="prefigure-centroid-between-curves-g-8">
         <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -4.528px" width="40.232px" height="18.096px" role="img" focusable="false" viewBox="0 -750 2222.7 1000" x="0.0" y="0.0">
           <defs>
@@ -225,59 +226,58 @@
     </g>
     <circle cx="237.4" cy="102.6" r="3" stroke="black" stroke-width="2" fill="black"/>
   </g>
-  <g id="prefigure-centroid-between-curves-cb-centroid">
-    <g transform="translate(149.7,200.3) translate(0.0,-0.0)">
-      <g id="prefigure-centroid-between-curves-g-9">
-        <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -6.528px" width="66.152px" height="22.184px" role="img" focusable="false" viewBox="0 -864.9 3654.9 1225.5" x="0.0" y="0.0">
-          <defs>
-            <path id="prefigure-centroid-between-curves-MJX-11-TEX-SO-28" d="M152 251Q152 646 388 850H416Q422 844 422 841Q422 837 403 816T357 753T302 649T255 482T236 250Q236 124 255 19T301 -147T356 -251T403 -315T422 -340Q422 -343 416 -349H388Q359 -325 332 -296T271 -213T212 -97T170 56T152 251Z"/>
-            <path id="prefigure-centroid-between-curves-MJX-11-TEX-N-39" d="M352 287Q304 211 232 211Q154 211 104 270T44 396Q42 412 42 436V444Q42 537 111 606Q171 666 243 666Q245 666 249 666T257 665H261Q273 665 286 663T323 651T370 619T413 560Q456 472 456 334Q456 194 396 97Q361 41 312 10T208 -22Q147 -22 108 7T68 93T121 149Q143 149 158 135T173 96Q173 78 164 65T148 49T135 44L131 43Q131 41 138 37T164 27T206 22H212Q272 22 313 86Q352 142 352 280V287ZM244 248Q292 248 321 297T351 430Q351 508 343 542Q341 552 337 562T323 588T293 615T246 625Q208 625 181 598Q160 576 154 546T147 441Q147 358 152 329T172 282Q197 248 244 248Z"/>
-            <path id="prefigure-centroid-between-curves-MJX-11-TEX-N-32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"/>
-            <path id="prefigure-centroid-between-curves-MJX-11-TEX-N-30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z"/>
-            <path id="prefigure-centroid-between-curves-MJX-11-TEX-N-2C" d="M78 35T78 60T94 103T137 121Q165 121 187 96T210 8Q210 -27 201 -60T180 -117T154 -158T130 -185T117 -194Q113 -194 104 -185T95 -172Q95 -168 106 -156T131 -126T157 -76T173 -3V9L172 8Q170 7 167 6T161 3T152 1T140 0Q113 0 96 17Z"/>
-            <path id="prefigure-centroid-between-curves-MJX-11-TEX-SO-29" d="M305 251Q305 -145 69 -349H56Q43 -349 39 -347T35 -338Q37 -333 60 -307T108 -239T160 -136T204 27T221 250T204 473T160 636T108 740T60 807T35 839Q35 850 50 850H56H69Q197 743 256 566Q305 425 305 251Z"/>
-          </defs>
-          <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
-            <g data-mml-node="math">
-              <g data-mml-node="TeXAtom" data-semantic-type="fenced" data-semantic-role="leftright" data-semantic-id="10" data-semantic-children="9" data-semantic-content="0,8" data-semantic-attributes="texclass:INNER" data-semantic-speech="left parenthesis nine twentieths comma nine twentieths right parenthesis" data-mjx-texclass="INNER">
-                <g data-mml-node="mo" data-semantic-type="fence" data-semantic-role="open" data-semantic-id="0" data-semantic-parent="10" data-semantic-attributes="texclass:OPEN" data-semantic-operator="fenced" data-semantic-speech="left parenthesis" transform="translate(0 -0.5)">
-                  <use data-c="28" xlink:href="#prefigure-centroid-between-curves-MJX-11-TEX-SO-28"/>
-                </g>
-                <g data-mml-node="mrow" data-semantic-type="punctuated" data-semantic-role="sequence" data-semantic-id="9" data-semantic-children="3,4,7" data-semantic-content="4" data-semantic-parent="10" data-semantic-speech="nine twentieths comma nine twentieths" transform="translate(458,0)">
-                  <g data-mml-node="mfrac" data-semantic-type="fraction" data-semantic-role="vulgar" data-semantic-id="3" data-semantic-children="1,2" data-semantic-parent="9" data-semantic-speech="nine twentieths">
-                    <g data-mml-node="mn" transform="translate(396.8,394) scale(0.707)" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple" data-semantic-id="1" data-semantic-parent="3" data-semantic-speech="9" data-semantic-prefix="Numerator">
-                      <use data-c="39" xlink:href="#prefigure-centroid-between-curves-MJX-11-TEX-N-39"/>
-                    </g>
-                    <g data-mml-node="mn" transform="translate(220,-345) scale(0.707)" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple" data-semantic-id="2" data-semantic-parent="3" data-semantic-speech="20" data-semantic-prefix="Denominator">
-                      <use data-c="32" xlink:href="#prefigure-centroid-between-curves-MJX-11-TEX-N-32"/>
-                      <use data-c="30" xlink:href="#prefigure-centroid-between-curves-MJX-11-TEX-N-30" transform="translate(500,0)"/>
-                    </g>
-                    <rect width="907.1" height="60" x="120" y="220"/>
+  <circle id="prefigure-centroid-between-curves-cb-centroid" cx="144.7" cy="195.3" r="4" stroke="black" stroke-width="2" fill="maroon"/>
+  <g id="prefigure-centroid-between-curves-cb-centroid-label" transform="translate(157.2,207.7) translate(0.0,-0.0)">
+    <rect x="-4" y="-4" width="74.152" height="30.184" stroke="none" fill="white"/>
+    <g id="prefigure-centroid-between-curves-g-9">
+      <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -6.528px" width="66.152px" height="22.184px" role="img" focusable="false" viewBox="0 -864.9 3654.9 1225.5" x="0.0" y="0.0">
+        <defs>
+          <path id="prefigure-centroid-between-curves-MJX-11-TEX-SO-28" d="M152 251Q152 646 388 850H416Q422 844 422 841Q422 837 403 816T357 753T302 649T255 482T236 250Q236 124 255 19T301 -147T356 -251T403 -315T422 -340Q422 -343 416 -349H388Q359 -325 332 -296T271 -213T212 -97T170 56T152 251Z"/>
+          <path id="prefigure-centroid-between-curves-MJX-11-TEX-N-39" d="M352 287Q304 211 232 211Q154 211 104 270T44 396Q42 412 42 436V444Q42 537 111 606Q171 666 243 666Q245 666 249 666T257 665H261Q273 665 286 663T323 651T370 619T413 560Q456 472 456 334Q456 194 396 97Q361 41 312 10T208 -22Q147 -22 108 7T68 93T121 149Q143 149 158 135T173 96Q173 78 164 65T148 49T135 44L131 43Q131 41 138 37T164 27T206 22H212Q272 22 313 86Q352 142 352 280V287ZM244 248Q292 248 321 297T351 430Q351 508 343 542Q341 552 337 562T323 588T293 615T246 625Q208 625 181 598Q160 576 154 546T147 441Q147 358 152 329T172 282Q197 248 244 248Z"/>
+          <path id="prefigure-centroid-between-curves-MJX-11-TEX-N-32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"/>
+          <path id="prefigure-centroid-between-curves-MJX-11-TEX-N-30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z"/>
+          <path id="prefigure-centroid-between-curves-MJX-11-TEX-N-2C" d="M78 35T78 60T94 103T137 121Q165 121 187 96T210 8Q210 -27 201 -60T180 -117T154 -158T130 -185T117 -194Q113 -194 104 -185T95 -172Q95 -168 106 -156T131 -126T157 -76T173 -3V9L172 8Q170 7 167 6T161 3T152 1T140 0Q113 0 96 17Z"/>
+          <path id="prefigure-centroid-between-curves-MJX-11-TEX-SO-29" d="M305 251Q305 -145 69 -349H56Q43 -349 39 -347T35 -338Q37 -333 60 -307T108 -239T160 -136T204 27T221 250T204 473T160 636T108 740T60 807T35 839Q35 850 50 850H56H69Q197 743 256 566Q305 425 305 251Z"/>
+        </defs>
+        <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+          <g data-mml-node="math">
+            <g data-mml-node="TeXAtom" data-semantic-type="fenced" data-semantic-role="leftright" data-semantic-id="10" data-semantic-children="9" data-semantic-content="0,8" data-semantic-attributes="texclass:INNER" data-semantic-speech="left parenthesis nine twentieths comma nine twentieths right parenthesis" data-mjx-texclass="INNER">
+              <g data-mml-node="mo" data-semantic-type="fence" data-semantic-role="open" data-semantic-id="0" data-semantic-parent="10" data-semantic-attributes="texclass:OPEN" data-semantic-operator="fenced" data-semantic-speech="left parenthesis" transform="translate(0 -0.5)">
+                <use data-c="28" xlink:href="#prefigure-centroid-between-curves-MJX-11-TEX-SO-28"/>
+              </g>
+              <g data-mml-node="mrow" data-semantic-type="punctuated" data-semantic-role="sequence" data-semantic-id="9" data-semantic-children="3,4,7" data-semantic-content="4" data-semantic-parent="10" data-semantic-speech="nine twentieths comma nine twentieths" transform="translate(458,0)">
+                <g data-mml-node="mfrac" data-semantic-type="fraction" data-semantic-role="vulgar" data-semantic-id="3" data-semantic-children="1,2" data-semantic-parent="9" data-semantic-speech="nine twentieths">
+                  <g data-mml-node="mn" transform="translate(396.8,394) scale(0.707)" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple" data-semantic-id="1" data-semantic-parent="3" data-semantic-speech="9" data-semantic-prefix="Numerator">
+                    <use data-c="39" xlink:href="#prefigure-centroid-between-curves-MJX-11-TEX-N-39"/>
                   </g>
-                  <g data-mml-node="mo" data-semantic-type="punctuation" data-semantic-role="comma" data-semantic-id="4" data-semantic-parent="9" data-semantic-operator="punctuated" data-semantic-speech="comma" transform="translate(1147.1,0)">
-                    <use data-c="2C" xlink:href="#prefigure-centroid-between-curves-MJX-11-TEX-N-2C"/>
+                  <g data-mml-node="mn" transform="translate(220,-345) scale(0.707)" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple" data-semantic-id="2" data-semantic-parent="3" data-semantic-speech="20" data-semantic-prefix="Denominator">
+                    <use data-c="32" xlink:href="#prefigure-centroid-between-curves-MJX-11-TEX-N-32"/>
+                    <use data-c="30" xlink:href="#prefigure-centroid-between-curves-MJX-11-TEX-N-30" transform="translate(500,0)"/>
                   </g>
-                  <g data-mml-node="mfrac" data-semantic-type="fraction" data-semantic-role="vulgar" data-semantic-id="7" data-semantic-children="5,6" data-semantic-parent="9" data-semantic-speech="nine twentieths" transform="translate(1591.8,0)">
-                    <g data-mml-node="mn" transform="translate(396.8,394) scale(0.707)" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple" data-semantic-id="5" data-semantic-parent="7" data-semantic-speech="9" data-semantic-prefix="Numerator">
-                      <use data-c="39" xlink:href="#prefigure-centroid-between-curves-MJX-11-TEX-N-39"/>
-                    </g>
-                    <g data-mml-node="mn" transform="translate(220,-345) scale(0.707)" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple" data-semantic-id="6" data-semantic-parent="7" data-semantic-speech="20" data-semantic-prefix="Denominator">
-                      <use data-c="32" xlink:href="#prefigure-centroid-between-curves-MJX-11-TEX-N-32"/>
-                      <use data-c="30" xlink:href="#prefigure-centroid-between-curves-MJX-11-TEX-N-30" transform="translate(500,0)"/>
-                    </g>
-                    <rect width="907.1" height="60" x="120" y="220"/>
+                  <rect width="907.1" height="60" x="120" y="220"/>
+                </g>
+                <g data-mml-node="mo" data-semantic-type="punctuation" data-semantic-role="comma" data-semantic-id="4" data-semantic-parent="9" data-semantic-operator="punctuated" data-semantic-speech="comma" transform="translate(1147.1,0)">
+                  <use data-c="2C" xlink:href="#prefigure-centroid-between-curves-MJX-11-TEX-N-2C"/>
+                </g>
+                <g data-mml-node="mfrac" data-semantic-type="fraction" data-semantic-role="vulgar" data-semantic-id="7" data-semantic-children="5,6" data-semantic-parent="9" data-semantic-speech="nine twentieths" transform="translate(1591.8,0)">
+                  <g data-mml-node="mn" transform="translate(396.8,394) scale(0.707)" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple" data-semantic-id="5" data-semantic-parent="7" data-semantic-speech="9" data-semantic-prefix="Numerator">
+                    <use data-c="39" xlink:href="#prefigure-centroid-between-curves-MJX-11-TEX-N-39"/>
                   </g>
+                  <g data-mml-node="mn" transform="translate(220,-345) scale(0.707)" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple" data-semantic-id="6" data-semantic-parent="7" data-semantic-speech="20" data-semantic-prefix="Denominator">
+                    <use data-c="32" xlink:href="#prefigure-centroid-between-curves-MJX-11-TEX-N-32"/>
+                    <use data-c="30" xlink:href="#prefigure-centroid-between-curves-MJX-11-TEX-N-30" transform="translate(500,0)"/>
+                  </g>
+                  <rect width="907.1" height="60" x="120" y="220"/>
                 </g>
-                <g data-mml-node="mo" data-semantic-type="fence" data-semantic-role="close" data-semantic-id="8" data-semantic-parent="10" data-semantic-attributes="texclass:CLOSE" data-semantic-operator="fenced" data-semantic-speech="right parenthesis" transform="translate(3196.9,0) translate(0 -0.5)">
-                  <use data-c="29" xlink:href="#prefigure-centroid-between-curves-MJX-11-TEX-SO-29"/>
-                </g>
+              </g>
+              <g data-mml-node="mo" data-semantic-type="fence" data-semantic-role="close" data-semantic-id="8" data-semantic-parent="10" data-semantic-attributes="texclass:CLOSE" data-semantic-operator="fenced" data-semantic-speech="right parenthesis" transform="translate(3196.9,0) translate(0 -0.5)">
+                <use data-c="29" xlink:href="#prefigure-centroid-between-curves-MJX-11-TEX-SO-29"/>
               </g>
             </g>
           </g>
-        </svg>
-      </g>
+        </g>
+      </svg>
     </g>
-    <circle cx="144.7" cy="195.3" r="4" stroke="black" stroke-width="2" fill="maroon"/>
   </g>
   <g id="prefigure-centroid-between-curves-cb-sqrt-label" transform="translate(317.6,153.8) translate(-58.8,-0.0)">
     <g id="prefigure-centroid-between-curves-g-10">

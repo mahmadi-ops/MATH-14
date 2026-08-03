@@ -1,22 +1,29 @@
 <diagram>
   <annotations>
-    <annotation id="arc-length-curve-figure" speech2="A smooth curve C traced by a moving object from the starting point A at time t equals a to the ending point B at time t equals b">
+    <annotation id="arc-length-curve-figure" speech2="A smooth closed curve C, drawn as a circle of radius three, traced by a moving object that starts at the point A at time t equals a and returns to it as the point B at time t equals b">
       <grouped>arc-length-curve-figure</grouped>
       <position>1</position>
       <children>
+        <active>arc-length-curve-ax</active>
         <active>arc-length-curve-curve-C</active>
-        <active>arc-length-curve-point-A</active>
-        <active>arc-length-curve-point-B</active>
+        <active>arc-length-curve-start-end</active>
       </children>
       <components>
+        <active>arc-length-curve-ax</active>
         <active>arc-length-curve-curve-C</active>
-        <active>arc-length-curve-point-A</active>
-        <active>arc-length-curve-point-B</active>
+        <active>arc-length-curve-start-end</active>
       </components>
     </annotation>
-    <annotation id="arc-length-curve-curve-C" speech2="The curve C, traversed in the direction of increasing time from A to B" sonify="yes">
-      <active>arc-length-curve-curve-C</active>
+    <annotation id="arc-length-curve-ax" speech2="The coordinate axes, equally scaled">
+      <active>arc-length-curve-ax</active>
       <position>1</position>
+      <parents>
+        <grouped>arc-length-curve-figure</grouped>
+      </parents>
+    </annotation>
+    <annotation id="arc-length-curve-curve-C" speech2="The curve C, traversed counterclockwise in the direction of increasing time" sonify="yes">
+      <active>arc-length-curve-curve-C</active>
+      <position>2</position>
       <parents>
         <grouped>arc-length-curve-figure</grouped>
       </parents>
@@ -24,15 +31,8 @@
         <ACTIVE>arc-length-curve-curve-C</ACTIVE>
       </sonification>
     </annotation>
-    <annotation id="arc-length-curve-point-A" speech2="The starting point A, reached at time t equals a">
-      <active>arc-length-curve-point-A</active>
-      <position>2</position>
-      <parents>
-        <grouped>arc-length-curve-figure</grouped>
-      </parents>
-    </annotation>
-    <annotation id="arc-length-curve-point-B" speech2="The ending point B, reached at time t equals b">
-      <active>arc-length-curve-point-B</active>
+    <annotation id="arc-length-curve-start-end" speech2="The point where the journey begins and ends: the starting point A at time t equals a and the ending point B at time t equals b">
+      <active>arc-length-curve-start-end</active>
       <position>3</position>
       <parents>
         <grouped>arc-length-curve-figure</grouped>

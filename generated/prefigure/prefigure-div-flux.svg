@@ -44,6 +44,7 @@
   <path id="prefigure-div-flux-df-rect" d="M 130.8 217.7 L 280.8 217.7 L 280.8 90.8 L 130.8 90.8 Z" stroke="#2b9ad6" stroke-width="2.5" fill="none" clip-path="url(#prefigure-div-flux-clipPath-1)"/>
   <g id="prefigure-div-flux-df-corner-bl">
     <g transform="translate(126.8,221.7) translate(-41.4,-0.0)">
+      <rect x="-3" y="-3" width="47.352" height="24.096" stroke="none" fill="white"/>
       <g id="prefigure-div-flux-g-0">
         <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -4.528px" width="41.352px" height="18.096px" role="img" focusable="false" viewBox="0 -750 2284.7 1000" x="0.0" y="0.0">
           <defs>
@@ -81,6 +82,7 @@
   </g>
   <g id="prefigure-div-flux-df-corner-br">
     <g transform="translate(284.8,221.7) translate(0.0,-0.0)">
+      <rect x="-3" y="-3" width="94.904" height="24.096" stroke="none" fill="white"/>
       <g id="prefigure-div-flux-g-1">
         <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -4.528px" width="88.904px" height="18.096px" role="img" focusable="false" viewBox="0 -750 4912.1 1000" x="0.0" y="0.0">
           <defs>
@@ -137,6 +139,7 @@
   </g>
   <g id="prefigure-div-flux-df-corner-tl">
     <g transform="translate(126.8,86.8) translate(-87.4,-18.1)">
+      <rect x="-3" y="-3" width="93.424" height="24.096" stroke="none" fill="white"/>
       <g id="prefigure-div-flux-g-2">
         <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -4.528px" width="87.424px" height="18.096px" role="img" focusable="false" viewBox="0 -750 4830.1 1000" x="0.0" y="0.0">
           <defs>
@@ -193,6 +196,7 @@
   </g>
   <g id="prefigure-div-flux-df-corner-tr">
     <g transform="translate(284.8,86.8) translate(0.0,-18.1)">
+      <rect x="-3" y="-3" width="140.976" height="24.096" stroke="none" fill="white"/>
       <g id="prefigure-div-flux-g-3">
         <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -4.528px" width="134.976px" height="18.096px" role="img" focusable="false" viewBox="0 -750 7457.6 1000" x="0.0" y="0.0">
           <defs>
@@ -268,6 +272,7 @@
   <line id="prefigure-div-flux-df-right" x1="280.8" y1="154.2" x2="303.8" y2="154.2" stroke="#e05090" stroke-width="3" fill="none" marker-end="url(#prefigure-div-flux-arrow-head-end-3_None_24_60-he05090)"/>
   <line id="prefigure-div-flux-df-left" x1="130.8" y1="154.2" x2="107.9" y2="154.2" stroke="#e05090" stroke-width="3" fill="none" marker-end="url(#prefigure-div-flux-arrow-head-end-3_None_24_60-he05090)"/>
   <g id="prefigure-div-flux-df-top-label" transform="translate(211.9,53.3) translate(0.0,-8.1)">
+    <rect x="-4" y="-4" width="73.72" height="24.2" stroke="none" fill="white"/>
     <g id="prefigure-div-flux-g-4">
       <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -3.616px" width="65.720px" height="16.200px" role="img" focusable="false" viewBox="0 -695 3631 895" x="0.0" y="0.0">
         <defs>
@@ -306,6 +311,7 @@
     </g>
   </g>
   <g id="prefigure-div-flux-df-bottom-label" transform="translate(211.9,252.3) translate(0.0,-9.0)">
+    <rect x="-4" y="-4" width="101.88" height="26.096" stroke="none" fill="white"/>
     <g id="prefigure-div-flux-g-5">
       <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -4.528px" width="93.880px" height="18.096px" role="img" focusable="false" viewBox="0 -750 5187 1000" x="0.0" y="0.0">
         <defs>
@@ -362,6 +368,7 @@
     </g>
   </g>
   <g id="prefigure-div-flux-df-right-label" transform="translate(311.9,138.7) translate(0.0,-13.3)">
+    <rect x="-4" y="-4" width="73.144" height="21.304000000000002" stroke="none" fill="white"/>
     <g id="prefigure-div-flux-g-6">
       <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -0.720px" width="65.144px" height="13.304px" role="img" focusable="false" viewBox="0 -695 3599 735" x="0.0" y="0.0">
         <defs>
@@ -400,6 +407,7 @@
     </g>
   </g>
   <g id="prefigure-div-flux-df-left-label" transform="translate(99.8,135.8) translate(-93.3,-18.1)">
+    <rect x="-4" y="-4" width="101.304" height="26.096" stroke="none" fill="white"/>
     <g id="prefigure-div-flux-g-7">
       <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -4.528px" width="93.304px" height="18.096px" role="img" focusable="false" viewBox="0 -750 5155 1000" x="0.0" y="0.0">
         <defs>
@@ -456,6 +464,7 @@
     </g>
   </g>
   <g id="prefigure-div-flux-df-A" transform="translate(205.8,139.8) translate(-6.8,-6.5)">
+    <rect x="-4" y="-4" width="21.576" height="20.96" stroke="none" fill="white"/>
     <g id="prefigure-div-flux-g-8">
       <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: 0.000px" width="13.576px" height="12.960px" role="img" focusable="false" viewBox="0 -716 750 716" x="0.0" y="0.0">
         <defs>
@@ -472,6 +481,7 @@
     </g>
   </g>
   <g id="prefigure-div-flux-df-dx" transform="translate(205.8,276.5) translate(-12.7,-0.0)">
+    <rect x="-4" y="-4" width="33.432" height="21.16" stroke="none" fill="white"/>
     <g id="prefigure-div-flux-g-9">
       <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -0.200px" width="25.432px" height="13.160px" role="img" focusable="false" viewBox="0 -716 1405 727" x="0.0" y="0.0">
         <defs>
@@ -496,6 +506,7 @@
     </g>
   </g>
   <g id="prefigure-div-flux-df-dy" transform="translate(332.8,154.2) translate(0.0,-8.3)">
+    <rect x="-4" y="-4" width="31.944" height="24.672" stroke="none" fill="white"/>
     <g id="prefigure-div-flux-g-10">
       <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -3.712px" width="23.944px" height="16.672px" role="img" focusable="false" viewBox="0 -716 1323 921" x="0.0" y="0.0">
         <defs>

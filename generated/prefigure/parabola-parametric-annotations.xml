@@ -1,0 +1,82 @@
+<diagram>
+  <annotations>
+    <annotation id="parabola-parametric-figure" speech2="The parametric curve x equals t, y equals t                                 squared, which is the parabola y equals x                                 squared traced from left to right">
+      <grouped>parabola-parametric-figure</grouped>
+      <position>1</position>
+      <children>
+        <active>parabola-parametric-grid-axes</active>
+        <active>parabola-parametric-grid</active>
+        <active>parabola-parametric-axes</active>
+        <active>parabola-parametric-curve</active>
+        <active>parabola-parametric-samples</active>
+      </children>
+      <components>
+        <active>parabola-parametric-grid-axes</active>
+        <active>parabola-parametric-grid</active>
+        <active>parabola-parametric-axes</active>
+        <active>parabola-parametric-curve</active>
+        <active>parabola-parametric-samples</active>
+      </components>
+    </annotation>
+    <annotation id="parabola-parametric-grid-axes" speech2="The coordinate grid and axes">
+      <grouped>parabola-parametric-grid-axes</grouped>
+      <position>1</position>
+      <children>
+        <active>parabola-parametric-grid</active>
+        <active>parabola-parametric-axes</active>
+      </children>
+      <components>
+        <active>parabola-parametric-grid</active>
+        <active>parabola-parametric-axes</active>
+      </components>
+      <parents>
+        <grouped>parabola-parametric-figure</grouped>
+      </parents>
+    </annotation>
+    <annotation id="parabola-parametric-grid" speech2="The coordinate grid">
+      <active>parabola-parametric-grid</active>
+      <position>1</position>
+      <parents>
+        <grouped>parabola-parametric-grid-axes</grouped>
+      </parents>
+    </annotation>
+    <annotation id="parabola-parametric-axes" speech2="The coordinate axes">
+      <active>parabola-parametric-axes</active>
+      <position>2</position>
+      <parents>
+        <grouped>parabola-parametric-grid-axes</grouped>
+      </parents>
+    </annotation>
+    <annotation id="parabola-parametric-grid" speech2="The coordinate grid">
+      <active>parabola-parametric-grid</active>
+      <position>2</position>
+      <parents>
+        <grouped>parabola-parametric-figure</grouped>
+      </parents>
+    </annotation>
+    <annotation id="parabola-parametric-axes" speech2="The coordinate axes">
+      <active>parabola-parametric-axes</active>
+      <position>3</position>
+      <parents>
+        <grouped>parabola-parametric-figure</grouped>
+      </parents>
+    </annotation>
+    <annotation id="parabola-parametric-curve" speech2="The parabola y equals x squared, traced in                                   the direction of increasing t" sonify="yes">
+      <active>parabola-parametric-curve</active>
+      <position>4</position>
+      <parents>
+        <grouped>parabola-parametric-figure</grouped>
+      </parents>
+      <sonification>
+        <ACTIVE>parabola-parametric-curve</ACTIVE>
+      </sonification>
+    </annotation>
+    <annotation id="parabola-parametric-samples" speech2="The seven points coming from the integer                                   parameter values t equals minus three                                   through three">
+      <active>parabola-parametric-samples</active>
+      <position>5</position>
+      <parents>
+        <grouped>parabola-parametric-figure</grouped>
+      </parents>
+    </annotation>
+  </annotations>
+</diagram>

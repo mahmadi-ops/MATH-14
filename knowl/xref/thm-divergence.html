@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="theorem theorem-like"><h4 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.3.5</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Gauss’s Divergence Theorem.</span>
+</h4>
+<div class="para">Let <span class="process-math">\(\mathbf{F}\)</span> be a vector field whose components have continuous first partial derivatives, and let <span class="process-math">\(S\)</span> be a piecewise smooth oriented closed surface. The flux of <span class="process-math">\(\mathbf{F}\)</span> across <span class="process-math">\(S\)</span> in the direction of the surface’s outward unit normal field <span class="process-math">\(\hat{\mathbf{n}}\)</span> equals the integral of <span class="process-math">\(\nabla \cdot \mathbf{F}\)</span> over the region <span class="process-math">\(D\)</span> enclosed by the surface:<div class="autopermalink" data-description="Paragraph"><a href="#thm-divergence-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math">
+\begin{equation}
+\underbrace{\iint_S \mathbf{F} \cdot \hat{\mathbf{n}}\,
+d\sigma}_{\text{outward flux through the boundary } S}
+= \underbrace{\iiint_D \nabla \cdot \mathbf{F}\,
+dV}_{\text{triple integral of the divergence over } D}.\tag{3.3.2}
+\end{equation}
+</div>
+<div class="autopermalink" data-description="Theorem 3.3.5: Gauss’s Divergence Theorem"><a href="#thm-divergence" title="Copy heading and permalink for Theorem 3.3.5: Gauss’s Divergence Theorem" aria-label="Copy heading and permalink for Theorem 3.3.5: Gauss’s Divergence Theorem">🔗</a></div></article><details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para">Write <span class="process-math">\(\mathbf{F} = M\,\mathbf{i} + N\,\mathbf{j} + P\,\mathbf{k}\text{.}\)</span> Both sides of <a href="section-divergence-theorem.html#eq-divergence-theorem" class="xref" data-knowl="./knowl/xref/eq-divergence-theorem.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 3.3.2">(3.3.2)</a> break into three pieces along the three components: by <a href="section-divergence-theorem.html#eq-div-3d" class="xref" data-knowl="./knowl/xref/eq-div-3d.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 3.3.1">(3.3.1)</a> the right-hand side is the sum of the integrals of <span class="process-math">\(\dfrac{\partial M}{\partial x}\text{,}\)</span> <span class="process-math">\(\dfrac{\partial N}{\partial y}\)</span> and <span class="process-math">\(\dfrac{\partial P}{\partial z}\text{,}\)</span> and the left-hand side is the sum of the fluxes of <span class="process-math">\(M\,\mathbf{i}\text{,}\)</span> <span class="process-math">\(N\,\mathbf{j}\)</span> and <span class="process-math">\(P\,\mathbf{k}\text{.}\)</span> So it is enough to prove the three separate statements<div class="autopermalink" data-description="Paragraph"><a href="#proof-divergence-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-divergence-theorem.html ./knowl/xref/eq-div-3d.html ./knowl/xref/sec-triple-case1.html ./knowl/xref/fig-divthm-proof-tikz.html ./knowl/xref/eq-flux-param.html ./knowl/xref/eq-triple-iterated.html ./knowl/xref/eq-divthm-three.html ./knowl/xref/sec-general-regions-case1.html ./knowl/xref/section-conservative-fields.html">
+\begin{align}
+\iint_S M\,\mathbf{i} \cdot \hat{\mathbf{n}}\, d\sigma
+\amp = \iiint_D \frac{\partial M}{\partial x}\, dV ,\tag{3.3.3}\\
+\iint_S N\,\mathbf{j} \cdot \hat{\mathbf{n}}\, d\sigma
+\amp = \iiint_D \frac{\partial N}{\partial y}\, dV ,\notag\\
+\iint_S P\,\mathbf{k} \cdot \hat{\mathbf{n}}\, d\sigma
+\amp = \iiint_D \frac{\partial P}{\partial z}\, dV ,\notag
+\end{align}
+</div>
+<div class="para">and add them. We prove the third; the other two are the same argument with the axes renamed.<div class="autopermalink" data-description="Paragraph"><a href="#proof-divergence-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para">
+<em class="emphasis">Step 1: a solid that is simple in the <span class="process-math">\(z\)</span>-direction.</em> Suppose first that <span class="process-math">\(D\)</span> can be described as in <a href="section-triple-integrals-rectangular.html#sec-triple-case1" class="internal" title="Subsection 2.5.2: Case I: E = \{(x,y,z) : a \le x \le b, g_1(x) \le y \le g_2(x), u_1(x,y) \le z \le u_2(x,y)\}">Subsection 2.5.2</a>, that is<div class="autopermalink" data-description="Paragraph"><a href="#proof-divergence-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-divergence-theorem.html ./knowl/xref/eq-div-3d.html ./knowl/xref/sec-triple-case1.html ./knowl/xref/fig-divthm-proof-tikz.html ./knowl/xref/eq-flux-param.html ./knowl/xref/eq-triple-iterated.html ./knowl/xref/eq-divthm-three.html ./knowl/xref/sec-general-regions-case1.html ./knowl/xref/section-conservative-fields.html">
+\begin{equation*}
+D = \left\{(x,y,z) : (x,y) \in R,\ u_1(x,y) \le z \le u_2(x,y)\right\} ,
+\end{equation*}
+</div>
+<div class="para">where <span class="process-math">\(R\)</span> is the shadow of <span class="process-math">\(D\)</span> in the <span class="process-math">\(xy\)</span>-plane and <span class="process-math">\(u_1 \le u_2\)</span> are smooth. Its boundary <span class="process-math">\(S\)</span> then falls into three pieces, drawn in <a href="section-divergence-theorem.html#fig-divthm-proof-tikz" class="xref" data-knowl="./knowl/xref/fig-divthm-proof-tikz.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 3.3.6">Figure 3.3.6</a>: the cap <span class="process-math">\(S_2\)</span> where <span class="process-math">\(z = u_2(x,y)\text{,}\)</span> the floor <span class="process-math">\(S_1\)</span> where <span class="process-math">\(z = u_1(x,y)\text{,}\)</span> and the vertical wall <span class="process-math">\(S_3\)</span> standing over the boundary of <span class="process-math">\(R\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#proof-divergence-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para">On the wall the outward normal is horizontal, so <span class="process-math">\(\mathbf{k} \cdot \hat{\mathbf{n}} = 0\)</span> and <span class="process-math">\(S_3\)</span> contributes nothing. On the cap the outward normal points upward, and for a graph <span class="process-math">\(z = u_2(x,y)\)</span> we already know from <a href="section-surface-integrals.html#eq-flux-param" class="xref" data-knowl="./knowl/xref/eq-flux-param.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 2.10.6">(2.10.6)</a> that <span class="process-math">\(\hat{\mathbf{n}}\, d\sigma
+= \left\langle -\dfrac{\partial u_2}{\partial x},\
+-\dfrac{\partial u_2}{\partial y},\ 1 \right\rangle dx\, dy\text{,}\)</span> so that <span class="process-math">\(\mathbf{k} \cdot \hat{\mathbf{n}}\, d\sigma = dx\, dy\text{.}\)</span> On the floor the outward normal points downward, which flips the sign, and <span class="process-math">\(\mathbf{k} \cdot \hat{\mathbf{n}}\, d\sigma = -dx\, dy\text{.}\)</span> Hence<div class="autopermalink" data-description="Paragraph"><a href="#proof-divergence-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-divergence-theorem.html ./knowl/xref/eq-div-3d.html ./knowl/xref/sec-triple-case1.html ./knowl/xref/fig-divthm-proof-tikz.html ./knowl/xref/eq-flux-param.html ./knowl/xref/eq-triple-iterated.html ./knowl/xref/eq-divthm-three.html ./knowl/xref/sec-general-regions-case1.html ./knowl/xref/section-conservative-fields.html">
+\begin{align*}
+\iint_S P\,\mathbf{k} \cdot \hat{\mathbf{n}}\, d\sigma
+\amp = \iint_{S_2} P\,\mathbf{k} \cdot \hat{\mathbf{n}}\, d\sigma
++ \iint_{S_1} P\,\mathbf{k} \cdot \hat{\mathbf{n}}\, d\sigma\\
+\amp = \iint_R P\bigl(x,y,u_2(x,y)\bigr) dx\, dy\\
+\amp \qquad - \iint_R P\bigl(x,y,u_1(x,y)\bigr) dx\, dy .
+\end{align*}
+</div>
+<div class="para">
+<em class="emphasis">Step 2: the triple integral.</em> Integrating first in <span class="process-math">\(z\text{,}\)</span> as in <a href="section-triple-integrals-rectangular.html#eq-triple-iterated" class="xref" data-knowl="./knowl/xref/eq-triple-iterated.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 2.5.3">(2.5.3)</a>, and using the Fundamental Theorem of Calculus on the inner integral,<div class="autopermalink" data-description="Paragraph"><a href="#proof-divergence-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-divergence-theorem.html ./knowl/xref/eq-div-3d.html ./knowl/xref/sec-triple-case1.html ./knowl/xref/fig-divthm-proof-tikz.html ./knowl/xref/eq-flux-param.html ./knowl/xref/eq-triple-iterated.html ./knowl/xref/eq-divthm-three.html ./knowl/xref/sec-general-regions-case1.html ./knowl/xref/section-conservative-fields.html">
+\begin{align*}
+\iiint_D \frac{\partial P}{\partial z}\, dV
+\amp = \iint_R \left[\int_{u_1(x,y)}^{u_2(x,y)}
+\frac{\partial P}{\partial z}\, dz\right] dx\, dy\\
+\amp = \iint_R \Bigl[P\bigl(x,y,u_2(x,y)\bigr)
+- P\bigl(x,y,u_1(x,y)\bigr)\Bigr] dx\, dy ,
+\end{align*}
+</div>
+<div class="para">which is exactly what Step 1 produced. So the third statement of <a href="section-divergence-theorem.html#proof-divergence-2" class="xref" data-knowl="./knowl/xref/eq-divthm-three.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 3.3.3">(3.3.3)</a> holds for such a solid. Running the same argument with <span class="process-math">\(D\)</span> viewed as simple in the <span class="process-math">\(x\)</span>-direction gives the first statement, and in the <span class="process-math">\(y\)</span>-direction the second. Adding the three proves the theorem for any solid that is simple in all three directions.<div class="autopermalink" data-description="Paragraph"><a href="#proof-divergence-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para">
+<em class="emphasis">Step 3: general solids.</em> A solid that is not simple in all three directions is cut into finitely many pieces that are, exactly as a region of the plane was cut in <a href="section-double-integrals-general-regions.html#sec-general-regions-case1" class="internal" title="Subsection 2.2.1: Case I: Regions of the Form R = \{(x,y) : a \le x \le b,\ f_2(x) \le y \le f_1(x)\}">Subsection 2.2.1</a>. Apply the theorem to each piece and add. Every cut surface is shared by two neighbouring pieces, and it carries opposite outward normals as seen from the two sides, so the two flux contributions differ only in sign and cancel. What survives on the left is the flux through the original boundary <span class="process-math">\(S\text{,}\)</span> and the volume integrals simply add up to the integral over <span class="process-math">\(D\text{.}\)</span> This is the same bookkeeping that made the loop property of <a href="section-conservative-fields.html" class="internal" title="Section 1.5: Path Independence, Conservative Fields, and Potential Functions">Section 1.5</a> work, one dimension up.<div class="autopermalink" data-description="Paragraph"><a href="#proof-divergence-12" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 3.3.5.1"><a href="#proof-divergence" title="Copy heading and permalink for Proof 3.3.5.1" aria-label="Copy heading and permalink for Proof 3.3.5.1">🔗</a></div></article></details><span class="incontext"><a class="internal" href="section-divergence-theorem.html#thm-divergence">in-context</a></span>
+</body>
+</html>

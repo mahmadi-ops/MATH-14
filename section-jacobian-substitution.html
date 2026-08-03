@@ -77,7 +77,9 @@ window.MathJax = {
 };
 </script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta property="og:type" content="article">
+<meta property="og:type" content="book">
+<meta property="book:title" content="MATH 14: Calculus and Analytic Geometry IV">
+<meta property="book:author" content="Mehdi Ahmadi">
 <script src="_static/pretext/js/jquery.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><!--** eBookCongig is necessary to configure interactive       **-->
 <!--** Runestone components to run locally in reader's browser **-->
 <!--** No external communication:                              **-->
@@ -100,21 +102,21 @@ eBookConfig.allow_pairs = false;
 eBookConfig.enableScratchAC = false;
 eBookConfig.build_info = "";
 eBookConfig.python3 = null;
-eBookConfig.runestone_version = '8.1.14';
+eBookConfig.runestone_version = '8.2.1';
 eBookConfig.jobehost = '';
 eBookConfig.proxyuri_runs = '';
 eBookConfig.proxyuri_files = '';
 eBookConfig.enable_chatcodes =  false;
 </script>
 <!--*** Runestone Services ***-->
-<script src="_static/prefix-runtime.cb5af2e851de3574.bundle.js"></script><script src="_static/prefix-926.5c7038c8ef173faf.bundle.js"></script><script src="_static/prefix-runestone.f51cd4153b45055d.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-926.229729d09512acc9.css">
-<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.66fa8a682a32c0ac.css">
+<script src="_static/prefix-runtime.ed2cce180827a7ad.bundle.js"></script><script src="_static/prefix-926.5c7038c8ef173faf.bundle.js"></script><script src="_static/prefix-runestone.1f660864c47fc762.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-926.229729d09512acc9.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.8086b62682b271d1.css">
 <script src="_static/pretext/js/diagcess/diagcess.js"></script><script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script>
 </head>
-<body class="pretext article ignore-math">
+<body class="pretext book ignore-math">
 <a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner"><div class="title-container">
-<h1 class="heading"><a href="shorttitlelowercase.html"><span class="title">MATH 14: Calculus and Analytic Geometry IV</span></a></h1>
+<h1 class="heading"><a href="math14.html"><span class="title">MATH 14: Calculus and Analytic Geometry IV</span></a></h1>
 <p class="byline">Mehdi Ahmadi</p>
 </div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
 <button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
@@ -128,7 +130,7 @@ eBookConfig.enable_chatcodes =  false;
 <ol id="searchresults" class="searchresults"></ol>
 </div>
 </div>
-<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="section-mass-center-of-mass.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="shorttitlelowercase.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="section-greens-theorem.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="section-mass-center-of-mass.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-multiple-integrals.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="section-surface-integrals.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
 </div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\deriv}[2]{\displaystyle \frac{d#1}{d#2}}
 \newcommand{\real}{\Bbb R}
 \newcommand{\R}{\mathbb{R}}
@@ -139,158 +141,292 @@ eBookConfig.enable_chatcodes =  false;
 \newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
 \)</span></div>
 <div class="ptx-page">
-<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2 focused" data-preexpanded-levels="0" data-max-levels="2"><ul class="structural toc-item-list contains-active">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth3 focused" data-preexpanded-levels="0" data-max-levels="3"><ul class="structural toc-item-list contains-active">
 <li class="toc-item toc-frontmatter">
 <div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-abstract"><div class="toc-title-box"><a href="frontmatter.html#frontmatter-3" class="internal"><span class="title">Abstract</span></a></div></li></ul>
-</li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="intro.html" class="internal"><span class="codenumber">1</span> <span class="title">Introduction</span></a></div></li>
-<li class="toc-item toc-section">
-<div class="toc-title-box"><a href="sec-arc-length.html" class="internal"><span class="codenumber">2</span> <span class="title">Arc Length of a Curve</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-arc-length.html#subsec-arc-length-2d" class="internal"><span class="codenumber">2.1</span> <span class="title">Arc Length in 2D</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-arc-length.html#subsec-arc-length-3d" class="internal"><span class="codenumber">2.2</span> <span class="title">Arc Length in 3D</span></a></div></li>
+<li class="toc-item toc-abstract"><div class="toc-title-box"><a href="frontmatter.html#frontmatter-3" class="internal"><span class="title">Abstract</span></a></div></li>
+<li class="toc-item toc-preface"><div class="toc-title-box"><a href="intro.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-preface"><div class="toc-title-box"><a href="subsec-brain-map.html" class="internal"><span class="title">Brain map: the integrals of vector calculus</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-curves-and-fields.html" class="internal"><span class="codenumber">1</span> <span class="title">Line Integrals</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-parametrization.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Parametrization of Curves</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-parametrization.html#subsec-parametric-equations" class="internal"><span class="codenumber">1.1.1</span> <span class="title">Parametric Equations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-parametrization.html#subsec-parametrizing-examples" class="internal"><span class="codenumber">1.1.2</span> <span class="title">Some Examples of Parametrizing Curves</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-parametrization.html#subsec-intersection-collision" class="internal"><span class="codenumber">1.1.3</span> <span class="title">Intersection Points versus Collision Points</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-parametrization.html#subsec-curves-in-space" class="internal"><span class="codenumber">1.1.4</span> <span class="title">Curves in Space and Vector Functions</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="sec-line-integrals.html" class="internal"><span class="codenumber">3</span> <span class="title">Line Integrals</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-line-integrals.html#subsec-scalar-line-integrals" class="internal"><span class="codenumber">3.1</span> <span class="title">Line Integrals of Scalar Functions</span></a></div></li></ul>
-</li>
-<li class="toc-item toc-section">
-<div class="toc-title-box"><a href="sec-vector-fields.html" class="internal"><span class="codenumber">4</span> <span class="title">Vector Fields and Line Integrals</span></a></div>
+<div class="toc-title-box"><a href="sec-arc-length.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Arc Length of a Curve</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-vector-fields.html#subsec-vector-fields" class="internal"><span class="codenumber">4.1</span> <span class="title">Vector Fields</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-vector-fields.html#subsec-work-reminder" class="internal"><span class="codenumber">4.2</span> <span class="title">Work (Reminder)</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-vector-fields.html#subsec-work-force-field" class="internal"><span class="codenumber">4.3</span> <span class="title">Work of a Force Field</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-arc-length.html#subsec-arc-length-2d" class="internal"><span class="codenumber">1.2.1</span> <span class="title">Arc Length in 2D</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-arc-length.html#subsec-arc-length-3d" class="internal"><span class="codenumber">1.2.2</span> <span class="title">Arc Length in 3D</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-arc-length.html#subsec-cone-plane-activity" class="internal"><span class="codenumber">1.2.3</span> <span class="title">Activity: Where a Plane Slices a Cone</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="section-conservative-fields.html" class="internal"><span class="codenumber">5</span> <span class="title">Path Independence, Conservative Fields, and Potential Functions</span></a></div>
+<div class="toc-title-box"><a href="sec-line-integrals.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Line Integrals</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-conservative-fields.html#sec-gradient-fields" class="internal"><span class="codenumber">5.1</span> <span class="title">Gradient Fields</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-conservative-fields.html#sec-conservative-definitions" class="internal"><span class="codenumber">5.2</span> <span class="title">Path Independence and Some Basic Definitions</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-conservative-fields.html#sec-ftli" class="internal"><span class="codenumber">5.3</span> <span class="title">Line Integrals in Conservative Fields</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-conservative-fields.html#sec-potential-function" class="internal"><span class="codenumber">5.4</span> <span class="title">Finding a Potential Function</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-conservative-fields.html#sec-conservative-gradient" class="internal"><span class="codenumber">5.5</span> <span class="title">Conservative Fields are Gradient Fields</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-conservative-fields.html#sec-loop-property" class="internal"><span class="codenumber">5.6</span> <span class="title">The Loop Property of Conservative Fields</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-line-integrals.html#subsec-scalar-line-integrals" class="internal"><span class="codenumber">1.3.1</span> <span class="title">Line Integrals of Scalar Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-line-integrals.html#subsec-line-integral-questions" class="internal"><span class="codenumber">1.3.2</span> <span class="title">Concept Check</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="section-double-integrals-rectangles.html" class="internal"><span class="codenumber">6</span> <span class="title">Double and Iterated Integrals Over Rectangles</span></a></div>
+<div class="toc-title-box"><a href="sec-vector-fields.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Vector Fields and Line Integrals</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-double-integrals-rectangles.html#sec-area-under-curve-reminder" class="internal"><span class="codenumber">6.1</span> <span class="title">Reminder: Area Under <span class="process-math">\(y = f(x)\)</span> from <span class="process-math">\(x = a\)</span> to <span class="process-math">\(x = b\)</span></span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-double-integrals-rectangles.html#sec-double-integrals-rectangles" class="internal"><span class="codenumber">6.2</span> <span class="title">Double Integrals Over Rectangles</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-double-integrals-rectangles.html#sec-iterated-integrals" class="internal"><span class="codenumber">6.3</span> <span class="title">Calculating Double Integrals as Iterated Integrals</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-double-integrals-rectangles.html#sec-iterated-integral-substitution" class="internal"><span class="codenumber">6.4</span> <span class="title">An Iterated Integral Requiring Substitution and Integration by Parts</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-vector-fields.html#subsec-vector-fields" class="internal"><span class="codenumber">1.4.1</span> <span class="title">Vector Fields</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-vector-fields.html#subsec-work-reminder" class="internal"><span class="codenumber">1.4.2</span> <span class="title">Work (Reminder)</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-vector-fields.html#subsec-work-force-field" class="internal"><span class="codenumber">1.4.3</span> <span class="title">Work of a Force Field</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-vector-fields.html#subsec-work-exploration" class="internal"><span class="codenumber">1.4.4</span> <span class="title">Concept Check</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="section-double-integrals-general-regions.html" class="internal"><span class="codenumber">7</span> <span class="title">Double Integrals Over General Regions and Area by Double Integration</span></a></div>
+<div class="toc-title-box"><a href="section-conservative-fields.html" class="internal"><span class="codenumber">1.5</span> <span class="title">Path Independence, Conservative Fields, and Potential Functions</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-double-integrals-general-regions.html#sec-general-regions-case1" class="internal"><span class="codenumber">7.1</span> <span class="title">Case I: Regions of the Form <span class="process-math">\(R = \{(x,y) : a \le x \le b,\ f_2(x) \le y \le f_1(x)\}\)</span></span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-double-integrals-general-regions.html#sec-general-regions-case2" class="internal"><span class="codenumber">7.2</span> <span class="title">Case II: Regions of the Form <span class="process-math">\(R = \{(x,y) : c \le y \le d,\ g_1(y) \le x \le g_2(y)\}\)</span></span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-double-integrals-general-regions.html#sec-tetrahedron-volume" class="internal"><span class="codenumber">7.3</span> <span class="title">Volume of a Tetrahedron</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-double-integrals-general-regions.html#sec-area-by-double-integration" class="internal"><span class="codenumber">7.4</span> <span class="title">Area by Double Integration</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-conservative-fields.html#sec-gradient-fields" class="internal"><span class="codenumber">1.5.1</span> <span class="title">Gradient Fields</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-conservative-fields.html#sec-conservative-definitions" class="internal"><span class="codenumber">1.5.2</span> <span class="title">Path Independence and Some Basic Definitions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-conservative-fields.html#sec-ftli" class="internal"><span class="codenumber">1.5.3</span> <span class="title">Line Integrals in Conservative Fields</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-conservative-fields.html#sec-potential-function" class="internal"><span class="codenumber">1.5.4</span> <span class="title">Finding a Potential Function</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-conservative-fields.html#sec-conservative-gradient" class="internal"><span class="codenumber">1.5.5</span> <span class="title">Conservative Fields are Gradient Fields</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-conservative-fields.html#sec-loop-property" class="internal"><span class="codenumber">1.5.6</span> <span class="title">The Loop Property of Conservative Fields</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-conservative-fields.html#sec-conservative-concept-check" class="internal"><span class="codenumber">1.5.7</span> <span class="title">Concept Check</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="ch-multiple-integrals.html" class="internal"><span class="codenumber">2</span> <span class="title">Multiple Integrals</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="section-double-integrals-rectangles.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Double and Iterated Integrals Over Rectangles</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-double-integrals-rectangles.html#sec-area-under-curve-reminder" class="internal"><span class="codenumber">2.1.1</span> <span class="title">Reminder: Area Under <span class="process-math">\(y = f(x)\)</span> from <span class="process-math">\(x = a\)</span> to <span class="process-math">\(x = b\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-double-integrals-rectangles.html#sec-double-integrals-rectangles" class="internal"><span class="codenumber">2.1.2</span> <span class="title">Double Integrals Over Rectangles</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-double-integrals-rectangles.html#sec-iterated-integrals" class="internal"><span class="codenumber">2.1.3</span> <span class="title">Calculating Double Integrals as Iterated Integrals</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-double-integrals-rectangles.html#sec-iterated-integral-substitution" class="internal"><span class="codenumber">2.1.4</span> <span class="title">An Iterated Integral Requiring Substitution and Integration by Parts</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-double-integrals-rectangles.html#subsec-double-integral-questions" class="internal"><span class="codenumber">2.1.5</span> <span class="title">Concept Check</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="section-polar-coordinates.html" class="internal"><span class="codenumber">8</span> <span class="title">Polar Coordinates and Graphing Polar Equations</span></a></div>
+<div class="toc-title-box"><a href="section-double-integrals-general-regions.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Double Integrals Over General Regions and Area by Double Integration</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-polar-coordinates.html#sec-polar-definition" class="internal"><span class="codenumber">8.1</span> <span class="title">The Polar Coordinate System</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-polar-coordinates.html#sec-polar-cartesian-relation" class="internal"><span class="codenumber">8.2</span> <span class="title">Relation Between Polar and Cartesian Coordinates</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-polar-coordinates.html#sec-polar-nonuniqueness" class="internal"><span class="codenumber">8.3</span> <span class="title">Non-Uniqueness of Polar Coordinates</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-polar-coordinates.html#sec-polar-to-cartesian-example" class="internal"><span class="codenumber">8.4</span> <span class="title">Replacing Polar Equations by Cartesian Equations</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-polar-coordinates.html#sec-polar-symmetries" class="internal"><span class="codenumber">8.5</span> <span class="title">Symmetries</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-double-integrals-general-regions.html#sec-general-regions-case1" class="internal"><span class="codenumber">2.2.1</span> <span class="title">Case I: Regions of the Form <span class="process-math">\(R = \{(x,y) : a \le x \le b,\ f_2(x) \le y \le f_1(x)\}\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-double-integrals-general-regions.html#sec-general-regions-case2" class="internal"><span class="codenumber">2.2.2</span> <span class="title">Case II: Regions of the Form <span class="process-math">\(R = \{(x,y) : c \le y \le d,\ g_1(y) \le x \le g_2(y)\}\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-double-integrals-general-regions.html#sec-tetrahedron-volume" class="internal"><span class="codenumber">2.2.3</span> <span class="title">Volume of a Tetrahedron</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-double-integrals-general-regions.html#sec-area-by-double-integration" class="internal"><span class="codenumber">2.2.4</span> <span class="title">Area by Double Integration</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-double-integrals-general-regions.html#subsec-general-regions-questions" class="internal"><span class="codenumber">2.2.5</span> <span class="title">Concept Check</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="section-double-integrals-polar-form.html" class="internal"><span class="codenumber">9</span> <span class="title">Double Integrals in Polar Form</span></a></div>
+<div class="toc-title-box"><a href="section-polar-coordinates.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Polar Coordinates and Graphing Polar Equations</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-double-integrals-polar-form.html#sec-polar-double-integral" class="internal"><span class="codenumber">9.1</span> <span class="title">How Does a Double Integral Look in Polar Coordinates?</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-double-integrals-polar-form.html#sec-polar-annulus-example" class="internal"><span class="codenumber">9.2</span> <span class="title">Integrating Over a Half Annulus</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-double-integrals-polar-form.html#sec-polar-rose-example" class="internal"><span class="codenumber">9.3</span> <span class="title">Area Enclosed by One Loop of a Rose</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-double-integrals-polar-form.html#sec-polar-volume-example" class="internal"><span class="codenumber">9.4</span> <span class="title">A Volume Computed in Polar Coordinates</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-double-integrals-polar-form.html#sec-polar-gaussian-example" class="internal"><span class="codenumber">9.5</span> <span class="title">An Integral That Needs Polar Coordinates</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-polar-coordinates.html#sec-polar-definition" class="internal"><span class="codenumber">2.3.1</span> <span class="title">The Polar Coordinate System</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-polar-coordinates.html#sec-polar-cartesian-relation" class="internal"><span class="codenumber">2.3.2</span> <span class="title">Relation Between Polar and Cartesian Coordinates</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-polar-coordinates.html#sec-polar-nonuniqueness" class="internal"><span class="codenumber">2.3.3</span> <span class="title">Non-Uniqueness of Polar Coordinates</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-polar-coordinates.html#sec-polar-to-cartesian-example" class="internal"><span class="codenumber">2.3.4</span> <span class="title">Replacing Polar Equations by Cartesian Equations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-polar-coordinates.html#sec-polar-symmetries" class="internal"><span class="codenumber">2.3.5</span> <span class="title">Symmetries</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="section-triple-integrals-rectangular.html" class="internal"><span class="codenumber">10</span> <span class="title">Triple Integrals in Rectangular Coordinates</span></a></div>
+<div class="toc-title-box"><a href="section-double-integrals-polar-form.html" class="internal"><span class="codenumber">2.4</span> <span class="title">Double Integrals in Polar Form</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-triple-integrals-rectangular.html#sec-triple-integral-meaning" class="internal"><span class="codenumber">10.1</span> <span class="title">What Does a Triple Integral Mean?</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-triple-integrals-rectangular.html#sec-triple-case1" class="internal"><span class="codenumber">10.2</span> <span class="title">Case I: <span class="process-math">\(E = \{(x,y,z) : a \le x \le b,\ g_1(x) \le y \le g_2(x),\ u_1(x,y) \le z \le u_2(x,y)\}\)</span></span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-triple-integrals-rectangular.html#sec-triple-case2" class="internal"><span class="codenumber">10.3</span> <span class="title">Case II: <span class="process-math">\(E = \{(x,y,z) : h_1(y) \le x \le h_2(y),\ c \le y \le d,\ u_1(x,y) \le z \le u_2(x,y)\}\)</span></span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-triple-integrals-rectangular.html#sec-triple-mass" class="internal"><span class="codenumber">10.4</span> <span class="title">Mass With Variable Density</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-double-integrals-polar-form.html#sec-polar-double-integral" class="internal"><span class="codenumber">2.4.1</span> <span class="title">How Does a Double Integral Look in Polar Coordinates?</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-double-integrals-polar-form.html#sec-polar-annulus-example" class="internal"><span class="codenumber">2.4.2</span> <span class="title">Integrating Over a Half Annulus</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-double-integrals-polar-form.html#sec-polar-rose-example" class="internal"><span class="codenumber">2.4.3</span> <span class="title">Area Enclosed by One Loop of a Rose</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-double-integrals-polar-form.html#sec-polar-volume-example" class="internal"><span class="codenumber">2.4.4</span> <span class="title">A Volume Computed in Polar Coordinates</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-double-integrals-polar-form.html#sec-polar-gaussian-example" class="internal"><span class="codenumber">2.4.5</span> <span class="title">An Integral That Needs Polar Coordinates</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-double-integrals-polar-form.html#subsec-polar-questions" class="internal"><span class="codenumber">2.4.6</span> <span class="title">Concept Check</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="section-triple-integrals-cylindrical.html" class="internal"><span class="codenumber">11</span> <span class="title">Triple Integrals in Cylindrical Coordinates</span></a></div>
+<div class="toc-title-box"><a href="section-triple-integrals-rectangular.html" class="internal"><span class="codenumber">2.5</span> <span class="title">Triple Integrals in Rectangular Coordinates</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-triple-integrals-cylindrical.html#sec-cylindrical-coordinates" class="internal"><span class="codenumber">11.1</span> <span class="title">Cylindrical Coordinates</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-triple-integrals-cylindrical.html#sec-cylindrical-mass-example" class="internal"><span class="codenumber">11.2</span> <span class="title">The Mass of a Solid With Axial Symmetry</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-triple-integrals-rectangular.html#sec-triple-integral-meaning" class="internal"><span class="codenumber">2.5.1</span> <span class="title">What Does a Triple Integral Mean?</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-triple-integrals-rectangular.html#sec-triple-case1" class="internal"><span class="codenumber">2.5.2</span> <span class="title">Case I: <span class="process-math">\(E = \{(x,y,z) : a \le x \le b,\)</span> <span class="process-math">\(g_1(x) \le y \le g_2(x),\)</span> <span class="process-math">\(u_1(x,y) \le z \le u_2(x,y)\}\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-triple-integrals-rectangular.html#sec-triple-case2" class="internal"><span class="codenumber">2.5.3</span> <span class="title">Case II: <span class="process-math">\(E = \{(x,y,z) : h_1(y) \le x \le h_2(y),\)</span> <span class="process-math">\(c \le y \le d,\)</span> <span class="process-math">\(u_1(x,y) \le z \le u_2(x,y)\}\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-triple-integrals-rectangular.html#sec-triple-mass" class="internal"><span class="codenumber">2.5.4</span> <span class="title">Mass With Variable Density</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-triple-integrals-rectangular.html#subsec-triple-questions" class="internal"><span class="codenumber">2.5.5</span> <span class="title">Concept Check</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="section-triple-integrals-spherical.html" class="internal"><span class="codenumber">12</span> <span class="title">Triple Integrals in Spherical Coordinates</span></a></div>
+<div class="toc-title-box"><a href="section-triple-integrals-cylindrical.html" class="internal"><span class="codenumber">2.6</span> <span class="title">Triple Integrals in Cylindrical Coordinates</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-triple-integrals-spherical.html#sec-spherical-coordinates" class="internal"><span class="codenumber">12.1</span> <span class="title">Spherical Coordinates</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-triple-integrals-spherical.html#sec-spherical-integration" class="internal"><span class="codenumber">12.2</span> <span class="title">Integration in Spherical Coordinates</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-triple-integrals-spherical.html#sec-spherical-icecream" class="internal"><span class="codenumber">12.3</span> <span class="title">The Ice Cream Cone</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-triple-integrals-spherical.html#sec-spherical-shifted-example" class="internal"><span class="codenumber">12.4</span> <span class="title">Converting a Triple Integral to Spherical Coordinates</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-triple-integrals-spherical.html#sec-spherical-rewrite" class="internal"><span class="codenumber">12.5</span> <span class="title">Re-Writing an Integral in Spherical and Cylindrical Coordinates</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-triple-integrals-cylindrical.html#sec-cylindrical-coordinates" class="internal"><span class="codenumber">2.6.1</span> <span class="title">Cylindrical Coordinates</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-triple-integrals-cylindrical.html#sec-cylindrical-mass-example" class="internal"><span class="codenumber">2.6.2</span> <span class="title">The Mass of a Solid With Axial Symmetry</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-triple-integrals-cylindrical.html#subsec-cylindrical-questions" class="internal"><span class="codenumber">2.6.3</span> <span class="title">Concept Check</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="section-mass-center-of-mass.html" class="internal"><span class="codenumber">13</span> <span class="title">Applications: Mass and Center of Mass</span></a></div>
+<div class="toc-title-box"><a href="section-triple-integrals-spherical.html" class="internal"><span class="codenumber">2.7</span> <span class="title">Triple Integrals in Spherical Coordinates</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-mass-center-of-mass.html#sec-mass-3d-object" class="internal"><span class="codenumber">13.1</span> <span class="title">Finding the Center of Mass of a 3D Object</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-mass-center-of-mass.html#sec-centroid" class="internal"><span class="codenumber">13.2</span> <span class="title">Centroids</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-triple-integrals-spherical.html#sec-spherical-coordinates" class="internal"><span class="codenumber">2.7.1</span> <span class="title">Spherical Coordinates</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-triple-integrals-spherical.html#sec-spherical-integration" class="internal"><span class="codenumber">2.7.2</span> <span class="title">Integration in Spherical Coordinates</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-triple-integrals-spherical.html#sec-spherical-icecream" class="internal"><span class="codenumber">2.7.3</span> <span class="title">The Ice Cream Cone</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-triple-integrals-spherical.html#sec-spherical-shifted-example" class="internal"><span class="codenumber">2.7.4</span> <span class="title">Converting a Triple Integral to Spherical Coordinates</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-triple-integrals-spherical.html#sec-spherical-rewrite" class="internal"><span class="codenumber">2.7.5</span> <span class="title">Re-Writing an Integral in Spherical and Cylindrical Coordinates</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="section-mass-center-of-mass.html" class="internal"><span class="codenumber">2.8</span> <span class="title">Applications: Mass and Center of Mass</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-mass-center-of-mass.html#sec-mass-3d-object" class="internal"><span class="codenumber">2.8.1</span> <span class="title">Finding the Center of Mass of a 3D Object</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-mass-center-of-mass.html#sec-centroid" class="internal"><span class="codenumber">2.8.2</span> <span class="title">Centroids</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section contains-active">
-<div class="toc-title-box"><a href="section-jacobian-substitution.html" class="internal"><span class="codenumber">14</span> <span class="title">Substitution in Multiple Integrals and the Jacobian Determinant</span></a></div>
+<div class="toc-title-box"><a href="section-jacobian-substitution.html" class="internal"><span class="codenumber">2.9</span> <span class="title">Substitution in Multiple Integrals and the Jacobian Determinant</span></a></div>
 <ul class="structural toc-item-list active">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-jacobian-substitution.html#sec-jacobian-determinant" class="internal"><span class="codenumber">14.1</span> <span class="title">The Jacobian Determinant</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-jacobian-substitution.html#sec-substitution-examples" class="internal"><span class="codenumber">14.2</span> <span class="title">Choosing a Transformation</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-jacobian-substitution.html#sec-substitution-3d" class="internal"><span class="codenumber">14.3</span> <span class="title">Substitution in Triple Integrals</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-jacobian-substitution.html#sec-jacobian-determinant" class="internal"><span class="codenumber">2.9.1</span> <span class="title">The Jacobian Determinant</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-jacobian-substitution.html#sec-substitution-examples" class="internal"><span class="codenumber">2.9.2</span> <span class="title">Choosing a Transformation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-jacobian-substitution.html#sec-substitution-3d" class="internal"><span class="codenumber">2.9.3</span> <span class="title">Substitution in Triple Integrals</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-jacobian-substitution.html#sec-jacobian-activity" class="internal"><span class="codenumber">2.9.4</span> <span class="title">Activity: Watching a Substitution Transform a Region</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="section-greens-theorem.html" class="internal"><span class="codenumber">15</span> <span class="title">Green’s Theorem in the Plane</span></a></div>
+<div class="toc-title-box"><a href="section-surface-integrals.html" class="internal"><span class="codenumber">2.10</span> <span class="title">Surface Integrals: Flux Through a Surface</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-greens-theorem.html#sec-divergence" class="internal"><span class="codenumber">15.1</span> <span class="title">Divergence</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-greens-theorem.html#sec-curl" class="internal"><span class="codenumber">15.2</span> <span class="title">Curl</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-greens-theorem.html#sec-greens-theorem-forms" class="internal"><span class="codenumber">15.3</span> <span class="title">The Two Forms of Green’s Theorem</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-greens-theorem.html#sec-component-test-alternative" class="internal"><span class="codenumber">15.4</span> <span class="title">An Alternative Form of the Component Test for Conservative Fields</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-surface-integrals.html#sec-flux-flat" class="internal"><span class="codenumber">2.10.1</span> <span class="title">Flux Through a Flat Surface</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-surface-integrals.html#sec-parametric-surfaces" class="internal"><span class="codenumber">2.10.2</span> <span class="title">Parametric Surfaces</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-surface-integrals.html#sec-surface-normal" class="internal"><span class="codenumber">2.10.3</span> <span class="title">The Normal Vector to a Surface</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-surface-integrals.html#sec-oriented-surfaces" class="internal"><span class="codenumber">2.10.4</span> <span class="title">Oriented Surfaces</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-surface-integrals.html#sec-surface-integral-def" class="internal"><span class="codenumber">2.10.5</span> <span class="title">The Surface Integral of a Vector Field</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-integral-theorems.html" class="internal"><span class="codenumber">3</span> <span class="title">The Big Theorems</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="section-greens-theorem.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Green’s Theorem in the Plane</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-greens-theorem.html#sec-divergence" class="internal"><span class="codenumber">3.1.1</span> <span class="title">Divergence</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-greens-theorem.html#sec-curl" class="internal"><span class="codenumber">3.1.2</span> <span class="title">Curl</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-greens-theorem.html#sec-greens-theorem-forms" class="internal"><span class="codenumber">3.1.3</span> <span class="title">The Two Forms of Green’s Theorem</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-greens-theorem.html#sec-component-test-alternative" class="internal"><span class="codenumber">3.1.4</span> <span class="title">An Alternative Form of the Component Test for Conservative Fields</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="section-surface-integrals.html" class="internal"><span class="codenumber">16</span> <span class="title">Surface Integrals: Flux Through a Surface</span></a></div>
+<div class="toc-title-box"><a href="section-stokes-theorem.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Stokes’ Theorem</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-surface-integrals.html#sec-flux-flat" class="internal"><span class="codenumber">16.1</span> <span class="title">Flux Through a Flat Surface</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-surface-integrals.html#sec-parametric-surfaces" class="internal"><span class="codenumber">16.2</span> <span class="title">Parametric Surfaces</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-surface-integrals.html#sec-surface-normal" class="internal"><span class="codenumber">16.3</span> <span class="title">The Normal Vector to a Surface</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-surface-integrals.html#sec-oriented-surfaces" class="internal"><span class="codenumber">16.4</span> <span class="title">Oriented Surfaces</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-surface-integrals.html#sec-surface-integral-def" class="internal"><span class="codenumber">16.5</span> <span class="title">The Surface Integral of a Vector Field</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-stokes-theorem.html#sec-curl-3d" class="internal"><span class="codenumber">3.2.1</span> <span class="title">Curl in Three Dimensions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-stokes-theorem.html#sec-stokes-theorem" class="internal"><span class="codenumber">3.2.2</span> <span class="title">Stokes’ Theorem</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-stokes-theorem.html#sec-stokes-surface-independence" class="internal"><span class="codenumber">3.2.3</span> <span class="title">Only the Boundary Matters</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="section-divergence-theorem.html" class="internal"><span class="codenumber">17</span> <span class="title">The Divergence Theorem</span></a></div>
+<div class="toc-title-box"><a href="section-divergence-theorem.html" class="internal"><span class="codenumber">3.3</span> <span class="title">The Divergence Theorem</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-divergence-theorem.html#sec-divergence-3d" class="internal"><span class="codenumber">17.1</span> <span class="title">Divergence in 3D</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-divergence-theorem.html#sec-gauss-theorem" class="internal"><span class="codenumber">17.2</span> <span class="title">Gauss’s Divergence Theorem</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-divergence-theorem.html#sec-divergence-3d" class="internal"><span class="codenumber">3.3.1</span> <span class="title">Divergence in 3D</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-divergence-theorem.html#sec-gauss-theorem" class="internal"><span class="codenumber">3.3.2</span> <span class="title">Gauss’s Divergence Theorem</span></a></div></li>
 </ul>
 </li>
-<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="exercises-hw1.html" class="internal"><span class="title">Homework 1</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="subsec-brain-map.html" class="internal"><span class="codenumber">19</span> <span class="title">Brain map: the integrals of vector calculus</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-assignments.html" class="internal"><span class="codenumber">4</span> <span class="title">Assignments</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-exercises-hw1.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Assignment 1</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-exercises-hw1.html#exercises-hw1" class="internal"><span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-exercises-hw2.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Assignment 2</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-exercises-hw2.html#exercises-hw2" class="internal"><span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-exercises-hw3.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Assignment 3</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-exercises-hw3.html#exercises-hw3" class="internal"><span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-exercises-hw4.html" class="internal"><span class="codenumber">4.4</span> <span class="title">Assignment 4</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-exercises-hw4.html#exercises-hw4" class="internal"><span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-exercises-hw5.html" class="internal"><span class="codenumber">4.5</span> <span class="title">Assignment 5</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-exercises-hw5.html#exercises-hw5" class="internal"><span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-exercises-hw6.html" class="internal"><span class="codenumber">4.6</span> <span class="title">Assignment 6</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-exercises-hw6.html#exercises-hw6" class="internal"><span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-exercises-hw7.html" class="internal"><span class="codenumber">4.7</span> <span class="title">Assignment 7</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-exercises-hw7.html#exercises-hw7" class="internal"><span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-exercises-hw8.html" class="internal"><span class="codenumber">4.8</span> <span class="title">Assignment 8</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-exercises-hw8.html#exercises-hw8" class="internal"><span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-exercises-hw9.html" class="internal"><span class="codenumber">4.9</span> <span class="title">Assignment 9</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-exercises-hw9.html#exercises-hw9" class="internal"><span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-online-assignments.html" class="internal"><span class="codenumber">5</span> <span class="title">Online Assignments</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-exercises-hw1-online.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Assignment 1, Online Version</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-exercises-hw1-online.html#exercises-hw1-online" class="internal"><span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-exercises-hw2-online.html" class="internal"><span class="codenumber">5.2</span> <span class="title">Assignment 2, Online Version</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-exercises-hw2-online.html#exercises-hw2-online" class="internal"><span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-exercises-hw3-online.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Assignment 3, Online Version</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-exercises-hw3-online.html#exercises-hw3-online" class="internal"><span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-exercises-hw4-online.html" class="internal"><span class="codenumber">5.4</span> <span class="title">Assignment 4, Online Version</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-exercises-hw4-online.html#exercises-hw4-online" class="internal"><span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-exercises-hw5-online.html" class="internal"><span class="codenumber">5.5</span> <span class="title">Assignment 5, Online Version</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-exercises-hw5-online.html#exercises-hw5-online" class="internal"><span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-exercises-hw6-online.html" class="internal"><span class="codenumber">5.6</span> <span class="title">Assignment 6, Online Version</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-exercises-hw6-online.html#exercises-hw6-online" class="internal"><span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-exercises-hw7-online.html" class="internal"><span class="codenumber">5.7</span> <span class="title">Assignment 7, Online Version</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-exercises-hw7-online.html#exercises-hw7-online" class="internal"><span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-exercises-hw8-online.html" class="internal"><span class="codenumber">5.8</span> <span class="title">Assignment 8, Online Version</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-exercises-hw8-online.html#exercises-hw8-online" class="internal"><span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-exercises-hw9-online.html" class="internal"><span class="codenumber">5.9</span> <span class="title">Assignment 9, Online Version</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-exercises-hw9-online.html#exercises-hw9-online" class="internal"><span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-review-problems.html" class="internal"><span class="codenumber">6</span> <span class="title">Review Problems</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-exercises-review4-online.html" class="internal"><span class="codenumber">6.1</span> <span class="title">Review Problems #4</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-exercises-review4-online.html#exercises-review4-online" class="internal"><span class="title">Exercises</span></a></div></li></ul>
+</li></ul>
+</li>
 </ul></nav></div>
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="section-jacobian-substitution"><h2 class="heading hide-type">
-<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">14</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Substitution in Multiple Integrals and the Jacobian Determinant</span>
+<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.9</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Substitution in Multiple Integrals and the Jacobian Determinant</span>
 </h2>
 <section class="introduction" id="section-jacobian-substitution-2"><div class="para" id="section-jacobian-substitution-2-1">In single-variable calculus, substitution converts a difficult integral into an easier one at the cost of a correction factor <span class="process-math">\(dx/du\text{.}\)</span> In this section we develop the analogous tool for double and triple integrals. The correction factor is now a determinant—the <dfn class="terminology">Jacobian determinant</dfn>—which measures how a change of variables stretches or shrinks area and volume.<div class="autopermalink" data-description="Paragraph"><a href="#section-jacobian-substitution-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div></section><section class="subsection" id="sec-jacobian-determinant"><h3 class="heading hide-type">
-<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">14.1</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">The Jacobian Determinant</span>
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.9.1</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">The Jacobian Determinant</span>
 </h3>
-<div class="para" id="sec-jacobian-determinant-2">Assume that there exists a transformation <span class="process-math">\(T\)</span> that relates two coordinate systems, <span class="process-math">\((u,v)\)</span> and <span class="process-math">\((x,y)\)</span> coordinates. In other words, there exist two functions <span class="process-math">\(f\)</span> and <span class="process-math">\(g\)</span> such that <span class="process-math">\(x = f(u,v)\)</span> and <span class="process-math">\(y = g(u,v)\text{.}\)</span> As illustrated in <a href="section-jacobian-substitution.html#fig-transformation-blobs" class="xref" data-knowl="./knowl/xref/fig-transformation-blobs.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 14.1">Figure 14.1</a>, the region <span class="process-math">\(S\)</span> in the <span class="process-math">\(uv\)</span>-plane is transformed to the region <span class="process-math">\(R\)</span> in the <span class="process-math">\(xy\)</span>-plane, and the inverse transformation <span class="process-math">\(T^{-1}\)</span> carries <span class="process-math">\(R\)</span> back to <span class="process-math">\(S\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-jacobian-determinant-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="sec-jacobian-determinant-2">Assume that there exists a transformation <span class="process-math">\(T\)</span> that relates two coordinate systems, <span class="process-math">\((u,v)\)</span> and <span class="process-math">\((x,y)\)</span> coordinates. In other words, there exist two functions <span class="process-math">\(f\)</span> and <span class="process-math">\(g\)</span> such that <span class="process-math">\(x = f(u,v)\)</span> and <span class="process-math">\(y = g(u,v)\text{.}\)</span> As illustrated in <a href="section-jacobian-substitution.html#fig-transformation-blobs" class="internal" title="Figure 2.9.1">Figure 2.9.1</a>, the region <span class="process-math">\(S\)</span> in the <span class="process-math">\(uv\)</span>-plane is transformed to the region <span class="process-math">\(R\)</span> in the <span class="process-math">\(xy\)</span>-plane, and the inverse transformation <span class="process-math">\(T^{-1}\)</span> carries <span class="process-math">\(R\)</span> back to <span class="process-math">\(S\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-jacobian-determinant-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <figure class="figure figure-like" id="fig-transformation-blobs"><div class="sidebyside"><div class="sbsrow" style="margin-left:2%;margin-right:2%;grid-template-columns:47.9166666666667% 47.9166666666667%;column-gap:4%;">
 <div class="sbspanel sbspanel--middle middle" style=""><div class="image-box"><div class="ChemAccess-element" data-src="generated/prefigure/prefigure-uvplane-blob-diagcess.svg" data-cml="generated/prefigure/prefigure-uvplane-blob-annotations.xml"></div></div></div>
@@ -387,8 +523,8 @@ eBookConfig.enable_chatcodes =  false;
 <td>Repeat sonification output</td>
 </tr>
 </tbody>
-</table></div></details><figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">14.1<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The transformation <span class="process-math">\(T(u,v) = (f(u,v), g(u,v))\)</span> carries the region <span class="process-math">\(S\)</span> in the <span class="process-math">\(uv\)</span>-plane onto the region <span class="process-math">\(R\)</span> in the <span class="process-math">\(xy\)</span>-plane; the inverse <span class="process-math">\(T^{-1}\)</span> carries <span class="process-math">\(R\)</span> back onto <span class="process-math">\(S\text{.}\)</span> The point <span class="process-math">\((u_1, v_1)\)</span> is sent to the point <span class="process-math">\((x_1, y_1)\text{.}\)</span><div class="autopermalink" data-description="Figure 14.1"><a href="#fig-transformation-blobs" title="Copy heading and permalink for Figure 14.1" aria-label="Copy heading and permalink for Figure 14.1">🔗</a></div></figcaption></figure><article class="definition definition-like" id="def-jacobian"><h4 class="heading">
-<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">14.2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</table></div></details><figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.9.1<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The transformation <span class="process-math">\(T(u,v) = (f(u,v), g(u,v))\)</span> carries the region <span class="process-math">\(S\)</span> in the <span class="process-math">\(uv\)</span>-plane onto the region <span class="process-math">\(R\)</span> in the <span class="process-math">\(xy\)</span>-plane; the inverse <span class="process-math">\(T^{-1}\)</span> carries <span class="process-math">\(R\)</span> back onto <span class="process-math">\(S\text{.}\)</span> The point <span class="process-math">\((u_1, v_1)\)</span> is sent to the point <span class="process-math">\((x_1, y_1)\text{.}\)</span><div class="autopermalink" data-description="Figure 2.9.1"><a href="#fig-transformation-blobs" title="Copy heading and permalink for Figure 2.9.1" aria-label="Copy heading and permalink for Figure 2.9.1">🔗</a></div></figcaption></figure><article class="definition definition-like" id="def-jacobian"><h4 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.9.2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4>
 <div class="para" id="def-jacobian-1-1">The <dfn class="terminology">Jacobian determinant</dfn> of the transformation <span class="process-math">\(x = f(u,v)\text{,}\)</span> <span class="process-math">\(y = g(u,v)\)</span> is defined as<div class="autopermalink" data-description="Paragraph"><a href="#def-jacobian-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
@@ -400,7 +536,7 @@ J(u,v) = \frac{\partial(x,y)}{\partial(u,v)}
 \dfrac{\partial y}{\partial u} \amp \dfrac{\partial y}{\partial v}
 \end{vmatrix}
 = \frac{\partial x}{\partial u}\frac{\partial y}{\partial v}
-- \frac{\partial x}{\partial v}\frac{\partial y}{\partial u}.\tag{14.1}
+- \frac{\partial x}{\partial v}\frac{\partial y}{\partial u}.\tag{2.9.1}
 \end{equation}
 </div>
 <div class="para" id="def-jacobian-1-3">In 3D, this definition is generalized to<div class="autopermalink" data-description="Paragraph"><a href="#def-jacobian-1-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
@@ -412,37 +548,37 @@ J(u,v,w) = \frac{\partial(x,y,z)}{\partial(u,v,w)}
 \dfrac{\partial x}{\partial u} \amp \dfrac{\partial x}{\partial v} \amp \dfrac{\partial x}{\partial w} \\[2ex]
 \dfrac{\partial y}{\partial u} \amp \dfrac{\partial y}{\partial v} \amp \dfrac{\partial y}{\partial w} \\[2ex]
 \dfrac{\partial z}{\partial u} \amp \dfrac{\partial z}{\partial v} \amp \dfrac{\partial z}{\partial w}
-\end{vmatrix}.\tag{14.2}
+\end{vmatrix}.\tag{2.9.2}
 \end{equation}
 </div>
-<div class="autopermalink" data-description="Definition 14.2"><a href="#def-jacobian" title="Copy heading and permalink for Definition 14.2" aria-label="Copy heading and permalink for Definition 14.2">🔗</a></div></article><div class="para" id="sec-jacobian-determinant-5">Then the multiple integrals can be converted from one coordinate system to another as follows:<div class="autopermalink" data-description="Paragraph"><a href="#sec-jacobian-determinant-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Definition 2.9.2"><a href="#def-jacobian" title="Copy heading and permalink for Definition 2.9.2" aria-label="Copy heading and permalink for Definition 2.9.2">🔗</a></div></article><div class="para" id="sec-jacobian-determinant-5">Then the multiple integrals can be converted from one coordinate system to another as follows:<div class="autopermalink" data-description="Paragraph"><a href="#sec-jacobian-determinant-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig-transformation-blobs.html ./knowl/xref/fig-jacobian-rectangle.html ./knowl/xref/eq-jacobian-2d.html ./knowl/xref/fig-jacobian-rectangle-video.html" id="eq-sub-2d">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig-transformation-blobs.html ./knowl/xref/eq-sub-2d.html ./knowl/xref/eq-sub-3d.html ./knowl/xref/fig-jacobian-rectangle.html ./knowl/xref/eq-jacobian-2d.html ./knowl/xref/fig-jacobian-rectangle-video.html" id="eq-sub-2d">
 \begin{equation}
 \iint_R F(x,y)\, dx\, dy
 = \iint_S F\big(f(u,v),\, g(u,v)\big)
-\left| \frac{\partial(x,y)}{\partial(u,v)} \right| du\, dv,\tag{14.3}
+\left| \frac{\partial(x,y)}{\partial(u,v)} \right| du\, dv,\tag{2.9.3}
 \end{equation}
 </div>
 <div class="para" id="sec-jacobian-determinant-7">and in three dimensions, with <span class="process-math">\(x = f(u,v,w)\text{,}\)</span> <span class="process-math">\(y = g(u,v,w)\text{,}\)</span> <span class="process-math">\(z = h(u,v,w)\)</span> carrying a region <span class="process-math">\(E\)</span> in <span class="process-math">\(uvw\)</span>-space onto a region <span class="process-math">\(D\)</span> in <span class="process-math">\(xyz\)</span>-space,<div class="autopermalink" data-description="Paragraph"><a href="#sec-jacobian-determinant-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig-transformation-blobs.html ./knowl/xref/fig-jacobian-rectangle.html ./knowl/xref/eq-jacobian-2d.html ./knowl/xref/fig-jacobian-rectangle-video.html" id="eq-sub-3d">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig-transformation-blobs.html ./knowl/xref/eq-sub-2d.html ./knowl/xref/eq-sub-3d.html ./knowl/xref/fig-jacobian-rectangle.html ./knowl/xref/eq-jacobian-2d.html ./knowl/xref/fig-jacobian-rectangle-video.html" id="eq-sub-3d">
 \begin{equation}
 \iiint_D F(x,y,z)\, dx\, dy\, dz
 = \iiint_E F\big(f(u,v,w),\, g(u,v,w),\, h(u,v,w)\big)
-\left| \frac{\partial(x,y,z)}{\partial(u,v,w)} \right| du\, dv\, dw.\tag{14.4}
+\left| \frac{\partial(x,y,z)}{\partial(u,v,w)} \right| du\, dv\, dw.\tag{2.9.4}
 \end{equation}
 </div>
-<div class="para" id="sec-jacobian-determinant-9">The above integrals should be compared to the single-variable substitution <span class="process-math">\(x = h(u)\text{:}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-jacobian-determinant-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="sec-jacobian-determinant-9">The integrals <a href="section-jacobian-substitution.html#eq-sub-2d" class="xref" data-knowl="./knowl/xref/eq-sub-2d.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 2.9.3">(2.9.3)</a> and <a href="section-jacobian-substitution.html#eq-sub-3d" class="xref" data-knowl="./knowl/xref/eq-sub-3d.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 2.9.4">(2.9.4)</a> should be compared to the single-variable substitution <span class="process-math">\(x = h(u)\text{:}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-jacobian-determinant-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig-transformation-blobs.html ./knowl/xref/fig-jacobian-rectangle.html ./knowl/xref/eq-jacobian-2d.html ./knowl/xref/fig-jacobian-rectangle-video.html" id="sec-jacobian-determinant-10">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig-transformation-blobs.html ./knowl/xref/eq-sub-2d.html ./knowl/xref/eq-sub-3d.html ./knowl/xref/fig-jacobian-rectangle.html ./knowl/xref/eq-jacobian-2d.html ./knowl/xref/fig-jacobian-rectangle-video.html" id="sec-jacobian-determinant-10">
 \begin{equation*}
 \int_{x=h(a)}^{x=h(b)} f(x)\, dx = \int_{u=a}^{u=b} f(h(u))\, \frac{dx}{du}\, du.
 \end{equation*}
 </div>
 <div class="para" id="sec-jacobian-determinant-11">Note that in the past we used to use the substitution of the form <span class="process-math">\(u = g(x)\)</span> and write:<div class="autopermalink" data-description="Paragraph"><a href="#sec-jacobian-determinant-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig-transformation-blobs.html ./knowl/xref/fig-jacobian-rectangle.html ./knowl/xref/eq-jacobian-2d.html ./knowl/xref/fig-jacobian-rectangle-video.html" id="sec-jacobian-determinant-12">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig-transformation-blobs.html ./knowl/xref/eq-sub-2d.html ./knowl/xref/eq-sub-3d.html ./knowl/xref/fig-jacobian-rectangle.html ./knowl/xref/eq-jacobian-2d.html ./knowl/xref/fig-jacobian-rectangle-video.html" id="sec-jacobian-determinant-12">
 \begin{equation*}
 \int_{x=a}^{x=b} f(g(x))\, \frac{du}{dx}\, dx = \int_{u=g(a)}^{u=g(b)} f(u)\, du.
 \end{equation*}
@@ -450,7 +586,7 @@ J(u,v,w) = \frac{\partial(x,y,z)}{\partial(u,v,w)}
 <div class="para" id="sec-jacobian-determinant-13">The derivative factor <span class="process-math">\(dx/du\)</span> records how much the substitution stretches lengths. In two variables, the Jacobian determinant plays the same role for areas: <span class="process-math">\(|J|\)</span> is the local ratio of area in the <span class="process-math">\(xy\)</span>-plane to area in the <span class="process-math">\(uv\)</span>-plane. The next example makes this ratio concrete.<div class="autopermalink" data-description="Paragraph"><a href="#sec-jacobian-determinant-13" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <details id="example-jacobian-rectangle" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
-<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">14.3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">A First Substitution: Scaling a Rectangle.</span>
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.9.3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">A First Substitution: Scaling a Rectangle.</span>
 </h4></summary><article class="example example-like knowl__content"><div class="para" id="example-jacobian-rectangle-2-1">Use the transformation <span class="process-math">\(u = 3x\text{,}\)</span> <span class="process-math">\(v = 2y\)</span> to evaluate<div class="autopermalink" data-description="Paragraph"><a href="#example-jacobian-rectangle-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="displaymath process-math" id="example-jacobian-rectangle-2-2">
@@ -460,9 +596,9 @@ J(u,v,w) = \frac{\partial(x,y,z)}{\partial(u,v,w)}
 </div>
 <div class="para" id="example-jacobian-rectangle-2-3">and verify that the Jacobian determinant equals the ratio of the areas of the two regions of integration.<div class="autopermalink" data-description="Paragraph"><a href="#example-jacobian-rectangle-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Example 14.3: A First Substitution: Scaling a Rectangle"><a href="#example-jacobian-rectangle" title="Copy heading and permalink for Example 14.3: A First Substitution: Scaling a Rectangle" aria-label="Copy heading and permalink for Example 14.3: A First Substitution: Scaling a Rectangle">🔗</a></div></article></details><details id="solution-jacobian-rectangle" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="autopermalink" data-description="Example 2.9.3: A First Substitution: Scaling a Rectangle"><a href="#example-jacobian-rectangle" title="Copy heading and permalink for Example 2.9.3: A First Substitution: Scaling a Rectangle" aria-label="Copy heading and permalink for Example 2.9.3: A First Substitution: Scaling a Rectangle">🔗</a></div></article></details><details id="solution-jacobian-rectangle" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
 <div class="para" id="solution-jacobian-rectangle-1">The transformation is <span class="process-math">\(T(u,v) = (x,y) = \left( \tfrac{u}{3},
-\tfrac{v}{2} \right)\text{,}\)</span> which carries the rectangle <span class="process-math">\(S = [0,3] \times [0,2]\)</span> in the <span class="process-math">\(uv\)</span>-plane onto the unit square <span class="process-math">\(R = [0,1] \times [0,1]\)</span> in the <span class="process-math">\(xy\)</span>-plane, as shown in <a href="section-jacobian-substitution.html#fig-jacobian-rectangle" class="xref" data-knowl="./knowl/xref/fig-jacobian-rectangle.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 14.5">Figure 14.5</a>. By <a href="section-jacobian-substitution.html#eq-jacobian-2d" class="xref" data-knowl="./knowl/xref/eq-jacobian-2d.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 14.1">(14.1)</a>, the Jacobian determinant is<div class="autopermalink" data-description="Paragraph"><a href="#solution-jacobian-rectangle-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+\tfrac{v}{2} \right)\text{,}\)</span> which carries the rectangle <span class="process-math">\(S = [0,3] \times [0,2]\)</span> in the <span class="process-math">\(uv\)</span>-plane onto the unit square <span class="process-math">\(R = [0,1] \times [0,1]\)</span> in the <span class="process-math">\(xy\)</span>-plane, as shown in <a href="section-jacobian-substitution.html#fig-jacobian-rectangle" class="internal" title="Figure 2.9.5">Figure 2.9.5</a>. By <a href="section-jacobian-substitution.html#eq-jacobian-2d" class="xref" data-knowl="./knowl/xref/eq-jacobian-2d.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 2.9.1">(2.9.1)</a>, the Jacobian determinant is<div class="autopermalink" data-description="Paragraph"><a href="#solution-jacobian-rectangle-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig-jacobian-rectangle.html ./knowl/xref/eq-jacobian-2d.html ./knowl/xref/fig-jacobian-rectangle-video.html" id="solution-jacobian-rectangle-2">
 \begin{equation*}
@@ -487,11 +623,11 @@ J(u,v,w) = \frac{\partial(x,y,z)}{\partial(u,v,w)}
 \end{align*}
 </div>
 <div class="para" id="solution-jacobian-rectangle-5">which agrees with computing the integral directly: <span class="process-math">\(\int_0^1 \int_0^1 6xy\, dx\, dy = 6 \cdot \tfrac{1}{2} \cdot
-\tfrac{1}{2} = \tfrac{3}{2}\text{.}\)</span> The animation in <a href="section-jacobian-substitution.html#fig-jacobian-rectangle-video" class="xref" data-knowl="./knowl/xref/fig-jacobian-rectangle-video.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 14.4">Figure 14.4</a> shows how the Jacobian acts as an area conversion factor.<div class="autopermalink" data-description="Paragraph"><a href="#solution-jacobian-rectangle-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+\tfrac{1}{2} = \tfrac{3}{2}\text{.}\)</span> The animation in <a href="section-jacobian-substitution.html#fig-jacobian-rectangle-video" class="xref" data-knowl="./knowl/xref/fig-jacobian-rectangle-video.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 2.9.4">Figure 2.9.4</a> shows how the Jacobian acts as an area conversion factor.<div class="autopermalink" data-description="Paragraph"><a href="#solution-jacobian-rectangle-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Solution 14.1.1"><a href="#solution-jacobian-rectangle" title="Copy heading and permalink for Solution 14.1.1" aria-label="Copy heading and permalink for Solution 14.1.1">🔗</a></div>
+<div class="autopermalink" data-description="Solution 2.9.1.1"><a href="#solution-jacobian-rectangle" title="Copy heading and permalink for Solution 2.9.1.1" aria-label="Copy heading and permalink for Solution 2.9.1.1">🔗</a></div>
 </div></details><figure class="figure figure-like" id="fig-jacobian-rectangle-video"><div class="video-box" style="width: 70%;padding-top: 39.375%; margin-left: 15%; margin-right: 15%;"><video id="video-jacobian-rectangle" class="video" controls=""><source src="external/videos/jacobian_area_scale_1080p.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video></div>
-<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">14.4<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The transformation <span class="process-math">\(T(u,v) = (u/3, v/2)\)</span> maps the rectangle <span class="process-math">\(S = [0,3] \times [0,2]\)</span> onto the unit square <span class="process-math">\(R\text{.}\)</span> The Jacobian <span class="process-math">\(1/6\)</span> is the ratio of the areas.<div class="autopermalink" data-description="Figure 14.4"><a href="#fig-jacobian-rectangle-video" title="Copy heading and permalink for Figure 14.4" aria-label="Copy heading and permalink for Figure 14.4">🔗</a></div></figcaption></figure><figure class="figure figure-like" id="fig-jacobian-rectangle"><div class="sidebyside"><div class="sbsrow" style="margin-left:2%;margin-right:2%;grid-template-columns:47.9166666666667% 47.9166666666667%;column-gap:4%;">
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.9.4<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The transformation <span class="process-math">\(T(u,v) = (u/3, v/2)\)</span> maps the rectangle <span class="process-math">\(S = [0,3] \times [0,2]\)</span> onto the unit square <span class="process-math">\(R\text{.}\)</span> The Jacobian <span class="process-math">\(1/6\)</span> is the ratio of the areas.<div class="autopermalink" data-description="Figure 2.9.4"><a href="#fig-jacobian-rectangle-video" title="Copy heading and permalink for Figure 2.9.4" aria-label="Copy heading and permalink for Figure 2.9.4">🔗</a></div></figcaption></figure><figure class="figure figure-like" id="fig-jacobian-rectangle"><div class="sidebyside"><div class="sbsrow" style="margin-left:2%;margin-right:2%;grid-template-columns:47.9166666666667% 47.9166666666667%;column-gap:4%;">
 <div class="sbspanel sbspanel--middle middle" style=""><div class="image-box"><div class="ChemAccess-element" data-src="generated/prefigure/prefigure-rect-R-diagcess.svg" data-cml="generated/prefigure/prefigure-rect-R-annotations.xml"></div></div></div>
 <div class="sbspanel sbspanel--middle middle" style=""><div class="image-box"><div class="ChemAccess-element" data-src="generated/prefigure/prefigure-rect-S-diagcess.svg" data-cml="generated/prefigure/prefigure-rect-S-annotations.xml"></div></div></div>
 </div></div>
@@ -586,13 +722,13 @@ J(u,v,w) = \frac{\partial(x,y,z)}{\partial(u,v,w)}
 <td>Repeat sonification output</td>
 </tr>
 </tbody>
-</table></div></details><figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">14.5<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The rectangle <span class="process-math">\(S = [0,3] \times [0,2]\)</span> in the <span class="process-math">\(uv\)</span>-plane (right) and its image, the unit square <span class="process-math">\(R\text{,}\)</span> in the <span class="process-math">\(xy\)</span>-plane (left) under <span class="process-math">\(T(u,v) = (u/3, v/2)\text{.}\)</span> The area ratio <span class="process-math">\(A_R / A_S = 1/6\)</span> equals the Jacobian determinant.<div class="autopermalink" data-description="Figure 14.5"><a href="#fig-jacobian-rectangle" title="Copy heading and permalink for Figure 14.5" aria-label="Copy heading and permalink for Figure 14.5">🔗</a></div></figcaption></figure><div class="autopermalink" data-description="Subsection 14.1: The Jacobian Determinant"><a href="#sec-jacobian-determinant" title="Copy heading and permalink for Subsection 14.1: The Jacobian Determinant" aria-label="Copy heading and permalink for Subsection 14.1: The Jacobian Determinant">🔗</a></div></section><section class="subsection" id="sec-substitution-examples"><h3 class="heading hide-type">
-<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">14.2</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Choosing a Transformation</span>
+</table></div></details><figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.9.5<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The rectangle <span class="process-math">\(S = [0,3] \times [0,2]\)</span> in the <span class="process-math">\(uv\)</span>-plane (right) and its image, the unit square <span class="process-math">\(R\text{,}\)</span> in the <span class="process-math">\(xy\)</span>-plane (left) under <span class="process-math">\(T(u,v) = (u/3, v/2)\text{.}\)</span> The area ratio <span class="process-math">\(A_R / A_S = 1/6\)</span> equals the Jacobian determinant.<div class="autopermalink" data-description="Figure 2.9.5"><a href="#fig-jacobian-rectangle" title="Copy heading and permalink for Figure 2.9.5" aria-label="Copy heading and permalink for Figure 2.9.5">🔗</a></div></figcaption></figure><div class="autopermalink" data-description="Subsection 2.9.1: The Jacobian Determinant"><a href="#sec-jacobian-determinant" title="Copy heading and permalink for Subsection 2.9.1: The Jacobian Determinant" aria-label="Copy heading and permalink for Subsection 2.9.1: The Jacobian Determinant">🔗</a></div></section><section class="subsection" id="sec-substitution-examples"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.9.2</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Choosing a Transformation</span>
 </h3>
 <div class="para" id="sec-substitution-examples-2">In practice we usually run the process in the other direction: the region of integration <span class="process-math">\(R\)</span> is awkward in <span class="process-math">\(xy\)</span>-coordinates, and we look for a substitution under which it corresponds to a simple region—ideally a rectangle—with constant limits of integration. The boundary curves of <span class="process-math">\(R\)</span> usually tell us what <span class="process-math">\(u\)</span> and <span class="process-math">\(v\)</span> should be.<div class="autopermalink" data-description="Paragraph"><a href="#sec-substitution-examples-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <details id="example-parallelogram-substitution" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
-<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">14.6</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">A Parallelogram Region.</span>
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.9.6</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">A Parallelogram Region.</span>
 </h4></summary><article class="example example-like knowl__content"><div class="para" id="example-parallelogram-substitution-2-1">Use the transformation <span class="process-math">\(T(u,v) = (u - 2v,\, v)\)</span> to compute<div class="autopermalink" data-description="Paragraph"><a href="#example-parallelogram-substitution-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig-parallelogram-sub.html" id="example-parallelogram-substitution-2-2">
@@ -600,10 +736,10 @@ J(u,v,w) = \frac{\partial(x,y,z)}{\partial(u,v,w)}
 \iint_D (x + 3y)\, dx\, dy,
 \end{equation*}
 </div>
-<div class="para" id="example-parallelogram-substitution-2-3">where <span class="process-math">\(D\)</span> is the parallelogram bounded by the lines <span class="process-math">\(x + 2y = 6\text{,}\)</span> <span class="process-math">\(x + 2y = 10\text{,}\)</span> <span class="process-math">\(y = 1\text{,}\)</span> and <span class="process-math">\(y = 3\text{,}\)</span> shown in <a href="section-jacobian-substitution.html#fig-parallelogram-sub" class="xref" data-knowl="./knowl/xref/fig-parallelogram-sub.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 14.8">Figure 14.8</a>.<div class="autopermalink" data-description="Paragraph"><a href="#example-parallelogram-substitution-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="example-parallelogram-substitution-2-3">where <span class="process-math">\(D\)</span> is the parallelogram bounded by the lines <span class="process-math">\(x + 2y = 6\text{,}\)</span> <span class="process-math">\(x + 2y = 10\text{,}\)</span> <span class="process-math">\(y = 1\text{,}\)</span> and <span class="process-math">\(y = 3\text{,}\)</span> shown in <a href="section-jacobian-substitution.html#fig-parallelogram-sub" class="internal" title="Figure 2.9.8">Figure 2.9.8</a>.<div class="autopermalink" data-description="Paragraph"><a href="#example-parallelogram-substitution-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Example 14.6: A Parallelogram Region"><a href="#example-parallelogram-substitution" title="Copy heading and permalink for Example 14.6: A Parallelogram Region" aria-label="Copy heading and permalink for Example 14.6: A Parallelogram Region">🔗</a></div></article></details><details id="solution-parallelogram-substitution" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
-<div class="para" id="solution-parallelogram-substitution-1">The transformation gives <span class="process-math">\(x = u - 2v\)</span> and <span class="process-math">\(y = v\text{,}\)</span> so by <a href="section-jacobian-substitution.html#eq-jacobian-2d" class="xref" data-knowl="./knowl/xref/eq-jacobian-2d.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 14.1">(14.1)</a>,<div class="autopermalink" data-description="Paragraph"><a href="#solution-parallelogram-substitution-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Example 2.9.6: A Parallelogram Region"><a href="#example-parallelogram-substitution" title="Copy heading and permalink for Example 2.9.6: A Parallelogram Region" aria-label="Copy heading and permalink for Example 2.9.6: A Parallelogram Region">🔗</a></div></article></details><details id="solution-parallelogram-substitution" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="solution-parallelogram-substitution-1">The transformation gives <span class="process-math">\(x = u - 2v\)</span> and <span class="process-math">\(y = v\text{,}\)</span> so by <a href="section-jacobian-substitution.html#eq-jacobian-2d" class="xref" data-knowl="./knowl/xref/eq-jacobian-2d.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 2.9.1">(2.9.1)</a>,<div class="autopermalink" data-description="Paragraph"><a href="#solution-parallelogram-substitution-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-jacobian-2d.html ./knowl/xref/eq-sub-2d.html ./knowl/xref/fig-parallelogram-sub-video.html" id="solution-parallelogram-substitution-2">
 \begin{equation*}
@@ -622,7 +758,7 @@ J(u,v,w) = \frac{\partial(x,y,z)}{\partial(u,v,w)}
 R = \{ (u,v) : 6 \le u \le 10,\ 1 \le v \le 3 \}.
 \end{equation*}
 </div>
-<div class="para" id="solution-parallelogram-substitution-5">The integrand becomes <span class="process-math">\(x + 3y = (u - 2v) + 3v = u + v\text{,}\)</span> so by <a href="section-jacobian-substitution.html#eq-sub-2d" class="xref" data-knowl="./knowl/xref/eq-sub-2d.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 14.3">(14.3)</a>,<div class="autopermalink" data-description="Paragraph"><a href="#solution-parallelogram-substitution-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="solution-parallelogram-substitution-5">The integrand becomes <span class="process-math">\(x + 3y = (u - 2v) + 3v = u + v\text{,}\)</span> so by <a href="section-jacobian-substitution.html#eq-sub-2d" class="xref" data-knowl="./knowl/xref/eq-sub-2d.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 2.9.3">(2.9.3)</a>,<div class="autopermalink" data-description="Paragraph"><a href="#solution-parallelogram-substitution-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-jacobian-2d.html ./knowl/xref/eq-sub-2d.html ./knowl/xref/fig-parallelogram-sub-video.html" id="solution-parallelogram-substitution-6">
 \begin{align*}
@@ -634,11 +770,11 @@ R = \{ (u,v) : 6 \le u \le 10,\ 1 \le v \le 3 \}.
 = 64 + 16 = 80.
 \end{align*}
 </div>
-<div class="para" id="solution-parallelogram-substitution-7">Watch the region unfold into a rectangle in <a href="section-jacobian-substitution.html#fig-parallelogram-sub-video" class="xref" data-knowl="./knowl/xref/fig-parallelogram-sub-video.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 14.7">Figure 14.7</a>.<div class="autopermalink" data-description="Paragraph"><a href="#solution-parallelogram-substitution-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="solution-parallelogram-substitution-7">Watch the region unfold into a rectangle in <a href="section-jacobian-substitution.html#fig-parallelogram-sub-video" class="xref" data-knowl="./knowl/xref/fig-parallelogram-sub-video.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 2.9.7">Figure 2.9.7</a>.<div class="autopermalink" data-description="Paragraph"><a href="#solution-parallelogram-substitution-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Solution 14.2.1"><a href="#solution-parallelogram-substitution" title="Copy heading and permalink for Solution 14.2.1" aria-label="Copy heading and permalink for Solution 14.2.1">🔗</a></div>
+<div class="autopermalink" data-description="Solution 2.9.2.1"><a href="#solution-parallelogram-substitution" title="Copy heading and permalink for Solution 2.9.2.1" aria-label="Copy heading and permalink for Solution 2.9.2.1">🔗</a></div>
 </div></details><figure class="figure figure-like" id="fig-parallelogram-sub-video"><div class="video-box" style="width: 70%;padding-top: 39.375%; margin-left: 15%; margin-right: 15%;"><video id="video-parallelogram-sub" class="video" controls=""><source src="external/videos/parallelogram_sub_1080p.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video></div>
-<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">14.7<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The substitution <span class="process-math">\(u = x + 2y\text{,}\)</span> <span class="process-math">\(v = y\)</span> straightens the parallelogram <span class="process-math">\(D\)</span> into the rectangle <span class="process-math">\([6,10] \times [1,3]\text{;}\)</span> the Jacobian equals <span class="process-math">\(1\text{,}\)</span> so areas are preserved.<div class="autopermalink" data-description="Figure 14.7"><a href="#fig-parallelogram-sub-video" title="Copy heading and permalink for Figure 14.7" aria-label="Copy heading and permalink for Figure 14.7">🔗</a></div></figcaption></figure><figure class="figure figure-like" id="fig-parallelogram-sub"><div class="sidebyside"><div class="sbsrow" style="margin-left:2%;margin-right:2%;grid-template-columns:50% 45.8333333333333%;column-gap:4%;">
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.9.7<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The substitution <span class="process-math">\(u = x + 2y\text{,}\)</span> <span class="process-math">\(v = y\)</span> straightens the parallelogram <span class="process-math">\(D\)</span> into the rectangle <span class="process-math">\([6,10] \times [1,3]\text{;}\)</span> the Jacobian equals <span class="process-math">\(1\text{,}\)</span> so areas are preserved.<div class="autopermalink" data-description="Figure 2.9.7"><a href="#fig-parallelogram-sub-video" title="Copy heading and permalink for Figure 2.9.7" aria-label="Copy heading and permalink for Figure 2.9.7">🔗</a></div></figcaption></figure><figure class="figure figure-like" id="fig-parallelogram-sub"><div class="sidebyside"><div class="sbsrow" style="margin-left:2%;margin-right:2%;grid-template-columns:50% 45.8333333333333%;column-gap:4%;">
 <div class="sbspanel sbspanel--middle middle" style=""><div class="image-box"><div class="ChemAccess-element" data-src="generated/prefigure/prefigure-parallelogram-D-diagcess.svg" data-cml="generated/prefigure/prefigure-parallelogram-D-annotations.xml"></div></div></div>
 <div class="sbspanel sbspanel--middle middle" style=""><div class="image-box"><div class="ChemAccess-element" data-src="generated/prefigure/prefigure-parallelogram-R-diagcess.svg" data-cml="generated/prefigure/prefigure-parallelogram-R-annotations.xml"></div></div></div>
 </div></div>
@@ -733,9 +869,9 @@ R = \{ (u,v) : 6 \le u \le 10,\ 1 \le v \le 3 \}.
 <td>Repeat sonification output</td>
 </tr>
 </tbody>
-</table></div></details><figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">14.8<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The parallelogram <span class="process-math">\(D\)</span> between the lines <span class="process-math">\(x + 2y = 6\text{,}\)</span> <span class="process-math">\(x + 2y = 10\text{,}\)</span> <span class="process-math">\(y = 1\text{,}\)</span> and <span class="process-math">\(y = 3\)</span> (left), and the corresponding rectangle <span class="process-math">\(R = [6,10] \times [1,3]\)</span> in the <span class="process-math">\(uv\)</span>-plane (right).<div class="autopermalink" data-description="Figure 14.8"><a href="#fig-parallelogram-sub" title="Copy heading and permalink for Figure 14.8" aria-label="Copy heading and permalink for Figure 14.8">🔗</a></div></figcaption></figure><details id="example-curved-to-rectangle" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
-<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">14.9</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">A Curved Region Mapped to a Rectangle.</span>
-</h4></summary><article class="example example-like knowl__content"><div class="para" id="example-curved-to-rectangle-2-1">Let <span class="process-math">\(D\)</span> be the region in the first quadrant bounded by the hyperbolas <span class="process-math">\(x^2 - y^2 = -3\text{,}\)</span> <span class="process-math">\(x^2 - y^2 = 3\text{,}\)</span> <span class="process-math">\(xy = 1\text{,}\)</span> and <span class="process-math">\(xy = 4\text{,}\)</span> shown in <a href="section-jacobian-substitution.html#fig-curved-region" class="xref" data-knowl="./knowl/xref/fig-curved-region.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 14.11">Figure 14.11</a>.<div class="autopermalink" data-description="Paragraph"><a href="#example-curved-to-rectangle-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</table></div></details><figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.9.8<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The parallelogram <span class="process-math">\(D\)</span> between the lines <span class="process-math">\(x + 2y = 6\text{,}\)</span> <span class="process-math">\(x + 2y = 10\text{,}\)</span> <span class="process-math">\(y = 1\text{,}\)</span> and <span class="process-math">\(y = 3\)</span> (left), and the corresponding rectangle <span class="process-math">\(R = [6,10] \times [1,3]\)</span> in the <span class="process-math">\(uv\)</span>-plane (right).<div class="autopermalink" data-description="Figure 2.9.8"><a href="#fig-parallelogram-sub" title="Copy heading and permalink for Figure 2.9.8" aria-label="Copy heading and permalink for Figure 2.9.8">🔗</a></div></figcaption></figure><details id="example-curved-to-rectangle" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.9.9</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">A Curved Region Mapped to a Rectangle.</span>
+</h4></summary><article class="example example-like knowl__content"><div class="para" id="example-curved-to-rectangle-2-1">Let <span class="process-math">\(D\)</span> be the region in the first quadrant bounded by the hyperbolas <span class="process-math">\(x^2 - y^2 = -3\text{,}\)</span> <span class="process-math">\(x^2 - y^2 = 3\text{,}\)</span> <span class="process-math">\(xy = 1\text{,}\)</span> and <span class="process-math">\(xy = 4\text{,}\)</span> shown in <a href="section-jacobian-substitution.html#fig-curved-region" class="internal" title="Figure 2.9.11">Figure 2.9.11</a>.<div class="autopermalink" data-description="Paragraph"><a href="#example-curved-to-rectangle-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> <div class="para logical" id="example-curved-to-rectangle-2-2">
 <ol class="upper-alpha ol-marker-1" id="example-curved-to-rectangle-2-2-1">
 <li id="example-curved-to-rectangle-2-2-1-1">
@@ -751,7 +887,7 @@ R = \{ (u,v) : 6 \le u \le 10,\ 1 \le v \le 3 \}.
 </ol>
 <div class="autopermalink" data-description="Paragraph"><a href="#example-curved-to-rectangle-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Example 14.9: A Curved Region Mapped to a Rectangle"><a href="#example-curved-to-rectangle" title="Copy heading and permalink for Example 14.9: A Curved Region Mapped to a Rectangle" aria-label="Copy heading and permalink for Example 14.9: A Curved Region Mapped to a Rectangle">🔗</a></div></article></details><details id="solution-curved-to-rectangle" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="autopermalink" data-description="Example 2.9.9: A Curved Region Mapped to a Rectangle"><a href="#example-curved-to-rectangle" title="Copy heading and permalink for Example 2.9.9: A Curved Region Mapped to a Rectangle" aria-label="Copy heading and permalink for Example 2.9.9: A Curved Region Mapped to a Rectangle">🔗</a></div></article></details><details id="solution-curved-to-rectangle" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
 <div class="para" id="solution-curved-to-rectangle-1">
 <em class="emphasis">Part A.</em> The boundary curves suggest the substitution<div class="autopermalink" data-description="Paragraph"><a href="#solution-curved-to-rectangle-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
@@ -782,14 +918,14 @@ y \amp x
 </div>
 <div class="para" id="solution-curved-to-rectangle-7">According to the inverse function theorem, the Jacobian we need is the reciprocal of this one:<div class="autopermalink" data-description="Paragraph"><a href="#solution-curved-to-rectangle-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-sub-2d.html ./knowl/xref/fig-curved-region-video.html" id="solution-curved-to-rectangle-8">
-\begin{equation*}
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-sub-2d.html ./knowl/xref/fig-curved-region-video.html" id="eq-jacobian-reciprocal">
+\begin{equation}
 \frac{\partial(x,y)}{\partial(u,v)}
 = \left( \frac{\partial(u,v)}{\partial(x,y)} \right)^{-1}
-= \frac{1}{2(x^2 + y^2)}.
-\end{equation*}
+= \frac{1}{2(x^2 + y^2)}.\tag{2.9.5}
+\end{equation}
 </div>
-<div class="para" id="solution-curved-to-rectangle-9">Now apply <a href="section-jacobian-substitution.html#eq-sub-2d" class="xref" data-knowl="./knowl/xref/eq-sub-2d.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 14.3">(14.3)</a>. The factor <span class="process-math">\(x^2 + y^2\)</span> in the integrand cancels against the Jacobian, and <span class="process-math">\(xy = v\text{:}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#solution-curved-to-rectangle-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="solution-curved-to-rectangle-9">Now apply <a href="section-jacobian-substitution.html#eq-sub-2d" class="xref" data-knowl="./knowl/xref/eq-sub-2d.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 2.9.3">(2.9.3)</a>. The factor <span class="process-math">\(x^2 + y^2\)</span> in the integrand cancels against the Jacobian, and <span class="process-math">\(xy = v\text{:}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#solution-curved-to-rectangle-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-sub-2d.html ./knowl/xref/fig-curved-region-video.html" id="solution-curved-to-rectangle-10">
 \begin{align*}
@@ -800,11 +936,11 @@ y \amp x
 = \frac{45}{2}.
 \end{align*}
 </div>
-<div class="para" id="solution-curved-to-rectangle-11">Without the substitution, even describing <span class="process-math">\(D\)</span> with explicit <span class="process-math">\(xy\)</span>-limits would be painful; with it, the integral collapses in two lines. See <a href="section-jacobian-substitution.html#fig-curved-region-video" class="xref" data-knowl="./knowl/xref/fig-curved-region-video.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 14.10">Figure 14.10</a> for the animation.<div class="autopermalink" data-description="Paragraph"><a href="#solution-curved-to-rectangle-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="solution-curved-to-rectangle-11">Without the substitution, even describing <span class="process-math">\(D\)</span> with explicit <span class="process-math">\(xy\)</span>-limits would be painful; with it, the integral collapses in two lines. See <a href="section-jacobian-substitution.html#fig-curved-region-video" class="xref" data-knowl="./knowl/xref/fig-curved-region-video.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 2.9.10">Figure 2.9.10</a> for the animation.<div class="autopermalink" data-description="Paragraph"><a href="#solution-curved-to-rectangle-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Solution 14.2.2"><a href="#solution-curved-to-rectangle" title="Copy heading and permalink for Solution 14.2.2" aria-label="Copy heading and permalink for Solution 14.2.2">🔗</a></div>
+<div class="autopermalink" data-description="Solution 2.9.2.2"><a href="#solution-curved-to-rectangle" title="Copy heading and permalink for Solution 2.9.2.2" aria-label="Copy heading and permalink for Solution 2.9.2.2">🔗</a></div>
 </div></details><figure class="figure figure-like" id="fig-curved-region-video"><div class="video-box" style="width: 70%;padding-top: 39.375%; margin-left: 15%; margin-right: 15%;"><video id="video-curved-region-sub" class="video" controls=""><source src="external/videos/curved_region_sub_1080p.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video></div>
-<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">14.10<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The substitution <span class="process-math">\(u = x^2 - y^2\text{,}\)</span> <span class="process-math">\(v = xy\)</span> maps the region between the four hyperbolas onto the rectangle <span class="process-math">\([-3,3] \times [1,4]\text{,}\)</span> and the Jacobian cancels the factor <span class="process-math">\(x^2 + y^2\)</span> in the integrand.<div class="autopermalink" data-description="Figure 14.10"><a href="#fig-curved-region-video" title="Copy heading and permalink for Figure 14.10" aria-label="Copy heading and permalink for Figure 14.10">🔗</a></div></figcaption></figure><figure class="figure figure-like" id="fig-curved-region"><div class="sidebyside"><div class="sbsrow" style="margin-left:2%;margin-right:2%;grid-template-columns:47.9166666666667% 47.9166666666667%;column-gap:4%;">
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.9.10<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The substitution <span class="process-math">\(u = x^2 - y^2\text{,}\)</span> <span class="process-math">\(v = xy\)</span> maps the region between the four hyperbolas onto the rectangle <span class="process-math">\([-3,3] \times [1,4]\text{,}\)</span> and the Jacobian cancels the factor <span class="process-math">\(x^2 + y^2\)</span> in the integrand.<div class="autopermalink" data-description="Figure 2.9.10"><a href="#fig-curved-region-video" title="Copy heading and permalink for Figure 2.9.10" aria-label="Copy heading and permalink for Figure 2.9.10">🔗</a></div></figcaption></figure><figure class="figure figure-like" id="fig-curved-region"><div class="sidebyside"><div class="sbsrow" style="margin-left:2%;margin-right:2%;grid-template-columns:47.9166666666667% 47.9166666666667%;column-gap:4%;">
 <div class="sbspanel sbspanel--middle middle" style=""><div class="image-box"><div class="ChemAccess-element" data-src="generated/prefigure/prefigure-curved-D-diagcess.svg" data-cml="generated/prefigure/prefigure-curved-D-annotations.xml"></div></div></div>
 <div class="sbspanel sbspanel--middle middle" style=""><div class="image-box"><div class="ChemAccess-element" data-src="generated/prefigure/prefigure-curved-R-diagcess.svg" data-cml="generated/prefigure/prefigure-curved-R-annotations.xml"></div></div></div>
 </div></div>
@@ -899,24 +1035,24 @@ y \amp x
 <td>Repeat sonification output</td>
 </tr>
 </tbody>
-</table></div></details><figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">14.11<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The region <span class="process-math">\(D\)</span> bounded by the hyperbolas <span class="process-math">\(x^2 - y^2 = \pm 3\)</span> and <span class="process-math">\(xy = 1\text{,}\)</span> <span class="process-math">\(xy = 4\)</span> (left) corresponds to the rectangle <span class="process-math">\(R = [-3,3] \times [1,4]\)</span> under <span class="process-math">\(u = x^2 - y^2\text{,}\)</span> <span class="process-math">\(v = xy\)</span> (right).<div class="autopermalink" data-description="Figure 14.11"><a href="#fig-curved-region" title="Copy heading and permalink for Figure 14.11" aria-label="Copy heading and permalink for Figure 14.11">🔗</a></div></figcaption></figure><div class="autopermalink" data-description="Subsection 14.2: Choosing a Transformation"><a href="#sec-substitution-examples" title="Copy heading and permalink for Subsection 14.2: Choosing a Transformation" aria-label="Copy heading and permalink for Subsection 14.2: Choosing a Transformation">🔗</a></div></section><section class="subsection" id="sec-substitution-3d"><h3 class="heading hide-type">
-<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">14.3</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Substitution in Triple Integrals</span>
+</table></div></details><figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.9.11<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The region <span class="process-math">\(D\)</span> bounded by the hyperbolas <span class="process-math">\(x^2 - y^2 = \pm 3\)</span> and <span class="process-math">\(xy = 1\text{,}\)</span> <span class="process-math">\(xy = 4\)</span> (left) corresponds to the rectangle <span class="process-math">\(R = [-3,3] \times [1,4]\)</span> under <span class="process-math">\(u = x^2 - y^2\text{,}\)</span> <span class="process-math">\(v = xy\)</span> (right).<div class="autopermalink" data-description="Figure 2.9.11"><a href="#fig-curved-region" title="Copy heading and permalink for Figure 2.9.11" aria-label="Copy heading and permalink for Figure 2.9.11">🔗</a></div></figcaption></figure><div class="autopermalink" data-description="Subsection 2.9.2: Choosing a Transformation"><a href="#sec-substitution-examples" title="Copy heading and permalink for Subsection 2.9.2: Choosing a Transformation" aria-label="Copy heading and permalink for Subsection 2.9.2: Choosing a Transformation">🔗</a></div></section><section class="subsection" id="sec-substitution-3d"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.9.3</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Substitution in Triple Integrals</span>
 </h3>
 <details id="example-parallelepiped-volume" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
-<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">14.12</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Volume of a Parallelepiped by Substitution.</span>
-</h4></summary><article class="example example-like knowl__content"><div class="para" id="example-parallelepiped-volume-2-1">Find the volume of the parallelepiped shown in <a href="section-jacobian-substitution.html#fig-parallelepiped-tikz" class="xref" data-knowl="./knowl/xref/fig-parallelepiped-tikz.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 14.15">Figure 14.15</a> by writing the equations of all faces of the parallelepiped and describing it by three inequalities. Use a suitable change of variables such that all the integral limits are constants (as opposed to functions).<div class="autopermalink" data-description="Paragraph"><a href="#example-parallelepiped-volume-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.9.12</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Volume of a Parallelepiped by Substitution.</span>
+</h4></summary><article class="example example-like knowl__content"><div class="para" id="example-parallelepiped-volume-2-1">Find the volume of the parallelepiped shown in <a href="section-jacobian-substitution.html#fig-parallelepiped-tikz" class="xref" data-knowl="./knowl/xref/fig-parallelepiped-tikz.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 2.9.15">Figure 2.9.15</a> by writing the equations of all faces of the parallelepiped and describing it by three inequalities. Use a suitable change of variables such that all the integral limits are constants (as opposed to functions).<div class="autopermalink" data-description="Paragraph"><a href="#example-parallelepiped-volume-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Example 14.12: Volume of a Parallelepiped by Substitution"><a href="#example-parallelepiped-volume" title="Copy heading and permalink for Example 14.12: Volume of a Parallelepiped by Substitution" aria-label="Copy heading and permalink for Example 14.12: Volume of a Parallelepiped by Substitution">🔗</a></div></article></details><details id="solution-parallelepiped-volume" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="autopermalink" data-description="Example 2.9.12: Volume of a Parallelepiped by Substitution"><a href="#example-parallelepiped-volume" title="Copy heading and permalink for Example 2.9.12: Volume of a Parallelepiped by Substitution" aria-label="Copy heading and permalink for Example 2.9.12: Volume of a Parallelepiped by Substitution">🔗</a></div></article></details><details id="solution-parallelepiped-volume" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
 <div class="para" id="solution-parallelepiped-volume-1">We can easily write the equations of <span class="process-math">\(4\)</span> of the faces, two of which are parallel to the <span class="process-math">\(xy\)</span>-plane and the other two are parallel to the <span class="process-math">\(yz\)</span>-plane:<div class="autopermalink" data-description="Paragraph"><a href="#solution-parallelepiped-volume-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-jacobian-3d.html ./knowl/xref/eq-sub-3d.html ./knowl/xref/fig-parallelepiped-video.html" id="solution-parallelepiped-volume-2">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-jacobian-reciprocal.html ./knowl/xref/eq-jacobian-3d.html ./knowl/xref/eq-sub-3d.html ./knowl/xref/fig-parallelepiped-video.html" id="solution-parallelepiped-volume-2">
 \begin{equation*}
 z = 0, \quad z = 1, \quad x = 0, \quad \text{and} \quad x = 1.
 \end{equation*}
 </div>
 <div class="para" id="solution-parallelepiped-volume-3">To write the equations of the remaining two slanted faces, we find the normal to the plane, and together with a point on each plane, we compute their equations. Each slanted face contains the direction <span class="process-math">\(\mathbf{i}\)</span> (an edge parallel to the <span class="process-math">\(x\)</span>-axis) and the edge direction <span class="process-math">\(\mathbf{j} + \mathbf{k}\text{,}\)</span> so<div class="autopermalink" data-description="Paragraph"><a href="#solution-parallelepiped-volume-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-jacobian-3d.html ./knowl/xref/eq-sub-3d.html ./knowl/xref/fig-parallelepiped-video.html" id="solution-parallelepiped-volume-4">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-jacobian-reciprocal.html ./knowl/xref/eq-jacobian-3d.html ./knowl/xref/eq-sub-3d.html ./knowl/xref/fig-parallelepiped-video.html" id="solution-parallelepiped-volume-4">
 \begin{equation*}
 \mathbf{n} =
 \begin{vmatrix}
@@ -929,7 +1065,7 @@ z = 0, \quad z = 1, \quad x = 0, \quad \text{and} \quad x = 1.
 </div>
 <div class="para" id="solution-parallelepiped-volume-5">Using the points <span class="process-math">\(\mathbf{0}\)</span> and <span class="process-math">\((0,3,0)\)</span> on the two faces,<div class="autopermalink" data-description="Paragraph"><a href="#solution-parallelepiped-volume-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-jacobian-3d.html ./knowl/xref/eq-sub-3d.html ./knowl/xref/fig-parallelepiped-video.html" id="solution-parallelepiped-volume-6">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-jacobian-reciprocal.html ./knowl/xref/eq-jacobian-3d.html ./knowl/xref/eq-sub-3d.html ./knowl/xref/fig-parallelepiped-video.html" id="solution-parallelepiped-volume-6">
 \begin{align*}
 D_1 = \mathbf{n} \cdot \mathbf{0} = 0
 \amp\;\Rightarrow\; y - z = 0,\\
@@ -939,21 +1075,21 @@ D_2 = \mathbf{n} \cdot (0,3,0)^T = -3
 </div>
 <div class="para" id="solution-parallelepiped-volume-7">Thus we can describe the parallelepiped as the region between the six faces—in other words, by the three inequalities<div class="autopermalink" data-description="Paragraph"><a href="#solution-parallelepiped-volume-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-jacobian-3d.html ./knowl/xref/eq-sub-3d.html ./knowl/xref/fig-parallelepiped-video.html" id="solution-parallelepiped-volume-8">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-jacobian-reciprocal.html ./knowl/xref/eq-jacobian-3d.html ./knowl/xref/eq-sub-3d.html ./knowl/xref/fig-parallelepiped-video.html" id="solution-parallelepiped-volume-8">
 \begin{equation*}
 R = \{ (x,y,z) : 0 \le x \le 1,\ 0 \le z \le 1,\ 0 \le y - z \le 3 \}.
 \end{equation*}
 </div>
 <div class="para" id="solution-parallelepiped-volume-9">We can now transform the region <span class="process-math">\(R\)</span> into a box <span class="process-math">\(S\)</span> using the transformation <span class="process-math">\(u = x\text{,}\)</span> <span class="process-math">\(v = z\text{,}\)</span> and <span class="process-math">\(w = y - z\text{:}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#solution-parallelepiped-volume-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-jacobian-3d.html ./knowl/xref/eq-sub-3d.html ./knowl/xref/fig-parallelepiped-video.html" id="solution-parallelepiped-volume-10">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-jacobian-reciprocal.html ./knowl/xref/eq-jacobian-3d.html ./knowl/xref/eq-sub-3d.html ./knowl/xref/fig-parallelepiped-video.html" id="solution-parallelepiped-volume-10">
 \begin{equation*}
 S = \{ (u,v,w) : 0 \le u \le 1,\ 0 \le v \le 1,\ 0 \le w \le 3 \}.
 \end{equation*}
 </div>
-<div class="para" id="solution-parallelepiped-volume-11">Note that according to the inverse function theorem, the matrix inverse of the Jacobian matrix of an invertible function is the Jacobian matrix of the inverse function. Using <a href="section-jacobian-substitution.html#eq-jacobian-3d" class="xref" data-knowl="./knowl/xref/eq-jacobian-3d.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 14.2">(14.2)</a> in the easy direction,<div class="autopermalink" data-description="Paragraph"><a href="#solution-parallelepiped-volume-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="solution-parallelepiped-volume-11">Note that according to the inverse function theorem, the matrix inverse of the Jacobian matrix of an invertible function is the Jacobian matrix of the inverse function, exactly as in <a href="section-jacobian-substitution.html#eq-jacobian-reciprocal" class="xref" data-knowl="./knowl/xref/eq-jacobian-reciprocal.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 2.9.5">(2.9.5)</a>. Using <a href="section-jacobian-substitution.html#eq-jacobian-3d" class="xref" data-knowl="./knowl/xref/eq-jacobian-3d.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 2.9.2">(2.9.2)</a> in the easy direction,<div class="autopermalink" data-description="Paragraph"><a href="#solution-parallelepiped-volume-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-jacobian-3d.html ./knowl/xref/eq-sub-3d.html ./knowl/xref/fig-parallelepiped-video.html" id="solution-parallelepiped-volume-12">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-jacobian-reciprocal.html ./knowl/xref/eq-jacobian-3d.html ./knowl/xref/eq-sub-3d.html ./knowl/xref/fig-parallelepiped-video.html" id="solution-parallelepiped-volume-12">
 \begin{equation*}
 \frac{\partial(u,v,w)}{\partial(x,y,z)}
 = \begin{vmatrix}
@@ -967,30 +1103,30 @@ S = \{ (u,v,w) : 0 \le u \le 1,\ 0 \le v \le 1,\ 0 \le w \le 3 \}.
 = (-1)^{-1} = -1.
 \end{equation*}
 </div>
-<div class="para" id="solution-parallelepiped-volume-13">For the volume of the parallelepiped, <a href="section-jacobian-substitution.html#eq-sub-3d" class="xref" data-knowl="./knowl/xref/eq-sub-3d.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 14.4">(14.4)</a> gives<div class="autopermalink" data-description="Paragraph"><a href="#solution-parallelepiped-volume-13" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="solution-parallelepiped-volume-13">For the volume of the parallelepiped, <a href="section-jacobian-substitution.html#eq-sub-3d" class="xref" data-knowl="./knowl/xref/eq-sub-3d.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 2.9.4">(2.9.4)</a> gives<div class="autopermalink" data-description="Paragraph"><a href="#solution-parallelepiped-volume-13" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-jacobian-3d.html ./knowl/xref/eq-sub-3d.html ./knowl/xref/fig-parallelepiped-video.html" id="solution-parallelepiped-volume-14">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-jacobian-reciprocal.html ./knowl/xref/eq-jacobian-3d.html ./knowl/xref/eq-sub-3d.html ./knowl/xref/fig-parallelepiped-video.html" id="solution-parallelepiped-volume-14">
 \begin{equation*}
 V_P = \iiint_R dx\, dy\, dz
 = \iiint_S \lvert -1 \rvert\, du\, dv\, dw
 = \int_0^1 \int_0^1 \int_0^3 dw\, dv\, du = 3.
 \end{equation*}
 </div>
-<div class="para" id="solution-parallelepiped-volume-15">The animation in <a href="section-jacobian-substitution.html#fig-parallelepiped-video" class="xref" data-knowl="./knowl/xref/fig-parallelepiped-video.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 14.14">Figure 14.14</a> shows the shear that straightens the parallelepiped into a box.<div class="autopermalink" data-description="Paragraph"><a href="#solution-parallelepiped-volume-15" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="solution-parallelepiped-volume-15">The animation in <a href="section-jacobian-substitution.html#fig-parallelepiped-video" class="xref" data-knowl="./knowl/xref/fig-parallelepiped-video.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 2.9.14">Figure 2.9.14</a> shows the shear that straightens the parallelepiped into a box.<div class="autopermalink" data-description="Paragraph"><a href="#solution-parallelepiped-volume-15" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Solution 14.3.1"><a href="#solution-parallelepiped-volume" title="Copy heading and permalink for Solution 14.3.1" aria-label="Copy heading and permalink for Solution 14.3.1">🔗</a></div>
+<div class="autopermalink" data-description="Solution 2.9.3.1"><a href="#solution-parallelepiped-volume" title="Copy heading and permalink for Solution 2.9.3.1" aria-label="Copy heading and permalink for Solution 2.9.3.1">🔗</a></div>
 </div></details><article class="remark remark-like" id="remark-box-product"><h4 class="heading">
-<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">14.13</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.9.13</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4>
 <div class="para" id="remark-box-product-1">Finally, we would like to mention that there is a much easier way of calculating the volume of a parallelepiped (using the so-called box product); however, the method above is a rich example in calculus and definitely worth learning. For example, you may need to integrate a function over the parallelepiped, which cannot be done using the box product.<div class="autopermalink" data-description="Paragraph"><a href="#remark-box-product-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Remark 14.13"><a href="#remark-box-product" title="Copy heading and permalink for Remark 14.13" aria-label="Copy heading and permalink for Remark 14.13">🔗</a></div></article><figure class="figure figure-like" id="fig-parallelepiped-video"><div class="video-box" style="width: 70%;padding-top: 39.375%; margin-left: 15%; margin-right: 15%;"><video id="video-parallelepiped" class="video" controls=""><source src="external/videos/parallelepiped_volume_1080p.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video></div>
-<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">14.14<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The change of variables <span class="process-math">\(u = x\text{,}\)</span> <span class="process-math">\(v = z\text{,}\)</span> <span class="process-math">\(w = y - z\)</span> shears the parallelepiped into the box <span class="process-math">\([0,1] \times [0,1] \times [0,3]\text{;}\)</span> since <span class="process-math">\(|J| = 1\text{,}\)</span> the volume is <span class="process-math">\(3\text{.}\)</span><div class="autopermalink" data-description="Figure 14.14"><a href="#fig-parallelepiped-video" title="Copy heading and permalink for Figure 14.14" aria-label="Copy heading and permalink for Figure 14.14">🔗</a></div></figcaption></figure><figure class="figure figure-like" id="fig-parallelepiped-tikz"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;">
+<div class="autopermalink" data-description="Remark 2.9.13"><a href="#remark-box-product" title="Copy heading and permalink for Remark 2.9.13" aria-label="Copy heading and permalink for Remark 2.9.13">🔗</a></div></article><figure class="figure figure-like" id="fig-parallelepiped-video"><div class="video-box" style="width: 70%;padding-top: 39.375%; margin-left: 15%; margin-right: 15%;"><video id="video-parallelepiped" class="video" controls=""><source src="external/videos/parallelepiped_volume_1080p.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.9.14<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The change of variables <span class="process-math">\(u = x\text{,}\)</span> <span class="process-math">\(v = z\text{,}\)</span> <span class="process-math">\(w = y - z\)</span> shears the parallelepiped into the box <span class="process-math">\([0,1] \times [0,1] \times [0,3]\text{;}\)</span> since <span class="process-math">\(|J| = 1\text{,}\)</span> the volume is <span class="process-math">\(3\text{.}\)</span><div class="autopermalink" data-description="Figure 2.9.14"><a href="#fig-parallelepiped-video" title="Copy heading and permalink for Figure 2.9.14" aria-label="Copy heading and permalink for Figure 2.9.14">🔗</a></div></figcaption></figure><figure class="figure figure-like" id="fig-parallelepiped-tikz"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;">
 <img src="generated/latex-image/image-parallelepiped-tikz.svg" role="img" class="contained" alt="A long slanted box in space bounded by six planes."><details class="image-description" aria-live="polite"><summary title="details"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span></summary><div id="image-parallelepiped-tikz-description"><div class="para" id="image-parallelepiped-tikz-2-1">A parallelepiped drawn with crimson edges in a three-dimensional coordinate system. Its base is the unit square <span class="process-math">\(0 \le x \le 1\)</span> in the plane <span class="process-math">\(z = 0\text{,}\)</span> sheared in the <span class="process-math">\(y\)</span>-direction: the bottom face lies between the planes <span class="process-math">\(y - z = 0\)</span> and <span class="process-math">\(y - z = 3\text{,}\)</span> and the top face, at height <span class="process-math">\(z = 1\text{,}\)</span> is shifted one unit in <span class="process-math">\(y\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#image-parallelepiped-tikz-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div></div></details>
 </div>
-<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">14.15<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The parallelepiped bounded by the planes <span class="process-math">\(x = 0\text{,}\)</span> <span class="process-math">\(x = 1\text{,}\)</span> <span class="process-math">\(z = 0\text{,}\)</span> <span class="process-math">\(z = 1\text{,}\)</span> <span class="process-math">\(y - z = 0\text{,}\)</span> and <span class="process-math">\(y - z = 3\text{.}\)</span><div class="autopermalink" data-description="Figure 14.15"><a href="#fig-parallelepiped-tikz" title="Copy heading and permalink for Figure 14.15" aria-label="Copy heading and permalink for Figure 14.15">🔗</a></div></figcaption></figure><details id="example-ellipsoid-volume" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
-<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">14.16</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Volume of an Ellipsoid.</span>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.9.15<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The parallelepiped bounded by the planes <span class="process-math">\(x = 0\text{,}\)</span> <span class="process-math">\(x = 1\text{,}\)</span> <span class="process-math">\(z = 0\text{,}\)</span> <span class="process-math">\(z = 1\text{,}\)</span> <span class="process-math">\(y - z = 0\text{,}\)</span> and <span class="process-math">\(y - z = 3\text{.}\)</span><div class="autopermalink" data-description="Figure 2.9.15"><a href="#fig-parallelepiped-tikz" title="Copy heading and permalink for Figure 2.9.15" aria-label="Copy heading and permalink for Figure 2.9.15">🔗</a></div></figcaption></figure><details id="example-ellipsoid-volume" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.9.16</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Volume of an Ellipsoid.</span>
 </h4></summary><article class="example example-like knowl__content"><div class="para" id="example-ellipsoid-volume-2-1">Use the method of substitution in multiple integrals to show that the volume of the ellipsoid<div class="autopermalink" data-description="Paragraph"><a href="#example-ellipsoid-volume-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="displaymath process-math" id="example-ellipsoid-volume-2-2">
@@ -1000,7 +1136,7 @@ V_P = \iiint_R dx\, dy\, dz
 </div>
 <div class="para" id="example-ellipsoid-volume-2-3">is equal to <span class="process-math">\(\dfrac{4\pi}{3}\, abc\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#example-ellipsoid-volume-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Example 14.16: Volume of an Ellipsoid"><a href="#example-ellipsoid-volume" title="Copy heading and permalink for Example 14.16: Volume of an Ellipsoid" aria-label="Copy heading and permalink for Example 14.16: Volume of an Ellipsoid">🔗</a></div></article></details><details id="solution-ellipsoid-volume" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="autopermalink" data-description="Example 2.9.16: Volume of an Ellipsoid"><a href="#example-ellipsoid-volume" title="Copy heading and permalink for Example 2.9.16: Volume of an Ellipsoid" aria-label="Copy heading and permalink for Example 2.9.16: Volume of an Ellipsoid">🔗</a></div></article></details><details id="solution-ellipsoid-volume" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
 <div class="para" id="solution-ellipsoid-volume-1">The ellipsoid is a stretched sphere, so we use the transformation<div class="autopermalink" data-description="Paragraph"><a href="#solution-ellipsoid-volume-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig-ellipsoid-tikz.html ./knowl/xref/eq-jacobian-3d.html ./knowl/xref/eq-sub-3d.html ./knowl/xref/fig-ellipsoid-video.html" id="solution-ellipsoid-volume-2">
@@ -1008,7 +1144,7 @@ V_P = \iiint_R dx\, dy\, dz
 T: \quad x = au, \qquad y = bv, \qquad z = cw,
 \end{equation*}
 </div>
-<div class="para" id="solution-ellipsoid-volume-3">which carries the unit ball <span class="process-math">\(S\text{,}\)</span> bounded by <span class="process-math">\(u^2 + v^2 + w^2 = 1\text{,}\)</span> onto the solid ellipsoid <span class="process-math">\(E\text{,}\)</span> as illustrated in <a href="section-jacobian-substitution.html#fig-ellipsoid-tikz" class="xref" data-knowl="./knowl/xref/fig-ellipsoid-tikz.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 14.18">Figure 14.18</a>. By <a href="section-jacobian-substitution.html#eq-jacobian-3d" class="xref" data-knowl="./knowl/xref/eq-jacobian-3d.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 14.2">(14.2)</a>, the Jacobian is<div class="autopermalink" data-description="Paragraph"><a href="#solution-ellipsoid-volume-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="solution-ellipsoid-volume-3">which carries the unit ball <span class="process-math">\(S\text{,}\)</span> bounded by <span class="process-math">\(u^2 + v^2 + w^2 = 1\text{,}\)</span> onto the solid ellipsoid <span class="process-math">\(E\text{,}\)</span> as illustrated in <a href="section-jacobian-substitution.html#fig-ellipsoid-tikz" class="xref" data-knowl="./knowl/xref/fig-ellipsoid-tikz.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 2.9.18">Figure 2.9.18</a>. By <a href="section-jacobian-substitution.html#eq-jacobian-3d" class="xref" data-knowl="./knowl/xref/eq-jacobian-3d.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 2.9.2">(2.9.2)</a>, the Jacobian is<div class="autopermalink" data-description="Paragraph"><a href="#solution-ellipsoid-volume-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig-ellipsoid-tikz.html ./knowl/xref/eq-jacobian-3d.html ./knowl/xref/eq-sub-3d.html ./knowl/xref/fig-ellipsoid-video.html" id="solution-ellipsoid-volume-4">
 \begin{equation*}
@@ -1021,7 +1157,7 @@ a \amp 0 \amp 0 \\
 = abc.
 \end{equation*}
 </div>
-<div class="para" id="solution-ellipsoid-volume-5">Therefore, by <a href="section-jacobian-substitution.html#eq-sub-3d" class="xref" data-knowl="./knowl/xref/eq-sub-3d.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 14.4">(14.4)</a>,<div class="autopermalink" data-description="Paragraph"><a href="#solution-ellipsoid-volume-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="solution-ellipsoid-volume-5">Therefore, by <a href="section-jacobian-substitution.html#eq-sub-3d" class="xref" data-knowl="./knowl/xref/eq-sub-3d.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 2.9.4">(2.9.4)</a>,<div class="autopermalink" data-description="Paragraph"><a href="#solution-ellipsoid-volume-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig-ellipsoid-tikz.html ./knowl/xref/eq-jacobian-3d.html ./knowl/xref/eq-sub-3d.html ./knowl/xref/fig-ellipsoid-video.html" id="solution-ellipsoid-volume-6">
 \begin{equation*}
@@ -1032,17 +1168,127 @@ du\, dv\, dw
 = \frac{4\pi}{3}\, abc,
 \end{equation*}
 </div>
-<div class="para" id="solution-ellipsoid-volume-7">since the last integral is the volume of a sphere of radius one, <span class="process-math">\(\tfrac{4\pi}{3}\text{.}\)</span> The animation in <a href="section-jacobian-substitution.html#fig-ellipsoid-video" class="xref" data-knowl="./knowl/xref/fig-ellipsoid-video.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 14.17">Figure 14.17</a> shows the unit sphere stretching by the factors <span class="process-math">\(a\text{,}\)</span> <span class="process-math">\(b\text{,}\)</span> <span class="process-math">\(c\)</span> along the three axes, scaling its volume by <span class="process-math">\(abc\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#solution-ellipsoid-volume-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="solution-ellipsoid-volume-7">since the last integral is the volume of a sphere of radius one, <span class="process-math">\(\tfrac{4\pi}{3}\text{.}\)</span> The animation in <a href="section-jacobian-substitution.html#fig-ellipsoid-video" class="xref" data-knowl="./knowl/xref/fig-ellipsoid-video.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 2.9.17">Figure 2.9.17</a> shows the unit sphere stretching by the factors <span class="process-math">\(a\text{,}\)</span> <span class="process-math">\(b\text{,}\)</span> <span class="process-math">\(c\)</span> along the three axes, scaling its volume by <span class="process-math">\(abc\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#solution-ellipsoid-volume-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Solution 14.3.2"><a href="#solution-ellipsoid-volume" title="Copy heading and permalink for Solution 14.3.2" aria-label="Copy heading and permalink for Solution 14.3.2">🔗</a></div>
+<div class="autopermalink" data-description="Solution 2.9.3.2"><a href="#solution-ellipsoid-volume" title="Copy heading and permalink for Solution 2.9.3.2" aria-label="Copy heading and permalink for Solution 2.9.3.2">🔗</a></div>
 </div></details><figure class="figure figure-like" id="fig-ellipsoid-video"><div class="video-box" style="width: 70%;padding-top: 39.375%; margin-left: 15%; margin-right: 15%;"><video id="video-ellipsoid" class="video" controls=""><source src="external/videos/ellipsoid_volume_1080p.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video></div>
-<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">14.17<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Stretching the unit sphere by factors <span class="process-math">\(a\text{,}\)</span> <span class="process-math">\(b\text{,}\)</span> and <span class="process-math">\(c\)</span> along the coordinate axes produces the ellipsoid; the Jacobian <span class="process-math">\(abc\)</span> scales the volume from <span class="process-math">\(\tfrac{4\pi}{3}\)</span> to <span class="process-math">\(\tfrac{4\pi}{3}abc\text{.}\)</span><div class="autopermalink" data-description="Figure 14.17"><a href="#fig-ellipsoid-video" title="Copy heading and permalink for Figure 14.17" aria-label="Copy heading and permalink for Figure 14.17">🔗</a></div></figcaption></figure><figure class="figure figure-like" id="fig-ellipsoid-tikz"><div class="image-box" style="width: 97%; margin-left: 1.5%; margin-right: 1.5%;">
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.9.17<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Stretching the unit sphere by factors <span class="process-math">\(a\text{,}\)</span> <span class="process-math">\(b\text{,}\)</span> and <span class="process-math">\(c\)</span> along the coordinate axes produces the ellipsoid; the Jacobian <span class="process-math">\(abc\)</span> scales the volume from <span class="process-math">\(\tfrac{4\pi}{3}\)</span> to <span class="process-math">\(\tfrac{4\pi}{3}abc\text{.}\)</span><div class="autopermalink" data-description="Figure 2.9.17"><a href="#fig-ellipsoid-video" title="Copy heading and permalink for Figure 2.9.17" aria-label="Copy heading and permalink for Figure 2.9.17">🔗</a></div></figcaption></figure><figure class="figure figure-like" id="fig-ellipsoid-tikz"><div class="image-box" style="width: 97%; margin-left: 1.5%; margin-right: 1.5%;">
 <img src="generated/latex-image/image-ellipsoid-tikz.svg" role="img" class="contained" alt="A unit sphere on the left is mapped by an arrow labeled T to an ellipsoid on the right."><details class="image-description" aria-live="polite"><summary title="details"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span></summary><div id="image-ellipsoid-tikz-description"><div class="para" id="image-ellipsoid-tikz-2-1">On the left, the unit sphere <span class="process-math">\(u^2 + v^2 + w^2 = 1\text{,}\)</span> labeled <span class="process-math">\(S\text{,}\)</span> drawn as a translucent gray-blue ball. An arrow labeled <span class="process-math">\(T(u,v,w) = (au, bv, cw)\)</span> points to the right, where the ellipsoid <span class="process-math">\(x^2/a^2 + y^2/b^2 + z^2/c^2 = 1\text{,}\)</span> labeled <span class="process-math">\(E\text{,}\)</span> is drawn as a translucent green surface, wider than it is tall, with its three semi-axes <span class="process-math">\(a\text{,}\)</span> <span class="process-math">\(b\text{,}\)</span> and <span class="process-math">\(c\)</span> drawn in vermillion, blue, and green.<div class="autopermalink" data-description="Paragraph"><a href="#image-ellipsoid-tikz-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div></div></details>
 </div>
-<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">14.18<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The transformation <span class="process-math">\(T(u,v,w) = (au, bv, cw)\)</span> carries the unit ball <span class="process-math">\(S\)</span> onto the solid ellipsoid <span class="process-math">\(E\)</span> with semi-axes <span class="process-math">\(a\text{,}\)</span> <span class="process-math">\(b\text{,}\)</span> <span class="process-math">\(c\text{.}\)</span><div class="autopermalink" data-description="Figure 14.18"><a href="#fig-ellipsoid-tikz" title="Copy heading and permalink for Figure 14.18" aria-label="Copy heading and permalink for Figure 14.18">🔗</a></div></figcaption></figure><div class="autopermalink" data-description="Subsection 14.3: Substitution in Triple Integrals"><a href="#sec-substitution-3d" title="Copy heading and permalink for Subsection 14.3: Substitution in Triple Integrals" aria-label="Copy heading and permalink for Subsection 14.3: Substitution in Triple Integrals">🔗</a></div></section><div class="autopermalink" data-description="Section 14: Substitution in Multiple Integrals and the Jacobian Determinant"><a href="#section-jacobian-substitution" title="Copy heading and permalink for Section 14: Substitution in Multiple Integrals and the Jacobian Determinant" aria-label="Copy heading and permalink for Section 14: Substitution in Multiple Integrals and the Jacobian Determinant">🔗</a></div></section></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.9.18<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The transformation <span class="process-math">\(T(u,v,w) = (au, bv, cw)\)</span> carries the unit ball <span class="process-math">\(S\)</span> onto the solid ellipsoid <span class="process-math">\(E\)</span> with semi-axes <span class="process-math">\(a\text{,}\)</span> <span class="process-math">\(b\text{,}\)</span> <span class="process-math">\(c\text{.}\)</span><div class="autopermalink" data-description="Figure 2.9.18"><a href="#fig-ellipsoid-tikz" title="Copy heading and permalink for Figure 2.9.18" aria-label="Copy heading and permalink for Figure 2.9.18">🔗</a></div></figcaption></figure><div class="autopermalink" data-description="Subsection 2.9.3: Substitution in Triple Integrals"><a href="#sec-substitution-3d" title="Copy heading and permalink for Subsection 2.9.3: Substitution in Triple Integrals" aria-label="Copy heading and permalink for Subsection 2.9.3: Substitution in Triple Integrals">🔗</a></div></section><section class="subsection" id="sec-jacobian-activity"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.9.4</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Activity: Watching a Substitution Transform a Region</span>
+</h3>
+<article class="activity project-like" id="activity-jacobian-geogebra"><h4 class="heading">
+<span class="type">Activity</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.9.1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">From a Rectangle to a Curved Region.</span>
+</h4>
+<div class="para" id="activity-jacobian-geogebra-2-1">Use the transformation<div class="autopermalink" data-description="Paragraph"><a href="#activity-jacobian-geogebra-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="activity-jacobian-geogebra-2-2">
+\begin{equation*}
+x = \frac{u^2}{4}, \qquad y = \frac{uv}{4}
+\end{equation*}
+</div>
+<div class="para" id="activity-jacobian-geogebra-2-3">to compute<div class="autopermalink" data-description="Paragraph"><a href="#activity-jacobian-geogebra-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="activity-jacobian-geogebra-2-4">
+\begin{equation*}
+\iint_E \frac{x}{y^2}\, dx\, dy,
+\end{equation*}
+</div>
+<div class="para" id="activity-jacobian-geogebra-2-5">where<div class="autopermalink" data-description="Paragraph"><a href="#activity-jacobian-geogebra-2-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="activity-jacobian-geogebra-2-6">
+\begin{equation*}
+E = \left\{ (x,y) \in \R^2 : 1 \le x \le 4,\
+\frac{1}{2}\sqrt{x} \le y \le \frac{5}{2}\sqrt{x} \right\}.
+\end{equation*}
+</div>
+<div class="para" id="activity-jacobian-geogebra-2-7">Also, make sure to graph the region of integration in the <span class="process-math">\(uv\)</span>-plane. <em class="emphasis">Note: choose a suitable substitution such that the limits of integration are numbers as opposed to functions.</em><div class="autopermalink" data-description="Paragraph"><a href="#activity-jacobian-geogebra-2-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para" id="activity-jacobian-geogebra-2-8">The interactive below shows exactly this transformation at work: a rectangle in the <span class="process-math">\(uv\)</span>-plane (left) is carried by <span class="process-math">\(T(u,v) = \left( \tfrac{u^2}{4}, \tfrac{uv}{4} \right)\)</span> onto a curved region in the <span class="process-math">\(xy\)</span>-plane (right). Drag the rectangle’s corner and adjust its dimensions until its image is exactly the region <span class="process-math">\(E\text{,}\)</span> and use what you see to read off the constant <span class="process-math">\(uv\)</span>-limits.<div class="autopermalink" data-description="Paragraph"><a href="#activity-jacobian-geogebra-2-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="interactive-iframe-container"><iframe src="https://www.geogebra.org/material/iframe/id/bvcz6sbs/scaleContainerClass/interactive-iframe-container/width/618/height/559/allowUpscale/true/autoHeight/true/border/888888/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/false/rc/false/ld/false/sdz/false/ctl/false" id="activity-jacobian-geogebra-2-9" style="width:600px; height:545px; display: block; "></iframe></div>
+<div class="instructions"><details id="activity-jacobian-geogebra-2-9-1" class="solution-like born-hidden-knowl"><summary class="knowl__link"><h5 class="heading"><span class="type">Instructions<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5></summary><div class="solution-like knowl__content">
+<div class="para" id="activity-jacobian-geogebra-2-9-1-1">Use the “Dimensions” sliders to change its length and width; the shaded region in the <span class="process-math">\(xy\)</span>-plane is its image under <span class="process-math">\(x = u^2/4\text{,}\)</span> <span class="process-math">\(y = uv/4\text{.}\)</span> Press “Animation” to watch the rectangle sweep out its image, and “Clear Traces” to start over.<div class="autopermalink" data-description="Paragraph"><a href="#activity-jacobian-geogebra-2-9-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Instructions"><a href="#activity-jacobian-geogebra-2-9-1" title="Copy heading and permalink for Instructions" aria-label="Copy heading and permalink for Instructions">🔗</a></div>
+</div></details></div>
+<div class="solutions"><details id="solution-watching-substitution" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="solution-watching-substitution-1">
+<em class="emphasis">Reading off the <span class="process-math">\(uv\)</span>-rectangle.</em> The transformation is already solved for <span class="process-math">\(x\)</span> and <span class="process-math">\(y\text{,}\)</span> so we can translate the description of <span class="process-math">\(E\)</span> directly. Since <span class="process-math">\(x = u^2/4\)</span> with <span class="process-math">\(u \ge 0\text{,}\)</span> we have <span class="process-math">\(u = 2\sqrt{x}\text{,}\)</span> and therefore<div class="autopermalink" data-description="Paragraph"><a href="#solution-watching-substitution-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-sub-2d.html" id="solution-watching-substitution-2">
+\begin{equation*}
+1 \le x \le 4 \quad\Longrightarrow\quad 2 \le u \le 4.
+\end{equation*}
+</div>
+<div class="para" id="solution-watching-substitution-3">For the <span class="process-math">\(y\)</span>-bounds, note that <span class="process-math">\(\sqrt{x} = u/2\text{,}\)</span> so the curves <span class="process-math">\(y = \tfrac12\sqrt{x}\)</span> and <span class="process-math">\(y = \tfrac52\sqrt{x}\)</span> become <span class="process-math">\(y = u/4\)</span> and <span class="process-math">\(y = 5u/4\text{.}\)</span> Since <span class="process-math">\(y = uv/4\text{,}\)</span> dividing these inequalities by <span class="process-math">\(u/4 &gt; 0\)</span> gives<div class="autopermalink" data-description="Paragraph"><a href="#solution-watching-substitution-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-sub-2d.html" id="solution-watching-substitution-4">
+\begin{equation*}
+\tfrac12\sqrt{x} \le y \le \tfrac52\sqrt{x}
+\quad\Longrightarrow\quad 1 \le v \le 5.
+\end{equation*}
+</div>
+<div class="para" id="solution-watching-substitution-5">Thus the region <span class="process-math">\(E\)</span> is the image of the rectangle with constant limits<div class="autopermalink" data-description="Paragraph"><a href="#solution-watching-substitution-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-sub-2d.html" id="solution-watching-substitution-6">
+\begin{equation*}
+S = \{ (u,v) : 2 \le u \le 4,\ 1 \le v \le 5 \},
+\end{equation*}
+</div>
+<div class="para" id="solution-watching-substitution-7">which is exactly the rectangle the interactive carries onto <span class="process-math">\(E\text{.}\)</span> This settles the graph in the <span class="process-math">\(uv\)</span>-plane: it is the axis-aligned box <span class="process-math">\([2,4]\times[1,5]\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#solution-watching-substitution-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="solution-watching-substitution-8">
+<em class="emphasis">The Jacobian.</em> Because the transformation is given in the direction <span class="process-math">\(x = x(u,v)\text{,}\)</span> <span class="process-math">\(y = y(u,v)\text{,}\)</span> we compute <span class="process-math">\(\partial(x,y)/\partial(u,v)\)</span> directly:<div class="autopermalink" data-description="Paragraph"><a href="#solution-watching-substitution-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-sub-2d.html" id="solution-watching-substitution-9">
+\begin{equation*}
+\frac{\partial(x,y)}{\partial(u,v)}
+= \begin{vmatrix}
+x_u \amp x_v \\
+y_u \amp y_v
+\end{vmatrix}
+= \begin{vmatrix}
+u/2 \amp 0 \\
+v/4 \amp u/4
+\end{vmatrix}
+= \frac{u}{2}\cdot\frac{u}{4} - 0 = \frac{u^2}{8}.
+\end{equation*}
+</div>
+<div class="para" id="solution-watching-substitution-10">On <span class="process-math">\(S\)</span> we have <span class="process-math">\(u \ge 2 &gt; 0\text{,}\)</span> so <span class="process-math">\(\left| \partial(x,y)/\partial(u,v) \right| = u^2/8\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#solution-watching-substitution-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="solution-watching-substitution-11">
+<em class="emphasis">The integrand.</em> With <span class="process-math">\(x = u^2/4\)</span> and <span class="process-math">\(y = uv/4\text{,}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#solution-watching-substitution-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-sub-2d.html" id="solution-watching-substitution-12">
+\begin{equation*}
+\frac{x}{y^2}
+= \frac{u^2/4}{(uv/4)^2}
+= \frac{u^2/4}{u^2 v^2/16}
+= \frac{4}{v^2}.
+\end{equation*}
+</div>
+<div class="para" id="solution-watching-substitution-13">
+<em class="emphasis">Evaluating.</em> Applying <a href="section-jacobian-substitution.html#eq-sub-2d" class="xref" data-knowl="./knowl/xref/eq-sub-2d.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 2.9.3">(2.9.3)</a>, the integral separates into a product of single-variable integrals:<div class="autopermalink" data-description="Paragraph"><a href="#solution-watching-substitution-13" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-sub-2d.html" id="solution-watching-substitution-14">
+\begin{align*}
+\iint_E \frac{x}{y^2}\, dx\, dy
+\amp= \iint_S \frac{4}{v^2}\cdot\frac{u^2}{8}\, du\, dv
+= \frac12 \int_1^5 \int_2^4 \frac{u^2}{v^2}\, du\, dv\\
+\amp= \frac12 \left( \int_2^4 u^2\, du \right)
+\left( \int_1^5 \frac{dv}{v^2} \right)
+= \frac12 \cdot \frac{56}{3} \cdot \frac{4}{5}
+= \frac{112}{15}.
+\end{align*}
+</div>
+<div class="para" id="solution-watching-substitution-15">The awkward <span class="process-math">\(\sqrt{x}\)</span>-limits in the <span class="process-math">\(xy\)</span>-plane have become the constant limits of a rectangle, and the integrand collapses to a function of <span class="process-math">\(v\)</span> alone.<div class="autopermalink" data-description="Paragraph"><a href="#solution-watching-substitution-15" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 2.9.1.1"><a href="#solution-watching-substitution" title="Copy heading and permalink for Solution 2.9.1.1" aria-label="Copy heading and permalink for Solution 2.9.1.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Activity 2.9.1: From a Rectangle to a Curved Region"><a href="#activity-jacobian-geogebra" title="Copy heading and permalink for Activity 2.9.1: From a Rectangle to a Curved Region" aria-label="Copy heading and permalink for Activity 2.9.1: From a Rectangle to a Curved Region">🔗</a></div></article><div class="autopermalink" data-description="Subsection 2.9.4: Activity: Watching a Substitution Transform a Region"><a href="#sec-jacobian-activity" title="Copy heading and permalink for Subsection 2.9.4: Activity: Watching a Substitution Transform a Region" aria-label="Copy heading and permalink for Subsection 2.9.4: Activity: Watching a Substitution Transform a Region">🔗</a></div></section><div class="autopermalink" data-description="Section 2.9: Substitution in Multiple Integrals and the Jacobian Determinant"><a href="#section-jacobian-substitution" title="Copy heading and permalink for Section 2.9: Substitution in Multiple Integrals and the Jacobian Determinant" aria-label="Copy heading and permalink for Section 2.9: Substitution in Multiple Integrals and the Jacobian Determinant">🔗</a></div></section></div>
 <div id="ptx-content-footer" class="ptx-content-footer">
-<a class="previous-button button" href="section-mass-center-of-mass.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="section-greens-theorem.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+<a class="previous-button button" href="section-mass-center-of-mass.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="section-surface-integrals.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">
