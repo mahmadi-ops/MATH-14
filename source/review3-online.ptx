@@ -33,20 +33,31 @@
     <ul>
       <li>
         <p>
-          <term>Numbers.</term> Type a decimal number and nothing
-          else<mdash/>no units, no <m>=</m> sign, no <m>\pi</m>. Give at
-          least three decimal places (for instance <c>18.850</c>, not
-          <c>6pi</c>). Answers are accepted within a small tolerance, so a
-          little rounding is fine.
+          <term>Give exact answers, not decimals.</term> A rounded decimal
+          will be marked wrong, even to several places. Type the exact
+          value: <c>pi*8^3/2</c> rather than <c>1608.495</c>, and
+          <c>4*5/(3*pi)</c> rather than <c>2.122</c>. A whole number or an
+          exact fraction may of course be typed as it stands, so
+          <c>77</c> and <c>7/3</c> are both fine.
         </p>
       </li>
       <li>
         <p>
-          <term>Expressions.</term> Type only the expression itself. Write
-          products with <c>*</c> and powers with <c>^</c>, and write
-          functions with parentheses: <c>sqrt(s-t)</c>,
-          <c>ln(v)</c>. So the expression <m>\dfrac{u^2}{v}</m> is typed
-          <c>u^2/v</c>. Spaces are ignored.
+          <term>How to type it.</term> Write products with <c>*</c> and
+          powers with <c>^</c>, and write functions with parentheses:
+          <c>sqrt(s-t)</c>, <c>ln(9)</c>, <c>exp(-4)</c>. Use <c>pi</c> for
+          <m>\pi</m>. So <m>\dfrac{u^2}{v}</m> is typed <c>u^2/v</c>, and
+          <m>2\pi\left(e^{-1} - e^{-4}\right)</m> is typed
+          <c>2*pi*(exp(-1)-exp(-4))</c>. Spaces are ignored.
+        </p>
+      </li>
+      <li>
+        <p>
+          <term>Any equivalent form counts.</term> Your answer is compared
+          to the exact value, not to one particular way of writing it, so
+          <c>2*pi*exp(-1)-2*pi*exp(-4)</c> is accepted just as readily as
+          <c>2*pi*(exp(-1)-exp(-4))</c>. Do not simplify on our
+          account<mdash/>just do not round.
         </p>
       </li>
     </ul>
@@ -156,10 +167,10 @@
         <m>\,du\,dv</m>, where
       </p>
       <p>
-        <m>c =</m> <fillin name="b9" mode="number" ansobj="one" width="5"/>,
-        <m>d =</m> <fillin name="b10" mode="number" ansobj="bb" width="5"/>,
-        <m>p =</m> <fillin name="b11" mode="number" ansobj="one" width="5"/>, and
-        <m>q =</m> <fillin name="b12" mode="number" ansobj="aa" width="5"/>.
+        <m>c =</m> <fillin name="b9" mode="math" ansobj="one" width="5"/>,
+        <m>d =</m> <fillin name="b10" mode="math" ansobj="bb" width="5"/>,
+        <m>p =</m> <fillin name="b11" mode="math" ansobj="one" width="5"/>, and
+        <m>q =</m> <fillin name="b12" mode="math" ansobj="aa" width="5"/>.
       </p>
       <p>
         <term>Part E.</term> Evaluate the double integral to find the area of
@@ -167,7 +178,7 @@
       </p>
       <p>
         Area <m>=</m>
-        <fillin name="b13" mode="number" ansobj="area" width="12"/>
+        <fillin name="b13" mode="math" ansobj="area" width="12"/>
       </p>
     </statement>
     <evaluation>
@@ -340,7 +351,7 @@
       </evaluate>
       <evaluate>
         <test correct="yes">
-          <numcmp use-answer="yes" min="one.value({})-Math.max(0.01,1e-4*Math.abs(one.value({})))" max="one.value({})+Math.max(0.01,1e-4*Math.abs(one.value({})))"/>
+          <mathcmp use-answer="yes"/>
           <feedback><p>Correct.</p></feedback>
         </test>
         <test>
@@ -356,7 +367,7 @@
       </evaluate>
       <evaluate>
         <test correct="yes">
-          <numcmp use-answer="yes" min="bb.value({})-Math.max(0.01,1e-4*Math.abs(bb.value({})))" max="bb.value({})+Math.max(0.01,1e-4*Math.abs(bb.value({})))"/>
+          <mathcmp use-answer="yes"/>
           <feedback><p>Correct.</p></feedback>
         </test>
         <test>
@@ -371,7 +382,7 @@
       </evaluate>
       <evaluate>
         <test correct="yes">
-          <numcmp use-answer="yes" min="one.value({})-Math.max(0.01,1e-4*Math.abs(one.value({})))" max="one.value({})+Math.max(0.01,1e-4*Math.abs(one.value({})))"/>
+          <mathcmp use-answer="yes"/>
           <feedback><p>Correct.</p></feedback>
         </test>
         <test>
@@ -387,7 +398,7 @@
       </evaluate>
       <evaluate>
         <test correct="yes">
-          <numcmp use-answer="yes" min="aa.value({})-Math.max(0.01,1e-4*Math.abs(aa.value({})))" max="aa.value({})+Math.max(0.01,1e-4*Math.abs(aa.value({})))"/>
+          <mathcmp use-answer="yes"/>
           <feedback><p>Correct.</p></feedback>
         </test>
         <test>
@@ -404,7 +415,7 @@
       </evaluate>
       <evaluate>
         <test correct="yes">
-          <numcmp use-answer="yes" min="area.value({})-Math.max(0.01,1e-4*Math.abs(area.value({})))" max="area.value({})+Math.max(0.01,1e-4*Math.abs(area.value({})))"/>
+          <mathcmp use-answer="yes"/>
           <feedback>
             <p>
               Correct:
@@ -509,14 +520,14 @@
       </p>
       <p>
         <m>\dfrac{\partial(x,y)}{\partial(s,t)} =</m>
-        <fillin name="b3" mode="number" ansobj="jac" width="6"/>
+        <fillin name="b3" mode="math" ansobj="jac" width="6"/>
       </p>
       <p>
         <term>Part C.</term> Find the area of the region.
       </p>
       <p>
         Area <m>=</m>
-        <fillin name="b4" mode="number" ansobj="area" width="12"/>
+        <fillin name="b4" mode="math" ansobj="area" width="12"/>
       </p>
     </statement>
     <evaluation>
@@ -558,7 +569,7 @@
       </evaluate>
       <evaluate>
         <test correct="yes">
-          <numcmp use-answer="yes" min="jac.value({})-Math.max(0.01,1e-4*Math.abs(jac.value({})))" max="jac.value({})+Math.max(0.01,1e-4*Math.abs(jac.value({})))"/>
+          <mathcmp use-answer="yes"/>
           <feedback>
             <p>
               Correct: the matrix is
@@ -580,7 +591,7 @@
       </evaluate>
       <evaluate>
         <test correct="yes">
-          <numcmp use-answer="yes" min="area.value({})-Math.max(0.01,1e-4*Math.abs(area.value({})))" max="area.value({})+Math.max(0.01,1e-4*Math.abs(area.value({})))"/>
+          <mathcmp use-answer="yes"/>
           <feedback>
             <p>
               Correct: the region becomes the unit disc
@@ -694,11 +705,11 @@
       </p>
       <p>
         <m>s</m> runs from
-        <fillin name="b4" mode="number" ansobj="zero" width="5"/> to
-        <fillin name="b5" mode="number" ansobj="bsq" width="5"/>, and
+        <fillin name="b4" mode="math" ansobj="zero" width="5"/> to
+        <fillin name="b5" mode="math" ansobj="bsq" width="5"/>, and
         <m>t</m> runs from
-        <fillin name="b6" mode="number" ansobj="nega" width="5"/> to
-        <fillin name="b7" mode="number" ansobj="zero" width="5"/>.
+        <fillin name="b6" mode="math" ansobj="nega" width="5"/> to
+        <fillin name="b7" mode="math" ansobj="zero" width="5"/>.
       </p>
       <p>
         <term>Part D.</term> After the substitution, the integrand
@@ -713,7 +724,7 @@
       </p>
       <p>
         <m>\displaystyle\iint_R x\,dx\,dy =</m>
-        <fillin name="b9" mode="number" ansobj="value" width="12"/>
+        <fillin name="b9" mode="math" ansobj="value" width="12"/>
       </p>
     </statement>
     <evaluation>
@@ -776,7 +787,7 @@
       </evaluate>
       <evaluate>
         <test correct="yes">
-          <numcmp use-answer="yes" min="zero.value({})-Math.max(0.01,1e-4*Math.abs(zero.value({})))" max="zero.value({})+Math.max(0.01,1e-4*Math.abs(zero.value({})))"/>
+          <mathcmp use-answer="yes"/>
           <feedback><p>Correct: <m>y = 0</m> becomes <m>s = 0</m>.</p></feedback>
         </test>
         <test>
@@ -792,7 +803,7 @@
       </evaluate>
       <evaluate>
         <test correct="yes">
-          <numcmp use-answer="yes" min="bsq.value({})-Math.max(0.01,1e-4*Math.abs(bsq.value({})))" max="bsq.value({})+Math.max(0.01,1e-4*Math.abs(bsq.value({})))"/>
+          <mathcmp use-answer="yes"/>
           <feedback><p>Correct: <m>y = <eval obj="bsq"/></m> becomes <m>s = <eval obj="bsq"/></m>.</p></feedback>
         </test>
         <test>
@@ -805,7 +816,7 @@
       </evaluate>
       <evaluate>
         <test correct="yes">
-          <numcmp use-answer="yes" min="nega.value({})-Math.max(0.01,1e-4*Math.abs(nega.value({})))" max="nega.value({})+Math.max(0.01,1e-4*Math.abs(nega.value({})))"/>
+          <mathcmp use-answer="yes"/>
           <feedback>
             <p>
               Correct: <m>y = x^2 - <eval obj="a"/></m> means
@@ -828,7 +839,7 @@
       </evaluate>
       <evaluate>
         <test correct="yes">
-          <numcmp use-answer="yes" min="zero.value({})-Math.max(0.01,1e-4*Math.abs(zero.value({})))" max="zero.value({})+Math.max(0.01,1e-4*Math.abs(zero.value({})))"/>
+          <mathcmp use-answer="yes"/>
           <feedback><p>Correct: <m>y = x^2</m> becomes <m>t = 0</m>.</p></feedback>
         </test>
         <test>
@@ -865,7 +876,7 @@
       </evaluate>
       <evaluate>
         <test correct="yes">
-          <numcmp use-answer="yes" min="value.value({})-Math.max(0.01,1e-4*Math.abs(value.value({})))" max="value.value({})+Math.max(0.01,1e-4*Math.abs(value.value({})))"/>
+          <mathcmp use-answer="yes"/>
           <feedback>
             <p>
               Correct: the rectangle <m>T</m> has area
@@ -963,7 +974,7 @@
       </p>
       <p>
         <m>\dfrac{\partial(x,y,z)}{\partial(u,v,w)} =</m>
-        <fillin name="b1" mode="number" ansobj="jac" width="8"/>
+        <fillin name="b1" mode="math" ansobj="jac" width="8"/>
       </p>
       <p>
         <term>Part B.</term> Evaluate the triple integral.
@@ -973,13 +984,13 @@
         \left(\frac{x^2}{<eval obj="a"/>^2}
         + \frac{y^2}{<eval obj="b"/>^2}
         + \frac{z^2}{<eval obj="c"/>^2}\right) dx\,dy\,dz =</m>
-        <fillin name="b2" mode="number" ansobj="value" width="12"/>
+        <fillin name="b2" mode="math" ansobj="value" width="12"/>
       </p>
     </statement>
     <evaluation>
       <evaluate>
         <test correct="yes">
-          <numcmp use-answer="yes" min="jac.value({})-Math.max(0.01,1e-4*Math.abs(jac.value({})))" max="jac.value({})+Math.max(0.01,1e-4*Math.abs(jac.value({})))"/>
+          <mathcmp use-answer="yes"/>
           <feedback>
             <p>
               Correct: the matrix is diagonal with entries
@@ -1002,7 +1013,7 @@
       </evaluate>
       <evaluate>
         <test correct="yes">
-          <numcmp use-answer="yes" min="value.value({})-Math.max(0.01,1e-4*Math.abs(value.value({})))" max="value.value({})+Math.max(0.01,1e-4*Math.abs(value.value({})))"/>
+          <mathcmp use-answer="yes"/>
           <feedback>
             <p>
               Correct: the integral becomes
@@ -1081,24 +1092,24 @@
       </p>
       <p>
         <m>\displaystyle\iiint_W <eval obj="k"/>\sqrt{z}\,dV =</m>
-        <fillin name="b1" mode="number" ansobj="mass" width="12"/>
+        <fillin name="b1" mode="math" ansobj="mass" width="12"/>
       </p>
       <p>
         <term>Part B.</term> Find the coordinates of the centre of mass.
       </p>
       <p>
         <m>x_{\mathrm{CM}} =</m>
-        <fillin name="b2" mode="number" ansobj="xcm" width="10"/>,
+        <fillin name="b2" mode="math" ansobj="xcm" width="10"/>,
         <m>y_{\mathrm{CM}} =</m>
-        <fillin name="b3" mode="number" ansobj="ycm" width="10"/>,
+        <fillin name="b3" mode="math" ansobj="ycm" width="10"/>,
         <m>z_{\mathrm{CM}} =</m>
-        <fillin name="b4" mode="number" ansobj="zcm" width="10"/>
+        <fillin name="b4" mode="math" ansobj="zcm" width="10"/>
       </p>
     </statement>
     <evaluation>
       <evaluate>
         <test correct="yes">
-          <numcmp use-answer="yes" min="mass.value({})-Math.max(0.01,1e-4*Math.abs(mass.value({})))" max="mass.value({})+Math.max(0.01,1e-4*Math.abs(mass.value({})))"/>
+          <mathcmp use-answer="yes"/>
           <feedback>
             <p>
               Correct:
@@ -1123,7 +1134,7 @@
       </evaluate>
       <evaluate>
         <test correct="yes">
-          <numcmp use-answer="yes" min="xcm.value({})-Math.max(0.01,1e-4*Math.abs(xcm.value({})))" max="xcm.value({})+Math.max(0.01,1e-4*Math.abs(xcm.value({})))"/>
+          <mathcmp use-answer="yes"/>
           <feedback>
             <p>
               Correct: the numerator is
@@ -1146,7 +1157,7 @@
       </evaluate>
       <evaluate>
         <test correct="yes">
-          <numcmp use-answer="yes" min="ycm.value({})-Math.max(0.01,1e-4*Math.abs(ycm.value({})))" max="ycm.value({})+Math.max(0.01,1e-4*Math.abs(ycm.value({})))"/>
+          <mathcmp use-answer="yes"/>
           <feedback>
             <p>
               Correct: the density and the solid are symmetric in <m>x</m>
@@ -1167,7 +1178,7 @@
       </evaluate>
       <evaluate>
         <test correct="yes">
-          <numcmp use-answer="yes" min="zcm.value({})-Math.max(0.01,1e-4*Math.abs(zcm.value({})))" max="zcm.value({})+Math.max(0.01,1e-4*Math.abs(zcm.value({})))"/>
+          <mathcmp use-answer="yes"/>
           <feedback>
             <p>
               Correct: the numerator is
@@ -1270,22 +1281,22 @@
       </p>
       <p>
         <m>m =</m>
-        <fillin name="b1" mode="number" ansobj="mass" width="12"/>
+        <fillin name="b1" mode="math" ansobj="mass" width="12"/>
       </p>
       <p>
         <term>Part B.</term> Where is the centre of mass?
       </p>
       <p>
         <m>\bar{x} =</m>
-        <fillin name="b2" mode="number" ansobj="xbar" width="12"/>,
+        <fillin name="b2" mode="math" ansobj="xbar" width="12"/>,
         <m>\bar{y} =</m>
-        <fillin name="b3" mode="number" ansobj="ybar" width="12"/>
+        <fillin name="b3" mode="math" ansobj="ybar" width="12"/>
       </p>
     </statement>
     <evaluation>
       <evaluate>
         <test correct="yes">
-          <numcmp use-answer="yes" min="mass.value({})-Math.max(0.01,1e-4*Math.abs(mass.value({})))" max="mass.value({})+Math.max(0.01,1e-4*Math.abs(mass.value({})))"/>
+          <mathcmp use-answer="yes"/>
           <feedback>
             <p>
               Correct:
@@ -1310,7 +1321,7 @@
       </evaluate>
       <evaluate>
         <test correct="yes">
-          <numcmp use-answer="yes" min="xbar.value({})-Math.max(0.01,1e-4*Math.abs(xbar.value({})))" max="xbar.value({})+Math.max(0.01,1e-4*Math.abs(xbar.value({})))"/>
+          <mathcmp use-answer="yes"/>
           <feedback>
             <p>
               Correct:
@@ -1332,7 +1343,7 @@
       </evaluate>
       <evaluate>
         <test correct="yes">
-          <numcmp use-answer="yes" min="ybar.value({})-Math.max(0.01,1e-4*Math.abs(ybar.value({})))" max="ybar.value({})+Math.max(0.01,1e-4*Math.abs(ybar.value({})))"/>
+          <mathcmp use-answer="yes"/>
           <feedback>
             <p>
               Correct:
@@ -1393,13 +1404,13 @@
       </p>
       <p>
         Volume <m>=</m>
-        <fillin name="b1" mode="number" ansobj="volume" width="12"/>
+        <fillin name="b1" mode="math" ansobj="volume" width="12"/>
       </p>
     </statement>
     <evaluation>
       <evaluate>
         <test correct="yes">
-          <numcmp use-answer="yes" min="volume.value({})-Math.max(0.01,1e-4*Math.abs(volume.value({})))" max="volume.value({})+Math.max(0.01,1e-4*Math.abs(volume.value({})))"/>
+          <mathcmp use-answer="yes"/>
           <feedback>
             <p>
               Correct:
@@ -1484,20 +1495,20 @@
       <p>
         <m>\displaystyle\int_{<eval obj="r0"/>}^{<eval obj="r1"/>}
         \rho^2\,d\rho =</m>
-        <fillin name="b1" mode="number" ansobj="radial" width="12"/>
+        <fillin name="b1" mode="math" ansobj="radial" width="12"/>
       </p>
       <p>
         <term>Part B.</term> Evaluate the whole integral.
       </p>
       <p>
         Integral <m>=</m>
-        <fillin name="b2" mode="number" ansobj="value" width="12"/>
+        <fillin name="b2" mode="math" ansobj="value" width="12"/>
       </p>
     </statement>
     <evaluation>
       <evaluate>
         <test correct="yes">
-          <numcmp use-answer="yes" min="radial.value({})-Math.max(0.01,1e-4*Math.abs(radial.value({})))" max="radial.value({})+Math.max(0.01,1e-4*Math.abs(radial.value({})))"/>
+          <mathcmp use-answer="yes"/>
           <feedback>
             <p>
               Correct:
@@ -1521,7 +1532,7 @@
       </evaluate>
       <evaluate>
         <test correct="yes">
-          <numcmp use-answer="yes" min="value.value({})-Math.max(0.01,1e-4*Math.abs(value.value({})))" max="value.value({})+Math.max(0.01,1e-4*Math.abs(value.value({})))"/>
+          <mathcmp use-answer="yes"/>
           <feedback>
             <p>
               Correct: the three integrals separate, giving
@@ -1609,13 +1620,13 @@
       </p>
       <p>
         Answer <m>=</m>
-        <fillin name="b1" mode="number" ansobj="value" width="14"/>
+        <fillin name="b1" mode="math" ansobj="value" width="14"/>
       </p>
     </statement>
     <evaluation>
       <evaluate>
         <test correct="yes">
-          <numcmp use-answer="yes" min="value.value({})-Math.max(0.01,1e-4*Math.abs(value.value({})))" max="value.value({})+Math.max(0.01,1e-4*Math.abs(value.value({})))"/>
+          <mathcmp use-answer="yes"/>
           <feedback>
             <p>
               Correct: the integral is
@@ -1715,26 +1726,26 @@
       </p>
       <p>
         <m>\dfrac{\partial x}{\partial u} =</m>
-        <fillin name="b1" mode="number" ansobj="xu" width="6"/>,
+        <fillin name="b1" mode="math" ansobj="xu" width="6"/>,
         <m>\dfrac{\partial x}{\partial v} =</m>
-        <fillin name="b2" mode="number" ansobj="xv" width="6"/>,
+        <fillin name="b2" mode="math" ansobj="xv" width="6"/>,
         <m>\dfrac{\partial y}{\partial u} =</m>
-        <fillin name="b3" mode="number" ansobj="yu" width="6"/>,
+        <fillin name="b3" mode="math" ansobj="yu" width="6"/>,
         <m>\dfrac{\partial y}{\partial v} =</m>
-        <fillin name="b4" mode="number" ansobj="yv" width="6"/>
+        <fillin name="b4" mode="math" ansobj="yv" width="6"/>
       </p>
       <p>
         <term>Part B.</term> Compute the Jacobian of this transformation.
       </p>
       <p>
         <m>\dfrac{\partial(x,y)}{\partial(u,v)} =</m>
-        <fillin name="b5" mode="number" ansobj="det" width="10"/>
+        <fillin name="b5" mode="math" ansobj="det" width="10"/>
       </p>
     </statement>
     <evaluation>
       <evaluate>
         <test correct="yes">
-          <numcmp use-answer="yes" min="xu.value({})-Math.max(0.01,1e-4*Math.abs(xu.value({})))" max="xu.value({})+Math.max(0.01,1e-4*Math.abs(xu.value({})))"/>
+          <mathcmp use-answer="yes"/>
           <feedback><p>Correct.</p></feedback>
         </test>
         <test>
@@ -1750,7 +1761,7 @@
       </evaluate>
       <evaluate>
         <test correct="yes">
-          <numcmp use-answer="yes" min="xv.value({})-Math.max(0.01,1e-4*Math.abs(xv.value({})))" max="xv.value({})+Math.max(0.01,1e-4*Math.abs(xv.value({})))"/>
+          <mathcmp use-answer="yes"/>
           <feedback><p>Correct.</p></feedback>
         </test>
         <test>
@@ -1765,7 +1776,7 @@
       </evaluate>
       <evaluate>
         <test correct="yes">
-          <numcmp use-answer="yes" min="yu.value({})-Math.max(0.01,1e-4*Math.abs(yu.value({})))" max="yu.value({})+Math.max(0.01,1e-4*Math.abs(yu.value({})))"/>
+          <mathcmp use-answer="yes"/>
           <feedback><p>Correct.</p></feedback>
         </test>
         <test>
@@ -1780,7 +1791,7 @@
       </evaluate>
       <evaluate>
         <test correct="yes">
-          <numcmp use-answer="yes" min="yv.value({})-Math.max(0.01,1e-4*Math.abs(yv.value({})))" max="yv.value({})+Math.max(0.01,1e-4*Math.abs(yv.value({})))"/>
+          <mathcmp use-answer="yes"/>
           <feedback><p>Correct.</p></feedback>
         </test>
         <test>
@@ -1795,7 +1806,7 @@
       </evaluate>
       <evaluate>
         <test correct="yes">
-          <numcmp use-answer="yes" min="det.value({})-Math.max(0.01,1e-4*Math.abs(det.value({})))" max="det.value({})+Math.max(0.01,1e-4*Math.abs(det.value({})))"/>
+          <mathcmp use-answer="yes"/>
           <feedback>
             <p>
               Correct:
@@ -1890,7 +1901,7 @@
       </p>
       <p>
         <m>\displaystyle\iint_{D} \sqrt{x^2+y^2}\,dx\,dy =</m>
-        <fillin name="b3" mode="number" ansobj="value" width="14"/>
+        <fillin name="b3" mode="math" ansobj="value" width="14"/>
       </p>
     </statement>
     <evaluation>
@@ -1940,7 +1951,7 @@
       </evaluate>
       <evaluate>
         <test correct="yes">
-          <numcmp use-answer="yes" min="value.value({})-Math.max(0.01,1e-4*Math.abs(value.value({})))" max="value.value({})+Math.max(0.01,1e-4*Math.abs(value.value({})))"/>
+          <mathcmp use-answer="yes"/>
           <feedback>
             <p>
               Correct:
@@ -2043,8 +2054,8 @@
         y\,\delta(x,y)\,dy\,dx</m>, where
       </p>
       <p>
-        <m>c =</m> <fillin name="b1" mode="number" ansobj="zero" width="6"/>,
-        <m>d =</m> <fillin name="b2" mode="number" ansobj="xstar" width="12"/>
+        <m>c =</m> <fillin name="b1" mode="math" ansobj="zero" width="6"/>,
+        <m>d =</m> <fillin name="b2" mode="math" ansobj="xstar" width="12"/>
       </p>
       <p>
         <m>p(x) =</m>
@@ -2055,32 +2066,32 @@
       <p>
         <m>\displaystyle\int_c^d\!\!\int_{p(x)}^{q(x)}
         \delta(x,y)\,dy\,dx =</m>
-        <fillin name="b5" mode="number" ansobj="mass" width="14"/>
+        <fillin name="b5" mode="math" ansobj="mass" width="14"/>
       </p>
       <p>
         <m>\displaystyle\int_c^d\!\!\int_{p(x)}^{q(x)}
         x\,\delta(x,y)\,dy\,dx =</m>
-        <fillin name="b6" mode="number" ansobj="xmom" width="14"/>
+        <fillin name="b6" mode="math" ansobj="xmom" width="14"/>
       </p>
       <p>
         <m>\displaystyle\int_c^d\!\!\int_{p(x)}^{q(x)}
         y\,\delta(x,y)\,dy\,dx =</m>
-        <fillin name="b7" mode="number" ansobj="ymom" width="14"/>
+        <fillin name="b7" mode="math" ansobj="ymom" width="14"/>
       </p>
       <p>
         and finally the centre of gravity is
       </p>
       <p>
         <m>\overline{x} =</m>
-        <fillin name="b8" mode="number" ansobj="xbar" width="12"/>,
+        <fillin name="b8" mode="math" ansobj="xbar" width="12"/>,
         <m>\overline{y} =</m>
-        <fillin name="b9" mode="number" ansobj="ybar" width="12"/>
+        <fillin name="b9" mode="math" ansobj="ybar" width="12"/>
       </p>
     </statement>
     <evaluation>
       <evaluate>
         <test correct="yes">
-          <numcmp use-answer="yes" min="zero.value({})-Math.max(0.01,1e-4*Math.abs(zero.value({})))" max="zero.value({})+Math.max(0.01,1e-4*Math.abs(zero.value({})))"/>
+          <mathcmp use-answer="yes"/>
           <feedback>
             <p>Correct: the <m>y</m>-axis is the left boundary, so
             <m>x</m> starts at <m>0</m>.</p>
@@ -2098,7 +2109,7 @@
       </evaluate>
       <evaluate>
         <test correct="yes">
-          <numcmp use-answer="yes" min="xstar.value({})-Math.max(0.01,1e-4*Math.abs(xstar.value({})))" max="xstar.value({})+Math.max(0.01,1e-4*Math.abs(xstar.value({})))"/>
+          <mathcmp use-answer="yes"/>
           <feedback>
             <p>
               Correct: solving
@@ -2160,7 +2171,7 @@
       </evaluate>
       <evaluate>
         <test correct="yes">
-          <numcmp use-answer="yes" min="mass.value({})-Math.max(0.01,1e-4*Math.abs(mass.value({})))" max="mass.value({})+Math.max(0.01,1e-4*Math.abs(mass.value({})))"/>
+          <mathcmp use-answer="yes"/>
           <feedback>
             <p>Correct: the mass is <m>\approx <eval obj="mass"/></m>.</p>
           </feedback>
@@ -2180,7 +2191,7 @@
       </evaluate>
       <evaluate>
         <test correct="yes">
-          <numcmp use-answer="yes" min="xmom.value({})-Math.max(0.01,1e-4*Math.abs(xmom.value({})))" max="xmom.value({})+Math.max(0.01,1e-4*Math.abs(xmom.value({})))"/>
+          <mathcmp use-answer="yes"/>
           <feedback>
             <p>Correct: the moment about the <m>y</m>-axis is
             <m>\approx <eval obj="xmom"/></m>.</p>
@@ -2200,7 +2211,7 @@
       </evaluate>
       <evaluate>
         <test correct="yes">
-          <numcmp use-answer="yes" min="ymom.value({})-Math.max(0.01,1e-4*Math.abs(ymom.value({})))" max="ymom.value({})+Math.max(0.01,1e-4*Math.abs(ymom.value({})))"/>
+          <mathcmp use-answer="yes"/>
           <feedback>
             <p>Correct: the moment about the <m>x</m>-axis is
             <m>\approx <eval obj="ymom"/></m>.</p>
@@ -2220,7 +2231,7 @@
       </evaluate>
       <evaluate>
         <test correct="yes">
-          <numcmp use-answer="yes" min="xbar.value({})-Math.max(0.01,1e-4*Math.abs(xbar.value({})))" max="xbar.value({})+Math.max(0.01,1e-4*Math.abs(xbar.value({})))"/>
+          <mathcmp use-answer="yes"/>
           <feedback>
             <p>
               Correct:
@@ -2240,7 +2251,7 @@
       </evaluate>
       <evaluate>
         <test correct="yes">
-          <numcmp use-answer="yes" min="ybar.value({})-Math.max(0.01,1e-4*Math.abs(ybar.value({})))" max="ybar.value({})+Math.max(0.01,1e-4*Math.abs(ybar.value({})))"/>
+          <mathcmp use-answer="yes"/>
           <feedback>
             <p>
               Correct:
@@ -2303,9 +2314,9 @@
       </p>
       <p>
         <m>\overline{x} =</m>
-        <fillin name="b1" mode="number" ansobj="coord" width="12"/>,
+        <fillin name="b1" mode="math" ansobj="coord" width="12"/>,
         <m>\overline{y} =</m>
-        <fillin name="b2" mode="number" ansobj="coord" width="12"/>
+        <fillin name="b2" mode="math" ansobj="coord" width="12"/>
       </p>
       <p>
         <em>Hint.</em> Use symmetry.
@@ -2314,7 +2325,7 @@
     <evaluation>
       <evaluate>
         <test correct="yes">
-          <numcmp use-answer="yes" min="coord.value({})-Math.max(0.01,1e-4*Math.abs(coord.value({})))" max="coord.value({})+Math.max(0.01,1e-4*Math.abs(coord.value({})))"/>
+          <mathcmp use-answer="yes"/>
           <feedback>
             <p>
               Correct:
@@ -2339,7 +2350,7 @@
       </evaluate>
       <evaluate>
         <test correct="yes">
-          <numcmp use-answer="yes" min="coord.value({})-Math.max(0.01,1e-4*Math.abs(coord.value({})))" max="coord.value({})+Math.max(0.01,1e-4*Math.abs(coord.value({})))"/>
+          <mathcmp use-answer="yes"/>
           <feedback>
             <p>
               Correct: the quarter disc is symmetric about the line

@@ -8,6 +8,12 @@
                 version="1.0">
   <xsl:import href="./core/pretext-html.xsl"/>
 
+  <!-- Equation-entry palette for the dynamic exercises.  PreTeXt emits   -->
+  <!-- one <script> at the foot of each page from $html.js.extra; the     -->
+  <!-- file lives in assets/ and is copied to output as external/.  It    -->
+  <!-- targets specific exercises by id and is inert on every other page. -->
+  <xsl:param name="html.js.extra" select="'external/math-input-palette.js'"/>
+
   <xsl:template match="exercises" mode="serial-number"/>
   <xsl:template match="exercises" mode="number"/>
 
