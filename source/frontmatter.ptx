@@ -12,12 +12,6 @@
     <titlepage-items/>
   </titlepage>
 
-  <abstract>
-    <p>
-      This document is a template for my future notes.
-    </p>
-  </abstract>
-
   <xi:include href="introduction.ptx" />
   <xi:include href="subsec-brain-map.ptx" />
 

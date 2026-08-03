@@ -1,11 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <preface xml:id="intro" xmlns:xi="http://www.w3.org/2001/XInclude">
-    <title>Introduction</title>
-    <p>The main purpose of these notes is to create a template for my future notes. You will find that 
-        I have not spent time on the actual content, rather on the structure and formatting. I am new to PreText 
-        and I would like to point out that it offers a plathora of  
-        <url href="https://pretextbook.org/doc/guide/html/topic-accessibility.html">accessiblity features</url>  that I have not yet explored. 
-        I will update these notes as I learn more about PreText and its capabilities.
+    <title>Preface</title>
+    <p>These pages aim to design and implement a series of interactive, accessible web-based
+        modules that strengthen students' conceptual understanding of foundational mathematical
+        ideas through explicit connections to physical phenomena. The project responds to a
+        persistent challenge observed across STEM disciplines at SCU: students often demonstrate
+        procedural competence in Mathematics while lacking the ability to transfer their
+        mathematical knowledge across courses, particularly when mathematical ideas are applied
+        in physical contexts.
     </p>
-    
+
+    <p>
+        Two of the main goals of this project are to:
+        <ul>
+            <li>
+                <p>
+                    Enhance students' conceptual understanding of mathematics through physically
+                    motivated examples and problems
+                </p>
+            </li>
+            <li>
+                <p>
+                    Develop accessible instructional materials that support diverse learners,
+                    including those using screen readers or tactile graphics
+                </p>
+            </li>
+        </ul>
+    </p>
+
 </preface>
