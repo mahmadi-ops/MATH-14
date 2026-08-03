@@ -6,8 +6,8 @@ var ptx_lunr_docs = [
   "url": "intro.html",
   "type": "Preface",
   "number": "",
-  "title": "Introduction",
-  "body": " Introduction  The main purpose of these notes is to create a template for my future notes. You will find that I have not spent time on the actual content, rather on the structure and formatting. I am new to PreText and I would like to point out that it offers a plathora of accessiblity features that I have not yet explored. I will update these notes as I learn more about PreText and its capabilities.  "
+  "title": "Preface",
+  "body": " Preface  The main purpose of these notes is to create a template for my future notes. You will find that I have not spent time on the actual content, rather on the structure and formatting. I am new to PreText and I would like to point out that it offers a plathora of accessiblity features that I have not yet explored. I will update these notes as I learn more about PreText and its capabilities.  "
 },
 {
   "id": "subsec-brain-map",
