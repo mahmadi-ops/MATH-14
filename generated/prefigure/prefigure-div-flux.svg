@@ -1,9 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" id="prefigure-div-flux-figure" width="420" height="320" viewBox="0 0 420 320">
   <defs>
-    <clipPath id="prefigure-div-flux-clipPath-0">
+    <clipPath id="prefigure-div-flux-__clipPath-0">
       <rect x="10.0" y="10.0" width="400.0" height="300.0"/>
     </clipPath>
-    <clipPath id="prefigure-div-flux-clipPath-1">
+    <clipPath id="prefigure-div-flux-__clipPath-1">
       <rect x="10.0" y="10.0" width="400.0" height="300.0"/>
     </clipPath>
     <marker id="prefigure-div-flux-arrow-head-end-2_None_24_60-hbbbbbb" markerWidth="9.0" markerHeight="8.0" markerUnits="userSpaceOnUse" orient="auto-start-reverse" refX="6.5" refY="4.0">
@@ -20,32 +20,33 @@
     </marker>
   </defs>
   <g id="prefigure-div-flux-df-field">
-    <line id="prefigure-div-flux-line-0" x1="110.0" y1="258.1" x2="118.0" y2="252.3" stroke="#bbbbbb" stroke-width="2" fill="none" marker-end="url(#prefigure-div-flux-arrow-head-end-2_None_24_60-hbbbbbb)"/>
-    <line id="prefigure-div-flux-line-1" x1="110.0" y1="200.4" x2="118.0" y2="188.0" stroke="#bbbbbb" stroke-width="2" fill="none" marker-end="url(#prefigure-div-flux-arrow-head-end-2_None_24_60-hbbbbbb)"/>
-    <line id="prefigure-div-flux-line-2" x1="110.0" y1="142.7" x2="118.0" y2="123.7" stroke="#bbbbbb" stroke-width="2" fill="none" marker-end="url(#prefigure-div-flux-arrow-head-end-2_None_24_60-hbbbbbb)"/>
-    <line id="prefigure-div-flux-line-3" x1="110.0" y1="85.0" x2="118.0" y2="59.3" stroke="#bbbbbb" stroke-width="2" fill="none" marker-end="url(#prefigure-div-flux-arrow-head-end-2_None_24_60-hbbbbbb)"/>
-    <line id="prefigure-div-flux-line-4" x1="155.8" y1="258.1" x2="170.4" y2="252.3" stroke="#bbbbbb" stroke-width="2" fill="none" marker-end="url(#prefigure-div-flux-arrow-head-end-2_None_24_60-hbbbbbb)"/>
-    <line id="prefigure-div-flux-line-5" x1="155.8" y1="200.4" x2="170.4" y2="188.0" stroke="#bbbbbb" stroke-width="2" fill="none" marker-end="url(#prefigure-div-flux-arrow-head-end-2_None_24_60-hbbbbbb)"/>
-    <line id="prefigure-div-flux-line-6" x1="155.8" y1="142.7" x2="170.4" y2="123.7" stroke="#bbbbbb" stroke-width="2" fill="none" marker-end="url(#prefigure-div-flux-arrow-head-end-2_None_24_60-hbbbbbb)"/>
-    <line id="prefigure-div-flux-line-7" x1="155.8" y1="85.0" x2="170.4" y2="59.3" stroke="#bbbbbb" stroke-width="2" fill="none" marker-end="url(#prefigure-div-flux-arrow-head-end-2_None_24_60-hbbbbbb)"/>
-    <line id="prefigure-div-flux-line-8" x1="201.7" y1="258.1" x2="222.8" y2="252.3" stroke="#bbbbbb" stroke-width="2" fill="none" marker-end="url(#prefigure-div-flux-arrow-head-end-2_None_24_60-hbbbbbb)"/>
-    <line id="prefigure-div-flux-line-9" x1="201.7" y1="200.4" x2="222.8" y2="188.0" stroke="#bbbbbb" stroke-width="2" fill="none" marker-end="url(#prefigure-div-flux-arrow-head-end-2_None_24_60-hbbbbbb)"/>
-    <line id="prefigure-div-flux-line-10" x1="201.7" y1="142.7" x2="222.8" y2="123.7" stroke="#bbbbbb" stroke-width="2" fill="none" marker-end="url(#prefigure-div-flux-arrow-head-end-2_None_24_60-hbbbbbb)"/>
-    <line id="prefigure-div-flux-line-11" x1="201.7" y1="85.0" x2="222.8" y2="59.3" stroke="#bbbbbb" stroke-width="2" fill="none" marker-end="url(#prefigure-div-flux-arrow-head-end-2_None_24_60-hbbbbbb)"/>
-    <line id="prefigure-div-flux-line-12" x1="247.5" y1="258.1" x2="275.3" y2="252.3" stroke="#bbbbbb" stroke-width="2" fill="none" marker-end="url(#prefigure-div-flux-arrow-head-end-2_None_24_60-hbbbbbb)"/>
-    <line id="prefigure-div-flux-line-13" x1="247.5" y1="200.4" x2="275.3" y2="188.0" stroke="#bbbbbb" stroke-width="2" fill="none" marker-end="url(#prefigure-div-flux-arrow-head-end-2_None_24_60-hbbbbbb)"/>
-    <line id="prefigure-div-flux-line-14" x1="247.5" y1="142.7" x2="275.3" y2="123.7" stroke="#bbbbbb" stroke-width="2" fill="none" marker-end="url(#prefigure-div-flux-arrow-head-end-2_None_24_60-hbbbbbb)"/>
-    <line id="prefigure-div-flux-line-15" x1="247.5" y1="85.0" x2="275.3" y2="59.3" stroke="#bbbbbb" stroke-width="2" fill="none" marker-end="url(#prefigure-div-flux-arrow-head-end-2_None_24_60-hbbbbbb)"/>
-    <line id="prefigure-div-flux-line-16" x1="293.3" y1="258.1" x2="327.7" y2="252.3" stroke="#bbbbbb" stroke-width="2" fill="none" marker-end="url(#prefigure-div-flux-arrow-head-end-2_None_24_60-hbbbbbb)"/>
-    <line id="prefigure-div-flux-line-17" x1="293.3" y1="200.4" x2="327.7" y2="188.0" stroke="#bbbbbb" stroke-width="2" fill="none" marker-end="url(#prefigure-div-flux-arrow-head-end-2_None_24_60-hbbbbbb)"/>
-    <line id="prefigure-div-flux-line-18" x1="293.3" y1="142.7" x2="327.7" y2="123.7" stroke="#bbbbbb" stroke-width="2" fill="none" marker-end="url(#prefigure-div-flux-arrow-head-end-2_None_24_60-hbbbbbb)"/>
-    <line id="prefigure-div-flux-line-19" x1="293.3" y1="85.0" x2="327.7" y2="59.3" stroke="#bbbbbb" stroke-width="2" fill="none" marker-end="url(#prefigure-div-flux-arrow-head-end-2_None_24_60-hbbbbbb)"/>
+    <line id="prefigure-div-flux-__line-0" x1="110.0" y1="258.1" x2="116.0" y2="253.7" stroke="#bbbbbb" stroke-width="2" fill="none" marker-end="url(#prefigure-div-flux-arrow-head-end-2_None_24_60-hbbbbbb)"/>
+    <line id="prefigure-div-flux-__line-1" x1="110.0" y1="200.4" x2="116.7" y2="190.1" stroke="#bbbbbb" stroke-width="2" fill="none" marker-end="url(#prefigure-div-flux-arrow-head-end-2_None_24_60-hbbbbbb)"/>
+    <line id="prefigure-div-flux-__line-2" x1="110.0" y1="142.7" x2="117.1" y2="126.0" stroke="#bbbbbb" stroke-width="2" fill="none" marker-end="url(#prefigure-div-flux-arrow-head-end-2_None_24_60-hbbbbbb)"/>
+    <line id="prefigure-div-flux-__line-3" x1="110.0" y1="85.0" x2="117.3" y2="61.6" stroke="#bbbbbb" stroke-width="2" fill="none" marker-end="url(#prefigure-div-flux-arrow-head-end-2_None_24_60-hbbbbbb)"/>
+    <line id="prefigure-div-flux-__line-4" x1="155.8" y1="258.1" x2="168.1" y2="253.2" stroke="#bbbbbb" stroke-width="2" fill="none" marker-end="url(#prefigure-div-flux-arrow-head-end-2_None_24_60-hbbbbbb)"/>
+    <line id="prefigure-div-flux-__line-5" x1="155.8" y1="200.4" x2="168.5" y2="189.6" stroke="#bbbbbb" stroke-width="2" fill="none" marker-end="url(#prefigure-div-flux-arrow-head-end-2_None_24_60-hbbbbbb)"/>
+    <line id="prefigure-div-flux-__line-6" x1="155.8" y1="142.7" x2="168.9" y2="125.6" stroke="#bbbbbb" stroke-width="2" fill="none" marker-end="url(#prefigure-div-flux-arrow-head-end-2_None_24_60-hbbbbbb)"/>
+    <line id="prefigure-div-flux-__line-7" x1="155.8" y1="85.0" x2="169.2" y2="61.4" stroke="#bbbbbb" stroke-width="2" fill="none" marker-end="url(#prefigure-div-flux-arrow-head-end-2_None_24_60-hbbbbbb)"/>
+    <line id="prefigure-div-flux-__line-8" x1="201.7" y1="258.1" x2="220.4" y2="252.9" stroke="#bbbbbb" stroke-width="2" fill="none" marker-end="url(#prefigure-div-flux-arrow-head-end-2_None_24_60-hbbbbbb)"/>
+    <line id="prefigure-div-flux-__line-9" x1="201.7" y1="200.4" x2="220.7" y2="189.2" stroke="#bbbbbb" stroke-width="2" fill="none" marker-end="url(#prefigure-div-flux-arrow-head-end-2_None_24_60-hbbbbbb)"/>
+    <line id="prefigure-div-flux-__line-10" x1="201.7" y1="142.7" x2="221.0" y2="125.3" stroke="#bbbbbb" stroke-width="2" fill="none" marker-end="url(#prefigure-div-flux-arrow-head-end-2_None_24_60-hbbbbbb)"/>
+    <line id="prefigure-div-flux-__line-11" x1="201.7" y1="85.0" x2="221.2" y2="61.2" stroke="#bbbbbb" stroke-width="2" fill="none" marker-end="url(#prefigure-div-flux-arrow-head-end-2_None_24_60-hbbbbbb)"/>
+    <line id="prefigure-div-flux-__line-12" x1="247.5" y1="258.1" x2="272.9" y2="252.8" stroke="#bbbbbb" stroke-width="2" fill="none" marker-end="url(#prefigure-div-flux-arrow-head-end-2_None_24_60-hbbbbbb)"/>
+    <line id="prefigure-div-flux-__line-13" x1="247.5" y1="200.4" x2="273.1" y2="189.0" stroke="#bbbbbb" stroke-width="2" fill="none" marker-end="url(#prefigure-div-flux-arrow-head-end-2_None_24_60-hbbbbbb)"/>
+    <line id="prefigure-div-flux-__line-14" x1="247.5" y1="142.7" x2="273.3" y2="125.1" stroke="#bbbbbb" stroke-width="2" fill="none" marker-end="url(#prefigure-div-flux-arrow-head-end-2_None_24_60-hbbbbbb)"/>
+    <line id="prefigure-div-flux-__line-15" x1="247.5" y1="85.0" x2="273.5" y2="61.0" stroke="#bbbbbb" stroke-width="2" fill="none" marker-end="url(#prefigure-div-flux-arrow-head-end-2_None_24_60-hbbbbbb)"/>
+    <line id="prefigure-div-flux-__line-16" x1="293.3" y1="258.1" x2="325.3" y2="252.7" stroke="#bbbbbb" stroke-width="2" fill="none" marker-end="url(#prefigure-div-flux-arrow-head-end-2_None_24_60-hbbbbbb)"/>
+    <line id="prefigure-div-flux-__line-17" x1="293.3" y1="200.4" x2="325.4" y2="188.8" stroke="#bbbbbb" stroke-width="2" fill="none" marker-end="url(#prefigure-div-flux-arrow-head-end-2_None_24_60-hbbbbbb)"/>
+    <line id="prefigure-div-flux-__line-18" x1="293.3" y1="142.7" x2="325.6" y2="124.9" stroke="#bbbbbb" stroke-width="2" fill="none" marker-end="url(#prefigure-div-flux-arrow-head-end-2_None_24_60-hbbbbbb)"/>
+    <line id="prefigure-div-flux-__line-19" x1="293.3" y1="85.0" x2="325.7" y2="60.8" stroke="#bbbbbb" stroke-width="2" fill="none" marker-end="url(#prefigure-div-flux-arrow-head-end-2_None_24_60-hbbbbbb)"/>
   </g>
-  <path id="prefigure-div-flux-df-rect" d="M 130.8 217.7 L 280.8 217.7 L 280.8 90.8 L 130.8 90.8 Z" stroke="#2b9ad6" stroke-width="2.5" fill="none" clip-path="url(#prefigure-div-flux-clipPath-1)"/>
+  <path id="prefigure-div-flux-df-rect" d="M 130.8 217.7 L 280.8 217.7 L 280.8 90.8 L 130.8 90.8 Z" stroke="#2b9ad6" stroke-width="2.5" fill="none" clip-path="url(#prefigure-div-flux-__clipPath-1)"/>
   <g id="prefigure-div-flux-df-corner-bl">
-    <g transform="translate(126.8,221.7) translate(-41.4,-0.0)">
+    <circle cx="130.8" cy="217.7" r="3" stroke="black" stroke-width="2" fill="#d02090"/>
+    <g id="prefigure-div-flux-df-corner-bl" transform="translate(126.8,221.7) translate(-41.4,-0.0)">
       <rect x="-3" y="-3" width="47.352" height="24.096" stroke="none" fill="white"/>
-      <g id="prefigure-div-flux-g-0">
+      <g id="prefigure-div-flux-__g-0">
         <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -4.528px" width="41.352px" height="18.096px" role="img" focusable="false" viewBox="0 -750 2284.7 1000" x="0.0" y="0.0">
           <defs>
             <path id="prefigure-div-flux-MJX-2-TEX-N-28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"/>
@@ -78,12 +79,12 @@
         </svg>
       </g>
     </g>
-    <circle cx="130.8" cy="217.7" r="3" stroke="black" stroke-width="2" fill="#d02090"/>
   </g>
   <g id="prefigure-div-flux-df-corner-br">
-    <g transform="translate(284.8,221.7) translate(0.0,-0.0)">
+    <circle cx="280.8" cy="217.7" r="3" stroke="black" stroke-width="2" fill="#2b9ad6"/>
+    <g id="prefigure-div-flux-df-corner-br" transform="translate(284.8,221.7) translate(0.0,-0.0)">
       <rect x="-3" y="-3" width="94.904" height="24.096" stroke="none" fill="white"/>
-      <g id="prefigure-div-flux-g-1">
+      <g id="prefigure-div-flux-__g-1">
         <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -4.528px" width="88.904px" height="18.096px" role="img" focusable="false" viewBox="0 -750 4912.1 1000" x="0.0" y="0.0">
           <defs>
             <path id="prefigure-div-flux-MJX-3-TEX-N-28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"/>
@@ -135,12 +136,12 @@
         </svg>
       </g>
     </g>
-    <circle cx="280.8" cy="217.7" r="3" stroke="black" stroke-width="2" fill="#2b9ad6"/>
   </g>
   <g id="prefigure-div-flux-df-corner-tl">
-    <g transform="translate(126.8,86.8) translate(-87.4,-18.1)">
+    <circle cx="130.8" cy="90.8" r="3" stroke="black" stroke-width="2" fill="#2b9ad6"/>
+    <g id="prefigure-div-flux-df-corner-tl" transform="translate(126.8,86.8) translate(-87.4,-18.1)">
       <rect x="-3" y="-3" width="93.424" height="24.096" stroke="none" fill="white"/>
-      <g id="prefigure-div-flux-g-2">
+      <g id="prefigure-div-flux-__g-2">
         <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -4.528px" width="87.424px" height="18.096px" role="img" focusable="false" viewBox="0 -750 4830.1 1000" x="0.0" y="0.0">
           <defs>
             <path id="prefigure-div-flux-MJX-4-TEX-N-28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"/>
@@ -192,12 +193,12 @@
         </svg>
       </g>
     </g>
-    <circle cx="130.8" cy="90.8" r="3" stroke="black" stroke-width="2" fill="#2b9ad6"/>
   </g>
   <g id="prefigure-div-flux-df-corner-tr">
-    <g transform="translate(284.8,86.8) translate(0.0,-18.1)">
+    <circle cx="280.8" cy="90.8" r="3" stroke="black" stroke-width="2" fill="#2b9ad6"/>
+    <g id="prefigure-div-flux-df-corner-tr" transform="translate(284.8,86.8) translate(0.0,-18.1)">
       <rect x="-3" y="-3" width="140.976" height="24.096" stroke="none" fill="white"/>
-      <g id="prefigure-div-flux-g-3">
+      <g id="prefigure-div-flux-__g-3">
         <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -4.528px" width="134.976px" height="18.096px" role="img" focusable="false" viewBox="0 -750 7457.6 1000" x="0.0" y="0.0">
           <defs>
             <path id="prefigure-div-flux-MJX-5-TEX-N-28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"/>
@@ -265,15 +266,14 @@
         </svg>
       </g>
     </g>
-    <circle cx="280.8" cy="90.8" r="3" stroke="black" stroke-width="2" fill="#2b9ad6"/>
   </g>
-  <line id="prefigure-div-flux-df-top" x1="205.8" y1="90.8" x2="205.8" y2="59.0" stroke="#e05090" stroke-width="3" fill="none" marker-end="url(#prefigure-div-flux-arrow-head-end-3_None_24_60-he05090)"/>
-  <line id="prefigure-div-flux-df-bottom" x1="205.8" y1="217.7" x2="205.8" y2="249.4" stroke="#e05090" stroke-width="3" fill="none" marker-end="url(#prefigure-div-flux-arrow-head-end-3_None_24_60-he05090)"/>
-  <line id="prefigure-div-flux-df-right" x1="280.8" y1="154.2" x2="303.8" y2="154.2" stroke="#e05090" stroke-width="3" fill="none" marker-end="url(#prefigure-div-flux-arrow-head-end-3_None_24_60-he05090)"/>
-  <line id="prefigure-div-flux-df-left" x1="130.8" y1="154.2" x2="107.9" y2="154.2" stroke="#e05090" stroke-width="3" fill="none" marker-end="url(#prefigure-div-flux-arrow-head-end-3_None_24_60-he05090)"/>
+  <line id="prefigure-div-flux-df-top" x1="205.8" y1="90.8" x2="205.8" y2="62.7" stroke="#e05090" stroke-width="3" fill="none" marker-end="url(#prefigure-div-flux-arrow-head-end-3_None_24_60-he05090)"/>
+  <line id="prefigure-div-flux-df-bottom" x1="205.8" y1="217.7" x2="205.8" y2="245.7" stroke="#e05090" stroke-width="3" fill="none" marker-end="url(#prefigure-div-flux-arrow-head-end-3_None_24_60-he05090)"/>
+  <line id="prefigure-div-flux-df-right" x1="280.8" y1="154.2" x2="300.1" y2="154.2" stroke="#e05090" stroke-width="3" fill="none" marker-end="url(#prefigure-div-flux-arrow-head-end-3_None_24_60-he05090)"/>
+  <line id="prefigure-div-flux-df-left" x1="130.8" y1="154.2" x2="111.6" y2="154.2" stroke="#e05090" stroke-width="3" fill="none" marker-end="url(#prefigure-div-flux-arrow-head-end-3_None_24_60-he05090)"/>
   <g id="prefigure-div-flux-df-top-label" transform="translate(211.9,53.3) translate(0.0,-8.1)">
     <rect x="-4" y="-4" width="73.72" height="24.2" stroke="none" fill="white"/>
-    <g id="prefigure-div-flux-g-4">
+    <g id="prefigure-div-flux-__g-4">
       <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -3.616px" width="65.720px" height="16.200px" role="img" focusable="false" viewBox="0 -695 3631 895" x="0.0" y="0.0">
         <defs>
           <path id="prefigure-div-flux-MJX-6-TEX-B-1D405" d="M425 0L228 3Q63 3 51 0H39V62H147V618H39V680H644V676Q647 670 659 552T675 428V424H613Q613 433 605 477Q599 511 589 535T562 574T530 599T488 612T441 617T387 618H368H304V371H333Q389 373 411 390T437 468V488H499V192H437V212Q436 244 430 263T408 292T378 305T333 309H304V62H439V0H425Z"/>
@@ -312,7 +312,7 @@
   </g>
   <g id="prefigure-div-flux-df-bottom-label" transform="translate(211.9,252.3) translate(0.0,-9.0)">
     <rect x="-4" y="-4" width="101.88" height="26.096" stroke="none" fill="white"/>
-    <g id="prefigure-div-flux-g-5">
+    <g id="prefigure-div-flux-__g-5">
       <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -4.528px" width="93.880px" height="18.096px" role="img" focusable="false" viewBox="0 -750 5187 1000" x="0.0" y="0.0">
         <defs>
           <path id="prefigure-div-flux-MJX-7-TEX-B-1D405" d="M425 0L228 3Q63 3 51 0H39V62H147V618H39V680H644V676Q647 670 659 552T675 428V424H613Q613 433 605 477Q599 511 589 535T562 574T530 599T488 612T441 617T387 618H368H304V371H333Q389 373 411 390T437 468V488H499V192H437V212Q436 244 430 263T408 292T378 305T333 309H304V62H439V0H425Z"/>
@@ -369,7 +369,7 @@
   </g>
   <g id="prefigure-div-flux-df-right-label" transform="translate(311.9,138.7) translate(0.0,-13.3)">
     <rect x="-4" y="-4" width="73.144" height="21.304000000000002" stroke="none" fill="white"/>
-    <g id="prefigure-div-flux-g-6">
+    <g id="prefigure-div-flux-__g-6">
       <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -0.720px" width="65.144px" height="13.304px" role="img" focusable="false" viewBox="0 -695 3599 735" x="0.0" y="0.0">
         <defs>
           <path id="prefigure-div-flux-MJX-8-TEX-B-1D405" d="M425 0L228 3Q63 3 51 0H39V62H147V618H39V680H644V676Q647 670 659 552T675 428V424H613Q613 433 605 477Q599 511 589 535T562 574T530 599T488 612T441 617T387 618H368H304V371H333Q389 373 411 390T437 468V488H499V192H437V212Q436 244 430 263T408 292T378 305T333 309H304V62H439V0H425Z"/>
@@ -408,7 +408,7 @@
   </g>
   <g id="prefigure-div-flux-df-left-label" transform="translate(99.8,135.8) translate(-93.3,-18.1)">
     <rect x="-4" y="-4" width="101.304" height="26.096" stroke="none" fill="white"/>
-    <g id="prefigure-div-flux-g-7">
+    <g id="prefigure-div-flux-__g-7">
       <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -4.528px" width="93.304px" height="18.096px" role="img" focusable="false" viewBox="0 -750 5155 1000" x="0.0" y="0.0">
         <defs>
           <path id="prefigure-div-flux-MJX-9-TEX-B-1D405" d="M425 0L228 3Q63 3 51 0H39V62H147V618H39V680H644V676Q647 670 659 552T675 428V424H613Q613 433 605 477Q599 511 589 535T562 574T530 599T488 612T441 617T387 618H368H304V371H333Q389 373 411 390T437 468V488H499V192H437V212Q436 244 430 263T408 292T378 305T333 309H304V62H439V0H425Z"/>
@@ -465,7 +465,7 @@
   </g>
   <g id="prefigure-div-flux-df-A" transform="translate(205.8,139.8) translate(-6.8,-6.5)">
     <rect x="-4" y="-4" width="21.576" height="20.96" stroke="none" fill="white"/>
-    <g id="prefigure-div-flux-g-8">
+    <g id="prefigure-div-flux-__g-8">
       <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: 0.000px" width="13.576px" height="12.960px" role="img" focusable="false" viewBox="0 -716 750 716" x="0.0" y="0.0">
         <defs>
           <path id="prefigure-div-flux-MJX-10-TEX-I-1D434" d="M208 74Q208 50 254 46Q272 46 272 35Q272 34 270 22Q267 8 264 4T251 0Q249 0 239 0T205 1T141 2Q70 2 50 0H42Q35 7 35 11Q37 38 48 46H62Q132 49 164 96Q170 102 345 401T523 704Q530 716 547 716H555H572Q578 707 578 706L606 383Q634 60 636 57Q641 46 701 46Q726 46 726 36Q726 34 723 22Q720 7 718 4T704 0Q701 0 690 0T651 1T578 2Q484 2 455 0H443Q437 6 437 9T439 27Q443 40 445 43L449 46H469Q523 49 533 63L521 213H283L249 155Q208 86 208 74ZM516 260Q516 271 504 416T490 562L463 519Q447 492 400 412L310 260L413 259Q516 259 516 260Z"/>
@@ -482,7 +482,7 @@
   </g>
   <g id="prefigure-div-flux-df-dx" transform="translate(205.8,276.5) translate(-12.7,-0.0)">
     <rect x="-4" y="-4" width="33.432" height="21.16" stroke="none" fill="white"/>
-    <g id="prefigure-div-flux-g-9">
+    <g id="prefigure-div-flux-__g-9">
       <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -0.200px" width="25.432px" height="13.160px" role="img" focusable="false" viewBox="0 -716 1405 727" x="0.0" y="0.0">
         <defs>
           <path id="prefigure-div-flux-MJX-11-TEX-N-394" d="M51 0Q46 4 46 7Q46 9 215 357T388 709Q391 716 416 716Q439 716 444 709Q447 705 616 357T786 7Q786 4 781 0H51ZM507 344L384 596L137 92L383 91H630Q630 93 507 344Z"/>
@@ -507,7 +507,7 @@
   </g>
   <g id="prefigure-div-flux-df-dy" transform="translate(332.8,154.2) translate(0.0,-8.3)">
     <rect x="-4" y="-4" width="31.944" height="24.672" stroke="none" fill="white"/>
-    <g id="prefigure-div-flux-g-10">
+    <g id="prefigure-div-flux-__g-10">
       <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -3.712px" width="23.944px" height="16.672px" role="img" focusable="false" viewBox="0 -716 1323 921" x="0.0" y="0.0">
         <defs>
           <path id="prefigure-div-flux-MJX-12-TEX-N-394" d="M51 0Q46 4 46 7Q46 9 215 357T388 709Q391 716 416 716Q439 716 444 709Q447 705 616 357T786 7Q786 4 781 0H51ZM507 344L384 596L137 92L383 91H630Q630 93 507 344Z"/>

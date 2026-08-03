@@ -1,30 +1,50 @@
 <svg xmlns="http://www.w3.org/2000/svg" id="arc-length-curve-figure" viewBox="0 0 479 427">
   <defs>
-    <clipPath id="arc-length-curve-clipPath-0">
+    <clipPath id="arc-length-curve-__clipPath-0">
       <rect x="5.0" y="5.0" width="469.0" height="417.0"/>
     </clipPath>
-    <clipPath id="arc-length-curve-clipPath-1">
+    <clipPath id="arc-length-curve-__clipPath-1">
       <rect x="5.0" y="5.0" width="469.0" height="417.0"/>
     </clipPath>
-    <marker id="arc-length-curve-arrow-head-end-2_None_24_60-black" markerWidth="9.0" markerHeight="8.0" markerUnits="userSpaceOnUse" orient="auto-start-reverse" refX="6.5" refY="4.0">
+    <marker id="arc-length-curve-arrow-head-end-2_None_24_60-black" markerWidth="9.0" markerHeight="8.0" markerUnits="userSpaceOnUse" orient="auto" refX="6.5" refY="4.0">
       <path d="M 9.0 4.0L 0.0 8.0L 1.7 5.0L 1.7 3.0L 0.0 0.0Z" fill="black" stroke="none"/>
     </marker>
-    <marker id="arc-length-curve-arrow-head-end-2_None_24_60-black-outline" markerWidth="13.0" markerHeight="12.0" markerUnits="userSpaceOnUse" orient="auto-start-reverse" refX="8.5" refY="6.0">
+    <marker id="arc-length-curve-arrow-head-end-2_None_24_60-black-outline" markerWidth="13.0" markerHeight="12.0" markerUnits="userSpaceOnUse" orient="auto" refX="8.5" refY="6.0">
       <path d="M 11.8 7.8 L 2.8 11.8 A 2 2 0 0 1 0.0 10.0 L 0.0 2.0 A 2 2 0 0 1 2.8 0.2 L 11.8 4.2 A 2 2 0 0 1 11.8 7.8 Z" fill="white" stroke="none"/>
     </marker>
-    <marker id="arc-length-curve-arrow-head-end-3_None_24_60-black" markerWidth="13.5" markerHeight="12.0" markerUnits="userSpaceOnUse" orient="auto-start-reverse" refX="9.8" refY="6.0">
+    <marker id="arc-length-curve-arrow-head-end-3_None_24_60-black" markerWidth="13.5" markerHeight="12.0" markerUnits="userSpaceOnUse" orient="auto" refX="9.8" refY="6.0">
       <path d="M 13.5 6.0L 0.0 12.0L 2.6 7.5L 2.6 4.5L 0.0 0.0Z" fill="black" stroke="none"/>
     </marker>
-    <marker id="arc-length-curve-arrow-head-end-3_None_24_60-black-outline" markerWidth="17.5" markerHeight="16.0" markerUnits="userSpaceOnUse" orient="auto-start-reverse" refX="11.8" refY="8.0">
+    <marker id="arc-length-curve-arrow-head-end-3_None_24_60-black-outline" markerWidth="17.5" markerHeight="16.0" markerUnits="userSpaceOnUse" orient="auto" refX="11.8" refY="8.0">
       <path d="M 16.3 9.8 L 2.8 15.8 A 2 2 0 0 1 0.0 14.0 L 0.0 2.0 A 2 2 0 0 1 2.8 0.2 L 16.3 6.2 A 2 2 0 0 1 16.3 9.8 Z" fill="white" stroke="none"/>
     </marker>
+    <marker id="arc-length-curve-arrow-head-start-2_None_24_60-black" markerWidth="9.0" markerHeight="8.0" markerUnits="userSpaceOnUse" orient="auto" refX="2.5" refY="4.0">
+      <g transform="rotate(180, 4.5, 4.0)">
+        <path d="M 9.0 4.0L 0.0 8.0L 1.7 5.0L 1.7 3.0L 0.0 0.0Z" fill="black" stroke="none"/>
+      </g>
+    </marker>
+    <marker id="arc-length-curve-arrow-head-start-2_None_24_60-black-outline" markerWidth="13.0" markerHeight="12.0" markerUnits="userSpaceOnUse" orient="auto" refX="4.5" refY="6.0">
+      <g transform="rotate(180, 6.5, 6.0)">
+        <path d="M 11.8 7.8 L 2.8 11.8 A 2 2 0 0 1 0.0 10.0 L 0.0 2.0 A 2 2 0 0 1 2.8 0.2 L 11.8 4.2 A 2 2 0 0 1 11.8 7.8 Z" fill="white" stroke="none"/>
+      </g>
+    </marker>
+    <marker id="arc-length-curve-arrow-head-start-3_None_24_60-black" markerWidth="13.5" markerHeight="12.0" markerUnits="userSpaceOnUse" orient="auto" refX="3.6999999999999993" refY="6.0">
+      <g transform="rotate(180, 6.75, 6.0)">
+        <path d="M 13.5 6.0L 0.0 12.0L 2.6 7.5L 2.6 4.5L 0.0 0.0Z" fill="black" stroke="none"/>
+      </g>
+    </marker>
+    <marker id="arc-length-curve-arrow-head-start-3_None_24_60-black-outline" markerWidth="17.5" markerHeight="16.0" markerUnits="userSpaceOnUse" orient="auto" refX="5.699999999999999" refY="8.0">
+      <g transform="rotate(180, 8.75, 8.0)">
+        <path d="M 16.3 9.8 L 2.8 15.8 A 2 2 0 0 1 0.0 14.0 L 0.0 2.0 A 2 2 0 0 1 2.8 0.2 L 16.3 6.2 A 2 2 0 0 1 16.3 9.8 Z" fill="white" stroke="none"/>
+      </g>
+    </marker>
   </defs>
-  <g id="ax" stroke="black" stroke-width="2">
-    <line id="arc-length-curve-line-0" x1="5.0" y1="229.9" x2="474.0" y2="229.9" stroke="black" stroke-width="2" marker-end="url(#arc-length-curve-arrow-head-end-2_None_24_60-black)"/>
-    <line id="arc-length-curve-line-1" x1="210.5" y1="422.0" x2="210.5" y2="5.0" stroke="black" stroke-width="2" marker-end="url(#arc-length-curve-arrow-head-end-2_None_24_60-black)"/>
+  <g id="arc-length-curve-ax" stroke="black" stroke-width="2">
+    <line id="arc-length-curve-__line-0" x1="5.0" y1="229.9" x2="474.0" y2="229.9" stroke="black" stroke-width="2" marker-end="url(#arc-length-curve-arrow-head-end-2_None_24_60-black)"/>
+    <line id="arc-length-curve-__line-1" x1="210.5" y1="422.0" x2="210.5" y2="5.0" stroke="black" stroke-width="2" marker-end="url(#arc-length-curve-arrow-head-end-2_None_24_60-black)"/>
   </g>
-  <g id="arc-length-curve-label-0" transform="translate(468.0,223.9) translate(-10.4,-8.2)">
-    <g id="arc-length-curve-g-0">
+  <g id="arc-length-curve-__label-0" transform="translate(468.0,223.9) translate(-10.4,-8.2)">
+    <g id="arc-length-curve-__g-0">
       <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -0.200px" width="10.352px" height="8.200px" role="img" focusable="false" viewBox="0 -442 572 453" x="0.0" y="0.0">
         <defs>
           <path id="arc-length-curve-MJX-2-TEX-I-1D465" d="M52 289Q59 331 106 386T222 442Q257 442 286 424T329 379Q371 442 430 442Q467 442 494 420T522 361Q522 332 508 314T481 292T458 288Q439 288 427 299T415 328Q415 374 465 391Q454 404 425 404Q412 404 406 402Q368 386 350 336Q290 115 290 78Q290 50 306 38T341 26Q378 26 414 59T463 140Q466 150 469 151T485 153H489Q504 153 504 145Q504 144 502 134Q486 77 440 33T333 -11Q263 -11 227 52Q186 -10 133 -10H127Q78 -10 57 16T35 71Q35 103 54 123T99 143Q142 143 142 101Q142 81 130 66T107 46T94 41L91 40Q91 39 97 36T113 29T132 26Q168 26 194 71Q203 87 217 139T245 247T261 313Q266 340 266 352Q266 380 251 392T217 404Q177 404 142 372T93 290Q91 281 88 280T72 278H58Q52 284 52 289Z"/>
@@ -39,8 +59,8 @@
       </svg>
     </g>
   </g>
-  <g id="arc-length-curve-label-1" transform="translate(216.5,11.0) translate(0.0,-0.0)">
-    <g id="arc-length-curve-g-1">
+  <g id="arc-length-curve-__label-1" transform="translate(216.5,11.0) translate(0.0,-0.0)">
+    <g id="arc-length-curve-__g-1">
       <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -3.712px" width="8.872px" height="11.712px" role="img" focusable="false" viewBox="0 -442 490 647" x="0.0" y="0.0">
         <defs>
           <path id="arc-length-curve-MJX-3-TEX-I-1D466" d="M21 287Q21 301 36 335T84 406T158 442Q199 442 224 419T250 355Q248 336 247 334Q247 331 231 288T198 191T182 105Q182 62 196 45T238 27Q261 27 281 38T312 61T339 94Q339 95 344 114T358 173T377 247Q415 397 419 404Q432 431 462 431Q475 431 483 424T494 412T496 403Q496 390 447 193T391 -23Q363 -106 294 -155T156 -205Q111 -205 77 -183T43 -117Q43 -95 50 -80T69 -58T89 -48T106 -45Q150 -45 150 -87Q150 -107 138 -122T115 -142T102 -147L99 -148Q101 -153 118 -160T152 -167H160Q177 -167 186 -165Q219 -156 247 -127T290 -65T313 -9T321 21L315 17Q309 13 296 6T270 -6Q250 -11 231 -11Q185 -11 150 11T104 82Q103 89 103 113Q103 170 138 262T173 379Q173 380 173 381Q173 390 173 393T169 400T158 404H154Q131 404 112 385T82 344T65 302T57 280Q55 278 41 278H27Q21 284 21 287Z"/>
@@ -56,9 +76,9 @@
     </g>
   </g>
   <g id="arc-length-curve-curve-C">
-    <path id="arc-length-curve-path-0" d="M 344.5 229.9 L 344.2 221.5 L 343.4 213.1 L 342.1 204.8 L 340.3 196.6 L 337.9 188.5 L 335.1 180.6 L 331.7 172.9 L 327.9 165.4 L 323.6 158.1 L 318.9 151.2 L 313.7 144.5 L 308.1 138.2 L 302.2 132.3 L 295.9 126.7 L 289.2 121.5 L 282.3 116.8 L 275.0 112.5 L 267.5 108.7 L 259.8 105.3 L 251.9 102.5 L 243.8 100.1 L 235.6 98.3 L 227.3 97.0 L 218.9 96.2 L 210.5 95.9 L 202.1 96.2 L 193.7 97.0 L 185.4 98.3 L 177.1 100.1 L 169.1 102.5 L 161.1 105.3 L 153.4 108.7 L 145.9 112.5 L 138.7 116.8 L 131.7 121.5 L 125.1 126.7 L 118.7 132.3 L 112.8 138.2 L 107.2 144.5 L 102.1 151.2 L 97.3 158.1 L 93.0 165.4 L 89.2 172.9 L 85.9 180.6 L 83.0 188.5 L 80.7 196.6 L 78.8 204.8 L 77.5 213.1 L 76.7 221.5 L 76.5 229.9 L 76.7 238.3 L 77.5 246.7 L 78.8 255.0 L 80.7 263.3 L 83.0 271.3 L 85.9 279.3 L 89.2 287.0 L 93.0 294.5 L 97.3 301.7 L 102.1 308.7 L 107.2 315.3 L 112.8 321.7 L 118.7 327.6 L 125.1 333.2 L 131.7 338.3 L 138.7 343.1 L 145.9 347.4 L 153.4 351.2 L 161.1 354.5 L 169.1 357.4 L 177.1 359.7 L 185.4 361.6 L 193.7 362.9 L 202.1 363.7 L 210.5 363.9 L 218.9 363.7 L 227.3 362.9 L 235.6 361.6 L 243.8 359.7 L 251.9 357.4 L 259.8 354.5 L 267.5 351.2 L 275.0 347.4 L 282.3 343.1 L 289.2 338.3 L 295.9 333.2 L 302.2 327.6 L 308.1 321.7 L 313.7 315.3 L 318.9 308.7 L 323.6 301.7 L 327.9 294.5 L 331.7 287.0 L 335.1 279.3 L 337.9 271.3 L 340.3 263.3 L 342.1 255.0 L 343.4 246.7 L 344.2 238.3 L 344.5 229.9 M 251.9 102.5 L 243.8 100.1 L 235.6 98.3 L 227.3 97.0 L 218.9 96.2 L 210.5 95.9" stroke="black" stroke-width="3" fill="none" clip-path="url(#arc-length-curve-clipPath-1)" marker-end="url(#arc-length-curve-arrow-head-end-3_None_24_60-black)"/>
-    <g id="arc-length-curve-label-2" transform="translate(85.6,150.9) translate(-13.8,-13.2)">
-      <g id="arc-length-curve-g-2">
+    <path id="arc-length-curve-__path-0" d="M 344.5 229.9 L 344.4 225.7 L 344.2 221.5 L 343.9 217.3 L 343.4 213.1 L 342.8 209.0 L 342.1 204.8 L 341.2 200.7 L 340.3 196.6 L 339.1 192.5 L 337.9 188.5 L 336.5 184.5 L 335.1 180.6 L 333.4 176.7 L 331.7 172.9 L 329.9 169.1 L 327.9 165.4 L 325.8 161.7 L 323.6 158.1 L 321.3 154.6 L 318.9 151.2 L 316.3 147.8 L 313.7 144.5 L 311.0 141.3 L 308.1 138.2 L 305.2 135.2 L 302.2 132.3 L 299.1 129.4 L 295.9 126.7 L 292.6 124.1 L 289.2 121.5 L 285.8 119.1 L 282.3 116.8 L 278.7 114.6 L 275.0 112.5 L 271.3 110.5 L 267.5 108.7 L 263.7 107.0 L 259.8 105.3 L 255.9 103.9 L 251.9 102.5 L 247.9 101.3 L 243.8 100.1 L 239.7 99.2 L 235.6 98.3 L 231.4 97.6 L 227.3 97.0 L 223.1 96.5 L 218.9 96.2 L 214.7 96.0 L 210.5 95.9 L 206.3 96.0 L 202.1 96.2 L 197.9 96.5 L 193.7 97.0 L 189.5 97.6 L 185.4 98.3 L 181.2 99.2 L 177.1 100.1 L 173.1 101.3 L 169.1 102.5 L 165.1 103.9 L 161.1 105.3 L 157.2 107.0 L 153.4 108.7 L 149.6 110.5 L 145.9 112.5 L 142.3 114.6 L 138.7 116.8 L 135.1 119.1 L 131.7 121.5 L 128.3 124.1 L 125.1 126.7 L 121.9 129.4 L 118.7 132.3 L 115.7 135.2 L 112.8 138.2 L 110.0 141.3 L 107.2 144.5 L 104.6 147.8 L 102.1 151.2 L 99.6 154.6 L 97.3 158.1 L 95.1 161.7 L 93.0 165.4 L 91.1 169.1 L 89.2 172.9 L 87.5 176.7 L 85.9 180.6 L 84.4 184.5 L 83.0 188.5 L 81.8 192.5 L 80.7 196.6 L 79.7 200.7 L 78.8 204.8 L 78.1 209.0 L 77.5 213.1 L 77.1 217.3 L 76.7 221.5 L 76.5 225.7 L 76.5 229.9 L 76.5 234.1 L 76.7 238.3 L 77.1 242.5 L 77.5 246.7 L 78.1 250.9 L 78.8 255.0 L 79.7 259.2 L 80.7 263.3 L 81.8 267.3 L 83.0 271.3 L 84.4 275.3 L 85.9 279.3 L 87.5 283.2 L 89.2 287.0 L 91.1 290.8 L 93.0 294.5 L 95.1 298.1 L 97.3 301.7 L 99.6 305.3 L 102.1 308.7 L 104.6 312.1 L 107.2 315.3 L 110.0 318.5 L 112.8 321.7 L 115.7 324.7 L 118.7 327.6 L 121.9 330.4 L 125.1 333.2 L 128.3 335.8 L 131.7 338.3 L 135.1 340.8 L 138.7 343.1 L 142.3 345.3 L 145.9 347.4 L 149.6 349.3 L 153.4 351.2 L 157.2 352.9 L 161.1 354.5 L 165.1 356.0 L 169.1 357.4 L 173.1 358.6 L 177.1 359.7 L 181.2 360.7 L 185.4 361.6 L 189.5 362.3 L 193.7 362.9 L 197.9 363.3 L 202.1 363.7 L 206.3 363.9 L 210.5 363.9 L 214.7 363.9 L 218.9 363.7 L 223.1 363.3 L 227.3 362.9 L 231.4 362.3 L 235.6 361.6 L 239.7 360.7 L 243.8 359.7 L 247.9 358.6 L 251.9 357.4 L 255.9 356.0 L 259.8 354.5 L 263.7 352.9 L 267.5 351.2 L 271.3 349.3 L 275.0 347.4 L 278.7 345.3 L 282.3 343.1 L 285.8 340.8 L 289.2 338.3 L 292.6 335.8 L 295.9 333.2 L 299.1 330.4 L 302.2 327.6 L 305.2 324.7 L 308.1 321.7 L 311.0 318.5 L 313.7 315.3 L 316.3 312.1 L 318.9 308.7 L 321.3 305.3 L 323.6 301.7 L 325.8 298.1 L 327.9 294.5 L 329.9 290.8 L 331.7 287.0 L 333.4 283.2 L 335.1 279.3 L 336.5 275.3 L 337.9 271.3 L 339.1 267.3 L 340.3 263.3 L 341.2 259.2 L 342.1 255.0 L 342.8 250.9 L 343.4 246.7 L 343.9 242.5 L 344.2 238.3 L 344.4 234.1 L 344.5 229.9 M 251.9 102.5 L 243.8 100.1 L 235.6 98.3 L 227.3 97.0 L 218.9 96.2 L 210.5 95.9" stroke="black" stroke-width="3" fill="none" clip-path="url(#arc-length-curve-__clipPath-1)" marker-end="url(#arc-length-curve-arrow-head-end-3_None_24_60-black)"/>
+    <g id="arc-length-curve-__label-2" transform="translate(85.6,150.9) translate(-13.8,-13.2)">
+      <g id="arc-length-curve-__g-2">
         <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -0.400px" width="13.752px" height="13.160px" role="img" focusable="false" viewBox="0 -705 760 727" x="0.0" y="0.0">
           <defs>
             <path id="arc-length-curve-MJX-4-TEX-I-1D436" d="M50 252Q50 367 117 473T286 641T490 704Q580 704 633 653Q642 643 648 636T656 626L657 623Q660 623 684 649Q691 655 699 663T715 679T725 690L740 705H746Q760 705 760 698Q760 694 728 561Q692 422 692 421Q690 416 687 415T669 413H653Q647 419 647 422Q647 423 648 429T650 449T651 481Q651 552 619 605T510 659Q484 659 454 652T382 628T299 572T226 479Q194 422 175 346T156 222Q156 108 232 58Q280 24 350 24Q441 24 512 92T606 240Q610 253 612 255T628 257Q648 257 648 248Q648 243 647 239Q618 132 523 55T319 -22Q206 -22 128 53T50 252Z"/>
@@ -75,10 +95,10 @@
     </g>
   </g>
   <g id="arc-length-curve-start-end">
-    <circle id="arc-length-curve-circle-0" cx="344.5" cy="229.9" r="4.5" stroke="red" stroke-width="2" fill="red"/>
-    <g id="arc-length-curve-label-3" transform="translate(356.5,207.6) translate(0.0,-7.2)">
+    <circle id="arc-length-curve-__circle-0" cx="344.5" cy="229.9" r="4.5" stroke="red" stroke-width="2" fill="red"/>
+    <g id="arc-length-curve-__label-3" transform="translate(356.5,207.6) translate(0.0,-7.2)">
       <rect x="-6" y="-6" width="63.448" height="26.439999999999998" stroke="none" fill="white"/>
-      <g id="arc-length-curve-g-3">
+      <g id="arc-length-curve-__g-3">
         <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -1.488px; color:red" width="51.448px" height="14.440px" role="img" focusable="false" viewBox="0 -716 2842.6 798" x="0.0" y="0.0">
           <defs>
             <path id="arc-length-curve-MJX-5-TEX-I-1D434" d="M208 74Q208 50 254 46Q272 46 272 35Q272 34 270 22Q267 8 264 4T251 0Q249 0 239 0T205 1T141 2Q70 2 50 0H42Q35 7 35 11Q37 38 48 46H62Q132 49 164 96Q170 102 345 401T523 704Q530 716 547 716H555H572Q578 707 578 706L606 383Q634 60 636 57Q641 46 701 46Q726 46 726 36Q726 34 723 22Q720 7 718 4T704 0Q701 0 690 0T651 1T578 2Q484 2 455 0H443Q437 6 437 9T439 27Q443 40 445 43L449 46H469Q523 49 533 63L521 213H283L249 155Q208 86 208 74ZM516 260Q516 271 504 416T490 562L463 519Q447 492 400 412L310 260L413 259Q516 259 516 260Z"/>
@@ -101,9 +121,9 @@
         </svg>
       </g>
     </g>
-    <g id="arc-length-curve-label-4" transform="translate(356.5,252.3) translate(0.0,-8.0)">
+    <g id="arc-length-curve-__label-4" transform="translate(356.5,252.3) translate(0.0,-8.0)">
       <rect x="-6" y="-6" width="103.256" height="28.072" stroke="none" fill="white"/>
-      <g id="arc-length-curve-g-4">
+      <g id="arc-length-curve-__g-4">
         <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -3.512px; color:red" width="91.256px" height="16.072px" role="img" focusable="false" viewBox="0 -694 5041.8 888" x="0.0" y="0.0">
           <defs>
             <path id="arc-length-curve-MJX-6-TEX-I-1D461" d="M26 385Q19 392 19 395Q19 399 22 411T27 425Q29 430 36 430T87 431H140L159 511Q162 522 166 540T173 566T179 586T187 603T197 615T211 624T229 626Q247 625 254 615T261 596Q261 589 252 549T232 470L222 433Q222 431 272 431H323Q330 424 330 420Q330 398 317 385H210L174 240Q135 80 135 68Q135 26 162 26Q197 26 230 60T283 144Q285 150 288 151T303 153H307Q322 153 322 145Q322 142 319 133Q314 117 301 95T267 48T216 6T155 -11Q125 -11 98 4T59 56Q57 64 57 83V101L92 241Q127 382 128 383Q128 385 77 385H26Z"/>

@@ -1,16 +1,26 @@
 <svg xmlns="http://www.w3.org/2000/svg" id="ellipse-param-figure" viewBox="0 0 350 430">
   <defs>
-    <clipPath id="ellipse-param-clipPath-0">
+    <clipPath id="ellipse-param-__clipPath-0">
       <rect x="5.0" y="5.0" width="340.0" height="420.0"/>
     </clipPath>
-    <clipPath id="ellipse-param-clipPath-1">
+    <clipPath id="ellipse-param-__clipPath-1">
       <rect x="5.0" y="5.0" width="340.0" height="420.0"/>
     </clipPath>
-    <marker id="ellipse-param-arrow-head-end-3_None_24_60-blue" markerWidth="13.5" markerHeight="12.0" markerUnits="userSpaceOnUse" orient="auto-start-reverse" refX="9.8" refY="6.0">
+    <marker id="ellipse-param-arrow-head-end-3_None_24_60-blue" markerWidth="13.5" markerHeight="12.0" markerUnits="userSpaceOnUse" orient="auto" refX="9.8" refY="6.0">
       <path d="M 13.5 6.0L 0.0 12.0L 2.6 7.5L 2.6 4.5L 0.0 0.0Z" fill="blue" stroke="none"/>
     </marker>
-    <marker id="ellipse-param-arrow-head-end-3_None_24_60-blue-outline" markerWidth="17.5" markerHeight="16.0" markerUnits="userSpaceOnUse" orient="auto-start-reverse" refX="11.8" refY="8.0">
+    <marker id="ellipse-param-arrow-head-end-3_None_24_60-blue-outline" markerWidth="17.5" markerHeight="16.0" markerUnits="userSpaceOnUse" orient="auto" refX="11.8" refY="8.0">
       <path d="M 16.3 9.8 L 2.8 15.8 A 2 2 0 0 1 0.0 14.0 L 0.0 2.0 A 2 2 0 0 1 2.8 0.2 L 16.3 6.2 A 2 2 0 0 1 16.3 9.8 Z" fill="white" stroke="none"/>
+    </marker>
+    <marker id="ellipse-param-arrow-head-start-3_None_24_60-blue" markerWidth="13.5" markerHeight="12.0" markerUnits="userSpaceOnUse" orient="auto" refX="3.6999999999999993" refY="6.0">
+      <g transform="rotate(180, 6.75, 6.0)">
+        <path d="M 13.5 6.0L 0.0 12.0L 2.6 7.5L 2.6 4.5L 0.0 0.0Z" fill="blue" stroke="none"/>
+      </g>
+    </marker>
+    <marker id="ellipse-param-arrow-head-start-3_None_24_60-blue-outline" markerWidth="17.5" markerHeight="16.0" markerUnits="userSpaceOnUse" orient="auto" refX="5.699999999999999" refY="8.0">
+      <g transform="rotate(180, 8.75, 8.0)">
+        <path d="M 16.3 9.8 L 2.8 15.8 A 2 2 0 0 1 0.0 14.0 L 0.0 2.0 A 2 2 0 0 1 2.8 0.2 L 16.3 6.2 A 2 2 0 0 1 16.3 9.8 Z" fill="white" stroke="none"/>
+      </g>
     </marker>
   </defs>
   <g id="ellipse-param-grid-axes">
@@ -32,20 +42,20 @@
       <line x1="5.0" y1="42.5" x2="345.0" y2="42.5"/>
     </g>
     <g id="ellipse-param-axes" stroke="black" stroke-width="2">
-      <line id="ellipse-param-line-15" x1="5.0" y1="201.9" x2="345.0" y2="201.9" stroke="black" stroke-width="2"/>
+      <line id="ellipse-param-__line-15" x1="5.0" y1="201.9" x2="345.0" y2="201.9" stroke="black" stroke-width="2"/>
       <g>
-        <line id="ellipse-param-line-16" x1="68.8" y1="204.9" x2="68.8" y2="198.9"/>
-        <line id="ellipse-param-line-17" x1="281.2" y1="204.9" x2="281.2" y2="198.9"/>
+        <line id="ellipse-param-__line-16" x1="68.8" y1="204.9" x2="68.8" y2="198.9"/>
+        <line id="ellipse-param-__line-17" x1="281.2" y1="204.9" x2="281.2" y2="198.9"/>
       </g>
-      <line id="ellipse-param-line-18" x1="175.0" y1="425.0" x2="175.0" y2="5.0" stroke="black" stroke-width="2"/>
+      <line id="ellipse-param-__line-18" x1="175.0" y1="425.0" x2="175.0" y2="5.0" stroke="black" stroke-width="2"/>
       <g>
-        <line id="ellipse-param-line-19" x1="172.0" y1="414.4" x2="178.0" y2="414.4"/>
-        <line id="ellipse-param-line-20" x1="172.0" y1="308.1" x2="178.0" y2="308.1"/>
-        <line id="ellipse-param-line-21" x1="172.0" y1="95.6" x2="178.0" y2="95.6"/>
+        <line id="ellipse-param-__line-19" x1="172.0" y1="414.4" x2="178.0" y2="414.4"/>
+        <line id="ellipse-param-__line-20" x1="172.0" y1="308.1" x2="178.0" y2="308.1"/>
+        <line id="ellipse-param-__line-21" x1="172.0" y1="95.6" x2="178.0" y2="95.6"/>
       </g>
     </g>
-    <g id="ellipse-param-label-0" transform="translate(341.0,197.9) translate(-10.4,-8.2)">
-      <g id="ellipse-param-g-0">
+    <g id="ellipse-param-__label-0" transform="translate(341.0,197.9) translate(-10.4,-8.2)">
+      <g id="ellipse-param-__g-0">
         <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -0.200px" width="10.352px" height="8.200px" role="img" focusable="false" viewBox="0 -442 572 453" x="0.0" y="0.0">
           <defs>
             <path id="ellipse-param-MJX-2-TEX-I-1D465" d="M52 289Q59 331 106 386T222 442Q257 442 286 424T329 379Q371 442 430 442Q467 442 494 420T522 361Q522 332 508 314T481 292T458 288Q439 288 427 299T415 328Q415 374 465 391Q454 404 425 404Q412 404 406 402Q368 386 350 336Q290 115 290 78Q290 50 306 38T341 26Q378 26 414 59T463 140Q466 150 469 151T485 153H489Q504 153 504 145Q504 144 502 134Q486 77 440 33T333 -11Q263 -11 227 52Q186 -10 133 -10H127Q78 -10 57 16T35 71Q35 103 54 123T99 143Q142 143 142 101Q142 81 130 66T107 46T94 41L91 40Q91 39 97 36T113 29T132 26Q168 26 194 71Q203 87 217 139T245 247T261 313Q266 340 266 352Q266 380 251 392T217 404Q177 404 142 372T93 290Q91 281 88 280T72 278H58Q52 284 52 289Z"/>
@@ -60,8 +70,8 @@
         </svg>
       </g>
     </g>
-    <g id="ellipse-param-label-1" transform="translate(179.0,9.0) translate(0.0,-0.0)">
-      <g id="ellipse-param-g-1">
+    <g id="ellipse-param-__label-1" transform="translate(179.0,9.0) translate(0.0,-0.0)">
+      <g id="ellipse-param-__g-1">
         <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -3.712px" width="8.872px" height="11.712px" role="img" focusable="false" viewBox="0 -442 490 647" x="0.0" y="0.0">
           <defs>
             <path id="ellipse-param-MJX-3-TEX-I-1D466" d="M21 287Q21 301 36 335T84 406T158 442Q199 442 224 419T250 355Q248 336 247 334Q247 331 231 288T198 191T182 105Q182 62 196 45T238 27Q261 27 281 38T312 61T339 94Q339 95 344 114T358 173T377 247Q415 397 419 404Q432 431 462 431Q475 431 483 424T494 412T496 403Q496 390 447 193T391 -23Q363 -106 294 -155T156 -205Q111 -205 77 -183T43 -117Q43 -95 50 -80T69 -58T89 -48T106 -45Q150 -45 150 -87Q150 -107 138 -122T115 -142T102 -147L99 -148Q101 -153 118 -160T152 -167H160Q177 -167 186 -165Q219 -156 247 -127T290 -65T313 -9T321 21L315 17Q309 13 296 6T270 -6Q250 -11 231 -11Q185 -11 150 11T104 82Q103 89 103 113Q103 170 138 262T173 379Q173 380 173 381Q173 390 173 393T169 400T158 404H154Q131 404 112 385T82 344T65 302T57 280Q55 278 41 278H27Q21 284 21 287Z"/>
@@ -76,8 +86,8 @@
         </svg>
       </g>
     </g>
-    <g id="ellipse-param-label-2" transform="translate(68.8,212.9) translate(-7.5,-0.0)">
-      <g id="ellipse-param-g-2">
+    <g id="ellipse-param-__label-2" transform="translate(68.8,212.9) translate(-7.5,-0.0)">
+      <g id="ellipse-param-__g-2">
         <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: 0.000px" width="15.080px" height="12.056px" role="img" focusable="false" viewBox="0 -666 833 666" x="0.0" y="0.0">
           <defs>
             <path id="ellipse-param-MJX-4-TEX-N-2D" d="M11 179V252H277V179H11Z"/>
@@ -94,8 +104,8 @@
         </svg>
       </g>
     </g>
-    <g id="ellipse-param-label-3" transform="translate(281.2,212.9) translate(-4.5,-0.0)">
-      <g id="ellipse-param-g-3">
+    <g id="ellipse-param-__label-3" transform="translate(281.2,212.9) translate(-4.5,-0.0)">
+      <g id="ellipse-param-__g-3">
         <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: 0.000px" width="9.048px" height="12.056px" role="img" focusable="false" viewBox="0 -666 500 666" x="0.0" y="0.0">
           <defs>
             <path id="ellipse-param-MJX-5-TEX-N-32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"/>
@@ -110,8 +120,8 @@
         </svg>
       </g>
     </g>
-    <g id="ellipse-param-label-4" transform="translate(164.0,414.4) translate(-15.1,-6.1)">
-      <g id="ellipse-param-g-4">
+    <g id="ellipse-param-__label-4" transform="translate(164.0,414.4) translate(-15.1,-6.1)">
+      <g id="ellipse-param-__g-4">
         <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: 0.000px" width="15.080px" height="12.256px" role="img" focusable="false" viewBox="0 -677 833 677" x="0.0" y="0.0">
           <defs>
             <path id="ellipse-param-MJX-6-TEX-N-2D" d="M11 179V252H277V179H11Z"/>
@@ -128,8 +138,8 @@
         </svg>
       </g>
     </g>
-    <g id="ellipse-param-label-5" transform="translate(164.0,308.1) translate(-15.1,-6.0)">
-      <g id="ellipse-param-g-5">
+    <g id="ellipse-param-__label-5" transform="translate(164.0,308.1) translate(-15.1,-6.0)">
+      <g id="ellipse-param-__g-5">
         <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: 0.000px" width="15.080px" height="12.056px" role="img" focusable="false" viewBox="0 -666 833 666" x="0.0" y="0.0">
           <defs>
             <path id="ellipse-param-MJX-7-TEX-N-2D" d="M11 179V252H277V179H11Z"/>
@@ -146,8 +156,8 @@
         </svg>
       </g>
     </g>
-    <g id="ellipse-param-label-6" transform="translate(164.0,95.6) translate(-9.0,-6.0)">
-      <g id="ellipse-param-g-6">
+    <g id="ellipse-param-__label-6" transform="translate(164.0,95.6) translate(-9.0,-6.0)">
+      <g id="ellipse-param-__g-6">
         <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: 0.000px" width="9.048px" height="12.056px" role="img" focusable="false" viewBox="0 -666 500 666" x="0.0" y="0.0">
           <defs>
             <path id="ellipse-param-MJX-8-TEX-N-32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"/>
@@ -164,13 +174,13 @@
     </g>
   </g>
   <g id="ellipse-param-curve">
-    <path id="ellipse-param-path-0" d="M 281.2 201.9 L 281.0 191.9 L 280.4 181.9 L 279.4 172.0 L 277.9 162.2 L 276.0 152.6 L 273.8 143.2 L 271.1 134.0 L 268.1 125.1 L 264.7 116.5 L 261.0 108.2 L 256.9 100.3 L 252.5 92.8 L 247.7 85.7 L 242.7 79.1 L 237.5 72.9 L 231.9 67.3 L 226.2 62.2 L 220.2 57.7 L 214.1 53.7 L 207.8 50.3 L 201.4 47.5 L 194.9 45.3 L 188.3 43.8 L 181.7 42.8 L 175.0 42.5 L 168.3 42.8 L 161.7 43.8 L 155.1 45.3 L 148.6 47.5 L 142.2 50.3 L 135.9 53.7 L 129.8 57.7 L 123.8 62.2 L 118.1 67.3 L 112.5 72.9 L 107.3 79.1 L 102.3 85.7 L 97.5 92.8 L 93.1 100.3 L 89.0 108.2 L 85.3 116.5 L 81.9 125.1 L 78.9 134.0 L 76.2 143.2 L 74.0 152.6 L 72.1 162.2 L 70.6 172.0 L 69.6 181.9 L 69.0 191.9 L 68.8 201.9 L 69.0 211.9 L 69.6 221.8 L 70.6 231.7 L 72.1 241.5 L 74.0 251.1 L 76.2 260.5 L 78.9 269.7 L 81.9 278.7 L 85.3 287.3 L 89.0 295.6 L 93.1 303.5 L 97.5 311.0 L 102.3 318.1 L 107.3 324.7 L 112.5 330.8 L 118.1 336.4 L 123.8 341.5 L 129.8 346.1 L 135.9 350.1 L 142.2 353.4 L 148.6 356.2 L 155.1 358.4 L 161.7 360.0 L 168.3 360.9 L 175.0 361.2 L 181.7 360.9 L 188.3 360.0 L 194.9 358.4 L 201.4 356.2 L 207.8 353.4 L 214.1 350.1 L 220.2 346.1 L 226.2 341.5 L 231.9 336.4 L 237.5 330.8 L 242.7 324.7 L 247.7 318.1 L 252.5 311.0 L 256.9 303.5 L 261.0 295.6 L 264.7 287.3 L 268.1 278.7 L 271.1 269.7 L 273.8 260.5 L 276.0 251.1 L 277.9 241.5 L 279.4 231.7 L 280.4 221.8 L 281.0 211.9 L 281.2 201.9 M 281.2 196.2 L 280.7 186.2 L 279.9 176.2 L 278.6 166.4 L 276.9 156.7 L 274.8 147.2" stroke="blue" stroke-width="3" fill="none" clip-path="url(#ellipse-param-clipPath-1)" marker-end="url(#ellipse-param-arrow-head-end-3_None_24_60-blue)"/>
+    <path id="ellipse-param-__path-0" d="M 281.2 201.9 L 281.2 199.4 L 281.2 196.9 L 281.1 194.4 L 281.0 191.9 L 280.8 186.9 L 280.4 181.9 L 279.9 176.9 L 279.4 172.0 L 278.7 167.1 L 277.9 162.2 L 277.0 157.4 L 276.0 152.6 L 275.0 147.9 L 273.8 143.2 L 272.5 138.6 L 271.1 134.0 L 269.7 129.5 L 268.1 125.1 L 266.5 120.7 L 264.7 116.5 L 262.9 112.3 L 261.0 108.2 L 259.0 104.2 L 256.9 100.3 L 254.7 96.5 L 252.5 92.8 L 250.1 89.2 L 247.7 85.7 L 245.3 82.3 L 242.7 79.1 L 240.1 75.9 L 237.5 72.9 L 234.7 70.1 L 231.9 67.3 L 229.1 64.7 L 226.2 62.2 L 223.2 59.9 L 220.2 57.7 L 217.2 55.6 L 214.1 53.7 L 211.0 51.9 L 207.8 50.3 L 204.6 48.8 L 201.4 47.5 L 198.2 46.3 L 194.9 45.3 L 191.6 44.5 L 188.3 43.8 L 185.0 43.2 L 181.7 42.8 L 178.3 42.6 L 175.0 42.5 L 171.7 42.6 L 168.3 42.8 L 165.0 43.2 L 161.7 43.8 L 158.4 44.5 L 155.1 45.3 L 151.8 46.3 L 148.6 47.5 L 145.4 48.8 L 142.2 50.3 L 139.0 51.9 L 135.9 53.7 L 132.8 55.6 L 129.8 57.7 L 126.8 59.9 L 123.8 62.2 L 120.9 64.7 L 118.1 67.3 L 115.3 70.1 L 112.5 72.9 L 109.9 75.9 L 107.3 79.1 L 104.7 82.3 L 102.3 85.7 L 99.9 89.2 L 97.5 92.8 L 95.3 96.5 L 93.1 100.3 L 91.0 104.2 L 89.0 108.2 L 87.1 112.3 L 85.3 116.5 L 83.5 120.7 L 81.9 125.1 L 80.3 129.5 L 78.9 134.0 L 77.5 138.6 L 76.2 143.2 L 75.0 147.9 L 74.0 152.6 L 73.0 157.4 L 72.1 162.2 L 71.3 167.1 L 70.6 172.0 L 70.1 176.9 L 69.6 181.9 L 69.2 186.9 L 69.0 191.9 L 68.9 194.4 L 68.8 196.9 L 68.8 199.4 L 68.8 201.9 L 68.8 204.4 L 68.8 206.9 L 68.9 209.4 L 69.0 211.9 L 69.2 216.9 L 69.6 221.8 L 70.1 226.8 L 70.6 231.7 L 71.3 236.6 L 72.1 241.5 L 73.0 246.3 L 74.0 251.1 L 75.0 255.9 L 76.2 260.5 L 77.5 265.2 L 78.9 269.7 L 80.3 274.2 L 81.9 278.7 L 83.5 283.0 L 85.3 287.3 L 87.1 291.5 L 89.0 295.6 L 91.0 299.6 L 93.1 303.5 L 95.3 307.3 L 97.5 311.0 L 99.9 314.6 L 102.3 318.1 L 104.7 321.4 L 107.3 324.7 L 109.9 327.8 L 112.5 330.8 L 115.3 333.7 L 118.1 336.4 L 120.9 339.1 L 123.8 341.5 L 126.8 343.9 L 129.8 346.1 L 132.8 348.1 L 135.9 350.1 L 139.0 351.8 L 142.2 353.4 L 145.4 354.9 L 148.6 356.2 L 151.8 357.4 L 155.1 358.4 L 158.4 359.3 L 161.7 360.0 L 165.0 360.5 L 168.3 360.9 L 171.7 361.2 L 175.0 361.2 L 178.3 361.2 L 181.7 360.9 L 185.0 360.5 L 188.3 360.0 L 191.6 359.3 L 194.9 358.4 L 198.2 357.4 L 201.4 356.2 L 204.6 354.9 L 207.8 353.4 L 211.0 351.8 L 214.1 350.1 L 217.2 348.1 L 220.2 346.1 L 223.2 343.9 L 226.2 341.5 L 229.1 339.1 L 231.9 336.4 L 234.7 333.7 L 237.5 330.8 L 240.1 327.8 L 242.7 324.7 L 245.3 321.4 L 247.7 318.1 L 250.1 314.6 L 252.5 311.0 L 254.7 307.3 L 256.9 303.5 L 259.0 299.6 L 261.0 295.6 L 262.9 291.5 L 264.7 287.3 L 266.5 283.0 L 268.1 278.7 L 269.7 274.2 L 271.1 269.7 L 272.5 265.2 L 273.8 260.5 L 275.0 255.9 L 276.0 251.1 L 277.0 246.3 L 277.9 241.5 L 278.7 236.6 L 279.4 231.7 L 279.9 226.8 L 280.4 221.8 L 280.8 216.9 L 281.0 211.9 L 281.1 209.4 L 281.2 206.9 L 281.2 204.4 L 281.2 201.9 M 281.2 196.2 L 280.7 186.2 L 279.9 176.2 L 278.6 166.4 L 276.9 156.7 L 274.8 147.2" stroke="blue" stroke-width="3" fill="none" clip-path="url(#ellipse-param-__clipPath-1)" marker-end="url(#ellipse-param-arrow-head-end-3_None_24_60-blue)"/>
   </g>
   <g id="ellipse-param-quarters">
-    <circle id="ellipse-param-circle-0" cx="281.2" cy="201.9" r="4" stroke="red" stroke-width="2" fill="red"/>
-    <g id="ellipse-param-label-7" transform="translate(291.2,193.9) translate(0.0,-13.5)">
+    <circle id="ellipse-param-__circle-0" cx="281.2" cy="201.9" r="4" stroke="red" stroke-width="2" fill="red"/>
+    <g id="ellipse-param-__label-7" transform="translate(291.2,193.9) translate(0.0,-13.5)">
       <rect x="-6" y="-6" width="51.72" height="25.536" stroke="none" fill="white"/>
-      <g id="ellipse-param-g-7">
+      <g id="ellipse-param-__g-7">
         <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -1.488px" width="39.720px" height="13.536px" role="img" focusable="false" viewBox="0 -666 2194.6 748" x="0.0" y="0.0">
           <defs>
             <path id="ellipse-param-MJX-9-TEX-I-1D461" d="M26 385Q19 392 19 395Q19 399 22 411T27 425Q29 430 36 430T87 431H140L159 511Q162 522 166 540T173 566T179 586T187 603T197 615T211 624T229 626Q247 625 254 615T261 596Q261 589 252 549T232 470L222 433Q222 431 272 431H323Q330 424 330 420Q330 398 317 385H210L174 240Q135 80 135 68Q135 26 162 26Q197 26 230 60T283 144Q285 150 288 151T303 153H307Q322 153 322 145Q322 142 319 133Q314 117 301 95T267 48T216 6T155 -11Q125 -11 98 4T59 56Q57 64 57 83V101L92 241Q127 382 128 383Q128 385 77 385H26Z"/>
@@ -193,10 +203,10 @@
         </svg>
       </g>
     </g>
-    <circle id="ellipse-param-circle-1" cx="175.0" cy="42.5" r="4" stroke="red" stroke-width="2" fill="red"/>
-    <g id="ellipse-param-label-8" transform="translate(175.0,30.5) translate(-29.5,-18.1)">
+    <circle id="ellipse-param-__circle-1" cx="175.0" cy="42.5" r="4" stroke="red" stroke-width="2" fill="red"/>
+    <g id="ellipse-param-__label-8" transform="translate(175.0,30.5) translate(-29.5,-18.1)">
       <rect x="-6" y="-6" width="71.088" height="30.096" stroke="none" fill="white"/>
-      <g id="ellipse-param-g-8">
+      <g id="ellipse-param-__g-8">
         <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -4.528px" width="59.088px" height="18.096px" role="img" focusable="false" viewBox="0 -750 3264.6 1000" x="0.0" y="0.0">
           <defs>
             <path id="ellipse-param-MJX-10-TEX-I-1D461" d="M26 385Q19 392 19 395Q19 399 22 411T27 425Q29 430 36 430T87 431H140L159 511Q162 522 166 540T173 566T179 586T187 603T197 615T211 624T229 626Q247 625 254 615T261 596Q261 589 252 549T232 470L222 433Q222 431 272 431H323Q330 424 330 420Q330 398 317 385H210L174 240Q135 80 135 68Q135 26 162 26Q197 26 230 60T283 144Q285 150 288 151T303 153H307Q322 153 322 145Q322 142 319 133Q314 117 301 95T267 48T216 6T155 -11Q125 -11 98 4T59 56Q57 64 57 83V101L92 241Q127 382 128 383Q128 385 77 385H26Z"/>
@@ -231,10 +241,10 @@
         </svg>
       </g>
     </g>
-    <circle id="ellipse-param-circle-2" cx="68.8" cy="201.9" r="4" stroke="red" stroke-width="2" fill="red"/>
-    <g id="ellipse-param-label-9" transform="translate(56.8,201.9) translate(-41.0,-6.4)">
+    <circle id="ellipse-param-__circle-2" cx="68.8" cy="201.9" r="4" stroke="red" stroke-width="2" fill="red"/>
+    <g id="ellipse-param-__label-9" transform="translate(56.8,201.9) translate(-41.0,-6.4)">
       <rect x="-6" y="-6" width="52.984" height="24.816000000000003" stroke="none" fill="white"/>
-      <g id="ellipse-param-g-9">
+      <g id="ellipse-param-__g-9">
         <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -1.488px" width="40.984px" height="12.816px" role="img" focusable="false" viewBox="0 -626 2264.6 708" x="0.0" y="0.0">
           <defs>
             <path id="ellipse-param-MJX-11-TEX-I-1D461" d="M26 385Q19 392 19 395Q19 399 22 411T27 425Q29 430 36 430T87 431H140L159 511Q162 522 166 540T173 566T179 586T187 603T197 615T211 624T229 626Q247 625 254 615T261 596Q261 589 252 549T232 470L222 433Q222 431 272 431H323Q330 424 330 420Q330 398 317 385H210L174 240Q135 80 135 68Q135 26 162 26Q197 26 230 60T283 144Q285 150 288 151T303 153H307Q322 153 322 145Q322 142 319 133Q314 117 301 95T267 48T216 6T155 -11Q125 -11 98 4T59 56Q57 64 57 83V101L92 241Q127 382 128 383Q128 385 77 385H26Z"/>
@@ -257,10 +267,10 @@
         </svg>
       </g>
     </g>
-    <circle id="ellipse-param-circle-3" cx="175.0" cy="361.2" r="4" stroke="red" stroke-width="2" fill="red"/>
-    <g id="ellipse-param-label-10" transform="translate(175.0,373.2) translate(-34.1,-0.0)">
+    <circle id="ellipse-param-__circle-3" cx="175.0" cy="361.2" r="4" stroke="red" stroke-width="2" fill="red"/>
+    <g id="ellipse-param-__label-10" transform="translate(175.0,373.2) translate(-34.1,-0.0)">
       <rect x="-6" y="-6" width="80.136" height="30.096" stroke="none" fill="white"/>
-      <g id="ellipse-param-g-10">
+      <g id="ellipse-param-__g-10">
         <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -4.528px" width="68.136px" height="18.096px" role="img" focusable="false" viewBox="0 -750 3764.6 1000" x="0.0" y="0.0">
           <defs>
             <path id="ellipse-param-MJX-12-TEX-I-1D461" d="M26 385Q19 392 19 395Q19 399 22 411T27 425Q29 430 36 430T87 431H140L159 511Q162 522 166 540T173 566T179 586T187 603T197 615T211 624T229 626Q247 625 254 615T261 596Q261 589 252 549T232 470L222 433Q222 431 272 431H323Q330 424 330 420Q330 398 317 385H210L174 240Q135 80 135 68Q135 26 162 26Q197 26 230 60T283 144Q285 150 288 151T303 153H307Q322 153 322 145Q322 142 319 133Q314 117 301 95T267 48T216 6T155 -11Q125 -11 98 4T59 56Q57 64 57 83V101L92 241Q127 382 128 383Q128 385 77 385H26Z"/>
