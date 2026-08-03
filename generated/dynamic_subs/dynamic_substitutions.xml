@@ -4,6 +4,116 @@
     <eval-subst obj="k">18</eval-subst>
     <eval-subst obj="M">18</eval-subst>
   </dynamic-substitution>
+  <dynamic-substitution id="ex-r3o-area-change-of-variables">
+    <eval-subst obj="aa">3^{2}</eval-subst>
+    <eval-subst obj="bb">5^{2}</eval-subst>
+    <eval-subst obj="xuv">\frac{u^{2}}{v}</eval-subst>
+    <eval-subst obj="yuv">\frac{v}{u}</eval-subst>
+    <eval-subst obj="xu">\frac{2 u}{v}</eval-subst>
+    <eval-subst obj="xv">\frac{-u^{2}}{v^{2}}</eval-subst>
+    <eval-subst obj="yu">\frac{-v}{u^{2}}</eval-subst>
+    <eval-subst obj="yv">\frac{1}{u}</eval-subst>
+    <eval-subst obj="jac">\frac{1}{v}</eval-subst>
+    <eval-subst obj="one">1</eval-subst>
+    <eval-subst obj="area">\left(3^{2}-1\right) \ln \mathopen{}\left(5^{2}\right)\mathclose{}</eval-subst>
+  </dynamic-substitution>
+  <dynamic-substitution id="ex-r3o-shear-ellipse-area">
+    <eval-subst obj="a">3</eval-subst>
+    <eval-subst obj="twoa">6</eval-subst>
+    <eval-subst obj="bcoef">3^{2}+1</eval-subst>
+    <eval-subst obj="xst">s-3 t</eval-subst>
+    <eval-subst obj="yst">t</eval-subst>
+    <eval-subst obj="jac">1</eval-subst>
+    <eval-subst obj="area">\pi</eval-subst>
+  </dynamic-substitution>
+  <dynamic-substitution id="ex-r3o-parabolic-strip">
+    <eval-subst obj="bsq">3^{2}</eval-subst>
+    <eval-subst obj="a">5</eval-subst>
+    <eval-subst obj="xst">\sqrt{s-t}</eval-subst>
+    <eval-subst obj="yst">s</eval-subst>
+    <eval-subst obj="jac">\frac{1}{2 \sqrt{s-t}}</eval-subst>
+    <eval-subst obj="zero">0</eval-subst>
+    <eval-subst obj="nega">-5</eval-subst>
+    <eval-subst obj="integrand">\frac{1}{2}</eval-subst>
+    <eval-subst obj="value">\frac{5\cdot 3^{2}}{2}</eval-subst>
+  </dynamic-substitution>
+  <dynamic-substitution id="ex-r3o-ellipsoid-integral">
+    <eval-subst obj="a">3</eval-subst>
+    <eval-subst obj="b">3</eval-subst>
+    <eval-subst obj="c">5</eval-subst>
+    <eval-subst obj="jac">45</eval-subst>
+    <eval-subst obj="value">\frac{180 \pi}{5}</eval-subst>
+  </dynamic-substitution>
+  <dynamic-substitution id="ex-r3o-tetrahedron-com">
+    <eval-subst obj="k">8</eval-subst>
+    <eval-subst obj="mass">\frac{64}{105}</eval-subst>
+    <eval-subst obj="xcm">\frac{2}{9}</eval-subst>
+    <eval-subst obj="ycm">\frac{2}{9}</eval-subst>
+    <eval-subst obj="zcm">\frac{1}{3}</eval-subst>
+  </dynamic-substitution>
+  <dynamic-substitution id="ex-r3o-lamina-rectangle">
+    <eval-subst obj="A">4</eval-subst>
+    <eval-subst obj="B">3</eval-subst>
+    <eval-subst obj="C">7</eval-subst>
+    <eval-subst obj="D">1</eval-subst>
+    <eval-subst obj="E">6</eval-subst>
+    <eval-subst obj="mass">\frac{4^{2}\cdot 3\cdot 7}{2}+\frac{3^{2}\cdot 1\cdot 4}{2}+72</eval-subst>
+    <eval-subst obj="xbar">\frac{\frac{7\cdot 4^{3}\cdot 3}{3}+\frac{1\cdot 4^{2}\cdot 3^{2}}{4}+\frac{6\cdot 4^{2}\cdot 3}{2}}{\frac{4^{2}\cdot 3\cdot 7}{2}+\frac{3^{2}\cdot 1\cdot 4}{2}+72}</eval-subst>
+    <eval-subst obj="ybar">\frac{\frac{7\cdot 4^{2}\cdot 3^{2}}{4}+\frac{4\cdot 3^{3}}{3}+\frac{24\cdot 3^{2}}{2}}{\frac{4^{2}\cdot 3\cdot 7}{2}+\frac{3^{2}\cdot 1\cdot 4}{2}+72}</eval-subst>
+    <eval-subst obj="xmom">\frac{7\cdot 4^{3}\cdot 3}{3}+\frac{1\cdot 4^{2}\cdot 3^{2}}{4}+\frac{6\cdot 4^{2}\cdot 3}{2}</eval-subst>
+    <eval-subst obj="ymom">\frac{7\cdot 4^{2}\cdot 3^{2}}{4}+\frac{4\cdot 3^{3}}{3}+\frac{24\cdot 3^{2}}{2}</eval-subst>
+  </dynamic-substitution>
+  <dynamic-substitution id="ex-r3o-sphere-minus-sphere">
+    <eval-subst obj="a">5</eval-subst>
+    <eval-subst obj="volume">\frac{\pi\cdot 5^{3}}{2}</eval-subst>
+  </dynamic-substitution>
+  <dynamic-substitution id="ex-r3o-spherical-shell">
+    <eval-subst obj="r0">2</eval-subst>
+    <eval-subst obj="r1">4</eval-subst>
+    <eval-subst obj="radial">\frac{4^{3}-2^{3}}{3}</eval-subst>
+    <eval-subst obj="value">\frac{\pi \left(4^{3}-2^{3}\right)}{3}</eval-subst>
+  </dynamic-substitution>
+  <dynamic-substitution id="ex-r3o-gaussian-shell">
+    <eval-subst obj="asq">1^{2}</eval-subst>
+    <eval-subst obj="bsq">2^{2}</eval-subst>
+    <eval-subst obj="value">2 \pi \left(e^{-1^{2}}-e^{-2^{2}}\right)</eval-subst>
+    <eval-subst obj="a">1</eval-subst>
+    <eval-subst obj="b">2</eval-subst>
+  </dynamic-substitution>
+  <dynamic-substitution id="ex-r3o-linear-jacobian">
+    <eval-subst obj="p">7</eval-subst>
+    <eval-subst obj="q">1</eval-subst>
+    <eval-subst obj="r">3</eval-subst>
+    <eval-subst obj="s">5</eval-subst>
+    <eval-subst obj="xu">7</eval-subst>
+    <eval-subst obj="xv">1</eval-subst>
+    <eval-subst obj="yu">3</eval-subst>
+    <eval-subst obj="yv">5</eval-subst>
+    <eval-subst obj="det">32</eval-subst>
+  </dynamic-substitution>
+  <dynamic-substitution id="ex-r3o-quadratic-map">
+    <eval-subst obj="a">3</eval-subst>
+    <eval-subst obj="fuv">u^{2}+v^{2}</eval-subst>
+    <eval-subst obj="jac">4 \left(u^{2}+v^{2}\right)</eval-subst>
+    <eval-subst obj="value">\frac{56\cdot 3^{6}}{45}</eval-subst>
+  </dynamic-substitution>
+  <dynamic-substitution id="ex-r3o-centre-of-gravity">
+    <eval-subst obj="m">3</eval-subst>
+    <eval-subst obj="b">6</eval-subst>
+    <eval-subst obj="zero">0</eval-subst>
+    <eval-subst obj="xstar">\frac{-3+\sqrt{3^{2}+24}}{2}</eval-subst>
+    <eval-subst obj="lower">3 x</eval-subst>
+    <eval-subst obj="upper">6-x^{2}</eval-subst>
+    <eval-subst obj="mass">\frac{\left(\frac{-3+\sqrt{3^{2}+24}}{2}\right)^{6}}{12}+\frac{\left(-6-\frac{3^{2}}{2}\right) \left(\frac{-3+\sqrt{3^{2}+24}}{2}\right)^{4}}{4}+\frac{6^{2} \left(\frac{-3+\sqrt{3^{2}+24}}{2}\right)^{2}}{4}</eval-subst>
+    <eval-subst obj="xmom">\frac{\left(\frac{-3+\sqrt{3^{2}+24}}{2}\right)^{7}}{14}+\frac{\left(-6-\frac{3^{2}}{2}\right) \left(\frac{-3+\sqrt{3^{2}+24}}{2}\right)^{5}}{5}+\frac{6^{2} \left(\frac{-3+\sqrt{3^{2}+24}}{2}\right)^{3}}{6}</eval-subst>
+    <eval-subst obj="ymom">\frac{-\left(\frac{-3+\sqrt{3^{2}+24}}{2}\right)^{8}}{24}+\frac{6 \left(\frac{-3+\sqrt{3^{2}+24}}{2}\right)^{6}}{6}-\frac{3^{3} \left(\frac{-3+\sqrt{3^{2}+24}}{2}\right)^{5}}{15}-\frac{6^{2} \left(\frac{-3+\sqrt{3^{2}+24}}{2}\right)^{4}}{4}+\frac{6^{3} \left(\frac{-3+\sqrt{3^{2}+24}}{2}\right)^{2}}{6}</eval-subst>
+    <eval-subst obj="xbar">\frac{\frac{\left(\frac{-3+\sqrt{3^{2}+24}}{2}\right)^{7}}{14}+\frac{\left(-6-\frac{3^{2}}{2}\right) \left(\frac{-3+\sqrt{3^{2}+24}}{2}\right)^{5}}{5}+\frac{6^{2} \left(\frac{-3+\sqrt{3^{2}+24}}{2}\right)^{3}}{6}}{\frac{\left(\frac{-3+\sqrt{3^{2}+24}}{2}\right)^{6}}{12}+\frac{\left(-6-\frac{3^{2}}{2}\right) \left(\frac{-3+\sqrt{3^{2}+24}}{2}\right)^{4}}{4}+\frac{6^{2} \left(\frac{-3+\sqrt{3^{2}+24}}{2}\right)^{2}}{4}}</eval-subst>
+    <eval-subst obj="ybar">\frac{\frac{-\left(\frac{-3+\sqrt{3^{2}+24}}{2}\right)^{8}}{24}+\frac{6 \left(\frac{-3+\sqrt{3^{2}+24}}{2}\right)^{6}}{6}-\frac{3^{3} \left(\frac{-3+\sqrt{3^{2}+24}}{2}\right)^{5}}{15}-\frac{6^{2} \left(\frac{-3+\sqrt{3^{2}+24}}{2}\right)^{4}}{4}+\frac{6^{3} \left(\frac{-3+\sqrt{3^{2}+24}}{2}\right)^{2}}{6}}{\frac{\left(\frac{-3+\sqrt{3^{2}+24}}{2}\right)^{6}}{12}+\frac{\left(-6-\frac{3^{2}}{2}\right) \left(\frac{-3+\sqrt{3^{2}+24}}{2}\right)^{4}}{4}+\frac{6^{2} \left(\frac{-3+\sqrt{3^{2}+24}}{2}\right)^{2}}{4}}</eval-subst>
+  </dynamic-substitution>
+  <dynamic-substitution id="ex-r3o-quarter-disc-com">
+    <eval-subst obj="r">5</eval-subst>
+    <eval-subst obj="coord">\frac{20}{3 \pi}</eval-subst>
+  </dynamic-substitution>
   <dynamic-substitution id="ex-r4o-box-flux">
     <eval-subst obj="A">5</eval-subst>
     <eval-subst obj="p">3</eval-subst>

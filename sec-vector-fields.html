@@ -188,7 +188,7 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="section-conservative-fields.html" class="internal"><span class="codenumber">1.5</span> <span class="title">Path Independence, Conservative Fields, and Potential Functions</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-conservative-fields.html#sec-gradient-fields" class="internal"><span class="codenumber">1.5.1</span> <span class="title">Gradient Fields</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-conservative-fields.html#sec-gradient-fields" class="internal"><span class="codenumber">1.5.1</span> <span class="title">A Brief Reminder (Gradient Fields)</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-conservative-fields.html#sec-conservative-definitions" class="internal"><span class="codenumber">1.5.2</span> <span class="title">Path Independence and Some Basic Definitions</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-conservative-fields.html#sec-ftli" class="internal"><span class="codenumber">1.5.3</span> <span class="title">Line Integrals in Conservative Fields</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-conservative-fields.html#sec-potential-function" class="internal"><span class="codenumber">1.5.4</span> <span class="title">Finding a Potential Function</span></a></div></li>
@@ -412,10 +412,16 @@ eBookConfig.enable_chatcodes =  false;
 </li>
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="ch-review-problems.html" class="internal"><span class="codenumber">6</span> <span class="title">Review Problems</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-section">
-<div class="toc-title-box"><a href="sec-exercises-review4-online.html" class="internal"><span class="codenumber">6.1</span> <span class="title">Review Problems #4</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-exercises-review3-online.html" class="internal"><span class="codenumber">6.1</span> <span class="title">Review Problems #3</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-exercises-review3-online.html#exercises-review3-online" class="internal"><span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-exercises-review4-online.html" class="internal"><span class="codenumber">6.2</span> <span class="title">Review Problems #4</span></a></div>
 <ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-exercises-review4-online.html#exercises-review4-online" class="internal"><span class="title">Exercises</span></a></div></li></ul>
-</li></ul>
+</li>
+</ul>
 </li>
 </ul></nav></div>
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-vector-fields"><h2 class="heading hide-type">
@@ -1081,12 +1087,166 @@ x^2+y^2+z^2=\cos^2 t+\sin^2 t+t^2=1+t^2,
 <figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.4.11<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The helix <span class="process-math">\(\mathbf{r}(t)=\langle\cos t,\sin t,t\rangle\text{,}\)</span> <span class="process-math">\(0\le t\le 2\pi\text{,}\)</span> climbing through the field <span class="process-math">\(\mathbf{F}=-\mathbf{r}/\left\lVert\mathbf{r}\right\rVert^3\)</span> (orange arrows, direction only). At the same three points the velocity <span class="process-math">\(\mathbf{v}\)</span> is drawn in green: at every one of them the field leans away from the direction of travel, which is why the work comes out negative.<div class="autopermalink" data-description="Figure 1.4.11"><a href="#fig-helix-gravity" title="Copy heading and permalink for Figure 1.4.11" aria-label="Copy heading and permalink for Figure 1.4.11">🔗</a></div></figcaption></figure><figure class="figure figure-like" id="fig-helix-gravity-video"><div class="video-box" style="width: 85%;padding-top: 47.8125%; margin-left: 7.5%; margin-right: 7.5%;"><video id="video-helix-gravity" class="video" controls=""><source src="external/videos/helix_gravity_work_1080p.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video></div>
 <figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.4.12<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>A particle climbs the helix through the field while the work <span class="process-math">\(W(t)=\dfrac{1}{\sqrt{1+t^2}}-1\)</span> accumulates, reaching <span class="process-math">\(\dfrac{1}{\sqrt{1+4\pi^2}}-1\approx -0.84\)</span> at the top: the field opposes the motion the whole way.<div class="autopermalink" data-description="Figure 1.4.12"><a href="#fig-helix-gravity-video" title="Copy heading and permalink for Figure 1.4.12" aria-label="Copy heading and permalink for Figure 1.4.12">🔗</a></div></figcaption></figure><div class="autopermalink" data-description="Solution 1.4.10.1"><a href="#ex-helix-gravity-3" title="Copy heading and permalink for Solution 1.4.10.1" aria-label="Copy heading and permalink for Solution 1.4.10.1">🔗</a></div>
 </div></details></div>
-<div class="autopermalink" data-description="Example 1.4.10: Work done by an inverse-square field along a helix"><a href="#ex-helix-gravity" title="Copy heading and permalink for Example 1.4.10: Work done by an inverse-square field along a helix" aria-label="Copy heading and permalink for Example 1.4.10: Work done by an inverse-square field along a helix">🔗</a></div></article></details><section class="subsection" id="subsec-work-exploration"><h3 class="heading hide-type">
+<div class="autopermalink" data-description="Example 1.4.10: Work done by an inverse-square field along a helix"><a href="#ex-helix-gravity" title="Copy heading and permalink for Example 1.4.10: Work done by an inverse-square field along a helix" aria-label="Copy heading and permalink for Example 1.4.10: Work done by an inverse-square field along a helix">🔗</a></div></article></details><details id="ex-work-path-dependence" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.4.13</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">The same endpoints, two paths, two answers.</span>
+</h3></summary><article class="example example-like knowl__content"><div class="para logical" id="ex-work-path-dependence-2-1">
+<div class="para">Calculate the work done by the force</div>
+<div class="displaymath process-math" id="ex-work-path-dependence-2-1-1">
+\begin{equation*}
+\mathbf{F}(x,y)=\left\langle y,\ 2x\right\rangle
+\end{equation*}
+</div>
+<div class="para">in moving a particle from <span class="process-math">\(O(0,0)\)</span> to <span class="process-math">\(P(1,1)\)</span> along each of the following two paths:</div>
+<ul class="disc" id="ex-work-path-dependence-2-1-4">
+<li id="ex-work-path-dependence-2-1-4-1">
+<div class="para" id="ex-work-path-dependence-2-1-4-1-1">
+<span class="process-math">\(C_1\text{,}\)</span> the straight segment from <span class="process-math">\(O\)</span> to <span class="process-math">\(P\text{,}\)</span> parametrized by <span class="process-math">\(\mathbf{r}_1(t)=\left\langle t,\ t\right\rangle\text{,}\)</span> <span class="process-math">\(0\le t\le 1\text{;}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-work-path-dependence-2-1-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#ex-work-path-dependence-2-1-4-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="ex-work-path-dependence-2-1-4-2">
+<div class="para" id="ex-work-path-dependence-2-1-4-2-1">
+<span class="process-math">\(C_2\text{,}\)</span> the arc of the parabola <span class="process-math">\(y=x^2\)</span> from <span class="process-math">\(O\)</span> to <span class="process-math">\(P\text{,}\)</span> parametrized by <span class="process-math">\(\mathbf{r}_2(t)=\left\langle t,\ t^2\right\rangle\text{,}\)</span> <span class="process-math">\(0\le t\le 1\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-work-path-dependence-2-1-4-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#ex-work-path-dependence-2-1-4-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-work-path-dependence-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="ex-work-path-dependence-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="ex-work-path-dependence-3-1">Both curves start at <span class="process-math">\(O(0,0)\)</span> and end at <span class="process-math">\(P(1,1)\text{,}\)</span> as shown in <a href="sec-vector-fields.html#fig-path-dependence-paths" class="internal" title="Figure 1.4.14">Figure 1.4.14</a>, so any difference between the two answers can come only from the paths themselves. We use <a href="sec-vector-fields.html#subsec-work-force-field-5-4" class="xref" data-knowl="./knowl/xref/eq-work-parametrized.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.4.9">(1.4.9)</a> for each one.<div class="autopermalink" data-description="Paragraph"><a href="#ex-work-path-dependence-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<figure class="figure figure-like" id="fig-path-dependence-paths"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;">
+<div class="ChemAccess-element" data-src="generated/prefigure/path-dependence-paths-diagcess.svg" data-cml="generated/prefigure/path-dependence-paths-annotations.xml"></div>
+<details><summary>Diagram Exploration Keyboard Controls</summary><div class="diagcess-navigation-controls"><table>
+<thead><tr>
+<th>Key</th>
+<th>Action</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Enter, A</td>
+<td>Activate keyboard driven exploration</td>
+</tr>
+<tr>
+<td>B</td>
+<td>Activate menu driven exploration</td>
+</tr>
+<tr>
+<td>Escape</td>
+<td>Leave exploration mode</td>
+</tr>
+<tr>
+<td>Cursor down</td>
+<td>Explore next lower level</td>
+</tr>
+<tr>
+<td>Cursor up</td>
+<td>Explore next upper level</td>
+</tr>
+<tr>
+<td>Cursor right</td>
+<td>Explore next element on level</td>
+</tr>
+<tr>
+<td>Cursor left</td>
+<td>Explore previous element on level</td>
+</tr>
+<tr>
+<td>X</td>
+<td>Toggle expert mode</td>
+</tr>
+<tr>
+<td>W</td>
+<td>Extra details if available</td>
+</tr>
+<tr>
+<td>Space</td>
+<td>Repeat speech</td>
+</tr>
+<tr>
+<td>M</td>
+<td>Activate step magnification</td>
+</tr>
+<tr>
+<td>Comma</td>
+<td>Activate direct magnification</td>
+</tr>
+<tr>
+<td>N</td>
+<td>Deactivate magnification</td>
+</tr>
+<tr>
+<td>Z</td>
+<td>Toggle subtitles</td>
+</tr>
+<tr>
+<td>C</td>
+<td>Cycle contrast settings</td>
+</tr>
+<tr>
+<td>T</td>
+<td>Monochrome colours</td>
+</tr>
+<tr>
+<td>L</td>
+<td>Toggle language (if available)</td>
+</tr>
+<tr>
+<td>K</td>
+<td>Kill current sound</td>
+</tr>
+<tr>
+<td>Y</td>
+<td>Stop sound output</td>
+</tr>
+<tr>
+<td>O</td>
+<td>Start and stop sonification</td>
+</tr>
+<tr>
+<td>P</td>
+<td>Repeat sonification output</td>
+</tr>
+</tbody>
+</table></div></details><details class="image-description" aria-live="polite"><summary title="details"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span></summary><div id="image-path-dependence-paths-description"><div class="para" id="image-path-dependence-paths-2-1">The first quadrant, with x and y running from zero to a little past one, carrying a grid of blue field arrows. Along the x axis they point straight up and along the y axis they point straight right, turning and lengthening in between. Two curves join the origin O to the point P at one comma one: a green straight segment labelled C 1 along the line y equals x, and a vermillion arc labelled C 2 following the parabola y equals x squared, which bows below the segment. Each curve carries an arrowhead pointing from O toward P.<div class="autopermalink" data-description="Paragraph"><a href="#image-path-dependence-paths-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></div></details>
+</div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.4.14<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The two paths of <a href="sec-vector-fields.html#ex-work-path-dependence" class="internal" title="Example 1.4.13: The same endpoints, two paths, two answers">Example 1.4.13</a> drawn in the field <span class="process-math">\(\mathbf{F}=\left\langle y,\ 2x\right\rangle\text{:}\)</span> the segment <span class="process-math">\(C_1\)</span> along <span class="process-math">\(y=x\)</span> and the arc <span class="process-math">\(C_2\)</span> along <span class="process-math">\(y=x^2\text{,}\)</span> both running from <span class="process-math">\(O(0,0)\)</span> to <span class="process-math">\(P(1,1)\text{.}\)</span> The field pushes harder along one than the other, and the two answers <span class="process-math">\(W_1=\frac{3}{2}\)</span> and <span class="process-math">\(W_2=\frac{5}{3}\)</span> differ.<div class="autopermalink" data-description="Figure 1.4.14"><a href="#fig-path-dependence-paths" title="Copy heading and permalink for Figure 1.4.14" aria-label="Copy heading and permalink for Figure 1.4.14">🔗</a></div></figcaption></figure><div class="para" id="ex-work-path-dependence-3-3">
+<em class="emphasis">Along <span class="process-math">\(C_1\text{.}\)</span></em> Here <span class="process-math">\(x=t\)</span> and <span class="process-math">\(y=t\text{,}\)</span> so <span class="process-math">\(\mathbf{F}=\left\langle y,\ 2x\right\rangle
+=\left\langle t,\ 2t\right\rangle\)</span> and <span class="process-math">\(\mathbf{r}_1'(t)=\left\langle 1,\ 1\right\rangle\text{.}\)</span> Therefore<div class="autopermalink" data-description="Paragraph"><a href="#ex-work-path-dependence-3-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig-path-dependence-paths.html ./knowl/xref/eq-work-parametrized.html ./knowl/xref/ex-work-path-dependence.html ./knowl/xref/section-conservative-fields.html" id="ex-work-path-dependence-3-4">
+\begin{align*}
+W_1 \amp = \int_{C_1}\mathbf{F}\cdot d\mathbf{r}
+= \int_0^1\left\langle t,\ 2t\right\rangle
+\cdot\left\langle 1,\ 1\right\rangle dt\\
+\amp = \int_0^1 3t\,dt = \frac{3}{2}.
+\end{align*}
+</div>
+<div class="para" id="ex-work-path-dependence-3-5">
+<em class="emphasis">Along <span class="process-math">\(C_2\text{.}\)</span></em> Here <span class="process-math">\(x=t\)</span> and <span class="process-math">\(y=t^2\text{,}\)</span> so <span class="process-math">\(\mathbf{F}=\left\langle y,\ 2x\right\rangle
+=\left\langle t^2,\ 2t\right\rangle\)</span> and <span class="process-math">\(\mathbf{r}_2'(t)=\left\langle 1,\ 2t\right\rangle\text{.}\)</span> Therefore<div class="autopermalink" data-description="Paragraph"><a href="#ex-work-path-dependence-3-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig-path-dependence-paths.html ./knowl/xref/eq-work-parametrized.html ./knowl/xref/ex-work-path-dependence.html ./knowl/xref/section-conservative-fields.html" id="ex-work-path-dependence-3-6">
+\begin{align*}
+W_2 \amp = \int_{C_2}\mathbf{F}\cdot d\mathbf{r}
+= \int_0^1\left\langle t^2,\ 2t\right\rangle
+\cdot\left\langle 1,\ 2t\right\rangle dt\\
+\amp = \int_0^1\left(t^2+4t^2\right)dt
+= \int_0^1 5t^2\,dt = \frac{5}{3}.
+\end{align*}
+</div>
+<div class="para" id="ex-work-path-dependence-3-7">Since <span class="process-math">\(W_1=\dfrac{3}{2}\)</span> and <span class="process-math">\(W_2=\dfrac{5}{3}\)</span> are not equal, the line integral of <span class="process-math">\(\mathbf{F}\)</span> from <span class="process-math">\(O\)</span> to <span class="process-math">\(P\)</span> depends on the path taken, and not on the endpoints alone. Knowing where a curve starts and ends is therefore <em class="emphasis">not</em> enough, in general, to determine the work. Deciding which fields are the exception—those for which the endpoints <em class="emphasis">are</em> enough—is the question taken up in <a href="section-conservative-fields.html" class="internal" title="Section 1.5: Path Independence, Conservative Fields, and Potential Functions">Section 1.5</a>.<div class="autopermalink" data-description="Paragraph"><a href="#ex-work-path-dependence-3-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 1.4.13.1"><a href="#ex-work-path-dependence-3" title="Copy heading and permalink for Solution 1.4.13.1" aria-label="Copy heading and permalink for Solution 1.4.13.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Example 1.4.13: The same endpoints, two paths, two answers"><a href="#ex-work-path-dependence" title="Copy heading and permalink for Example 1.4.13: The same endpoints, two paths, two answers" aria-label="Copy heading and permalink for Example 1.4.13: The same endpoints, two paths, two answers">🔗</a></div></article></details><section class="subsection" id="subsec-work-exploration"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.4.4</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Concept Check</span>
 </h3>
 <details id="q-work-sign-two-paths" class="exercise exercise-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
-<span class="type">Checkpoint</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.4.13</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Positive, negative, or zero?</span>
-</h4></summary><article class="exercise exercise-like knowl__content"><div class="para" id="q-work-sign-two-paths-2-1">In <a href="sec-vector-fields.html#fig-two-paths-curves" class="internal" title="Figure 1.4.14">Figure 1.4.14</a>, determine whether the work done by the force field along the two paths <span class="process-math">\(C_1\)</span> and <span class="process-math">\(C_2\)</span> is positive, negative, or zero.<div class="autopermalink" data-description="Paragraph"><a href="#q-work-sign-two-paths-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<span class="type">Checkpoint</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.4.15</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Positive, negative, or zero?</span>
+</h4></summary><article class="exercise exercise-like knowl__content"><div class="para" id="q-work-sign-two-paths-2-1">In <a href="sec-vector-fields.html#fig-two-paths-curves" class="internal" title="Figure 1.4.16">Figure 1.4.16</a>, determine whether the work done by the force field along the two paths <span class="process-math">\(C_1\)</span> and <span class="process-math">\(C_2\)</span> is positive, negative, or zero.<div class="autopermalink" data-description="Paragraph"><a href="#q-work-sign-two-paths-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> <figure class="figure figure-like" id="fig-two-paths-curves"><div class="image-box" style="width: 65%; margin-left: 17.5%; margin-right: 17.5%;">
 <div class="ChemAccess-element" data-src="generated/prefigure/two-paths-curves-diagcess.svg" data-cml="generated/prefigure/two-paths-curves-annotations.xml"></div>
 <details><summary>Diagram Exploration Keyboard Controls</summary><div class="diagcess-navigation-controls"><table>
@@ -1183,11 +1343,11 @@ x^2+y^2+z^2=\cos^2 t+\sin^2 t+t^2=1+t^2,
 </table></div></details><details class="image-description" aria-live="polite"><summary title="details"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span></summary><div id="image-two-paths-curves-description"><div class="para" id="image-two-paths-curves-2-1">The plane with x and y from minus 5 to 5, filled with blue arrows that point straight away from the origin and grow longer with the distance from it. A green ellipse crosses the x axis at plus and minus three and the y axis at plus and minus one; its arrowhead, just above the origin, points in the negative x direction, so the ellipse is traversed counterclockwise. A black circle of radius two is centred at the origin; its arrowhead, in the upper right, points down and to the right, so the circle is traversed clockwise. A red dot marks the origin, where the field is the zero vector.<div class="autopermalink" data-description="Paragraph"><a href="#image-two-paths-curves-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div></div></details>
 </div>
-<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.4.14<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Two closed paths in the radial field <a href="sec-vector-fields.html#subsec-vector-fields-2-6" class="xref" data-knowl="./knowl/xref/eq-radial-field.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.4.1">(1.4.1)</a>: the ellipse <span class="process-math">\(C_1\)</span> and the circle <span class="process-math">\(C_2\text{.}\)</span> Notice the orientation of each curve.<div class="autopermalink" data-description="Figure 1.4.14"><a href="#fig-two-paths-curves" title="Copy heading and permalink for Figure 1.4.14" aria-label="Copy heading and permalink for Figure 1.4.14">🔗</a></div></figcaption></figure><div class="solutions">
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.4.16<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Two closed paths in the radial field <a href="sec-vector-fields.html#subsec-vector-fields-2-6" class="xref" data-knowl="./knowl/xref/eq-radial-field.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.4.1">(1.4.1)</a>: the ellipse <span class="process-math">\(C_1\)</span> and the circle <span class="process-math">\(C_2\text{.}\)</span> Notice the orientation of each curve.<div class="autopermalink" data-description="Figure 1.4.16"><a href="#fig-two-paths-curves" title="Copy heading and permalink for Figure 1.4.16" aria-label="Copy heading and permalink for Figure 1.4.16">🔗</a></div></figcaption></figure><div class="solutions">
 <details id="q-work-sign-two-paths-3" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="answer solution-like knowl__content">
 <div class="para" id="q-work-sign-two-paths-3-1">Zero along both paths—but for two different reasons.<div class="autopermalink" data-description="Paragraph"><a href="#q-work-sign-two-paths-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Answer 1.4.13.1"><a href="#q-work-sign-two-paths-3" title="Copy heading and permalink for Answer 1.4.13.1" aria-label="Copy heading and permalink for Answer 1.4.13.1">🔗</a></div>
+<div class="autopermalink" data-description="Answer 1.4.15.1"><a href="#q-work-sign-two-paths-3" title="Copy heading and permalink for Answer 1.4.15.1" aria-label="Copy heading and permalink for Answer 1.4.15.1">🔗</a></div>
 </div></details><details id="q-work-sign-two-paths-4" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
 <div class="para" id="q-work-sign-two-paths-4-1">The field is <span class="process-math">\(\mathbf{F}=\left\langle x,\ y\right\rangle\text{,}\)</span> which at every point aims straight away from the origin.<div class="autopermalink" data-description="Paragraph"><a href="#q-work-sign-two-paths-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
@@ -1290,7 +1450,7 @@ x^2+y^2+z^2=\cos^2 t+\sin^2 t+t^2=1+t^2,
 </table></div></details><details class="image-description" aria-live="polite"><summary title="details"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span></summary><div id="image-circle-perp-description"><div class="para" id="image-circle-perp-2-1">A circle of radius two centred at the origin, drawn on a coordinate grid over a sparse field of blue arrows that point straight away from the origin. At each of four points of the circle two arrows are attached: a red one pointing radially outward, away from the origin, and a green one tangent to the circle in the counterclockwise direction of travel. A small square at each of those points marks the right angle between the red and the green arrow.<div class="autopermalink" data-description="Paragraph"><a href="#image-circle-perp-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div></div></details>
 </div>
-<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.4.15<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>On a circle centred at the origin the field <span class="process-math">\(\mathbf{F}\)</span> (red) points straight out and the direction of travel <span class="process-math">\(\mathbf{T}\)</span> (green) runs around, so the two are perpendicular at every point and <span class="process-math">\(\mathbf{F}\cdot\mathbf{T}=0\)</span> throughout.<div class="autopermalink" data-description="Figure 1.4.15"><a href="#fig-circle-perp" title="Copy heading and permalink for Figure 1.4.15" aria-label="Copy heading and permalink for Figure 1.4.15">🔗</a></div></figcaption></figure><div class="para" id="q-work-sign-two-paths-4-4">
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.4.17<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>On a circle centred at the origin the field <span class="process-math">\(\mathbf{F}\)</span> (red) points straight out and the direction of travel <span class="process-math">\(\mathbf{T}\)</span> (green) runs around, so the two are perpendicular at every point and <span class="process-math">\(\mathbf{F}\cdot\mathbf{T}=0\)</span> throughout.<div class="autopermalink" data-description="Figure 1.4.17"><a href="#fig-circle-perp" title="Copy heading and permalink for Figure 1.4.17" aria-label="Copy heading and permalink for Figure 1.4.17">🔗</a></div></figcaption></figure><div class="para" id="q-work-sign-two-paths-4-4">
 <dfn class="terminology">The ellipse <span class="process-math">\(C_1\text{.}\)</span></dfn> Here the integrand does <em class="emphasis">not</em> vanish: on the stretches where the curve moves away from the origin the field pushes it along and <span class="process-math">\(\mathbf{F}\cdot\mathbf{T}\gt 0\text{,}\)</span> while on the stretches where it moves back inward <span class="process-math">\(\mathbf{F}\cdot\mathbf{T}\lt 0\text{.}\)</span> Over one full circuit the curve returns to where it started, so the outward stretches and the inward stretches cancel exactly and the total is again zero. Reversing the orientation swaps which stretches are positive, and the total is still zero.<div class="autopermalink" data-description="Paragraph"><a href="#q-work-sign-two-paths-4-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <figure class="figure figure-like" id="fig-ellipse-cancel"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;">
@@ -1389,10 +1549,10 @@ x^2+y^2+z^2=\cos^2 t+\sin^2 t+t^2=1+t^2,
 </table></div></details><details class="image-description" aria-live="polite"><summary title="details"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span></summary><div id="image-ellipse-cancel-description"><div class="para" id="image-ellipse-cancel-2-1">An ellipse centred at the origin, three units wide and one unit tall, drawn over a sparse field of blue arrows pointing away from the origin. The ellipse is traversed counterclockwise. Its four quarters alternate in colour: the two along which the point moves away from the origin are green and marked with a plus, and the two along which it moves back toward the origin are orange and marked with a minus. At one green point and one orange point the outward field vector and the tangent vector are drawn; at the green point they make an acute angle, at the orange point an obtuse one. Four black dots mark the ends of the axes, where the distance from the origin stops changing.<div class="autopermalink" data-description="Paragraph"><a href="#image-ellipse-cancel-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div></div></details>
 </div>
-<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.4.16<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>On an ellipse the distance from the origin rises and falls. Along the green stretches the curve moves outward and <span class="process-math">\(\mathbf{F}\cdot\mathbf{T}\gt 0\text{;}\)</span> along the orange stretches it moves back inward and <span class="process-math">\(\mathbf{F}\cdot\mathbf{T}\lt 0\text{.}\)</span> At the four marked points the distance is momentarily stationary and the integrand is zero. Over a full circuit the two kinds of stretch cancel.<div class="autopermalink" data-description="Figure 1.4.16"><a href="#fig-ellipse-cancel" title="Copy heading and permalink for Figure 1.4.16" aria-label="Copy heading and permalink for Figure 1.4.16">🔗</a></div></figcaption></figure><div class="autopermalink" data-description="Solution 1.4.13.1"><a href="#q-work-sign-two-paths-4" title="Copy heading and permalink for Solution 1.4.13.1" aria-label="Copy heading and permalink for Solution 1.4.13.1">🔗</a></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.4.18<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>On an ellipse the distance from the origin rises and falls. Along the green stretches the curve moves outward and <span class="process-math">\(\mathbf{F}\cdot\mathbf{T}\gt 0\text{;}\)</span> along the orange stretches it moves back inward and <span class="process-math">\(\mathbf{F}\cdot\mathbf{T}\lt 0\text{.}\)</span> At the four marked points the distance is momentarily stationary and the integrand is zero. Over a full circuit the two kinds of stretch cancel.<div class="autopermalink" data-description="Figure 1.4.18"><a href="#fig-ellipse-cancel" title="Copy heading and permalink for Figure 1.4.18" aria-label="Copy heading and permalink for Figure 1.4.18">🔗</a></div></figcaption></figure><div class="autopermalink" data-description="Solution 1.4.15.1"><a href="#q-work-sign-two-paths-4" title="Copy heading and permalink for Solution 1.4.15.1" aria-label="Copy heading and permalink for Solution 1.4.15.1">🔗</a></div>
 </div></details>
 </div>
-<div class="autopermalink" data-description="Checkpoint 1.4.13: Positive, negative, or zero?"><a href="#q-work-sign-two-paths" title="Copy heading and permalink for Checkpoint 1.4.13: Positive, negative, or zero?" aria-label="Copy heading and permalink for Checkpoint 1.4.13: Positive, negative, or zero?">🔗</a></div></article></details><div class="autopermalink" data-description="Subsection 1.4.4: Concept Check"><a href="#subsec-work-exploration" title="Copy heading and permalink for Subsection 1.4.4: Concept Check" aria-label="Copy heading and permalink for Subsection 1.4.4: Concept Check">🔗</a></div></section><div class="autopermalink" data-description="Section 1.4: Vector Fields and Line Integrals"><a href="#sec-vector-fields" title="Copy heading and permalink for Section 1.4: Vector Fields and Line Integrals" aria-label="Copy heading and permalink for Section 1.4: Vector Fields and Line Integrals">🔗</a></div></section></div>
+<div class="autopermalink" data-description="Checkpoint 1.4.15: Positive, negative, or zero?"><a href="#q-work-sign-two-paths" title="Copy heading and permalink for Checkpoint 1.4.15: Positive, negative, or zero?" aria-label="Copy heading and permalink for Checkpoint 1.4.15: Positive, negative, or zero?">🔗</a></div></article></details><div class="autopermalink" data-description="Subsection 1.4.4: Concept Check"><a href="#subsec-work-exploration" title="Copy heading and permalink for Subsection 1.4.4: Concept Check" aria-label="Copy heading and permalink for Subsection 1.4.4: Concept Check">🔗</a></div></section><div class="autopermalink" data-description="Section 1.4: Vector Fields and Line Integrals"><a href="#sec-vector-fields" title="Copy heading and permalink for Section 1.4: Vector Fields and Line Integrals" aria-label="Copy heading and permalink for Section 1.4: Vector Fields and Line Integrals">🔗</a></div></section></div>
 <div id="ptx-content-footer" class="ptx-content-footer">
 <a class="previous-button button" href="sec-line-integrals.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="section-conservative-fields.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
@@ -1400,6 +1560,6 @@ x^2+y^2+z^2=\cos^2 t+\sin^2 t+t^2=1+t^2,
 <div id="ptx-page-footer" class="ptx-page-footer">
 <a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
 </div>
-<script>diagcess.Base.init()</script>
+<script>diagcess.Base.init()</script><script src="external/math-input-palette.js"></script>
 </body>
 </html>
