@@ -119,6 +119,75 @@ so that
 </me>
 </solution>
 
+<figure xml:id="fig-curl-paddle-tikz">
+<caption>
+The curl of <xref ref="example-curl-3d"/> at the point <m>P(1,1,1)</m>,
+where <m>\nabla \times \mathbf{F} = -3\,\mathbf{i} + \mathbf{j} +
+\mathbf{k}</m>. The curl is the axis of the paddle wheel: put the wheel in
+the plane perpendicular to it and the field turns the wheel the way the
+arrow shows.
+</caption>
+<image xml:id="image-curl-paddle" width="62%">
+<shortdescription>
+A vector at a point in space with a small paddle wheel turning about it.
+</shortdescription>
+<description>
+<p>
+At the point P equals one, one, one, a green arrow points in the
+direction of the curl, up and back toward the negative x direction. A small
+vermillion circle with four blades sits in the plane perpendicular to that
+arrow, with an arrowhead showing which way it turns.
+</p>
+</description>
+<latex-image>
+<![CDATA[\begin{tikzpicture}[line join=round, line cap=round]
+  \definecolor{oiblue}{RGB}{0,114,178}
+  \definecolor{oivermillion}{RGB}{213,94,0}
+  \definecolor{oigreen}{RGB}{0,158,115}
+  \begin{axis}[
+      view={118}{20}, width=11cm, axis lines=center,
+      axis line style={-latex, black!70, line width=0.7pt},
+      xlabel={$x$}, ylabel={$y$}, zlabel={$z$},
+      label style={font=\large}, ticks=none,
+      xmin=-1.2, xmax=2.4, ymin=-0.6, ymax=2.6, zmin=0, zmax=2.6,
+      clip=false,
+    ]
+    % the point P = (1,1,1)
+    \addplot3[only marks, mark=*, mark size=1.9pt, color=black, forget plot]
+      coordinates {(1,1,1)};
+    \node[anchor=north east, font=\small] at (axis cs:1,1,0.94) {$P$};
+    % the curl vector at P, the axis the paddle wheel turns about
+    \draw[-{Latex[length=3mm]}, oigreen, line width=1.5pt]
+      (axis cs:1,1,1) -- (axis cs:-0.176,1.392,1.392);
+    \node[oigreen, font=\large, anchor=south east]
+      at (axis cs:-0.20,1.40,1.42) {$\nabla\times\mathbf{F}$};
+    % the paddle wheel: a circle in the plane perpendicular to the curl
+    \addplot3[oivermillion, line width=1.3pt, samples=80, samples y=0,
+              domain=0:360, forget plot]
+      ({1 + 0.55*(0.316*cos(x) - 0.286*sin(x))},
+       {1 + 0.55*(0.949*cos(x) + 0.095*sin(x))},
+       {1 + 0.55*(-0.953*sin(x))});
+    % four blades
+    \foreach \s in {0,90,180,270} {}
+    \draw[oivermillion, line width=1.1pt]
+      (axis cs:1,1,1) -- (axis cs:1.174,1.522,1);
+    \draw[oivermillion, line width=1.1pt]
+      (axis cs:1,1,1) -- (axis cs:0.843,1.052,0.476);
+    \draw[oivermillion, line width=1.1pt]
+      (axis cs:1,1,1) -- (axis cs:0.826,0.478,1);
+    \draw[oivermillion, line width=1.1pt]
+      (axis cs:1,1,1) -- (axis cs:1.157,0.948,1.524);
+    % which way it turns
+    \draw[-{Latex[length=2.2mm]}, oivermillion, line width=1.3pt]
+      (axis cs:1.150,1.386,0.795) -- (axis cs:1.174,1.522,1.000);
+    \node[oivermillion, font=\small, anchor=west]
+      at (axis cs:1.20,1.55,0.95) {paddle wheel};
+  \end{axis}
+\end{tikzpicture}]]>
+</latex-image>
+</image>
+</figure>
+
 <p>
 Two facts about the curl are worth recording, both of which we have
 already met in disguise. First, a field is conservative exactly when its
@@ -381,6 +450,76 @@ which matches the circulation, as <xref ref="thm-stokes"/> promises.
 </p>
 </solution>
 
+<figure xml:id="fig-stokes-hemisphere-tikz">
+<caption>
+The surface and boundary of <xref ref="example-stokes-hemisphere"/>:
+the upper hemisphere <m>S</m> of <m>x^2+y^2+z^2=1</m> with its upward
+normal, and the unit circle <m>C</m> in the <m>xy</m>-plane, counterclockwise
+seen from above. The field <m>\mathbf{F} = -y\,\mathbf{i} + x\,\mathbf{j}</m>
+runs tangent to <m>C</m> all the way round, which is why the circulation is
+as large as it can be.
+</caption>
+<image xml:id="image-stokes-hemisphere" width="62%">
+<shortdescription>
+A hemisphere with an upward normal, its boundary circle, and a field tangent to that circle.
+</shortdescription>
+<description>
+<p>
+A translucent blue hemisphere sits on the horizontal plane. Its rim is
+the unit circle, drawn in vermillion with arrowheads pointing
+counterclockwise seen from above, and shorter vermillion arrows along the
+circle show the field running tangent to it. A green arrow rises from the
+top of the hemisphere.
+</p>
+</description>
+<latex-image>
+<![CDATA[\begin{tikzpicture}[line join=round, line cap=round]
+  \definecolor{oiblue}{RGB}{0,114,178}
+  \definecolor{oivermillion}{RGB}{213,94,0}
+  \definecolor{oigreen}{RGB}{0,158,115}
+  \begin{axis}[
+      view={120}{20}, width=11cm, axis lines=center,
+      axis line style={-latex, black!70, line width=0.7pt},
+      xlabel={$x$}, ylabel={$y$}, zlabel={$z$},
+      label style={font=\large}, ticks=none,
+      xmin=-1.5, xmax=1.5, ymin=-1.5, ymax=1.5, zmin=0, zmax=1.7,
+      clip=false,
+    ]
+    % the hemisphere S
+    \addplot3[surf, shader=faceted, faceted color=oiblue!25,
+              colormap={hem}{color=(oiblue!14!white) color=(oiblue!45!white)},
+              opacity=0.62, fill opacity=0.62,
+              domain=0:1, samples=18, y domain=0:360, samples y=44,
+              z buffer=sort, forget plot]
+      ({x*cos(y)}, {x*sin(y)}, {sqrt(max(0,1-x^2))});
+    % the boundary circle C, counterclockwise seen from above
+    \addplot3[oivermillion, line width=1.5pt, samples=120, samples y=0,
+              domain=0:360, forget plot]
+      ({cos(x)}, {sin(x)}, 0);
+    \draw[-{Latex[length=2.6mm]}, oivermillion, line width=1.5pt]
+      (axis cs:0.9945,-0.1045,0) -- (axis cs:0.9945,0.1045,0);
+    \draw[-{Latex[length=2.6mm]}, oivermillion, line width=1.5pt]
+      (axis cs:-0.3746,0.9272,0) -- (axis cs:-0.5446,0.8387,0);
+    \draw[-{Latex[length=2.6mm]}, oivermillion, line width=1.5pt]
+      (axis cs:-0.4384,-0.8988,0) -- (axis cs:-0.2419,-0.9703,0);
+    % the field F = <-y, x, 0>, tangent to C
+    \addplot3[-{Latex[length=2mm]}, oivermillion!55, forget plot,
+              quiver={u={-y}, v={x}, w=0, scale arrows=0.45},
+              samples=8, samples y=0, domain=0:315]
+      ({cos(x)}, {sin(x)}, 0);
+    % the upward normal
+    \draw[-{Latex[length=3mm]}, oigreen, line width=1.4pt]
+      (axis cs:0,0,1) -- (axis cs:0,0,1.45);
+    \node[oigreen, font=\large, anchor=west]
+      at (axis cs:0.10,0,1.34) {$\hat{\mathbf{n}}$};
+    \node[oiblue, font=\large] at (axis cs:-0.95,0.62,0.72) {$S$};
+    \node[oivermillion, font=\large] at (axis cs:1.18,0.62,0.12) {$C$};
+  \end{axis}
+\end{tikzpicture}]]>
+</latex-image>
+</image>
+</figure>
+
 <example xml:id="example-stokes-cylinder">
 <title>A Circulation That Is Easier as a Flux</title>
 <statement>
@@ -555,15 +694,19 @@ theorem only ever sees the field through its curl, and by
 <xref ref="eq-curl-3d"/>,
 </p>
 
-<me>
+<md>
+<mrow>
 \nabla \times \mathbf{F}
-= \left( \frac{\partial}{\partial y}(2y)
+\amp = \left( \frac{\partial}{\partial y}(2y)
 - \frac{\partial}{\partial z}(4z) \right) \mathbf{i}
 + 0\,\mathbf{j}
-+ \left( 0 - \frac{\partial}{\partial y}
+</mrow>
+<mrow>
+\amp \quad + \left( 0 - \frac{\partial}{\partial y}
 \left[\cos\left(x^{100}\right) + 3y\right] \right) \mathbf{k}
 = -2\,\mathbf{i} - 3\,\mathbf{k}:
-</me>
+</mrow>
+</md>
 
 <p>
 the monster differentiates to zero. For the surface we take the
@@ -581,6 +724,73 @@ constant, so
 = -3 \cdot \text{Area}(S) = -3 \left(9\pi\right) = -27\pi .
 </me>
 </solution>
+
+<figure xml:id="fig-stokes-flat-disk-tikz">
+<caption>
+The cheapest surface for <xref ref="example-stokes-flat-disk"/>: the
+flat disk <m>S</m> of radius <m>3</m> in the plane <m>z=2</m>, whose
+boundary is the given circle <m>C</m>. Its unit normal is
+<m>\hat{\mathbf{n}} = \mathbf{k}</m>, so only the
+<m>\mathbf{k}</m>-component of the curl survives.
+</caption>
+<image xml:id="image-stokes-flat-disk" width="62%">
+<shortdescription>
+A flat disk floating at height two, with its boundary circle and an upward normal.
+</shortdescription>
+<description>
+<p>
+A translucent blue disk of radius three lies in the horizontal plane at
+height two above the origin. Its boundary circle is drawn in vermillion with
+arrowheads pointing counterclockwise seen from above, and a green arrow
+labelled n hat equals k rises from the centre of the disk.
+</p>
+</description>
+<latex-image>
+<![CDATA[\begin{tikzpicture}[line join=round, line cap=round]
+  \definecolor{oiblue}{RGB}{0,114,178}
+  \definecolor{oivermillion}{RGB}{213,94,0}
+  \definecolor{oigreen}{RGB}{0,158,115}
+  \begin{axis}[
+      view={118}{18}, width=11cm, axis lines=center,
+      axis line style={-latex, black!70, line width=0.7pt},
+      xlabel={$x$}, ylabel={$y$}, zlabel={$z$},
+      label style={font=\large}, ticks=none,
+      xmin=-4, xmax=4, ymin=-4, ymax=4, zmin=0, zmax=3.6,
+      clip=false,
+    ]
+    % the flat disk S at height 2
+    \addplot3[surf, shader=flat, draw=oiblue!45, fill=oiblue!22,
+              opacity=0.72, fill opacity=0.72,
+              domain=0:3, samples=14, y domain=0:360, samples y=44,
+              forget plot]
+      ({x*cos(y)}, {x*sin(y)}, 2);
+    % its boundary C
+    \addplot3[oivermillion, line width=1.5pt, samples=120, samples y=0,
+              domain=0:360, forget plot]
+      ({3*cos(x)}, {3*sin(x)}, 2);
+    \draw[-{Latex[length=2.6mm]}, oivermillion, line width=1.5pt]
+      (axis cs:2.984,-0.314,2) -- (axis cs:2.984,0.314,2);
+    \draw[-{Latex[length=2.6mm]}, oivermillion, line width=1.5pt]
+      (axis cs:-1.124,2.782,2) -- (axis cs:-1.634,2.516,2);
+    \draw[-{Latex[length=2.6mm]}, oivermillion, line width=1.5pt]
+      (axis cs:-1.315,-2.696,2) -- (axis cs:-0.726,-2.911,2);
+    % the normal
+    \draw[-{Latex[length=3mm]}, oigreen, line width=1.4pt]
+      (axis cs:0,0,2) -- (axis cs:0,0,3.05);
+    \node[oigreen, font=\large, anchor=west]
+      at (axis cs:0.14,0,2.90) {$\hat{\mathbf{n}} = \mathbf{k}$};
+    \node[oiblue, font=\large] at (axis cs:-2.1,1.6,2.0) {$S$};
+    \node[oivermillion, font=\large] at (axis cs:3.35,1.5,2.0) {$C$};
+    \draw[black!45, dashed, line width=0.7pt]
+      (axis cs:3,0,0) -- (axis cs:3,0,2);
+    \node[anchor=north, font=\small] at (axis cs:3,0,-0.08) {$3$};
+    \draw[black!55, line width=0.6pt] (axis cs:0,0,2) -- (axis cs:0.14,0,2);
+    \node[anchor=east, font=\small] at (axis cs:0,0,2) {$2$};
+  \end{axis}
+\end{tikzpicture}]]>
+</latex-image>
+</image>
+</figure>
 
 <p>
 The same trick works when the curve is tilted<mdash/>the flat surface it
@@ -663,6 +873,77 @@ and area <m>9\pi/\sqrt{2}</m>. Then
 </p>
 </solution>
 
+<figure xml:id="fig-stokes-tilted-tikz">
+<caption>
+The curve of <xref ref="example-stokes-tilted-circle"/>: the plane
+<m>z=x</m> passes through the centre of the sphere
+<m>x^2+y^2+z^2=9</m>, so it cuts out a great circle <m>C</m> of radius
+<m>3</m>. The surface <m>S</m> is the flat disk that <m>C</m> bounds in that
+plane, tilted at <m>45^\circ</m>, and its unit normal is
+<m>\hat{\mathbf{n}} = \left(-\mathbf{i}+\mathbf{k}\right)/\sqrt2</m>.
+</caption>
+<image xml:id="image-stokes-tilted" width="62%">
+<shortdescription>
+A sphere cut by a slanted plane through its centre, with the great circle and the tilted disk it bounds.
+</shortdescription>
+<description>
+<p>
+A faint grey sphere of radius three is cut through its centre by a
+slanted plane. The circle of intersection is drawn in vermillion with
+arrowheads showing counterclockwise travel seen from above, the flat disk
+inside it is shaded blue, and a green arrow perpendicular to that disk
+points up and toward the negative x direction.
+</p>
+</description>
+<latex-image>
+<![CDATA[\begin{tikzpicture}[line join=round, line cap=round]
+  \definecolor{oiblue}{RGB}{0,114,178}
+  \definecolor{oivermillion}{RGB}{213,94,0}
+  \definecolor{oigreen}{RGB}{0,158,115}
+  \begin{axis}[
+      view={118}{16}, width=11cm, axis lines=center,
+      axis line style={-latex, black!70, line width=0.7pt},
+      xlabel={$x$}, ylabel={$y$}, zlabel={$z$},
+      label style={font=\large}, ticks=none,
+      xmin=-4, xmax=4, ymin=-4, ymax=4, zmin=-3.6, zmax=3.6,
+      clip=false,
+    ]
+    % the sphere of radius 3
+    \addplot3[surf, shader=faceted, faceted color=black!12,
+              colormap={sph}{color=(black!6!white) color=(black!16!white)},
+              opacity=0.22, fill opacity=0.22,
+              domain=0:360, samples=40, y domain=0:180, samples y=24,
+              z buffer=sort, forget plot]
+      ({3*cos(x)*sin(y)}, {3*sin(x)*sin(y)}, {3*cos(y)});
+    % the disk S cut out by the plane z = x, spanned by (1,0,1)/sqrt2 and (0,1,0)
+    \addplot3[surf, shader=flat, draw=oiblue!45, fill=oiblue!24,
+              opacity=0.7, fill opacity=0.7,
+              domain=0:3, samples=14, y domain=0:360, samples y=44,
+              forget plot]
+      ({x*cos(y)*0.7071}, {x*sin(y)}, {x*cos(y)*0.7071});
+    % the great circle C
+    \addplot3[oivermillion, line width=1.5pt, samples=140, samples y=0,
+              domain=0:360, forget plot]
+      ({3*cos(x)*0.7071}, {3*sin(x)}, {3*cos(x)*0.7071});
+    \draw[-{Latex[length=2.6mm]}, oivermillion, line width=1.5pt]
+      (axis cs:2.110,-0.314,2.110) -- (axis cs:2.110,0.314,2.110);
+    \draw[-{Latex[length=2.6mm]}, oivermillion, line width=1.5pt]
+      (axis cs:-0.795,2.782,-0.795) -- (axis cs:-1.155,2.516,-1.155);
+    % the unit normal (-i + k)/sqrt 2
+    \draw[-{Latex[length=3mm]}, oigreen, line width=1.4pt]
+      (axis cs:0,0,0) -- (axis cs:-1.06,0,1.06);
+    \node[oigreen, font=\large, anchor=south east]
+      at (axis cs:-1.08,0,1.10) {$\hat{\mathbf{n}}$};
+    \node[oiblue, font=\large] at (axis cs:0.9,1.9,0.9) {$S$};
+    \node[oivermillion, font=\large] at (axis cs:2.35,1.9,2.35) {$C$};
+    \node[black!55, font=\large] at (axis cs:-2.2,-2.2,2.3)
+      {$x^2+y^2+z^2=9$};
+  \end{axis}
+\end{tikzpicture}]]>
+</latex-image>
+</image>
+</figure>
+
 <p>
 When the boundary is made of straight segments, both sides of
 <xref ref="eq-stokes"/> are computable, and the comparison is
@@ -695,12 +976,15 @@ directly, and by Stokes' theorem.
 <m>\mathbf{r}'(t) = (-2,\ 2,\ 0)</m>, so
 </p>
 
-<me>
+<md>
+<mrow>
 \int_{C_1} \mathbf{F} \cdot d\mathbf{r}
-= \int_0^1 \left(2t,\ 2-2t,\ (2-2t)^2 + 2t\right) \cdot (-2,\ 2,\ 0)\,
-dt
-= \int_0^1 (4 - 8t)\, dt = 0 .
-</me>
+\amp = \int_0^1 \left(2t,\ 2-2t,\ (2-2t)^2 + 2t\right) \cdot (-2,\ 2,\ 0)\, dt
+</mrow>
+<mrow>
+\amp = \int_0^1 (4 - 8t)\, dt = 0 .
+</mrow>
+</md>
 
 <p>
 The segment <m>C_2</m> from <m>(0,2,0)</m> to <m>(0,0,4)</m> is
@@ -708,11 +992,15 @@ The segment <m>C_2</m> from <m>(0,2,0)</m> to <m>(0,0,4)</m> is
 <m>\mathbf{r}'(t) = (0,\ -2,\ 4)</m>, so
 </p>
 
-<me>
+<md>
+<mrow>
 \int_{C_2} \mathbf{F} \cdot d\mathbf{r}
-= \int_0^1 \left(2 - 6t,\ 4t,\ 2 - 2t\right) \cdot (0,\ -2,\ 4)\, dt
-= \int_0^1 (8 - 16t)\, dt = 0 ,
-</me>
+\amp = \int_0^1 \left(2 - 6t,\ 4t,\ 2 - 2t\right) \cdot (0,\ -2,\ 4)\, dt
+</mrow>
+<mrow>
+\amp = \int_0^1 (8 - 16t)\, dt = 0 ,
+</mrow>
+</md>
 
 <p>
 and the segment <m>C_3</m> from <m>(0,0,4)</m> back to <m>(2,0,0)</m>
@@ -720,11 +1008,15 @@ is <m>\mathbf{r}(t) = (2t,\ 0,\ 4-4t)</m> with
 <m>\mathbf{r}'(t) = (2,\ 0,\ -4)</m>, so
 </p>
 
-<me>
+<md>
+<mrow>
 \int_{C_3} \mathbf{F} \cdot d\mathbf{r}
-= \int_0^1 \left(4t - 4,\ 4 - 2t,\ 4t^2\right) \cdot (2,\ 0,\ -4)\, dt
-= \int_0^1 \left(8t - 8 - 16t^2\right) dt = -\frac{28}{3} .
-</me>
+\amp = \int_0^1 \left(4t - 4,\ 4 - 2t,\ 4t^2\right) \cdot (2,\ 0,\ -4)\, dt
+</mrow>
+<mrow>
+\amp = \int_0^1 \left(8t - 8 - 16t^2\right) dt = -\frac{28}{3} .
+</mrow>
+</md>
 
 <p>
 The total is <m>0 + 0 - \frac{28}{3} = -\frac{28}{3}</m>.
@@ -749,7 +1041,9 @@ counterclockwise seen from above, which pairs with the upward normal
 \oint_C \mathbf{F} \cdot d\mathbf{r}
 \amp = \iint_R \left\langle 0,\ -(1+2x),\ 0 \right\rangle \cdot
 \left\langle 2,\ 2,\ 1 \right\rangle dx\,dy
-= \iint_R (-2 - 4x)\, dx\,dy
+</mrow>
+<mrow>
+\amp = \iint_R (-2 - 4x)\, dx\,dy
 </mrow>
 <mrow>
 \amp = -2\,\text{Area}(R) - 4 \iint_R x\, dx\,dy
@@ -893,6 +1187,71 @@ field, zero work<mdash/>exactly as in
 <xref ref="section-conservative-fields"/>.
 </p>
 </solution>
+
+<figure xml:id="fig-stokes-warped-loop-tikz">
+<caption>
+The curve of <xref ref="example-stokes-conservative"/>: the paraboloid
+<m>z = 2x^2+y^2</m> meets the ellipsoid
+<m>x^2+\frac{y^2}{4}+\frac{z^2}{9}=1</m> in a warped loop <m>C</m>. Nothing
+about its shape matters here: the curl of <m>\mathbf{F}</m> is
+<m>\mathbf{0}</m>, so the circulation around it is zero whatever surface it
+bounds.
+</caption>
+<image xml:id="image-stokes-warped-loop" width="62%">
+<shortdescription>
+A warped closed curve where a paraboloid meets an ellipsoid.
+</shortdescription>
+<description>
+<p>
+A translucent blue paraboloid opening upward passes through a faint
+grey ellipsoid. They meet along a closed loop, drawn in vermillion with
+arrowheads showing counterclockwise travel seen from above. The loop is not
+flat: it rises and falls as it goes round.
+</p>
+</description>
+<latex-image>
+<![CDATA[\begin{tikzpicture}[line join=round, line cap=round]
+  \definecolor{oiblue}{RGB}{0,114,178}
+  \definecolor{oivermillion}{RGB}{213,94,0}
+  \definecolor{oigreen}{RGB}{0,158,115}
+  \begin{axis}[
+      view={122}{18}, width=11cm, axis lines=center,
+      axis line style={-latex, black!70, line width=0.7pt},
+      xlabel={$x$}, ylabel={$y$}, zlabel={$z$},
+      label style={font=\large}, ticks=none,
+      xmin=-2.2, xmax=2.2, ymin=-2.6, ymax=2.6, zmin=0, zmax=3.4,
+      clip=false,
+    ]
+    % the paraboloid z = 2x^2 + y^2
+    \addplot3[surf, shader=faceted, faceted color=oiblue!20,
+              colormap={pb}{color=(oiblue!10!white) color=(oiblue!34!white)},
+              opacity=0.45, fill opacity=0.45,
+              domain=0:1.5, samples=18, y domain=0:360, samples y=44,
+              z buffer=sort, forget plot]
+      ({x*cos(y)}, {x*sin(y)}, {2*(x*cos(y))^2 + (x*sin(y))^2});
+    % the ellipsoid x^2 + y^2/4 + z^2/9 = 1, upper half
+    \addplot3[surf, shader=faceted, faceted color=black!12,
+              colormap={el}{color=(black!5!white) color=(black!14!white)},
+              opacity=0.20, fill opacity=0.20,
+              domain=0:360, samples=40, y domain=0:90, samples y=18,
+              z buffer=sort, forget plot]
+      ({cos(x)*sin(y)}, {2*sin(x)*sin(y)}, {3*cos(y)});
+    % the curve of intersection
+    \addplot3[oivermillion, line width=1.7pt, forget plot] coordinates {(0.866,0.000,1.500) (0.865,0.076,1.502) (0.861,0.152,1.507) (0.855,0.229,1.516) (0.847,0.308,1.528) (0.835,0.389,1.545) (0.819,0.473,1.567) (0.800,0.560,1.593) (0.775,0.650,1.625) (0.744,0.744,1.663) (0.706,0.842,1.707) (0.660,0.942,1.757) (0.602,1.043,1.813) (0.533,1.143,1.873) (0.450,1.236,1.933) (0.353,1.319,1.990) (0.244,1.385,2.037) (0.125,1.427,2.068) (0.000,1.442,2.079) (-0.125,1.427,2.068) (-0.244,1.385,2.037) (-0.353,1.319,1.990) (-0.450,1.236,1.933) (-0.533,1.143,1.873) (-0.602,1.043,1.813) (-0.660,0.942,1.757) (-0.706,0.842,1.707) (-0.744,0.744,1.663) (-0.775,0.650,1.625) (-0.800,0.560,1.593) (-0.819,0.473,1.567) (-0.835,0.389,1.545) (-0.847,0.308,1.528) (-0.855,0.229,1.516) (-0.861,0.152,1.507) (-0.865,0.076,1.502) (-0.866,0.000,1.500) (-0.865,-0.076,1.502) (-0.861,-0.152,1.507) (-0.855,-0.229,1.516) (-0.847,-0.308,1.528) (-0.835,-0.389,1.545) (-0.819,-0.473,1.567) (-0.800,-0.560,1.593) (-0.775,-0.650,1.625) (-0.744,-0.744,1.663) (-0.706,-0.842,1.707) (-0.660,-0.942,1.757) (-0.602,-1.043,1.813) (-0.533,-1.143,1.873) (-0.450,-1.236,1.933) (-0.353,-1.319,1.990) (-0.244,-1.385,2.037) (-0.125,-1.427,2.068) (-0.000,-1.442,2.079) (0.125,-1.427,2.068) (0.244,-1.385,2.037) (0.353,-1.319,1.990) (0.450,-1.236,1.933) (0.533,-1.143,1.873) (0.602,-1.043,1.813) (0.660,-0.942,1.757) (0.706,-0.842,1.707) (0.744,-0.744,1.663) (0.775,-0.650,1.625) (0.800,-0.560,1.593) (0.819,-0.473,1.567) (0.835,-0.389,1.545) (0.847,-0.308,1.528) (0.855,-0.229,1.516) (0.861,-0.152,1.507) (0.865,-0.076,1.502) (0.866,-0.000,1.500)};
+    \draw[-{Latex[length=2.6mm]}, oivermillion, line width=1.7pt]
+      (axis cs:0.775,0.650,1.625) -- (axis cs:0.744,0.744,1.663);
+    \draw[-{Latex[length=2.6mm]}, oivermillion, line width=1.7pt]
+      (axis cs:-0.775,0.650,1.625) -- (axis cs:-0.847,0.520,1.605);
+    \node[oivermillion, font=\large] at (axis cs:0.15,1.95,2.35) {$C$};
+    \node[oiblue, font=\large, anchor=west]
+      at (axis cs:1.15,-1.15,2.60) {$z = 2x^2+y^2$};
+    \node[black!55, font=\large, anchor=west]
+      at (axis cs:-2.1,-1.6,3.15) {$x^2+\tfrac{y^2}{4}+\tfrac{z^2}{9}=1$};
+  \end{axis}
+\end{tikzpicture}]]>
+</latex-image>
+</image>
+</figure>
 </subsection>
 
 <!-- ================================================================ -->
@@ -977,6 +1336,79 @@ and <m>z = 0</m> we have
 = \int_0^{2\pi} \left(-4\sin^2 t\right) dt = -4\pi .
 </me>
 </solution>
+
+<figure xml:id="fig-stokes-paraboloid-tikz">
+<caption>
+The two surfaces of <xref ref="example-stokes-paraboloid"/>: the
+paraboloid <m>S</m> and the flat disk <m>S_2</m>, which share the boundary
+circle <m>C</m> and carry orientations that give the same direction on it.
+By <xref ref="eq-stokes-independence"/> the flux of the curl through them is
+the same, and the disk is the easy one.
+</caption>
+<image xml:id="image-stokes-paraboloid" width="62%">
+<shortdescription>
+A paraboloid and a flat disk sharing the same boundary circle.
+</shortdescription>
+<description>
+<p>
+A translucent blue paraboloid opens downward from height four to the
+horizontal plane, where its rim is a circle of radius two drawn in
+vermillion with arrowheads pointing counterclockwise seen from above. The
+flat green disk bounded by that same circle lies in the plane. An upward
+arrow rises from the top of the paraboloid and another from the disk.
+</p>
+</description>
+<latex-image>
+<![CDATA[\begin{tikzpicture}[line join=round, line cap=round]
+  \definecolor{oiblue}{RGB}{0,114,178}
+  \definecolor{oivermillion}{RGB}{213,94,0}
+  \definecolor{oigreen}{RGB}{0,158,115}
+  \begin{axis}[
+      view={118}{20}, width=11cm, axis lines=center,
+      axis line style={-latex, black!70, line width=0.7pt},
+      xlabel={$x$}, ylabel={$y$}, zlabel={$z$},
+      label style={font=\large}, ticks=none,
+      xmin=-3, xmax=3, ymin=-3, ymax=3, zmin=0, zmax=5,
+      clip=false,
+    ]
+    % the paraboloid S: z = 4 - x^2 - y^2 above the plane
+    \addplot3[surf, shader=faceted, faceted color=oiblue!25,
+              colormap={par}{color=(oiblue!14!white) color=(oiblue!45!white)},
+              opacity=0.6, fill opacity=0.6,
+              domain=0:2, samples=18, y domain=0:360, samples y=44,
+              z buffer=sort, forget plot]
+      ({x*cos(y)}, {x*sin(y)}, {4 - x^2});
+    % the flat disk S_2, the cheaper surface with the same boundary
+    \addplot3[surf, shader=flat, draw=oigreen!45, fill=oigreen!22,
+              opacity=0.55, fill opacity=0.55,
+              domain=0:2, samples=12, y domain=0:360, samples y=44,
+              forget plot]
+      ({x*cos(y)}, {x*sin(y)}, 0);
+    % the shared boundary C
+    \addplot3[oivermillion, line width=1.5pt, samples=120, samples y=0,
+              domain=0:360, forget plot]
+      ({2*cos(x)}, {2*sin(x)}, 0);
+    \draw[-{Latex[length=2.6mm]}, oivermillion, line width=1.5pt]
+      (axis cs:1.989,-0.209,0) -- (axis cs:1.989,0.209,0);
+    \draw[-{Latex[length=2.6mm]}, oivermillion, line width=1.5pt]
+      (axis cs:-0.749,1.855,0) -- (axis cs:-1.089,1.677,0);
+    \draw[-{Latex[length=2.6mm]}, oivermillion, line width=1.5pt]
+      (axis cs:-0.877,-1.797,0) -- (axis cs:-0.484,-1.941,0);
+    % the two upward normals
+    \draw[-{Latex[length=3mm]}, oiblue, line width=1.3pt]
+      (axis cs:0.75,0.75,2.875) -- (axis cs:1.20,1.20,3.35);
+    \draw[-{Latex[length=3mm]}, oigreen, line width=1.3pt]
+      (axis cs:0.9,0.5,0) -- (axis cs:0.9,0.5,0.85);
+    \node[oiblue, font=\large, anchor=west]
+      at (axis cs:1.24,1.24,3.38) {$S$};
+    \node[oigreen, font=\large, anchor=west]
+      at (axis cs:1.0,0.55,0.85) {$S_2$};
+    \node[oivermillion, font=\large] at (axis cs:2.25,1.25,0.10) {$C$};
+  \end{axis}
+\end{tikzpicture}]]>
+</latex-image>
+</image>
+</figure>
 </subsection>
 
 </section>
