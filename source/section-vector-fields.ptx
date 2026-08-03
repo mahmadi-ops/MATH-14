@@ -1004,6 +1004,198 @@ x y z u v w\\
     </solution>
   </example>
 
+  <example xml:id="ex-work-path-dependence">
+    <title>The same endpoints, two paths, two answers</title>
+    <statement>
+      <p>
+        Calculate the work done by the force
+        <md>
+          \mathbf{F}(x,y)=\left\langle y,\ 2x\right\rangle
+        </md>
+        in moving a particle from <m>O(0,0)</m> to <m>P(1,1)</m> along each
+        of the following two paths:
+        <ul>
+          <li>
+            <p>
+              <m>C_1</m>, the straight segment from <m>O</m> to <m>P</m>,
+              parametrized by
+              <m>\mathbf{r}_1(t)=\left\langle t,\ t\right\rangle</m>,
+              <m>0\le t\le 1</m>;
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>C_2</m>, the arc of the parabola <m>y=x^2</m> from
+              <m>O</m> to <m>P</m>, parametrized by
+              <m>\mathbf{r}_2(t)=\left\langle t,\ t^2\right\rangle</m>,
+              <m>0\le t\le 1</m>.
+            </p>
+          </li>
+        </ul>
+      </p>
+    </statement>
+
+    <solution>
+      <p>
+        Both curves start at <m>O(0,0)</m> and end at <m>P(1,1)</m>, as shown
+        in <xref ref="fig-path-dependence-paths"/>, so any difference between
+        the two answers can come only from the paths themselves. We use
+        <xref ref="eq-work-parametrized"/> for each one.
+      </p>
+
+      <figure xml:id="fig-path-dependence-paths">
+        <caption>
+          The two paths of <xref ref="ex-work-path-dependence"/> drawn in the
+          field <m>\mathbf{F}=\left\langle y,\ 2x\right\rangle</m>: the
+          segment <m>C_1</m> along <m>y=x</m> and the arc <m>C_2</m> along
+          <m>y=x^2</m>, both running from <m>O(0,0)</m> to <m>P(1,1)</m>.
+          The field pushes harder along one than the other, and the two
+          answers <m>W_1=\frac{3}{2}</m> and <m>W_2=\frac{5}{3}</m> differ.
+        </caption>
+        <image xml:id="image-path-dependence-paths" width="60%">
+          <shortdescription>
+            A straight segment and a parabolic arc, both joining the origin to
+            the point one comma one, drawn in a field of arrows.
+          </shortdescription>
+          <description>
+            <p>
+              The first quadrant, with x and y running from zero to a little
+              past one, carrying a grid of blue field arrows. Along the x axis
+              they point straight up and along the y axis they point straight
+              right, turning and lengthening in between. Two curves join the
+              origin O to the point P
+              at one comma one: a green straight segment labelled C 1 along
+              the line y equals x, and a vermillion arc labelled C 2 following
+              the parabola y equals x squared, which bows below the segment.
+              Each curve carries an arrowhead pointing from O toward P.
+            </p>
+          </description>
+          <prefigure xmlns="https://prefigure.org" label="path-dependence-paths">
+            <diagram dimensions="(400,400)" margins="5">
+              <definition>F(x,y) = (0.11*y, 0.22*x)</definition>
+              <definition>c1(t) = (t, t)</definition>
+              <definition>c2(t) = (t, t^2)</definition>
+              <coordinates bbox="(-0.28,-0.28,1.35,1.35)" aspect-ratio="1">
+                <grid-axes xlabel="x" ylabel="y"/>
+
+                <group at="field">
+                  <repeat parameter="i=0..5">
+                    <repeat parameter="j=0..5">
+                      <vector v="F(0.2*i,0.2*j)" tail="(0.2*i,0.2*j)"
+                              stroke="blue" thickness="2"/>
+                    </repeat>
+                  </repeat>
+                </group>
+
+                <group at="c1">
+                  <parametric-curve function="c1" domain="(0,1)"
+                                    stroke="#009E73" thickness="3"
+                                    arrows="1" arrow-location="0.55"/>
+                  <label anchor="(0.45,0.55)" alignment="nw"
+                         color="#009E73">
+                    <m>C_1</m>
+                  </label>
+                </group>
+
+                <group at="c2">
+                  <parametric-curve function="c2" domain="(0,1)"
+                                    stroke="#D55E00" thickness="3"
+                                    arrows="1" arrow-location="0.65"/>
+                  <label anchor="(0.78,0.5)" alignment="se"
+                         color="#D55E00">
+                    <m>C_2</m>
+                  </label>
+                </group>
+
+                <group at="endpoints">
+                  <point p="(0,0)" size="4.5" stroke="black" fill="black"/>
+                  <label anchor="(0,0)" alignment="sw">
+                    <m>O</m>
+                  </label>
+                  <point p="(1,1)" size="4.5" stroke="black" fill="black"/>
+                  <label anchor="(1,1)" alignment="ne">
+                    <m>P</m>
+                  </label>
+                </group>
+              </coordinates>
+
+              <annotations>
+                <annotation ref="figure"
+                            text="Two paths from the origin to the point one
+                                  comma one, drawn in the field F of x and y
+                                  equals the vector y, two x">
+                  <annotation ref="grid" text="The coordinate grid"/>
+                  <annotation ref="axes" text="The coordinate axes"/>
+                  <annotation ref="field"
+                              text="The grid of field vectors of the field F
+                                    of x and y equals the vector y, two x"/>
+                  <annotation ref="c1"
+                              text="The path C 1, the straight segment along
+                                    the line y equals x from O to P"
+                              sonify="yes"/>
+                  <annotation ref="c2"
+                              text="The path C 2, the arc of the parabola y
+                                    equals x squared from O to P, bowing below
+                                    the segment"
+                              sonify="yes"/>
+                  <annotation ref="endpoints"
+                              text="The common endpoints O at the origin and P
+                                    at one comma one"/>
+                </annotation>
+              </annotations>
+            </diagram>
+          </prefigure>
+        </image>
+      </figure>
+
+      <p>
+        <em>Along <m>C_1</m>.</em> Here <m>x=t</m> and <m>y=t</m>, so
+        <m>\mathbf{F}=\left\langle y,\ 2x\right\rangle
+        =\left\langle t,\ 2t\right\rangle</m> and
+        <m>\mathbf{r}_1'(t)=\left\langle 1,\ 1\right\rangle</m>. Therefore
+      </p>
+      <md>
+        <mrow>
+          W_1 \amp = \int_{C_1}\mathbf{F}\cdot d\mathbf{r}
+                   = \int_0^1\left\langle t,\ 2t\right\rangle
+                     \cdot\left\langle 1,\ 1\right\rangle dt
+        </mrow>
+        <mrow>
+          \amp = \int_0^1 3t\,dt = \frac{3}{2}.
+        </mrow>
+      </md>
+
+      <p>
+        <em>Along <m>C_2</m>.</em> Here <m>x=t</m> and <m>y=t^2</m>, so
+        <m>\mathbf{F}=\left\langle y,\ 2x\right\rangle
+        =\left\langle t^2,\ 2t\right\rangle</m> and
+        <m>\mathbf{r}_2'(t)=\left\langle 1,\ 2t\right\rangle</m>. Therefore
+      </p>
+      <md>
+        <mrow>
+          W_2 \amp = \int_{C_2}\mathbf{F}\cdot d\mathbf{r}
+                   = \int_0^1\left\langle t^2,\ 2t\right\rangle
+                     \cdot\left\langle 1,\ 2t\right\rangle dt
+        </mrow>
+        <mrow>
+          \amp = \int_0^1\left(t^2+4t^2\right)dt
+               = \int_0^1 5t^2\,dt = \frac{5}{3}.
+        </mrow>
+      </md>
+
+      <p>
+        Since <m>W_1=\dfrac{3}{2}</m> and <m>W_2=\dfrac{5}{3}</m> are not
+        equal, the line integral of <m>\mathbf{F}</m> from <m>O</m> to
+        <m>P</m> depends on the path taken, and not on the endpoints alone.
+        Knowing where a curve starts and ends is therefore <em>not</em>
+        enough, in general, to determine the work. Deciding which fields are
+        the exception<mdash/>those for which the endpoints <em>are</em>
+        enough<mdash/>is the question taken up in
+        <xref ref="section-conservative-fields"/>.
+      </p>
+    </solution>
+  </example>
+
   <!-- ================================================================= -->
   <!-- Interactive exploration: the GeoGebra applet "VF-Fig1"             -->
   <!-- (geogebra.org/m/e2m6kghr), 599 x 488.                              -->

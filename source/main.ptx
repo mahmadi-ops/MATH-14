@@ -87,6 +87,7 @@
 
     <chapter xml:id="ch-review-problems">
       <title>Review Problems</title>
+      <xi:include href="review3-online.ptx" />
       <xi:include href="review4-online.ptx" />
     </chapter>
 

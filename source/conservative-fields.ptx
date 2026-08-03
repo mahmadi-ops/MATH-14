@@ -10,7 +10,7 @@ need to study a particular type of a vector field known as a
 
 <!-- ================================================================ -->
 <subsection xml:id="sec-gradient-fields">
-<title>Gradient Fields</title>
+<title>A Brief Reminder (Gradient Fields)</title>
 
 <definition xml:id="def-gradient-field">
 <title>Gradient Field</title>
@@ -82,15 +82,15 @@ origin, growing longer at points farther from the origin.
     % ---- surface: paraboloid z = (x^2 + y^2)/2 (scaled for display) ----
     \addplot3[surf, shader=interp,
               point meta={z},
-              colormap={softz}{color=(oiblue!12!white) color=(oiblue!45!white)},
-              opacity=0.55, fill opacity=0.55,
+              colormap={softz}{color=(oiblue!30!white) color=(oiblue!80!white)},
+              opacity=0.75, fill opacity=0.75,
               domain=0:360, samples=61,
               y domain=0:2.1, samples y=25,
               z buffer=sort, forget plot]
       ({y*cos(x)}, {y*sin(x)}, {y^2});
-    % light parallels (circles) for shape cues
+    % level curves (circles) for shape cues
     \foreach \rr in {0.7,1.2,1.7,2.1}{
-      \edef\tmp{\noexpand\addplot3[black!25, line width=0.35pt, domain=0:360,
+      \edef\tmp{\noexpand\addplot3[black!70, line width=1.1pt, domain=0:360,
           samples=97, samples y=0, forget plot]
         ({\rr*cos(x)}, {\rr*sin(x)}, {\rr*\rr});}\tmp}
     % labels (placed relative to the picture, away from the axes)
@@ -133,8 +133,9 @@ direction of the steepest slope.
 <title>Path Independence and Some Basic Definitions</title>
 
 <p>
-In previous lectures, we saw that the line integral of a vector field
-depends on the path in general. Then, the natural question to ask is:
+Previously, in <xref ref="ex-work-path-dependence"/>, we saw that the
+line integral of a vector field depends on the path in general. Then,
+the natural question to ask is:
 </p>
 
 <blockquote>
@@ -147,8 +148,8 @@ independent of the curve <m>C</m> taken to go from <m>A</m> to
 </blockquote>
 
 <p>
-To answer this question, we will need some concepts and therefore we
-begin by explaining them.
+Answering this question requires a few new ideas, so we introduce them
+first.
 </p>
 
 <remark xml:id="remark-smooth-curve">
@@ -263,7 +264,7 @@ Simply connected
     stroke="#D55E00" thickness="2"/>
 <label at="nsc-loop-label" anchor="(-0.7,-0.45)" alignment="s"
     color="#D55E00"><m>C_1</m></label>
-<label at="nsc-label" anchor="(1.5,-1.7)" alignment="s">
+<label at="nsc-label" anchor="(1.56,-1.7)" alignment="s">
 Not simply connected
 </label>
 </coordinates>
@@ -288,12 +289,20 @@ Not simply connected
 <title>Line Integrals in Conservative Fields</title>
 
 <p>
-Next, we will study the line integrals of conservative fields. As you
+Next, we will study the line integrals of conservative fields, in the
+sense of <xref ref="def-conservative-concepts"/>. As you
 will recognize, if you think of the gradient of a vector field as its
 derivative, then the fundamental theorem of line integrals makes a
 similar statement for vector-valued functions as the one made for
 definite integrals of scalar-valued functions, i.e., the one that you
-learned in MATH 12 and you know as FTC II.
+know as FTC II.<fn>The Fundamental Theorem of Calculus, Part II: if
+<m>f</m> is continuous on <m>[a,b]</m> and <m>F</m> is any antiderivative
+of <m>f</m> on that interval, then
+<m>\int_a^b f(x)\,dx = F(b) - F(a)</m>. It evaluates a definite integral
+from the values of an antiderivative at the two endpoints, and
+<xref ref="thm-ftli"/> does the same for a line integral, using the
+values of a potential function at the two endpoints of the
+curve.</fn>
 </p>
 
 <theorem xml:id="thm-ftli">
@@ -353,29 +362,31 @@ and we can rewrite the line integral as
 </theorem>
 
 <p>
-In <xref ref="fig-ftli-region-tikz"/>, the boundary of the region
-<m>D</m> is marked as dotted and the curve <m>C</m> is in red. According
+In <xref ref="fig-ftli-region-tikz"/>, the region <m>D</m> is drawn as a
+translucent solid and the curve <m>C</m> is in red. According
 to the fundamental theorem, the line integral of a conservative vector
 field <m>\mathbf F</m> can be easily calculated by calculating the
-values of its corresponding potential function <m>f</m> at the beginning
+values of its corresponding potential function <m>f</m>
+(<xref ref="def-conservative-concepts"/>) at the beginning
 (point <m>A</m>) and end (point <m>B</m>) of the curve <m>C</m>.
 </p>
 
 <figure xml:id="fig-ftli-region-tikz">
 <caption>
 A smooth curve <m>C</m> joining <m>A(x_1,y_1,z_1)</m> to
-<m>B(x_2,y_2,z_2)</m> inside an open region <m>D</m> in space, whose
-boundary is drawn dotted. For a conservative field
+<m>B(x_2,y_2,z_2)</m> inside an open region <m>D</m> in space, drawn as
+a translucent solid containing <m>C</m>. For a conservative field
 <m>\mathbf F = \nabla f</m>, the line integral along <m>C</m> equals
 <m>f(B) - f(A)</m>, no matter how <m>C</m> winds from <m>A</m> to
 <m>B</m>.
 </caption>
 <image width="70%">
 <description>
-Three coordinate axes in space with a dotted oval marking the boundary
-of a region D. Inside the region, a red curve C winds from the point A
+Three coordinate axes in space with a translucent blue solid marking an
+open region D. Inside the solid, a red curve C winds from the point A
 with coordinates x 1 comma y 1 comma z 1 to the point B with
-coordinates x 2 comma y 2 comma z 2.
+coordinates x 2 comma y 2 comma z 2, with an arrowhead at the middle of
+the curve showing the direction of travel from A to B.
 </description>
 <latex-image>
 <![CDATA[\begin{tikzpicture}[line join=round, line cap=round]
@@ -392,27 +403,49 @@ coordinates x 2 comma y 2 comma z 2.
       xlabel={$x$}, ylabel={$y$}, zlabel={$z$},
       label style={font=\large},
       ticks=none,
-      xmin=-0.4, xmax=2.6, ymin=-0.5, ymax=2.9, zmin=-0.2, zmax=2.6,
+      xmin=-0.4, xmax=2.7, ymin=-0.6, ymax=3.3, zmin=-0.2, zmax=2.7,
       clip=false,
     ]
-    % ---- dotted boundary of the region D (a tilted closed curve) ----
-    \addplot3[black, dotted, line width=1.3pt, domain=0:360, samples=121,
-        samples y=0, forget plot]
-      ({1.15 + 1.35*cos(x)}, {1.3 + 1.55*sin(x)},
-       {1.15 + 0.45*sin(x) + 0.35*cos(2*x)});
-    \node[anchor=south, font=\large] at (axis cs:1.6,2.3,0.55) {$D$};
+    % ---- the region D: a translucent solid (ellipsoid) containing C ----
+    \addplot3[surf, shader=interp, draw=none,
+        colormap={dblue}{color=(oiblue!12!white) color=(oiblue!55!white)},
+        opacity=0.30, fill opacity=0.30,
+        domain=0:360, samples=61,
+        y domain=-90:90, samples y=31,
+        z buffer=sort, forget plot]
+      ({1.25 + 1.2*cos(y)*cos(x)},
+       {1.35 + 1.75*cos(y)*sin(x)},
+       {1.15 + 1.1*sin(y)});
+    % parallels and meridians, so D reads as a solid rather than a flat disc
+    \foreach \vv in {-55,-25,10,45}{
+      \edef\tmp{\noexpand\addplot3[oiblue!55, line width=0.5pt, domain=0:360,
+          samples=97, samples y=0, forget plot]
+        ({1.25 + 1.2*cos(\vv)*cos(x)}, {1.35 + 1.75*cos(\vv)*sin(x)},
+         {1.15 + 1.1*sin(\vv)});}\tmp}
+    \foreach \uu in {0,30,...,330}{
+      \edef\tmp{\noexpand\addplot3[oiblue!40, line width=0.4pt, domain=-90:90,
+          samples=49, samples y=0, forget plot]
+        ({1.25 + 1.2*cos(x)*cos(\uu)}, {1.35 + 1.75*cos(x)*sin(\uu)},
+         {1.15 + 1.1*sin(x)});}\tmp}
+    \node[anchor=south, font=\large] at (axis cs:1.25,1.35,2.32) {$D$};
     % ---- the curve C from A to B (a gentle S-curve, in red/vermillion) ----
-    \addplot3[oivermillion, line width=1.7pt, -{Latex[length=2.2mm]},
+    \addplot3[oivermillion, line width=1.7pt,
         domain=0:1, samples=81, samples y=0, forget plot]
       ({0.9 + 0.5*x + 0.45*sin(360*x)},
        {0.15 + 2.45*x},
        {0.6 + 1.1*x});
-    \node[oivermillion, anchor=south, font=\large]
+    % direction arrowhead placed near the middle of C
+    \addplot3[oivermillion, line width=1.7pt, -{Latex[length=2.6mm]},
+        domain=0.40:0.50, samples=21, samples y=0, forget plot]
+      ({0.9 + 0.5*x + 0.45*sin(360*x)},
+       {0.15 + 2.45*x},
+       {0.6 + 1.1*x});
+    \node[oivermillion, anchor=south east, font=\large]
       at (axis cs:1.05,1.5,1.45) {$C$};
     % ---- endpoints ----
     \addplot3[only marks, mark=*, mark size=1.8pt, color=oiblue,
         forget plot] coordinates {(0.9,0.15,0.6) (1.4,2.6,1.7)};
-    \node[anchor=north, font=\small] at (axis cs:0.9,0.15,0.4)
+    \node[anchor=south, xshift=-8pt, font=\small] at (axis cs:0.9,0.15,0.68)
       {$A(x_1,y_1,z_1)$};
     \node[anchor=south west, font=\small] at (axis cs:1.42,2.62,1.78)
       {$B(x_2,y_2,z_2)$};
@@ -528,7 +561,8 @@ calculating the line integral as follows:
 <em>C.</em> The result is the same as part B<mdash/>and it agrees with
 the direct computation <xref ref="eq-helix-gravity-work"/> of
 <xref ref="ex-helix-gravity"/><mdash/>since the vector field
-<m>\mathbf F(x,y,z) = \nabla f</m> is a conservative field, which means
+<m>\mathbf F(x,y,z) = \nabla f</m> is a conservative field
+(<xref ref="def-conservative-concepts"/>), which means
 that the result of the line integral is independent of the chosen path.
 Note that the line integral is calculated from <m>(1,0,0)</m> to
 <m>(1,0,2\pi)</m> in both cases. The two curves <m>C_1</m> and
@@ -580,16 +614,22 @@ marked and labeled.
       legend image post style={line width=1.6pt, sharp plot},
     ]
     % ---- helix C1: (cos t, sin t, t), t in [0, 2pi] ----
-    \addplot3[oiblue, line width=1.7pt, -{Latex[length=2.2mm]},
+    \addplot3[oiblue, line width=1.7pt,
         domain=0:360, samples=121, samples y=0]
       ({cos(x)}, {sin(x)}, {2*pi*x/360});
     \addlegendentry{$C_1$: helix $\mathbf r(t)=\cos t\,\mathbf i+\sin t\,\mathbf j+t\,\mathbf k$}
     % ---- segment C2 from (1,0,0) to (1,0,2pi) ----
-    \addplot3[oivermillion, line width=1.7pt, -{Latex[length=2.2mm]},
+    \addplot3[oivermillion, line width=1.7pt,
         samples y=0] coordinates {(1,0,0) (1,0,6.28318)};
     \addlegendentry{$C_2$: straight segment}
+    % ---- direction arrowheads placed at the middle of each path ----
+    \addplot3[oiblue, line width=1.7pt, -{Latex[length=2.4mm]},
+        domain=168:180, samples=17, samples y=0, forget plot]
+      ({cos(x)}, {sin(x)}, {2*pi*x/360});
+    \addplot3[oivermillion, line width=1.7pt, -{Latex[length=2.4mm]},
+        samples y=0, forget plot] coordinates {(1,0,2.85) (1,0,3.14159)};
     % ---- dashed guide circle in the xy-plane ----
-    \addplot3[black!30, dashed, line width=0.6pt, domain=0:360,
+    \addplot3[black!45, dashed, line width=1.2pt, domain=0:360,
         samples=97, samples y=0, forget plot]
       ({cos(x)}, {sin(x)}, 0);
     % ---- endpoints ----
@@ -597,8 +637,8 @@ marked and labeled.
         forget plot] coordinates {(1,0,0) (1,0,6.28318)};
     \node[anchor=west, font=\small] at (axis cs:1.06,0,-0.35)
       {$(1,0,0)$};
-    \node[oigreen, anchor=south west, font=\small]
-      at (axis cs:1.02,0,6.5) {$(1,0,2\pi)$};
+    \node[oigreen, anchor=east, font=\small]
+      at (axis cs:0.92,0,6.34) {$(1,0,2\pi)$};
   \end{axis}
 \end{tikzpicture}]]>
 </latex-image>
@@ -611,8 +651,112 @@ marked and labeled.
 <subsection xml:id="sec-potential-function">
 <title>Finding a Potential Function</title>
 
-<example xml:id="example-potential-function">
+<example xml:id="example-potential-2d">
 <title>Example II</title>
+<statement>
+<p>
+Consider the vector field
+<m>\mathbf F = (2xy + 3)\mathbf i + (x^2 - 4y)\mathbf j</m> in the
+plane.
+</p>
+
+<p>
+<ol marker="A.">
+<li>
+<p>
+Find a function <m>f</m> such that <m>\mathbf F = \nabla f</m>.
+</p>
+</li>
+<li>
+<p>
+Use the solution of part (A) to calculate the line integral of
+<m>\mathbf F</m> along any curve from <m>(0,0)</m> to <m>(1,2)</m>.
+</p>
+</li>
+</ol>
+</p>
+</statement>
+
+<solution>
+<p>
+<em>A.</em> In the plane there are two components to match instead of
+three. Writing
+<m>\mathbf F = (2xy+3)\mathbf i + (x^2-4y)\mathbf j
+= \left\langle \dfrac{\partial f}{\partial x},\,
+\dfrac{\partial f}{\partial y}\right\rangle</m>, we take them one at a
+time.
+</p>
+
+<p>
+<em>Step I.</em> Since <m>\dfrac{\partial f}{\partial x} = 2xy + 3</m>,
+we integrate with respect to <m>x</m> (here <m>x</m> is the variable and
+<m>y</m> is constant), so
+</p>
+
+<men xml:id="eq-potential-2d-step1">
+f(x,y) = x^2y + 3x + g(y),
+</men>
+
+<p>
+where the constant of integration <m>g(y)</m> is allowed to depend on
+<m>y</m>.
+</p>
+
+<p>
+<em>Step II.</em> Since <m>\dfrac{\partial f}{\partial y} = x^2 - 4y</m>,
+we differentiate <xref ref="eq-potential-2d-step1"/> with respect to
+<m>y</m>:
+</p>
+
+<md>
+<mrow>
+\frac{\partial}{\partial y}\Big(x^2y + 3x + g(y)\Big)
+\amp= x^2 + \frac{dg}{dy} = x^2 - 4y
+</mrow>
+<mrow>
+\amp\Rightarrow\quad \frac{dg}{dy} = -4y
+\quad\Rightarrow\quad
+g(y) = -2y^2 + C.
+</mrow>
+</md>
+
+<p>
+Putting the two steps together, we conclude
+</p>
+
+<men xml:id="eq-potential-2d-answer">
+f(x,y) = x^2y + 3x - 2y^2 + C.
+</men>
+
+<p>
+<em>B.</em> Since <m>\mathbf F = \nabla f</m>, the field is conservative
+(<xref ref="def-conservative-concepts"/>), so <xref ref="thm-ftli"/>
+applies to <em>any</em> curve <m>C</m> joining <m>(0,0)</m> to
+<m>(1,2)</m>:
+</p>
+
+<md>
+<mrow>
+\int_C \mathbf F\cdot d\mathbf r
+\amp= f(1,2) - f(0,0)
+</mrow>
+<mrow>
+\amp= \big((1)^2(2) + 3(1) - 2(2)^2\big) - \big(0 + 0 - 0\big)
+</mrow>
+<mrow>
+\amp= (2 + 3 - 8) - 0 = -3.
+</mrow>
+</md>
+
+<p>
+Notice that the arbitrary constant <m>C</m> cancels in the difference,
+so it never affects the value of a line integral.
+</p>
+</solution>
+</example>
+
+<example xml:id="example-potential-function">
+<title>Example III</title>
 <statement>
 <p>
 Consider the vector field
@@ -728,7 +872,6 @@ f(x,y,z) = xyz + z^2 + C.
 = 81 - 4 = 77.
 </mrow>
 </md>
-</solution>
 
 <figure xml:id="fig-potential-steps-prefigure">
 <caption>
@@ -799,6 +942,7 @@ Each component of <m>\mathbf F</m> pins down one more piece of
 </prefigure>
 </image>
 </figure>
+</solution>
 
 </subsection>
 
@@ -812,16 +956,106 @@ Each component of <m>\mathbf F</m> pins down one more piece of
 <p>
 Let <m>\mathbf F = M\mathbf i + N\mathbf j + P\mathbf k</m> be a vector
 field whose components are continuous throughout an open connected
-region <m>D</m> in space. Then <m>\mathbf F</m> is conservative if and
+region <m>D</m> in space (<xref ref="def-conservative-concepts"/>).
+Then <m>\mathbf F</m> is conservative if and
 only if <m>\mathbf F</m> is a gradient field <m>\nabla f</m> for a
 differentiable function <m>f</m>.
 </p>
 </statement>
+<proof>
+<p>
+<alert>First, we prove that a gradient field is conservative;</alert> we
+assume that <m>\mathbf F = \nabla f</m> for a differentiable function
+<m>f</m>. If <m>C</m> is any piecewise smooth curve in <m>D</m> running
+from <m>A</m> to <m>B</m>, then <xref ref="thm-ftli"/> gives
+</p>
+
+<md>
+\int_C \mathbf F\cdot d\mathbf r = f(B) - f(A),
+</md>
+
+<p>
+which depends only on the endpoints <m>A</m> and <m>B</m>, and not on
+the curve <m>C</m> joining them. The line integral is therefore
+path-independent in <m>D</m>, which is to say that <m>\mathbf F</m> is
+conservative on <m>D</m> (<xref ref="def-conservative-concepts"/>).
+</p>
+
+<p>
+<alert>Next, we prove that a conservative field is a gradient
+field;</alert> we assume that <m>\mathbf F</m> is conservative on
+<m>D</m>, and we build a potential function for it. Fix a point
+<m>A_0</m> of <m>D</m>. Because <m>D</m> is connected, every point
+<m>(x,y,z)</m> of <m>D</m> can be joined to <m>A_0</m> by a curve lying
+in <m>D</m>; and because <m>\mathbf F</m> is conservative, the value of
+the line integral along such a curve does not depend on which one we
+choose. We may therefore define
+</p>
+
+<men xml:id="eq-potential-construction">
+f(x,y,z) = \int_{A_0}^{(x,y,z)} \mathbf F\cdot d\mathbf r ,
+</men>
+
+<p>
+the integral being taken along any curve in <m>D</m> from <m>A_0</m> to
+<m>(x,y,z)</m>. It remains to check that <m>\nabla f = \mathbf F</m>.
+</p>
+
+<p>
+Fix a point <m>(x,y,z)</m> of <m>D</m>. Since <m>D</m> is open, there is
+a <m>\delta &gt; 0</m> such that every point within distance
+<m>\delta</m> of <m>(x,y,z)</m> also lies in <m>D</m>. For
+<m>0 &lt; |h| &lt; \delta</m>, let <m>L_h</m> be the straight segment
+from <m>(x,y,z)</m> to <m>(x+h,y,z)</m>, which then lies in <m>D</m>.
+Following a curve from <m>A_0</m> to <m>(x,y,z)</m> and then travelling
+along <m>L_h</m> produces a curve in <m>D</m> from <m>A_0</m> to
+<m>(x+h,y,z)</m>, so <xref ref="eq-potential-construction"/> gives
+</p>
+
+<md>
+f(x+h,y,z) - f(x,y,z) = \int_{L_h} \mathbf F\cdot d\mathbf r .
+</md>
+
+<p>
+Parametrizing <m>L_h</m> by
+<m>\mathbf r(t) = (x+t)\mathbf i + y\mathbf j + z\mathbf k</m> with
+<m>0 \le t \le h</m> gives <m>d\mathbf r = \mathbf i\,dt</m>, so that
+<m>\mathbf F\cdot d\mathbf r = M(x+t,y,z)\,dt</m> and
+</p>
+
+<md>
+\frac{f(x+h,y,z) - f(x,y,z)}{h}
+  = \frac{1}{h}\int_0^h M(x+t,y,z)\,dt .
+</md>
+
+<p>
+The right-hand side is the average value of <m>M</m> along the segment
+from <m>(x,y,z)</m> to <m>(x+h,y,z)</m>. As <m>h \to 0</m> that segment
+shrinks down to the single point <m>(x,y,z)</m>, and since <m>M</m> is
+continuous its values on the segment all approach <m>M(x,y,z)</m>; so
+their average does too. Therefore
+<m>\dfrac{\partial f}{\partial x} = M</m>. Repeating the argument with
+segments in the <m>\mathbf j</m> and <m>\mathbf k</m> directions gives
+<m>\dfrac{\partial f}{\partial y} = N</m> and
+<m>\dfrac{\partial f}{\partial z} = P</m>. Hence
+</p>
+
+<md>
+\nabla f = M\mathbf i + N\mathbf j + P\mathbf k = \mathbf F ,
+</md>
+
+<p>
+and <m>f</m> is differentiable because its partial derivatives
+<m>M</m>, <m>N</m>, and <m>P</m> are continuous on <m>D</m>. So
+<m>\mathbf F</m> is the gradient field of <m>f</m>.
+</p>
+</proof>
 </theorem>
 
 <p>
 The content of <xref ref="thm-conservative-gradient"/>, combined with
-<xref ref="thm-ftli"/> and the definition of path independence, can be
+<xref ref="thm-ftli"/> and the definition of path independence in
+<xref ref="def-conservative-concepts"/>, can be
 organized into the following square of equivalent statements:
 </p>
 
@@ -931,8 +1165,8 @@ The field <m>\mathbf F</m> is conservative on <m>D</m>.
 </statement>
 <proof>
 <p>
-We prove that (2) implies (1); the reverse direction runs the same
-computation backwards. We assume that <m>\mathbf F</m> is conservative.
+<alert>First, we prove that (2) implies (1);</alert> we assume that
+<m>\mathbf F</m> is conservative.
 Then, as shown in <xref ref="fig-loop-split-prefigure"/>, we can think
 about any loop as <m>C = C_1 \cup C_2</m>, where <m>C_1</m> goes from
 <m>A</m> to <m>B</m> and <m>C_2</m> returns from <m>B</m> to <m>A</m>.
@@ -967,6 +1201,42 @@ and therefore
 <p>
 Hence <m>\oint_C \mathbf F\cdot d\mathbf r = 0</m> for any loop
 <m>C</m>.
+</p>
+
+<p>
+<alert>Next, we prove that (1) implies (2);</alert> we assume that
+<m>\oint_C \mathbf F\cdot d\mathbf r = 0</m> around every loop in
+<m>D</m>. Let <m>A</m> and <m>B</m> be any two points of <m>D</m>, and
+let <m>C_1</m> and <m>C_2</m> be any two paths in <m>D</m> from
+<m>A</m> to <m>B</m>. Travelling along <m>C_1</m> from <m>A</m> to
+<m>B</m> and then back along <m>-C_2</m> from <m>B</m> to <m>A</m>
+traces a loop <m>C = C_1 \cup (-C_2)</m> in <m>D</m>, so the assumption
+applies to it:
+</p>
+
+<md xml:id="eq-loop-converse">
+<mrow>
+0 \amp= \oint_C \mathbf F\cdot d\mathbf r
+</mrow>
+<mrow>
+\amp= \int_{C_1} \mathbf F\cdot d\mathbf r
++ \int_{-C_2} \mathbf F\cdot d\mathbf r
+</mrow>
+<mrow>
+\amp= \int_{C_1} \mathbf F\cdot d\mathbf r
+- \int_{C_2} \mathbf F\cdot d\mathbf r .
+</mrow>
+</md>
+
+<p>
+Therefore
+<m>\int_{C_1} \mathbf F\cdot d\mathbf r
+= \int_{C_2} \mathbf F\cdot d\mathbf r</m>. Since <m>C_1</m> and
+<m>C_2</m> were arbitrary paths joining <m>A</m> to <m>B</m>, and
+<m>A</m> and <m>B</m> were arbitrary points of <m>D</m>, the line
+integral of <m>\mathbf F</m> is path-independent in <m>D</m>; that is,
+<m>\mathbf F</m> is conservative on <m>D</m>
+(<xref ref="def-conservative-concepts"/>).
 </p>
 </proof>
 </theorem>
@@ -1129,7 +1399,8 @@ W = \int_0^{2\pi}\sin(2t)\,dt
 <p>
 <term>By the fundamental theorem.</term> Yes, it applies. The field
 <m>\mathbf{F}=\left\langle -x,\ y,\ 0\right\rangle</m> is defined and
-smooth on all of <m>\R^3</m>, which is open and simply connected, and its
+smooth on all of <m>\R^3</m>, which is open and simply connected
+(<xref ref="def-conservative-concepts"/>), and its
 mixed partials match:
 <m>\partial(-x)/\partial y = 0 = \partial(y)/\partial x</m>, and the
 <m>z</m>-component is <m>0</m> while neither of the others involves
