@@ -29,39 +29,125 @@
 
   <exercise xml:id="ex-hw2o-quarter-circle">
     <title>Mass of a Quarter-Circle Wire</title>
+    <setup>
+      <de-object name="k" context="number">
+        <de-random distribution="discrete" min="8" max="30" by="2"/>
+      </de-object>
+      <de-object name="R" context="number">
+        <de-random distribution="discrete" min="1" max="5" by="1"/>
+      </de-object>
+      <de-object name="M" context="number">
+        <de-expression>k*R/2</de-expression>
+      </de-object>
+    </setup>
     <statement>
       <p>
-        A wire is the quarter circle of radius <m>1</m> centered at
+        A wire is the quarter circle of radius <eval obj="R"/> centered at
         <m>(a,0)</m>, <m>a \gt 0</m>, lying in the first quadrant relative
-        to its center, with density
-        <m>\rho(x,y) = \dfrac{18(x-a)y}{(x-a)^2+y^2}</m> kilograms per
-        meter.
-      </p>
-      <p>The total mass of the wire is <var width="10"/> kilograms.</p>
-    </statement>
-    <setup>
-      <var>
-        <condition number="9" tolerance="0.01">
-          <feedback><p>Correct.</p></feedback>
-        </condition>
-        <condition number="4.5" tolerance="0.01">
-          <feedback><p>That is the value of the integral of 9 sin(2t) over half the range; check your limits.</p></feedback>
-        </condition>
-      </var>
-    </setup>
-    <solution>
-      <p>
-        With <m>\mathbf{r}(t) = \left\langle \cos t + a, \sin t
-        \right\rangle</m>, <m>0 \le t \le \pi/2</m>, the speed is
-        <m>\lVert \mathbf{v} \rVert = 1</m>, and
-        <m>(x-a)^2 + y^2 = 1</m>, so
-        <m>\rho = 18 \cos t \sin t = 9\sin(2t)</m>. Hence
+        to its center. Its density is
       </p>
       <me>
-        M = \int_0^{\pi/2} 9\sin(2t)\,dt
-          = -\frac92\Big[\cos(2t)\Big]_0^{\pi/2} = 9 .
+        \rho(x,y) = \frac{<eval obj="k"/>\,(x-a)y}{(x-a)^2 + y^2}
       </me>
-      <p>The answer does not depend on <m>a</m>.</p>
+      <p>
+        in kilograms per meter. The total mass of the wire is
+        <fillin mode="number" ansobj="M" width="10"/> kilograms.
+      </p>
+    </statement>
+    <evaluation>
+      <evaluate>
+        <!-- The <solution> below is what the print version uses; in HTML the
+             dynamic runtime never shows it, so the worked solution rides
+             along with the feedback, where it does appear. -->
+        <test correct="yes">
+          <numcmp use-answer="yes" tolerance="0.001"/>
+          <feedback>
+            <p>
+              Correct. Parametrizing by
+              <m>\mathbf{r}(t) = \left\langle R\cos t + a,\ R\sin t
+              \right\rangle</m>, <m>0 \le t \le \pi/2</m>, gives
+              <m>\lVert\mathbf{v}\rVert = R</m> and
+              <m>(x-a)^2+y^2 = R^2</m>, so the density along the wire is
+              <m>k\cos t\sin t = \frac{k}{2}\sin(2t)</m> and
+            </p>
+            <me>
+              M = \int_0^{\pi/2} \frac{k}{2}\sin(2t)\,R\,dt
+              = \frac{kR}{2}
+              = \frac{\left(<eval obj="k"/>\right)
+                       \left(<eval obj="R"/>\right)}{2}
+              = <eval obj="M"/> .
+            </me>
+            <p>
+              The center <m>a</m> never enters: shifting the wire sideways
+              carries its density with it.
+            </p>
+          </feedback>
+        </test>
+        <test>
+          <numcmp object="k" tolerance="0.001"/>
+          <feedback>
+            <p>
+              That is the coefficient <m>k</m> from the density, not the
+              mass. The wire has radius <m>R = <eval obj="R"/></m>, and the
+              mass works out to <m>kR/2</m>; see the derivation below.
+            </p>
+            <me>
+              M = \int_0^{\pi/2} \frac{k}{2}\sin(2t)\,R\,dt
+              = \frac{kR}{2} = <eval obj="M"/> .
+            </me>
+          </feedback>
+        </test>
+        <test>
+          <numcmp min="-1000000000" max="1000000000"/>
+          <feedback>
+            <p>
+              Not quite. Parametrize by
+              <m>\mathbf{r}(t) = \left\langle R\cos t + a,\ R\sin t
+              \right\rangle</m>, <m>0 \le t \le \pi/2</m>. Then
+              <m>\lVert\mathbf{v}\rVert = R</m> and
+              <m>(x-a)^2+y^2 = R^2</m>, so the density along the wire
+              collapses to <m>k\cos t\sin t = \frac{k}{2}\sin(2t)</m>,
+              and
+            </p>
+            <me>
+              M = \int_0^{\pi/2} \frac{k}{2}\sin(2t)\,R\,dt
+              = \frac{kR}{2}
+              = \frac{\left(<eval obj="k"/>\right)
+                       \left(<eval obj="R"/>\right)}{2}
+              = <eval obj="M"/> .
+            </me>
+            <p>
+              Note that the center <m>a</m> drops out, so the answer does
+              not depend on it.
+            </p>
+          </feedback>
+        </test>
+      </evaluate>
+    </evaluation>
+    <solution>
+      <p>
+        Parametrize the quarter circle by
+        <m>\mathbf{r}(t) = \left\langle R\cos t + a,\ R\sin t
+        \right\rangle</m>, <m>0 \le t \le \pi/2</m>, where <m>R</m> is
+        the radius. Then <m>\lVert\mathbf{v}\rVert = R</m> and
+        <m>(x-a)^2 + y^2 = R^2</m>, so the density along the wire is
+      </p>
+      <me>
+        \rho = \frac{k\,(R\cos t)(R\sin t)}{R^2} = k\cos t\sin t
+        = \frac{k}{2}\sin(2t) ,
+      </me>
+      <p>
+        where <m>k</m> is the coefficient in the numerator. Hence
+      </p>
+      <me>
+        M = \int_0^{\pi/2} \frac{k}{2}\sin(2t)\;R\,dt
+        = \frac{kR}{2}\Big[-\tfrac12\cos(2t)\Big]_0^{\pi/2}
+        = \frac{kR}{2} .
+      </me>
+      <p>
+        The center <m>a</m> never enters: shifting the wire sideways moves
+        the density with it.
+      </p>
     </solution>
   </exercise>
 

@@ -49,12 +49,12 @@
       <xi:include href="triple-integrals-spherical.ptx" />
       <xi:include href="mass-center-of-mass.ptx" />
       <xi:include href="jacobian-substitution.ptx" />
+      <xi:include href="surface-integrals.ptx" />
     </chapter>
 
     <chapter xml:id="ch-integral-theorems">
       <title>The Big Theorems</title>
       <xi:include href="greens-theorem.ptx" />
-      <xi:include href="surface-integrals.ptx" />
       <xi:include href="stokes-theorem.ptx" />
       <xi:include href="divergence-theorem.ptx" />
     </chapter>

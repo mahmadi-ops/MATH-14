@@ -661,7 +661,190 @@ over <m>R</m>:
 of curl} \,\cdot\, \mathbf{k} \text{ over } R}.
 </men>
 </statement>
+
+<proof xml:id="proof-green-tangential">
+<p>
+Write <m>\mathbf{F} = M\,\mathbf{i} + N\,\mathbf{j}</m>. Both sides of
+<xref ref="eq-green-tangential"/> split into two pieces, one carrying
+<m>M</m> and one carrying <m>N</m>, so it is enough to prove the two
+separate statements
+</p>
+
+<md>
+<mrow xml:id="eq-green-two" number="yes">
+\oint_C M\,dx \amp = -\iint_R \frac{\partial M}{\partial y}\,dA ,
+</mrow>
+<mrow>
+\oint_C N\,dy \amp = \iint_R \frac{\partial N}{\partial x}\,dA ,
+</mrow>
+</md>
+
+<p>
+and add them. Note the minus sign in the first: it is the whole reason the
+curl carries one.
+</p>
+
+<p>
+<em>Step 1: the <m>M</m> statement, on a region cut by vertical lines.</em>
+Suppose first that <m>R</m> is a region of the kind studied in
+<xref ref="sec-general-regions-case1"/>,
+</p>
+
+<me>
+R = \left\{(x,y) : a \le x \le b,\ f_2(x) \le y \le f_1(x)\right\} ,
+</me>
+
+<p>
+so that <m>C</m> is made of the bottom curve <m>y = f_2(x)</m> travelled
+left to right, the top curve <m>y = f_1(x)</m> travelled right to left, and
+possibly two vertical segments at <m>x=a</m> and <m>x=b</m>. This is the
+picture in <xref ref="fig-green-proof-prefigure"/>. On the vertical
+segments <m>x</m> never changes, so <m>dx = 0</m> and they contribute
+nothing to <m>\oint_C M\,dx</m>. What is left is
+</p>
+
+<md>
+<mrow>
+\oint_C M\,dx
+\amp = \int_a^b M\bigl(x,f_2(x)\bigr)\,dx
++ \int_b^a M\bigl(x,f_1(x)\bigr)\,dx
+</mrow>
+<mrow>
+\amp = -\int_a^b \Bigl[M\bigl(x,f_1(x)\bigr)
+- M\bigl(x,f_2(x)\bigr)\Bigr] dx ,
+</mrow>
+</md>
+
+<p>
+the sign appearing because the top is travelled backwards. Meanwhile, doing
+the double integral in the <m>y</m>-direction first and applying the
+Fundamental Theorem of Calculus to the inner integral,
+</p>
+
+<md>
+<mrow>
+\iint_R \frac{\partial M}{\partial y}\,dA
+\amp = \int_a^b\left[\int_{f_2(x)}^{f_1(x)}
+\frac{\partial M}{\partial y}\,dy\right] dx
+</mrow>
+<mrow>
+\amp = \int_a^b \Bigl[M\bigl(x,f_1(x)\bigr)
+- M\bigl(x,f_2(x)\bigr)\Bigr] dx .
+</mrow>
+</md>
+
+<p>
+The two agree up to the minus sign, which is the first line of
+<xref ref="eq-green-two"/>.
+</p>
+
+<p>
+<em>Step 2: the <m>N</m> statement.</em> Now read <m>R</m> the other way,
+as in <xref ref="sec-general-regions-case2"/>, with
+<m>c \le y \le d</m> and <m>g_1(y) \le x \le g_2(y)</m>. On the horizontal
+parts of the boundary <m>dy = 0</m>, and the same computation with the
+roles of <m>x</m> and <m>y</m> exchanged gives the second line of
+<xref ref="eq-green-two"/>. Here the right-hand curve is travelled upwards,
+in the direction of increasing <m>y</m>, which is why no minus sign
+appears. Adding the two lines proves the theorem for a region that can be
+described both ways.
+</p>
+
+<p>
+<em>Step 3: general regions.</em> A region that cannot be described both
+ways at once is cut into finitely many pieces that can, exactly as in
+<xref ref="sec-general-regions-case1"/>, and the theorem is applied to each
+piece. Each cut is travelled twice, once for the piece on either side, and
+in opposite directions, so those two line integrals cancel. What survives
+is the integral around the original curve <m>C</m>, while the double
+integrals add up to the integral over <m>R</m>.
+</p>
+
+<p>
+Finally, <xref ref="thm-green-normal"/> is the same theorem in disguise:
+applying <xref ref="eq-green-tangential"/> to the rotated field
+<m>\left\langle -N, M \right\rangle</m> turns the circulation into the
+outward flux and the <m>\mathbf{k}</m>-component of the curl into the
+divergence.
+</p>
+</proof>
 </theorem>
+
+<figure xml:id="fig-green-proof-prefigure">
+<caption>
+Step 1 of the proof of <xref ref="thm-green-tangential"/>: a region
+<m>R</m> cut by vertical lines, with <m>f_2(x) \le y \le f_1(x)</m> for
+<m>a \le x \le b</m>. Counterclockwise, the bottom curve is travelled left
+to right and the top curve right to left; on the two vertical sides
+<m>dx = 0</m>, so they contribute nothing to
+<m>\oint_C M\,dx</m>.
+</caption>
+<image width="72%">
+<prefigure xmlns="https://prefigure.org" label="prefigure-green-proof">
+<diagram dimensions="(430,300)" margins="12">
+<definition>bottom(t) = (t, 0.55 + 0.30*sin(1.5*t - 0.6))</definition>
+<definition>top(t) = (t, 2.35 - 0.35*sin(1.2*t + 0.4))</definition>
+<coordinates bbox="(-0.5,-0.65,4.35,3.15)">
+<polygon at="gp-region" closed="yes" fill="#dcecf7" stroke="none"
+    points="((0.800,0.719),(1.025,0.792),(1.250,0.837),(1.475,0.850),(1.700,0.829),(1.925,0.776),(2.150,0.698),(2.375,0.603),(2.600,0.503),(2.825,0.407),(3.050,0.328),(3.275,0.274),(3.500,0.251),(3.500,2.698),(3.275,2.675),(3.050,2.628),(2.825,2.561),(2.600,2.479),(2.375,2.388),(2.150,2.294),(1.925,2.204),(1.700,2.124),(1.475,2.061),(1.250,2.019),(1.025,2.001),(0.800,2.008))"/>
+<axes at="gp-axes" xlabel="x" ylabel="y" decorations="no" arrows="1"/>
+<parametric-curve at="gp-bottom" function="bottom" domain="(0.8,3.5)"
+    stroke="#0072B2" thickness="3"/>
+<parametric-curve at="gp-top" function="top" domain="(0.8,3.5)"
+    stroke="#0072B2" thickness="3"/>
+<line at="gp-left" endpoints="((0.8,0.719),(0.8,2.008))" stroke="#0072B2"
+    thickness="3"/>
+<line at="gp-right" endpoints="((3.5,0.251),(3.5,2.698))"
+    stroke="#0072B2" thickness="3"/>
+<vector at="gp-arrow-bottom" v="(0.34,-0.113)" tail="(1.85,0.792)"
+    stroke="#0072B2" thickness="3"/>
+<vector at="gp-arrow-top" v="(-0.34,-0.143)" tail="(2.45,2.297)"
+    stroke="#0072B2" thickness="3"/>
+<line at="gp-a" endpoints="((0.8,0),(0.8,-0.17))" stroke="#555555"
+    thickness="1.5"/>
+<line at="gp-b" endpoints="((3.5,0),(3.5,-0.17))" stroke="#555555"
+    thickness="1.5"/>
+<label at="gp-alab" anchor="(0.8,-0.2)" alignment="s"><m>a</m></label>
+<label at="gp-blab" anchor="(3.5,-0.2)" alignment="s"><m>b</m></label>
+<label at="gp-bottomlab" anchor="(1.55,0.80)" alignment="s"
+    color="#0072B2"><m>y = f_2(x)</m></label>
+<label at="gp-toplab" anchor="(1.35,2.07)" alignment="n"
+    color="#0072B2"><m>y = f_1(x)</m></label>
+<label at="gp-region-lab" anchor="(2.35,1.45)" alignment="center">
+<m>R</m>
+</label>
+<line at="gp-slice" endpoints="((2.9,0.379),(2.9,2.586))"
+    stroke="#009E73" thickness="2" dash="5 4"/>
+<label at="gp-slicelab" anchor="(2.96,1.48)" alignment="e"
+    color="#009E73"><m>dy</m></label>
+</coordinates>
+<annotations>
+<annotation ref="figure" text="A shaded region R in the plane lying between a lower curve y equals f two of x and an upper curve y equals f one of x, for x between a and b. The boundary is drawn in blue with an arrowhead on the lower curve pointing right and one on the upper curve pointing left, so the boundary is travelled counterclockwise. Short vertical sides close the region at x equals a and x equals b. A dashed green segment inside the region runs from the lower curve up to the upper curve, the inner integration in the y direction.">
+  <annotation ref="gp-region" text="The region R, between the two curves."/>
+  <annotation ref="gp-bottom" text="The lower boundary curve y equals f two of x, travelled from left to right."/>
+  <annotation ref="gp-top" text="The upper boundary curve y equals f one of x, travelled from right to left."/>
+  <annotation ref="gp-left" text="The vertical side at x equals a, on which dx is zero."/>
+  <annotation ref="gp-right" text="The vertical side at x equals b, on which dx is zero."/>
+  <annotation ref="gp-slice" text="A vertical slice: the inner integration in y, from the lower curve to the upper curve."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+
+<figure xml:id="fig-green-proof-video">
+<caption>
+The idea of the proof, without the algebra: the <m>\mathbf{k}</m>-component
+of the curl is circulation per unit area, so chop <m>R</m> into little
+cells and add the circulation around each one. Every interior edge is
+travelled twice, once in each direction, so the inside cancels in pairs and
+only the circulation around <m>C</m> is left.
+</caption>
+<video xml:id="video-green-proof-idea"
+       source="videos/green_proof_idea_1080p.mp4"
+       width="70%" aspect="16:9"/>
+</figure>
 
 <example xml:id="example-green-circle">
 <title>Verifying Both Forms on the Unit Circle</title>

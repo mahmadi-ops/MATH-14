@@ -1,18 +1,16 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8"?>
 <publication>
-    <!-- directories are relative to the main source PreTeXt file -->
-    <source>
-        <directories external="../assets" generated="../generated-assets"/>
-    </source>
 
-    <common>
-        <!-- When writing an article for a specific journal, you can   -->
-        <!-- specify the name of the journal to get appropriate latex. -->
-        <!-- See the guide for a list of valid names:
-          https://pretextbook.org/doc/guide/html/appendix-journals.html#appendix-journals -->
+  <!-- the directories the CLI used implicitly before this file existed;
+       they are resolved relative to the source file, hence the ../ -->
+  <source>
+    <directories external="../assets" generated="../generated-assets"/>
+  </source>
 
-        <!--<journal name="ams" /> -->
-    </common>
-
+  <!-- Table of contents down to subsections, so the sidebar lists every
+       subsection of the book, not only chapters and sections. -->
+  <common>
+    <tableofcontents level="3"/>
+  </common>
 
 </publication>
