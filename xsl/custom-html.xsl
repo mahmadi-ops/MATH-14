@@ -5,6 +5,7 @@
 <!--     are plain links, not knowls (see the comment below)                -->
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                 xmlns:pf="https://prefigure.org"
+                exclude-result-prefixes="pf"
                 version="1.0">
   <xsl:import href="./core/pretext-html.xsl"/>
 
@@ -35,6 +36,60 @@
                 mode="xref-as-knowl">
     <xsl:param name="link" select="/.."/>
     <xsl:value-of select="false()"/>
+  </xsl:template>
+
+  <!-- Every GeoGebra applet gets GeoGebra's own fullscreen button.        -->
+  <!-- The core slate template writes the applet-parameter object inline   -->
+  <!-- and offers no hook for extra parameters, so instead of copying the  -->
+  <!-- whole template we emit a small shim first and then defer to it via  -->
+  <!-- apply-imports.  The shim wraps window.GGBApplet so that any         -->
+  <!-- parameter object passing through it picks up                        -->
+  <!-- showFullscreenButton: true (unless the author set it).  deployggb   -->
+  <!-- loads synchronously in the head, so GGBApplet exists by the time    -->
+  <!-- this body script runs; the setter branch covers it loading later.   -->
+  <xsl:template match="slate[@surface='geogebra']">
+    <script>
+<![CDATA[(function () {
+  if (window.ggbFullscreenShim) { return; }
+  window.ggbFullscreenShim = true;
+  var Real = window.GGBApplet || null;
+  Object.defineProperty(window, 'GGBApplet', {
+    configurable: true,
+    get: function () {
+      if (!Real) { return undefined; }
+      return function (params, b) {
+        if (params && typeof params === 'object' &&
+            !('showFullscreenButton' in params)) {
+          params.showFullscreenButton = true;
+        }
+        return new Real(params, b);
+      };
+    },
+    set: function (v) { Real = v; }
+  });
+})();]]>
+    </script>
+    <xsl:apply-imports/>
+  </xsl:template>
+
+  <!-- The applet lives inside an iframe page, and the fullscreen request  -->
+  <!-- made by GeoGebra's button is only honoured when the embedding       -->
+  <!-- iframe carries the allowfullscreen permission.  This is the core    -->
+  <!-- template with that one attribute added.                             -->
+  <xsl:template match="interactive[@platform]" mode="iframe-interactive">
+    <iframe>
+      <xsl:attribute name="allowfullscreen"/>
+      <xsl:attribute name="allow">
+        <xsl:text>fullscreen</xsl:text>
+      </xsl:attribute>
+      <xsl:apply-templates select="." mode="iframe-common-attributes"/>
+      <xsl:attribute name="src">
+        <xsl:apply-templates select="." mode="iframe-filename"/>
+      </xsl:attribute>
+      <xsl:apply-templates select="." mode="iframe-accessibility-attributes"/>
+    </iframe>
+    <!-- possibly give a long description -->
+    <xsl:apply-templates select="." mode="description"/>
   </xsl:template>
 
 </xsl:stylesheet>
