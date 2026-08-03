@@ -60,7 +60,7 @@
              dynamic runtime never shows it, so the worked solution rides
              along with the feedback, where it does appear. -->
         <test correct="yes">
-          <numcmp use-answer="yes" tolerance="0.001"/>
+          <numcmp use-answer="yes" min="M.value({})-Math.max(0.01,1e-4*Math.abs(M.value({})))" max="M.value({})+Math.max(0.01,1e-4*Math.abs(M.value({})))"/>
           <feedback>
             <p>
               Correct. Parametrizing by
@@ -84,7 +84,7 @@
           </feedback>
         </test>
         <test>
-          <numcmp object="k" tolerance="0.001"/>
+          <numcmp object="k" min="k.value({})-Math.max(0.01,1e-4*Math.abs(k.value({})))" max="k.value({})+Math.max(0.01,1e-4*Math.abs(k.value({})))"/>
           <feedback>
             <p>
               That is the coefficient <m>k</m> from the density, not the

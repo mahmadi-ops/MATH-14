@@ -85,6 +85,11 @@
       <xi:include href="hw9-online.ptx" />
     </chapter>
 
+    <chapter xml:id="ch-review-problems">
+      <title>Review Problems</title>
+      <xi:include href="review4-online.ptx" />
+    </chapter>
+
   </book>
 
 </pretext>
