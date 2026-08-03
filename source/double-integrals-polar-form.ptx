@@ -548,6 +548,9 @@ the cylinder <m>x^2 + y^2 = 2x</m>. Its volume is
 <m>\frac{3\pi}{2}</m>.
 </caption>
 <image width="70%">
+<shortdescription>
+A paraboloid rising inside an off-center vertical cylinder above the plane.
+</shortdescription>
 <description>
 Three coordinate axes in space with a vertical circular cylinder of
 radius one centered on the line x equals one, y equals zero. Inside

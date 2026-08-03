@@ -17,6 +17,16 @@
   </p>
 
   <interactive xml:id="brain-map" iframe="brain-map.html" width="100%" aspect="16:9">
+    <instructions>
+      <p>
+        Each node of the map is a topic of the course, and each line
+        connects a topic to the ones it builds on; the gold lines trace
+        the coordinate substitutions between the integral types. Drag the
+        background to pan and scroll to zoom; drag a node to move it. The
+        map is mouse-driven; the same topics, in the same order, appear
+        in the table of contents of this book.
+      </p>
+    </instructions>
     <static>
       <p>Interactive brain map of the chapter's integrals (view in the HTML version).</p>
     </static>

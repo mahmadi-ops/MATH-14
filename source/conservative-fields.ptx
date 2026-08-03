@@ -45,6 +45,9 @@ origin, the direction of steepest ascent, and grow longer as we move
 away from the origin.
 </caption>
 <image width="75%">
+<shortdescription>
+A paraboloid above the plane, with gradient arrows below it pointing radially outward.
+</shortdescription>
 <description>
 An upward-opening paraboloid, the graph of z equals x squared plus y
 squared, drawn as a translucent blue surface. In the x y plane below
@@ -381,6 +384,9 @@ a translucent solid containing <m>C</m>. For a conservative field
 <m>B</m>.
 </caption>
 <image width="70%">
+<shortdescription>
+A curve winding from point A to point B inside a dotted region in space.
+</shortdescription>
 <description>
 Three coordinate axes in space with a translucent blue solid marking an
 open region D. Inside the solid, a red curve C winds from the point A
@@ -580,6 +586,9 @@ is conservative, both line integrals equal
 <m>\frac{1}{\sqrt{1+4\pi^2}} - 1</m>.
 </caption>
 <image width="75%">
+<shortdescription>
+A helix and a vertical segment joining the same two points in space.
+</shortdescription>
 <description>
 Three coordinate axes in space showing a blue helix that winds once
 around the z axis, climbing from the point one comma zero comma zero up

@@ -330,6 +330,9 @@ The tetrahedron <m>T</m> bounded by the planes <m>x + 2y + z = 2</m>
 <m>(0,1,0)</m> and <m>\left(1,\tfrac12,0\right)</m>.
 </caption>
 <image width="75%">
+<shortdescription>
+A tetrahedron with one vertex at the origin, bounded by a slanted plane and a vertical plane.
+</shortdescription>
 <description>
 Three coordinate axes in space with a tetrahedron drawn in translucent
 blue. One vertex is at the origin, one at height two on the z axis,

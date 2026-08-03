@@ -40,6 +40,9 @@ A point <m>P(r,\theta,z)</m> in cylindrical coordinates:
 usual height.
 </caption>
 <image width="80%">
+<shortdescription>
+A point in space located by a radius in the plane, an angle, and a height.
+</shortdescription>
 <description>
 Three coordinate axes in space. A point P is shown above the x y
 plane. A segment of length r runs from the origin to the projection of
@@ -261,6 +264,9 @@ below the plane <m>z = 4</m>. Its mass, with density
 <m>\delta = Kr</m>, is <m>\frac{12\pi K}{5}</m>.
 </caption>
 <image width="60%">
+<shortdescription>
+A vertical cylinder with a flat top and a dome-shaped paraboloid floor.
+</shortdescription>
 <description>
 Three coordinate axes in space with a vertical circular cylinder of
 radius one about the z axis, capped by the plane z equals four on top.
@@ -409,7 +415,15 @@ The solid of part (a).
 <interactive geogebra="p4fvbdxf"
              width="100%" aspect="500:500" design-width="500"
              material-width="500" material-height="500"
-             shift-drag-zoom="yes" reset-icon="yes"/>
+             shift-drag-zoom="yes" reset-icon="yes">
+<instructions>
+<p>
+Drag the background to rotate the solid and compare it with the picture
+you formed from the description. Shift-drag or pinch to zoom, and use
+the reset icon in the corner to return to the original view.
+</p>
+</instructions>
+</interactive>
 </figure>
 </solution>
 </task>
@@ -441,7 +455,15 @@ The solid of part (b).
 <interactive geogebra="djjefngs"
              width="100%" aspect="500:500" design-width="500"
              material-width="500" material-height="500"
-             shift-drag-zoom="yes" reset-icon="yes"/>
+             shift-drag-zoom="yes" reset-icon="yes">
+<instructions>
+<p>
+Drag the background to rotate the solid and compare it with the picture
+you formed from the description. Shift-drag or pinch to zoom, and use
+the reset icon in the corner to return to the original view.
+</p>
+</instructions>
+</interactive>
 </figure>
 </solution>
 </task>
@@ -474,7 +496,15 @@ The solid of part (c).
 <interactive geogebra="v4vbftuh"
              width="100%" aspect="500:500" design-width="500"
              material-width="500" material-height="500"
-             shift-drag-zoom="yes" reset-icon="yes"/>
+             shift-drag-zoom="yes" reset-icon="yes">
+<instructions>
+<p>
+Drag the background to rotate the solid and compare it with the picture
+you formed from the description. Shift-drag or pinch to zoom, and use
+the reset icon in the corner to return to the original view.
+</p>
+</instructions>
+</interactive>
 </figure>
 </solution>
 </task>
@@ -507,7 +537,15 @@ The solid of part (d).
 <interactive geogebra="xunfqxxr"
              width="100%" aspect="500:500" design-width="500"
              material-width="500" material-height="500"
-             shift-drag-zoom="yes" reset-icon="yes"/>
+             shift-drag-zoom="yes" reset-icon="yes">
+<instructions>
+<p>
+Drag the background to rotate the solid and compare it with the picture
+you formed from the description. Shift-drag or pinch to zoom, and use
+the reset icon in the corner to return to the original view.
+</p>
+</instructions>
+</interactive>
 </figure>
 </solution>
 </task>
@@ -539,7 +577,15 @@ The solid of part (e).
 <interactive geogebra="p45dyezj"
              width="100%" aspect="500:500" design-width="500"
              material-width="500" material-height="500"
-             shift-drag-zoom="yes" reset-icon="yes"/>
+             shift-drag-zoom="yes" reset-icon="yes">
+<instructions>
+<p>
+Drag the background to rotate the solid and compare it with the picture
+you formed from the description. Shift-drag or pinch to zoom, and use
+the reset icon in the corner to return to the original view.
+</p>
+</instructions>
+</interactive>
 </figure>
 </solution>
 </task>
@@ -573,7 +619,15 @@ The solid of part (f).
 <interactive geogebra="zpr8xcup"
              width="100%" aspect="500:500" design-width="500"
              material-width="500" material-height="500"
-             shift-drag-zoom="yes" reset-icon="yes"/>
+             shift-drag-zoom="yes" reset-icon="yes">
+<instructions>
+<p>
+Drag the background to rotate the solid and compare it with the picture
+you formed from the description. Shift-drag or pinch to zoom, and use
+the reset icon in the corner to return to the original view.
+</p>
+</instructions>
+</interactive>
 </figure>
 </solution>
 </task>
@@ -607,7 +661,15 @@ The solid of part (g).
 <interactive geogebra="ckvwwrqq"
              width="100%" aspect="500:500" design-width="500"
              material-width="500" material-height="500"
-             shift-drag-zoom="yes" reset-icon="yes"/>
+             shift-drag-zoom="yes" reset-icon="yes">
+<instructions>
+<p>
+Drag the background to rotate the solid and compare it with the picture
+you formed from the description. Shift-drag or pinch to zoom, and use
+the reset icon in the corner to return to the original view.
+</p>
+</instructions>
+</interactive>
 </figure>
 </solution>
 </task>
@@ -640,7 +702,15 @@ The solid of part (h).
 <interactive geogebra="ubfxfene"
              width="100%" aspect="500:500" design-width="500"
              material-width="500" material-height="500"
-             shift-drag-zoom="yes" reset-icon="yes"/>
+             shift-drag-zoom="yes" reset-icon="yes">
+<instructions>
+<p>
+Drag the background to rotate the solid and compare it with the picture
+you formed from the description. Shift-drag or pinch to zoom, and use
+the reset icon in the corner to return to the original view.
+</p>
+</instructions>
+</interactive>
 </figure>
 </solution>
 </task>

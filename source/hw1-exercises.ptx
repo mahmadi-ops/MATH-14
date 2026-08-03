@@ -31,6 +31,18 @@
       <figure xml:id="fig-hw1-springs">
         <caption>Which spring uses more wire?</caption>
         <image xml:id="img-hw1-springs" width="80%">
+<shortdescription>
+Two coil springs side by side: spring A wide with three turns, spring B narrow with five turns.
+</shortdescription>
+<description>
+<p>
+Two helical springs drawn side by side. Spring A, on the left, has
+three turns of radius seven centimeters and a marked height of four
+centimeters. Spring B, on the right, has five turns of radius four
+centimeters and a marked height of three centimeters. Dashed lines
+with a double-headed arrow mark each spring's height.
+</p>
+</description>
           <latex-image>
             <![CDATA[\begin{tikzpicture}[scale=0.32, line cap=round]
   %% Spring A: 3 turns, radius 7, height 4

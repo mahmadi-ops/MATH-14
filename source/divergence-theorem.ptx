@@ -605,7 +605,7 @@ every direction and growing with distance from the origin.
 In <xref ref="example-sphere-flux"/> we found the flux of
 <m>\mathbf{F}(x,y,z) = z\,\mathbf{i} + y\,\mathbf{j} +
 x\,\mathbf{k}</m> across the unit sphere by parametrizing the surface,
-computing <m>\mathbf{r}_\varphi \times \mathbf{r}_\theta</m>, and
+computing <m>\mathbf{r}_\phi \times \mathbf{r}_\theta</m>, and
 integrating<mdash/>a full page of work that produced
 <m>\tfrac{4\pi}{3}</m>. Recompute this flux using the divergence
 theorem.

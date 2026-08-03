@@ -215,18 +215,18 @@ In <term>cylindrical coordinates</term> the same paraboloid is
 
 <p>
 In <term>spherical coordinates</term>, substituting
-<m>x = \rho\sin\varphi\cos\theta</m>,
-<m>y = \rho\sin\varphi\sin\theta</m>, <m>z = \rho\cos\varphi</m> into
+<m>x = \rho\sin\phi\cos\theta</m>,
+<m>y = \rho\sin\phi\sin\theta</m>, <m>z = \rho\cos\phi</m> into
 <m>z = x^2 + y^2</m> gives
-<m>\rho\cos\varphi = \rho^2\sin^2\varphi</m>, so
-<m>\rho = \cot\varphi\csc\varphi</m> on the surface, and
+<m>\rho\cos\phi = \rho^2\sin^2\phi</m>, so
+<m>\rho = \cot\phi\csc\phi</m> on the surface, and
 </p>
 
 <me>
-\mathbf{r}(\theta,\varphi)
-= \langle \cot\varphi\cos\theta,\, \cot\varphi\sin\theta,\,
-\cot^2\varphi \rangle,
-\qquad 0 \lt \varphi \le \frac{\pi}{2}, \quad 0 \le \theta \le 2\pi.
+\mathbf{r}(\theta,\phi)
+= \langle \cot\phi\cos\theta,\, \cot\phi\sin\theta,\,
+\cot^2\phi \rangle,
+\qquad 0 \lt \phi \le \frac{\pi}{2}, \quad 0 \le \theta \le 2\pi.
 </me>
 
 <p>
@@ -235,10 +235,10 @@ radius <m>2</m>, so spherical coordinates with <m>\rho = 2</m> give
 </p>
 
 <me>
-\mathbf{r}(\theta,\varphi)
-= \langle 2\sin\varphi\cos\theta,\, 2\sin\varphi\sin\theta,\,
-2\cos\varphi \rangle,
-\qquad 0 \le \varphi \le \pi, \quad 0 \le \theta \le 2\pi.
+\mathbf{r}(\theta,\phi)
+= \langle 2\sin\phi\cos\theta,\, 2\sin\phi\sin\theta,\,
+2\cos\phi \rangle,
+\qquad 0 \le \phi \le \pi, \quad 0 \le \theta \le 2\pi.
 </me>
 
 <p>
@@ -281,9 +281,9 @@ parametrization
 </p>
 
 <men xml:id="eq-sphere-param">
-\mathbf{r}(\theta,\varphi)
-= \langle \sin\varphi\cos\theta,\, \sin\varphi\sin\theta,\,
-\cos\varphi \rangle.
+\mathbf{r}(\theta,\phi)
+= \langle \sin\phi\cos\theta,\, \sin\phi\sin\theta,\,
+\cos\phi \rangle.
 </men>
 
 <p>
@@ -293,20 +293,20 @@ other produces two tangent vectors,
 </p>
 
 <me>
-\mathbf{r}_\varphi = \frac{\partial \mathbf{r}}{\partial \varphi}
-= \lim_{\Delta\varphi \to 0}
-\frac{\mathbf{r}(\theta, \varphi + \Delta\varphi)
-- \mathbf{r}(\theta,\varphi)}{\Delta\varphi},
+\mathbf{r}_\phi = \frac{\partial \mathbf{r}}{\partial \phi}
+= \lim_{\Delta\phi \to 0}
+\frac{\mathbf{r}(\theta, \phi + \Delta\phi)
+- \mathbf{r}(\theta,\phi)}{\Delta\phi},
 \qquad
 \mathbf{r}_\theta = \frac{\partial \mathbf{r}}{\partial \theta}
 = \lim_{\Delta\theta \to 0}
-\frac{\mathbf{r}(\theta + \Delta\theta, \varphi)
-- \mathbf{r}(\theta,\varphi)}{\Delta\theta},
+\frac{\mathbf{r}(\theta + \Delta\theta, \phi)
+- \mathbf{r}(\theta,\phi)}{\Delta\theta},
 </me>
 
 <p>
 so that the two edges of a small coordinate patch on the sphere are
-approximately <m>\mathbf{r}_\varphi\, \Delta\varphi</m> and
+approximately <m>\mathbf{r}_\phi\, \Delta\phi</m> and
 <m>\mathbf{r}_\theta\, \Delta\theta</m>, as in
 <xref ref="fig-sphere-patch"/>. Their cross product is perpendicular
 to the patch, so it gives a normal vector, and its length gives the
@@ -314,17 +314,17 @@ area of the patch:
 </p>
 
 <men xml:id="eq-normal-patch">
-\mathbf{n} \approx (\mathbf{r}_\varphi \times \mathbf{r}_\theta)\,
-\Delta\varphi\, \Delta\theta,
+\mathbf{n} \approx (\mathbf{r}_\phi \times \mathbf{r}_\theta)\,
+\Delta\phi\, \Delta\theta,
 \qquad
-\Delta\sigma \approx \lVert \mathbf{r}_\varphi \times
-\mathbf{r}_\theta \rVert\, \Delta\varphi\, \Delta\theta.
+\Delta\sigma \approx \lVert \mathbf{r}_\phi \times
+\mathbf{r}_\theta \rVert\, \Delta\phi\, \Delta\theta.
 </men>
 
 <figure xml:id="fig-sphere-patch">
 <caption>
 A small coordinate patch on the unit sphere. The tangent vectors
-<m>\mathbf{r}_\theta</m> and <m>\mathbf{r}_\varphi</m> span the patch,
+<m>\mathbf{r}_\theta</m> and <m>\mathbf{r}_\phi</m> span the patch,
 and their cross product points along the outward normal
 <m>\hat{\mathbf{n}}</m>.
 </caption>
@@ -336,9 +336,9 @@ vector drawn at a point.
 <description>
 <p>
 A wireframe octant of the unit sphere. At a point
-<m>\mathbf{r}(\theta,\varphi)</m> on the surface, a blue tangent
+<m>\mathbf{r}(\theta,\phi)</m> on the surface, a blue tangent
 vector <m>\mathbf{r}_\theta</m> points east along a parallel, a red
-tangent vector <m>\mathbf{r}_\varphi</m> points south along a
+tangent vector <m>\mathbf{r}_\phi</m> points south along a
 meridian, a small shaded patch <m>\Delta\sigma</m> lies between them,
 and a green arrow <m>\hat{\mathbf{n}}</m> points radially outward,
 perpendicular to both.
@@ -384,7 +384,7 @@ perpendicular to both.
     \draw[-latex, black!80, line width=1.1pt]
       (axis cs:0,0,0) -- (axis cs:0.5792,0.4056,0.7071);
     \node[lbl, font=\small, anchor=north, text=black!80]
-      at (axis cs:0.34,0.18,0.38) {$\mathbf{r}(\theta,\varphi)$};
+      at (axis cs:0.34,0.18,0.38) {$\mathbf{r}(\theta,\phi)$};
     % r_theta = sinphi*(-sin t, cos t, 0) = 0.7071*(-0.5736,0.8192,0)
     \draw[-latex, oiblue, line width=1.5pt]
       (axis cs:0.5792,0.4056,0.7071)
@@ -397,7 +397,7 @@ perpendicular to both.
       (axis cs:0.5792,0.4056,0.7071)
       -- (axis cs:{0.5792+0.45*0.5793},{0.4056+0.45*0.4056},{0.7071-0.45*0.7071});
     \node[lbl, font=\normalsize, text=oivermillion, anchor=west]
-      at (axis cs:0.85,0.62,0.42) {$\mathbf{r}_\varphi$};
+      at (axis cs:0.85,0.62,0.42) {$\mathbf{r}_\phi$};
     % outward normal at the point (radial direction)
     \draw[-latex, oigreen!70!black, line width=1.6pt]
       (axis cs:0.5792,0.4056,0.7071)
@@ -417,10 +417,10 @@ are
 </p>
 
 <md>
-<mrow>\mathbf{r}_\varphi \amp= \langle \cos\varphi\cos\theta,\,
-\cos\varphi\sin\theta,\, -\sin\varphi \rangle,</mrow>
-<mrow>\mathbf{r}_\theta \amp= \langle -\sin\varphi\sin\theta,\,
-\sin\varphi\cos\theta,\, 0 \rangle,</mrow>
+<mrow>\mathbf{r}_\phi \amp= \langle \cos\phi\cos\theta,\,
+\cos\phi\sin\theta,\, -\sin\phi \rangle,</mrow>
+<mrow>\mathbf{r}_\theta \amp= \langle -\sin\phi\sin\theta,\,
+\sin\phi\cos\theta,\, 0 \rangle,</mrow>
 </md>
 
 <p>
@@ -428,20 +428,20 @@ and their cross product is
 </p>
 
 <md>
-<mrow>\mathbf{r}_\varphi \times \mathbf{r}_\theta
+<mrow>\mathbf{r}_\phi \times \mathbf{r}_\theta
 \amp= \begin{vmatrix}
 \mathbf{i} \amp \mathbf{j} \amp \mathbf{k} \\
-\cos\varphi\cos\theta \amp \cos\varphi\sin\theta \amp -\sin\varphi \\
--\sin\varphi\sin\theta \amp \sin\varphi\cos\theta \amp 0
+\cos\phi\cos\theta \amp \cos\phi\sin\theta \amp -\sin\phi \\
+-\sin\phi\sin\theta \amp \sin\phi\cos\theta \amp 0
 \end{vmatrix}</mrow>
-<mrow>\amp= \left( \sin^2\varphi\cos\theta \right)\mathbf{i}
-+ \left( \sin^2\varphi\sin\theta \right)\mathbf{j}
-+ \cos\varphi\sin\varphi
+<mrow>\amp= \left( \sin^2\phi\cos\theta \right)\mathbf{i}
++ \left( \sin^2\phi\sin\theta \right)\mathbf{j}
++ \cos\phi\sin\phi
 \underbrace{\left( \cos^2\theta + \sin^2\theta \right)}_{=1}\mathbf{k}</mrow>
-<mrow xml:id="eq-sphere-cross" number="yes">\amp= \sin\varphi\,
-\langle \sin\varphi\cos\theta,\,
-\sin\varphi\sin\theta,\, \cos\varphi \rangle
-= \sin\varphi\, \langle x, y, z \rangle.</mrow>
+<mrow xml:id="eq-sphere-cross" number="yes">\amp= \sin\phi\,
+\langle \sin\phi\cos\theta,\,
+\sin\phi\sin\theta,\, \cos\phi \rangle
+= \sin\phi\, \langle x, y, z \rangle.</mrow>
 </md>
 
 <p>
@@ -451,11 +451,11 @@ on the sphere,
 
 <men xml:id="eq-sphere-unit-normal">
 \hat{\mathbf{n}}
-= \frac{\sin\varphi\, \langle x,y,z \rangle}
-{\sin\varphi\, \sqrt{x^2 + y^2 + z^2}}
+= \frac{\sin\phi\, \langle x,y,z \rangle}
+{\sin\phi\, \sqrt{x^2 + y^2 + z^2}}
 = \langle x, y, z \rangle
-= \langle \sin\varphi\cos\theta,\, \sin\varphi\sin\theta,\,
-\cos\varphi \rangle:
+= \langle \sin\phi\cos\theta,\, \sin\phi\sin\theta,\,
+\cos\phi \rangle:
 </men>
 
 <p>
@@ -468,9 +468,9 @@ construction step by step.
 <figure xml:id="fig-surface-normal-video">
 <caption>
 The tangent vectors <m>\mathbf{r}_\theta</m> and
-<m>\mathbf{r}_\varphi</m> span a small patch of the sphere; their
-cross product <m>\mathbf{r}_\varphi \times \mathbf{r}_\theta =
-\sin\varphi\, \langle x,y,z \rangle</m> is normal to the surface and
+<m>\mathbf{r}_\phi</m> span a small patch of the sphere; their
+cross product <m>\mathbf{r}_\phi \times \mathbf{r}_\theta =
+\sin\phi\, \langle x,y,z \rangle</m> is normal to the surface and
 its length measures the patch area.
 </caption>
 <video xml:id="video-surface-normal"
@@ -675,23 +675,23 @@ origin can be parametrized as
 </p>
 
 <me>
-x = \sin\varphi\cos\theta, \qquad
-y = \sin\varphi\sin\theta, \qquad
-z = \cos\varphi,
+x = \sin\phi\cos\theta, \qquad
+y = \sin\phi\sin\theta, \qquad
+z = \cos\phi,
 </me>
 
 <p>
-where <m>0 \le \theta \le 2\pi</m> and <m>0 \le \varphi \le \pi</m>.
+where <m>0 \le \theta \le 2\pi</m> and <m>0 \le \phi \le \pi</m>.
 This means that we can use the formula for surface integrals,
 <xref ref="eq-flux-param"/>, to compute the flux. From
 <xref ref="eq-sphere-cross"/>,
 </p>
 
 <me>
-\mathbf{r}_\varphi \times \mathbf{r}_\theta
-= \sin^2\varphi\cos\theta\,\mathbf{i}
-+ \sin^2\varphi\sin\theta\,\mathbf{j}
-+ \sin\varphi\cos\varphi\,\mathbf{k},
+\mathbf{r}_\phi \times \mathbf{r}_\theta
+= \sin^2\phi\cos\theta\,\mathbf{i}
++ \sin^2\phi\sin\theta\,\mathbf{j}
++ \sin\phi\cos\phi\,\mathbf{k},
 </me>
 
 <p>
@@ -700,9 +700,9 @@ which points outward. Substituting the parametrization into
 </p>
 
 <me>
-\mathbf{F}(\theta,\varphi)
-= \cos\varphi\,\mathbf{i} + \sin\varphi\sin\theta\,\mathbf{j}
-+ \sin\varphi\cos\theta\,\mathbf{k},
+\mathbf{F}(\theta,\phi)
+= \cos\phi\,\mathbf{i} + \sin\phi\sin\theta\,\mathbf{j}
++ \sin\phi\cos\theta\,\mathbf{k},
 </me>
 
 <p>
@@ -710,8 +710,8 @@ so the integrand is
 </p>
 
 <me>
-\mathbf{F} \cdot (\mathbf{r}_\varphi \times \mathbf{r}_\theta)
-= 2\sin^2\varphi\cos\varphi\cos\theta + \sin^3\varphi\sin^2\theta.
+\mathbf{F} \cdot (\mathbf{r}_\phi \times \mathbf{r}_\theta)
+= 2\sin^2\phi\cos\phi\cos\theta + \sin^3\phi\sin^2\theta.
 </me>
 
 <p>
@@ -721,11 +721,11 @@ Now we integrate over the parameter region:
 <md>
 <mrow>\iint_S \mathbf{F} \cdot \hat{\mathbf{n}}\, d\sigma
 \amp= \int_0^{2\pi}\!\! \int_0^{\pi}
-\left( 2\sin^2\varphi\cos\varphi\cos\theta
-+ \sin^3\varphi\sin^2\theta \right) d\varphi\, d\theta</mrow>
-<mrow>\amp= 2 \int_0^{\pi} \sin^2\varphi\cos\varphi\, d\varphi
+\left( 2\sin^2\phi\cos\phi\cos\theta
++ \sin^3\phi\sin^2\theta \right) d\phi\, d\theta</mrow>
+<mrow>\amp= 2 \int_0^{\pi} \sin^2\phi\cos\phi\, d\phi
 \underbrace{\int_0^{2\pi} \cos\theta\, d\theta}_{=0}
-+ \int_0^{\pi} \sin^3\varphi\, d\varphi
++ \int_0^{\pi} \sin^3\phi\, d\phi
 \int_0^{2\pi} \sin^2\theta\, d\theta</mrow>
 <mrow>\amp= 0 + \left( \frac{4}{3} \right)(\pi)
 = \frac{4\pi}{3}.</mrow>

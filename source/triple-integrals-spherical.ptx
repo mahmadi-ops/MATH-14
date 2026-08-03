@@ -55,6 +55,9 @@ usual polar angle of the projection into the <m>xy</m>-plane, and
 positive <m>z</m>-axis.
 </caption>
 <image width="60%">
+<shortdescription>
+A point in space located by a distance from the origin and two angles.
+</shortdescription>
 <description>
 Three coordinate axes in space. A segment of length rho runs from the
 origin to a point P above the x y plane. The angle phi is marked
@@ -375,6 +378,9 @@ sphere <m>\rho = 1</m> and above the cone <m>\phi = \pi/3</m>. Its
 volume is <m>\frac{\pi}{3}</m>.
 </caption>
 <image width="60%">
+<shortdescription>
+An ice cream cone shape: a cone from the origin capped by a piece of a sphere.
+</shortdescription>
 <description>
 Three coordinate axes in space with an ice cream cone shaped solid: a
 cone with vertex at the origin opening upward at sixty degrees from
@@ -537,6 +543,9 @@ coordinates is <m>\rho = 4\cos\phi</m>. It sits on the
 <m>xy</m>-plane, touching the origin.
 </caption>
 <image width="55%">
+<shortdescription>
+A sphere resting on the origin, centered on the vertical axis.
+</shortdescription>
 <description>
 Three coordinate axes in space with a sphere of radius two centered on
 the z axis at height two, so it touches the origin from above. A
@@ -692,6 +701,9 @@ half disk, between the cone <m>z = \sqrt{x^2+y^2}</m> (spherical
 <m>\rho = \sec\phi</m>).
 </caption>
 <image width="60%">
+<shortdescription>
+A half cone over the negative y half plane, capped by a flat half disk.
+</shortdescription>
 <description>
 Three coordinate axes in space with a half cone opening upward from
 the origin at forty five degrees, over the half of the plane with y

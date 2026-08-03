@@ -133,6 +133,9 @@ bounded by the three coordinate planes and the plane
 triangle <m>D</m>.
 </caption>
 <image width="70%">
+<shortdescription>
+A tetrahedron cut from the first octant by a slanted plane, with its shadow triangle shaded.
+</shortdescription>
 <description>
 Three coordinate axes in space with a tetrahedron whose vertices are
 the origin and the three points one zero zero, zero one zero, and zero
@@ -428,6 +431,9 @@ the parabolic cylinder <m>z = 1 - x^2</m>, the vertical plane
 <m>y = 1 - x</m>, and the coordinate planes.
 </caption>
 <image width="70%">
+<shortdescription>
+A solid under a parabolic cylinder, cut by a slanted vertical plane.
+</shortdescription>
 <description>
 Three coordinate axes in space with a solid bounded above by the
 parabolic cylinder z equals one minus x squared, on the side by the

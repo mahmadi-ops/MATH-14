@@ -538,6 +538,9 @@ surface and the shaded base rectangle, and equals
 <m>\frac{3}{2}\ln 3 - 1 \approx 0.648</m>.
 </caption>
 <image width="75%">
+<shortdescription>
+A curved surface over a rectangle in the plane, highest along one edge.
+</shortdescription>
 <description>
 Three coordinate axes in space with a curved surface over the
 rectangle zero to one in x and zero to two in y. The surface rises
