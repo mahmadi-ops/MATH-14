@@ -521,6 +521,378 @@ it the unit disk in the x y plane is shaded gray as its shadow.
 </latex-image>
 </image>
 </figure>
+
+<!-- The next four examples are variations on the worked examples of    -->
+<!-- CLP-4 Vector Calculus, Section 4.4 (Feldman, Rechnitzer, Yeager),  -->
+<!-- with different fields, curves, and numbers.                        -->
+
+<p>
+The next example shows the theorem at its most merciless: one term of
+the field cannot be integrated in closed form at all, and Stokes'
+theorem simply erases it.
+</p>
+
+<example xml:id="example-stokes-flat-disk">
+<title>A Term That Cannot Be Integrated</title>
+<statement>
+<p>
+Evaluate <m>\oint_C \mathbf{F} \cdot d\mathbf{r}</m> for
+<me>
+\mathbf{F} = \left[\cos\left(x^{100}\right) + 3y\right]\mathbf{i}
++ 4z\,\mathbf{j} + 2y\,\mathbf{k},
+</me>
+where <m>C</m> is the circle <m>x^2 + y^2 = 9</m>, <m>z = 2</m>,
+traversed counterclockwise when seen from above.
+</p>
+</statement>
+</example>
+
+<solution xml:id="solution-stokes-flat-disk">
+<p>
+The term <m>\cos\left(x^{100}\right)</m> makes a direct evaluation
+hopeless<mdash/>its antiderivative has no closed form. But Stokes'
+theorem only ever sees the field through its curl, and by
+<xref ref="eq-curl-3d"/>,
+</p>
+
+<me>
+\nabla \times \mathbf{F}
+= \left( \frac{\partial}{\partial y}(2y)
+- \frac{\partial}{\partial z}(4z) \right) \mathbf{i}
++ 0\,\mathbf{j}
++ \left( 0 - \frac{\partial}{\partial y}
+\left[\cos\left(x^{100}\right) + 3y\right] \right) \mathbf{k}
+= -2\,\mathbf{i} - 3\,\mathbf{k}:
+</me>
+
+<p>
+the monster differentiates to zero. For the surface we take the
+cheapest thing with boundary <m>C</m>: the flat disk
+<m>S = \left\{ (x,y,z) : x^2 + y^2 \le 9,\ z = 2 \right\}</m>, whose
+unit normal (paired with the counterclockwise orientation of <m>C</m>
+by the right-hand rule) is <m>\hat{\mathbf{n}} = \mathbf{k}</m>. Then
+<m>(\nabla \times \mathbf{F}) \cdot \hat{\mathbf{n}} = -3</m> is
+constant, so
+</p>
+
+<me>
+\oint_C \mathbf{F} \cdot d\mathbf{r}
+= \iint_S (\nabla \times \mathbf{F}) \cdot \hat{\mathbf{n}}\, d\sigma
+= -3 \cdot \text{Area}(S) = -3 \left(9\pi\right) = -27\pi .
+</me>
+</solution>
+
+<p>
+The same trick works when the curve is tilted<mdash/>the flat surface it
+bounds just tilts with it.
+</p>
+
+<example xml:id="example-stokes-tilted-circle">
+<title>A Tilted Circle</title>
+<statement>
+<p>
+Evaluate <m>\oint_C \mathbf{F} \cdot d\mathbf{r}</m> for
+<me>
+\mathbf{F} = \ln\left(1 + x^8\right)\mathbf{i} - z\,\mathbf{j}
++ y\,\mathbf{k},
+</me>
+where <m>C</m> is the intersection of the sphere
+<m>x^2 + y^2 + z^2 = 9</m> with the plane <m>z = x</m>, traversed
+counterclockwise when seen from above.
+</p>
+</statement>
+</example>
+
+<solution xml:id="solution-stokes-tilted-circle">
+<p>
+The plane <m>z = x</m> passes through the centre of the sphere, so
+<m>C</m> is a great circle: centre <m>(0,0,0)</m> and radius <m>3</m>.
+The <m>\ln\left(1 + x^8\right)</m> again rules out a direct attack, and
+again it dies under the curl: by <xref ref="eq-curl-3d"/>,
+</p>
+
+<me>
+\nabla \times \mathbf{F}
+= \left( \frac{\partial}{\partial y}(y)
+- \frac{\partial}{\partial z}(-z) \right) \mathbf{i}
++ 0\,\mathbf{j} + 0\,\mathbf{k}
+= 2\,\mathbf{i} .
+</me>
+
+<p>
+Take <m>S</m> to be the flat disk that <m>C</m> bounds in the plane
+<m>z = x</m>. The gradient of <m>z - x</m> is
+<m>-\mathbf{i} + \mathbf{k}</m>, so the upward unit normal of <m>S</m>
+(the one the right-hand rule pairs with counterclockwise-from-above) is
+<m>\hat{\mathbf{n}} = \frac{1}{\sqrt{2}}(-\mathbf{i} + \mathbf{k})</m>,
+and the integrand
+</p>
+
+<me>
+(\nabla \times \mathbf{F}) \cdot \hat{\mathbf{n}}
+= 2\,\mathbf{i} \cdot
+\frac{-\mathbf{i} + \mathbf{k}}{\sqrt{2}}
+= -\sqrt{2}
+</me>
+
+<p>
+is constant. Since <m>S</m> is a disk of radius <m>3</m>,
+</p>
+
+<me>
+\oint_C \mathbf{F} \cdot d\mathbf{r}
+= -\sqrt{2}\ \text{Area}(S)
+= -\sqrt{2}\left(9\pi\right)
+= -9\sqrt{2}\,\pi .
+</me>
+
+<p>
+If the constant-integrand shortcut goes unnoticed, the standard graph
+protocol still works: on <m>S</m>, <m>z = f(x,y) = x</m>, so
+<m>\hat{\mathbf{n}}\, d\sigma
+= \left\langle -f_x, -f_y, 1 \right\rangle dx\,dy
+= \left\langle -1, 0, 1 \right\rangle dx\,dy</m>
+and
+<m>(\nabla \times \mathbf{F}) \cdot \hat{\mathbf{n}}\, d\sigma
+= -2\, dx\,dy</m>. Substituting <m>z = x</m> into the sphere,
+the shadow of <m>S</m> in the <m>xy</m>-plane is the ellipse
+<m>2x^2 + y^2 \le 9</m>, with semiaxes <m>3/\sqrt{2}</m> and <m>3</m>
+and area <m>9\pi/\sqrt{2}</m>. Then
+<m>\oint_C \mathbf{F} \cdot d\mathbf{r}
+= -2 \left( 9\pi/\sqrt{2} \right) = -9\sqrt{2}\,\pi</m>, as before.
+</p>
+</solution>
+
+<p>
+When the boundary is made of straight segments, both sides of
+<xref ref="eq-stokes"/> are computable, and the comparison is
+instructive: the direct route costs three parametrizations, the Stokes
+route one double integral.
+</p>
+
+<example xml:id="example-stokes-triangle">
+<title>Around a Triangle, Twice</title>
+<statement>
+<p>
+Evaluate <m>\oint_C \mathbf{F} \cdot d\mathbf{r}</m> for
+<me>
+\mathbf{F} = (y - z)\,\mathbf{i} + (x + z)\,\mathbf{j}
++ \left(x^2 + y\right)\mathbf{k},
+</me>
+where <m>C</m> goes from <m>(2,0,0)</m> to <m>(0,2,0)</m> to
+<m>(0,0,4)</m> and back to <m>(2,0,0)</m> along straight line segments,
+as in <xref ref="fig-stokes-triangle-tikz"/>. Do the computation twice:
+directly, and by Stokes' theorem.
+</p>
+</statement>
+</example>
+
+<solution xml:id="solution-stokes-triangle">
+<p>
+<em>Directly.</em> The segment <m>C_1</m> from <m>(2,0,0)</m> to
+<m>(0,2,0)</m> is <m>\mathbf{r}(t) = (2-2t,\ 2t,\ 0)</m>,
+<m>0 \le t \le 1</m>, with
+<m>\mathbf{r}'(t) = (-2,\ 2,\ 0)</m>, so
+</p>
+
+<me>
+\int_{C_1} \mathbf{F} \cdot d\mathbf{r}
+= \int_0^1 \left(2t,\ 2-2t,\ (2-2t)^2 + 2t\right) \cdot (-2,\ 2,\ 0)\,
+dt
+= \int_0^1 (4 - 8t)\, dt = 0 .
+</me>
+
+<p>
+The segment <m>C_2</m> from <m>(0,2,0)</m> to <m>(0,0,4)</m> is
+<m>\mathbf{r}(t) = (0,\ 2-2t,\ 4t)</m> with
+<m>\mathbf{r}'(t) = (0,\ -2,\ 4)</m>, so
+</p>
+
+<me>
+\int_{C_2} \mathbf{F} \cdot d\mathbf{r}
+= \int_0^1 \left(2 - 6t,\ 4t,\ 2 - 2t\right) \cdot (0,\ -2,\ 4)\, dt
+= \int_0^1 (8 - 16t)\, dt = 0 ,
+</me>
+
+<p>
+and the segment <m>C_3</m> from <m>(0,0,4)</m> back to <m>(2,0,0)</m>
+is <m>\mathbf{r}(t) = (2t,\ 0,\ 4-4t)</m> with
+<m>\mathbf{r}'(t) = (2,\ 0,\ -4)</m>, so
+</p>
+
+<me>
+\int_{C_3} \mathbf{F} \cdot d\mathbf{r}
+= \int_0^1 \left(4t - 4,\ 4 - 2t,\ 4t^2\right) \cdot (2,\ 0,\ -4)\, dt
+= \int_0^1 \left(8t - 8 - 16t^2\right) dt = -\frac{28}{3} .
+</me>
+
+<p>
+The total is <m>0 + 0 - \frac{28}{3} = -\frac{28}{3}</m>.
+</p>
+
+<p>
+<em>By Stokes' theorem.</em> By <xref ref="eq-curl-3d"/>,
+<m>\nabla \times \mathbf{F} = (1-1)\,\mathbf{i}
++ (-1 - 2x)\,\mathbf{j} + (1-1)\,\mathbf{k}
+= -(1 + 2x)\,\mathbf{j}</m>. The triangle lies in the plane
+<m>\frac{x}{2} + \frac{y}{2} + \frac{z}{4} = 1</m>, that is, the graph
+of <m>z = 4 - 2x - 2y</m> over the shadow triangle
+<m>R = \left\{ (x,y) : x \ge 0,\ y \ge 0,\ x + y \le 2 \right\}</m>.
+The traversal <m>(2,0,0) \to (0,2,0) \to (0,0,4)</m> is
+counterclockwise seen from above, which pairs with the upward normal
+<m>\hat{\mathbf{n}}\, d\sigma
+= \left\langle 2,\ 2,\ 1 \right\rangle dx\,dy</m>. So
+</p>
+
+<md>
+<mrow>
+\oint_C \mathbf{F} \cdot d\mathbf{r}
+\amp = \iint_R \left\langle 0,\ -(1+2x),\ 0 \right\rangle \cdot
+\left\langle 2,\ 2,\ 1 \right\rangle dx\,dy
+= \iint_R (-2 - 4x)\, dx\,dy
+</mrow>
+<mrow>
+\amp = -2\,\text{Area}(R) - 4 \iint_R x\, dx\,dy
+= -2(2) - 4\left(\frac{4}{3}\right)
+= -\frac{28}{3} ,
+</mrow>
+</md>
+
+<p>
+using <m>\iint_R x\, dx\,dy = \int_0^2 x(2-x)\, dx = \frac{4}{3}</m>.
+The two answers agree, and the second computation is the one to
+remember.
+</p>
+</solution>
+
+<figure xml:id="fig-stokes-triangle-tikz">
+<caption>
+The oriented triangle of <xref ref="example-stokes-triangle"/>: from
+<m>(2,0,0)</m> to <m>(0,2,0)</m> to <m>(0,0,4)</m> and back, bounding a
+piece of the plane <m>\frac{x}{2} + \frac{y}{2} + \frac{z}{4} = 1</m>.
+The traversal is counterclockwise seen from above, pairing with the
+upward normal by the right-hand rule.
+</caption>
+<image xml:id="image-stokes-triangle" width="62%">
+<shortdescription>
+A triangle in space with vertices on the three positive coordinate
+axes, its edges carrying arrowheads that circle counterclockwise seen
+from above.
+</shortdescription>
+<description>
+<p>
+Coordinate axes in three dimensions. A blue triangular plate has its
+corners on the positive x axis at 2, the positive y axis at 2, and the
+positive z axis at 4. Vermillion arrows run along its edges from the x
+axis corner to the y axis corner, then up to the z axis corner, then
+back down to the x axis corner, a circuit that is counterclockwise when
+seen from above.
+</p>
+</description>
+<latex-image>
+<![CDATA[\begin{tikzpicture}[line join=round, line cap=round]
+  % Okabe-Ito colorblind-safe palette
+  \definecolor{oiblue}{RGB}{0,114,178}
+  \definecolor{oivermillion}{RGB}{213,94,0}
+  \begin{axis}[
+      view={120}{24},
+      width=10.5cm,
+      axis lines=center,
+      axis line style={-latex, black!70, line width=0.7pt},
+      xlabel={$x$}, ylabel={$y$}, zlabel={$z$},
+      label style={font=\large},
+      ticks=none,
+      xmin=0, xmax=2.6, ymin=0, ymax=2.6, zmin=0, zmax=4.4,
+      clip=false,
+    ]
+    % ---- the triangular plate ----
+    \addplot3[patch, patch type=triangle, shader=flat,
+              draw=oiblue!60, fill=oiblue!22, opacity=0.75,
+              fill opacity=0.75, forget plot]
+      coordinates {(2,0,0) (0,2,0) (0,0,4)};
+    % ---- the oriented edges ----
+    \draw[-{Latex[length=2.8mm]}, oivermillion, line width=1.5pt]
+      (axis cs:2,0,0) -- (axis cs:1,1,0);
+    \draw[oivermillion, line width=1.5pt]
+      (axis cs:1,1,0) -- (axis cs:0,2,0);
+    \draw[-{Latex[length=2.8mm]}, oivermillion, line width=1.5pt]
+      (axis cs:0,2,0) -- (axis cs:0,1,2);
+    \draw[oivermillion, line width=1.5pt]
+      (axis cs:0,1,2) -- (axis cs:0,0,4);
+    \draw[-{Latex[length=2.8mm]}, oivermillion, line width=1.5pt]
+      (axis cs:0,0,4) -- (axis cs:1,0,2);
+    \draw[oivermillion, line width=1.5pt]
+      (axis cs:1,0,2) -- (axis cs:2,0,0);
+    % ---- vertex labels ----
+    \node[font=\small, anchor=north west] at (axis cs:2,0,0)
+      {$(2,0,0)$};
+    \node[font=\small, anchor=north east] at (axis cs:0,2,0)
+      {$(0,2,0)$};
+    \node[font=\small, anchor=south east] at (axis cs:0,0,4)
+      {$(0,0,4)$};
+    % ---- labels ----
+    \node[oivermillion, font=\large] at (axis cs:1.15,1.15,0.45) {$C$};
+    \node[oiblue, font=\large] at (axis cs:0.45,0.45,1.15) {$S$};
+  \end{axis}
+\end{tikzpicture}]]>
+</latex-image>
+</image>
+</figure>
+
+<p>
+Finally, before reaching for Stokes' theorem at all, it pays to glance
+at the curl: if it vanishes, no surface is needed.
+</p>
+
+<example xml:id="example-stokes-conservative">
+<title>The Curve Nobody Can Parametrize</title>
+<statement>
+<p>
+Evaluate <m>\oint_C \mathbf{F} \cdot d\mathbf{r}</m> for
+<me>
+\mathbf{F} = \left(e^x + y + z\right)\mathbf{i}
++ (x + z)\,\mathbf{j} + (x + y)\,\mathbf{k},
+</me>
+where <m>C</m> is the intersection of the ellipsoid
+<m>x^2 + \frac{y^2}{4} + \frac{z^2}{9} = 1</m> with the paraboloid
+<m>z = 2x^2 + y^2</m>, traversed counterclockwise when seen from above.
+</p>
+</statement>
+</example>
+
+<solution xml:id="solution-stokes-conservative">
+<p>
+The curve is a warped loop around the paraboloid<mdash/>solving the two
+equations simultaneously for a parametrization would be miserable, and
+whatever surface it bounds is worse. But by <xref ref="eq-curl-3d"/>,
+</p>
+
+<me>
+\nabla \times \mathbf{F}
+= (1 - 1)\,\mathbf{i} + (1 - 1)\,\mathbf{j} + (1 - 1)\,\mathbf{k}
+= \mathbf{0} .
+</me>
+
+<p>
+By the component test <xref ref="eq-component-test-3d"/>, this
+<m>\mathbf{F}</m> is conservative<mdash/>indeed
+<m>\mathbf{F} = \nabla\!\left(e^x + xy + xz + yz\right)</m><mdash/>so
+whichever surface <m>S</m> the loop bounds,
+</p>
+
+<me>
+\oint_C \mathbf{F} \cdot d\mathbf{r}
+= \iint_S (\nabla \times \mathbf{F}) \cdot \hat{\mathbf{n}}\, d\sigma
+= \iint_S \mathbf{0} \cdot \hat{\mathbf{n}}\, d\sigma
+= 0 ,
+</me>
+
+<p>
+and the geometry of <m>C</m> never enters. Closed curve, conservative
+field, zero work<mdash/>exactly as in
+<xref ref="section-conservative-fields"/>.
+</p>
+</solution>
 </subsection>
 
 <!-- ================================================================ -->
