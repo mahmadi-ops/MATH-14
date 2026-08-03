@@ -7,7 +7,7 @@ var ptx_lunr_docs = [
   "type": "Preface",
   "number": "",
   "title": "Preface",
-  "body": " Preface  The main purpose of these notes is to create a template for my future notes. You will find that I have not spent time on the actual content, rather on the structure and formatting. I am new to PreText and I would like to point out that it offers a plathora of accessiblity features that I have not yet explored. I will update these notes as I learn more about PreText and its capabilities.  "
+  "body": " Preface  These pages aim to design and implement a series of interactive, accessible web-based modules that strengthen students' conceptual understanding of foundational mathematical ideas through explicit connections to physical phenomena. The project responds to a persistent challenge observed across STEM disciplines at SCU: students often demonstrate procedural competence in Mathematics while lacking the ability to transfer their mathematical knowledge across courses, particularly when mathematical ideas are applied in physical contexts.  Two of the main goals of this project are to:   Enhance students' conceptual understanding of mathematics through physically motivated examples and problems    Develop accessible instructional materials that support diverse learners, including those using screen readers or tactile graphics     "
 },
 {
   "id": "subsec-brain-map",
