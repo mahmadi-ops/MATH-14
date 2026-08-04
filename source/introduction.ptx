@@ -1,31 +1,144 @@
 <?xml version="1.0" encoding="utf-8"?>
 <preface xml:id="intro" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Preface</title>
-    <p>These pages aim to design and implement a series of interactive, accessible web-based
-        modules that strengthen students' conceptual understanding of foundational mathematical
-        ideas through explicit connections to physical phenomena. The project responds to a
-        persistent challenge observed across STEM disciplines at SCU: students often demonstrate
-        procedural competence in Mathematics while lacking the ability to transfer their
-        mathematical knowledge across courses, particularly when mathematical ideas are applied
-        in physical contexts.
-    </p>
 
     <p>
-        Two of the main goals of this project are to:
-        <ul>
-            <li>
-                <p>
-                    Enhance students' conceptual understanding of mathematics through physically
-                    motivated examples and problems
-                </p>
-            </li>
-            <li>
-                <p>
-                    Develop accessible instructional materials that support diverse learners,
-                    including those using screen readers or tactile graphics
-                </p>
-            </li>
-        </ul>
+        This book covers the same vector calculus as a traditional printed
+        text<mdash/>line integrals, multiple integrals, and the big theorems
+        that tie them together<mdash/>but it was written from the start as an
+        interactive, accessible web book rather than a printed page. This
+        preface points out what that makes possible, and what you will find
+        here that a conventional textbook cannot offer.
     </p>
+
+    <paragraphs>
+        <title>What this book does that other books do not</title>
+
+        <p>
+            <ul>
+                <li>
+                    <p>
+                        <em>Answer boxes that check your work instantly.</em>
+                        The assignments and review problems are not just lists
+                        of exercises: each problem carries answer boxes that
+                        grade themselves the moment you press
+                        <q>Check Me</q>, as many times as you like. Each box
+                        is checked on its own, so you learn exactly which part
+                        of a long computation went wrong<mdash/>something no
+                        printed answer key in the back of a book can tell you.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <em>Every assignment in two synchronized forms.</em>
+                        The same nine assignments appear once with self-checked
+                        answer boxes, for verifying your final answers before
+                        you submit your written solutions, and once with
+                        complete worked solutions that are posted after each
+                        due date. Review problem sets likewise come in a
+                        practice form and a fully worked form.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <em>A clickable map of the whole course.</em>
+                        The <q>big picture</q> map in this front matter draws
+                        every integral of the course on one page, with arrows
+                        showing what builds on what and gold arrows marking
+                        the theorems that bridge the integral types. Every
+                        topic on the map is a link into the part of the book
+                        where it is covered.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <em>Figures you can move.</em> Many figures are live
+                        GeoGebra worksheets: you can rotate a solid of
+                        integration with your own hands, drag sliders to
+                        refine a Riemann sum box by box, and watch a region
+                        of integration change shape<mdash/>instead of staring
+                        at one frozen perspective drawing.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <em>Animated proof ideas.</em> The proofs of
+                        Green's theorem, Stokes' theorem, and the divergence
+                        theorem are accompanied by short animations that show
+                        the key idea<mdash/>internal boundaries cancelling,
+                        partitions refining<mdash/>unfolding in time, the way
+                        an instructor would build it up at the board.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <em>Free, current, and everywhere.</em> The book costs
+                        nothing, opens on a phone, a tablet, or a laptop, and
+                        can be corrected and improved continuously<mdash/>a
+                        fixed typo or a clearer example reaches every reader
+                        the same day, with no second edition to buy.
+                    </p>
+                </li>
+            </ul>
+        </p>
+    </paragraphs>
+
+    <paragraphs>
+        <title>Accessibility</title>
+
+        <p>
+            Accessibility is a design goal of this book, not an afterthought.
+            The book is built with PreTeXt, which produces web pages designed
+            to support diverse learners, including readers who use assistive
+            technology:
+        </p>
+
+        <p>
+            <ul>
+                <li>
+                    <p>
+                        <em>Mathematics a screen reader can speak.</em> Every
+                        formula is real mathematical notation, not a picture
+                        of one. Screen readers can read expressions aloud
+                        piece by piece, and readers can magnify or explore
+                        any formula without it turning into a blur.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <em>Figures built to be described and touched.</em>
+                        Diagrams are generated from descriptions of their
+                        mathematical content, so the same figure can carry
+                        text alternatives for screen readers and can be
+                        produced as tactile graphics for readers who are
+                        blind or have low vision.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <em>Navigation without a mouse.</em> The book has a
+                        consistent structure<mdash/>chapters, sections, and a
+                        table of contents on every page<mdash/>that can be
+                        traversed entirely from the keyboard.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <em>Type and layout that adapt to the reader.</em>
+                        Text reflows to fit any screen and any zoom level,
+                        so enlarging the type never forces sideways
+                        scrolling, and the reading experience is the same on
+                        a phone as on a desktop monitor.
+                    </p>
+                </li>
+            </ul>
+        </p>
+
+        <p>
+            If any part of this book does not work well with the tools you
+            use to read it, please let the author know, so it can be fixed
+            for you and for every reader after you.
+        </p>
+    </paragraphs>
 
 </preface>
