@@ -19,7 +19,7 @@
       <path d="M 16.3 9.8 L 2.8 15.8 A 2 2 0 0 1 0.0 14.0 L 0.0 2.0 A 2 2 0 0 1 2.8 0.2 L 16.3 6.2 A 2 2 0 0 1 16.3 9.8 Z" fill="white" stroke="none"/>
     </marker>
   </defs>
-  <g id="prefigure-hw2-square-hs-axes" stroke="black" stroke-width="2">
+  <g id="hs-axes" stroke="black" stroke-width="2">
     <line id="prefigure-hw2-square-line-0" x1="12.0" y1="216.9" x2="312.0" y2="216.9" stroke="black" stroke-width="2" marker-end="url(#prefigure-hw2-square-arrow-head-end-2_None_24_60-black)"/>
     <line id="prefigure-hw2-square-line-1" x1="88.7" y1="292.0" x2="88.7" y2="12.0" stroke="black" stroke-width="2" marker-end="url(#prefigure-hw2-square-arrow-head-end-2_None_24_60-black)"/>
   </g>
@@ -56,10 +56,10 @@
     </g>
   </g>
   <path id="prefigure-hw2-square-hs-square" d="M 88.7 216.9 L 228.3 216.9 L 228.3 80.3 L 88.7 80.3 Z" stroke="#0072B2" stroke-width="3" fill="none" clip-path="url(#prefigure-hw2-square-clipPath-1)"/>
-  <path id="prefigure-hw2-square-hs-a1" stroke="#0072B2" stroke-width="3" fill="none" marker-end="url(#prefigure-hw2-square-arrow-head-end-3_None_24_60-h0072B2)" d="M 147.3 216.9 L 166.0 216.9"/>
-  <path id="prefigure-hw2-square-hs-a2" stroke="#0072B2" stroke-width="3" fill="none" marker-end="url(#prefigure-hw2-square-arrow-head-end-3_None_24_60-h0072B2)" d="M 228.3 159.5 L 228.3 141.3"/>
-  <path id="prefigure-hw2-square-hs-a3" stroke="#0072B2" stroke-width="3" fill="none" marker-end="url(#prefigure-hw2-square-arrow-head-end-3_None_24_60-h0072B2)" d="M 169.7 80.3 L 151.0 80.3"/>
-  <path id="prefigure-hw2-square-hs-a4" stroke="#0072B2" stroke-width="3" fill="none" marker-end="url(#prefigure-hw2-square-arrow-head-end-3_None_24_60-h0072B2)" d="M 88.7 137.7 L 88.7 155.8"/>
+  <path id="prefigure-hw2-square-hs-a1" stroke="#0072B2" stroke-width="3" fill="none" d="M 147.3 216.9 L 169.7 216.9" marker-end="url(#prefigure-hw2-square-arrow-head-end-3_None_24_60-h0072B2)"/>
+  <path id="prefigure-hw2-square-hs-a2" stroke="#0072B2" stroke-width="3" fill="none" d="M 228.3 159.5 L 228.3 137.7" marker-end="url(#prefigure-hw2-square-arrow-head-end-3_None_24_60-h0072B2)"/>
+  <path id="prefigure-hw2-square-hs-a3" stroke="#0072B2" stroke-width="3" fill="none" d="M 169.7 80.3 L 147.3 80.3" marker-end="url(#prefigure-hw2-square-arrow-head-end-3_None_24_60-h0072B2)"/>
+  <path id="prefigure-hw2-square-hs-a4" stroke="#0072B2" stroke-width="3" fill="none" d="M 88.7 137.7 L 88.7 159.5" marker-end="url(#prefigure-hw2-square-arrow-head-end-3_None_24_60-h0072B2)"/>
   <g id="prefigure-hw2-square-hs-p00">
     <g transform="translate(83.7,221.9) translate(-40.2,-0.0)">
       <g id="prefigure-hw2-square-g-2">

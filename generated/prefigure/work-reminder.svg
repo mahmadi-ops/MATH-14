@@ -32,14 +32,14 @@
     </marker>
   </defs>
   <g id="work-reminder-ground">
-    <line id="work-reminder-line-0" x1="27.4" y1="178.1" x2="532.7" y2="178.1" stroke="black" stroke-width="2" fill="none" marker-end="url(#work-reminder-arrow-head-end-2_None_24_60-black)"/>
+    <line id="work-reminder-line-0" x1="27.4" y1="178.1" x2="535.1" y2="178.1" stroke="black" stroke-width="2" fill="none" marker-end="url(#work-reminder-arrow-head-end-2_None_24_60-black)"/>
   </g>
   <g id="work-reminder-boxes">
     <path id="work-reminder-path-0" d="M 87.1 178.1 L 124.5 178.1 L 124.5 133.3 L 87.1 133.3 Z" stroke="black" stroke-width="2" fill="#d9d9d9"/>
     <path id="work-reminder-path-1" d="M 430.6 178.1 L 467.9 178.1 L 467.9 133.3 L 430.6 133.3 Z" stroke="#b3b3b3" stroke-width="2" fill="#f2f2f2"/>
   </g>
   <g id="work-reminder-force">
-    <path id="work-reminder-path-2" stroke="red" stroke-width="3" fill="none" marker-end="url(#work-reminder-arrow-head-end-3_6_24_60-red)" d="M 105.8 133.3 L 189.8 33.1"/>
+    <path id="work-reminder-path-2" stroke="red" stroke-width="3" fill="none" d="M 105.8 133.3 L 192.2 30.3" marker-end="url(#work-reminder-arrow-head-end-3_6_24_60-red)"/>
     <g id="work-reminder-label-0" transform="translate(201.6,27.2) translate(0.0,-6.2)">
       <g id="work-reminder-g-0">
         <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: 0.000px; color:red" width="13.104px" height="12.304px" role="img" focusable="false" viewBox="0 -680 724 680" x="0.0" y="0.0">
@@ -77,7 +77,7 @@
     </g>
   </g>
   <g id="work-reminder-component">
-    <path id="work-reminder-path-4" stroke="blue" stroke-width="3" fill="none" marker-end="url(#work-reminder-arrow-head-end-3_6_24_60-blue)" d="M 105.8 133.3 L 188.5 133.3"/>
+    <path id="work-reminder-path-4" stroke="blue" stroke-width="3" fill="none" d="M 105.8 133.3 L 192.2 133.3" marker-end="url(#work-reminder-arrow-head-end-3_6_24_60-blue)"/>
     <g id="work-reminder-label-2" transform="translate(203.1,155.7) translate(0.0,-9.0)">
       <g id="work-reminder-g-2">
         <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -4.528px; color:blue" width="92.896px" height="18.096px" role="img" focusable="false" viewBox="0 -750 5132.7 1000" x="0.0" y="0.0">
@@ -155,7 +155,7 @@
     <circle id="work-reminder-circle-1" cx="449.3" cy="155.7" r="3.5" stroke="#8c8c8c" stroke-width="2" fill="#8c8c8c"/>
     <line id="work-reminder-line-1" x1="105.8" y1="155.7" x2="105.8" y2="241.5" stroke="#8c8c8c" stroke-width="1" stroke-dasharray="4 3" fill="none"/>
     <line id="work-reminder-line-2" x1="449.3" y1="155.7" x2="449.3" y2="241.5" stroke="#8c8c8c" stroke-width="1" stroke-dasharray="4 3" fill="none"/>
-    <line id="work-reminder-line-3" x1="109.5" y1="228.8" x2="445.6" y2="228.8" stroke="#009E73" stroke-width="3" stroke-dasharray="7 4" fill="none" marker-end="url(#work-reminder-arrow-head-end-3_None_24_60-h009E73)" marker-start="url(#work-reminder-arrow-head-end-3_None_24_60-h009E73)"/>
+    <line id="work-reminder-line-3" x1="105.8" y1="228.8" x2="449.3" y2="228.8" stroke="#009E73" stroke-width="3" stroke-dasharray="7 4" fill="none" marker-end="url(#work-reminder-arrow-head-end-3_None_24_60-h009E73)" marker-start="url(#work-reminder-arrow-head-end-3_None_24_60-h009E73)"/>
     <g id="work-reminder-label-3" transform="translate(277.5,267.7) translate(-9.2,-6.6)">
       <g id="work-reminder-g-3">
         <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -0.200px; color:#009E73" width="18.392px" height="13.176px" role="img" focusable="false" viewBox="0 -717 1016 728" x="0.0" y="0.0">

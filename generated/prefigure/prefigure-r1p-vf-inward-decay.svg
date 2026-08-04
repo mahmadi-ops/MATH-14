@@ -19,7 +19,7 @@
       <path d="M 11.8 7.8 L 2.8 11.8 A 2 2 0 0 1 0.0 10.0 L 0.0 2.0 A 2 2 0 0 1 2.8 0.2 L 11.8 4.2 A 2 2 0 0 1 11.8 7.8 Z" fill="white" stroke="none"/>
     </marker>
   </defs>
-  <g id="prefigure-r1p-vf-inward-decay-axes" stroke="#555555" stroke-width="1">
+  <g id="axes" stroke="#555555" stroke-width="1">
     <line id="prefigure-r1p-vf-inward-decay-line-0" x1="4.0" y1="109.0" x2="214.0" y2="109.0" stroke="#555555" stroke-width="1" marker-end="url(#prefigure-r1p-vf-inward-decay-arrow-head-end-1_None_24_60-h555555)"/>
     <line id="prefigure-r1p-vf-inward-decay-line-1" x1="109.0" y1="214.0" x2="109.0" y2="4.0" stroke="#555555" stroke-width="1" marker-end="url(#prefigure-r1p-vf-inward-decay-arrow-head-end-1_None_24_60-h555555)"/>
   </g>
@@ -55,76 +55,76 @@
       </svg>
     </g>
   </g>
-  <path id="prefigure-r1p-vf-inward-decay-vf1" stroke="#3c6fbf" stroke-width="2" fill="none" marker-end="url(#prefigure-r1p-vf-inward-decay-arrow-head-end-2_None_24_60-h3c6fbf)" d="M 40.5 177.5 L 45.2 172.8"/>
+  <path id="prefigure-r1p-vf-inward-decay-vf1" stroke="#3c6fbf" stroke-width="2" fill="none" d="M 40.5 177.5 L 46.9 171.1" marker-end="url(#prefigure-r1p-vf-inward-decay-arrow-head-end-2_None_24_60-h3c6fbf)"/>
   <circle id="prefigure-r1p-vf-inward-decay-pt1" cx="40.5" cy="177.5" r="3" stroke="#8b1a2b" stroke-width="2" fill="none"/>
-  <path id="prefigure-r1p-vf-inward-decay-vf2" stroke="#3c6fbf" stroke-width="2" fill="none" marker-end="url(#prefigure-r1p-vf-inward-decay-arrow-head-end-2_None_24_60-h3c6fbf)" d="M 40.5 154.7 L 47.3 150.1"/>
+  <path id="prefigure-r1p-vf-inward-decay-vf2" stroke="#3c6fbf" stroke-width="2" fill="none" d="M 40.5 154.7 L 49.4 148.8" marker-end="url(#prefigure-r1p-vf-inward-decay-arrow-head-end-2_None_24_60-h3c6fbf)"/>
   <circle id="prefigure-r1p-vf-inward-decay-pt2" cx="40.5" cy="154.7" r="3" stroke="#8b1a2b" stroke-width="2" fill="none"/>
-  <path id="prefigure-r1p-vf-inward-decay-vf3" stroke="#3c6fbf" stroke-width="2" fill="none" marker-end="url(#prefigure-r1p-vf-inward-decay-arrow-head-end-2_None_24_60-h3c6fbf)" d="M 40.5 131.8 L 49.7 128.8"/>
+  <path id="prefigure-r1p-vf-inward-decay-vf3" stroke="#3c6fbf" stroke-width="2" fill="none" d="M 40.5 131.8 L 52.0 128.0" marker-end="url(#prefigure-r1p-vf-inward-decay-arrow-head-end-2_None_24_60-h3c6fbf)"/>
   <circle id="prefigure-r1p-vf-inward-decay-pt3" cx="40.5" cy="131.8" r="3" stroke="#8b1a2b" stroke-width="2" fill="none"/>
-  <path id="prefigure-r1p-vf-inward-decay-vf4" stroke="#3c6fbf" stroke-width="2" fill="none" marker-end="url(#prefigure-r1p-vf-inward-decay-arrow-head-end-2_None_24_60-h3c6fbf)" d="M 40.5 86.2 L 49.7 89.2"/>
+  <path id="prefigure-r1p-vf-inward-decay-vf4" stroke="#3c6fbf" stroke-width="2" fill="none" d="M 40.5 86.2 L 52.0 90.0" marker-end="url(#prefigure-r1p-vf-inward-decay-arrow-head-end-2_None_24_60-h3c6fbf)"/>
   <circle id="prefigure-r1p-vf-inward-decay-pt4" cx="40.5" cy="86.2" r="3" stroke="#8b1a2b" stroke-width="2" fill="none"/>
-  <path id="prefigure-r1p-vf-inward-decay-vf5" stroke="#3c6fbf" stroke-width="2" fill="none" marker-end="url(#prefigure-r1p-vf-inward-decay-arrow-head-end-2_None_24_60-h3c6fbf)" d="M 40.5 63.3 L 47.3 67.9"/>
+  <path id="prefigure-r1p-vf-inward-decay-vf5" stroke="#3c6fbf" stroke-width="2" fill="none" d="M 40.5 63.3 L 49.4 69.2" marker-end="url(#prefigure-r1p-vf-inward-decay-arrow-head-end-2_None_24_60-h3c6fbf)"/>
   <circle id="prefigure-r1p-vf-inward-decay-pt5" cx="40.5" cy="63.3" r="3" stroke="#8b1a2b" stroke-width="2" fill="none"/>
-  <path id="prefigure-r1p-vf-inward-decay-vf6" stroke="#3c6fbf" stroke-width="2" fill="none" marker-end="url(#prefigure-r1p-vf-inward-decay-arrow-head-end-2_None_24_60-h3c6fbf)" d="M 40.5 40.5 L 45.2 45.2"/>
+  <path id="prefigure-r1p-vf-inward-decay-vf6" stroke="#3c6fbf" stroke-width="2" fill="none" d="M 40.5 40.5 L 46.9 46.9" marker-end="url(#prefigure-r1p-vf-inward-decay-arrow-head-end-2_None_24_60-h3c6fbf)"/>
   <circle id="prefigure-r1p-vf-inward-decay-pt6" cx="40.5" cy="40.5" r="3" stroke="#8b1a2b" stroke-width="2" fill="none"/>
-  <path id="prefigure-r1p-vf-inward-decay-vf7" stroke="#3c6fbf" stroke-width="2" fill="none" marker-end="url(#prefigure-r1p-vf-inward-decay-arrow-head-end-2_None_24_60-h3c6fbf)" d="M 63.3 177.5 L 67.9 170.7"/>
+  <path id="prefigure-r1p-vf-inward-decay-vf7" stroke="#3c6fbf" stroke-width="2" fill="none" d="M 63.3 177.5 L 69.2 168.6" marker-end="url(#prefigure-r1p-vf-inward-decay-arrow-head-end-2_None_24_60-h3c6fbf)"/>
   <circle id="prefigure-r1p-vf-inward-decay-pt7" cx="63.3" cy="177.5" r="3" stroke="#8b1a2b" stroke-width="2" fill="none"/>
-  <path id="prefigure-r1p-vf-inward-decay-vf8" stroke="#3c6fbf" stroke-width="2" fill="none" marker-end="url(#prefigure-r1p-vf-inward-decay-arrow-head-end-2_None_24_60-h3c6fbf)" d="M 63.3 154.7 L 71.2 146.8"/>
+  <path id="prefigure-r1p-vf-inward-decay-vf8" stroke="#3c6fbf" stroke-width="2" fill="none" d="M 63.3 154.7 L 72.9 145.1" marker-end="url(#prefigure-r1p-vf-inward-decay-arrow-head-end-2_None_24_60-h3c6fbf)"/>
   <circle id="prefigure-r1p-vf-inward-decay-pt8" cx="63.3" cy="154.7" r="3" stroke="#8b1a2b" stroke-width="2" fill="none"/>
-  <path id="prefigure-r1p-vf-inward-decay-vf9" stroke="#3c6fbf" stroke-width="2" fill="none" marker-end="url(#prefigure-r1p-vf-inward-decay-arrow-head-end-2_None_24_60-h3c6fbf)" d="M 63.3 131.8 L 76.5 125.3"/>
+  <path id="prefigure-r1p-vf-inward-decay-vf9" stroke="#3c6fbf" stroke-width="2" fill="none" d="M 63.3 131.8 L 78.7 124.2" marker-end="url(#prefigure-r1p-vf-inward-decay-arrow-head-end-2_None_24_60-h3c6fbf)"/>
   <circle id="prefigure-r1p-vf-inward-decay-pt9" cx="63.3" cy="131.8" r="3" stroke="#8b1a2b" stroke-width="2" fill="none"/>
-  <path id="prefigure-r1p-vf-inward-decay-vf10" stroke="#3c6fbf" stroke-width="2" fill="none" marker-end="url(#prefigure-r1p-vf-inward-decay-arrow-head-end-2_None_24_60-h3c6fbf)" d="M 63.3 86.2 L 76.5 92.7"/>
+  <path id="prefigure-r1p-vf-inward-decay-vf10" stroke="#3c6fbf" stroke-width="2" fill="none" d="M 63.3 86.2 L 78.7 93.8" marker-end="url(#prefigure-r1p-vf-inward-decay-arrow-head-end-2_None_24_60-h3c6fbf)"/>
   <circle id="prefigure-r1p-vf-inward-decay-pt10" cx="63.3" cy="86.2" r="3" stroke="#8b1a2b" stroke-width="2" fill="none"/>
-  <path id="prefigure-r1p-vf-inward-decay-vf11" stroke="#3c6fbf" stroke-width="2" fill="none" marker-end="url(#prefigure-r1p-vf-inward-decay-arrow-head-end-2_None_24_60-h3c6fbf)" d="M 63.3 63.3 L 71.2 71.2"/>
+  <path id="prefigure-r1p-vf-inward-decay-vf11" stroke="#3c6fbf" stroke-width="2" fill="none" d="M 63.3 63.3 L 72.9 72.9" marker-end="url(#prefigure-r1p-vf-inward-decay-arrow-head-end-2_None_24_60-h3c6fbf)"/>
   <circle id="prefigure-r1p-vf-inward-decay-pt11" cx="63.3" cy="63.3" r="3" stroke="#8b1a2b" stroke-width="2" fill="none"/>
-  <path id="prefigure-r1p-vf-inward-decay-vf12" stroke="#3c6fbf" stroke-width="2" fill="none" marker-end="url(#prefigure-r1p-vf-inward-decay-arrow-head-end-2_None_24_60-h3c6fbf)" d="M 63.3 40.5 L 67.9 47.3"/>
+  <path id="prefigure-r1p-vf-inward-decay-vf12" stroke="#3c6fbf" stroke-width="2" fill="none" d="M 63.3 40.5 L 69.2 49.4" marker-end="url(#prefigure-r1p-vf-inward-decay-arrow-head-end-2_None_24_60-h3c6fbf)"/>
   <circle id="prefigure-r1p-vf-inward-decay-pt12" cx="63.3" cy="40.5" r="3" stroke="#8b1a2b" stroke-width="2" fill="none"/>
-  <path id="prefigure-r1p-vf-inward-decay-vf13" stroke="#3c6fbf" stroke-width="2" fill="none" marker-end="url(#prefigure-r1p-vf-inward-decay-arrow-head-end-2_None_24_60-h3c6fbf)" d="M 86.2 177.5 L 89.2 168.3"/>
+  <path id="prefigure-r1p-vf-inward-decay-vf13" stroke="#3c6fbf" stroke-width="2" fill="none" d="M 86.2 177.5 L 90.0 166.0" marker-end="url(#prefigure-r1p-vf-inward-decay-arrow-head-end-2_None_24_60-h3c6fbf)"/>
   <circle id="prefigure-r1p-vf-inward-decay-pt13" cx="86.2" cy="177.5" r="3" stroke="#8b1a2b" stroke-width="2" fill="none"/>
-  <path id="prefigure-r1p-vf-inward-decay-vf14" stroke="#3c6fbf" stroke-width="2" fill="none" marker-end="url(#prefigure-r1p-vf-inward-decay-arrow-head-end-2_None_24_60-h3c6fbf)" d="M 86.2 154.7 L 92.7 141.5"/>
+  <path id="prefigure-r1p-vf-inward-decay-vf14" stroke="#3c6fbf" stroke-width="2" fill="none" d="M 86.2 154.7 L 93.8 139.3" marker-end="url(#prefigure-r1p-vf-inward-decay-arrow-head-end-2_None_24_60-h3c6fbf)"/>
   <circle id="prefigure-r1p-vf-inward-decay-pt14" cx="86.2" cy="154.7" r="3" stroke="#8b1a2b" stroke-width="2" fill="none"/>
-  <path id="prefigure-r1p-vf-inward-decay-vf15" stroke="#3c6fbf" stroke-width="2" fill="none" marker-end="url(#prefigure-r1p-vf-inward-decay-arrow-head-end-2_None_24_60-h3c6fbf)" d="M 86.2 131.8 L 103.6 114.4"/>
+  <path id="prefigure-r1p-vf-inward-decay-vf15" stroke="#3c6fbf" stroke-width="2" fill="none" d="M 86.2 131.8 L 105.3 112.7" marker-end="url(#prefigure-r1p-vf-inward-decay-arrow-head-end-2_None_24_60-h3c6fbf)"/>
   <circle id="prefigure-r1p-vf-inward-decay-pt15" cx="86.2" cy="131.8" r="3" stroke="#8b1a2b" stroke-width="2" fill="none"/>
-  <path id="prefigure-r1p-vf-inward-decay-vf16" stroke="#3c6fbf" stroke-width="2" fill="none" marker-end="url(#prefigure-r1p-vf-inward-decay-arrow-head-end-2_None_24_60-h3c6fbf)" d="M 86.2 86.2 L 103.6 103.6"/>
+  <path id="prefigure-r1p-vf-inward-decay-vf16" stroke="#3c6fbf" stroke-width="2" fill="none" d="M 86.2 86.2 L 105.3 105.3" marker-end="url(#prefigure-r1p-vf-inward-decay-arrow-head-end-2_None_24_60-h3c6fbf)"/>
   <circle id="prefigure-r1p-vf-inward-decay-pt16" cx="86.2" cy="86.2" r="3" stroke="#8b1a2b" stroke-width="2" fill="none"/>
-  <path id="prefigure-r1p-vf-inward-decay-vf17" stroke="#3c6fbf" stroke-width="2" fill="none" marker-end="url(#prefigure-r1p-vf-inward-decay-arrow-head-end-2_None_24_60-h3c6fbf)" d="M 86.2 63.3 L 92.7 76.5"/>
+  <path id="prefigure-r1p-vf-inward-decay-vf17" stroke="#3c6fbf" stroke-width="2" fill="none" d="M 86.2 63.3 L 93.8 78.7" marker-end="url(#prefigure-r1p-vf-inward-decay-arrow-head-end-2_None_24_60-h3c6fbf)"/>
   <circle id="prefigure-r1p-vf-inward-decay-pt17" cx="86.2" cy="63.3" r="3" stroke="#8b1a2b" stroke-width="2" fill="none"/>
-  <path id="prefigure-r1p-vf-inward-decay-vf18" stroke="#3c6fbf" stroke-width="2" fill="none" marker-end="url(#prefigure-r1p-vf-inward-decay-arrow-head-end-2_None_24_60-h3c6fbf)" d="M 86.2 40.5 L 89.2 49.7"/>
+  <path id="prefigure-r1p-vf-inward-decay-vf18" stroke="#3c6fbf" stroke-width="2" fill="none" d="M 86.2 40.5 L 90.0 52.0" marker-end="url(#prefigure-r1p-vf-inward-decay-arrow-head-end-2_None_24_60-h3c6fbf)"/>
   <circle id="prefigure-r1p-vf-inward-decay-pt18" cx="86.2" cy="40.5" r="3" stroke="#8b1a2b" stroke-width="2" fill="none"/>
-  <path id="prefigure-r1p-vf-inward-decay-vf19" stroke="#3c6fbf" stroke-width="2" fill="none" marker-end="url(#prefigure-r1p-vf-inward-decay-arrow-head-end-2_None_24_60-h3c6fbf)" d="M 131.8 177.5 L 128.8 168.3"/>
+  <path id="prefigure-r1p-vf-inward-decay-vf19" stroke="#3c6fbf" stroke-width="2" fill="none" d="M 131.8 177.5 L 128.0 166.0" marker-end="url(#prefigure-r1p-vf-inward-decay-arrow-head-end-2_None_24_60-h3c6fbf)"/>
   <circle id="prefigure-r1p-vf-inward-decay-pt19" cx="131.8" cy="177.5" r="3" stroke="#8b1a2b" stroke-width="2" fill="none"/>
-  <path id="prefigure-r1p-vf-inward-decay-vf20" stroke="#3c6fbf" stroke-width="2" fill="none" marker-end="url(#prefigure-r1p-vf-inward-decay-arrow-head-end-2_None_24_60-h3c6fbf)" d="M 131.8 154.7 L 125.3 141.5"/>
+  <path id="prefigure-r1p-vf-inward-decay-vf20" stroke="#3c6fbf" stroke-width="2" fill="none" d="M 131.8 154.7 L 124.2 139.3" marker-end="url(#prefigure-r1p-vf-inward-decay-arrow-head-end-2_None_24_60-h3c6fbf)"/>
   <circle id="prefigure-r1p-vf-inward-decay-pt20" cx="131.8" cy="154.7" r="3" stroke="#8b1a2b" stroke-width="2" fill="none"/>
-  <path id="prefigure-r1p-vf-inward-decay-vf21" stroke="#3c6fbf" stroke-width="2" fill="none" marker-end="url(#prefigure-r1p-vf-inward-decay-arrow-head-end-2_None_24_60-h3c6fbf)" d="M 131.8 131.8 L 114.4 114.4"/>
+  <path id="prefigure-r1p-vf-inward-decay-vf21" stroke="#3c6fbf" stroke-width="2" fill="none" d="M 131.8 131.8 L 112.7 112.7" marker-end="url(#prefigure-r1p-vf-inward-decay-arrow-head-end-2_None_24_60-h3c6fbf)"/>
   <circle id="prefigure-r1p-vf-inward-decay-pt21" cx="131.8" cy="131.8" r="3" stroke="#8b1a2b" stroke-width="2" fill="none"/>
-  <path id="prefigure-r1p-vf-inward-decay-vf22" stroke="#3c6fbf" stroke-width="2" fill="none" marker-end="url(#prefigure-r1p-vf-inward-decay-arrow-head-end-2_None_24_60-h3c6fbf)" d="M 131.8 86.2 L 114.4 103.6"/>
+  <path id="prefigure-r1p-vf-inward-decay-vf22" stroke="#3c6fbf" stroke-width="2" fill="none" d="M 131.8 86.2 L 112.7 105.3" marker-end="url(#prefigure-r1p-vf-inward-decay-arrow-head-end-2_None_24_60-h3c6fbf)"/>
   <circle id="prefigure-r1p-vf-inward-decay-pt22" cx="131.8" cy="86.2" r="3" stroke="#8b1a2b" stroke-width="2" fill="none"/>
-  <path id="prefigure-r1p-vf-inward-decay-vf23" stroke="#3c6fbf" stroke-width="2" fill="none" marker-end="url(#prefigure-r1p-vf-inward-decay-arrow-head-end-2_None_24_60-h3c6fbf)" d="M 131.8 63.3 L 125.3 76.5"/>
+  <path id="prefigure-r1p-vf-inward-decay-vf23" stroke="#3c6fbf" stroke-width="2" fill="none" d="M 131.8 63.3 L 124.2 78.7" marker-end="url(#prefigure-r1p-vf-inward-decay-arrow-head-end-2_None_24_60-h3c6fbf)"/>
   <circle id="prefigure-r1p-vf-inward-decay-pt23" cx="131.8" cy="63.3" r="3" stroke="#8b1a2b" stroke-width="2" fill="none"/>
-  <path id="prefigure-r1p-vf-inward-decay-vf24" stroke="#3c6fbf" stroke-width="2" fill="none" marker-end="url(#prefigure-r1p-vf-inward-decay-arrow-head-end-2_None_24_60-h3c6fbf)" d="M 131.8 40.5 L 128.8 49.7"/>
+  <path id="prefigure-r1p-vf-inward-decay-vf24" stroke="#3c6fbf" stroke-width="2" fill="none" d="M 131.8 40.5 L 128.0 52.0" marker-end="url(#prefigure-r1p-vf-inward-decay-arrow-head-end-2_None_24_60-h3c6fbf)"/>
   <circle id="prefigure-r1p-vf-inward-decay-pt24" cx="131.8" cy="40.5" r="3" stroke="#8b1a2b" stroke-width="2" fill="none"/>
-  <path id="prefigure-r1p-vf-inward-decay-vf25" stroke="#3c6fbf" stroke-width="2" fill="none" marker-end="url(#prefigure-r1p-vf-inward-decay-arrow-head-end-2_None_24_60-h3c6fbf)" d="M 154.7 177.5 L 150.1 170.7"/>
+  <path id="prefigure-r1p-vf-inward-decay-vf25" stroke="#3c6fbf" stroke-width="2" fill="none" d="M 154.7 177.5 L 148.8 168.6" marker-end="url(#prefigure-r1p-vf-inward-decay-arrow-head-end-2_None_24_60-h3c6fbf)"/>
   <circle id="prefigure-r1p-vf-inward-decay-pt25" cx="154.7" cy="177.5" r="3" stroke="#8b1a2b" stroke-width="2" fill="none"/>
-  <path id="prefigure-r1p-vf-inward-decay-vf26" stroke="#3c6fbf" stroke-width="2" fill="none" marker-end="url(#prefigure-r1p-vf-inward-decay-arrow-head-end-2_None_24_60-h3c6fbf)" d="M 154.7 154.7 L 146.8 146.8"/>
+  <path id="prefigure-r1p-vf-inward-decay-vf26" stroke="#3c6fbf" stroke-width="2" fill="none" d="M 154.7 154.7 L 145.1 145.1" marker-end="url(#prefigure-r1p-vf-inward-decay-arrow-head-end-2_None_24_60-h3c6fbf)"/>
   <circle id="prefigure-r1p-vf-inward-decay-pt26" cx="154.7" cy="154.7" r="3" stroke="#8b1a2b" stroke-width="2" fill="none"/>
-  <path id="prefigure-r1p-vf-inward-decay-vf27" stroke="#3c6fbf" stroke-width="2" fill="none" marker-end="url(#prefigure-r1p-vf-inward-decay-arrow-head-end-2_None_24_60-h3c6fbf)" d="M 154.7 131.8 L 141.5 125.3"/>
+  <path id="prefigure-r1p-vf-inward-decay-vf27" stroke="#3c6fbf" stroke-width="2" fill="none" d="M 154.7 131.8 L 139.3 124.2" marker-end="url(#prefigure-r1p-vf-inward-decay-arrow-head-end-2_None_24_60-h3c6fbf)"/>
   <circle id="prefigure-r1p-vf-inward-decay-pt27" cx="154.7" cy="131.8" r="3" stroke="#8b1a2b" stroke-width="2" fill="none"/>
-  <path id="prefigure-r1p-vf-inward-decay-vf28" stroke="#3c6fbf" stroke-width="2" fill="none" marker-end="url(#prefigure-r1p-vf-inward-decay-arrow-head-end-2_None_24_60-h3c6fbf)" d="M 154.7 86.2 L 141.5 92.7"/>
+  <path id="prefigure-r1p-vf-inward-decay-vf28" stroke="#3c6fbf" stroke-width="2" fill="none" d="M 154.7 86.2 L 139.3 93.8" marker-end="url(#prefigure-r1p-vf-inward-decay-arrow-head-end-2_None_24_60-h3c6fbf)"/>
   <circle id="prefigure-r1p-vf-inward-decay-pt28" cx="154.7" cy="86.2" r="3" stroke="#8b1a2b" stroke-width="2" fill="none"/>
-  <path id="prefigure-r1p-vf-inward-decay-vf29" stroke="#3c6fbf" stroke-width="2" fill="none" marker-end="url(#prefigure-r1p-vf-inward-decay-arrow-head-end-2_None_24_60-h3c6fbf)" d="M 154.7 63.3 L 146.8 71.2"/>
+  <path id="prefigure-r1p-vf-inward-decay-vf29" stroke="#3c6fbf" stroke-width="2" fill="none" d="M 154.7 63.3 L 145.1 72.9" marker-end="url(#prefigure-r1p-vf-inward-decay-arrow-head-end-2_None_24_60-h3c6fbf)"/>
   <circle id="prefigure-r1p-vf-inward-decay-pt29" cx="154.7" cy="63.3" r="3" stroke="#8b1a2b" stroke-width="2" fill="none"/>
-  <path id="prefigure-r1p-vf-inward-decay-vf30" stroke="#3c6fbf" stroke-width="2" fill="none" marker-end="url(#prefigure-r1p-vf-inward-decay-arrow-head-end-2_None_24_60-h3c6fbf)" d="M 154.7 40.5 L 150.1 47.3"/>
+  <path id="prefigure-r1p-vf-inward-decay-vf30" stroke="#3c6fbf" stroke-width="2" fill="none" d="M 154.7 40.5 L 148.8 49.4" marker-end="url(#prefigure-r1p-vf-inward-decay-arrow-head-end-2_None_24_60-h3c6fbf)"/>
   <circle id="prefigure-r1p-vf-inward-decay-pt30" cx="154.7" cy="40.5" r="3" stroke="#8b1a2b" stroke-width="2" fill="none"/>
-  <path id="prefigure-r1p-vf-inward-decay-vf31" stroke="#3c6fbf" stroke-width="2" fill="none" marker-end="url(#prefigure-r1p-vf-inward-decay-arrow-head-end-2_None_24_60-h3c6fbf)" d="M 177.5 177.5 L 172.8 172.8"/>
+  <path id="prefigure-r1p-vf-inward-decay-vf31" stroke="#3c6fbf" stroke-width="2" fill="none" d="M 177.5 177.5 L 171.1 171.1" marker-end="url(#prefigure-r1p-vf-inward-decay-arrow-head-end-2_None_24_60-h3c6fbf)"/>
   <circle id="prefigure-r1p-vf-inward-decay-pt31" cx="177.5" cy="177.5" r="3" stroke="#8b1a2b" stroke-width="2" fill="none"/>
-  <path id="prefigure-r1p-vf-inward-decay-vf32" stroke="#3c6fbf" stroke-width="2" fill="none" marker-end="url(#prefigure-r1p-vf-inward-decay-arrow-head-end-2_None_24_60-h3c6fbf)" d="M 177.5 154.7 L 170.7 150.1"/>
+  <path id="prefigure-r1p-vf-inward-decay-vf32" stroke="#3c6fbf" stroke-width="2" fill="none" d="M 177.5 154.7 L 168.6 148.8" marker-end="url(#prefigure-r1p-vf-inward-decay-arrow-head-end-2_None_24_60-h3c6fbf)"/>
   <circle id="prefigure-r1p-vf-inward-decay-pt32" cx="177.5" cy="154.7" r="3" stroke="#8b1a2b" stroke-width="2" fill="none"/>
-  <path id="prefigure-r1p-vf-inward-decay-vf33" stroke="#3c6fbf" stroke-width="2" fill="none" marker-end="url(#prefigure-r1p-vf-inward-decay-arrow-head-end-2_None_24_60-h3c6fbf)" d="M 177.5 131.8 L 168.3 128.8"/>
+  <path id="prefigure-r1p-vf-inward-decay-vf33" stroke="#3c6fbf" stroke-width="2" fill="none" d="M 177.5 131.8 L 166.0 128.0" marker-end="url(#prefigure-r1p-vf-inward-decay-arrow-head-end-2_None_24_60-h3c6fbf)"/>
   <circle id="prefigure-r1p-vf-inward-decay-pt33" cx="177.5" cy="131.8" r="3" stroke="#8b1a2b" stroke-width="2" fill="none"/>
-  <path id="prefigure-r1p-vf-inward-decay-vf34" stroke="#3c6fbf" stroke-width="2" fill="none" marker-end="url(#prefigure-r1p-vf-inward-decay-arrow-head-end-2_None_24_60-h3c6fbf)" d="M 177.5 86.2 L 168.3 89.2"/>
+  <path id="prefigure-r1p-vf-inward-decay-vf34" stroke="#3c6fbf" stroke-width="2" fill="none" d="M 177.5 86.2 L 166.0 90.0" marker-end="url(#prefigure-r1p-vf-inward-decay-arrow-head-end-2_None_24_60-h3c6fbf)"/>
   <circle id="prefigure-r1p-vf-inward-decay-pt34" cx="177.5" cy="86.2" r="3" stroke="#8b1a2b" stroke-width="2" fill="none"/>
-  <path id="prefigure-r1p-vf-inward-decay-vf35" stroke="#3c6fbf" stroke-width="2" fill="none" marker-end="url(#prefigure-r1p-vf-inward-decay-arrow-head-end-2_None_24_60-h3c6fbf)" d="M 177.5 63.3 L 170.7 67.9"/>
+  <path id="prefigure-r1p-vf-inward-decay-vf35" stroke="#3c6fbf" stroke-width="2" fill="none" d="M 177.5 63.3 L 168.6 69.2" marker-end="url(#prefigure-r1p-vf-inward-decay-arrow-head-end-2_None_24_60-h3c6fbf)"/>
   <circle id="prefigure-r1p-vf-inward-decay-pt35" cx="177.5" cy="63.3" r="3" stroke="#8b1a2b" stroke-width="2" fill="none"/>
-  <path id="prefigure-r1p-vf-inward-decay-vf36" stroke="#3c6fbf" stroke-width="2" fill="none" marker-end="url(#prefigure-r1p-vf-inward-decay-arrow-head-end-2_None_24_60-h3c6fbf)" d="M 177.5 40.5 L 172.8 45.2"/>
+  <path id="prefigure-r1p-vf-inward-decay-vf36" stroke="#3c6fbf" stroke-width="2" fill="none" d="M 177.5 40.5 L 171.1 46.9" marker-end="url(#prefigure-r1p-vf-inward-decay-arrow-head-end-2_None_24_60-h3c6fbf)"/>
   <circle id="prefigure-r1p-vf-inward-decay-pt36" cx="177.5" cy="40.5" r="3" stroke="#8b1a2b" stroke-width="2" fill="none"/>
 </svg>
