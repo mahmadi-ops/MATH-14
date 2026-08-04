@@ -76,17 +76,40 @@
   <!-- made by GeoGebra's button is only honoured when the embedding       -->
   <!-- iframe carries the allowfullscreen permission.  This is the core    -->
   <!-- template with that one attribute added.                             -->
+  <!-- This is the core template with two attributes added.  Every attribute -->
+  <!-- must be written before any content: an <xsl:apply-templates> in a     -->
+  <!-- mode that has no matching template falls back to the built-in rule,   -->
+  <!-- which copies the element's text into the iframe, and a later          -->
+  <!-- <xsl:attribute> then fails with "Cannot add attributes to an element  -->
+  <!-- if children have been already added".                                 -->
   <xsl:template match="interactive[@platform]" mode="iframe-interactive">
     <iframe>
       <xsl:attribute name="allowfullscreen"/>
       <xsl:attribute name="allow">
         <xsl:text>fullscreen</xsl:text>
       </xsl:attribute>
-      <xsl:apply-templates select="." mode="iframe-common-attributes"/>
+      <xsl:apply-templates select="." mode="html-id-attribute"/>
+      <xsl:apply-templates select="." mode="interactive-sizing-style-attribute"/>
       <xsl:attribute name="src">
         <xsl:apply-templates select="." mode="iframe-filename"/>
       </xsl:attribute>
-      <xsl:apply-templates select="." mode="iframe-accessibility-attributes"/>
+      <!-- title attribute for accessibility -->
+      <xsl:choose>
+        <xsl:when test="not(string(shortdescription) = '')">
+          <xsl:attribute name="title">
+            <xsl:apply-templates select="shortdescription"/>
+          </xsl:attribute>
+        </xsl:when>
+        <xsl:when test="description">
+          <xsl:attribute name="title">
+            <xsl:text>described in detail following the image</xsl:text>
+          </xsl:attribute>
+          <xsl:attribute name="aria-describedby">
+            <xsl:apply-templates select="." mode="describedby-id"/>
+          </xsl:attribute>
+        </xsl:when>
+      </xsl:choose>
+      <xsl:apply-templates select="." mode="iframe-dark-mode-attribute"/>
     </iframe>
     <!-- possibly give a long description -->
     <xsl:apply-templates select="." mode="description"/>
