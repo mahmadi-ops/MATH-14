@@ -87,20 +87,55 @@
         <condition string="x\s*\^\s*2\s*-\s*y\s*\^\s*2">
           <feedback><p>Correct: r squared times cosine of two theta is x squared minus y squared.</p></feedback>
         </condition>
-      </var>
+         <condition string=".*">
+     <feedback>
+       <p>
+         Not quite. Type only the expression itself, with <c>*</c> for
+              products and <c>^</c> for powers, for example
+              <c>4cos(t)^2</c>.
+       </p>
+     </feedback>
+   </condition>
+ </var>
       <var case="insensitive">
         <condition string="-\s*x">
           <feedback><p>Correct.</p></feedback>
+        </condition>
+              <condition string=".*">
+          <feedback>
+            <p>
+              Not quite. Type only the expression itself, with <c>*</c> for
+              products and <c>^</c> for powers, for example
+              <c>4cos(t)^2</c>.
+            </p>
+          </feedback>
         </condition>
       </var>
       <var case="insensitive">
         <condition string="x">
           <feedback><p>Correct.</p></feedback>
         </condition>
+              <condition string=".*">
+          <feedback>
+            <p>
+              Not quite. Type only the expression itself, with <c>*</c> for
+              products and <c>^</c> for powers, for example
+              <c>4cos(t)^2</c>.
+            </p>
+          </feedback>
+        </condition>
       </var>
       <var>
         <condition number="1" tolerance="0.01">
           <feedback><p>Correct: r = sec(theta) is the line x = 1.</p></feedback>
+        </condition>
+              <condition string=".*">
+          <feedback>
+            <p>
+              Not quite. Type a decimal number and nothing else, to at least
+              three decimal places.
+            </p>
+          </feedback>
         </condition>
       </var>
     </setup>
@@ -190,10 +225,26 @@
         <condition number="2" tolerance="0.01">
           <feedback><p>Correct.</p></feedback>
         </condition>
+              <condition string=".*">
+          <feedback>
+            <p>
+              Not quite. Type a decimal number and nothing else, to at least
+              three decimal places.
+            </p>
+          </feedback>
+        </condition>
       </var>
       <var>
         <condition number="20.566" tolerance="0.05">
           <feedback><p>Correct.</p></feedback>
+        </condition>
+              <condition string=".*">
+          <feedback>
+            <p>
+              Not quite. Type a decimal number and nothing else, to at least
+              three decimal places.
+            </p>
+          </feedback>
         </condition>
       </var>
     </setup>

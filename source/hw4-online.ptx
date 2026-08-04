@@ -314,15 +314,40 @@
         <condition number="2.5" tolerance="0.01">
           <feedback><p>Correct: that is where y = x/2 meets x = 5.</p></feedback>
         </condition>
+              <condition string=".*">
+          <feedback>
+            <p>
+              Not quite. Type a decimal number and nothing else, to at least
+              three decimal places.
+            </p>
+          </feedback>
+        </condition>
       </var>
       <var case="insensitive">
         <condition string="2\s*\*?\s*y">
           <feedback><p>Correct.</p></feedback>
         </condition>
+              <condition string=".*">
+          <feedback>
+            <p>
+              Not quite. Type only the expression itself, with <c>*</c> for
+              products and <c>^</c> for powers, for example
+              <c>4cos(t)^2</c>.
+            </p>
+          </feedback>
+        </condition>
       </var>
       <var>
         <condition number="5" tolerance="0.01">
           <feedback><p>Correct.</p></feedback>
+        </condition>
+              <condition string=".*">
+          <feedback>
+            <p>
+              Not quite. Type a decimal number and nothing else, to at least
+              three decimal places.
+            </p>
+          </feedback>
         </condition>
       </var>
     </setup>
@@ -358,10 +383,27 @@
         <condition string="x\s*\*?\s*sqrt\s*\(\s*1\s*-\s*x\s*\^\s*2\s*\)">
           <feedback><p>Correct.</p></feedback>
         </condition>
-      </var>
+                <condition string=".*">
+            <feedback>
+              <p>
+                Not quite. Type only the expression itself, with <c>*</c> for
+              products and <c>^</c> for powers, for example
+              <c>4cos(t)^2</c>.
+              </p>
+            </feedback>
+          </condition>
+        </var>
       <var>
         <condition number="0.333" tolerance="0.005">
           <feedback><p>Correct: one third.</p></feedback>
+        </condition>
+              <condition string=".*">
+          <feedback>
+            <p>
+              Not quite. Type a decimal number and nothing else, to at least
+              three decimal places.
+            </p>
+          </feedback>
         </condition>
       </var>
     </setup>

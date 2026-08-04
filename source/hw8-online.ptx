@@ -121,15 +121,39 @@
         <condition number="6.283" tolerance="0.01">
           <feedback><p>Correct: two pi.</p></feedback>
         </condition>
+        <condition string=".*">
+          <feedback>
+            <p>
+              Not quite. Type a decimal number and nothing else, to at
+              least three decimal places.
+            </p>
+          </feedback>
+        </condition>
       </var>
       <var>
         <condition number="1.047" tolerance="0.01">
           <feedback><p>Correct: pi over three.</p></feedback>
         </condition>
+              <condition string=".*">
+          <feedback>
+            <p>
+              Not quite. Type a decimal number and nothing else, to at least
+              three decimal places.
+            </p>
+          </feedback>
+        </condition>
       </var>
       <var>
         <condition number="0.25" tolerance="0.005">
           <feedback><p>Correct: one quarter.</p></feedback>
+        </condition>
+              <condition string=".*">
+          <feedback>
+            <p>
+              Not quite. Type a decimal number and nothing else, to at least
+              three decimal places.
+            </p>
+          </feedback>
         </condition>
       </var>
     </setup>
@@ -176,15 +200,39 @@
         <condition number="0.785" tolerance="0.005">
           <feedback><p>Correct: pi over four.</p></feedback>
         </condition>
-      </var>
+                <condition string=".*">
+            <feedback>
+              <p>
+                Not quite. Type a decimal number and nothing else, to at least
+              three decimal places.
+              </p>
+            </feedback>
+          </condition>
+        </var>
       <var>
         <condition number="0.628" tolerance="0.005">
           <feedback><p>Correct: pi over five.</p></feedback>
+        </condition>
+              <condition string=".*">
+          <feedback>
+            <p>
+              Not quite. Type a decimal number and nothing else, to at least
+              three decimal places.
+            </p>
+          </feedback>
         </condition>
       </var>
       <var>
         <condition number="0.8" tolerance="0.005">
           <feedback><p>Correct: four fifths.</p></feedback>
+        </condition>
+              <condition string=".*">
+          <feedback>
+            <p>
+              Not quite. Type a decimal number and nothing else, to at least
+              three decimal places.
+            </p>
+          </feedback>
         </condition>
       </var>
     </setup>

@@ -138,15 +138,40 @@
         <condition string="1\s*\+\s*sin\s*\(\s*3\s*\*?\s*(theta|t)\s*\)">
           <feedback><p>Correct.</p></feedback>
         </condition>
+              <condition string=".*">
+          <feedback>
+            <p>
+              Not quite. Type only the expression itself, with <c>*</c> for
+              products and <c>^</c> for powers, for example
+              <c>4cos(t)^2</c>.
+            </p>
+          </feedback>
+        </condition>
       </var>
       <var>
         <condition number="0.524" tolerance="0.005">
           <feedback><p>Correct: pi over six.</p></feedback>
         </condition>
+              <condition string=".*">
+          <feedback>
+            <p>
+              Not quite. Type a decimal number and nothing else, to at least
+              three decimal places.
+            </p>
+          </feedback>
+        </condition>
       </var>
       <var>
         <condition number="2.618" tolerance="0.005">
           <feedback><p>Correct: five pi over six.</p></feedback>
+        </condition>
+              <condition string=".*">
+          <feedback>
+            <p>
+              Not quite. Type a decimal number and nothing else, to at least
+              three decimal places.
+            </p>
+          </feedback>
         </condition>
       </var>
     </setup>
@@ -186,20 +211,52 @@
         <condition number="1" tolerance="0.01">
           <feedback><p>Correct.</p></feedback>
         </condition>
-      </var>
+         <condition string=".*">
+     <feedback>
+       <p>
+         Not quite. Type a decimal number and nothing else, to at least
+              three decimal places.
+       </p>
+     </feedback>
+   </condition>
+ </var>
       <var>
         <condition number="2" tolerance="0.01">
           <feedback><p>Correct.</p></feedback>
+        </condition>
+              <condition string=".*">
+          <feedback>
+            <p>
+              Not quite. Type a decimal number and nothing else, to at least
+              three decimal places.
+            </p>
+          </feedback>
         </condition>
       </var>
       <var>
         <condition number="0" tolerance="0.01">
           <feedback><p>Correct.</p></feedback>
         </condition>
+              <condition string=".*">
+          <feedback>
+            <p>
+              Not quite. Type a decimal number and nothing else, to at least
+              three decimal places.
+            </p>
+          </feedback>
+        </condition>
       </var>
       <var>
         <condition number="0.785" tolerance="0.005">
           <feedback><p>Correct: pi over four.</p></feedback>
+        </condition>
+              <condition string=".*">
+          <feedback>
+            <p>
+              Not quite. Type a decimal number and nothing else, to at least
+              three decimal places.
+            </p>
+          </feedback>
         </condition>
       </var>
     </setup>
@@ -236,10 +293,26 @@
         <condition number="0.785" tolerance="0.005">
           <feedback><p>Correct: pi over four.</p></feedback>
         </condition>
-      </var>
+         <condition string=".*">
+     <feedback>
+       <p>
+         Not quite. Type a decimal number and nothing else, to at least
+              three decimal places.
+       </p>
+     </feedback>
+   </condition>
+ </var>
       <var>
         <condition number="2.264" tolerance="0.01">
           <feedback><p>Correct: the natural log of two plus pi over two.</p></feedback>
+        </condition>
+              <condition string=".*">
+          <feedback>
+            <p>
+              Not quite. Type a decimal number and nothing else, to at least
+              three decimal places.
+            </p>
+          </feedback>
         </condition>
       </var>
     </setup>

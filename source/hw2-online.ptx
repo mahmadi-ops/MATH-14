@@ -170,10 +170,27 @@
         <condition string="2\s*\*?\s*t\s*-\s*2">
           <feedback><p>Correct.</p></feedback>
         </condition>
+              <condition string=".*">
+          <feedback>
+            <p>
+              Not quite. Type only the expression itself, with <c>*</c> for
+              products and <c>^</c> for powers, for example
+              <c>4cos(t)^2</c>.
+            </p>
+          </feedback>
+        </condition>
       </var>
       <var>
         <condition number="1.414" tolerance="0.01">
           <feedback><p>Correct: the speed is the square root of two.</p></feedback>
+        </condition>
+              <condition string=".*">
+          <feedback>
+            <p>
+              Not quite. Type a decimal number and nothing else, to at least
+              three decimal places.
+            </p>
+          </feedback>
         </condition>
       </var>
       <var>
@@ -273,10 +290,26 @@
         <condition number="0.785" tolerance="0.005">
           <feedback><p>Correct: that is the arctangent of one.</p></feedback>
         </condition>
-      </var>
+                <condition string=".*">
+            <feedback>
+              <p>
+                Not quite. Type a decimal number and nothing else, to at least
+              three decimal places.
+              </p>
+            </feedback>
+          </condition>
+        </var>
       <var>
         <condition number="0.615" tolerance="0.005">
           <feedback><p>Correct.</p></feedback>
+        </condition>
+              <condition string=".*">
+          <feedback>
+            <p>
+              Not quite. Type a decimal number and nothing else, to at least
+              three decimal places.
+            </p>
+          </feedback>
         </condition>
       </var>
       <var>

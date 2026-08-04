@@ -124,10 +124,26 @@
         <condition number="2" tolerance="0.01">
           <feedback><p>Correct.</p></feedback>
         </condition>
-      </var>
+         <condition string=".*">
+     <feedback>
+       <p>
+         Not quite. Type a decimal number and nothing else, to at least
+              three decimal places.
+       </p>
+     </feedback>
+   </condition>
+ </var>
       <var>
         <condition number="2" tolerance="0.01">
           <feedback><p>Correct<mdash/>the same as along the parabola, which is worth thinking about.</p></feedback>
+        </condition>
+              <condition string=".*">
+          <feedback>
+            <p>
+              Not quite. Type a decimal number and nothing else, to at least
+              three decimal places.
+            </p>
+          </feedback>
         </condition>
       </var>
     </setup>
@@ -170,7 +186,15 @@
         <condition number="1.159" tolerance="0.005">
           <feedback><p>Correct: one plus one over two pi.</p></feedback>
         </condition>
-      </var>
+                <condition string=".*">
+            <feedback>
+              <p>
+                Not quite. Type a decimal number and nothing else, to at least
+              three decimal places.
+              </p>
+            </feedback>
+          </condition>
+        </var>
       <var>
         <condition number="7.283" tolerance="0.01">
           <feedback><p>Correct: two pi plus one.</p></feedback>
