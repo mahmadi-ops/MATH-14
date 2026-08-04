@@ -20,26 +20,26 @@
     </marker>
   </defs>
   <g id="prefigure-curl-circulation-cf-field">
-    <line id="prefigure-curl-circulation-line-0" x1="110.0" y1="258.1" x2="116.0" y2="253.7" stroke="#bbbbbb" stroke-width="2" fill="none" marker-end="url(#prefigure-curl-circulation-arrow-head-end-2_None_24_60-hbbbbbb)"/>
-    <line id="prefigure-curl-circulation-line-1" x1="110.0" y1="200.4" x2="116.7" y2="190.1" stroke="#bbbbbb" stroke-width="2" fill="none" marker-end="url(#prefigure-curl-circulation-arrow-head-end-2_None_24_60-hbbbbbb)"/>
-    <line id="prefigure-curl-circulation-line-2" x1="110.0" y1="142.7" x2="117.1" y2="126.0" stroke="#bbbbbb" stroke-width="2" fill="none" marker-end="url(#prefigure-curl-circulation-arrow-head-end-2_None_24_60-hbbbbbb)"/>
-    <line id="prefigure-curl-circulation-line-3" x1="110.0" y1="85.0" x2="117.3" y2="61.6" stroke="#bbbbbb" stroke-width="2" fill="none" marker-end="url(#prefigure-curl-circulation-arrow-head-end-2_None_24_60-hbbbbbb)"/>
-    <line id="prefigure-curl-circulation-line-4" x1="155.8" y1="258.1" x2="168.1" y2="253.2" stroke="#bbbbbb" stroke-width="2" fill="none" marker-end="url(#prefigure-curl-circulation-arrow-head-end-2_None_24_60-hbbbbbb)"/>
-    <line id="prefigure-curl-circulation-line-5" x1="155.8" y1="200.4" x2="168.5" y2="189.6" stroke="#bbbbbb" stroke-width="2" fill="none" marker-end="url(#prefigure-curl-circulation-arrow-head-end-2_None_24_60-hbbbbbb)"/>
-    <line id="prefigure-curl-circulation-line-6" x1="155.8" y1="142.7" x2="168.9" y2="125.6" stroke="#bbbbbb" stroke-width="2" fill="none" marker-end="url(#prefigure-curl-circulation-arrow-head-end-2_None_24_60-hbbbbbb)"/>
-    <line id="prefigure-curl-circulation-line-7" x1="155.8" y1="85.0" x2="169.2" y2="61.4" stroke="#bbbbbb" stroke-width="2" fill="none" marker-end="url(#prefigure-curl-circulation-arrow-head-end-2_None_24_60-hbbbbbb)"/>
-    <line id="prefigure-curl-circulation-line-8" x1="201.7" y1="258.1" x2="220.4" y2="252.9" stroke="#bbbbbb" stroke-width="2" fill="none" marker-end="url(#prefigure-curl-circulation-arrow-head-end-2_None_24_60-hbbbbbb)"/>
-    <line id="prefigure-curl-circulation-line-9" x1="201.7" y1="200.4" x2="220.7" y2="189.2" stroke="#bbbbbb" stroke-width="2" fill="none" marker-end="url(#prefigure-curl-circulation-arrow-head-end-2_None_24_60-hbbbbbb)"/>
-    <line id="prefigure-curl-circulation-line-10" x1="201.7" y1="142.7" x2="221.0" y2="125.3" stroke="#bbbbbb" stroke-width="2" fill="none" marker-end="url(#prefigure-curl-circulation-arrow-head-end-2_None_24_60-hbbbbbb)"/>
-    <line id="prefigure-curl-circulation-line-11" x1="201.7" y1="85.0" x2="221.2" y2="61.2" stroke="#bbbbbb" stroke-width="2" fill="none" marker-end="url(#prefigure-curl-circulation-arrow-head-end-2_None_24_60-hbbbbbb)"/>
-    <line id="prefigure-curl-circulation-line-12" x1="247.5" y1="258.1" x2="272.9" y2="252.8" stroke="#bbbbbb" stroke-width="2" fill="none" marker-end="url(#prefigure-curl-circulation-arrow-head-end-2_None_24_60-hbbbbbb)"/>
-    <line id="prefigure-curl-circulation-line-13" x1="247.5" y1="200.4" x2="273.1" y2="189.0" stroke="#bbbbbb" stroke-width="2" fill="none" marker-end="url(#prefigure-curl-circulation-arrow-head-end-2_None_24_60-hbbbbbb)"/>
-    <line id="prefigure-curl-circulation-line-14" x1="247.5" y1="142.7" x2="273.3" y2="125.1" stroke="#bbbbbb" stroke-width="2" fill="none" marker-end="url(#prefigure-curl-circulation-arrow-head-end-2_None_24_60-hbbbbbb)"/>
-    <line id="prefigure-curl-circulation-line-15" x1="247.5" y1="85.0" x2="273.5" y2="61.0" stroke="#bbbbbb" stroke-width="2" fill="none" marker-end="url(#prefigure-curl-circulation-arrow-head-end-2_None_24_60-hbbbbbb)"/>
-    <line id="prefigure-curl-circulation-line-16" x1="293.3" y1="258.1" x2="325.3" y2="252.7" stroke="#bbbbbb" stroke-width="2" fill="none" marker-end="url(#prefigure-curl-circulation-arrow-head-end-2_None_24_60-hbbbbbb)"/>
-    <line id="prefigure-curl-circulation-line-17" x1="293.3" y1="200.4" x2="325.4" y2="188.8" stroke="#bbbbbb" stroke-width="2" fill="none" marker-end="url(#prefigure-curl-circulation-arrow-head-end-2_None_24_60-hbbbbbb)"/>
-    <line id="prefigure-curl-circulation-line-18" x1="293.3" y1="142.7" x2="325.6" y2="124.9" stroke="#bbbbbb" stroke-width="2" fill="none" marker-end="url(#prefigure-curl-circulation-arrow-head-end-2_None_24_60-hbbbbbb)"/>
-    <line id="prefigure-curl-circulation-line-19" x1="293.3" y1="85.0" x2="325.7" y2="60.8" stroke="#bbbbbb" stroke-width="2" fill="none" marker-end="url(#prefigure-curl-circulation-arrow-head-end-2_None_24_60-hbbbbbb)"/>
+    <line id="prefigure-curl-circulation-line-0" x1="110.0" y1="258.1" x2="118.0" y2="252.3" stroke="#bbbbbb" stroke-width="2" fill="none" marker-end="url(#prefigure-curl-circulation-arrow-head-end-2_None_24_60-hbbbbbb)"/>
+    <line id="prefigure-curl-circulation-line-1" x1="110.0" y1="200.4" x2="118.0" y2="188.0" stroke="#bbbbbb" stroke-width="2" fill="none" marker-end="url(#prefigure-curl-circulation-arrow-head-end-2_None_24_60-hbbbbbb)"/>
+    <line id="prefigure-curl-circulation-line-2" x1="110.0" y1="142.7" x2="118.0" y2="123.7" stroke="#bbbbbb" stroke-width="2" fill="none" marker-end="url(#prefigure-curl-circulation-arrow-head-end-2_None_24_60-hbbbbbb)"/>
+    <line id="prefigure-curl-circulation-line-3" x1="110.0" y1="85.0" x2="118.0" y2="59.3" stroke="#bbbbbb" stroke-width="2" fill="none" marker-end="url(#prefigure-curl-circulation-arrow-head-end-2_None_24_60-hbbbbbb)"/>
+    <line id="prefigure-curl-circulation-line-4" x1="155.8" y1="258.1" x2="170.4" y2="252.3" stroke="#bbbbbb" stroke-width="2" fill="none" marker-end="url(#prefigure-curl-circulation-arrow-head-end-2_None_24_60-hbbbbbb)"/>
+    <line id="prefigure-curl-circulation-line-5" x1="155.8" y1="200.4" x2="170.4" y2="188.0" stroke="#bbbbbb" stroke-width="2" fill="none" marker-end="url(#prefigure-curl-circulation-arrow-head-end-2_None_24_60-hbbbbbb)"/>
+    <line id="prefigure-curl-circulation-line-6" x1="155.8" y1="142.7" x2="170.4" y2="123.7" stroke="#bbbbbb" stroke-width="2" fill="none" marker-end="url(#prefigure-curl-circulation-arrow-head-end-2_None_24_60-hbbbbbb)"/>
+    <line id="prefigure-curl-circulation-line-7" x1="155.8" y1="85.0" x2="170.4" y2="59.3" stroke="#bbbbbb" stroke-width="2" fill="none" marker-end="url(#prefigure-curl-circulation-arrow-head-end-2_None_24_60-hbbbbbb)"/>
+    <line id="prefigure-curl-circulation-line-8" x1="201.7" y1="258.1" x2="222.8" y2="252.3" stroke="#bbbbbb" stroke-width="2" fill="none" marker-end="url(#prefigure-curl-circulation-arrow-head-end-2_None_24_60-hbbbbbb)"/>
+    <line id="prefigure-curl-circulation-line-9" x1="201.7" y1="200.4" x2="222.8" y2="188.0" stroke="#bbbbbb" stroke-width="2" fill="none" marker-end="url(#prefigure-curl-circulation-arrow-head-end-2_None_24_60-hbbbbbb)"/>
+    <line id="prefigure-curl-circulation-line-10" x1="201.7" y1="142.7" x2="222.8" y2="123.7" stroke="#bbbbbb" stroke-width="2" fill="none" marker-end="url(#prefigure-curl-circulation-arrow-head-end-2_None_24_60-hbbbbbb)"/>
+    <line id="prefigure-curl-circulation-line-11" x1="201.7" y1="85.0" x2="222.8" y2="59.3" stroke="#bbbbbb" stroke-width="2" fill="none" marker-end="url(#prefigure-curl-circulation-arrow-head-end-2_None_24_60-hbbbbbb)"/>
+    <line id="prefigure-curl-circulation-line-12" x1="247.5" y1="258.1" x2="275.3" y2="252.3" stroke="#bbbbbb" stroke-width="2" fill="none" marker-end="url(#prefigure-curl-circulation-arrow-head-end-2_None_24_60-hbbbbbb)"/>
+    <line id="prefigure-curl-circulation-line-13" x1="247.5" y1="200.4" x2="275.3" y2="188.0" stroke="#bbbbbb" stroke-width="2" fill="none" marker-end="url(#prefigure-curl-circulation-arrow-head-end-2_None_24_60-hbbbbbb)"/>
+    <line id="prefigure-curl-circulation-line-14" x1="247.5" y1="142.7" x2="275.3" y2="123.7" stroke="#bbbbbb" stroke-width="2" fill="none" marker-end="url(#prefigure-curl-circulation-arrow-head-end-2_None_24_60-hbbbbbb)"/>
+    <line id="prefigure-curl-circulation-line-15" x1="247.5" y1="85.0" x2="275.3" y2="59.3" stroke="#bbbbbb" stroke-width="2" fill="none" marker-end="url(#prefigure-curl-circulation-arrow-head-end-2_None_24_60-hbbbbbb)"/>
+    <line id="prefigure-curl-circulation-line-16" x1="293.3" y1="258.1" x2="327.7" y2="252.3" stroke="#bbbbbb" stroke-width="2" fill="none" marker-end="url(#prefigure-curl-circulation-arrow-head-end-2_None_24_60-hbbbbbb)"/>
+    <line id="prefigure-curl-circulation-line-17" x1="293.3" y1="200.4" x2="327.7" y2="188.0" stroke="#bbbbbb" stroke-width="2" fill="none" marker-end="url(#prefigure-curl-circulation-arrow-head-end-2_None_24_60-hbbbbbb)"/>
+    <line id="prefigure-curl-circulation-line-18" x1="293.3" y1="142.7" x2="327.7" y2="123.7" stroke="#bbbbbb" stroke-width="2" fill="none" marker-end="url(#prefigure-curl-circulation-arrow-head-end-2_None_24_60-hbbbbbb)"/>
+    <line id="prefigure-curl-circulation-line-19" x1="293.3" y1="85.0" x2="327.7" y2="59.3" stroke="#bbbbbb" stroke-width="2" fill="none" marker-end="url(#prefigure-curl-circulation-arrow-head-end-2_None_24_60-hbbbbbb)"/>
   </g>
   <path id="prefigure-curl-circulation-cf-rect" d="M 130.8 217.7 L 280.8 217.7 L 280.8 90.8 L 130.8 90.8 Z" stroke="#2b9ad6" stroke-width="2.5" fill="none" clip-path="url(#prefigure-curl-circulation-clipPath-1)"/>
   <g id="prefigure-curl-circulation-cf-corner-bl">
@@ -267,10 +267,10 @@
     </g>
     <circle cx="280.8" cy="90.8" r="3" stroke="black" stroke-width="2" fill="#2b9ad6"/>
   </g>
-  <line id="prefigure-curl-circulation-cf-top" x1="214.2" y1="90.8" x2="194.9" y2="90.8" stroke="#e05090" stroke-width="3" fill="none" marker-end="url(#prefigure-curl-circulation-arrow-head-end-3_None_24_60-he05090)"/>
-  <line id="prefigure-curl-circulation-cf-bottom" x1="197.5" y1="217.7" x2="216.7" y2="217.7" stroke="#e05090" stroke-width="3" fill="none" marker-end="url(#prefigure-curl-circulation-arrow-head-end-3_None_24_60-he05090)"/>
-  <line id="prefigure-curl-circulation-cf-right" x1="280.8" y1="165.8" x2="280.8" y2="137.7" stroke="#e05090" stroke-width="3" fill="none" marker-end="url(#prefigure-curl-circulation-arrow-head-end-3_None_24_60-he05090)"/>
-  <line id="prefigure-curl-circulation-cf-left" x1="130.8" y1="142.7" x2="130.8" y2="170.7" stroke="#e05090" stroke-width="3" fill="none" marker-end="url(#prefigure-curl-circulation-arrow-head-end-3_None_24_60-he05090)"/>
+  <line id="prefigure-curl-circulation-cf-top" x1="214.2" y1="90.8" x2="191.2" y2="90.8" stroke="#e05090" stroke-width="3" fill="none" marker-end="url(#prefigure-curl-circulation-arrow-head-end-3_None_24_60-he05090)"/>
+  <line id="prefigure-curl-circulation-cf-bottom" x1="197.5" y1="217.7" x2="220.4" y2="217.7" stroke="#e05090" stroke-width="3" fill="none" marker-end="url(#prefigure-curl-circulation-arrow-head-end-3_None_24_60-he05090)"/>
+  <line id="prefigure-curl-circulation-cf-right" x1="280.8" y1="165.8" x2="280.8" y2="134.0" stroke="#e05090" stroke-width="3" fill="none" marker-end="url(#prefigure-curl-circulation-arrow-head-end-3_None_24_60-he05090)"/>
+  <line id="prefigure-curl-circulation-cf-left" x1="130.8" y1="142.7" x2="130.8" y2="174.4" stroke="#e05090" stroke-width="3" fill="none" marker-end="url(#prefigure-curl-circulation-arrow-head-end-3_None_24_60-he05090)"/>
   <g id="prefigure-curl-circulation-cf-top-label" transform="translate(211.9,53.3) translate(0.0,-9.0)">
     <rect x="-4" y="-4" width="101.304" height="26.096" stroke="none" fill="white"/>
     <g id="prefigure-curl-circulation-g-4">

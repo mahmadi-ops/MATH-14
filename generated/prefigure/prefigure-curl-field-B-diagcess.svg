@@ -19,7 +19,7 @@
       <path d="M 11.8 7.8 L 2.8 11.8 A 2 2 0 0 1 0.0 10.0 L 0.0 2.0 A 2 2 0 0 1 2.8 0.2 L 11.8 4.2 A 2 2 0 0 1 11.8 7.8 Z" fill="white" stroke="none"/>
     </marker>
   </defs>
-  <g id="prefigure-curl-field-B-cfb-axes" stroke="black" stroke-width="2">
+  <g id="cfb-axes" stroke="black" stroke-width="2">
     <line id="prefigure-curl-field-B-line-0" x1="10.0" y1="150.0" x2="290.0" y2="150.0" stroke="black" stroke-width="2" marker-end="url(#prefigure-curl-field-B-arrow-head-end-2_None_24_60-black)"/>
     <line id="prefigure-curl-field-B-line-1" x1="150.0" y1="290.0" x2="150.0" y2="10.0" stroke="black" stroke-width="2" marker-end="url(#prefigure-curl-field-B-arrow-head-end-2_None_24_60-black)"/>
   </g>
@@ -56,53 +56,53 @@
     </g>
   </g>
   <g id="prefigure-curl-field-B-cfb-field">
-    <line id="prefigure-curl-field-B-line-2" x1="26.5" y1="273.5" x2="55.7" y2="302.7" stroke="#2b6cb0" stroke-width="2" fill="none" marker-end="url(#prefigure-curl-field-B-arrow-head-end-2_None_24_60-h2b6cb0)"/>
-    <line id="prefigure-curl-field-B-line-3" x1="26.5" y1="232.4" x2="45.7" y2="261.2" stroke="#2b6cb0" stroke-width="2" fill="none" marker-end="url(#prefigure-curl-field-B-arrow-head-end-2_None_24_60-h2b6cb0)"/>
-    <line id="prefigure-curl-field-B-line-4" x1="26.5" y1="191.2" x2="36.0" y2="219.8" stroke="#2b6cb0" stroke-width="2" fill="none" marker-end="url(#prefigure-curl-field-B-arrow-head-end-2_None_24_60-h2b6cb0)"/>
-    <line id="prefigure-curl-field-B-line-5" x1="26.5" y1="150.0" x2="26.5" y2="178.5" stroke="#2b6cb0" stroke-width="2" fill="none" marker-end="url(#prefigure-curl-field-B-arrow-head-end-2_None_24_60-h2b6cb0)"/>
-    <line id="prefigure-curl-field-B-line-6" x1="26.5" y1="108.8" x2="17.0" y2="137.4" stroke="#2b6cb0" stroke-width="2" fill="none" marker-end="url(#prefigure-curl-field-B-arrow-head-end-2_None_24_60-h2b6cb0)"/>
-    <line id="prefigure-curl-field-B-line-7" x1="26.5" y1="67.6" x2="7.3" y2="96.5" stroke="#2b6cb0" stroke-width="2" fill="none" marker-end="url(#prefigure-curl-field-B-arrow-head-end-2_None_24_60-h2b6cb0)"/>
-    <line id="prefigure-curl-field-B-line-8" x1="26.5" y1="26.5" x2="-2.7" y2="55.7" stroke="#2b6cb0" stroke-width="2" fill="none" marker-end="url(#prefigure-curl-field-B-arrow-head-end-2_None_24_60-h2b6cb0)"/>
-    <line id="prefigure-curl-field-B-line-9" x1="67.6" y1="273.5" x2="96.5" y2="292.7" stroke="#2b6cb0" stroke-width="2" fill="none" marker-end="url(#prefigure-curl-field-B-arrow-head-end-2_None_24_60-h2b6cb0)"/>
-    <line id="prefigure-curl-field-B-line-10" x1="67.6" y1="232.4" x2="86.5" y2="251.2" stroke="#2b6cb0" stroke-width="2" fill="none" marker-end="url(#prefigure-curl-field-B-arrow-head-end-2_None_24_60-h2b6cb0)"/>
-    <line id="prefigure-curl-field-B-line-11" x1="67.6" y1="191.2" x2="76.8" y2="209.6" stroke="#2b6cb0" stroke-width="2" fill="none" marker-end="url(#prefigure-curl-field-B-arrow-head-end-2_None_24_60-h2b6cb0)"/>
-    <line id="prefigure-curl-field-B-line-12" x1="67.6" y1="150.0" x2="67.6" y2="168.2" stroke="#2b6cb0" stroke-width="2" fill="none" marker-end="url(#prefigure-curl-field-B-arrow-head-end-2_None_24_60-h2b6cb0)"/>
-    <line id="prefigure-curl-field-B-line-13" x1="67.6" y1="108.8" x2="58.5" y2="127.2" stroke="#2b6cb0" stroke-width="2" fill="none" marker-end="url(#prefigure-curl-field-B-arrow-head-end-2_None_24_60-h2b6cb0)"/>
-    <line id="prefigure-curl-field-B-line-14" x1="67.6" y1="67.6" x2="48.8" y2="86.5" stroke="#2b6cb0" stroke-width="2" fill="none" marker-end="url(#prefigure-curl-field-B-arrow-head-end-2_None_24_60-h2b6cb0)"/>
-    <line id="prefigure-curl-field-B-line-15" x1="67.6" y1="26.5" x2="38.8" y2="45.7" stroke="#2b6cb0" stroke-width="2" fill="none" marker-end="url(#prefigure-curl-field-B-arrow-head-end-2_None_24_60-h2b6cb0)"/>
-    <line id="prefigure-curl-field-B-line-16" x1="108.8" y1="273.5" x2="137.4" y2="283.0" stroke="#2b6cb0" stroke-width="2" fill="none" marker-end="url(#prefigure-curl-field-B-arrow-head-end-2_None_24_60-h2b6cb0)"/>
-    <line id="prefigure-curl-field-B-line-17" x1="108.8" y1="232.4" x2="127.2" y2="241.5" stroke="#2b6cb0" stroke-width="2" fill="none" marker-end="url(#prefigure-curl-field-B-arrow-head-end-2_None_24_60-h2b6cb0)"/>
-    <line id="prefigure-curl-field-B-line-18" x1="108.8" y1="191.2" x2="117.4" y2="199.8" stroke="#2b6cb0" stroke-width="2" fill="none" marker-end="url(#prefigure-curl-field-B-arrow-head-end-2_None_24_60-h2b6cb0)"/>
-    <line id="prefigure-curl-field-B-line-19" x1="108.8" y1="150.0" x2="108.8" y2="157.9" stroke="#2b6cb0" stroke-width="2" fill="none" marker-end="url(#prefigure-curl-field-B-arrow-head-end-2_None_24_60-h2b6cb0)"/>
-    <line id="prefigure-curl-field-B-line-20" x1="108.8" y1="108.8" x2="100.2" y2="117.4" stroke="#2b6cb0" stroke-width="2" fill="none" marker-end="url(#prefigure-curl-field-B-arrow-head-end-2_None_24_60-h2b6cb0)"/>
-    <line id="prefigure-curl-field-B-line-21" x1="108.8" y1="67.6" x2="90.4" y2="76.8" stroke="#2b6cb0" stroke-width="2" fill="none" marker-end="url(#prefigure-curl-field-B-arrow-head-end-2_None_24_60-h2b6cb0)"/>
-    <line id="prefigure-curl-field-B-line-22" x1="108.8" y1="26.5" x2="80.2" y2="36.0" stroke="#2b6cb0" stroke-width="2" fill="none" marker-end="url(#prefigure-curl-field-B-arrow-head-end-2_None_24_60-h2b6cb0)"/>
-    <line id="prefigure-curl-field-B-line-23" x1="150.0" y1="273.5" x2="178.5" y2="273.5" stroke="#2b6cb0" stroke-width="2" fill="none" marker-end="url(#prefigure-curl-field-B-arrow-head-end-2_None_24_60-h2b6cb0)"/>
-    <line id="prefigure-curl-field-B-line-24" x1="150.0" y1="232.4" x2="168.2" y2="232.4" stroke="#2b6cb0" stroke-width="2" fill="none" marker-end="url(#prefigure-curl-field-B-arrow-head-end-2_None_24_60-h2b6cb0)"/>
-    <line id="prefigure-curl-field-B-line-25" x1="150.0" y1="191.2" x2="157.9" y2="191.2" stroke="#2b6cb0" stroke-width="2" fill="none" marker-end="url(#prefigure-curl-field-B-arrow-head-end-2_None_24_60-h2b6cb0)"/>
-    <line id="prefigure-curl-field-B-line-26" x1="150.0" y1="108.8" x2="142.1" y2="108.8" stroke="#2b6cb0" stroke-width="2" fill="none" marker-end="url(#prefigure-curl-field-B-arrow-head-end-2_None_24_60-h2b6cb0)"/>
-    <line id="prefigure-curl-field-B-line-27" x1="150.0" y1="67.6" x2="131.8" y2="67.6" stroke="#2b6cb0" stroke-width="2" fill="none" marker-end="url(#prefigure-curl-field-B-arrow-head-end-2_None_24_60-h2b6cb0)"/>
-    <line id="prefigure-curl-field-B-line-28" x1="150.0" y1="26.5" x2="121.5" y2="26.5" stroke="#2b6cb0" stroke-width="2" fill="none" marker-end="url(#prefigure-curl-field-B-arrow-head-end-2_None_24_60-h2b6cb0)"/>
-    <line id="prefigure-curl-field-B-line-29" x1="191.2" y1="273.5" x2="219.8" y2="264.0" stroke="#2b6cb0" stroke-width="2" fill="none" marker-end="url(#prefigure-curl-field-B-arrow-head-end-2_None_24_60-h2b6cb0)"/>
-    <line id="prefigure-curl-field-B-line-30" x1="191.2" y1="232.4" x2="209.6" y2="223.2" stroke="#2b6cb0" stroke-width="2" fill="none" marker-end="url(#prefigure-curl-field-B-arrow-head-end-2_None_24_60-h2b6cb0)"/>
-    <line id="prefigure-curl-field-B-line-31" x1="191.2" y1="191.2" x2="199.8" y2="182.6" stroke="#2b6cb0" stroke-width="2" fill="none" marker-end="url(#prefigure-curl-field-B-arrow-head-end-2_None_24_60-h2b6cb0)"/>
-    <line id="prefigure-curl-field-B-line-32" x1="191.2" y1="150.0" x2="191.2" y2="142.1" stroke="#2b6cb0" stroke-width="2" fill="none" marker-end="url(#prefigure-curl-field-B-arrow-head-end-2_None_24_60-h2b6cb0)"/>
-    <line id="prefigure-curl-field-B-line-33" x1="191.2" y1="108.8" x2="182.6" y2="100.2" stroke="#2b6cb0" stroke-width="2" fill="none" marker-end="url(#prefigure-curl-field-B-arrow-head-end-2_None_24_60-h2b6cb0)"/>
-    <line id="prefigure-curl-field-B-line-34" x1="191.2" y1="67.6" x2="172.8" y2="58.5" stroke="#2b6cb0" stroke-width="2" fill="none" marker-end="url(#prefigure-curl-field-B-arrow-head-end-2_None_24_60-h2b6cb0)"/>
-    <line id="prefigure-curl-field-B-line-35" x1="191.2" y1="26.5" x2="162.6" y2="17.0" stroke="#2b6cb0" stroke-width="2" fill="none" marker-end="url(#prefigure-curl-field-B-arrow-head-end-2_None_24_60-h2b6cb0)"/>
-    <line id="prefigure-curl-field-B-line-36" x1="232.4" y1="273.5" x2="261.2" y2="254.3" stroke="#2b6cb0" stroke-width="2" fill="none" marker-end="url(#prefigure-curl-field-B-arrow-head-end-2_None_24_60-h2b6cb0)"/>
-    <line id="prefigure-curl-field-B-line-37" x1="232.4" y1="232.4" x2="251.2" y2="213.5" stroke="#2b6cb0" stroke-width="2" fill="none" marker-end="url(#prefigure-curl-field-B-arrow-head-end-2_None_24_60-h2b6cb0)"/>
-    <line id="prefigure-curl-field-B-line-38" x1="232.4" y1="191.2" x2="241.5" y2="172.8" stroke="#2b6cb0" stroke-width="2" fill="none" marker-end="url(#prefigure-curl-field-B-arrow-head-end-2_None_24_60-h2b6cb0)"/>
-    <line id="prefigure-curl-field-B-line-39" x1="232.4" y1="150.0" x2="232.4" y2="131.8" stroke="#2b6cb0" stroke-width="2" fill="none" marker-end="url(#prefigure-curl-field-B-arrow-head-end-2_None_24_60-h2b6cb0)"/>
-    <line id="prefigure-curl-field-B-line-40" x1="232.4" y1="108.8" x2="223.2" y2="90.4" stroke="#2b6cb0" stroke-width="2" fill="none" marker-end="url(#prefigure-curl-field-B-arrow-head-end-2_None_24_60-h2b6cb0)"/>
-    <line id="prefigure-curl-field-B-line-41" x1="232.4" y1="67.6" x2="213.5" y2="48.8" stroke="#2b6cb0" stroke-width="2" fill="none" marker-end="url(#prefigure-curl-field-B-arrow-head-end-2_None_24_60-h2b6cb0)"/>
-    <line id="prefigure-curl-field-B-line-42" x1="232.4" y1="26.5" x2="203.5" y2="7.3" stroke="#2b6cb0" stroke-width="2" fill="none" marker-end="url(#prefigure-curl-field-B-arrow-head-end-2_None_24_60-h2b6cb0)"/>
-    <line id="prefigure-curl-field-B-line-43" x1="273.5" y1="273.5" x2="302.7" y2="244.3" stroke="#2b6cb0" stroke-width="2" fill="none" marker-end="url(#prefigure-curl-field-B-arrow-head-end-2_None_24_60-h2b6cb0)"/>
-    <line id="prefigure-curl-field-B-line-44" x1="273.5" y1="232.4" x2="292.7" y2="203.5" stroke="#2b6cb0" stroke-width="2" fill="none" marker-end="url(#prefigure-curl-field-B-arrow-head-end-2_None_24_60-h2b6cb0)"/>
-    <line id="prefigure-curl-field-B-line-45" x1="273.5" y1="191.2" x2="283.0" y2="162.6" stroke="#2b6cb0" stroke-width="2" fill="none" marker-end="url(#prefigure-curl-field-B-arrow-head-end-2_None_24_60-h2b6cb0)"/>
-    <line id="prefigure-curl-field-B-line-46" x1="273.5" y1="150.0" x2="273.5" y2="121.5" stroke="#2b6cb0" stroke-width="2" fill="none" marker-end="url(#prefigure-curl-field-B-arrow-head-end-2_None_24_60-h2b6cb0)"/>
-    <line id="prefigure-curl-field-B-line-47" x1="273.5" y1="108.8" x2="264.0" y2="80.2" stroke="#2b6cb0" stroke-width="2" fill="none" marker-end="url(#prefigure-curl-field-B-arrow-head-end-2_None_24_60-h2b6cb0)"/>
-    <line id="prefigure-curl-field-B-line-48" x1="273.5" y1="67.6" x2="254.3" y2="38.8" stroke="#2b6cb0" stroke-width="2" fill="none" marker-end="url(#prefigure-curl-field-B-arrow-head-end-2_None_24_60-h2b6cb0)"/>
-    <line id="prefigure-curl-field-B-line-49" x1="273.5" y1="26.5" x2="244.3" y2="-2.7" stroke="#2b6cb0" stroke-width="2" fill="none" marker-end="url(#prefigure-curl-field-B-arrow-head-end-2_None_24_60-h2b6cb0)"/>
+    <line id="prefigure-curl-field-B-line-2" x1="26.5" y1="273.5" x2="57.4" y2="304.4" stroke="#2b6cb0" stroke-width="2" fill="none" marker-end="url(#prefigure-curl-field-B-arrow-head-end-2_None_24_60-h2b6cb0)"/>
+    <line id="prefigure-curl-field-B-line-3" x1="26.5" y1="232.4" x2="47.1" y2="263.2" stroke="#2b6cb0" stroke-width="2" fill="none" marker-end="url(#prefigure-curl-field-B-arrow-head-end-2_None_24_60-h2b6cb0)"/>
+    <line id="prefigure-curl-field-B-line-4" x1="26.5" y1="191.2" x2="36.8" y2="222.1" stroke="#2b6cb0" stroke-width="2" fill="none" marker-end="url(#prefigure-curl-field-B-arrow-head-end-2_None_24_60-h2b6cb0)"/>
+    <line id="prefigure-curl-field-B-line-5" x1="26.5" y1="150.0" x2="26.5" y2="180.9" stroke="#2b6cb0" stroke-width="2" fill="none" marker-end="url(#prefigure-curl-field-B-arrow-head-end-2_None_24_60-h2b6cb0)"/>
+    <line id="prefigure-curl-field-B-line-6" x1="26.5" y1="108.8" x2="16.2" y2="139.7" stroke="#2b6cb0" stroke-width="2" fill="none" marker-end="url(#prefigure-curl-field-B-arrow-head-end-2_None_24_60-h2b6cb0)"/>
+    <line id="prefigure-curl-field-B-line-7" x1="26.5" y1="67.6" x2="5.9" y2="98.5" stroke="#2b6cb0" stroke-width="2" fill="none" marker-end="url(#prefigure-curl-field-B-arrow-head-end-2_None_24_60-h2b6cb0)"/>
+    <line id="prefigure-curl-field-B-line-8" x1="26.5" y1="26.5" x2="-4.4" y2="57.4" stroke="#2b6cb0" stroke-width="2" fill="none" marker-end="url(#prefigure-curl-field-B-arrow-head-end-2_None_24_60-h2b6cb0)"/>
+    <line id="prefigure-curl-field-B-line-9" x1="67.6" y1="273.5" x2="98.5" y2="294.1" stroke="#2b6cb0" stroke-width="2" fill="none" marker-end="url(#prefigure-curl-field-B-arrow-head-end-2_None_24_60-h2b6cb0)"/>
+    <line id="prefigure-curl-field-B-line-10" x1="67.6" y1="232.4" x2="88.2" y2="252.9" stroke="#2b6cb0" stroke-width="2" fill="none" marker-end="url(#prefigure-curl-field-B-arrow-head-end-2_None_24_60-h2b6cb0)"/>
+    <line id="prefigure-curl-field-B-line-11" x1="67.6" y1="191.2" x2="77.9" y2="211.8" stroke="#2b6cb0" stroke-width="2" fill="none" marker-end="url(#prefigure-curl-field-B-arrow-head-end-2_None_24_60-h2b6cb0)"/>
+    <line id="prefigure-curl-field-B-line-12" x1="67.6" y1="150.0" x2="67.6" y2="170.6" stroke="#2b6cb0" stroke-width="2" fill="none" marker-end="url(#prefigure-curl-field-B-arrow-head-end-2_None_24_60-h2b6cb0)"/>
+    <line id="prefigure-curl-field-B-line-13" x1="67.6" y1="108.8" x2="57.4" y2="129.4" stroke="#2b6cb0" stroke-width="2" fill="none" marker-end="url(#prefigure-curl-field-B-arrow-head-end-2_None_24_60-h2b6cb0)"/>
+    <line id="prefigure-curl-field-B-line-14" x1="67.6" y1="67.6" x2="47.1" y2="88.2" stroke="#2b6cb0" stroke-width="2" fill="none" marker-end="url(#prefigure-curl-field-B-arrow-head-end-2_None_24_60-h2b6cb0)"/>
+    <line id="prefigure-curl-field-B-line-15" x1="67.6" y1="26.5" x2="36.8" y2="47.1" stroke="#2b6cb0" stroke-width="2" fill="none" marker-end="url(#prefigure-curl-field-B-arrow-head-end-2_None_24_60-h2b6cb0)"/>
+    <line id="prefigure-curl-field-B-line-16" x1="108.8" y1="273.5" x2="139.7" y2="283.8" stroke="#2b6cb0" stroke-width="2" fill="none" marker-end="url(#prefigure-curl-field-B-arrow-head-end-2_None_24_60-h2b6cb0)"/>
+    <line id="prefigure-curl-field-B-line-17" x1="108.8" y1="232.4" x2="129.4" y2="242.6" stroke="#2b6cb0" stroke-width="2" fill="none" marker-end="url(#prefigure-curl-field-B-arrow-head-end-2_None_24_60-h2b6cb0)"/>
+    <line id="prefigure-curl-field-B-line-18" x1="108.8" y1="191.2" x2="119.1" y2="201.5" stroke="#2b6cb0" stroke-width="2" fill="none" marker-end="url(#prefigure-curl-field-B-arrow-head-end-2_None_24_60-h2b6cb0)"/>
+    <line id="prefigure-curl-field-B-line-19" x1="108.8" y1="150.0" x2="108.8" y2="160.3" stroke="#2b6cb0" stroke-width="2" fill="none" marker-end="url(#prefigure-curl-field-B-arrow-head-end-2_None_24_60-h2b6cb0)"/>
+    <line id="prefigure-curl-field-B-line-20" x1="108.8" y1="108.8" x2="98.5" y2="119.1" stroke="#2b6cb0" stroke-width="2" fill="none" marker-end="url(#prefigure-curl-field-B-arrow-head-end-2_None_24_60-h2b6cb0)"/>
+    <line id="prefigure-curl-field-B-line-21" x1="108.8" y1="67.6" x2="88.2" y2="77.9" stroke="#2b6cb0" stroke-width="2" fill="none" marker-end="url(#prefigure-curl-field-B-arrow-head-end-2_None_24_60-h2b6cb0)"/>
+    <line id="prefigure-curl-field-B-line-22" x1="108.8" y1="26.5" x2="77.9" y2="36.8" stroke="#2b6cb0" stroke-width="2" fill="none" marker-end="url(#prefigure-curl-field-B-arrow-head-end-2_None_24_60-h2b6cb0)"/>
+    <line id="prefigure-curl-field-B-line-23" x1="150.0" y1="273.5" x2="180.9" y2="273.5" stroke="#2b6cb0" stroke-width="2" fill="none" marker-end="url(#prefigure-curl-field-B-arrow-head-end-2_None_24_60-h2b6cb0)"/>
+    <line id="prefigure-curl-field-B-line-24" x1="150.0" y1="232.4" x2="170.6" y2="232.4" stroke="#2b6cb0" stroke-width="2" fill="none" marker-end="url(#prefigure-curl-field-B-arrow-head-end-2_None_24_60-h2b6cb0)"/>
+    <line id="prefigure-curl-field-B-line-25" x1="150.0" y1="191.2" x2="160.3" y2="191.2" stroke="#2b6cb0" stroke-width="2" fill="none" marker-end="url(#prefigure-curl-field-B-arrow-head-end-2_None_24_60-h2b6cb0)"/>
+    <line id="prefigure-curl-field-B-line-26" x1="150.0" y1="108.8" x2="139.7" y2="108.8" stroke="#2b6cb0" stroke-width="2" fill="none" marker-end="url(#prefigure-curl-field-B-arrow-head-end-2_None_24_60-h2b6cb0)"/>
+    <line id="prefigure-curl-field-B-line-27" x1="150.0" y1="67.6" x2="129.4" y2="67.6" stroke="#2b6cb0" stroke-width="2" fill="none" marker-end="url(#prefigure-curl-field-B-arrow-head-end-2_None_24_60-h2b6cb0)"/>
+    <line id="prefigure-curl-field-B-line-28" x1="150.0" y1="26.5" x2="119.1" y2="26.5" stroke="#2b6cb0" stroke-width="2" fill="none" marker-end="url(#prefigure-curl-field-B-arrow-head-end-2_None_24_60-h2b6cb0)"/>
+    <line id="prefigure-curl-field-B-line-29" x1="191.2" y1="273.5" x2="222.1" y2="263.2" stroke="#2b6cb0" stroke-width="2" fill="none" marker-end="url(#prefigure-curl-field-B-arrow-head-end-2_None_24_60-h2b6cb0)"/>
+    <line id="prefigure-curl-field-B-line-30" x1="191.2" y1="232.4" x2="211.8" y2="222.1" stroke="#2b6cb0" stroke-width="2" fill="none" marker-end="url(#prefigure-curl-field-B-arrow-head-end-2_None_24_60-h2b6cb0)"/>
+    <line id="prefigure-curl-field-B-line-31" x1="191.2" y1="191.2" x2="201.5" y2="180.9" stroke="#2b6cb0" stroke-width="2" fill="none" marker-end="url(#prefigure-curl-field-B-arrow-head-end-2_None_24_60-h2b6cb0)"/>
+    <line id="prefigure-curl-field-B-line-32" x1="191.2" y1="150.0" x2="191.2" y2="139.7" stroke="#2b6cb0" stroke-width="2" fill="none" marker-end="url(#prefigure-curl-field-B-arrow-head-end-2_None_24_60-h2b6cb0)"/>
+    <line id="prefigure-curl-field-B-line-33" x1="191.2" y1="108.8" x2="180.9" y2="98.5" stroke="#2b6cb0" stroke-width="2" fill="none" marker-end="url(#prefigure-curl-field-B-arrow-head-end-2_None_24_60-h2b6cb0)"/>
+    <line id="prefigure-curl-field-B-line-34" x1="191.2" y1="67.6" x2="170.6" y2="57.4" stroke="#2b6cb0" stroke-width="2" fill="none" marker-end="url(#prefigure-curl-field-B-arrow-head-end-2_None_24_60-h2b6cb0)"/>
+    <line id="prefigure-curl-field-B-line-35" x1="191.2" y1="26.5" x2="160.3" y2="16.2" stroke="#2b6cb0" stroke-width="2" fill="none" marker-end="url(#prefigure-curl-field-B-arrow-head-end-2_None_24_60-h2b6cb0)"/>
+    <line id="prefigure-curl-field-B-line-36" x1="232.4" y1="273.5" x2="263.2" y2="252.9" stroke="#2b6cb0" stroke-width="2" fill="none" marker-end="url(#prefigure-curl-field-B-arrow-head-end-2_None_24_60-h2b6cb0)"/>
+    <line id="prefigure-curl-field-B-line-37" x1="232.4" y1="232.4" x2="252.9" y2="211.8" stroke="#2b6cb0" stroke-width="2" fill="none" marker-end="url(#prefigure-curl-field-B-arrow-head-end-2_None_24_60-h2b6cb0)"/>
+    <line id="prefigure-curl-field-B-line-38" x1="232.4" y1="191.2" x2="242.6" y2="170.6" stroke="#2b6cb0" stroke-width="2" fill="none" marker-end="url(#prefigure-curl-field-B-arrow-head-end-2_None_24_60-h2b6cb0)"/>
+    <line id="prefigure-curl-field-B-line-39" x1="232.4" y1="150.0" x2="232.4" y2="129.4" stroke="#2b6cb0" stroke-width="2" fill="none" marker-end="url(#prefigure-curl-field-B-arrow-head-end-2_None_24_60-h2b6cb0)"/>
+    <line id="prefigure-curl-field-B-line-40" x1="232.4" y1="108.8" x2="222.1" y2="88.2" stroke="#2b6cb0" stroke-width="2" fill="none" marker-end="url(#prefigure-curl-field-B-arrow-head-end-2_None_24_60-h2b6cb0)"/>
+    <line id="prefigure-curl-field-B-line-41" x1="232.4" y1="67.6" x2="211.8" y2="47.1" stroke="#2b6cb0" stroke-width="2" fill="none" marker-end="url(#prefigure-curl-field-B-arrow-head-end-2_None_24_60-h2b6cb0)"/>
+    <line id="prefigure-curl-field-B-line-42" x1="232.4" y1="26.5" x2="201.5" y2="5.9" stroke="#2b6cb0" stroke-width="2" fill="none" marker-end="url(#prefigure-curl-field-B-arrow-head-end-2_None_24_60-h2b6cb0)"/>
+    <line id="prefigure-curl-field-B-line-43" x1="273.5" y1="273.5" x2="304.4" y2="242.6" stroke="#2b6cb0" stroke-width="2" fill="none" marker-end="url(#prefigure-curl-field-B-arrow-head-end-2_None_24_60-h2b6cb0)"/>
+    <line id="prefigure-curl-field-B-line-44" x1="273.5" y1="232.4" x2="294.1" y2="201.5" stroke="#2b6cb0" stroke-width="2" fill="none" marker-end="url(#prefigure-curl-field-B-arrow-head-end-2_None_24_60-h2b6cb0)"/>
+    <line id="prefigure-curl-field-B-line-45" x1="273.5" y1="191.2" x2="283.8" y2="160.3" stroke="#2b6cb0" stroke-width="2" fill="none" marker-end="url(#prefigure-curl-field-B-arrow-head-end-2_None_24_60-h2b6cb0)"/>
+    <line id="prefigure-curl-field-B-line-46" x1="273.5" y1="150.0" x2="273.5" y2="119.1" stroke="#2b6cb0" stroke-width="2" fill="none" marker-end="url(#prefigure-curl-field-B-arrow-head-end-2_None_24_60-h2b6cb0)"/>
+    <line id="prefigure-curl-field-B-line-47" x1="273.5" y1="108.8" x2="263.2" y2="77.9" stroke="#2b6cb0" stroke-width="2" fill="none" marker-end="url(#prefigure-curl-field-B-arrow-head-end-2_None_24_60-h2b6cb0)"/>
+    <line id="prefigure-curl-field-B-line-48" x1="273.5" y1="67.6" x2="252.9" y2="36.8" stroke="#2b6cb0" stroke-width="2" fill="none" marker-end="url(#prefigure-curl-field-B-arrow-head-end-2_None_24_60-h2b6cb0)"/>
+    <line id="prefigure-curl-field-B-line-49" x1="273.5" y1="26.5" x2="242.6" y2="-4.4" stroke="#2b6cb0" stroke-width="2" fill="none" marker-end="url(#prefigure-curl-field-B-arrow-head-end-2_None_24_60-h2b6cb0)"/>
   </g>
 </svg>

@@ -19,7 +19,7 @@
       <path d="M 16.3 9.8 L 2.8 15.8 A 2 2 0 0 1 0.0 14.0 L 0.0 2.0 A 2 2 0 0 1 2.8 0.2 L 16.3 6.2 A 2 2 0 0 1 16.3 9.8 Z" fill="white" stroke="none"/>
     </marker>
   </defs>
-  <g id="prefigure-r4p-parallelogram-pg-axes" stroke="black" stroke-width="2">
+  <g id="pg-axes" stroke="black" stroke-width="2">
     <line id="prefigure-r4p-parallelogram-line-0" x1="10.0" y1="203.7" x2="370.0" y2="203.7" stroke="black" stroke-width="2" marker-end="url(#prefigure-r4p-parallelogram-arrow-head-end-2_None_24_60-black)"/>
     <line id="prefigure-r4p-parallelogram-line-1" x1="60.5" y1="250.0" x2="60.5" y2="10.0" stroke="black" stroke-width="2" marker-end="url(#prefigure-r4p-parallelogram-arrow-head-end-2_None_24_60-black)"/>
   </g>
@@ -56,10 +56,10 @@
     </g>
   </g>
   <path id="prefigure-r4p-parallelogram-pg-par" d="M 60.5 203.7 L 186.8 85.8 L 313.2 85.8 L 186.8 203.7 Z" stroke="#CC0079" stroke-width="3" fill="#CC0079" fill-opacity="0.15" clip-path="url(#prefigure-r4p-parallelogram-clipPath-1)"/>
-  <path id="prefigure-r4p-parallelogram-pg-e1" stroke="#CC0079" stroke-width="3" fill="none" marker-end="url(#prefigure-r4p-parallelogram-arrow-head-end-3_None_24_60-hCC0079)" d="M 107.9 159.5 L 149.4 120.7"/>
-  <path id="prefigure-r4p-parallelogram-pg-e2" stroke="#CC0079" stroke-width="3" fill="none" marker-end="url(#prefigure-r4p-parallelogram-arrow-head-end-3_None_24_60-hCC0079)" d="M 231.1 85.8 L 277.9 85.8"/>
-  <path id="prefigure-r4p-parallelogram-pg-e3" stroke="#CC0079" stroke-width="3" fill="none" marker-end="url(#prefigure-r4p-parallelogram-arrow-head-end-3_None_24_60-hCC0079)" d="M 272.1 124.1 L 230.6 162.9"/>
-  <path id="prefigure-r4p-parallelogram-pg-e4" stroke="#CC0079" stroke-width="3" fill="none" marker-end="url(#prefigure-r4p-parallelogram-arrow-head-end-3_None_24_60-hCC0079)" d="M 142.6 203.7 L 95.8 203.7"/>
+  <path id="prefigure-r4p-parallelogram-pg-e1" stroke="#CC0079" stroke-width="3" fill="none" d="M 107.9 159.5 L 152.1 118.2" marker-end="url(#prefigure-r4p-parallelogram-arrow-head-end-3_None_24_60-hCC0079)"/>
+  <path id="prefigure-r4p-parallelogram-pg-e2" stroke="#CC0079" stroke-width="3" fill="none" d="M 231.1 85.8 L 281.6 85.8" marker-end="url(#prefigure-r4p-parallelogram-arrow-head-end-3_None_24_60-hCC0079)"/>
+  <path id="prefigure-r4p-parallelogram-pg-e3" stroke="#CC0079" stroke-width="3" fill="none" d="M 272.1 124.1 L 227.9 165.4" marker-end="url(#prefigure-r4p-parallelogram-arrow-head-end-3_None_24_60-hCC0079)"/>
+  <path id="prefigure-r4p-parallelogram-pg-e4" stroke="#CC0079" stroke-width="3" fill="none" d="M 142.6 203.7 L 92.1 203.7" marker-end="url(#prefigure-r4p-parallelogram-arrow-head-end-3_None_24_60-hCC0079)"/>
   <g id="prefigure-r4p-parallelogram-pg-O">
     <g transform="translate(55.5,208.7) translate(-40.2,-0.0)">
       <g id="prefigure-r4p-parallelogram-g-2">
