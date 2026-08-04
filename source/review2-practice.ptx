@@ -1497,83 +1497,19 @@
       <de-object name="a" context="number">
         <de-random distribution="discrete" min="1" max="9" by="1"/>
       </de-object>
-      <de-object name="val" context="number"><de-expression>16*a/5</de-expression></de-object>
+      <de-object name="val" context="number"><de-expression>3*a/5</de-expression></de-object>
     </setup>
     <statement>
       <p>
         A solid <m>E</m> lies inside both the sphere
-        <m>x^2+y^2+z^2 = 4</m> and the cylinder
-        <m>x^2+(y-1)^2 = 1</m>. Its density at a point is
+        <m>x^2+y^2+z^2 = 1</m> and the cylinder
+        <m>x^2+(y-1)^2 = 1</m>; the two surfaces are drawn together in
+        <xref ref="fig-ws-cylinder-sphere"/>. The density of <m>E</m> at a
+        point is
       </p>
       <me>
         \delta(x,y,z) = \frac{<eval obj="a"/>\,\lvert xy \rvert}{x^2+y^2} .
       </me>
-      <figure xml:id="fig-r2p-sphere-cylinder">
-        <caption>
-          The solid of <xref ref="ex-r2p-sphere-cylinder-mass"/>: the part of
-          the ball of radius two that lies inside the cylinder
-          <m>x^2+(y-1)^2=1</m>.
-        </caption>
-        <image xml:id="image-r2p-sphere-cylinder" width="60%">
-          <shortdescription>
-            A translucent sphere with a vertical cylinder passing through it;
-            the cylinder is tangent to the sphere on the y axis and the solid
-            is the part of the ball inside the cylinder.
-          </shortdescription>
-          <latex-image>
-            \begin{tikzpicture}[line join=round, line cap=round]
-    \definecolor{oiblue}{RGB}{0,114,178}
-    \definecolor{oiorange}{RGB}{213,94,0}
-    \begin{axis}[
-        view={145}{24},
-        width=11cm,
-        axis lines=center,
-        axis line style={-latex, black!70, line width=0.7pt},
-        xlabel={$x$}, ylabel={$y$}, zlabel={$z$},
-        label style={font=\large},
-        ticks=none,
-        xmin=-2.6, xmax=2.6, ymin=-2.6, ymax=2.9, zmin=-2.6, zmax=2.9,
-        clip=false,
-      ]
-      % ---- the ball of radius 2: a light wireframe plus a faint surface ----
-      \addplot3[surf, shader=interp, opacity=0.10, fill opacity=0.10,
-                colormap={sph}{color=(oiblue!30!white) color=(oiblue!60!white)},
-                domain=0:180, y domain=0:360, samples=22, samples y=34,
-                z buffer=sort, forget plot]
-        ({2*sin(x)*cos(y)}, {2*sin(x)*sin(y)}, {2*cos(x)});
-      \addplot3[oiblue!55, line width=0.9pt, samples=100, samples y=0,
-                domain=0:360, forget plot] ({2*cos(x)}, {2*sin(x)}, 0);
-      \addplot3[oiblue!55, line width=0.9pt, samples=100, samples y=0,
-                domain=0:360, forget plot] ({2*cos(x)}, 0, {2*sin(x)});
-      \addplot3[oiblue!55, line width=0.9pt, samples=100, samples y=0,
-                domain=0:360, forget plot] (0, {2*cos(x)}, {2*sin(x)});
-      % ---- the cylinder x^2+(y-1)^2=1, cut off where it meets the sphere ----
-      \addplot3[surf, shader=faceted, faceted color=oiorange!45,
-                colormap={cyl}{color=(oiorange!20!white) color=(oiorange!60!white)},
-                opacity=0.72, fill opacity=0.72,
-                domain=0:360, y domain=-1:1, samples=56, samples y=20,
-                z buffer=sort, forget plot]
-        ({cos(x)}, {1+sin(x)}, {y*sqrt(max(0.0001,2-2*sin(x)))});
-      % ---- the two curves where the cylinder meets the sphere ----
-      \addplot3[oiorange, line width=1.3pt, samples=110, samples y=0,
-                domain=0:360, forget plot]
-        ({cos(x)}, {1+sin(x)}, {sqrt(max(0.0001,2-2*sin(x)))});
-      \addplot3[oiorange, line width=1.3pt, samples=110, samples y=0,
-                domain=0:360, forget plot]
-        ({cos(x)}, {1+sin(x)}, {-sqrt(max(0.0001,2-2*sin(x)))});
-      % ---- the base circle of the cylinder in the xy-plane ----
-      \addplot3[oiorange!80, dashed, line width=1pt, samples=90, samples y=0,
-                domain=0:360, forget plot] ({cos(x)}, {1+sin(x)}, 0);
-      \node[anchor=north, font=\small] at (axis cs:0,2,-0.15) {$2$};
-      \node[oiorange, font=\large, anchor=south west]
-        at (axis description cs:0.02,0.9) {$x^2+(y-1)^2=1$};
-      \node[oiblue, font=\large, anchor=south west]
-        at (axis description cs:0.02,0.82) {$x^2+y^2+z^2=4$};
-    \end{axis}
-  \end{tikzpicture}
-          </latex-image>
-        </image>
-      </figure>
       <p>
         Find the mass of <m>E</m>:
         <fillin name="b1" mode="number" ansobj="val" width="14"/>
@@ -1590,31 +1526,68 @@
     </evaluation>
     <solution include-automatic="no">
       <p component="review2-solutions">
-        Cylindrical coordinates suit both surfaces. The cylinder
-        <m>x^2+(y-1)^2=1</m> becomes <m>r = 2\sin\theta</m>, traced once
-        for <m>0 \le \theta \le \pi</m>, and it lies inside the sphere,
-        touching it only at <m>(0,2,0)</m>. The sphere gives
-        <m>-\sqrt{4-r^2} \le z \le \sqrt{4-r^2}</m>. The density
+        Cylindrical coordinates suit both surfaces. The cylinder becomes
+        <m>r = 2\sin\theta</m>, traced once for
+        <m>0 \le \theta \le \pi</m>, and the sphere gives
+        <m>r \le 1</m> with
+        <m>-\sqrt{1-r^2} \le z \le \sqrt{1-r^2}</m>. The density
         simplifies beautifully:
         <m>\dfrac{a\lvert xy\rvert}{x^2+y^2}
-        = a\lvert\cos\theta\sin\theta\rvert</m>. So
+        = a\lvert\cos\theta\sin\theta\rvert</m>, with no <m>r</m> in it
+        at all.
+      </p>
+      <p component="review2-solutions">
+        The one trap here is the upper limit for <m>r</m>. The cylinder is
+        <term>not</term> contained in the ball: its wall reaches out to
+        <m>r = 2</m>, while the sphere stops at <m>r = 1</m>. A ray at angle
+        <m>\theta</m> therefore stops at whichever surface it meets first,
+        so <m>r</m> runs from <m>0</m> to
+        <m>R(\theta) = \min\left(1,\ 2\sin\theta\right)</m>. The two
+        agree where <m>2\sin\theta = 1</m>, that is at
+        <m>\theta = \pi/6</m> and <m>\theta = 5\pi/6</m>.
+      </p>
+      <p component="review2-solutions">
+        Doing the <m>z</m>- and <m>r</m>-integrals first,
       </p>
       <me component="review2-solutions">
-        M = a\int_0^{\pi}\!\!\int_0^{2\sin\theta}
-        \!\!\int_{-\sqrt{4-r^2}}^{\sqrt{4-r^2}}
-        \lvert\cos\theta\sin\theta\rvert\,r\,dz\,dr\,d\theta .
+        \int_0^{R}\!\!\int_{-\sqrt{1-r^2}}^{\sqrt{1-r^2}} r\,dz\,dr
+        = \int_0^{R} 2r\sqrt{1-r^2}\,dr
+        = \frac{2}{3}\left[1-\left(1-R^2\right)^{3/2}\right].
       </me>
       <p component="review2-solutions">
-        The <m>z</m>- and <m>r</m>-integrals give
-        <m>\frac{2}{3}\left[8-\left(4-4\sin^2\theta\right)^{3/2}\right]
-        = \frac{16}{3}\left(1-\lvert\cos\theta\rvert^3\right)</m>, and
-        then
+        On <m>\pi/6 \le \theta \le 5\pi/6</m> we have <m>R = 1</m> and
+        this is just <m>2/3</m>. On the two end pieces <m>R = 2\sin\theta</m>
+        and it is <m>\frac{2}{3}\left[1-\left(1-4\sin^2\theta\right)^{3/2}\right]</m>.
+        Both <m>\lvert\cos\theta\sin\theta\rvert</m> and <m>R(\theta)</m>
+        are symmetric about <m>\theta = \pi/2</m>, so
       </p>
       <me component="review2-solutions">
-        M = \frac{32a}{3}\int_0^{\pi/2}
-        \cos\theta\sin\theta\left(1-\cos^3\theta\right)d\theta
-        = \frac{32a}{3}\left(\frac12-\frac15\right) = \frac{16a}{5} .
+        M = 2a\left[\frac{2}{3}\int_{\pi/6}^{\pi/2}
+        \cos\theta\sin\theta\,d\theta
+        + \frac{2}{3}\int_0^{\pi/6}\cos\theta\sin\theta
+        \left(1-\left(1-4\sin^2\theta\right)^{3/2}\right)d\theta\right].
       </me>
+      <p component="review2-solutions">
+        Substituting <m>u = \sin\theta</m> makes all three pieces easy:
+        <m>\int_{\pi/6}^{\pi/2}\cos\theta\sin\theta\,d\theta
+        = \frac{3}{8}</m>,
+        <m>\int_0^{\pi/6}\cos\theta\sin\theta\,d\theta
+        = \frac{1}{8}</m>, and
+        <m>\int_0^{1/2} u\left(1-4u^2\right)^{3/2}du = \frac{1}{20}</m>.
+        Hence
+      </p>
+      <me component="review2-solutions">
+        M = \frac{4a}{3}\left(\frac{3}{8}+\frac{1}{8}-\frac{1}{20}\right)
+        = \frac{4a}{3}\cdot\frac{9}{20}
+        = \frac{3a}{5} .
+      </me>
+      <p component="review2-solutions">
+        Using <m>r = 2\sin\theta</m> as the upper limit for every
+        <m>\theta</m> happens to give the same number here, because
+        <m>\sqrt{1-r^2}</m> is zero beyond <m>r = 1</m> and those rays
+        contribute nothing. That is luck, not a rule: with any other
+        integrand it would be wrong.
+      </p>
     </solution>
   </exercise>
 
