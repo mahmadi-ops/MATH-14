@@ -3457,11 +3457,254 @@ var ptx_lunr_docs = [
   "body": " Green's Theorem on One Petal   For around one petal of : equals .  The area of the petal is , so the line integral is .       Correct.      Incorrect.        Correct.      Incorrect.        Correct.      Incorrect.      "
 },
 {
+  "id": "sec-exercises-review1-practice",
+  "level": "1",
+  "url": "sec-exercises-review1-practice.html",
+  "type": "Section",
+  "number": "4.10",
+  "title": "Review Problems #1",
+  "body": " Review Problems #1   Sections: , , and . Work each problem, then type your answers into the boxes and have them checked here.  Every answer box is graded separately, so a box you fill in correctly earns its credit even if another box in the same problem is wrong. Press Check Me to submit; you may check as often as you like.   How to type your answers. Type numbers as decimals to at least three places, with no units and no . Type expressions with * for products and ^ for powers, and write functions with parentheses: cos(t) , sqrt(x) , e^t , ln(s) .     Speed Where the Tangent Line is Horizontal       2*a     The position of an object at time is given by   Find its speed at the points where the tangent line is horizontal.  speed         Correct.     Incorrect.       A Cartesian Equation and a Tangent Line          b^3*x^3+a^3*y^3-a^2*b^2*x*y    (-b\/a)*(x-a\/2)+b\/2     Find a Cartesian equation relating and for the parametric curve   Write your answer in the form , where is a polynomial in and whose coefficient is .      Find the equation of the tangent line to the curve at the point corresponding to .           Correct.     Incorrect.       Correct.     Incorrect.       A Scalar Line Integral Along a Helix          sqrt(2)*(a*pi+pi^(n+1)\/(n+1))     Calculate the integral of over the curve for .           Correct.     Incorrect.       A Vector Line Integral Along an Exponential Path       2*(exp(2*T)-exp(-2*T))-(exp(T)-exp(-T))     Compute the line integral of the vector field over the path for .           Correct.     Incorrect.       A Circle Traced in Space          0     The function traces a circle. Determine the plane containing it, its center, and its radius.   Plane:    Center:  , ,    Radius:        Correct.   Incorrect.      Correct.   Incorrect.      Correct.   Incorrect.      Correct.   Incorrect.      Correct.   Incorrect.      Time, Distance and Speed of a Moving Object          a+gap       b^3\/3+b-a^3\/3-a    a^2+1     The position vector of an object is   Calculate the time it takes the object to reach ; the distance it travels from until ; and its speed at seconds.    seconds    meters    meters per second       Correct.   Incorrect.      Correct.   Incorrect.      Correct.   Incorrect.      Work Along a Parabola       a*7\/3+(exp(2)-exp(1))\/2     Evaluate the work done by the force field on a particle that moves along the curve from to .  Work         Correct.   Incorrect.      The Length of an Involute       a^2\/2     Calculate the length of the parametrized curve   Length         Correct.   Incorrect.      Matching Vector Fields to Their Graphs   Match each of the following vector fields with its graph, entering the letter A , B , C , D or E . The graphs are shown below; in each one a small circle marks the tail of the arrow.   :    :    :    :    :     Graph .   Vector field A: arrows drawn at a grid of points, each with a dot at its tail.                                                                                       Graph .   Vector field B: arrows drawn at a grid of points, each with a dot at its tail.                                                                                       Graph .   Vector field C: arrows drawn at a grid of points, each with a dot at its tail.                                                                                         Graph .   Vector field D: arrows drawn at a grid of points, each with a dot at its tail.                                                                                       Graph .   Vector field E: arrows drawn at a grid of points, each with a dot at its tail.                                                                                           A  Correct.    .*  Incorrect.      B  Correct.    .*  Incorrect.      C  Correct.    .*  Incorrect.      D  Correct.    .*  Incorrect.      E  Correct.    .*  Incorrect.       The Sign of a Line Integral Around a Closed Curve   Consider the closed curve shown in . For each vector field below, decide whether is positive, negative, or zero. Type positive , negative or zero .   :    :    :    Be sure you can justify each answer.    The closed curve : down the inner arc, out along the lower edge, up the outer arc, and back in along the upper edge.   A closed curve made of two circular arcs of radius one and two between minus forty-five and plus forty-five degrees, joined by two radial segments, with arrows showing the direction of travel.    fInner(t) = (cos(t), sin(t))  fOuter(t) = (2*cos(t), 2*sin(t))            C                  zero Correct.  .* Incorrect.    positive Correct.  .* Incorrect.    negative Correct.  .* Incorrect.      Ordering Three Line Integrals   Consider the vector field shown in together with the paths , and . Arrange the three line integrals , and in ascending order. Type C1 , C2 or C3 in each box.  smallest:  middle:  largest:    The vector field and the three paths , and . Each field vector is drawn with a dot at its tail.   A constant vector field pointing to the right, with three straight paths drawn on it.                                                                                                                                         C_1      C_2      C_3                 C2 Correct.  .* Incorrect.    C3 Correct.  .* Incorrect.    C1 Correct.  .* Incorrect.      "
+},
+{
+  "id": "sec-exercises-review1-practice-2-3",
+  "level": "2",
+  "url": "sec-exercises-review1-practice.html#sec-exercises-review1-practice-2-3",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "How to type your answers. "
+},
+{
+  "id": "ex-r1p-cycloid-speed",
+  "level": "2",
+  "url": "sec-exercises-review1-practice.html#ex-r1p-cycloid-speed",
+  "type": "Exercise",
+  "number": "1",
+  "title": "Speed Where the Tangent Line is Horizontal.",
+  "body": " Speed Where the Tangent Line is Horizontal       2*a     The position of an object at time is given by   Find its speed at the points where the tangent line is horizontal.  speed         Correct.     Incorrect.     "
+},
+{
+  "id": "ex-r1p-cartesian-from-parametric",
+  "level": "2",
+  "url": "sec-exercises-review1-practice.html#ex-r1p-cartesian-from-parametric",
+  "type": "Exercise",
+  "number": "2",
+  "title": "A Cartesian Equation and a Tangent Line.",
+  "body": " A Cartesian Equation and a Tangent Line          b^3*x^3+a^3*y^3-a^2*b^2*x*y    (-b\/a)*(x-a\/2)+b\/2     Find a Cartesian equation relating and for the parametric curve   Write your answer in the form , where is a polynomial in and whose coefficient is .      Find the equation of the tangent line to the curve at the point corresponding to .           Correct.     Incorrect.       Correct.     Incorrect.     "
+},
+{
+  "id": "ex-r1p-helix-scalar",
+  "level": "2",
+  "url": "sec-exercises-review1-practice.html#ex-r1p-helix-scalar",
+  "type": "Exercise",
+  "number": "3",
+  "title": "A Scalar Line Integral Along a Helix.",
+  "body": " A Scalar Line Integral Along a Helix          sqrt(2)*(a*pi+pi^(n+1)\/(n+1))     Calculate the integral of over the curve for .           Correct.     Incorrect.     "
+},
+{
+  "id": "ex-r1p-exponential-path",
+  "level": "2",
+  "url": "sec-exercises-review1-practice.html#ex-r1p-exponential-path",
+  "type": "Exercise",
+  "number": "4",
+  "title": "A Vector Line Integral Along an Exponential Path.",
+  "body": " A Vector Line Integral Along an Exponential Path       2*(exp(2*T)-exp(-2*T))-(exp(T)-exp(-T))     Compute the line integral of the vector field over the path for .           Correct.     Incorrect.     "
+},
+{
+  "id": "ex-r1p-circle-in-plane",
+  "level": "2",
+  "url": "sec-exercises-review1-practice.html#ex-r1p-circle-in-plane",
+  "type": "Exercise",
+  "number": "5",
+  "title": "A Circle Traced in Space.",
+  "body": " A Circle Traced in Space          0     The function traces a circle. Determine the plane containing it, its center, and its radius.   Plane:    Center:  , ,    Radius:        Correct.   Incorrect.      Correct.   Incorrect.      Correct.   Incorrect.      Correct.   Incorrect.      Correct.   Incorrect.    "
+},
+{
+  "id": "ex-r1p-speed-distance",
+  "level": "2",
+  "url": "sec-exercises-review1-practice.html#ex-r1p-speed-distance",
+  "type": "Exercise",
+  "number": "6",
+  "title": "Time, Distance and Speed of a Moving Object.",
+  "body": " Time, Distance and Speed of a Moving Object          a+gap       b^3\/3+b-a^3\/3-a    a^2+1     The position vector of an object is   Calculate the time it takes the object to reach ; the distance it travels from until ; and its speed at seconds.    seconds    meters    meters per second       Correct.   Incorrect.      Correct.   Incorrect.      Correct.   Incorrect.    "
+},
+{
+  "id": "ex-r1p-work-parabola",
+  "level": "2",
+  "url": "sec-exercises-review1-practice.html#ex-r1p-work-parabola",
+  "type": "Exercise",
+  "number": "7",
+  "title": "Work Along a Parabola.",
+  "body": " Work Along a Parabola       a*7\/3+(exp(2)-exp(1))\/2     Evaluate the work done by the force field on a particle that moves along the curve from to .  Work         Correct.   Incorrect.    "
+},
+{
+  "id": "ex-r1p-spiral-length",
+  "level": "2",
+  "url": "sec-exercises-review1-practice.html#ex-r1p-spiral-length",
+  "type": "Exercise",
+  "number": "8",
+  "title": "The Length of an Involute.",
+  "body": " The Length of an Involute       a^2\/2     Calculate the length of the parametrized curve   Length         Correct.   Incorrect.    "
+},
+{
+  "id": "ex-r1p-match-fields",
+  "level": "2",
+  "url": "sec-exercises-review1-practice.html#ex-r1p-match-fields",
+  "type": "Exercise",
+  "number": "9",
+  "title": "Matching Vector Fields to Their Graphs.",
+  "body": " Matching Vector Fields to Their Graphs   Match each of the following vector fields with its graph, entering the letter A , B , C , D or E . The graphs are shown below; in each one a small circle marks the tail of the arrow.   :    :    :    :    :     Graph .   Vector field A: arrows drawn at a grid of points, each with a dot at its tail.                                                                                       Graph .   Vector field B: arrows drawn at a grid of points, each with a dot at its tail.                                                                                       Graph .   Vector field C: arrows drawn at a grid of points, each with a dot at its tail.                                                                                         Graph .   Vector field D: arrows drawn at a grid of points, each with a dot at its tail.                                                                                       Graph .   Vector field E: arrows drawn at a grid of points, each with a dot at its tail.                                                                                           A  Correct.    .*  Incorrect.      B  Correct.    .*  Incorrect.      C  Correct.    .*  Incorrect.      D  Correct.    .*  Incorrect.      E  Correct.    .*  Incorrect.     "
+},
+{
+  "id": "ex-r1p-sign-of-circulation",
+  "level": "2",
+  "url": "sec-exercises-review1-practice.html#ex-r1p-sign-of-circulation",
+  "type": "Exercise",
+  "number": "10",
+  "title": "The Sign of a Line Integral Around a Closed Curve.",
+  "body": " The Sign of a Line Integral Around a Closed Curve   Consider the closed curve shown in . For each vector field below, decide whether is positive, negative, or zero. Type positive , negative or zero .   :    :    :    Be sure you can justify each answer.    The closed curve : down the inner arc, out along the lower edge, up the outer arc, and back in along the upper edge.   A closed curve made of two circular arcs of radius one and two between minus forty-five and plus forty-five degrees, joined by two radial segments, with arrows showing the direction of travel.    fInner(t) = (cos(t), sin(t))  fOuter(t) = (2*cos(t), 2*sin(t))            C                  zero Correct.  .* Incorrect.    positive Correct.  .* Incorrect.    negative Correct.  .* Incorrect.    "
+},
+{
+  "id": "ex-r1p-order-integrals",
+  "level": "2",
+  "url": "sec-exercises-review1-practice.html#ex-r1p-order-integrals",
+  "type": "Exercise",
+  "number": "11",
+  "title": "Ordering Three Line Integrals.",
+  "body": " Ordering Three Line Integrals   Consider the vector field shown in together with the paths , and . Arrange the three line integrals , and in ascending order. Type C1 , C2 or C3 in each box.  smallest:  middle:  largest:    The vector field and the three paths , and . Each field vector is drawn with a dot at its tail.   A constant vector field pointing to the right, with three straight paths drawn on it.                                                                                                                                         C_1      C_2      C_3                 C2 Correct.  .* Incorrect.    C3 Correct.  .* Incorrect.    C1 Correct.  .* Incorrect.    "
+},
+{
+  "id": "sec-exercises-review2-practice",
+  "level": "1",
+  "url": "sec-exercises-review2-practice.html",
+  "type": "Section",
+  "number": "4.11",
+  "title": "Review Problems #2",
+  "body": " Review Problems #2   Sections: , , , , , and .  Every answer box is graded separately, so a box you fill in correctly earns its credit even if another box in the same problem is wrong. Press Check Me to submit; you may check as often as you like.   How to type your answers. Give numbers as decimals to at least three places, with no units and no .     A Double Integral Over a Rectangle          (1\/15)*((a^2+b^2)^(5\/2)-a^5-b^5)     Evaluate .  Answer:        Correct.   Incorrect.      Reversing the Order of Integration          b^2    (2*c\/9)*((b^3+1)^(3\/2)-1)     Evaluate .  Answer:        Correct.   Incorrect.      Converting an Integral to Polar Coordinates       a^2    a^4\/16     Convert to polar coordinates and evaluate   Answer:        Correct.   Incorrect.      A Sector Integral in Polar Form       3*k    k*(1-sqrt(3)\/2)     Sketch the region of integration and evaluate by changing to polar coordinates:   Answer:        Correct.   Incorrect.      Mass of a Solid Under a Plane             a*b    a^2*b^2*(a+b*m)\/24     Find the mass of the solid bounded by the coordinate planes and the plane , if the density is .  mass         Correct.   Incorrect.      A Triple Integral Over a Tetrahedron       a^5\/60     Evaluate , where is the solid tetrahedron with vertices , , and .  Answer:        Correct.   Incorrect.      A Double Integral Over a Triangle       7*a\/8     Evaluate , where is the triangular region with vertices , and .  Answer:        Correct.   Incorrect.      Volume Under a Hyperbolic Paraboloid       40\/3+2*a     Find the volume of the solid that lies under the hyperbolic paraboloid and above the rectangle , .  Volume         Correct.   Incorrect.      A Double Integral Over a Region Under a Logarithm       (1\/(a+1))*((a\/(a+1))*exp(a+1)+1\/(a+1))     Evaluate , where .  Answer:        Correct.   Incorrect.      A Triple Integral in Cylindrical Coordinates       r^2    2*pi*r^2     Evaluate   Answer:        Correct.   Incorrect.      Volume Inside a Sphere and Outside a Cone          a^2    2*pi*a^3*b\/(3*sqrt(b^2+1))     Find the volume of the solid that lies within the sphere , above the -plane, and outside the cone .  Volume         Correct.   Incorrect.      A Triple Integral Over a Wedge       6*k    k     Evaluate over the region given by , , .  Answer:        Correct.   Incorrect.      "
+},
+{
+  "id": "sec-exercises-review2-practice-2-3",
+  "level": "2",
+  "url": "sec-exercises-review2-practice.html#sec-exercises-review2-practice-2-3",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "How to type your answers. "
+},
+{
+  "id": "ex-r2p-xy-sqrt",
+  "level": "2",
+  "url": "sec-exercises-review2-practice.html#ex-r2p-xy-sqrt",
+  "type": "Exercise",
+  "number": "1",
+  "title": "A Double Integral Over a Rectangle.",
+  "body": " A Double Integral Over a Rectangle          (1\/15)*((a^2+b^2)^(5\/2)-a^5-b^5)     Evaluate .  Answer:        Correct.   Incorrect.    "
+},
+{
+  "id": "ex-r2p-reverse-order",
+  "level": "2",
+  "url": "sec-exercises-review2-practice.html#ex-r2p-reverse-order",
+  "type": "Exercise",
+  "number": "2",
+  "title": "Reversing the Order of Integration.",
+  "body": " Reversing the Order of Integration          b^2    (2*c\/9)*((b^3+1)^(3\/2)-1)     Evaluate .  Answer:        Correct.   Incorrect.    "
+},
+{
+  "id": "ex-r2p-to-polar",
+  "level": "2",
+  "url": "sec-exercises-review2-practice.html#ex-r2p-to-polar",
+  "type": "Exercise",
+  "number": "3",
+  "title": "Converting an Integral to Polar Coordinates.",
+  "body": " Converting an Integral to Polar Coordinates       a^2    a^4\/16     Convert to polar coordinates and evaluate   Answer:        Correct.   Incorrect.    "
+},
+{
+  "id": "ex-r2p-sector",
+  "level": "2",
+  "url": "sec-exercises-review2-practice.html#ex-r2p-sector",
+  "type": "Exercise",
+  "number": "4",
+  "title": "A Sector Integral in Polar Form.",
+  "body": " A Sector Integral in Polar Form       3*k    k*(1-sqrt(3)\/2)     Sketch the region of integration and evaluate by changing to polar coordinates:   Answer:        Correct.   Incorrect.    "
+},
+{
+  "id": "ex-r2p-mass-plane",
+  "level": "2",
+  "url": "sec-exercises-review2-practice.html#ex-r2p-mass-plane",
+  "type": "Exercise",
+  "number": "5",
+  "title": "Mass of a Solid Under a Plane.",
+  "body": " Mass of a Solid Under a Plane             a*b    a^2*b^2*(a+b*m)\/24     Find the mass of the solid bounded by the coordinate planes and the plane , if the density is .  mass         Correct.   Incorrect.    "
+},
+{
+  "id": "ex-r2p-tetra-x2",
+  "level": "2",
+  "url": "sec-exercises-review2-practice.html#ex-r2p-tetra-x2",
+  "type": "Exercise",
+  "number": "6",
+  "title": "A Triple Integral Over a Tetrahedron.",
+  "body": " A Triple Integral Over a Tetrahedron       a^5\/60     Evaluate , where is the solid tetrahedron with vertices , , and .  Answer:        Correct.   Incorrect.    "
+},
+{
+  "id": "ex-r2p-triangle-xy",
+  "level": "2",
+  "url": "sec-exercises-review2-practice.html#ex-r2p-triangle-xy",
+  "type": "Exercise",
+  "number": "7",
+  "title": "A Double Integral Over a Triangle.",
+  "body": " A Double Integral Over a Triangle       7*a\/8     Evaluate , where is the triangular region with vertices , and .  Answer:        Correct.   Incorrect.    "
+},
+{
+  "id": "ex-r2p-hyperbolic-paraboloid",
+  "level": "2",
+  "url": "sec-exercises-review2-practice.html#ex-r2p-hyperbolic-paraboloid",
+  "type": "Exercise",
+  "number": "8",
+  "title": "Volume Under a Hyperbolic Paraboloid.",
+  "body": " Volume Under a Hyperbolic Paraboloid       40\/3+2*a     Find the volume of the solid that lies under the hyperbolic paraboloid and above the rectangle , .  Volume         Correct.   Incorrect.    "
+},
+{
+  "id": "ex-r2p-log-region",
+  "level": "2",
+  "url": "sec-exercises-review2-practice.html#ex-r2p-log-region",
+  "type": "Exercise",
+  "number": "9",
+  "title": "A Double Integral Over a Region Under a Logarithm.",
+  "body": " A Double Integral Over a Region Under a Logarithm       (1\/(a+1))*((a\/(a+1))*exp(a+1)+1\/(a+1))     Evaluate , where .  Answer:        Correct.   Incorrect.    "
+},
+{
+  "id": "ex-r2p-cylinder-inverse-r",
+  "level": "2",
+  "url": "sec-exercises-review2-practice.html#ex-r2p-cylinder-inverse-r",
+  "type": "Exercise",
+  "number": "10",
+  "title": "A Triple Integral in Cylindrical Coordinates.",
+  "body": " A Triple Integral in Cylindrical Coordinates       r^2    2*pi*r^2     Evaluate   Answer:        Correct.   Incorrect.    "
+},
+{
+  "id": "ex-r2p-sphere-minus-cone",
+  "level": "2",
+  "url": "sec-exercises-review2-practice.html#ex-r2p-sphere-minus-cone",
+  "type": "Exercise",
+  "number": "11",
+  "title": "Volume Inside a Sphere and Outside a Cone.",
+  "body": " Volume Inside a Sphere and Outside a Cone          a^2    2*pi*a^3*b\/(3*sqrt(b^2+1))     Find the volume of the solid that lies within the sphere , above the -plane, and outside the cone .  Volume         Correct.   Incorrect.    "
+},
+{
+  "id": "ex-r2p-wedge",
+  "level": "2",
+  "url": "sec-exercises-review2-practice.html#ex-r2p-wedge",
+  "type": "Exercise",
+  "number": "12",
+  "title": "A Triple Integral Over a Wedge.",
+  "body": " A Triple Integral Over a Wedge       6*k    k     Evaluate over the region given by , , .  Answer:        Correct.   Incorrect.    "
+},
+{
   "id": "sec-exercises-review3-practice",
   "level": "1",
   "url": "sec-exercises-review3-practice.html",
   "type": "Section",
-  "number": "4.10",
+  "number": "4.12",
   "title": "Review Problems #3",
   "body": " Review Problems #3   Sections: , , and . Work each problem, then type your answers into the boxes and have them checked here.  Every answer box is graded separately, so a box you fill in correctly earns its credit even if another box in the same problem is wrong. Press Check Me to submit; you may check as often as you like.  Checking an answer tells you whether it is right or wrong and nothing more use the boxes to test yourself. A complete worked solution for every problem will be revealed beneath it once solutions are posted.   How to type your answers.      Give exact answers, not decimals. A rounded decimal will be marked wrong, even to several places. Type the exact value: pi*8^3\/2 rather than 1608.495 , and 4*5\/(3*pi) rather than 2.122 . A whole number or an exact fraction may of course be typed as it stands, so 77 and 7\/3 are both fine.     How to type it. Write products with * and powers with ^ , and write functions with parentheses: sqrt(s-t) , ln(9) , exp(-4) . Use pi for . So is typed u^2\/v , and is typed 2*pi*(exp(-1)-exp(-4)) . Spaces are ignored.     Any equivalent form counts. Your answer is compared to the exact value, not to one particular way of writing it, so 2*pi*exp(-1)-2*pi*exp(-4) is accepted just as readily as 2*pi*(exp(-1)-exp(-4)) . Do not simplify on our account just do not round.          Area by a Non-Linear Change of Variables          a^2    b^2    1    u^2\/v    v\/u    2*u\/v    -u^2\/v^2    -v\/u^2    1\/u    1\/v    (aa-1)*ln(bb)     Compute the area of the region in the first quadrant of the -plane bounded by    Part A. Sketch the region . (Nothing to submit for this part the sketch is for your own use in the parts that follow.)   Part B. Using the non-linear change of variables and , find and as functions of and .           Part C. Find the four partial derivatives in the Jacobian matrix of this change of variables, and then its determinant.    ,      ,         Part D. Using the change of variables, set up a double integral for the area of in the form   , where    ,  ,  , and  .   Part E. Evaluate the double integral to find the area of .  Area          Correct.       Incorrect.         Correct.       Incorrect.         Correct.       Incorrect.         Correct.       Incorrect.         Correct.       Incorrect.         Correct.       Incorrect.         Correct.       Incorrect.         Correct.       Incorrect.         Correct.       Incorrect.         Correct.       Incorrect.         Correct.       Incorrect.         Correct.       Incorrect.         Correct.       Incorrect.           Area of a Tilted Ellipse by a Shear       2*a    a^2+1    s-a*t    t    1    pi     Use the change of variables , to find the area of the region bounded by    Part A. Invert the change of variables.    ,     Part B. Find the Jacobian determinant .       Part C. Find the area of the region.  Area          Correct.       Incorrect.         Correct.       Incorrect.         Correct.       Incorrect.         Correct.       Incorrect.           A Double Integral Under a Parabolic Change of Variables          b^2    -a    0    sqrt(s-t)    s    1\/(2*sqrt(s-t))    1\/2    a*bsq\/2     Use the change of variables , to evaluate over the region in the first quadrant bounded by , , , and .   Part A. Invert the change of variables. (Take the positive square root, since lies in the first quadrant.)    ,     Part B. Find the Jacobian determinant.       Part C. The region becomes a rectangle in the -plane. Give its limits.   runs from to , and runs from to .   Part D. After the substitution, the integrand times the Jacobian simplifies to a constant. What is it?       Part E. Evaluate the integral.            Correct.       Incorrect.         Correct.       Incorrect.         Correct.       Incorrect.         Correct.       Incorrect.         Correct.       Incorrect.         Correct.       Incorrect.         Correct.       Incorrect.         Correct.       Incorrect.         Correct.       Incorrect.           A Triple Integral Over an Ellipsoid             a*b*c    4*a*b*c*pi\/5     Calculate the triple integral   where is the region bounded by the ellipsoid .   Part A. Use the change of variables , , , which carries to the unit ball. What is the Jacobian determinant ?       Part B. Evaluate the triple integral.            Correct.       Incorrect.         Correct.       Incorrect.           Centre of Mass of a Tetrahedron       8*k\/105    2\/9    2\/9    1\/3     Find the centre of mass of the solid bounded by the planes , , , and , assuming a mass density of .   Part A. Find the mass of the solid.       Part B. Find the coordinates of the centre of mass.    ,  ,          Correct.       Incorrect.         Correct.       Incorrect.         Correct.       Incorrect.         Correct.       Incorrect.           Mass and Centre of Mass of a Rectangular Lamina                   A^2*B*C\/2+B^2*D*A\/2+E*A*B    C*A^3*B\/3+D*A^2*B^2\/4+E*A^2*B\/2    C*A^2*B^2\/4+D*A*B^3\/3+E*A*B^2\/2    xmom\/mass    ymom\/mass     A lamina occupies the part of the rectangle , , and the density at each point is given by the function .   Part A. What is the total mass?       Part B. Where is the centre of mass?    ,          Correct.       Incorrect.         Correct.       Incorrect.         Correct.       Incorrect.           Volume Between Two Spheres in Spherical Coordinates       pi*a^3\/2     Find the volume of the region outside the sphere and inside the half sphere , with .  Volume          Correct.       Incorrect.           A Triple Integral Over a Spherical Shell          r0+gap    (r1^3-r0^3)\/3    pi*(r1^3-r0^3)\/3     Evaluate, in spherical coordinates, the triple integral of over the region , , .   Part A. The -integral separates from the rest. Evaluate it.       Part B. Evaluate the whole integral.  Integral          Correct.       Incorrect.         Correct.       Incorrect.           An Exponential Integral Between Two Spheres          a+gap    a^2    b^2    2*pi*(exp(-asq)-exp(-bsq))     Use spherical coordinates to evaluate the triple integral   where is the region bounded by the spheres and .  Answer          Correct.       Incorrect.           The Jacobian of a Linear Transformation                p*s-q*r    p    q    r    s     Consider the transformation from -coordinates to -coordinates given by    Part A. Find the four partial derivatives.    ,  ,  ,     Part B. Compute the Jacobian of this transformation.            Correct.       Incorrect.         Correct.       Incorrect.         Correct.       Incorrect.         Correct.       Incorrect.         Correct.       Incorrect.           A Quadratic Map and the Integral It Simplifies       u^2+v^2    4*(u^2+v^2)    56*a^6\/45     The map carries the triangle onto the domain in the first quadrant bounded by , , and the parabola through the image of the edge . Use to evaluate    Part A. Express the integrand in terms of and .       Part B. Find the Jacobian of .       Part C. Evaluate the integral.            Correct.       Incorrect.         Correct.       Incorrect.         Correct.       Incorrect.           Centre of Gravity of a Region Between Two Curves          0    (-m+sqrt(m^2+4*b))\/2    m*x    b-x^2    xstar^6\/12+(-b-m^2\/2)*xstar^4\/4+b^2*xstar^2\/4    xstar^7\/14+(-b-m^2\/2)*xstar^5\/5+b^2*xstar^3\/6    -xstar^8\/24+b*xstar^6\/6-m^3*xstar^5\/15-b^2*xstar^4\/4+b^3*xstar^2\/6    xmom\/mass    ymom\/mass     The region is bounded by the curves , , and the -axis, and its mass density is . To find the centre of gravity of you would compute the three integrals , , and , where    ,      ,                and finally the centre of gravity is    ,          Correct.       Incorrect.         Correct.       Incorrect.         Correct.       Incorrect.         Correct.       Incorrect.         Correct.       Incorrect.         Correct.       Incorrect.         Correct.       Incorrect.         Correct.       Incorrect.         Correct.       Incorrect.           Centre of Mass of a Quarter Disc       4*r\/(3*pi)     The centre of mass of the quarter disc of radius lying under for , with constant density, is a point .    ,     Hint. Use symmetry.        Correct.       Incorrect.         Correct.       Incorrect.        "
 },
@@ -3623,7 +3866,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "sec-exercises-review4-practice.html",
   "type": "Section",
-  "number": "4.11",
+  "number": "4.13",
   "title": "Review Problems #4",
   "body": " Review Problems #4   Sections: , , and . Work each problem, then type your answers into the boxes and have them checked here.  Every answer box is graded separately, so a box you fill in correctly earns its credit even if another box in the same problem is wrong. Press Check Me to submit; you may check as often as you like.  Checking an answer tells you whether it is right or wrong and nothing more use the boxes to test yourself. A complete worked solution for every problem will be revealed beneath it once solutions are posted.   How to type your answers.      Numbers. Type a decimal number and nothing else no units, no sign, no . Give at least three decimal places (for instance 18.850 , not 6pi ). Answers are accepted within a small tolerance, so a little rounding is fine.     Expressions. Type only the expression itself. Write products with * and powers with ^ , and write functions with parentheses: cos(u) , sqrt(x^2+y^2) , e^z . So the expression is typed 2*x + e^z . Spaces are ignored.     Words. Type just the word or letters asked for, in lower case unless the problem says otherwise.          Outward Flux Through the Surface of a Box                0    2*A*x+e^z    A*p^2*q*s+p*q*(e^s-1)    A*x^2+z^4+e^z     Evaluate the outward flux of the vector field   through the surface of the solid box given by , , .   Part A. By the Divergence Theorem the flux equals   , where    ,  ,  ,  ,  , and  .   Part B. Evaluate the integral that you set up in the previous part.  Flux  .        Correct.       Incorrect.       Incorrect.         Correct.       Incorrect.         Correct.       Incorrect.         Correct.       Incorrect.         Correct.       Incorrect.         Correct.       Incorrect.         Correct.       Incorrect.         Correct.       Incorrect.           The Box With the Largest Flux          2*k       k*(2*A*a-a^2)*b*c    k*A^2*M^2     Let and .  (a) Find the flux of out of the rectangular solid , , , as an expression in , and .  flux    (b) For what values of , , is the flux largest?    ,  ,    (c) What is that largest flux?  flux          Correct.       Incorrect.         Correct.       Incorrect.       Incorrect.         Correct.       Incorrect.         Correct.       Incorrect.         Correct.       Incorrect.           Verifying the Divergence Theorem on a Cylinder                A*h*pi     Verify the Divergence Theorem for the vector field and region:   and the region , . Give each side as a decimal number.                Correct.       Incorrect.         Correct.       Incorrect.           Flux Through a Sphere       R^2       3*x^2+3*z^2    8*pi*R^5\/5     Use the Divergence Theorem to evaluate the surface integral , where   and is the sphere , oriented outward.                Correct.       Incorrect.         Correct.       Incorrect.           Flux Through a Paraboloid Cap             (2*u-1)*t    1+a^2    b*(a^4\/2+a^2)*pi     Let . Use the Divergence Theorem to find the flux of across the part of the paraboloid that lies above the plane and is oriented upward.    (a number)            Correct.       Incorrect.         Correct.       Incorrect.           Radial Field Through a Closed Cylinder          3    6*pi*R^2*L     Compute the flux of the vector field through the surface , which is a closed cylinder of radius centered on the -axis, with , and oriented outward.    (a number)  Flux          Correct.       Incorrect.         Correct.       Incorrect.           Flux Through a Helicoid       w\/2    (w\/2)*(sin(u)-cos(u)+v)    (w\/2)*(2+pi\/2)    (w\/2)*(cos(u)-sin(u)-v)     Evaluate , where the vector field and the parametrized surface is the helicoid   oriented upward.  First compute the integrand (as an expression in and ):              Correct.       Incorrect.       Incorrect.         Correct.       Incorrect.           Flux Through a Paraboloid, Directly          R^2    2*a*(x^2+y^2)    pi*a*R^4     Compute the flux of the vector field through the surface , which is the part of the surface above the disk of radius centered at the origin, oriented upward .  Writing , we have , so (as an expression in and )    Flux          Correct.       Incorrect.         Correct.       Incorrect.           The parallelogram of , with its orientation. Note the direction of the arrows.   A parallelogram anchored at the origin with arrows showing its boundary orientation.            (0,0)    (x_0,0)    (x_0,y_0)    (2x_0,y_0)                  Work Around a Parallelogram                A    x0*y0    -A*x0*y0    A*x0*y0     Use Green's Theorem to evaluate the work done by in moving an object around the boundary of the parallelogram in ( note the orientation ), with and . Assume that the object circulates only once around the boundary and that its motion begins at the origin and ends at the same point.  With , first compute (a number):    The area of the parallelogram is .  Work          Correct.       Incorrect.         Correct.       Incorrect.         Correct.       Incorrect.       Incorrect.           Three Gradient Fields and the Unit Circle             a1*x*y    a3*sqrt(x^2+y^2)    0    -2*pi*a2    2*pi*a2     (a) Each of the vector fields   is a gradient vector field on some domain (not necessarily the whole plane). Find potential functions for and , choosing the constant so that the potential is at the origin; and find the constant for the potential of .  For :    For : with    For :    (b) Find the line integrals of , , around the curve given to be the unit circle in the -plane, centered at the origin, and traversed counterclockwise.    ,  ,    (c) For which of the three vector fields can Green's Theorem be used to calculate the line integral in part (b)? Type the letters of all that apply, with no spaces (for example fg ):    (Be sure that you are able to explain why or why not.)         Correct.       Incorrect.         Correct.       Incorrect.         Correct.       Incorrect.         Correct.       Incorrect.         Correct.       Incorrect.       Incorrect.         Correct.       Incorrect.       f   Correct.     fgh   Incorrect.     .*   Incorrect.           Circulation Around a Rectangle             -a*x    -a*x0^2*y0\/2    a*x     Use Green's Theorem to calculate the circulation of around the rectangle , , oriented counterclockwise.  With , first compute (as an expression in and ):    circulation          Correct.       Incorrect.       Incorrect.         Correct.       Incorrect.           Circulation Around a Circle                   c2+(2*u-1)*d0       (2*u-1)*d0    (2*u-1)*d0*pi*m^2     Calculate , where is the circular path with center and radius , oriented counterclockwise. Use Green's Theorem.  With , first compute (a number):              Correct.       Incorrect.         Correct.       Incorrect.           Divergence of a Family of Radial Fields          -2+pp    -2-qq    2+A    A    -2     Let and consider the vector field , where and is a constant. has no -component and is independent of .  (a) Find , and show that it can be written in the form . As expressions in :    , and  .  (b) For what values of is positive, negative, or zero?   is positive for  , negative for  , and zero for  .  (c) Suppose that . What is the sign of the flux out of a small sphere centered at ? Type positive or negative :   If instead , what is the sign of the flux out of a small sphere centered at ?    (Be sure you can say how your answers in part (c) would change if the question were about a small sphere centered at .)         Correct.       Incorrect.         Correct.       Incorrect.         Correct.       Incorrect.         Correct.       Incorrect.         Correct.       Incorrect.       positive   Correct.     .*   Incorrect.       negative   Correct.     .*   Incorrect.           Flux Through a Slanted Cylinder Band       R^2          z0+dz    2*pi*R^2*dz     Compute the flux of through the surface of the cylinder bounded below by the plane , above by the plane , and oriented away from the -axis . Note that we are only interested in the flux through the curved surface of the cylinder.  On the cylinder,  (a number).  Flux          Correct.       Incorrect.         Correct.       Incorrect.           Flux Out of a Closed Cone                2*a*y    a*r^4*pi\/2     Find the flux of out of the closed cone , with .    (an expression in , , )  flux          Correct.       Incorrect.         Correct.       Incorrect.           Flux Through the Surface of a Tetrahedron             1+x    a*b*c*(a+4)\/24    a*b*c\/6     Use the Divergence Theorem to calculate the flux of across , where and is the surface of the tetrahedron enclosed by the coordinate planes and the plane     (an expression in , , )            Correct.       Incorrect.         Correct.       Incorrect.       Incorrect.        "
 },
@@ -3740,7 +3983,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-exercises-review4-practice.html#fig-r4p-parallelogram",
   "type": "Figure",
-  "number": "4.11.1",
+  "number": "4.13.1",
   "title": "",
   "body": " The parallelogram of , with its orientation. Note the direction of the arrows.   A parallelogram anchored at the origin with arrows showing its boundary orientation.            (0,0)    (x_0,0)    (x_0,y_0)    (2x_0,y_0)                "
 },

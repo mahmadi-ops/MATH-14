@@ -1,0 +1,39 @@
+<diagram>
+  <annotations>
+    <annotation id="prefigure-r1p-three-paths-figure" speech2="A constant vector field whose arrows all point horizontally to the right, with equal length, drawn on a grid. Three straight paths are marked: C one runs left to right along the bottom, C two runs downward on the right, and C three runs up and to the right from the left side.">
+      <grouped>prefigure-r1p-three-paths-figure</grouped>
+      <position>1</position>
+      <children>
+        <active>prefigure-r1p-three-paths-p1</active>
+        <active>prefigure-r1p-three-paths-p2</active>
+        <active>prefigure-r1p-three-paths-p3</active>
+      </children>
+      <components>
+        <active>prefigure-r1p-three-paths-p1</active>
+        <active>prefigure-r1p-three-paths-p2</active>
+        <active>prefigure-r1p-three-paths-p3</active>
+      </components>
+    </annotation>
+    <annotation id="prefigure-r1p-three-paths-p1" speech2="Path C one: a horizontal segment traversed left to right, of length one and a half.">
+      <active>prefigure-r1p-three-paths-p1</active>
+      <position>1</position>
+      <parents>
+        <grouped>prefigure-r1p-three-paths-figure</grouped>
+      </parents>
+    </annotation>
+    <annotation id="prefigure-r1p-three-paths-p2" speech2="Path C two: a vertical segment traversed downward, of length one and a half.">
+      <active>prefigure-r1p-three-paths-p2</active>
+      <position>2</position>
+      <parents>
+        <grouped>prefigure-r1p-three-paths-figure</grouped>
+      </parents>
+    </annotation>
+    <annotation id="prefigure-r1p-three-paths-p3" speech2="Path C three: a segment traversed up and to the right, rising one and a half and moving three quarters to the right.">
+      <active>prefigure-r1p-three-paths-p3</active>
+      <position>3</position>
+      <parents>
+        <grouped>prefigure-r1p-three-paths-figure</grouped>
+      </parents>
+    </annotation>
+  </annotations>
+</diagram>
