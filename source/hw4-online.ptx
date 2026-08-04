@@ -148,89 +148,75 @@
       Four small pictures of candidate regions, each on its own axes.
       </shortdescription>
       <prefigure xmlns="https://prefigure.org" label="prefigure-hw4o-shapes">
-        <diagram dimensions="(460,340)" margins="8">
-          <definition>arc3(t) = (2.6 + 1.3*cos(t), 4.6 + 1.3*sin(t))</definition>
-          <definition>arc4(t) = (7.4 + 1.3*cos(t), 4.6 + 1.3*sin(t))</definition>
-          <coordinates bbox="(0.2,-0.9,9.9,7.6)">
-            <!-- shape 1: above y = x, cut by y = r -->
-            <polygon at="hs1" closed="yes" fill="#c9c9c9" stroke="#555555"
-                thickness="2" points="((1.3,1.0),(2.6,2.3),(1.3,2.3))"/>
-            <line at="hs1-x" endpoints="((0.5,1.0),(3.4,1.0))" stroke="black"
-                thickness="1"/>
-            <line at="hs1-y" endpoints="((1.3,0.2),(1.3,2.9))" stroke="black"
-                thickness="1"/>
-            <line at="hs1-diag" endpoints="((1.3,1.0),(3.0,2.7))"
-                stroke="#777777" thickness="1" dash="4 3"/>
-            <line at="hs1-cut" endpoints="((0.9,2.3),(2.9,2.3))"
-                stroke="#777777" thickness="1" dash="4 3"/>
-            <label at="hs1-lab" anchor="(1.75,1.75)" alignment="center">
-              <m>1</m>
-            </label>
-            <label at="hs1-yr" anchor="(2.95,2.3)" alignment="e"
-                color="#555555"><m>y=r</m></label>
-            <label at="hs1-diaglab" anchor="(3.05,2.72)" alignment="ne"
-                color="#555555"><m>y=x</m></label>
-            <!-- shape 2: below y = x, cut by x = r -->
-            <polygon at="hs2" closed="yes" fill="#c9c9c9" stroke="#555555"
-                thickness="2" points="((6.1,1.0),(7.4,1.0),(7.4,2.3))"/>
-            <line at="hs2-x" endpoints="((5.3,1.0),(8.2,1.0))" stroke="black"
-                thickness="1"/>
-            <line at="hs2-y" endpoints="((6.1,0.2),(6.1,2.9))" stroke="black"
-                thickness="1"/>
-            <line at="hs2-diag" endpoints="((6.1,1.0),(7.8,2.7))"
-                stroke="#777777" thickness="1" dash="4 3"/>
-            <line at="hs2-cut" endpoints="((7.4,0.5),(7.4,2.6))"
-                stroke="#777777" thickness="1" dash="4 3"/>
-            <label at="hs2-lab" anchor="(7.0,1.45)" alignment="center">
-              <m>2</m>
-            </label>
-            <label at="hs2-xr" anchor="(7.45,0.45)" alignment="se"
-                color="#555555"><m>x=r</m></label>
-            <label at="hs2-diaglab" anchor="(7.85,2.72)" alignment="ne"
-                color="#555555"><m>y=x</m></label>
-            <!-- shape 3: the sector between y = x and the y-axis -->
-            <polygon at="hs3" closed="yes" fill="#c9c9c9" stroke="none"
-                points="((2.6,4.6),(3.52,5.52),(3.32,5.85),(3.06,6.09),(2.75,6.24),(2.6,5.9))"/>
-            <parametric-curve at="hs3-arc" function="arc3" domain="(pi/4,pi/2)"
-                stroke="#555555" thickness="2"/>
-            <line at="hs3-x" endpoints="((1.8,4.6),(4.7,4.6))" stroke="black"
-                thickness="1"/>
-            <line at="hs3-y" endpoints="((2.6,3.8),(2.6,6.7))" stroke="black"
-                thickness="1"/>
-            <line at="hs3-diag" endpoints="((2.6,4.6),(4.3,6.3))"
-                stroke="#777777" thickness="1" dash="4 3"/>
-            <label at="hs3-lab" anchor="(2.98,5.42)" alignment="center">
-              <m>3</m>
-            </label>
-            <label at="hs3-circ" anchor="(1.75,4.05)" alignment="e"
-                color="#555555"><m>x^2+y^2=r^2</m></label>
-            <label at="hs3-diaglab" anchor="(4.35,6.32)" alignment="ne"
-                color="#555555"><m>y=x</m></label>
-            <!-- shape 4: the sector between y = -x and the negative x-axis -->
-            <polygon at="hs4" closed="yes" fill="#c9c9c9" stroke="none"
-                points="((7.4,4.6),(6.1,4.6),(6.25,4.94),(6.48,5.22),(6.74,5.44),(7.4,4.6))"/>
-            <parametric-curve at="hs4-arc" function="arc4"
-                domain="(3*pi/4,pi)" stroke="#555555" thickness="2"/>
-            <line at="hs4-x" endpoints="((5.6,4.6),(8.5,4.6))" stroke="black"
-                thickness="1"/>
-            <line at="hs4-y" endpoints="((7.4,3.8),(7.4,6.7))" stroke="black"
-                thickness="1"/>
-            <line at="hs4-diag" endpoints="((7.4,4.6),(5.9,6.1))"
-                stroke="#777777" thickness="1" dash="4 3"/>
-            <label at="hs4-lab" anchor="(6.72,4.92)" alignment="center">
-              <m>4</m>
-            </label>
-            <label at="hs4-circ" anchor="(6.55,4.05)" alignment="e"
-                color="#555555"><m>x^2+y^2=r^2</m></label>
-            <label at="hs4-diaglab" anchor="(6.30,5.55)" alignment="sw"
-                color="#555555"><m>y=-x</m></label>
+        <diagram dimensions="(620,440)" margins="8">
+          <coordinates bbox="(0.2,0.1,11.0,7.9)">
+            <line at="s1-x" endpoints="((0.4000,5.5000),(5.2000,5.5000))"
+                stroke="#555555" thickness="1"/>
+            <line at="s1-y" endpoints="((2.8000,4.4000),(2.8000,7.6500))"
+                stroke="#555555" thickness="1"/>
+            <polygon at="s1" closed="yes" fill="#cfe0f5" stroke="#3c6fbf"
+                thickness="3" points="((2.8000,5.5000),(4.1000,6.8000),(2.8000,6.8000))"/>
+            <line at="s1-diag" endpoints="((2.8000,5.5000),(4.6000,7.3000))"
+                stroke="#999999" thickness="1" dash="4 3"/>
+            <line at="s1-cut" endpoints="((2.6000,6.8000),(4.6000,6.8000))"
+                stroke="#999999" thickness="1" dash="4 3"/>
+            <label at="s1-num" anchor="(3.2330,6.3670)"
+                alignment="center"><m>1</m></label>
+            <label at="s1-cutlab" anchor="(2.5500,6.8000)"
+                alignment="w" color="#555555"><m>y=r</m></label>
+            <label at="s1-diaglab" anchor="(4.6000,7.3000)"
+                alignment="nw" color="#555555"><m>y=x</m></label>
+            <line at="s2-x" endpoints="((6.0000,5.5000),(10.8000,5.5000))"
+                stroke="#555555" thickness="1"/>
+            <line at="s2-y" endpoints="((8.4000,4.4000),(8.4000,7.6500))"
+                stroke="#555555" thickness="1"/>
+            <polygon at="s2" closed="yes" fill="#cfe0f5" stroke="#3c6fbf"
+                thickness="3" points="((8.4000,5.5000),(9.7000,5.5000),(9.7000,6.8000))"/>
+            <line at="s2-diag" endpoints="((8.4000,5.5000),(10.2000,7.3000))"
+                stroke="#999999" thickness="1" dash="4 3"/>
+            <line at="s2-cut" endpoints="((9.7000,4.8000),(9.7000,7.3000))"
+                stroke="#999999" thickness="1" dash="4 3"/>
+            <label at="s2-num" anchor="(9.2670,5.9330)"
+                alignment="center"><m>2</m></label>
+            <label at="s2-cutlab" anchor="(9.7000,4.7000)"
+                alignment="s" color="#555555"><m>x=r</m></label>
+            <label at="s2-diaglab" anchor="(10.2000,7.3000)"
+                alignment="nw" color="#555555"><m>y=x</m></label>
+            <line at="s3-x" endpoints="((0.4000,1.4000),(5.2000,1.4000))"
+                stroke="#555555" thickness="1"/>
+            <line at="s3-y" endpoints="((2.8000,0.3000),(2.8000,3.5500))"
+                stroke="#555555" thickness="1"/>
+            <polygon at="s3" closed="yes" fill="#cfe0f5" stroke="#3c6fbf"
+                thickness="3" points="((2.8000,1.4000),(3.7192,2.3192),(3.7041,2.3342),(3.6887,2.3488),(3.6730,2.3632),(3.6571,2.3774),(3.6410,2.3913),(3.6247,2.4049),(3.6082,2.4183),(3.5914,2.4314),(3.5744,2.4442),(3.5572,2.4567),(3.5398,2.4689),(3.5222,2.4809),(3.5045,2.4926),(3.4865,2.5040),(3.4683,2.5150),(3.4500,2.5258),(3.4315,2.5363),(3.4128,2.5465),(3.3940,2.5564),(3.3750,2.5659),(3.3558,2.5752),(3.3365,2.5841),(3.3171,2.5927),(3.2975,2.6010),(3.2778,2.6090),(3.2579,2.6167),(3.2380,2.6240),(3.2179,2.6310),(3.1977,2.6377),(3.1774,2.6440),(3.1570,2.6500),(3.1365,2.6557),(3.1159,2.6610),(3.0952,2.6660),(3.0744,2.6707),(3.0536,2.6750),(3.0327,2.6790),(3.0118,2.6826),(2.9907,2.6859),(2.9697,2.6889),(2.9486,2.6915),(2.9274,2.6937),(2.9062,2.6957),(2.8850,2.6972),(2.8638,2.6984),(2.8425,2.6993),(2.8213,2.6998),(2.8000,2.7000))"/>
+            <line at="s3-diag" endpoints="((2.8000,1.4000),(4.6000,3.2000))"
+                stroke="#999999" thickness="1" dash="4 3"/>
+            <label at="s3-num" anchor="(3.1230,2.1800)"
+                alignment="center"><m>3</m></label>
+            <label at="s3-circ" anchor="(2.8000,0.6000)"
+                alignment="s" color="#555555"><m>x^2+y^2=r^2</m></label>
+            <label at="s3-diaglab" anchor="(4.6000,3.2000)"
+                alignment="nw" color="#555555"><m>y=x</m></label>
+            <line at="s4-x" endpoints="((6.0000,1.4000),(10.8000,1.4000))"
+                stroke="#555555" thickness="1"/>
+            <line at="s4-y" endpoints="((8.4000,0.3000),(8.4000,3.5500))"
+                stroke="#555555" thickness="1"/>
+            <polygon at="s4" closed="yes" fill="#cfe0f5" stroke="#3c6fbf"
+                thickness="3" points="((8.4000,1.4000),(7.4808,2.3192),(7.4658,2.3041),(7.4512,2.2887),(7.4368,2.2730),(7.4226,2.2571),(7.4087,2.2410),(7.3951,2.2247),(7.3817,2.2082),(7.3686,2.1914),(7.3558,2.1744),(7.3433,2.1572),(7.3311,2.1398),(7.3191,2.1222),(7.3074,2.1045),(7.2960,2.0865),(7.2850,2.0683),(7.2742,2.0500),(7.2637,2.0315),(7.2535,2.0128),(7.2436,1.9940),(7.2341,1.9750),(7.2248,1.9558),(7.2159,1.9365),(7.2073,1.9171),(7.1990,1.8975),(7.1910,1.8778),(7.1833,1.8579),(7.1760,1.8380),(7.1690,1.8179),(7.1623,1.7977),(7.1560,1.7774),(7.1500,1.7570),(7.1443,1.7365),(7.1390,1.7159),(7.1340,1.6952),(7.1293,1.6744),(7.1250,1.6536),(7.1210,1.6327),(7.1174,1.6118),(7.1141,1.5907),(7.1111,1.5697),(7.1085,1.5486),(7.1063,1.5274),(7.1043,1.5062),(7.1028,1.4850),(7.1016,1.4638),(7.1007,1.4425),(7.1002,1.4213),(7.1000,1.4000))"/>
+            <line at="s4-diag" endpoints="((8.4000,1.4000),(6.6000,3.2000))"
+                stroke="#999999" thickness="1" dash="4 3"/>
+            <label at="s4-num" anchor="(7.6200,1.7230)"
+                alignment="center"><m>4</m></label>
+            <label at="s4-circ" anchor="(8.4000,0.6000)"
+                alignment="s" color="#555555"><m>x^2+y^2=r^2</m></label>
+            <label at="s4-diaglab" anchor="(6.6000,3.2000)"
+                alignment="ne" color="#555555"><m>y=-x</m></label>
           </coordinates>
           <annotations>
-            <annotation ref="figure" text="Four small pictures, each with its own pair of axes. Shape one is the triangle lying above the line y equals x and below the line y equals r. Shape two is the triangle lying below y equals x and to the left of the line x equals r. Shape three is the sector of the circle of radius r between the line y equals x and the positive y axis. Shape four is the sector of the same circle between the line y equals minus x and the negative x axis.">
-              <annotation ref="hs1" text="Shape one, the triangle above the line y equals x, where the absolute value of y is at least the absolute value of x."/>
-              <annotation ref="hs2" text="Shape two, the triangle below the line y equals x, where the absolute value of x is at least the absolute value of y."/>
-              <annotation ref="hs3" text="Shape three, the circular sector between the line y equals x and the y axis, where the absolute value of y is at least the absolute value of x."/>
-              <annotation ref="hs4" text="Shape four, the circular sector between the line y equals minus x and the negative x axis, where the absolute value of x is at least the absolute value of y."/>
+            <annotation ref="figure" text="Four pictures on a two by two grid, each drawn to the same scale on its own pair of axes. Shape one, top left, is the triangle lying above the line y equals x and below the line y equals r. Shape two, top right, is the triangle lying below y equals x and to the left of the line x equals r. Shape three, bottom left, is the sector of the circle of radius r between the line y equals x and the positive y axis. Shape four, bottom right, is the sector of the same circle between the line y equals minus x and the negative x axis.">
+              <annotation ref="s1" text="Shape one, the triangle above the line y equals x, where the absolute value of y is at least the absolute value of x."/>
+              <annotation ref="s2" text="Shape two, the triangle below the line y equals x, where the absolute value of x is at least the absolute value of y."/>
+              <annotation ref="s3" text="Shape three, the circular sector between the line y equals x and the y axis, where the absolute value of y is at least the absolute value of x."/>
+              <annotation ref="s4" text="Shape four, the circular sector between the line y equals minus x and the negative x axis, where the absolute value of x is at least the absolute value of y."/>
             </annotation>
           </annotations>
         </diagram>
