@@ -551,575 +551,15 @@
     </solution>
   </exercise>
 
-  <exercise xml:id="ex-r1p-match-fields">
-    <title>Matching Vector Fields to Their Graphs</title>
-    <statement>
-      <p>
-        Match each of the following vector fields with its graph, entering
-        the letter <c>A</c>, <c>B</c>, <c>C</c>, <c>D</c> or <c>E</c>. The
-        graphs are shown below; in each one a small circle marks the
-        <term>tail</term> of the arrow.
-      </p>
-      <p>
-        <m>\mathbf{F}(x,y) = \dfrac{x\,\mathbf{i} + y\,\mathbf{j}}
-        {\sqrt{x^2+y^2}}</m>:
-        <fillin name="b1" mode="string" answer="A" width="4"/>
-      </p>
-      <p>
-        <m>\mathbf{F}(x,y) = \dfrac{-y\,\mathbf{i} + x\,\mathbf{j}}
-        {\sqrt{x^2+y^2}}</m>:
-        <fillin name="b2" mode="string" answer="B" width="4"/>
-      </p>
-      <p>
-        <m>\mathbf{F}(x,y) = \dfrac{-x\,\mathbf{i} + y\,\mathbf{j}}
-        {\sqrt{x^2+y^2}}</m>:
-        <fillin name="b3" mode="string" answer="C" width="4"/>
-      </p>
-      <p>
-        <m>\mathbf{F}(x,y) = \dfrac{x\,\mathbf{i} + y\,\mathbf{j}}
-        {x^2+y^2}</m>:
-        <fillin name="b4" mode="string" answer="D" width="4"/>
-      </p>
-      <p>
-        <m>\mathbf{F}(x,y) = \dfrac{-x\,\mathbf{i} - y\,\mathbf{j}}
-        {x^2+y^2}</m>:
-        <fillin name="b5" mode="string" answer="E" width="4"/>
-      </p>
-      <sidebyside widths="30% 30% 30%" margins="2%" valign="middle">
-        <figure xml:id="fig-r1p-vf-radial-unit">
-          <caption>Graph <m>A</m>.</caption>
-          <image width="100%">
-            <shortdescription>Vector field A: arrows drawn at a grid of points, each with a dot at its tail.</shortdescription>
-            <prefigure xmlns="https://prefigure.org" label="prefigure-r1p-vf-radial-unit">
-              <diagram dimensions="(210,210)" margins="4">
-                <coordinates bbox="(-2.3,-2.3,2.3,2.3)">
-                  <axes at="axes" xlabel="x" ylabel="y" decorations="no" arrows="1" stroke="#555555" thickness="1"/>
-                  <vector at="vf1" v="(-0.240,-0.240)" tail="(-1.5,-1.5)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt1" p="(-1.5,-1.5)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf2" v="(-0.283,-0.189)" tail="(-1.5,-1.0)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt2" p="(-1.5,-1.0)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf3" v="(-0.323,-0.108)" tail="(-1.5,-0.5)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt3" p="(-1.5,-0.5)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf4" v="(-0.323,0.108)" tail="(-1.5,0.5)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt4" p="(-1.5,0.5)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf5" v="(-0.283,0.189)" tail="(-1.5,1.0)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt5" p="(-1.5,1.0)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf6" v="(-0.240,0.240)" tail="(-1.5,1.5)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt6" p="(-1.5,1.5)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf7" v="(-0.189,-0.283)" tail="(-1.0,-1.5)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt7" p="(-1.0,-1.5)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf8" v="(-0.240,-0.240)" tail="(-1.0,-1.0)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt8" p="(-1.0,-1.0)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf9" v="(-0.304,-0.152)" tail="(-1.0,-0.5)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt9" p="(-1.0,-0.5)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf10" v="(-0.304,0.152)" tail="(-1.0,0.5)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt10" p="(-1.0,0.5)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf11" v="(-0.240,0.240)" tail="(-1.0,1.0)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt11" p="(-1.0,1.0)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf12" v="(-0.189,0.283)" tail="(-1.0,1.5)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt12" p="(-1.0,1.5)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf13" v="(-0.108,-0.323)" tail="(-0.5,-1.5)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt13" p="(-0.5,-1.5)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf14" v="(-0.152,-0.304)" tail="(-0.5,-1.0)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt14" p="(-0.5,-1.0)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf15" v="(-0.240,-0.240)" tail="(-0.5,-0.5)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt15" p="(-0.5,-0.5)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf16" v="(-0.240,0.240)" tail="(-0.5,0.5)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt16" p="(-0.5,0.5)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf17" v="(-0.152,0.304)" tail="(-0.5,1.0)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt17" p="(-0.5,1.0)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf18" v="(-0.108,0.323)" tail="(-0.5,1.5)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt18" p="(-0.5,1.5)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf19" v="(0.108,-0.323)" tail="(0.5,-1.5)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt19" p="(0.5,-1.5)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf20" v="(0.152,-0.304)" tail="(0.5,-1.0)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt20" p="(0.5,-1.0)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf21" v="(0.240,-0.240)" tail="(0.5,-0.5)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt21" p="(0.5,-0.5)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf22" v="(0.240,0.240)" tail="(0.5,0.5)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt22" p="(0.5,0.5)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf23" v="(0.152,0.304)" tail="(0.5,1.0)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt23" p="(0.5,1.0)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf24" v="(0.108,0.323)" tail="(0.5,1.5)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt24" p="(0.5,1.5)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf25" v="(0.189,-0.283)" tail="(1.0,-1.5)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt25" p="(1.0,-1.5)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf26" v="(0.240,-0.240)" tail="(1.0,-1.0)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt26" p="(1.0,-1.0)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf27" v="(0.304,-0.152)" tail="(1.0,-0.5)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt27" p="(1.0,-0.5)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf28" v="(0.304,0.152)" tail="(1.0,0.5)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt28" p="(1.0,0.5)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf29" v="(0.240,0.240)" tail="(1.0,1.0)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt29" p="(1.0,1.0)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf30" v="(0.189,0.283)" tail="(1.0,1.5)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt30" p="(1.0,1.5)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf31" v="(0.240,-0.240)" tail="(1.5,-1.5)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt31" p="(1.5,-1.5)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf32" v="(0.283,-0.189)" tail="(1.5,-1.0)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt32" p="(1.5,-1.0)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf33" v="(0.323,-0.108)" tail="(1.5,-0.5)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt33" p="(1.5,-0.5)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf34" v="(0.323,0.108)" tail="(1.5,0.5)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt34" p="(1.5,0.5)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf35" v="(0.283,0.189)" tail="(1.5,1.0)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt35" p="(1.5,1.0)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf36" v="(0.240,0.240)" tail="(1.5,1.5)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt36" p="(1.5,1.5)" size="3" stroke="#8b1a2b" fill="none"/>
-                </coordinates>
-                <annotations>
-                  <annotation ref="figure" text="Vector field A. Arrows are drawn at sixteen grid points, each arrow starting from a small circle at its tail."/>
-                </annotations>
-              </diagram>
-            </prefigure>
-          </image>
-        </figure>
-        <figure xml:id="fig-r1p-vf-swirl-unit">
-          <caption>Graph <m>B</m>.</caption>
-          <image width="100%">
-            <shortdescription>Vector field B: arrows drawn at a grid of points, each with a dot at its tail.</shortdescription>
-            <prefigure xmlns="https://prefigure.org" label="prefigure-r1p-vf-swirl-unit">
-              <diagram dimensions="(210,210)" margins="4">
-                <coordinates bbox="(-2.3,-2.3,2.3,2.3)">
-                  <axes at="axes" xlabel="x" ylabel="y" decorations="no" arrows="1" stroke="#555555" thickness="1"/>
-                  <vector at="vf1" v="(0.240,-0.240)" tail="(-1.5,-1.5)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt1" p="(-1.5,-1.5)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf2" v="(0.189,-0.283)" tail="(-1.5,-1.0)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt2" p="(-1.5,-1.0)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf3" v="(0.108,-0.323)" tail="(-1.5,-0.5)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt3" p="(-1.5,-0.5)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf4" v="(-0.108,-0.323)" tail="(-1.5,0.5)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt4" p="(-1.5,0.5)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf5" v="(-0.189,-0.283)" tail="(-1.5,1.0)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt5" p="(-1.5,1.0)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf6" v="(-0.240,-0.240)" tail="(-1.5,1.5)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt6" p="(-1.5,1.5)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf7" v="(0.283,-0.189)" tail="(-1.0,-1.5)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt7" p="(-1.0,-1.5)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf8" v="(0.240,-0.240)" tail="(-1.0,-1.0)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt8" p="(-1.0,-1.0)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf9" v="(0.152,-0.304)" tail="(-1.0,-0.5)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt9" p="(-1.0,-0.5)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf10" v="(-0.152,-0.304)" tail="(-1.0,0.5)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt10" p="(-1.0,0.5)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf11" v="(-0.240,-0.240)" tail="(-1.0,1.0)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt11" p="(-1.0,1.0)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf12" v="(-0.283,-0.189)" tail="(-1.0,1.5)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt12" p="(-1.0,1.5)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf13" v="(0.323,-0.108)" tail="(-0.5,-1.5)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt13" p="(-0.5,-1.5)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf14" v="(0.304,-0.152)" tail="(-0.5,-1.0)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt14" p="(-0.5,-1.0)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf15" v="(0.240,-0.240)" tail="(-0.5,-0.5)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt15" p="(-0.5,-0.5)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf16" v="(-0.240,-0.240)" tail="(-0.5,0.5)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt16" p="(-0.5,0.5)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf17" v="(-0.304,-0.152)" tail="(-0.5,1.0)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt17" p="(-0.5,1.0)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf18" v="(-0.323,-0.108)" tail="(-0.5,1.5)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt18" p="(-0.5,1.5)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf19" v="(0.323,0.108)" tail="(0.5,-1.5)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt19" p="(0.5,-1.5)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf20" v="(0.304,0.152)" tail="(0.5,-1.0)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt20" p="(0.5,-1.0)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf21" v="(0.240,0.240)" tail="(0.5,-0.5)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt21" p="(0.5,-0.5)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf22" v="(-0.240,0.240)" tail="(0.5,0.5)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt22" p="(0.5,0.5)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf23" v="(-0.304,0.152)" tail="(0.5,1.0)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt23" p="(0.5,1.0)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf24" v="(-0.323,0.108)" tail="(0.5,1.5)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt24" p="(0.5,1.5)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf25" v="(0.283,0.189)" tail="(1.0,-1.5)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt25" p="(1.0,-1.5)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf26" v="(0.240,0.240)" tail="(1.0,-1.0)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt26" p="(1.0,-1.0)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf27" v="(0.152,0.304)" tail="(1.0,-0.5)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt27" p="(1.0,-0.5)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf28" v="(-0.152,0.304)" tail="(1.0,0.5)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt28" p="(1.0,0.5)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf29" v="(-0.240,0.240)" tail="(1.0,1.0)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt29" p="(1.0,1.0)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf30" v="(-0.283,0.189)" tail="(1.0,1.5)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt30" p="(1.0,1.5)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf31" v="(0.240,0.240)" tail="(1.5,-1.5)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt31" p="(1.5,-1.5)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf32" v="(0.189,0.283)" tail="(1.5,-1.0)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt32" p="(1.5,-1.0)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf33" v="(0.108,0.323)" tail="(1.5,-0.5)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt33" p="(1.5,-0.5)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf34" v="(-0.108,0.323)" tail="(1.5,0.5)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt34" p="(1.5,0.5)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf35" v="(-0.189,0.283)" tail="(1.5,1.0)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt35" p="(1.5,1.0)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf36" v="(-0.240,0.240)" tail="(1.5,1.5)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt36" p="(1.5,1.5)" size="3" stroke="#8b1a2b" fill="none"/>
-                </coordinates>
-                <annotations>
-                  <annotation ref="figure" text="Vector field B. Arrows are drawn at sixteen grid points, each arrow starting from a small circle at its tail."/>
-                </annotations>
-              </diagram>
-            </prefigure>
-          </image>
-        </figure>
-        <figure xml:id="fig-r1p-vf-hyperbolic">
-          <caption>Graph <m>C</m>.</caption>
-          <image width="100%">
-            <shortdescription>Vector field C: arrows drawn at a grid of points, each with a dot at its tail.</shortdescription>
-            <prefigure xmlns="https://prefigure.org" label="prefigure-r1p-vf-hyperbolic">
-              <diagram dimensions="(210,210)" margins="4">
-                <coordinates bbox="(-2.3,-2.3,2.3,2.3)">
-                  <axes at="axes" xlabel="x" ylabel="y" decorations="no" arrows="1" stroke="#555555" thickness="1"/>
-                  <vector at="vf1" v="(0.240,-0.240)" tail="(-1.5,-1.5)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt1" p="(-1.5,-1.5)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf2" v="(0.283,-0.189)" tail="(-1.5,-1.0)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt2" p="(-1.5,-1.0)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf3" v="(0.323,-0.108)" tail="(-1.5,-0.5)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt3" p="(-1.5,-0.5)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf4" v="(0.323,0.108)" tail="(-1.5,0.5)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt4" p="(-1.5,0.5)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf5" v="(0.283,0.189)" tail="(-1.5,1.0)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt5" p="(-1.5,1.0)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf6" v="(0.240,0.240)" tail="(-1.5,1.5)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt6" p="(-1.5,1.5)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf7" v="(0.189,-0.283)" tail="(-1.0,-1.5)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt7" p="(-1.0,-1.5)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf8" v="(0.240,-0.240)" tail="(-1.0,-1.0)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt8" p="(-1.0,-1.0)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf9" v="(0.304,-0.152)" tail="(-1.0,-0.5)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt9" p="(-1.0,-0.5)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf10" v="(0.304,0.152)" tail="(-1.0,0.5)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt10" p="(-1.0,0.5)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf11" v="(0.240,0.240)" tail="(-1.0,1.0)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt11" p="(-1.0,1.0)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf12" v="(0.189,0.283)" tail="(-1.0,1.5)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt12" p="(-1.0,1.5)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf13" v="(0.108,-0.323)" tail="(-0.5,-1.5)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt13" p="(-0.5,-1.5)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf14" v="(0.152,-0.304)" tail="(-0.5,-1.0)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt14" p="(-0.5,-1.0)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf15" v="(0.240,-0.240)" tail="(-0.5,-0.5)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt15" p="(-0.5,-0.5)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf16" v="(0.240,0.240)" tail="(-0.5,0.5)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt16" p="(-0.5,0.5)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf17" v="(0.152,0.304)" tail="(-0.5,1.0)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt17" p="(-0.5,1.0)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf18" v="(0.108,0.323)" tail="(-0.5,1.5)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt18" p="(-0.5,1.5)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf19" v="(-0.108,-0.323)" tail="(0.5,-1.5)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt19" p="(0.5,-1.5)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf20" v="(-0.152,-0.304)" tail="(0.5,-1.0)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt20" p="(0.5,-1.0)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf21" v="(-0.240,-0.240)" tail="(0.5,-0.5)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt21" p="(0.5,-0.5)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf22" v="(-0.240,0.240)" tail="(0.5,0.5)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt22" p="(0.5,0.5)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf23" v="(-0.152,0.304)" tail="(0.5,1.0)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt23" p="(0.5,1.0)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf24" v="(-0.108,0.323)" tail="(0.5,1.5)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt24" p="(0.5,1.5)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf25" v="(-0.189,-0.283)" tail="(1.0,-1.5)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt25" p="(1.0,-1.5)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf26" v="(-0.240,-0.240)" tail="(1.0,-1.0)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt26" p="(1.0,-1.0)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf27" v="(-0.304,-0.152)" tail="(1.0,-0.5)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt27" p="(1.0,-0.5)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf28" v="(-0.304,0.152)" tail="(1.0,0.5)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt28" p="(1.0,0.5)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf29" v="(-0.240,0.240)" tail="(1.0,1.0)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt29" p="(1.0,1.0)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf30" v="(-0.189,0.283)" tail="(1.0,1.5)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt30" p="(1.0,1.5)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf31" v="(-0.240,-0.240)" tail="(1.5,-1.5)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt31" p="(1.5,-1.5)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf32" v="(-0.283,-0.189)" tail="(1.5,-1.0)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt32" p="(1.5,-1.0)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf33" v="(-0.323,-0.108)" tail="(1.5,-0.5)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt33" p="(1.5,-0.5)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf34" v="(-0.323,0.108)" tail="(1.5,0.5)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt34" p="(1.5,0.5)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf35" v="(-0.283,0.189)" tail="(1.5,1.0)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt35" p="(1.5,1.0)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf36" v="(-0.240,0.240)" tail="(1.5,1.5)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt36" p="(1.5,1.5)" size="3" stroke="#8b1a2b" fill="none"/>
-                </coordinates>
-                <annotations>
-                  <annotation ref="figure" text="Vector field C. Arrows are drawn at sixteen grid points, each arrow starting from a small circle at its tail."/>
-                </annotations>
-              </diagram>
-            </prefigure>
-          </image>
-        </figure>
-      </sidebyside>
-
-      <sidebyside widths="30% 30%" margins="17%" valign="middle">
-        <figure xml:id="fig-r1p-vf-outward-decay">
-          <caption>Graph <m>D</m>.</caption>
-          <image width="100%">
-            <shortdescription>Vector field D: arrows drawn at a grid of points, each with a dot at its tail.</shortdescription>
-            <prefigure xmlns="https://prefigure.org" label="prefigure-r1p-vf-outward-decay">
-              <diagram dimensions="(210,210)" margins="4">
-                <coordinates bbox="(-2.3,-2.3,2.3,2.3)">
-                  <axes at="axes" xlabel="x" ylabel="y" decorations="no" arrows="1" stroke="#555555" thickness="1"/>
-                  <vector at="vf1" v="(-0.140,-0.140)" tail="(-1.5,-1.5)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt1" p="(-1.5,-1.5)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf2" v="(-0.194,-0.129)" tail="(-1.5,-1.0)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt2" p="(-1.5,-1.0)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf3" v="(-0.252,-0.084)" tail="(-1.5,-0.5)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt3" p="(-1.5,-0.5)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf4" v="(-0.252,0.084)" tail="(-1.5,0.5)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt4" p="(-1.5,0.5)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf5" v="(-0.194,0.129)" tail="(-1.5,1.0)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt5" p="(-1.5,1.0)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf6" v="(-0.140,0.140)" tail="(-1.5,1.5)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt6" p="(-1.5,1.5)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf7" v="(-0.129,-0.194)" tail="(-1.0,-1.5)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt7" p="(-1.0,-1.5)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf8" v="(-0.210,-0.210)" tail="(-1.0,-1.0)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt8" p="(-1.0,-1.0)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf9" v="(-0.336,-0.168)" tail="(-1.0,-0.5)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt9" p="(-1.0,-0.5)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf10" v="(-0.336,0.168)" tail="(-1.0,0.5)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt10" p="(-1.0,0.5)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf11" v="(-0.210,0.210)" tail="(-1.0,1.0)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt11" p="(-1.0,1.0)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf12" v="(-0.129,0.194)" tail="(-1.0,1.5)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt12" p="(-1.0,1.5)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf13" v="(-0.084,-0.252)" tail="(-0.5,-1.5)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt13" p="(-0.5,-1.5)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf14" v="(-0.168,-0.336)" tail="(-0.5,-1.0)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt14" p="(-0.5,-1.0)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf15" v="(-0.420,-0.420)" tail="(-0.5,-0.5)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt15" p="(-0.5,-0.5)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf16" v="(-0.420,0.420)" tail="(-0.5,0.5)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt16" p="(-0.5,0.5)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf17" v="(-0.168,0.336)" tail="(-0.5,1.0)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt17" p="(-0.5,1.0)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf18" v="(-0.084,0.252)" tail="(-0.5,1.5)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt18" p="(-0.5,1.5)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf19" v="(0.084,-0.252)" tail="(0.5,-1.5)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt19" p="(0.5,-1.5)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf20" v="(0.168,-0.336)" tail="(0.5,-1.0)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt20" p="(0.5,-1.0)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf21" v="(0.420,-0.420)" tail="(0.5,-0.5)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt21" p="(0.5,-0.5)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf22" v="(0.420,0.420)" tail="(0.5,0.5)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt22" p="(0.5,0.5)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf23" v="(0.168,0.336)" tail="(0.5,1.0)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt23" p="(0.5,1.0)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf24" v="(0.084,0.252)" tail="(0.5,1.5)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt24" p="(0.5,1.5)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf25" v="(0.129,-0.194)" tail="(1.0,-1.5)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt25" p="(1.0,-1.5)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf26" v="(0.210,-0.210)" tail="(1.0,-1.0)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt26" p="(1.0,-1.0)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf27" v="(0.336,-0.168)" tail="(1.0,-0.5)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt27" p="(1.0,-0.5)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf28" v="(0.336,0.168)" tail="(1.0,0.5)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt28" p="(1.0,0.5)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf29" v="(0.210,0.210)" tail="(1.0,1.0)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt29" p="(1.0,1.0)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf30" v="(0.129,0.194)" tail="(1.0,1.5)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt30" p="(1.0,1.5)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf31" v="(0.140,-0.140)" tail="(1.5,-1.5)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt31" p="(1.5,-1.5)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf32" v="(0.194,-0.129)" tail="(1.5,-1.0)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt32" p="(1.5,-1.0)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf33" v="(0.252,-0.084)" tail="(1.5,-0.5)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt33" p="(1.5,-0.5)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf34" v="(0.252,0.084)" tail="(1.5,0.5)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt34" p="(1.5,0.5)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf35" v="(0.194,0.129)" tail="(1.5,1.0)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt35" p="(1.5,1.0)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf36" v="(0.140,0.140)" tail="(1.5,1.5)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt36" p="(1.5,1.5)" size="3" stroke="#8b1a2b" fill="none"/>
-                </coordinates>
-                <annotations>
-                  <annotation ref="figure" text="Vector field D. Arrows are drawn at sixteen grid points, each arrow starting from a small circle at its tail."/>
-                </annotations>
-              </diagram>
-            </prefigure>
-          </image>
-        </figure>
-        <figure xml:id="fig-r1p-vf-inward-decay">
-          <caption>Graph <m>E</m>.</caption>
-          <image width="100%">
-            <shortdescription>Vector field E: arrows drawn at a grid of points, each with a dot at its tail.</shortdescription>
-            <prefigure xmlns="https://prefigure.org" label="prefigure-r1p-vf-inward-decay">
-              <diagram dimensions="(210,210)" margins="4">
-                <coordinates bbox="(-2.3,-2.3,2.3,2.3)">
-                  <axes at="axes" xlabel="x" ylabel="y" decorations="no" arrows="1" stroke="#555555" thickness="1"/>
-                  <vector at="vf1" v="(0.140,0.140)" tail="(-1.5,-1.5)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt1" p="(-1.5,-1.5)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf2" v="(0.194,0.129)" tail="(-1.5,-1.0)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt2" p="(-1.5,-1.0)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf3" v="(0.252,0.084)" tail="(-1.5,-0.5)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt3" p="(-1.5,-0.5)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf4" v="(0.252,-0.084)" tail="(-1.5,0.5)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt4" p="(-1.5,0.5)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf5" v="(0.194,-0.129)" tail="(-1.5,1.0)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt5" p="(-1.5,1.0)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf6" v="(0.140,-0.140)" tail="(-1.5,1.5)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt6" p="(-1.5,1.5)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf7" v="(0.129,0.194)" tail="(-1.0,-1.5)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt7" p="(-1.0,-1.5)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf8" v="(0.210,0.210)" tail="(-1.0,-1.0)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt8" p="(-1.0,-1.0)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf9" v="(0.336,0.168)" tail="(-1.0,-0.5)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt9" p="(-1.0,-0.5)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf10" v="(0.336,-0.168)" tail="(-1.0,0.5)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt10" p="(-1.0,0.5)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf11" v="(0.210,-0.210)" tail="(-1.0,1.0)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt11" p="(-1.0,1.0)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf12" v="(0.129,-0.194)" tail="(-1.0,1.5)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt12" p="(-1.0,1.5)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf13" v="(0.084,0.252)" tail="(-0.5,-1.5)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt13" p="(-0.5,-1.5)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf14" v="(0.168,0.336)" tail="(-0.5,-1.0)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt14" p="(-0.5,-1.0)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf15" v="(0.420,0.420)" tail="(-0.5,-0.5)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt15" p="(-0.5,-0.5)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf16" v="(0.420,-0.420)" tail="(-0.5,0.5)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt16" p="(-0.5,0.5)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf17" v="(0.168,-0.336)" tail="(-0.5,1.0)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt17" p="(-0.5,1.0)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf18" v="(0.084,-0.252)" tail="(-0.5,1.5)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt18" p="(-0.5,1.5)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf19" v="(-0.084,0.252)" tail="(0.5,-1.5)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt19" p="(0.5,-1.5)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf20" v="(-0.168,0.336)" tail="(0.5,-1.0)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt20" p="(0.5,-1.0)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf21" v="(-0.420,0.420)" tail="(0.5,-0.5)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt21" p="(0.5,-0.5)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf22" v="(-0.420,-0.420)" tail="(0.5,0.5)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt22" p="(0.5,0.5)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf23" v="(-0.168,-0.336)" tail="(0.5,1.0)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt23" p="(0.5,1.0)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf24" v="(-0.084,-0.252)" tail="(0.5,1.5)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt24" p="(0.5,1.5)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf25" v="(-0.129,0.194)" tail="(1.0,-1.5)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt25" p="(1.0,-1.5)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf26" v="(-0.210,0.210)" tail="(1.0,-1.0)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt26" p="(1.0,-1.0)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf27" v="(-0.336,0.168)" tail="(1.0,-0.5)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt27" p="(1.0,-0.5)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf28" v="(-0.336,-0.168)" tail="(1.0,0.5)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt28" p="(1.0,0.5)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf29" v="(-0.210,-0.210)" tail="(1.0,1.0)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt29" p="(1.0,1.0)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf30" v="(-0.129,-0.194)" tail="(1.0,1.5)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt30" p="(1.0,1.5)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf31" v="(-0.140,0.140)" tail="(1.5,-1.5)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt31" p="(1.5,-1.5)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf32" v="(-0.194,0.129)" tail="(1.5,-1.0)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt32" p="(1.5,-1.0)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf33" v="(-0.252,0.084)" tail="(1.5,-0.5)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt33" p="(1.5,-0.5)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf34" v="(-0.252,-0.084)" tail="(1.5,0.5)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt34" p="(1.5,0.5)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf35" v="(-0.194,-0.129)" tail="(1.5,1.0)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt35" p="(1.5,1.0)" size="3" stroke="#8b1a2b" fill="none"/>
-                  <vector at="vf36" v="(-0.140,-0.140)" tail="(1.5,1.5)" stroke="#3c6fbf" thickness="2"/>
-                  <point at="pt36" p="(1.5,1.5)" size="3" stroke="#8b1a2b" fill="none"/>
-                </coordinates>
-                <annotations>
-                  <annotation ref="figure" text="Vector field E. Arrows are drawn at sixteen grid points, each arrow starting from a small circle at its tail."/>
-                </annotations>
-              </diagram>
-            </prefigure>
-          </image>
-        </figure>
-      </sidebyside>
-    </statement>
-    <evaluation>
-      <evaluate>
-        <test correct="yes">
-          <strcmp case="insensitive">A</strcmp>
-          <feedback><p>Correct.</p></feedback>
-        </test>
-        <test>
-          <strcmp strip="no">.*</strcmp>
-          <feedback><p>Incorrect.</p></feedback>
-        </test>
-      </evaluate>
-      <evaluate>
-        <test correct="yes">
-          <strcmp case="insensitive">B</strcmp>
-          <feedback><p>Correct.</p></feedback>
-        </test>
-        <test>
-          <strcmp strip="no">.*</strcmp>
-          <feedback><p>Incorrect.</p></feedback>
-        </test>
-      </evaluate>
-      <evaluate>
-        <test correct="yes">
-          <strcmp case="insensitive">C</strcmp>
-          <feedback><p>Correct.</p></feedback>
-        </test>
-        <test>
-          <strcmp strip="no">.*</strcmp>
-          <feedback><p>Incorrect.</p></feedback>
-        </test>
-      </evaluate>
-      <evaluate>
-        <test correct="yes">
-          <strcmp case="insensitive">D</strcmp>
-          <feedback><p>Correct.</p></feedback>
-        </test>
-        <test>
-          <strcmp strip="no">.*</strcmp>
-          <feedback><p>Incorrect.</p></feedback>
-        </test>
-      </evaluate>
-      <evaluate>
-        <test correct="yes">
-          <strcmp case="insensitive">E</strcmp>
-          <feedback><p>Correct.</p></feedback>
-        </test>
-        <test>
-          <strcmp strip="no">.*</strcmp>
-          <feedback><p>Incorrect.</p></feedback>
-        </test>
-      </evaluate>
-    </evaluation>
-    <solution component="review1-solutions">
-      <p>
-        Two things separate the five fields: which way the arrows point, and
-        whether their length changes with distance from the origin.
-      </p>
-      <p>
-        The first three all have length <m>1</m> everywhere, since dividing
-        by <m>\sqrt{x^2+y^2}</m> normalizes them; the last two have length
-        <m>1/\sqrt{x^2+y^2}</m>, so their arrows are long near the origin
-        and short far away.
-      </p>
-      <p>
-        Among the unit fields,
-        <m>\dfrac{x\,\mathbf{i}+y\,\mathbf{j}}{\sqrt{x^2+y^2}}</m>
-        points straight away from the origin, and
-        <m>\dfrac{-y\,\mathbf{i}+x\,\mathbf{j}}{\sqrt{x^2+y^2}}</m> is
-        perpendicular to that, circling counterclockwise. The third,
-        <m>\dfrac{-x\,\mathbf{i}+y\,\mathbf{j}}{\sqrt{x^2+y^2}}</m>,
-        points toward the <m>y</m>-axis along the <m>x</m>-axis but away
-        from the origin along the <m>y</m>-axis, giving the saddle pattern.
-      </p>
-      <p>
-        The last two differ only by a sign: one flows outward, the other
-        inward.
-      </p>
-    </solution>
-  </exercise>
-
   <exercise xml:id="ex-r1p-sign-of-circulation">
     <title>The Sign of a Line Integral Around a Closed Curve</title>
     <statement>
       <p>
-        Consider the closed curve <m>C</m> shown in
-        <xref ref="fig-r1p-annulus"/>. For each vector field below, decide
-        whether <m>\displaystyle\oint_C \mathbf{F}\cdot d\mathbf{r}</m>
-        is positive, negative, or zero. Type <c>positive</c>,
-        <c>negative</c> or <c>zero</c>.
+        Consider the closed curve <m>C</m> shown below. For each vector
+        field, decide whether
+        <m>\displaystyle\oint_C \mathbf{F}\cdot d\mathbf{r}</m> is
+        positive, negative, or zero. Type <c>positive</c>, <c>negative</c>
+        or <c>zero</c>.
       </p>
       <p>
         <m>\mathbf{F} = x\,\mathbf{i} + y\,\mathbf{j}</m>:
@@ -1133,49 +573,27 @@
         <m>\mathbf{F} = y\,\mathbf{i} - x\,\mathbf{j}</m>:
         <fillin name="b3" mode="string" answer="negative" width="10"/>
       </p>
-      <p>
-        <em>Be sure you can justify each answer.</em>
-      </p>
       <figure xml:id="fig-r1p-annulus">
         <caption>
-          The closed curve <m>C</m>: down the inner arc, out along the lower
-          edge, up the outer arc, and back in along the upper edge.
+          The closed curve <m>C</m>, with the direction of travel marked on
+          the two straight edges.
         </caption>
         <image width="62%">
-          <shortdescription>
-            A closed curve made of two circular arcs of radius one and two
-            between minus forty-five and plus forty-five degrees, joined by two
-            radial segments, with arrows showing the direction of travel.
-          </shortdescription>
+          <shortdescription>A closed curve made of two circular arcs of radius one and two between minus forty-five and plus forty-five degrees, joined by two radial segments, with arrows on the straight edges showing the direction of travel.</shortdescription>
           <prefigure xmlns="https://prefigure.org" label="prefigure-r1p-annulus">
             <diagram dimensions="(330,330)" margins="8">
               <definition>fInner(t) = (cos(t), sin(t))</definition>
               <definition>fOuter(t) = (2*cos(t), 2*sin(t))</definition>
               <coordinates bbox="(-0.65,-1.75,2.85,1.75)">
-                <axes at="ax" xlabel="x" ylabel="y" decorations="no" arrows="1"
-                    stroke="#555555" thickness="1"/>
-                <parametric-curve at="inner" function="fInner" domain="(-pi/4,pi/4)"
-                    stroke="#CC0079" thickness="3"/>
-                <parametric-curve at="outer" function="fOuter" domain="(-pi/4,pi/4)"
-                    stroke="#CC0079" thickness="3"/>
-                <line at="lower" endpoints="((0.7071,-0.7071),(1.4142,-1.4142))"
-                    stroke="#CC0079" thickness="3"/>
-                <line at="upper" endpoints="((1.4142,1.4142),(0.7071,0.7071))"
-                    stroke="#CC0079" thickness="3"/>
-                <vector at="a-inner" v="(0.0707,-0.3326)" tail="(0.9781,0.2079)" stroke="#CC0079" thickness="3"/>
-                <vector at="a-outer" v="(0.0707,0.3326)" tail="(1.9563,-0.4158)" stroke="#CC0079" thickness="3"/>
+                <axes at="ax" xlabel="x" ylabel="y" decorations="no" arrows="1" stroke="#555555" thickness="1"/>
+                <parametric-curve at="inner" function="fInner" domain="(-pi/4,pi/4)" stroke="#CC0079" thickness="3"/>
+                <parametric-curve at="outer" function="fOuter" domain="(-pi/4,pi/4)" stroke="#CC0079" thickness="3"/>
+                <line at="lower" endpoints="((0.7071,-0.7071),(1.4142,-1.4142))" stroke="#CC0079" thickness="3"/>
+                <line at="upper" endpoints="((1.4142,1.4142),(0.7071,0.7071))" stroke="#CC0079" thickness="3"/>
                 <vector at="a-lower" v="(0.2404,-0.2404)" tail="(1.0041,-1.0041)" stroke="#CC0079" thickness="3"/>
                 <vector at="a-upper" v="(-0.2404,-0.2404)" tail="(1.1172,1.1172)" stroke="#CC0079" thickness="3"/>
                 <label at="lab" anchor="(1.5,0.30)" alignment="c"><m>C</m></label>
               </coordinates>
-              <annotations>
-                <annotation ref="figure" text="A closed curve in the right half plane. Two circular arcs, of radius one and radius two, run between minus forty-five and plus forty-five degrees, and two straight radial segments join their ends. Arrows show the curve traversed down the inner arc, outward along the lower segment, up the outer arc, and back inward along the upper segment.">
-                  <annotation ref="inner" text="The inner arc, of radius one, traversed downward."/>
-                  <annotation ref="outer" text="The outer arc, of radius two, traversed upward."/>
-                  <annotation ref="lower" text="The lower radial segment, traversed outward."/>
-                  <annotation ref="upper" text="The upper radial segment, traversed inward."/>
-                </annotation>
-              </annotations>
             </diagram>
           </prefigure>
         </image>
@@ -1192,6 +610,514 @@
       </evaluate>
       <evaluate>
         <test correct="yes"><strcmp case="insensitive">negative</strcmp><feedback><p>Correct.</p></feedback></test>
+        <test><strcmp strip="no">.*</strcmp><feedback><p>Incorrect.</p></feedback></test>
+      </evaluate>
+    </evaluation>
+    <solution component="review1-solutions">
+      <p>
+        The curve bounds the annular sector between <m>r=1</m> and
+        <m>r=2</m> from <m>-45^\circ</m> to <m>45^\circ</m>, traversed with
+        the region on the left, so it is positively oriented. Its area is
+        <m>\tfrac12\left(\tfrac{\pi}{2}\right)\left(2^2-1^2\right)
+        = \tfrac{3\pi}{4}</m>.
+      </p>
+      <p>
+        The first field is radial: perpendicular to both arcs, and parallel
+        to the two straight edges, which are travelled once outward and once
+        inward, so those contributions cancel and the integral is <m>0</m>.
+      </p>
+      <p>
+        For the second, <m>N_x - M_y = 2</m>, so Green's Theorem gives
+        <m>2\cdot\text{Area} = \tfrac{3\pi}{2}</m>, which is positive.
+        The third is its negative, <m>-\tfrac{3\pi}{2}</m>.
+      </p>
+    </solution>
+  </exercise>
+
+  <exercise xml:id="ex-r1p-match-fields">
+    <title>Matching Vector Fields to Their Graphs</title>
+    <statement>
+      <p>
+        Match each of the following vector fields with its graph, entering
+        the letter <c>A</c>, <c>B</c>, <c>C</c>, <c>D</c> or <c>E</c>. The
+        graphs are shown below; in each one a small circle marks the
+        <term>tail</term> of the arrow.
+      </p>
+      <p>
+        <m>\mathbf{F}(x,y) = \dfrac{x\,\mathbf{i} + y\,\mathbf{j}}
+        {\sqrt{x^2+y^2}}</m>:
+        <fillin name="b1" mode="string" answer="C" width="4"/>
+      </p>
+      <p>
+        <m>\mathbf{F}(x,y) = \dfrac{-y\,\mathbf{i} + x\,\mathbf{j}}
+        {\sqrt{x^2+y^2}}</m>:
+        <fillin name="b2" mode="string" answer="D" width="4"/>
+      </p>
+      <p>
+        <m>\mathbf{F}(x,y) = \dfrac{-x\,\mathbf{i} + y\,\mathbf{j}}
+        {\sqrt{x^2+y^2}}</m>:
+        <fillin name="b3" mode="string" answer="A" width="4"/>
+      </p>
+      <p>
+        <m>\mathbf{F}(x,y) = \dfrac{x\,\mathbf{i} + y\,\mathbf{j}}
+        {x^2+y^2}</m>:
+        <fillin name="b4" mode="string" answer="E" width="4"/>
+      </p>
+      <p>
+        <m>\mathbf{F}(x,y) = \dfrac{-x\,\mathbf{i} - y\,\mathbf{j}}
+        {x^2+y^2}</m>:
+        <fillin name="b5" mode="string" answer="B" width="4"/>
+      </p>
+      <sidebyside widths="30% 30% 30%" margins="2%" valign="middle">
+      <figure xml:id="fig-r1p-vf-hyperbolic">
+        <caption>Graph <m>A</m>.</caption>
+        <image width="100%">
+          <shortdescription>Vector field A: arrows drawn at a grid of points, each with a dot at its tail.</shortdescription>
+          <prefigure xmlns="https://prefigure.org" label="prefigure-r1p-vf-hyperbolic">
+            <diagram dimensions="(210,210)" margins="4">
+              <coordinates bbox="(-2.3,-2.3,2.3,2.3)">
+                <axes at="axes" xlabel="x" ylabel="y" decorations="no" arrows="1" stroke="#555555" thickness="1"/>
+                <vector at="vf1" v="(0.240,-0.240)" tail="(-1.5,-1.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt1" p="(-1.5,-1.5)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf2" v="(0.283,-0.189)" tail="(-1.5,-1.0)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt2" p="(-1.5,-1.0)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf3" v="(0.323,-0.108)" tail="(-1.5,-0.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt3" p="(-1.5,-0.5)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf4" v="(0.323,0.108)" tail="(-1.5,0.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt4" p="(-1.5,0.5)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf5" v="(0.283,0.189)" tail="(-1.5,1.0)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt5" p="(-1.5,1.0)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf6" v="(0.240,0.240)" tail="(-1.5,1.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt6" p="(-1.5,1.5)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf7" v="(0.189,-0.283)" tail="(-1.0,-1.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt7" p="(-1.0,-1.5)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf8" v="(0.240,-0.240)" tail="(-1.0,-1.0)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt8" p="(-1.0,-1.0)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf9" v="(0.304,-0.152)" tail="(-1.0,-0.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt9" p="(-1.0,-0.5)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf10" v="(0.304,0.152)" tail="(-1.0,0.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt10" p="(-1.0,0.5)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf11" v="(0.240,0.240)" tail="(-1.0,1.0)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt11" p="(-1.0,1.0)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf12" v="(0.189,0.283)" tail="(-1.0,1.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt12" p="(-1.0,1.5)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf13" v="(0.108,-0.323)" tail="(-0.5,-1.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt13" p="(-0.5,-1.5)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf14" v="(0.152,-0.304)" tail="(-0.5,-1.0)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt14" p="(-0.5,-1.0)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf15" v="(0.240,-0.240)" tail="(-0.5,-0.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt15" p="(-0.5,-0.5)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf16" v="(0.240,0.240)" tail="(-0.5,0.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt16" p="(-0.5,0.5)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf17" v="(0.152,0.304)" tail="(-0.5,1.0)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt17" p="(-0.5,1.0)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf18" v="(0.108,0.323)" tail="(-0.5,1.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt18" p="(-0.5,1.5)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf19" v="(-0.108,-0.323)" tail="(0.5,-1.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt19" p="(0.5,-1.5)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf20" v="(-0.152,-0.304)" tail="(0.5,-1.0)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt20" p="(0.5,-1.0)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf21" v="(-0.240,-0.240)" tail="(0.5,-0.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt21" p="(0.5,-0.5)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf22" v="(-0.240,0.240)" tail="(0.5,0.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt22" p="(0.5,0.5)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf23" v="(-0.152,0.304)" tail="(0.5,1.0)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt23" p="(0.5,1.0)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf24" v="(-0.108,0.323)" tail="(0.5,1.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt24" p="(0.5,1.5)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf25" v="(-0.189,-0.283)" tail="(1.0,-1.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt25" p="(1.0,-1.5)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf26" v="(-0.240,-0.240)" tail="(1.0,-1.0)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt26" p="(1.0,-1.0)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf27" v="(-0.304,-0.152)" tail="(1.0,-0.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt27" p="(1.0,-0.5)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf28" v="(-0.304,0.152)" tail="(1.0,0.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt28" p="(1.0,0.5)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf29" v="(-0.240,0.240)" tail="(1.0,1.0)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt29" p="(1.0,1.0)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf30" v="(-0.189,0.283)" tail="(1.0,1.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt30" p="(1.0,1.5)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf31" v="(-0.240,-0.240)" tail="(1.5,-1.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt31" p="(1.5,-1.5)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf32" v="(-0.283,-0.189)" tail="(1.5,-1.0)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt32" p="(1.5,-1.0)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf33" v="(-0.323,-0.108)" tail="(1.5,-0.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt33" p="(1.5,-0.5)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf34" v="(-0.323,0.108)" tail="(1.5,0.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt34" p="(1.5,0.5)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf35" v="(-0.283,0.189)" tail="(1.5,1.0)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt35" p="(1.5,1.0)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf36" v="(-0.240,0.240)" tail="(1.5,1.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt36" p="(1.5,1.5)" size="3" stroke="#8b1a2b" fill="none"/>
+              </coordinates>
+            </diagram>
+          </prefigure>
+        </image>
+      </figure>
+      <figure xml:id="fig-r1p-vf-inward-decay">
+        <caption>Graph <m>B</m>.</caption>
+        <image width="100%">
+          <shortdescription>Vector field B: arrows drawn at a grid of points, each with a dot at its tail.</shortdescription>
+          <prefigure xmlns="https://prefigure.org" label="prefigure-r1p-vf-inward-decay">
+            <diagram dimensions="(210,210)" margins="4">
+              <coordinates bbox="(-2.3,-2.3,2.3,2.3)">
+                <axes at="axes" xlabel="x" ylabel="y" decorations="no" arrows="1" stroke="#555555" thickness="1"/>
+                <vector at="vf1" v="(0.140,0.140)" tail="(-1.5,-1.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt1" p="(-1.5,-1.5)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf2" v="(0.194,0.129)" tail="(-1.5,-1.0)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt2" p="(-1.5,-1.0)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf3" v="(0.252,0.084)" tail="(-1.5,-0.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt3" p="(-1.5,-0.5)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf4" v="(0.252,-0.084)" tail="(-1.5,0.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt4" p="(-1.5,0.5)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf5" v="(0.194,-0.129)" tail="(-1.5,1.0)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt5" p="(-1.5,1.0)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf6" v="(0.140,-0.140)" tail="(-1.5,1.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt6" p="(-1.5,1.5)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf7" v="(0.129,0.194)" tail="(-1.0,-1.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt7" p="(-1.0,-1.5)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf8" v="(0.210,0.210)" tail="(-1.0,-1.0)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt8" p="(-1.0,-1.0)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf9" v="(0.336,0.168)" tail="(-1.0,-0.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt9" p="(-1.0,-0.5)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf10" v="(0.336,-0.168)" tail="(-1.0,0.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt10" p="(-1.0,0.5)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf11" v="(0.210,-0.210)" tail="(-1.0,1.0)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt11" p="(-1.0,1.0)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf12" v="(0.129,-0.194)" tail="(-1.0,1.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt12" p="(-1.0,1.5)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf13" v="(0.084,0.252)" tail="(-0.5,-1.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt13" p="(-0.5,-1.5)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf14" v="(0.168,0.336)" tail="(-0.5,-1.0)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt14" p="(-0.5,-1.0)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf15" v="(0.420,0.420)" tail="(-0.5,-0.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt15" p="(-0.5,-0.5)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf16" v="(0.420,-0.420)" tail="(-0.5,0.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt16" p="(-0.5,0.5)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf17" v="(0.168,-0.336)" tail="(-0.5,1.0)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt17" p="(-0.5,1.0)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf18" v="(0.084,-0.252)" tail="(-0.5,1.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt18" p="(-0.5,1.5)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf19" v="(-0.084,0.252)" tail="(0.5,-1.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt19" p="(0.5,-1.5)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf20" v="(-0.168,0.336)" tail="(0.5,-1.0)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt20" p="(0.5,-1.0)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf21" v="(-0.420,0.420)" tail="(0.5,-0.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt21" p="(0.5,-0.5)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf22" v="(-0.420,-0.420)" tail="(0.5,0.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt22" p="(0.5,0.5)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf23" v="(-0.168,-0.336)" tail="(0.5,1.0)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt23" p="(0.5,1.0)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf24" v="(-0.084,-0.252)" tail="(0.5,1.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt24" p="(0.5,1.5)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf25" v="(-0.129,0.194)" tail="(1.0,-1.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt25" p="(1.0,-1.5)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf26" v="(-0.210,0.210)" tail="(1.0,-1.0)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt26" p="(1.0,-1.0)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf27" v="(-0.336,0.168)" tail="(1.0,-0.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt27" p="(1.0,-0.5)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf28" v="(-0.336,-0.168)" tail="(1.0,0.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt28" p="(1.0,0.5)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf29" v="(-0.210,-0.210)" tail="(1.0,1.0)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt29" p="(1.0,1.0)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf30" v="(-0.129,-0.194)" tail="(1.0,1.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt30" p="(1.0,1.5)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf31" v="(-0.140,0.140)" tail="(1.5,-1.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt31" p="(1.5,-1.5)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf32" v="(-0.194,0.129)" tail="(1.5,-1.0)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt32" p="(1.5,-1.0)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf33" v="(-0.252,0.084)" tail="(1.5,-0.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt33" p="(1.5,-0.5)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf34" v="(-0.252,-0.084)" tail="(1.5,0.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt34" p="(1.5,0.5)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf35" v="(-0.194,-0.129)" tail="(1.5,1.0)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt35" p="(1.5,1.0)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf36" v="(-0.140,-0.140)" tail="(1.5,1.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt36" p="(1.5,1.5)" size="3" stroke="#8b1a2b" fill="none"/>
+              </coordinates>
+            </diagram>
+          </prefigure>
+        </image>
+      </figure>
+      <figure xml:id="fig-r1p-vf-radial-unit">
+        <caption>Graph <m>C</m>.</caption>
+        <image width="100%">
+          <shortdescription>Vector field C: arrows drawn at a grid of points, each with a dot at its tail.</shortdescription>
+          <prefigure xmlns="https://prefigure.org" label="prefigure-r1p-vf-radial-unit">
+            <diagram dimensions="(210,210)" margins="4">
+              <coordinates bbox="(-2.3,-2.3,2.3,2.3)">
+                <axes at="axes" xlabel="x" ylabel="y" decorations="no" arrows="1" stroke="#555555" thickness="1"/>
+                <vector at="vf1" v="(-0.240,-0.240)" tail="(-1.5,-1.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt1" p="(-1.5,-1.5)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf2" v="(-0.283,-0.189)" tail="(-1.5,-1.0)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt2" p="(-1.5,-1.0)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf3" v="(-0.323,-0.108)" tail="(-1.5,-0.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt3" p="(-1.5,-0.5)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf4" v="(-0.323,0.108)" tail="(-1.5,0.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt4" p="(-1.5,0.5)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf5" v="(-0.283,0.189)" tail="(-1.5,1.0)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt5" p="(-1.5,1.0)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf6" v="(-0.240,0.240)" tail="(-1.5,1.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt6" p="(-1.5,1.5)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf7" v="(-0.189,-0.283)" tail="(-1.0,-1.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt7" p="(-1.0,-1.5)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf8" v="(-0.240,-0.240)" tail="(-1.0,-1.0)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt8" p="(-1.0,-1.0)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf9" v="(-0.304,-0.152)" tail="(-1.0,-0.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt9" p="(-1.0,-0.5)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf10" v="(-0.304,0.152)" tail="(-1.0,0.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt10" p="(-1.0,0.5)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf11" v="(-0.240,0.240)" tail="(-1.0,1.0)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt11" p="(-1.0,1.0)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf12" v="(-0.189,0.283)" tail="(-1.0,1.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt12" p="(-1.0,1.5)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf13" v="(-0.108,-0.323)" tail="(-0.5,-1.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt13" p="(-0.5,-1.5)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf14" v="(-0.152,-0.304)" tail="(-0.5,-1.0)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt14" p="(-0.5,-1.0)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf15" v="(-0.240,-0.240)" tail="(-0.5,-0.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt15" p="(-0.5,-0.5)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf16" v="(-0.240,0.240)" tail="(-0.5,0.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt16" p="(-0.5,0.5)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf17" v="(-0.152,0.304)" tail="(-0.5,1.0)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt17" p="(-0.5,1.0)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf18" v="(-0.108,0.323)" tail="(-0.5,1.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt18" p="(-0.5,1.5)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf19" v="(0.108,-0.323)" tail="(0.5,-1.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt19" p="(0.5,-1.5)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf20" v="(0.152,-0.304)" tail="(0.5,-1.0)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt20" p="(0.5,-1.0)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf21" v="(0.240,-0.240)" tail="(0.5,-0.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt21" p="(0.5,-0.5)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf22" v="(0.240,0.240)" tail="(0.5,0.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt22" p="(0.5,0.5)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf23" v="(0.152,0.304)" tail="(0.5,1.0)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt23" p="(0.5,1.0)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf24" v="(0.108,0.323)" tail="(0.5,1.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt24" p="(0.5,1.5)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf25" v="(0.189,-0.283)" tail="(1.0,-1.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt25" p="(1.0,-1.5)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf26" v="(0.240,-0.240)" tail="(1.0,-1.0)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt26" p="(1.0,-1.0)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf27" v="(0.304,-0.152)" tail="(1.0,-0.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt27" p="(1.0,-0.5)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf28" v="(0.304,0.152)" tail="(1.0,0.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt28" p="(1.0,0.5)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf29" v="(0.240,0.240)" tail="(1.0,1.0)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt29" p="(1.0,1.0)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf30" v="(0.189,0.283)" tail="(1.0,1.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt30" p="(1.0,1.5)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf31" v="(0.240,-0.240)" tail="(1.5,-1.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt31" p="(1.5,-1.5)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf32" v="(0.283,-0.189)" tail="(1.5,-1.0)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt32" p="(1.5,-1.0)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf33" v="(0.323,-0.108)" tail="(1.5,-0.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt33" p="(1.5,-0.5)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf34" v="(0.323,0.108)" tail="(1.5,0.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt34" p="(1.5,0.5)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf35" v="(0.283,0.189)" tail="(1.5,1.0)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt35" p="(1.5,1.0)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf36" v="(0.240,0.240)" tail="(1.5,1.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt36" p="(1.5,1.5)" size="3" stroke="#8b1a2b" fill="none"/>
+              </coordinates>
+            </diagram>
+          </prefigure>
+        </image>
+      </figure>
+      </sidebyside>
+
+      <sidebyside widths="30% 30%" margins="17%" valign="middle">
+      <figure xml:id="fig-r1p-vf-swirl-unit">
+        <caption>Graph <m>D</m>.</caption>
+        <image width="100%">
+          <shortdescription>Vector field D: arrows drawn at a grid of points, each with a dot at its tail.</shortdescription>
+          <prefigure xmlns="https://prefigure.org" label="prefigure-r1p-vf-swirl-unit">
+            <diagram dimensions="(210,210)" margins="4">
+              <coordinates bbox="(-2.3,-2.3,2.3,2.3)">
+                <axes at="axes" xlabel="x" ylabel="y" decorations="no" arrows="1" stroke="#555555" thickness="1"/>
+                <vector at="vf1" v="(0.240,-0.240)" tail="(-1.5,-1.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt1" p="(-1.5,-1.5)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf2" v="(0.189,-0.283)" tail="(-1.5,-1.0)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt2" p="(-1.5,-1.0)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf3" v="(0.108,-0.323)" tail="(-1.5,-0.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt3" p="(-1.5,-0.5)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf4" v="(-0.108,-0.323)" tail="(-1.5,0.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt4" p="(-1.5,0.5)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf5" v="(-0.189,-0.283)" tail="(-1.5,1.0)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt5" p="(-1.5,1.0)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf6" v="(-0.240,-0.240)" tail="(-1.5,1.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt6" p="(-1.5,1.5)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf7" v="(0.283,-0.189)" tail="(-1.0,-1.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt7" p="(-1.0,-1.5)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf8" v="(0.240,-0.240)" tail="(-1.0,-1.0)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt8" p="(-1.0,-1.0)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf9" v="(0.152,-0.304)" tail="(-1.0,-0.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt9" p="(-1.0,-0.5)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf10" v="(-0.152,-0.304)" tail="(-1.0,0.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt10" p="(-1.0,0.5)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf11" v="(-0.240,-0.240)" tail="(-1.0,1.0)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt11" p="(-1.0,1.0)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf12" v="(-0.283,-0.189)" tail="(-1.0,1.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt12" p="(-1.0,1.5)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf13" v="(0.323,-0.108)" tail="(-0.5,-1.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt13" p="(-0.5,-1.5)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf14" v="(0.304,-0.152)" tail="(-0.5,-1.0)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt14" p="(-0.5,-1.0)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf15" v="(0.240,-0.240)" tail="(-0.5,-0.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt15" p="(-0.5,-0.5)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf16" v="(-0.240,-0.240)" tail="(-0.5,0.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt16" p="(-0.5,0.5)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf17" v="(-0.304,-0.152)" tail="(-0.5,1.0)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt17" p="(-0.5,1.0)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf18" v="(-0.323,-0.108)" tail="(-0.5,1.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt18" p="(-0.5,1.5)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf19" v="(0.323,0.108)" tail="(0.5,-1.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt19" p="(0.5,-1.5)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf20" v="(0.304,0.152)" tail="(0.5,-1.0)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt20" p="(0.5,-1.0)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf21" v="(0.240,0.240)" tail="(0.5,-0.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt21" p="(0.5,-0.5)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf22" v="(-0.240,0.240)" tail="(0.5,0.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt22" p="(0.5,0.5)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf23" v="(-0.304,0.152)" tail="(0.5,1.0)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt23" p="(0.5,1.0)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf24" v="(-0.323,0.108)" tail="(0.5,1.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt24" p="(0.5,1.5)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf25" v="(0.283,0.189)" tail="(1.0,-1.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt25" p="(1.0,-1.5)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf26" v="(0.240,0.240)" tail="(1.0,-1.0)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt26" p="(1.0,-1.0)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf27" v="(0.152,0.304)" tail="(1.0,-0.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt27" p="(1.0,-0.5)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf28" v="(-0.152,0.304)" tail="(1.0,0.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt28" p="(1.0,0.5)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf29" v="(-0.240,0.240)" tail="(1.0,1.0)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt29" p="(1.0,1.0)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf30" v="(-0.283,0.189)" tail="(1.0,1.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt30" p="(1.0,1.5)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf31" v="(0.240,0.240)" tail="(1.5,-1.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt31" p="(1.5,-1.5)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf32" v="(0.189,0.283)" tail="(1.5,-1.0)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt32" p="(1.5,-1.0)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf33" v="(0.108,0.323)" tail="(1.5,-0.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt33" p="(1.5,-0.5)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf34" v="(-0.108,0.323)" tail="(1.5,0.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt34" p="(1.5,0.5)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf35" v="(-0.189,0.283)" tail="(1.5,1.0)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt35" p="(1.5,1.0)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf36" v="(-0.240,0.240)" tail="(1.5,1.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt36" p="(1.5,1.5)" size="3" stroke="#8b1a2b" fill="none"/>
+              </coordinates>
+            </diagram>
+          </prefigure>
+        </image>
+      </figure>
+      <figure xml:id="fig-r1p-vf-outward-decay">
+        <caption>Graph <m>E</m>.</caption>
+        <image width="100%">
+          <shortdescription>Vector field E: arrows drawn at a grid of points, each with a dot at its tail.</shortdescription>
+          <prefigure xmlns="https://prefigure.org" label="prefigure-r1p-vf-outward-decay">
+            <diagram dimensions="(210,210)" margins="4">
+              <coordinates bbox="(-2.3,-2.3,2.3,2.3)">
+                <axes at="axes" xlabel="x" ylabel="y" decorations="no" arrows="1" stroke="#555555" thickness="1"/>
+                <vector at="vf1" v="(-0.140,-0.140)" tail="(-1.5,-1.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt1" p="(-1.5,-1.5)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf2" v="(-0.194,-0.129)" tail="(-1.5,-1.0)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt2" p="(-1.5,-1.0)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf3" v="(-0.252,-0.084)" tail="(-1.5,-0.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt3" p="(-1.5,-0.5)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf4" v="(-0.252,0.084)" tail="(-1.5,0.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt4" p="(-1.5,0.5)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf5" v="(-0.194,0.129)" tail="(-1.5,1.0)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt5" p="(-1.5,1.0)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf6" v="(-0.140,0.140)" tail="(-1.5,1.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt6" p="(-1.5,1.5)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf7" v="(-0.129,-0.194)" tail="(-1.0,-1.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt7" p="(-1.0,-1.5)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf8" v="(-0.210,-0.210)" tail="(-1.0,-1.0)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt8" p="(-1.0,-1.0)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf9" v="(-0.336,-0.168)" tail="(-1.0,-0.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt9" p="(-1.0,-0.5)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf10" v="(-0.336,0.168)" tail="(-1.0,0.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt10" p="(-1.0,0.5)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf11" v="(-0.210,0.210)" tail="(-1.0,1.0)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt11" p="(-1.0,1.0)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf12" v="(-0.129,0.194)" tail="(-1.0,1.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt12" p="(-1.0,1.5)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf13" v="(-0.084,-0.252)" tail="(-0.5,-1.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt13" p="(-0.5,-1.5)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf14" v="(-0.168,-0.336)" tail="(-0.5,-1.0)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt14" p="(-0.5,-1.0)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf15" v="(-0.420,-0.420)" tail="(-0.5,-0.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt15" p="(-0.5,-0.5)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf16" v="(-0.420,0.420)" tail="(-0.5,0.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt16" p="(-0.5,0.5)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf17" v="(-0.168,0.336)" tail="(-0.5,1.0)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt17" p="(-0.5,1.0)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf18" v="(-0.084,0.252)" tail="(-0.5,1.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt18" p="(-0.5,1.5)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf19" v="(0.084,-0.252)" tail="(0.5,-1.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt19" p="(0.5,-1.5)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf20" v="(0.168,-0.336)" tail="(0.5,-1.0)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt20" p="(0.5,-1.0)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf21" v="(0.420,-0.420)" tail="(0.5,-0.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt21" p="(0.5,-0.5)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf22" v="(0.420,0.420)" tail="(0.5,0.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt22" p="(0.5,0.5)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf23" v="(0.168,0.336)" tail="(0.5,1.0)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt23" p="(0.5,1.0)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf24" v="(0.084,0.252)" tail="(0.5,1.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt24" p="(0.5,1.5)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf25" v="(0.129,-0.194)" tail="(1.0,-1.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt25" p="(1.0,-1.5)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf26" v="(0.210,-0.210)" tail="(1.0,-1.0)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt26" p="(1.0,-1.0)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf27" v="(0.336,-0.168)" tail="(1.0,-0.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt27" p="(1.0,-0.5)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf28" v="(0.336,0.168)" tail="(1.0,0.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt28" p="(1.0,0.5)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf29" v="(0.210,0.210)" tail="(1.0,1.0)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt29" p="(1.0,1.0)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf30" v="(0.129,0.194)" tail="(1.0,1.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt30" p="(1.0,1.5)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf31" v="(0.140,-0.140)" tail="(1.5,-1.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt31" p="(1.5,-1.5)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf32" v="(0.194,-0.129)" tail="(1.5,-1.0)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt32" p="(1.5,-1.0)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf33" v="(0.252,-0.084)" tail="(1.5,-0.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt33" p="(1.5,-0.5)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf34" v="(0.252,0.084)" tail="(1.5,0.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt34" p="(1.5,0.5)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf35" v="(0.194,0.129)" tail="(1.5,1.0)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt35" p="(1.5,1.0)" size="3" stroke="#8b1a2b" fill="none"/>
+                <vector at="vf36" v="(0.140,0.140)" tail="(1.5,1.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="pt36" p="(1.5,1.5)" size="3" stroke="#8b1a2b" fill="none"/>
+              </coordinates>
+            </diagram>
+          </prefigure>
+        </image>
+      </figure>
+      </sidebyside>
+      </statement>
+        <evaluation>
+      <evaluate>
+        <test correct="yes"><strcmp case="insensitive">C</strcmp><feedback><p>Correct.</p></feedback></test>
+        <test><strcmp strip="no">.*</strcmp><feedback><p>Incorrect.</p></feedback></test>
+      </evaluate>
+      <evaluate>
+        <test correct="yes"><strcmp case="insensitive">D</strcmp><feedback><p>Correct.</p></feedback></test>
+        <test><strcmp strip="no">.*</strcmp><feedback><p>Incorrect.</p></feedback></test>
+      </evaluate>
+      <evaluate>
+        <test correct="yes"><strcmp case="insensitive">A</strcmp><feedback><p>Correct.</p></feedback></test>
+        <test><strcmp strip="no">.*</strcmp><feedback><p>Incorrect.</p></feedback></test>
+      </evaluate>
+      <evaluate>
+        <test correct="yes"><strcmp case="insensitive">E</strcmp><feedback><p>Correct.</p></feedback></test>
+        <test><strcmp strip="no">.*</strcmp><feedback><p>Incorrect.</p></feedback></test>
+      </evaluate>
+      <evaluate>
+        <test correct="yes"><strcmp case="insensitive">B</strcmp><feedback><p>Correct.</p></feedback></test>
         <test><strcmp strip="no">.*</strcmp><feedback><p>Incorrect.</p></feedback></test>
       </evaluate>
     </evaluation>
@@ -1386,29 +1312,22 @@
                 <point at="q63" p="(4.00,3.50)" size="3" stroke="#2f6fb5" fill="#2f6fb5"/>
                 <vector at="v64" v="(0.34,0)" tail="(4.00,4.00)" stroke="#2f6fb5" thickness="2"/>
                 <point at="q64" p="(4.00,4.00)" size="3" stroke="#2f6fb5" fill="#2f6fb5"/>
-                <line at="p1" endpoints="((0.5,0.5),(2.0,0.5))" stroke="#123f7a" thickness="3"/>
-                <point at="s1" p="(0.5,0.5)" size="5" fill="#123f7a" stroke="#123f7a"/>
-                <point at="e1" p="(2.0,0.5)" size="5" fill="#123f7a" stroke="#123f7a"/>
-                <vector at="d1" v="(0.675,0.000)" tail="(0.5,0.5)" stroke="#123f7a" thickness="3"/>
-                <label at="l1" anchor="(1.25,0.3)" alignment="c" color="#123f7a"><m>C_1</m></label>
-                <line at="p2" endpoints="((3.5,3.5),(3.5,2.0))" stroke="#123f7a" thickness="3"/>
-                <point at="s2" p="(3.5,3.5)" size="5" fill="#123f7a" stroke="#123f7a"/>
-                <point at="e2" p="(3.5,2.0)" size="5" fill="#123f7a" stroke="#123f7a"/>
-                <vector at="d2" v="(0.000,-0.675)" tail="(3.5,3.5)" stroke="#123f7a" thickness="3"/>
-                <label at="l2" anchor="(3.68,2.75)" alignment="c" color="#123f7a"><m>C_2</m></label>
-                <line at="p3" endpoints="((0.5,2.0),(1.25,3.5))" stroke="#123f7a" thickness="3"/>
-                <point at="s3" p="(0.5,2.0)" size="5" fill="#123f7a" stroke="#123f7a"/>
-                <point at="e3" p="(1.25,3.5)" size="5" fill="#123f7a" stroke="#123f7a"/>
-                <vector at="d3" v="(0.338,0.675)" tail="(0.5,2.0)" stroke="#123f7a" thickness="3"/>
-                <label at="l3" anchor="(0.72,2.95)" alignment="c" color="#123f7a"><m>C_3</m></label>
+                <line at="p1" endpoints="((0.5,0.5),(2.0,0.5))" stroke="#c00000" thickness="3"/>
+                <point at="s1" p="(0.5,0.5)" size="5" fill="#c00000" stroke="#c00000"/>
+                <point at="e1" p="(2.0,0.5)" size="5" fill="#c00000" stroke="#c00000"/>
+                <vector at="d1" v="(0.675,0.000)" tail="(0.5,0.5)" stroke="#c00000" thickness="3"/>
+                <label at="l1" anchor="(1.25,0.3)" alignment="c" color="#c00000"><m>C_1</m></label>
+                <line at="p2" endpoints="((3.5,3.5),(3.5,2.0))" stroke="#c00000" thickness="3"/>
+                <point at="s2" p="(3.5,3.5)" size="5" fill="#c00000" stroke="#c00000"/>
+                <point at="e2" p="(3.5,2.0)" size="5" fill="#c00000" stroke="#c00000"/>
+                <vector at="d2" v="(0.000,-0.675)" tail="(3.5,3.5)" stroke="#c00000" thickness="3"/>
+                <label at="l2" anchor="(3.68,2.75)" alignment="c" color="#c00000"><m>C_2</m></label>
+                <line at="p3" endpoints="((0.5,2.0),(1.25,3.5))" stroke="#c00000" thickness="3"/>
+                <point at="s3" p="(0.5,2.0)" size="5" fill="#c00000" stroke="#c00000"/>
+                <point at="e3" p="(1.25,3.5)" size="5" fill="#c00000" stroke="#c00000"/>
+                <vector at="d3" v="(0.338,0.675)" tail="(0.5,2.0)" stroke="#c00000" thickness="3"/>
+                <label at="l3" anchor="(0.72,2.95)" alignment="c" color="#c00000"><m>C_3</m></label>
               </coordinates>
-              <annotations>
-                <annotation ref="figure" text="A constant vector field whose arrows all point horizontally to the right, with equal length, drawn on a grid. Three straight paths are marked: C one runs left to right along the bottom, C two runs downward on the right, and C three runs up and to the right from the left side.">
-                  <annotation ref="p1" text="Path C one: a horizontal segment traversed left to right, of length one and a half."/>
-                  <annotation ref="p2" text="Path C two: a vertical segment traversed downward, of length one and a half."/>
-                  <annotation ref="p3" text="Path C three: a segment traversed up and to the right, rising one and a half and moving three quarters to the right."/>
-                </annotation>
-              </annotations>
             </diagram>
           </prefigure>
         </image>

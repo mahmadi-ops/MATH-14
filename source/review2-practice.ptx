@@ -601,5 +601,1609 @@
     </solution>
   </exercise>
 
+  <exercise xml:id="ex-r2p-match-polar">
+    <title>Matching Polar Regions to Their Integrals</title>
+    <statement>
+      <p>
+        Each integral below is the area of one of the eight shaded regions
+        shown underneath. Match each integral with its region by entering the
+        letter <c>A</c> through <c>H</c>. Every region is drawn on the same
+        scale, and each letter is used exactly once.
+      </p>
+      <p>
+        <m>\displaystyle \int_0^{2\pi}\!\!\int_1^{2} r\,dr\,d\theta</m>:
+        <fillin name="b1" mode="string" answer="C" width="4"/>
+      </p>
+      <p>
+        <m>\displaystyle \int_0^{\pi}\!\!\int_0^{2} r\,dr\,d\theta</m>:
+        <fillin name="b2" mode="string" answer="F" width="4"/>
+      </p>
+      <p>
+        <m>\displaystyle \int_0^{\pi/2}\!\!\int_0^{2} r\,dr\,d\theta</m>:
+        <fillin name="b3" mode="string" answer="A" width="4"/>
+      </p>
+      <p>
+        <m>\displaystyle \int_0^{2\pi}\!\!\int_0^{1+\cos\theta} r\,dr\,d\theta</m>:
+        <fillin name="b4" mode="string" answer="B" width="4"/>
+      </p>
+      <p>
+        <m>\displaystyle \int_{-\pi/2}^{\pi/2}\!\!\int_0^{2\cos\theta} r\,dr\,d\theta</m>:
+        <fillin name="b5" mode="string" answer="H" width="4"/>
+      </p>
+      <p>
+        <m>\displaystyle \int_{-\pi/4}^{\pi/4}\!\!\int_0^{2\cos 2\theta} r\,dr\,d\theta</m>:
+        <fillin name="b6" mode="string" answer="E" width="4"/>
+      </p>
+      <p>
+        <m>\displaystyle \int_0^{\pi/2}\!\!\int_1^{2} r\,dr\,d\theta</m>:
+        <fillin name="b7" mode="string" answer="G" width="4"/>
+      </p>
+      <p>
+        <m>\displaystyle \int_0^{\pi}\!\!\int_0^{2\sin\theta} r\,dr\,d\theta</m>:
+        <fillin name="b8" mode="string" answer="D" width="4"/>
+      </p>
+      <sidebyside widths="22% 22% 22% 22%" margins="2%" valign="middle">
+      <figure xml:id="fig-r2p-polar-quarter">
+        <caption>Region <m>A</m>.</caption>
+        <image width="100%">
+          <shortdescription>Polar region A: the quarter disk, shaded.</shortdescription>
+          <prefigure xmlns="https://prefigure.org" label="prefigure-r2p-polar-quarter">
+            <diagram dimensions="(190,190)" margins="4">
+              <coordinates bbox="(-2.4,-2.4,2.4,2.4)">
+                <axes at="axes" xlabel="x" ylabel="y" decorations="no" arrows="1" stroke="#555555" thickness="1"/>
+                <polygon at="reg" closed="yes" stroke="#3c6fbf" fill="#cfe0f5" thickness="2" points="((0.0000,0.0000),(2.0000,0.0000),(1.9999,0.0224),(1.9995,0.0449),(1.9989,0.0673),(1.9980,0.0897),(1.9969,0.1121),(1.9955,0.1345),(1.9938,0.1569),(1.9919,0.1793),(1.9898,0.2016),(1.9874,0.2239),(1.9848,0.2462),(1.9819,0.2685),(1.9788,0.2907),(1.9754,0.3129),(1.9717,0.3350),(1.9679,0.3571),(1.9637,0.3792),(1.9594,0.4012),(1.9547,0.4231),(1.9499,0.4450),(1.9447,0.4669),(1.9394,0.4887),(1.9338,0.5104),(1.9279,0.5321),(1.9218,0.5537),(1.9155,0.5752),(1.9089,0.5967),(1.9021,0.6180),(1.8951,0.6393),(1.8878,0.6606),(1.8802,0.6817),(1.8725,0.7027),(1.8645,0.7237),(1.8562,0.7446),(1.8478,0.7654),(1.8391,0.7861),(1.8301,0.8066),(1.8210,0.8271),(1.8116,0.8475),(1.8019,0.8678),(1.7921,0.8879),(1.7820,0.9080),(1.7717,0.9279),(1.7612,0.9477),(1.7504,0.9674),(1.7395,0.9870),(1.7283,1.0065),(1.7169,1.0258),(1.7053,1.0450),(1.6934,1.0641),(1.6814,1.0830),(1.6691,1.1018),(1.6567,1.1205),(1.6440,1.1390),(1.6311,1.1573),(1.6180,1.1756),(1.6047,1.1937),(1.5912,1.2116),(1.5776,1.2294),(1.5637,1.2470),(1.5496,1.2644),(1.5353,1.2818),(1.5208,1.2989),(1.5061,1.3159),(1.4913,1.3327),(1.4762,1.3493),(1.4610,1.3658),(1.4456,1.3821),(1.4300,1.3983),(1.4142,1.4142),(1.3983,1.4300),(1.3821,1.4456),(1.3658,1.4610),(1.3493,1.4762),(1.3327,1.4913),(1.3159,1.5061),(1.2989,1.5208),(1.2818,1.5353),(1.2644,1.5496),(1.2470,1.5637),(1.2294,1.5776),(1.2116,1.5912),(1.1937,1.6047),(1.1756,1.6180),(1.1573,1.6311),(1.1390,1.6440),(1.1205,1.6567),(1.1018,1.6691),(1.0830,1.6814),(1.0641,1.6934),(1.0450,1.7053),(1.0258,1.7169),(1.0065,1.7283),(0.9870,1.7395),(0.9674,1.7504),(0.9477,1.7612),(0.9279,1.7717),(0.9080,1.7820),(0.8879,1.7921),(0.8678,1.8019),(0.8475,1.8116),(0.8271,1.8210),(0.8066,1.8301),(0.7861,1.8391),(0.7654,1.8478),(0.7446,1.8562),(0.7237,1.8645),(0.7027,1.8725),(0.6817,1.8802),(0.6606,1.8878),(0.6393,1.8951),(0.6180,1.9021),(0.5967,1.9089),(0.5752,1.9155),(0.5537,1.9218),(0.5321,1.9279),(0.5104,1.9338),(0.4887,1.9394),(0.4669,1.9447),(0.4450,1.9499),(0.4231,1.9547),(0.4012,1.9594),(0.3792,1.9637),(0.3571,1.9679),(0.3350,1.9717),(0.3129,1.9754),(0.2907,1.9788),(0.2685,1.9819),(0.2462,1.9848),(0.2239,1.9874),(0.2016,1.9898),(0.1793,1.9919),(0.1569,1.9938),(0.1345,1.9955),(0.1121,1.9969),(0.0897,1.9980),(0.0673,1.9989),(0.0449,1.9995),(0.0224,1.9999),(0.0000,2.0000),(0.0000,0.0000))"/>
+              </coordinates>
+            </diagram>
+          </prefigure>
+        </image>
+      </figure>
+      <figure xml:id="fig-r2p-polar-cardioid">
+        <caption>Region <m>B</m>.</caption>
+        <image width="100%">
+          <shortdescription>Polar region B: a cardioid, shaded.</shortdescription>
+          <prefigure xmlns="https://prefigure.org" label="prefigure-r2p-polar-cardioid">
+            <diagram dimensions="(190,190)" margins="4">
+              <coordinates bbox="(-2.4,-2.4,2.4,2.4)">
+                <axes at="axes" xlabel="x" ylabel="y" decorations="no" arrows="1" stroke="#555555" thickness="1"/>
+                <polygon at="reg" closed="yes" stroke="#3c6fbf" fill="#cfe0f5" thickness="2" points="((2.0000,0.0000),(1.9970,0.0897),(1.9879,0.1789),(1.9729,0.2673),(1.9520,0.3542),(1.9254,0.4395),(1.8932,0.5225),(1.8556,0.6029),(1.8128,0.6803),(1.7651,0.7544),(1.7127,0.8248),(1.6560,0.8912),(1.5954,0.9532),(1.5311,1.0107),(1.4635,1.0633),(1.3931,1.1110),(1.3202,1.1534),(1.2452,1.1906),(1.1686,1.2223),(1.0908,1.2485),(1.0122,1.2693),(0.9333,1.2845),(0.8544,1.2943),(0.7760,1.2987),(0.6984,1.2979),(0.6221,1.2919),(0.5475,1.2809),(0.4748,1.2652),(0.4045,1.2449),(0.3368,1.2204),(0.2720,1.1919),(0.2104,1.1596),(0.1523,1.1240),(0.0977,1.0853),(0.0469,1.0438),(0.0000,1.0000),(-0.0429,0.9542),(-0.0816,0.9067),(-0.1162,0.8579),(-0.1467,0.8082),(-0.1730,0.7580),(-0.1953,0.7075),(-0.2135,0.6572),(-0.2279,0.6073),(-0.2386,0.5581),(-0.2456,0.5101),(-0.2493,0.4633),(-0.2498,0.4182),(-0.2474,0.3748),(-0.2423,0.3335),(-0.2348,0.2944),(-0.2251,0.2576),(-0.2135,0.2233),(-0.2004,0.1916),(-0.1860,0.1625),(-0.1706,0.1360),(-0.1545,0.1123),(-0.1381,0.0911),(-0.1215,0.0726),(-0.1051,0.0566),(-0.0892,0.0430),(-0.0740,0.0316),(-0.0597,0.0224),(-0.0465,0.0151),(-0.0347,0.0096),(-0.0244,0.0056),(-0.0158,0.0029),(-0.0090,0.0012),(-0.0040,0.0004),(-0.0010,0.0000),(-0.0000,0.0000),(-0.0010,-0.0000),(-0.0040,-0.0004),(-0.0090,-0.0012),(-0.0158,-0.0029),(-0.0244,-0.0056),(-0.0347,-0.0096),(-0.0465,-0.0151),(-0.0597,-0.0224),(-0.0740,-0.0316),(-0.0892,-0.0430),(-0.1051,-0.0566),(-0.1215,-0.0726),(-0.1381,-0.0911),(-0.1545,-0.1123),(-0.1706,-0.1360),(-0.1860,-0.1625),(-0.2004,-0.1916),(-0.2135,-0.2233),(-0.2251,-0.2576),(-0.2348,-0.2944),(-0.2423,-0.3335),(-0.2474,-0.3748),(-0.2498,-0.4182),(-0.2493,-0.4633),(-0.2456,-0.5101),(-0.2386,-0.5581),(-0.2279,-0.6073),(-0.2135,-0.6572),(-0.1953,-0.7075),(-0.1730,-0.7580),(-0.1467,-0.8082),(-0.1162,-0.8579),(-0.0816,-0.9067),(-0.0429,-0.9542),(-0.0000,-1.0000),(0.0469,-1.0438),(0.0977,-1.0853),(0.1523,-1.1240),(0.2104,-1.1596),(0.2720,-1.1919),(0.3368,-1.2204),(0.4045,-1.2449),(0.4748,-1.2652),(0.5475,-1.2809),(0.6221,-1.2919),(0.6984,-1.2979),(0.7760,-1.2987),(0.8544,-1.2943),(0.9333,-1.2845),(1.0122,-1.2693),(1.0908,-1.2485),(1.1686,-1.2223),(1.2452,-1.1906),(1.3202,-1.1534),(1.3931,-1.1110),(1.4635,-1.0633),(1.5311,-1.0107),(1.5954,-0.9532),(1.6560,-0.8912),(1.7127,-0.8248),(1.7651,-0.7544),(1.8128,-0.6803),(1.8556,-0.6029),(1.8932,-0.5225),(1.9254,-0.4395),(1.9520,-0.3542),(1.9729,-0.2673),(1.9879,-0.1789),(1.9970,-0.0897),(2.0000,-0.0000))"/>
+              </coordinates>
+            </diagram>
+          </prefigure>
+        </image>
+      </figure>
+      <figure xml:id="fig-r2p-polar-annulus">
+        <caption>Region <m>C</m>.</caption>
+        <image width="100%">
+          <shortdescription>Polar region C: an annulus, shaded.</shortdescription>
+          <prefigure xmlns="https://prefigure.org" label="prefigure-r2p-polar-annulus">
+            <diagram dimensions="(190,190)" margins="4">
+              <coordinates bbox="(-2.4,-2.4,2.4,2.4)">
+                <axes at="axes" xlabel="x" ylabel="y" decorations="no" arrows="1" stroke="#555555" thickness="1"/>
+                <circle at="outer" center="(0,0)" radius="2" stroke="#3c6fbf" fill="#cfe0f5" thickness="2"/>
+                <circle at="inner" center="(0,0)" radius="1" stroke="#3c6fbf" fill="#ffffff" thickness="2"/>
+              </coordinates>
+            </diagram>
+          </prefigure>
+        </image>
+      </figure>
+      <figure xml:id="fig-r2p-polar-circ-sin">
+        <caption>Region <m>D</m>.</caption>
+        <image width="100%">
+          <shortdescription>Polar region D: a disk sitting above the origin, shaded.</shortdescription>
+          <prefigure xmlns="https://prefigure.org" label="prefigure-r2p-polar-circ-sin">
+            <diagram dimensions="(190,190)" margins="4">
+              <coordinates bbox="(-2.4,-2.4,2.4,2.4)">
+                <axes at="axes" xlabel="x" ylabel="y" decorations="no" arrows="1" stroke="#555555" thickness="1"/>
+                <polygon at="reg" closed="yes" stroke="#3c6fbf" fill="#cfe0f5" thickness="2" points="((0.0000,0.0000),(0.0449,0.0010),(0.0896,0.0040),(0.1342,0.0091),(0.1786,0.0161),(0.2225,0.0251),(0.2660,0.0360),(0.3090,0.0489),(0.3514,0.0638),(0.3930,0.0805),(0.4339,0.0990),(0.4739,0.1194),(0.5129,0.1416),(0.5509,0.1654),(0.5878,0.1910),(0.6235,0.2182),(0.6579,0.2469),(0.6911,0.2772),(0.7228,0.3089),(0.7531,0.3421),(0.7818,0.3765),(0.8090,0.4122),(0.8346,0.4491),(0.8584,0.4871),(0.8806,0.5261),(0.9010,0.5661),(0.9195,0.6070),(0.9362,0.6486),(0.9511,0.6910),(0.9640,0.7340),(0.9749,0.7775),(0.9839,0.8214),(0.9909,0.8658),(0.9960,0.9104),(0.9990,0.9551),(1.0000,1.0000),(0.9990,1.0449),(0.9960,1.0896),(0.9909,1.1342),(0.9839,1.1786),(0.9749,1.2225),(0.9640,1.2660),(0.9511,1.3090),(0.9362,1.3514),(0.9195,1.3930),(0.9010,1.4339),(0.8806,1.4739),(0.8584,1.5129),(0.8346,1.5509),(0.8090,1.5878),(0.7818,1.6235),(0.7531,1.6579),(0.7228,1.6911),(0.6911,1.7228),(0.6579,1.7531),(0.6235,1.7818),(0.5878,1.8090),(0.5509,1.8346),(0.5129,1.8584),(0.4739,1.8806),(0.4339,1.9010),(0.3930,1.9195),(0.3514,1.9362),(0.3090,1.9511),(0.2660,1.9640),(0.2225,1.9749),(0.1786,1.9839),(0.1342,1.9909),(0.0896,1.9960),(0.0449,1.9990),(0.0000,2.0000),(-0.0449,1.9990),(-0.0896,1.9960),(-0.1342,1.9909),(-0.1786,1.9839),(-0.2225,1.9749),(-0.2660,1.9640),(-0.3090,1.9511),(-0.3514,1.9362),(-0.3930,1.9195),(-0.4339,1.9010),(-0.4739,1.8806),(-0.5129,1.8584),(-0.5509,1.8346),(-0.5878,1.8090),(-0.6235,1.7818),(-0.6579,1.7531),(-0.6911,1.7228),(-0.7228,1.6911),(-0.7531,1.6579),(-0.7818,1.6235),(-0.8090,1.5878),(-0.8346,1.5509),(-0.8584,1.5129),(-0.8806,1.4739),(-0.9010,1.4339),(-0.9195,1.3930),(-0.9362,1.3514),(-0.9511,1.3090),(-0.9640,1.2660),(-0.9749,1.2225),(-0.9839,1.1786),(-0.9909,1.1342),(-0.9960,1.0896),(-0.9990,1.0449),(-1.0000,1.0000),(-0.9990,0.9551),(-0.9960,0.9104),(-0.9909,0.8658),(-0.9839,0.8214),(-0.9749,0.7775),(-0.9640,0.7340),(-0.9511,0.6910),(-0.9362,0.6486),(-0.9195,0.6070),(-0.9010,0.5661),(-0.8806,0.5261),(-0.8584,0.4871),(-0.8346,0.4491),(-0.8090,0.4122),(-0.7818,0.3765),(-0.7531,0.3421),(-0.7228,0.3089),(-0.6911,0.2772),(-0.6579,0.2469),(-0.6235,0.2182),(-0.5878,0.1910),(-0.5509,0.1654),(-0.5129,0.1416),(-0.4739,0.1194),(-0.4339,0.0990),(-0.3930,0.0805),(-0.3514,0.0638),(-0.3090,0.0489),(-0.2660,0.0360),(-0.2225,0.0251),(-0.1786,0.0161),(-0.1342,0.0091),(-0.0896,0.0040),(-0.0449,0.0010),(-0.0000,0.0000))"/>
+              </coordinates>
+            </diagram>
+          </prefigure>
+        </image>
+      </figure>
+      </sidebyside>
+      <sidebyside widths="22% 22% 22% 22%" margins="2%" valign="middle">
+      <figure xml:id="fig-r2p-polar-petal">
+        <caption>Region <m>E</m>.</caption>
+        <image width="100%">
+          <shortdescription>Polar region E: one petal of a rose, shaded.</shortdescription>
+          <prefigure xmlns="https://prefigure.org" label="prefigure-r2p-polar-petal">
+            <diagram dimensions="(190,190)" margins="4">
+              <coordinates bbox="(-2.4,-2.4,2.4,2.4)">
+                <axes at="axes" xlabel="x" ylabel="y" decorations="no" arrows="1" stroke="#555555" thickness="1"/>
+                <polygon at="reg" closed="yes" stroke="#3c6fbf" fill="#cfe0f5" thickness="2" points="((0.0000,0.0000),(0.0000,-0.0000),(0.0321,-0.0314),(0.0649,-0.0620),(0.0983,-0.0919),(0.1323,-0.1210),(0.1670,-0.1492),(0.2022,-0.1766),(0.2379,-0.2032),(0.2741,-0.2289),(0.3108,-0.2536),(0.3479,-0.2775),(0.3855,-0.3004),(0.4233,-0.3223),(0.4615,-0.3433),(0.5000,-0.3633),(0.5387,-0.3822),(0.5777,-0.4002),(0.6168,-0.4171),(0.6560,-0.4330),(0.6954,-0.4479),(0.7348,-0.4617),(0.7742,-0.4744),(0.8136,-0.4861),(0.8529,-0.4967),(0.8922,-0.5062),(0.9313,-0.5147),(0.9702,-0.5221),(1.0090,-0.5284),(1.0474,-0.5337),(1.0856,-0.5379),(1.1235,-0.5410),(1.1610,-0.5431),(1.1981,-0.5442),(1.2347,-0.5442),(1.2709,-0.5432),(1.3066,-0.5412),(1.3417,-0.5382),(1.3762,-0.5342),(1.4101,-0.5292),(1.4434,-0.5233),(1.4759,-0.5164),(1.5078,-0.5087),(1.5388,-0.5000),(1.5691,-0.4905),(1.5986,-0.4800),(1.6273,-0.4688),(1.6550,-0.4568),(1.6819,-0.4439),(1.7078,-0.4303),(1.7328,-0.4160),(1.7568,-0.4010),(1.7797,-0.3853),(1.8017,-0.3689),(1.8226,-0.3519),(1.8424,-0.3343),(1.8611,-0.3162),(1.8787,-0.2976),(1.8952,-0.2784),(1.9105,-0.2588),(1.9246,-0.2388),(1.9376,-0.2183),(1.9494,-0.1975),(1.9599,-0.1764),(1.9693,-0.1550),(1.9774,-0.1333),(1.9843,-0.1114),(1.9899,-0.0894),(1.9943,-0.0672),(1.9975,-0.0448),(1.9994,-0.0224),(2.0000,0.0000),(1.9994,0.0224),(1.9975,0.0448),(1.9943,0.0672),(1.9899,0.0894),(1.9843,0.1114),(1.9774,0.1333),(1.9693,0.1550),(1.9599,0.1764),(1.9494,0.1975),(1.9376,0.2183),(1.9246,0.2388),(1.9105,0.2588),(1.8952,0.2784),(1.8787,0.2976),(1.8611,0.3162),(1.8424,0.3343),(1.8226,0.3519),(1.8017,0.3689),(1.7797,0.3853),(1.7568,0.4010),(1.7328,0.4160),(1.7078,0.4303),(1.6819,0.4439),(1.6550,0.4568),(1.6273,0.4688),(1.5986,0.4800),(1.5691,0.4905),(1.5388,0.5000),(1.5078,0.5087),(1.4759,0.5164),(1.4434,0.5233),(1.4101,0.5292),(1.3762,0.5342),(1.3417,0.5382),(1.3066,0.5412),(1.2709,0.5432),(1.2347,0.5442),(1.1981,0.5442),(1.1610,0.5431),(1.1235,0.5410),(1.0856,0.5379),(1.0474,0.5337),(1.0090,0.5284),(0.9702,0.5221),(0.9313,0.5147),(0.8922,0.5062),(0.8529,0.4967),(0.8136,0.4861),(0.7742,0.4744),(0.7348,0.4617),(0.6954,0.4479),(0.6560,0.4330),(0.6168,0.4171),(0.5777,0.4002),(0.5387,0.3822),(0.5000,0.3633),(0.4615,0.3433),(0.4233,0.3223),(0.3855,0.3004),(0.3479,0.2775),(0.3108,0.2536),(0.2741,0.2289),(0.2379,0.2032),(0.2022,0.1766),(0.1670,0.1492),(0.1323,0.1210),(0.0983,0.0919),(0.0649,0.0620),(0.0321,0.0314),(0.0000,0.0000),(0.0000,0.0000))"/>
+              </coordinates>
+            </diagram>
+          </prefigure>
+        </image>
+      </figure>
+      <figure xml:id="fig-r2p-polar-half">
+        <caption>Region <m>F</m>.</caption>
+        <image width="100%">
+          <shortdescription>Polar region F: the upper half disk, shaded.</shortdescription>
+          <prefigure xmlns="https://prefigure.org" label="prefigure-r2p-polar-half">
+            <diagram dimensions="(190,190)" margins="4">
+              <coordinates bbox="(-2.4,-2.4,2.4,2.4)">
+                <axes at="axes" xlabel="x" ylabel="y" decorations="no" arrows="1" stroke="#555555" thickness="1"/>
+                <polygon at="reg" closed="yes" stroke="#3c6fbf" fill="#cfe0f5" thickness="2" points="((-2.0000,0.0000),(2.0000,0.0000),(1.9995,0.0449),(1.9980,0.0897),(1.9955,0.1345),(1.9919,0.1793),(1.9874,0.2239),(1.9819,0.2685),(1.9754,0.3129),(1.9679,0.3571),(1.9594,0.4012),(1.9499,0.4450),(1.9394,0.4887),(1.9279,0.5321),(1.9155,0.5752),(1.9021,0.6180),(1.8878,0.6606),(1.8725,0.7027),(1.8562,0.7446),(1.8391,0.7861),(1.8210,0.8271),(1.8019,0.8678),(1.7820,0.9080),(1.7612,0.9477),(1.7395,0.9870),(1.7169,1.0258),(1.6934,1.0641),(1.6691,1.1018),(1.6440,1.1390),(1.6180,1.1756),(1.5912,1.2116),(1.5637,1.2470),(1.5353,1.2818),(1.5061,1.3159),(1.4762,1.3493),(1.4456,1.3821),(1.4142,1.4142),(1.3821,1.4456),(1.3493,1.4762),(1.3159,1.5061),(1.2818,1.5353),(1.2470,1.5637),(1.2116,1.5912),(1.1756,1.6180),(1.1390,1.6440),(1.1018,1.6691),(1.0641,1.6934),(1.0258,1.7169),(0.9870,1.7395),(0.9477,1.7612),(0.9080,1.7820),(0.8678,1.8019),(0.8271,1.8210),(0.7861,1.8391),(0.7446,1.8562),(0.7027,1.8725),(0.6606,1.8878),(0.6180,1.9021),(0.5752,1.9155),(0.5321,1.9279),(0.4887,1.9394),(0.4450,1.9499),(0.4012,1.9594),(0.3571,1.9679),(0.3129,1.9754),(0.2685,1.9819),(0.2239,1.9874),(0.1793,1.9919),(0.1345,1.9955),(0.0897,1.9980),(0.0449,1.9995),(0.0000,2.0000),(-0.0449,1.9995),(-0.0897,1.9980),(-0.1345,1.9955),(-0.1793,1.9919),(-0.2239,1.9874),(-0.2685,1.9819),(-0.3129,1.9754),(-0.3571,1.9679),(-0.4012,1.9594),(-0.4450,1.9499),(-0.4887,1.9394),(-0.5321,1.9279),(-0.5752,1.9155),(-0.6180,1.9021),(-0.6606,1.8878),(-0.7027,1.8725),(-0.7446,1.8562),(-0.7861,1.8391),(-0.8271,1.8210),(-0.8678,1.8019),(-0.9080,1.7820),(-0.9477,1.7612),(-0.9870,1.7395),(-1.0258,1.7169),(-1.0641,1.6934),(-1.1018,1.6691),(-1.1390,1.6440),(-1.1756,1.6180),(-1.2116,1.5912),(-1.2470,1.5637),(-1.2818,1.5353),(-1.3159,1.5061),(-1.3493,1.4762),(-1.3821,1.4456),(-1.4142,1.4142),(-1.4456,1.3821),(-1.4762,1.3493),(-1.5061,1.3159),(-1.5353,1.2818),(-1.5637,1.2470),(-1.5912,1.2116),(-1.6180,1.1756),(-1.6440,1.1390),(-1.6691,1.1018),(-1.6934,1.0641),(-1.7169,1.0258),(-1.7395,0.9870),(-1.7612,0.9477),(-1.7820,0.9080),(-1.8019,0.8678),(-1.8210,0.8271),(-1.8391,0.7861),(-1.8562,0.7446),(-1.8725,0.7027),(-1.8878,0.6606),(-1.9021,0.6180),(-1.9155,0.5752),(-1.9279,0.5321),(-1.9394,0.4887),(-1.9499,0.4450),(-1.9594,0.4012),(-1.9679,0.3571),(-1.9754,0.3129),(-1.9819,0.2685),(-1.9874,0.2239),(-1.9919,0.1793),(-1.9955,0.1345),(-1.9980,0.0897),(-1.9995,0.0449),(-2.0000,0.0000),(-2.0000,0.0000))"/>
+              </coordinates>
+            </diagram>
+          </prefigure>
+        </image>
+      </figure>
+      <figure xml:id="fig-r2p-polar-ann-sector">
+        <caption>Region <m>G</m>.</caption>
+        <image width="100%">
+          <shortdescription>Polar region G: a quarter of an annulus, shaded.</shortdescription>
+          <prefigure xmlns="https://prefigure.org" label="prefigure-r2p-polar-ann-sector">
+            <diagram dimensions="(190,190)" margins="4">
+              <coordinates bbox="(-2.4,-2.4,2.4,2.4)">
+                <axes at="axes" xlabel="x" ylabel="y" decorations="no" arrows="1" stroke="#555555" thickness="1"/>
+                <polygon at="reg" closed="yes" stroke="#3c6fbf" fill="#cfe0f5" thickness="2" points="((1.0000,0.0000),(0.9999,0.0112),(0.9997,0.0224),(0.9994,0.0337),(0.9990,0.0449),(0.9984,0.0561),(0.9977,0.0673),(0.9969,0.0785),(0.9960,0.0896),(0.9949,0.1008),(0.9937,0.1120),(0.9924,0.1231),(0.9909,0.1342),(0.9894,0.1453),(0.9877,0.1564),(0.9859,0.1675),(0.9839,0.1786),(0.9819,0.1896),(0.9797,0.2006),(0.9774,0.2116),(0.9749,0.2225),(0.9724,0.2334),(0.9697,0.2443),(0.9669,0.2552),(0.9640,0.2660),(0.9609,0.2768),(0.9578,0.2876),(0.9545,0.2983),(0.9511,0.3090),(0.9475,0.3197),(0.9439,0.3303),(0.9401,0.3408),(0.9362,0.3514),(0.9322,0.3619),(0.9281,0.3723),(0.9239,0.3827),(0.9195,0.3930),(0.9151,0.4033),(0.9105,0.4136),(0.9058,0.4237),(0.9010,0.4339),(0.8960,0.4440),(0.8910,0.4540),(0.8859,0.4640),(0.8806,0.4739),(0.8752,0.4837),(0.8697,0.4935),(0.8641,0.5032),(0.8584,0.5129),(0.8526,0.5225),(0.8467,0.5320),(0.8407,0.5415),(0.8346,0.5509),(0.8283,0.5602),(0.8220,0.5695),(0.8156,0.5787),(0.8090,0.5878),(0.8024,0.5968),(0.7956,0.6058),(0.7888,0.6147),(0.7818,0.6235),(0.7748,0.6322),(0.7676,0.6409),(0.7604,0.6494),(0.7531,0.6579),(0.7456,0.6663),(0.7381,0.6747),(0.7305,0.6829),(0.7228,0.6911),(0.7150,0.6991),(0.7071,0.7071),(0.6991,0.7150),(0.6911,0.7228),(0.6829,0.7305),(0.6747,0.7381),(0.6663,0.7456),(0.6579,0.7531),(0.6494,0.7604),(0.6409,0.7676),(0.6322,0.7748),(0.6235,0.7818),(0.6147,0.7888),(0.6058,0.7956),(0.5968,0.8024),(0.5878,0.8090),(0.5787,0.8156),(0.5695,0.8220),(0.5602,0.8283),(0.5509,0.8346),(0.5415,0.8407),(0.5320,0.8467),(0.5225,0.8526),(0.5129,0.8584),(0.5032,0.8641),(0.4935,0.8697),(0.4837,0.8752),(0.4739,0.8806),(0.4640,0.8859),(0.4540,0.8910),(0.4440,0.8960),(0.4339,0.9010),(0.4237,0.9058),(0.4136,0.9105),(0.4033,0.9151),(0.3930,0.9195),(0.3827,0.9239),(0.3723,0.9281),(0.3619,0.9322),(0.3514,0.9362),(0.3408,0.9401),(0.3303,0.9439),(0.3197,0.9475),(0.3090,0.9511),(0.2983,0.9545),(0.2876,0.9578),(0.2768,0.9609),(0.2660,0.9640),(0.2552,0.9669),(0.2443,0.9697),(0.2334,0.9724),(0.2225,0.9749),(0.2116,0.9774),(0.2006,0.9797),(0.1896,0.9819),(0.1786,0.9839),(0.1675,0.9859),(0.1564,0.9877),(0.1453,0.9894),(0.1342,0.9909),(0.1231,0.9924),(0.1120,0.9937),(0.1008,0.9949),(0.0896,0.9960),(0.0785,0.9969),(0.0673,0.9977),(0.0561,0.9984),(0.0449,0.9990),(0.0337,0.9994),(0.0224,0.9997),(0.0112,0.9999),(0.0000,1.0000),(0.0000,2.0000),(0.0224,1.9999),(0.0449,1.9995),(0.0673,1.9989),(0.0897,1.9980),(0.1121,1.9969),(0.1345,1.9955),(0.1569,1.9938),(0.1793,1.9919),(0.2016,1.9898),(0.2239,1.9874),(0.2462,1.9848),(0.2685,1.9819),(0.2907,1.9788),(0.3129,1.9754),(0.3350,1.9717),(0.3571,1.9679),(0.3792,1.9637),(0.4012,1.9594),(0.4231,1.9547),(0.4450,1.9499),(0.4669,1.9447),(0.4887,1.9394),(0.5104,1.9338),(0.5321,1.9279),(0.5537,1.9218),(0.5752,1.9155),(0.5967,1.9089),(0.6180,1.9021),(0.6393,1.8951),(0.6606,1.8878),(0.6817,1.8802),(0.7027,1.8725),(0.7237,1.8645),(0.7446,1.8562),(0.7654,1.8478),(0.7861,1.8391),(0.8066,1.8301),(0.8271,1.8210),(0.8475,1.8116),(0.8678,1.8019),(0.8879,1.7921),(0.9080,1.7820),(0.9279,1.7717),(0.9477,1.7612),(0.9674,1.7504),(0.9870,1.7395),(1.0065,1.7283),(1.0258,1.7169),(1.0450,1.7053),(1.0641,1.6934),(1.0830,1.6814),(1.1018,1.6691),(1.1205,1.6567),(1.1390,1.6440),(1.1573,1.6311),(1.1756,1.6180),(1.1937,1.6047),(1.2116,1.5912),(1.2294,1.5776),(1.2470,1.5637),(1.2644,1.5496),(1.2818,1.5353),(1.2989,1.5208),(1.3159,1.5061),(1.3327,1.4913),(1.3493,1.4762),(1.3658,1.4610),(1.3821,1.4456),(1.3983,1.4300),(1.4142,1.4142),(1.4300,1.3983),(1.4456,1.3821),(1.4610,1.3658),(1.4762,1.3493),(1.4913,1.3327),(1.5061,1.3159),(1.5208,1.2989),(1.5353,1.2818),(1.5496,1.2644),(1.5637,1.2470),(1.5776,1.2294),(1.5912,1.2116),(1.6047,1.1937),(1.6180,1.1756),(1.6311,1.1573),(1.6440,1.1390),(1.6567,1.1205),(1.6691,1.1018),(1.6814,1.0830),(1.6934,1.0641),(1.7053,1.0450),(1.7169,1.0258),(1.7283,1.0065),(1.7395,0.9870),(1.7504,0.9674),(1.7612,0.9477),(1.7717,0.9279),(1.7820,0.9080),(1.7921,0.8879),(1.8019,0.8678),(1.8116,0.8475),(1.8210,0.8271),(1.8301,0.8066),(1.8391,0.7861),(1.8478,0.7654),(1.8562,0.7446),(1.8645,0.7237),(1.8725,0.7027),(1.8802,0.6817),(1.8878,0.6606),(1.8951,0.6393),(1.9021,0.6180),(1.9089,0.5967),(1.9155,0.5752),(1.9218,0.5537),(1.9279,0.5321),(1.9338,0.5104),(1.9394,0.4887),(1.9447,0.4669),(1.9499,0.4450),(1.9547,0.4231),(1.9594,0.4012),(1.9637,0.3792),(1.9679,0.3571),(1.9717,0.3350),(1.9754,0.3129),(1.9788,0.2907),(1.9819,0.2685),(1.9848,0.2462),(1.9874,0.2239),(1.9898,0.2016),(1.9919,0.1793),(1.9938,0.1569),(1.9955,0.1345),(1.9969,0.1121),(1.9980,0.0897),(1.9989,0.0673),(1.9995,0.0449),(1.9999,0.0224),(2.0000,0.0000))"/>
+              </coordinates>
+            </diagram>
+          </prefigure>
+        </image>
+      </figure>
+      <figure xml:id="fig-r2p-polar-circ-cos">
+        <caption>Region <m>H</m>.</caption>
+        <image width="100%">
+          <shortdescription>Polar region H: a disk sitting to the right of the origin, shaded.</shortdescription>
+          <prefigure xmlns="https://prefigure.org" label="prefigure-r2p-polar-circ-cos">
+            <diagram dimensions="(190,190)" margins="4">
+              <coordinates bbox="(-2.4,-2.4,2.4,2.4)">
+                <axes at="axes" xlabel="x" ylabel="y" decorations="no" arrows="1" stroke="#555555" thickness="1"/>
+                <polygon at="reg" closed="yes" stroke="#3c6fbf" fill="#cfe0f5" thickness="2" points="((0.0000,-0.0000),(0.0010,-0.0449),(0.0040,-0.0896),(0.0091,-0.1342),(0.0161,-0.1786),(0.0251,-0.2225),(0.0360,-0.2660),(0.0489,-0.3090),(0.0638,-0.3514),(0.0805,-0.3930),(0.0990,-0.4339),(0.1194,-0.4739),(0.1416,-0.5129),(0.1654,-0.5509),(0.1910,-0.5878),(0.2182,-0.6235),(0.2469,-0.6579),(0.2772,-0.6911),(0.3089,-0.7228),(0.3421,-0.7531),(0.3765,-0.7818),(0.4122,-0.8090),(0.4491,-0.8346),(0.4871,-0.8584),(0.5261,-0.8806),(0.5661,-0.9010),(0.6070,-0.9195),(0.6486,-0.9362),(0.6910,-0.9511),(0.7340,-0.9640),(0.7775,-0.9749),(0.8214,-0.9839),(0.8658,-0.9909),(0.9104,-0.9960),(0.9551,-0.9990),(1.0000,-1.0000),(1.0449,-0.9990),(1.0896,-0.9960),(1.1342,-0.9909),(1.1786,-0.9839),(1.2225,-0.9749),(1.2660,-0.9640),(1.3090,-0.9511),(1.3514,-0.9362),(1.3930,-0.9195),(1.4339,-0.9010),(1.4739,-0.8806),(1.5129,-0.8584),(1.5509,-0.8346),(1.5878,-0.8090),(1.6235,-0.7818),(1.6579,-0.7531),(1.6911,-0.7228),(1.7228,-0.6911),(1.7531,-0.6579),(1.7818,-0.6235),(1.8090,-0.5878),(1.8346,-0.5509),(1.8584,-0.5129),(1.8806,-0.4739),(1.9010,-0.4339),(1.9195,-0.3930),(1.9362,-0.3514),(1.9511,-0.3090),(1.9640,-0.2660),(1.9749,-0.2225),(1.9839,-0.1786),(1.9909,-0.1342),(1.9960,-0.0896),(1.9990,-0.0449),(2.0000,0.0000),(1.9990,0.0449),(1.9960,0.0896),(1.9909,0.1342),(1.9839,0.1786),(1.9749,0.2225),(1.9640,0.2660),(1.9511,0.3090),(1.9362,0.3514),(1.9195,0.3930),(1.9010,0.4339),(1.8806,0.4739),(1.8584,0.5129),(1.8346,0.5509),(1.8090,0.5878),(1.7818,0.6235),(1.7531,0.6579),(1.7228,0.6911),(1.6911,0.7228),(1.6579,0.7531),(1.6235,0.7818),(1.5878,0.8090),(1.5509,0.8346),(1.5129,0.8584),(1.4739,0.8806),(1.4339,0.9010),(1.3930,0.9195),(1.3514,0.9362),(1.3090,0.9511),(1.2660,0.9640),(1.2225,0.9749),(1.1786,0.9839),(1.1342,0.9909),(1.0896,0.9960),(1.0449,0.9990),(1.0000,1.0000),(0.9551,0.9990),(0.9104,0.9960),(0.8658,0.9909),(0.8214,0.9839),(0.7775,0.9749),(0.7340,0.9640),(0.6910,0.9511),(0.6486,0.9362),(0.6070,0.9195),(0.5661,0.9010),(0.5261,0.8806),(0.4871,0.8584),(0.4491,0.8346),(0.4122,0.8090),(0.3765,0.7818),(0.3421,0.7531),(0.3089,0.7228),(0.2772,0.6911),(0.2469,0.6579),(0.2182,0.6235),(0.1910,0.5878),(0.1654,0.5509),(0.1416,0.5129),(0.1194,0.4739),(0.0990,0.4339),(0.0805,0.3930),(0.0638,0.3514),(0.0489,0.3090),(0.0360,0.2660),(0.0251,0.2225),(0.0161,0.1786),(0.0091,0.1342),(0.0040,0.0896),(0.0010,0.0449),(0.0000,0.0000))"/>
+              </coordinates>
+            </diagram>
+          </prefigure>
+        </image>
+      </figure>
+      </sidebyside>
+    </statement>
+    <evaluation>
+      <evaluate>
+        <test correct="yes"><strcmp case="insensitive">C</strcmp><feedback><p>Correct.</p></feedback></test>
+        <test><strcmp strip="no">.*</strcmp><feedback><p>Incorrect.</p></feedback></test>
+      </evaluate>
+      <evaluate>
+        <test correct="yes"><strcmp case="insensitive">F</strcmp><feedback><p>Correct.</p></feedback></test>
+        <test><strcmp strip="no">.*</strcmp><feedback><p>Incorrect.</p></feedback></test>
+      </evaluate>
+      <evaluate>
+        <test correct="yes"><strcmp case="insensitive">A</strcmp><feedback><p>Correct.</p></feedback></test>
+        <test><strcmp strip="no">.*</strcmp><feedback><p>Incorrect.</p></feedback></test>
+      </evaluate>
+      <evaluate>
+        <test correct="yes"><strcmp case="insensitive">B</strcmp><feedback><p>Correct.</p></feedback></test>
+        <test><strcmp strip="no">.*</strcmp><feedback><p>Incorrect.</p></feedback></test>
+      </evaluate>
+      <evaluate>
+        <test correct="yes"><strcmp case="insensitive">H</strcmp><feedback><p>Correct.</p></feedback></test>
+        <test><strcmp strip="no">.*</strcmp><feedback><p>Incorrect.</p></feedback></test>
+      </evaluate>
+      <evaluate>
+        <test correct="yes"><strcmp case="insensitive">E</strcmp><feedback><p>Correct.</p></feedback></test>
+        <test><strcmp strip="no">.*</strcmp><feedback><p>Incorrect.</p></feedback></test>
+      </evaluate>
+      <evaluate>
+        <test correct="yes"><strcmp case="insensitive">G</strcmp><feedback><p>Correct.</p></feedback></test>
+        <test><strcmp strip="no">.*</strcmp><feedback><p>Incorrect.</p></feedback></test>
+      </evaluate>
+      <evaluate>
+        <test correct="yes"><strcmp case="insensitive">D</strcmp><feedback><p>Correct.</p></feedback></test>
+        <test><strcmp strip="no">.*</strcmp><feedback><p>Incorrect.</p></feedback></test>
+      </evaluate>
+    </evaluation>
+    <solution component="review2-solutions">
+      <p>
+        Read each integral as a description of the region it sweeps out. The
+        <m>\theta</m>-limits say which rays bound the region and the
+        <m>r</m>-limits say how far out the region reaches along each ray.
+        An inner limit <m>r=1</m> punches a hole of radius one, so
+        <m>\int_0^{2\pi}\int_1^2</m> is the full annulus and
+        <m>\int_0^{\pi/2}\int_1^2</m> is a quarter of it. The curve
+        <m>r = 2\cos\theta</m> is the circle of radius one centred at
+        <m>(1,0)</m> and <m>r = 2\sin\theta</m> is the circle of radius one
+        centred at <m>(0,1)</m>, which is why one disk sits to the right of
+        the origin and the other above it. Reading the eight integrals in
+        order gives
+        <m>C</m>, <m>F</m>, <m>A</m>, <m>B</m>, <m>H</m>, <m>E</m>,
+        <m>G</m>, <m>D</m>.
+      </p>
+    </solution>
+  </exercise>
+
+  <exercise xml:id="ex-r2p-circle-limits">
+    <title>Limits of Integration Over a Disk</title>
+    <setup>
+      <de-object name="rad" context="number">
+        <de-random distribution="discrete" min="2" max="7" by="1"/>
+      </de-object>
+      <de-object name="xlo" context="formula"><de-expression>-rad</de-expression></de-object>
+      <de-object name="xhi" context="formula"><de-expression>rad</de-expression></de-object>
+      <de-object name="ylo" context="formula"><de-expression>-sqrt(rad^2-x^2)</de-expression></de-object>
+      <de-object name="yhi" context="formula"><de-expression>sqrt(rad^2-x^2)</de-expression></de-object>
+      <de-object name="qlo" context="formula"><de-expression>-rad</de-expression></de-object>
+      <de-object name="qhi" context="formula"><de-expression>rad</de-expression></de-object>
+      <de-object name="plo" context="formula"><de-expression>-sqrt(rad^2-y^2)</de-expression></de-object>
+      <de-object name="phi" context="formula"><de-expression>sqrt(rad^2-y^2)</de-expression></de-object>
+    </setup>
+    <statement>
+      <p>
+        Let <m>R</m> be the disk of radius <m>r = <eval obj="rad"/></m>
+        centred at the origin, shown below. Write
+        <m>\displaystyle\iint_R f(x,y)\,dA</m> as an iterated integral in
+        each of the two orders. Use <c>sqrt(...)</c> for square roots.
+      </p>
+      <figure xml:id="fig-r2p-disk">
+        <caption>The disk <m>R</m> of <xref ref="ex-r2p-circle-limits"/>.</caption>
+        <image width="48%">
+          <shortdescription>A disk centred at the origin, shaded, with radius r marked on both axes.</shortdescription>
+          <prefigure xmlns="https://prefigure.org" label="prefigure-r2p-disk">
+            <diagram dimensions="(260,260)" margins="4">
+              <coordinates bbox="(-1.45,-1.45,1.45,1.45)">
+                <axes at="axes" xlabel="x" ylabel="y" decorations="no" arrows="1" stroke="#555555" thickness="1"/>
+                <circle at="disk" center="(0,0)" radius="1" stroke="#3c6fbf" fill="#cfe0f5" thickness="3"/>
+                <label at="lr" anchor="(1,0)" alignment="se" offset="(4,-4)"><m>r</m></label>
+                <label at="lnr" anchor="(-1,0)" alignment="sw" offset="(-4,-4)"><m>-r</m></label>
+                <label at="lt" anchor="(0,1)" alignment="ne" offset="(6,2)"><m>r</m></label>
+                <label at="lb" anchor="(0,-1)" alignment="se" offset="(6,-2)"><m>-r</m></label>
+                <label at="lreg" anchor="(0.28,0.4)" alignment="center"><m>R</m></label>
+              </coordinates>
+            </diagram>
+          </prefigure>
+        </image>
+      </figure>
+      <p>
+        <m>\displaystyle\iint_R f\,dA = \int_{\;}^{\;}\!\!\int_{\;}^{\;} f(x,y)\,dy\,dx</m>
+        with <m>x</m> from
+        <fillin name="b1" mode="math" ansobj="xlo" width="12"/> to
+        <fillin name="b2" mode="math" ansobj="xhi" width="12"/> and
+        <m>y</m> from
+        <fillin name="b3" mode="math" ansobj="ylo" width="18"/> to
+        <fillin name="b4" mode="math" ansobj="yhi" width="18"/>.
+      </p>
+      <p>
+        <m>\displaystyle\iint_R f\,dA = \int_{\;}^{\;}\!\!\int_{\;}^{\;} f(x,y)\,dx\,dy</m>
+        with <m>y</m> from
+        <fillin name="b5" mode="math" ansobj="qlo" width="12"/> to
+        <fillin name="b6" mode="math" ansobj="qhi" width="12"/> and
+        <m>x</m> from
+        <fillin name="b7" mode="math" ansobj="plo" width="18"/> to
+        <fillin name="b8" mode="math" ansobj="phi" width="18"/>.
+      </p>
+    </statement>
+    <evaluation>
+      <evaluate>
+        <test correct="yes"><mathcmp use-answer="yes"/><feedback><p>Correct.</p></feedback></test>
+        <test><numcmp min="-1000000000" max="1000000000"/><feedback><p>Incorrect.</p></feedback></test>
+      </evaluate>
+      <evaluate>
+        <test correct="yes"><mathcmp use-answer="yes"/><feedback><p>Correct.</p></feedback></test>
+        <test><numcmp min="-1000000000" max="1000000000"/><feedback><p>Incorrect.</p></feedback></test>
+      </evaluate>
+      <evaluate>
+        <test correct="yes"><mathcmp use-answer="yes"/><feedback><p>Correct.</p></feedback></test>
+        <test><numcmp min="-1000000000" max="1000000000"/><feedback><p>Incorrect.</p></feedback></test>
+      </evaluate>
+      <evaluate>
+        <test correct="yes"><mathcmp use-answer="yes"/><feedback><p>Correct.</p></feedback></test>
+        <test><numcmp min="-1000000000" max="1000000000"/><feedback><p>Incorrect.</p></feedback></test>
+      </evaluate>
+      <evaluate>
+        <test correct="yes"><mathcmp use-answer="yes"/><feedback><p>Correct.</p></feedback></test>
+        <test><numcmp min="-1000000000" max="1000000000"/><feedback><p>Incorrect.</p></feedback></test>
+      </evaluate>
+      <evaluate>
+        <test correct="yes"><mathcmp use-answer="yes"/><feedback><p>Correct.</p></feedback></test>
+        <test><numcmp min="-1000000000" max="1000000000"/><feedback><p>Incorrect.</p></feedback></test>
+      </evaluate>
+      <evaluate>
+        <test correct="yes"><mathcmp use-answer="yes"/><feedback><p>Correct.</p></feedback></test>
+        <test><numcmp min="-1000000000" max="1000000000"/><feedback><p>Incorrect.</p></feedback></test>
+      </evaluate>
+      <evaluate>
+        <test correct="yes"><mathcmp use-answer="yes"/><feedback><p>Correct.</p></feedback></test>
+        <test><numcmp min="-1000000000" max="1000000000"/><feedback><p>Incorrect.</p></feedback></test>
+      </evaluate>
+    </evaluation>
+    <solution component="review2-solutions">
+      <p>
+        The disk is <m>x^2+y^2 \le r^2</m>. Slicing vertically, <m>x</m>
+        runs across the whole disk, from <m>-r</m> to <m>r</m>, and for a
+        fixed <m>x</m> the vertical slice runs between the two halves of the
+        circle, from <m>y=-\sqrt{r^2-x^2}</m> to <m>y=\sqrt{r^2-x^2}</m>.
+        Slicing horizontally is the same picture with the roles of <m>x</m>
+        and <m>y</m> exchanged: <m>y</m> runs from <m>-r</m> to <m>r</m> and
+        <m>x</m> from <m>-\sqrt{r^2-y^2}</m> to <m>\sqrt{r^2-y^2}</m>. The
+        disk is symmetric in the two variables, so the two answers look
+        alike; that is a feature of this region, not a general rule.
+      </p>
+    </solution>
+  </exercise>
+
+  <exercise xml:id="ex-r2p-trapezoid-limits">
+    <title>Limits of Integration Over a Trapezoid</title>
+    <setup>
+      <de-object name="k" context="number">
+        <de-random distribution="discrete" min="2" max="9" by="1"/>
+      </de-object>
+      <de-object name="xlo" context="formula"><de-expression>1</de-expression></de-object>
+      <de-object name="xhi" context="formula"><de-expression>3</de-expression></de-object>
+      <de-object name="ylo" context="formula"><de-expression>x-1</de-expression></de-object>
+      <de-object name="yhi" context="formula"><de-expression>4</de-expression></de-object>
+      <de-object name="val" context="number"><de-expression>6*k</de-expression></de-object>
+    </setup>
+    <statement>
+      <p>
+        Let <m>R</m> be the trapezoid with vertices <m>(1,0)</m>,
+        <m>(3,2)</m>, <m>(3,4)</m> and <m>(1,4)</m>, shown below.
+      </p>
+      <figure xml:id="fig-r2p-trapezoid">
+        <caption>The trapezoid <m>R</m> of <xref ref="ex-r2p-trapezoid-limits"/>.</caption>
+        <image width="52%">
+          <shortdescription>A shaded trapezoid with vertices at one comma zero, three comma two, three comma four and one comma four.</shortdescription>
+          <prefigure xmlns="https://prefigure.org" label="prefigure-r2p-trapezoid">
+            <diagram dimensions="(300,300)" margins="4">
+              <coordinates bbox="(-0.6,-0.7,3.9,4.8)">
+                <axes at="axes" xlabel="x" ylabel="y" decorations="no" arrows="1" stroke="#555555" thickness="1"/>
+                <polygon at="reg" closed="yes" stroke="#3c6fbf" fill="#cfe0f5" thickness="3" points="((1,0),(3,2),(3,4),(1,4))"/>
+                <point at="v1" p="(1,0)" size="4" stroke="#3c6fbf" fill="#3c6fbf" alignment="sw"><m>(1,0)</m></point>
+                <point at="v2" p="(3,2)" size="4" stroke="#3c6fbf" fill="#3c6fbf" alignment="se"><m>(3,2)</m></point>
+                <point at="v3" p="(3,4)" size="4" stroke="#3c6fbf" fill="#3c6fbf" alignment="ne"><m>(3,4)</m></point>
+                <point at="v4" p="(1,4)" size="4" stroke="#3c6fbf" fill="#3c6fbf" alignment="nw"><m>(1,4)</m></point>
+                <label at="lreg" anchor="(1.9,2.9)" alignment="center"><m>R</m></label>
+              </coordinates>
+            </diagram>
+          </prefigure>
+        </image>
+      </figure>
+      <p>
+        Fill in the limits that make
+        <m>\displaystyle\iint_R f(x,y)\,dA</m> an iterated integral in the
+        order <m>dy\,dx</m>: <m>x</m> runs from
+        <fillin name="b1" mode="math" ansobj="xlo" width="10"/> to
+        <fillin name="b2" mode="math" ansobj="xhi" width="10"/>, and for each
+        such <m>x</m>, <m>y</m> runs from
+        <fillin name="b3" mode="math" ansobj="ylo" width="14"/> to
+        <fillin name="b4" mode="math" ansobj="yhi" width="14"/>.
+      </p>
+      <p>
+        Using those limits, evaluate
+        <m>\displaystyle\iint_R <eval obj="k"/>\,dA</m>:
+        <fillin name="b5" mode="number" ansobj="val" width="12"/>
+      </p>
+    </statement>
+    <evaluation>
+      <evaluate>
+        <test correct="yes"><mathcmp use-answer="yes"/><feedback><p>Correct.</p></feedback></test>
+        <test><numcmp min="-1000000000" max="1000000000"/><feedback><p>Incorrect.</p></feedback></test>
+      </evaluate>
+      <evaluate>
+        <test correct="yes"><mathcmp use-answer="yes"/><feedback><p>Correct.</p></feedback></test>
+        <test><numcmp min="-1000000000" max="1000000000"/><feedback><p>Incorrect.</p></feedback></test>
+      </evaluate>
+      <evaluate>
+        <test correct="yes"><mathcmp use-answer="yes"/><feedback><p>Correct.</p></feedback></test>
+        <test><numcmp min="-1000000000" max="1000000000"/><feedback><p>Incorrect.</p></feedback></test>
+      </evaluate>
+      <evaluate>
+        <test correct="yes"><mathcmp use-answer="yes"/><feedback><p>Correct.</p></feedback></test>
+        <test><numcmp min="-1000000000" max="1000000000"/><feedback><p>Incorrect.</p></feedback></test>
+      </evaluate>
+      <evaluate>
+        <test correct="yes">
+          <numcmp use-answer="yes" min="val.value({})-Math.max(0.01,1e-4*Math.abs(val.value({})))" max="val.value({})+Math.max(0.01,1e-4*Math.abs(val.value({})))"/>
+          <feedback><p>Correct.</p></feedback>
+        </test>
+        <test><numcmp min="-1000000000" max="1000000000"/><feedback><p>Incorrect.</p></feedback></test>
+      </evaluate>
+    </evaluation>
+    <solution component="review2-solutions">
+      <p>
+        The trapezoid sits between the vertical lines <m>x=1</m> and
+        <m>x=3</m>. Its top edge is the horizontal line <m>y=4</m>. Its
+        slanted lower edge joins <m>(1,0)</m> to <m>(3,2)</m>, a line of
+        slope <m>1</m> through <m>(1,0)</m>, so that edge is
+        <m>y = x-1</m>. Hence
+      </p>
+      <me>
+        \iint_R f\,dA = \int_1^{3}\!\!\int_{x-1}^{4} f(x,y)\,dy\,dx .
+      </me>
+      <p>
+        With a constant integrand the integral is that constant times the
+        area of <m>R</m>, and
+        <m>\int_1^3\left[4-(x-1)\right]dx = \int_1^3 (5-x)\,dx = 6</m>.
+      </p>
+    </solution>
+  </exercise>
+
+  <exercise xml:id="ex-r2p-two-circles">
+    <title>An Integral Between Two Circles</title>
+    <setup>
+      <de-object name="a" context="number">
+        <de-random distribution="discrete" min="1" max="6" by="1"/>
+      </de-object>
+      <de-object name="val" context="number">
+        <de-expression>(2/3)*pi*(2*a)^3-(4/9)*(2*a)^3</de-expression>
+      </de-object>
+    </setup>
+    <statement>
+      <p>
+        Let <m>a = <eval obj="a"/></m> and let <m>D</m> be the region that
+        lies inside the circle <m>x^2+y^2=(2a)^2</m> and outside the circle
+        <m>(x-a)^2+y^2=a^2</m>, shaded below. The two circles are tangent at
+        <m>(2a,0)</m>.
+      </p>
+      <figure xml:id="fig-r2p-two-circles">
+        <caption>The region <m>D</m> of <xref ref="ex-r2p-two-circles"/>.</caption>
+        <image width="55%">
+          <shortdescription>A large disk centred at the origin with a smaller disk removed; the smaller disk is internally tangent to the large one on the positive x axis.</shortdescription>
+          <prefigure xmlns="https://prefigure.org" label="prefigure-r2p-two-circles">
+            <diagram dimensions="(300,300)" margins="4">
+              <coordinates bbox="(-2.9,-2.9,2.9,2.9)">
+                <axes at="axes" xlabel="x" ylabel="y" decorations="no" arrows="1" stroke="#555555" thickness="1"/>
+                <circle at="big" center="(0,0)" radius="2" stroke="#3c6fbf" fill="#cfe0f5" thickness="3"/>
+                <circle at="small" center="(1,0)" radius="1" stroke="#c00000" fill="#ffffff" thickness="3"/>
+                <label at="l1" anchor="(0,-2)" alignment="se" offset="(4,-4)"><m>x^2+y^2=(2a)^2</m></label>
+                <label at="l2" anchor="(1,-1.55)" alignment="s" offset="(0,-2)"><m>(x-a)^2+y^2=a^2</m></label>
+                <label at="lreg" anchor="(-1.15,0.75)" alignment="center"><m>D</m></label>
+              </coordinates>
+            </diagram>
+          </prefigure>
+        </image>
+      </figure>
+      <p>
+        Evaluate <m>\displaystyle\iint_D \sqrt{x^2+y^2}\,dA</m>:
+        <fillin name="b1" mode="number" ansobj="val" width="16"/>
+      </p>
+    </statement>
+    <evaluation>
+      <evaluate>
+        <test correct="yes">
+          <numcmp use-answer="yes" min="val.value({})-Math.max(0.01,1e-4*Math.abs(val.value({})))" max="val.value({})+Math.max(0.01,1e-4*Math.abs(val.value({})))"/>
+          <feedback><p>Correct.</p></feedback>
+        </test>
+        <test><numcmp min="-1000000000" max="1000000000"/><feedback><p>Incorrect.</p></feedback></test>
+      </evaluate>
+    </evaluation>
+    <solution component="review2-solutions">
+      <p>
+        Work in polar coordinates, where the integrand is <m>r</m> and the
+        area element is <m>r\,dr\,d\theta</m>. Over the large disk,
+      </p>
+      <me>
+        \int_0^{2\pi}\!\!\int_0^{2a} r^2\,dr\,d\theta
+        = \frac{2\pi(2a)^3}{3} .
+      </me>
+      <p>
+        The small circle is <m>r = 2a\cos\theta</m> and is swept out for
+        <m>-\pi/2 \le \theta \le \pi/2</m>, so the disk it bounds
+        contributes
+      </p>
+      <me>
+        \int_{-\pi/2}^{\pi/2}\!\!\int_0^{2a\cos\theta} r^2\,dr\,d\theta
+        = \frac{(2a)^3}{3}\int_{-\pi/2}^{\pi/2}\cos^3\theta\,d\theta
+        = \frac{4(2a)^3}{9} .
+      </me>
+      <p>
+        Subtracting, the integral over <m>D</m> is
+        <m>\dfrac{2\pi(2a)^3}{3} - \dfrac{4(2a)^3}{9}</m>.
+      </p>
+    </solution>
+  </exercise>
+
+  <exercise xml:id="ex-r2p-parabola-line">
+    <title>A Double Integral Between a Parabola and a Line</title>
+    <setup>
+      <de-object name="k" context="number">
+        <de-random distribution="discrete" min="1" max="9" by="1"/>
+      </de-object>
+      <de-object name="val" context="number"><de-expression>36*k</de-expression></de-object>
+    </setup>
+    <statement>
+      <p>
+        Let <m>R</m> be the region bounded by the parabola
+        <m>x = \dfrac{y^2}{2}-3</m> and the line <m>y = x-1</m>, shaded
+        below.
+      </p>
+      <figure xml:id="fig-r2p-parabola-line">
+        <caption>The region <m>R</m> of <xref ref="ex-r2p-parabola-line"/>.</caption>
+        <image width="60%">
+          <shortdescription>A rightward-opening parabola cut by a slanted line; the region between them is shaded, with corners at minus one comma minus two and five comma four.</shortdescription>
+          <prefigure xmlns="https://prefigure.org" label="prefigure-r2p-parabola-line">
+            <diagram dimensions="(330,300)" margins="4">
+              <definition>par(t) = (t^2/2-3, t)</definition>
+              <definition>lin(t) = (t+1, t)</definition>
+              <coordinates bbox="(-4.2,-3.6,6.4,5.2)">
+                <axes at="axes" xlabel="x" ylabel="y" decorations="no" arrows="1" stroke="#555555" thickness="1"/>
+                <polygon at="reg" closed="yes" stroke="none" fill="#cfe0f5" thickness="1" points="((-1.0000,-2.0000),(-1.0988,-1.9500),(-1.1950,-1.9000),(-1.2887,-1.8500),(-1.3800,-1.8000),(-1.4688,-1.7500),(-1.5550,-1.7000),(-1.6388,-1.6500),(-1.7200,-1.6000),(-1.7987,-1.5500),(-1.8750,-1.5000),(-1.9487,-1.4500),(-2.0200,-1.4000),(-2.0888,-1.3500),(-2.1550,-1.3000),(-2.2188,-1.2500),(-2.2800,-1.2000),(-2.3388,-1.1500),(-2.3950,-1.1000),(-2.4487,-1.0500),(-2.5000,-1.0000),(-2.5488,-0.9500),(-2.5950,-0.9000),(-2.6387,-0.8500),(-2.6800,-0.8000),(-2.7188,-0.7500),(-2.7550,-0.7000),(-2.7888,-0.6500),(-2.8200,-0.6000),(-2.8487,-0.5500),(-2.8750,-0.5000),(-2.8988,-0.4500),(-2.9200,-0.4000),(-2.9387,-0.3500),(-2.9550,-0.3000),(-2.9688,-0.2500),(-2.9800,-0.2000),(-2.9888,-0.1500),(-2.9950,-0.1000),(-2.9987,-0.0500),(-3.0000,0.0000),(-2.9987,0.0500),(-2.9950,0.1000),(-2.9888,0.1500),(-2.9800,0.2000),(-2.9688,0.2500),(-2.9550,0.3000),(-2.9387,0.3500),(-2.9200,0.4000),(-2.8987,0.4500),(-2.8750,0.5000),(-2.8487,0.5500),(-2.8200,0.6000),(-2.7888,0.6500),(-2.7550,0.7000),(-2.7188,0.7500),(-2.6800,0.8000),(-2.6387,0.8500),(-2.5950,0.9000),(-2.5488,0.9500),(-2.5000,1.0000),(-2.4488,1.0500),(-2.3950,1.1000),(-2.3388,1.1500),(-2.2800,1.2000),(-2.2188,1.2500),(-2.1550,1.3000),(-2.0888,1.3500),(-2.0200,1.4000),(-1.9487,1.4500),(-1.8750,1.5000),(-1.7988,1.5500),(-1.7200,1.6000),(-1.6388,1.6500),(-1.5550,1.7000),(-1.4688,1.7500),(-1.3800,1.8000),(-1.2887,1.8500),(-1.1950,1.9000),(-1.0987,1.9500),(-1.0000,2.0000),(-0.8988,2.0500),(-0.7950,2.1000),(-0.6887,2.1500),(-0.5800,2.2000),(-0.4688,2.2500),(-0.3550,2.3000),(-0.2388,2.3500),(-0.1200,2.4000),(0.0013,2.4500),(0.1250,2.5000),(0.2512,2.5500),(0.3800,2.6000),(0.5113,2.6500),(0.6450,2.7000),(0.7812,2.7500),(0.9200,2.8000),(1.0612,2.8500),(1.2050,2.9000),(1.3513,2.9500),(1.5000,3.0000),(1.6512,3.0500),(1.8050,3.1000),(1.9613,3.1500),(2.1200,3.2000),(2.2812,3.2500),(2.4450,3.3000),(2.6112,3.3500),(2.7800,3.4000),(2.9513,3.4500),(3.1250,3.5000),(3.3012,3.5500),(3.4800,3.6000),(3.6613,3.6500),(3.8450,3.7000),(4.0312,3.7500),(4.2200,3.8000),(4.4112,3.8500),(4.6050,3.9000),(4.8013,3.9500),(5.0000,4.0000),(5.0000,4.0000),(4.9000,3.9000),(4.8000,3.8000),(4.7000,3.7000),(4.6000,3.6000),(4.5000,3.5000),(4.4000,3.4000),(4.3000,3.3000),(4.2000,3.2000),(4.1000,3.1000),(4.0000,3.0000),(3.9000,2.9000),(3.8000,2.8000),(3.7000,2.7000),(3.6000,2.6000),(3.5000,2.5000),(3.4000,2.4000),(3.3000,2.3000),(3.2000,2.2000),(3.1000,2.1000),(3.0000,2.0000),(2.9000,1.9000),(2.8000,1.8000),(2.7000,1.7000),(2.6000,1.6000),(2.5000,1.5000),(2.4000,1.4000),(2.3000,1.3000),(2.2000,1.2000),(2.1000,1.1000),(2.0000,1.0000),(1.9000,0.9000),(1.8000,0.8000),(1.7000,0.7000),(1.6000,0.6000),(1.5000,0.5000),(1.4000,0.4000),(1.3000,0.3000),(1.2000,0.2000),(1.1000,0.1000),(1.0000,0.0000),(0.9000,-0.1000),(0.8000,-0.2000),(0.7000,-0.3000),(0.6000,-0.4000),(0.5000,-0.5000),(0.4000,-0.6000),(0.3000,-0.7000),(0.2000,-0.8000),(0.1000,-0.9000),(0.0000,-1.0000),(-0.1000,-1.1000),(-0.2000,-1.2000),(-0.3000,-1.3000),(-0.4000,-1.4000),(-0.5000,-1.5000),(-0.6000,-1.6000),(-0.7000,-1.7000),(-0.8000,-1.8000),(-0.9000,-1.9000),(-1.0000,-2.0000))"/>
+                <parametric-curve at="parab" stroke="#3c6fbf" thickness="3" function="par" domain="(-3.2,3.6)"/>
+                <parametric-curve at="line" stroke="#c00000" thickness="3" function="lin" domain="(-3.2,4.6)"/>
+                <label at="lp" anchor="(-2.6,3.1)" alignment="ne" offset="(4,2)"><m>x = \frac{y^2}{2}-3</m></label>
+                <label at="ll" anchor="(4.3,1.3)" alignment="se" offset="(2,-2)"><m>y = x-1</m></label>
+                <point at="q1" p="(5,4)" size="4" stroke="#555555" fill="#555555" alignment="se"><m>(5,4)</m></point>
+                <point at="q2" p="(-1,-2)" size="4" stroke="#555555" fill="#555555" alignment="sw"><m>(-1,-2)</m></point>
+                <label at="lreg" anchor="(0.2,1.0)" alignment="center"><m>R</m></label>
+              </coordinates>
+            </diagram>
+          </prefigure>
+        </image>
+      </figure>
+      <p>
+        Evaluate
+        <m>\displaystyle\iint_R <eval obj="k"/>\,xy\,dA</m>:
+        <fillin name="b1" mode="number" ansobj="val" width="16"/>
+      </p>
+    </statement>
+    <evaluation>
+      <evaluate>
+        <test correct="yes">
+          <numcmp use-answer="yes" min="val.value({})-Math.max(0.01,1e-4*Math.abs(val.value({})))" max="val.value({})+Math.max(0.01,1e-4*Math.abs(val.value({})))"/>
+          <feedback><p>Correct.</p></feedback>
+        </test>
+        <test><numcmp min="-1000000000" max="1000000000"/><feedback><p>Incorrect.</p></feedback></test>
+      </evaluate>
+    </evaluation>
+    <solution component="review2-solutions">
+      <p>
+        Solve <m>y+1 = \frac{y^2}{2}-3</m>, that is
+        <m>y^2-2y-8 = 0</m>, to get <m>y=-2</m> and <m>y=4</m>: the two
+        curves meet at <m>(-1,-2)</m> and <m>(5,4)</m>. Slicing
+        horizontally, the line is the right boundary and the parabola the
+        left one, so
+      </p>
+      <me>
+        \iint_R k\,xy\,dA
+        = k\int_{-2}^{4}\!\!\int_{y^2/2-3}^{\,y+1} xy\,dx\,dy
+        = \frac{k}{2}\int_{-2}^{4}
+          y\left[(y+1)^2 - \left(\tfrac{y^2}{2}-3\right)^2\right]dy
+        = 36k .
+      </me>
+      <p>
+        Integrating in the other order would need two separate integrals,
+        because for <m>x \lt -1</m> the region is bounded above and below by
+        the two halves of the parabola, while for <m>x \gt -1</m> the line
+        takes over as the lower boundary.
+      </p>
+    </solution>
+  </exercise>
+
+  <exercise xml:id="ex-r2p-polar-overlap">
+    <title>A Region Common to a Cardioid and a Circle</title>
+    <setup>
+      <de-object name="t1" context="formula"><de-expression>-pi/2</de-expression></de-object>
+      <de-object name="t2" context="formula"><de-expression>pi/6</de-expression></de-object>
+      <de-object name="t3" context="formula"><de-expression>pi/6</de-expression></de-object>
+      <de-object name="t4" context="formula"><de-expression>pi/2</de-expression></de-object>
+      <de-object name="z1" context="formula"><de-expression>0</de-expression></de-object>
+      <de-object name="z2" context="formula"><de-expression>0</de-expression></de-object>
+      <de-object name="f1" context="formula"><de-expression>1+sin(t)</de-expression></de-object>
+      <de-object name="f2" context="formula"><de-expression>sqrt(3)*cos(t)</de-expression></de-object>
+    </setup>
+    <statement>
+      <p>
+        Let <m>R</m> be the region lying inside both the cardioid
+        <m>r = 1+\sin\theta</m> and the circle
+        <m>r = \sqrt{3}\,\cos\theta</m>, shaded below. The two curves
+        cross at <m>\theta = \pi/6</m>, where both equal <m>3/2</m>.
+      </p>
+      <figure xml:id="fig-r2p-polar-overlap">
+        <caption>The region <m>R</m> of <xref ref="ex-r2p-polar-overlap"/>.</caption>
+        <image width="58%">
+          <shortdescription>A cardioid and a circle drawn together; the region inside both is shaded, and the crossing point at theta equals pi over six is marked.</shortdescription>
+          <prefigure xmlns="https://prefigure.org" label="prefigure-r2p-polar-overlap">
+            <diagram dimensions="(320,320)" margins="4">
+              <definition>card(t) = ((1+sin(t))*cos(t), (1+sin(t))*sin(t))</definition>
+              <definition>circ(t) = (sqrt(3)*cos(t)*cos(t), sqrt(3)*cos(t)*sin(t))</definition>
+              <coordinates bbox="(-2.5,-2.5,2.5,2.5)">
+                <axes at="axes" xlabel="x" ylabel="y" decorations="no" arrows="1" stroke="#555555" thickness="1"/>
+                <polygon at="reg" closed="yes" stroke="none" fill="#cfe0f5" thickness="1" points="((0.0000,0.0000),(0.0000,-0.0000),(0.0000,-0.0003),(0.0001,-0.0011),(0.0002,-0.0024),(0.0004,-0.0043),(0.0008,-0.0067),(0.0014,-0.0096),(0.0021,-0.0131),(0.0032,-0.0170),(0.0045,-0.0214),(0.0062,-0.0262),(0.0083,-0.0315),(0.0107,-0.0372),(0.0135,-0.0434),(0.0168,-0.0498),(0.0206,-0.0567),(0.0249,-0.0638),(0.0298,-0.0713),(0.0352,-0.0790),(0.0411,-0.0869),(0.0477,-0.0951),(0.0550,-0.1034),(0.0628,-0.1118),(0.0713,-0.1203),(0.0805,-0.1289),(0.0904,-0.1374),(0.1010,-0.1460),(0.1123,-0.1545),(0.1242,-0.1629),(0.1370,-0.1712),(0.1504,-0.1792),(0.1645,-0.1871),(0.1794,-0.1946),(0.1950,-0.2019),(0.2112,-0.2088),(0.2282,-0.2153),(0.2459,-0.2214),(0.2642,-0.2270),(0.2832,-0.2321),(0.3029,-0.2366),(0.3231,-0.2406),(0.3440,-0.2439),(0.3654,-0.2465),(0.3874,-0.2484),(0.4100,-0.2496),(0.4330,-0.2500),(0.4565,-0.2496),(0.4804,-0.2483),(0.5048,-0.2462),(0.5295,-0.2432),(0.5545,-0.2392),(0.5799,-0.2343),(0.6054,-0.2284),(0.6312,-0.2215),(0.6572,-0.2135),(0.6832,-0.2045),(0.7094,-0.1945),(0.7356,-0.1834),(0.7617,-0.1712),(0.7878,-0.1579),(0.8138,-0.1435),(0.8396,-0.1280),(0.8652,-0.1113),(0.8906,-0.0936),(0.9156,-0.0747),(0.9403,-0.0548),(0.9645,-0.0337),(0.9883,-0.0115),(1.0116,0.0118),(1.0343,0.0361),(1.0564,0.0615),(1.0778,0.0880),(1.0985,0.1155),(1.1184,0.1439),(1.1375,0.1734),(1.1558,0.2038),(1.1732,0.2351),(1.1896,0.2674),(1.2050,0.3004),(1.2194,0.3344),(1.2327,0.3691),(1.2449,0.4045),(1.2560,0.4407),(1.2659,0.4775),(1.2745,0.5149),(1.2819,0.5530),(1.2880,0.5915),(1.2928,0.6305),(1.2963,0.6700),(1.2983,0.7098),(1.2990,0.7500),(1.2990,0.7500),(1.2815,0.7599),(1.2637,0.7693),(1.2457,0.7784),(1.2275,0.7870),(1.2090,0.7952),(1.1904,0.8030),(1.1717,0.8103),(1.1527,0.8172),(1.1336,0.8236),(1.1144,0.8296),(1.0950,0.8352),(1.0755,0.8403),(1.0559,0.8449),(1.0362,0.8491),(1.0164,0.8529),(0.9965,0.8561),(0.9766,0.8589),(0.9565,0.8613),(0.9365,0.8632),(0.9164,0.8646),(0.8962,0.8655),(0.8761,0.8660),(0.8559,0.8660),(0.8358,0.8655),(0.8157,0.8646),(0.7956,0.8632),(0.7755,0.8613),(0.7555,0.8589),(0.7355,0.8561),(0.7156,0.8529),(0.6958,0.8491),(0.6761,0.8449),(0.6565,0.8403),(0.6370,0.8352),(0.6176,0.8296),(0.5984,0.8236),(0.5793,0.8172),(0.5604,0.8103),(0.5416,0.8030),(0.5230,0.7952),(0.5046,0.7870),(0.4864,0.7784),(0.4684,0.7693),(0.4506,0.7599),(0.4330,0.7500),(0.4157,0.7397),(0.3986,0.7290),(0.3818,0.7180),(0.3652,0.7065),(0.3489,0.6947),(0.3328,0.6824),(0.3171,0.6698),(0.3017,0.6569),(0.2865,0.6436),(0.2717,0.6299),(0.2572,0.6159),(0.2431,0.6016),(0.2292,0.5869),(0.2157,0.5720),(0.2026,0.5567),(0.1898,0.5411),(0.1774,0.5252),(0.1654,0.5090),(0.1537,0.4926),(0.1425,0.4759),(0.1316,0.4589),(0.1211,0.4417),(0.1110,0.4243),(0.1014,0.4066),(0.0921,0.3887),(0.0833,0.3706),(0.0749,0.3522),(0.0669,0.3337),(0.0593,0.3151),(0.0522,0.2962),(0.0456,0.2772),(0.0393,0.2580),(0.0335,0.2387),(0.0282,0.2193),(0.0233,0.1997),(0.0189,0.1801),(0.0150,0.1603),(0.0115,0.1405),(0.0084,0.1205),(0.0059,0.1005),(0.0037,0.0805),(0.0021,0.0604),(0.0009,0.0403),(0.0002,0.0202),(0.0000,0.0000),(0.0000,0.0000))"/>
+                <parametric-curve at="card" stroke="#3c6fbf" thickness="3" function="card" domain="(0,6.2832)"/>
+                <parametric-curve at="circ" stroke="#c00000" thickness="3" function="circ" domain="(-1.5708,1.5708)"/>
+                <label at="lc" anchor="(-0.9,1.5)" alignment="nw" offset="(-2,4)"><m>r = 1+\sin\theta</m></label>
+                <label at="lr" anchor="(0.87,-1.35)" alignment="s" offset="(0,-2)"><m>r = \sqrt{3}\,\cos\theta</m></label>
+                <point at="mp" p="(1.299,0.75)" size="4" stroke="#555555" fill="#555555" alignment="ne"><m>\theta = \pi/6</m></point>
+                <label at="lreg" anchor="(0.42,0.16)" alignment="center"><m>R</m></label>
+              </coordinates>
+            </diagram>
+          </prefigure>
+        </image>
+      </figure>
+      <p>
+        Writing <m>\displaystyle\iint_R f\,dA</m> as a sum of two polar
+        integrals splits <m>R</m> at that crossing. Use <c>t</c> for
+        <m>\theta</m> and give exact answers, so <c>pi/2</c> rather than a
+        decimal.
+      </p>
+      <p>
+        First piece: <m>\theta</m> from
+        <fillin name="b1" mode="math" ansobj="t1" width="10"/> to
+        <fillin name="b2" mode="math" ansobj="t2" width="10"/>, and
+        <m>r</m> from
+        <fillin name="b3" mode="math" ansobj="z1" width="10"/> to
+        <fillin name="b4" mode="math" ansobj="f1" width="18"/>.
+      </p>
+      <p>
+        Second piece: <m>\theta</m> from
+        <fillin name="b5" mode="math" ansobj="t3" width="10"/> to
+        <fillin name="b6" mode="math" ansobj="t4" width="10"/>, and
+        <m>r</m> from
+        <fillin name="b7" mode="math" ansobj="z2" width="10"/> to
+        <fillin name="b8" mode="math" ansobj="f2" width="18"/>.
+      </p>
+    </statement>
+    <evaluation>
+      <evaluate>
+        <test correct="yes"><mathcmp use-answer="yes"/><feedback><p>Correct.</p></feedback></test>
+        <test><numcmp min="-1000000000" max="1000000000"/><feedback><p>Incorrect.</p></feedback></test>
+      </evaluate>
+      <evaluate>
+        <test correct="yes"><mathcmp use-answer="yes"/><feedback><p>Correct.</p></feedback></test>
+        <test><numcmp min="-1000000000" max="1000000000"/><feedback><p>Incorrect.</p></feedback></test>
+      </evaluate>
+      <evaluate>
+        <test correct="yes"><mathcmp use-answer="yes"/><feedback><p>Correct.</p></feedback></test>
+        <test><numcmp min="-1000000000" max="1000000000"/><feedback><p>Incorrect.</p></feedback></test>
+      </evaluate>
+      <evaluate>
+        <test correct="yes"><mathcmp use-answer="yes"/><feedback><p>Correct.</p></feedback></test>
+        <test><numcmp min="-1000000000" max="1000000000"/><feedback><p>Incorrect.</p></feedback></test>
+      </evaluate>
+      <evaluate>
+        <test correct="yes"><mathcmp use-answer="yes"/><feedback><p>Correct.</p></feedback></test>
+        <test><numcmp min="-1000000000" max="1000000000"/><feedback><p>Incorrect.</p></feedback></test>
+      </evaluate>
+      <evaluate>
+        <test correct="yes"><mathcmp use-answer="yes"/><feedback><p>Correct.</p></feedback></test>
+        <test><numcmp min="-1000000000" max="1000000000"/><feedback><p>Incorrect.</p></feedback></test>
+      </evaluate>
+      <evaluate>
+        <test correct="yes"><mathcmp use-answer="yes"/><feedback><p>Correct.</p></feedback></test>
+        <test><numcmp min="-1000000000" max="1000000000"/><feedback><p>Incorrect.</p></feedback></test>
+      </evaluate>
+      <evaluate>
+        <test correct="yes"><mathcmp use-answer="yes"/><feedback><p>Correct.</p></feedback></test>
+        <test><numcmp min="-1000000000" max="1000000000"/><feedback><p>Incorrect.</p></feedback></test>
+      </evaluate>
+    </evaluation>
+    <solution component="review2-solutions">
+      <p>
+        Setting <m>1+\sin\theta = \sqrt{3}\cos\theta</m> gives
+        <m>\theta = \pi/6</m>, where both curves have <m>r = 3/2</m>. To be
+        inside both curves, a ray must stop at whichever curve it reaches
+        first, so the boundary of <m>R</m> is the smaller of the two.
+      </p>
+      <p>
+        The circle only exists for <m>-\pi/2 \le \theta \le \pi/2</m>, so
+        no part of <m>R</m> lies outside that range. On
+        <m>-\pi/2 \le \theta \le \pi/6</m> the cardioid is the smaller
+        one; on <m>\pi/6 \le \theta \le \pi/2</m> the circle is. Hence
+      </p>
+      <me>
+        \iint_R f\,dA
+        = \int_{-\pi/2}^{\pi/6}\!\!\int_0^{1+\sin\theta} f\,r\,dr\,d\theta
+        + \int_{\pi/6}^{\pi/2}\!\!\int_0^{\sqrt3\cos\theta} f\,r\,dr\,d\theta .
+      </me>
+      <p>
+        Taking <m>f=1</m> gives the area of <m>R</m>, about
+        <m>1.057</m>.
+      </p>
+    </solution>
+  </exercise>
+
+  <exercise xml:id="ex-r2p-volume-square">
+    <title>Volume Under a Surface Over a Square</title>
+    <setup>
+      <de-object name="a" context="number">
+        <de-random distribution="discrete" min="1" max="9" by="1"/>
+      </de-object>
+      <de-object name="val" context="number"><de-expression>16/3+4+4*a</de-expression></de-object>
+    </setup>
+    <statement>
+      <p>
+        Find the volume of the solid that lies under the surface
+        <m>z = x^2+y+a</m>, with <m>a = <eval obj="a"/></m>, and above the
+        square <m>0 \le x \le 2</m>, <m>0 \le y \le 2</m> in the
+        <m>xy</m>-plane.
+      </p>
+      <figure xml:id="fig-r2p-volume-square">
+        <caption>
+          The solid of <xref ref="ex-r2p-volume-square"/>: the surface
+          <m>z = x^2+y+a</m> over the square <m>[0,2]\times[0,2]</m>.
+        </caption>
+        <image xml:id="image-r2p-volume-square" width="60%">
+          <shortdescription>
+            A curved surface rising over a square base in the horizontal
+            plane, with the vertical solid beneath it.
+          </shortdescription>
+          <latex-image>
+            \begin{tikzpicture}[line join=round, line cap=round]
+    \definecolor{oiblue}{RGB}{0,114,178}
+    \begin{axis}[
+        view={125}{20},
+        width=11cm,
+        axis lines=center,
+        axis line style={-latex, black!70, line width=0.7pt},
+        xlabel={$x$}, ylabel={$y$}, zlabel={$z$},
+        label style={font=\large},
+        ticks=none,
+        xmin=-0.5, xmax=2.9, ymin=-0.5, ymax=2.9, zmin=0, zmax=9.5,
+        clip=false,
+      ]
+      \addplot3[surf, shader=faceted, faceted color=oiblue!35,
+                colormap={topz}{color=(oiblue!12!white) color=(oiblue!55!white)},
+                opacity=0.8, fill opacity=0.8,
+                domain=0:2, y domain=0:2, samples=22, samples y=22,
+                z buffer=sort, forget plot]
+        {x^2+y+2};
+      \addplot3[black!70, line width=1.2pt, forget plot]
+        coordinates {(0,0,0) (2,0,0) (2,2,0) (0,2,0) (0,0,0)};
+      \draw[black!45, line width=0.6pt] (axis cs:2,0,0) -- (axis cs:2,0,6);
+      \draw[black!45, line width=0.6pt] (axis cs:2,2,0) -- (axis cs:2,2,8);
+      \draw[black!45, line width=0.6pt] (axis cs:0,2,0) -- (axis cs:0,2,4);
+      \node[anchor=north, font=\small] at (axis cs:2,0,-0.2) {$2$};
+      \node[anchor=north, font=\small] at (axis cs:0,2,-0.2) {$2$};
+      \node[oiblue, font=\large, anchor=south west]
+        at (axis description cs:0.02,0.88) {$z = x^2+y+a$};
+    \end{axis}
+  \end{tikzpicture}
+          </latex-image>
+        </image>
+      </figure>
+      <p>
+        Volume: <fillin name="b1" mode="number" ansobj="val" width="14"/>
+      </p>
+    </statement>
+    <evaluation>
+      <evaluate>
+        <test correct="yes">
+          <numcmp use-answer="yes" min="val.value({})-Math.max(0.01,1e-4*Math.abs(val.value({})))" max="val.value({})+Math.max(0.01,1e-4*Math.abs(val.value({})))"/>
+          <feedback><p>Correct.</p></feedback>
+        </test>
+        <test><numcmp min="-1000000000" max="1000000000"/><feedback><p>Incorrect.</p></feedback></test>
+      </evaluate>
+    </evaluation>
+    <solution component="review2-solutions">
+      <p>
+        The base is a rectangle, so the limits are all constants:
+      </p>
+      <me>
+        V = \int_0^{2}\!\!\int_0^{2}\left(x^2+y+a\right)dy\,dx
+        = \int_0^{2}\left(2x^2+2+2a\right)dx
+        = \frac{16}{3}+4+4a .
+      </me>
+      <p>
+        The surface stays above the square as long as <m>a \gt 0</m>, so no
+        part of the solid dips below the <m>xy</m>-plane and the integral is
+        the volume itself.
+      </p>
+    </solution>
+  </exercise>
+
+  <exercise xml:id="ex-r2p-volume-triangle">
+    <title>Volume Under a Plane Over a Triangle</title>
+    <setup>
+      <de-object name="a" context="number">
+        <de-random distribution="discrete" min="3" max="9" by="1"/>
+      </de-object>
+      <de-object name="val" context="number"><de-expression>(a-1)/2</de-expression></de-object>
+    </setup>
+    <statement>
+      <p>
+        Let <m>R</m> be the triangle in the <m>xy</m>-plane with vertices
+        <m>(0,0)</m>, <m>(1,0)</m> and <m>(1,1)</m>. Find the volume of the
+        solid lying under the plane <m>z = a-x-y</m>, with
+        <m>a = <eval obj="a"/></m>, and above <m>R</m>.
+      </p>
+      <figure xml:id="fig-r2p-volume-triangle">
+        <caption>
+          The solid of <xref ref="ex-r2p-volume-triangle"/>: the plane
+          <m>z = a-x-y</m> over the triangle <m>R</m>.
+        </caption>
+        <image xml:id="image-r2p-volume-triangle" width="60%">
+          <shortdescription>
+            A slanted plane above a triangular base in the horizontal plane,
+            the base having corners at the origin, one comma zero and one
+            comma one.
+          </shortdescription>
+          <latex-image>
+            \begin{tikzpicture}[line join=round, line cap=round]
+    \definecolor{oiblue}{RGB}{0,114,178}
+    \definecolor{oigreen}{RGB}{0,158,115}
+    \begin{axis}[
+        view={125}{20},
+        width=11cm,
+        axis lines=center,
+        axis line style={-latex, black!70, line width=0.7pt},
+        xlabel={$x$}, ylabel={$y$}, zlabel={$z$},
+        label style={font=\large},
+        ticks=none,
+        xmin=-0.35, xmax=1.6, ymin=-0.35, ymax=1.6, zmin=0, zmax=3.6,
+        clip=false,
+      ]
+      \addplot3[surf, shader=faceted, faceted color=oiblue!35,
+                colormap={topz}{color=(oiblue!12!white) color=(oiblue!55!white)},
+                opacity=0.8, fill opacity=0.8,
+                domain=0:1, y domain=0:1, samples=20, samples y=20,
+                z buffer=sort, forget plot]
+        ({x}, {x*y}, {3-x-x*y});
+      \addplot3[fill=oigreen!30, draw=oigreen, line width=1.2pt, forget plot]
+        coordinates {(0,0,0) (1,0,0) (1,1,0) (0,0,0)};
+      \addplot3[oiblue, line width=1.3pt, forget plot]
+        coordinates {(0,0,3) (1,0,2) (1,1,1) (0,0,3)};
+      \draw[black!50, line width=0.8pt] (axis cs:0,0,0) -- (axis cs:0,0,3);
+      \draw[black!50, line width=0.8pt] (axis cs:1,0,0) -- (axis cs:1,0,2);
+      \draw[black!50, line width=0.8pt] (axis cs:1,1,0) -- (axis cs:1,1,1);
+      \node[anchor=north, font=\small] at (axis cs:1,0,-0.12) {$1$};
+      \node[anchor=north west, font=\small] at (axis cs:1,1,-0.12) {$(1,1)$};
+      \node[oigreen, font=\large] at (axis cs:0.72,0.28,0.02) {$R$};
+      \node[oiblue, font=\large, anchor=south west]
+        at (axis description cs:0.02,0.88) {$z = a-x-y$};
+    \end{axis}
+  \end{tikzpicture}
+          </latex-image>
+        </image>
+      </figure>
+      <p>
+        Volume: <fillin name="b1" mode="number" ansobj="val" width="14"/>
+      </p>
+    </statement>
+    <evaluation>
+      <evaluate>
+        <test correct="yes">
+          <numcmp use-answer="yes" min="val.value({})-Math.max(0.01,1e-4*Math.abs(val.value({})))" max="val.value({})+Math.max(0.01,1e-4*Math.abs(val.value({})))"/>
+          <feedback><p>Correct.</p></feedback>
+        </test>
+        <test><numcmp min="-1000000000" max="1000000000"/><feedback><p>Incorrect.</p></feedback></test>
+      </evaluate>
+    </evaluation>
+    <solution component="review2-solutions">
+      <p>
+        The triangle lies below the line <m>y=x</m> and to the left of
+        <m>x=1</m>, so for a fixed <m>x</m> the variable <m>y</m> runs from
+        <m>0</m> to <m>x</m>:
+      </p>
+      <me>
+        V = \int_0^{1}\!\!\int_0^{x}\left(a-x-y\right)dy\,dx
+        = \int_0^{1}\left(ax - x^2 - \frac{x^2}{2}\right)dx
+        = \frac{a}{2}-\frac{1}{2} = \frac{a-1}{2} .
+      </me>
+      <p>
+        The lowest point of the plane over <m>R</m> is at <m>(1,1)</m>,
+        where <m>z = a-2</m>, so the solid stays above the
+        <m>xy</m>-plane whenever <m>a \ge 2</m>.
+      </p>
+    </solution>
+  </exercise>
+
+  <exercise xml:id="ex-r2p-sphere-cylinder-mass">
+    <title>Mass of a Solid Inside a Sphere and a Cylinder</title>
+    <setup>
+      <de-object name="a" context="number">
+        <de-random distribution="discrete" min="1" max="9" by="1"/>
+      </de-object>
+      <de-object name="val" context="number"><de-expression>16*a/5</de-expression></de-object>
+    </setup>
+    <statement>
+      <p>
+        A solid <m>E</m> lies inside both the sphere
+        <m>x^2+y^2+z^2 = 4</m> and the cylinder
+        <m>x^2+(y-1)^2 = 1</m>. Its density at a point is
+      </p>
+      <me>
+        \delta(x,y,z) = \frac{<eval obj="a"/>\,\lvert xy \rvert}{x^2+y^2} .
+      </me>
+      <figure xml:id="fig-r2p-sphere-cylinder">
+        <caption>
+          The solid of <xref ref="ex-r2p-sphere-cylinder-mass"/>: the part of
+          the ball of radius two that lies inside the cylinder
+          <m>x^2+(y-1)^2=1</m>.
+        </caption>
+        <image xml:id="image-r2p-sphere-cylinder" width="60%">
+          <shortdescription>
+            A translucent sphere with a vertical cylinder passing through it;
+            the cylinder is tangent to the sphere on the y axis and the solid
+            is the part of the ball inside the cylinder.
+          </shortdescription>
+          <latex-image>
+            \begin{tikzpicture}[line join=round, line cap=round]
+    \definecolor{oiblue}{RGB}{0,114,178}
+    \definecolor{oiorange}{RGB}{213,94,0}
+    \begin{axis}[
+        view={145}{24},
+        width=11cm,
+        axis lines=center,
+        axis line style={-latex, black!70, line width=0.7pt},
+        xlabel={$x$}, ylabel={$y$}, zlabel={$z$},
+        label style={font=\large},
+        ticks=none,
+        xmin=-2.6, xmax=2.6, ymin=-2.6, ymax=2.9, zmin=-2.6, zmax=2.9,
+        clip=false,
+      ]
+      % ---- the ball of radius 2: a light wireframe plus a faint surface ----
+      \addplot3[surf, shader=interp, opacity=0.10, fill opacity=0.10,
+                colormap={sph}{color=(oiblue!30!white) color=(oiblue!60!white)},
+                domain=0:180, y domain=0:360, samples=22, samples y=34,
+                z buffer=sort, forget plot]
+        ({2*sin(x)*cos(y)}, {2*sin(x)*sin(y)}, {2*cos(x)});
+      \addplot3[oiblue!55, line width=0.9pt, samples=100, samples y=0,
+                domain=0:360, forget plot] ({2*cos(x)}, {2*sin(x)}, 0);
+      \addplot3[oiblue!55, line width=0.9pt, samples=100, samples y=0,
+                domain=0:360, forget plot] ({2*cos(x)}, 0, {2*sin(x)});
+      \addplot3[oiblue!55, line width=0.9pt, samples=100, samples y=0,
+                domain=0:360, forget plot] (0, {2*cos(x)}, {2*sin(x)});
+      % ---- the cylinder x^2+(y-1)^2=1, cut off where it meets the sphere ----
+      \addplot3[surf, shader=faceted, faceted color=oiorange!45,
+                colormap={cyl}{color=(oiorange!20!white) color=(oiorange!60!white)},
+                opacity=0.72, fill opacity=0.72,
+                domain=0:360, y domain=-1:1, samples=56, samples y=20,
+                z buffer=sort, forget plot]
+        ({cos(x)}, {1+sin(x)}, {y*sqrt(max(0.0001,2-2*sin(x)))});
+      % ---- the two curves where the cylinder meets the sphere ----
+      \addplot3[oiorange, line width=1.3pt, samples=110, samples y=0,
+                domain=0:360, forget plot]
+        ({cos(x)}, {1+sin(x)}, {sqrt(max(0.0001,2-2*sin(x)))});
+      \addplot3[oiorange, line width=1.3pt, samples=110, samples y=0,
+                domain=0:360, forget plot]
+        ({cos(x)}, {1+sin(x)}, {-sqrt(max(0.0001,2-2*sin(x)))});
+      % ---- the base circle of the cylinder in the xy-plane ----
+      \addplot3[oiorange!80, dashed, line width=1pt, samples=90, samples y=0,
+                domain=0:360, forget plot] ({cos(x)}, {1+sin(x)}, 0);
+      \node[anchor=north, font=\small] at (axis cs:0,2,-0.15) {$2$};
+      \node[oiorange, font=\large, anchor=south west]
+        at (axis description cs:0.02,0.9) {$x^2+(y-1)^2=1$};
+      \node[oiblue, font=\large, anchor=south west]
+        at (axis description cs:0.02,0.82) {$x^2+y^2+z^2=4$};
+    \end{axis}
+  \end{tikzpicture}
+          </latex-image>
+        </image>
+      </figure>
+      <p>
+        Find the mass of <m>E</m>:
+        <fillin name="b1" mode="number" ansobj="val" width="14"/>
+      </p>
+    </statement>
+    <evaluation>
+      <evaluate>
+        <test correct="yes">
+          <numcmp use-answer="yes" min="val.value({})-Math.max(0.01,1e-4*Math.abs(val.value({})))" max="val.value({})+Math.max(0.01,1e-4*Math.abs(val.value({})))"/>
+          <feedback><p>Correct.</p></feedback>
+        </test>
+        <test><numcmp min="-1000000000" max="1000000000"/><feedback><p>Incorrect.</p></feedback></test>
+      </evaluate>
+    </evaluation>
+    <solution component="review2-solutions">
+      <p>
+        Cylindrical coordinates suit both surfaces. The cylinder
+        <m>x^2+(y-1)^2=1</m> becomes <m>r = 2\sin\theta</m>, traced once
+        for <m>0 \le \theta \le \pi</m>, and it lies inside the sphere,
+        touching it only at <m>(0,2,0)</m>. The sphere gives
+        <m>-\sqrt{4-r^2} \le z \le \sqrt{4-r^2}</m>. The density
+        simplifies beautifully:
+        <m>\dfrac{a\lvert xy\rvert}{x^2+y^2}
+        = a\lvert\cos\theta\sin\theta\rvert</m>. So
+      </p>
+      <me>
+        M = a\int_0^{\pi}\!\!\int_0^{2\sin\theta}
+        \!\!\int_{-\sqrt{4-r^2}}^{\sqrt{4-r^2}}
+        \lvert\cos\theta\sin\theta\rvert\,r\,dz\,dr\,d\theta .
+      </me>
+      <p>
+        The <m>z</m>- and <m>r</m>-integrals give
+        <m>\frac{2}{3}\left[8-\left(4-4\sin^2\theta\right)^{3/2}\right]
+        = \frac{16}{3}\left(1-\lvert\cos\theta\rvert^3\right)</m>, and
+        then
+      </p>
+      <me>
+        M = \frac{32a}{3}\int_0^{\pi/2}
+        \cos\theta\sin\theta\left(1-\cos^3\theta\right)d\theta
+        = \frac{32a}{3}\left(\frac12-\frac15\right) = \frac{16a}{5} .
+      </me>
+    </solution>
+  </exercise>
+
+  <exercise xml:id="ex-r2p-path-independence">
+    <title>Which Fields Are Path Independent?</title>
+    <statement>
+      <p>
+        Six vector fields are graphed below. For each one, decide whether
+        <m>\displaystyle\int_C \mathbf{F}\cdot d\mathbf{r}</m> is path
+        independent on the whole plane. Enter <c>yes</c> or <c>no</c>.
+      </p>
+      <p>
+        Field <m>A</m>, <m>\mathbf{F} = x\,\mathbf{i} + y\,\mathbf{j}</m>:
+        <fillin name="ba" mode="string" answer="yes" width="5"/>
+      </p>
+      <p>
+        Field <m>B</m>, <m>\mathbf{F} = y\,\mathbf{i} + x\,\mathbf{j}</m>:
+        <fillin name="bb" mode="string" answer="yes" width="5"/>
+      </p>
+      <p>
+        Field <m>C</m>, <m>\mathbf{F} = y\,\mathbf{i}</m>:
+        <fillin name="bc" mode="string" answer="no" width="5"/>
+      </p>
+      <p>
+        Field <m>D</m>, <m>\mathbf{F} = \mathbf{i} + \tfrac12\mathbf{j}</m>:
+        <fillin name="bd" mode="string" answer="yes" width="5"/>
+      </p>
+      <p>
+        Field <m>E</m>, <m>\mathbf{F} = x\,\mathbf{j}</m>:
+        <fillin name="be" mode="string" answer="no" width="5"/>
+      </p>
+      <p>
+        Field <m>F</m>, <m>\mathbf{F} = -y\,\mathbf{i} + x\,\mathbf{j}</m>:
+        <fillin name="bf" mode="string" answer="no" width="5"/>
+      </p>
+      <sidebyside widths="30% 30% 30%" margins="2%" valign="middle">
+      <figure xml:id="fig-r2p-pi-grad-radial">
+        <caption>Field <m>A</m>.</caption>
+        <image width="100%">
+          <shortdescription>Vector field A: arrows drawn at a grid of points, each with a small circle at its tail.</shortdescription>
+          <prefigure xmlns="https://prefigure.org" label="prefigure-r2p-pi-grad-radial">
+            <diagram dimensions="(210,210)" margins="4">
+              <coordinates bbox="(-2.3,-2.3,2.3,2.3)">
+                <axes at="axes" xlabel="x" ylabel="y" decorations="no" arrows="1" stroke="#555555" thickness="1"/>
+                <vector at="v1" v="(-0.306,-0.306)" tail="(-1.5,-1.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q1" p="(-1.5,-1.5)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v2" v="(-0.336,-0.224)" tail="(-1.5,-1.0)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q2" p="(-1.5,-1.0)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v3" v="(-0.365,-0.122)" tail="(-1.5,-0.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q3" p="(-1.5,-0.5)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v4" v="(-0.365,0.122)" tail="(-1.5,0.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q4" p="(-1.5,0.5)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v5" v="(-0.336,0.224)" tail="(-1.5,1.0)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q5" p="(-1.5,1.0)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v6" v="(-0.306,0.306)" tail="(-1.5,1.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q6" p="(-1.5,1.5)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v7" v="(-0.224,-0.336)" tail="(-1.0,-1.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q7" p="(-1.0,-1.5)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v8" v="(-0.261,-0.261)" tail="(-1.0,-1.0)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q8" p="(-1.0,-1.0)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v9" v="(-0.306,-0.153)" tail="(-1.0,-0.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q9" p="(-1.0,-0.5)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v10" v="(-0.306,0.153)" tail="(-1.0,0.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q10" p="(-1.0,0.5)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v11" v="(-0.261,0.261)" tail="(-1.0,1.0)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q11" p="(-1.0,1.0)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v12" v="(-0.224,0.336)" tail="(-1.0,1.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q12" p="(-1.0,1.5)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v13" v="(-0.122,-0.365)" tail="(-0.5,-1.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q13" p="(-0.5,-1.5)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v14" v="(-0.153,-0.306)" tail="(-0.5,-1.0)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q14" p="(-0.5,-1.0)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v15" v="(-0.216,-0.216)" tail="(-0.5,-0.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q15" p="(-0.5,-0.5)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v16" v="(-0.216,0.216)" tail="(-0.5,0.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q16" p="(-0.5,0.5)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v17" v="(-0.153,0.306)" tail="(-0.5,1.0)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q17" p="(-0.5,1.0)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v18" v="(-0.122,0.365)" tail="(-0.5,1.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q18" p="(-0.5,1.5)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v19" v="(0.122,-0.365)" tail="(0.5,-1.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q19" p="(0.5,-1.5)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v20" v="(0.153,-0.306)" tail="(0.5,-1.0)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q20" p="(0.5,-1.0)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v21" v="(0.216,-0.216)" tail="(0.5,-0.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q21" p="(0.5,-0.5)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v22" v="(0.216,0.216)" tail="(0.5,0.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q22" p="(0.5,0.5)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v23" v="(0.153,0.306)" tail="(0.5,1.0)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q23" p="(0.5,1.0)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v24" v="(0.122,0.365)" tail="(0.5,1.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q24" p="(0.5,1.5)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v25" v="(0.224,-0.336)" tail="(1.0,-1.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q25" p="(1.0,-1.5)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v26" v="(0.261,-0.261)" tail="(1.0,-1.0)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q26" p="(1.0,-1.0)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v27" v="(0.306,-0.153)" tail="(1.0,-0.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q27" p="(1.0,-0.5)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v28" v="(0.306,0.153)" tail="(1.0,0.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q28" p="(1.0,0.5)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v29" v="(0.261,0.261)" tail="(1.0,1.0)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q29" p="(1.0,1.0)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v30" v="(0.224,0.336)" tail="(1.0,1.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q30" p="(1.0,1.5)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v31" v="(0.306,-0.306)" tail="(1.5,-1.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q31" p="(1.5,-1.5)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v32" v="(0.336,-0.224)" tail="(1.5,-1.0)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q32" p="(1.5,-1.0)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v33" v="(0.365,-0.122)" tail="(1.5,-0.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q33" p="(1.5,-0.5)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v34" v="(0.365,0.122)" tail="(1.5,0.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q34" p="(1.5,0.5)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v35" v="(0.336,0.224)" tail="(1.5,1.0)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q35" p="(1.5,1.0)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v36" v="(0.306,0.306)" tail="(1.5,1.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q36" p="(1.5,1.5)" size="2" stroke="#8b1a2b" fill="none"/>
+              </coordinates>
+            </diagram>
+          </prefigure>
+        </image>
+      </figure>
+      <figure xml:id="fig-r2p-pi-grad-saddle">
+        <caption>Field <m>B</m>.</caption>
+        <image width="100%">
+          <shortdescription>Vector field B: arrows drawn at a grid of points, each with a small circle at its tail.</shortdescription>
+          <prefigure xmlns="https://prefigure.org" label="prefigure-r2p-pi-grad-saddle">
+            <diagram dimensions="(210,210)" margins="4">
+              <coordinates bbox="(-2.3,-2.3,2.3,2.3)">
+                <axes at="axes" xlabel="x" ylabel="y" decorations="no" arrows="1" stroke="#555555" thickness="1"/>
+                <vector at="v1" v="(-0.306,-0.306)" tail="(-1.5,-1.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q1" p="(-1.5,-1.5)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v2" v="(-0.224,-0.336)" tail="(-1.5,-1.0)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q2" p="(-1.5,-1.0)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v3" v="(-0.122,-0.365)" tail="(-1.5,-0.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q3" p="(-1.5,-0.5)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v4" v="(0.122,-0.365)" tail="(-1.5,0.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q4" p="(-1.5,0.5)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v5" v="(0.224,-0.336)" tail="(-1.5,1.0)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q5" p="(-1.5,1.0)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v6" v="(0.306,-0.306)" tail="(-1.5,1.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q6" p="(-1.5,1.5)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v7" v="(-0.336,-0.224)" tail="(-1.0,-1.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q7" p="(-1.0,-1.5)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v8" v="(-0.261,-0.261)" tail="(-1.0,-1.0)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q8" p="(-1.0,-1.0)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v9" v="(-0.153,-0.306)" tail="(-1.0,-0.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q9" p="(-1.0,-0.5)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v10" v="(0.153,-0.306)" tail="(-1.0,0.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q10" p="(-1.0,0.5)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v11" v="(0.261,-0.261)" tail="(-1.0,1.0)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q11" p="(-1.0,1.0)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v12" v="(0.336,-0.224)" tail="(-1.0,1.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q12" p="(-1.0,1.5)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v13" v="(-0.365,-0.122)" tail="(-0.5,-1.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q13" p="(-0.5,-1.5)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v14" v="(-0.306,-0.153)" tail="(-0.5,-1.0)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q14" p="(-0.5,-1.0)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v15" v="(-0.216,-0.216)" tail="(-0.5,-0.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q15" p="(-0.5,-0.5)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v16" v="(0.216,-0.216)" tail="(-0.5,0.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q16" p="(-0.5,0.5)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v17" v="(0.306,-0.153)" tail="(-0.5,1.0)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q17" p="(-0.5,1.0)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v18" v="(0.365,-0.122)" tail="(-0.5,1.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q18" p="(-0.5,1.5)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v19" v="(-0.365,0.122)" tail="(0.5,-1.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q19" p="(0.5,-1.5)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v20" v="(-0.306,0.153)" tail="(0.5,-1.0)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q20" p="(0.5,-1.0)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v21" v="(-0.216,0.216)" tail="(0.5,-0.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q21" p="(0.5,-0.5)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v22" v="(0.216,0.216)" tail="(0.5,0.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q22" p="(0.5,0.5)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v23" v="(0.306,0.153)" tail="(0.5,1.0)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q23" p="(0.5,1.0)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v24" v="(0.365,0.122)" tail="(0.5,1.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q24" p="(0.5,1.5)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v25" v="(-0.336,0.224)" tail="(1.0,-1.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q25" p="(1.0,-1.5)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v26" v="(-0.261,0.261)" tail="(1.0,-1.0)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q26" p="(1.0,-1.0)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v27" v="(-0.153,0.306)" tail="(1.0,-0.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q27" p="(1.0,-0.5)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v28" v="(0.153,0.306)" tail="(1.0,0.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q28" p="(1.0,0.5)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v29" v="(0.261,0.261)" tail="(1.0,1.0)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q29" p="(1.0,1.0)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v30" v="(0.336,0.224)" tail="(1.0,1.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q30" p="(1.0,1.5)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v31" v="(-0.306,0.306)" tail="(1.5,-1.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q31" p="(1.5,-1.5)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v32" v="(-0.224,0.336)" tail="(1.5,-1.0)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q32" p="(1.5,-1.0)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v33" v="(-0.122,0.365)" tail="(1.5,-0.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q33" p="(1.5,-0.5)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v34" v="(0.122,0.365)" tail="(1.5,0.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q34" p="(1.5,0.5)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v35" v="(0.224,0.336)" tail="(1.5,1.0)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q35" p="(1.5,1.0)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v36" v="(0.306,0.306)" tail="(1.5,1.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q36" p="(1.5,1.5)" size="2" stroke="#8b1a2b" fill="none"/>
+              </coordinates>
+            </diagram>
+          </prefigure>
+        </image>
+      </figure>
+      <figure xml:id="fig-r2p-pi-shear">
+        <caption>Field <m>C</m>.</caption>
+        <image width="100%">
+          <shortdescription>Vector field C: arrows drawn at a grid of points, each with a small circle at its tail.</shortdescription>
+          <prefigure xmlns="https://prefigure.org" label="prefigure-r2p-pi-shear">
+            <diagram dimensions="(210,210)" margins="4">
+              <coordinates bbox="(-2.3,-2.3,2.3,2.3)">
+                <axes at="axes" xlabel="x" ylabel="y" decorations="no" arrows="1" stroke="#555555" thickness="1"/>
+                <vector at="v1" v="(-0.377,0.000)" tail="(-1.5,-1.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q1" p="(-1.5,-1.5)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v2" v="(-0.332,0.000)" tail="(-1.5,-1.0)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q2" p="(-1.5,-1.0)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v3" v="(-0.287,0.000)" tail="(-1.5,-0.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q3" p="(-1.5,-0.5)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v4" v="(0.287,0.000)" tail="(-1.5,0.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q4" p="(-1.5,0.5)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v5" v="(0.332,0.000)" tail="(-1.5,1.0)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q5" p="(-1.5,1.0)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v6" v="(0.377,0.000)" tail="(-1.5,1.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q6" p="(-1.5,1.5)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v7" v="(-0.377,0.000)" tail="(-1.0,-1.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q7" p="(-1.0,-1.5)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v8" v="(-0.332,0.000)" tail="(-1.0,-1.0)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q8" p="(-1.0,-1.0)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v9" v="(-0.287,0.000)" tail="(-1.0,-0.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q9" p="(-1.0,-0.5)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v10" v="(0.287,0.000)" tail="(-1.0,0.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q10" p="(-1.0,0.5)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v11" v="(0.332,0.000)" tail="(-1.0,1.0)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q11" p="(-1.0,1.0)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v12" v="(0.377,0.000)" tail="(-1.0,1.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q12" p="(-1.0,1.5)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v13" v="(-0.377,0.000)" tail="(-0.5,-1.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q13" p="(-0.5,-1.5)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v14" v="(-0.332,0.000)" tail="(-0.5,-1.0)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q14" p="(-0.5,-1.0)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v15" v="(-0.287,0.000)" tail="(-0.5,-0.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q15" p="(-0.5,-0.5)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v16" v="(0.287,0.000)" tail="(-0.5,0.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q16" p="(-0.5,0.5)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v17" v="(0.332,0.000)" tail="(-0.5,1.0)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q17" p="(-0.5,1.0)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v18" v="(0.377,0.000)" tail="(-0.5,1.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q18" p="(-0.5,1.5)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v19" v="(-0.377,0.000)" tail="(0.5,-1.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q19" p="(0.5,-1.5)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v20" v="(-0.332,0.000)" tail="(0.5,-1.0)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q20" p="(0.5,-1.0)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v21" v="(-0.287,0.000)" tail="(0.5,-0.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q21" p="(0.5,-0.5)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v22" v="(0.287,0.000)" tail="(0.5,0.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q22" p="(0.5,0.5)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v23" v="(0.332,0.000)" tail="(0.5,1.0)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q23" p="(0.5,1.0)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v24" v="(0.377,0.000)" tail="(0.5,1.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q24" p="(0.5,1.5)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v25" v="(-0.377,0.000)" tail="(1.0,-1.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q25" p="(1.0,-1.5)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v26" v="(-0.332,0.000)" tail="(1.0,-1.0)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q26" p="(1.0,-1.0)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v27" v="(-0.287,0.000)" tail="(1.0,-0.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q27" p="(1.0,-0.5)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v28" v="(0.287,0.000)" tail="(1.0,0.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q28" p="(1.0,0.5)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v29" v="(0.332,0.000)" tail="(1.0,1.0)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q29" p="(1.0,1.0)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v30" v="(0.377,0.000)" tail="(1.0,1.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q30" p="(1.0,1.5)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v31" v="(-0.377,0.000)" tail="(1.5,-1.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q31" p="(1.5,-1.5)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v32" v="(-0.332,0.000)" tail="(1.5,-1.0)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q32" p="(1.5,-1.0)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v33" v="(-0.287,0.000)" tail="(1.5,-0.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q33" p="(1.5,-0.5)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v34" v="(0.287,0.000)" tail="(1.5,0.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q34" p="(1.5,0.5)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v35" v="(0.332,0.000)" tail="(1.5,1.0)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q35" p="(1.5,1.0)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v36" v="(0.377,0.000)" tail="(1.5,1.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q36" p="(1.5,1.5)" size="2" stroke="#8b1a2b" fill="none"/>
+              </coordinates>
+            </diagram>
+          </prefigure>
+        </image>
+      </figure>
+      </sidebyside>
+      <sidebyside widths="30% 30% 30%" margins="2%" valign="middle">
+      <figure xml:id="fig-r2p-pi-constant">
+        <caption>Field <m>D</m>.</caption>
+        <image width="100%">
+          <shortdescription>Vector field D: arrows drawn at a grid of points, each with a small circle at its tail.</shortdescription>
+          <prefigure xmlns="https://prefigure.org" label="prefigure-r2p-pi-constant">
+            <diagram dimensions="(210,210)" margins="4">
+              <coordinates bbox="(-2.3,-2.3,2.3,2.3)">
+                <axes at="axes" xlabel="x" ylabel="y" decorations="no" arrows="1" stroke="#555555" thickness="1"/>
+                <vector at="v1" v="(0.306,0.153)" tail="(-1.5,-1.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q1" p="(-1.5,-1.5)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v2" v="(0.306,0.153)" tail="(-1.5,-1.0)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q2" p="(-1.5,-1.0)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v3" v="(0.306,0.153)" tail="(-1.5,-0.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q3" p="(-1.5,-0.5)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v4" v="(0.306,0.153)" tail="(-1.5,0.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q4" p="(-1.5,0.5)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v5" v="(0.306,0.153)" tail="(-1.5,1.0)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q5" p="(-1.5,1.0)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v6" v="(0.306,0.153)" tail="(-1.5,1.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q6" p="(-1.5,1.5)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v7" v="(0.306,0.153)" tail="(-1.0,-1.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q7" p="(-1.0,-1.5)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v8" v="(0.306,0.153)" tail="(-1.0,-1.0)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q8" p="(-1.0,-1.0)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v9" v="(0.306,0.153)" tail="(-1.0,-0.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q9" p="(-1.0,-0.5)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v10" v="(0.306,0.153)" tail="(-1.0,0.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q10" p="(-1.0,0.5)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v11" v="(0.306,0.153)" tail="(-1.0,1.0)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q11" p="(-1.0,1.0)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v12" v="(0.306,0.153)" tail="(-1.0,1.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q12" p="(-1.0,1.5)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v13" v="(0.306,0.153)" tail="(-0.5,-1.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q13" p="(-0.5,-1.5)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v14" v="(0.306,0.153)" tail="(-0.5,-1.0)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q14" p="(-0.5,-1.0)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v15" v="(0.306,0.153)" tail="(-0.5,-0.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q15" p="(-0.5,-0.5)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v16" v="(0.306,0.153)" tail="(-0.5,0.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q16" p="(-0.5,0.5)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v17" v="(0.306,0.153)" tail="(-0.5,1.0)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q17" p="(-0.5,1.0)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v18" v="(0.306,0.153)" tail="(-0.5,1.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q18" p="(-0.5,1.5)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v19" v="(0.306,0.153)" tail="(0.5,-1.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q19" p="(0.5,-1.5)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v20" v="(0.306,0.153)" tail="(0.5,-1.0)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q20" p="(0.5,-1.0)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v21" v="(0.306,0.153)" tail="(0.5,-0.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q21" p="(0.5,-0.5)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v22" v="(0.306,0.153)" tail="(0.5,0.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q22" p="(0.5,0.5)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v23" v="(0.306,0.153)" tail="(0.5,1.0)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q23" p="(0.5,1.0)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v24" v="(0.306,0.153)" tail="(0.5,1.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q24" p="(0.5,1.5)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v25" v="(0.306,0.153)" tail="(1.0,-1.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q25" p="(1.0,-1.5)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v26" v="(0.306,0.153)" tail="(1.0,-1.0)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q26" p="(1.0,-1.0)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v27" v="(0.306,0.153)" tail="(1.0,-0.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q27" p="(1.0,-0.5)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v28" v="(0.306,0.153)" tail="(1.0,0.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q28" p="(1.0,0.5)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v29" v="(0.306,0.153)" tail="(1.0,1.0)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q29" p="(1.0,1.0)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v30" v="(0.306,0.153)" tail="(1.0,1.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q30" p="(1.0,1.5)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v31" v="(0.306,0.153)" tail="(1.5,-1.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q31" p="(1.5,-1.5)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v32" v="(0.306,0.153)" tail="(1.5,-1.0)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q32" p="(1.5,-1.0)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v33" v="(0.306,0.153)" tail="(1.5,-0.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q33" p="(1.5,-0.5)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v34" v="(0.306,0.153)" tail="(1.5,0.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q34" p="(1.5,0.5)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v35" v="(0.306,0.153)" tail="(1.5,1.0)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q35" p="(1.5,1.0)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v36" v="(0.306,0.153)" tail="(1.5,1.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q36" p="(1.5,1.5)" size="2" stroke="#8b1a2b" fill="none"/>
+              </coordinates>
+            </diagram>
+          </prefigure>
+        </image>
+      </figure>
+      <figure xml:id="fig-r2p-pi-vertical">
+        <caption>Field <m>E</m>.</caption>
+        <image width="100%">
+          <shortdescription>Vector field E: arrows drawn at a grid of points, each with a small circle at its tail.</shortdescription>
+          <prefigure xmlns="https://prefigure.org" label="prefigure-r2p-pi-vertical">
+            <diagram dimensions="(210,210)" margins="4">
+              <coordinates bbox="(-2.3,-2.3,2.3,2.3)">
+                <axes at="axes" xlabel="x" ylabel="y" decorations="no" arrows="1" stroke="#555555" thickness="1"/>
+                <vector at="v1" v="(0.000,-0.377)" tail="(-1.5,-1.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q1" p="(-1.5,-1.5)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v2" v="(0.000,-0.377)" tail="(-1.5,-1.0)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q2" p="(-1.5,-1.0)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v3" v="(0.000,-0.377)" tail="(-1.5,-0.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q3" p="(-1.5,-0.5)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v4" v="(0.000,-0.377)" tail="(-1.5,0.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q4" p="(-1.5,0.5)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v5" v="(0.000,-0.377)" tail="(-1.5,1.0)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q5" p="(-1.5,1.0)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v6" v="(0.000,-0.377)" tail="(-1.5,1.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q6" p="(-1.5,1.5)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v7" v="(0.000,-0.332)" tail="(-1.0,-1.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q7" p="(-1.0,-1.5)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v8" v="(0.000,-0.332)" tail="(-1.0,-1.0)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q8" p="(-1.0,-1.0)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v9" v="(0.000,-0.332)" tail="(-1.0,-0.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q9" p="(-1.0,-0.5)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v10" v="(0.000,-0.332)" tail="(-1.0,0.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q10" p="(-1.0,0.5)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v11" v="(0.000,-0.332)" tail="(-1.0,1.0)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q11" p="(-1.0,1.0)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v12" v="(0.000,-0.332)" tail="(-1.0,1.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q12" p="(-1.0,1.5)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v13" v="(0.000,-0.287)" tail="(-0.5,-1.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q13" p="(-0.5,-1.5)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v14" v="(0.000,-0.287)" tail="(-0.5,-1.0)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q14" p="(-0.5,-1.0)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v15" v="(0.000,-0.287)" tail="(-0.5,-0.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q15" p="(-0.5,-0.5)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v16" v="(0.000,-0.287)" tail="(-0.5,0.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q16" p="(-0.5,0.5)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v17" v="(0.000,-0.287)" tail="(-0.5,1.0)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q17" p="(-0.5,1.0)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v18" v="(0.000,-0.287)" tail="(-0.5,1.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q18" p="(-0.5,1.5)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v19" v="(0.000,0.287)" tail="(0.5,-1.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q19" p="(0.5,-1.5)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v20" v="(0.000,0.287)" tail="(0.5,-1.0)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q20" p="(0.5,-1.0)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v21" v="(0.000,0.287)" tail="(0.5,-0.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q21" p="(0.5,-0.5)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v22" v="(0.000,0.287)" tail="(0.5,0.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q22" p="(0.5,0.5)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v23" v="(0.000,0.287)" tail="(0.5,1.0)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q23" p="(0.5,1.0)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v24" v="(0.000,0.287)" tail="(0.5,1.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q24" p="(0.5,1.5)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v25" v="(0.000,0.332)" tail="(1.0,-1.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q25" p="(1.0,-1.5)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v26" v="(0.000,0.332)" tail="(1.0,-1.0)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q26" p="(1.0,-1.0)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v27" v="(0.000,0.332)" tail="(1.0,-0.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q27" p="(1.0,-0.5)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v28" v="(0.000,0.332)" tail="(1.0,0.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q28" p="(1.0,0.5)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v29" v="(0.000,0.332)" tail="(1.0,1.0)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q29" p="(1.0,1.0)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v30" v="(0.000,0.332)" tail="(1.0,1.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q30" p="(1.0,1.5)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v31" v="(0.000,0.377)" tail="(1.5,-1.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q31" p="(1.5,-1.5)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v32" v="(0.000,0.377)" tail="(1.5,-1.0)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q32" p="(1.5,-1.0)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v33" v="(0.000,0.377)" tail="(1.5,-0.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q33" p="(1.5,-0.5)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v34" v="(0.000,0.377)" tail="(1.5,0.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q34" p="(1.5,0.5)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v35" v="(0.000,0.377)" tail="(1.5,1.0)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q35" p="(1.5,1.0)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v36" v="(0.000,0.377)" tail="(1.5,1.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q36" p="(1.5,1.5)" size="2" stroke="#8b1a2b" fill="none"/>
+              </coordinates>
+            </diagram>
+          </prefigure>
+        </image>
+      </figure>
+      <figure xml:id="fig-r2p-pi-rotation">
+        <caption>Field <m>F</m>.</caption>
+        <image width="100%">
+          <shortdescription>Vector field F: arrows drawn at a grid of points, each with a small circle at its tail.</shortdescription>
+          <prefigure xmlns="https://prefigure.org" label="prefigure-r2p-pi-rotation">
+            <diagram dimensions="(210,210)" margins="4">
+              <coordinates bbox="(-2.3,-2.3,2.3,2.3)">
+                <axes at="axes" xlabel="x" ylabel="y" decorations="no" arrows="1" stroke="#555555" thickness="1"/>
+                <vector at="v1" v="(0.306,-0.306)" tail="(-1.5,-1.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q1" p="(-1.5,-1.5)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v2" v="(0.224,-0.336)" tail="(-1.5,-1.0)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q2" p="(-1.5,-1.0)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v3" v="(0.122,-0.365)" tail="(-1.5,-0.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q3" p="(-1.5,-0.5)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v4" v="(-0.122,-0.365)" tail="(-1.5,0.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q4" p="(-1.5,0.5)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v5" v="(-0.224,-0.336)" tail="(-1.5,1.0)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q5" p="(-1.5,1.0)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v6" v="(-0.306,-0.306)" tail="(-1.5,1.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q6" p="(-1.5,1.5)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v7" v="(0.336,-0.224)" tail="(-1.0,-1.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q7" p="(-1.0,-1.5)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v8" v="(0.261,-0.261)" tail="(-1.0,-1.0)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q8" p="(-1.0,-1.0)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v9" v="(0.153,-0.306)" tail="(-1.0,-0.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q9" p="(-1.0,-0.5)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v10" v="(-0.153,-0.306)" tail="(-1.0,0.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q10" p="(-1.0,0.5)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v11" v="(-0.261,-0.261)" tail="(-1.0,1.0)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q11" p="(-1.0,1.0)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v12" v="(-0.336,-0.224)" tail="(-1.0,1.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q12" p="(-1.0,1.5)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v13" v="(0.365,-0.122)" tail="(-0.5,-1.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q13" p="(-0.5,-1.5)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v14" v="(0.306,-0.153)" tail="(-0.5,-1.0)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q14" p="(-0.5,-1.0)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v15" v="(0.216,-0.216)" tail="(-0.5,-0.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q15" p="(-0.5,-0.5)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v16" v="(-0.216,-0.216)" tail="(-0.5,0.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q16" p="(-0.5,0.5)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v17" v="(-0.306,-0.153)" tail="(-0.5,1.0)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q17" p="(-0.5,1.0)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v18" v="(-0.365,-0.122)" tail="(-0.5,1.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q18" p="(-0.5,1.5)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v19" v="(0.365,0.122)" tail="(0.5,-1.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q19" p="(0.5,-1.5)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v20" v="(0.306,0.153)" tail="(0.5,-1.0)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q20" p="(0.5,-1.0)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v21" v="(0.216,0.216)" tail="(0.5,-0.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q21" p="(0.5,-0.5)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v22" v="(-0.216,0.216)" tail="(0.5,0.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q22" p="(0.5,0.5)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v23" v="(-0.306,0.153)" tail="(0.5,1.0)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q23" p="(0.5,1.0)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v24" v="(-0.365,0.122)" tail="(0.5,1.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q24" p="(0.5,1.5)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v25" v="(0.336,0.224)" tail="(1.0,-1.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q25" p="(1.0,-1.5)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v26" v="(0.261,0.261)" tail="(1.0,-1.0)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q26" p="(1.0,-1.0)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v27" v="(0.153,0.306)" tail="(1.0,-0.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q27" p="(1.0,-0.5)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v28" v="(-0.153,0.306)" tail="(1.0,0.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q28" p="(1.0,0.5)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v29" v="(-0.261,0.261)" tail="(1.0,1.0)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q29" p="(1.0,1.0)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v30" v="(-0.336,0.224)" tail="(1.0,1.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q30" p="(1.0,1.5)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v31" v="(0.306,0.306)" tail="(1.5,-1.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q31" p="(1.5,-1.5)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v32" v="(0.224,0.336)" tail="(1.5,-1.0)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q32" p="(1.5,-1.0)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v33" v="(0.122,0.365)" tail="(1.5,-0.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q33" p="(1.5,-0.5)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v34" v="(-0.122,0.365)" tail="(1.5,0.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q34" p="(1.5,0.5)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v35" v="(-0.224,0.336)" tail="(1.5,1.0)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q35" p="(1.5,1.0)" size="2" stroke="#8b1a2b" fill="none"/>
+                <vector at="v36" v="(-0.306,0.306)" tail="(1.5,1.5)" stroke="#3c6fbf" thickness="2"/>
+                <point at="q36" p="(1.5,1.5)" size="2" stroke="#8b1a2b" fill="none"/>
+              </coordinates>
+            </diagram>
+          </prefigure>
+        </image>
+      </figure>
+      </sidebyside>
+    </statement>
+    <evaluation>
+      <evaluate>
+        <test correct="yes"><strcmp case="insensitive">yes</strcmp><feedback><p>Correct.</p></feedback></test>
+        <test><strcmp strip="no">.*</strcmp><feedback><p>Incorrect.</p></feedback></test>
+      </evaluate>
+      <evaluate>
+        <test correct="yes"><strcmp case="insensitive">yes</strcmp><feedback><p>Correct.</p></feedback></test>
+        <test><strcmp strip="no">.*</strcmp><feedback><p>Incorrect.</p></feedback></test>
+      </evaluate>
+      <evaluate>
+        <test correct="yes"><strcmp case="insensitive">no</strcmp><feedback><p>Correct.</p></feedback></test>
+        <test><strcmp strip="no">.*</strcmp><feedback><p>Incorrect.</p></feedback></test>
+      </evaluate>
+      <evaluate>
+        <test correct="yes"><strcmp case="insensitive">yes</strcmp><feedback><p>Correct.</p></feedback></test>
+        <test><strcmp strip="no">.*</strcmp><feedback><p>Incorrect.</p></feedback></test>
+      </evaluate>
+      <evaluate>
+        <test correct="yes"><strcmp case="insensitive">no</strcmp><feedback><p>Correct.</p></feedback></test>
+        <test><strcmp strip="no">.*</strcmp><feedback><p>Incorrect.</p></feedback></test>
+      </evaluate>
+      <evaluate>
+        <test correct="yes"><strcmp case="insensitive">no</strcmp><feedback><p>Correct.</p></feedback></test>
+        <test><strcmp strip="no">.*</strcmp><feedback><p>Incorrect.</p></feedback></test>
+      </evaluate>
+    </evaluation>
+    <solution component="review2-solutions">
+      <p>
+        The plane is simply connected, so the integral is path independent
+        exactly when <m>\partial P/\partial y = \partial Q/\partial x</m>.
+      </p>
+      <p>
+        Field <m>A</m> is <m>\nabla\left(\frac{x^2+y^2}{2}\right)</m> and
+        both derivatives are <m>0</m>: yes. Field <m>B</m> is
+        <m>\nabla(xy)</m>, with both derivatives equal to <m>1</m>: yes.
+        Field <m>D</m> is constant, hence
+        <m>\nabla\left(x+\frac{y}{2}\right)</m>: yes.
+      </p>
+      <p>
+        For <m>C</m>, <m>\partial P/\partial y = 1</m> while
+        <m>\partial Q/\partial x = 0</m>: no. For <m>E</m> they are
+        <m>0</m> and <m>1</m>: no. For <m>F</m> they are <m>-1</m> and
+        <m>1</m>: no.
+      </p>
+      <p>
+        The pictures agree. <m>A</m>, <m>B</m> and <m>D</m> have no
+        circulation: follow any closed loop and the gains cancel the losses.
+        <m>F</m> visibly swirls once around the origin, and <m>C</m> and
+        <m>E</m> shear, so a rectangular loop picks up more along one side
+        than it gives back along the opposite one.
+      </p>
+    </solution>
+  </exercise>
+
   </exercises>
 </section>
