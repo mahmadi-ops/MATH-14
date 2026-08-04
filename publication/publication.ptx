@@ -35,7 +35,8 @@
                       hw4-solutions hw5-solutions hw6-solutions
                       hw7-solutions hw8-solutions hw9-solutions
                       review3-solutions review4-solutions"/> -->
-    <version include="hw1-solutions"/>
+    <!-- <version include="hw1-solutions review1-solutions"/> -->
+    <version include="review1-solutions"/> 
   </source>
 
   <!-- Table of contents down to subsections, so the sidebar lists every

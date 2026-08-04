@@ -1,0 +1,1110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- MATH 14 - Review Problems #1, practice version.                          -->
+<!--                                                                         -->
+<!-- Rebuilt from the WeBWorK set: every answer box is graded on its own, so  -->
+<!-- partial credit survives, and the feedback is a bare Correct./Incorrect.  -->
+<!-- Each <solution> carries component="review1-solutions" so the set can be  -->
+<!-- posted from publication/publication.ptx after the due date.              -->
+<section xml:id="sec-exercises-review1-practice" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Review Problems #1</title>
+
+  <introduction>
+    <p>
+      Sections: <xref ref="sec-parametrization" text="title"/>,
+      <xref ref="sec-arc-length" text="title"/>, and
+      <xref ref="sec-line-integrals" text="title"/>. Work each problem, then
+      type your answers into the boxes and have them checked here.
+    </p>
+    <p>
+      Every answer box is graded separately, so a box you fill in correctly
+      earns its credit even if another box in the same problem is wrong.
+      Press <q>Check Me</q> to submit; you may check as often as you like.
+    </p>
+    <p>
+      <term>How to type your answers.</term> Type numbers as decimals to at
+      least three places, with no units and no <m>\pi</m>. Type expressions
+      with <c>*</c> for products and <c>^</c> for powers, and write functions
+      with parentheses: <c>cos(t)</c>, <c>sqrt(x)</c>, <c>e^t</c>,
+      <c>ln(s)</c>.
+    </p>
+  </introduction>
+
+  <exercises xml:id="exercises-review1-practice">
+
+  <exercise xml:id="ex-r1p-cycloid-speed">
+    <title>Speed Where the Tangent Line is Horizontal</title>
+    <setup>
+      <de-object name="a" context="number">
+        <de-random distribution="discrete" min="2" max="9" by="1"/>
+      </de-object>
+      <de-object name="speed" context="number">
+        <de-expression>2*a</de-expression>
+      </de-object>
+    </setup>
+    <statement>
+      <p>
+        The position of an object at time <m>t</m> is given by
+      </p>
+      <me>
+        \mathbf{r}(t) = \left\langle <eval obj="a"/>t
+        - <eval obj="a"/>\sin t,\ <eval obj="a"/>
+        - <eval obj="a"/>\cos t \right\rangle .
+      </me>
+      <p>
+        Find its speed at the points where the tangent line is horizontal.
+      </p>
+      <p>
+        speed <m>=</m> <fillin name="b1" mode="number" ansobj="speed" width="10"/>
+      </p>
+    </statement>
+    <evaluation>
+      <evaluate>
+        <test correct="yes">
+          <numcmp use-answer="yes" min="speed.value({})-Math.max(0.01,1e-4*Math.abs(speed.value({})))" max="speed.value({})+Math.max(0.01,1e-4*Math.abs(speed.value({})))"/>
+          <feedback><p>Correct.</p></feedback>
+        </test>
+        <test>
+          <numcmp min="-1000000000" max="1000000000"/>
+          <feedback><p>Incorrect.</p></feedback>
+        </test>
+      </evaluate>
+    </evaluation>
+    <solution component="review1-solutions">
+      <p>
+        The slope of the tangent line is
+        <m>\dfrac{dy/dt}{dx/dt}
+        = \dfrac{a\sin t}{a - a\cos t} = \dfrac{\sin t}{1-\cos t}</m>,
+        which vanishes when <m>\sin t = 0</m> and <m>\cos t \ne 1</m>, that
+        is at <m>t = \pi(2k-1)</m>. The speed is
+      </p>
+      <me>
+        \left\lVert\mathbf{v}\right\rVert
+        = \sqrt{\left(a - a\cos t\right)^2 + \left(a\sin t\right)^2}
+        = \sqrt{2a^2\left(1-\cos t\right)}
+        = 2a\left\lvert\sin\tfrac{t}{2}\right\rvert ,
+      </me>
+      <p>
+        and at <m>t = \pi(2k-1)</m> the sine equals <m>\pm 1</m>, so the
+        speed is <m>2a</m>.
+      </p>
+    </solution>
+  </exercise>
+
+  <exercise xml:id="ex-r1p-cartesian-from-parametric">
+    <title>A Cartesian Equation and a Tangent Line</title>
+    <setup>
+      <de-object name="a" context="number">
+        <de-random distribution="discrete" min="2" max="6" by="1"/>
+      </de-object>
+      <de-object name="b" context="number">
+        <de-random distribution="discrete" min="7" max="11" by="1"/>
+      </de-object>
+      <de-object name="poly" context="formula">
+        <de-expression>b^3*x^3+a^3*y^3-a^2*b^2*x*y</de-expression>
+      </de-object>
+      <de-object name="tangent" context="formula">
+        <de-expression>(-b/a)*(x-a/2)+b/2</de-expression>
+      </de-object>
+    </setup>
+    <statement>
+      <p>
+        Find a Cartesian equation relating <m>x</m> and <m>y</m> for the
+        parametric curve
+      </p>
+      <me>
+        x = \frac{<eval obj="a"/>t}{1+t^3}, \qquad
+        y = \frac{<eval obj="b"/>t^2}{1+t^3}, \qquad t \ne -1 .
+      </me>
+      <p>
+        Write your answer in the form <m>P(x,y) = 0</m>, where
+        <m>P(x,y)</m> is a polynomial in <m>x</m> and <m>y</m> whose
+        <m>x^3</m> coefficient is <m><eval obj="b"/>^3</m>.
+      </p>
+      <p>
+        <m>P(x,y) =</m>
+        <fillin name="b1" mode="math" ansobj="poly" width="30"/>
+      </p>
+      <p>
+        Find the equation of the tangent line to the curve at the point
+        corresponding to <m>t = 1</m>.
+      </p>
+      <p>
+        <m>y =</m>
+        <fillin name="b2" mode="math" ansobj="tangent" width="30"/>
+      </p>
+    </statement>
+    <evaluation>
+      <evaluate>
+        <test correct="yes">
+          <mathcmp use-answer="yes"/>
+          <feedback><p>Correct.</p></feedback>
+        </test>
+        <test>
+          <numcmp min="-1000000000" max="1000000000"/>
+          <feedback><p>Incorrect.</p></feedback>
+        </test>
+      </evaluate>
+      <evaluate>
+        <test correct="yes">
+          <mathcmp use-answer="yes"/>
+          <feedback><p>Correct.</p></feedback>
+        </test>
+        <test>
+          <numcmp min="-1000000000" max="1000000000"/>
+          <feedback><p>Incorrect.</p></feedback>
+        </test>
+      </evaluate>
+    </evaluation>
+    <solution component="review1-solutions">
+      <p>
+        Write <m>a</m> and <m>b</m> for the two coefficients. Then
+        <m>x^3 = \dfrac{a^3t^3}{(1+t^3)^3}</m> and
+        <m>y^3 = \dfrac{b^3t^6}{(1+t^3)^3}</m>, while
+        <m>xy = \dfrac{ab\,t^3}{(1+t^3)^2}</m>. Substituting into
+        <m>b^3x^3 + a^3y^3 - a^2b^2xy</m> and putting everything over
+        <m>(1+t^3)^3</m>, the numerator is
+        <m>a^3b^3t^3\left(1 + t^3 - (1+t^3)\right) = 0</m>, so
+      </p>
+      <me>
+        P(x,y) = b^3x^3 + a^3y^3 - a^2b^2xy = 0 .
+      </me>
+      <p>
+        At <m>t = 1</m> the point is
+        <m>\left(\tfrac{a}{2}, \tfrac{b}{2}\right)</m>, and
+        <m>\dfrac{dy}{dx} = \dfrac{y'(1)}{x'(1)} = -\dfrac{b}{a}</m>, so the
+        tangent line is
+        <m>y = -\dfrac{b}{a}\left(x - \dfrac{a}{2}\right) + \dfrac{b}{2}</m>.
+      </p>
+    </solution>
+  </exercise>
+
+  <exercise xml:id="ex-r1p-helix-scalar">
+    <title>A Scalar Line Integral Along a Helix</title>
+    <setup>
+      <de-object name="a" context="number">
+        <de-random distribution="discrete" min="2" max="9" by="1"/>
+      </de-object>
+      <de-object name="n" context="number">
+        <de-random distribution="discrete" min="2" max="5" by="1"/>
+      </de-object>
+      <de-object name="value" context="number">
+        <de-expression>sqrt(2)*(a*pi+pi^(n+1)/(n+1))</de-expression>
+      </de-object>
+    </setup>
+    <statement>
+      <p>
+        Calculate the integral of
+        <m>f(x,y,z) = <eval obj="a"/>x^2 + <eval obj="a"/>y^2
+        + z^{<eval obj="n"/>}</m> over the curve
+        <m>\mathbf{c}(t) = \left(\cos t,\ \sin t,\ t\right)</m> for
+        <m>0 \le t \le \pi</m>.
+      </p>
+      <p>
+        <m>\displaystyle\int_{\mathcal{C}} f\,ds =</m>
+        <fillin name="b1" mode="number" ansobj="value" width="14"/>
+      </p>
+    </statement>
+    <evaluation>
+      <evaluate>
+        <test correct="yes">
+          <numcmp use-answer="yes" min="value.value({})-Math.max(0.01,1e-4*Math.abs(value.value({})))" max="value.value({})+Math.max(0.01,1e-4*Math.abs(value.value({})))"/>
+          <feedback><p>Correct.</p></feedback>
+        </test>
+        <test>
+          <numcmp min="-1000000000" max="1000000000"/>
+          <feedback><p>Incorrect.</p></feedback>
+        </test>
+      </evaluate>
+    </evaluation>
+    <solution component="review1-solutions">
+      <p>
+        Since <m>\mathbf{c}'(t) = \langle -\sin t, \cos t, 1\rangle</m>, we
+        have <m>\lVert\mathbf{c}'(t)\rVert = \sqrt2</m> and
+        <m>ds = \sqrt2\,dt</m>. On the curve
+        <m>a\cos^2 t + a\sin^2 t + t^{n} = a + t^{n}</m>, so
+      </p>
+      <me>
+        \int_{\mathcal{C}} f\,ds
+        = \sqrt2\int_0^{\pi}\left(a + t^{n}\right)dt
+        = \sqrt2\left(a\pi + \frac{\pi^{\,n+1}}{n+1}\right) .
+      </me>
+    </solution>
+  </exercise>
+
+  <exercise xml:id="ex-r1p-exponential-path">
+    <title>A Vector Line Integral Along an Exponential Path</title>
+    <setup>
+      <de-object name="T" context="number">
+        <de-random distribution="discrete" min="1" max="4" by="1"/>
+      </de-object>
+      <de-object name="value" context="number">
+        <de-expression>2*(exp(2*T)-exp(-2*T))-(exp(T)-exp(-T))</de-expression>
+      </de-object>
+    </setup>
+    <statement>
+      <p>
+        Compute the line integral of the vector field
+        <m>\mathbf{F} = \left\langle 3zy^{-1},\ 4x,\ -y \right\rangle</m>
+        over the path
+        <m>\mathbf{c}(t) = \left\langle e^t, e^t, t\right\rangle</m> for
+        <m>-<eval obj="T"/> \le t \le <eval obj="T"/></m>.
+      </p>
+      <p>
+        <m>\displaystyle\int_{\mathcal{C}} \mathbf{F}\cdot d\mathbf{r} =</m>
+        <fillin name="b1" mode="number" ansobj="value" width="14"/>
+      </p>
+    </statement>
+    <evaluation>
+      <evaluate>
+        <test correct="yes">
+          <numcmp use-answer="yes" min="value.value({})-Math.max(0.01,1e-4*Math.abs(value.value({})))" max="value.value({})+Math.max(0.01,1e-4*Math.abs(value.value({})))"/>
+          <feedback><p>Correct.</p></feedback>
+        </test>
+        <test>
+          <numcmp min="-1000000000" max="1000000000"/>
+          <feedback><p>Incorrect.</p></feedback>
+        </test>
+      </evaluate>
+    </evaluation>
+    <solution component="review1-solutions">
+      <p>
+        On the path, <m>\mathbf{F}(\mathbf{c}(t))
+        = \left\langle 3te^{-t},\ 4e^{t},\ -e^{t}\right\rangle</m> and
+        <m>\mathbf{c}'(t) = \left\langle e^{t}, e^{t}, 1\right\rangle</m>,
+        so the integrand is
+      </p>
+      <me>
+        \mathbf{F}\cdot\mathbf{c}'(t) = 3t + 4e^{2t} - e^{t} .
+      </me>
+      <p>
+        The term <m>3t</m> is odd and integrates to <m>0</m> over the
+        symmetric interval, so
+      </p>
+      <me>
+        \int_{\mathcal{C}} \mathbf{F}\cdot d\mathbf{r}
+        = \Big[2e^{2t} - e^{t}\Big]_{-T}^{T}
+        = 2\left(e^{2T} - e^{-2T}\right) - \left(e^{T} - e^{-T}\right) .
+      </me>
+    </solution>
+  </exercise>
+
+  <exercise xml:id="ex-r1p-circle-in-plane">
+    <title>A Circle Traced in Space</title>
+    <setup>
+      <de-object name="c" context="number">
+        <de-random distribution="discrete" min="2" max="9" by="1"/>
+      </de-object>
+      <de-object name="R" context="number">
+        <de-random distribution="discrete" min="3" max="13" by="1"/>
+      </de-object>
+      <de-object name="zero" context="number">
+        <de-expression>0</de-expression>
+      </de-object>
+    </setup>
+    <statement>
+      <p>
+        The function <m>\mathbf{r}(t)</m> traces a circle. Determine the
+        plane containing it, its center, and its radius.
+      </p>
+      <me>
+        \mathbf{r}(t) = <eval obj="c"/>\,\mathbf{i}
+        + \left(<eval obj="R"/>\cos t\right)\mathbf{j}
+        + \left(<eval obj="R"/>\sin t\right)\mathbf{k}
+      </me>
+      <p>
+        Plane: <m>x =</m>
+        <fillin name="b1" mode="number" ansobj="c" width="6"/>
+      </p>
+      <p>
+        Center: <m>\Big(</m>
+        <fillin name="b2" mode="number" ansobj="c" width="6"/>,
+        <fillin name="b3" mode="number" ansobj="zero" width="6"/>,
+        <fillin name="b4" mode="number" ansobj="zero" width="6"/>
+        <m>\Big)</m>
+      </p>
+      <p>
+        Radius: <fillin name="b5" mode="number" ansobj="R" width="6"/>
+      </p>
+    </statement>
+    <evaluation>
+      <evaluate>
+        <test correct="yes">
+          <numcmp use-answer="yes" min="c.value({})-0.01" max="c.value({})+0.01"/>
+          <feedback><p>Correct.</p></feedback>
+        </test>
+        <test><numcmp min="-1000000000" max="1000000000"/><feedback><p>Incorrect.</p></feedback></test>
+      </evaluate>
+      <evaluate>
+        <test correct="yes">
+          <numcmp use-answer="yes" min="c.value({})-0.01" max="c.value({})+0.01"/>
+          <feedback><p>Correct.</p></feedback>
+        </test>
+        <test><numcmp min="-1000000000" max="1000000000"/><feedback><p>Incorrect.</p></feedback></test>
+      </evaluate>
+      <evaluate>
+        <test correct="yes">
+          <numcmp use-answer="yes" min="zero.value({})-0.01" max="zero.value({})+0.01"/>
+          <feedback><p>Correct.</p></feedback>
+        </test>
+        <test><numcmp min="-1000000000" max="1000000000"/><feedback><p>Incorrect.</p></feedback></test>
+      </evaluate>
+      <evaluate>
+        <test correct="yes">
+          <numcmp use-answer="yes" min="zero.value({})-0.01" max="zero.value({})+0.01"/>
+          <feedback><p>Correct.</p></feedback>
+        </test>
+        <test><numcmp min="-1000000000" max="1000000000"/><feedback><p>Incorrect.</p></feedback></test>
+      </evaluate>
+      <evaluate>
+        <test correct="yes">
+          <numcmp use-answer="yes" min="R.value({})-0.01" max="R.value({})+0.01"/>
+          <feedback><p>Correct.</p></feedback>
+        </test>
+        <test><numcmp min="-1000000000" max="1000000000"/><feedback><p>Incorrect.</p></feedback></test>
+      </evaluate>
+    </evaluation>
+    <solution component="review1-solutions">
+      <p>
+        Here <m>x(t) = c</m> is constant, so the curve lies in the vertical
+        plane <m>x = c</m>. In that plane,
+        <m>y(t)^2 + z(t)^2 = R^2\cos^2 t + R^2\sin^2 t = R^2</m>, the
+        equation of a circle of radius <m>R</m> centered at
+        <m>(c, 0, 0)</m>.
+      </p>
+    </solution>
+  </exercise>
+
+  <exercise xml:id="ex-r1p-speed-distance">
+    <title>Time, Distance and Speed of a Moving Object</title>
+    <setup>
+      <de-object name="a" context="number">
+        <de-random distribution="discrete" min="1" max="9" by="1"/>
+      </de-object>
+      <de-object name="gap" context="number">
+        <de-random distribution="discrete" min="5" max="11" by="1"/>
+      </de-object>
+      <de-object name="b" context="number">
+        <de-expression>a+gap</de-expression>
+      </de-object>
+      <de-object name="c" context="number">
+        <de-random distribution="discrete" min="20" max="25" by="1"/>
+      </de-object>
+      <de-object name="L" context="number">
+        <de-expression>b^3/3+b-a^3/3-a</de-expression>
+      </de-object>
+      <de-object name="sp" context="number">
+        <de-expression>a^2+1</de-expression>
+      </de-object>
+    </setup>
+    <statement>
+      <p>
+        The position vector of an object is
+      </p>
+      <me>
+        \mathbf{r}(t) = \frac{t^2}{\sqrt2}\cos\!\left(\sqrt2\,t\right)
+        \mathbf{i} + \frac{t^2}{\sqrt2}\sin\!\left(\sqrt2\,t\right)
+        \mathbf{j} + \left(<eval obj="c"/> - t\right)\mathbf{k} .
+      </me>
+      <p>
+        Calculate the time <m>t</m> it takes the object to reach
+        <m>z = 0</m>; the distance <m>L</m> it travels from
+        <m>t = <eval obj="a"/></m> until <m>t = <eval obj="b"/></m>; and its
+        speed at <m>t = <eval obj="a"/></m> seconds.
+      </p>
+      <p>
+        <m>t =</m> <fillin name="b1" mode="number" ansobj="c" width="8"/>
+        seconds
+      </p>
+      <p>
+        <m>L =</m> <fillin name="b2" mode="number" ansobj="L" width="12"/>
+        meters
+      </p>
+      <p>
+        <m>\left\lVert\mathbf{v}\left(<eval obj="a"/>\right)\right\rVert =</m>
+        <fillin name="b3" mode="number" ansobj="sp" width="10"/>
+        meters per second
+      </p>
+    </statement>
+    <evaluation>
+      <evaluate>
+        <test correct="yes">
+          <numcmp use-answer="yes" min="c.value({})-0.01" max="c.value({})+0.01"/>
+          <feedback><p>Correct.</p></feedback>
+        </test>
+        <test><numcmp min="-1000000000" max="1000000000"/><feedback><p>Incorrect.</p></feedback></test>
+      </evaluate>
+      <evaluate>
+        <test correct="yes">
+          <numcmp use-answer="yes" min="L.value({})-Math.max(0.01,1e-4*Math.abs(L.value({})))" max="L.value({})+Math.max(0.01,1e-4*Math.abs(L.value({})))"/>
+          <feedback><p>Correct.</p></feedback>
+        </test>
+        <test><numcmp min="-1000000000" max="1000000000"/><feedback><p>Incorrect.</p></feedback></test>
+      </evaluate>
+      <evaluate>
+        <test correct="yes">
+          <numcmp use-answer="yes" min="sp.value({})-0.01" max="sp.value({})+0.01"/>
+          <feedback><p>Correct.</p></feedback>
+        </test>
+        <test><numcmp min="-1000000000" max="1000000000"/><feedback><p>Incorrect.</p></feedback></test>
+      </evaluate>
+    </evaluation>
+    <solution component="review1-solutions">
+      <p>
+        The <m>z</m>-coordinate is <m>c - t</m>, so <m>z = 0</m> at
+        <m>t = c</m>. Differentiating and simplifying,
+        <m>\left\lVert\mathbf{v}(t)\right\rVert = t^2 + 1</m>, so the speed
+        at <m>t = a</m> is <m>a^2 + 1</m>, and the distance travelled is
+      </p>
+      <me>
+        L = \int_a^b \left(t^2+1\right)dt
+        = \left(\frac{b^3}{3} + b\right) - \left(\frac{a^3}{3} + a\right) .
+      </me>
+    </solution>
+  </exercise>
+
+  <exercise xml:id="ex-r1p-work-parabola">
+    <title>Work Along a Parabola</title>
+    <setup>
+      <de-object name="a" context="number">
+        <de-random distribution="discrete" min="1" max="5" by="1"/>
+      </de-object>
+      <de-object name="work" context="number">
+        <de-expression>a*7/3+(exp(2)-exp(1))/2</de-expression>
+      </de-object>
+    </setup>
+    <statement>
+      <p>
+        Evaluate the work done by the force field
+        <m>\mathbf{F}(x,y) = <eval obj="a"/>x^2\,\mathbf{i}
+        + ye^{x}\,\mathbf{j}</m> on a particle that moves along the curve
+        <m>C: x = y^2+1</m> from <m>(1,0)</m> to <m>(2,1)</m>.
+      </p>
+      <p>
+        Work <m>=</m>
+        <fillin name="b1" mode="number" ansobj="work" width="12"/>
+      </p>
+    </statement>
+    <evaluation>
+      <evaluate>
+        <test correct="yes">
+          <numcmp use-answer="yes" min="work.value({})-Math.max(0.01,1e-4*Math.abs(work.value({})))" max="work.value({})+Math.max(0.01,1e-4*Math.abs(work.value({})))"/>
+          <feedback><p>Correct.</p></feedback>
+        </test>
+        <test><numcmp min="-1000000000" max="1000000000"/><feedback><p>Incorrect.</p></feedback></test>
+      </evaluate>
+    </evaluation>
+    <solution component="review1-solutions">
+      <p>
+        Parametrize by <m>y = t</m>, <m>x = t^2+1</m>, <m>0 \le t \le 1</m>,
+        so <m>dx = 2t\,dt</m> and <m>dy = dt</m>. Then
+      </p>
+      <me>
+        W = \int_0^1 \left[a\left(t^2+1\right)^2(2t)
+        + t\,e^{t^2+1}\right]dt
+        = \frac{7a}{3} + \frac{e^2 - e}{2} .
+      </me>
+    </solution>
+  </exercise>
+
+  <exercise xml:id="ex-r1p-spiral-length">
+    <title>The Length of an Involute</title>
+    <setup>
+      <de-object name="a" context="number">
+        <de-random distribution="discrete" min="2" max="9" by="1"/>
+      </de-object>
+      <de-object name="len" context="number">
+        <de-expression>a^2/2</de-expression>
+      </de-object>
+    </setup>
+    <statement>
+      <p>
+        Calculate the length of the parametrized curve
+      </p>
+      <me>
+        \mathbf{r}(\theta) = \left\langle \sin\theta - \theta\cos\theta,\
+        \cos\theta + \theta\sin\theta \right\rangle, \qquad
+        0 \le \theta \le <eval obj="a"/> .
+      </me>
+      <p>
+        Length <m>=</m>
+        <fillin name="b1" mode="number" ansobj="len" width="12"/>
+      </p>
+    </statement>
+    <evaluation>
+      <evaluate>
+        <test correct="yes">
+          <numcmp use-answer="yes" min="len.value({})-Math.max(0.01,1e-4*Math.abs(len.value({})))" max="len.value({})+Math.max(0.01,1e-4*Math.abs(len.value({})))"/>
+          <feedback><p>Correct.</p></feedback>
+        </test>
+        <test><numcmp min="-1000000000" max="1000000000"/><feedback><p>Incorrect.</p></feedback></test>
+      </evaluate>
+    </evaluation>
+    <solution component="review1-solutions">
+      <p>
+        Differentiating, <m>x' = \theta\sin\theta</m> and
+        <m>y' = \theta\cos\theta</m>, so
+        <m>\sqrt{x'^2 + y'^2} = \theta</m> for <m>\theta \ge 0</m> and
+      </p>
+      <me>
+        S = \int_0^{a} \theta\,d\theta = \frac{a^2}{2} .
+      </me>
+    </solution>
+  </exercise>
+
+  <exercise xml:id="ex-r1p-match-fields">
+    <title>Matching Vector Fields to Their Graphs</title>
+    <statement>
+      <p>
+        Match each of the following vector fields with its graph, entering
+        the letter <c>A</c>, <c>B</c>, <c>C</c>, <c>D</c> or <c>E</c>. The
+        graphs are shown below; in each one a small circle marks the
+        <term>tail</term> of the arrow.
+      </p>
+      <p>
+        <m>\mathbf{F}(x,y) = \dfrac{x\,\mathbf{i} + y\,\mathbf{j}}
+        {\sqrt{x^2+y^2}}</m>:
+        <fillin name="b1" mode="string" answer="A" width="4"/>
+      </p>
+      <p>
+        <m>\mathbf{F}(x,y) = \dfrac{-y\,\mathbf{i} + x\,\mathbf{j}}
+        {\sqrt{x^2+y^2}}</m>:
+        <fillin name="b2" mode="string" answer="B" width="4"/>
+      </p>
+      <p>
+        <m>\mathbf{F}(x,y) = \dfrac{-x\,\mathbf{i} + y\,\mathbf{j}}
+        {\sqrt{x^2+y^2}}</m>:
+        <fillin name="b3" mode="string" answer="C" width="4"/>
+      </p>
+      <p>
+        <m>\mathbf{F}(x,y) = \dfrac{x\,\mathbf{i} + y\,\mathbf{j}}
+        {x^2+y^2}</m>:
+        <fillin name="b4" mode="string" answer="D" width="4"/>
+      </p>
+      <p>
+        <m>\mathbf{F}(x,y) = \dfrac{-x\,\mathbf{i} - y\,\mathbf{j}}
+        {x^2+y^2}</m>:
+        <fillin name="b5" mode="string" answer="E" width="4"/>
+      </p>
+    </statement>
+    <evaluation>
+      <evaluate>
+        <test correct="yes">
+          <strcmp case="insensitive">A</strcmp>
+          <feedback><p>Correct.</p></feedback>
+        </test>
+        <test>
+          <strcmp strip="no">.*</strcmp>
+          <feedback><p>Incorrect.</p></feedback>
+        </test>
+      </evaluate>
+      <evaluate>
+        <test correct="yes">
+          <strcmp case="insensitive">B</strcmp>
+          <feedback><p>Correct.</p></feedback>
+        </test>
+        <test>
+          <strcmp strip="no">.*</strcmp>
+          <feedback><p>Incorrect.</p></feedback>
+        </test>
+      </evaluate>
+      <evaluate>
+        <test correct="yes">
+          <strcmp case="insensitive">C</strcmp>
+          <feedback><p>Correct.</p></feedback>
+        </test>
+        <test>
+          <strcmp strip="no">.*</strcmp>
+          <feedback><p>Incorrect.</p></feedback>
+        </test>
+      </evaluate>
+      <evaluate>
+        <test correct="yes">
+          <strcmp case="insensitive">D</strcmp>
+          <feedback><p>Correct.</p></feedback>
+        </test>
+        <test>
+          <strcmp strip="no">.*</strcmp>
+          <feedback><p>Incorrect.</p></feedback>
+        </test>
+      </evaluate>
+      <evaluate>
+        <test correct="yes">
+          <strcmp case="insensitive">E</strcmp>
+          <feedback><p>Correct.</p></feedback>
+        </test>
+        <test>
+          <strcmp strip="no">.*</strcmp>
+          <feedback><p>Incorrect.</p></feedback>
+        </test>
+      </evaluate>
+    </evaluation>
+    <solution component="review1-solutions">
+      <p>
+        Two things separate the five fields: which way the arrows point, and
+        whether their length changes with distance from the origin.
+      </p>
+      <p>
+        The first three all have length <m>1</m> everywhere, since dividing
+        by <m>\sqrt{x^2+y^2}</m> normalizes them; the last two have length
+        <m>1/\sqrt{x^2+y^2}</m>, so their arrows are long near the origin
+        and short far away.
+      </p>
+      <p>
+        Among the unit fields,
+        <m>\dfrac{x\,\mathbf{i}+y\,\mathbf{j}}{\sqrt{x^2+y^2}}</m>
+        points straight away from the origin, and
+        <m>\dfrac{-y\,\mathbf{i}+x\,\mathbf{j}}{\sqrt{x^2+y^2}}</m> is
+        perpendicular to that, circling counterclockwise. The third,
+        <m>\dfrac{-x\,\mathbf{i}+y\,\mathbf{j}}{\sqrt{x^2+y^2}}</m>,
+        points toward the <m>y</m>-axis along the <m>x</m>-axis but away
+        from the origin along the <m>y</m>-axis, giving the saddle pattern.
+      </p>
+      <p>
+        The last two differ only by a sign: one flows outward, the other
+        inward.
+      </p>
+    </solution>
+  </exercise>
+
+  <figure xml:id="fig-r1p-vf-radial-unit">
+    <caption>Graph <m>A</m>.</caption>
+    <image width="100%">
+      <shortdescription>Vector field A: arrows drawn at a grid of points, each with a dot at its tail.</shortdescription>
+      <prefigure xmlns="https://prefigure.org" label="prefigure-r1p-vf-radial-unit">
+        <diagram dimensions="(210,210)" margins="4">
+          <coordinates bbox="(-2.3,-2.3,2.3,2.3)">
+            <vector at="vf1" v="(-0.240,-0.240)" tail="(-1.5,-1.5)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt1" p="(-1.5,-1.5)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf2" v="(-0.283,-0.189)" tail="(-1.5,-1.0)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt2" p="(-1.5,-1.0)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf3" v="(-0.323,-0.108)" tail="(-1.5,-0.5)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt3" p="(-1.5,-0.5)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf4" v="(-0.323,0.108)" tail="(-1.5,0.5)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt4" p="(-1.5,0.5)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf5" v="(-0.283,0.189)" tail="(-1.5,1.0)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt5" p="(-1.5,1.0)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf6" v="(-0.240,0.240)" tail="(-1.5,1.5)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt6" p="(-1.5,1.5)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf7" v="(-0.189,-0.283)" tail="(-1.0,-1.5)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt7" p="(-1.0,-1.5)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf8" v="(-0.240,-0.240)" tail="(-1.0,-1.0)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt8" p="(-1.0,-1.0)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf9" v="(-0.304,-0.152)" tail="(-1.0,-0.5)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt9" p="(-1.0,-0.5)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf10" v="(-0.304,0.152)" tail="(-1.0,0.5)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt10" p="(-1.0,0.5)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf11" v="(-0.240,0.240)" tail="(-1.0,1.0)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt11" p="(-1.0,1.0)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf12" v="(-0.189,0.283)" tail="(-1.0,1.5)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt12" p="(-1.0,1.5)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf13" v="(-0.108,-0.323)" tail="(-0.5,-1.5)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt13" p="(-0.5,-1.5)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf14" v="(-0.152,-0.304)" tail="(-0.5,-1.0)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt14" p="(-0.5,-1.0)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf15" v="(-0.240,-0.240)" tail="(-0.5,-0.5)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt15" p="(-0.5,-0.5)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf16" v="(-0.240,0.240)" tail="(-0.5,0.5)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt16" p="(-0.5,0.5)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf17" v="(-0.152,0.304)" tail="(-0.5,1.0)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt17" p="(-0.5,1.0)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf18" v="(-0.108,0.323)" tail="(-0.5,1.5)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt18" p="(-0.5,1.5)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf19" v="(0.108,-0.323)" tail="(0.5,-1.5)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt19" p="(0.5,-1.5)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf20" v="(0.152,-0.304)" tail="(0.5,-1.0)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt20" p="(0.5,-1.0)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf21" v="(0.240,-0.240)" tail="(0.5,-0.5)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt21" p="(0.5,-0.5)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf22" v="(0.240,0.240)" tail="(0.5,0.5)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt22" p="(0.5,0.5)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf23" v="(0.152,0.304)" tail="(0.5,1.0)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt23" p="(0.5,1.0)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf24" v="(0.108,0.323)" tail="(0.5,1.5)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt24" p="(0.5,1.5)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf25" v="(0.189,-0.283)" tail="(1.0,-1.5)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt25" p="(1.0,-1.5)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf26" v="(0.240,-0.240)" tail="(1.0,-1.0)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt26" p="(1.0,-1.0)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf27" v="(0.304,-0.152)" tail="(1.0,-0.5)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt27" p="(1.0,-0.5)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf28" v="(0.304,0.152)" tail="(1.0,0.5)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt28" p="(1.0,0.5)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf29" v="(0.240,0.240)" tail="(1.0,1.0)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt29" p="(1.0,1.0)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf30" v="(0.189,0.283)" tail="(1.0,1.5)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt30" p="(1.0,1.5)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf31" v="(0.240,-0.240)" tail="(1.5,-1.5)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt31" p="(1.5,-1.5)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf32" v="(0.283,-0.189)" tail="(1.5,-1.0)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt32" p="(1.5,-1.0)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf33" v="(0.323,-0.108)" tail="(1.5,-0.5)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt33" p="(1.5,-0.5)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf34" v="(0.323,0.108)" tail="(1.5,0.5)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt34" p="(1.5,0.5)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf35" v="(0.283,0.189)" tail="(1.5,1.0)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt35" p="(1.5,1.0)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf36" v="(0.240,0.240)" tail="(1.5,1.5)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt36" p="(1.5,1.5)" size="3" stroke="#8b1a2b" fill="none"/>
+          </coordinates>
+          <annotations>
+            <annotation ref="figure" text="Vector field A. Arrows are drawn at sixteen grid points, each arrow starting from a small circle at its tail."/>
+          </annotations>
+        </diagram>
+      </prefigure>
+    </image>
+  </figure>
+
+  <figure xml:id="fig-r1p-vf-swirl-unit">
+    <caption>Graph <m>B</m>.</caption>
+    <image width="100%">
+      <shortdescription>Vector field B: arrows drawn at a grid of points, each with a dot at its tail.</shortdescription>
+      <prefigure xmlns="https://prefigure.org" label="prefigure-r1p-vf-swirl-unit">
+        <diagram dimensions="(210,210)" margins="4">
+          <coordinates bbox="(-2.3,-2.3,2.3,2.3)">
+            <vector at="vf1" v="(0.240,-0.240)" tail="(-1.5,-1.5)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt1" p="(-1.5,-1.5)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf2" v="(0.189,-0.283)" tail="(-1.5,-1.0)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt2" p="(-1.5,-1.0)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf3" v="(0.108,-0.323)" tail="(-1.5,-0.5)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt3" p="(-1.5,-0.5)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf4" v="(-0.108,-0.323)" tail="(-1.5,0.5)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt4" p="(-1.5,0.5)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf5" v="(-0.189,-0.283)" tail="(-1.5,1.0)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt5" p="(-1.5,1.0)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf6" v="(-0.240,-0.240)" tail="(-1.5,1.5)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt6" p="(-1.5,1.5)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf7" v="(0.283,-0.189)" tail="(-1.0,-1.5)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt7" p="(-1.0,-1.5)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf8" v="(0.240,-0.240)" tail="(-1.0,-1.0)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt8" p="(-1.0,-1.0)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf9" v="(0.152,-0.304)" tail="(-1.0,-0.5)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt9" p="(-1.0,-0.5)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf10" v="(-0.152,-0.304)" tail="(-1.0,0.5)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt10" p="(-1.0,0.5)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf11" v="(-0.240,-0.240)" tail="(-1.0,1.0)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt11" p="(-1.0,1.0)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf12" v="(-0.283,-0.189)" tail="(-1.0,1.5)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt12" p="(-1.0,1.5)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf13" v="(0.323,-0.108)" tail="(-0.5,-1.5)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt13" p="(-0.5,-1.5)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf14" v="(0.304,-0.152)" tail="(-0.5,-1.0)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt14" p="(-0.5,-1.0)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf15" v="(0.240,-0.240)" tail="(-0.5,-0.5)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt15" p="(-0.5,-0.5)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf16" v="(-0.240,-0.240)" tail="(-0.5,0.5)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt16" p="(-0.5,0.5)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf17" v="(-0.304,-0.152)" tail="(-0.5,1.0)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt17" p="(-0.5,1.0)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf18" v="(-0.323,-0.108)" tail="(-0.5,1.5)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt18" p="(-0.5,1.5)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf19" v="(0.323,0.108)" tail="(0.5,-1.5)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt19" p="(0.5,-1.5)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf20" v="(0.304,0.152)" tail="(0.5,-1.0)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt20" p="(0.5,-1.0)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf21" v="(0.240,0.240)" tail="(0.5,-0.5)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt21" p="(0.5,-0.5)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf22" v="(-0.240,0.240)" tail="(0.5,0.5)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt22" p="(0.5,0.5)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf23" v="(-0.304,0.152)" tail="(0.5,1.0)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt23" p="(0.5,1.0)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf24" v="(-0.323,0.108)" tail="(0.5,1.5)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt24" p="(0.5,1.5)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf25" v="(0.283,0.189)" tail="(1.0,-1.5)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt25" p="(1.0,-1.5)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf26" v="(0.240,0.240)" tail="(1.0,-1.0)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt26" p="(1.0,-1.0)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf27" v="(0.152,0.304)" tail="(1.0,-0.5)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt27" p="(1.0,-0.5)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf28" v="(-0.152,0.304)" tail="(1.0,0.5)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt28" p="(1.0,0.5)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf29" v="(-0.240,0.240)" tail="(1.0,1.0)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt29" p="(1.0,1.0)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf30" v="(-0.283,0.189)" tail="(1.0,1.5)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt30" p="(1.0,1.5)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf31" v="(0.240,0.240)" tail="(1.5,-1.5)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt31" p="(1.5,-1.5)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf32" v="(0.189,0.283)" tail="(1.5,-1.0)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt32" p="(1.5,-1.0)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf33" v="(0.108,0.323)" tail="(1.5,-0.5)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt33" p="(1.5,-0.5)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf34" v="(-0.108,0.323)" tail="(1.5,0.5)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt34" p="(1.5,0.5)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf35" v="(-0.189,0.283)" tail="(1.5,1.0)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt35" p="(1.5,1.0)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf36" v="(-0.240,0.240)" tail="(1.5,1.5)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt36" p="(1.5,1.5)" size="3" stroke="#8b1a2b" fill="none"/>
+          </coordinates>
+          <annotations>
+            <annotation ref="figure" text="Vector field B. Arrows are drawn at sixteen grid points, each arrow starting from a small circle at its tail."/>
+          </annotations>
+        </diagram>
+      </prefigure>
+    </image>
+  </figure>
+
+  <figure xml:id="fig-r1p-vf-hyperbolic">
+    <caption>Graph <m>C</m>.</caption>
+    <image width="100%">
+      <shortdescription>Vector field C: arrows drawn at a grid of points, each with a dot at its tail.</shortdescription>
+      <prefigure xmlns="https://prefigure.org" label="prefigure-r1p-vf-hyperbolic">
+        <diagram dimensions="(210,210)" margins="4">
+          <coordinates bbox="(-2.3,-2.3,2.3,2.3)">
+            <vector at="vf1" v="(0.240,-0.240)" tail="(-1.5,-1.5)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt1" p="(-1.5,-1.5)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf2" v="(0.283,-0.189)" tail="(-1.5,-1.0)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt2" p="(-1.5,-1.0)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf3" v="(0.323,-0.108)" tail="(-1.5,-0.5)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt3" p="(-1.5,-0.5)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf4" v="(0.323,0.108)" tail="(-1.5,0.5)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt4" p="(-1.5,0.5)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf5" v="(0.283,0.189)" tail="(-1.5,1.0)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt5" p="(-1.5,1.0)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf6" v="(0.240,0.240)" tail="(-1.5,1.5)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt6" p="(-1.5,1.5)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf7" v="(0.189,-0.283)" tail="(-1.0,-1.5)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt7" p="(-1.0,-1.5)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf8" v="(0.240,-0.240)" tail="(-1.0,-1.0)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt8" p="(-1.0,-1.0)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf9" v="(0.304,-0.152)" tail="(-1.0,-0.5)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt9" p="(-1.0,-0.5)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf10" v="(0.304,0.152)" tail="(-1.0,0.5)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt10" p="(-1.0,0.5)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf11" v="(0.240,0.240)" tail="(-1.0,1.0)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt11" p="(-1.0,1.0)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf12" v="(0.189,0.283)" tail="(-1.0,1.5)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt12" p="(-1.0,1.5)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf13" v="(0.108,-0.323)" tail="(-0.5,-1.5)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt13" p="(-0.5,-1.5)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf14" v="(0.152,-0.304)" tail="(-0.5,-1.0)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt14" p="(-0.5,-1.0)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf15" v="(0.240,-0.240)" tail="(-0.5,-0.5)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt15" p="(-0.5,-0.5)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf16" v="(0.240,0.240)" tail="(-0.5,0.5)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt16" p="(-0.5,0.5)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf17" v="(0.152,0.304)" tail="(-0.5,1.0)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt17" p="(-0.5,1.0)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf18" v="(0.108,0.323)" tail="(-0.5,1.5)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt18" p="(-0.5,1.5)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf19" v="(-0.108,-0.323)" tail="(0.5,-1.5)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt19" p="(0.5,-1.5)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf20" v="(-0.152,-0.304)" tail="(0.5,-1.0)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt20" p="(0.5,-1.0)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf21" v="(-0.240,-0.240)" tail="(0.5,-0.5)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt21" p="(0.5,-0.5)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf22" v="(-0.240,0.240)" tail="(0.5,0.5)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt22" p="(0.5,0.5)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf23" v="(-0.152,0.304)" tail="(0.5,1.0)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt23" p="(0.5,1.0)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf24" v="(-0.108,0.323)" tail="(0.5,1.5)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt24" p="(0.5,1.5)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf25" v="(-0.189,-0.283)" tail="(1.0,-1.5)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt25" p="(1.0,-1.5)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf26" v="(-0.240,-0.240)" tail="(1.0,-1.0)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt26" p="(1.0,-1.0)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf27" v="(-0.304,-0.152)" tail="(1.0,-0.5)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt27" p="(1.0,-0.5)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf28" v="(-0.304,0.152)" tail="(1.0,0.5)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt28" p="(1.0,0.5)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf29" v="(-0.240,0.240)" tail="(1.0,1.0)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt29" p="(1.0,1.0)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf30" v="(-0.189,0.283)" tail="(1.0,1.5)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt30" p="(1.0,1.5)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf31" v="(-0.240,-0.240)" tail="(1.5,-1.5)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt31" p="(1.5,-1.5)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf32" v="(-0.283,-0.189)" tail="(1.5,-1.0)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt32" p="(1.5,-1.0)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf33" v="(-0.323,-0.108)" tail="(1.5,-0.5)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt33" p="(1.5,-0.5)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf34" v="(-0.323,0.108)" tail="(1.5,0.5)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt34" p="(1.5,0.5)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf35" v="(-0.283,0.189)" tail="(1.5,1.0)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt35" p="(1.5,1.0)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf36" v="(-0.240,0.240)" tail="(1.5,1.5)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt36" p="(1.5,1.5)" size="3" stroke="#8b1a2b" fill="none"/>
+          </coordinates>
+          <annotations>
+            <annotation ref="figure" text="Vector field C. Arrows are drawn at sixteen grid points, each arrow starting from a small circle at its tail."/>
+          </annotations>
+        </diagram>
+      </prefigure>
+    </image>
+  </figure>
+
+  <figure xml:id="fig-r1p-vf-outward-decay">
+    <caption>Graph <m>D</m>.</caption>
+    <image width="100%">
+      <shortdescription>Vector field D: arrows drawn at a grid of points, each with a dot at its tail.</shortdescription>
+      <prefigure xmlns="https://prefigure.org" label="prefigure-r1p-vf-outward-decay">
+        <diagram dimensions="(210,210)" margins="4">
+          <coordinates bbox="(-2.3,-2.3,2.3,2.3)">
+            <vector at="vf1" v="(-0.140,-0.140)" tail="(-1.5,-1.5)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt1" p="(-1.5,-1.5)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf2" v="(-0.194,-0.129)" tail="(-1.5,-1.0)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt2" p="(-1.5,-1.0)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf3" v="(-0.252,-0.084)" tail="(-1.5,-0.5)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt3" p="(-1.5,-0.5)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf4" v="(-0.252,0.084)" tail="(-1.5,0.5)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt4" p="(-1.5,0.5)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf5" v="(-0.194,0.129)" tail="(-1.5,1.0)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt5" p="(-1.5,1.0)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf6" v="(-0.140,0.140)" tail="(-1.5,1.5)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt6" p="(-1.5,1.5)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf7" v="(-0.129,-0.194)" tail="(-1.0,-1.5)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt7" p="(-1.0,-1.5)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf8" v="(-0.210,-0.210)" tail="(-1.0,-1.0)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt8" p="(-1.0,-1.0)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf9" v="(-0.336,-0.168)" tail="(-1.0,-0.5)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt9" p="(-1.0,-0.5)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf10" v="(-0.336,0.168)" tail="(-1.0,0.5)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt10" p="(-1.0,0.5)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf11" v="(-0.210,0.210)" tail="(-1.0,1.0)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt11" p="(-1.0,1.0)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf12" v="(-0.129,0.194)" tail="(-1.0,1.5)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt12" p="(-1.0,1.5)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf13" v="(-0.084,-0.252)" tail="(-0.5,-1.5)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt13" p="(-0.5,-1.5)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf14" v="(-0.168,-0.336)" tail="(-0.5,-1.0)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt14" p="(-0.5,-1.0)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf15" v="(-0.420,-0.420)" tail="(-0.5,-0.5)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt15" p="(-0.5,-0.5)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf16" v="(-0.420,0.420)" tail="(-0.5,0.5)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt16" p="(-0.5,0.5)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf17" v="(-0.168,0.336)" tail="(-0.5,1.0)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt17" p="(-0.5,1.0)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf18" v="(-0.084,0.252)" tail="(-0.5,1.5)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt18" p="(-0.5,1.5)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf19" v="(0.084,-0.252)" tail="(0.5,-1.5)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt19" p="(0.5,-1.5)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf20" v="(0.168,-0.336)" tail="(0.5,-1.0)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt20" p="(0.5,-1.0)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf21" v="(0.420,-0.420)" tail="(0.5,-0.5)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt21" p="(0.5,-0.5)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf22" v="(0.420,0.420)" tail="(0.5,0.5)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt22" p="(0.5,0.5)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf23" v="(0.168,0.336)" tail="(0.5,1.0)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt23" p="(0.5,1.0)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf24" v="(0.084,0.252)" tail="(0.5,1.5)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt24" p="(0.5,1.5)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf25" v="(0.129,-0.194)" tail="(1.0,-1.5)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt25" p="(1.0,-1.5)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf26" v="(0.210,-0.210)" tail="(1.0,-1.0)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt26" p="(1.0,-1.0)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf27" v="(0.336,-0.168)" tail="(1.0,-0.5)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt27" p="(1.0,-0.5)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf28" v="(0.336,0.168)" tail="(1.0,0.5)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt28" p="(1.0,0.5)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf29" v="(0.210,0.210)" tail="(1.0,1.0)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt29" p="(1.0,1.0)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf30" v="(0.129,0.194)" tail="(1.0,1.5)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt30" p="(1.0,1.5)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf31" v="(0.140,-0.140)" tail="(1.5,-1.5)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt31" p="(1.5,-1.5)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf32" v="(0.194,-0.129)" tail="(1.5,-1.0)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt32" p="(1.5,-1.0)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf33" v="(0.252,-0.084)" tail="(1.5,-0.5)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt33" p="(1.5,-0.5)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf34" v="(0.252,0.084)" tail="(1.5,0.5)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt34" p="(1.5,0.5)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf35" v="(0.194,0.129)" tail="(1.5,1.0)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt35" p="(1.5,1.0)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf36" v="(0.140,0.140)" tail="(1.5,1.5)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt36" p="(1.5,1.5)" size="3" stroke="#8b1a2b" fill="none"/>
+          </coordinates>
+          <annotations>
+            <annotation ref="figure" text="Vector field D. Arrows are drawn at sixteen grid points, each arrow starting from a small circle at its tail."/>
+          </annotations>
+        </diagram>
+      </prefigure>
+    </image>
+  </figure>
+
+  <figure xml:id="fig-r1p-vf-inward-decay">
+    <caption>Graph <m>E</m>.</caption>
+    <image width="100%">
+      <shortdescription>Vector field E: arrows drawn at a grid of points, each with a dot at its tail.</shortdescription>
+      <prefigure xmlns="https://prefigure.org" label="prefigure-r1p-vf-inward-decay">
+        <diagram dimensions="(210,210)" margins="4">
+          <coordinates bbox="(-2.3,-2.3,2.3,2.3)">
+            <vector at="vf1" v="(0.140,0.140)" tail="(-1.5,-1.5)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt1" p="(-1.5,-1.5)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf2" v="(0.194,0.129)" tail="(-1.5,-1.0)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt2" p="(-1.5,-1.0)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf3" v="(0.252,0.084)" tail="(-1.5,-0.5)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt3" p="(-1.5,-0.5)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf4" v="(0.252,-0.084)" tail="(-1.5,0.5)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt4" p="(-1.5,0.5)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf5" v="(0.194,-0.129)" tail="(-1.5,1.0)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt5" p="(-1.5,1.0)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf6" v="(0.140,-0.140)" tail="(-1.5,1.5)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt6" p="(-1.5,1.5)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf7" v="(0.129,0.194)" tail="(-1.0,-1.5)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt7" p="(-1.0,-1.5)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf8" v="(0.210,0.210)" tail="(-1.0,-1.0)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt8" p="(-1.0,-1.0)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf9" v="(0.336,0.168)" tail="(-1.0,-0.5)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt9" p="(-1.0,-0.5)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf10" v="(0.336,-0.168)" tail="(-1.0,0.5)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt10" p="(-1.0,0.5)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf11" v="(0.210,-0.210)" tail="(-1.0,1.0)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt11" p="(-1.0,1.0)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf12" v="(0.129,-0.194)" tail="(-1.0,1.5)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt12" p="(-1.0,1.5)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf13" v="(0.084,0.252)" tail="(-0.5,-1.5)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt13" p="(-0.5,-1.5)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf14" v="(0.168,0.336)" tail="(-0.5,-1.0)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt14" p="(-0.5,-1.0)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf15" v="(0.420,0.420)" tail="(-0.5,-0.5)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt15" p="(-0.5,-0.5)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf16" v="(0.420,-0.420)" tail="(-0.5,0.5)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt16" p="(-0.5,0.5)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf17" v="(0.168,-0.336)" tail="(-0.5,1.0)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt17" p="(-0.5,1.0)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf18" v="(0.084,-0.252)" tail="(-0.5,1.5)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt18" p="(-0.5,1.5)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf19" v="(-0.084,0.252)" tail="(0.5,-1.5)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt19" p="(0.5,-1.5)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf20" v="(-0.168,0.336)" tail="(0.5,-1.0)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt20" p="(0.5,-1.0)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf21" v="(-0.420,0.420)" tail="(0.5,-0.5)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt21" p="(0.5,-0.5)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf22" v="(-0.420,-0.420)" tail="(0.5,0.5)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt22" p="(0.5,0.5)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf23" v="(-0.168,-0.336)" tail="(0.5,1.0)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt23" p="(0.5,1.0)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf24" v="(-0.084,-0.252)" tail="(0.5,1.5)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt24" p="(0.5,1.5)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf25" v="(-0.129,0.194)" tail="(1.0,-1.5)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt25" p="(1.0,-1.5)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf26" v="(-0.210,0.210)" tail="(1.0,-1.0)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt26" p="(1.0,-1.0)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf27" v="(-0.336,0.168)" tail="(1.0,-0.5)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt27" p="(1.0,-0.5)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf28" v="(-0.336,-0.168)" tail="(1.0,0.5)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt28" p="(1.0,0.5)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf29" v="(-0.210,-0.210)" tail="(1.0,1.0)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt29" p="(1.0,1.0)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf30" v="(-0.129,-0.194)" tail="(1.0,1.5)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt30" p="(1.0,1.5)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf31" v="(-0.140,0.140)" tail="(1.5,-1.5)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt31" p="(1.5,-1.5)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf32" v="(-0.194,0.129)" tail="(1.5,-1.0)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt32" p="(1.5,-1.0)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf33" v="(-0.252,0.084)" tail="(1.5,-0.5)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt33" p="(1.5,-0.5)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf34" v="(-0.252,-0.084)" tail="(1.5,0.5)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt34" p="(1.5,0.5)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf35" v="(-0.194,-0.129)" tail="(1.5,1.0)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt35" p="(1.5,1.0)" size="3" stroke="#8b1a2b" fill="none"/>
+            <vector at="vf36" v="(-0.140,-0.140)" tail="(1.5,1.5)" stroke="#3c6fbf" thickness="2"/>
+            <point at="pt36" p="(1.5,1.5)" size="3" stroke="#8b1a2b" fill="none"/>
+          </coordinates>
+          <annotations>
+            <annotation ref="figure" text="Vector field E. Arrows are drawn at sixteen grid points, each arrow starting from a small circle at its tail."/>
+          </annotations>
+        </diagram>
+      </prefigure>
+    </image>
+  </figure>
+
+  </exercises>
+</section>
