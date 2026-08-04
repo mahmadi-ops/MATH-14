@@ -26,17 +26,18 @@ gas through the boundaries of a rectangle shown in
 <caption>
 The flux of the field <m>\mathbf{F} = M\,\mathbf{i} + N\,\mathbf{j}</m>
 through the four sides of a small rectangle with corner <m>(x,y)</m>,
-width <m>\Delta x</m>, and height <m>\Delta y</m>. The pink arrows show
-the outward components of <m>\mathbf{F}</m> on each side.
+width <m>\Delta x</m>, and height <m>\Delta y</m>. Each side's outward
+component of <m>\mathbf{F}</m> is drawn in its own color, and the legend
+gives the dot product it represents.
 </caption>
 <image width="70%">
 <shortdescription>
-A rectangle in a vector field with outward arrows through its four sides.
+A rectangle in a vector field with a differently colored outward arrow through each of its four sides, and a legend pairing each color with its dot product.
 </shortdescription>
 <prefigure xmlns="https://prefigure.org" label="prefigure-div-flux">
-<diagram dimensions="(400,300)" margins="10">
+<diagram dimensions="(440,300)" margins="10">
 <definition>field(x,y) = (0.4*x + 0.25, 0.32*y + 0.18)</definition>
-<coordinates bbox="(-1.7,-0.6,7.9,4.6)">
+<coordinates bbox="(-3.0,-0.6,7.9,4.6)">
 <vector-field at="df-field" function="field"
               spacings="((0.7,1.1,5.9),(0.3,1.0,4.0))" stroke="#bbbbbb"/>
 <polygon closed="yes" at="df-rect" points="((1.2,1.0),(4.8,1.0),(4.8,3.2),(1.2,3.2))"
@@ -58,23 +59,34 @@ A rectangle in a vector field with outward arrows through its four sides.
 <m>(x+\Delta x, y+\Delta y)</m>
 </point>
 <line at="df-top" p1="(3.0,3.2)" p2="(3.0,3.75)" arrows="1"
-      stroke="#e05090" thickness="3"/>
+      stroke="#D55E00" thickness="3"/>
 <line at="df-bottom" p1="(3.0,1.0)" p2="(3.0,0.45)" arrows="1"
-      stroke="#e05090" thickness="3"/>
+      stroke="#E69F00" thickness="3"/>
 <line at="df-right" p1="(4.8,2.1)" p2="(5.35,2.1)" arrows="1"
-      stroke="#e05090" thickness="3"/>
+      stroke="#009E73" thickness="3"/>
 <line at="df-left" p1="(1.2,2.1)" p2="(0.65,2.1)" arrows="1"
-      stroke="#e05090" thickness="3"/>
-<label at="df-top-label" clear-background="yes" background-margin="4" anchor="(3.05,3.85)" alignment="e">
+      stroke="#7b3294" thickness="3"/>
+<!-- Legend: one row per side, a swatch arrow in the side's color paired -->
+<!-- with the dot product it represents, in the order of the derivation  -->
+<!-- (top, bottom, right, left) in the text below the figure.            -->
+<line at="df-leg-top" p1="(-2.85,4.35)" p2="(-2.45,4.35)" arrows="1"
+      stroke="#D55E00" thickness="3"/>
+<label at="df-leg-top-label" clear-background="yes" background-margin="4" anchor="(-2.35,4.35)" alignment="e">
 <m>\mathbf{F}\cdot\mathbf{j}\gt 0</m>
 </label>
-<label at="df-bottom-label" clear-background="yes" background-margin="4" anchor="(3.05,0.4)" alignment="e">
+<line at="df-leg-bottom" p1="(-2.85,3.90)" p2="(-2.45,3.90)" arrows="1"
+      stroke="#E69F00" thickness="3"/>
+<label at="df-leg-bottom-label" clear-background="yes" background-margin="4" anchor="(-2.35,3.90)" alignment="e">
 <m>\mathbf{F}\cdot(-\mathbf{j})\mathrel{\unicode{x3C}} 0</m>
 </label>
-<label at="df-right-label" clear-background="yes" background-margin="4" anchor="(5.45,2.3)" alignment="ne">
+<line at="df-leg-right" p1="(-2.85,3.45)" p2="(-2.45,3.45)" arrows="1"
+      stroke="#009E73" thickness="3"/>
+<label at="df-leg-right-label" clear-background="yes" background-margin="4" anchor="(-2.35,3.45)" alignment="e">
 <m>\mathbf{F}\cdot\mathbf{i}\gt 0</m>
 </label>
-<label at="df-left-label" clear-background="yes" background-margin="4" anchor="(0.55,2.35)" alignment="nw">
+<line at="df-leg-left" p1="(-2.85,3.00)" p2="(-2.45,3.00)" arrows="1"
+      stroke="#7b3294" thickness="3"/>
+<label at="df-leg-left-label" clear-background="yes" background-margin="4" anchor="(-2.35,3.00)" alignment="e">
 <m>\mathbf{F}\cdot(-\mathbf{i})\mathrel{\unicode{x3C}} 0</m>
 </label>
 <label at="df-A" clear-background="yes" background-margin="4" anchor="(3.0,2.35)" alignment="c">
@@ -88,12 +100,12 @@ A rectangle in a vector field with outward arrows through its four sides.
 </label>
 </coordinates>
 <annotations>
-<annotation ref="figure" text="A blue rectangle with corner x comma y, width delta x, and height delta y, sitting in a gray vector field that points up and to the right. Pink arrows at the middle of each side show the outward component of the field: positive through the top and right sides, negative through the bottom and left sides.">
+<annotation ref="figure" text="A blue rectangle with corner x comma y, width delta x, and height delta y, sitting in a gray vector field that points up and to the right. An arrow at the middle of each side shows the outward component of the field in that side's own color, and a legend at the upper left pairs each color with its dot product: positive through the top and right sides, negative through the bottom and left sides.">
   <annotation ref="df-rect" text="The rectangle with area A equals delta x delta y through whose boundary we measure the net flux."/>
-  <annotation ref="df-top" text="On the top side the outward direction is j, and F dot j is positive: fluid leaves through the top."/>
-  <annotation ref="df-right" text="On the right side the outward direction is i, and F dot i is positive: fluid leaves through the right."/>
-  <annotation ref="df-bottom" text="On the bottom side the outward direction is negative j, and F dot negative j is negative: fluid enters through the bottom."/>
-  <annotation ref="df-left" text="On the left side the outward direction is negative i, and F dot negative i is negative: fluid enters through the left."/>
+  <annotation ref="df-top" text="On the top side, in vermillion, the outward direction is j, and F dot j is positive: fluid leaves through the top."/>
+  <annotation ref="df-right" text="On the right side, in green, the outward direction is i, and F dot i is positive: fluid leaves through the right."/>
+  <annotation ref="df-bottom" text="On the bottom side, in orange, the outward direction is negative j, and F dot negative j is negative: fluid enters through the bottom."/>
+  <annotation ref="df-left" text="On the left side, in purple, the outward direction is negative i, and F dot negative i is negative: fluid enters through the left."/>
 </annotation>
 </annotations>
 </diagram>
