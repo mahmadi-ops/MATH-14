@@ -574,7 +574,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "1.5",
   "title": "Path Independence, Conservative Fields, and Potential Functions",
-  "body": " Path Independence, Conservative Fields, and Potential Functions  Before we begin discussing the actual topic of today's lecture, we will need to study a particular type of a vector field known as a gradient field .    A Brief Reminder (Gradient Fields)   Gradient Field   The gradient field of a differentiable function is the field of gradient vectors     At each point , the gradient field gives a vector pointing in the direction of greatest increase of . Let us emphasize that even though the function is a scalar-valued function, its gradient is a vector-valued one by definition. As an example, see .   The surface together with its gradient field , drawn in the -plane. The gradient vectors point radially away from the origin, the direction of steepest ascent, and grow longer as we move away from the origin.   A paraboloid above the plane, with gradient arrows below it pointing radially outward.  An upward-opening paraboloid, the graph of z equals x squared plus y squared, drawn as a translucent blue surface. In the x y plane below it, blue arrows of the gradient field point radially outward from the origin, growing longer at points farther from the origin.     In , you see the scalar-valued function , which is a function on , and according to , its gradient is   The gradient field is visualized in the -plane and the value of the function at each point is plotted on the -axis. Intuitively, the gradient of a function at a point is a vector pointing in the direction of the steepest slope.     Path Independence and Some Basic Definitions  Previously, in , we saw that the line integral of a vector field depends on the path in general. Then, the natural question to ask is:    What are the conditions under which the line integral of a vector field from point to point is independent of the curve taken to go from to ?    Answering this question requires a few new ideas, so we introduce them first.   Reminder  A smooth curve has no sharp corners or cusps; when the tangent vector turns, it does so continuously.    Open, Connected, and Simply Connected Regions; Conservative Fields      A region is open if for every point in there is a disk with center that lies entirely in , which means that doesn't contain any of its boundary points.    Consider an open region in space and a vector field . If the result of the line integral from to is the same for all possible paths inside , then the line integral is said to be path-independent inside and the field is said to be conservative on .    If a vector field can be written as , where is a scalar-valued function, then is a potential function .     Piecewise smooth curves are curves that are made up of finitely many smooth pieces.    An open region is said to be connected if any two points in can be joined by a smooth curve that lies in the region.     is simply connected , which means that every loop in can be contracted to a point in without ever leaving . (See .)        On the left, a simply connected region: every loop can be contracted to a point without leaving the region. On the right, a region that is not simply connected: the loop encircles a hole and cannot be contracted to a point while staying inside the region.    A blob-shaped region with no holes.    blob(t) = ((1.5 + 0.55*sin(2*t) + 0.3*cos(3*t))*cos(t) + 0.2, (1.2 + 0.45*cos(2*t) + 0.25*sin(3*t))*sin(t) + 0.4)     Simply connected            A blob-shaped region with two holes and a loop around one hole.    blob(t) = ((1.9 + 0.4*sin(2*t))*cos(t), (1.25 + 0.3*cos(3*t))*sin(t) + 0.3)         C_1  Not simply connected                   Line Integrals in Conservative Fields  Next, we will study the line integrals of conservative fields, in the sense of . As you will recognize, if you think of the gradient of a vector field as its derivative, then the fundamental theorem of line integrals makes a similar statement for vector-valued functions as the one made for definite integrals of scalar-valued functions, i.e., the one that you know as FTC II. The Fundamental Theorem of Calculus, Part II: if is continuous on and is any antiderivative of on that interval, then . It evaluates a definite integral from the values of an antiderivative at the two endpoints, and does the same for a line integral, using the values of a potential function at the two endpoints of the curve.    Fundamental Theorem of Line Integrals   Let be a smooth curve joining the point to the point in the plane or in space and parametrized by . Let be a differentiable function with a continuous gradient vector on a domain containing . Then     Assuming that the curve is parametrised as , we have and we can rewrite the line integral as     In , the region is drawn as a translucent solid and the curve is in red. According to the fundamental theorem, the line integral of a conservative vector field can be easily calculated by calculating the values of its corresponding potential function ( ) at the beginning (point ) and end (point ) of the curve .   A smooth curve joining to inside an open region in space, drawn as a translucent solid containing . For a conservative field , the line integral along equals , no matter how winds from to .   A curve winding from point A to point B inside a dotted region in space.  Three coordinate axes in space with a translucent blue solid marking an open region D. Inside the solid, a red curve C winds from the point A with coordinates x 1 comma y 1 comma z 1 to the point B with coordinates x 2 comma y 2 comma z 2, with an arrowhead at the middle of the curve showing the direction of travel from A to B.     The central idea of the theorem that only the endpoints matter is animated in .   Animation of the fundamental theorem of line integrals for the field with . Two different curves join to : the helix and the straight segment . The accumulated value of each line integral is tracked as the paths are traced, and both integrals arrive at the same value .    In the next example, we will see how we can use .   Example I   Consider the scalar-valued function .     Calculate the gradient vector field .    Evaluate the line integral of the vector field over the curve parametrized as from to .    What is the result of from to where is the line connecting the two points?         A. We compute the three partial derivatives of :    B. Of course, one way would be to calculate the line integral using the vector field calculated in part A, exactly as was done in ; however, provides us with a much more efficient way of calculating the line integral as follows:    C. The result is the same as part B and it agrees with the direct computation of since the vector field is a conservative field ( ), which means that the result of the line integral is independent of the chosen path. Note that the line integral is calculated from to in both cases. The two curves and are shown in .    The two paths of joining to : the helix , parametrized by , and the straight segment . Since is conservative, both line integrals equal .   A helix and a vertical segment joining the same two points in space.  Three coordinate axes in space showing a blue helix that winds once around the z axis, climbing from the point one comma zero comma zero up to the point one comma zero comma two pi, and a vertical vermillion segment joining the same two points directly. Both endpoints are marked and labeled.        Finding a Potential Function   Example II   Consider the vector field in the plane.     Find a function such that .    Use the solution of part (A) to calculate the line integral of along any curve from to .        A. In the plane there are two components to match instead of three. Writing , we take them one at a time.   Step I. Since , we integrate with respect to (here is the variable and is constant), so   where the constant of integration is allowed to depend on .   Step II. Since , we differentiate with respect to :   Putting the two steps together, we conclude    B. Since , the field is conservative ( ), so applies to any curve joining to :   Notice that the arbitrary constant cancels in the difference, so it never affects the value of a line integral.     Example III   Consider the vector field .     Find a function such that .    Use the solution of part (A) to calculate the line integral from to .         A. Writing , we match the components one at a time; the three steps are summarized in .   Step I. Since , we integrate with respect to (here is the variable and and are constants), so   where the constant of integration is allowed to depend on and .   Step II. Since , we differentiate with respect to :   so does not depend on , and we can write ; that is,    Step III. Since , we differentiate with respect to :   Putting the three steps together, we conclude    B. By , with and ,    The three-step cascade for building the potential function of . Each component of pins down one more piece of , shrinking the unknown constant of integration from to to the true constant .   A three-row flow diagram building the potential function step by step.       \\dfrac{\\partial f}{\\partial x} = yz    integrate in x    xyz + g(y,z)     \\dfrac{\\partial f}{\\partial y} = xz    \\partial g\/\\partial y = 0    xyz + h(z)     \\dfrac{\\partial f}{\\partial z} = xy + 2z    h'(z) = 2z    xyz + z^2 + C                      Conservative Fields are Gradient Fields   Conservative Fields are Gradient Fields   Let be a vector field whose components are continuous throughout an open connected region in space ( ). Then is conservative if and only if is a gradient field for a differentiable function .     First, we prove that a gradient field is conservative; we assume that for a differentiable function . If is any piecewise smooth curve in running from to , then gives   which depends only on the endpoints and , and not on the curve joining them. The line integral is therefore path-independent in , which is to say that is conservative on ( ).   Next, we prove that a conservative field is a gradient field; we assume that is conservative on , and we build a potential function for it. Fix a point of . Because is connected, every point of can be joined to by a curve lying in ; and because is conservative, the value of the line integral along such a curve does not depend on which one we choose. We may therefore define   the integral being taken along any curve in from to . It remains to check that .  Fix a point of . Since is open, there is a such that every point within distance of also lies in . For , let be the straight segment from to , which then lies in . Following a curve from to and then travelling along produces a curve in from to , so gives   Parametrizing by with gives , so that and   The right-hand side is the average value of along the segment from to . As that segment shrinks down to the single point , and since is continuous its values on the segment all approach ; so their average does too. Therefore . Repeating the argument with segments in the and directions gives and . Hence   and is differentiable because its partial derivatives , , and are continuous on . So is the gradient field of .    The content of , combined with and the definition of path independence in , can be organized into the following square of equivalent statements:   Path independence means that all of the paths in give the same value of the line integral: if is conservative, then    Three different paths , , and joining to . For a conservative field, all three line integrals have the same value .   Three different curves joining the points A and B.    c1(t) = (4*t - 1.6*t*(1-t), 3*t - 3.4*t*(1-t))  c2(t) = (4*t, 3*t)  c3(t) = (4*t - 3.4*t*(1-t), 3*t + 3.2*t*(1-t))       A    B   C_1  C_2  C_3                   The Loop Property of Conservative Fields   Loop Property of Conservative Fields   The following statements are equivalent.      around every loop (that is, closed curve ) in .    The field is conservative on .        First, we prove that (2) implies (1); we assume that is conservative. Then, as shown in , we can think about any loop as , where goes from to and returns from to . Reversing the orientation of produces the curve , and and both connect to . Since is conservative, path independence gives , and therefore   Hence for any loop .   Next, we prove that (1) implies (2); we assume that around every loop in . Let and be any two points of , and let and be any two paths in from to . Travelling along from to and then back along from to traces a loop in , so the assumption applies to it:   Therefore . Since and were arbitrary paths joining to , and and were arbitrary points of , the line integral of is path-independent in ; that is, is conservative on ( ).     On the left, a loop is split into two pieces: from to and from back to , so . On the right, the orientation of is reversed to produce ; now and both connect to , and path independence forces the two integrals to agree.    An oval loop through A and B split into an upper and a lower half.    top(t) = (2*cos(t), 1.35*sin(t) + 0.12*sin(2*t))  bot(t) = (2*cos(t), 1.35*sin(t) - 0.1*sin(2*t))      A    B   C_1  C_2   C = C_1 \\cup C_2              The same oval with the lower half reversed so both halves run from A to B.    top(t) = (2*cos(t), 1.35*sin(t) + 0.12*sin(2*t))  botrev(t) = (2*cos(-t), 1.35*sin(-t) + 0.1*sin(2*t))      A    B   C_1  -C_2   \\int_{C_1}\\mathbf F\\cdot d\\mathbf r = \\int_{-C_2}\\mathbf F\\cdot d\\mathbf r                    Concept Check  The three questions below all use the applets that go with them. In each one, drag the slider to send the point along the curve and watch the field vector and the tangent vector move with it; the sign of their dot product is what the integral is accumulating. Every applet can be rotated by dragging the background and zoomed by scrolling.   Work Along the Helix, Two Ways   For the field and path of :    Use the parametrized path to compute the work done by the force field from point to point .    Is it possible to use the fundamental theorem of line integrals to compute that work? If so, use it to verify your answer to the previous part. Justify your answer fully.      The work is , by either method.     Directly. On the helix the point is and is , since . Along the curve   Hence    By the fundamental theorem. Yes, it applies. The field is defined and smooth on all of , which is open and simply connected ( ), and its mixed partials match: , and the -component is while neither of the others involves . So is conservative, with potential   Therefore, by ,   which agrees with the direct computation. The reason is visible in the picture: and differ only in , and the potential does not involve at all, so climbing costs nothing. The work gained on the stretches where and make an acute angle is given back exactly on the stretches where the angle is obtuse.     A point climbing the helix from to , through the force field . The two arrows are at the moving point and the velocity .     A Line Integral Along a Segment   Compute the line integral of the vector field along the line segment shown in .         The field is conservative: it is smooth on all of and   A potential is found by inspection:   So there is no need to parametrize the segment at all. By , with and ,      The straight segment from to in the field , with and the unit tangent drawn at the moving point.      The Same Endpoints, a Wilder Path   Compute the line integral of the vector field from point to point as shown in , where the curve is parametrized as      , exactly as in .    First check the endpoints. At , , and at , . So this curve joins the same two points as the segment of .  Computing directly here would mean differentiating and and integrating the resulting mess. There is no need: the field is the same conservative field as before, with the same potential , so the integral depends only on the endpoints:   This is the same number as in , and that is the whole point: for a conservative field the path between two points is irrelevant. A wildly complicated path and a straight segment cost exactly the same.     The same field and the same endpoints as in , but now joined by the curve .      "
+  "body": " Path Independence, Conservative Fields, and Potential Functions  Before we begin discussing the actual topic of today's lecture, we will need to study a particular type of a vector field known as a gradient field .    A Brief Reminder (Gradient Fields)   Gradient Field   The gradient field of a differentiable function is the field of gradient vectors     At each point , the gradient field gives a vector pointing in the direction of greatest increase of . Let us emphasize that even though the function is a scalar-valued function, its gradient is a vector-valued one by definition. As an example, see .   The surface together with its gradient field , drawn in the -plane. The gradient vectors point radially away from the origin, the direction of steepest ascent, and grow longer as we move away from the origin.   A paraboloid above the plane, with gradient arrows below it pointing radially outward.  An upward-opening paraboloid, the graph of z equals x squared plus y squared, drawn as a translucent blue surface. In the x y plane below it, blue arrows of the gradient field point radially outward from the origin, growing longer at points farther from the origin.     In , you see the scalar-valued function , which is a function on , and according to , its gradient is   The gradient field is visualized in the -plane and the value of the function at each point is plotted on the -axis. Intuitively, the gradient of a function at a point is a vector pointing in the direction of the steepest slope.     Path Independence and Some Basic Definitions  Previously, in , we saw that the line integral of a vector field depends on the path in general. Then, the natural question to ask is:    What are the conditions under which the line integral of a vector field from point to point is independent of the curve taken to go from to ?    Answering this question requires a few new ideas, so we introduce them first.   Reminder  A smooth curve has no sharp corners or cusps; when the tangent vector turns, it does so continuously.    Open, Connected, and Simply Connected Regions; Conservative Fields      A region is open if for every point in there is a disk with center that lies entirely in , which means that doesn't contain any of its boundary points.    Consider an open region in space and a vector field . If the result of the line integral from to is the same for all possible paths inside , then the line integral is said to be path-independent inside and the field is said to be conservative on .    If a vector field can be written as , where is a scalar-valued function, then is a potential function .     Piecewise smooth curves are curves that are made up of finitely many smooth pieces.    An open region is said to be connected if any two points in can be joined by a smooth curve that lies in the region.     is simply connected , which means that every loop in can be contracted to a point in without ever leaving . (See .)        On the left, a simply connected region: every loop can be contracted to a point without leaving the region. On the right, a region that is not simply connected: the loop encircles a hole and cannot be contracted to a point while staying inside the region.    A blob-shaped region with no holes.    blob(t) = ((1.5 + 0.55*sin(2*t) + 0.3*cos(3*t))*cos(t) + 0.2, (1.2 + 0.45*cos(2*t) + 0.25*sin(3*t))*sin(t) + 0.4)     Simply connected            A blob-shaped region with two holes and a loop around one hole.    blob(t) = ((1.9 + 0.4*sin(2*t))*cos(t), (1.25 + 0.3*cos(3*t))*sin(t) + 0.3)         C_1  Not simply connected                   Line Integrals in Conservative Fields  Next, we will study the line integrals of conservative fields, in the sense of . As you will recognize, if you think of the gradient of a vector field as its derivative, then the fundamental theorem of line integrals makes a similar statement for vector-valued functions as the one made for definite integrals of scalar-valued functions, i.e., the one that you know as FTC II. The Fundamental Theorem of Calculus, Part II: if is continuous on and is any antiderivative of on that interval, then . It evaluates a definite integral from the values of an antiderivative at the two endpoints, and does the same for a line integral, using the values of a potential function at the two endpoints of the curve.    Fundamental Theorem of Line Integrals   Let be a smooth curve joining the point to the point in the plane or in space and parametrized by . Let be a differentiable function with a continuous gradient vector on a domain containing . Then     Assuming that the curve is parametrised as , we have and we can rewrite the line integral as     In , the region is drawn as a translucent solid and the curve is in red. According to the fundamental theorem, the line integral of a conservative vector field can be easily calculated by calculating the values of its corresponding potential function ( ) at the beginning (point ) and end (point ) of the curve .   A smooth curve joining to inside an open region in space, drawn as a translucent solid containing . For a conservative field , the line integral along equals , no matter how winds from to .   A curve winding from point A to point B inside a dotted region in space.  Three coordinate axes in space with a translucent blue solid marking an open region D. Inside the solid, a red curve C winds from the point A with coordinates x 1 comma y 1 comma z 1 to the point B with coordinates x 2 comma y 2 comma z 2, with an arrowhead at the middle of the curve showing the direction of travel from A to B.     The central idea of the theorem that only the endpoints matter is animated in .   Animation of the fundamental theorem of line integrals for the field with . Two different curves join to : the helix and the straight segment . The accumulated value of each line integral is tracked as the paths are traced, and both integrals arrive at the same value .    In the next example, we will see how we can use .   Example I   Consider the scalar-valued function .     Calculate the gradient vector field .    Evaluate the line integral of the vector field over the curve parametrized as from to .    What is the result of from to where is the line connecting the two points?         A. We compute the three partial derivatives of :    B. Of course, one way would be to calculate the line integral using the vector field calculated in part A, exactly as was done in ; however, provides us with a much more efficient way of calculating the line integral as follows:    C. The result is the same as part B and it agrees with the direct computation of since the vector field is a conservative field ( ), which means that the result of the line integral is independent of the chosen path. Note that the line integral is calculated from to in both cases. The two curves and are shown in .    The two paths of joining to : the helix , parametrized by , and the straight segment . Since is conservative, both line integrals equal .   A helix and a vertical segment joining the same two points in space.  Three coordinate axes in space showing a blue helix that winds once around the z axis, climbing from the point one comma zero comma zero up to the point one comma zero comma two pi, and a vertical vermillion segment joining the same two points directly. Both endpoints are marked and labeled.        Finding a Potential Function   Example II   Consider the vector field in the plane.     Find a function such that .    Use the solution of part (A) to calculate the line integral of along any curve from to .        A. In the plane there are two components to match instead of three. Writing , we take them one at a time.   Step I. Since , we integrate with respect to (here is the variable and is constant), so   where the constant of integration is allowed to depend on .   Step II. Since , we differentiate with respect to :   Putting the two steps together, we conclude    B. Since , the field is conservative ( ), so applies to any curve joining to :   Notice that the arbitrary constant cancels in the difference, so it never affects the value of a line integral.     Example III   Consider the vector field .     Find a function such that .    Use the solution of part (A) to calculate the line integral from to .         A. Writing , we match the components one at a time; the three steps are summarized in .   Step I. Since , we integrate with respect to (here is the variable and and are constants), so   where the constant of integration is allowed to depend on and .   Step II. Since , we differentiate with respect to :   so does not depend on , and we can write ; that is,    Step III. Since , we differentiate with respect to :   Putting the three steps together, we conclude    B. By , with and ,    The three-step cascade for building the potential function of . Each component of pins down one more piece of , shrinking the unknown constant of integration from to to the true constant .   A three-row flow diagram building the potential function step by step.       \\dfrac{\\partial f}{\\partial x} = yz    integrate in x    xyz + g(y,z)     \\dfrac{\\partial f}{\\partial y} = xz    \\partial g\/\\partial y = 0    xyz + h(z)     \\dfrac{\\partial f}{\\partial z} = xy + 2z    h'(z) = 2z    xyz + z^2 + C                       Example IV   In we computed the work done by the inverse-square field   along the helix from to , by parametrizing the curve. Do it again with .    The field is defined everywhere except at the origin, and the helix never passes through the origin, so we may look for a potential function. Rather than run the three steps of , notice that depends only on the distance , and recall that   So for the chain rule gives   so is a potential function for . Now the work needs nothing but the two endpoints. At we have , and at we have , so gives   which is , obtained there only after writing the field along the curve, taking a dot product, and evaluating an integral by substitution. The potential function did all of that work at once. Notice also what the calculation never used: the helix itself. Any other path from to that avoids the origin gives the same .       Conservative Fields are Gradient Fields   Conservative Fields are Gradient Fields   Let be a vector field whose components are continuous throughout an open connected region in space ( ). Then is conservative if and only if is a gradient field for a differentiable function .     First, we prove that a gradient field is conservative; we assume that for a differentiable function . If is any piecewise smooth curve in running from to , then gives   which depends only on the endpoints and , and not on the curve joining them. The line integral is therefore path-independent in , which is to say that is conservative on ( ).   Next, we prove that a conservative field is a gradient field; we assume that is conservative on , and we build a potential function for it. Fix a point of . Because is connected, every point of can be joined to by a curve lying in ; and because is conservative, the value of the line integral along such a curve does not depend on which one we choose. We may therefore define   the integral being taken along any curve in from to . It remains to check that .  Fix a point of . Since is open, there is a such that every point within distance of also lies in . For , let be the straight segment from to , which then lies in . Following a curve from to and then travelling along produces a curve in from to , so gives   Parametrizing by with gives , so that and   The right-hand side is the average value of along the segment from to . As that segment shrinks down to the single point , and since is continuous its values on the segment all approach ; so their average does too. Therefore . Repeating the argument with segments in the and directions gives and . Hence   and is differentiable because its partial derivatives , , and are continuous on . So is the gradient field of .    Path independence means that all of the paths in give the same value of the line integral: if is conservative, then    Three different paths , , and joining to . For a conservative field, all three line integrals have the same value .   Three different curves joining the points A and B.    c1(t) = (4*t - 1.6*t*(1-t), 3*t - 3.4*t*(1-t))  c2(t) = (4*t, 3*t)  c3(t) = (4*t - 3.4*t*(1-t), 3*t + 3.2*t*(1-t))              A    B   C_1  C_2  C_3                   The Loop Property of Conservative Fields   Loop Property of Conservative Fields   The following statements are equivalent.      around every loop (that is, closed curve ) in .    The field is conservative on .        First, we prove that (2) implies (1); we assume that is conservative. Then, as shown in , we can think about any loop as , where goes from to and returns from to . Reversing the orientation of produces the curve , and and both connect to . Since is conservative, path independence gives , and therefore   Hence for any loop .   Next, we prove that (1) implies (2); we assume that around every loop in . Let and be any two points of , and let and be any two paths in from to . Travelling along from to and then back along from to traces a loop in , so the assumption applies to it:   Therefore . Since and were arbitrary paths joining to , and and were arbitrary points of , the line integral of is path-independent in ; that is, is conservative on ( ).     On the left, a loop is split into two pieces: from to and from back to , so . On the right, the orientation of is reversed to produce ; now and both connect to , and path independence forces the two integrals to agree.    An oval loop through A and B split into an upper and a lower half.    top(t) = (2*cos(t), 1.35*sin(t) + 0.12*sin(2*t))  bot(t) = (2*cos(t), 1.35*sin(t) - 0.1*sin(2*t))      A    B   C_1  C_2   C = C_1 \\cup C_2              The same oval with the lower half reversed so both halves run from A to B.    top(t) = (2*cos(t), 1.35*sin(t) + 0.12*sin(2*t))  botrev(t) = (2*cos(-t), 1.35*sin(-t) + 0.1*sin(2*t))      A    B   C_1  -C_2   \\int_{C_1}\\mathbf F\\cdot d\\mathbf r = \\int_{-C_2}\\mathbf F\\cdot d\\mathbf r               We can now collect everything this section has proved. The content of , combined with , the loop property in , and the definition of path independence in , can be organized into the following square of equivalent statements. Throughout, is a continuous field with continuous partial derivatives on an open, connected, simply connected region .   The four statements are equivalent. Each double arrow joins the middle of one box to the middle of the next, and may be read in either direction.   Four boxed statements at the corners of a square, joined by double arrows.           \\mathbf F \\text{ is a conservative field}     \\mathbf F \\text{ is a gradient field}    \\mathbf F = \\nabla f \\text{ for some } f     \\oint_C \\mathbf F\\cdot d\\mathbf r = 0    \\text{on every loop}     \\int_C \\mathbf F\\cdot d\\mathbf r \\text{ is path independent}    \\int_C \\mathbf F\\cdot d\\mathbf r = f(B) - f(A)                         Read across the top: a conservative field is exactly a gradient field, and the potential function is what makes that concrete. Read across the bottom: path independence and the loop property are two ways of saying the same thing, and the Fundamental Theorem turns either one into a number, . Read down either side: each statement on the top implies, and is implied by, the one beneath it. In practice the four are used in whichever direction is convenient find a potential function to evaluate a line integral, or observe that a field is a gradient field to conclude at once that its integral around every loop vanishes.       Concept Check  The three questions below all use the applets that go with them. In each one, drag the slider to send the point along the curve and watch the field vector and the tangent vector move with it; the sign of their dot product is what the integral is accumulating. Every applet can be rotated by dragging the background and zoomed by scrolling.   Work Along the Helix, Two Ways   For the field and path of :    Use the parametrized path to compute the work done by the force field from point to point .    Is it possible to use the fundamental theorem of line integrals to compute that work? If so, use it to verify your answer to the previous part. Justify your answer fully.      The work is , by either method.     Directly. On the helix the point is and is , since . Along the curve   Hence    By the fundamental theorem. Yes, it applies. The field is defined and smooth on all of , which is open and simply connected ( ), and its mixed partials match: , and the -component is while neither of the others involves . So is conservative, with potential   Therefore, by ,   which agrees with the direct computation. The reason is visible in the picture: and differ only in , and the potential does not involve at all, so climbing costs nothing. The work gained on the stretches where and make an acute angle is given back exactly on the stretches where the angle is obtuse.     A point climbing the helix from to , through the force field . The two arrows are at the moving point and the velocity .     A Line Integral Along a Segment   Compute the line integral of the vector field along the line segment shown in .         The field is conservative: it is smooth on all of and   A potential is found by inspection:   So there is no need to parametrize the segment at all. By , with and ,      The straight segment from to in the field , with and the unit tangent drawn at the moving point.      The Same Endpoints, a Wilder Path   Compute the line integral of the vector field from point to point as shown in , where the curve is parametrized as      , exactly as in .    First check the endpoints. At , , and at , . So this curve joins the same two points as the segment of .  Computing directly here would mean differentiating and and integrating the resulting mess. There is no need: the field is the same conservative field as before, with the same potential , so the integral depends only on the endpoints:   This is the same number as in , and that is the whole point: for a conservative field the path between two points is irrelevant. A wildly complicated path and a straight segment cost exactly the same.     The same field and the same endpoints as in , but now joined by the curve .      "
 },
 {
   "id": "def-gradient-field",
@@ -694,11 +694,20 @@ var ptx_lunr_docs = [
   "body": " The three-step cascade for building the potential function of . Each component of pins down one more piece of , shrinking the unknown constant of integration from to to the true constant .   A three-row flow diagram building the potential function step by step.       \\dfrac{\\partial f}{\\partial x} = yz    integrate in x    xyz + g(y,z)     \\dfrac{\\partial f}{\\partial y} = xz    \\partial g\/\\partial y = 0    xyz + h(z)     \\dfrac{\\partial f}{\\partial z} = xy + 2z    h'(z) = 2z    xyz + z^2 + C                 "
 },
 {
+  "id": "example-gravity-ftli",
+  "level": "2",
+  "url": "section-conservative-fields.html#example-gravity-ftli",
+  "type": "Example",
+  "number": "1.5.14",
+  "title": "Example IV.",
+  "body": " Example IV   In we computed the work done by the inverse-square field   along the helix from to , by parametrizing the curve. Do it again with .    The field is defined everywhere except at the origin, and the helix never passes through the origin, so we may look for a potential function. Rather than run the three steps of , notice that depends only on the distance , and recall that   So for the chain rule gives   so is a potential function for . Now the work needs nothing but the two endpoints. At we have , and at we have , so gives   which is , obtained there only after writing the field along the curve, taking a dot product, and evaluating an integral by substitution. The potential function did all of that work at once. Notice also what the calculation never used: the helix itself. Any other path from to that avoids the origin gives the same .   "
+},
+{
   "id": "thm-conservative-gradient",
   "level": "2",
   "url": "section-conservative-fields.html#thm-conservative-gradient",
   "type": "Theorem",
-  "number": "1.5.14",
+  "number": "1.5.15",
   "title": "Conservative Fields are Gradient Fields.",
   "body": " Conservative Fields are Gradient Fields   Let be a vector field whose components are continuous throughout an open connected region in space ( ). Then is conservative if and only if is a gradient field for a differentiable function .     First, we prove that a gradient field is conservative; we assume that for a differentiable function . If is any piecewise smooth curve in running from to , then gives   which depends only on the endpoints and , and not on the curve joining them. The line integral is therefore path-independent in , which is to say that is conservative on ( ).   Next, we prove that a conservative field is a gradient field; we assume that is conservative on , and we build a potential function for it. Fix a point of . Because is connected, every point of can be joined to by a curve lying in ; and because is conservative, the value of the line integral along such a curve does not depend on which one we choose. We may therefore define   the integral being taken along any curve in from to . It remains to check that .  Fix a point of . Since is open, there is a such that every point within distance of also lies in . For , let be the straight segment from to , which then lies in . Following a curve from to and then travelling along produces a curve in from to , so gives   Parametrizing by with gives , so that and   The right-hand side is the average value of along the segment from to . As that segment shrinks down to the single point , and since is continuous its values on the segment all approach ; so their average does too. Therefore . Repeating the argument with segments in the and directions gives and . Hence   and is differentiable because its partial derivatives , , and are continuous on . So is the gradient field of .   "
 },
@@ -707,16 +716,16 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "section-conservative-fields.html#fig-path-independence-prefigure",
   "type": "Figure",
-  "number": "1.5.15",
+  "number": "1.5.16",
   "title": "",
-  "body": " Three different paths , , and joining to . For a conservative field, all three line integrals have the same value .   Three different curves joining the points A and B.    c1(t) = (4*t - 1.6*t*(1-t), 3*t - 3.4*t*(1-t))  c2(t) = (4*t, 3*t)  c3(t) = (4*t - 3.4*t*(1-t), 3*t + 3.2*t*(1-t))       A    B   C_1  C_2  C_3               "
+  "body": " Three different paths , , and joining to . For a conservative field, all three line integrals have the same value .   Three different curves joining the points A and B.    c1(t) = (4*t - 1.6*t*(1-t), 3*t - 3.4*t*(1-t))  c2(t) = (4*t, 3*t)  c3(t) = (4*t - 3.4*t*(1-t), 3*t + 3.2*t*(1-t))              A    B   C_1  C_2  C_3               "
 },
 {
   "id": "thm-loop-property",
   "level": "2",
   "url": "section-conservative-fields.html#thm-loop-property",
   "type": "Theorem",
-  "number": "1.5.16",
+  "number": "1.5.17",
   "title": "Loop Property of Conservative Fields.",
   "body": " Loop Property of Conservative Fields   The following statements are equivalent.      around every loop (that is, closed curve ) in .    The field is conservative on .        First, we prove that (2) implies (1); we assume that is conservative. Then, as shown in , we can think about any loop as , where goes from to and returns from to . Reversing the orientation of produces the curve , and and both connect to . Since is conservative, path independence gives , and therefore   Hence for any loop .   Next, we prove that (1) implies (2); we assume that around every loop in . Let and be any two points of , and let and be any two paths in from to . Travelling along from to and then back along from to traces a loop in , so the assumption applies to it:   Therefore . Since and were arbitrary paths joining to , and and were arbitrary points of , the line integral of is path-independent in ; that is, is conservative on ( ).   "
 },
@@ -725,16 +734,25 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "section-conservative-fields.html#fig-loop-split-prefigure",
   "type": "Figure",
-  "number": "1.5.17",
+  "number": "1.5.18",
   "title": "",
   "body": " On the left, a loop is split into two pieces: from to and from back to , so . On the right, the orientation of is reversed to produce ; now and both connect to , and path independence forces the two integrals to agree.    An oval loop through A and B split into an upper and a lower half.    top(t) = (2*cos(t), 1.35*sin(t) + 0.12*sin(2*t))  bot(t) = (2*cos(t), 1.35*sin(t) - 0.1*sin(2*t))      A    B   C_1  C_2   C = C_1 \\cup C_2              The same oval with the lower half reversed so both halves run from A to B.    top(t) = (2*cos(t), 1.35*sin(t) + 0.12*sin(2*t))  botrev(t) = (2*cos(-t), 1.35*sin(-t) + 0.1*sin(2*t))      A    B   C_1  -C_2   \\int_{C_1}\\mathbf F\\cdot d\\mathbf r = \\int_{-C_2}\\mathbf F\\cdot d\\mathbf r              "
+},
+{
+  "id": "fig-equivalence-square-prefigure",
+  "level": "2",
+  "url": "section-conservative-fields.html#fig-equivalence-square-prefigure",
+  "type": "Figure",
+  "number": "1.5.19",
+  "title": "",
+  "body": " The four statements are equivalent. Each double arrow joins the middle of one box to the middle of the next, and may be read in either direction.   Four boxed statements at the corners of a square, joined by double arrows.           \\mathbf F \\text{ is a conservative field}     \\mathbf F \\text{ is a gradient field}    \\mathbf F = \\nabla f \\text{ for some } f     \\oint_C \\mathbf F\\cdot d\\mathbf r = 0    \\text{on every loop}     \\int_C \\mathbf F\\cdot d\\mathbf r \\text{ is path independent}    \\int_C \\mathbf F\\cdot d\\mathbf r = f(B) - f(A)                        "
 },
 {
   "id": "q-vf-helix-work",
   "level": "2",
   "url": "section-conservative-fields.html#q-vf-helix-work",
   "type": "Checkpoint",
-  "number": "1.5.18",
+  "number": "1.5.20",
   "title": "Work Along the Helix, Two Ways.",
   "body": " Work Along the Helix, Two Ways   For the field and path of :    Use the parametrized path to compute the work done by the force field from point to point .    Is it possible to use the fundamental theorem of line integrals to compute that work? If so, use it to verify your answer to the previous part. Justify your answer fully.      The work is , by either method.     Directly. On the helix the point is and is , since . Along the curve   Hence    By the fundamental theorem. Yes, it applies. The field is defined and smooth on all of , which is open and simply connected ( ), and its mixed partials match: , and the -component is while neither of the others involves . So is conservative, with potential   Therefore, by ,   which agrees with the direct computation. The reason is visible in the picture: and differ only in , and the potential does not involve at all, so climbing costs nothing. The work gained on the stretches where and make an acute angle is given back exactly on the stretches where the angle is obtuse.   "
 },
@@ -743,7 +761,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "section-conservative-fields.html#fig-vf-helix-work",
   "type": "Figure",
-  "number": "1.5.19",
+  "number": "1.5.21",
   "title": "",
   "body": " A point climbing the helix from to , through the force field . The two arrows are at the moving point and the velocity .   "
 },
@@ -752,7 +770,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "section-conservative-fields.html#q-vf-segment",
   "type": "Checkpoint",
-  "number": "1.5.20",
+  "number": "1.5.22",
   "title": "A Line Integral Along a Segment.",
   "body": " A Line Integral Along a Segment   Compute the line integral of the vector field along the line segment shown in .         The field is conservative: it is smooth on all of and   A potential is found by inspection:   So there is no need to parametrize the segment at all. By , with and ,    "
 },
@@ -761,7 +779,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "section-conservative-fields.html#fig-vf-segment",
   "type": "Figure",
-  "number": "1.5.21",
+  "number": "1.5.23",
   "title": "",
   "body": " The straight segment from to in the field , with and the unit tangent drawn at the moving point.    "
 },
@@ -770,7 +788,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "section-conservative-fields.html#q-vf-curve",
   "type": "Checkpoint",
-  "number": "1.5.22",
+  "number": "1.5.24",
   "title": "The Same Endpoints, a Wilder Path.",
   "body": " The Same Endpoints, a Wilder Path   Compute the line integral of the vector field from point to point as shown in , where the curve is parametrized as      , exactly as in .    First check the endpoints. At , , and at , . So this curve joins the same two points as the segment of .  Computing directly here would mean differentiating and and integrating the resulting mess. There is no need: the field is the same conservative field as before, with the same potential , so the integral depends only on the endpoints:   This is the same number as in , and that is the whole point: for a conservative field the path between two points is irrelevant. A wildly complicated path and a straight segment cost exactly the same.   "
 },
@@ -779,7 +797,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "section-conservative-fields.html#fig-vf-curve",
   "type": "Figure",
-  "number": "1.5.23",
+  "number": "1.5.25",
   "title": "",
   "body": " The same field and the same endpoints as in , but now joined by the curve .    "
 },
@@ -2908,463 +2926,13 @@ var ptx_lunr_docs = [
   "body": " The flux of through the closed paraboloid-and-disk surface: the divergence theorem replaces two surface integrals with one triple integral whose value is .   "
 },
 {
-  "id": "sec-exercises-hw1",
-  "level": "1",
-  "url": "sec-exercises-hw1.html",
-  "type": "Section",
-  "number": "4.1",
-  "title": "Assignment 1",
-  "body": " Assignment 1   Sections: and .      The curve is the intersection of and . Parametrize .      The curve is a helix of radius and height . Moreover, let denote the number of turns (revolutions) for the helix.   Which spring uses more wire?   Two coil springs side by side: spring A wide with three turns, spring B narrow with five turns.   Two helical springs drawn side by side. Spring A, on the left, has three turns of radius seven centimeters and a marked height of four centimeters. Spring B, on the right, has five turns of radius four centimeters and a marked height of three centimeters. Dashed lines with a double-headed arrow mark each spring's height.         Parametrize .      Compute the length of the two springs shown in . Which spring uses more wire? A or B?       Find equation of the tangent line to the curve at the point .      The path of an object is given by Assume that the starting point of the object's motion is the origin. Determine the location of the object after traveling a distance of .     "
-},
-{
-  "id": "ex-hw1-parametrize-intersection",
-  "level": "2",
-  "url": "sec-exercises-hw1.html#ex-hw1-parametrize-intersection",
-  "type": "Exercise",
-  "number": "1",
-  "title": "",
-  "body": "  The curve is the intersection of and . Parametrize .   "
-},
-{
-  "id": "ex-hw1-helix",
-  "level": "2",
-  "url": "sec-exercises-hw1.html#ex-hw1-helix",
-  "type": "Exercise",
-  "number": "2",
-  "title": "",
-  "body": "  The curve is a helix of radius and height . Moreover, let denote the number of turns (revolutions) for the helix.   Which spring uses more wire?   Two coil springs side by side: spring A wide with three turns, spring B narrow with five turns.   Two helical springs drawn side by side. Spring A, on the left, has three turns of radius seven centimeters and a marked height of four centimeters. Spring B, on the right, has five turns of radius four centimeters and a marked height of three centimeters. Dashed lines with a double-headed arrow mark each spring's height.         Parametrize .      Compute the length of the two springs shown in . Which spring uses more wire? A or B?    "
-},
-{
-  "id": "ex-hw1-tangent-line",
-  "level": "2",
-  "url": "sec-exercises-hw1.html#ex-hw1-tangent-line",
-  "type": "Exercise",
-  "number": "3",
-  "title": "",
-  "body": "  Find equation of the tangent line to the curve at the point .   "
-},
-{
-  "id": "ex-hw1-location",
-  "level": "2",
-  "url": "sec-exercises-hw1.html#ex-hw1-location",
-  "type": "Exercise",
-  "number": "4",
-  "title": "",
-  "body": "  The path of an object is given by Assume that the starting point of the object's motion is the origin. Determine the location of the object after traveling a distance of .   "
-},
-{
-  "id": "sec-exercises-hw2",
-  "level": "1",
-  "url": "sec-exercises-hw2.html",
-  "type": "Section",
-  "number": "4.2",
-  "title": "Assignment 2",
-  "body": " Assignment 2   Section: .      Consider a wire whose shape is a quarter circle of radius one, centered at , where . The density of the wire is   measured in kilograms per meter. Find the total mass of the wire.      Evaluate the line integral , where is the straight-line segment parametrized by , , and , from to .      Evaluate the line integral over the curve of .     The curve of : the boundary of the unit square, traversed once as shown.   The unit square traversed counterclockwise, arrowheads on all four sides.            (0,0)    (1,0)    (1,1)    (0,1)                   Find the surface area of the wall whose height is given by and whose base is the unit circle in the -plane. See .     The wall of : its base is the unit circle in the -plane and its height above a point of that circle is .   A curved wall standing on the unit circle, whose top edge rises and falls twice around the circle.   A translucent blue wall stands vertically on the unit circle in the horizontal plane. Its top edge is a closed curve that reaches height four above the points where the circle meets the x axis and dips to height two above the points where it meets the y axis.       "
-},
-{
-  "id": "ex-hw2-quarter-circle",
-  "level": "2",
-  "url": "sec-exercises-hw2.html#ex-hw2-quarter-circle",
-  "type": "Exercise",
-  "number": "1",
-  "title": "",
-  "body": "  Consider a wire whose shape is a quarter circle of radius one, centered at , where . The density of the wire is   measured in kilograms per meter. Find the total mass of the wire.   "
-},
-{
-  "id": "ex-hw2-segment",
-  "level": "2",
-  "url": "sec-exercises-hw2.html#ex-hw2-segment",
-  "type": "Exercise",
-  "number": "2",
-  "title": "",
-  "body": "  Evaluate the line integral , where is the straight-line segment parametrized by , , and , from to .   "
-},
-{
-  "id": "ex-hw2-square-path",
-  "level": "2",
-  "url": "sec-exercises-hw2.html#ex-hw2-square-path",
-  "type": "Exercise",
-  "number": "3",
-  "title": "",
-  "body": "  Evaluate the line integral over the curve of .   "
-},
-{
-  "id": "fig-hw2-square",
-  "level": "2",
-  "url": "sec-exercises-hw2.html#fig-hw2-square",
-  "type": "Figure",
-  "number": "4.2.1",
-  "title": "",
-  "body": " The curve of : the boundary of the unit square, traversed once as shown.   The unit square traversed counterclockwise, arrowheads on all four sides.            (0,0)    (1,0)    (1,1)    (0,1)                "
-},
-{
-  "id": "ex-hw2-wall",
-  "level": "2",
-  "url": "sec-exercises-hw2.html#ex-hw2-wall",
-  "type": "Exercise",
-  "number": "4",
-  "title": "",
-  "body": "  Find the surface area of the wall whose height is given by and whose base is the unit circle in the -plane. See .   "
-},
-{
-  "id": "fig-hw2-wall",
-  "level": "2",
-  "url": "sec-exercises-hw2.html#fig-hw2-wall",
-  "type": "Figure",
-  "number": "4.2.2",
-  "title": "",
-  "body": " The wall of : its base is the unit circle in the -plane and its height above a point of that circle is .   A curved wall standing on the unit circle, whose top edge rises and falls twice around the circle.   A translucent blue wall stands vertically on the unit circle in the horizontal plane. Its top edge is a closed curve that reaches height four above the points where the circle meets the x axis and dips to height two above the points where it meets the y axis.     "
-},
-{
-  "id": "sec-exercises-hw3",
-  "level": "1",
-  "url": "sec-exercises-hw3.html",
-  "type": "Section",
-  "number": "4.3",
-  "title": "Assignment 3",
-  "body": " Assignment 3   Section: .      Determine whether the line integral of the vector field along the curve is positive, negative, or zero. and are shown in . Remember to fully justify your answer.     The vector field and the curve of . The curve is traversed in the direction of the arrowhead.   A field over the first quadrant tilting from downward to rightward, with a blue circle.    F(x,y) = (0.30*y, -0.30)  circle(t) = (1.5 + 1.05*cos(t), 1.35 + 1.05*sin(t))           C  \\mathbf{F}                Two particles move from to under the influence of a force field . One moves along the curve , the parabola defined by . The other particle moves along the curve , the bottom half of the circle . Force is measured in pounds and distances are measured in feet. Find the work performed by moving each particle along its path.      The work done by a force field along a curve is given by , where is the unit tangent vector to . Show that can be written in each of the following forms. Remember to fully justify your answers.                           Suppose that is the portion of the helix given by , where . Calculate .     "
-},
-{
-  "id": "ex-hw3-sign",
-  "level": "2",
-  "url": "sec-exercises-hw3.html#ex-hw3-sign",
-  "type": "Exercise",
-  "number": "1",
-  "title": "",
-  "body": "  Determine whether the line integral of the vector field along the curve is positive, negative, or zero. and are shown in . Remember to fully justify your answer.   "
-},
-{
-  "id": "fig-hw3-field",
-  "level": "2",
-  "url": "sec-exercises-hw3.html#fig-hw3-field",
-  "type": "Figure",
-  "number": "4.3.1",
-  "title": "",
-  "body": " The vector field and the curve of . The curve is traversed in the direction of the arrowhead.   A field over the first quadrant tilting from downward to rightward, with a blue circle.    F(x,y) = (0.30*y, -0.30)  circle(t) = (1.5 + 1.05*cos(t), 1.35 + 1.05*sin(t))           C  \\mathbf{F}             "
-},
-{
-  "id": "ex-hw3-two-paths",
-  "level": "2",
-  "url": "sec-exercises-hw3.html#ex-hw3-two-paths",
-  "type": "Exercise",
-  "number": "2",
-  "title": "",
-  "body": "  Two particles move from to under the influence of a force field . One moves along the curve , the parabola defined by . The other particle moves along the curve , the bottom half of the circle . Force is measured in pounds and distances are measured in feet. Find the work performed by moving each particle along its path.   "
-},
-{
-  "id": "ex-hw3-three-forms",
-  "level": "2",
-  "url": "sec-exercises-hw3.html#ex-hw3-three-forms",
-  "type": "Exercise",
-  "number": "3",
-  "title": "",
-  "body": "  The work done by a force field along a curve is given by , where is the unit tangent vector to . Show that can be written in each of the following forms. Remember to fully justify your answers.                        "
-},
-{
-  "id": "ex-hw3-helix",
-  "level": "2",
-  "url": "sec-exercises-hw3.html#ex-hw3-helix",
-  "type": "Exercise",
-  "number": "4",
-  "title": "",
-  "body": "  Suppose that is the portion of the helix given by , where . Calculate .   "
-},
-{
-  "id": "sec-exercises-hw4",
-  "level": "1",
-  "url": "sec-exercises-hw4.html",
-  "type": "Section",
-  "number": "4.4",
-  "title": "Assignment 4",
-  "body": " Assignment 4   Sections: , , and .      The force field is shown by the arrows in .     Over which of the two paths, or , does perform less work? Fully justify your answer.      Is a conservative field or not? Why?      The vector field and the two paths and of . Every field vector points in the same direction; only their lengths change.   A uniform slanted field with a square path from corner A to corner B.    G(x,y) = (0.16*(1+x), 0.16*(1+x))           A    D    C    B                    Consider the density function (mass per unit area) and the four shapes of , each of which is drawn with the same .     Choose the shapes in that can possess as their density function. Justify your answers.      Determine which one of your choices in part (a) is the heavier one. Why?      The four shapes of . Shapes and are triangles cut off by and ; shapes and are sectors of the circle . The dashed lines are and .   Four small pictures of candidate regions, each on its own axes.    arc3(t) = (2.6 + 1.3*cos(t), 4.6 + 1.3*sin(t))  arc4(t) = (7.4 + 1.3*cos(t), 4.6 + 1.3*sin(t))          1   y=r  y=x         2   x=r  y=x         3   x^2+y^2=r^2  y=x         4   x^2+y^2=r^2  y=-x                 Rewrite the integral with the order of integration reversed.      Find the volume under the surface and above the triangle formed by , , and the -axis.     "
-},
-{
-  "id": "ex-hw4-two-paths",
-  "level": "2",
-  "url": "sec-exercises-hw4.html#ex-hw4-two-paths",
-  "type": "Exercise",
-  "number": "1",
-  "title": "",
-  "body": "  The force field is shown by the arrows in .     Over which of the two paths, or , does perform less work? Fully justify your answer.      Is a conservative field or not? Why?    "
-},
-{
-  "id": "fig-hw4-paths",
-  "level": "2",
-  "url": "sec-exercises-hw4.html#fig-hw4-paths",
-  "type": "Figure",
-  "number": "4.4.1",
-  "title": "",
-  "body": " The vector field and the two paths and of . Every field vector points in the same direction; only their lengths change.   A uniform slanted field with a square path from corner A to corner B.    G(x,y) = (0.16*(1+x), 0.16*(1+x))           A    D    C    B                 "
-},
-{
-  "id": "ex-hw4-density-shapes",
-  "level": "2",
-  "url": "sec-exercises-hw4.html#ex-hw4-density-shapes",
-  "type": "Exercise",
-  "number": "2",
-  "title": "",
-  "body": "  Consider the density function (mass per unit area) and the four shapes of , each of which is drawn with the same .     Choose the shapes in that can possess as their density function. Justify your answers.      Determine which one of your choices in part (a) is the heavier one. Why?    "
-},
-{
-  "id": "fig-hw4-shapes",
-  "level": "2",
-  "url": "sec-exercises-hw4.html#fig-hw4-shapes",
-  "type": "Figure",
-  "number": "4.4.2",
-  "title": "",
-  "body": " The four shapes of . Shapes and are triangles cut off by and ; shapes and are sectors of the circle . The dashed lines are and .   Four small pictures of candidate regions, each on its own axes.    arc3(t) = (2.6 + 1.3*cos(t), 4.6 + 1.3*sin(t))  arc4(t) = (7.4 + 1.3*cos(t), 4.6 + 1.3*sin(t))          1   y=r  y=x         2   x=r  y=x         3   x^2+y^2=r^2  y=x         4   x^2+y^2=r^2  y=-x              "
-},
-{
-  "id": "ex-hw4-reverse-order",
-  "level": "2",
-  "url": "sec-exercises-hw4.html#ex-hw4-reverse-order",
-  "type": "Exercise",
-  "number": "3",
-  "title": "",
-  "body": "  Rewrite the integral with the order of integration reversed.   "
-},
-{
-  "id": "ex-hw4-volume",
-  "level": "2",
-  "url": "sec-exercises-hw4.html#ex-hw4-volume",
-  "type": "Exercise",
-  "number": "4",
-  "title": "",
-  "body": "  Find the volume under the surface and above the triangle formed by , , and the -axis.   "
-},
-{
-  "id": "sec-exercises-hw5",
-  "level": "1",
-  "url": "sec-exercises-hw5.html",
-  "type": "Section",
-  "number": "4.5",
-  "title": "Assignment 5",
-  "body": " Assignment 5   Sections: and .      Consider the polar equation , .     Determine the type of symmetry that its graph possesses.      Sketch its graph. Use the polar chart of .      Set up (do not evaluate) the integral necessary for computing the area bounded by , .      A blank polar chart for . The circles are , , , and , and the spokes are spaced apart.   A blank polar grid of four circles and twelve labeled spokes.    c1(t) = (0.5*cos(t), 0.5*sin(t))  c2(t) = (cos(t), sin(t))  c3(t) = (1.5*cos(t), 1.5*sin(t))  c4(t) = (2*cos(t), 2*sin(t))          0   \\pi\/6    \\pi\/3    \\pi\/2    2\\pi\/3    5\\pi\/6   \\pi   7\\pi\/6    4\\pi\/3    3\\pi\/2    5\\pi\/3    11\\pi\/6   0.5  1  1.5  2               Combine the following sum into one double integral. Do not evaluate the integral.       Compute the net mass of the planar object that occupies the region bounded by and , and whose mass density is given by .     "
-},
-{
-  "id": "ex-hw5-rose",
-  "level": "2",
-  "url": "sec-exercises-hw5.html#ex-hw5-rose",
-  "type": "Exercise",
-  "number": "1",
-  "title": "",
-  "body": "  Consider the polar equation , .     Determine the type of symmetry that its graph possesses.      Sketch its graph. Use the polar chart of .      Set up (do not evaluate) the integral necessary for computing the area bounded by , .    "
-},
-{
-  "id": "fig-hw5-polar-chart",
-  "level": "2",
-  "url": "sec-exercises-hw5.html#fig-hw5-polar-chart",
-  "type": "Figure",
-  "number": "4.5.1",
-  "title": "",
-  "body": " A blank polar chart for . The circles are , , , and , and the spokes are spaced apart.   A blank polar grid of four circles and twelve labeled spokes.    c1(t) = (0.5*cos(t), 0.5*sin(t))  c2(t) = (cos(t), sin(t))  c3(t) = (1.5*cos(t), 1.5*sin(t))  c4(t) = (2*cos(t), 2*sin(t))          0   \\pi\/6    \\pi\/3    \\pi\/2    2\\pi\/3    5\\pi\/6   \\pi   7\\pi\/6    4\\pi\/3    3\\pi\/2    5\\pi\/3    11\\pi\/6   0.5  1  1.5  2            "
-},
-{
-  "id": "ex-hw5-combine",
-  "level": "2",
-  "url": "sec-exercises-hw5.html#ex-hw5-combine",
-  "type": "Exercise",
-  "number": "2",
-  "title": "",
-  "body": "  Combine the following sum into one double integral. Do not evaluate the integral.    "
-},
-{
-  "id": "ex-hw5-two-circles",
-  "level": "2",
-  "url": "sec-exercises-hw5.html#ex-hw5-two-circles",
-  "type": "Exercise",
-  "number": "3",
-  "title": "",
-  "body": "  Compute the net mass of the planar object that occupies the region bounded by and , and whose mass density is given by .   "
-},
-{
-  "id": "sec-exercises-hw6",
-  "level": "1",
-  "url": "sec-exercises-hw6.html",
-  "type": "Section",
-  "number": "4.6",
-  "title": "Assignment 6",
-  "body": " Assignment 6   Sections: and .      Consider an object bounded by and . Suppose that the object's mass density function is . Find the mass of the object.      Convert (do not evaluate) the following integral to rectangular coordinates:        Without calculating the integrals , decide whether each of the integrals below is positive, negative, or zero. Let be the solid bounded by and . Remember to justify your answers.                    Calculate the volume of the region bounded by and .     "
-},
-{
-  "id": "ex-hw6-cone-mass",
-  "level": "2",
-  "url": "sec-exercises-hw6.html#ex-hw6-cone-mass",
-  "type": "Exercise",
-  "number": "1",
-  "title": "",
-  "body": "  Consider an object bounded by and . Suppose that the object's mass density function is . Find the mass of the object.   "
-},
-{
-  "id": "ex-hw6-convert",
-  "level": "2",
-  "url": "sec-exercises-hw6.html#ex-hw6-convert",
-  "type": "Exercise",
-  "number": "2",
-  "title": "",
-  "body": "  Convert (do not evaluate) the following integral to rectangular coordinates:    "
-},
-{
-  "id": "ex-hw6-signs",
-  "level": "2",
-  "url": "sec-exercises-hw6.html#ex-hw6-signs",
-  "type": "Exercise",
-  "number": "3",
-  "title": "",
-  "body": "   Without calculating the integrals , decide whether each of the integrals below is positive, negative, or zero. Let be the solid bounded by and . Remember to justify your answers.                 "
-},
-{
-  "id": "ex-hw6-volume",
-  "level": "2",
-  "url": "sec-exercises-hw6.html#ex-hw6-volume",
-  "type": "Exercise",
-  "number": "4",
-  "title": "",
-  "body": "  Calculate the volume of the region bounded by and .   "
-},
-{
-  "id": "sec-exercises-hw7",
-  "level": "1",
-  "url": "sec-exercises-hw7.html",
-  "type": "Section",
-  "number": "4.7",
-  "title": "Assignment 7",
-  "body": " Assignment 7   Sections: and .      Evaluate the following integral:       Convert (do not evaluate) the following integral to spherical and cylindrical coordinates. Which set of coordinates is the most efficient for evaluating this integral?       Use the change of variables , to find the area of the region bounded by the ellipse .      Suppose that , where is the disk . Assuming that is the disk and , evaluate .     "
-},
-{
-  "id": "ex-hw7-hemisphere",
-  "level": "2",
-  "url": "sec-exercises-hw7.html#ex-hw7-hemisphere",
-  "type": "Exercise",
-  "number": "1",
-  "title": "",
-  "body": "  Evaluate the following integral:    "
-},
-{
-  "id": "ex-hw7-convert",
-  "level": "2",
-  "url": "sec-exercises-hw7.html#ex-hw7-convert",
-  "type": "Exercise",
-  "number": "2",
-  "title": "",
-  "body": "  Convert (do not evaluate) the following integral to spherical and cylindrical coordinates. Which set of coordinates is the most efficient for evaluating this integral?    "
-},
-{
-  "id": "ex-hw7-ellipse",
-  "level": "2",
-  "url": "sec-exercises-hw7.html#ex-hw7-ellipse",
-  "type": "Exercise",
-  "number": "3",
-  "title": "",
-  "body": "  Use the change of variables , to find the area of the region bounded by the ellipse .   "
-},
-{
-  "id": "ex-hw7-scaling",
-  "level": "2",
-  "url": "sec-exercises-hw7.html#ex-hw7-scaling",
-  "type": "Exercise",
-  "number": "4",
-  "title": "",
-  "body": "  Suppose that , where is the disk . Assuming that is the disk and , evaluate .   "
-},
-{
-  "id": "sec-exercises-hw8",
-  "level": "1",
-  "url": "sec-exercises-hw8.html",
-  "type": "Section",
-  "number": "4.8",
-  "title": "Assignment 8",
-  "body": " Assignment 8   Section: .      Find the centroid of the solid shown in . The cone is bounded by a disk in the plane and the cylinder is bounded by the planes. Note that both the cone and the cylinder are assumed to be solid objects, that is, they are not hollow.     The solid of : the cone capped by the plane , sitting on the horizontal cylinder cut off by the planes .   A cone standing point-down on a horizontal cylinder lying along the y axis.   A red cylinder of radius one lies on its side along the y axis, cut off by the planes y equals plus and minus one. Above it, a red cone opens upward from the point at height one on the z axis to a disk of radius one in the plane z equals two.        Consider a solid object bounded by and . Suppose that the object's mass density function is . Find the location of the center of mass of the object.     "
-},
-{
-  "id": "ex-hw8-centroid",
-  "level": "2",
-  "url": "sec-exercises-hw8.html#ex-hw8-centroid",
-  "type": "Exercise",
-  "number": "1",
-  "title": "",
-  "body": "  Find the centroid of the solid shown in . The cone is bounded by a disk in the plane and the cylinder is bounded by the planes. Note that both the cone and the cylinder are assumed to be solid objects, that is, they are not hollow.   "
-},
-{
-  "id": "fig-hw8-solid",
-  "level": "2",
-  "url": "sec-exercises-hw8.html#fig-hw8-solid",
-  "type": "Figure",
-  "number": "4.8.1",
-  "title": "",
-  "body": " The solid of : the cone capped by the plane , sitting on the horizontal cylinder cut off by the planes .   A cone standing point-down on a horizontal cylinder lying along the y axis.   A red cylinder of radius one lies on its side along the y axis, cut off by the planes y equals plus and minus one. Above it, a red cone opens upward from the point at height one on the z axis to a disk of radius one in the plane z equals two.     "
-},
-{
-  "id": "ex-hw8-center-of-mass",
-  "level": "2",
-  "url": "sec-exercises-hw8.html#ex-hw8-center-of-mass",
-  "type": "Exercise",
-  "number": "2",
-  "title": "",
-  "body": "  Consider a solid object bounded by and . Suppose that the object's mass density function is . Find the location of the center of mass of the object.   "
-},
-{
-  "id": "sec-exercises-hw9",
-  "level": "1",
-  "url": "sec-exercises-hw9.html",
-  "type": "Section",
-  "number": "4.9",
-  "title": "Assignment 9",
-  "body": " Assignment 9   Section: .      Compute the work done by the force field   along the path , which is shown in . Assume that the object moves along the path from to and then to .     The curve of : a staircase of ten unit steps from to , followed by the horizontal segment back to .   A staircase of ten unit steps from the origin to (10,10), returning along the top.          (0,0)    (10,10)    (0,10)                 Calculate the line integral   where is the circle , with counterclockwise orientation.      Calculate the outward flux of the vector field across the unit circle.      Consider the line integral , where the curve is , , oriented counterclockwise. Note that are polar coordinates.     Use Green's theorem to calculate the line integral.      In physics, this line integral can be interpreted in two different ways. Briefly explain.      "
-},
-{
-  "id": "ex-hw9-staircase",
-  "level": "2",
-  "url": "sec-exercises-hw9.html#ex-hw9-staircase",
-  "type": "Exercise",
-  "number": "1",
-  "title": "",
-  "body": "  Compute the work done by the force field   along the path , which is shown in . Assume that the object moves along the path from to and then to .   "
-},
-{
-  "id": "fig-hw9-staircase",
-  "level": "2",
-  "url": "sec-exercises-hw9.html#fig-hw9-staircase",
-  "type": "Figure",
-  "number": "4.9.1",
-  "title": "",
-  "body": " The curve of : a staircase of ten unit steps from to , followed by the horizontal segment back to .   A staircase of ten unit steps from the origin to (10,10), returning along the top.          (0,0)    (10,10)    (0,10)              "
-},
-{
-  "id": "ex-hw9-circle",
-  "level": "2",
-  "url": "sec-exercises-hw9.html#ex-hw9-circle",
-  "type": "Exercise",
-  "number": "2",
-  "title": "",
-  "body": "  Calculate the line integral   where is the circle , with counterclockwise orientation.   "
-},
-{
-  "id": "ex-hw9-flux",
-  "level": "2",
-  "url": "sec-exercises-hw9.html#ex-hw9-flux",
-  "type": "Exercise",
-  "number": "3",
-  "title": "",
-  "body": "  Calculate the outward flux of the vector field across the unit circle.   "
-},
-{
-  "id": "ex-hw9-rose",
-  "level": "2",
-  "url": "sec-exercises-hw9.html#ex-hw9-rose",
-  "type": "Exercise",
-  "number": "4",
-  "title": "",
-  "body": "  Consider the line integral , where the curve is , , oriented counterclockwise. Note that are polar coordinates.     Use Green's theorem to calculate the line integral.      In physics, this line integral can be interpreted in two different ways. Briefly explain.    "
-},
-{
   "id": "sec-exercises-hw1-online",
   "level": "1",
   "url": "sec-exercises-hw1-online.html",
   "type": "Section",
-  "number": "5.1",
-  "title": "Assignment 1, Online Version",
-  "body": " Assignment 1, Online Version   Sections: and . Work each problem, then type your answers into the boxes and have them checked here.  Each problem below has several answer boxes, and every box is graded separately : a box you fill in correctly earns its credit even if another box in the same problem is wrong. Press Check Me to submit; you may check as often as you like.   How to type your answers.      Numbers. Type a decimal number and nothing else: no units, no sign, no . Give at least three decimal places (for instance 132.008 , not 132 and not 42pi ). Answers are accepted within a small tolerance, so a little rounding is fine.     Expressions. Type only the expression itself, not z(t) = . Write products with * and powers with ^ , and write functions with parentheses: cos(t) , sin(t) , ln(t) , sqrt(t) . So the expression is typed 4cos(t)^2 . Spaces are ignored.        Parametrizing a Curve of Intersection   The curve is the intersection of the cylinder and the surface . Parametrize by filling in the three components below, using the standard parametrization of the unit circle for the shadow of in the -plane.        The parameter runs from to , which traces exactly once.      Correct.     That is a valid choice too, but then and have to change to match. Use here.       Correct.      Correct.     Careful: the surface is , so substitute the -component, not the -component.      Close you dropped the factor of .       Correct: one full trip around the cylinder.     Half a turn only covers half of ; the shadow is the whole unit circle.       The shadow of in the -plane is the unit circle, so take , with . Substituting into gives , so       How Much Wire Is in a Spring?   A helix of radius and height that makes turns can be parametrized as    (a) For spring A of the figure below (radius cm, height cm, turns), the constant is  and the parameter runs up to  .   (b) Compute the length of each spring, in centimetres.  Length of spring A: cm.  Length of spring B: cm.  Which spring uses more wire? Type a single letter, A or B :    Which spring uses more wire?   Two coil springs side by side: spring A wide with three turns, spring B narrow with five turns.   Two helical springs drawn side by side. Spring A, on the left, has three turns of radius seven centimeters and a marked height of four centimeters. Spring B, on the right, has five turns of radius four centimeters and a marked height of three centimeters. Dashed lines with a double-headed arrow mark each spring's height.          Correct: .     That is , the rise per turn. One turn is units of , not one.       Correct: .    That is one turn; this spring makes three.      Correct.     That is , the shadow circle travelled three times. You still have to account for the climb .       Correct.     That is alone; the height still has to be included.        Correct: , so spring A uses more wire, even though it has fewer turns.      Spring B has more turns, but each is much smaller in radius. Compare the two lengths you computed.       The height is gained over turns, that is, over units of , so . For spring A, and .  The speed is constant, , so   Spring A gives cm and spring B gives cm, so A uses more wire. Notice how little the height contributes: the wire is almost all winding.      Tangent Line to a Space Curve   Consider the curve   and the point on it.  The parameter value at is  .  The tangent line at has direction vector  , ,  .      Correct: forces .     At the curve is not even defined, since needs . Solve instead.       Correct: at .       Correct: the quotient rule gives .      Check the numerator in the quotient rule: it is , not .        Correct: at .      The product rule gives , and at that is .       The point is reached when , that is, at ; the other two components vanish there as well. Differentiating,   so and the tangent line is       Where Is the Object After Travelling 15?   The path of an object is   starting at the origin. Find where it is after travelling a distance of .  Its speed at is .  The object has travelled a distance of at time  .  At that moment it is at the point  , ,  .       Correct: , which is at .      The object is at the origin at , but it is not at rest: only the and -components of the velocity vanish there.       Correct: gives .     That is divided by the speed at . The speed is not constant, so the distance must be integrated.       Correct.      Correct.      Correct.      Differentiating, , and the speed collapses to a perfect square:   Hence the distance travelled by time is   and gives , so . The object is then at .     "
+  "number": "4.1",
+  "title": "Assignment 1",
+  "body": " Assignment 1   Sections: and . Work each problem, then type your answers into the boxes and have them checked here.  Each problem below has several answer boxes, and every box is graded separately : a box you fill in correctly earns its credit even if another box in the same problem is wrong. Press Check Me to submit; you may check as often as you like.   How to type your answers.      Numbers. Type a decimal number and nothing else: no units, no sign, no . Give at least three decimal places (for instance 132.008 , not 132 and not 42pi ). Answers are accepted within a small tolerance, so a little rounding is fine.     Expressions. Type only the expression itself, not z(t) = . Write products with * and powers with ^ , and write functions with parentheses: cos(t) , sin(t) , ln(t) , sqrt(t) . So the expression is typed 4cos(t)^2 . Spaces are ignored.        Parametrizing a Curve of Intersection   The curve is the intersection of the cylinder and the surface . Parametrize by filling in the three components below, using the standard parametrization of the unit circle for the shadow of in the -plane.        The parameter runs from to , which traces exactly once.      Correct.     That is a valid choice too, but then and have to change to match. Use here.       Correct.     Not quite. Type only the expression itself, with * for products and ^ for powers, for example 4cos(t)^2 .       Correct.     Careful: the surface is , so substitute the -component, not the -component.      Close you dropped the factor of .       Correct: one full trip around the cylinder.     Half a turn only covers half of ; the shadow is the whole unit circle.         How Much Wire Is in a Spring?   A helix of radius and height that makes turns can be parametrized as    (a) For spring A of the figure below (radius cm, height cm, turns), the constant is  and the parameter runs up to  .   (b) Compute the length of each spring, in centimetres.  Length of spring A: cm.  Length of spring B: cm.  Which spring uses more wire? Type a single letter, A or B :    Which spring uses more wire?   Two coil springs side by side: spring A wide with three turns, spring B narrow with five turns.   Two helical springs drawn side by side. Spring A, on the left, has three turns of radius seven centimeters and a marked height of four centimeters. Spring B, on the right, has five turns of radius four centimeters and a marked height of three centimeters. Dashed lines with a double-headed arrow mark each spring's height.          Correct: .     That is , the rise per turn. One turn is units of , not one.       Correct: .    That is one turn; this spring makes three.      Correct.     That is , the shadow circle travelled three times. You still have to account for the climb .       Correct.     That is alone; the height still has to be included.        Correct: , so spring A uses more wire, even though it has fewer turns.      Spring B has more turns, but each is much smaller in radius. Compare the two lengths you computed.         Tangent Line to a Space Curve   Consider the curve   and the point on it.  The parameter value at is  .  The tangent line at has direction vector  , ,  .      Correct: forces .     At the curve is not even defined, since needs . Solve instead.       Correct: at .     Not quite. Type a decimal number and nothing else, to at least three decimal places.        Correct: the quotient rule gives .      Check the numerator in the quotient rule: it is , not .        Correct: at .      The product rule gives , and at that is .         Where Is the Object After Travelling 15?   The path of an object is   starting at the origin. Find where it is after travelling a distance of .  Its speed at is .  The object has travelled a distance of at time  .  At that moment it is at the point  , ,  .       Correct: , which is at .      The object is at the origin at , but it is not at rest: only the and -components of the velocity vanish there.       Correct: gives .     That is divided by the speed at . The speed is not constant, so the distance must be integrated.       Correct.     Not quite. Type a decimal number and nothing else, to at least three decimal places.       Correct.     Not quite. Type a decimal number and nothing else, to at least three decimal places.       Correct.     Not quite. Type a decimal number and nothing else, to at least three decimal places.        "
 },
 {
   "id": "sec-exercises-hw1-online-2-3",
@@ -3400,7 +2968,7 @@ var ptx_lunr_docs = [
   "type": "Exercise",
   "number": "1",
   "title": "Parametrizing a Curve of Intersection.",
-  "body": " Parametrizing a Curve of Intersection   The curve is the intersection of the cylinder and the surface . Parametrize by filling in the three components below, using the standard parametrization of the unit circle for the shadow of in the -plane.        The parameter runs from to , which traces exactly once.      Correct.     That is a valid choice too, but then and have to change to match. Use here.       Correct.      Correct.     Careful: the surface is , so substitute the -component, not the -component.      Close you dropped the factor of .       Correct: one full trip around the cylinder.     Half a turn only covers half of ; the shadow is the whole unit circle.       The shadow of in the -plane is the unit circle, so take , with . Substituting into gives , so    "
+  "body": " Parametrizing a Curve of Intersection   The curve is the intersection of the cylinder and the surface . Parametrize by filling in the three components below, using the standard parametrization of the unit circle for the shadow of in the -plane.        The parameter runs from to , which traces exactly once.      Correct.     That is a valid choice too, but then and have to change to match. Use here.       Correct.     Not quite. Type only the expression itself, with * for products and ^ for powers, for example 4cos(t)^2 .       Correct.     Careful: the surface is , so substitute the -component, not the -component.      Close you dropped the factor of .       Correct: one full trip around the cylinder.     Half a turn only covers half of ; the shadow is the whole unit circle.      "
 },
 {
   "id": "ex-hw1o-helix",
@@ -3409,7 +2977,7 @@ var ptx_lunr_docs = [
   "type": "Exercise",
   "number": "2",
   "title": "How Much Wire Is in a Spring?",
-  "body": " How Much Wire Is in a Spring?   A helix of radius and height that makes turns can be parametrized as    (a) For spring A of the figure below (radius cm, height cm, turns), the constant is  and the parameter runs up to  .   (b) Compute the length of each spring, in centimetres.  Length of spring A: cm.  Length of spring B: cm.  Which spring uses more wire? Type a single letter, A or B :    Which spring uses more wire?   Two coil springs side by side: spring A wide with three turns, spring B narrow with five turns.   Two helical springs drawn side by side. Spring A, on the left, has three turns of radius seven centimeters and a marked height of four centimeters. Spring B, on the right, has five turns of radius four centimeters and a marked height of three centimeters. Dashed lines with a double-headed arrow mark each spring's height.          Correct: .     That is , the rise per turn. One turn is units of , not one.       Correct: .    That is one turn; this spring makes three.      Correct.     That is , the shadow circle travelled three times. You still have to account for the climb .       Correct.     That is alone; the height still has to be included.        Correct: , so spring A uses more wire, even though it has fewer turns.      Spring B has more turns, but each is much smaller in radius. Compare the two lengths you computed.       The height is gained over turns, that is, over units of , so . For spring A, and .  The speed is constant, , so   Spring A gives cm and spring B gives cm, so A uses more wire. Notice how little the height contributes: the wire is almost all winding.   "
+  "body": " How Much Wire Is in a Spring?   A helix of radius and height that makes turns can be parametrized as    (a) For spring A of the figure below (radius cm, height cm, turns), the constant is  and the parameter runs up to  .   (b) Compute the length of each spring, in centimetres.  Length of spring A: cm.  Length of spring B: cm.  Which spring uses more wire? Type a single letter, A or B :    Which spring uses more wire?   Two coil springs side by side: spring A wide with three turns, spring B narrow with five turns.   Two helical springs drawn side by side. Spring A, on the left, has three turns of radius seven centimeters and a marked height of four centimeters. Spring B, on the right, has five turns of radius four centimeters and a marked height of three centimeters. Dashed lines with a double-headed arrow mark each spring's height.          Correct: .     That is , the rise per turn. One turn is units of , not one.       Correct: .    That is one turn; this spring makes three.      Correct.     That is , the shadow circle travelled three times. You still have to account for the climb .       Correct.     That is alone; the height still has to be included.        Correct: , so spring A uses more wire, even though it has fewer turns.      Spring B has more turns, but each is much smaller in radius. Compare the two lengths you computed.      "
 },
 {
   "id": "ex-hw1o-tangent-line",
@@ -3418,7 +2986,7 @@ var ptx_lunr_docs = [
   "type": "Exercise",
   "number": "3",
   "title": "Tangent Line to a Space Curve.",
-  "body": " Tangent Line to a Space Curve   Consider the curve   and the point on it.  The parameter value at is  .  The tangent line at has direction vector  , ,  .      Correct: forces .     At the curve is not even defined, since needs . Solve instead.       Correct: at .       Correct: the quotient rule gives .      Check the numerator in the quotient rule: it is , not .        Correct: at .      The product rule gives , and at that is .       The point is reached when , that is, at ; the other two components vanish there as well. Differentiating,   so and the tangent line is    "
+  "body": " Tangent Line to a Space Curve   Consider the curve   and the point on it.  The parameter value at is  .  The tangent line at has direction vector  , ,  .      Correct: forces .     At the curve is not even defined, since needs . Solve instead.       Correct: at .     Not quite. Type a decimal number and nothing else, to at least three decimal places.        Correct: the quotient rule gives .      Check the numerator in the quotient rule: it is , not .        Correct: at .      The product rule gives , and at that is .      "
 },
 {
   "id": "ex-hw1o-location",
@@ -3427,16 +2995,16 @@ var ptx_lunr_docs = [
   "type": "Exercise",
   "number": "4",
   "title": "Where Is the Object After Travelling 15?",
-  "body": " Where Is the Object After Travelling 15?   The path of an object is   starting at the origin. Find where it is after travelling a distance of .  Its speed at is .  The object has travelled a distance of at time  .  At that moment it is at the point  , ,  .       Correct: , which is at .      The object is at the origin at , but it is not at rest: only the and -components of the velocity vanish there.       Correct: gives .     That is divided by the speed at . The speed is not constant, so the distance must be integrated.       Correct.      Correct.      Correct.      Differentiating, , and the speed collapses to a perfect square:   Hence the distance travelled by time is   and gives , so . The object is then at .   "
+  "body": " Where Is the Object After Travelling 15?   The path of an object is   starting at the origin. Find where it is after travelling a distance of .  Its speed at is .  The object has travelled a distance of at time  .  At that moment it is at the point  , ,  .       Correct: , which is at .      The object is at the origin at , but it is not at rest: only the and -components of the velocity vanish there.       Correct: gives .     That is divided by the speed at . The speed is not constant, so the distance must be integrated.       Correct.     Not quite. Type a decimal number and nothing else, to at least three decimal places.       Correct.     Not quite. Type a decimal number and nothing else, to at least three decimal places.       Correct.     Not quite. Type a decimal number and nothing else, to at least three decimal places.      "
 },
 {
   "id": "sec-exercises-hw2-online",
   "level": "1",
   "url": "sec-exercises-hw2-online.html",
   "type": "Section",
-  "number": "5.2",
-  "title": "Assignment 2, Online Version",
-  "body": " Assignment 2, Online Version   Section: . Work each problem, then type your answers into the boxes and have them checked here.  Every answer box is graded separately, so a box you fill in correctly earns its credit even if another box in the same problem is wrong. Press Check Me to submit; you may check as often as you like.   How to type your answers. Numbers: a decimal number and nothing else no units, no sign, no ; give at least three decimals (for instance 18.850 , not 6pi ). Answers are accepted within a small tolerance. Words: type just the word asked for, in lower case.     Mass of a Quarter-Circle Wire          k*R\/2     A wire is the quarter circle of radius centered at , , lying in the first quadrant relative to its center. Its density is   in kilograms per meter. The total mass of the wire is kilograms.         Correct. Parametrizing by , , gives and , so the density along the wire is and   The center never enters: shifting the wire sideways carries its density with it.       That is the coefficient from the density, not the mass. The wire has radius , and the mass works out to ; see the derivation below.        Not quite. Parametrize by , . Then and , so the density along the wire collapses to , and   Note that the center drops out, so the answer does not depend on it.       Parametrize the quarter circle by , , where is the radius. Then and , so the density along the wire is   where is the coefficient in the numerator. Hence   The center never enters: shifting the wire sideways moves the density with it.     A Line Integral Along a Segment   Evaluate along the segment , , from to .  Along the path the integrand simplifies to (in terms of ); the speed of your parametrization is ; and the integral equals .      Correct.      Correct: the speed is the square root of two.      Correct.    Right size, wrong sign: the integrand 2t-2 is negative on the whole segment.      Here and , so , and runs from to :      The curve of : the boundary of the unit square, traversed once as shown.   The unit square traversed counterclockwise, arrowheads on all four sides.            (0,0)    (1,0)    (1,1)    (0,1)                  Around the Unit Square   Evaluate over the boundary of the unit square of .  The side from to contributes ; the side from to contributes ; and the whole integral equals .      Correct: that is the arctangent of one.      Correct.      Correct.    That is only the two sides on the axes; add the other two.      On the side from to , and , giving ; the side on the -axis gives the same. On each of the other two sides , giving . Adding,   A line integral of a scalar function does not depend on the direction of travel, and opposite sides of the square give equal contributions.     The wall of : its base is the unit circle in the -plane and its height above a point of that circle is .   A curved wall standing on the unit circle, whose top edge rises and falls twice around the circle.   A translucent blue wall stands vertically on the unit circle in the horizontal plane. Its top edge is a closed curve that reaches height four above the points where the circle meets the x axis and dips to height two above the points where it meets the y axis.       Area of a Curved Wall   Find the surface area of the wall of , whose height is over the unit circle.  The surface area of the wall is .      Correct: six pi.    That is the coefficient; multiply by the length of the circle.      With the speed is and   so the area is      "
+  "number": "4.2",
+  "title": "Assignment 2",
+  "body": " Assignment 2   Section: . Work each problem, then type your answers into the boxes and have them checked here.  Every answer box is graded separately, so a box you fill in correctly earns its credit even if another box in the same problem is wrong. Press Check Me to submit; you may check as often as you like.   How to type your answers. Numbers: a decimal number and nothing else no units, no sign, no ; give at least three decimals (for instance 18.850 , not 6pi ). Answers are accepted within a small tolerance. Words: type just the word asked for, in lower case.     Mass of a Quarter-Circle Wire          k*R\/2     A wire is the quarter circle of radius centered at , , lying in the first quadrant relative to its center. Its density is   in kilograms per meter. The total mass of the wire is kilograms.         Correct. Parametrizing by , , gives and , so the density along the wire is and   The center never enters: shifting the wire sideways carries its density with it.       That is the coefficient from the density, not the mass. The wire has radius , and the mass works out to ; see the derivation below.        Not quite. Parametrize by , . Then and , so the density along the wire collapses to , and   Note that the center drops out, so the answer does not depend on it.        A Line Integral Along a Segment   Evaluate along the segment , , from to .  Along the path the integrand simplifies to (in terms of ); the speed of your parametrization is ; and the integral equals .      Correct.     Not quite. Type only the expression itself, with * for products and ^ for powers, for example 4cos(t)^2 .       Correct: the speed is the square root of two.     Not quite. Type a decimal number and nothing else, to at least three decimal places.       Correct.    Right size, wrong sign: the integrand 2t-2 is negative on the whole segment.       The curve of : the boundary of the unit square, traversed once as shown.   The unit square traversed counterclockwise, arrowheads on all four sides.            (0,0)    (1,0)    (1,1)    (0,1)                  Around the Unit Square   Evaluate over the boundary of the unit square of .  The side from to contributes ; the side from to contributes ; and the whole integral equals .      Correct: that is the arctangent of one.     Not quite. Type a decimal number and nothing else, to at least three decimal places.       Correct.     Not quite. Type a decimal number and nothing else, to at least three decimal places.       Correct.    That is only the two sides on the axes; add the other two.       The wall of : its base is the unit circle in the -plane and its height above a point of that circle is .   A curved wall standing on the unit circle, whose top edge rises and falls twice around the circle.   A translucent blue wall stands vertically on the unit circle in the horizontal plane. Its top edge is a closed curve that reaches height four above the points where the circle meets the x axis and dips to height two above the points where it meets the y axis.       Area of a Curved Wall   Find the surface area of the wall of , whose height is over the unit circle.  The surface area of the wall is .      Correct: six pi.    That is the coefficient; multiply by the length of the circle.       "
 },
 {
   "id": "sec-exercises-hw2-online-2-3",
@@ -3454,7 +3022,7 @@ var ptx_lunr_docs = [
   "type": "Exercise",
   "number": "1",
   "title": "Mass of a Quarter-Circle Wire.",
-  "body": " Mass of a Quarter-Circle Wire          k*R\/2     A wire is the quarter circle of radius centered at , , lying in the first quadrant relative to its center. Its density is   in kilograms per meter. The total mass of the wire is kilograms.         Correct. Parametrizing by , , gives and , so the density along the wire is and   The center never enters: shifting the wire sideways carries its density with it.       That is the coefficient from the density, not the mass. The wire has radius , and the mass works out to ; see the derivation below.        Not quite. Parametrize by , . Then and , so the density along the wire collapses to , and   Note that the center drops out, so the answer does not depend on it.       Parametrize the quarter circle by , , where is the radius. Then and , so the density along the wire is   where is the coefficient in the numerator. Hence   The center never enters: shifting the wire sideways moves the density with it.   "
+  "body": " Mass of a Quarter-Circle Wire          k*R\/2     A wire is the quarter circle of radius centered at , , lying in the first quadrant relative to its center. Its density is   in kilograms per meter. The total mass of the wire is kilograms.         Correct. Parametrizing by , , gives and , so the density along the wire is and   The center never enters: shifting the wire sideways carries its density with it.       That is the coefficient from the density, not the mass. The wire has radius , and the mass works out to ; see the derivation below.        Not quite. Parametrize by , . Then and , so the density along the wire collapses to , and   Note that the center drops out, so the answer does not depend on it.      "
 },
 {
   "id": "ex-hw2o-segment",
@@ -3463,14 +3031,14 @@ var ptx_lunr_docs = [
   "type": "Exercise",
   "number": "2",
   "title": "A Line Integral Along a Segment.",
-  "body": " A Line Integral Along a Segment   Evaluate along the segment , , from to .  Along the path the integrand simplifies to (in terms of ); the speed of your parametrization is ; and the integral equals .      Correct.      Correct: the speed is the square root of two.      Correct.    Right size, wrong sign: the integrand 2t-2 is negative on the whole segment.      Here and , so , and runs from to :    "
+  "body": " A Line Integral Along a Segment   Evaluate along the segment , , from to .  Along the path the integrand simplifies to (in terms of ); the speed of your parametrization is ; and the integral equals .      Correct.     Not quite. Type only the expression itself, with * for products and ^ for powers, for example 4cos(t)^2 .       Correct: the speed is the square root of two.     Not quite. Type a decimal number and nothing else, to at least three decimal places.       Correct.    Right size, wrong sign: the integrand 2t-2 is negative on the whole segment.     "
 },
 {
   "id": "fig-hw2o-square",
   "level": "2",
   "url": "sec-exercises-hw2-online.html#fig-hw2o-square",
   "type": "Figure",
-  "number": "5.2.1",
+  "number": "4.2.1",
   "title": "",
   "body": " The curve of : the boundary of the unit square, traversed once as shown.   The unit square traversed counterclockwise, arrowheads on all four sides.            (0,0)    (1,0)    (1,1)    (0,1)                "
 },
@@ -3481,14 +3049,14 @@ var ptx_lunr_docs = [
   "type": "Exercise",
   "number": "3",
   "title": "Around the Unit Square.",
-  "body": " Around the Unit Square   Evaluate over the boundary of the unit square of .  The side from to contributes ; the side from to contributes ; and the whole integral equals .      Correct: that is the arctangent of one.      Correct.      Correct.    That is only the two sides on the axes; add the other two.      On the side from to , and , giving ; the side on the -axis gives the same. On each of the other two sides , giving . Adding,   A line integral of a scalar function does not depend on the direction of travel, and opposite sides of the square give equal contributions.   "
+  "body": " Around the Unit Square   Evaluate over the boundary of the unit square of .  The side from to contributes ; the side from to contributes ; and the whole integral equals .      Correct: that is the arctangent of one.     Not quite. Type a decimal number and nothing else, to at least three decimal places.       Correct.     Not quite. Type a decimal number and nothing else, to at least three decimal places.       Correct.    That is only the two sides on the axes; add the other two.     "
 },
 {
   "id": "fig-hw2o-wall",
   "level": "2",
   "url": "sec-exercises-hw2-online.html#fig-hw2o-wall",
   "type": "Figure",
-  "number": "5.2.2",
+  "number": "4.2.2",
   "title": "",
   "body": " The wall of : its base is the unit circle in the -plane and its height above a point of that circle is .   A curved wall standing on the unit circle, whose top edge rises and falls twice around the circle.   A translucent blue wall stands vertically on the unit circle in the horizontal plane. Its top edge is a closed curve that reaches height four above the points where the circle meets the x axis and dips to height two above the points where it meets the y axis.     "
 },
@@ -3499,16 +3067,16 @@ var ptx_lunr_docs = [
   "type": "Exercise",
   "number": "4",
   "title": "Area of a Curved Wall.",
-  "body": " Area of a Curved Wall   Find the surface area of the wall of , whose height is over the unit circle.  The surface area of the wall is .      Correct: six pi.    That is the coefficient; multiply by the length of the circle.      With the speed is and   so the area is    "
+  "body": " Area of a Curved Wall   Find the surface area of the wall of , whose height is over the unit circle.  The surface area of the wall is .      Correct: six pi.    That is the coefficient; multiply by the length of the circle.     "
 },
 {
   "id": "sec-exercises-hw3-online",
   "level": "1",
   "url": "sec-exercises-hw3-online.html",
   "type": "Section",
-  "number": "5.3",
-  "title": "Assignment 3, Online Version",
-  "body": " Assignment 3, Online Version   Section: . Work each problem, then type your answers into the boxes and have them checked here.  Every answer box is graded separately, so a box you fill in correctly earns its credit even if another box in the same problem is wrong. Press Check Me to submit; you may check as often as you like.   How to type your answers. Numbers: a decimal number and nothing else no units, no sign, no ; give at least three decimals (for instance 18.850 , not 6pi ). Answers are accepted within a small tolerance. Words: type just the word asked for, in lower case.     The vector field and the curve of . The curve is traversed in the direction of the arrowhead.   A field over the first quadrant tilting from downward to rightward, with a blue circle.    F(x,y) = (0.30*y, -0.30)  circle(t) = (1.5 + 1.05*cos(t), 1.35 + 1.05*sin(t))           C  \\mathbf{F}               The Sign of a Line Integral   For the field and curve of , is positive, negative, or zero? Type one word: positive , negative , or zero .  Answer:      Correct.    Look again at where the field is strongest: along the top of C the field and the direction of travel make an obtuse angle.    The two halves do not cancel, because the field is stronger over the top half.      Along the bottom of the field and the unit tangent make acute angles, so there; along the top they make obtuse angles, so . The field is longer stronger over the top half, so the negative contribution wins and the integral is negative .     Two Particles, Two Paths   With , find the work done from to along the parabola and along , the bottom half of .  Work along : foot-pounds.  Work along : foot-pounds.      Correct.      Correct the same as along the parabola, which is worth thinking about.      On , with , so and .  On , with , so and again.  The two answers agree because is conservative revisit this problem after .     A Line Integral Along a Helix   For the helix , , compute .  The integrand is the constant , and the integral equals .      Correct: one plus one over two pi.      Correct: two pi plus one.    That is two pi: you dropped the dz term.      The integral is with . Along the helix and , so and      "
+  "number": "4.3",
+  "title": "Assignment 3",
+  "body": " Assignment 3   Section: . Work each problem, then type your answers into the boxes and have them checked here.  Every answer box is graded separately, so a box you fill in correctly earns its credit even if another box in the same problem is wrong. Press Check Me to submit; you may check as often as you like.   How to type your answers. Numbers: a decimal number and nothing else no units, no sign, no ; give at least three decimals (for instance 18.850 , not 6pi ). Answers are accepted within a small tolerance. Words: type just the word asked for, in lower case.     The vector field and the curve of . The curve is traversed in the direction of the arrowhead.   A field over the first quadrant tilting from downward to rightward, with a blue circle.    F(x,y) = (0.30*y, -0.30)  circle(t) = (1.5 + 1.05*cos(t), 1.35 + 1.05*sin(t))           C  \\mathbf{F}               The Sign of a Line Integral   For the field and curve of , is positive, negative, or zero? Type one word: positive , negative , or zero .  Answer:      Correct.    Look again at where the field is strongest: along the top of C the field and the direction of travel make an obtuse angle.    The two halves do not cancel, because the field is stronger over the top half.       Two Particles, Two Paths   With , find the work done from to along the parabola and along , the bottom half of .  Work along : foot-pounds.  Work along : foot-pounds.      Correct.     Not quite. Type a decimal number and nothing else, to at least three decimal places.       Correct the same as along the parabola, which is worth thinking about.     Not quite. Type a decimal number and nothing else, to at least three decimal places.        A Line Integral Along a Helix   For the helix , , compute .  The integrand is the constant , and the integral equals .      Correct: one plus one over two pi.     Not quite. Type a decimal number and nothing else, to at least three decimal places.       Correct: two pi plus one.    That is two pi: you dropped the dz term.       "
 },
 {
   "id": "sec-exercises-hw3-online-2-3",
@@ -3524,7 +3092,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-exercises-hw3-online.html#fig-hw3o-field",
   "type": "Figure",
-  "number": "5.3.1",
+  "number": "4.3.1",
   "title": "",
   "body": " The vector field and the curve of . The curve is traversed in the direction of the arrowhead.   A field over the first quadrant tilting from downward to rightward, with a blue circle.    F(x,y) = (0.30*y, -0.30)  circle(t) = (1.5 + 1.05*cos(t), 1.35 + 1.05*sin(t))           C  \\mathbf{F}             "
 },
@@ -3535,7 +3103,7 @@ var ptx_lunr_docs = [
   "type": "Exercise",
   "number": "1",
   "title": "The Sign of a Line Integral.",
-  "body": " The Sign of a Line Integral   For the field and curve of , is positive, negative, or zero? Type one word: positive , negative , or zero .  Answer:      Correct.    Look again at where the field is strongest: along the top of C the field and the direction of travel make an obtuse angle.    The two halves do not cancel, because the field is stronger over the top half.      Along the bottom of the field and the unit tangent make acute angles, so there; along the top they make obtuse angles, so . The field is longer stronger over the top half, so the negative contribution wins and the integral is negative .   "
+  "body": " The Sign of a Line Integral   For the field and curve of , is positive, negative, or zero? Type one word: positive , negative , or zero .  Answer:      Correct.    Look again at where the field is strongest: along the top of C the field and the direction of travel make an obtuse angle.    The two halves do not cancel, because the field is stronger over the top half.     "
 },
 {
   "id": "ex-hw3o-two-paths",
@@ -3544,7 +3112,7 @@ var ptx_lunr_docs = [
   "type": "Exercise",
   "number": "2",
   "title": "Two Particles, Two Paths.",
-  "body": " Two Particles, Two Paths   With , find the work done from to along the parabola and along , the bottom half of .  Work along : foot-pounds.  Work along : foot-pounds.      Correct.      Correct the same as along the parabola, which is worth thinking about.      On , with , so and .  On , with , so and again.  The two answers agree because is conservative revisit this problem after .   "
+  "body": " Two Particles, Two Paths   With , find the work done from to along the parabola and along , the bottom half of .  Work along : foot-pounds.  Work along : foot-pounds.      Correct.     Not quite. Type a decimal number and nothing else, to at least three decimal places.       Correct the same as along the parabola, which is worth thinking about.     Not quite. Type a decimal number and nothing else, to at least three decimal places.      "
 },
 {
   "id": "ex-hw3o-helix",
@@ -3553,16 +3121,16 @@ var ptx_lunr_docs = [
   "type": "Exercise",
   "number": "3",
   "title": "A Line Integral Along a Helix.",
-  "body": " A Line Integral Along a Helix   For the helix , , compute .  The integrand is the constant , and the integral equals .      Correct: one plus one over two pi.      Correct: two pi plus one.    That is two pi: you dropped the dz term.      The integral is with . Along the helix and , so and    "
+  "body": " A Line Integral Along a Helix   For the helix , , compute .  The integrand is the constant , and the integral equals .      Correct: one plus one over two pi.     Not quite. Type a decimal number and nothing else, to at least three decimal places.       Correct: two pi plus one.    That is two pi: you dropped the dz term.     "
 },
 {
   "id": "sec-exercises-hw4-online",
   "level": "1",
   "url": "sec-exercises-hw4-online.html",
   "type": "Section",
-  "number": "5.4",
-  "title": "Assignment 4, Online Version",
-  "body": " Assignment 4, Online Version   Sections: , , and . Work each problem, then type your answers into the boxes and have them checked here.  Every answer box is graded separately, so a box you fill in correctly earns its credit even if another box in the same problem is wrong. Press Check Me to submit; you may check as often as you like.   How to type your answers. Numbers: a decimal number and nothing else no units, no sign, no ; give at least three decimals (for instance 18.850 , not 6pi ). Answers are accepted within a small tolerance. Words: type just the word asked for, in lower case.     The vector field and the two paths and of . Every field vector points in the same direction; only their lengths change.   A uniform slanted field with a square path from corner A to corner B.    G(x,y) = (0.16*(1+x), 0.16*(1+x))           A    D    C    B                   Which Path Takes Less Work?   For the field of : over which path does perform less work? Type ADC or ABC .  Answer:  Is conservative? Type yes or no .  Answer:      Correct.    The other way round: along DC the field is longer than along AB, while the angle with the direction of travel is the same, so ADC does more work.      Correct.    If it were conservative the two paths would give the same work, since they share their endpoints.      Both paths run along two sides of the square. The horizontal sides and contribute the same, but the vertical side sits where the field is longer than it is along , and the angle between and is the same on both. Hence , so is the path of less work.  Because the two paths share their endpoints and give different work, is not conservative: a conservative field is path-independent.     The four shapes of . Shapes and are triangles cut off by and ; shapes and are sectors of the circle . The dashed lines are and .   Four small pictures of candidate regions, each on its own axes.    arc3(t) = (2.6 + 1.3*cos(t), 4.6 + 1.3*sin(t))  arc4(t) = (7.4 + 1.3*cos(t), 4.6 + 1.3*sin(t))          1   y=r  y=x         2   x=r  y=x         3   x^2+y^2=r^2  y=x         4   x^2+y^2=r^2  y=-x                Which Shapes Can Carry This Density?   With and the shapes of : type the numbers of the two shapes that can carry as a density, in increasing order and separated by a comma (for instance 1,3 ).  Answer:  Which of those two is heavier? Type its number.  Answer:      Correct.    Those are the shapes where the absolute value of y is at least the absolute value of x, so the density would be negative there.      Correct.    Compare the areas: the triangle has area r squared over two and the sector has area pi r squared over eight, which is smaller.      A density cannot be negative, so we need , that is . That holds on shapes and , and fails on shapes and .  Shape is the triangle of area and shape the sector of area . The triangle contains the sector's range of radii and has the larger area, so : shape is heavier.     Reversing the Order of Integration   Rewrite with the order of integration reversed.  How many double integrals does the reversed order need?   Taking them in order of increasing : the first runs up to  , and in it goes from to ; in the second, goes from to .      Correct: the right-hand boundary changes.     One is not enough: the right-hand boundary of the region is for small and after that.       Correct: that is where y = x\/2 meets x = 5.      Correct.      Correct.      The region is bounded by below, above, and on the right. Reading it in -slices, the left boundary is always ; the right boundary is until , and after that:      A Volume Over a Triangle   Find the volume under and above the triangle formed by , , and the -axis.  After integrating in , the remaining integrand is (in terms of ), and the volume is .      Correct.      Correct: one third.      The triangle is , , so      "
+  "number": "4.4",
+  "title": "Assignment 4",
+  "body": " Assignment 4   Sections: , , and . Work each problem, then type your answers into the boxes and have them checked here.  Every answer box is graded separately, so a box you fill in correctly earns its credit even if another box in the same problem is wrong. Press Check Me to submit; you may check as often as you like.   How to type your answers. Numbers: a decimal number and nothing else no units, no sign, no ; give at least three decimals (for instance 18.850 , not 6pi ). Answers are accepted within a small tolerance. Words: type just the word asked for, in lower case.     The vector field and the two paths and of . Every field vector points in the same direction; only their lengths change.   A uniform slanted field with a square path from corner A to corner B.    G(x,y) = (0.16*(1+x), 0.16*(1+x))           A    D    C    B                   Which Path Takes Less Work?   For the field of : over which path does perform less work? Type ADC or ABC .  Answer:  Is conservative? Type yes or no .  Answer:      Correct.    The other way round: along DC the field is longer than along AB, while the angle with the direction of travel is the same, so ADC does more work.      Correct.    If it were conservative the two paths would give the same work, since they share their endpoints.       The four shapes of . Shapes and are triangles cut off by and ; shapes and are sectors of the circle . The dashed lines are and .   Four small pictures of candidate regions, each on its own axes.    arc3(t) = (2.6 + 1.3*cos(t), 4.6 + 1.3*sin(t))  arc4(t) = (7.4 + 1.3*cos(t), 4.6 + 1.3*sin(t))          1   y=r  y=x         2   x=r  y=x         3   x^2+y^2=r^2  y=x         4   x^2+y^2=r^2  y=-x                Which Shapes Can Carry This Density?   With and the shapes of : type the numbers of the two shapes that can carry as a density, in increasing order and separated by a comma (for instance 1,3 ).  Answer:  Which of those two is heavier? Type its number.  Answer:      Correct.    Those are the shapes where the absolute value of y is at least the absolute value of x, so the density would be negative there.      Correct.    Compare the areas: the triangle has area r squared over two and the sector has area pi r squared over eight, which is smaller.       Reversing the Order of Integration   Rewrite with the order of integration reversed.  How many double integrals does the reversed order need?   Taking them in order of increasing : the first runs up to  , and in it goes from to ; in the second, goes from to .      Correct: the right-hand boundary changes.     One is not enough: the right-hand boundary of the region is for small and after that.       Correct: that is where y = x\/2 meets x = 5.     Not quite. Type a decimal number and nothing else, to at least three decimal places.       Correct.     Not quite. Type only the expression itself, with * for products and ^ for powers, for example 4cos(t)^2 .       Correct.     Not quite. Type a decimal number and nothing else, to at least three decimal places.        A Volume Over a Triangle   Find the volume under and above the triangle formed by , , and the -axis.  After integrating in , the remaining integrand is (in terms of ), and the volume is .      Correct.     Not quite. Type only the expression itself, with * for products and ^ for powers, for example 4cos(t)^2 .       Correct: one third.     Not quite. Type a decimal number and nothing else, to at least three decimal places.        "
 },
 {
   "id": "sec-exercises-hw4-online-2-3",
@@ -3578,7 +3146,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-exercises-hw4-online.html#fig-hw4o-paths",
   "type": "Figure",
-  "number": "5.4.1",
+  "number": "4.4.1",
   "title": "",
   "body": " The vector field and the two paths and of . Every field vector points in the same direction; only their lengths change.   A uniform slanted field with a square path from corner A to corner B.    G(x,y) = (0.16*(1+x), 0.16*(1+x))           A    D    C    B                 "
 },
@@ -3589,14 +3157,14 @@ var ptx_lunr_docs = [
   "type": "Exercise",
   "number": "1",
   "title": "Which Path Takes Less Work?",
-  "body": " Which Path Takes Less Work?   For the field of : over which path does perform less work? Type ADC or ABC .  Answer:  Is conservative? Type yes or no .  Answer:      Correct.    The other way round: along DC the field is longer than along AB, while the angle with the direction of travel is the same, so ADC does more work.      Correct.    If it were conservative the two paths would give the same work, since they share their endpoints.      Both paths run along two sides of the square. The horizontal sides and contribute the same, but the vertical side sits where the field is longer than it is along , and the angle between and is the same on both. Hence , so is the path of less work.  Because the two paths share their endpoints and give different work, is not conservative: a conservative field is path-independent.   "
+  "body": " Which Path Takes Less Work?   For the field of : over which path does perform less work? Type ADC or ABC .  Answer:  Is conservative? Type yes or no .  Answer:      Correct.    The other way round: along DC the field is longer than along AB, while the angle with the direction of travel is the same, so ADC does more work.      Correct.    If it were conservative the two paths would give the same work, since they share their endpoints.     "
 },
 {
   "id": "fig-hw4o-shapes",
   "level": "2",
   "url": "sec-exercises-hw4-online.html#fig-hw4o-shapes",
   "type": "Figure",
-  "number": "5.4.2",
+  "number": "4.4.2",
   "title": "",
   "body": " The four shapes of . Shapes and are triangles cut off by and ; shapes and are sectors of the circle . The dashed lines are and .   Four small pictures of candidate regions, each on its own axes.    arc3(t) = (2.6 + 1.3*cos(t), 4.6 + 1.3*sin(t))  arc4(t) = (7.4 + 1.3*cos(t), 4.6 + 1.3*sin(t))          1   y=r  y=x         2   x=r  y=x         3   x^2+y^2=r^2  y=x         4   x^2+y^2=r^2  y=-x              "
 },
@@ -3607,7 +3175,7 @@ var ptx_lunr_docs = [
   "type": "Exercise",
   "number": "2",
   "title": "Which Shapes Can Carry This Density?",
-  "body": " Which Shapes Can Carry This Density?   With and the shapes of : type the numbers of the two shapes that can carry as a density, in increasing order and separated by a comma (for instance 1,3 ).  Answer:  Which of those two is heavier? Type its number.  Answer:      Correct.    Those are the shapes where the absolute value of y is at least the absolute value of x, so the density would be negative there.      Correct.    Compare the areas: the triangle has area r squared over two and the sector has area pi r squared over eight, which is smaller.      A density cannot be negative, so we need , that is . That holds on shapes and , and fails on shapes and .  Shape is the triangle of area and shape the sector of area . The triangle contains the sector's range of radii and has the larger area, so : shape is heavier.   "
+  "body": " Which Shapes Can Carry This Density?   With and the shapes of : type the numbers of the two shapes that can carry as a density, in increasing order and separated by a comma (for instance 1,3 ).  Answer:  Which of those two is heavier? Type its number.  Answer:      Correct.    Those are the shapes where the absolute value of y is at least the absolute value of x, so the density would be negative there.      Correct.    Compare the areas: the triangle has area r squared over two and the sector has area pi r squared over eight, which is smaller.     "
 },
 {
   "id": "ex-hw4o-reverse-order",
@@ -3616,7 +3184,7 @@ var ptx_lunr_docs = [
   "type": "Exercise",
   "number": "3",
   "title": "Reversing the Order of Integration.",
-  "body": " Reversing the Order of Integration   Rewrite with the order of integration reversed.  How many double integrals does the reversed order need?   Taking them in order of increasing : the first runs up to  , and in it goes from to ; in the second, goes from to .      Correct: the right-hand boundary changes.     One is not enough: the right-hand boundary of the region is for small and after that.       Correct: that is where y = x\/2 meets x = 5.      Correct.      Correct.      The region is bounded by below, above, and on the right. Reading it in -slices, the left boundary is always ; the right boundary is until , and after that:    "
+  "body": " Reversing the Order of Integration   Rewrite with the order of integration reversed.  How many double integrals does the reversed order need?   Taking them in order of increasing : the first runs up to  , and in it goes from to ; in the second, goes from to .      Correct: the right-hand boundary changes.     One is not enough: the right-hand boundary of the region is for small and after that.       Correct: that is where y = x\/2 meets x = 5.     Not quite. Type a decimal number and nothing else, to at least three decimal places.       Correct.     Not quite. Type only the expression itself, with * for products and ^ for powers, for example 4cos(t)^2 .       Correct.     Not quite. Type a decimal number and nothing else, to at least three decimal places.      "
 },
 {
   "id": "ex-hw4o-volume",
@@ -3625,16 +3193,16 @@ var ptx_lunr_docs = [
   "type": "Exercise",
   "number": "4",
   "title": "A Volume Over a Triangle.",
-  "body": " A Volume Over a Triangle   Find the volume under and above the triangle formed by , , and the -axis.  After integrating in , the remaining integrand is (in terms of ), and the volume is .      Correct.      Correct: one third.      The triangle is , , so    "
+  "body": " A Volume Over a Triangle   Find the volume under and above the triangle formed by , , and the -axis.  After integrating in , the remaining integrand is (in terms of ), and the volume is .      Correct.     Not quite. Type only the expression itself, with * for products and ^ for powers, for example 4cos(t)^2 .       Correct: one third.     Not quite. Type a decimal number and nothing else, to at least three decimal places.      "
 },
 {
   "id": "sec-exercises-hw5-online",
   "level": "1",
   "url": "sec-exercises-hw5-online.html",
   "type": "Section",
-  "number": "5.5",
-  "title": "Assignment 5, Online Version",
-  "body": " Assignment 5, Online Version   Sections: and . Work each problem, then type your answers into the boxes and have them checked here.  Every answer box is graded separately, so a box you fill in correctly earns its credit even if another box in the same problem is wrong. Press Check Me to submit; you may check as often as you like.   How to type your answers. Numbers: a decimal number and nothing else no units, no sign, no ; give at least three decimals (for instance 18.850 , not 6pi ). Answers are accepted within a small tolerance. Words: type just the word asked for, in lower case.     A blank polar chart for . The circles are , , , and , and the spokes are spaced apart.   A blank polar grid of four circles and twelve labeled spokes.    c1(t) = (0.5*cos(t), 0.5*sin(t))  c2(t) = (cos(t), sin(t))  c3(t) = (1.5*cos(t), 1.5*sin(t))  c4(t) = (2*cos(t), 2*sin(t))          0   \\pi\/6    \\pi\/3    \\pi\/2    2\\pi\/3    5\\pi\/6   \\pi   7\\pi\/6    4\\pi\/3    3\\pi\/2    5\\pi\/3    11\\pi\/6   0.5  1  1.5  2              A Rose and Its Area   For , : about which axis is the graph symmetric? Type x or y .  Answer:  In the area integral , the inner limits are to , and runs from to .      Correct.    Replacing theta by pi minus theta leaves r unchanged, which is symmetry about the y-axis.      Correct.      Correct: pi over six.      Correct: five pi over six.      Replacing by gives , so is unchanged: the graph is symmetric about the -axis. The area is   which by the symmetry is also .     Three Integrals Into One   Combine the three integrals of into a single polar integral. In , the radius runs from to and from to .      Correct.      Correct.      Correct.      Correct: pi over four.      The three pieces together are the part of the annulus lying between the -axis and the line . Since and by ,      Mass Between Two Circles   Find the mass of the region bounded by and , whose density is .  Away from the origin the two circles cross at the polar angle  , and the mass is .      Correct: pi over four.      Correct: the natural log of two plus pi over two.      The two circles are and , meeting where . With and by ,      "
+  "number": "4.5",
+  "title": "Assignment 5",
+  "body": " Assignment 5   Sections: and . Work each problem, then type your answers into the boxes and have them checked here.  Every answer box is graded separately, so a box you fill in correctly earns its credit even if another box in the same problem is wrong. Press Check Me to submit; you may check as often as you like.   How to type your answers. Numbers: a decimal number and nothing else no units, no sign, no ; give at least three decimals (for instance 18.850 , not 6pi ). Answers are accepted within a small tolerance. Words: type just the word asked for, in lower case.     A blank polar chart for . The circles are , , , and , and the spokes are spaced apart.   A blank polar grid of four circles and twelve labeled spokes.    c1(t) = (0.5*cos(t), 0.5*sin(t))  c2(t) = (cos(t), sin(t))  c3(t) = (1.5*cos(t), 1.5*sin(t))  c4(t) = (2*cos(t), 2*sin(t))          0   \\pi\/6    \\pi\/3    \\pi\/2    2\\pi\/3    5\\pi\/6   \\pi   7\\pi\/6    4\\pi\/3    3\\pi\/2    5\\pi\/3    11\\pi\/6   0.5  1  1.5  2              A Rose and Its Area   For , : about which axis is the graph symmetric? Type x or y .  Answer:  In the area integral , the inner limits are to , and runs from to .      Correct.    Replacing theta by pi minus theta leaves r unchanged, which is symmetry about the y-axis.      Correct.     Not quite. Type only the expression itself, with * for products and ^ for powers, for example 4cos(t)^2 .       Correct: pi over six.     Not quite. Type a decimal number and nothing else, to at least three decimal places.       Correct: five pi over six.     Not quite. Type a decimal number and nothing else, to at least three decimal places.        Three Integrals Into One   Combine the three integrals of into a single polar integral. In , the radius runs from to and from to .      Correct.     Not quite. Type a decimal number and nothing else, to at least three decimal places.       Correct.     Not quite. Type a decimal number and nothing else, to at least three decimal places.       Correct.     Not quite. Type a decimal number and nothing else, to at least three decimal places.       Correct: pi over four.     Not quite. Type a decimal number and nothing else, to at least three decimal places.        Mass Between Two Circles   Find the mass of the region bounded by and , whose density is .  Away from the origin the two circles cross at the polar angle  , and the mass is .      Correct: pi over four.     Not quite. Type a decimal number and nothing else, to at least three decimal places.       Correct: the natural log of two plus pi over two.     Not quite. Type a decimal number and nothing else, to at least three decimal places.        "
 },
 {
   "id": "sec-exercises-hw5-online-2-3",
@@ -3650,7 +3218,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-exercises-hw5-online.html#fig-hw5o-polar-chart",
   "type": "Figure",
-  "number": "5.5.1",
+  "number": "4.5.1",
   "title": "",
   "body": " A blank polar chart for . The circles are , , , and , and the spokes are spaced apart.   A blank polar grid of four circles and twelve labeled spokes.    c1(t) = (0.5*cos(t), 0.5*sin(t))  c2(t) = (cos(t), sin(t))  c3(t) = (1.5*cos(t), 1.5*sin(t))  c4(t) = (2*cos(t), 2*sin(t))          0   \\pi\/6    \\pi\/3    \\pi\/2    2\\pi\/3    5\\pi\/6   \\pi   7\\pi\/6    4\\pi\/3    3\\pi\/2    5\\pi\/3    11\\pi\/6   0.5  1  1.5  2            "
 },
@@ -3661,7 +3229,7 @@ var ptx_lunr_docs = [
   "type": "Exercise",
   "number": "1",
   "title": "A Rose and Its Area.",
-  "body": " A Rose and Its Area   For , : about which axis is the graph symmetric? Type x or y .  Answer:  In the area integral , the inner limits are to , and runs from to .      Correct.    Replacing theta by pi minus theta leaves r unchanged, which is symmetry about the y-axis.      Correct.      Correct: pi over six.      Correct: five pi over six.      Replacing by gives , so is unchanged: the graph is symmetric about the -axis. The area is   which by the symmetry is also .   "
+  "body": " A Rose and Its Area   For , : about which axis is the graph symmetric? Type x or y .  Answer:  In the area integral , the inner limits are to , and runs from to .      Correct.    Replacing theta by pi minus theta leaves r unchanged, which is symmetry about the y-axis.      Correct.     Not quite. Type only the expression itself, with * for products and ^ for powers, for example 4cos(t)^2 .       Correct: pi over six.     Not quite. Type a decimal number and nothing else, to at least three decimal places.       Correct: five pi over six.     Not quite. Type a decimal number and nothing else, to at least three decimal places.      "
 },
 {
   "id": "ex-hw5o-combine",
@@ -3670,7 +3238,7 @@ var ptx_lunr_docs = [
   "type": "Exercise",
   "number": "2",
   "title": "Three Integrals Into One.",
-  "body": " Three Integrals Into One   Combine the three integrals of into a single polar integral. In , the radius runs from to and from to .      Correct.      Correct.      Correct.      Correct: pi over four.      The three pieces together are the part of the annulus lying between the -axis and the line . Since and by ,    "
+  "body": " Three Integrals Into One   Combine the three integrals of into a single polar integral. In , the radius runs from to and from to .      Correct.     Not quite. Type a decimal number and nothing else, to at least three decimal places.       Correct.     Not quite. Type a decimal number and nothing else, to at least three decimal places.       Correct.     Not quite. Type a decimal number and nothing else, to at least three decimal places.       Correct: pi over four.     Not quite. Type a decimal number and nothing else, to at least three decimal places.      "
 },
 {
   "id": "ex-hw5o-two-circles",
@@ -3679,16 +3247,16 @@ var ptx_lunr_docs = [
   "type": "Exercise",
   "number": "3",
   "title": "Mass Between Two Circles.",
-  "body": " Mass Between Two Circles   Find the mass of the region bounded by and , whose density is .  Away from the origin the two circles cross at the polar angle  , and the mass is .      Correct: pi over four.      Correct: the natural log of two plus pi over two.      The two circles are and , meeting where . With and by ,    "
+  "body": " Mass Between Two Circles   Find the mass of the region bounded by and , whose density is .  Away from the origin the two circles cross at the polar angle  , and the mass is .      Correct: pi over four.     Not quite. Type a decimal number and nothing else, to at least three decimal places.       Correct: the natural log of two plus pi over two.     Not quite. Type a decimal number and nothing else, to at least three decimal places.      "
 },
 {
   "id": "sec-exercises-hw6-online",
   "level": "1",
   "url": "sec-exercises-hw6-online.html",
   "type": "Section",
-  "number": "5.6",
-  "title": "Assignment 6, Online Version",
-  "body": " Assignment 6, Online Version   Sections: and . Work each problem, then type your answers into the boxes and have them checked here.  Every answer box is graded separately, so a box you fill in correctly earns its credit even if another box in the same problem is wrong. Press Check Me to submit; you may check as often as you like.   How to type your answers. Numbers: a decimal number and nothing else no units, no sign, no ; give at least three decimals (for instance 18.850 , not 6pi ). Answers are accepted within a small tolerance. Words: type just the word asked for, in lower case.     Mass of a Cone Along the x-Axis   An object is bounded by and , and its density is .  The mass of the object is .      Correct: pi over four.    That is pi; recheck the r-integration.      With (the cylindrical volume element about the -axis) and ,      From Cylindrical Back to Rectangular   Convert to rectangular coordinates.  In rectangular coordinates the innermost limit for becomes ; for a fixed , runs from to ; and runs from to .      Correct: r squared times cosine of two theta is x squared minus y squared.      Correct.      Correct.      Correct: r = sec(theta) is the line x = 1.      Since and is , that is , the region in the plane is the triangle bounded by , , and . Hence      Two Signs, No Calculation   Let be the solid between and . Type positive , negative , or zero for each.   :    :       Correct.    On R we have z at most 1-x^2-y^2, so the integrand is at most zero.      Correct.    On R we have z at least x^2+y^2, so the integrand is at least zero.      On , . The right inequality gives , so the first integral is negative ; the left gives , so the second is positive . Each integrand vanishes only on one of the two bounding surfaces.     Volume Between a Hyperboloid and a Paraboloid   Find the volume of the region bounded by and .  The two surfaces meet at  , over the circle of radius , and the volume is .      Correct: z = 2 would need x^2+y^2 = -1, which is impossible.    That root gives x squared plus y squared equal to minus one, so it is rejected.      Correct.      Correct.      The surfaces are and . Setting equal to gives , so or ; only is possible, and then . Therefore      "
+  "number": "4.6",
+  "title": "Assignment 6",
+  "body": " Assignment 6   Sections: and . Work each problem, then type your answers into the boxes and have them checked here.  Every answer box is graded separately, so a box you fill in correctly earns its credit even if another box in the same problem is wrong. Press Check Me to submit; you may check as often as you like.   How to type your answers. Numbers: a decimal number and nothing else no units, no sign, no ; give at least three decimals (for instance 18.850 , not 6pi ). Answers are accepted within a small tolerance. Words: type just the word asked for, in lower case.     Mass of a Cone Along the x-Axis   An object is bounded by and , and its density is .  The mass of the object is .      Correct: pi over four.    That is pi; recheck the r-integration.       From Cylindrical Back to Rectangular   Convert to rectangular coordinates.  In rectangular coordinates the innermost limit for becomes ; for a fixed , runs from to ; and runs from to .      Correct: r squared times cosine of two theta is x squared minus y squared.     Not quite. Type only the expression itself, with * for products and ^ for powers, for example 4cos(t)^2 .       Correct.     Not quite. Type only the expression itself, with * for products and ^ for powers, for example 4cos(t)^2 .       Correct.     Not quite. Type only the expression itself, with * for products and ^ for powers, for example 4cos(t)^2 .       Correct: r = sec(theta) is the line x = 1.     Not quite. Type a decimal number and nothing else, to at least three decimal places.        Two Signs, No Calculation   Let be the solid between and . Type positive , negative , or zero for each.   :    :       Correct.    On R we have z at most 1-x^2-y^2, so the integrand is at most zero.      Correct.    On R we have z at least x^2+y^2, so the integrand is at least zero.       Volume Between a Hyperboloid and a Paraboloid   Find the volume of the region bounded by and .  The two surfaces meet at  , over the circle of radius , and the volume is .      Correct: z = 2 would need x^2+y^2 = -1, which is impossible.    That root gives x squared plus y squared equal to minus one, so it is rejected.      Correct.     Not quite. Type a decimal number and nothing else, to at least three decimal places.       Correct.     Not quite. Type a decimal number and nothing else, to at least three decimal places.        "
 },
 {
   "id": "sec-exercises-hw6-online-2-3",
@@ -3706,7 +3274,7 @@ var ptx_lunr_docs = [
   "type": "Exercise",
   "number": "1",
   "title": "Mass of a Cone Along the x-Axis.",
-  "body": " Mass of a Cone Along the x-Axis   An object is bounded by and , and its density is .  The mass of the object is .      Correct: pi over four.    That is pi; recheck the r-integration.      With (the cylindrical volume element about the -axis) and ,    "
+  "body": " Mass of a Cone Along the x-Axis   An object is bounded by and , and its density is .  The mass of the object is .      Correct: pi over four.    That is pi; recheck the r-integration.     "
 },
 {
   "id": "ex-hw6o-convert",
@@ -3715,7 +3283,7 @@ var ptx_lunr_docs = [
   "type": "Exercise",
   "number": "2",
   "title": "From Cylindrical Back to Rectangular.",
-  "body": " From Cylindrical Back to Rectangular   Convert to rectangular coordinates.  In rectangular coordinates the innermost limit for becomes ; for a fixed , runs from to ; and runs from to .      Correct: r squared times cosine of two theta is x squared minus y squared.      Correct.      Correct.      Correct: r = sec(theta) is the line x = 1.      Since and is , that is , the region in the plane is the triangle bounded by , , and . Hence    "
+  "body": " From Cylindrical Back to Rectangular   Convert to rectangular coordinates.  In rectangular coordinates the innermost limit for becomes ; for a fixed , runs from to ; and runs from to .      Correct: r squared times cosine of two theta is x squared minus y squared.     Not quite. Type only the expression itself, with * for products and ^ for powers, for example 4cos(t)^2 .       Correct.     Not quite. Type only the expression itself, with * for products and ^ for powers, for example 4cos(t)^2 .       Correct.     Not quite. Type only the expression itself, with * for products and ^ for powers, for example 4cos(t)^2 .       Correct: r = sec(theta) is the line x = 1.     Not quite. Type a decimal number and nothing else, to at least three decimal places.      "
 },
 {
   "id": "ex-hw6o-signs",
@@ -3724,7 +3292,7 @@ var ptx_lunr_docs = [
   "type": "Exercise",
   "number": "3",
   "title": "Two Signs, No Calculation.",
-  "body": " Two Signs, No Calculation   Let be the solid between and . Type positive , negative , or zero for each.   :    :       Correct.    On R we have z at most 1-x^2-y^2, so the integrand is at most zero.      Correct.    On R we have z at least x^2+y^2, so the integrand is at least zero.      On , . The right inequality gives , so the first integral is negative ; the left gives , so the second is positive . Each integrand vanishes only on one of the two bounding surfaces.   "
+  "body": " Two Signs, No Calculation   Let be the solid between and . Type positive , negative , or zero for each.   :    :       Correct.    On R we have z at most 1-x^2-y^2, so the integrand is at most zero.      Correct.    On R we have z at least x^2+y^2, so the integrand is at least zero.     "
 },
 {
   "id": "ex-hw6o-volume",
@@ -3733,16 +3301,16 @@ var ptx_lunr_docs = [
   "type": "Exercise",
   "number": "4",
   "title": "Volume Between a Hyperboloid and a Paraboloid.",
-  "body": " Volume Between a Hyperboloid and a Paraboloid   Find the volume of the region bounded by and .  The two surfaces meet at  , over the circle of radius , and the volume is .      Correct: z = 2 would need x^2+y^2 = -1, which is impossible.    That root gives x squared plus y squared equal to minus one, so it is rejected.      Correct.      Correct.      The surfaces are and . Setting equal to gives , so or ; only is possible, and then . Therefore    "
+  "body": " Volume Between a Hyperboloid and a Paraboloid   Find the volume of the region bounded by and .  The two surfaces meet at  , over the circle of radius , and the volume is .      Correct: z = 2 would need x^2+y^2 = -1, which is impossible.    That root gives x squared plus y squared equal to minus one, so it is rejected.      Correct.     Not quite. Type a decimal number and nothing else, to at least three decimal places.       Correct.     Not quite. Type a decimal number and nothing else, to at least three decimal places.      "
 },
 {
   "id": "sec-exercises-hw7-online",
   "level": "1",
   "url": "sec-exercises-hw7-online.html",
   "type": "Section",
-  "number": "5.7",
-  "title": "Assignment 7, Online Version",
-  "body": " Assignment 7, Online Version   Sections: and . Work each problem, then type your answers into the boxes and have them checked here.  Every answer box is graded separately, so a box you fill in correctly earns its credit even if another box in the same problem is wrong. Press Check Me to submit; you may check as often as you like.   How to type your answers. Numbers: a decimal number and nothing else no units, no sign, no ; give at least three decimals (for instance 18.850 , not 6pi ). Answers are accepted within a small tolerance. Words: type just the word asked for, in lower case.     A Hemisphere in Spherical Coordinates   Evaluate   The solid of integration is half of a ball; its radius is , and the value of the integral is .      Correct.      Correct: thirty-six pi.    That is the whole ball; the limits give only the half with x at least zero.      The bounds describe the hemisphere , . Since by and the integrand is ,      The Area of a Slanted Ellipse   With , , the Jacobian equals , the ellipse becomes the unit disk in the -plane, and its area is .      Correct.      Correct: pi.      Inverting gives , , so the Jacobian determinant is and . Substituting, , so the region is the unit disk and      Scaling a Double Integral   Suppose , where is the disk . Let be the disk and .  The change of variables carrying onto multiplies areas by , and  .      Correct: dx dy = 4 du dv.      Correct.    You applied the factor of three but not the area factor of four.      With , the Jacobian is , and becomes , which is . Hence      "
+  "number": "4.7",
+  "title": "Assignment 7",
+  "body": " Assignment 7   Sections: and . Work each problem, then type your answers into the boxes and have them checked here.  Every answer box is graded separately, so a box you fill in correctly earns its credit even if another box in the same problem is wrong. Press Check Me to submit; you may check as often as you like.   How to type your answers. Numbers: a decimal number and nothing else no units, no sign, no ; give at least three decimals (for instance 18.850 , not 6pi ). Answers are accepted within a small tolerance. Words: type just the word asked for, in lower case.     A Hemisphere in Spherical Coordinates   Evaluate   The solid of integration is half of a ball; its radius is , and the value of the integral is .      Correct.     Not quite. Type a decimal number and nothing else, to at least three decimal places.       Correct: thirty-six pi.    That is the whole ball; the limits give only the half with x at least zero.       The Area of a Slanted Ellipse   With , , the Jacobian equals , the ellipse becomes the unit disk in the -plane, and its area is .      Correct.     Not quite. Type a decimal number and nothing else, to at least three decimal places.       Correct: pi.     Not quite. Type a decimal number and nothing else, to at least three decimal places.        Scaling a Double Integral   Suppose , where is the disk . Let be the disk and .  The change of variables carrying onto multiplies areas by , and  .      Correct: dx dy = 4 du dv.     Not quite. Type a decimal number and nothing else, to at least three decimal places.       Correct.    You applied the factor of three but not the area factor of four.       "
 },
 {
   "id": "sec-exercises-hw7-online-2-3",
@@ -3760,7 +3328,7 @@ var ptx_lunr_docs = [
   "type": "Exercise",
   "number": "1",
   "title": "A Hemisphere in Spherical Coordinates.",
-  "body": " A Hemisphere in Spherical Coordinates   Evaluate   The solid of integration is half of a ball; its radius is , and the value of the integral is .      Correct.      Correct: thirty-six pi.    That is the whole ball; the limits give only the half with x at least zero.      The bounds describe the hemisphere , . Since by and the integrand is ,    "
+  "body": " A Hemisphere in Spherical Coordinates   Evaluate   The solid of integration is half of a ball; its radius is , and the value of the integral is .      Correct.     Not quite. Type a decimal number and nothing else, to at least three decimal places.       Correct: thirty-six pi.    That is the whole ball; the limits give only the half with x at least zero.     "
 },
 {
   "id": "ex-hw7o-ellipse",
@@ -3769,7 +3337,7 @@ var ptx_lunr_docs = [
   "type": "Exercise",
   "number": "2",
   "title": "The Area of a Slanted Ellipse.",
-  "body": " The Area of a Slanted Ellipse   With , , the Jacobian equals , the ellipse becomes the unit disk in the -plane, and its area is .      Correct.      Correct: pi.      Inverting gives , , so the Jacobian determinant is and . Substituting, , so the region is the unit disk and    "
+  "body": " The Area of a Slanted Ellipse   With , , the Jacobian equals , the ellipse becomes the unit disk in the -plane, and its area is .      Correct.     Not quite. Type a decimal number and nothing else, to at least three decimal places.       Correct: pi.     Not quite. Type a decimal number and nothing else, to at least three decimal places.      "
 },
 {
   "id": "ex-hw7o-scaling",
@@ -3778,16 +3346,16 @@ var ptx_lunr_docs = [
   "type": "Exercise",
   "number": "3",
   "title": "Scaling a Double Integral.",
-  "body": " Scaling a Double Integral   Suppose , where is the disk . Let be the disk and .  The change of variables carrying onto multiplies areas by , and  .      Correct: dx dy = 4 du dv.      Correct.    You applied the factor of three but not the area factor of four.      With , the Jacobian is , and becomes , which is . Hence    "
+  "body": " Scaling a Double Integral   Suppose , where is the disk . Let be the disk and .  The change of variables carrying onto multiplies areas by , and  .      Correct: dx dy = 4 du dv.     Not quite. Type a decimal number and nothing else, to at least three decimal places.       Correct.    You applied the factor of three but not the area factor of four.     "
 },
 {
   "id": "sec-exercises-hw8-online",
   "level": "1",
   "url": "sec-exercises-hw8-online.html",
   "type": "Section",
-  "number": "5.8",
-  "title": "Assignment 8, Online Version",
-  "body": " Assignment 8, Online Version   Section: . Work each problem, then type your answers into the boxes and have them checked here.  Every answer box is graded separately, so a box you fill in correctly earns its credit even if another box in the same problem is wrong. Press Check Me to submit; you may check as often as you like.   How to type your answers. Numbers: a decimal number and nothing else no units, no sign, no ; give at least three decimals (for instance 18.850 , not 6pi ). Answers are accepted within a small tolerance. Words: type just the word asked for, in lower case.     The solid of : the cone capped by the plane , sitting on the horizontal cylinder cut off by the planes .   A cone standing point-down on a horizontal cylinder lying along the y axis.   A red cylinder of radius one lies on its side along the y axis, cut off by the planes y equals plus and minus one. Above it, a red cone opens upward from the point at height one on the z axis to a disk of radius one in the plane z equals two.       The Centroid of Cone Plus Cylinder   For the solid of with constant density : the mass of the cylinder is  times , and the mass of the cone is  times .  The centroid lies on the -axis at  .      Correct: two pi.      Correct: pi over three.      Correct: one quarter.      By symmetry the cylinder's own centroid is the origin, so only the cone moves the answer. The cylinder has volume and the cone   The cone's own centroid sits at , so with ,   so the centroid is .     Center of Mass of the Cone   For the solid bounded by and with : the mass is , the moment is , and the center of mass is at  .      Correct: pi over four.      Correct: pi over five.      Correct: four fifths.      By symmetry the center of mass lies on the -axis. From , , and   Hence , and the center of mass is .     "
+  "number": "4.8",
+  "title": "Assignment 8",
+  "body": " Assignment 8   Section: . Work each problem, then type your answers into the boxes and have them checked here.  Every answer box is graded separately, so a box you fill in correctly earns its credit even if another box in the same problem is wrong. Press Check Me to submit; you may check as often as you like.   How to type your answers. Numbers: a decimal number and nothing else no units, no sign, no ; give at least three decimals (for instance 18.850 , not 6pi ). Answers are accepted within a small tolerance. Words: type just the word asked for, in lower case.     The solid of : the cone capped by the plane , sitting on the horizontal cylinder cut off by the planes .   A cone standing point-down on a horizontal cylinder lying along the y axis.   A red cylinder of radius one lies on its side along the y axis, cut off by the planes y equals plus and minus one. Above it, a red cone opens upward from the point at height one on the z axis to a disk of radius one in the plane z equals two.       The Centroid of Cone Plus Cylinder   For the solid of with constant density : the mass of the cylinder is  times , and the mass of the cone is  times .  The centroid lies on the -axis at  .      Correct: two pi.     Not quite. Type a decimal number and nothing else, to at least three decimal places.       Correct: pi over three.     Not quite. Type a decimal number and nothing else, to at least three decimal places.       Correct: one quarter.     Not quite. Type a decimal number and nothing else, to at least three decimal places.        Center of Mass of the Cone   For the solid bounded by and with : the mass is , the moment is , and the center of mass is at  .      Correct: pi over four.     Not quite. Type a decimal number and nothing else, to at least three decimal places.       Correct: pi over five.     Not quite. Type a decimal number and nothing else, to at least three decimal places.       Correct: four fifths.     Not quite. Type a decimal number and nothing else, to at least three decimal places.        "
 },
 {
   "id": "sec-exercises-hw8-online-2-3",
@@ -3803,7 +3371,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-exercises-hw8-online.html#fig-hw8o-solid",
   "type": "Figure",
-  "number": "5.8.1",
+  "number": "4.8.1",
   "title": "",
   "body": " The solid of : the cone capped by the plane , sitting on the horizontal cylinder cut off by the planes .   A cone standing point-down on a horizontal cylinder lying along the y axis.   A red cylinder of radius one lies on its side along the y axis, cut off by the planes y equals plus and minus one. Above it, a red cone opens upward from the point at height one on the z axis to a disk of radius one in the plane z equals two.     "
 },
@@ -3814,7 +3382,7 @@ var ptx_lunr_docs = [
   "type": "Exercise",
   "number": "1",
   "title": "The Centroid of Cone Plus Cylinder.",
-  "body": " The Centroid of Cone Plus Cylinder   For the solid of with constant density : the mass of the cylinder is  times , and the mass of the cone is  times .  The centroid lies on the -axis at  .      Correct: two pi.      Correct: pi over three.      Correct: one quarter.      By symmetry the cylinder's own centroid is the origin, so only the cone moves the answer. The cylinder has volume and the cone   The cone's own centroid sits at , so with ,   so the centroid is .   "
+  "body": " The Centroid of Cone Plus Cylinder   For the solid of with constant density : the mass of the cylinder is  times , and the mass of the cone is  times .  The centroid lies on the -axis at  .      Correct: two pi.     Not quite. Type a decimal number and nothing else, to at least three decimal places.       Correct: pi over three.     Not quite. Type a decimal number and nothing else, to at least three decimal places.       Correct: one quarter.     Not quite. Type a decimal number and nothing else, to at least three decimal places.      "
 },
 {
   "id": "ex-hw8o-center-of-mass",
@@ -3823,16 +3391,16 @@ var ptx_lunr_docs = [
   "type": "Exercise",
   "number": "2",
   "title": "Center of Mass of the Cone.",
-  "body": " Center of Mass of the Cone   For the solid bounded by and with : the mass is , the moment is , and the center of mass is at  .      Correct: pi over four.      Correct: pi over five.      Correct: four fifths.      By symmetry the center of mass lies on the -axis. From , , and   Hence , and the center of mass is .   "
+  "body": " Center of Mass of the Cone   For the solid bounded by and with : the mass is , the moment is , and the center of mass is at  .      Correct: pi over four.     Not quite. Type a decimal number and nothing else, to at least three decimal places.       Correct: pi over five.     Not quite. Type a decimal number and nothing else, to at least three decimal places.       Correct: four fifths.     Not quite. Type a decimal number and nothing else, to at least three decimal places.      "
 },
 {
   "id": "sec-exercises-hw9-online",
   "level": "1",
   "url": "sec-exercises-hw9-online.html",
   "type": "Section",
-  "number": "5.9",
-  "title": "Assignment 9, Online Version",
-  "body": " Assignment 9, Online Version   Section: . Work each problem, then type your answers into the boxes and have them checked here.  Every answer box is graded separately, so a box you fill in correctly earns its credit even if another box in the same problem is wrong. Press Check Me to submit; you may check as often as you like.   How to type your answers. Numbers: a decimal number and nothing else no units, no sign, no ; give at least three decimals (for instance 18.850 , not 6pi ). Answers are accepted within a small tolerance. Words: type just the word asked for, in lower case.     The curve of : a staircase of ten unit steps from to , followed by the horizontal segment back to .   A staircase of ten unit steps from the origin to (10,10), returning along the top.          (0,0)    (10,10)    (0,10)                Work Along a Staircase   For along the path of : the curl integrand of equals .  Closing the path into a simple closed curve encloses an area of , so the integral around that closed curve is .  The work along the given path is .      Correct.      Correct: fifty plus ten halves.      Correct: twice the area.      Correct.      Closing the path with the segment down the -axis gives a simple closed curve, and , so by Green's theorem, , the closed loop integral is , where is the enclosed area.  On , and , so . Therefore      A Fierce-Looking Integral Around a Circle   For the integral of around the unit circle: after simplification equals (in terms of ), and the integral equals .      Correct.      Correct: pi over four.      Differentiating, and , so their difference is . By Green's theorem, ,      Outward Flux Across the Unit Circle   For : the flux density of equals  , and the outward flux across the unit circle is .      Correct.      Correct: pi.      Here , so by the flux form of Green's theorem, ,   since the -term integrates to zero by symmetry and what is left is the area of the disk.     Green\\u2019s Theorem on One Petal   For around one petal of : equals .  The area of the petal is , so the line integral is .      Correct.      Correct: pi over eight.      Correct: minus pi over two.      With and , and , so their difference is . The petal has area   so the integral is . It is both the circulation of around the petal and, read the other way, the work done by on a particle going once around it.     "
+  "number": "4.9",
+  "title": "Assignment 9",
+  "body": " Assignment 9   Section: . Work each problem, then type your answers into the boxes and have them checked here.  Every answer box is graded separately, so a box you fill in correctly earns its credit even if another box in the same problem is wrong. Press Check Me to submit; you may check as often as you like.   How to type your answers. Numbers: a decimal number and nothing else no units, no sign, no ; give at least three decimals (for instance 18.850 , not 6pi ). Answers are accepted within a small tolerance. Words: type just the word asked for, in lower case.     The curve of : a staircase of ten unit steps from to , followed by the horizontal segment back to .   A staircase of ten unit steps from the origin to (10,10), returning along the top.          (0,0)    (10,10)    (0,10)                Work Along a Staircase   For along the path of : the curl integrand of equals .  Closing the path into a simple closed curve encloses an area of , so the integral around that closed curve is .  The work along the given path is .      Correct.     Not quite. Type a decimal number and nothing else, to at least three decimal places.       Correct: fifty plus ten halves.     Not quite. Type a decimal number and nothing else, to at least three decimal places.       Correct: twice the area.     Not quite. Type a decimal number and nothing else, to at least three decimal places.       Correct.     Not quite. Type a decimal number and nothing else, to at least three decimal places.        A Fierce-Looking Integral Around a Circle   For the integral of around the unit circle: after simplification equals (in terms of ), and the integral equals .      Correct.     Not quite. Type only the expression itself, with * for products and ^ for powers, for example 4cos(t)^2 .       Correct: pi over four.     Not quite. Type a decimal number and nothing else, to at least three decimal places.        Outward Flux Across the Unit Circle   For : the flux density of equals  , and the outward flux across the unit circle is .      Correct.     Not quite. Type only the expression itself, with * for products and ^ for powers, for example 4cos(t)^2 .       Correct: pi.     Not quite. Type a decimal number and nothing else, to at least three decimal places.        Green\\u2019s Theorem on One Petal   For around one petal of : equals .  The area of the petal is , so the line integral is .      Correct.     Not quite. Type a decimal number and nothing else, to at least three decimal places.       Correct: pi over eight.     Not quite. Type a decimal number and nothing else, to at least three decimal places.       Correct: minus pi over two.     Not quite. Type a decimal number and nothing else, to at least three decimal places.        "
 },
 {
   "id": "sec-exercises-hw9-online-2-3",
@@ -3848,7 +3416,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-exercises-hw9-online.html#fig-hw9o-staircase",
   "type": "Figure",
-  "number": "5.9.1",
+  "number": "4.9.1",
   "title": "",
   "body": " The curve of : a staircase of ten unit steps from to , followed by the horizontal segment back to .   A staircase of ten unit steps from the origin to (10,10), returning along the top.          (0,0)    (10,10)    (0,10)              "
 },
@@ -3859,7 +3427,7 @@ var ptx_lunr_docs = [
   "type": "Exercise",
   "number": "1",
   "title": "Work Along a Staircase.",
-  "body": " Work Along a Staircase   For along the path of : the curl integrand of equals .  Closing the path into a simple closed curve encloses an area of , so the integral around that closed curve is .  The work along the given path is .      Correct.      Correct: fifty plus ten halves.      Correct: twice the area.      Correct.      Closing the path with the segment down the -axis gives a simple closed curve, and , so by Green's theorem, , the closed loop integral is , where is the enclosed area.  On , and , so . Therefore    "
+  "body": " Work Along a Staircase   For along the path of : the curl integrand of equals .  Closing the path into a simple closed curve encloses an area of , so the integral around that closed curve is .  The work along the given path is .      Correct.     Not quite. Type a decimal number and nothing else, to at least three decimal places.       Correct: fifty plus ten halves.     Not quite. Type a decimal number and nothing else, to at least three decimal places.       Correct: twice the area.     Not quite. Type a decimal number and nothing else, to at least three decimal places.       Correct.     Not quite. Type a decimal number and nothing else, to at least three decimal places.      "
 },
 {
   "id": "ex-hw9o-circle",
@@ -3868,7 +3436,7 @@ var ptx_lunr_docs = [
   "type": "Exercise",
   "number": "2",
   "title": "A Fierce-Looking Integral Around a Circle.",
-  "body": " A Fierce-Looking Integral Around a Circle   For the integral of around the unit circle: after simplification equals (in terms of ), and the integral equals .      Correct.      Correct: pi over four.      Differentiating, and , so their difference is . By Green's theorem, ,    "
+  "body": " A Fierce-Looking Integral Around a Circle   For the integral of around the unit circle: after simplification equals (in terms of ), and the integral equals .      Correct.     Not quite. Type only the expression itself, with * for products and ^ for powers, for example 4cos(t)^2 .       Correct: pi over four.     Not quite. Type a decimal number and nothing else, to at least three decimal places.      "
 },
 {
   "id": "ex-hw9o-flux",
@@ -3877,7 +3445,7 @@ var ptx_lunr_docs = [
   "type": "Exercise",
   "number": "3",
   "title": "Outward Flux Across the Unit Circle.",
-  "body": " Outward Flux Across the Unit Circle   For : the flux density of equals  , and the outward flux across the unit circle is .      Correct.      Correct: pi.      Here , so by the flux form of Green's theorem, ,   since the -term integrates to zero by symmetry and what is left is the area of the disk.   "
+  "body": " Outward Flux Across the Unit Circle   For : the flux density of equals  , and the outward flux across the unit circle is .      Correct.     Not quite. Type only the expression itself, with * for products and ^ for powers, for example 4cos(t)^2 .       Correct: pi.     Not quite. Type a decimal number and nothing else, to at least three decimal places.      "
 },
 {
   "id": "ex-hw9o-rose",
@@ -3886,7 +3454,457 @@ var ptx_lunr_docs = [
   "type": "Exercise",
   "number": "4",
   "title": "Green\\u2019s Theorem on One Petal.",
-  "body": " Green\\u2019s Theorem on One Petal   For around one petal of : equals .  The area of the petal is , so the line integral is .      Correct.      Correct: pi over eight.      Correct: minus pi over two.      With and , and , so their difference is . The petal has area   so the integral is . It is both the circulation of around the petal and, read the other way, the work done by on a particle going once around it.   "
+  "body": " Green\\u2019s Theorem on One Petal   For around one petal of : equals .  The area of the petal is , so the line integral is .      Correct.     Not quite. Type a decimal number and nothing else, to at least three decimal places.       Correct: pi over eight.     Not quite. Type a decimal number and nothing else, to at least three decimal places.       Correct: minus pi over two.     Not quite. Type a decimal number and nothing else, to at least three decimal places.      "
+},
+{
+  "id": "sec-solutions-hw1",
+  "level": "1",
+  "url": "sec-solutions-hw1.html",
+  "type": "Section",
+  "number": "5.1",
+  "title": "Assignment 1",
+  "body": " Assignment 1  Sections: and .  Work each problem yourself first; the full solution follows immediately below it. The auto-graded version of the same problems is .    The curve is the intersection of and . Parametrize .      The curve is a helix of radius and height . Moreover, let denote the number of turns (revolutions) for the helix.   Which spring uses more wire?   Two coil springs side by side: spring A wide with three turns, spring B narrow with five turns.   Two helical springs drawn side by side. Spring A, on the left, has three turns of radius seven centimeters and a marked height of four centimeters. Spring B, on the right, has five turns of radius four centimeters and a marked height of three centimeters. Dashed lines with a double-headed arrow mark each spring's height.      Parametrize .  (b) Compute the length of the two springs shown in . Which spring uses more wire? A or B?      Find equation of the tangent line to the curve at the point .      The path of an object is given by Assume that the starting point of the object's motion is the origin. Determine the location of the object after traveling a distance of .    "
+},
+{
+  "id": "ex-hw1-parametrize-intersection",
+  "level": "2",
+  "url": "sec-solutions-hw1.html#ex-hw1-parametrize-intersection",
+  "type": "Problem",
+  "number": "5.1.1",
+  "title": "",
+  "body": "  The curve is the intersection of and . Parametrize .   "
+},
+{
+  "id": "ex-hw1-helix",
+  "level": "2",
+  "url": "sec-solutions-hw1.html#ex-hw1-helix",
+  "type": "Problem",
+  "number": "5.1.2",
+  "title": "",
+  "body": "  The curve is a helix of radius and height . Moreover, let denote the number of turns (revolutions) for the helix.   Which spring uses more wire?   Two coil springs side by side: spring A wide with three turns, spring B narrow with five turns.   Two helical springs drawn side by side. Spring A, on the left, has three turns of radius seven centimeters and a marked height of four centimeters. Spring B, on the right, has five turns of radius four centimeters and a marked height of three centimeters. Dashed lines with a double-headed arrow mark each spring's height.      Parametrize .  (b) Compute the length of the two springs shown in . Which spring uses more wire? A or B?   "
+},
+{
+  "id": "ex-hw1-tangent-line",
+  "level": "2",
+  "url": "sec-solutions-hw1.html#ex-hw1-tangent-line",
+  "type": "Problem",
+  "number": "5.1.4",
+  "title": "",
+  "body": "  Find equation of the tangent line to the curve at the point .   "
+},
+{
+  "id": "ex-hw1-location",
+  "level": "2",
+  "url": "sec-solutions-hw1.html#ex-hw1-location",
+  "type": "Problem",
+  "number": "5.1.5",
+  "title": "",
+  "body": "  The path of an object is given by Assume that the starting point of the object's motion is the origin. Determine the location of the object after traveling a distance of .   "
+},
+{
+  "id": "sec-solutions-hw2",
+  "level": "1",
+  "url": "sec-solutions-hw2.html",
+  "type": "Section",
+  "number": "5.2",
+  "title": "Assignment 2",
+  "body": " Assignment 2  Section: .  Work each problem yourself first; the full solution follows immediately below it. The auto-graded version of the same problems is .    Consider a wire whose shape is a quarter circle of radius one, centered at , where . The density of the wire is   measured in kilograms per meter. Find the total mass of the wire.      Evaluate the line integral , where is the straight-line segment parametrized by , , and , from to .      Evaluate the line integral over the curve of .     The curve of : the boundary of the unit square, traversed once as shown.   The unit square traversed counterclockwise, arrowheads on all four sides.            (0,0)    (1,0)    (1,1)    (0,1)                   Find the surface area of the wall whose height is given by and whose base is the unit circle in the -plane. See .     The wall of : its base is the unit circle in the -plane and its height above a point of that circle is .   A curved wall standing on the unit circle, whose top edge rises and falls twice around the circle.   A translucent blue wall stands vertically on the unit circle in the horizontal plane. Its top edge is a closed curve that reaches height four above the points where the circle meets the x axis and dips to height two above the points where it meets the y axis.      "
+},
+{
+  "id": "ex-hw2-quarter-circle",
+  "level": "2",
+  "url": "sec-solutions-hw2.html#ex-hw2-quarter-circle",
+  "type": "Problem",
+  "number": "5.2.1",
+  "title": "",
+  "body": "  Consider a wire whose shape is a quarter circle of radius one, centered at , where . The density of the wire is   measured in kilograms per meter. Find the total mass of the wire.   "
+},
+{
+  "id": "ex-hw2-segment",
+  "level": "2",
+  "url": "sec-solutions-hw2.html#ex-hw2-segment",
+  "type": "Problem",
+  "number": "5.2.2",
+  "title": "",
+  "body": "  Evaluate the line integral , where is the straight-line segment parametrized by , , and , from to .   "
+},
+{
+  "id": "ex-hw2-square-path",
+  "level": "2",
+  "url": "sec-solutions-hw2.html#ex-hw2-square-path",
+  "type": "Problem",
+  "number": "5.2.3",
+  "title": "",
+  "body": "  Evaluate the line integral over the curve of .   "
+},
+{
+  "id": "fig-hw2-square",
+  "level": "2",
+  "url": "sec-solutions-hw2.html#fig-hw2-square",
+  "type": "Figure",
+  "number": "5.2.4",
+  "title": "",
+  "body": " The curve of : the boundary of the unit square, traversed once as shown.   The unit square traversed counterclockwise, arrowheads on all four sides.            (0,0)    (1,0)    (1,1)    (0,1)                "
+},
+{
+  "id": "ex-hw2-wall",
+  "level": "2",
+  "url": "sec-solutions-hw2.html#ex-hw2-wall",
+  "type": "Problem",
+  "number": "5.2.5",
+  "title": "",
+  "body": "  Find the surface area of the wall whose height is given by and whose base is the unit circle in the -plane. See .   "
+},
+{
+  "id": "fig-hw2-wall",
+  "level": "2",
+  "url": "sec-solutions-hw2.html#fig-hw2-wall",
+  "type": "Figure",
+  "number": "5.2.6",
+  "title": "",
+  "body": " The wall of : its base is the unit circle in the -plane and its height above a point of that circle is .   A curved wall standing on the unit circle, whose top edge rises and falls twice around the circle.   A translucent blue wall stands vertically on the unit circle in the horizontal plane. Its top edge is a closed curve that reaches height four above the points where the circle meets the x axis and dips to height two above the points where it meets the y axis.     "
+},
+{
+  "id": "sec-solutions-hw3",
+  "level": "1",
+  "url": "sec-solutions-hw3.html",
+  "type": "Section",
+  "number": "5.3",
+  "title": "Assignment 3",
+  "body": " Assignment 3  Section: .  Work each problem yourself first; the full solution follows immediately below it. The auto-graded version of the same problems is .    Determine whether the line integral of the vector field along the curve is positive, negative, or zero. and are shown in . Remember to fully justify your answer.     The vector field and the curve of . The curve is traversed in the direction of the arrowhead.   A field over the first quadrant tilting from downward to rightward, with a blue circle.    F(x,y) = (0.30*y, -0.30)  circle(t) = (1.5 + 1.05*cos(t), 1.35 + 1.05*sin(t))           C  \\mathbf{F}                Two particles move from to under the influence of a force field . One moves along the curve , the parabola defined by . The other particle moves along the curve , the bottom half of the circle . Force is measured in pounds and distances are measured in feet. Find the work performed by moving each particle along its path.      The work done by a force field along a curve is given by , where is the unit tangent vector to . Show that can be written in each of the following forms. Remember to fully justify your answers.  (a)   (b)   (c)       Suppose that is the portion of the helix given by , where . Calculate .    "
+},
+{
+  "id": "ex-hw3-sign",
+  "level": "2",
+  "url": "sec-solutions-hw3.html#ex-hw3-sign",
+  "type": "Problem",
+  "number": "5.3.1",
+  "title": "",
+  "body": "  Determine whether the line integral of the vector field along the curve is positive, negative, or zero. and are shown in . Remember to fully justify your answer.   "
+},
+{
+  "id": "fig-hw3-field",
+  "level": "2",
+  "url": "sec-solutions-hw3.html#fig-hw3-field",
+  "type": "Figure",
+  "number": "5.3.2",
+  "title": "",
+  "body": " The vector field and the curve of . The curve is traversed in the direction of the arrowhead.   A field over the first quadrant tilting from downward to rightward, with a blue circle.    F(x,y) = (0.30*y, -0.30)  circle(t) = (1.5 + 1.05*cos(t), 1.35 + 1.05*sin(t))           C  \\mathbf{F}             "
+},
+{
+  "id": "ex-hw3-two-paths",
+  "level": "2",
+  "url": "sec-solutions-hw3.html#ex-hw3-two-paths",
+  "type": "Problem",
+  "number": "5.3.3",
+  "title": "",
+  "body": "  Two particles move from to under the influence of a force field . One moves along the curve , the parabola defined by . The other particle moves along the curve , the bottom half of the circle . Force is measured in pounds and distances are measured in feet. Find the work performed by moving each particle along its path.   "
+},
+{
+  "id": "ex-hw3-three-forms",
+  "level": "2",
+  "url": "sec-solutions-hw3.html#ex-hw3-three-forms",
+  "type": "Problem",
+  "number": "5.3.4",
+  "title": "",
+  "body": "  The work done by a force field along a curve is given by , where is the unit tangent vector to . Show that can be written in each of the following forms. Remember to fully justify your answers.  (a)   (b)   (c)    "
+},
+{
+  "id": "ex-hw3-helix",
+  "level": "2",
+  "url": "sec-solutions-hw3.html#ex-hw3-helix",
+  "type": "Problem",
+  "number": "5.3.5",
+  "title": "",
+  "body": "  Suppose that is the portion of the helix given by , where . Calculate .   "
+},
+{
+  "id": "sec-solutions-hw4",
+  "level": "1",
+  "url": "sec-solutions-hw4.html",
+  "type": "Section",
+  "number": "5.4",
+  "title": "Assignment 4",
+  "body": " Assignment 4  Sections: , , and .  Work each problem yourself first; the full solution follows immediately below it. The auto-graded version of the same problems is .    The force field is shown by the arrows in .  (a) Over which of the two paths, or , does perform less work? Fully justify your answer.  (b) Is a conservative field or not? Why?     The vector field and the two paths and of . Every field vector points in the same direction; only their lengths change.   A uniform slanted field with a square path from corner A to corner B.    G(x,y) = (0.16*(1+x), 0.16*(1+x))           A    D    C    B                    Consider the density function (mass per unit area) and the four shapes of , each of which is drawn with the same .  (a) Choose the shapes in that can possess as their density function. Justify your answers.  (b) Determine which one of your choices in part (a) is the heavier one. Why?     The four shapes of . Shapes and are triangles cut off by and ; shapes and are sectors of the circle . The dashed lines are and .   Four small pictures of candidate regions, each on its own axes.    arc3(t) = (2.6 + 1.3*cos(t), 4.6 + 1.3*sin(t))  arc4(t) = (7.4 + 1.3*cos(t), 4.6 + 1.3*sin(t))          1   y=r  y=x         2   x=r  y=x         3   x^2+y^2=r^2  y=x         4   x^2+y^2=r^2  y=-x                 Rewrite the integral with the order of integration reversed.      Find the volume under the surface and above the triangle formed by , , and the -axis.    "
+},
+{
+  "id": "ex-hw4-two-paths",
+  "level": "2",
+  "url": "sec-solutions-hw4.html#ex-hw4-two-paths",
+  "type": "Problem",
+  "number": "5.4.1",
+  "title": "",
+  "body": "  The force field is shown by the arrows in .  (a) Over which of the two paths, or , does perform less work? Fully justify your answer.  (b) Is a conservative field or not? Why?   "
+},
+{
+  "id": "fig-hw4-paths",
+  "level": "2",
+  "url": "sec-solutions-hw4.html#fig-hw4-paths",
+  "type": "Figure",
+  "number": "5.4.2",
+  "title": "",
+  "body": " The vector field and the two paths and of . Every field vector points in the same direction; only their lengths change.   A uniform slanted field with a square path from corner A to corner B.    G(x,y) = (0.16*(1+x), 0.16*(1+x))           A    D    C    B                 "
+},
+{
+  "id": "ex-hw4-density-shapes",
+  "level": "2",
+  "url": "sec-solutions-hw4.html#ex-hw4-density-shapes",
+  "type": "Problem",
+  "number": "5.4.3",
+  "title": "",
+  "body": "  Consider the density function (mass per unit area) and the four shapes of , each of which is drawn with the same .  (a) Choose the shapes in that can possess as their density function. Justify your answers.  (b) Determine which one of your choices in part (a) is the heavier one. Why?   "
+},
+{
+  "id": "fig-hw4-shapes",
+  "level": "2",
+  "url": "sec-solutions-hw4.html#fig-hw4-shapes",
+  "type": "Figure",
+  "number": "5.4.4",
+  "title": "",
+  "body": " The four shapes of . Shapes and are triangles cut off by and ; shapes and are sectors of the circle . The dashed lines are and .   Four small pictures of candidate regions, each on its own axes.    arc3(t) = (2.6 + 1.3*cos(t), 4.6 + 1.3*sin(t))  arc4(t) = (7.4 + 1.3*cos(t), 4.6 + 1.3*sin(t))          1   y=r  y=x         2   x=r  y=x         3   x^2+y^2=r^2  y=x         4   x^2+y^2=r^2  y=-x              "
+},
+{
+  "id": "ex-hw4-reverse-order",
+  "level": "2",
+  "url": "sec-solutions-hw4.html#ex-hw4-reverse-order",
+  "type": "Problem",
+  "number": "5.4.5",
+  "title": "",
+  "body": "  Rewrite the integral with the order of integration reversed.   "
+},
+{
+  "id": "ex-hw4-volume",
+  "level": "2",
+  "url": "sec-solutions-hw4.html#ex-hw4-volume",
+  "type": "Problem",
+  "number": "5.4.6",
+  "title": "",
+  "body": "  Find the volume under the surface and above the triangle formed by , , and the -axis.   "
+},
+{
+  "id": "sec-solutions-hw5",
+  "level": "1",
+  "url": "sec-solutions-hw5.html",
+  "type": "Section",
+  "number": "5.5",
+  "title": "Assignment 5",
+  "body": " Assignment 5  Sections: and .  Work each problem yourself first; the full solution follows immediately below it. The auto-graded version of the same problems is .    Consider the polar equation , .  (a) Determine the type of symmetry that its graph possesses.  (b) Sketch its graph. Use the polar chart of .  (c) Set up (do not evaluate) the integral necessary for computing the area bounded by , .     A blank polar chart for part (b) of . The circles are , , , and , and the spokes are spaced apart.   A blank polar grid of four circles and twelve labeled spokes.    c1(t) = (0.5*cos(t), 0.5*sin(t))  c2(t) = (cos(t), sin(t))  c3(t) = (1.5*cos(t), 1.5*sin(t))  c4(t) = (2*cos(t), 2*sin(t))          0   \\pi\/6    \\pi\/3    \\pi\/2    2\\pi\/3    5\\pi\/6   \\pi   7\\pi\/6    4\\pi\/3    3\\pi\/2    5\\pi\/3    11\\pi\/6   0.5  1  1.5  2               Combine the following sum into one double integral. Do not evaluate the integral.       Compute the net mass of the planar object that occupies the region bounded by and , and whose mass density is given by .    "
+},
+{
+  "id": "ex-hw5-rose",
+  "level": "2",
+  "url": "sec-solutions-hw5.html#ex-hw5-rose",
+  "type": "Problem",
+  "number": "5.5.1",
+  "title": "",
+  "body": "  Consider the polar equation , .  (a) Determine the type of symmetry that its graph possesses.  (b) Sketch its graph. Use the polar chart of .  (c) Set up (do not evaluate) the integral necessary for computing the area bounded by , .   "
+},
+{
+  "id": "fig-hw5-polar-chart",
+  "level": "2",
+  "url": "sec-solutions-hw5.html#fig-hw5-polar-chart",
+  "type": "Figure",
+  "number": "5.5.2",
+  "title": "",
+  "body": " A blank polar chart for part (b) of . The circles are , , , and , and the spokes are spaced apart.   A blank polar grid of four circles and twelve labeled spokes.    c1(t) = (0.5*cos(t), 0.5*sin(t))  c2(t) = (cos(t), sin(t))  c3(t) = (1.5*cos(t), 1.5*sin(t))  c4(t) = (2*cos(t), 2*sin(t))          0   \\pi\/6    \\pi\/3    \\pi\/2    2\\pi\/3    5\\pi\/6   \\pi   7\\pi\/6    4\\pi\/3    3\\pi\/2    5\\pi\/3    11\\pi\/6   0.5  1  1.5  2            "
+},
+{
+  "id": "ex-hw5-combine",
+  "level": "2",
+  "url": "sec-solutions-hw5.html#ex-hw5-combine",
+  "type": "Problem",
+  "number": "5.5.3",
+  "title": "",
+  "body": "  Combine the following sum into one double integral. Do not evaluate the integral.    "
+},
+{
+  "id": "ex-hw5-two-circles",
+  "level": "2",
+  "url": "sec-solutions-hw5.html#ex-hw5-two-circles",
+  "type": "Problem",
+  "number": "5.5.4",
+  "title": "",
+  "body": "  Compute the net mass of the planar object that occupies the region bounded by and , and whose mass density is given by .   "
+},
+{
+  "id": "sec-solutions-hw6",
+  "level": "1",
+  "url": "sec-solutions-hw6.html",
+  "type": "Section",
+  "number": "5.6",
+  "title": "Assignment 6",
+  "body": " Assignment 6  Sections: and .  Work each problem yourself first; the full solution follows immediately below it. The auto-graded version of the same problems is .    Consider an object bounded by and . Suppose that the object's mass density function is . Find the mass of the object.      Convert (do not evaluate) the following integral to rectangular coordinates:        Without calculating the integrals , decide whether each of the integrals below is positive, negative, or zero. Let be the solid bounded by and . Remember to justify your answers.  (a)   (b)       Calculate the volume of the region bounded by and .    "
+},
+{
+  "id": "ex-hw6-cone-mass",
+  "level": "2",
+  "url": "sec-solutions-hw6.html#ex-hw6-cone-mass",
+  "type": "Problem",
+  "number": "5.6.1",
+  "title": "",
+  "body": "  Consider an object bounded by and . Suppose that the object's mass density function is . Find the mass of the object.   "
+},
+{
+  "id": "ex-hw6-convert",
+  "level": "2",
+  "url": "sec-solutions-hw6.html#ex-hw6-convert",
+  "type": "Problem",
+  "number": "5.6.2",
+  "title": "",
+  "body": "  Convert (do not evaluate) the following integral to rectangular coordinates:    "
+},
+{
+  "id": "ex-hw6-signs",
+  "level": "2",
+  "url": "sec-solutions-hw6.html#ex-hw6-signs",
+  "type": "Problem",
+  "number": "5.6.3",
+  "title": "",
+  "body": "   Without calculating the integrals , decide whether each of the integrals below is positive, negative, or zero. Let be the solid bounded by and . Remember to justify your answers.  (a)   (b)    "
+},
+{
+  "id": "ex-hw6-volume",
+  "level": "2",
+  "url": "sec-solutions-hw6.html#ex-hw6-volume",
+  "type": "Problem",
+  "number": "5.6.4",
+  "title": "",
+  "body": "  Calculate the volume of the region bounded by and .   "
+},
+{
+  "id": "sec-solutions-hw7",
+  "level": "1",
+  "url": "sec-solutions-hw7.html",
+  "type": "Section",
+  "number": "5.7",
+  "title": "Assignment 7",
+  "body": " Assignment 7  Sections: and .  Work each problem yourself first; the full solution follows immediately below it. The auto-graded version of the same problems is .    Evaluate the following integral:       Convert (do not evaluate) the following integral to spherical and cylindrical coordinates. Which set of coordinates is the most efficient for evaluating this integral?       Use the change of variables , to find the area of the region bounded by the ellipse .      Suppose that , where is the disk . Assuming that is the disk and , evaluate .    "
+},
+{
+  "id": "ex-hw7-hemisphere",
+  "level": "2",
+  "url": "sec-solutions-hw7.html#ex-hw7-hemisphere",
+  "type": "Problem",
+  "number": "5.7.1",
+  "title": "",
+  "body": "  Evaluate the following integral:    "
+},
+{
+  "id": "ex-hw7-convert",
+  "level": "2",
+  "url": "sec-solutions-hw7.html#ex-hw7-convert",
+  "type": "Problem",
+  "number": "5.7.2",
+  "title": "",
+  "body": "  Convert (do not evaluate) the following integral to spherical and cylindrical coordinates. Which set of coordinates is the most efficient for evaluating this integral?    "
+},
+{
+  "id": "ex-hw7-ellipse",
+  "level": "2",
+  "url": "sec-solutions-hw7.html#ex-hw7-ellipse",
+  "type": "Problem",
+  "number": "5.7.3",
+  "title": "",
+  "body": "  Use the change of variables , to find the area of the region bounded by the ellipse .   "
+},
+{
+  "id": "ex-hw7-scaling",
+  "level": "2",
+  "url": "sec-solutions-hw7.html#ex-hw7-scaling",
+  "type": "Problem",
+  "number": "5.7.4",
+  "title": "",
+  "body": "  Suppose that , where is the disk . Assuming that is the disk and , evaluate .   "
+},
+{
+  "id": "sec-solutions-hw8",
+  "level": "1",
+  "url": "sec-solutions-hw8.html",
+  "type": "Section",
+  "number": "5.8",
+  "title": "Assignment 8",
+  "body": " Assignment 8  Section: .  Work each problem yourself first; the full solution follows immediately below it. The auto-graded version of the same problems is .    Find the centroid of the solid shown in . The cone is bounded by a disk in the plane and the cylinder is bounded by the planes. Note that both the cone and the cylinder are assumed to be solid objects, that is, they are not hollow.     The solid of : the cone capped by the plane , sitting on the horizontal cylinder cut off by the planes .   A cone standing point-down on a horizontal cylinder lying along the y axis.   A red cylinder of radius one lies on its side along the y axis, cut off by the planes y equals plus and minus one. Above it, a red cone opens upward from the point at height one on the z axis to a disk of radius one in the plane z equals two.        Consider a solid object bounded by and . Suppose that the object's mass density function is . Find the location of the center of mass of the object.    "
+},
+{
+  "id": "ex-hw8-centroid",
+  "level": "2",
+  "url": "sec-solutions-hw8.html#ex-hw8-centroid",
+  "type": "Problem",
+  "number": "5.8.1",
+  "title": "",
+  "body": "  Find the centroid of the solid shown in . The cone is bounded by a disk in the plane and the cylinder is bounded by the planes. Note that both the cone and the cylinder are assumed to be solid objects, that is, they are not hollow.   "
+},
+{
+  "id": "fig-hw8-solid",
+  "level": "2",
+  "url": "sec-solutions-hw8.html#fig-hw8-solid",
+  "type": "Figure",
+  "number": "5.8.2",
+  "title": "",
+  "body": " The solid of : the cone capped by the plane , sitting on the horizontal cylinder cut off by the planes .   A cone standing point-down on a horizontal cylinder lying along the y axis.   A red cylinder of radius one lies on its side along the y axis, cut off by the planes y equals plus and minus one. Above it, a red cone opens upward from the point at height one on the z axis to a disk of radius one in the plane z equals two.     "
+},
+{
+  "id": "ex-hw8-center-of-mass",
+  "level": "2",
+  "url": "sec-solutions-hw8.html#ex-hw8-center-of-mass",
+  "type": "Problem",
+  "number": "5.8.3",
+  "title": "",
+  "body": "  Consider a solid object bounded by and . Suppose that the object's mass density function is . Find the location of the center of mass of the object.   "
+},
+{
+  "id": "sec-solutions-hw9",
+  "level": "1",
+  "url": "sec-solutions-hw9.html",
+  "type": "Section",
+  "number": "5.9",
+  "title": "Assignment 9",
+  "body": " Assignment 9  Section: .  Work each problem yourself first; the full solution follows immediately below it. The auto-graded version of the same problems is .    Compute the work done by the force field   along the path , which is shown in . Assume that the object moves along the path from to and then to .     The curve of : a staircase of ten unit steps from to , followed by the horizontal segment back to .   A staircase of ten unit steps from the origin to (10,10), returning along the top.          (0,0)    (10,10)    (0,10)                 Calculate the line integral   where is the circle , with counterclockwise orientation.      Calculate the outward flux of the vector field across the unit circle.      Consider the line integral , where the curve is , , oriented counterclockwise. Note that are polar coordinates.  (a) Use Green's theorem to calculate the line integral.  (b) In physics, this line integral can be interpreted in two different ways. Briefly explain.    "
+},
+{
+  "id": "ex-hw9-staircase",
+  "level": "2",
+  "url": "sec-solutions-hw9.html#ex-hw9-staircase",
+  "type": "Problem",
+  "number": "5.9.1",
+  "title": "",
+  "body": "  Compute the work done by the force field   along the path , which is shown in . Assume that the object moves along the path from to and then to .   "
+},
+{
+  "id": "fig-hw9-staircase",
+  "level": "2",
+  "url": "sec-solutions-hw9.html#fig-hw9-staircase",
+  "type": "Figure",
+  "number": "5.9.2",
+  "title": "",
+  "body": " The curve of : a staircase of ten unit steps from to , followed by the horizontal segment back to .   A staircase of ten unit steps from the origin to (10,10), returning along the top.          (0,0)    (10,10)    (0,10)              "
+},
+{
+  "id": "ex-hw9-circle",
+  "level": "2",
+  "url": "sec-solutions-hw9.html#ex-hw9-circle",
+  "type": "Problem",
+  "number": "5.9.3",
+  "title": "",
+  "body": "  Calculate the line integral   where is the circle , with counterclockwise orientation.   "
+},
+{
+  "id": "ex-hw9-flux",
+  "level": "2",
+  "url": "sec-solutions-hw9.html#ex-hw9-flux",
+  "type": "Problem",
+  "number": "5.9.4",
+  "title": "",
+  "body": "  Calculate the outward flux of the vector field across the unit circle.   "
+},
+{
+  "id": "ex-hw9-rose",
+  "level": "2",
+  "url": "sec-solutions-hw9.html#ex-hw9-rose",
+  "type": "Problem",
+  "number": "5.9.5",
+  "title": "",
+  "body": "  Consider the line integral , where the curve is , , oriented counterclockwise. Note that are polar coordinates.  (a) Use Green's theorem to calculate the line integral.  (b) In physics, this line integral can be interpreted in two different ways. Briefly explain.   "
 },
 {
   "id": "sec-exercises-review3-online",
@@ -3895,160 +3913,124 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "6.1",
   "title": "Review Problems #3",
-  "body": " Review Problems #3   Sections: , , and . Work each problem, then type your answers into the boxes and have them checked here.  Every answer box is graded separately, so a box you fill in correctly earns its credit even if another box in the same problem is wrong. Press Check Me to submit; you may check as often as you like.   How to type your answers.      Give exact answers, not decimals. A rounded decimal will be marked wrong, even to several places. Type the exact value: pi*8^3\/2 rather than 1608.495 , and 4*5\/(3*pi) rather than 2.122 . A whole number or an exact fraction may of course be typed as it stands, so 77 and 7\/3 are both fine.     How to type it. Write products with * and powers with ^ , and write functions with parentheses: sqrt(s-t) , ln(9) , exp(-4) . Use pi for . So is typed u^2\/v , and is typed 2*pi*(exp(-1)-exp(-4)) . Spaces are ignored.     Any equivalent form counts. Your answer is compared to the exact value, not to one particular way of writing it, so 2*pi*exp(-1)-2*pi*exp(-4) is accepted just as readily as 2*pi*(exp(-1)-exp(-4)) . Do not simplify on our account just do not round.          Area by a Non-Linear Change of Variables          a^2    b^2    1    u^2\/v    v\/u    2*u\/v    -u^2\/v^2    -v\/u^2    1\/u    1\/v    (aa-1)*ln(bb)     Compute the area of the region in the first quadrant of the -plane bounded by    Part A. Sketch the region . (Nothing to submit for this part the sketch is for your own use in the parts that follow.)   Part B. Using the non-linear change of variables and , find and as functions of and .           Part C. Find the four partial derivatives in the Jacobian matrix of this change of variables, and then its determinant.    ,      ,         Part D. Using the change of variables, set up a double integral for the area of in the form   , where    ,  ,  , and  .   Part E. Evaluate the double integral to find the area of .  Area          Correct: from and we get , and then .       Divide the two equations: . Now substitute back into and solve for .         Correct: .       Dividing by cancels the and one factor of .         Correct: differentiating with respect to , with held constant, gives .       Hold constant and differentiate with respect to .         Correct: , so .       Write and differentiate with respect to , holding constant. Do not lose the minus sign.         Correct: , so .       Write and differentiate with respect to , holding constant.         Correct: is linear in , so .       With held constant, is just a constant multiple of .         Correct: .       The determinant is . Both terms simplify to multiples of ; watch the two minus signs in the second product.         Correct: for an area the integrand is just the absolute value of the Jacobian, .       Area , so the integrand is the Jacobian determinant.        Correct.      The outer integral pairs with , and runs between the two curves and .        Correct.      In the new variables the region is a rectangle: runs from up to .        Correct.      The inner integral pairs with , and runs between and .        Correct.      The four bounding curves become , , , and : a rectangle in the -plane.         Correct: .       The integrand does not involve , so the inner integral just contributes the length . Then .       Dividing by gives , and then . The Jacobian matrix has entries , , , , so   The four bounding curves are exactly , , , , so becomes a rectangle and         Area of a Tilted Ellipse by a Shear       2*a    a^2+1    s-a*t    t    1    pi     Use the change of variables , to find the area of the region bounded by    Part A. Invert the change of variables.    ,     Part B. Find the Jacobian determinant .       Part C. Find the area of the region.  Area          Correct: from and we get .       Substitute into and solve for .        Correct: the second equation already says .      The change of variables sets , so inverting it leaves unchanged.         Correct: the matrix is , a shear, whose determinant is .       With and the Jacobian matrix is upper triangular with s on the diagonal, so the determinant is the product of those.         Correct: the region becomes the unit disc , and the Jacobian is , so the area is .       Substitute: . So the region is the unit disc, and a shear does not change area.       Inverting the shear gives , , so the Jacobian matrix is with determinant , and . Completing the substitution,   so the region is the unit disc and .        A Double Integral Under a Parabolic Change of Variables          b^2    -a    0    sqrt(s-t)    s    1\/(2*sqrt(s-t))    1\/2    a*bsq\/2     Use the change of variables , to evaluate over the region in the first quadrant bounded by , , , and .   Part A. Invert the change of variables. (Take the positive square root, since lies in the first quadrant.)    ,     Part B. Find the Jacobian determinant.       Part C. The region becomes a rectangle in the -plane. Give its limits.   runs from to , and runs from to .   Part D. After the substitution, the integrand times the Jacobian simplifies to a constant. What is it?       Part E. Evaluate the integral.            Correct: , so and .       Since , the second equation reads . Solve that for , keeping the positive root.        Correct: the substitution sets outright.      The first equation of the substitution is .         Correct: with and , , , , , so the determinant is .       The determinant is . Since only the second product survives, and .        Correct: becomes .      The bottom and top boundaries of are and ; since , these are the -limits.        Correct: becomes .      Since , the top boundary is the upper -limit.         Correct: means , that is .       Rewrite the left and right boundaries in terms of : gives , and gives .        Correct: becomes .      On the curve we have , so there.         Correct: . This is what makes the problem easy.       The integrand is and the Jacobian is . Multiply them and watch the square roots cancel.         Correct: the rectangle has area , so the integral is .       Integrating the constant over the rectangle , gives half its area.       Inverting gives and , so   The boundaries and become and , while and become and . The integrand times the Jacobian collapses to , so         A Triple Integral Over an Ellipsoid             a*b*c    4*a*b*c*pi\/5     Calculate the triple integral   where is the region bounded by the ellipsoid .   Part A. Use the change of variables , , , which carries to the unit ball. What is the Jacobian determinant ?       Part B. Evaluate the triple integral.            Correct: the matrix is diagonal with entries , , , so the determinant is their product, .       Each new variable is scaled independently, so the Jacobian matrix is diagonal and its determinant is the product of the three scale factors.         Correct: the integral becomes .       After the substitution the integrand is over the unit ball. In spherical coordinates . Multiply by the Jacobian.       Setting , , carries to the unit ball and has Jacobian , while the integrand becomes . Hence         Centre of Mass of a Tetrahedron       8*k\/105    2\/9    2\/9    1\/3     Find the centre of mass of the solid bounded by the planes , , , and , assuming a mass density of .   Part A. Find the mass of the solid.       Part B. Find the coordinates of the centre of mass.    ,  ,          Correct: .       Describe by , , . The inner integral gives ; the next gives .         Correct: the numerator is , and dividing by the mass gives .        . The constant cancels, so the answer does not depend on it.         Correct: the density and the solid are symmetric in and , so .       Swapping and leaves both the solid and the density unchanged, so this coordinate matches .         Correct: the numerator is , and dividing by the mass gives .       Here . Integrating over gives ; divide by the mass. The density grows with , so sits above the centroid height .       Describe by , , . Then   and the -numerator equals the -numerator by the symmetry of and of in and . Dividing,   independently of the constant , which cancels from every ratio.        Mass and Centre of Mass of a Rectangular Lamina                   A^2*B*C\/2+B^2*D*A\/2+E*A*B    C*A^3*B\/3+D*A^2*B^2\/4+E*A^2*B\/2    C*A^2*B^2\/4+D*A*B^3\/3+E*A*B^2\/2    xmom\/mass    ymom\/mass     A lamina occupies the part of the rectangle , , and the density at each point is given by the function .   Part A. What is the total mass?       Part B. Where is the centre of mass?    ,          Correct: .       Integrate term by term over the rectangle: , and similarly for the other two terms.         Correct: .        . Compute the moment first, then divide by the mass.         Correct: .        . The moment is ; divide by the mass.       Over the rectangle ,   and the two moments are and . Dividing each by the mass gives and .        Volume Between Two Spheres in Spherical Coordinates       pi*a^3\/2     Find the volume of the region outside the sphere and inside the half sphere , with .  Volume          Correct: .       For each , runs from the inner sphere out to . After the -integral you are left with ; substitute to get .       In spherical coordinates,   With the remaining integral is , so .        A Triple Integral Over a Spherical Shell          r0+gap    (r1^3-r0^3)\/3    pi*(r1^3-r0^3)\/3     Evaluate, in spherical coordinates, the triple integral of over the region , , .   Part A. The -integral separates from the rest. Evaluate it.       Part B. Evaluate the whole integral.  Integral          Correct: .       The volume element in spherical coordinates is , so the -integral is .         Correct: the three integrals separate, giving .       The integrand times the volume element is , which factors completely: , , and .       Because the integrand and the volume element both factor, the triple integral splits into a product:   These are , , and , so the integral equals .        An Exponential Integral Between Two Spheres          a+gap    a^2    b^2    2*pi*(exp(-asq)-exp(-bsq))     Use spherical coordinates to evaluate the triple integral   where is the region bounded by the spheres and .  Answer          Correct: the integral is .       In spherical coordinates the integrand is and , so one factor of cancels. The angular integrals give , and . Note the spheres have radii and , not and .       The spheres have radii and . In spherical coordinates,   With this is .        The Jacobian of a Linear Transformation                p*s-q*r    p    q    r    s     Consider the transformation from -coordinates to -coordinates given by    Part A. Find the four partial derivatives.    ,  ,  ,     Part B. Compute the Jacobian of this transformation.           Correct.       , so differentiating with respect to leaves the coefficient of .        Correct.      Differentiate with respect to .        Correct.      Differentiate with respect to .        Correct.      Differentiate with respect to .         Correct: . For a linear map the Jacobian is a constant.       The Jacobian is the determinant .       For a linear transformation the partial derivatives are just the coefficients, so   a constant: a linear map scales every area by the same factor.        A Quadratic Map and the Integral It Simplifies       u^2+v^2    4*(u^2+v^2)    56*a^6\/45     The map carries the triangle onto the domain in the first quadrant bounded by , , and the parabola through the image of the edge . Use to evaluate    Part A. Express the integrand in terms of and .       Part B. Find the Jacobian of .       Part C. Evaluate the integral.            Correct: .       Expand , which is a perfect square.         Correct: .       With and , , , , . Take .         Correct: .       The integrand times the Jacobian is . Over the triangle , the inner integral gives .       Since and ,   Therefore         Centre of Gravity of a Region Between Two Curves          0    (-m+sqrt(m^2+4*b))\/2    m*x    b-x^2    xstar^6\/12+(-b-m^2\/2)*xstar^4\/4+b^2*xstar^2\/4    xstar^7\/14+(-b-m^2\/2)*xstar^5\/5+b^2*xstar^3\/6    -xstar^8\/24+b*xstar^6\/6-m^3*xstar^5\/15-b^2*xstar^4\/4+b^3*xstar^2\/6    xmom\/mass    ymom\/mass     The region is bounded by the curves , , and the -axis, and its mass density is . To find the centre of gravity of you would compute the three integrals , , and , where    ,      ,                and finally the centre of gravity is    ,          Correct: the -axis is the left boundary, so starts at .       One of the three boundaries is the -axis, which is the line .         Correct: solving gives .       The right-hand end of the region is where the line meets the parabola. Solve and keep the positive root.         Correct: on this interval the line lies below the parabola.       For the line is the lower boundary and the parabola is the upper one.         Correct: the downward parabola is the upper boundary.       At the parabola is at height while the line is at , so the parabola is on top.         Correct: the mass is .       The inner integral is . Expand and integrate from to .         Correct: the moment about the -axis is .       This is the same computation as the mass but with one extra factor of , so the inner integral is .         Correct: the moment about the -axis is .       Here the inner integrand is , so the inner integral is .         Correct: .       Divide the moment about the -axis by the mass.         Correct: .       Divide the moment about the -axis by the mass.       The line and the parabola meet where , that is at , so and , with and . Carrying out the three integrals of , , and over that region gives , , and respectively, so         Centre of Mass of a Quarter Disc       4*r\/(3*pi)     The centre of mass of the quarter disc of radius lying under for , with constant density, is a point .    ,     Hint. Use symmetry.        Correct: .       The area of the quarter disc is , and . Divide.         Correct: the quarter disc is symmetric about the line , so .       Reflecting in the line maps the quarter disc to itself and swaps the roles of and , so the two coordinates of the centre of mass are equal.       By symmetry about the line , the centre of mass lies on that line, so . Computing ,   and has the same value.     "
-},
-{
-  "id": "sec-exercises-review3-online-2-3",
-  "level": "2",
-  "url": "sec-exercises-review3-online.html#sec-exercises-review3-online-2-3",
-  "type": "Paragraph (with a defined term)",
-  "number": "",
-  "title": "",
-  "body": "How to type your answers. "
-},
-{
-  "id": "sec-exercises-review3-online-2-4-1-1",
-  "level": "2",
-  "url": "sec-exercises-review3-online.html#sec-exercises-review3-online-2-4-1-1",
-  "type": "Paragraph (with a defined term)",
-  "number": "",
-  "title": "",
-  "body": "Give exact answers, not decimals. "
-},
-{
-  "id": "sec-exercises-review3-online-2-4-2-1",
-  "level": "2",
-  "url": "sec-exercises-review3-online.html#sec-exercises-review3-online-2-4-2-1",
-  "type": "Paragraph (with a defined term)",
-  "number": "",
-  "title": "",
-  "body": "How to type it. "
-},
-{
-  "id": "sec-exercises-review3-online-2-4-3-1",
-  "level": "2",
-  "url": "sec-exercises-review3-online.html#sec-exercises-review3-online-2-4-3-1",
-  "type": "Paragraph (with a defined term)",
-  "number": "",
-  "title": "",
-  "body": "Any equivalent form counts. "
+  "body": " Review Problems #3  Sections: , , and .  Work each problem yourself first; the full solution follows immediately below it. The same thirteen problems, with the numbers randomised and every answer checked automatically, are in .   Area by a Non-Linear Change of Variables   Compute the area of the region in the first quadrant of the -plane bounded by   Sketch , then use the non-linear change of variables , : find and as functions of and , compute the Jacobian determinant, set up the double integral for the area, and evaluate it.     Area of a Tilted Ellipse by a Shear   Use the change of variables , to find the area of the region bounded by   Invert the change of variables, find the Jacobian determinant, and then the area.     A Double Integral Under a Parabolic Change of Variables   Use the change of variables , to evaluate   over the region in the first quadrant bounded by , , , and . (Take the positive square root when inverting, since lies in the first quadrant.)     A Triple Integral Over an Ellipsoid   Calculate the triple integral   where is the region bounded by the ellipsoid . Use the change of variables , , , which carries to the unit ball.     Centre of Mass of a Tetrahedron   Find the mass and the centre of mass of the solid bounded by the planes , , , and , assuming a mass density of .     Mass and Centre of Mass of a Rectangular Lamina   A lamina occupies the part of the rectangle , , and the density at each point is given by the function . What is the total mass, and where is the centre of mass?     Volume Between Two Spheres in Spherical Coordinates   Find the volume of the region outside the sphere and inside the half sphere , with .     A Triple Integral Over a Spherical Shell   Evaluate, in spherical coordinates, the triple integral of over the region , , .     An Exponential Integral Between Two Spheres   Use spherical coordinates to evaluate the triple integral   where is the region bounded by the spheres and .     The Jacobian of a Linear Transformation   Consider the transformation from -coordinates to -coordinates given by   Find the four partial derivatives of the transformation, and then its Jacobian.     A Quadratic Map and the Integral It Simplifies   The map carries the triangle onto the domain in the first quadrant bounded by , , and the parabola through the image of the edge . Use to evaluate      Centre of Gravity of a Region Between Two Curves   The region is bounded by the curves , , and the -axis, and its mass density is . Find the limits of the iterated integral describing , evaluate the three integrals of , and over , and use them to locate the centre of gravity of .     Centre of Mass of a Quarter Disc   Find the centre of mass of the quarter disc of radius lying under for , with constant density. (Use symmetry.)    "
 },
 {
   "id": "ex-r3o-area-change-of-variables",
   "level": "2",
   "url": "sec-exercises-review3-online.html#ex-r3o-area-change-of-variables",
-  "type": "Exercise",
-  "number": "1",
+  "type": "Problem",
+  "number": "6.1.1",
   "title": "Area by a Non-Linear Change of Variables.",
-  "body": " Area by a Non-Linear Change of Variables          a^2    b^2    1    u^2\/v    v\/u    2*u\/v    -u^2\/v^2    -v\/u^2    1\/u    1\/v    (aa-1)*ln(bb)     Compute the area of the region in the first quadrant of the -plane bounded by    Part A. Sketch the region . (Nothing to submit for this part the sketch is for your own use in the parts that follow.)   Part B. Using the non-linear change of variables and , find and as functions of and .           Part C. Find the four partial derivatives in the Jacobian matrix of this change of variables, and then its determinant.    ,      ,         Part D. Using the change of variables, set up a double integral for the area of in the form   , where    ,  ,  , and  .   Part E. Evaluate the double integral to find the area of .  Area          Correct: from and we get , and then .       Divide the two equations: . Now substitute back into and solve for .         Correct: .       Dividing by cancels the and one factor of .         Correct: differentiating with respect to , with held constant, gives .       Hold constant and differentiate with respect to .         Correct: , so .       Write and differentiate with respect to , holding constant. Do not lose the minus sign.         Correct: , so .       Write and differentiate with respect to , holding constant.         Correct: is linear in , so .       With held constant, is just a constant multiple of .         Correct: .       The determinant is . Both terms simplify to multiples of ; watch the two minus signs in the second product.         Correct: for an area the integrand is just the absolute value of the Jacobian, .       Area , so the integrand is the Jacobian determinant.        Correct.      The outer integral pairs with , and runs between the two curves and .        Correct.      In the new variables the region is a rectangle: runs from up to .        Correct.      The inner integral pairs with , and runs between and .        Correct.      The four bounding curves become , , , and : a rectangle in the -plane.         Correct: .       The integrand does not involve , so the inner integral just contributes the length . Then .       Dividing by gives , and then . The Jacobian matrix has entries , , , , so   The four bounding curves are exactly , , , , so becomes a rectangle and    "
+  "body": " Area by a Non-Linear Change of Variables   Compute the area of the region in the first quadrant of the -plane bounded by   Sketch , then use the non-linear change of variables , : find and as functions of and , compute the Jacobian determinant, set up the double integral for the area, and evaluate it.   "
 },
 {
   "id": "ex-r3o-shear-ellipse-area",
   "level": "2",
   "url": "sec-exercises-review3-online.html#ex-r3o-shear-ellipse-area",
-  "type": "Exercise",
-  "number": "2",
+  "type": "Problem",
+  "number": "6.1.2",
   "title": "Area of a Tilted Ellipse by a Shear.",
-  "body": " Area of a Tilted Ellipse by a Shear       2*a    a^2+1    s-a*t    t    1    pi     Use the change of variables , to find the area of the region bounded by    Part A. Invert the change of variables.    ,     Part B. Find the Jacobian determinant .       Part C. Find the area of the region.  Area          Correct: from and we get .       Substitute into and solve for .        Correct: the second equation already says .      The change of variables sets , so inverting it leaves unchanged.         Correct: the matrix is , a shear, whose determinant is .       With and the Jacobian matrix is upper triangular with s on the diagonal, so the determinant is the product of those.         Correct: the region becomes the unit disc , and the Jacobian is , so the area is .       Substitute: . So the region is the unit disc, and a shear does not change area.       Inverting the shear gives , , so the Jacobian matrix is with determinant , and . Completing the substitution,   so the region is the unit disc and .   "
+  "body": " Area of a Tilted Ellipse by a Shear   Use the change of variables , to find the area of the region bounded by   Invert the change of variables, find the Jacobian determinant, and then the area.   "
 },
 {
   "id": "ex-r3o-parabolic-strip",
   "level": "2",
   "url": "sec-exercises-review3-online.html#ex-r3o-parabolic-strip",
-  "type": "Exercise",
-  "number": "3",
+  "type": "Problem",
+  "number": "6.1.3",
   "title": "A Double Integral Under a Parabolic Change of Variables.",
-  "body": " A Double Integral Under a Parabolic Change of Variables          b^2    -a    0    sqrt(s-t)    s    1\/(2*sqrt(s-t))    1\/2    a*bsq\/2     Use the change of variables , to evaluate over the region in the first quadrant bounded by , , , and .   Part A. Invert the change of variables. (Take the positive square root, since lies in the first quadrant.)    ,     Part B. Find the Jacobian determinant.       Part C. The region becomes a rectangle in the -plane. Give its limits.   runs from to , and runs from to .   Part D. After the substitution, the integrand times the Jacobian simplifies to a constant. What is it?       Part E. Evaluate the integral.            Correct: , so and .       Since , the second equation reads . Solve that for , keeping the positive root.        Correct: the substitution sets outright.      The first equation of the substitution is .         Correct: with and , , , , , so the determinant is .       The determinant is . Since only the second product survives, and .        Correct: becomes .      The bottom and top boundaries of are and ; since , these are the -limits.        Correct: becomes .      Since , the top boundary is the upper -limit.         Correct: means , that is .       Rewrite the left and right boundaries in terms of : gives , and gives .        Correct: becomes .      On the curve we have , so there.         Correct: . This is what makes the problem easy.       The integrand is and the Jacobian is . Multiply them and watch the square roots cancel.         Correct: the rectangle has area , so the integral is .       Integrating the constant over the rectangle , gives half its area.       Inverting gives and , so   The boundaries and become and , while and become and . The integrand times the Jacobian collapses to , so    "
+  "body": " A Double Integral Under a Parabolic Change of Variables   Use the change of variables , to evaluate   over the region in the first quadrant bounded by , , , and . (Take the positive square root when inverting, since lies in the first quadrant.)   "
 },
 {
   "id": "ex-r3o-ellipsoid-integral",
   "level": "2",
   "url": "sec-exercises-review3-online.html#ex-r3o-ellipsoid-integral",
-  "type": "Exercise",
-  "number": "4",
+  "type": "Problem",
+  "number": "6.1.4",
   "title": "A Triple Integral Over an Ellipsoid.",
-  "body": " A Triple Integral Over an Ellipsoid             a*b*c    4*a*b*c*pi\/5     Calculate the triple integral   where is the region bounded by the ellipsoid .   Part A. Use the change of variables , , , which carries to the unit ball. What is the Jacobian determinant ?       Part B. Evaluate the triple integral.            Correct: the matrix is diagonal with entries , , , so the determinant is their product, .       Each new variable is scaled independently, so the Jacobian matrix is diagonal and its determinant is the product of the three scale factors.         Correct: the integral becomes .       After the substitution the integrand is over the unit ball. In spherical coordinates . Multiply by the Jacobian.       Setting , , carries to the unit ball and has Jacobian , while the integrand becomes . Hence    "
+  "body": " A Triple Integral Over an Ellipsoid   Calculate the triple integral   where is the region bounded by the ellipsoid . Use the change of variables , , , which carries to the unit ball.   "
 },
 {
   "id": "ex-r3o-tetrahedron-com",
   "level": "2",
   "url": "sec-exercises-review3-online.html#ex-r3o-tetrahedron-com",
-  "type": "Exercise",
-  "number": "5",
+  "type": "Problem",
+  "number": "6.1.5",
   "title": "Centre of Mass of a Tetrahedron.",
-  "body": " Centre of Mass of a Tetrahedron       8*k\/105    2\/9    2\/9    1\/3     Find the centre of mass of the solid bounded by the planes , , , and , assuming a mass density of .   Part A. Find the mass of the solid.       Part B. Find the coordinates of the centre of mass.    ,  ,          Correct: .       Describe by , , . The inner integral gives ; the next gives .         Correct: the numerator is , and dividing by the mass gives .        . The constant cancels, so the answer does not depend on it.         Correct: the density and the solid are symmetric in and , so .       Swapping and leaves both the solid and the density unchanged, so this coordinate matches .         Correct: the numerator is , and dividing by the mass gives .       Here . Integrating over gives ; divide by the mass. The density grows with , so sits above the centroid height .       Describe by , , . Then   and the -numerator equals the -numerator by the symmetry of and of in and . Dividing,   independently of the constant , which cancels from every ratio.   "
+  "body": " Centre of Mass of a Tetrahedron   Find the mass and the centre of mass of the solid bounded by the planes , , , and , assuming a mass density of .   "
 },
 {
   "id": "ex-r3o-lamina-rectangle",
   "level": "2",
   "url": "sec-exercises-review3-online.html#ex-r3o-lamina-rectangle",
-  "type": "Exercise",
-  "number": "6",
+  "type": "Problem",
+  "number": "6.1.6",
   "title": "Mass and Centre of Mass of a Rectangular Lamina.",
-  "body": " Mass and Centre of Mass of a Rectangular Lamina                   A^2*B*C\/2+B^2*D*A\/2+E*A*B    C*A^3*B\/3+D*A^2*B^2\/4+E*A^2*B\/2    C*A^2*B^2\/4+D*A*B^3\/3+E*A*B^2\/2    xmom\/mass    ymom\/mass     A lamina occupies the part of the rectangle , , and the density at each point is given by the function .   Part A. What is the total mass?       Part B. Where is the centre of mass?    ,          Correct: .       Integrate term by term over the rectangle: , and similarly for the other two terms.         Correct: .        . Compute the moment first, then divide by the mass.         Correct: .        . The moment is ; divide by the mass.       Over the rectangle ,   and the two moments are and . Dividing each by the mass gives and .   "
+  "body": " Mass and Centre of Mass of a Rectangular Lamina   A lamina occupies the part of the rectangle , , and the density at each point is given by the function . What is the total mass, and where is the centre of mass?   "
 },
 {
   "id": "ex-r3o-sphere-minus-sphere",
   "level": "2",
   "url": "sec-exercises-review3-online.html#ex-r3o-sphere-minus-sphere",
-  "type": "Exercise",
-  "number": "7",
+  "type": "Problem",
+  "number": "6.1.7",
   "title": "Volume Between Two Spheres in Spherical Coordinates.",
-  "body": " Volume Between Two Spheres in Spherical Coordinates       pi*a^3\/2     Find the volume of the region outside the sphere and inside the half sphere , with .  Volume          Correct: .       For each , runs from the inner sphere out to . After the -integral you are left with ; substitute to get .       In spherical coordinates,   With the remaining integral is , so .   "
+  "body": " Volume Between Two Spheres in Spherical Coordinates   Find the volume of the region outside the sphere and inside the half sphere , with .   "
 },
 {
   "id": "ex-r3o-spherical-shell",
   "level": "2",
   "url": "sec-exercises-review3-online.html#ex-r3o-spherical-shell",
-  "type": "Exercise",
-  "number": "8",
+  "type": "Problem",
+  "number": "6.1.8",
   "title": "A Triple Integral Over a Spherical Shell.",
-  "body": " A Triple Integral Over a Spherical Shell          r0+gap    (r1^3-r0^3)\/3    pi*(r1^3-r0^3)\/3     Evaluate, in spherical coordinates, the triple integral of over the region , , .   Part A. The -integral separates from the rest. Evaluate it.       Part B. Evaluate the whole integral.  Integral          Correct: .       The volume element in spherical coordinates is , so the -integral is .         Correct: the three integrals separate, giving .       The integrand times the volume element is , which factors completely: , , and .       Because the integrand and the volume element both factor, the triple integral splits into a product:   These are , , and , so the integral equals .   "
+  "body": " A Triple Integral Over a Spherical Shell   Evaluate, in spherical coordinates, the triple integral of over the region , , .   "
 },
 {
   "id": "ex-r3o-gaussian-shell",
   "level": "2",
   "url": "sec-exercises-review3-online.html#ex-r3o-gaussian-shell",
-  "type": "Exercise",
-  "number": "9",
+  "type": "Problem",
+  "number": "6.1.9",
   "title": "An Exponential Integral Between Two Spheres.",
-  "body": " An Exponential Integral Between Two Spheres          a+gap    a^2    b^2    2*pi*(exp(-asq)-exp(-bsq))     Use spherical coordinates to evaluate the triple integral   where is the region bounded by the spheres and .  Answer          Correct: the integral is .       In spherical coordinates the integrand is and , so one factor of cancels. The angular integrals give , and . Note the spheres have radii and , not and .       The spheres have radii and . In spherical coordinates,   With this is .   "
+  "body": " An Exponential Integral Between Two Spheres   Use spherical coordinates to evaluate the triple integral   where is the region bounded by the spheres and .   "
 },
 {
   "id": "ex-r3o-linear-jacobian",
   "level": "2",
   "url": "sec-exercises-review3-online.html#ex-r3o-linear-jacobian",
-  "type": "Exercise",
-  "number": "10",
+  "type": "Problem",
+  "number": "6.1.10",
   "title": "The Jacobian of a Linear Transformation.",
-  "body": " The Jacobian of a Linear Transformation                p*s-q*r    p    q    r    s     Consider the transformation from -coordinates to -coordinates given by    Part A. Find the four partial derivatives.    ,  ,  ,     Part B. Compute the Jacobian of this transformation.           Correct.       , so differentiating with respect to leaves the coefficient of .        Correct.      Differentiate with respect to .        Correct.      Differentiate with respect to .        Correct.      Differentiate with respect to .         Correct: . For a linear map the Jacobian is a constant.       The Jacobian is the determinant .       For a linear transformation the partial derivatives are just the coefficients, so   a constant: a linear map scales every area by the same factor.   "
+  "body": " The Jacobian of a Linear Transformation   Consider the transformation from -coordinates to -coordinates given by   Find the four partial derivatives of the transformation, and then its Jacobian.   "
 },
 {
   "id": "ex-r3o-quadratic-map",
   "level": "2",
   "url": "sec-exercises-review3-online.html#ex-r3o-quadratic-map",
-  "type": "Exercise",
-  "number": "11",
+  "type": "Problem",
+  "number": "6.1.11",
   "title": "A Quadratic Map and the Integral It Simplifies.",
-  "body": " A Quadratic Map and the Integral It Simplifies       u^2+v^2    4*(u^2+v^2)    56*a^6\/45     The map carries the triangle onto the domain in the first quadrant bounded by , , and the parabola through the image of the edge . Use to evaluate    Part A. Express the integrand in terms of and .       Part B. Find the Jacobian of .       Part C. Evaluate the integral.            Correct: .       Expand , which is a perfect square.         Correct: .       With and , , , , . Take .         Correct: .       The integrand times the Jacobian is . Over the triangle , the inner integral gives .       Since and ,   Therefore    "
+  "body": " A Quadratic Map and the Integral It Simplifies   The map carries the triangle onto the domain in the first quadrant bounded by , , and the parabola through the image of the edge . Use to evaluate    "
 },
 {
   "id": "ex-r3o-centre-of-gravity",
   "level": "2",
   "url": "sec-exercises-review3-online.html#ex-r3o-centre-of-gravity",
-  "type": "Exercise",
-  "number": "12",
+  "type": "Problem",
+  "number": "6.1.12",
   "title": "Centre of Gravity of a Region Between Two Curves.",
-  "body": " Centre of Gravity of a Region Between Two Curves          0    (-m+sqrt(m^2+4*b))\/2    m*x    b-x^2    xstar^6\/12+(-b-m^2\/2)*xstar^4\/4+b^2*xstar^2\/4    xstar^7\/14+(-b-m^2\/2)*xstar^5\/5+b^2*xstar^3\/6    -xstar^8\/24+b*xstar^6\/6-m^3*xstar^5\/15-b^2*xstar^4\/4+b^3*xstar^2\/6    xmom\/mass    ymom\/mass     The region is bounded by the curves , , and the -axis, and its mass density is . To find the centre of gravity of you would compute the three integrals , , and , where    ,      ,                and finally the centre of gravity is    ,          Correct: the -axis is the left boundary, so starts at .       One of the three boundaries is the -axis, which is the line .         Correct: solving gives .       The right-hand end of the region is where the line meets the parabola. Solve and keep the positive root.         Correct: on this interval the line lies below the parabola.       For the line is the lower boundary and the parabola is the upper one.         Correct: the downward parabola is the upper boundary.       At the parabola is at height while the line is at , so the parabola is on top.         Correct: the mass is .       The inner integral is . Expand and integrate from to .         Correct: the moment about the -axis is .       This is the same computation as the mass but with one extra factor of , so the inner integral is .         Correct: the moment about the -axis is .       Here the inner integrand is , so the inner integral is .         Correct: .       Divide the moment about the -axis by the mass.         Correct: .       Divide the moment about the -axis by the mass.       The line and the parabola meet where , that is at , so and , with and . Carrying out the three integrals of , , and over that region gives , , and respectively, so    "
+  "body": " Centre of Gravity of a Region Between Two Curves   The region is bounded by the curves , , and the -axis, and its mass density is . Find the limits of the iterated integral describing , evaluate the three integrals of , and over , and use them to locate the centre of gravity of .   "
 },
 {
   "id": "ex-r3o-quarter-disc-com",
   "level": "2",
   "url": "sec-exercises-review3-online.html#ex-r3o-quarter-disc-com",
-  "type": "Exercise",
-  "number": "13",
+  "type": "Problem",
+  "number": "6.1.13",
   "title": "Centre of Mass of a Quarter Disc.",
-  "body": " Centre of Mass of a Quarter Disc       4*r\/(3*pi)     The centre of mass of the quarter disc of radius lying under for , with constant density, is a point .    ,     Hint. Use symmetry.        Correct: .       The area of the quarter disc is , and . Divide.         Correct: the quarter disc is symmetric about the line , so .       Reflecting in the line maps the quarter disc to itself and swaps the roles of and , so the two coordinates of the centre of mass are equal.       By symmetry about the line , the centre of mass lies on that line, so . Computing ,   and has the same value.   "
+  "body": " Centre of Mass of a Quarter Disc   Find the centre of mass of the quarter disc of radius lying under for , with constant density. (Use symmetry.)   "
 },
 {
   "id": "sec-exercises-review4-online",
@@ -4057,122 +4039,86 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "6.2",
   "title": "Review Problems #4",
-  "body": " Review Problems #4   Sections: , , and . Work each problem, then type your answers into the boxes and have them checked here.  Every answer box is graded separately, so a box you fill in correctly earns its credit even if another box in the same problem is wrong. Press Check Me to submit; you may check as often as you like.   How to type your answers.      Numbers. Type a decimal number and nothing else no units, no sign, no . Give at least three decimal places (for instance 18.850 , not 6pi ). Answers are accepted within a small tolerance, so a little rounding is fine.     Expressions. Type only the expression itself. Write products with * and powers with ^ , and write functions with parentheses: cos(u) , sqrt(x^2+y^2) , e^z . So the expression is typed 2*x + e^z . Spaces are ignored.     Words. Type just the word or letters asked for, in lower case unless the problem says otherwise.          Outward Flux Through the Surface of a Box                0    2*A*x+e^z    A*p^2*q*s+p*q*(e^s-1)    A*x^2+z^4+e^z     Evaluate the outward flux of the vector field   through the surface of the solid box given by , , .   Part A. By the Divergence Theorem the flux equals   , where    ,  ,  ,  ,  , and  .   Part B. Evaluate the integral that you set up in the previous part.  Flux  .        Correct: the integrand is the divergence, .       That is , the sum of the components of . The Divergence Theorem uses : differentiate each component before adding.       The integrand is the divergence: . Note that the middle term is , since does not depend on .        Correct.      In the outermost integral pairs with , so and are the -limits of the box.        Correct.      The outermost integral pairs with , so is the upper -limit of the box.        Correct.      The middle integral pairs with , so and are the -limits of the box.        Correct.      The middle integral pairs with , so is the upper -limit of the box.        Correct.      The innermost integral pairs with , so and are the -limits of the box.        Correct.      The innermost integral pairs with , so is the upper -limit of the box.         Correct: .       Integrate one term at a time over the box: , then multiply by the lengths in and ; and , then multiply by the lengths in and . The flux is (to three decimals).       By the Divergence Theorem, with , where is the coefficient of . Writing the triple integral in the order , the limits are the -limits outside, then the -limits, then the -limits inside. Integrating,   where are the -, - and -dimensions of the box.        The Box With the Largest Flux          2*k       k*(2*A*a-a^2)*b*c    k*A^2*M^2     Let and .  (a) Find the flux of out of the rectangular solid , , , as an expression in , and .  flux    (b) For what values of , , is the flux largest?    ,  ,    (c) What is that largest flux?  flux          Correct: by the Divergence Theorem the flux is .       Use the Divergence Theorem: the flux out of the box is the triple integral of over it. Only appears in the divergence, so , and the - and -integrals contribute the factor .         Correct: should maximize , whose maximum is at , inside the allowed interval.       Careful: unlike and , taking as large as possible does not maximize the flux, because becomes negative for : the part of the box beyond subtracts flux.       Maximize as a function of on .        Correct.      The factor multiplies a positive quantity, so take as large as allowed.        Correct.      The factor multiplies a positive quantity, so take as large as allowed.         Correct: .       Substitute , into ; the result is .       By the Divergence Theorem the flux out of the box is , where is the leading coefficient and the root of the divergence. Since and multiply a positive quantity, take , the largest allowed value; and is maximized at . The largest flux is .        Verifying the Divergence Theorem on a Cylinder                A*h*pi     Verify the Divergence Theorem for the vector field and region:   and the region , . Give each side as a decimal number.                Correct. On the side of the cylinder, and , which integrates to ; the integrals over the top and bottom disks vanish by symmetry.       Split into the side, the top and the bottom. On the side, parametrized by , the outward normal is and . Integrating over , gives . On the top, , whose integral over the disk is by symmetry; likewise on the bottom.         Correct: , a constant, so the triple integral is , matching the surface integral, as the Divergence Theorem promises.       Here , so the integral is times the volume of the cylinder.       With we get , so . Computing the surface integral directly: on the side, integrates to ; the top and bottom disks contribute by symmetry, since there . Both sides equal , verifying the theorem.        Flux Through a Sphere       R^2       3*x^2+3*z^2    8*pi*R^5\/5     Use the Divergence Theorem to evaluate the surface integral , where   and is the sphere , oriented outward.                Correct: the constant middle component differentiates to zero, leaving .        .         Correct: in spherical coordinates , and the integral over the ball of radius works out to .       Convert to spherical coordinates. Because the integrand omits , use ; then . (A slicker route: by symmetry the integrals of , , over the ball are equal, each , so the flux is .)        . By symmetry of the ball of radius , the integrals of , , over are all equal to . Hence         Flux Through a Paraboloid Cap             (2*u-1)*t    1+a^2    b*(a^4\/2+a^2)*pi     Let . Use the Divergence Theorem to find the flux of across the part of the paraboloid that lies above the plane and is oriented upward.    (a number)            Correct: the first component does not involve and the second does not involve , so only the third contributes: .       Differentiate each component with respect to its own variable: , , and . The scary-looking terms are decoys.         Correct. Closing the surface with the downward disk at and applying the Divergence Theorem gives flux .       The surface is not closed, so first close it: let be the disk in the plane , oriented downward. On , , so . The closed surface encloses the region between the plane and the paraboloid, whose volume is , so the total outward flux is . Subtracting the disk's share, .       Write for the coefficient of and , so the paraboloid meets the plane in the circle of radius . Then . Close the surface with the disk of radius at , oriented downward; there , so . The enclosed volume is , so the closed-surface flux is , and         Radial Field Through a Closed Cylinder          3    6*pi*R^2*L     Compute the flux of the vector field through the surface , which is a closed cylinder of radius centered on the -axis, with , and oriented outward.    (a number)  Flux         Correct: .       .         Correct: the cylinder is a closed surface, so the flux is . It does not matter that the cylinder's axis is the -axis rather than the -axis.       Since is closed, apply the Divergence Theorem: flux . The cylinder has radius and length along the -axis, so its volume is .       The surface is closed, so by the Divergence Theorem with , , where is the radius and the length of the cylinder.        Flux Through a Helicoid       w\/2    (w\/2)*(sin(u)-cos(u)+v)    (w\/2)*(2+pi\/2)    (w\/2)*(cos(u)-sin(u)-v)     Evaluate , where the vector field and the parametrized surface is the helicoid   oriented upward.  First compute the integrand (as an expression in and ):              Correct: (this is the upward choice, since the -component is nonnegative), and dotting with gives .       That is the opposite sign: you used , whose -component is , the downward orientation. The problem asks for the upward one.       Compute and ; then , and .         Correct: .       Integrate over the parameter rectangle: and , so the flux is .       With and , the upward normal is . Writing for the common component of ,         Flux Through a Paraboloid, Directly          R^2    2*a*(x^2+y^2)    pi*a*R^4     Compute the flux of the vector field through the surface , which is the part of the surface above the disk of radius centered at the origin, oriented upward .  Writing , we have , so (as an expression in and )    Flux          Correct: , , and has no -component, so the dot product is .       With we get and , so .         Correct: in polar coordinates, .       Convert to polar coordinates: and , so the flux is .       Writing the surface as over the disk of radius , and , where is the coefficient in . In polar coordinates,         The parallelogram of , with its orientation. Note the direction of the arrows.   A parallelogram anchored at the origin with arrows showing its boundary orientation.            (0,0)    (x_0,0)    (x_0,y_0)    (2x_0,y_0)                  Work Around a Parallelogram                A    x0*y0    -A*x0*y0    A*x0*y0     Use Green's Theorem to evaluate the work done by in moving an object around the boundary of the parallelogram in ( note the orientation ), with and . Assume that the object circulates only once around the boundary and that its motion begins at the origin and ends at the same point.  With , first compute (a number):    The area of the parallelogram is .  Work          Correct: .       Here depends only on , so , and .         Correct: base and height , so the area is .       A parallelogram's area is base times height. The base along the -axis runs from to , and the height is .         Correct. Green's Theorem gives for the counterclockwise orientation; since the figure's arrows run clockwise, the work is .       Check the orientation: the arrows in the figure run clockwise , and Green's Theorem as stated applies to the counterclockwise orientation. Your answer is off by a sign.       By Green's Theorem the counterclockwise circulation equals . The figure's orientation is clockwise, so flip the sign: Work .       With and , . For the counterclockwise orientation Green's Theorem would give ; the boundary in the figure is traversed clockwise, so .        Three Gradient Fields and the Unit Circle             a1*x*y    a3*sqrt(x^2+y^2)    0    -2*pi*a2    2*pi*a2     (a) Each of the vector fields   is a gradient vector field on some domain (not necessarily the whole plane). Find potential functions for and , choosing the constant so that the potential is at the origin; and find the constant for the potential of .  For :    For : with    For :    (b) Find the line integrals of , , around the curve given to be the unit circle in the -plane, centered at the origin, and traversed counterclockwise.    ,  ,    (c) For which of the three vector fields can Green's Theorem be used to calculate the line integral in part (b)? Type the letters of all that apply, with no spaces (for example fg ):    (Be sure that you are able to explain why or why not.)         Correct: , for all .       Look for with and ; integrating the first with respect to suggests , and the second equation forces to be constant.         Correct: and , wherever .       Differentiate with respect to : . Match the coefficient with the first component of .         Correct: , except at the origin.        is a radial field of constant magnitude ; try a potential of the form (constant) and differentiate to fix the constant.         Correct: is a gradient field on the whole plane, and is closed, so the integral is .        with defined on all of , and the circle is a closed curve: the fundamental theorem of line integrals gives .         Correct: on the unit circle is tangent to the circle, of length , pointing against the counterclockwise direction, so the integral is . The potential does not help here: it is not defined on the whole circle (it fails at ).       Right size, wrong sign: on the unit circle points clockwise , against the direction of travel.       Parametrize with , : on the circle , so while ; the dot product is , and integrating over gives .         Correct: points radially outward, so it is perpendicular to the circle everywhere, and the integral is .        is radial and the circle is traversed tangentially, so at every point.       f   Correct: Green's Theorem needs the field to be defined and differentiable everywhere inside the curve. and are undefined at the origin, which lies inside the unit circle, so the theorem applies only to (and indeed gives the answer instantly).     fgh   Careful: Green's Theorem requires and to have continuous partials on all of the region enclosed by the curve. Two of these fields blow up at the origin, which is inside the unit circle.     .*   Ask: is the field defined, with continuous partial derivatives, at every point of the disk bounded by the circle including the origin?       (a) , (so , valid where ), and (valid except at the origin), where are the coefficients in , , .  (b) since is a gradient field on the whole plane and is closed. On the unit circle is tangent, of length , pointing clockwise, so . is radial, hence perpendicular to , so its integral is .  (c) Only : the domains of and do not include the origin, which is inside , so Green's Theorem does not apply to them.        Circulation Around a Rectangle             -a*x    -a*x0^2*y0\/2    a*x     Use Green's Theorem to calculate the circulation of around the rectangle , , oriented counterclockwise.  With , first compute (as an expression in and ):    circulation          Correct: , so the integrand is .       Sign error: the circulation form of Green's Theorem uses , and here is the -component, so the integrand is .       Here and , so .         Correct: .       By Green's Theorem the circulation is over the rectangle; integrating, .       With and , , so by Green's Theorem         Circulation Around a Circle                   c2+(2*u-1)*d0       (2*u-1)*d0    (2*u-1)*d0*pi*m^2     Calculate , where is the circular path with center and radius , oriented counterclockwise. Use Green's Theorem.  With , first compute (a number):              Correct: , a constant.        and .         Correct: the integrand is the constant , so the integral is independent of the center .       By Green's Theorem the integral equals times the area of the disk, . The center of the circle does not matter, because the integrand is constant.        is the constant difference of the two cross coefficients, so Green's Theorem gives , where is the radius; the center plays no role.        Divergence of a Family of Radial Fields          -2+pp    -2-qq    2+A    A    -2     Let and consider the vector field , where and is a constant. has no -component and is independent of .  (a) Find , and show that it can be written in the form . As expressions in :    , and  .  (b) For what values of is positive, negative, or zero?   is positive for  , negative for  , and zero for  .  (c) Suppose that . What is the sign of the flux out of a small sphere centered at ? Type positive or negative :   If instead , what is the sign of the flux out of a small sphere centered at ?    (Be sure you can say how your answers in part (c) would change if the question were about a small sphere centered at .)         Correct: using and , .       Differentiate with the product rule: , with , and similarly in . Adding, the cross terms combine to , so the divergence is .         Correct: the divergence is , the same power of as in the field.       The two terms of the divergence are and ; both carry the power .        Correct.      Since for , the sign of is the sign of .        Correct.      The sign of the divergence is the sign of .        Correct.       for exactly when the coefficient vanishes.       positive   Correct: with the divergence is positive near , and the flux out of a small sphere has the sign of the divergence at its center.     .*   Think of the divergence at a point as the flux density out of a small sphere centered there: the flux has the same sign as the divergence. Here , so compare with .       negative   Correct: , so the divergence and with it the flux out of a small sphere away from the origin is negative. (For a sphere centered at no conclusion can be drawn this way: the field is not defined at the origin.)     .*   Compare with : the divergence has the sign of .       (a) With and , the product rule gives , so and .  (b) Since , the divergence is positive for , negative for , and zero for .  (c) The flux out of a small sphere has the sign of the divergence at its center, provided the sphere avoids the origin, where the field is undefined: positive when , negative when . For a sphere centered at the origin the calculation above says nothing, since the divergence is not defined there.        Flux Through a Slanted Cylinder Band       R^2          z0+dz    2*pi*R^2*dz     Compute the flux of through the surface of the cylinder bounded below by the plane , above by the plane , and oriented away from the -axis . Note that we are only interested in the flux through the curved surface of the cylinder.  On the cylinder,  (a number).  Flux          Correct: the outward normal is , so everywhere on the cylinder.       The outward unit normal of the cylinder (away from the -axis) is ; dot it with and use . The -component of contributes nothing.         Correct: since is constant, the flux is . Above each point of the circle the band runs between the two slanted planes, a vertical gap of , so the area is and the flux is .       Parametrize the band by with : for every the -interval has the same length . With constant, the flux is .       On the cylinder of radius the outward normal is , so : the -component of is tangent to the surface. The two slanted planes cut every vertical line on the cylinder in a segment of the same length , so the band has area , and         Flux Out of a Closed Cone                2*a*y    a*r^4*pi\/2     Find the flux of out of the closed cone , with .    (an expression in , , )  flux          Correct: only the middle component depends on its own variable, so .        , , and .         Correct: in cylindrical coordinates around the -axis the interior of the cone is . Integrating first, , and then .       Apply the Divergence Theorem and use cylindrical coordinates with playing the role of the axis: the interior of the cone is , , . Then .        , where is the coefficient of . By the Divergence Theorem, using cylindrical coordinates around the -axis (the cone is ),         Flux Through the Surface of a Tetrahedron             1+x    a*b*c*(a+4)\/24    a*b*c\/6     Use the Divergence Theorem to calculate the flux of across , where and is the surface of the tetrahedron enclosed by the coordinate planes and the plane     (an expression in , , )            Correct: , , , so .       Differentiate each component with respect to its own variable: the first gives , the second , and the third .         Correct: .       That is the volume of the tetrahedron, which is but the integrand is , so the -term still needs to be integrated.       Set up the triple integral over the tetrahedron with , , . Integrating gives .        . The tetrahedron has vertices , , , , so   using .     "
-},
-{
-  "id": "sec-exercises-review4-online-2-3",
-  "level": "2",
-  "url": "sec-exercises-review4-online.html#sec-exercises-review4-online-2-3",
-  "type": "Paragraph (with a defined term)",
-  "number": "",
-  "title": "",
-  "body": "How to type your answers. "
-},
-{
-  "id": "sec-exercises-review4-online-2-4-1-1",
-  "level": "2",
-  "url": "sec-exercises-review4-online.html#sec-exercises-review4-online-2-4-1-1",
-  "type": "Paragraph (with a defined term)",
-  "number": "",
-  "title": "",
-  "body": "Numbers. "
-},
-{
-  "id": "sec-exercises-review4-online-2-4-2-1",
-  "level": "2",
-  "url": "sec-exercises-review4-online.html#sec-exercises-review4-online-2-4-2-1",
-  "type": "Paragraph (with a defined term)",
-  "number": "",
-  "title": "",
-  "body": "Expressions. "
-},
-{
-  "id": "sec-exercises-review4-online-2-4-3-1",
-  "level": "2",
-  "url": "sec-exercises-review4-online.html#sec-exercises-review4-online-2-4-3-1",
-  "type": "Paragraph (with a defined term)",
-  "number": "",
-  "title": "",
-  "body": "Words. "
+  "body": " Review Problems #4  Sections: , , and .  Work each problem yourself first; the full solution follows immediately below it. The same sixteen problems, with the numbers randomised and every answer checked automatically, are in .   Outward Flux Through the Surface of a Box   Evaluate the outward flux of the vector field   through the surface of the solid box given by , , . Set up the triple integral that the Divergence Theorem provides, and evaluate it.     The Box With the Largest Flux   Let and .  (a) Find the flux of out of the rectangular solid , , , as an expression in , and .  (b) For which values of , and is that flux largest, and what is the largest flux?     Verifying the Divergence Theorem on a Cylinder   Verify the Divergence Theorem for the vector field   and the region , : compute the flux across the closed surface directly, compute over the solid, and check that the two agree.     Flux Through a Sphere   Use the Divergence Theorem to evaluate the surface integral , where   and is the sphere , oriented outward.     Flux Through a Paraboloid Cap   Let . Use the Divergence Theorem to find the flux of across the part of the paraboloid that lies above the plane and is oriented upward.     Radial Field Through a Closed Cylinder   Compute the flux of the vector field through the surface , which is a closed cylinder of radius centered on the -axis, with , and oriented outward.     Flux Through a Helicoid   Evaluate , where the vector field is and the parametrized surface is the helicoid   oriented upward.     Flux Through a Paraboloid, Directly   Compute the flux of the vector field through the surface , which is the part of the surface above the disk of radius centered at the origin, oriented upward .     The parallelogram of , with its orientation. Note the direction of the arrows.   A parallelogram anchored at the origin with arrows showing its boundary orientation.            (0,0)    (x_0,0)    (x_0,y_0)    (2x_0,y_0)                  Work Around a Parallelogram   Use Green's Theorem to evaluate the work done by in moving an object around the boundary of the parallelogram in ( note the orientation ), with and . Assume that the object circulates only once around the boundary, and that its motion begins at the origin and ends at the same point.     Three Gradient Fields and the Unit Circle   (a) Each of the vector fields   is a gradient vector field on some domain (not necessarily the whole plane). Find potential functions for and , choosing the constant so that the potential is at the origin, and find the constant for which is a potential function for .  (b) Find the line integrals of , and around the curve , the unit circle in the -plane centered at the origin and traversed counterclockwise.  (c) For which of the three vector fields can Green's Theorem be used to calculate the line integral in part (b), and why?     Circulation Around a Rectangle   Use Green's Theorem to calculate the circulation of around the rectangle , , oriented counterclockwise.     Circulation Around a Circle   Use Green's Theorem to calculate   where is the circular path with center and radius , oriented counterclockwise.     Divergence of a Family of Radial Fields   Let and consider the vector field , where and is a constant. Note that has no -component and is independent of .  (a) Find , and show that it can be written in the form for constants and depending on .  (b) For what values of is positive, negative, or zero?  (c) What is the sign of the flux out of a small sphere centered at when , and when ? How would your answers change for a small sphere centered at the origin?     Flux Through a Slanted Cylinder Band   Compute the flux of through the surface of the cylinder bounded below by the plane , above by the plane , and oriented away from the -axis . Note that we are only interested in the flux through the curved surface of the cylinder.     Flux Out of a Closed Cone   Find the flux of out of the closed cone , with .     Flux Through the Surface of a Tetrahedron   Use the Divergence Theorem to calculate the flux of across , where and is the surface of the tetrahedron enclosed by the coordinate planes and the plane     "
 },
 {
   "id": "ex-r4o-box-flux",
   "level": "2",
   "url": "sec-exercises-review4-online.html#ex-r4o-box-flux",
-  "type": "Exercise",
-  "number": "1",
+  "type": "Problem",
+  "number": "6.2.1",
   "title": "Outward Flux Through the Surface of a Box.",
-  "body": " Outward Flux Through the Surface of a Box                0    2*A*x+e^z    A*p^2*q*s+p*q*(e^s-1)    A*x^2+z^4+e^z     Evaluate the outward flux of the vector field   through the surface of the solid box given by , , .   Part A. By the Divergence Theorem the flux equals   , where    ,  ,  ,  ,  , and  .   Part B. Evaluate the integral that you set up in the previous part.  Flux  .        Correct: the integrand is the divergence, .       That is , the sum of the components of . The Divergence Theorem uses : differentiate each component before adding.       The integrand is the divergence: . Note that the middle term is , since does not depend on .        Correct.      In the outermost integral pairs with , so and are the -limits of the box.        Correct.      The outermost integral pairs with , so is the upper -limit of the box.        Correct.      The middle integral pairs with , so and are the -limits of the box.        Correct.      The middle integral pairs with , so is the upper -limit of the box.        Correct.      The innermost integral pairs with , so and are the -limits of the box.        Correct.      The innermost integral pairs with , so is the upper -limit of the box.         Correct: .       Integrate one term at a time over the box: , then multiply by the lengths in and ; and , then multiply by the lengths in and . The flux is (to three decimals).       By the Divergence Theorem, with , where is the coefficient of . Writing the triple integral in the order , the limits are the -limits outside, then the -limits, then the -limits inside. Integrating,   where are the -, - and -dimensions of the box.   "
+  "body": " Outward Flux Through the Surface of a Box   Evaluate the outward flux of the vector field   through the surface of the solid box given by , , . Set up the triple integral that the Divergence Theorem provides, and evaluate it.   "
 },
 {
   "id": "ex-r4o-box-div-max",
   "level": "2",
   "url": "sec-exercises-review4-online.html#ex-r4o-box-div-max",
-  "type": "Exercise",
-  "number": "2",
+  "type": "Problem",
+  "number": "6.2.2",
   "title": "The Box With the Largest Flux.",
-  "body": " The Box With the Largest Flux          2*k       k*(2*A*a-a^2)*b*c    k*A^2*M^2     Let and .  (a) Find the flux of out of the rectangular solid , , , as an expression in , and .  flux    (b) For what values of , , is the flux largest?    ,  ,    (c) What is that largest flux?  flux          Correct: by the Divergence Theorem the flux is .       Use the Divergence Theorem: the flux out of the box is the triple integral of over it. Only appears in the divergence, so , and the - and -integrals contribute the factor .         Correct: should maximize , whose maximum is at , inside the allowed interval.       Careful: unlike and , taking as large as possible does not maximize the flux, because becomes negative for : the part of the box beyond subtracts flux.       Maximize as a function of on .        Correct.      The factor multiplies a positive quantity, so take as large as allowed.        Correct.      The factor multiplies a positive quantity, so take as large as allowed.         Correct: .       Substitute , into ; the result is .       By the Divergence Theorem the flux out of the box is , where is the leading coefficient and the root of the divergence. Since and multiply a positive quantity, take , the largest allowed value; and is maximized at . The largest flux is .   "
+  "body": " The Box With the Largest Flux   Let and .  (a) Find the flux of out of the rectangular solid , , , as an expression in , and .  (b) For which values of , and is that flux largest, and what is the largest flux?   "
 },
 {
   "id": "ex-r4o-verify-cylinder",
   "level": "2",
   "url": "sec-exercises-review4-online.html#ex-r4o-verify-cylinder",
-  "type": "Exercise",
-  "number": "3",
+  "type": "Problem",
+  "number": "6.2.3",
   "title": "Verifying the Divergence Theorem on a Cylinder.",
-  "body": " Verifying the Divergence Theorem on a Cylinder                A*h*pi     Verify the Divergence Theorem for the vector field and region:   and the region , . Give each side as a decimal number.                Correct. On the side of the cylinder, and , which integrates to ; the integrals over the top and bottom disks vanish by symmetry.       Split into the side, the top and the bottom. On the side, parametrized by , the outward normal is and . Integrating over , gives . On the top, , whose integral over the disk is by symmetry; likewise on the bottom.         Correct: , a constant, so the triple integral is , matching the surface integral, as the Divergence Theorem promises.       Here , so the integral is times the volume of the cylinder.       With we get , so . Computing the surface integral directly: on the side, integrates to ; the top and bottom disks contribute by symmetry, since there . Both sides equal , verifying the theorem.   "
+  "body": " Verifying the Divergence Theorem on a Cylinder   Verify the Divergence Theorem for the vector field   and the region , : compute the flux across the closed surface directly, compute over the solid, and check that the two agree.   "
 },
 {
   "id": "ex-r4o-sphere",
   "level": "2",
   "url": "sec-exercises-review4-online.html#ex-r4o-sphere",
-  "type": "Exercise",
-  "number": "4",
+  "type": "Problem",
+  "number": "6.2.4",
   "title": "Flux Through a Sphere.",
-  "body": " Flux Through a Sphere       R^2       3*x^2+3*z^2    8*pi*R^5\/5     Use the Divergence Theorem to evaluate the surface integral , where   and is the sphere , oriented outward.                Correct: the constant middle component differentiates to zero, leaving .        .         Correct: in spherical coordinates , and the integral over the ball of radius works out to .       Convert to spherical coordinates. Because the integrand omits , use ; then . (A slicker route: by symmetry the integrals of , , over the ball are equal, each , so the flux is .)        . By symmetry of the ball of radius , the integrals of , , over are all equal to . Hence    "
+  "body": " Flux Through a Sphere   Use the Divergence Theorem to evaluate the surface integral , where   and is the sphere , oriented outward.   "
 },
 {
   "id": "ex-r4o-paraboloid-cap",
   "level": "2",
   "url": "sec-exercises-review4-online.html#ex-r4o-paraboloid-cap",
-  "type": "Exercise",
-  "number": "5",
+  "type": "Problem",
+  "number": "6.2.5",
   "title": "Flux Through a Paraboloid Cap.",
-  "body": " Flux Through a Paraboloid Cap             (2*u-1)*t    1+a^2    b*(a^4\/2+a^2)*pi     Let . Use the Divergence Theorem to find the flux of across the part of the paraboloid that lies above the plane and is oriented upward.    (a number)            Correct: the first component does not involve and the second does not involve , so only the third contributes: .       Differentiate each component with respect to its own variable: , , and . The scary-looking terms are decoys.         Correct. Closing the surface with the downward disk at and applying the Divergence Theorem gives flux .       The surface is not closed, so first close it: let be the disk in the plane , oriented downward. On , , so . The closed surface encloses the region between the plane and the paraboloid, whose volume is , so the total outward flux is . Subtracting the disk's share, .       Write for the coefficient of and , so the paraboloid meets the plane in the circle of radius . Then . Close the surface with the disk of radius at , oriented downward; there , so . The enclosed volume is , so the closed-surface flux is , and    "
+  "body": " Flux Through a Paraboloid Cap   Let . Use the Divergence Theorem to find the flux of across the part of the paraboloid that lies above the plane and is oriented upward.   "
 },
 {
   "id": "ex-r4o-cylinder-x-axis",
   "level": "2",
   "url": "sec-exercises-review4-online.html#ex-r4o-cylinder-x-axis",
-  "type": "Exercise",
-  "number": "6",
+  "type": "Problem",
+  "number": "6.2.6",
   "title": "Radial Field Through a Closed Cylinder.",
-  "body": " Radial Field Through a Closed Cylinder          3    6*pi*R^2*L     Compute the flux of the vector field through the surface , which is a closed cylinder of radius centered on the -axis, with , and oriented outward.    (a number)  Flux         Correct: .       .         Correct: the cylinder is a closed surface, so the flux is . It does not matter that the cylinder's axis is the -axis rather than the -axis.       Since is closed, apply the Divergence Theorem: flux . The cylinder has radius and length along the -axis, so its volume is .       The surface is closed, so by the Divergence Theorem with , , where is the radius and the length of the cylinder.   "
+  "body": " Radial Field Through a Closed Cylinder   Compute the flux of the vector field through the surface , which is a closed cylinder of radius centered on the -axis, with , and oriented outward.   "
 },
 {
   "id": "ex-r4o-helicoid",
   "level": "2",
   "url": "sec-exercises-review4-online.html#ex-r4o-helicoid",
-  "type": "Exercise",
-  "number": "7",
+  "type": "Problem",
+  "number": "6.2.7",
   "title": "Flux Through a Helicoid.",
-  "body": " Flux Through a Helicoid       w\/2    (w\/2)*(sin(u)-cos(u)+v)    (w\/2)*(2+pi\/2)    (w\/2)*(cos(u)-sin(u)-v)     Evaluate , where the vector field and the parametrized surface is the helicoid   oriented upward.  First compute the integrand (as an expression in and ):              Correct: (this is the upward choice, since the -component is nonnegative), and dotting with gives .       That is the opposite sign: you used , whose -component is , the downward orientation. The problem asks for the upward one.       Compute and ; then , and .         Correct: .       Integrate over the parameter rectangle: and , so the flux is .       With and , the upward normal is . Writing for the common component of ,    "
+  "body": " Flux Through a Helicoid   Evaluate , where the vector field is and the parametrized surface is the helicoid   oriented upward.   "
 },
 {
   "id": "ex-r4o-paraboloid-updisk",
   "level": "2",
   "url": "sec-exercises-review4-online.html#ex-r4o-paraboloid-updisk",
-  "type": "Exercise",
-  "number": "8",
+  "type": "Problem",
+  "number": "6.2.8",
   "title": "Flux Through a Paraboloid, Directly.",
-  "body": " Flux Through a Paraboloid, Directly          R^2    2*a*(x^2+y^2)    pi*a*R^4     Compute the flux of the vector field through the surface , which is the part of the surface above the disk of radius centered at the origin, oriented upward .  Writing , we have , so (as an expression in and )    Flux          Correct: , , and has no -component, so the dot product is .       With we get and , so .         Correct: in polar coordinates, .       Convert to polar coordinates: and , so the flux is .       Writing the surface as over the disk of radius , and , where is the coefficient in . In polar coordinates,    "
+  "body": " Flux Through a Paraboloid, Directly   Compute the flux of the vector field through the surface , which is the part of the surface above the disk of radius centered at the origin, oriented upward .   "
 },
 {
   "id": "fig-r4o-parallelogram",
   "level": "2",
   "url": "sec-exercises-review4-online.html#fig-r4o-parallelogram",
   "type": "Figure",
-  "number": "6.2.1",
+  "number": "6.2.9",
   "title": "",
   "body": " The parallelogram of , with its orientation. Note the direction of the arrows.   A parallelogram anchored at the origin with arrows showing its boundary orientation.            (0,0)    (x_0,0)    (x_0,y_0)    (2x_0,y_0)                "
 },
@@ -4180,73 +4126,433 @@ var ptx_lunr_docs = [
   "id": "ex-r4o-parallelogram",
   "level": "2",
   "url": "sec-exercises-review4-online.html#ex-r4o-parallelogram",
-  "type": "Exercise",
-  "number": "9",
+  "type": "Problem",
+  "number": "6.2.10",
   "title": "Work Around a Parallelogram.",
-  "body": " Work Around a Parallelogram                A    x0*y0    -A*x0*y0    A*x0*y0     Use Green's Theorem to evaluate the work done by in moving an object around the boundary of the parallelogram in ( note the orientation ), with and . Assume that the object circulates only once around the boundary and that its motion begins at the origin and ends at the same point.  With , first compute (a number):    The area of the parallelogram is .  Work          Correct: .       Here depends only on , so , and .         Correct: base and height , so the area is .       A parallelogram's area is base times height. The base along the -axis runs from to , and the height is .         Correct. Green's Theorem gives for the counterclockwise orientation; since the figure's arrows run clockwise, the work is .       Check the orientation: the arrows in the figure run clockwise , and Green's Theorem as stated applies to the counterclockwise orientation. Your answer is off by a sign.       By Green's Theorem the counterclockwise circulation equals . The figure's orientation is clockwise, so flip the sign: Work .       With and , . For the counterclockwise orientation Green's Theorem would give ; the boundary in the figure is traversed clockwise, so .   "
+  "body": " Work Around a Parallelogram   Use Green's Theorem to evaluate the work done by in moving an object around the boundary of the parallelogram in ( note the orientation ), with and . Assume that the object circulates only once around the boundary, and that its motion begins at the origin and ends at the same point.   "
 },
 {
   "id": "ex-r4o-three-fields",
   "level": "2",
   "url": "sec-exercises-review4-online.html#ex-r4o-three-fields",
-  "type": "Exercise",
-  "number": "10",
+  "type": "Problem",
+  "number": "6.2.11",
   "title": "Three Gradient Fields and the Unit Circle.",
-  "body": " Three Gradient Fields and the Unit Circle             a1*x*y    a3*sqrt(x^2+y^2)    0    -2*pi*a2    2*pi*a2     (a) Each of the vector fields   is a gradient vector field on some domain (not necessarily the whole plane). Find potential functions for and , choosing the constant so that the potential is at the origin; and find the constant for the potential of .  For :    For : with    For :    (b) Find the line integrals of , , around the curve given to be the unit circle in the -plane, centered at the origin, and traversed counterclockwise.    ,  ,    (c) For which of the three vector fields can Green's Theorem be used to calculate the line integral in part (b)? Type the letters of all that apply, with no spaces (for example fg ):    (Be sure that you are able to explain why or why not.)         Correct: , for all .       Look for with and ; integrating the first with respect to suggests , and the second equation forces to be constant.         Correct: and , wherever .       Differentiate with respect to : . Match the coefficient with the first component of .         Correct: , except at the origin.        is a radial field of constant magnitude ; try a potential of the form (constant) and differentiate to fix the constant.         Correct: is a gradient field on the whole plane, and is closed, so the integral is .        with defined on all of , and the circle is a closed curve: the fundamental theorem of line integrals gives .         Correct: on the unit circle is tangent to the circle, of length , pointing against the counterclockwise direction, so the integral is . The potential does not help here: it is not defined on the whole circle (it fails at ).       Right size, wrong sign: on the unit circle points clockwise , against the direction of travel.       Parametrize with , : on the circle , so while ; the dot product is , and integrating over gives .         Correct: points radially outward, so it is perpendicular to the circle everywhere, and the integral is .        is radial and the circle is traversed tangentially, so at every point.       f   Correct: Green's Theorem needs the field to be defined and differentiable everywhere inside the curve. and are undefined at the origin, which lies inside the unit circle, so the theorem applies only to (and indeed gives the answer instantly).     fgh   Careful: Green's Theorem requires and to have continuous partials on all of the region enclosed by the curve. Two of these fields blow up at the origin, which is inside the unit circle.     .*   Ask: is the field defined, with continuous partial derivatives, at every point of the disk bounded by the circle including the origin?       (a) , (so , valid where ), and (valid except at the origin), where are the coefficients in , , .  (b) since is a gradient field on the whole plane and is closed. On the unit circle is tangent, of length , pointing clockwise, so . is radial, hence perpendicular to , so its integral is .  (c) Only : the domains of and do not include the origin, which is inside , so Green's Theorem does not apply to them.   "
+  "body": " Three Gradient Fields and the Unit Circle   (a) Each of the vector fields   is a gradient vector field on some domain (not necessarily the whole plane). Find potential functions for and , choosing the constant so that the potential is at the origin, and find the constant for which is a potential function for .  (b) Find the line integrals of , and around the curve , the unit circle in the -plane centered at the origin and traversed counterclockwise.  (c) For which of the three vector fields can Green's Theorem be used to calculate the line integral in part (b), and why?   "
 },
 {
   "id": "ex-r4o-rect-circulation",
   "level": "2",
   "url": "sec-exercises-review4-online.html#ex-r4o-rect-circulation",
-  "type": "Exercise",
-  "number": "11",
+  "type": "Problem",
+  "number": "6.2.12",
   "title": "Circulation Around a Rectangle.",
-  "body": " Circulation Around a Rectangle             -a*x    -a*x0^2*y0\/2    a*x     Use Green's Theorem to calculate the circulation of around the rectangle , , oriented counterclockwise.  With , first compute (as an expression in and ):    circulation          Correct: , so the integrand is .       Sign error: the circulation form of Green's Theorem uses , and here is the -component, so the integrand is .       Here and , so .         Correct: .       By Green's Theorem the circulation is over the rectangle; integrating, .       With and , , so by Green's Theorem    "
+  "body": " Circulation Around a Rectangle   Use Green's Theorem to calculate the circulation of around the rectangle , , oriented counterclockwise.   "
 },
 {
   "id": "ex-r4o-circle-green",
   "level": "2",
   "url": "sec-exercises-review4-online.html#ex-r4o-circle-green",
-  "type": "Exercise",
-  "number": "12",
+  "type": "Problem",
+  "number": "6.2.13",
   "title": "Circulation Around a Circle.",
-  "body": " Circulation Around a Circle                   c2+(2*u-1)*d0       (2*u-1)*d0    (2*u-1)*d0*pi*m^2     Calculate , where is the circular path with center and radius , oriented counterclockwise. Use Green's Theorem.  With , first compute (a number):              Correct: , a constant.        and .         Correct: the integrand is the constant , so the integral is independent of the center .       By Green's Theorem the integral equals times the area of the disk, . The center of the circle does not matter, because the integrand is constant.        is the constant difference of the two cross coefficients, so Green's Theorem gives , where is the radius; the center plays no role.   "
+  "body": " Circulation Around a Circle   Use Green's Theorem to calculate   where is the circular path with center and radius , oriented counterclockwise.   "
 },
 {
   "id": "ex-r4o-radial-power",
   "level": "2",
   "url": "sec-exercises-review4-online.html#ex-r4o-radial-power",
-  "type": "Exercise",
-  "number": "13",
+  "type": "Problem",
+  "number": "6.2.14",
   "title": "Divergence of a Family of Radial Fields.",
-  "body": " Divergence of a Family of Radial Fields          -2+pp    -2-qq    2+A    A    -2     Let and consider the vector field , where and is a constant. has no -component and is independent of .  (a) Find , and show that it can be written in the form . As expressions in :    , and  .  (b) For what values of is positive, negative, or zero?   is positive for  , negative for  , and zero for  .  (c) Suppose that . What is the sign of the flux out of a small sphere centered at ? Type positive or negative :   If instead , what is the sign of the flux out of a small sphere centered at ?    (Be sure you can say how your answers in part (c) would change if the question were about a small sphere centered at .)         Correct: using and , .       Differentiate with the product rule: , with , and similarly in . Adding, the cross terms combine to , so the divergence is .         Correct: the divergence is , the same power of as in the field.       The two terms of the divergence are and ; both carry the power .        Correct.      Since for , the sign of is the sign of .        Correct.      The sign of the divergence is the sign of .        Correct.       for exactly when the coefficient vanishes.       positive   Correct: with the divergence is positive near , and the flux out of a small sphere has the sign of the divergence at its center.     .*   Think of the divergence at a point as the flux density out of a small sphere centered there: the flux has the same sign as the divergence. Here , so compare with .       negative   Correct: , so the divergence and with it the flux out of a small sphere away from the origin is negative. (For a sphere centered at no conclusion can be drawn this way: the field is not defined at the origin.)     .*   Compare with : the divergence has the sign of .       (a) With and , the product rule gives , so and .  (b) Since , the divergence is positive for , negative for , and zero for .  (c) The flux out of a small sphere has the sign of the divergence at its center, provided the sphere avoids the origin, where the field is undefined: positive when , negative when . For a sphere centered at the origin the calculation above says nothing, since the divergence is not defined there.   "
+  "body": " Divergence of a Family of Radial Fields   Let and consider the vector field , where and is a constant. Note that has no -component and is independent of .  (a) Find , and show that it can be written in the form for constants and depending on .  (b) For what values of is positive, negative, or zero?  (c) What is the sign of the flux out of a small sphere centered at when , and when ? How would your answers change for a small sphere centered at the origin?   "
 },
 {
   "id": "ex-r4o-cylinder-band",
   "level": "2",
   "url": "sec-exercises-review4-online.html#ex-r4o-cylinder-band",
-  "type": "Exercise",
-  "number": "14",
+  "type": "Problem",
+  "number": "6.2.15",
   "title": "Flux Through a Slanted Cylinder Band.",
-  "body": " Flux Through a Slanted Cylinder Band       R^2          z0+dz    2*pi*R^2*dz     Compute the flux of through the surface of the cylinder bounded below by the plane , above by the plane , and oriented away from the -axis . Note that we are only interested in the flux through the curved surface of the cylinder.  On the cylinder,  (a number).  Flux          Correct: the outward normal is , so everywhere on the cylinder.       The outward unit normal of the cylinder (away from the -axis) is ; dot it with and use . The -component of contributes nothing.         Correct: since is constant, the flux is . Above each point of the circle the band runs between the two slanted planes, a vertical gap of , so the area is and the flux is .       Parametrize the band by with : for every the -interval has the same length . With constant, the flux is .       On the cylinder of radius the outward normal is , so : the -component of is tangent to the surface. The two slanted planes cut every vertical line on the cylinder in a segment of the same length , so the band has area , and    "
+  "body": " Flux Through a Slanted Cylinder Band   Compute the flux of through the surface of the cylinder bounded below by the plane , above by the plane , and oriented away from the -axis . Note that we are only interested in the flux through the curved surface of the cylinder.   "
 },
 {
   "id": "ex-r4o-cone",
   "level": "2",
   "url": "sec-exercises-review4-online.html#ex-r4o-cone",
-  "type": "Exercise",
-  "number": "15",
+  "type": "Problem",
+  "number": "6.2.16",
   "title": "Flux Out of a Closed Cone.",
-  "body": " Flux Out of a Closed Cone                2*a*y    a*r^4*pi\/2     Find the flux of out of the closed cone , with .    (an expression in , , )  flux          Correct: only the middle component depends on its own variable, so .        , , and .         Correct: in cylindrical coordinates around the -axis the interior of the cone is . Integrating first, , and then .       Apply the Divergence Theorem and use cylindrical coordinates with playing the role of the axis: the interior of the cone is , , . Then .        , where is the coefficient of . By the Divergence Theorem, using cylindrical coordinates around the -axis (the cone is ),    "
+  "body": " Flux Out of a Closed Cone   Find the flux of out of the closed cone , with .   "
 },
 {
   "id": "ex-r4o-tetrahedron",
   "level": "2",
   "url": "sec-exercises-review4-online.html#ex-r4o-tetrahedron",
+  "type": "Problem",
+  "number": "6.2.17",
+  "title": "Flux Through the Surface of a Tetrahedron.",
+  "body": " Flux Through the Surface of a Tetrahedron   Use the Divergence Theorem to calculate the flux of across , where and is the surface of the tetrahedron enclosed by the coordinate planes and the plane    "
+},
+{
+  "id": "sec-exercises-review3-practice",
+  "level": "1",
+  "url": "sec-exercises-review3-practice.html",
+  "type": "Section",
+  "number": "7.1",
+  "title": "Review Problems #3—Practice",
+  "body": " Review Problems #3 Practice   Sections: , , and . Work each problem, then type your answers into the boxes and have them checked here.  Every answer box is graded separately, so a box you fill in correctly earns its credit even if another box in the same problem is wrong. Press Check Me to submit; you may check as often as you like.  This chapter is for testing yourself, so it contains the questions only. Checking an answer tells you whether it is right or wrong and nothing more no hints, no worked feedback, and no solutions. The same problems, with complete solutions, are in .   How to type your answers.      Give exact answers, not decimals. A rounded decimal will be marked wrong, even to several places. Type the exact value: pi*8^3\/2 rather than 1608.495 , and 4*5\/(3*pi) rather than 2.122 . A whole number or an exact fraction may of course be typed as it stands, so 77 and 7\/3 are both fine.     How to type it. Write products with * and powers with ^ , and write functions with parentheses: sqrt(s-t) , ln(9) , exp(-4) . Use pi for . So is typed u^2\/v , and is typed 2*pi*(exp(-1)-exp(-4)) . Spaces are ignored.     Any equivalent form counts. Your answer is compared to the exact value, not to one particular way of writing it, so 2*pi*exp(-1)-2*pi*exp(-4) is accepted just as readily as 2*pi*(exp(-1)-exp(-4)) . Do not simplify on our account just do not round.          Area by a Non-Linear Change of Variables          a^2    b^2    1    u^2\/v    v\/u    2*u\/v    -u^2\/v^2    -v\/u^2    1\/u    1\/v    (aa-1)*ln(bb)     Compute the area of the region in the first quadrant of the -plane bounded by    Part A. Sketch the region . (Nothing to submit for this part the sketch is for your own use in the parts that follow.)   Part B. Using the non-linear change of variables and , find and as functions of and .           Part C. Find the four partial derivatives in the Jacobian matrix of this change of variables, and then its determinant.    ,      ,         Part D. Using the change of variables, set up a double integral for the area of in the form   , where    ,  ,  , and  .   Part E. Evaluate the double integral to find the area of .  Area          Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.           Area of a Tilted Ellipse by a Shear       2*a    a^2+1    s-a*t    t    1    pi     Use the change of variables , to find the area of the region bounded by    Part A. Invert the change of variables.    ,     Part B. Find the Jacobian determinant .       Part C. Find the area of the region.  Area          Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.           A Double Integral Under a Parabolic Change of Variables          b^2    -a    0    sqrt(s-t)    s    1\/(2*sqrt(s-t))    1\/2    a*bsq\/2     Use the change of variables , to evaluate over the region in the first quadrant bounded by , , , and .   Part A. Invert the change of variables. (Take the positive square root, since lies in the first quadrant.)    ,     Part B. Find the Jacobian determinant.       Part C. The region becomes a rectangle in the -plane. Give its limits.   runs from to , and runs from to .   Part D. After the substitution, the integrand times the Jacobian simplifies to a constant. What is it?       Part E. Evaluate the integral.            Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.           A Triple Integral Over an Ellipsoid             a*b*c    4*a*b*c*pi\/5     Calculate the triple integral   where is the region bounded by the ellipsoid .   Part A. Use the change of variables , , , which carries to the unit ball. What is the Jacobian determinant ?       Part B. Evaluate the triple integral.            Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.           Centre of Mass of a Tetrahedron       8*k\/105    2\/9    2\/9    1\/3     Find the centre of mass of the solid bounded by the planes , , , and , assuming a mass density of .   Part A. Find the mass of the solid.       Part B. Find the coordinates of the centre of mass.    ,  ,          Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.           Mass and Centre of Mass of a Rectangular Lamina                   A^2*B*C\/2+B^2*D*A\/2+E*A*B    C*A^3*B\/3+D*A^2*B^2\/4+E*A^2*B\/2    C*A^2*B^2\/4+D*A*B^3\/3+E*A*B^2\/2    xmom\/mass    ymom\/mass     A lamina occupies the part of the rectangle , , and the density at each point is given by the function .   Part A. What is the total mass?       Part B. Where is the centre of mass?    ,          Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.           Volume Between Two Spheres in Spherical Coordinates       pi*a^3\/2     Find the volume of the region outside the sphere and inside the half sphere , with .  Volume          Correct.       Not correct yet check your work and try again.           A Triple Integral Over a Spherical Shell          r0+gap    (r1^3-r0^3)\/3    pi*(r1^3-r0^3)\/3     Evaluate, in spherical coordinates, the triple integral of over the region , , .   Part A. The -integral separates from the rest. Evaluate it.       Part B. Evaluate the whole integral.  Integral          Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.           An Exponential Integral Between Two Spheres          a+gap    a^2    b^2    2*pi*(exp(-asq)-exp(-bsq))     Use spherical coordinates to evaluate the triple integral   where is the region bounded by the spheres and .  Answer          Correct.       Not correct yet check your work and try again.           The Jacobian of a Linear Transformation                p*s-q*r    p    q    r    s     Consider the transformation from -coordinates to -coordinates given by    Part A. Find the four partial derivatives.    ,  ,  ,     Part B. Compute the Jacobian of this transformation.            Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.           A Quadratic Map and the Integral It Simplifies       u^2+v^2    4*(u^2+v^2)    56*a^6\/45     The map carries the triangle onto the domain in the first quadrant bounded by , , and the parabola through the image of the edge . Use to evaluate    Part A. Express the integrand in terms of and .       Part B. Find the Jacobian of .       Part C. Evaluate the integral.            Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.           Centre of Gravity of a Region Between Two Curves          0    (-m+sqrt(m^2+4*b))\/2    m*x    b-x^2    xstar^6\/12+(-b-m^2\/2)*xstar^4\/4+b^2*xstar^2\/4    xstar^7\/14+(-b-m^2\/2)*xstar^5\/5+b^2*xstar^3\/6    -xstar^8\/24+b*xstar^6\/6-m^3*xstar^5\/15-b^2*xstar^4\/4+b^3*xstar^2\/6    xmom\/mass    ymom\/mass     The region is bounded by the curves , , and the -axis, and its mass density is . To find the centre of gravity of you would compute the three integrals , , and , where    ,      ,                and finally the centre of gravity is    ,          Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.           Centre of Mass of a Quarter Disc       4*r\/(3*pi)     The centre of mass of the quarter disc of radius lying under for , with constant density, is a point .    ,     Hint. Use symmetry.        Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.        "
+},
+{
+  "id": "sec-exercises-review3-practice-2-4",
+  "level": "2",
+  "url": "sec-exercises-review3-practice.html#sec-exercises-review3-practice-2-4",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "How to type your answers. "
+},
+{
+  "id": "sec-exercises-review3-practice-2-5-1-1",
+  "level": "2",
+  "url": "sec-exercises-review3-practice.html#sec-exercises-review3-practice-2-5-1-1",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Give exact answers, not decimals. "
+},
+{
+  "id": "sec-exercises-review3-practice-2-5-2-1",
+  "level": "2",
+  "url": "sec-exercises-review3-practice.html#sec-exercises-review3-practice-2-5-2-1",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "How to type it. "
+},
+{
+  "id": "sec-exercises-review3-practice-2-5-3-1",
+  "level": "2",
+  "url": "sec-exercises-review3-practice.html#sec-exercises-review3-practice-2-5-3-1",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Any equivalent form counts. "
+},
+{
+  "id": "ex-r3p-area-change-of-variables",
+  "level": "2",
+  "url": "sec-exercises-review3-practice.html#ex-r3p-area-change-of-variables",
+  "type": "Exercise",
+  "number": "1",
+  "title": "Area by a Non-Linear Change of Variables.",
+  "body": " Area by a Non-Linear Change of Variables          a^2    b^2    1    u^2\/v    v\/u    2*u\/v    -u^2\/v^2    -v\/u^2    1\/u    1\/v    (aa-1)*ln(bb)     Compute the area of the region in the first quadrant of the -plane bounded by    Part A. Sketch the region . (Nothing to submit for this part the sketch is for your own use in the parts that follow.)   Part B. Using the non-linear change of variables and , find and as functions of and .           Part C. Find the four partial derivatives in the Jacobian matrix of this change of variables, and then its determinant.    ,      ,         Part D. Using the change of variables, set up a double integral for the area of in the form   , where    ,  ,  , and  .   Part E. Evaluate the double integral to find the area of .  Area          Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.      "
+},
+{
+  "id": "ex-r3p-shear-ellipse-area",
+  "level": "2",
+  "url": "sec-exercises-review3-practice.html#ex-r3p-shear-ellipse-area",
+  "type": "Exercise",
+  "number": "2",
+  "title": "Area of a Tilted Ellipse by a Shear.",
+  "body": " Area of a Tilted Ellipse by a Shear       2*a    a^2+1    s-a*t    t    1    pi     Use the change of variables , to find the area of the region bounded by    Part A. Invert the change of variables.    ,     Part B. Find the Jacobian determinant .       Part C. Find the area of the region.  Area          Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.      "
+},
+{
+  "id": "ex-r3p-parabolic-strip",
+  "level": "2",
+  "url": "sec-exercises-review3-practice.html#ex-r3p-parabolic-strip",
+  "type": "Exercise",
+  "number": "3",
+  "title": "A Double Integral Under a Parabolic Change of Variables.",
+  "body": " A Double Integral Under a Parabolic Change of Variables          b^2    -a    0    sqrt(s-t)    s    1\/(2*sqrt(s-t))    1\/2    a*bsq\/2     Use the change of variables , to evaluate over the region in the first quadrant bounded by , , , and .   Part A. Invert the change of variables. (Take the positive square root, since lies in the first quadrant.)    ,     Part B. Find the Jacobian determinant.       Part C. The region becomes a rectangle in the -plane. Give its limits.   runs from to , and runs from to .   Part D. After the substitution, the integrand times the Jacobian simplifies to a constant. What is it?       Part E. Evaluate the integral.            Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.      "
+},
+{
+  "id": "ex-r3p-ellipsoid-integral",
+  "level": "2",
+  "url": "sec-exercises-review3-practice.html#ex-r3p-ellipsoid-integral",
+  "type": "Exercise",
+  "number": "4",
+  "title": "A Triple Integral Over an Ellipsoid.",
+  "body": " A Triple Integral Over an Ellipsoid             a*b*c    4*a*b*c*pi\/5     Calculate the triple integral   where is the region bounded by the ellipsoid .   Part A. Use the change of variables , , , which carries to the unit ball. What is the Jacobian determinant ?       Part B. Evaluate the triple integral.            Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.      "
+},
+{
+  "id": "ex-r3p-tetrahedron-com",
+  "level": "2",
+  "url": "sec-exercises-review3-practice.html#ex-r3p-tetrahedron-com",
+  "type": "Exercise",
+  "number": "5",
+  "title": "Centre of Mass of a Tetrahedron.",
+  "body": " Centre of Mass of a Tetrahedron       8*k\/105    2\/9    2\/9    1\/3     Find the centre of mass of the solid bounded by the planes , , , and , assuming a mass density of .   Part A. Find the mass of the solid.       Part B. Find the coordinates of the centre of mass.    ,  ,          Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.      "
+},
+{
+  "id": "ex-r3p-lamina-rectangle",
+  "level": "2",
+  "url": "sec-exercises-review3-practice.html#ex-r3p-lamina-rectangle",
+  "type": "Exercise",
+  "number": "6",
+  "title": "Mass and Centre of Mass of a Rectangular Lamina.",
+  "body": " Mass and Centre of Mass of a Rectangular Lamina                   A^2*B*C\/2+B^2*D*A\/2+E*A*B    C*A^3*B\/3+D*A^2*B^2\/4+E*A^2*B\/2    C*A^2*B^2\/4+D*A*B^3\/3+E*A*B^2\/2    xmom\/mass    ymom\/mass     A lamina occupies the part of the rectangle , , and the density at each point is given by the function .   Part A. What is the total mass?       Part B. Where is the centre of mass?    ,          Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.      "
+},
+{
+  "id": "ex-r3p-sphere-minus-sphere",
+  "level": "2",
+  "url": "sec-exercises-review3-practice.html#ex-r3p-sphere-minus-sphere",
+  "type": "Exercise",
+  "number": "7",
+  "title": "Volume Between Two Spheres in Spherical Coordinates.",
+  "body": " Volume Between Two Spheres in Spherical Coordinates       pi*a^3\/2     Find the volume of the region outside the sphere and inside the half sphere , with .  Volume          Correct.       Not correct yet check your work and try again.      "
+},
+{
+  "id": "ex-r3p-spherical-shell",
+  "level": "2",
+  "url": "sec-exercises-review3-practice.html#ex-r3p-spherical-shell",
+  "type": "Exercise",
+  "number": "8",
+  "title": "A Triple Integral Over a Spherical Shell.",
+  "body": " A Triple Integral Over a Spherical Shell          r0+gap    (r1^3-r0^3)\/3    pi*(r1^3-r0^3)\/3     Evaluate, in spherical coordinates, the triple integral of over the region , , .   Part A. The -integral separates from the rest. Evaluate it.       Part B. Evaluate the whole integral.  Integral          Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.      "
+},
+{
+  "id": "ex-r3p-gaussian-shell",
+  "level": "2",
+  "url": "sec-exercises-review3-practice.html#ex-r3p-gaussian-shell",
+  "type": "Exercise",
+  "number": "9",
+  "title": "An Exponential Integral Between Two Spheres.",
+  "body": " An Exponential Integral Between Two Spheres          a+gap    a^2    b^2    2*pi*(exp(-asq)-exp(-bsq))     Use spherical coordinates to evaluate the triple integral   where is the region bounded by the spheres and .  Answer          Correct.       Not correct yet check your work and try again.      "
+},
+{
+  "id": "ex-r3p-linear-jacobian",
+  "level": "2",
+  "url": "sec-exercises-review3-practice.html#ex-r3p-linear-jacobian",
+  "type": "Exercise",
+  "number": "10",
+  "title": "The Jacobian of a Linear Transformation.",
+  "body": " The Jacobian of a Linear Transformation                p*s-q*r    p    q    r    s     Consider the transformation from -coordinates to -coordinates given by    Part A. Find the four partial derivatives.    ,  ,  ,     Part B. Compute the Jacobian of this transformation.            Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.      "
+},
+{
+  "id": "ex-r3p-quadratic-map",
+  "level": "2",
+  "url": "sec-exercises-review3-practice.html#ex-r3p-quadratic-map",
+  "type": "Exercise",
+  "number": "11",
+  "title": "A Quadratic Map and the Integral It Simplifies.",
+  "body": " A Quadratic Map and the Integral It Simplifies       u^2+v^2    4*(u^2+v^2)    56*a^6\/45     The map carries the triangle onto the domain in the first quadrant bounded by , , and the parabola through the image of the edge . Use to evaluate    Part A. Express the integrand in terms of and .       Part B. Find the Jacobian of .       Part C. Evaluate the integral.            Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.      "
+},
+{
+  "id": "ex-r3p-centre-of-gravity",
+  "level": "2",
+  "url": "sec-exercises-review3-practice.html#ex-r3p-centre-of-gravity",
+  "type": "Exercise",
+  "number": "12",
+  "title": "Centre of Gravity of a Region Between Two Curves.",
+  "body": " Centre of Gravity of a Region Between Two Curves          0    (-m+sqrt(m^2+4*b))\/2    m*x    b-x^2    xstar^6\/12+(-b-m^2\/2)*xstar^4\/4+b^2*xstar^2\/4    xstar^7\/14+(-b-m^2\/2)*xstar^5\/5+b^2*xstar^3\/6    -xstar^8\/24+b*xstar^6\/6-m^3*xstar^5\/15-b^2*xstar^4\/4+b^3*xstar^2\/6    xmom\/mass    ymom\/mass     The region is bounded by the curves , , and the -axis, and its mass density is . To find the centre of gravity of you would compute the three integrals , , and , where    ,      ,                and finally the centre of gravity is    ,          Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.      "
+},
+{
+  "id": "ex-r3p-quarter-disc-com",
+  "level": "2",
+  "url": "sec-exercises-review3-practice.html#ex-r3p-quarter-disc-com",
+  "type": "Exercise",
+  "number": "13",
+  "title": "Centre of Mass of a Quarter Disc.",
+  "body": " Centre of Mass of a Quarter Disc       4*r\/(3*pi)     The centre of mass of the quarter disc of radius lying under for , with constant density, is a point .    ,     Hint. Use symmetry.        Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.      "
+},
+{
+  "id": "sec-exercises-review4-practice",
+  "level": "1",
+  "url": "sec-exercises-review4-practice.html",
+  "type": "Section",
+  "number": "7.2",
+  "title": "Review Problems #4—Practice",
+  "body": " Review Problems #4 Practice   Sections: , , and . Work each problem, then type your answers into the boxes and have them checked here.  Every answer box is graded separately, so a box you fill in correctly earns its credit even if another box in the same problem is wrong. Press Check Me to submit; you may check as often as you like.  This chapter is for testing yourself, so it contains the questions only. Checking an answer tells you whether it is right or wrong and nothing more no hints, no worked feedback, and no solutions. The same problems, with complete solutions, are in .   How to type your answers.      Numbers. Type a decimal number and nothing else no units, no sign, no . Give at least three decimal places (for instance 18.850 , not 6pi ). Answers are accepted within a small tolerance, so a little rounding is fine.     Expressions. Type only the expression itself. Write products with * and powers with ^ , and write functions with parentheses: cos(u) , sqrt(x^2+y^2) , e^z . So the expression is typed 2*x + e^z . Spaces are ignored.     Words. Type just the word or letters asked for, in lower case unless the problem says otherwise.          Outward Flux Through the Surface of a Box                0    2*A*x+e^z    A*p^2*q*s+p*q*(e^s-1)    A*x^2+z^4+e^z     Evaluate the outward flux of the vector field   through the surface of the solid box given by , , .   Part A. By the Divergence Theorem the flux equals   , where    ,  ,  ,  ,  , and  .   Part B. Evaluate the integral that you set up in the previous part.  Flux  .        Correct.       Not correct yet check your work and try again.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.           The Box With the Largest Flux          2*k       k*(2*A*a-a^2)*b*c    k*A^2*M^2     Let and .  (a) Find the flux of out of the rectangular solid , , , as an expression in , and .  flux    (b) For what values of , , is the flux largest?    ,  ,    (c) What is that largest flux?  flux          Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.           Verifying the Divergence Theorem on a Cylinder                A*h*pi     Verify the Divergence Theorem for the vector field and region:   and the region , . Give each side as a decimal number.                Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.           Flux Through a Sphere       R^2       3*x^2+3*z^2    8*pi*R^5\/5     Use the Divergence Theorem to evaluate the surface integral , where   and is the sphere , oriented outward.                Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.           Flux Through a Paraboloid Cap             (2*u-1)*t    1+a^2    b*(a^4\/2+a^2)*pi     Let . Use the Divergence Theorem to find the flux of across the part of the paraboloid that lies above the plane and is oriented upward.    (a number)            Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.           Radial Field Through a Closed Cylinder          3    6*pi*R^2*L     Compute the flux of the vector field through the surface , which is a closed cylinder of radius centered on the -axis, with , and oriented outward.    (a number)  Flux          Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.           Flux Through a Helicoid       w\/2    (w\/2)*(sin(u)-cos(u)+v)    (w\/2)*(2+pi\/2)    (w\/2)*(cos(u)-sin(u)-v)     Evaluate , where the vector field and the parametrized surface is the helicoid   oriented upward.  First compute the integrand (as an expression in and ):              Correct.       Not correct yet check your work and try again.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.           Flux Through a Paraboloid, Directly          R^2    2*a*(x^2+y^2)    pi*a*R^4     Compute the flux of the vector field through the surface , which is the part of the surface above the disk of radius centered at the origin, oriented upward .  Writing , we have , so (as an expression in and )    Flux          Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.           The parallelogram of , with its orientation. Note the direction of the arrows.   A parallelogram anchored at the origin with arrows showing its boundary orientation.            (0,0)    (x_0,0)    (x_0,y_0)    (2x_0,y_0)                  Work Around a Parallelogram                A    x0*y0    -A*x0*y0    A*x0*y0     Use Green's Theorem to evaluate the work done by in moving an object around the boundary of the parallelogram in ( note the orientation ), with and . Assume that the object circulates only once around the boundary and that its motion begins at the origin and ends at the same point.  With , first compute (a number):    The area of the parallelogram is .  Work          Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.       Not correct yet check your work and try again.           Three Gradient Fields and the Unit Circle             a1*x*y    a3*sqrt(x^2+y^2)    0    -2*pi*a2    2*pi*a2     (a) Each of the vector fields   is a gradient vector field on some domain (not necessarily the whole plane). Find potential functions for and , choosing the constant so that the potential is at the origin; and find the constant for the potential of .  For :    For : with    For :    (b) Find the line integrals of , , around the curve given to be the unit circle in the -plane, centered at the origin, and traversed counterclockwise.    ,  ,    (c) For which of the three vector fields can Green's Theorem be used to calculate the line integral in part (b)? Type the letters of all that apply, with no spaces (for example fg ):    (Be sure that you are able to explain why or why not.)         Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.       f   Correct.     fgh   Not correct yet check your work and try again.     .*   Not correct yet check your work and try again.           Circulation Around a Rectangle             -a*x    -a*x0^2*y0\/2    a*x     Use Green's Theorem to calculate the circulation of around the rectangle , , oriented counterclockwise.  With , first compute (as an expression in and ):    circulation          Correct.       Not correct yet check your work and try again.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.           Circulation Around a Circle                   c2+(2*u-1)*d0       (2*u-1)*d0    (2*u-1)*d0*pi*m^2     Calculate , where is the circular path with center and radius , oriented counterclockwise. Use Green's Theorem.  With , first compute (a number):              Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.           Divergence of a Family of Radial Fields          -2+pp    -2-qq    2+A    A    -2     Let and consider the vector field , where and is a constant. has no -component and is independent of .  (a) Find , and show that it can be written in the form . As expressions in :    , and  .  (b) For what values of is positive, negative, or zero?   is positive for  , negative for  , and zero for  .  (c) Suppose that . What is the sign of the flux out of a small sphere centered at ? Type positive or negative :   If instead , what is the sign of the flux out of a small sphere centered at ?    (Be sure you can say how your answers in part (c) would change if the question were about a small sphere centered at .)         Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.       positive   Correct.     .*   Not correct yet check your work and try again.       negative   Correct.     .*   Not correct yet check your work and try again.           Flux Through a Slanted Cylinder Band       R^2          z0+dz    2*pi*R^2*dz     Compute the flux of through the surface of the cylinder bounded below by the plane , above by the plane , and oriented away from the -axis . Note that we are only interested in the flux through the curved surface of the cylinder.  On the cylinder,  (a number).  Flux          Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.           Flux Out of a Closed Cone                2*a*y    a*r^4*pi\/2     Find the flux of out of the closed cone , with .    (an expression in , , )  flux          Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.           Flux Through the Surface of a Tetrahedron             1+x    a*b*c*(a+4)\/24    a*b*c\/6     Use the Divergence Theorem to calculate the flux of across , where and is the surface of the tetrahedron enclosed by the coordinate planes and the plane     (an expression in , , )            Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.       Not correct yet check your work and try again.        "
+},
+{
+  "id": "sec-exercises-review4-practice-2-4",
+  "level": "2",
+  "url": "sec-exercises-review4-practice.html#sec-exercises-review4-practice-2-4",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "How to type your answers. "
+},
+{
+  "id": "sec-exercises-review4-practice-2-5-1-1",
+  "level": "2",
+  "url": "sec-exercises-review4-practice.html#sec-exercises-review4-practice-2-5-1-1",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Numbers. "
+},
+{
+  "id": "sec-exercises-review4-practice-2-5-2-1",
+  "level": "2",
+  "url": "sec-exercises-review4-practice.html#sec-exercises-review4-practice-2-5-2-1",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Expressions. "
+},
+{
+  "id": "sec-exercises-review4-practice-2-5-3-1",
+  "level": "2",
+  "url": "sec-exercises-review4-practice.html#sec-exercises-review4-practice-2-5-3-1",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Words. "
+},
+{
+  "id": "ex-r4p-box-flux",
+  "level": "2",
+  "url": "sec-exercises-review4-practice.html#ex-r4p-box-flux",
+  "type": "Exercise",
+  "number": "1",
+  "title": "Outward Flux Through the Surface of a Box.",
+  "body": " Outward Flux Through the Surface of a Box                0    2*A*x+e^z    A*p^2*q*s+p*q*(e^s-1)    A*x^2+z^4+e^z     Evaluate the outward flux of the vector field   through the surface of the solid box given by , , .   Part A. By the Divergence Theorem the flux equals   , where    ,  ,  ,  ,  , and  .   Part B. Evaluate the integral that you set up in the previous part.  Flux  .        Correct.       Not correct yet check your work and try again.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.      "
+},
+{
+  "id": "ex-r4p-box-div-max",
+  "level": "2",
+  "url": "sec-exercises-review4-practice.html#ex-r4p-box-div-max",
+  "type": "Exercise",
+  "number": "2",
+  "title": "The Box With the Largest Flux.",
+  "body": " The Box With the Largest Flux          2*k       k*(2*A*a-a^2)*b*c    k*A^2*M^2     Let and .  (a) Find the flux of out of the rectangular solid , , , as an expression in , and .  flux    (b) For what values of , , is the flux largest?    ,  ,    (c) What is that largest flux?  flux          Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.      "
+},
+{
+  "id": "ex-r4p-verify-cylinder",
+  "level": "2",
+  "url": "sec-exercises-review4-practice.html#ex-r4p-verify-cylinder",
+  "type": "Exercise",
+  "number": "3",
+  "title": "Verifying the Divergence Theorem on a Cylinder.",
+  "body": " Verifying the Divergence Theorem on a Cylinder                A*h*pi     Verify the Divergence Theorem for the vector field and region:   and the region , . Give each side as a decimal number.                Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.      "
+},
+{
+  "id": "ex-r4p-sphere",
+  "level": "2",
+  "url": "sec-exercises-review4-practice.html#ex-r4p-sphere",
+  "type": "Exercise",
+  "number": "4",
+  "title": "Flux Through a Sphere.",
+  "body": " Flux Through a Sphere       R^2       3*x^2+3*z^2    8*pi*R^5\/5     Use the Divergence Theorem to evaluate the surface integral , where   and is the sphere , oriented outward.                Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.      "
+},
+{
+  "id": "ex-r4p-paraboloid-cap",
+  "level": "2",
+  "url": "sec-exercises-review4-practice.html#ex-r4p-paraboloid-cap",
+  "type": "Exercise",
+  "number": "5",
+  "title": "Flux Through a Paraboloid Cap.",
+  "body": " Flux Through a Paraboloid Cap             (2*u-1)*t    1+a^2    b*(a^4\/2+a^2)*pi     Let . Use the Divergence Theorem to find the flux of across the part of the paraboloid that lies above the plane and is oriented upward.    (a number)            Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.      "
+},
+{
+  "id": "ex-r4p-cylinder-x-axis",
+  "level": "2",
+  "url": "sec-exercises-review4-practice.html#ex-r4p-cylinder-x-axis",
+  "type": "Exercise",
+  "number": "6",
+  "title": "Radial Field Through a Closed Cylinder.",
+  "body": " Radial Field Through a Closed Cylinder          3    6*pi*R^2*L     Compute the flux of the vector field through the surface , which is a closed cylinder of radius centered on the -axis, with , and oriented outward.    (a number)  Flux          Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.      "
+},
+{
+  "id": "ex-r4p-helicoid",
+  "level": "2",
+  "url": "sec-exercises-review4-practice.html#ex-r4p-helicoid",
+  "type": "Exercise",
+  "number": "7",
+  "title": "Flux Through a Helicoid.",
+  "body": " Flux Through a Helicoid       w\/2    (w\/2)*(sin(u)-cos(u)+v)    (w\/2)*(2+pi\/2)    (w\/2)*(cos(u)-sin(u)-v)     Evaluate , where the vector field and the parametrized surface is the helicoid   oriented upward.  First compute the integrand (as an expression in and ):              Correct.       Not correct yet check your work and try again.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.      "
+},
+{
+  "id": "ex-r4p-paraboloid-updisk",
+  "level": "2",
+  "url": "sec-exercises-review4-practice.html#ex-r4p-paraboloid-updisk",
+  "type": "Exercise",
+  "number": "8",
+  "title": "Flux Through a Paraboloid, Directly.",
+  "body": " Flux Through a Paraboloid, Directly          R^2    2*a*(x^2+y^2)    pi*a*R^4     Compute the flux of the vector field through the surface , which is the part of the surface above the disk of radius centered at the origin, oriented upward .  Writing , we have , so (as an expression in and )    Flux          Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.      "
+},
+{
+  "id": "fig-r4p-parallelogram",
+  "level": "2",
+  "url": "sec-exercises-review4-practice.html#fig-r4p-parallelogram",
+  "type": "Figure",
+  "number": "7.2.1",
+  "title": "",
+  "body": " The parallelogram of , with its orientation. Note the direction of the arrows.   A parallelogram anchored at the origin with arrows showing its boundary orientation.            (0,0)    (x_0,0)    (x_0,y_0)    (2x_0,y_0)                "
+},
+{
+  "id": "ex-r4p-parallelogram",
+  "level": "2",
+  "url": "sec-exercises-review4-practice.html#ex-r4p-parallelogram",
+  "type": "Exercise",
+  "number": "9",
+  "title": "Work Around a Parallelogram.",
+  "body": " Work Around a Parallelogram                A    x0*y0    -A*x0*y0    A*x0*y0     Use Green's Theorem to evaluate the work done by in moving an object around the boundary of the parallelogram in ( note the orientation ), with and . Assume that the object circulates only once around the boundary and that its motion begins at the origin and ends at the same point.  With , first compute (a number):    The area of the parallelogram is .  Work          Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.       Not correct yet check your work and try again.      "
+},
+{
+  "id": "ex-r4p-three-fields",
+  "level": "2",
+  "url": "sec-exercises-review4-practice.html#ex-r4p-three-fields",
+  "type": "Exercise",
+  "number": "10",
+  "title": "Three Gradient Fields and the Unit Circle.",
+  "body": " Three Gradient Fields and the Unit Circle             a1*x*y    a3*sqrt(x^2+y^2)    0    -2*pi*a2    2*pi*a2     (a) Each of the vector fields   is a gradient vector field on some domain (not necessarily the whole plane). Find potential functions for and , choosing the constant so that the potential is at the origin; and find the constant for the potential of .  For :    For : with    For :    (b) Find the line integrals of , , around the curve given to be the unit circle in the -plane, centered at the origin, and traversed counterclockwise.    ,  ,    (c) For which of the three vector fields can Green's Theorem be used to calculate the line integral in part (b)? Type the letters of all that apply, with no spaces (for example fg ):    (Be sure that you are able to explain why or why not.)         Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.       f   Correct.     fgh   Not correct yet check your work and try again.     .*   Not correct yet check your work and try again.      "
+},
+{
+  "id": "ex-r4p-rect-circulation",
+  "level": "2",
+  "url": "sec-exercises-review4-practice.html#ex-r4p-rect-circulation",
+  "type": "Exercise",
+  "number": "11",
+  "title": "Circulation Around a Rectangle.",
+  "body": " Circulation Around a Rectangle             -a*x    -a*x0^2*y0\/2    a*x     Use Green's Theorem to calculate the circulation of around the rectangle , , oriented counterclockwise.  With , first compute (as an expression in and ):    circulation          Correct.       Not correct yet check your work and try again.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.      "
+},
+{
+  "id": "ex-r4p-circle-green",
+  "level": "2",
+  "url": "sec-exercises-review4-practice.html#ex-r4p-circle-green",
+  "type": "Exercise",
+  "number": "12",
+  "title": "Circulation Around a Circle.",
+  "body": " Circulation Around a Circle                   c2+(2*u-1)*d0       (2*u-1)*d0    (2*u-1)*d0*pi*m^2     Calculate , where is the circular path with center and radius , oriented counterclockwise. Use Green's Theorem.  With , first compute (a number):              Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.      "
+},
+{
+  "id": "ex-r4p-radial-power",
+  "level": "2",
+  "url": "sec-exercises-review4-practice.html#ex-r4p-radial-power",
+  "type": "Exercise",
+  "number": "13",
+  "title": "Divergence of a Family of Radial Fields.",
+  "body": " Divergence of a Family of Radial Fields          -2+pp    -2-qq    2+A    A    -2     Let and consider the vector field , where and is a constant. has no -component and is independent of .  (a) Find , and show that it can be written in the form . As expressions in :    , and  .  (b) For what values of is positive, negative, or zero?   is positive for  , negative for  , and zero for  .  (c) Suppose that . What is the sign of the flux out of a small sphere centered at ? Type positive or negative :   If instead , what is the sign of the flux out of a small sphere centered at ?    (Be sure you can say how your answers in part (c) would change if the question were about a small sphere centered at .)         Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.       positive   Correct.     .*   Not correct yet check your work and try again.       negative   Correct.     .*   Not correct yet check your work and try again.      "
+},
+{
+  "id": "ex-r4p-cylinder-band",
+  "level": "2",
+  "url": "sec-exercises-review4-practice.html#ex-r4p-cylinder-band",
+  "type": "Exercise",
+  "number": "14",
+  "title": "Flux Through a Slanted Cylinder Band.",
+  "body": " Flux Through a Slanted Cylinder Band       R^2          z0+dz    2*pi*R^2*dz     Compute the flux of through the surface of the cylinder bounded below by the plane , above by the plane , and oriented away from the -axis . Note that we are only interested in the flux through the curved surface of the cylinder.  On the cylinder,  (a number).  Flux          Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.      "
+},
+{
+  "id": "ex-r4p-cone",
+  "level": "2",
+  "url": "sec-exercises-review4-practice.html#ex-r4p-cone",
+  "type": "Exercise",
+  "number": "15",
+  "title": "Flux Out of a Closed Cone.",
+  "body": " Flux Out of a Closed Cone                2*a*y    a*r^4*pi\/2     Find the flux of out of the closed cone , with .    (an expression in , , )  flux          Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.      "
+},
+{
+  "id": "ex-r4p-tetrahedron",
+  "level": "2",
+  "url": "sec-exercises-review4-practice.html#ex-r4p-tetrahedron",
   "type": "Exercise",
   "number": "16",
   "title": "Flux Through the Surface of a Tetrahedron.",
-  "body": " Flux Through the Surface of a Tetrahedron             1+x    a*b*c*(a+4)\/24    a*b*c\/6     Use the Divergence Theorem to calculate the flux of across , where and is the surface of the tetrahedron enclosed by the coordinate planes and the plane     (an expression in , , )            Correct: , , , so .       Differentiate each component with respect to its own variable: the first gives , the second , and the third .         Correct: .       That is the volume of the tetrahedron, which is but the integrand is , so the -term still needs to be integrated.       Set up the triple integral over the tetrahedron with , , . Integrating gives .        . The tetrahedron has vertices , , , , so   using .   "
+  "body": " Flux Through the Surface of a Tetrahedron             1+x    a*b*c*(a+4)\/24    a*b*c\/6     Use the Divergence Theorem to calculate the flux of across , where and is the surface of the tetrahedron enclosed by the coordinate planes and the plane     (an expression in , , )            Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.       Not correct yet check your work and try again.      "
 }
 ]
 

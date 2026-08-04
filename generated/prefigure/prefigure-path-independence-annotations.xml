@@ -1,6 +1,6 @@
 <diagram>
   <annotations>
-    <annotation id="prefigure-path-independence-figure" speech2="Two points A and B in the plane joined by three different curves. C 1 bows below the straight path, C 2 is the straight segment from A to B, and C 3 bows above. Arrows on all three curves point from A to B.">
+    <annotation id="prefigure-path-independence-figure" speech2="Two points A and B in the plane joined by three different curves. C 1 bows below the straight path, C 2 is the straight segment from A to B, and C 3 bows above. An arrow at the middle of each curve points from A to B.">
       <grouped>prefigure-path-independence-figure</grouped>
       <position>1</position>
       <children>
@@ -32,21 +32,21 @@
         <grouped>prefigure-path-independence-figure</grouped>
       </parents>
     </annotation>
-    <annotation id="prefigure-path-independence-pi-c1" speech2="The path C 1, drawn in blue, bowing below the straight segment.">
+    <annotation id="prefigure-path-independence-pi-c1" speech2="The path C 1, drawn in blue, bowing below the straight segment, with an arrow at its midpoint pointing from A toward B.">
       <active>prefigure-path-independence-pi-c1</active>
       <position>3</position>
       <parents>
         <grouped>prefigure-path-independence-figure</grouped>
       </parents>
     </annotation>
-    <annotation id="prefigure-path-independence-pi-c2" speech2="The path C 2, the straight segment from A to B, drawn in green.">
+    <annotation id="prefigure-path-independence-pi-c2" speech2="The path C 2, the straight segment from A to B, drawn in green, with an arrow at its midpoint.">
       <active>prefigure-path-independence-pi-c2</active>
       <position>4</position>
       <parents>
         <grouped>prefigure-path-independence-figure</grouped>
       </parents>
     </annotation>
-    <annotation id="prefigure-path-independence-pi-c3" speech2="The path C 3, drawn in vermillion, bowing above the straight segment.">
+    <annotation id="prefigure-path-independence-pi-c3" speech2="The path C 3, drawn in vermillion, bowing above the straight segment, with an arrow at its midpoint.">
       <active>prefigure-path-independence-pi-c3</active>
       <position>5</position>
       <parents>

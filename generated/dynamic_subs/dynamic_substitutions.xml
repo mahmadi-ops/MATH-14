@@ -4,7 +4,7 @@
     <eval-subst obj="k">18</eval-subst>
     <eval-subst obj="M">18</eval-subst>
   </dynamic-substitution>
-  <dynamic-substitution id="ex-r3o-area-change-of-variables">
+  <dynamic-substitution id="ex-r3p-area-change-of-variables">
     <eval-subst obj="aa">3^{2}</eval-subst>
     <eval-subst obj="bb">5^{2}</eval-subst>
     <eval-subst obj="xuv">\frac{u^{2}}{v}</eval-subst>
@@ -17,7 +17,7 @@
     <eval-subst obj="one">1</eval-subst>
     <eval-subst obj="area">\left(3^{2}-1\right) \ln \mathopen{}\left(5^{2}\right)\mathclose{}</eval-subst>
   </dynamic-substitution>
-  <dynamic-substitution id="ex-r3o-shear-ellipse-area">
+  <dynamic-substitution id="ex-r3p-shear-ellipse-area">
     <eval-subst obj="a">3</eval-subst>
     <eval-subst obj="twoa">6</eval-subst>
     <eval-subst obj="bcoef">3^{2}+1</eval-subst>
@@ -26,7 +26,7 @@
     <eval-subst obj="jac">1</eval-subst>
     <eval-subst obj="area">\pi</eval-subst>
   </dynamic-substitution>
-  <dynamic-substitution id="ex-r3o-parabolic-strip">
+  <dynamic-substitution id="ex-r3p-parabolic-strip">
     <eval-subst obj="bsq">3^{2}</eval-subst>
     <eval-subst obj="a">5</eval-subst>
     <eval-subst obj="xst">\sqrt{s-t}</eval-subst>
@@ -37,21 +37,21 @@
     <eval-subst obj="integrand">\frac{1}{2}</eval-subst>
     <eval-subst obj="value">\frac{5\cdot 3^{2}}{2}</eval-subst>
   </dynamic-substitution>
-  <dynamic-substitution id="ex-r3o-ellipsoid-integral">
+  <dynamic-substitution id="ex-r3p-ellipsoid-integral">
     <eval-subst obj="a">3</eval-subst>
     <eval-subst obj="b">3</eval-subst>
     <eval-subst obj="c">5</eval-subst>
     <eval-subst obj="jac">45</eval-subst>
     <eval-subst obj="value">\frac{180 \pi}{5}</eval-subst>
   </dynamic-substitution>
-  <dynamic-substitution id="ex-r3o-tetrahedron-com">
+  <dynamic-substitution id="ex-r3p-tetrahedron-com">
     <eval-subst obj="k">8</eval-subst>
     <eval-subst obj="mass">\frac{64}{105}</eval-subst>
     <eval-subst obj="xcm">\frac{2}{9}</eval-subst>
     <eval-subst obj="ycm">\frac{2}{9}</eval-subst>
     <eval-subst obj="zcm">\frac{1}{3}</eval-subst>
   </dynamic-substitution>
-  <dynamic-substitution id="ex-r3o-lamina-rectangle">
+  <dynamic-substitution id="ex-r3p-lamina-rectangle">
     <eval-subst obj="A">4</eval-subst>
     <eval-subst obj="B">3</eval-subst>
     <eval-subst obj="C">7</eval-subst>
@@ -60,27 +60,23 @@
     <eval-subst obj="mass">\frac{4^{2}\cdot 3\cdot 7}{2}+\frac{3^{2}\cdot 1\cdot 4}{2}+72</eval-subst>
     <eval-subst obj="xbar">\frac{\frac{7\cdot 4^{3}\cdot 3}{3}+\frac{1\cdot 4^{2}\cdot 3^{2}}{4}+\frac{6\cdot 4^{2}\cdot 3}{2}}{\frac{4^{2}\cdot 3\cdot 7}{2}+\frac{3^{2}\cdot 1\cdot 4}{2}+72}</eval-subst>
     <eval-subst obj="ybar">\frac{\frac{7\cdot 4^{2}\cdot 3^{2}}{4}+\frac{4\cdot 3^{3}}{3}+\frac{24\cdot 3^{2}}{2}}{\frac{4^{2}\cdot 3\cdot 7}{2}+\frac{3^{2}\cdot 1\cdot 4}{2}+72}</eval-subst>
-    <eval-subst obj="xmom">\frac{7\cdot 4^{3}\cdot 3}{3}+\frac{1\cdot 4^{2}\cdot 3^{2}}{4}+\frac{6\cdot 4^{2}\cdot 3}{2}</eval-subst>
-    <eval-subst obj="ymom">\frac{7\cdot 4^{2}\cdot 3^{2}}{4}+\frac{4\cdot 3^{3}}{3}+\frac{24\cdot 3^{2}}{2}</eval-subst>
   </dynamic-substitution>
-  <dynamic-substitution id="ex-r3o-sphere-minus-sphere">
+  <dynamic-substitution id="ex-r3p-sphere-minus-sphere">
     <eval-subst obj="a">5</eval-subst>
     <eval-subst obj="volume">\frac{\pi\cdot 5^{3}}{2}</eval-subst>
   </dynamic-substitution>
-  <dynamic-substitution id="ex-r3o-spherical-shell">
+  <dynamic-substitution id="ex-r3p-spherical-shell">
     <eval-subst obj="r0">2</eval-subst>
     <eval-subst obj="r1">4</eval-subst>
     <eval-subst obj="radial">\frac{4^{3}-2^{3}}{3}</eval-subst>
     <eval-subst obj="value">\frac{\pi \left(4^{3}-2^{3}\right)}{3}</eval-subst>
   </dynamic-substitution>
-  <dynamic-substitution id="ex-r3o-gaussian-shell">
+  <dynamic-substitution id="ex-r3p-gaussian-shell">
     <eval-subst obj="asq">1^{2}</eval-subst>
     <eval-subst obj="bsq">2^{2}</eval-subst>
     <eval-subst obj="value">2 \pi \left(e^{-1^{2}}-e^{-2^{2}}\right)</eval-subst>
-    <eval-subst obj="a">1</eval-subst>
-    <eval-subst obj="b">2</eval-subst>
   </dynamic-substitution>
-  <dynamic-substitution id="ex-r3o-linear-jacobian">
+  <dynamic-substitution id="ex-r3p-linear-jacobian">
     <eval-subst obj="p">7</eval-subst>
     <eval-subst obj="q">1</eval-subst>
     <eval-subst obj="r">3</eval-subst>
@@ -91,13 +87,13 @@
     <eval-subst obj="yv">5</eval-subst>
     <eval-subst obj="det">32</eval-subst>
   </dynamic-substitution>
-  <dynamic-substitution id="ex-r3o-quadratic-map">
+  <dynamic-substitution id="ex-r3p-quadratic-map">
     <eval-subst obj="a">3</eval-subst>
     <eval-subst obj="fuv">u^{2}+v^{2}</eval-subst>
     <eval-subst obj="jac">4 \left(u^{2}+v^{2}\right)</eval-subst>
     <eval-subst obj="value">\frac{56\cdot 3^{6}}{45}</eval-subst>
   </dynamic-substitution>
-  <dynamic-substitution id="ex-r3o-centre-of-gravity">
+  <dynamic-substitution id="ex-r3p-centre-of-gravity">
     <eval-subst obj="m">3</eval-subst>
     <eval-subst obj="b">6</eval-subst>
     <eval-subst obj="zero">0</eval-subst>
@@ -110,11 +106,11 @@
     <eval-subst obj="xbar">\frac{\frac{\left(\frac{-3+\sqrt{3^{2}+24}}{2}\right)^{7}}{14}+\frac{\left(-6-\frac{3^{2}}{2}\right) \left(\frac{-3+\sqrt{3^{2}+24}}{2}\right)^{5}}{5}+\frac{6^{2} \left(\frac{-3+\sqrt{3^{2}+24}}{2}\right)^{3}}{6}}{\frac{\left(\frac{-3+\sqrt{3^{2}+24}}{2}\right)^{6}}{12}+\frac{\left(-6-\frac{3^{2}}{2}\right) \left(\frac{-3+\sqrt{3^{2}+24}}{2}\right)^{4}}{4}+\frac{6^{2} \left(\frac{-3+\sqrt{3^{2}+24}}{2}\right)^{2}}{4}}</eval-subst>
     <eval-subst obj="ybar">\frac{\frac{-\left(\frac{-3+\sqrt{3^{2}+24}}{2}\right)^{8}}{24}+\frac{6 \left(\frac{-3+\sqrt{3^{2}+24}}{2}\right)^{6}}{6}-\frac{3^{3} \left(\frac{-3+\sqrt{3^{2}+24}}{2}\right)^{5}}{15}-\frac{6^{2} \left(\frac{-3+\sqrt{3^{2}+24}}{2}\right)^{4}}{4}+\frac{6^{3} \left(\frac{-3+\sqrt{3^{2}+24}}{2}\right)^{2}}{6}}{\frac{\left(\frac{-3+\sqrt{3^{2}+24}}{2}\right)^{6}}{12}+\frac{\left(-6-\frac{3^{2}}{2}\right) \left(\frac{-3+\sqrt{3^{2}+24}}{2}\right)^{4}}{4}+\frac{6^{2} \left(\frac{-3+\sqrt{3^{2}+24}}{2}\right)^{2}}{4}}</eval-subst>
   </dynamic-substitution>
-  <dynamic-substitution id="ex-r3o-quarter-disc-com">
+  <dynamic-substitution id="ex-r3p-quarter-disc-com">
     <eval-subst obj="r">5</eval-subst>
     <eval-subst obj="coord">\frac{20}{3 \pi}</eval-subst>
   </dynamic-substitution>
-  <dynamic-substitution id="ex-r4o-box-flux">
+  <dynamic-substitution id="ex-r4p-box-flux">
     <eval-subst obj="A">5</eval-subst>
     <eval-subst obj="p">3</eval-subst>
     <eval-subst obj="q">5</eval-subst>
@@ -123,53 +119,50 @@
     <eval-subst obj="zero">0</eval-subst>
     <eval-subst obj="flux">5\cdot 3^{2}\cdot 5\cdot 1+15 \left(\mathrm{e}^{1}-1\right)</eval-subst>
   </dynamic-substitution>
-  <dynamic-substitution id="ex-r4o-box-div-max">
+  <dynamic-substitution id="ex-r4p-box-div-max">
     <eval-subst obj="twok">2</eval-subst>
     <eval-subst obj="A">5</eval-subst>
     <eval-subst obj="M">14</eval-subst>
     <eval-subst obj="fluxformula">1 \left(10 a-a^{2}\right) b c</eval-subst>
     <eval-subst obj="maxflux">1\cdot 5^{2}\cdot 14^{2}</eval-subst>
-    <eval-subst obj="k">1</eval-subst>
   </dynamic-substitution>
-  <dynamic-substitution id="ex-r4o-verify-cylinder">
+  <dynamic-substitution id="ex-r4p-verify-cylinder">
     <eval-subst obj="A">5</eval-subst>
     <eval-subst obj="B">4</eval-subst>
     <eval-subst obj="C">8</eval-subst>
     <eval-subst obj="h">2</eval-subst>
     <eval-subst obj="both">10 \pi</eval-subst>
   </dynamic-substitution>
-  <dynamic-substitution id="ex-r4o-sphere">
+  <dynamic-substitution id="ex-r4p-sphere">
     <eval-subst obj="c">3</eval-subst>
     <eval-subst obj="Rsq">3^{2}</eval-subst>
     <eval-subst obj="divF">3 x^{2}+3 z^{2}</eval-subst>
     <eval-subst obj="flux">\frac{8 \pi\cdot 3^{5}}{5}</eval-subst>
-    <eval-subst obj="R">3</eval-subst>
   </dynamic-substitution>
-  <dynamic-substitution id="ex-r4o-paraboloid-cap">
+  <dynamic-substitution id="ex-r4p-paraboloid-cap">
     <eval-subst obj="b">-4</eval-subst>
     <eval-subst obj="h">1+1^{2}</eval-subst>
     <eval-subst obj="flux">-4 \left(\frac{1^{4}}{2}+1^{2}\right) \pi</eval-subst>
-    <eval-subst obj="a">1</eval-subst>
   </dynamic-substitution>
-  <dynamic-substitution id="ex-r4o-cylinder-x-axis">
+  <dynamic-substitution id="ex-r4p-cylinder-x-axis">
     <eval-subst obj="R">4</eval-subst>
     <eval-subst obj="L">2</eval-subst>
     <eval-subst obj="three">3</eval-subst>
     <eval-subst obj="flux">6 \pi\cdot 4^{2}\cdot 2</eval-subst>
   </dynamic-substitution>
-  <dynamic-substitution id="ex-r4o-helicoid">
+  <dynamic-substitution id="ex-r4p-helicoid">
     <eval-subst obj="c">1</eval-subst>
     <eval-subst obj="integrand">1 \left(\sin \mathopen{}\left(u\right)\mathclose{}-\cos \mathopen{}\left(u\right)\mathclose{}+v\right)</eval-subst>
     <eval-subst obj="flux">1 \left(2+\frac{\pi}{2}\right)</eval-subst>
   </dynamic-substitution>
-  <dynamic-substitution id="ex-r4o-paraboloid-updisk">
+  <dynamic-substitution id="ex-r4p-paraboloid-updisk">
     <eval-subst obj="a">3</eval-subst>
     <eval-subst obj="Rsq">3^{2}</eval-subst>
     <eval-subst obj="R">3</eval-subst>
     <eval-subst obj="integrand">6 \left(x^{2}+y^{2}\right)</eval-subst>
     <eval-subst obj="flux">\pi\cdot 3\cdot 3^{4}</eval-subst>
   </dynamic-substitution>
-  <dynamic-substitution id="ex-r4o-parallelogram">
+  <dynamic-substitution id="ex-r4p-parallelogram">
     <eval-subst obj="n">4</eval-subst>
     <eval-subst obj="A">4</eval-subst>
     <eval-subst obj="x0">5</eval-subst>
@@ -178,7 +171,7 @@
     <eval-subst obj="area">10</eval-subst>
     <eval-subst obj="work">-4\cdot 5\cdot 2</eval-subst>
   </dynamic-substitution>
-  <dynamic-substitution id="ex-r4o-three-fields">
+  <dynamic-substitution id="ex-r4p-three-fields">
     <eval-subst obj="a1">3</eval-subst>
     <eval-subst obj="a2">2</eval-subst>
     <eval-subst obj="a3">4</eval-subst>
@@ -187,14 +180,14 @@
     <eval-subst obj="zero">0</eval-subst>
     <eval-subst obj="Gint">-2 \pi\cdot 2</eval-subst>
   </dynamic-substitution>
-  <dynamic-substitution id="ex-r4o-rect-circulation">
+  <dynamic-substitution id="ex-r4p-rect-circulation">
     <eval-subst obj="a">3</eval-subst>
     <eval-subst obj="x0">4</eval-subst>
     <eval-subst obj="y0">5</eval-subst>
     <eval-subst obj="curlF">-3 x</eval-subst>
     <eval-subst obj="circ">\frac{-3\cdot 4^{2}\cdot 5}{2}</eval-subst>
   </dynamic-substitution>
-  <dynamic-substitution id="ex-r4o-circle-green">
+  <dynamic-substitution id="ex-r4p-circle-green">
     <eval-subst obj="c1">5</eval-subst>
     <eval-subst obj="c2">4</eval-subst>
     <eval-subst obj="c3">0</eval-subst>
@@ -203,22 +196,21 @@
     <eval-subst obj="diff">-4</eval-subst>
     <eval-subst obj="circ">-4 \pi\cdot 3^{2}</eval-subst>
   </dynamic-substitution>
-  <dynamic-substitution id="ex-r4o-radial-power">
+  <dynamic-substitution id="ex-r4p-radial-power">
     <eval-subst obj="coeff">2+A</eval-subst>
     <eval-subst obj="expo">A</eval-subst>
     <eval-subst obj="minustwo">-2</eval-subst>
     <eval-subst obj="a1">2</eval-subst>
     <eval-subst obj="a2">-4</eval-subst>
   </dynamic-substitution>
-  <dynamic-substitution id="ex-r4o-cylinder-band">
+  <dynamic-substitution id="ex-r4p-cylinder-band">
     <eval-subst obj="Rsq">3^{2}</eval-subst>
     <eval-subst obj="z0">1</eval-subst>
     <eval-subst obj="z1">6</eval-subst>
     <eval-subst obj="R">3</eval-subst>
     <eval-subst obj="flux">2 \pi\cdot 3^{2}\cdot 5</eval-subst>
-    <eval-subst obj="dz">5</eval-subst>
   </dynamic-substitution>
-  <dynamic-substitution id="ex-r4o-cone">
+  <dynamic-substitution id="ex-r4p-cone">
     <eval-subst obj="B">3</eval-subst>
     <eval-subst obj="a">3</eval-subst>
     <eval-subst obj="C">5</eval-subst>
@@ -226,7 +218,7 @@
     <eval-subst obj="divF">6 y</eval-subst>
     <eval-subst obj="flux">\frac{3\cdot 1^{4} \pi}{2}</eval-subst>
   </dynamic-substitution>
-  <dynamic-substitution id="ex-r4o-tetrahedron">
+  <dynamic-substitution id="ex-r4p-tetrahedron">
     <eval-subst obj="a">3</eval-subst>
     <eval-subst obj="b">2</eval-subst>
     <eval-subst obj="c">4</eval-subst>

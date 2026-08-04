@@ -1,37 +1,26 @@
 <svg xmlns="http://www.w3.org/2000/svg" id="prefigure-polar-rep2-figure" viewBox="0 0 300 246">
   <defs>
-    <clipPath id="prefigure-polar-rep2-__clipPath-0">
+    <clipPath id="prefigure-polar-rep2-clipPath-0">
       <rect x="10.0" y="10.0" width="280.0" height="226.0"/>
     </clipPath>
-    <clipPath id="prefigure-polar-rep2-__clipPath-1">
+    <clipPath id="prefigure-polar-rep2-clipPath-1">
       <rect x="10.0" y="10.0" width="280.0" height="226.0"/>
     </clipPath>
-    <marker id="prefigure-polar-rep2-arrow-head-end-2_None_24_60-black" markerWidth="9.0" markerHeight="8.0" markerUnits="userSpaceOnUse" orient="auto" refX="6.5" refY="4.0">
+    <marker id="prefigure-polar-rep2-arrow-head-end-2_None_24_60-black" markerWidth="9.0" markerHeight="8.0" markerUnits="userSpaceOnUse" orient="auto-start-reverse" refX="6.5" refY="4.0">
       <path d="M 9.0 4.0L 0.0 8.0L 1.7 5.0L 1.7 3.0L 0.0 0.0Z" fill="black" stroke="none"/>
     </marker>
-    <marker id="prefigure-polar-rep2-arrow-head-end-2_None_24_60-black-outline" markerWidth="13.0" markerHeight="12.0" markerUnits="userSpaceOnUse" orient="auto" refX="8.5" refY="6.0">
+    <marker id="prefigure-polar-rep2-arrow-head-end-2_None_24_60-black-outline" markerWidth="13.0" markerHeight="12.0" markerUnits="userSpaceOnUse" orient="auto-start-reverse" refX="8.5" refY="6.0">
       <path d="M 11.8 7.8 L 2.8 11.8 A 2 2 0 0 1 0.0 10.0 L 0.0 2.0 A 2 2 0 0 1 2.8 0.2 L 11.8 4.2 A 2 2 0 0 1 11.8 7.8 Z" fill="white" stroke="none"/>
-    </marker>
-    <marker id="prefigure-polar-rep2-arrow-head-start-2_None_24_60-black" markerWidth="9.0" markerHeight="8.0" markerUnits="userSpaceOnUse" orient="auto" refX="2.5" refY="4.0">
-      <g transform="rotate(180, 4.5, 4.0)">
-        <path d="M 9.0 4.0L 0.0 8.0L 1.7 5.0L 1.7 3.0L 0.0 0.0Z" fill="black" stroke="none"/>
-      </g>
-    </marker>
-    <marker id="prefigure-polar-rep2-arrow-head-start-2_None_24_60-black-outline" markerWidth="13.0" markerHeight="12.0" markerUnits="userSpaceOnUse" orient="auto" refX="4.5" refY="6.0">
-      <g transform="rotate(180, 6.5, 6.0)">
-        <path d="M 11.8 7.8 L 2.8 11.8 A 2 2 0 0 1 0.0 10.0 L 0.0 2.0 A 2 2 0 0 1 2.8 0.2 L 11.8 4.2 A 2 2 0 0 1 11.8 7.8 Z" fill="white" stroke="none"/>
-      </g>
     </marker>
   </defs>
   <line id="prefigure-polar-rep2-rp2-axis" x1="133.7" y1="123.0" x2="270.5" y2="123.0" stroke="black" stroke-width="2" fill="none"/>
-  <path stroke="black" stroke-width="2" fill="none" marker-end="url(#prefigure-polar-rep2-arrow-head-end-2_None_24_60-black)" d="M 267.2 123.0 L 274.5 123.0" id="prefigure-polar-rep2-rp2-arrow"/>
+  <path id="prefigure-polar-rep2-rp2-arrow" stroke="black" stroke-width="2" fill="none" d="M 267.2 123.0 L 277.0 123.0" marker-end="url(#prefigure-polar-rep2-arrow-head-end-2_None_24_60-black)"/>
   <line id="prefigure-polar-rep2-rp2-ray" x1="133.7" y1="123.0" x2="202.7" y2="52.5" stroke="black" stroke-width="2" fill="none"/>
   <line id="prefigure-polar-rep2-rp2-opposite" x1="133.7" y1="123.0" x2="87.7" y2="170.0" stroke="#56B4E9" stroke-width="2" stroke-dasharray="6 4" fill="none"/>
-  <path id="prefigure-polar-rep2-rp2-arc" d="M 166.3 123.0 L 166.3 122.7 L 166.3 122.5 L 166.3 122.2 L 166.3 122.0 L 166.3 121.7 L 166.2 121.4 L 166.2 121.2 L 166.2 120.9 L 166.2 120.7 L 166.2 120.4 L 166.2 120.1 L 166.1 119.9 L 166.1 119.6 L 166.1 119.4 L 166.1 119.1 L 166.0 118.8 L 166.0 118.6 L 166.0 118.3 L 165.9 118.1 L 165.9 117.8 L 165.8 117.5 L 165.8 117.3 L 165.7 117.0 L 165.7 116.8 L 165.7 116.5 L 165.6 116.3 L 165.6 116.0 L 165.5 115.8 L 165.4 115.5 L 165.4 115.2 L 165.3 115.0 L 165.3 114.7 L 165.2 114.5 L 165.1 114.2 L 165.1 114.0 L 165.0 113.7 L 164.9 113.5 L 164.8 113.2 L 164.8 113.0 L 164.7 112.7 L 164.6 112.5 L 164.5 112.2 L 164.4 112.0 L 164.4 111.7 L 164.3 111.5 L 164.2 111.3 L 164.1 111.0 L 164.0 110.8 L 163.9 110.5 L 163.8 110.3 L 163.7 110.0 L 163.6 109.8 L 163.5 109.6 L 163.4 109.3 L 163.3 109.1 L 163.2 108.9 L 163.1 108.6 L 163.0 108.4 L 162.8 108.2 L 162.7 107.9 L 162.6 107.7 L 162.5 107.5 L 162.4 107.2 L 162.3 107.0 L 162.1 106.8 L 162.0 106.5 L 161.9 106.3 L 161.7 106.1 L 161.6 105.9 L 161.5 105.6 L 161.4 105.4 L 161.2 105.2 L 161.1 105.0 L 160.9 104.8 L 160.8 104.5 L 160.7 104.3 L 160.5 104.1 L 160.4 103.9 L 160.2 103.7 L 160.1 103.5 L 159.9 103.3 L 159.8 103.1 L 159.6 102.8 L 159.5 102.6 L 159.3 102.4 L 159.1 102.2 L 159.0 102.0 L 158.8 101.8 L 158.7 101.6 L 158.5 101.4 L 158.3 101.2 L 158.2 101.0 L 158.0 100.8 L 157.8 100.6 L 157.6 100.4 L 157.5 100.3 L 157.3 100.1 L 157.1 99.9 L 156.9 99.7 L 156.8 99.5" stroke="#CC79A7" stroke-width="2" fill="none" clip-path="url(#prefigure-polar-rep2-__clipPath-1)"/>
+  <path id="prefigure-polar-rep2-rp2-arc" d="M 166.3 123.0 L 166.3 122.7 L 166.3 122.5 L 166.3 122.2 L 166.3 122.0 L 166.3 121.7 L 166.2 121.4 L 166.2 121.2 L 166.2 120.9 L 166.2 120.7 L 166.2 120.4 L 166.2 120.1 L 166.1 119.9 L 166.1 119.6 L 166.1 119.4 L 166.1 119.1 L 166.0 118.8 L 166.0 118.6 L 166.0 118.3 L 165.9 118.1 L 165.9 117.8 L 165.8 117.5 L 165.8 117.3 L 165.7 117.0 L 165.7 116.8 L 165.7 116.5 L 165.6 116.3 L 165.6 116.0 L 165.5 115.8 L 165.4 115.5 L 165.4 115.2 L 165.3 115.0 L 165.3 114.7 L 165.2 114.5 L 165.1 114.2 L 165.1 114.0 L 165.0 113.7 L 164.9 113.5 L 164.8 113.2 L 164.8 113.0 L 164.7 112.7 L 164.6 112.5 L 164.5 112.2 L 164.4 112.0 L 164.4 111.7 L 164.3 111.5 L 164.2 111.3 L 164.1 111.0 L 164.0 110.8 L 163.9 110.5 L 163.8 110.3 L 163.7 110.0 L 163.6 109.8 L 163.5 109.6 L 163.4 109.3 L 163.3 109.1 L 163.2 108.9 L 163.1 108.6 L 163.0 108.4 L 162.8 108.2 L 162.7 107.9 L 162.6 107.7 L 162.5 107.5 L 162.4 107.2 L 162.3 107.0 L 162.1 106.8 L 162.0 106.5 L 161.9 106.3 L 161.7 106.1 L 161.6 105.9 L 161.5 105.6 L 161.4 105.4 L 161.2 105.2 L 161.1 105.0 L 160.9 104.8 L 160.8 104.5 L 160.7 104.3 L 160.5 104.1 L 160.4 103.9 L 160.2 103.7 L 160.1 103.5 L 159.9 103.3 L 159.8 103.1 L 159.6 102.8 L 159.5 102.6 L 159.3 102.4 L 159.1 102.2 L 159.0 102.0 L 158.8 101.8 L 158.7 101.6 L 158.5 101.4 L 158.3 101.2 L 158.2 101.0 L 158.0 100.8 L 157.8 100.6 L 157.6 100.4 L 157.5 100.3 L 157.3 100.1 L 157.1 99.9 L 156.9 99.7 L 156.8 99.5" stroke="#CC79A7" stroke-width="2" fill="none" clip-path="url(#prefigure-polar-rep2-clipPath-1)"/>
   <g id="prefigure-polar-rep2-rp2-O">
-    <circle cx="133.7" cy="123.0" r="4" stroke="black" stroke-width="2" fill="black"/>
-    <g id="prefigure-polar-rep2-rp2-O" transform="translate(133.7,131.0) translate(-6.9,-0.0)">
-      <g id="prefigure-polar-rep2-__g-0">
+    <g transform="translate(133.7,131.0) translate(-6.9,-0.0)">
+      <g id="prefigure-polar-rep2-g-0">
         <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -0.400px" width="13.808px" height="13.144px" role="img" focusable="false" viewBox="0 -704 763 726" x="0.0" y="0.0">
           <defs>
             <path id="prefigure-polar-rep2-MJX-2-TEX-I-1D442" d="M740 435Q740 320 676 213T511 42T304 -22Q207 -22 138 35T51 201Q50 209 50 244Q50 346 98 438T227 601Q351 704 476 704Q514 704 524 703Q621 689 680 617T740 435ZM637 476Q637 565 591 615T476 665Q396 665 322 605Q242 542 200 428T157 216Q157 126 200 73T314 19Q404 19 485 98T608 313Q637 408 637 476Z"/>
@@ -46,11 +35,11 @@
         </svg>
       </g>
     </g>
+    <circle cx="133.7" cy="123.0" r="4" stroke="black" stroke-width="2" fill="black"/>
   </g>
   <g id="prefigure-polar-rep2-rp2-P">
-    <circle cx="87.7" cy="170.0" r="4" stroke="black" stroke-width="2" fill="#0072B2"/>
-    <g id="prefigure-polar-rep2-rp2-P" transform="translate(82.7,175.0) translate(-63.0,-0.0)">
-      <g id="prefigure-polar-rep2-__g-1">
+    <g transform="translate(82.7,175.0) translate(-63.0,-0.0)">
+      <g id="prefigure-polar-rep2-g-1">
         <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -6.328px" width="63.016px" height="21.704px" role="img" focusable="false" viewBox="0 -849.5 3481.7 1199" x="0.0" y="0.0">
           <defs>
             <path id="prefigure-polar-rep2-MJX-3-TEX-SO-28" d="M152 251Q152 646 388 850H416Q422 844 422 841Q422 837 403 816T357 753T302 649T255 482T236 250Q236 124 255 19T301 -147T356 -251T403 -315T422 -340Q422 -343 416 -349H388Q359 -325 332 -296T271 -213T212 -97T170 56T152 251Z"/>
@@ -100,9 +89,10 @@
         </svg>
       </g>
     </g>
+    <circle cx="87.7" cy="170.0" r="4" stroke="black" stroke-width="2" fill="#0072B2"/>
   </g>
   <g id="prefigure-polar-rep2-rp2-angle" transform="translate(178.1,103.1) translate(0.0,-9.4)">
-    <g id="prefigure-polar-rep2-__g-2">
+    <g id="prefigure-polar-rep2-g-2">
       <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -6.248px; color:#CC79A7" width="15.256px" height="18.888px" role="img" focusable="false" viewBox="0 -698.8 843.1 1043.8" x="0.0" y="0.0">
         <defs>
           <path id="prefigure-polar-rep2-MJX-4-TEX-I-1D70B" d="M132 -11Q98 -11 98 22V33L111 61Q186 219 220 334L228 358H196Q158 358 142 355T103 336Q92 329 81 318T62 297T53 285Q51 284 38 284Q19 284 19 294Q19 300 38 329T93 391T164 429Q171 431 389 431Q549 431 553 430Q573 423 573 402Q573 371 541 360Q535 358 472 358H408L405 341Q393 269 393 222Q393 170 402 129T421 65T431 37Q431 20 417 5T381 -10Q370 -10 363 -7T347 17T331 77Q330 86 330 121Q330 170 339 226T357 318T367 358H269L268 354Q268 351 249 275T206 114T175 17Q164 -11 132 -11Z"/>

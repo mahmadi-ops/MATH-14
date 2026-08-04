@@ -1,50 +1,30 @@
 <svg xmlns="http://www.w3.org/2000/svg" id="prefigure-riemann-1d-figure" viewBox="0 0 440 300">
   <defs>
-    <clipPath id="prefigure-riemann-1d-__clipPath-0">
+    <clipPath id="prefigure-riemann-1d-clipPath-0">
       <rect x="10.0" y="10.0" width="420.0" height="280.0"/>
     </clipPath>
-    <clipPath id="prefigure-riemann-1d-__clipPath-1">
+    <clipPath id="prefigure-riemann-1d-clipPath-1">
       <rect x="10.0" y="10.0" width="420.0" height="280.0"/>
     </clipPath>
-    <marker id="prefigure-riemann-1d-arrow-head-end-2_None_24_60-black" markerWidth="9.0" markerHeight="8.0" markerUnits="userSpaceOnUse" orient="auto" refX="6.5" refY="4.0">
+    <marker id="prefigure-riemann-1d-arrow-head-end-2_None_24_60-black" markerWidth="9.0" markerHeight="8.0" markerUnits="userSpaceOnUse" orient="auto-start-reverse" refX="6.5" refY="4.0">
       <path d="M 9.0 4.0L 0.0 8.0L 1.7 5.0L 1.7 3.0L 0.0 0.0Z" fill="black" stroke="none"/>
     </marker>
-    <marker id="prefigure-riemann-1d-arrow-head-end-2_None_24_60-black-outline" markerWidth="13.0" markerHeight="12.0" markerUnits="userSpaceOnUse" orient="auto" refX="8.5" refY="6.0">
+    <marker id="prefigure-riemann-1d-arrow-head-end-2_None_24_60-black-outline" markerWidth="13.0" markerHeight="12.0" markerUnits="userSpaceOnUse" orient="auto-start-reverse" refX="8.5" refY="6.0">
       <path d="M 11.8 7.8 L 2.8 11.8 A 2 2 0 0 1 0.0 10.0 L 0.0 2.0 A 2 2 0 0 1 2.8 0.2 L 11.8 4.2 A 2 2 0 0 1 11.8 7.8 Z" fill="white" stroke="none"/>
     </marker>
-    <marker id="prefigure-riemann-1d-arrow-head-end-2_None_24_60-h009E73" markerWidth="9.0" markerHeight="8.0" markerUnits="userSpaceOnUse" orient="auto" refX="6.5" refY="4.0">
+    <marker id="prefigure-riemann-1d-arrow-head-end-2_None_24_60-h009E73" markerWidth="9.0" markerHeight="8.0" markerUnits="userSpaceOnUse" orient="auto-start-reverse" refX="6.5" refY="4.0">
       <path d="M 9.0 4.0L 0.0 8.0L 1.7 5.0L 1.7 3.0L 0.0 0.0Z" fill="#009E73" stroke="none"/>
     </marker>
-    <marker id="prefigure-riemann-1d-arrow-head-end-2_None_24_60-h009E73-outline" markerWidth="13.0" markerHeight="12.0" markerUnits="userSpaceOnUse" orient="auto" refX="8.5" refY="6.0">
+    <marker id="prefigure-riemann-1d-arrow-head-end-2_None_24_60-h009E73-outline" markerWidth="13.0" markerHeight="12.0" markerUnits="userSpaceOnUse" orient="auto-start-reverse" refX="8.5" refY="6.0">
       <path d="M 11.8 7.8 L 2.8 11.8 A 2 2 0 0 1 0.0 10.0 L 0.0 2.0 A 2 2 0 0 1 2.8 0.2 L 11.8 4.2 A 2 2 0 0 1 11.8 7.8 Z" fill="white" stroke="none"/>
     </marker>
-    <marker id="prefigure-riemann-1d-arrow-head-start-2_None_24_60-black" markerWidth="9.0" markerHeight="8.0" markerUnits="userSpaceOnUse" orient="auto" refX="2.5" refY="4.0">
-      <g transform="rotate(180, 4.5, 4.0)">
-        <path d="M 9.0 4.0L 0.0 8.0L 1.7 5.0L 1.7 3.0L 0.0 0.0Z" fill="black" stroke="none"/>
-      </g>
-    </marker>
-    <marker id="prefigure-riemann-1d-arrow-head-start-2_None_24_60-black-outline" markerWidth="13.0" markerHeight="12.0" markerUnits="userSpaceOnUse" orient="auto" refX="4.5" refY="6.0">
-      <g transform="rotate(180, 6.5, 6.0)">
-        <path d="M 11.8 7.8 L 2.8 11.8 A 2 2 0 0 1 0.0 10.0 L 0.0 2.0 A 2 2 0 0 1 2.8 0.2 L 11.8 4.2 A 2 2 0 0 1 11.8 7.8 Z" fill="white" stroke="none"/>
-      </g>
-    </marker>
-    <marker id="prefigure-riemann-1d-arrow-head-start-2_None_24_60-h009E73" markerWidth="9.0" markerHeight="8.0" markerUnits="userSpaceOnUse" orient="auto" refX="2.5" refY="4.0">
-      <g transform="rotate(180, 4.5, 4.0)">
-        <path d="M 9.0 4.0L 0.0 8.0L 1.7 5.0L 1.7 3.0L 0.0 0.0Z" fill="#009E73" stroke="none"/>
-      </g>
-    </marker>
-    <marker id="prefigure-riemann-1d-arrow-head-start-2_None_24_60-h009E73-outline" markerWidth="13.0" markerHeight="12.0" markerUnits="userSpaceOnUse" orient="auto" refX="4.5" refY="6.0">
-      <g transform="rotate(180, 6.5, 6.0)">
-        <path d="M 11.8 7.8 L 2.8 11.8 A 2 2 0 0 1 0.0 10.0 L 0.0 2.0 A 2 2 0 0 1 2.8 0.2 L 11.8 4.2 A 2 2 0 0 1 11.8 7.8 Z" fill="white" stroke="none"/>
-      </g>
-    </marker>
   </defs>
-  <g id="prefigure-riemann-1d-r1-axes" stroke="black" stroke-width="2">
-    <line id="prefigure-riemann-1d-__line-0" x1="10.0" y1="241.3" x2="430.0" y2="241.3" stroke="black" stroke-width="2" marker-end="url(#prefigure-riemann-1d-arrow-head-end-2_None_24_60-black)"/>
-    <line id="prefigure-riemann-1d-__line-1" x1="45.6" y1="290.0" x2="45.6" y2="10.0" stroke="black" stroke-width="2" marker-end="url(#prefigure-riemann-1d-arrow-head-end-2_None_24_60-black)"/>
+  <g id="r1-axes" stroke="black" stroke-width="2">
+    <line id="prefigure-riemann-1d-line-0" x1="10.0" y1="241.3" x2="430.0" y2="241.3" stroke="black" stroke-width="2" marker-end="url(#prefigure-riemann-1d-arrow-head-end-2_None_24_60-black)"/>
+    <line id="prefigure-riemann-1d-line-1" x1="45.6" y1="290.0" x2="45.6" y2="10.0" stroke="black" stroke-width="2" marker-end="url(#prefigure-riemann-1d-arrow-head-end-2_None_24_60-black)"/>
   </g>
-  <g id="prefigure-riemann-1d-__label-0" transform="translate(424.0,235.3) translate(-10.4,-8.2)">
-    <g id="prefigure-riemann-1d-__g-0">
+  <g id="prefigure-riemann-1d-label-0" transform="translate(424.0,235.3) translate(-10.4,-8.2)">
+    <g id="prefigure-riemann-1d-g-0">
       <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -0.200px" width="10.352px" height="8.200px" role="img" focusable="false" viewBox="0 -442 572 453" x="0.0" y="0.0">
         <defs>
           <path id="prefigure-riemann-1d-MJX-2-TEX-I-1D465" d="M52 289Q59 331 106 386T222 442Q257 442 286 424T329 379Q371 442 430 442Q467 442 494 420T522 361Q522 332 508 314T481 292T458 288Q439 288 427 299T415 328Q415 374 465 391Q454 404 425 404Q412 404 406 402Q368 386 350 336Q290 115 290 78Q290 50 306 38T341 26Q378 26 414 59T463 140Q466 150 469 151T485 153H489Q504 153 504 145Q504 144 502 134Q486 77 440 33T333 -11Q263 -11 227 52Q186 -10 133 -10H127Q78 -10 57 16T35 71Q35 103 54 123T99 143Q142 143 142 101Q142 81 130 66T107 46T94 41L91 40Q91 39 97 36T113 29T132 26Q168 26 194 71Q203 87 217 139T245 247T261 313Q266 340 266 352Q266 380 251 392T217 404Q177 404 142 372T93 290Q91 281 88 280T72 278H58Q52 284 52 289Z"/>
@@ -59,8 +39,8 @@
       </svg>
     </g>
   </g>
-  <g id="prefigure-riemann-1d-__label-1" transform="translate(51.6,16.0) translate(0.0,-0.0)">
-    <g id="prefigure-riemann-1d-__g-1">
+  <g id="prefigure-riemann-1d-label-1" transform="translate(51.6,16.0) translate(0.0,-0.0)">
+    <g id="prefigure-riemann-1d-g-1">
       <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -3.712px" width="8.872px" height="11.712px" role="img" focusable="false" viewBox="0 -442 490 647" x="0.0" y="0.0">
         <defs>
           <path id="prefigure-riemann-1d-MJX-3-TEX-I-1D466" d="M21 287Q21 301 36 335T84 406T158 442Q199 442 224 419T250 355Q248 336 247 334Q247 331 231 288T198 191T182 105Q182 62 196 45T238 27Q261 27 281 38T312 61T339 94Q339 95 344 114T358 173T377 247Q415 397 419 404Q432 431 462 431Q475 431 483 424T494 412T496 403Q496 390 447 193T391 -23Q363 -106 294 -155T156 -205Q111 -205 77 -183T43 -117Q43 -95 50 -80T69 -58T89 -48T106 -45Q150 -45 150 -87Q150 -107 138 -122T115 -142T102 -147L99 -148Q101 -153 118 -160T152 -167H160Q177 -167 186 -165Q219 -156 247 -127T290 -65T313 -9T321 21L315 17Q309 13 296 6T270 -6Q250 -11 231 -11Q185 -11 150 11T104 82Q103 89 103 113Q103 170 138 262T173 379Q173 380 173 381Q173 390 173 393T169 400T158 404H154Q131 404 112 385T82 344T65 302T57 280Q55 278 41 278H27Q21 284 21 287Z"/>
@@ -83,11 +63,10 @@
   <path id="prefigure-riemann-1d-r1-rect6" d="M 259.2 241.3 L 294.7 241.3 L 294.7 98.1 L 259.2 98.1 Z" stroke="#0072B2" stroke-width="1" fill="#f4e3c1"/>
   <path id="prefigure-riemann-1d-r1-rect7" d="M 294.7 241.3 L 330.3 241.3 L 330.3 112.7 L 294.7 112.7 Z" stroke="#0072B2" stroke-width="1" fill="#f4e3c1"/>
   <path id="prefigure-riemann-1d-r1-rect8" d="M 330.3 241.3 L 365.9 241.3 L 365.9 116.9 L 330.3 116.9 Z" stroke="#0072B2" stroke-width="1" fill="#f4e3c1"/>
-  <path id="prefigure-riemann-1d-r1-curve" d="M 70.5 162.3 L 72.0 158.9 L 73.6 155.7 L 75.1 152.5 L 76.6 149.4 L 78.2 146.3 L 79.7 143.3 L 81.2 140.4 L 82.8 137.6 L 84.3 134.8 L 85.8 132.0 L 87.3 129.3 L 88.9 126.7 L 90.4 124.2 L 91.9 121.7 L 93.5 119.2 L 95.0 116.9 L 96.5 114.6 L 98.1 112.3 L 99.6 110.1 L 101.1 107.9 L 102.6 105.9 L 104.2 103.8 L 107.2 99.9 L 110.3 96.2 L 113.4 92.8 L 116.4 89.5 L 119.5 86.4 L 122.5 83.6 L 125.6 80.9 L 128.7 78.4 L 131.7 76.1 L 134.8 74.0 L 137.9 72.1 L 140.9 70.3 L 144.0 68.7 L 147.0 67.3 L 150.1 66.0 L 153.2 64.9 L 156.2 63.9 L 159.3 63.1 L 162.3 62.4 L 165.4 61.9 L 168.5 61.5 L 171.5 61.2 L 174.6 61.1 L 177.6 61.0 L 180.7 61.1 L 183.8 61.3 L 186.8 61.6 L 189.9 62.0 L 192.9 62.5 L 196.0 63.1 L 199.1 63.8 L 202.1 64.6 L 205.2 65.4 L 208.3 66.4 L 211.3 67.4 L 214.4 68.4 L 217.4 69.6 L 220.5 70.8 L 223.6 72.0 L 226.6 73.3 L 229.7 74.7 L 232.7 76.0 L 235.8 77.5 L 238.9 78.9 L 241.9 80.4 L 245.0 81.9 L 248.0 83.5 L 251.1 85.0 L 254.2 86.6 L 257.2 88.1 L 260.3 89.7 L 263.4 91.3 L 266.4 92.8 L 269.5 94.4 L 272.5 95.9 L 275.6 97.5 L 278.7 98.9 L 281.7 100.4 L 284.8 101.9 L 287.8 103.3 L 290.9 104.6 L 294.0 105.9 L 297.0 107.2 L 300.1 108.4 L 303.1 109.5 L 306.2 110.6 L 309.3 111.7 L 312.3 112.6 L 315.4 113.5 L 318.5 114.3 L 321.5 115.0 L 324.6 115.6 L 327.6 116.1 L 330.7 116.6 L 333.8 116.9 L 336.8 117.1 L 339.9 117.2 L 342.9 117.2 L 346.0 117.1 L 349.1 116.9 L 352.1 116.5 L 355.2 116.0 L 358.2 115.3 L 361.3 114.6 L 364.4 113.6 L 367.4 112.6 L 370.5 111.3 L 373.5 109.9 L 376.6 108.4" stroke="#D55E00" stroke-width="3" fill="none" clip-path="url(#prefigure-riemann-1d-__clipPath-1)"/>
+  <path id="prefigure-riemann-1d-r1-curve" d="M 70.5 162.3 L 73.6 155.7 L 76.6 149.4 L 79.7 143.3 L 82.8 137.6 L 85.8 132.0 L 88.9 126.7 L 91.9 121.7 L 95.0 116.9 L 98.1 112.3 L 101.1 107.9 L 104.2 103.8 L 107.2 99.9 L 110.3 96.2 L 113.4 92.8 L 116.4 89.5 L 119.5 86.4 L 122.5 83.6 L 125.6 80.9 L 128.7 78.4 L 131.7 76.1 L 134.8 74.0 L 137.9 72.1 L 140.9 70.3 L 144.0 68.7 L 147.0 67.3 L 150.1 66.0 L 153.2 64.9 L 156.2 63.9 L 159.3 63.1 L 162.3 62.4 L 165.4 61.9 L 168.5 61.5 L 171.5 61.2 L 174.6 61.1 L 177.6 61.0 L 180.7 61.1 L 183.8 61.3 L 186.8 61.6 L 189.9 62.0 L 192.9 62.5 L 196.0 63.1 L 199.1 63.8 L 202.1 64.6 L 205.2 65.4 L 208.3 66.4 L 211.3 67.4 L 214.4 68.4 L 217.4 69.6 L 220.5 70.8 L 223.6 72.0 L 226.6 73.3 L 229.7 74.7 L 232.7 76.0 L 235.8 77.5 L 238.9 78.9 L 241.9 80.4 L 245.0 81.9 L 248.0 83.5 L 251.1 85.0 L 254.2 86.6 L 257.2 88.1 L 260.3 89.7 L 263.4 91.3 L 266.4 92.8 L 269.5 94.4 L 272.5 95.9 L 275.6 97.5 L 278.7 98.9 L 281.7 100.4 L 284.8 101.9 L 287.8 103.3 L 290.9 104.6 L 294.0 105.9 L 297.0 107.2 L 300.1 108.4 L 303.1 109.5 L 306.2 110.6 L 309.3 111.7 L 312.3 112.6 L 315.4 113.5 L 318.5 114.3 L 321.5 115.0 L 324.6 115.6 L 327.6 116.1 L 330.7 116.6 L 333.8 116.9 L 336.8 117.1 L 339.9 117.2 L 342.9 117.2 L 346.0 117.1 L 349.1 116.9 L 352.1 116.5 L 355.2 116.0 L 358.2 115.3 L 361.3 114.6 L 364.4 113.6 L 367.4 112.6 L 370.5 111.3 L 373.5 109.9 L 376.6 108.4" stroke="#D55E00" stroke-width="3" fill="none" clip-path="url(#prefigure-riemann-1d-clipPath-1)"/>
   <g id="prefigure-riemann-1d-r1-a">
-    <circle cx="81.2" cy="241.3" r="4" stroke="black" stroke-width="2" fill="black"/>
-    <g id="prefigure-riemann-1d-r1-a" transform="translate(81.2,249.3) translate(-4.8,-0.0)">
-      <g id="prefigure-riemann-1d-__g-2">
+    <g transform="translate(81.2,249.3) translate(-4.8,-0.0)">
+      <g id="prefigure-riemann-1d-g-2">
         <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -0.184px" width="9.576px" height="8.160px" role="img" focusable="false" viewBox="0 -441 529 451" x="0.0" y="0.0">
           <defs>
             <path id="prefigure-riemann-1d-MJX-4-TEX-I-1D44E" d="M33 157Q33 258 109 349T280 441Q331 441 370 392Q386 422 416 422Q429 422 439 414T449 394Q449 381 412 234T374 68Q374 43 381 35T402 26Q411 27 422 35Q443 55 463 131Q469 151 473 152Q475 153 483 153H487Q506 153 506 144Q506 138 501 117T481 63T449 13Q436 0 417 -8Q409 -10 393 -10Q359 -10 336 5T306 36L300 51Q299 52 296 50Q294 48 292 46Q233 -10 172 -10Q117 -10 75 30T33 157ZM351 328Q351 334 346 350T323 385T277 405Q242 405 210 374T160 293Q131 214 119 129Q119 126 119 118T118 106Q118 61 136 44T179 26Q217 26 254 59T298 110Q300 114 325 217T351 328Z"/>
@@ -102,11 +81,11 @@
         </svg>
       </g>
     </g>
+    <circle cx="81.2" cy="241.3" r="4" stroke="black" stroke-width="2" fill="black"/>
   </g>
   <g id="prefigure-riemann-1d-r1-b">
-    <circle cx="365.9" cy="241.3" r="4" stroke="black" stroke-width="2" fill="black"/>
-    <g id="prefigure-riemann-1d-r1-b" transform="translate(365.9,249.3) translate(-3.9,-0.0)">
-      <g id="prefigure-riemann-1d-__g-3">
+    <g transform="translate(365.9,249.3) translate(-3.9,-0.0)">
+      <g id="prefigure-riemann-1d-g-3">
         <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -0.200px" width="7.768px" height="12.760px" role="img" focusable="false" viewBox="0 -694 429 705" x="0.0" y="0.0">
           <defs>
             <path id="prefigure-riemann-1d-MJX-5-TEX-I-1D44F" d="M73 647Q73 657 77 670T89 683Q90 683 161 688T234 694Q246 694 246 685T212 542Q204 508 195 472T180 418L176 399Q176 396 182 402Q231 442 283 442Q345 442 383 396T422 280Q422 169 343 79T173 -11Q123 -11 82 27T40 150V159Q40 180 48 217T97 414Q147 611 147 623T109 637Q104 637 101 637H96Q86 637 83 637T76 640T73 647ZM336 325V331Q336 405 275 405Q258 405 240 397T207 376T181 352T163 330L157 322L136 236Q114 150 114 114Q114 66 138 42Q154 26 178 26Q211 26 245 58Q270 81 285 114T318 219Q336 291 336 325Z"/>
@@ -121,9 +100,10 @@
         </svg>
       </g>
     </g>
+    <circle cx="365.9" cy="241.3" r="4" stroke="black" stroke-width="2" fill="black"/>
   </g>
   <g id="prefigure-riemann-1d-r1-dx" transform="translate(205.8,39.5) translate(-12.7,-13.2)">
-    <g id="prefigure-riemann-1d-__g-4">
+    <g id="prefigure-riemann-1d-g-4">
       <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -0.200px; color:#0072B2" width="25.432px" height="13.160px" role="img" focusable="false" viewBox="0 -716 1405 727" x="0.0" y="0.0">
         <defs>
           <path id="prefigure-riemann-1d-MJX-6-TEX-N-394" d="M51 0Q46 4 46 7Q46 9 215 357T388 709Q391 716 416 716Q439 716 444 709Q447 705 616 357T786 7Q786 4 781 0H51ZM507 344L384 596L137 92L383 91H630Q630 93 507 344Z"/>
@@ -150,9 +130,8 @@
   <line id="prefigure-riemann-1d-r1-dx-right" x1="223.6" y1="55.7" x2="223.6" y2="65.6" stroke="#0072B2" stroke-width="1" stroke-dasharray="4 3" fill="none"/>
   <line id="prefigure-riemann-1d-r1-height" x1="205.8" y1="241.3" x2="205.8" y2="65.6" stroke="#009E73" stroke-width="2" stroke-dasharray="5 4" fill="none"/>
   <g id="prefigure-riemann-1d-r1-xi">
-    <circle cx="205.8" cy="241.3" r="4" stroke="black" stroke-width="2" fill="#009E73"/>
-    <g id="prefigure-riemann-1d-r1-xi" transform="translate(205.8,249.3) translate(-9.1,-0.0)">
-      <g id="prefigure-riemann-1d-__g-5">
+    <g transform="translate(205.8,249.3) translate(-9.1,-0.0)">
+      <g id="prefigure-riemann-1d-g-5">
         <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -4.840px" width="18.256px" height="17.360px" role="img" focusable="false" viewBox="0 -691.8 1008.6 959.2" x="0.0" y="0.0">
           <defs>
             <path id="prefigure-riemann-1d-MJX-7-TEX-I-1D465" d="M52 289Q59 331 106 386T222 442Q257 442 286 424T329 379Q371 442 430 442Q467 442 494 420T522 361Q522 332 508 314T481 292T458 288Q439 288 427 299T415 328Q415 374 465 391Q454 404 425 404Q412 404 406 402Q368 386 350 336Q290 115 290 78Q290 50 306 38T341 26Q378 26 414 59T463 140Q466 150 469 151T485 153H489Q504 153 504 145Q504 144 502 134Q486 77 440 33T333 -11Q263 -11 227 52Q186 -10 133 -10H127Q78 -10 57 16T35 71Q35 103 54 123T99 143Q142 143 142 101Q142 81 130 66T107 46T94 41L91 40Q91 39 97 36T113 29T132 26Q168 26 194 71Q203 87 217 139T245 247T261 313Q266 340 266 352Q266 380 251 392T217 404Q177 404 142 372T93 290Q91 281 88 280T72 278H58Q52 284 52 289Z"/>
@@ -177,12 +156,13 @@
         </svg>
       </g>
     </g>
+    <circle cx="205.8" cy="241.3" r="4" stroke="black" stroke-width="2" fill="#009E73"/>
   </g>
   <circle id="prefigure-riemann-1d-r1-fxi-top" cx="205.8" cy="65.6" r="4" stroke="black" stroke-width="2" fill="#009E73"/>
-  <path stroke="#009E73" stroke-width="2" fill="none" marker-end="url(#prefigure-riemann-1d-arrow-head-end-2_None_24_60-h009E73)" d="M 232.1 153.7 L 232.1 122.6" id="prefigure-riemann-1d-r1-height-up"/>
-  <path stroke="#009E73" stroke-width="2" fill="none" marker-end="url(#prefigure-riemann-1d-arrow-head-end-2_None_24_60-h009E73)" d="M 232.1 153.7 L 232.1 184.7" id="prefigure-riemann-1d-r1-height-down"/>
+  <path id="prefigure-riemann-1d-r1-height-up" stroke="#009E73" stroke-width="2" fill="none" d="M 232.1 153.7 L 232.1 120.2" marker-end="url(#prefigure-riemann-1d-arrow-head-end-2_None_24_60-h009E73)"/>
+  <path id="prefigure-riemann-1d-r1-height-down" stroke="#009E73" stroke-width="2" fill="none" d="M 232.1 153.7 L 232.1 187.1" marker-end="url(#prefigure-riemann-1d-arrow-head-end-2_None_24_60-h009E73)"/>
   <g id="prefigure-riemann-1d-r1-fxi" transform="translate(243.2,153.7) translate(0.0,-9.2)">
-    <g id="prefigure-riemann-1d-__g-6">
+    <g id="prefigure-riemann-1d-g-6">
       <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -4.840px; color:#009E73" width="115.712px" height="18.416px" role="img" focusable="false" viewBox="0 -750 6393.1 1017.4" x="0.0" y="0.0">
         <defs>
           <path id="prefigure-riemann-1d-MJX-8-TEX-N-68" d="M41 46H55Q94 46 102 60V68Q102 77 102 91T102 124T102 167T103 217T103 272T103 329Q103 366 103 407T103 482T102 542T102 586T102 603Q99 622 88 628T43 637H25V660Q25 683 27 683L37 684Q47 685 66 686T103 688Q120 689 140 690T170 693T181 694H184V367Q244 442 328 442Q451 442 463 329Q464 322 464 190V104Q464 66 466 59T477 49Q498 46 526 46H542V0H534L510 1Q487 2 460 2T422 3Q319 3 310 0H302V46H318Q379 46 379 62Q380 64 380 200Q379 335 378 343Q372 371 358 385T334 402T308 404Q263 404 229 370Q202 343 195 315T187 232V168V108Q187 78 188 68T191 55T200 49Q221 46 249 46H265V0H257L234 1Q210 2 183 2T145 3Q42 3 33 0H25V46H41Z"/>
@@ -248,7 +228,7 @@
     </g>
   </g>
   <g id="prefigure-riemann-1d-r1-flabel" transform="translate(337.9,45.6) translate(0.0,-18.1)">
-    <g id="prefigure-riemann-1d-__g-7">
+    <g id="prefigure-riemann-1d-g-7">
       <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -4.528px; color:#D55E00" width="67.392px" height="18.096px" role="img" focusable="false" viewBox="0 -750 3723.6 1000" x="0.0" y="0.0">
         <defs>
           <path id="prefigure-riemann-1d-MJX-9-TEX-I-1D466" d="M21 287Q21 301 36 335T84 406T158 442Q199 442 224 419T250 355Q248 336 247 334Q247 331 231 288T198 191T182 105Q182 62 196 45T238 27Q261 27 281 38T312 61T339 94Q339 95 344 114T358 173T377 247Q415 397 419 404Q432 431 462 431Q475 431 483 424T494 412T496 403Q496 390 447 193T391 -23Q363 -106 294 -155T156 -205Q111 -205 77 -183T43 -117Q43 -95 50 -80T69 -58T89 -48T106 -45Q150 -45 150 -87Q150 -107 138 -122T115 -142T102 -147L99 -148Q101 -153 118 -160T152 -167H160Q177 -167 186 -165Q219 -156 247 -127T290 -65T313 -9T321 21L315 17Q309 13 296 6T270 -6Q250 -11 231 -11Q185 -11 150 11T104 82Q103 89 103 113Q103 170 138 262T173 379Q173 380 173 381Q173 390 173 393T169 400T158 404H154Q131 404 112 385T82 344T65 302T57 280Q55 278 41 278H27Q21 284 21 287Z"/>
