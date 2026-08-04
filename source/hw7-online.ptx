@@ -67,7 +67,7 @@
         </condition>
       </var>
     </setup>
-    <solution component="assignment-inline-solutions">
+    <solution component="hw7-solutions">
       <p>
         The bounds describe the hemisphere <m>\rho \le 6</m>,
         <m>x \ge 0</m>. Since <m>dV = \rho^2\sin\phi\,
@@ -126,7 +126,7 @@
         </condition>
       </var>
     </setup>
-    <solution component="assignment-inline-solutions">
+    <solution component="hw7-solutions">
       <p>
         Inverting gives <m>x = s-4t</m>, <m>y = t</m>, so the Jacobian
         determinant is <m>1</m> and <m>dx\,dy = ds\,dt</m>. Substituting,
@@ -177,7 +177,7 @@
         </condition>
       </var>
     </setup>
-    <solution component="assignment-inline-solutions">
+    <solution component="hw7-solutions">
       <p>
         With <m>x = 2u</m>, <m>y = 2v</m> the Jacobian is <m>4</m>, and
         <m>E</m> becomes <m>u^2+v^2 \le 16</m>, which is <m>D</m>. Hence

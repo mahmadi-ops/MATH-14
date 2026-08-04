@@ -15,31 +15,28 @@
   <!-- targets specific exercises by id and is inert on every other page. -->
   <xsl:param name="html.js.extra" select="'external/math-input-palette.js'"/>
 
+  <!-- The "Assignments and Review Problems" chapter is unnumbered; the    -->
+  <!-- numbers are hidden by this stylesheet (copied from assets/ into     -->
+  <!-- external/ at build time and linked on every page).                  -->
+  <xsl:param name="html.css.extra" select="'external/unnumbered-chapter.css'"/>
+
   <xsl:template match="exercises" mode="serial-number"/>
   <xsl:template match="exercises" mode="number"/>
 
-  <!-- In "Review Problems with Solutions" the solution is printed straight   -->
-  <!-- below its problem instead of being hidden behind a knowl.  PreTeXt     -->
-  <!-- has a publisher switch for this (knowl/@example-solution), but that    -->
-  <!-- is global: it would also unfold the solutions of every worked example  -->
-  <!-- in the text.  These two templates are the core's own "born visible"    -->
-  <!-- branch, restricted to that one chapter.                                -->
-  <!-- The problems themselves are born visible too, so the chapter reads   -->
-  <!-- as a worked-solutions document rather than a page of knowl links.    -->
-  <xsl:template match="problem[ancestor::chapter[@xml:id = 'ch-review-solutions' or
-                                                 @xml:id = 'ch-assignment-solutions']]"
+  <!-- In "Assignments and Review Problems" a posted solution is printed     -->
+  <!-- straight below its problem instead of being hidden behind a knowl.    -->
+  <!-- PreTeXt has a publisher switch for this (knowl/@example-solution),    -->
+  <!-- but that is global: it would also unfold the solutions of every       -->
+  <!-- worked example in the text.  These templates are the core's own       -->
+  <!-- "born visible" branch, restricted to that one chapter.  Which         -->
+  <!-- solutions exist at all is decided by <version include="..."/> in      -->
+  <!-- publication/publication.ptx.                                          -->
+  <xsl:template match="exercise[ancestor::chapter[@xml:id = 'ch-problems']]/solution"
                 mode="is-hidden">
     <xsl:text>false</xsl:text>
   </xsl:template>
 
-  <xsl:template match="problem[ancestor::chapter[@xml:id = 'ch-review-solutions' or
-                                                 @xml:id = 'ch-assignment-solutions']]/solution"
-                mode="is-hidden">
-    <xsl:text>false</xsl:text>
-  </xsl:template>
-
-  <xsl:template match="problem[ancestor::chapter[@xml:id = 'ch-review-solutions' or
-                                                 @xml:id = 'ch-assignment-solutions']]/solution"
+  <xsl:template match="exercise[ancestor::chapter[@xml:id = 'ch-problems']]/solution"
                 mode="heading-birth">
     <xsl:apply-templates select="." mode="heading-non-singleton-number"/>
   </xsl:template>

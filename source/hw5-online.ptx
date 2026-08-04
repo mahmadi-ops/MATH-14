@@ -175,7 +175,7 @@
         </condition>
       </var>
     </setup>
-    <solution component="assignment-inline-solutions">
+    <solution component="hw5-solutions">
       <p>
         Replacing <m>\theta</m> by <m>\pi - \theta</m> gives
         <m>1+\sin(3\pi-3\theta) = 1+\sin(\pi-3\theta)
@@ -260,7 +260,7 @@
         </condition>
       </var>
     </setup>
-    <solution component="assignment-inline-solutions">
+    <solution component="hw5-solutions">
       <p>
         The three pieces together are the part of the annulus
         <m>1 \le r \le 2</m> lying between the <m>x</m>-axis and the line
@@ -316,7 +316,7 @@
         </condition>
       </var>
     </setup>
-    <solution component="assignment-inline-solutions">
+    <solution component="hw5-solutions">
       <p>
         The two circles are <m>r = 2\sin\theta</m> and
         <m>r = 2\cos\theta</m>, meeting where

@@ -46,7 +46,7 @@
         </condition>
       </var>
     </setup>
-    <solution component="assignment-inline-solutions">
+    <solution component="hw6-solutions">
       <p>
         With <m>dV = r\,dr\,d\theta\,dx</m> (the cylindrical volume element
         <xref ref="eq-dv-cylindrical"/> about the <m>x</m>-axis) and
@@ -139,7 +139,7 @@
         </condition>
       </var>
     </setup>
-    <solution component="assignment-inline-solutions">
+    <solution component="hw6-solutions">
       <p>
         Since <m>r^2\cos(2\theta) = r^2\left(\cos^2\theta -
         \sin^2\theta\right) = x^2 - y^2</m> and
@@ -188,7 +188,7 @@
         </condition>
       </var>
     </setup>
-    <solution component="assignment-inline-solutions">
+    <solution component="hw6-solutions">
       <p>
         On <m>R</m>, <m>x^2+y^2 \le z \le 1-x^2-y^2</m>. The right
         inequality gives <m>z + x^2 + y^2 - 1 \le 0</m>, so the first
@@ -248,7 +248,7 @@
         </condition>
       </var>
     </setup>
-    <solution component="assignment-inline-solutions">
+    <solution component="hw6-solutions">
       <p>
         The surfaces are <m>z = \pm\sqrt{r^2+5}</m> and
         <m>z = 1-r^2</m>. Setting <m>r^2 = z^2-5</m> equal to

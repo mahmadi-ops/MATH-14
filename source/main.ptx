@@ -59,10 +59,10 @@
       <xi:include href="divergence-theorem.ptx" />
     </chapter>
 
-    <!-- The written assignments are hidden from the build.  Their problem  -->
-    <!-- statements now live in the "Assignments with Solutions" chapter,   -->
-    <!-- and the same problems are auto-graded in "Assignments".  To bring  -->
-    <!-- this chapter back, delete the two marker lines around it.          -->
+    <!-- The written assignments are hidden from the build.  The same       -->
+    <!-- problems are auto-graded in "Assignments and Review Problems",     -->
+    <!-- which also carries the worked solutions.  To bring this chapter    -->
+    <!-- back, delete the two marker lines around it.                       -->
     <!-- HIDDEN-CHAPTER-BEGIN
     <chapter xml:id="ch-assignments">
       <title>Assignments</title>
@@ -78,16 +78,26 @@
     </chapter>
     HIDDEN-CHAPTER-END -->
 
-    <chapter xml:id="ch-online-assignments">
-      <title>Assignments</title>
+    <!-- This chapter is deliberately unnumbered: its heading, its section  -->
+    <!-- headings, and its table-of-contents entries show bare titles.      -->
+    <!-- The numbers are hidden by assets/unnumbered-chapter.css, wired in  -->
+    <!-- through html.css.extra in xsl/custom-html.xsl.                     -->
+    <chapter xml:id="ch-problems">
+      <title>Assignments and Review Problems</title>
       <introduction>
         <p>
-          The nine assignments. You can check your work by entering your
-          answers in the provided boxes: type an answer, press
-          <q>Check Me</q>, and check as often as you like. This lets you
-          verify your final answers before submitting the complete solution
-          to be graded by the grader. The worked solutions are in
-          <xref ref="ch-assignment-solutions" text="title"/>.
+          The nine assignments and the review problem sets, in one place.
+          You can check your work by entering your answers in the provided
+          boxes: type an answer, press <q>Check Me</q>, and check as often
+          as you like. Each box is graded on its own, so a box you get
+          right earns its credit even when another box in the same problem
+          is wrong. This lets you verify your final answers before
+          submitting the complete solution to be graded by the grader.
+        </p>
+        <p>
+          Complete worked solutions will appear beneath each problem after
+          the due date of its assignment; solutions for the review sets are
+          posted the same way.
         </p>
       </introduction>
       <xi:include href="hw1-online.ptx" />
@@ -99,56 +109,8 @@
       <xi:include href="hw7-online.ptx" />
       <xi:include href="hw8-online.ptx" />
       <xi:include href="hw9-online.ptx" />
-    </chapter>
-
-    <chapter xml:id="ch-assignment-solutions">
-      <title>Assignments with Solutions</title>
-      <introduction>
-        <p>
-          The same nine assignments, each problem followed by a complete
-          worked solution. The solutions will be posted after the due date
-          of each assignment. To work the problems with your answers checked
-          automatically, use <xref ref="ch-online-assignments" text="title"/>.
-        </p>
-      </introduction>
-      <xi:include href="hw1-solutions.ptx" />
-      <xi:include href="hw2-solutions.ptx" />
-      <xi:include href="hw3-solutions.ptx" />
-      <xi:include href="hw4-solutions.ptx" />
-      <xi:include href="hw5-solutions.ptx" />
-      <xi:include href="hw6-solutions.ptx" />
-      <xi:include href="hw7-solutions.ptx" />
-      <xi:include href="hw8-solutions.ptx" />
-      <xi:include href="hw9-solutions.ptx" />
-    </chapter>
-
-    <chapter xml:id="ch-review-practice">
-      <title>Review Problems for Practice</title>
-      <introduction>
-        <p>
-          The review problem sets, questions only: answers are checked
-          automatically, but the only response is right or
-          wrong<mdash/>no hints, no worked feedback, and no solutions
-          anywhere in this chapter. The problems with their complete
-          solutions are in <xref ref="ch-review-solutions" text="title"/>.
-        </p>
-      </introduction>
       <xi:include href="review3-practice.ptx" />
       <xi:include href="review4-practice.ptx" />
-    </chapter>
-
-    <chapter xml:id="ch-review-solutions">
-      <title>Review Problems with Solutions</title>
-      <introduction>
-        <p>
-          The same review problem sets with a complete worked solution
-          printed below every problem. To try the problems on their own,
-          with your answers checked automatically and no solutions in
-          sight, use <xref ref="ch-review-practice" text="title"/>.
-        </p>
-      </introduction>
-      <xi:include href="review3-online.ptx" />
-      <xi:include href="review4-online.ptx" />
     </chapter>
 
   </book>

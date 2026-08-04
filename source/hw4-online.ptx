@@ -109,7 +109,7 @@
         </condition>
       </var>
     </setup>
-    <solution component="assignment-inline-solutions">
+    <solution component="hw4-solutions">
       <p>
         Both paths run along two sides of the square. The horizontal sides
         <m>AD</m> and <m>BC</m> contribute the same, but the vertical side
@@ -261,7 +261,7 @@
         </condition>
       </var>
     </setup>
-    <solution component="assignment-inline-solutions">
+    <solution component="hw4-solutions">
       <p>
         A density cannot be negative, so we need
         <m>x^2 - y^2 \ge 0</m>, that is <m>|x| \ge |y|</m>. That holds on
@@ -351,7 +351,7 @@
         </condition>
       </var>
     </setup>
-    <solution component="assignment-inline-solutions">
+    <solution component="hw4-solutions">
       <p>
         The region is bounded by <m>y = x/2</m> below, <m>y = x</m> above,
         and <m>x = 5</m> on the right. Reading it in <m>y</m>-slices, the
@@ -407,7 +407,7 @@
         </condition>
       </var>
     </setup>
-    <solution component="assignment-inline-solutions">
+    <solution component="hw4-solutions">
       <p>
         The triangle is <m>0 \le x \le 1</m>, <m>0 \le y \le x</m>, so
       </p>

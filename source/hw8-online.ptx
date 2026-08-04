@@ -157,7 +157,7 @@
         </condition>
       </var>
     </setup>
-    <solution component="assignment-inline-solutions">
+    <solution component="hw8-solutions">
       <p>
         By symmetry the cylinder's own centroid is the origin, so only the
         cone moves the answer. The cylinder has volume
@@ -236,7 +236,7 @@
         </condition>
       </var>
     </setup>
-    <solution component="assignment-inline-solutions">
+    <solution component="hw8-solutions">
       <p>
         By symmetry the center of mass lies on the <m>x</m>-axis. From
         <xref ref="ex-hw6o-cone-mass"/>, <m>M = \pi/4</m>, and

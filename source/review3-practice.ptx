@@ -6,7 +6,7 @@
 <!-- This file is GENERATED-STYLE but maintained by hand: if the problems -->
 <!-- in review3-online.ptx change, regenerate or mirror the change here. -->
 <section xml:id="sec-exercises-review3-practice" xmlns:xi="http://www.w3.org/2001/XInclude">
-  <title>Review Problems #3<mdash/>Practice</title>
+  <title>Review Problems #3</title>
 
   <introduction>
     <p>
@@ -22,11 +22,10 @@
       Press <q>Check Me</q> to submit; you may check as often as you like.
     </p>
     <p>
-      This chapter is for testing yourself, so it contains the questions
-      only. Checking an answer tells you whether it is right or wrong and
-      nothing more<mdash/>no hints, no worked feedback, and no solutions.
-      The same problems, with complete solutions, are in
-      <xref ref="ch-review-solutions" text="title"/>.
+      Checking an answer tells you whether it is right or wrong and
+      nothing more<mdash/>use the boxes to test yourself. A complete
+      worked solution for every problem will be revealed beneath it
+      once solutions are posted.
     </p>
     <p>
       <term>How to type your answers.</term>
@@ -392,6 +391,38 @@
         </test>
       </evaluate>
     </evaluation>
+      <solution component="review3-solutions">
+      <p>
+        Dividing <m>v = xy^2</m> by <m>u = xy</m> gives <m>y = v/u</m>, and
+        then <m>x = u/y = u^2/v</m>. The Jacobian matrix has entries
+        <m>x_u = 2u/v</m>, <m>x_v = -u^2/v^2</m>, <m>y_u = -v/u^2</m>,
+        <m>y_v = 1/u</m>, so
+      </p>
+      <me>
+        \frac{\partial(x,y)}{\partial(u,v)}
+        = \frac{2u}{v}\cdot\frac{1}{u}
+        - \left(-\frac{u^2}{v^2}\right)\left(-\frac{v}{u^2}\right)
+        = \frac{2}{v} - \frac{1}{v} = \frac{1}{v}.
+      </me>
+      <p>
+        The four bounding curves are exactly <m>u = 1</m>,
+        <m>u = 9</m>, <m>v = 1</m>, <m>v = 36</m>,
+        so <m>D</m> becomes a rectangle and
+      </p>
+      <me>
+        \text{Area}
+        = \int_1^{36}\!\!\int_1^{9}
+          \frac{1}{v}\,du\,dv
+        = \left(9 - 1\right)
+          \ln\!\left(36\right).
+      </me>
+      <p>
+        Here the four curves are <m>u = 1</m>, <m>u = 9</m>, <m>v = 1</m> and
+<m>v = 36</m>, so the area is
+<m>(9-1)\ln 36 = 8\ln 36 \approx 28.67</m>.
+      </p>
+    </solution>
+
   </exercise>
 
   <!-- =================================================================== -->
@@ -522,6 +553,31 @@
         </test>
       </evaluate>
     </evaluation>
+      <solution component="review3-solutions">
+      <p>
+        Inverting the shear gives <m>x = s - 3t</m>,
+        <m>y = t</m>, so the Jacobian matrix is
+        <m>\begin{pmatrix} 1 &amp; -3 \\ 0 &amp; 1
+        \end{pmatrix}</m> with determinant <m>1</m>, and
+        <m>dx\,dy = ds\,dt</m>. Completing the substitution,
+      </p>
+      <me>
+        x^2 + 6xy + 10y^2
+        = \left(s - 3t\right)^2
+        + 6\left(s - 3t\right)t
+        + 10t^2
+        = s^2 + t^2 ,
+      </me>
+      <p>
+        so the region is the unit disc <m>T</m> and
+        <m>\iint_R dx\,dy = \iint_T ds\,dt = \text{Area}(T) = \pi</m>.
+      </p>
+      <p>
+        Here <m>a = 3</m>, and the area is <m>\pi</m> whatever the value of
+<m>a</m>: the shear does not change area.
+      </p>
+    </solution>
+
   </exercise>
 
   <!-- =================================================================== -->
@@ -760,6 +816,40 @@
         </test>
       </evaluate>
     </evaluation>
+      <solution component="review3-solutions">
+      <p>
+        Inverting gives <m>x = \sqrt{s-t}</m> and <m>y = s</m>, so
+      </p>
+      <me>
+        \frac{\partial(x,y)}{\partial(s,t)}
+        = \begin{vmatrix}
+          \frac{1}{2\sqrt{s-t}} &amp; -\frac{1}{2\sqrt{s-t}} \\
+          1 &amp; 0
+          \end{vmatrix}
+        = \frac{1}{2\sqrt{s-t}} .
+      </me>
+      <p>
+        The boundaries <m>y = x^2</m> and <m>y = x^2 - 4</m>
+        become <m>t = 0</m> and <m>t = -4</m>, while
+        <m>y = 0</m> and <m>y = 9</m> become <m>s = 0</m>
+        and <m>s = 9</m>. The integrand times the Jacobian
+        collapses to <m>\sqrt{s-t}\cdot\frac{1}{2\sqrt{s-t}}
+        = \frac{1}{2}</m>, so
+      </p>
+      <me>
+        \iint_R x\,dx\,dy
+        = \iint_T \frac{1}{2}\,ds\,dt
+        = \frac{1}{2}\,\text{Area}(T)
+        = \frac{\left(4\right)\left(9\right)}{2}
+        = 18 .
+      </me>
+      <p>
+        Here <m>a = 4</m> and <m>b^2 = 9</m>, so the rectangle <m>T</m> is
+<m>4 \times 9</m> and the integral equals
+<m>\dfrac{(4)(9)}{2} = 18</m>.
+      </p>
+    </solution>
+
   </exercise>
 
   <!-- =================================================================== -->
@@ -855,6 +945,27 @@
         </test>
       </evaluate>
     </evaluation>
+      <solution component="review3-solutions">
+      <p>
+        Setting <m>x = 2u</m>, <m>y = 3v</m>,
+        <m>z = 4w</m> carries <m>E</m> to the unit ball and
+        has Jacobian <m>24</m>, while the integrand becomes
+        <m>u^2+v^2+w^2 = \rho^2</m>. Hence
+      </p>
+      <me>
+        \iiint_E \left(\frac{x^2}{2^2}
+        + \frac{y^2}{3^2}
+        + \frac{z^2}{4^2}\right) dV
+        = 24\int_0^{2\pi}\!\!\int_0^{\pi}\!\!\int_0^{1}
+          \rho^4 \sin\phi \,d\rho\,d\phi\,d\theta
+        = \frac{4\,\pi\,24}{5} .
+      </me>
+      <p>
+        Here the Jacobian is <m>(2)(3)(4) = 24</m>, so the integral is
+<m>\dfrac{4\pi(24)}{5} = \dfrac{96\pi}{5} \approx 60.32</m>.
+      </p>
+    </solution>
+
   </exercise>
 
   <!-- =================================================================== -->
@@ -971,6 +1082,40 @@
         </test>
       </evaluate>
     </evaluation>
+      <solution component="review3-solutions">
+      <p>
+        Describe <m>W</m> by <m>0 \le x \le 1</m>, <m>0 \le y \le 1-x</m>,
+        <m>0 \le z \le 1-x-y</m>. Then
+      </p>
+      <me>
+        \iiint_W 6\sqrt{z}\,dV
+        = \frac{8\left(6\right)}{105}, \qquad
+        \iiint_W 6x\sqrt{z}\,dV
+        = \frac{16\left(6\right)}{945}, \qquad
+        \iiint_W 6z\sqrt{z}\,dV
+        = \frac{8\left(6\right)}{315},
+      </me>
+      <p>
+        and the <m>y</m>-numerator equals the <m>x</m>-numerator by the
+        symmetry of <m>W</m> and of <m>\rho</m> in <m>x</m> and <m>y</m>.
+        Dividing,
+      </p>
+      <me>
+        \left(x_{\mathrm{CM}}, y_{\mathrm{CM}}, z_{\mathrm{CM}}\right)
+        = \left(\frac29, \frac29, \frac13\right),
+      </me>
+      <p>
+        independently of the constant <m>6</m>, which cancels
+        from every ratio.
+      </p>
+      <p>
+        Here <m>k = 6</m>, so the mass is <m>\dfrac{8(6)}{105} = \dfrac{16}{35}
+\approx 0.457</m>, and the centre of mass is
+<m>\left(\tfrac29, \tfrac29, \tfrac13\right)</m>, independent of
+<m>k</m>.
+      </p>
+    </solution>
+
   </exercise>
 
   <!-- =================================================================== -->
@@ -1085,6 +1230,32 @@
         </test>
       </evaluate>
     </evaluation>
+      <solution component="review3-solutions">
+      <p>
+        Over the rectangle <m>R</m>,
+      </p>
+      <me>
+        m = \int_0^{2}\!\!\int_0^{3}
+        \left(4x + 5y + 6\right)
+        dy\,dx = 105 ,
+      </me>
+      <p>
+        and the two moments are
+        <m>\iint_R x\rho\,dA = 113</m> and
+        <m>\iint_R y\rho\,dA = 180</m>. Dividing each by the
+        mass gives <m>\bar{x} \approx 1.076</m> and
+        <m>\bar{y} \approx 1.714</m>.
+      </p>
+      <p>
+        Here <m>A = 2</m>, <m>B = 3</m>, <m>C = 4</m>, <m>D = 5</m> and
+<m>E = 6</m>, so <m>m = 105</m>, the moments are <m>113</m> and
+<m>180</m>, and
+<m>\left(\bar x, \bar y\right)
+= \left(\tfrac{113}{105}, \tfrac{12}{7}\right)
+\approx (1.076, 1.714)</m>.
+      </p>
+    </solution>
+
   </exercise>
 
   <!-- =================================================================== -->
@@ -1130,6 +1301,29 @@
         </test>
       </evaluate>
     </evaluation>
+      <solution component="review3-solutions">
+      <p>
+        In spherical coordinates,
+      </p>
+      <me>
+        V = \int_0^{2\pi}\!\!\int_0^{\pi/2}\!\!
+        \int_{4\cos\phi}^{4}
+        \rho^2\sin\phi\,d\rho\,d\phi\,d\theta
+        = \frac{2\pi\left(4\right)^3}{3}
+        \int_0^{\pi/2}\left(1 - \cos^3\phi\right)\sin\phi\,d\phi .
+      </me>
+      <p>
+        With <m>c = \cos\phi</m> the remaining integral is
+        <m>\int_0^1 \left(1 - c^3\right) dc = \tfrac34</m>, so
+        <m>V = \frac{2\pi\left(4\right)^3}{3}\cdot\frac34
+        = \frac{\pi\left(4\right)^3}{2}</m>.
+      </p>
+      <p>
+        Here <m>a = 4</m>, so the volume is
+<m>\dfrac{\pi\left(4^3\right)}{2} = 32\pi \approx 100.53</m>.
+      </p>
+    </solution>
+
   </exercise>
 
   <!-- =================================================================== -->
@@ -1213,6 +1407,33 @@
         </test>
       </evaluate>
     </evaluation>
+      <solution component="review3-solutions">
+      <p>
+        Because the integrand and the volume element both factor, the
+        triple integral splits into a product:
+      </p>
+      <me>
+        \int_0^{2\pi}\!\!\int_0^{\pi/2}\!\!
+        \int_{1}^{3}
+        \left(\cos\phi\right)\rho^2\sin\phi\,d\rho\,d\phi\,d\theta
+        = \left(\int_0^{2\pi} d\theta\right)
+          \left(\int_{1}^{3}\rho^2 d\rho\right)
+          \left(\int_0^{\pi/2}\cos\phi\sin\phi\,d\phi\right).
+      </me>
+      <p>
+        These are <m>2\pi</m>,
+        <m>\frac{\left(3\right)^3
+        - \left(1\right)^3}{3}</m>, and <m>\tfrac12</m>,
+        so the integral equals
+        <m>\frac{\pi\left(\left(3\right)^3
+        - \left(1\right)^3\right)}{3}</m>.
+      </p>
+      <p>
+        Here the radial integral is <m>\dfrac{3^3 - 1^3}{3} = \dfrac{26}{3}</m>,
+so the triple integral is <m>\dfrac{26\pi}{3} \approx 27.23</m>.
+      </p>
+    </solution>
+
   </exercise>
 
   <!-- =================================================================== -->
@@ -1276,6 +1497,31 @@
         </test>
       </evaluate>
     </evaluation>
+      <solution component="review3-solutions">
+      <p>
+        The spheres have radii <m>1</m> and
+        <m>2</m>. In spherical coordinates,
+      </p>
+      <me>
+        \iiint_E \frac{e^{-\rho^2}}{\rho}\,dV
+        = \int_0^{2\pi}\!\!\int_0^{\pi}\!\!
+          \int_{1}^{2}
+          \frac{e^{-\rho^2}}{\rho}\,\rho^2\sin\phi
+          \,d\rho\,d\phi\,d\theta
+        = 4\pi\int_{1}^{2}
+          \rho\,e^{-\rho^2}\,d\rho .
+      </me>
+      <p>
+        With <m>w = \rho^2</m> this is
+        <m>4\pi\left[-\tfrac12 e^{-\rho^2}\right]_{1}^{2}
+        = 2\pi\left(e^{-1} - e^{-4}\right)</m>.
+      </p>
+      <p>
+        Here the radii are <m>1</m> and <m>2</m>, so the integral is
+<m>2\pi\left(e^{-1} - e^{-4}\right) \approx 2.196</m>.
+      </p>
+    </solution>
+
   </exercise>
 
   <!-- =================================================================== -->
@@ -1424,6 +1670,30 @@
         </test>
       </evaluate>
     </evaluation>
+      <solution component="review3-solutions">
+      <p>
+        For a linear transformation the partial derivatives are just the
+        coefficients, so
+      </p>
+      <me>
+        \mathrm{Jac}(T) = \frac{\partial(x,y)}{\partial(u,v)}
+        = \begin{vmatrix}
+          7 &amp; 2 \\
+          3 &amp; 8
+          \end{vmatrix}
+        = \left(7\right)\left(8\right)
+        - \left(2\right)\left(3\right)
+        = 50 ,
+      </me>
+      <p>
+        a constant: a linear map scales every area by the same factor.
+      </p>
+      <p>
+        Here the partial derivatives are <m>7</m>, <m>2</m>, <m>3</m> and
+<m>8</m>, so the Jacobian is <m>(7)(8) - (2)(3) = 50</m>.
+      </p>
+    </solution>
+
   </exercise>
 
   <!-- =================================================================== -->
@@ -1530,6 +1800,33 @@
         </test>
       </evaluate>
     </evaluation>
+      <solution component="review3-solutions">
+      <p>
+        Since <m>x = u^2-v^2</m> and <m>y = 2uv</m>,
+      </p>
+      <me>
+        \sqrt{x^2+y^2}
+        = \sqrt{\left(u^2+v^2\right)^2} = u^2+v^2, \qquad
+        \frac{\partial(x,y)}{\partial(u,v)}
+        = \begin{vmatrix} 2u &amp; -2v \\ 2v &amp; 2u \end{vmatrix}
+        = 4\left(u^2+v^2\right).
+      </me>
+      <p>
+        Therefore
+      </p>
+      <me>
+        \iint_D \sqrt{x^2+y^2}\,dx\,dy
+        = 4\int_0^{2}\!\!\int_0^{u}
+          \left(u^4 + 2u^2v^2 + v^4\right) dv\,du
+        = 4\int_0^{2} \frac{28}{15}u^5\,du
+        = \frac{56\left(2\right)^6}{45} .
+      </me>
+      <p>
+        Here <m>a = 2</m>, so the integral equals
+<m>\dfrac{56\left(2^6\right)}{45} = \dfrac{3584}{45} \approx 79.64</m>.
+      </p>
+    </solution>
+
   </exercise>
 
   <!-- =================================================================== -->
@@ -1767,6 +2064,33 @@
         </test>
       </evaluate>
     </evaluation>
+      <solution component="review3-solutions">
+      <p>
+        The line and the parabola meet where
+        <m>x^2 + 2x - 8 = 0</m>, that is at
+        <m>x = 2</m>, so <m>c = 0</m> and
+        <m>d = 2</m>, with
+        <m>p(x) = 2x</m> and
+        <m>q(x) = 8 - x^2</m>. Carrying out the three
+        integrals of <m>xy</m>, <m>x^2y</m>, and <m>xy^2</m> over that
+        region gives <m>\tfrac{88}{3}</m>, <m>30.476</m>,
+        and <m>142.933</m> respectively, so
+      </p>
+      <me>
+        \overline{x} = \frac{30.476}{\tfrac{88}{3}}
+        \approx 1.039, \qquad
+        \overline{y} = \frac{142.933}{\tfrac{88}{3}}
+        \approx 4.873 .
+      </me>
+      <p>
+        Here <m>m = 2</m> and <m>b = 8</m>, so <m>x^{*} = 2</m> exactly, giving
+<m>c = 0</m>, <m>d = 2</m>, <m>p(x) = 2x</m>, <m>q(x) = 8 - x^2</m>, the
+three integrals <m>\tfrac{88}{3} \approx 29.33</m>, <m>30.48</m> and
+<m>142.93</m>, and
+<m>\left(\overline{x}, \overline{y}\right) \approx (1.039, 4.873)</m>.
+      </p>
+    </solution>
+
   </exercise>
 
   <!-- =================================================================== -->
@@ -1834,6 +2158,32 @@
         </test>
       </evaluate>
     </evaluation>
+      <solution component="review3-solutions">
+      <p>
+        By symmetry about the line <m>y = x</m>, the centre of mass lies on
+        that line, so <m>\overline{x} = \overline{y}</m>. Computing
+        <m>\overline{x}</m>,
+      </p>
+      <me>
+        \overline{x}
+        = \frac{\displaystyle\int_0^{3}
+          x\sqrt{\left(3\right)^2-x^2}\,dx}
+          {\displaystyle\frac{\pi\left(3\right)^2}{4}}
+        = \frac{\left(3\right)^3/3}
+          {\pi\left(3\right)^2/4}
+        = \frac{4\left(3\right)}{3\pi}
+        \approx \tfrac{4}{\pi} \approx 1.273 ,
+      </me>
+      <p>
+        and <m>\overline{y}</m> has the same value.
+      </p>
+      <p>
+        Here <m>r = 3</m>, so
+<m>\overline{x} = \overline{y} = \dfrac{4(3)}{3\pi} = \dfrac{4}{\pi}
+\approx 1.273</m>.
+      </p>
+    </solution>
+
   </exercise>
 
   </exercises>
