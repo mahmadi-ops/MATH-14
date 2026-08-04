@@ -47,23 +47,26 @@
     <setup>
       <var>
         <condition number="6" tolerance="0.01">
-          <feedback><p>Correct.</p></feedback>
+          <feedback>
+   <p>Correct.</p>
+ </feedback>
         </condition>
         <condition string=".*">
           <feedback>
-            <p>
-              Not quite. Type a decimal number and nothing else, to at
-              least three decimal places.
-            </p>
-          </feedback>
+          <p>Incorrect.</p>
+        </feedback>
         </condition>
       </var>
       <var>
         <condition number="113.097" tolerance="0.05">
-          <feedback><p>Correct: thirty-six pi.</p></feedback>
+          <feedback>
+          <p>Correct.</p>
+        </feedback>
         </condition>
         <condition number="226.195" tolerance="0.1">
-          <feedback><p>That is the whole ball; the limits give only the half with x at least zero.</p></feedback>
+          <feedback>
+          <p>Incorrect.</p>
+        </feedback>
         </condition>
       </var>
     </setup>
@@ -101,28 +104,26 @@
     <setup>
       <var>
         <condition number="1" tolerance="0.01">
-          <feedback><p>Correct.</p></feedback>
+          <feedback>
+          <p>Correct.</p>
+        </feedback>
         </condition>
          <condition string=".*">
      <feedback>
-       <p>
-         Not quite. Type a decimal number and nothing else, to at least
-              three decimal places.
-       </p>
-     </feedback>
+           <p>Incorrect.</p>
+         </feedback>
    </condition>
  </var>
       <var>
         <condition number="3.142" tolerance="0.01">
-          <feedback><p>Correct: pi.</p></feedback>
+          <feedback>
+          <p>Correct.</p>
+        </feedback>
         </condition>
               <condition string=".*">
           <feedback>
-            <p>
-              Not quite. Type a decimal number and nothing else, to at least
-              three decimal places.
-            </p>
-          </feedback>
+                <p>Incorrect.</p>
+              </feedback>
         </condition>
       </var>
     </setup>
@@ -157,23 +158,26 @@
     <setup>
       <var>
         <condition number="4" tolerance="0.01">
-          <feedback><p>Correct: dx dy = 4 du dv.</p></feedback>
+          <feedback>
+          <p>Correct.</p>
+        </feedback>
         </condition>
          <condition string=".*">
      <feedback>
-       <p>
-         Not quite. Type a decimal number and nothing else, to at least
-              three decimal places.
-       </p>
-     </feedback>
+           <p>Incorrect.</p>
+         </feedback>
    </condition>
  </var>
       <var>
         <condition number="36" tolerance="0.05">
-          <feedback><p>Correct.</p></feedback>
+          <feedback>
+          <p>Correct.</p>
+        </feedback>
         </condition>
         <condition number="9" tolerance="0.05">
-          <feedback><p>You applied the factor of three but not the area factor of four.</p></feedback>
+          <feedback>
+          <p>Incorrect.</p>
+        </feedback>
         </condition>
       </var>
     </setup>

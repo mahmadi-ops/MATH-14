@@ -85,13 +85,19 @@
     <setup>
       <var case="insensitive">
         <condition string="negative">
-          <feedback><p>Correct.</p></feedback>
+          <feedback>
+   <p>Correct.</p>
+ </feedback>
         </condition>
         <condition string="positive">
-          <feedback><p>Look again at where the field is strongest: along the top of C the field and the direction of travel make an obtuse angle.</p></feedback>
+          <feedback>
+          <p>Incorrect.</p>
+        </feedback>
         </condition>
         <condition string="zero">
-          <feedback><p>The two halves do not cancel, because the field is stronger over the top half.</p></feedback>
+          <feedback>
+          <p>Incorrect.</p>
+        </feedback>
         </condition>
       </var>
     </setup>
@@ -122,28 +128,26 @@
     <setup>
       <var>
         <condition number="2" tolerance="0.01">
-          <feedback><p>Correct.</p></feedback>
+          <feedback>
+          <p>Correct.</p>
+        </feedback>
         </condition>
          <condition string=".*">
      <feedback>
-       <p>
-         Not quite. Type a decimal number and nothing else, to at least
-              three decimal places.
-       </p>
-     </feedback>
+           <p>Incorrect.</p>
+         </feedback>
    </condition>
  </var>
       <var>
         <condition number="2" tolerance="0.01">
-          <feedback><p>Correct<mdash/>the same as along the parabola, which is worth thinking about.</p></feedback>
+          <feedback>
+          <p>Correct.</p>
+        </feedback>
         </condition>
               <condition string=".*">
           <feedback>
-            <p>
-              Not quite. Type a decimal number and nothing else, to at least
-              three decimal places.
-            </p>
-          </feedback>
+                <p>Incorrect.</p>
+              </feedback>
         </condition>
       </var>
     </setup>
@@ -184,23 +188,26 @@
     <setup>
       <var>
         <condition number="1.159" tolerance="0.005">
-          <feedback><p>Correct: one plus one over two pi.</p></feedback>
+          <feedback>
+          <p>Correct.</p>
+        </feedback>
         </condition>
                 <condition string=".*">
             <feedback>
-              <p>
-                Not quite. Type a decimal number and nothing else, to at least
-              three decimal places.
-              </p>
-            </feedback>
+                  <p>Incorrect.</p>
+                </feedback>
           </condition>
         </var>
       <var>
         <condition number="7.283" tolerance="0.01">
-          <feedback><p>Correct: two pi plus one.</p></feedback>
+          <feedback>
+          <p>Correct.</p>
+        </feedback>
         </condition>
         <condition number="6.283" tolerance="0.01">
-          <feedback><p>That is two pi: you dropped the dz term.</p></feedback>
+          <feedback>
+          <p>Incorrect.</p>
+        </feedback>
         </condition>
       </var>
     </setup>

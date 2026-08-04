@@ -94,18 +94,26 @@
     <setup>
       <var case="insensitive">
         <condition string="abc">
-          <feedback><p>Correct.</p></feedback>
+          <feedback>
+   <p>Correct.</p>
+ </feedback>
         </condition>
         <condition string="adc">
-          <feedback><p>The other way round: along DC the field is longer than along AB, while the angle with the direction of travel is the same, so ADC does more work.</p></feedback>
+          <feedback>
+          <p>Incorrect.</p>
+        </feedback>
         </condition>
       </var>
       <var case="insensitive">
         <condition string="no">
-          <feedback><p>Correct.</p></feedback>
+          <feedback>
+          <p>Correct.</p>
+        </feedback>
         </condition>
         <condition string="yes">
-          <feedback><p>If it were conservative the two paths would give the same work, since they share their endpoints.</p></feedback>
+          <feedback>
+          <p>Incorrect.</p>
+        </feedback>
         </condition>
       </var>
     </setup>
@@ -246,18 +254,26 @@
     <setup>
       <var case="insensitive">
         <condition string="2\s*,\s*4">
-          <feedback><p>Correct.</p></feedback>
+          <feedback>
+          <p>Correct.</p>
+        </feedback>
         </condition>
         <condition string="1\s*,\s*3">
-          <feedback><p>Those are the shapes where the absolute value of y is at least the absolute value of x, so the density would be negative there.</p></feedback>
+          <feedback>
+          <p>Incorrect.</p>
+        </feedback>
         </condition>
       </var>
       <var case="insensitive">
         <condition string="2">
-          <feedback><p>Correct.</p></feedback>
+          <feedback>
+          <p>Correct.</p>
+        </feedback>
         </condition>
         <condition string="4">
-          <feedback><p>Compare the areas: the triangle has area r squared over two and the sector has area pi r squared over eight, which is smaller.</p></feedback>
+          <feedback>
+          <p>Incorrect.</p>
+        </feedback>
         </condition>
       </var>
     </setup>
@@ -299,55 +315,50 @@
     <setup>
       <var>
         <condition number="2" tolerance="0.01">
-          <feedback><p>Correct: the right-hand boundary changes.</p></feedback>
+          <feedback>
+          <p>Correct.</p>
+        </feedback>
         </condition>
         <condition number="1" tolerance="0.01">
           <feedback>
-            <p>
-              One is not enough: the right-hand boundary of the region is
-              <m>x=2y</m> for small <m>y</m> and <m>x=5</m> after that.
-            </p>
-          </feedback>
+          <p>Incorrect.</p>
+        </feedback>
         </condition>
       </var>
       <var>
         <condition number="2.5" tolerance="0.01">
-          <feedback><p>Correct: that is where y = x/2 meets x = 5.</p></feedback>
+          <feedback>
+          <p>Correct.</p>
+        </feedback>
         </condition>
               <condition string=".*">
           <feedback>
-            <p>
-              Not quite. Type a decimal number and nothing else, to at least
-              three decimal places.
-            </p>
-          </feedback>
+                <p>Incorrect.</p>
+              </feedback>
         </condition>
       </var>
       <var case="insensitive">
         <condition string="2\s*\*?\s*y">
-          <feedback><p>Correct.</p></feedback>
+          <feedback>
+          <p>Correct.</p>
+        </feedback>
         </condition>
               <condition string=".*">
           <feedback>
-            <p>
-              Not quite. Type only the expression itself, with <c>*</c> for
-              products and <c>^</c> for powers, for example
-              <c>4cos(t)^2</c>.
-            </p>
-          </feedback>
+                <p>Incorrect.</p>
+              </feedback>
         </condition>
       </var>
       <var>
         <condition number="5" tolerance="0.01">
-          <feedback><p>Correct.</p></feedback>
+          <feedback>
+          <p>Correct.</p>
+        </feedback>
         </condition>
               <condition string=".*">
           <feedback>
-            <p>
-              Not quite. Type a decimal number and nothing else, to at least
-              three decimal places.
-            </p>
-          </feedback>
+                <p>Incorrect.</p>
+              </feedback>
         </condition>
       </var>
     </setup>
@@ -381,29 +392,26 @@
     <setup>
       <var case="insensitive">
         <condition string="x\s*\*?\s*sqrt\s*\(\s*1\s*-\s*x\s*\^\s*2\s*\)">
-          <feedback><p>Correct.</p></feedback>
+          <feedback>
+          <p>Correct.</p>
+        </feedback>
         </condition>
                 <condition string=".*">
             <feedback>
-              <p>
-                Not quite. Type only the expression itself, with <c>*</c> for
-              products and <c>^</c> for powers, for example
-              <c>4cos(t)^2</c>.
-              </p>
-            </feedback>
+                  <p>Incorrect.</p>
+                </feedback>
           </condition>
         </var>
       <var>
         <condition number="0.333" tolerance="0.005">
-          <feedback><p>Correct: one third.</p></feedback>
+          <feedback>
+          <p>Correct.</p>
+        </feedback>
         </condition>
               <condition string=".*">
           <feedback>
-            <p>
-              Not quite. Type a decimal number and nothing else, to at least
-              three decimal places.
-            </p>
-          </feedback>
+                <p>Incorrect.</p>
+              </feedback>
         </condition>
       </var>
     </setup>

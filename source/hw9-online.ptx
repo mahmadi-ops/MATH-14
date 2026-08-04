@@ -91,54 +91,50 @@
     <setup>
       <var>
         <condition number="2" tolerance="0.01">
-          <feedback><p>Correct.</p></feedback>
+          <feedback>
+   <p>Correct.</p>
+ </feedback>
         </condition>
         <condition string=".*">
           <feedback>
-            <p>
-              Not quite. Type a decimal number and nothing else, to at
-              least three decimal places.
-            </p>
-          </feedback>
+          <p>Incorrect.</p>
+        </feedback>
         </condition>
       </var>
       <var>
         <condition number="55" tolerance="0.5">
-          <feedback><p>Correct: fifty plus ten halves.</p></feedback>
+          <feedback>
+          <p>Correct.</p>
+        </feedback>
         </condition>
               <condition string=".*">
           <feedback>
-            <p>
-              Not quite. Type a decimal number and nothing else, to at least
-              three decimal places.
-            </p>
-          </feedback>
+                <p>Incorrect.</p>
+              </feedback>
         </condition>
       </var>
       <var>
         <condition number="110" tolerance="0.5">
-          <feedback><p>Correct: twice the area.</p></feedback>
+          <feedback>
+          <p>Correct.</p>
+        </feedback>
         </condition>
               <condition string=".*">
           <feedback>
-            <p>
-              Not quite. Type a decimal number and nothing else, to at least
-              three decimal places.
-            </p>
-          </feedback>
+                <p>Incorrect.</p>
+              </feedback>
         </condition>
       </var>
       <var>
         <condition number="-21582.1" tolerance="1">
-          <feedback><p>Correct.</p></feedback>
+          <feedback>
+          <p>Correct.</p>
+        </feedback>
         </condition>
               <condition string=".*">
           <feedback>
-            <p>
-              Not quite. Type a decimal number and nothing else, to at least
-              three decimal places.
-            </p>
-          </feedback>
+                <p>Incorrect.</p>
+              </feedback>
         </condition>
       </var>
     </setup>
@@ -180,29 +176,26 @@
     <setup>
       <var case="insensitive">
         <condition string="y\s*\^\s*2">
-          <feedback><p>Correct.</p></feedback>
+          <feedback>
+          <p>Correct.</p>
+        </feedback>
         </condition>
          <condition string=".*">
      <feedback>
-       <p>
-         Not quite. Type only the expression itself, with <c>*</c> for
-              products and <c>^</c> for powers, for example
-              <c>4cos(t)^2</c>.
-       </p>
-     </feedback>
+           <p>Incorrect.</p>
+         </feedback>
    </condition>
  </var>
       <var>
         <condition number="0.785" tolerance="0.005">
-          <feedback><p>Correct: pi over four.</p></feedback>
+          <feedback>
+          <p>Correct.</p>
+        </feedback>
         </condition>
               <condition string=".*">
           <feedback>
-            <p>
-              Not quite. Type a decimal number and nothing else, to at least
-              three decimal places.
-            </p>
-          </feedback>
+                <p>Incorrect.</p>
+              </feedback>
         </condition>
       </var>
     </setup>
@@ -237,29 +230,26 @@
     <setup>
       <var case="insensitive">
         <condition string="x">
-          <feedback><p>Correct.</p></feedback>
+          <feedback>
+          <p>Correct.</p>
+        </feedback>
         </condition>
          <condition string=".*">
      <feedback>
-       <p>
-         Not quite. Type only the expression itself, with <c>*</c> for
-              products and <c>^</c> for powers, for example
-              <c>4cos(t)^2</c>.
-       </p>
-     </feedback>
+           <p>Incorrect.</p>
+         </feedback>
    </condition>
  </var>
       <var>
         <condition number="3.142" tolerance="0.01">
-          <feedback><p>Correct: pi.</p></feedback>
+          <feedback>
+          <p>Correct.</p>
+        </feedback>
         </condition>
               <condition string=".*">
           <feedback>
-            <p>
-              Not quite. Type a decimal number and nothing else, to at least
-              three decimal places.
-            </p>
-          </feedback>
+                <p>Incorrect.</p>
+              </feedback>
         </condition>
       </var>
     </setup>
@@ -299,41 +289,38 @@
     <setup>
       <var>
         <condition number="-4" tolerance="0.01">
-          <feedback><p>Correct.</p></feedback>
+          <feedback>
+          <p>Correct.</p>
+        </feedback>
         </condition>
          <condition string=".*">
      <feedback>
-       <p>
-         Not quite. Type a decimal number and nothing else, to at least
-              three decimal places.
-       </p>
-     </feedback>
+           <p>Incorrect.</p>
+         </feedback>
    </condition>
  </var>
       <var>
         <condition number="0.3927" tolerance="0.002">
-          <feedback><p>Correct: pi over eight.</p></feedback>
+          <feedback>
+          <p>Correct.</p>
+        </feedback>
         </condition>
               <condition string=".*">
           <feedback>
-            <p>
-              Not quite. Type a decimal number and nothing else, to at least
-              three decimal places.
-            </p>
-          </feedback>
+                <p>Incorrect.</p>
+              </feedback>
         </condition>
       </var>
       <var>
         <condition number="-1.571" tolerance="0.01">
-          <feedback><p>Correct: minus pi over two.</p></feedback>
+          <feedback>
+          <p>Correct.</p>
+        </feedback>
         </condition>
               <condition string=".*">
           <feedback>
-            <p>
-              Not quite. Type a decimal number and nothing else, to at least
-              three decimal places.
-            </p>
-          </feedback>
+                <p>Incorrect.</p>
+              </feedback>
         </condition>
       </var>
     </setup>

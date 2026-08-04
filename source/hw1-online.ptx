@@ -73,60 +73,55 @@
     <setup>
       <var case="insensitive">
         <condition string="cos\s*\(\s*t\s*\)">
-          <feedback><p>Correct.</p></feedback>
+          <feedback>
+   <p>Correct.</p>
+ </feedback>
         </condition>
         <condition string="sin\s*\(\s*t\s*\)">
           <feedback>
-            <p>
-              That is a valid choice too, but then <m>y</m> and <m>z</m>
-              have to change to match. Use <m>x=\cos(t)</m> here.
-            </p>
-          </feedback>
+          <p>Incorrect.</p>
+        </feedback>
         </condition>
       </var>
       <var case="insensitive">
         <condition string="sin\s*\(\s*t\s*\)">
-          <feedback><p>Correct.</p></feedback>
+          <feedback>
+          <p>Correct.</p>
+        </feedback>
         </condition>
               <condition string=".*">
           <feedback>
-            <p>
-              Not quite. Type only the expression itself, with <c>*</c> for
-              products and <c>^</c> for powers, for example
-              <c>4cos(t)^2</c>.
-            </p>
-          </feedback>
+                <p>Incorrect.</p>
+              </feedback>
         </condition>
       </var>
       <var case="insensitive">
         <condition string="4\s*\*?\s*(cos\s*\(\s*t\s*\)\s*\^\s*2|cos\s*\^\s*2\s*\(\s*t\s*\))">
-          <feedback><p>Correct.</p></feedback>
+          <feedback>
+          <p>Correct.</p>
+        </feedback>
         </condition>
         <condition string="4\s*\*?\s*(sin\s*\(\s*t\s*\)\s*\^\s*2|sin\s*\^\s*2\s*\(\s*t\s*\))">
           <feedback>
-            <p>
-              Careful: the surface is <m>z=4x^2</m>, so substitute the
-              <m>x</m>-component, not the <m>y</m>-component.
-            </p>
-          </feedback>
+          <p>Incorrect.</p>
+        </feedback>
         </condition>
         <condition string="cos\s*\(\s*t\s*\)\s*\^\s*2">
           <feedback>
-            <p>Close<mdash/>you dropped the factor of <m>4</m>.</p>
-          </feedback>
+          <p>Incorrect.</p>
+        </feedback>
         </condition>
       </var>
       <var>
         <condition number="6.283" tolerance="0.005">
-          <feedback><p>Correct: one full trip around the cylinder.</p></feedback>
+          <feedback>
+          <p>Correct.</p>
+        </feedback>
         </condition>
         <condition number="3.142" tolerance="0.005">
           <feedback>
-            <p>
-              Half a turn only covers half of <m>C</m>; the shadow is the
-              whole unit circle.
-            </p>
-          </feedback>
+          <p>Incorrect.</p>
+        </feedback>
         </condition>
       </var>
     </setup>
@@ -232,67 +227,62 @@ with a double-headed arrow mark each spring's height.
     <setup>
       <var>
         <condition number="0.2122" tolerance="0.002">
-          <feedback><p>Correct: <m>c = H/(2\pi N)</m>.</p></feedback>
+          <feedback>
+          <p>Correct.</p>
+        </feedback>
         </condition>
         <condition number="1.3333" tolerance="0.002">
           <feedback>
-            <p>
-              That is <m>H/N</m>, the rise per turn. One turn is
-              <m>2\pi</m> units of <m>t</m>, not one.
-            </p>
-          </feedback>
+          <p>Incorrect.</p>
+        </feedback>
         </condition>
       </var>
       <var>
         <condition number="18.850" tolerance="0.01">
-          <feedback><p>Correct: <m>T = 2\pi N</m>.</p></feedback>
+          <feedback>
+          <p>Correct.</p>
+        </feedback>
         </condition>
         <condition number="6.283" tolerance="0.01">
-          <feedback><p>That is one turn; this spring makes three.</p></feedback>
+          <feedback>
+          <p>Incorrect.</p>
+        </feedback>
         </condition>
       </var>
       <var>
         <condition number="132.008" tolerance="0.05">
-          <feedback><p>Correct.</p></feedback>
+          <feedback>
+          <p>Correct.</p>
+        </feedback>
         </condition>
         <condition number="131.947" tolerance="0.02">
           <feedback>
-            <p>
-              That is <m>2\pi N R</m>, the shadow circle travelled three
-              times. You still have to account for the climb <m>H</m>.
-            </p>
-          </feedback>
+          <p>Incorrect.</p>
+        </feedback>
         </condition>
       </var>
       <var>
         <condition number="125.700" tolerance="0.05">
-          <feedback><p>Correct.</p></feedback>
+          <feedback>
+          <p>Correct.</p>
+        </feedback>
         </condition>
         <condition number="125.664" tolerance="0.02">
           <feedback>
-            <p>
-              That is <m>2\pi N R</m> alone; the height still has to be
-              included.
-            </p>
-          </feedback>
+          <p>Incorrect.</p>
+        </feedback>
         </condition>
       </var>
       <var case="insensitive">
         <condition string="a">
           <feedback>
-            <p>
-              Correct: <m>132.0 \gt 125.7</m>, so spring A uses more wire,
-              even though it has fewer turns.
-            </p>
-          </feedback>
+          <p>Correct.</p>
+        </feedback>
         </condition>
         <condition string="b">
           <feedback>
-            <p>
-              Spring B has more turns, but each is much smaller in radius.
-              Compare the two lengths you computed.
-            </p>
-          </feedback>
+          <p>Incorrect.</p>
+        </feedback>
         </condition>
       </var>
     </setup>
@@ -345,59 +335,50 @@ with a double-headed arrow mark each spring's height.
     <setup>
       <var>
         <condition number="1" tolerance="0.001">
-          <feedback><p>Correct: <m>\ln(t)=0</m> forces <m>t=1</m>.</p></feedback>
+          <feedback>
+          <p>Correct.</p>
+        </feedback>
         </condition>
         <condition number="0" tolerance="0.001">
           <feedback>
-            <p>
-              At <m>t=0</m> the curve is not even defined, since
-              <m>\ln(t)</m> needs <m>t\gt 0</m>. Solve <m>\ln(t)=0</m>
-              instead.
-            </p>
-          </feedback>
+          <p>Incorrect.</p>
+        </feedback>
         </condition>
       </var>
       <var>
         <condition number="1" tolerance="0.005">
-          <feedback><p>Correct: <m>1/t = 1</m> at <m>t=1</m>.</p></feedback>
+          <feedback>
+          <p>Correct.</p>
+        </feedback>
         </condition>
               <condition string=".*">
           <feedback>
-            <p>
-              Not quite. Type a decimal number and nothing else, to at least
-              three decimal places.
-            </p>
-          </feedback>
+                <p>Incorrect.</p>
+              </feedback>
         </condition>
       </var>
       <var>
         <condition number="0.3333" tolerance="0.005">
           <feedback>
-            <p>Correct: the quotient rule gives <m>3/(t+2)^2 = 1/3</m>.</p>
-          </feedback>
+          <p>Correct.</p>
+        </feedback>
         </condition>
         <condition number="0.1111" tolerance="0.005">
           <feedback>
-            <p>
-              Check the numerator in the quotient rule: it is
-              <m>(t+2)-(t-1)=3</m>, not <m>1</m>.
-            </p>
-          </feedback>
+          <p>Incorrect.</p>
+        </feedback>
         </condition>
       </var>
       <var>
         <condition number="1" tolerance="0.005">
           <feedback>
-            <p>Correct: <m>\ln(t)+1 = 1</m> at <m>t=1</m>.</p>
-          </feedback>
+          <p>Correct.</p>
+        </feedback>
         </condition>
         <condition number="0" tolerance="0.005">
           <feedback>
-            <p>
-              The product rule gives <m>\ln(t)+1</m>, and at <m>t=1</m>
-              that is <m>0+1</m>.
-            </p>
-          </feedback>
+          <p>Incorrect.</p>
+        </feedback>
         </condition>
       </var>
     </setup>
@@ -454,73 +435,61 @@ with a double-headed arrow mark each spring's height.
       <var>
         <condition number="12" tolerance="0.01">
           <feedback>
-            <p>
-              Correct:
-              <m>\left\lVert\mathbf{v}(t)\right\rVert=6(t+2)</m>, which is
-              <m>12</m> at <m>t=0</m>.
-            </p>
-          </feedback>
+          <p>Correct.</p>
+        </feedback>
         </condition>
         <condition number="0" tolerance="0.01">
           <feedback>
-            <p>
-              The object is at the origin at <m>t=0</m>, but it is not at
-              rest: only the <m>y</m><ndash/> and <m>z</m>-components of
-              the velocity vanish there.
-            </p>
-          </feedback>
+          <p>Incorrect.</p>
+        </feedback>
         </condition>
       </var>
       <var>
         <condition number="1" tolerance="0.005">
-          <feedback><p>Correct: <m>3t^2+12t=15</m> gives <m>t=1</m>.</p></feedback>
+          <feedback>
+          <p>Correct.</p>
+        </feedback>
         </condition>
         <condition number="1.25" tolerance="0.005">
           <feedback>
-            <p>
-              That is <m>15</m> divided by the speed at <m>t=0</m>. The
-              speed is not constant, so the distance must be integrated.
-            </p>
-          </feedback>
+          <p>Incorrect.</p>
+        </feedback>
         </condition>
       </var>
       <var>
         <condition number="12" tolerance="0.01">
-          <feedback><p>Correct.</p></feedback>
+          <feedback>
+          <p>Correct.</p>
+        </feedback>
         </condition>
               <condition string=".*">
           <feedback>
-            <p>
-              Not quite. Type a decimal number and nothing else, to at least
-              three decimal places.
-            </p>
-          </feedback>
+                <p>Incorrect.</p>
+              </feedback>
         </condition>
       </var>
       <var>
         <condition number="8" tolerance="0.01">
-          <feedback><p>Correct.</p></feedback>
+          <feedback>
+          <p>Correct.</p>
+        </feedback>
         </condition>
               <condition string=".*">
           <feedback>
-            <p>
-              Not quite. Type a decimal number and nothing else, to at least
-              three decimal places.
-            </p>
-          </feedback>
+                <p>Incorrect.</p>
+              </feedback>
         </condition>
       </var>
       <var>
         <condition number="3" tolerance="0.01">
-          <feedback><p>Correct.</p></feedback>
+          <feedback>
+          <p>Correct.</p>
+        </feedback>
         </condition>
               <condition string=".*">
           <feedback>
-            <p>
-              Not quite. Type a decimal number and nothing else, to at least
-              three decimal places.
-            </p>
-          </feedback>
+                <p>Incorrect.</p>
+              </feedback>
         </condition>
       </var>
     </setup>

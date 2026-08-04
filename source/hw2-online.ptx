@@ -64,36 +64,20 @@
         <test correct="yes">
           <numcmp use-answer="yes" min="M.value({})-Math.max(0.01,1e-4*Math.abs(M.value({})))" max="M.value({})+Math.max(0.01,1e-4*Math.abs(M.value({})))"/>
           <feedback>
-            <p>
-              Correct. Notice that the center <m>a</m> never enters: shifting
-              the wire sideways carries its density with it.
-            </p>
-          </feedback>
+          <p>Correct.</p>
+        </feedback>
         </test>
         <test>
           <numcmp object="k" min="k.value({})-Math.max(0.01,1e-4*Math.abs(k.value({})))" max="k.value({})+Math.max(0.01,1e-4*Math.abs(k.value({})))"/>
           <feedback>
-            <p>
-              That is the coefficient <m>k</m> from the density, not the
-              mass. Once the density is written in terms of the parameter,
-              the arc-length factor <m>ds = \lVert\mathbf{v}\rVert\,dt</m>
-              still has to be included.
-            </p>
-          </feedback>
+          <p>Incorrect.</p>
+        </feedback>
         </test>
         <test>
           <numcmp min="-1000000000" max="1000000000"/>
           <feedback>
-            <p>
-              Not quite. Parametrize the quarter circle by
-              <m>\mathbf{r}(t) = \left\langle R\cos t + a,\ R\sin t
-              \right\rangle</m>, <m>0 \le t \le \pi/2</m>, and remember
-              that <m>ds = \lVert\mathbf{v}\rVert\,dt</m>. On the wire the
-              density simplifies considerably, and the center <m>a</m> drops
-              out. The complete worked solution is in the
-              <q>Solutions of the Assignments</q> chapter.
-            </p>
-          </feedback>
+          <p>Incorrect.</p>
+        </feedback>
         </test>
       </evaluate>
     </evaluation>
@@ -145,33 +129,32 @@
         </condition>
               <condition string=".*">
           <feedback>
-            <p>
-              Not quite. Type only the expression itself, with <c>*</c> for
-              products and <c>^</c> for powers, for example
-              <c>4cos(t)^2</c>.
-            </p>
-          </feedback>
+                <p>Incorrect.</p>
+              </feedback>
         </condition>
       </var>
       <var>
         <condition number="1.414" tolerance="0.01">
-          <feedback><p>Correct: the speed is the square root of two.</p></feedback>
+          <feedback>
+          <p>Correct.</p>
+        </feedback>
         </condition>
               <condition string=".*">
           <feedback>
-            <p>
-              Not quite. Type a decimal number and nothing else, to at least
-              three decimal places.
-            </p>
-          </feedback>
+                <p>Incorrect.</p>
+              </feedback>
         </condition>
       </var>
       <var>
         <condition number="-1.414" tolerance="0.01">
-          <feedback><p>Correct.</p></feedback>
+          <feedback>
+          <p>Correct.</p>
+        </feedback>
         </condition>
         <condition number="1.414" tolerance="0.01">
-          <feedback><p>Right size, wrong sign: the integrand 2t-2 is negative on the whole segment.</p></feedback>
+          <feedback>
+          <p>Incorrect.</p>
+        </feedback>
         </condition>
       </var>
     </setup>
@@ -261,36 +244,38 @@
     <setup>
       <var>
         <condition number="0.785" tolerance="0.005">
-          <feedback><p>Correct: that is the arctangent of one.</p></feedback>
+          <feedback>
+          <p>Correct.</p>
+        </feedback>
         </condition>
                 <condition string=".*">
             <feedback>
-              <p>
-                Not quite. Type a decimal number and nothing else, to at least
-              three decimal places.
-              </p>
-            </feedback>
+                  <p>Incorrect.</p>
+                </feedback>
           </condition>
         </var>
       <var>
         <condition number="0.615" tolerance="0.005">
-          <feedback><p>Correct.</p></feedback>
+          <feedback>
+          <p>Correct.</p>
+        </feedback>
         </condition>
               <condition string=".*">
           <feedback>
-            <p>
-              Not quite. Type a decimal number and nothing else, to at least
-              three decimal places.
-            </p>
-          </feedback>
+                <p>Incorrect.</p>
+              </feedback>
         </condition>
       </var>
       <var>
         <condition number="2.441" tolerance="0.01">
-          <feedback><p>Correct.</p></feedback>
+          <feedback>
+          <p>Correct.</p>
+        </feedback>
         </condition>
         <condition number="1.571" tolerance="0.01">
-          <feedback><p>That is only the two sides on the axes; add the other two.</p></feedback>
+          <feedback>
+          <p>Incorrect.</p>
+        </feedback>
         </condition>
       </var>
     </setup>
@@ -391,10 +376,14 @@
     <setup>
       <var>
         <condition number="18.850" tolerance="0.02">
-          <feedback><p>Correct: six pi.</p></feedback>
+          <feedback>
+          <p>Correct.</p>
+        </feedback>
         </condition>
         <condition number="6" tolerance="0.01">
-          <feedback><p>That is the coefficient; multiply by the length of the circle.</p></feedback>
+          <feedback>
+          <p>Incorrect.</p>
+        </feedback>
         </condition>
       </var>
     </setup>
