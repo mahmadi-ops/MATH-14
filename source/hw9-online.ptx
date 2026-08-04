@@ -282,7 +282,7 @@
   </exercise>
 
   <exercise xml:id="ex-hw9o-rose">
-    <title>Green\u2019s Theorem on One Petal</title>
+    <title>Green's Theorem on One Petal</title>
     <statement>
       <p>
         For <m>\displaystyle\oint_C \left(y^4-2y\right) dx
