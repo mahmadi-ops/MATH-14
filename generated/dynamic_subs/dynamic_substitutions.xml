@@ -100,6 +100,55 @@
     <eval-subst obj="a">30</eval-subst>
     <eval-subst obj="val">5</eval-subst>
   </dynamic-substitution>
+  <dynamic-substitution id="ex-r2p-circle-limits">
+    <eval-subst obj="rad">4</eval-subst>
+    <eval-subst obj="xlo">-4</eval-subst>
+    <eval-subst obj="xhi">4</eval-subst>
+    <eval-subst obj="ylo">-\sqrt{4^{2}-x^{2}}</eval-subst>
+    <eval-subst obj="yhi">\sqrt{4^{2}-x^{2}}</eval-subst>
+    <eval-subst obj="qlo">-4</eval-subst>
+    <eval-subst obj="qhi">4</eval-subst>
+    <eval-subst obj="plo">-\sqrt{4^{2}-y^{2}}</eval-subst>
+    <eval-subst obj="phi">\sqrt{4^{2}-y^{2}}</eval-subst>
+  </dynamic-substitution>
+  <dynamic-substitution id="ex-r2p-trapezoid-limits">
+    <eval-subst obj="xlo">1</eval-subst>
+    <eval-subst obj="xhi">3</eval-subst>
+    <eval-subst obj="ylo">x-1</eval-subst>
+    <eval-subst obj="yhi">4</eval-subst>
+    <eval-subst obj="k">5</eval-subst>
+    <eval-subst obj="val">30</eval-subst>
+  </dynamic-substitution>
+  <dynamic-substitution id="ex-r2p-two-circles">
+    <eval-subst obj="a">3</eval-subst>
+    <eval-subst obj="val">\frac{2}{3} \pi\cdot 6^{3}-\frac{4}{9}\cdot 6^{3}</eval-subst>
+  </dynamic-substitution>
+  <dynamic-substitution id="ex-r2p-parabola-line">
+    <eval-subst obj="k">5</eval-subst>
+    <eval-subst obj="val">180</eval-subst>
+  </dynamic-substitution>
+  <dynamic-substitution id="ex-r2p-polar-overlap">
+    <eval-subst obj="t1">\frac{-\pi}{2}</eval-subst>
+    <eval-subst obj="t2">\frac{\pi}{6}</eval-subst>
+    <eval-subst obj="z1">0</eval-subst>
+    <eval-subst obj="f1">1+\sin \mathopen{}\left(t\right)\mathclose{}</eval-subst>
+    <eval-subst obj="t3">\frac{\pi}{6}</eval-subst>
+    <eval-subst obj="t4">\frac{\pi}{2}</eval-subst>
+    <eval-subst obj="z2">0</eval-subst>
+    <eval-subst obj="f2">\sqrt{3} \cos \mathopen{}\left(t\right)\mathclose{}</eval-subst>
+  </dynamic-substitution>
+  <dynamic-substitution id="ex-r2p-volume-square">
+    <eval-subst obj="a">5</eval-subst>
+    <eval-subst obj="val">\frac{88}{3}</eval-subst>
+  </dynamic-substitution>
+  <dynamic-substitution id="ex-r2p-volume-triangle">
+    <eval-subst obj="a">6</eval-subst>
+    <eval-subst obj="val">\frac{5}{2}</eval-subst>
+  </dynamic-substitution>
+  <dynamic-substitution id="ex-r2p-sphere-cylinder-mass">
+    <eval-subst obj="a">5</eval-subst>
+    <eval-subst obj="val">16</eval-subst>
+  </dynamic-substitution>
   <dynamic-substitution id="ex-r3p-area-change-of-variables">
     <eval-subst obj="aa">3^{2}</eval-subst>
     <eval-subst obj="bb">5^{2}</eval-subst>
