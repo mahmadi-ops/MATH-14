@@ -16,17 +16,15 @@
     <!-- never affected - only the solutions come and go.               -->
     <!--                                                                -->
     <!--   hw1-solutions ... hw9-solutions                              -->
-    <!--       the worked solutions in "Assignments with Solutions",    -->
-    <!--       one name per assignment                                  -->
+    <!--       the worked solutions carried inside the auto-graded      -->
+    <!--       exercises of "Assignments and Review Problems", one name -->
+    <!--       per assignment.  After an assignment's due date, add its -->
+    <!--       name to the list and rebuild: the solutions then appear  -->
+    <!--       printed beneath each of that assignment's problems.      -->
     <!--                                                                -->
     <!--   review3-solutions, review4-solutions                         -->
-    <!--       the worked solutions in "Review Problems with Solutions" -->
-    <!--                                                                -->
-    <!--   assignment-inline-solutions                                  -->
-    <!--       the solutions carried inside the auto-graded exercises of -->
-    <!--       the "Assignments" chapter.  Left out of the list on       -->
-    <!--       purpose, so that chapter stays a place to work rather     -->
-    <!--       than read; add the name to reveal them there too.         -->
+    <!--       the worked solutions beneath the review problems in the  -->
+    <!--       same chapter, one name per review set                    -->
     <!--                                                                -->
     <!-- To hide EVERY solution, put a name that nothing uses:          -->
     <!--     <version include="none"/>                                  -->
