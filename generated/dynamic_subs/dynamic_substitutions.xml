@@ -5,9 +5,9 @@
     <eval-subst obj="M">18</eval-subst>
   </dynamic-substitution>
   <dynamic-substitution id="ex-hw10o-cylinder-flux">
-    <eval-subst obj="a">2</eval-subst>
-    <eval-subst obj="b">6</eval-subst>
-    <eval-subst obj="rsq">3^{2}</eval-subst>
+    <eval-subst obj="a">3</eval-subst>
+    <eval-subst obj="b">7</eval-subst>
+    <eval-subst obj="rsq">9</eval-subst>
     <eval-subst obj="c">4</eval-subst>
     <eval-subst obj="rad">3</eval-subst>
     <eval-subst obj="coef">-4\cdot 3^{2}</eval-subst>
@@ -28,7 +28,7 @@
     <eval-subst obj="val">\frac{9}{2} \left(3^{2}-2^{2}\right)</eval-subst>
   </dynamic-substitution>
   <dynamic-substitution id="ex-hw10o-verify-hemisphere">
-    <eval-subst obj="rsq">3^{2}</eval-subst>
+    <eval-subst obj="rsq">9</eval-subst>
     <eval-subst obj="val">-\pi\cdot 3^{2}</eval-subst>
   </dynamic-substitution>
   <dynamic-substitution id="ex-hw10o-verify-cone">
@@ -180,7 +180,7 @@
   </dynamic-substitution>
   <dynamic-substitution id="ex-r2p-sphere-cylinder-mass">
     <eval-subst obj="a">5</eval-subst>
-    <eval-subst obj="val">16</eval-subst>
+    <eval-subst obj="val">3</eval-subst>
   </dynamic-substitution>
   <dynamic-substitution id="ex-r3p-area-change-of-variables">
     <eval-subst obj="aa">3^{2}</eval-subst>
