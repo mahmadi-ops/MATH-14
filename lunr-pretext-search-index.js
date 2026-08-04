@@ -15,8 +15,8 @@ var ptx_lunr_docs = [
   "url": "subsec-brain-map.html",
   "type": "Preface",
   "number": "",
-  "title": "Brain map: the integrals of vector calculus",
-  "body": " Brain map: the integrals of vector calculus  The map below gathers every integral of this book on one page. Parametrization feeds the line integrals; the five theorems act as bridges, trading an integral over a boundary for an integral over the region, surface, or solid it bounds; and each multiple integral carries its coordinate substitutions. Follow the gold lines. For comfortable reading, open the map full size in a new tab .   "
+  "title": "The big picture",
+  "body": " The big picture  The map below gathers every integral of this book on one page. Parametrization feeds the line integrals; the five theorems act as bridges, trading an integral over a boundary for an integral over the region, surface, or solid it bounds; and each multiple integral carries its coordinate substitutions. An arrow between two topics means the second builds on the first, and the gold arrows mark the theorem and substitution bridges between the integral types. Every topic on the map is a link to the part of the book where it is covered. For comfortable reading, open the map full size in a new tab .   "
 },
 {
   "id": "sec-parametrization",
@@ -3400,7 +3400,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "4.9",
   "title": "Assignment 9",
-  "body": " Assignment 9   Section: . Work each problem, then type your answers into the boxes and have them checked here.  Every answer box is graded separately, so a box you fill in correctly earns its credit even if another box in the same problem is wrong. Press Check Me to submit; you may check as often as you like.   How to type your answers. Numbers: a decimal number and nothing else no units, no sign, no ; give at least three decimals (for instance 18.850 , not 6pi ). Answers are accepted within a small tolerance. Words: type just the word asked for, in lower case.     The curve of : a staircase of ten unit steps from to , followed by the horizontal segment back to .   A staircase of ten unit steps from the origin to (10,10), returning along the top.          (0,0)    (10,10)    (0,10)                Work Along a Staircase   For along the path of : the curl integrand of equals .  Closing the path into a simple closed curve encloses an area of , so the integral around that closed curve is .  The work along the given path is .      Correct.     Not quite. Type a decimal number and nothing else, to at least three decimal places.       Correct: fifty plus ten halves.     Not quite. Type a decimal number and nothing else, to at least three decimal places.       Correct: twice the area.     Not quite. Type a decimal number and nothing else, to at least three decimal places.       Correct.     Not quite. Type a decimal number and nothing else, to at least three decimal places.        A Fierce-Looking Integral Around a Circle   For the integral of around the unit circle: after simplification equals (in terms of ), and the integral equals .      Correct.     Not quite. Type only the expression itself, with * for products and ^ for powers, for example 4cos(t)^2 .       Correct: pi over four.     Not quite. Type a decimal number and nothing else, to at least three decimal places.        Outward Flux Across the Unit Circle   For : the flux density of equals  , and the outward flux across the unit circle is .      Correct.     Not quite. Type only the expression itself, with * for products and ^ for powers, for example 4cos(t)^2 .       Correct: pi.     Not quite. Type a decimal number and nothing else, to at least three decimal places.        Green\\u2019s Theorem on One Petal   For around one petal of : equals .  The area of the petal is , so the line integral is .      Correct.     Not quite. Type a decimal number and nothing else, to at least three decimal places.       Correct: pi over eight.     Not quite. Type a decimal number and nothing else, to at least three decimal places.       Correct: minus pi over two.     Not quite. Type a decimal number and nothing else, to at least three decimal places.        "
+  "body": " Assignment 9   Section: . Work each problem, then type your answers into the boxes and have them checked here.  Every answer box is graded separately, so a box you fill in correctly earns its credit even if another box in the same problem is wrong. Press Check Me to submit; you may check as often as you like.   How to type your answers. Numbers: a decimal number and nothing else no units, no sign, no ; give at least three decimals (for instance 18.850 , not 6pi ). Answers are accepted within a small tolerance. Words: type just the word asked for, in lower case.     The curve of : a staircase of ten unit steps from to , followed by the horizontal segment back to .   A staircase of ten unit steps from the origin to (10,10), returning along the top.          (0,0)    (10,10)    (0,10)                Work Along a Staircase   For along the path of : the curl integrand of equals .  Closing the path into a simple closed curve encloses an area of , so the integral around that closed curve is .  The work along the given path is .      Correct.     Not quite. Type a decimal number and nothing else, to at least three decimal places.       Correct: fifty plus ten halves.     Not quite. Type a decimal number and nothing else, to at least three decimal places.       Correct: twice the area.     Not quite. Type a decimal number and nothing else, to at least three decimal places.       Correct.     Not quite. Type a decimal number and nothing else, to at least three decimal places.        A Fierce-Looking Integral Around a Circle   For the integral of around the unit circle: after simplification equals (in terms of ), and the integral equals .      Correct.     Not quite. Type only the expression itself, with * for products and ^ for powers, for example 4cos(t)^2 .       Correct: pi over four.     Not quite. Type a decimal number and nothing else, to at least three decimal places.        Outward Flux Across the Unit Circle   For : the flux density of equals  , and the outward flux across the unit circle is .      Correct.     Not quite. Type only the expression itself, with * for products and ^ for powers, for example 4cos(t)^2 .       Correct: pi.     Not quite. Type a decimal number and nothing else, to at least three decimal places.        Green's Theorem on One Petal   For around one petal of : equals .  The area of the petal is , so the line integral is .      Correct.     Not quite. Type a decimal number and nothing else, to at least three decimal places.       Correct: pi over eight.     Not quite. Type a decimal number and nothing else, to at least three decimal places.       Correct: minus pi over two.     Not quite. Type a decimal number and nothing else, to at least three decimal places.        "
 },
 {
   "id": "sec-exercises-hw9-online-2-3",
@@ -3453,8 +3453,8 @@ var ptx_lunr_docs = [
   "url": "sec-exercises-hw9-online.html#ex-hw9o-rose",
   "type": "Exercise",
   "number": "4",
-  "title": "Green\\u2019s Theorem on One Petal.",
-  "body": " Green\\u2019s Theorem on One Petal   For around one petal of : equals .  The area of the petal is , so the line integral is .      Correct.     Not quite. Type a decimal number and nothing else, to at least three decimal places.       Correct: pi over eight.     Not quite. Type a decimal number and nothing else, to at least three decimal places.       Correct: minus pi over two.     Not quite. Type a decimal number and nothing else, to at least three decimal places.      "
+  "title": "Green’s Theorem on One Petal.",
+  "body": " Green's Theorem on One Petal   For around one petal of : equals .  The area of the petal is , so the line integral is .      Correct.     Not quite. Type a decimal number and nothing else, to at least three decimal places.       Correct: pi over eight.     Not quite. Type a decimal number and nothing else, to at least three decimal places.       Correct: minus pi over two.     Not quite. Type a decimal number and nothing else, to at least three decimal places.      "
 },
 {
   "id": "sec-solutions-hw1",
@@ -3907,299 +3907,11 @@ var ptx_lunr_docs = [
   "body": "  Consider the line integral , where the curve is , , oriented counterclockwise. Note that are polar coordinates.  (a) Use Green's theorem to calculate the line integral.  (b) In physics, this line integral can be interpreted in two different ways. Briefly explain.   "
 },
 {
-  "id": "sec-exercises-review3-online",
-  "level": "1",
-  "url": "sec-exercises-review3-online.html",
-  "type": "Section",
-  "number": "6.1",
-  "title": "Review Problems #3",
-  "body": " Review Problems #3  Sections: , , and .  Work each problem yourself first; the full solution follows immediately below it. The same thirteen problems, with the numbers randomised and every answer checked automatically, are in .   Area by a Non-Linear Change of Variables   Compute the area of the region in the first quadrant of the -plane bounded by   Sketch , then use the non-linear change of variables , : find and as functions of and , compute the Jacobian determinant, set up the double integral for the area, and evaluate it.     Area of a Tilted Ellipse by a Shear   Use the change of variables , to find the area of the region bounded by   Invert the change of variables, find the Jacobian determinant, and then the area.     A Double Integral Under a Parabolic Change of Variables   Use the change of variables , to evaluate   over the region in the first quadrant bounded by , , , and . (Take the positive square root when inverting, since lies in the first quadrant.)     A Triple Integral Over an Ellipsoid   Calculate the triple integral   where is the region bounded by the ellipsoid . Use the change of variables , , , which carries to the unit ball.     Centre of Mass of a Tetrahedron   Find the mass and the centre of mass of the solid bounded by the planes , , , and , assuming a mass density of .     Mass and Centre of Mass of a Rectangular Lamina   A lamina occupies the part of the rectangle , , and the density at each point is given by the function . What is the total mass, and where is the centre of mass?     Volume Between Two Spheres in Spherical Coordinates   Find the volume of the region outside the sphere and inside the half sphere , with .     A Triple Integral Over a Spherical Shell   Evaluate, in spherical coordinates, the triple integral of over the region , , .     An Exponential Integral Between Two Spheres   Use spherical coordinates to evaluate the triple integral   where is the region bounded by the spheres and .     The Jacobian of a Linear Transformation   Consider the transformation from -coordinates to -coordinates given by   Find the four partial derivatives of the transformation, and then its Jacobian.     A Quadratic Map and the Integral It Simplifies   The map carries the triangle onto the domain in the first quadrant bounded by , , and the parabola through the image of the edge . Use to evaluate      Centre of Gravity of a Region Between Two Curves   The region is bounded by the curves , , and the -axis, and its mass density is . Find the limits of the iterated integral describing , evaluate the three integrals of , and over , and use them to locate the centre of gravity of .     Centre of Mass of a Quarter Disc   Find the centre of mass of the quarter disc of radius lying under for , with constant density. (Use symmetry.)    "
-},
-{
-  "id": "ex-r3o-area-change-of-variables",
-  "level": "2",
-  "url": "sec-exercises-review3-online.html#ex-r3o-area-change-of-variables",
-  "type": "Problem",
-  "number": "6.1.1",
-  "title": "Area by a Non-Linear Change of Variables.",
-  "body": " Area by a Non-Linear Change of Variables   Compute the area of the region in the first quadrant of the -plane bounded by   Sketch , then use the non-linear change of variables , : find and as functions of and , compute the Jacobian determinant, set up the double integral for the area, and evaluate it.   "
-},
-{
-  "id": "ex-r3o-shear-ellipse-area",
-  "level": "2",
-  "url": "sec-exercises-review3-online.html#ex-r3o-shear-ellipse-area",
-  "type": "Problem",
-  "number": "6.1.2",
-  "title": "Area of a Tilted Ellipse by a Shear.",
-  "body": " Area of a Tilted Ellipse by a Shear   Use the change of variables , to find the area of the region bounded by   Invert the change of variables, find the Jacobian determinant, and then the area.   "
-},
-{
-  "id": "ex-r3o-parabolic-strip",
-  "level": "2",
-  "url": "sec-exercises-review3-online.html#ex-r3o-parabolic-strip",
-  "type": "Problem",
-  "number": "6.1.3",
-  "title": "A Double Integral Under a Parabolic Change of Variables.",
-  "body": " A Double Integral Under a Parabolic Change of Variables   Use the change of variables , to evaluate   over the region in the first quadrant bounded by , , , and . (Take the positive square root when inverting, since lies in the first quadrant.)   "
-},
-{
-  "id": "ex-r3o-ellipsoid-integral",
-  "level": "2",
-  "url": "sec-exercises-review3-online.html#ex-r3o-ellipsoid-integral",
-  "type": "Problem",
-  "number": "6.1.4",
-  "title": "A Triple Integral Over an Ellipsoid.",
-  "body": " A Triple Integral Over an Ellipsoid   Calculate the triple integral   where is the region bounded by the ellipsoid . Use the change of variables , , , which carries to the unit ball.   "
-},
-{
-  "id": "ex-r3o-tetrahedron-com",
-  "level": "2",
-  "url": "sec-exercises-review3-online.html#ex-r3o-tetrahedron-com",
-  "type": "Problem",
-  "number": "6.1.5",
-  "title": "Centre of Mass of a Tetrahedron.",
-  "body": " Centre of Mass of a Tetrahedron   Find the mass and the centre of mass of the solid bounded by the planes , , , and , assuming a mass density of .   "
-},
-{
-  "id": "ex-r3o-lamina-rectangle",
-  "level": "2",
-  "url": "sec-exercises-review3-online.html#ex-r3o-lamina-rectangle",
-  "type": "Problem",
-  "number": "6.1.6",
-  "title": "Mass and Centre of Mass of a Rectangular Lamina.",
-  "body": " Mass and Centre of Mass of a Rectangular Lamina   A lamina occupies the part of the rectangle , , and the density at each point is given by the function . What is the total mass, and where is the centre of mass?   "
-},
-{
-  "id": "ex-r3o-sphere-minus-sphere",
-  "level": "2",
-  "url": "sec-exercises-review3-online.html#ex-r3o-sphere-minus-sphere",
-  "type": "Problem",
-  "number": "6.1.7",
-  "title": "Volume Between Two Spheres in Spherical Coordinates.",
-  "body": " Volume Between Two Spheres in Spherical Coordinates   Find the volume of the region outside the sphere and inside the half sphere , with .   "
-},
-{
-  "id": "ex-r3o-spherical-shell",
-  "level": "2",
-  "url": "sec-exercises-review3-online.html#ex-r3o-spherical-shell",
-  "type": "Problem",
-  "number": "6.1.8",
-  "title": "A Triple Integral Over a Spherical Shell.",
-  "body": " A Triple Integral Over a Spherical Shell   Evaluate, in spherical coordinates, the triple integral of over the region , , .   "
-},
-{
-  "id": "ex-r3o-gaussian-shell",
-  "level": "2",
-  "url": "sec-exercises-review3-online.html#ex-r3o-gaussian-shell",
-  "type": "Problem",
-  "number": "6.1.9",
-  "title": "An Exponential Integral Between Two Spheres.",
-  "body": " An Exponential Integral Between Two Spheres   Use spherical coordinates to evaluate the triple integral   where is the region bounded by the spheres and .   "
-},
-{
-  "id": "ex-r3o-linear-jacobian",
-  "level": "2",
-  "url": "sec-exercises-review3-online.html#ex-r3o-linear-jacobian",
-  "type": "Problem",
-  "number": "6.1.10",
-  "title": "The Jacobian of a Linear Transformation.",
-  "body": " The Jacobian of a Linear Transformation   Consider the transformation from -coordinates to -coordinates given by   Find the four partial derivatives of the transformation, and then its Jacobian.   "
-},
-{
-  "id": "ex-r3o-quadratic-map",
-  "level": "2",
-  "url": "sec-exercises-review3-online.html#ex-r3o-quadratic-map",
-  "type": "Problem",
-  "number": "6.1.11",
-  "title": "A Quadratic Map and the Integral It Simplifies.",
-  "body": " A Quadratic Map and the Integral It Simplifies   The map carries the triangle onto the domain in the first quadrant bounded by , , and the parabola through the image of the edge . Use to evaluate    "
-},
-{
-  "id": "ex-r3o-centre-of-gravity",
-  "level": "2",
-  "url": "sec-exercises-review3-online.html#ex-r3o-centre-of-gravity",
-  "type": "Problem",
-  "number": "6.1.12",
-  "title": "Centre of Gravity of a Region Between Two Curves.",
-  "body": " Centre of Gravity of a Region Between Two Curves   The region is bounded by the curves , , and the -axis, and its mass density is . Find the limits of the iterated integral describing , evaluate the three integrals of , and over , and use them to locate the centre of gravity of .   "
-},
-{
-  "id": "ex-r3o-quarter-disc-com",
-  "level": "2",
-  "url": "sec-exercises-review3-online.html#ex-r3o-quarter-disc-com",
-  "type": "Problem",
-  "number": "6.1.13",
-  "title": "Centre of Mass of a Quarter Disc.",
-  "body": " Centre of Mass of a Quarter Disc   Find the centre of mass of the quarter disc of radius lying under for , with constant density. (Use symmetry.)   "
-},
-{
-  "id": "sec-exercises-review4-online",
-  "level": "1",
-  "url": "sec-exercises-review4-online.html",
-  "type": "Section",
-  "number": "6.2",
-  "title": "Review Problems #4",
-  "body": " Review Problems #4  Sections: , , and .  Work each problem yourself first; the full solution follows immediately below it. The same sixteen problems, with the numbers randomised and every answer checked automatically, are in .   Outward Flux Through the Surface of a Box   Evaluate the outward flux of the vector field   through the surface of the solid box given by , , . Set up the triple integral that the Divergence Theorem provides, and evaluate it.     The Box With the Largest Flux   Let and .  (a) Find the flux of out of the rectangular solid , , , as an expression in , and .  (b) For which values of , and is that flux largest, and what is the largest flux?     Verifying the Divergence Theorem on a Cylinder   Verify the Divergence Theorem for the vector field   and the region , : compute the flux across the closed surface directly, compute over the solid, and check that the two agree.     Flux Through a Sphere   Use the Divergence Theorem to evaluate the surface integral , where   and is the sphere , oriented outward.     Flux Through a Paraboloid Cap   Let . Use the Divergence Theorem to find the flux of across the part of the paraboloid that lies above the plane and is oriented upward.     Radial Field Through a Closed Cylinder   Compute the flux of the vector field through the surface , which is a closed cylinder of radius centered on the -axis, with , and oriented outward.     Flux Through a Helicoid   Evaluate , where the vector field is and the parametrized surface is the helicoid   oriented upward.     Flux Through a Paraboloid, Directly   Compute the flux of the vector field through the surface , which is the part of the surface above the disk of radius centered at the origin, oriented upward .     The parallelogram of , with its orientation. Note the direction of the arrows.   A parallelogram anchored at the origin with arrows showing its boundary orientation.            (0,0)    (x_0,0)    (x_0,y_0)    (2x_0,y_0)                  Work Around a Parallelogram   Use Green's Theorem to evaluate the work done by in moving an object around the boundary of the parallelogram in ( note the orientation ), with and . Assume that the object circulates only once around the boundary, and that its motion begins at the origin and ends at the same point.     Three Gradient Fields and the Unit Circle   (a) Each of the vector fields   is a gradient vector field on some domain (not necessarily the whole plane). Find potential functions for and , choosing the constant so that the potential is at the origin, and find the constant for which is a potential function for .  (b) Find the line integrals of , and around the curve , the unit circle in the -plane centered at the origin and traversed counterclockwise.  (c) For which of the three vector fields can Green's Theorem be used to calculate the line integral in part (b), and why?     Circulation Around a Rectangle   Use Green's Theorem to calculate the circulation of around the rectangle , , oriented counterclockwise.     Circulation Around a Circle   Use Green's Theorem to calculate   where is the circular path with center and radius , oriented counterclockwise.     Divergence of a Family of Radial Fields   Let and consider the vector field , where and is a constant. Note that has no -component and is independent of .  (a) Find , and show that it can be written in the form for constants and depending on .  (b) For what values of is positive, negative, or zero?  (c) What is the sign of the flux out of a small sphere centered at when , and when ? How would your answers change for a small sphere centered at the origin?     Flux Through a Slanted Cylinder Band   Compute the flux of through the surface of the cylinder bounded below by the plane , above by the plane , and oriented away from the -axis . Note that we are only interested in the flux through the curved surface of the cylinder.     Flux Out of a Closed Cone   Find the flux of out of the closed cone , with .     Flux Through the Surface of a Tetrahedron   Use the Divergence Theorem to calculate the flux of across , where and is the surface of the tetrahedron enclosed by the coordinate planes and the plane     "
-},
-{
-  "id": "ex-r4o-box-flux",
-  "level": "2",
-  "url": "sec-exercises-review4-online.html#ex-r4o-box-flux",
-  "type": "Problem",
-  "number": "6.2.1",
-  "title": "Outward Flux Through the Surface of a Box.",
-  "body": " Outward Flux Through the Surface of a Box   Evaluate the outward flux of the vector field   through the surface of the solid box given by , , . Set up the triple integral that the Divergence Theorem provides, and evaluate it.   "
-},
-{
-  "id": "ex-r4o-box-div-max",
-  "level": "2",
-  "url": "sec-exercises-review4-online.html#ex-r4o-box-div-max",
-  "type": "Problem",
-  "number": "6.2.2",
-  "title": "The Box With the Largest Flux.",
-  "body": " The Box With the Largest Flux   Let and .  (a) Find the flux of out of the rectangular solid , , , as an expression in , and .  (b) For which values of , and is that flux largest, and what is the largest flux?   "
-},
-{
-  "id": "ex-r4o-verify-cylinder",
-  "level": "2",
-  "url": "sec-exercises-review4-online.html#ex-r4o-verify-cylinder",
-  "type": "Problem",
-  "number": "6.2.3",
-  "title": "Verifying the Divergence Theorem on a Cylinder.",
-  "body": " Verifying the Divergence Theorem on a Cylinder   Verify the Divergence Theorem for the vector field   and the region , : compute the flux across the closed surface directly, compute over the solid, and check that the two agree.   "
-},
-{
-  "id": "ex-r4o-sphere",
-  "level": "2",
-  "url": "sec-exercises-review4-online.html#ex-r4o-sphere",
-  "type": "Problem",
-  "number": "6.2.4",
-  "title": "Flux Through a Sphere.",
-  "body": " Flux Through a Sphere   Use the Divergence Theorem to evaluate the surface integral , where   and is the sphere , oriented outward.   "
-},
-{
-  "id": "ex-r4o-paraboloid-cap",
-  "level": "2",
-  "url": "sec-exercises-review4-online.html#ex-r4o-paraboloid-cap",
-  "type": "Problem",
-  "number": "6.2.5",
-  "title": "Flux Through a Paraboloid Cap.",
-  "body": " Flux Through a Paraboloid Cap   Let . Use the Divergence Theorem to find the flux of across the part of the paraboloid that lies above the plane and is oriented upward.   "
-},
-{
-  "id": "ex-r4o-cylinder-x-axis",
-  "level": "2",
-  "url": "sec-exercises-review4-online.html#ex-r4o-cylinder-x-axis",
-  "type": "Problem",
-  "number": "6.2.6",
-  "title": "Radial Field Through a Closed Cylinder.",
-  "body": " Radial Field Through a Closed Cylinder   Compute the flux of the vector field through the surface , which is a closed cylinder of radius centered on the -axis, with , and oriented outward.   "
-},
-{
-  "id": "ex-r4o-helicoid",
-  "level": "2",
-  "url": "sec-exercises-review4-online.html#ex-r4o-helicoid",
-  "type": "Problem",
-  "number": "6.2.7",
-  "title": "Flux Through a Helicoid.",
-  "body": " Flux Through a Helicoid   Evaluate , where the vector field is and the parametrized surface is the helicoid   oriented upward.   "
-},
-{
-  "id": "ex-r4o-paraboloid-updisk",
-  "level": "2",
-  "url": "sec-exercises-review4-online.html#ex-r4o-paraboloid-updisk",
-  "type": "Problem",
-  "number": "6.2.8",
-  "title": "Flux Through a Paraboloid, Directly.",
-  "body": " Flux Through a Paraboloid, Directly   Compute the flux of the vector field through the surface , which is the part of the surface above the disk of radius centered at the origin, oriented upward .   "
-},
-{
-  "id": "fig-r4o-parallelogram",
-  "level": "2",
-  "url": "sec-exercises-review4-online.html#fig-r4o-parallelogram",
-  "type": "Figure",
-  "number": "6.2.9",
-  "title": "",
-  "body": " The parallelogram of , with its orientation. Note the direction of the arrows.   A parallelogram anchored at the origin with arrows showing its boundary orientation.            (0,0)    (x_0,0)    (x_0,y_0)    (2x_0,y_0)                "
-},
-{
-  "id": "ex-r4o-parallelogram",
-  "level": "2",
-  "url": "sec-exercises-review4-online.html#ex-r4o-parallelogram",
-  "type": "Problem",
-  "number": "6.2.10",
-  "title": "Work Around a Parallelogram.",
-  "body": " Work Around a Parallelogram   Use Green's Theorem to evaluate the work done by in moving an object around the boundary of the parallelogram in ( note the orientation ), with and . Assume that the object circulates only once around the boundary, and that its motion begins at the origin and ends at the same point.   "
-},
-{
-  "id": "ex-r4o-three-fields",
-  "level": "2",
-  "url": "sec-exercises-review4-online.html#ex-r4o-three-fields",
-  "type": "Problem",
-  "number": "6.2.11",
-  "title": "Three Gradient Fields and the Unit Circle.",
-  "body": " Three Gradient Fields and the Unit Circle   (a) Each of the vector fields   is a gradient vector field on some domain (not necessarily the whole plane). Find potential functions for and , choosing the constant so that the potential is at the origin, and find the constant for which is a potential function for .  (b) Find the line integrals of , and around the curve , the unit circle in the -plane centered at the origin and traversed counterclockwise.  (c) For which of the three vector fields can Green's Theorem be used to calculate the line integral in part (b), and why?   "
-},
-{
-  "id": "ex-r4o-rect-circulation",
-  "level": "2",
-  "url": "sec-exercises-review4-online.html#ex-r4o-rect-circulation",
-  "type": "Problem",
-  "number": "6.2.12",
-  "title": "Circulation Around a Rectangle.",
-  "body": " Circulation Around a Rectangle   Use Green's Theorem to calculate the circulation of around the rectangle , , oriented counterclockwise.   "
-},
-{
-  "id": "ex-r4o-circle-green",
-  "level": "2",
-  "url": "sec-exercises-review4-online.html#ex-r4o-circle-green",
-  "type": "Problem",
-  "number": "6.2.13",
-  "title": "Circulation Around a Circle.",
-  "body": " Circulation Around a Circle   Use Green's Theorem to calculate   where is the circular path with center and radius , oriented counterclockwise.   "
-},
-{
-  "id": "ex-r4o-radial-power",
-  "level": "2",
-  "url": "sec-exercises-review4-online.html#ex-r4o-radial-power",
-  "type": "Problem",
-  "number": "6.2.14",
-  "title": "Divergence of a Family of Radial Fields.",
-  "body": " Divergence of a Family of Radial Fields   Let and consider the vector field , where and is a constant. Note that has no -component and is independent of .  (a) Find , and show that it can be written in the form for constants and depending on .  (b) For what values of is positive, negative, or zero?  (c) What is the sign of the flux out of a small sphere centered at when , and when ? How would your answers change for a small sphere centered at the origin?   "
-},
-{
-  "id": "ex-r4o-cylinder-band",
-  "level": "2",
-  "url": "sec-exercises-review4-online.html#ex-r4o-cylinder-band",
-  "type": "Problem",
-  "number": "6.2.15",
-  "title": "Flux Through a Slanted Cylinder Band.",
-  "body": " Flux Through a Slanted Cylinder Band   Compute the flux of through the surface of the cylinder bounded below by the plane , above by the plane , and oriented away from the -axis . Note that we are only interested in the flux through the curved surface of the cylinder.   "
-},
-{
-  "id": "ex-r4o-cone",
-  "level": "2",
-  "url": "sec-exercises-review4-online.html#ex-r4o-cone",
-  "type": "Problem",
-  "number": "6.2.16",
-  "title": "Flux Out of a Closed Cone.",
-  "body": " Flux Out of a Closed Cone   Find the flux of out of the closed cone , with .   "
-},
-{
-  "id": "ex-r4o-tetrahedron",
-  "level": "2",
-  "url": "sec-exercises-review4-online.html#ex-r4o-tetrahedron",
-  "type": "Problem",
-  "number": "6.2.17",
-  "title": "Flux Through the Surface of a Tetrahedron.",
-  "body": " Flux Through the Surface of a Tetrahedron   Use the Divergence Theorem to calculate the flux of across , where and is the surface of the tetrahedron enclosed by the coordinate planes and the plane    "
-},
-{
   "id": "sec-exercises-review3-practice",
   "level": "1",
   "url": "sec-exercises-review3-practice.html",
   "type": "Section",
-  "number": "7.1",
+  "number": "6.1",
   "title": "Review Problems #3—Practice",
   "body": " Review Problems #3 Practice   Sections: , , and . Work each problem, then type your answers into the boxes and have them checked here.  Every answer box is graded separately, so a box you fill in correctly earns its credit even if another box in the same problem is wrong. Press Check Me to submit; you may check as often as you like.  This chapter is for testing yourself, so it contains the questions only. Checking an answer tells you whether it is right or wrong and nothing more no hints, no worked feedback, and no solutions. The same problems, with complete solutions, are in .   How to type your answers.      Give exact answers, not decimals. A rounded decimal will be marked wrong, even to several places. Type the exact value: pi*8^3\/2 rather than 1608.495 , and 4*5\/(3*pi) rather than 2.122 . A whole number or an exact fraction may of course be typed as it stands, so 77 and 7\/3 are both fine.     How to type it. Write products with * and powers with ^ , and write functions with parentheses: sqrt(s-t) , ln(9) , exp(-4) . Use pi for . So is typed u^2\/v , and is typed 2*pi*(exp(-1)-exp(-4)) . Spaces are ignored.     Any equivalent form counts. Your answer is compared to the exact value, not to one particular way of writing it, so 2*pi*exp(-1)-2*pi*exp(-4) is accepted just as readily as 2*pi*(exp(-1)-exp(-4)) . Do not simplify on our account just do not round.          Area by a Non-Linear Change of Variables          a^2    b^2    1    u^2\/v    v\/u    2*u\/v    -u^2\/v^2    -v\/u^2    1\/u    1\/v    (aa-1)*ln(bb)     Compute the area of the region in the first quadrant of the -plane bounded by    Part A. Sketch the region . (Nothing to submit for this part the sketch is for your own use in the parts that follow.)   Part B. Using the non-linear change of variables and , find and as functions of and .           Part C. Find the four partial derivatives in the Jacobian matrix of this change of variables, and then its determinant.    ,      ,         Part D. Using the change of variables, set up a double integral for the area of in the form   , where    ,  ,  , and  .   Part E. Evaluate the double integral to find the area of .  Area          Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.           Area of a Tilted Ellipse by a Shear       2*a    a^2+1    s-a*t    t    1    pi     Use the change of variables , to find the area of the region bounded by    Part A. Invert the change of variables.    ,     Part B. Find the Jacobian determinant .       Part C. Find the area of the region.  Area          Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.           A Double Integral Under a Parabolic Change of Variables          b^2    -a    0    sqrt(s-t)    s    1\/(2*sqrt(s-t))    1\/2    a*bsq\/2     Use the change of variables , to evaluate over the region in the first quadrant bounded by , , , and .   Part A. Invert the change of variables. (Take the positive square root, since lies in the first quadrant.)    ,     Part B. Find the Jacobian determinant.       Part C. The region becomes a rectangle in the -plane. Give its limits.   runs from to , and runs from to .   Part D. After the substitution, the integrand times the Jacobian simplifies to a constant. What is it?       Part E. Evaluate the integral.            Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.           A Triple Integral Over an Ellipsoid             a*b*c    4*a*b*c*pi\/5     Calculate the triple integral   where is the region bounded by the ellipsoid .   Part A. Use the change of variables , , , which carries to the unit ball. What is the Jacobian determinant ?       Part B. Evaluate the triple integral.            Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.           Centre of Mass of a Tetrahedron       8*k\/105    2\/9    2\/9    1\/3     Find the centre of mass of the solid bounded by the planes , , , and , assuming a mass density of .   Part A. Find the mass of the solid.       Part B. Find the coordinates of the centre of mass.    ,  ,          Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.           Mass and Centre of Mass of a Rectangular Lamina                   A^2*B*C\/2+B^2*D*A\/2+E*A*B    C*A^3*B\/3+D*A^2*B^2\/4+E*A^2*B\/2    C*A^2*B^2\/4+D*A*B^3\/3+E*A*B^2\/2    xmom\/mass    ymom\/mass     A lamina occupies the part of the rectangle , , and the density at each point is given by the function .   Part A. What is the total mass?       Part B. Where is the centre of mass?    ,          Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.           Volume Between Two Spheres in Spherical Coordinates       pi*a^3\/2     Find the volume of the region outside the sphere and inside the half sphere , with .  Volume          Correct.       Not correct yet check your work and try again.           A Triple Integral Over a Spherical Shell          r0+gap    (r1^3-r0^3)\/3    pi*(r1^3-r0^3)\/3     Evaluate, in spherical coordinates, the triple integral of over the region , , .   Part A. The -integral separates from the rest. Evaluate it.       Part B. Evaluate the whole integral.  Integral          Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.           An Exponential Integral Between Two Spheres          a+gap    a^2    b^2    2*pi*(exp(-asq)-exp(-bsq))     Use spherical coordinates to evaluate the triple integral   where is the region bounded by the spheres and .  Answer          Correct.       Not correct yet check your work and try again.           The Jacobian of a Linear Transformation                p*s-q*r    p    q    r    s     Consider the transformation from -coordinates to -coordinates given by    Part A. Find the four partial derivatives.    ,  ,  ,     Part B. Compute the Jacobian of this transformation.            Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.           A Quadratic Map and the Integral It Simplifies       u^2+v^2    4*(u^2+v^2)    56*a^6\/45     The map carries the triangle onto the domain in the first quadrant bounded by , , and the parabola through the image of the edge . Use to evaluate    Part A. Express the integrand in terms of and .       Part B. Find the Jacobian of .       Part C. Evaluate the integral.            Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.           Centre of Gravity of a Region Between Two Curves          0    (-m+sqrt(m^2+4*b))\/2    m*x    b-x^2    xstar^6\/12+(-b-m^2\/2)*xstar^4\/4+b^2*xstar^2\/4    xstar^7\/14+(-b-m^2\/2)*xstar^5\/5+b^2*xstar^3\/6    -xstar^8\/24+b*xstar^6\/6-m^3*xstar^5\/15-b^2*xstar^4\/4+b^3*xstar^2\/6    xmom\/mass    ymom\/mass     The region is bounded by the curves , , and the -axis, and its mass density is . To find the centre of gravity of you would compute the three integrals , , and , where    ,      ,                and finally the centre of gravity is    ,          Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.           Centre of Mass of a Quarter Disc       4*r\/(3*pi)     The centre of mass of the quarter disc of radius lying under for , with constant density, is a point .    ,     Hint. Use symmetry.        Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.        "
 },
@@ -4361,7 +4073,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "sec-exercises-review4-practice.html",
   "type": "Section",
-  "number": "7.2",
+  "number": "6.2",
   "title": "Review Problems #4—Practice",
   "body": " Review Problems #4 Practice   Sections: , , and . Work each problem, then type your answers into the boxes and have them checked here.  Every answer box is graded separately, so a box you fill in correctly earns its credit even if another box in the same problem is wrong. Press Check Me to submit; you may check as often as you like.  This chapter is for testing yourself, so it contains the questions only. Checking an answer tells you whether it is right or wrong and nothing more no hints, no worked feedback, and no solutions. The same problems, with complete solutions, are in .   How to type your answers.      Numbers. Type a decimal number and nothing else no units, no sign, no . Give at least three decimal places (for instance 18.850 , not 6pi ). Answers are accepted within a small tolerance, so a little rounding is fine.     Expressions. Type only the expression itself. Write products with * and powers with ^ , and write functions with parentheses: cos(u) , sqrt(x^2+y^2) , e^z . So the expression is typed 2*x + e^z . Spaces are ignored.     Words. Type just the word or letters asked for, in lower case unless the problem says otherwise.          Outward Flux Through the Surface of a Box                0    2*A*x+e^z    A*p^2*q*s+p*q*(e^s-1)    A*x^2+z^4+e^z     Evaluate the outward flux of the vector field   through the surface of the solid box given by , , .   Part A. By the Divergence Theorem the flux equals   , where    ,  ,  ,  ,  , and  .   Part B. Evaluate the integral that you set up in the previous part.  Flux  .        Correct.       Not correct yet check your work and try again.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.           The Box With the Largest Flux          2*k       k*(2*A*a-a^2)*b*c    k*A^2*M^2     Let and .  (a) Find the flux of out of the rectangular solid , , , as an expression in , and .  flux    (b) For what values of , , is the flux largest?    ,  ,    (c) What is that largest flux?  flux          Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.           Verifying the Divergence Theorem on a Cylinder                A*h*pi     Verify the Divergence Theorem for the vector field and region:   and the region , . Give each side as a decimal number.                Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.           Flux Through a Sphere       R^2       3*x^2+3*z^2    8*pi*R^5\/5     Use the Divergence Theorem to evaluate the surface integral , where   and is the sphere , oriented outward.                Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.           Flux Through a Paraboloid Cap             (2*u-1)*t    1+a^2    b*(a^4\/2+a^2)*pi     Let . Use the Divergence Theorem to find the flux of across the part of the paraboloid that lies above the plane and is oriented upward.    (a number)            Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.           Radial Field Through a Closed Cylinder          3    6*pi*R^2*L     Compute the flux of the vector field through the surface , which is a closed cylinder of radius centered on the -axis, with , and oriented outward.    (a number)  Flux          Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.           Flux Through a Helicoid       w\/2    (w\/2)*(sin(u)-cos(u)+v)    (w\/2)*(2+pi\/2)    (w\/2)*(cos(u)-sin(u)-v)     Evaluate , where the vector field and the parametrized surface is the helicoid   oriented upward.  First compute the integrand (as an expression in and ):              Correct.       Not correct yet check your work and try again.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.           Flux Through a Paraboloid, Directly          R^2    2*a*(x^2+y^2)    pi*a*R^4     Compute the flux of the vector field through the surface , which is the part of the surface above the disk of radius centered at the origin, oriented upward .  Writing , we have , so (as an expression in and )    Flux          Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.           The parallelogram of , with its orientation. Note the direction of the arrows.   A parallelogram anchored at the origin with arrows showing its boundary orientation.            (0,0)    (x_0,0)    (x_0,y_0)    (2x_0,y_0)                  Work Around a Parallelogram                A    x0*y0    -A*x0*y0    A*x0*y0     Use Green's Theorem to evaluate the work done by in moving an object around the boundary of the parallelogram in ( note the orientation ), with and . Assume that the object circulates only once around the boundary and that its motion begins at the origin and ends at the same point.  With , first compute (a number):    The area of the parallelogram is .  Work          Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.       Not correct yet check your work and try again.           Three Gradient Fields and the Unit Circle             a1*x*y    a3*sqrt(x^2+y^2)    0    -2*pi*a2    2*pi*a2     (a) Each of the vector fields   is a gradient vector field on some domain (not necessarily the whole plane). Find potential functions for and , choosing the constant so that the potential is at the origin; and find the constant for the potential of .  For :    For : with    For :    (b) Find the line integrals of , , around the curve given to be the unit circle in the -plane, centered at the origin, and traversed counterclockwise.    ,  ,    (c) For which of the three vector fields can Green's Theorem be used to calculate the line integral in part (b)? Type the letters of all that apply, with no spaces (for example fg ):    (Be sure that you are able to explain why or why not.)         Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.       f   Correct.     fgh   Not correct yet check your work and try again.     .*   Not correct yet check your work and try again.           Circulation Around a Rectangle             -a*x    -a*x0^2*y0\/2    a*x     Use Green's Theorem to calculate the circulation of around the rectangle , , oriented counterclockwise.  With , first compute (as an expression in and ):    circulation          Correct.       Not correct yet check your work and try again.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.           Circulation Around a Circle                   c2+(2*u-1)*d0       (2*u-1)*d0    (2*u-1)*d0*pi*m^2     Calculate , where is the circular path with center and radius , oriented counterclockwise. Use Green's Theorem.  With , first compute (a number):              Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.           Divergence of a Family of Radial Fields          -2+pp    -2-qq    2+A    A    -2     Let and consider the vector field , where and is a constant. has no -component and is independent of .  (a) Find , and show that it can be written in the form . As expressions in :    , and  .  (b) For what values of is positive, negative, or zero?   is positive for  , negative for  , and zero for  .  (c) Suppose that . What is the sign of the flux out of a small sphere centered at ? Type positive or negative :   If instead , what is the sign of the flux out of a small sphere centered at ?    (Be sure you can say how your answers in part (c) would change if the question were about a small sphere centered at .)         Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.       positive   Correct.     .*   Not correct yet check your work and try again.       negative   Correct.     .*   Not correct yet check your work and try again.           Flux Through a Slanted Cylinder Band       R^2          z0+dz    2*pi*R^2*dz     Compute the flux of through the surface of the cylinder bounded below by the plane , above by the plane , and oriented away from the -axis . Note that we are only interested in the flux through the curved surface of the cylinder.  On the cylinder,  (a number).  Flux          Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.           Flux Out of a Closed Cone                2*a*y    a*r^4*pi\/2     Find the flux of out of the closed cone , with .    (an expression in , , )  flux          Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.           Flux Through the Surface of a Tetrahedron             1+x    a*b*c*(a+4)\/24    a*b*c\/6     Use the Divergence Theorem to calculate the flux of across , where and is the surface of the tetrahedron enclosed by the coordinate planes and the plane     (an expression in , , )            Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.       Not correct yet check your work and try again.        "
 },
@@ -4478,7 +4190,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-exercises-review4-practice.html#fig-r4p-parallelogram",
   "type": "Figure",
-  "number": "7.2.1",
+  "number": "6.2.1",
   "title": "",
   "body": " The parallelogram of , with its orientation. Note the direction of the arrows.   A parallelogram anchored at the origin with arrows showing its boundary orientation.            (0,0)    (x_0,0)    (x_0,y_0)    (2x_0,y_0)                "
 },
@@ -4553,6 +4265,294 @@ var ptx_lunr_docs = [
   "number": "16",
   "title": "Flux Through the Surface of a Tetrahedron.",
   "body": " Flux Through the Surface of a Tetrahedron             1+x    a*b*c*(a+4)\/24    a*b*c\/6     Use the Divergence Theorem to calculate the flux of across , where and is the surface of the tetrahedron enclosed by the coordinate planes and the plane     (an expression in , , )            Correct.       Not correct yet check your work and try again.         Correct.       Not correct yet check your work and try again.       Not correct yet check your work and try again.      "
+},
+{
+  "id": "sec-exercises-review3-online",
+  "level": "1",
+  "url": "sec-exercises-review3-online.html",
+  "type": "Section",
+  "number": "7.1",
+  "title": "Review Problems #3",
+  "body": " Review Problems #3  Sections: , , and .  Work each problem yourself first; the full solution follows immediately below it. The same thirteen problems, with the numbers randomised and every answer checked automatically, are in .   Area by a Non-Linear Change of Variables   Compute the area of the region in the first quadrant of the -plane bounded by   Sketch , then use the non-linear change of variables , : find and as functions of and , compute the Jacobian determinant, set up the double integral for the area, and evaluate it.     Area of a Tilted Ellipse by a Shear   Use the change of variables , to find the area of the region bounded by   Invert the change of variables, find the Jacobian determinant, and then the area.     A Double Integral Under a Parabolic Change of Variables   Use the change of variables , to evaluate   over the region in the first quadrant bounded by , , , and . (Take the positive square root when inverting, since lies in the first quadrant.)     A Triple Integral Over an Ellipsoid   Calculate the triple integral   where is the region bounded by the ellipsoid . Use the change of variables , , , which carries to the unit ball.     Centre of Mass of a Tetrahedron   Find the mass and the centre of mass of the solid bounded by the planes , , , and , assuming a mass density of .     Mass and Centre of Mass of a Rectangular Lamina   A lamina occupies the part of the rectangle , , and the density at each point is given by the function . What is the total mass, and where is the centre of mass?     Volume Between Two Spheres in Spherical Coordinates   Find the volume of the region outside the sphere and inside the half sphere , with .     A Triple Integral Over a Spherical Shell   Evaluate, in spherical coordinates, the triple integral of over the region , , .     An Exponential Integral Between Two Spheres   Use spherical coordinates to evaluate the triple integral   where is the region bounded by the spheres and .     The Jacobian of a Linear Transformation   Consider the transformation from -coordinates to -coordinates given by   Find the four partial derivatives of the transformation, and then its Jacobian.     A Quadratic Map and the Integral It Simplifies   The map carries the triangle onto the domain in the first quadrant bounded by , , and the parabola through the image of the edge . Use to evaluate      Centre of Gravity of a Region Between Two Curves   The region is bounded by the curves , , and the -axis, and its mass density is . Find the limits of the iterated integral describing , evaluate the three integrals of , and over , and use them to locate the centre of gravity of .     Centre of Mass of a Quarter Disc   Find the centre of mass of the quarter disc of radius lying under for , with constant density. (Use symmetry.)    "
+},
+{
+  "id": "ex-r3o-area-change-of-variables",
+  "level": "2",
+  "url": "sec-exercises-review3-online.html#ex-r3o-area-change-of-variables",
+  "type": "Problem",
+  "number": "7.1.1",
+  "title": "Area by a Non-Linear Change of Variables.",
+  "body": " Area by a Non-Linear Change of Variables   Compute the area of the region in the first quadrant of the -plane bounded by   Sketch , then use the non-linear change of variables , : find and as functions of and , compute the Jacobian determinant, set up the double integral for the area, and evaluate it.   "
+},
+{
+  "id": "ex-r3o-shear-ellipse-area",
+  "level": "2",
+  "url": "sec-exercises-review3-online.html#ex-r3o-shear-ellipse-area",
+  "type": "Problem",
+  "number": "7.1.2",
+  "title": "Area of a Tilted Ellipse by a Shear.",
+  "body": " Area of a Tilted Ellipse by a Shear   Use the change of variables , to find the area of the region bounded by   Invert the change of variables, find the Jacobian determinant, and then the area.   "
+},
+{
+  "id": "ex-r3o-parabolic-strip",
+  "level": "2",
+  "url": "sec-exercises-review3-online.html#ex-r3o-parabolic-strip",
+  "type": "Problem",
+  "number": "7.1.3",
+  "title": "A Double Integral Under a Parabolic Change of Variables.",
+  "body": " A Double Integral Under a Parabolic Change of Variables   Use the change of variables , to evaluate   over the region in the first quadrant bounded by , , , and . (Take the positive square root when inverting, since lies in the first quadrant.)   "
+},
+{
+  "id": "ex-r3o-ellipsoid-integral",
+  "level": "2",
+  "url": "sec-exercises-review3-online.html#ex-r3o-ellipsoid-integral",
+  "type": "Problem",
+  "number": "7.1.4",
+  "title": "A Triple Integral Over an Ellipsoid.",
+  "body": " A Triple Integral Over an Ellipsoid   Calculate the triple integral   where is the region bounded by the ellipsoid . Use the change of variables , , , which carries to the unit ball.   "
+},
+{
+  "id": "ex-r3o-tetrahedron-com",
+  "level": "2",
+  "url": "sec-exercises-review3-online.html#ex-r3o-tetrahedron-com",
+  "type": "Problem",
+  "number": "7.1.5",
+  "title": "Centre of Mass of a Tetrahedron.",
+  "body": " Centre of Mass of a Tetrahedron   Find the mass and the centre of mass of the solid bounded by the planes , , , and , assuming a mass density of .   "
+},
+{
+  "id": "ex-r3o-lamina-rectangle",
+  "level": "2",
+  "url": "sec-exercises-review3-online.html#ex-r3o-lamina-rectangle",
+  "type": "Problem",
+  "number": "7.1.6",
+  "title": "Mass and Centre of Mass of a Rectangular Lamina.",
+  "body": " Mass and Centre of Mass of a Rectangular Lamina   A lamina occupies the part of the rectangle , , and the density at each point is given by the function . What is the total mass, and where is the centre of mass?   "
+},
+{
+  "id": "ex-r3o-sphere-minus-sphere",
+  "level": "2",
+  "url": "sec-exercises-review3-online.html#ex-r3o-sphere-minus-sphere",
+  "type": "Problem",
+  "number": "7.1.7",
+  "title": "Volume Between Two Spheres in Spherical Coordinates.",
+  "body": " Volume Between Two Spheres in Spherical Coordinates   Find the volume of the region outside the sphere and inside the half sphere , with .   "
+},
+{
+  "id": "ex-r3o-spherical-shell",
+  "level": "2",
+  "url": "sec-exercises-review3-online.html#ex-r3o-spherical-shell",
+  "type": "Problem",
+  "number": "7.1.8",
+  "title": "A Triple Integral Over a Spherical Shell.",
+  "body": " A Triple Integral Over a Spherical Shell   Evaluate, in spherical coordinates, the triple integral of over the region , , .   "
+},
+{
+  "id": "ex-r3o-gaussian-shell",
+  "level": "2",
+  "url": "sec-exercises-review3-online.html#ex-r3o-gaussian-shell",
+  "type": "Problem",
+  "number": "7.1.9",
+  "title": "An Exponential Integral Between Two Spheres.",
+  "body": " An Exponential Integral Between Two Spheres   Use spherical coordinates to evaluate the triple integral   where is the region bounded by the spheres and .   "
+},
+{
+  "id": "ex-r3o-linear-jacobian",
+  "level": "2",
+  "url": "sec-exercises-review3-online.html#ex-r3o-linear-jacobian",
+  "type": "Problem",
+  "number": "7.1.10",
+  "title": "The Jacobian of a Linear Transformation.",
+  "body": " The Jacobian of a Linear Transformation   Consider the transformation from -coordinates to -coordinates given by   Find the four partial derivatives of the transformation, and then its Jacobian.   "
+},
+{
+  "id": "ex-r3o-quadratic-map",
+  "level": "2",
+  "url": "sec-exercises-review3-online.html#ex-r3o-quadratic-map",
+  "type": "Problem",
+  "number": "7.1.11",
+  "title": "A Quadratic Map and the Integral It Simplifies.",
+  "body": " A Quadratic Map and the Integral It Simplifies   The map carries the triangle onto the domain in the first quadrant bounded by , , and the parabola through the image of the edge . Use to evaluate    "
+},
+{
+  "id": "ex-r3o-centre-of-gravity",
+  "level": "2",
+  "url": "sec-exercises-review3-online.html#ex-r3o-centre-of-gravity",
+  "type": "Problem",
+  "number": "7.1.12",
+  "title": "Centre of Gravity of a Region Between Two Curves.",
+  "body": " Centre of Gravity of a Region Between Two Curves   The region is bounded by the curves , , and the -axis, and its mass density is . Find the limits of the iterated integral describing , evaluate the three integrals of , and over , and use them to locate the centre of gravity of .   "
+},
+{
+  "id": "ex-r3o-quarter-disc-com",
+  "level": "2",
+  "url": "sec-exercises-review3-online.html#ex-r3o-quarter-disc-com",
+  "type": "Problem",
+  "number": "7.1.13",
+  "title": "Centre of Mass of a Quarter Disc.",
+  "body": " Centre of Mass of a Quarter Disc   Find the centre of mass of the quarter disc of radius lying under for , with constant density. (Use symmetry.)   "
+},
+{
+  "id": "sec-exercises-review4-online",
+  "level": "1",
+  "url": "sec-exercises-review4-online.html",
+  "type": "Section",
+  "number": "7.2",
+  "title": "Review Problems #4",
+  "body": " Review Problems #4  Sections: , , and .  Work each problem yourself first; the full solution follows immediately below it. The same sixteen problems, with the numbers randomised and every answer checked automatically, are in .   Outward Flux Through the Surface of a Box   Evaluate the outward flux of the vector field   through the surface of the solid box given by , , . Set up the triple integral that the Divergence Theorem provides, and evaluate it.     The Box With the Largest Flux   Let and .  (a) Find the flux of out of the rectangular solid , , , as an expression in , and .  (b) For which values of , and is that flux largest, and what is the largest flux?     Verifying the Divergence Theorem on a Cylinder   Verify the Divergence Theorem for the vector field   and the region , : compute the flux across the closed surface directly, compute over the solid, and check that the two agree.     Flux Through a Sphere   Use the Divergence Theorem to evaluate the surface integral , where   and is the sphere , oriented outward.     Flux Through a Paraboloid Cap   Let . Use the Divergence Theorem to find the flux of across the part of the paraboloid that lies above the plane and is oriented upward.     Radial Field Through a Closed Cylinder   Compute the flux of the vector field through the surface , which is a closed cylinder of radius centered on the -axis, with , and oriented outward.     Flux Through a Helicoid   Evaluate , where the vector field is and the parametrized surface is the helicoid   oriented upward.     Flux Through a Paraboloid, Directly   Compute the flux of the vector field through the surface , which is the part of the surface above the disk of radius centered at the origin, oriented upward .     The parallelogram of , with its orientation. Note the direction of the arrows.   A parallelogram anchored at the origin with arrows showing its boundary orientation.            (0,0)    (x_0,0)    (x_0,y_0)    (2x_0,y_0)                  Work Around a Parallelogram   Use Green's Theorem to evaluate the work done by in moving an object around the boundary of the parallelogram in ( note the orientation ), with and . Assume that the object circulates only once around the boundary, and that its motion begins at the origin and ends at the same point.     Three Gradient Fields and the Unit Circle   (a) Each of the vector fields   is a gradient vector field on some domain (not necessarily the whole plane). Find potential functions for and , choosing the constant so that the potential is at the origin, and find the constant for which is a potential function for .  (b) Find the line integrals of , and around the curve , the unit circle in the -plane centered at the origin and traversed counterclockwise.  (c) For which of the three vector fields can Green's Theorem be used to calculate the line integral in part (b), and why?     Circulation Around a Rectangle   Use Green's Theorem to calculate the circulation of around the rectangle , , oriented counterclockwise.     Circulation Around a Circle   Use Green's Theorem to calculate   where is the circular path with center and radius , oriented counterclockwise.     Divergence of a Family of Radial Fields   Let and consider the vector field , where and is a constant. Note that has no -component and is independent of .  (a) Find , and show that it can be written in the form for constants and depending on .  (b) For what values of is positive, negative, or zero?  (c) What is the sign of the flux out of a small sphere centered at when , and when ? How would your answers change for a small sphere centered at the origin?     Flux Through a Slanted Cylinder Band   Compute the flux of through the surface of the cylinder bounded below by the plane , above by the plane , and oriented away from the -axis . Note that we are only interested in the flux through the curved surface of the cylinder.     Flux Out of a Closed Cone   Find the flux of out of the closed cone , with .     Flux Through the Surface of a Tetrahedron   Use the Divergence Theorem to calculate the flux of across , where and is the surface of the tetrahedron enclosed by the coordinate planes and the plane     "
+},
+{
+  "id": "ex-r4o-box-flux",
+  "level": "2",
+  "url": "sec-exercises-review4-online.html#ex-r4o-box-flux",
+  "type": "Problem",
+  "number": "7.2.1",
+  "title": "Outward Flux Through the Surface of a Box.",
+  "body": " Outward Flux Through the Surface of a Box   Evaluate the outward flux of the vector field   through the surface of the solid box given by , , . Set up the triple integral that the Divergence Theorem provides, and evaluate it.   "
+},
+{
+  "id": "ex-r4o-box-div-max",
+  "level": "2",
+  "url": "sec-exercises-review4-online.html#ex-r4o-box-div-max",
+  "type": "Problem",
+  "number": "7.2.2",
+  "title": "The Box With the Largest Flux.",
+  "body": " The Box With the Largest Flux   Let and .  (a) Find the flux of out of the rectangular solid , , , as an expression in , and .  (b) For which values of , and is that flux largest, and what is the largest flux?   "
+},
+{
+  "id": "ex-r4o-verify-cylinder",
+  "level": "2",
+  "url": "sec-exercises-review4-online.html#ex-r4o-verify-cylinder",
+  "type": "Problem",
+  "number": "7.2.3",
+  "title": "Verifying the Divergence Theorem on a Cylinder.",
+  "body": " Verifying the Divergence Theorem on a Cylinder   Verify the Divergence Theorem for the vector field   and the region , : compute the flux across the closed surface directly, compute over the solid, and check that the two agree.   "
+},
+{
+  "id": "ex-r4o-sphere",
+  "level": "2",
+  "url": "sec-exercises-review4-online.html#ex-r4o-sphere",
+  "type": "Problem",
+  "number": "7.2.4",
+  "title": "Flux Through a Sphere.",
+  "body": " Flux Through a Sphere   Use the Divergence Theorem to evaluate the surface integral , where   and is the sphere , oriented outward.   "
+},
+{
+  "id": "ex-r4o-paraboloid-cap",
+  "level": "2",
+  "url": "sec-exercises-review4-online.html#ex-r4o-paraboloid-cap",
+  "type": "Problem",
+  "number": "7.2.5",
+  "title": "Flux Through a Paraboloid Cap.",
+  "body": " Flux Through a Paraboloid Cap   Let . Use the Divergence Theorem to find the flux of across the part of the paraboloid that lies above the plane and is oriented upward.   "
+},
+{
+  "id": "ex-r4o-cylinder-x-axis",
+  "level": "2",
+  "url": "sec-exercises-review4-online.html#ex-r4o-cylinder-x-axis",
+  "type": "Problem",
+  "number": "7.2.6",
+  "title": "Radial Field Through a Closed Cylinder.",
+  "body": " Radial Field Through a Closed Cylinder   Compute the flux of the vector field through the surface , which is a closed cylinder of radius centered on the -axis, with , and oriented outward.   "
+},
+{
+  "id": "ex-r4o-helicoid",
+  "level": "2",
+  "url": "sec-exercises-review4-online.html#ex-r4o-helicoid",
+  "type": "Problem",
+  "number": "7.2.7",
+  "title": "Flux Through a Helicoid.",
+  "body": " Flux Through a Helicoid   Evaluate , where the vector field is and the parametrized surface is the helicoid   oriented upward.   "
+},
+{
+  "id": "ex-r4o-paraboloid-updisk",
+  "level": "2",
+  "url": "sec-exercises-review4-online.html#ex-r4o-paraboloid-updisk",
+  "type": "Problem",
+  "number": "7.2.8",
+  "title": "Flux Through a Paraboloid, Directly.",
+  "body": " Flux Through a Paraboloid, Directly   Compute the flux of the vector field through the surface , which is the part of the surface above the disk of radius centered at the origin, oriented upward .   "
+},
+{
+  "id": "fig-r4o-parallelogram",
+  "level": "2",
+  "url": "sec-exercises-review4-online.html#fig-r4o-parallelogram",
+  "type": "Figure",
+  "number": "7.2.9",
+  "title": "",
+  "body": " The parallelogram of , with its orientation. Note the direction of the arrows.   A parallelogram anchored at the origin with arrows showing its boundary orientation.            (0,0)    (x_0,0)    (x_0,y_0)    (2x_0,y_0)                "
+},
+{
+  "id": "ex-r4o-parallelogram",
+  "level": "2",
+  "url": "sec-exercises-review4-online.html#ex-r4o-parallelogram",
+  "type": "Problem",
+  "number": "7.2.10",
+  "title": "Work Around a Parallelogram.",
+  "body": " Work Around a Parallelogram   Use Green's Theorem to evaluate the work done by in moving an object around the boundary of the parallelogram in ( note the orientation ), with and . Assume that the object circulates only once around the boundary, and that its motion begins at the origin and ends at the same point.   "
+},
+{
+  "id": "ex-r4o-three-fields",
+  "level": "2",
+  "url": "sec-exercises-review4-online.html#ex-r4o-three-fields",
+  "type": "Problem",
+  "number": "7.2.11",
+  "title": "Three Gradient Fields and the Unit Circle.",
+  "body": " Three Gradient Fields and the Unit Circle   (a) Each of the vector fields   is a gradient vector field on some domain (not necessarily the whole plane). Find potential functions for and , choosing the constant so that the potential is at the origin, and find the constant for which is a potential function for .  (b) Find the line integrals of , and around the curve , the unit circle in the -plane centered at the origin and traversed counterclockwise.  (c) For which of the three vector fields can Green's Theorem be used to calculate the line integral in part (b), and why?   "
+},
+{
+  "id": "ex-r4o-rect-circulation",
+  "level": "2",
+  "url": "sec-exercises-review4-online.html#ex-r4o-rect-circulation",
+  "type": "Problem",
+  "number": "7.2.12",
+  "title": "Circulation Around a Rectangle.",
+  "body": " Circulation Around a Rectangle   Use Green's Theorem to calculate the circulation of around the rectangle , , oriented counterclockwise.   "
+},
+{
+  "id": "ex-r4o-circle-green",
+  "level": "2",
+  "url": "sec-exercises-review4-online.html#ex-r4o-circle-green",
+  "type": "Problem",
+  "number": "7.2.13",
+  "title": "Circulation Around a Circle.",
+  "body": " Circulation Around a Circle   Use Green's Theorem to calculate   where is the circular path with center and radius , oriented counterclockwise.   "
+},
+{
+  "id": "ex-r4o-radial-power",
+  "level": "2",
+  "url": "sec-exercises-review4-online.html#ex-r4o-radial-power",
+  "type": "Problem",
+  "number": "7.2.14",
+  "title": "Divergence of a Family of Radial Fields.",
+  "body": " Divergence of a Family of Radial Fields   Let and consider the vector field , where and is a constant. Note that has no -component and is independent of .  (a) Find , and show that it can be written in the form for constants and depending on .  (b) For what values of is positive, negative, or zero?  (c) What is the sign of the flux out of a small sphere centered at when , and when ? How would your answers change for a small sphere centered at the origin?   "
+},
+{
+  "id": "ex-r4o-cylinder-band",
+  "level": "2",
+  "url": "sec-exercises-review4-online.html#ex-r4o-cylinder-band",
+  "type": "Problem",
+  "number": "7.2.15",
+  "title": "Flux Through a Slanted Cylinder Band.",
+  "body": " Flux Through a Slanted Cylinder Band   Compute the flux of through the surface of the cylinder bounded below by the plane , above by the plane , and oriented away from the -axis . Note that we are only interested in the flux through the curved surface of the cylinder.   "
+},
+{
+  "id": "ex-r4o-cone",
+  "level": "2",
+  "url": "sec-exercises-review4-online.html#ex-r4o-cone",
+  "type": "Problem",
+  "number": "7.2.16",
+  "title": "Flux Out of a Closed Cone.",
+  "body": " Flux Out of a Closed Cone   Find the flux of out of the closed cone , with .   "
+},
+{
+  "id": "ex-r4o-tetrahedron",
+  "level": "2",
+  "url": "sec-exercises-review4-online.html#ex-r4o-tetrahedron",
+  "type": "Problem",
+  "number": "7.2.17",
+  "title": "Flux Through the Surface of a Tetrahedron.",
+  "body": " Flux Through the Surface of a Tetrahedron   Use the Divergence Theorem to calculate the flux of across , where and is the surface of the tetrahedron enclosed by the coordinate planes and the plane    "
 }
 ]
 

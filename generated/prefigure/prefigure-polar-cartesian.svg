@@ -13,7 +13,7 @@
       <path d="M 11.8 7.8 L 2.8 11.8 A 2 2 0 0 1 0.0 10.0 L 0.0 2.0 A 2 2 0 0 1 2.8 0.2 L 11.8 4.2 A 2 2 0 0 1 11.8 7.8 Z" fill="white" stroke="none"/>
     </marker>
   </defs>
-  <g id="pc-axes" stroke="black" stroke-width="2">
+  <g id="prefigure-polar-cartesian-pc-axes" stroke="black" stroke-width="2">
     <line id="prefigure-polar-cartesian-line-0" x1="10.0" y1="183.9" x2="370.0" y2="183.9" stroke="black" stroke-width="2" marker-end="url(#prefigure-polar-cartesian-arrow-head-end-2_None_24_60-black)"/>
     <line id="prefigure-polar-cartesian-line-1" x1="169.2" y1="337.0" x2="169.2" y2="10.0" stroke="black" stroke-width="2" marker-end="url(#prefigure-polar-cartesian-arrow-head-end-2_None_24_60-black)"/>
   </g>

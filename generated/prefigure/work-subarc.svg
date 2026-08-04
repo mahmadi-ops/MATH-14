@@ -25,7 +25,7 @@
       <path d="M 23.0 12.8 L 2.8 21.8 A 2 2 0 0 1 0.0 20.0 L 0.0 2.0 A 2 2 0 0 1 2.8 0.2 L 23.0 9.2 A 2 2 0 0 1 23.0 12.8 Z" fill="white" stroke="none"/>
     </marker>
   </defs>
-  <g id="ax" stroke="black" stroke-width="2">
+  <g id="work-subarc-ax" stroke="black" stroke-width="2">
     <line id="work-subarc-line-0" x1="5.0" y1="384.4" x2="405.0" y2="384.4" stroke="black" stroke-width="2" marker-end="url(#work-subarc-arrow-head-end-2_None_24_60-black)"/>
     <line id="work-subarc-line-1" x1="45.6" y1="425.0" x2="45.6" y2="5.0" stroke="black" stroke-width="2" marker-end="url(#work-subarc-arrow-head-end-2_None_24_60-black)"/>
   </g>
@@ -104,7 +104,7 @@
   </g>
   <g id="work-subarc-vectors">
     <circle id="work-subarc-circle-2" cx="105.9" cy="310.8" r="4" stroke="black" stroke-width="2" fill="black"/>
-    <path id="work-subarc-path-2" stroke="red" stroke-width="3" fill="none" d="M 105.9 310.8 L 154.6 172.8" marker-end="url(#work-subarc-arrow-head-end-3_6_24_60-red)"/>
+    <path id="work-subarc-path-2" stroke="red" stroke-width="3" fill="none" marker-end="url(#work-subarc-arrow-head-end-3_6_24_60-red)" d="M 105.9 310.8 L 153.3 176.3"/>
     <g id="work-subarc-label-3" transform="translate(150.6,164.8) translate(-70.8,-18.1)">
       <g id="work-subarc-g-3">
         <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -4.528px; color:red" width="70.792px" height="18.096px" role="img" focusable="false" viewBox="0 -750 3911.5 1000" x="0.0" y="0.0">
@@ -162,7 +162,7 @@
         </svg>
       </g>
     </g>
-    <path id="work-subarc-path-3" stroke="#009E73" stroke-width="3" fill="none" d="M 105.9 310.8 L 196.3 263.2" marker-end="url(#work-subarc-arrow-head-end-3_6_24_60-h009E73)"/>
+    <path id="work-subarc-path-3" stroke="#009E73" stroke-width="3" fill="none" marker-end="url(#work-subarc-arrow-head-end-3_6_24_60-h009E73)" d="M 105.9 310.8 L 193.1 264.9"/>
     <g id="work-subarc-label-4" transform="translate(208.6,269.0) translate(0.0,-7.5)">
       <g id="work-subarc-g-4">
         <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -2.856px; color:#009E73" width="22.648px" height="15.072px" role="img" focusable="false" viewBox="0 -675 1251.4 832.8" x="0.0" y="0.0">
