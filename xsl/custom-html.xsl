@@ -41,6 +41,35 @@
     <xsl:apply-templates select="." mode="heading-non-singleton-number"/>
   </xsl:template>
 
+  <!-- A dynamic <fillin>/<evaluation> exercise swallows its <solution>     -->
+  <!-- into the Runestone component data ("solutionHtml"), which the        -->
+  <!-- current Runestone runtime never displays: the core's 'fillin' branch -->
+  <!-- of exercise-components forwards only the hints to solutions-div.     -->
+  <!-- The review problems are dynamic exercises, so their posted solutions -->
+  <!-- would be invisible.  This override is the core's branch with the     -->
+  <!-- answer and solution forwarded as well, so a posted solution prints   -->
+  <!-- beneath its problem exactly as in the fillin-basic assignments.      -->
+  <xsl:template match="exercise[@exercise-interactive = 'fillin' and
+                                ancestor::chapter[@xml:id = 'ch-problems']]"
+                mode="exercise-components">
+    <xsl:param name="b-original"/>
+    <xsl:param name="block-type"/>
+    <xsl:param name="b-has-statement"/>
+    <xsl:param name="b-has-hint"/>
+    <xsl:param name="b-has-answer"/>
+    <xsl:param name="b-has-solution"/>
+    <xsl:if test="$b-has-statement">
+      <xsl:apply-templates select="." mode="runestone-to-interactive"/>
+    </xsl:if>
+    <xsl:apply-templates select="." mode="solutions-div">
+      <xsl:with-param name="b-original" select="$b-original"/>
+      <xsl:with-param name="block-type" select="$block-type"/>
+      <xsl:with-param name="b-has-hint" select="$b-has-hint"/>
+      <xsl:with-param name="b-has-answer" select="$b-has-answer"/>
+      <xsl:with-param name="b-has-solution" select="$b-has-solution"/>
+    </xsl:apply-templates>
+  </xsl:template>
+
   <!-- A PreFigure diagram carrying <annotations> is not emitted as an     -->
   <!-- <img>: PreTeXt emits an empty <div class="ChemAccess-element"> that -->
   <!-- the diagcess JS library fills in, and that library only scans the   -->
