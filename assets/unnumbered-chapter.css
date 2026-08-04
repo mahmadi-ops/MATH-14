@@ -15,3 +15,20 @@ a[href^="ch-problems.html"] .codenumber,
 a[href^="sec-exercises-"] .codenumber {
   display: none;
 }
+
+/* An unposted solution.
+   In the review sets each <solution> is a bare element whose *contents*
+   carry component="reviewN-solutions"; the publisher's <version include>
+   list in publication/publication.ptx decides whether those contents
+   survive.  The solution element itself always survives, which is what
+   keeps PreTeXt from generating an automatic answer-key copy of the
+   statement - see the comment at the top of source/review1-practice.ptx.
+   The cost is that a hidden solution leaves an empty "Solution." heading
+   behind, and these two rules drop it.  A solution whose only children
+   are its heading and its permalink has no content, so it is not shown,
+   and neither is the wrapper holding it. */
+
+.solution.solution-like:not(:has(> *:not(.heading):not(.autopermalink))),
+.solutions:not(:has(> .solution.solution-like > *:not(.heading):not(.autopermalink))) {
+  display: none;
+}

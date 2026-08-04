@@ -3,8 +3,22 @@
 <!--                                                                         -->
 <!-- Rebuilt from the WeBWorK set: every answer box is graded on its own, so  -->
 <!-- partial credit survives, and the feedback is a bare Correct./Incorrect.  -->
-<!-- Each <solution> carries component="review1-solutions" so the set can be  -->
+<!-- Each <solution> carries component="review1-solutions" so the set can be   -->
 <!-- posted from publication/publication.ptx after the due date.              -->
+<!--                                                                         -->
+<!-- WHY THE SOLUTIONS LOOK ODD.  Each <solution> is a bare element and it    -->
+<!-- is its *children* that carry component="review1-solutions"; the element   -->
+<!-- itself is never dropped, and it carries include-automatic="no".         -->
+<!-- Both details matter.  These are dynamic "fillin" exercises, and when     -->
+<!-- such an exercise has no authored solution marked include-automatic="no", -->
+<!-- PreTeXt manufactures one by copying the whole statement with the answers -->
+<!-- filled in.  That copy duplicates every xml:id and every PreFigure @label -->
+<!-- inside the statement - and the figures live inside these statements - so -->
+<!-- asset generation reports duplicate identifiers and the build fails.      -->
+<!-- Keeping the solution element present, with its contents gated instead,   -->
+<!-- suppresses the manufactured copy whether or not solutions are posted.    -->
+<!-- assets/unnumbered-chapter.css hides the empty "Solution." heading that   -->
+<!-- remains while the contents are switched off.                            -->
 <section xml:id="sec-exercises-review1-practice" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Review Problems #1</title>
 
@@ -69,21 +83,21 @@
         </test>
       </evaluate>
     </evaluation>
-    <solution component="review1-solutions">
-      <p>
+    <solution include-automatic="no">
+      <p component="review1-solutions">
         The slope of the tangent line is
         <m>\dfrac{dy/dt}{dx/dt}
         = \dfrac{a\sin t}{a - a\cos t} = \dfrac{\sin t}{1-\cos t}</m>,
         which vanishes when <m>\sin t = 0</m> and <m>\cos t \ne 1</m>, that
         is at <m>t = \pi(2k-1)</m>. The speed is
       </p>
-      <me>
+      <me component="review1-solutions">
         \left\lVert\mathbf{v}\right\rVert
         = \sqrt{\left(a - a\cos t\right)^2 + \left(a\sin t\right)^2}
         = \sqrt{2a^2\left(1-\cos t\right)}
         = 2a\left\lvert\sin\tfrac{t}{2}\right\rvert ,
       </me>
-      <p>
+      <p component="review1-solutions">
         and at <m>t = \pi(2k-1)</m> the sine equals <m>\pm 1</m>, so the
         speed is <m>2a</m>.
       </p>
@@ -155,8 +169,8 @@
         </test>
       </evaluate>
     </evaluation>
-    <solution component="review1-solutions">
-      <p>
+    <solution include-automatic="no">
+      <p component="review1-solutions">
         Write <m>a</m> and <m>b</m> for the two coefficients. Then
         <m>x^3 = \dfrac{a^3t^3}{(1+t^3)^3}</m> and
         <m>y^3 = \dfrac{b^3t^6}{(1+t^3)^3}</m>, while
@@ -165,10 +179,10 @@
         <m>(1+t^3)^3</m>, the numerator is
         <m>a^3b^3t^3\left(1 + t^3 - (1+t^3)\right) = 0</m>, so
       </p>
-      <me>
+      <me component="review1-solutions">
         P(x,y) = b^3x^3 + a^3y^3 - a^2b^2xy = 0 .
       </me>
-      <p>
+      <p component="review1-solutions">
         At <m>t = 1</m> the point is
         <m>\left(\tfrac{a}{2}, \tfrac{b}{2}\right)</m>, and
         <m>\dfrac{dy}{dx} = \dfrac{y'(1)}{x'(1)} = -\dfrac{b}{a}</m>, so the
@@ -216,14 +230,14 @@
         </test>
       </evaluate>
     </evaluation>
-    <solution component="review1-solutions">
-      <p>
+    <solution include-automatic="no">
+      <p component="review1-solutions">
         Since <m>\mathbf{c}'(t) = \langle -\sin t, \cos t, 1\rangle</m>, we
         have <m>\lVert\mathbf{c}'(t)\rVert = \sqrt2</m> and
         <m>ds = \sqrt2\,dt</m>. On the curve
         <m>a\cos^2 t + a\sin^2 t + t^{n} = a + t^{n}</m>, so
       </p>
-      <me>
+      <me component="review1-solutions">
         \int_{\mathcal{C}} f\,ds
         = \sqrt2\int_0^{\pi}\left(a + t^{n}\right)dt
         = \sqrt2\left(a\pi + \frac{\pi^{\,n+1}}{n+1}\right) .
@@ -266,21 +280,21 @@
         </test>
       </evaluate>
     </evaluation>
-    <solution component="review1-solutions">
-      <p>
+    <solution include-automatic="no">
+      <p component="review1-solutions">
         On the path, <m>\mathbf{F}(\mathbf{c}(t))
         = \left\langle 3te^{-t},\ 4e^{t},\ -e^{t}\right\rangle</m> and
         <m>\mathbf{c}'(t) = \left\langle e^{t}, e^{t}, 1\right\rangle</m>,
         so the integrand is
       </p>
-      <me>
+      <me component="review1-solutions">
         \mathbf{F}\cdot\mathbf{c}'(t) = 3t + 4e^{2t} - e^{t} .
       </me>
-      <p>
+      <p component="review1-solutions">
         The term <m>3t</m> is odd and integrates to <m>0</m> over the
         symmetric interval, so
       </p>
-      <me>
+      <me component="review1-solutions">
         \int_{\mathcal{C}} \mathbf{F}\cdot d\mathbf{r}
         = \Big[2e^{2t} - e^{t}\Big]_{-T}^{T}
         = 2\left(e^{2T} - e^{-2T}\right) - \left(e^{T} - e^{-T}\right) .
@@ -363,8 +377,8 @@
         <test><numcmp min="-1000000000" max="1000000000"/><feedback><p>Incorrect.</p></feedback></test>
       </evaluate>
     </evaluation>
-    <solution component="review1-solutions">
-      <p>
+    <solution include-automatic="no">
+      <p component="review1-solutions">
         Here <m>x(t) = c</m> is constant, so the curve lies in the vertical
         plane <m>x = c</m>. In that plane,
         <m>y(t)^2 + z(t)^2 = R^2\cos^2 t + R^2\sin^2 t = R^2</m>, the
@@ -448,14 +462,14 @@
         <test><numcmp min="-1000000000" max="1000000000"/><feedback><p>Incorrect.</p></feedback></test>
       </evaluate>
     </evaluation>
-    <solution component="review1-solutions">
-      <p>
+    <solution include-automatic="no">
+      <p component="review1-solutions">
         The <m>z</m>-coordinate is <m>c - t</m>, so <m>z = 0</m> at
         <m>t = c</m>. Differentiating and simplifying,
         <m>\left\lVert\mathbf{v}(t)\right\rVert = t^2 + 1</m>, so the speed
         at <m>t = a</m> is <m>a^2 + 1</m>, and the distance travelled is
       </p>
-      <me>
+      <me component="review1-solutions">
         L = \int_a^b \left(t^2+1\right)dt
         = \left(\frac{b^3}{3} + b\right) - \left(\frac{a^3}{3} + a\right) .
       </me>
@@ -493,12 +507,12 @@
         <test><numcmp min="-1000000000" max="1000000000"/><feedback><p>Incorrect.</p></feedback></test>
       </evaluate>
     </evaluation>
-    <solution component="review1-solutions">
-      <p>
+    <solution include-automatic="no">
+      <p component="review1-solutions">
         Parametrize by <m>y = t</m>, <m>x = t^2+1</m>, <m>0 \le t \le 1</m>,
         so <m>dx = 2t\,dt</m> and <m>dy = dt</m>. Then
       </p>
-      <me>
+      <me component="review1-solutions">
         W = \int_0^1 \left[a\left(t^2+1\right)^2(2t)
         + t\,e^{t^2+1}\right]dt
         = \frac{7a}{3} + \frac{e^2 - e}{2} .
@@ -539,13 +553,13 @@
         <test><numcmp min="-1000000000" max="1000000000"/><feedback><p>Incorrect.</p></feedback></test>
       </evaluate>
     </evaluation>
-    <solution component="review1-solutions">
-      <p>
+    <solution include-automatic="no">
+      <p component="review1-solutions">
         Differentiating, <m>x' = \theta\sin\theta</m> and
         <m>y' = \theta\cos\theta</m>, so
         <m>\sqrt{x'^2 + y'^2} = \theta</m> for <m>\theta \ge 0</m> and
       </p>
-      <me>
+      <me component="review1-solutions">
         S = \int_0^{a} \theta\,d\theta = \frac{a^2}{2} .
       </me>
     </solution>
@@ -613,20 +627,20 @@
         <test><strcmp strip="no">.*</strcmp><feedback><p>Incorrect.</p></feedback></test>
       </evaluate>
     </evaluation>
-    <solution component="review1-solutions">
-      <p>
+    <solution include-automatic="no">
+      <p component="review1-solutions">
         The curve bounds the annular sector between <m>r=1</m> and
         <m>r=2</m> from <m>-45^\circ</m> to <m>45^\circ</m>, traversed with
         the region on the left, so it is positively oriented. Its area is
         <m>\tfrac12\left(\tfrac{\pi}{2}\right)\left(2^2-1^2\right)
         = \tfrac{3\pi}{4}</m>.
       </p>
-      <p>
+      <p component="review1-solutions">
         The first field is radial: perpendicular to both arcs, and parallel
         to the two straight edges, which are travelled once outward and once
         inward, so those contributions cancel and the integral is <m>0</m>.
       </p>
-      <p>
+      <p component="review1-solutions">
         For the second, <m>N_x - M_y = 2</m>, so Green's Theorem gives
         <m>2\cdot\text{Area} = \tfrac{3\pi}{2}</m>, which is positive.
         The third is its negative, <m>-\tfrac{3\pi}{2}</m>.
@@ -1121,8 +1135,8 @@
         <test><strcmp strip="no">.*</strcmp><feedback><p>Incorrect.</p></feedback></test>
       </evaluate>
     </evaluation>
-    <solution component="review1-solutions">
-      <p>
+    <solution include-automatic="no">
+      <p component="review1-solutions">
         The curve bounds the annular sector between <m>r=1</m> and
         <m>r=2</m> from <m>-45^\circ</m> to <m>45^\circ</m>, and the
         arrows traverse it with the region on the left, so it is positively
@@ -1130,7 +1144,7 @@
         <m>\tfrac12\left(\tfrac{\pi}{2}\right)\left(2^2-1^2\right)
         = \tfrac{3\pi}{4}</m>.
       </p>
-      <p>
+      <p component="review1-solutions">
         The first field is radial, so it is everywhere perpendicular to the
         two arcs and everywhere parallel to the two radial segments, which
         are traversed once outward and once inward: the contributions cancel
@@ -1138,12 +1152,12 @@
         <m>\mathbf{F} = \nabla\!\left(\tfrac12(x^2+y^2)\right)</m>, and
         <m>C</m> is closed.)
       </p>
-      <p>
+      <p component="review1-solutions">
         For the second, <m>N_x - M_y = 1-(-1) = 2</m>, so by Green's Theorem
         the circulation is <m>2\cdot\text{Area} = \tfrac{3\pi}{2} \gt 0</m>:
         the field circles counterclockwise, the same way as <m>C</m>.
       </p>
-      <p>
+      <p component="review1-solutions">
         The third is the negative of the second, so its circulation is
         <m>-\tfrac{3\pi}{2} \lt 0</m>.
       </p>
@@ -1347,25 +1361,25 @@
         <test><strcmp strip="no">.*</strcmp><feedback><p>Incorrect.</p></feedback></test>
       </evaluate>
     </evaluation>
-    <solution component="review1-solutions">
-      <p>
+    <solution include-automatic="no">
+      <p component="review1-solutions">
         The field is constant and horizontal,
         <m>\mathbf{F} = \mathbf{i}</m>, so
         <m>\mathbf{F}\cdot d\mathbf{r} = dx</m> and each integral is
         simply the net horizontal displacement of its path.
       </p>
-      <p>
+      <p component="review1-solutions">
         <m>C_2</m> is vertical, so it gains no <m>x</m> at all and its
         integral is <m>0</m>. <m>C_3</m> moves <m>0.75</m> to the right,
         and <m>C_1</m> moves <m>1.5</m> to the right, in the direction of
         the field. Hence
       </p>
-      <me>
+      <me component="review1-solutions">
         \int_{C_2} \mathbf{F}\cdot d\mathbf{r} = 0
         \lt \int_{C_3} \mathbf{F}\cdot d\mathbf{r} = 0.75
         \lt \int_{C_1} \mathbf{F}\cdot d\mathbf{r} = 1.5 .
       </me>
-      <p>
+      <p component="review1-solutions">
         Only the horizontal displacement matters; the vertical motion of
         <m>C_3</m> contributes nothing.
       </p>

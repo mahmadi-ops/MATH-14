@@ -2,9 +2,23 @@
 <!-- MATH 14 - Review Problems #2, practice version.                          -->
 <!--                                                                         -->
 <!-- Every answer box is graded on its own, so partial credit survives, and   -->
-<!-- the feedback is a bare Correct./Incorrect.  Each <solution> carries      -->
+<!-- the feedback is a bare Correct./Incorrect.  Each <solution> carries       -->
 <!-- component="review2-solutions" so the set can be posted from              -->
 <!-- publication/publication.ptx after the due date.                          -->
+<!--                                                                         -->
+<!-- WHY THE SOLUTIONS LOOK ODD.  Each <solution> is a bare element and it    -->
+<!-- is its *children* that carry component="review2-solutions"; the element   -->
+<!-- itself is never dropped, and it carries include-automatic="no".         -->
+<!-- Both details matter.  These are dynamic "fillin" exercises, and when     -->
+<!-- such an exercise has no authored solution marked include-automatic="no", -->
+<!-- PreTeXt manufactures one by copying the whole statement with the answers -->
+<!-- filled in.  That copy duplicates every xml:id and every PreFigure @label -->
+<!-- inside the statement - and the figures live inside these statements - so -->
+<!-- asset generation reports duplicate identifiers and the build fails.      -->
+<!-- Keeping the solution element present, with its contents gated instead,   -->
+<!-- suppresses the manufactured copy whether or not solutions are posted.    -->
+<!-- assets/unnumbered-chapter.css hides the empty "Solution." heading that   -->
+<!-- remains while the contents are switched off.                            -->
 <section xml:id="sec-exercises-review2-practice" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Review Problems #2</title>
 
@@ -62,14 +76,14 @@
         <test><numcmp min="-1000000000" max="1000000000"/><feedback><p>Incorrect.</p></feedback></test>
       </evaluate>
     </evaluation>
-    <solution component="review2-solutions">
-      <p>
+    <solution include-automatic="no">
+      <p component="review2-solutions">
         Substituting <m>u = x^2+y^2</m> in the inner integral,
         <m>\int_0^{b} xy\sqrt{x^2+y^2}\,dy
         = \tfrac{x}{3}\left[\left(x^2+b^2\right)^{3/2} - x^3\right]</m>,
         and integrating that in <m>x</m> gives
       </p>
-      <me>
+      <me component="review2-solutions">
         \frac{1}{15}\left[\left(a^2+b^2\right)^{5/2} - a^5 - b^5\right].
       </me>
     </solution>
@@ -111,18 +125,18 @@
         <test><numcmp min="-1000000000" max="1000000000"/><feedback><p>Incorrect.</p></feedback></test>
       </evaluate>
     </evaluation>
-    <solution component="review2-solutions">
-      <p>
+    <solution include-automatic="no">
+      <p component="review2-solutions">
         As written the inner integral cannot be done in closed form, so
         reverse the order. The region is
         <m>0 \le x \le b</m>, <m>0 \le y \le x^2</m>, hence
       </p>
-      <me>
+      <me component="review2-solutions">
         \int_0^{b}\!\!\int_0^{x^2} c\sqrt{x^3+1}\,dy\,dx
         = \int_0^{b} c\,x^2\sqrt{x^3+1}\,dx
         = \frac{2c}{9}\left[\left(b^3+1\right)^{3/2} - 1\right],
       </me>
-      <p>
+      <p component="review2-solutions">
         using <m>u = x^3+1</m>.
       </p>
     </solution>
@@ -162,14 +176,14 @@
         <test><numcmp min="-1000000000" max="1000000000"/><feedback><p>Incorrect.</p></feedback></test>
       </evaluate>
     </evaluation>
-    <solution component="review2-solutions">
-      <p>
+    <solution include-automatic="no">
+      <p component="review2-solutions">
         The region is bounded on the left by <m>y = x</m> and on the right
         by the circle of radius <m>a</m>, so in polar coordinates it is
         <m>0 \le \theta \le \frac{\pi}{4}</m>, <m>0 \le r \le a</m>.
         Then
       </p>
-      <me>
+      <me component="review2-solutions">
         \int_0^{\pi/4}\!\!\int_0^{a} \left(r\cos\theta\right)
         \left(r\sin\theta\right) r\,dr\,d\theta
         = \left[\frac{r^4}{4}\right]_0^{a}
@@ -214,14 +228,14 @@
         <test><numcmp min="-1000000000" max="1000000000"/><feedback><p>Incorrect.</p></feedback></test>
       </evaluate>
     </evaluation>
-    <solution component="review2-solutions">
-      <p>
+    <solution include-automatic="no">
+      <p component="review2-solutions">
         The ray <m>y = \sqrt3\,x</m> is <m>\theta = \frac{\pi}{3}</m> and
         the circle <m>y = \sqrt{1-x^2}</m> is <m>r = 1</m>, so the region is
         the sector <m>\frac{\pi}{3} \le \theta \le \frac{\pi}{2}</m>,
         <m>0 \le r \le 1</m>. With <m>3k</m> the coefficient,
       </p>
-      <me>
+      <me component="review2-solutions">
         \int_{\pi/3}^{\pi/2}\!\!\int_0^{1} 3k\,r^2\cos\theta
         \,dr\,d\theta
         = k\left[\sin\theta\right]_{\pi/3}^{\pi/2}
@@ -271,15 +285,15 @@
         <test><numcmp min="-1000000000" max="1000000000"/><feedback><p>Incorrect.</p></feedback></test>
       </evaluate>
     </evaluation>
-    <solution component="review2-solutions">
-      <p>
+    <solution include-automatic="no">
+      <p component="review2-solutions">
         The plane meets the axes at <m>a</m>, <m>b</m> and <m>c = ab</m>, so
         over the triangle <m>0 \le x \le a</m>,
         <m>0 \le y \le b\left(1-\frac{x}{a}\right)</m> the solid runs
         from <m>z = 0</m> up to <m>z = c - bx - ay</m>. Carrying out the
         three integrations,
       </p>
-      <me>
+      <me component="review2-solutions">
         M = \iiint_W \left(x + my\right)dV
         = \frac{a^2b^2\left(a + bm\right)}{24}.
       </me>
@@ -316,13 +330,13 @@
         <test><numcmp min="-1000000000" max="1000000000"/><feedback><p>Incorrect.</p></feedback></test>
       </evaluate>
     </evaluation>
-    <solution component="review2-solutions">
-      <p>
+    <solution include-automatic="no">
+      <p component="review2-solutions">
         The tetrahedron is <m>0 \le x \le a</m>,
         <m>0 \le y \le a-x</m>, <m>0 \le z \le a-x-y</m>. Integrating in
         <m>z</m> then <m>y</m>,
       </p>
-      <me>
+      <me component="review2-solutions">
         \iiint_T x^2\,dV = \int_0^{a} x^2\,\frac{(a-x)^2}{2}\,dx
         = \frac{a^5}{60}.
       </me>
@@ -358,12 +372,12 @@
         <test><numcmp min="-1000000000" max="1000000000"/><feedback><p>Incorrect.</p></feedback></test>
       </evaluate>
     </evaluation>
-    <solution component="review2-solutions">
-      <p>
+    <solution include-automatic="no">
+      <p component="review2-solutions">
         For <m>0 \le x \le 1</m> the triangle runs from the line
         <m>y = 2x</m> up to the line <m>y = 3-x</m>, so
       </p>
-      <me>
+      <me component="review2-solutions">
         \iint_D a\,xy\,dA
         = \int_0^1 \frac{a\,x}{2}\left[(3-x)^2 - (2x)^2\right]dx
         = \frac{7a}{8}.
@@ -401,11 +415,11 @@
         <test><numcmp min="-1000000000" max="1000000000"/><feedback><p>Incorrect.</p></feedback></test>
       </evaluate>
     </evaluation>
-    <solution component="review2-solutions">
-      <p>
+    <solution include-automatic="no">
+      <p component="review2-solutions">
         The surface lies above the rectangle throughout, so
       </p>
-      <me>
+      <me component="review2-solutions">
         V = \int_{-1}^{1}\!\!\int_1^2 \left(3y^2 - x^2 + a\right)
         dy\,dx = \frac{40}{3} + 2a .
       </me>
@@ -441,13 +455,13 @@
         <test><numcmp min="-1000000000" max="1000000000"/><feedback><p>Incorrect.</p></feedback></test>
       </evaluate>
     </evaluation>
-    <solution component="review2-solutions">
-      <p>
+    <solution include-automatic="no">
+      <p component="review2-solutions">
         Integrating in <m>y</m> first gives
         <m>\int_1^{e} x^{a}\ln x\,dx</m>, and integrating by parts with
         <m>u = \ln x</m>,
       </p>
-      <me>
+      <me component="review2-solutions">
         \int_1^{e} x^{a}\ln x\,dx
         = \frac{1}{a+1}\left(\frac{a}{a+1}e^{\,a+1}
         + \frac{1}{a+1}\right).
@@ -491,14 +505,14 @@
         <test><numcmp min="-1000000000" max="1000000000"/><feedback><p>Incorrect.</p></feedback></test>
       </evaluate>
     </evaluation>
-    <solution component="review2-solutions">
-      <p>
+    <solution include-automatic="no">
+      <p component="review2-solutions">
         The <m>x</m> and <m>y</m> limits describe the full disk of radius
         <m>r</m>, and <m>z</m> runs from <m>0</m> to <m>r</m>. In
         cylindrical coordinates the integrand times the volume element is
         <m>\frac{1}{\rho}\cdot\rho = 1</m>, so
       </p>
-      <me>
+      <me component="review2-solutions">
         \int_0^{r}\!\!\int_0^{2\pi}\!\!\int_0^{r} 1\,d\rho
         \,d\theta\,dz = 2\pi r^2 .
       </me>
@@ -542,14 +556,14 @@
         <test><numcmp min="-1000000000" max="1000000000"/><feedback><p>Incorrect.</p></feedback></test>
       </evaluate>
     </evaluation>
-    <solution component="review2-solutions">
-      <p>
+    <solution include-automatic="no">
+      <p component="review2-solutions">
         In spherical coordinates the sphere is <m>\rho = a</m> and the cone
         is <m>\phi = \arctan\frac{1}{b}</m>, so the solid is
         <m>\arctan\frac1b \le \phi \le \frac{\pi}{2}</m>,
         <m>0 \le \rho \le a</m>, and
       </p>
-      <me>
+      <me component="review2-solutions">
         V = 2\pi\,\frac{a^3}{3}\cos\left(\arctan\tfrac1b\right)
         = \frac{2\pi a^3 b}{3\sqrt{b^2+1}} .
       </me>
@@ -588,12 +602,12 @@
         <test><numcmp min="-1000000000" max="1000000000"/><feedback><p>Incorrect.</p></feedback></test>
       </evaluate>
     </evaluation>
-    <solution component="review2-solutions">
-      <p>
+    <solution include-automatic="no">
+      <p component="review2-solutions">
         Integrating in <m>z</m> first turns the integrand into
         <m>a(x+y)(x-y) = a\left(x^2-y^2\right)</m>, so
       </p>
-      <me>
+      <me component="review2-solutions">
         \iiint_W a(x+y)\,dV
         = \int_0^1\!\!\int_0^{x} a\left(x^2-y^2\right)dy\,dx
         = \int_0^1 \frac{2a}{3}x^3\,dx = \frac{a}{6}.
@@ -794,8 +808,8 @@
         <test><strcmp strip="no">.*</strcmp><feedback><p>Incorrect.</p></feedback></test>
       </evaluate>
     </evaluation>
-    <solution component="review2-solutions">
-      <p>
+    <solution include-automatic="no">
+      <p component="review2-solutions">
         Read each integral as a description of the region it sweeps out. The
         <m>\theta</m>-limits say which rays bound the region and the
         <m>r</m>-limits say how far out the region reaches along each ray.
@@ -907,8 +921,8 @@
         <test><numcmp min="-1000000000" max="1000000000"/><feedback><p>Incorrect.</p></feedback></test>
       </evaluate>
     </evaluation>
-    <solution component="review2-solutions">
-      <p>
+    <solution include-automatic="no">
+      <p component="review2-solutions">
         The disk is <m>x^2+y^2 \le r^2</m>. Slicing vertically, <m>x</m>
         runs across the whole disk, from <m>-r</m> to <m>r</m>, and for a
         fixed <m>x</m> the vertical slice runs between the two halves of the
@@ -999,18 +1013,18 @@
         <test><numcmp min="-1000000000" max="1000000000"/><feedback><p>Incorrect.</p></feedback></test>
       </evaluate>
     </evaluation>
-    <solution component="review2-solutions">
-      <p>
+    <solution include-automatic="no">
+      <p component="review2-solutions">
         The trapezoid sits between the vertical lines <m>x=1</m> and
         <m>x=3</m>. Its top edge is the horizontal line <m>y=4</m>. Its
         slanted lower edge joins <m>(1,0)</m> to <m>(3,2)</m>, a line of
         slope <m>1</m> through <m>(1,0)</m>, so that edge is
         <m>y = x-1</m>. Hence
       </p>
-      <me>
+      <me component="review2-solutions">
         \iint_R f\,dA = \int_1^{3}\!\!\int_{x-1}^{4} f(x,y)\,dy\,dx .
       </me>
-      <p>
+      <p component="review2-solutions">
         With a constant integrand the integral is that constant times the
         area of <m>R</m>, and
         <m>\int_1^3\left[4-(x-1)\right]dx = \int_1^3 (5-x)\,dx = 6</m>.
@@ -1067,26 +1081,26 @@
         <test><numcmp min="-1000000000" max="1000000000"/><feedback><p>Incorrect.</p></feedback></test>
       </evaluate>
     </evaluation>
-    <solution component="review2-solutions">
-      <p>
+    <solution include-automatic="no">
+      <p component="review2-solutions">
         Work in polar coordinates, where the integrand is <m>r</m> and the
         area element is <m>r\,dr\,d\theta</m>. Over the large disk,
       </p>
-      <me>
+      <me component="review2-solutions">
         \int_0^{2\pi}\!\!\int_0^{2a} r^2\,dr\,d\theta
         = \frac{2\pi(2a)^3}{3} .
       </me>
-      <p>
+      <p component="review2-solutions">
         The small circle is <m>r = 2a\cos\theta</m> and is swept out for
         <m>-\pi/2 \le \theta \le \pi/2</m>, so the disk it bounds
         contributes
       </p>
-      <me>
+      <me component="review2-solutions">
         \int_{-\pi/2}^{\pi/2}\!\!\int_0^{2a\cos\theta} r^2\,dr\,d\theta
         = \frac{(2a)^3}{3}\int_{-\pi/2}^{\pi/2}\cos^3\theta\,d\theta
         = \frac{4(2a)^3}{9} .
       </me>
-      <p>
+      <p component="review2-solutions">
         Subtracting, the integral over <m>D</m> is
         <m>\dfrac{2\pi(2a)^3}{3} - \dfrac{4(2a)^3}{9}</m>.
       </p>
@@ -1145,22 +1159,22 @@
         <test><numcmp min="-1000000000" max="1000000000"/><feedback><p>Incorrect.</p></feedback></test>
       </evaluate>
     </evaluation>
-    <solution component="review2-solutions">
-      <p>
+    <solution include-automatic="no">
+      <p component="review2-solutions">
         Solve <m>y+1 = \frac{y^2}{2}-3</m>, that is
         <m>y^2-2y-8 = 0</m>, to get <m>y=-2</m> and <m>y=4</m>: the two
         curves meet at <m>(-1,-2)</m> and <m>(5,4)</m>. Slicing
         horizontally, the line is the right boundary and the parabola the
         left one, so
       </p>
-      <me>
+      <me component="review2-solutions">
         \iint_R k\,xy\,dA
         = k\int_{-2}^{4}\!\!\int_{y^2/2-3}^{\,y+1} xy\,dx\,dy
         = \frac{k}{2}\int_{-2}^{4}
           y\left[(y+1)^2 - \left(\tfrac{y^2}{2}-3\right)^2\right]dy
         = 36k .
       </me>
-      <p>
+      <p component="review2-solutions">
         Integrating in the other order would need two separate integrals,
         because for <m>x \lt -1</m> the region is bounded above and below by
         the two halves of the parabola, while for <m>x \gt -1</m> the line
@@ -1267,25 +1281,25 @@
         <test><numcmp min="-1000000000" max="1000000000"/><feedback><p>Incorrect.</p></feedback></test>
       </evaluate>
     </evaluation>
-    <solution component="review2-solutions">
-      <p>
+    <solution include-automatic="no">
+      <p component="review2-solutions">
         Setting <m>1+\sin\theta = \sqrt{3}\cos\theta</m> gives
         <m>\theta = \pi/6</m>, where both curves have <m>r = 3/2</m>. To be
         inside both curves, a ray must stop at whichever curve it reaches
         first, so the boundary of <m>R</m> is the smaller of the two.
       </p>
-      <p>
+      <p component="review2-solutions">
         The circle only exists for <m>-\pi/2 \le \theta \le \pi/2</m>, so
         no part of <m>R</m> lies outside that range. On
         <m>-\pi/2 \le \theta \le \pi/6</m> the cardioid is the smaller
         one; on <m>\pi/6 \le \theta \le \pi/2</m> the circle is. Hence
       </p>
-      <me>
+      <me component="review2-solutions">
         \iint_R f\,dA
         = \int_{-\pi/2}^{\pi/6}\!\!\int_0^{1+\sin\theta} f\,r\,dr\,d\theta
         + \int_{\pi/6}^{\pi/2}\!\!\int_0^{\sqrt3\cos\theta} f\,r\,dr\,d\theta .
       </me>
-      <p>
+      <p component="review2-solutions">
         Taking <m>f=1</m> gives the area of <m>R</m>, about
         <m>1.057</m>.
       </p>
@@ -1364,16 +1378,16 @@
         <test><numcmp min="-1000000000" max="1000000000"/><feedback><p>Incorrect.</p></feedback></test>
       </evaluate>
     </evaluation>
-    <solution component="review2-solutions">
-      <p>
+    <solution include-automatic="no">
+      <p component="review2-solutions">
         The base is a rectangle, so the limits are all constants:
       </p>
-      <me>
+      <me component="review2-solutions">
         V = \int_0^{2}\!\!\int_0^{2}\left(x^2+y+a\right)dy\,dx
         = \int_0^{2}\left(2x^2+2+2a\right)dx
         = \frac{16}{3}+4+4a .
       </me>
-      <p>
+      <p component="review2-solutions">
         The surface stays above the square as long as <m>a \gt 0</m>, so no
         part of the solid dips below the <m>xy</m>-plane and the integral is
         the volume itself.
@@ -1458,18 +1472,18 @@
         <test><numcmp min="-1000000000" max="1000000000"/><feedback><p>Incorrect.</p></feedback></test>
       </evaluate>
     </evaluation>
-    <solution component="review2-solutions">
-      <p>
+    <solution include-automatic="no">
+      <p component="review2-solutions">
         The triangle lies below the line <m>y=x</m> and to the left of
         <m>x=1</m>, so for a fixed <m>x</m> the variable <m>y</m> runs from
         <m>0</m> to <m>x</m>:
       </p>
-      <me>
+      <me component="review2-solutions">
         V = \int_0^{1}\!\!\int_0^{x}\left(a-x-y\right)dy\,dx
         = \int_0^{1}\left(ax - x^2 - \frac{x^2}{2}\right)dx
         = \frac{a}{2}-\frac{1}{2} = \frac{a-1}{2} .
       </me>
-      <p>
+      <p component="review2-solutions">
         The lowest point of the plane over <m>R</m> is at <m>(1,1)</m>,
         where <m>z = a-2</m>, so the solid stays above the
         <m>xy</m>-plane whenever <m>a \ge 2</m>.
@@ -1574,8 +1588,8 @@
         <test><numcmp min="-1000000000" max="1000000000"/><feedback><p>Incorrect.</p></feedback></test>
       </evaluate>
     </evaluation>
-    <solution component="review2-solutions">
-      <p>
+    <solution include-automatic="no">
+      <p component="review2-solutions">
         Cylindrical coordinates suit both surfaces. The cylinder
         <m>x^2+(y-1)^2=1</m> becomes <m>r = 2\sin\theta</m>, traced once
         for <m>0 \le \theta \le \pi</m>, and it lies inside the sphere,
@@ -1585,18 +1599,18 @@
         <m>\dfrac{a\lvert xy\rvert}{x^2+y^2}
         = a\lvert\cos\theta\sin\theta\rvert</m>. So
       </p>
-      <me>
+      <me component="review2-solutions">
         M = a\int_0^{\pi}\!\!\int_0^{2\sin\theta}
         \!\!\int_{-\sqrt{4-r^2}}^{\sqrt{4-r^2}}
         \lvert\cos\theta\sin\theta\rvert\,r\,dz\,dr\,d\theta .
       </me>
-      <p>
+      <p component="review2-solutions">
         The <m>z</m>- and <m>r</m>-integrals give
         <m>\frac{2}{3}\left[8-\left(4-4\sin^2\theta\right)^{3/2}\right]
         = \frac{16}{3}\left(1-\lvert\cos\theta\rvert^3\right)</m>, and
         then
       </p>
-      <me>
+      <me component="review2-solutions">
         M = \frac{32a}{3}\int_0^{\pi/2}
         \cos\theta\sin\theta\left(1-\cos^3\theta\right)d\theta
         = \frac{32a}{3}\left(\frac12-\frac15\right) = \frac{16a}{5} .
@@ -2177,25 +2191,25 @@
         <test><strcmp strip="no">.*</strcmp><feedback><p>Incorrect.</p></feedback></test>
       </evaluate>
     </evaluation>
-    <solution component="review2-solutions">
-      <p>
+    <solution include-automatic="no">
+      <p component="review2-solutions">
         The plane is simply connected, so the integral is path independent
         exactly when <m>\partial P/\partial y = \partial Q/\partial x</m>.
       </p>
-      <p>
+      <p component="review2-solutions">
         Field <m>A</m> is <m>\nabla\left(\frac{x^2+y^2}{2}\right)</m> and
         both derivatives are <m>0</m>: yes. Field <m>B</m> is
         <m>\nabla(xy)</m>, with both derivatives equal to <m>1</m>: yes.
         Field <m>D</m> is constant, hence
         <m>\nabla\left(x+\frac{y}{2}\right)</m>: yes.
       </p>
-      <p>
+      <p component="review2-solutions">
         For <m>C</m>, <m>\partial P/\partial y = 1</m> while
         <m>\partial Q/\partial x = 0</m>: no. For <m>E</m> they are
         <m>0</m> and <m>1</m>: no. For <m>F</m> they are <m>-1</m> and
         <m>1</m>: no.
       </p>
-      <p>
+      <p component="review2-solutions">
         The pictures agree. <m>A</m>, <m>B</m> and <m>D</m> have no
         circulation: follow any closed loop and the gains cancel the losses.
         <m>F</m> visibly swirls once around the origin, and <m>C</m> and

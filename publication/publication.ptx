@@ -30,6 +30,13 @@
     <!--     <version include="none"/>                                  -->
     <!-- Do NOT delete the <version> line to hide things: with no list  -->
     <!-- at all PreTeXt keeps every component, which shows them all.    -->
+    <!--                                                                -->
+    <!-- In the review sets the component name sits on the *contents*   -->
+    <!-- of each <solution>, not on the <solution> itself, so that the  -->
+    <!-- element survives even when its contents are switched off.  It  -->
+    <!-- has to: see the comment at the top of source/review1-practice  -->
+    <!-- .ptx.  Switching a name on and off here works exactly the same -->
+    <!-- way regardless.                                                -->
     <!-- ============================================================== -->
     <!-- <version include="hw1-solutions hw2-solutions hw3-solutions
                       hw4-solutions hw5-solutions hw6-solutions
