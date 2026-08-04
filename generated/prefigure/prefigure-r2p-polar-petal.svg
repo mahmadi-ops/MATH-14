@@ -13,7 +13,7 @@
       <path d="M 7.3 5.8 L 2.8 7.8 A 2 2 0 0 1 0.0 6.0 L 0.0 2.0 A 2 2 0 0 1 2.8 0.2 L 7.3 2.2 A 2 2 0 0 1 7.3 5.8 Z" fill="white" stroke="none"/>
     </marker>
   </defs>
-  <g id="axes" stroke="#555555" stroke-width="1">
+  <g id="prefigure-r2p-polar-petal-axes" stroke="#555555" stroke-width="1">
     <line id="prefigure-r2p-polar-petal-line-0" x1="4.0" y1="99.0" x2="194.0" y2="99.0" stroke="#555555" stroke-width="1" marker-end="url(#prefigure-r2p-polar-petal-arrow-head-end-1_None_24_60-h555555)"/>
     <line id="prefigure-r2p-polar-petal-line-1" x1="99.0" y1="194.0" x2="99.0" y2="4.0" stroke="#555555" stroke-width="1" marker-end="url(#prefigure-r2p-polar-petal-arrow-head-end-1_None_24_60-h555555)"/>
   </g>

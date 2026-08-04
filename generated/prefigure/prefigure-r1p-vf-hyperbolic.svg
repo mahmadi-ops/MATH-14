@@ -19,7 +19,7 @@
       <path d="M 11.8 7.8 L 2.8 11.8 A 2 2 0 0 1 0.0 10.0 L 0.0 2.0 A 2 2 0 0 1 2.8 0.2 L 11.8 4.2 A 2 2 0 0 1 11.8 7.8 Z" fill="white" stroke="none"/>
     </marker>
   </defs>
-  <g id="axes" stroke="#555555" stroke-width="1">
+  <g id="prefigure-r1p-vf-hyperbolic-axes" stroke="#555555" stroke-width="1">
     <line id="prefigure-r1p-vf-hyperbolic-line-0" x1="4.0" y1="109.0" x2="214.0" y2="109.0" stroke="#555555" stroke-width="1" marker-end="url(#prefigure-r1p-vf-hyperbolic-arrow-head-end-1_None_24_60-h555555)"/>
     <line id="prefigure-r1p-vf-hyperbolic-line-1" x1="109.0" y1="214.0" x2="109.0" y2="4.0" stroke="#555555" stroke-width="1" marker-end="url(#prefigure-r1p-vf-hyperbolic-arrow-head-end-1_None_24_60-h555555)"/>
   </g>
@@ -55,76 +55,76 @@
       </svg>
     </g>
   </g>
-  <path id="prefigure-r1p-vf-hyperbolic-vf1" stroke="#3c6fbf" stroke-width="2" fill="none" d="M 40.5 177.5 L 51.5 188.4" marker-end="url(#prefigure-r1p-vf-hyperbolic-arrow-head-end-2_None_24_60-h3c6fbf)"/>
+  <path id="prefigure-r1p-vf-hyperbolic-vf1" stroke="#3c6fbf" stroke-width="2" fill="none" marker-end="url(#prefigure-r1p-vf-hyperbolic-arrow-head-end-2_None_24_60-h3c6fbf)" d="M 40.5 177.5 L 49.7 186.7"/>
   <circle id="prefigure-r1p-vf-hyperbolic-pt1" cx="40.5" cy="177.5" r="3" stroke="#8b1a2b" stroke-width="2" fill="none"/>
-  <path id="prefigure-r1p-vf-hyperbolic-vf2" stroke="#3c6fbf" stroke-width="2" fill="none" d="M 40.5 154.7 L 53.4 163.3" marker-end="url(#prefigure-r1p-vf-hyperbolic-arrow-head-end-2_None_24_60-h3c6fbf)"/>
+  <path id="prefigure-r1p-vf-hyperbolic-vf2" stroke="#3c6fbf" stroke-width="2" fill="none" marker-end="url(#prefigure-r1p-vf-hyperbolic-arrow-head-end-2_None_24_60-h3c6fbf)" d="M 40.5 154.7 L 51.4 161.9"/>
   <circle id="prefigure-r1p-vf-hyperbolic-pt2" cx="40.5" cy="154.7" r="3" stroke="#8b1a2b" stroke-width="2" fill="none"/>
-  <path id="prefigure-r1p-vf-hyperbolic-vf3" stroke="#3c6fbf" stroke-width="2" fill="none" d="M 40.5 131.8 L 55.3 136.8" marker-end="url(#prefigure-r1p-vf-hyperbolic-arrow-head-end-2_None_24_60-h3c6fbf)"/>
+  <path id="prefigure-r1p-vf-hyperbolic-vf3" stroke="#3c6fbf" stroke-width="2" fill="none" marker-end="url(#prefigure-r1p-vf-hyperbolic-arrow-head-end-2_None_24_60-h3c6fbf)" d="M 40.5 131.8 L 52.9 136.0"/>
   <circle id="prefigure-r1p-vf-hyperbolic-pt3" cx="40.5" cy="131.8" r="3" stroke="#8b1a2b" stroke-width="2" fill="none"/>
-  <path id="prefigure-r1p-vf-hyperbolic-vf4" stroke="#3c6fbf" stroke-width="2" fill="none" d="M 40.5 86.2 L 55.3 81.2" marker-end="url(#prefigure-r1p-vf-hyperbolic-arrow-head-end-2_None_24_60-h3c6fbf)"/>
+  <path id="prefigure-r1p-vf-hyperbolic-vf4" stroke="#3c6fbf" stroke-width="2" fill="none" marker-end="url(#prefigure-r1p-vf-hyperbolic-arrow-head-end-2_None_24_60-h3c6fbf)" d="M 40.5 86.2 L 52.9 82.0"/>
   <circle id="prefigure-r1p-vf-hyperbolic-pt4" cx="40.5" cy="86.2" r="3" stroke="#8b1a2b" stroke-width="2" fill="none"/>
-  <path id="prefigure-r1p-vf-hyperbolic-vf5" stroke="#3c6fbf" stroke-width="2" fill="none" d="M 40.5 63.3 L 53.4 54.7" marker-end="url(#prefigure-r1p-vf-hyperbolic-arrow-head-end-2_None_24_60-h3c6fbf)"/>
+  <path id="prefigure-r1p-vf-hyperbolic-vf5" stroke="#3c6fbf" stroke-width="2" fill="none" marker-end="url(#prefigure-r1p-vf-hyperbolic-arrow-head-end-2_None_24_60-h3c6fbf)" d="M 40.5 63.3 L 51.4 56.1"/>
   <circle id="prefigure-r1p-vf-hyperbolic-pt5" cx="40.5" cy="63.3" r="3" stroke="#8b1a2b" stroke-width="2" fill="none"/>
-  <path id="prefigure-r1p-vf-hyperbolic-vf6" stroke="#3c6fbf" stroke-width="2" fill="none" d="M 40.5 40.5 L 51.5 29.6" marker-end="url(#prefigure-r1p-vf-hyperbolic-arrow-head-end-2_None_24_60-h3c6fbf)"/>
+  <path id="prefigure-r1p-vf-hyperbolic-vf6" stroke="#3c6fbf" stroke-width="2" fill="none" marker-end="url(#prefigure-r1p-vf-hyperbolic-arrow-head-end-2_None_24_60-h3c6fbf)" d="M 40.5 40.5 L 49.7 31.3"/>
   <circle id="prefigure-r1p-vf-hyperbolic-pt6" cx="40.5" cy="40.5" r="3" stroke="#8b1a2b" stroke-width="2" fill="none"/>
-  <path id="prefigure-r1p-vf-hyperbolic-vf7" stroke="#3c6fbf" stroke-width="2" fill="none" d="M 63.3 177.5 L 72.0 190.4" marker-end="url(#prefigure-r1p-vf-hyperbolic-arrow-head-end-2_None_24_60-h3c6fbf)"/>
+  <path id="prefigure-r1p-vf-hyperbolic-vf7" stroke="#3c6fbf" stroke-width="2" fill="none" marker-end="url(#prefigure-r1p-vf-hyperbolic-arrow-head-end-2_None_24_60-h3c6fbf)" d="M 63.3 177.5 L 70.6 188.4"/>
   <circle id="prefigure-r1p-vf-hyperbolic-pt7" cx="63.3" cy="177.5" r="3" stroke="#8b1a2b" stroke-width="2" fill="none"/>
-  <path id="prefigure-r1p-vf-hyperbolic-vf8" stroke="#3c6fbf" stroke-width="2" fill="none" d="M 63.3 154.7 L 74.3 165.6" marker-end="url(#prefigure-r1p-vf-hyperbolic-arrow-head-end-2_None_24_60-h3c6fbf)"/>
+  <path id="prefigure-r1p-vf-hyperbolic-vf8" stroke="#3c6fbf" stroke-width="2" fill="none" marker-end="url(#prefigure-r1p-vf-hyperbolic-arrow-head-end-2_None_24_60-h3c6fbf)" d="M 63.3 154.7 L 72.6 163.9"/>
   <circle id="prefigure-r1p-vf-hyperbolic-pt8" cx="63.3" cy="154.7" r="3" stroke="#8b1a2b" stroke-width="2" fill="none"/>
-  <path id="prefigure-r1p-vf-hyperbolic-vf9" stroke="#3c6fbf" stroke-width="2" fill="none" d="M 63.3 131.8 L 77.2 138.8" marker-end="url(#prefigure-r1p-vf-hyperbolic-arrow-head-end-2_None_24_60-h3c6fbf)"/>
+  <path id="prefigure-r1p-vf-hyperbolic-vf9" stroke="#3c6fbf" stroke-width="2" fill="none" marker-end="url(#prefigure-r1p-vf-hyperbolic-arrow-head-end-2_None_24_60-h3c6fbf)" d="M 63.3 131.8 L 75.0 137.7"/>
   <circle id="prefigure-r1p-vf-hyperbolic-pt9" cx="63.3" cy="131.8" r="3" stroke="#8b1a2b" stroke-width="2" fill="none"/>
-  <path id="prefigure-r1p-vf-hyperbolic-vf10" stroke="#3c6fbf" stroke-width="2" fill="none" d="M 63.3 86.2 L 77.2 79.2" marker-end="url(#prefigure-r1p-vf-hyperbolic-arrow-head-end-2_None_24_60-h3c6fbf)"/>
+  <path id="prefigure-r1p-vf-hyperbolic-vf10" stroke="#3c6fbf" stroke-width="2" fill="none" marker-end="url(#prefigure-r1p-vf-hyperbolic-arrow-head-end-2_None_24_60-h3c6fbf)" d="M 63.3 86.2 L 75.0 80.3"/>
   <circle id="prefigure-r1p-vf-hyperbolic-pt10" cx="63.3" cy="86.2" r="3" stroke="#8b1a2b" stroke-width="2" fill="none"/>
-  <path id="prefigure-r1p-vf-hyperbolic-vf11" stroke="#3c6fbf" stroke-width="2" fill="none" d="M 63.3 63.3 L 74.3 52.4" marker-end="url(#prefigure-r1p-vf-hyperbolic-arrow-head-end-2_None_24_60-h3c6fbf)"/>
+  <path id="prefigure-r1p-vf-hyperbolic-vf11" stroke="#3c6fbf" stroke-width="2" fill="none" marker-end="url(#prefigure-r1p-vf-hyperbolic-arrow-head-end-2_None_24_60-h3c6fbf)" d="M 63.3 63.3 L 72.6 54.1"/>
   <circle id="prefigure-r1p-vf-hyperbolic-pt11" cx="63.3" cy="63.3" r="3" stroke="#8b1a2b" stroke-width="2" fill="none"/>
-  <path id="prefigure-r1p-vf-hyperbolic-vf12" stroke="#3c6fbf" stroke-width="2" fill="none" d="M 63.3 40.5 L 72.0 27.6" marker-end="url(#prefigure-r1p-vf-hyperbolic-arrow-head-end-2_None_24_60-h3c6fbf)"/>
+  <path id="prefigure-r1p-vf-hyperbolic-vf12" stroke="#3c6fbf" stroke-width="2" fill="none" marker-end="url(#prefigure-r1p-vf-hyperbolic-arrow-head-end-2_None_24_60-h3c6fbf)" d="M 63.3 40.5 L 70.6 29.6"/>
   <circle id="prefigure-r1p-vf-hyperbolic-pt12" cx="63.3" cy="40.5" r="3" stroke="#8b1a2b" stroke-width="2" fill="none"/>
-  <path id="prefigure-r1p-vf-hyperbolic-vf13" stroke="#3c6fbf" stroke-width="2" fill="none" d="M 86.2 177.5 L 91.1 192.2" marker-end="url(#prefigure-r1p-vf-hyperbolic-arrow-head-end-2_None_24_60-h3c6fbf)"/>
+  <path id="prefigure-r1p-vf-hyperbolic-vf13" stroke="#3c6fbf" stroke-width="2" fill="none" marker-end="url(#prefigure-r1p-vf-hyperbolic-arrow-head-end-2_None_24_60-h3c6fbf)" d="M 86.2 177.5 L 90.3 189.9"/>
   <circle id="prefigure-r1p-vf-hyperbolic-pt13" cx="86.2" cy="177.5" r="3" stroke="#8b1a2b" stroke-width="2" fill="none"/>
-  <path id="prefigure-r1p-vf-hyperbolic-vf14" stroke="#3c6fbf" stroke-width="2" fill="none" d="M 86.2 154.7 L 93.1 168.5" marker-end="url(#prefigure-r1p-vf-hyperbolic-arrow-head-end-2_None_24_60-h3c6fbf)"/>
+  <path id="prefigure-r1p-vf-hyperbolic-vf14" stroke="#3c6fbf" stroke-width="2" fill="none" marker-end="url(#prefigure-r1p-vf-hyperbolic-arrow-head-end-2_None_24_60-h3c6fbf)" d="M 86.2 154.7 L 92.0 166.3"/>
   <circle id="prefigure-r1p-vf-hyperbolic-pt14" cx="86.2" cy="154.7" r="3" stroke="#8b1a2b" stroke-width="2" fill="none"/>
-  <path id="prefigure-r1p-vf-hyperbolic-vf15" stroke="#3c6fbf" stroke-width="2" fill="none" d="M 86.2 131.8 L 97.1 142.8" marker-end="url(#prefigure-r1p-vf-hyperbolic-arrow-head-end-2_None_24_60-h3c6fbf)"/>
+  <path id="prefigure-r1p-vf-hyperbolic-vf15" stroke="#3c6fbf" stroke-width="2" fill="none" marker-end="url(#prefigure-r1p-vf-hyperbolic-arrow-head-end-2_None_24_60-h3c6fbf)" d="M 86.2 131.8 L 95.4 141.1"/>
   <circle id="prefigure-r1p-vf-hyperbolic-pt15" cx="86.2" cy="131.8" r="3" stroke="#8b1a2b" stroke-width="2" fill="none"/>
-  <path id="prefigure-r1p-vf-hyperbolic-vf16" stroke="#3c6fbf" stroke-width="2" fill="none" d="M 86.2 86.2 L 97.1 75.2" marker-end="url(#prefigure-r1p-vf-hyperbolic-arrow-head-end-2_None_24_60-h3c6fbf)"/>
+  <path id="prefigure-r1p-vf-hyperbolic-vf16" stroke="#3c6fbf" stroke-width="2" fill="none" marker-end="url(#prefigure-r1p-vf-hyperbolic-arrow-head-end-2_None_24_60-h3c6fbf)" d="M 86.2 86.2 L 95.4 76.9"/>
   <circle id="prefigure-r1p-vf-hyperbolic-pt16" cx="86.2" cy="86.2" r="3" stroke="#8b1a2b" stroke-width="2" fill="none"/>
-  <path id="prefigure-r1p-vf-hyperbolic-vf17" stroke="#3c6fbf" stroke-width="2" fill="none" d="M 86.2 63.3 L 93.1 49.5" marker-end="url(#prefigure-r1p-vf-hyperbolic-arrow-head-end-2_None_24_60-h3c6fbf)"/>
+  <path id="prefigure-r1p-vf-hyperbolic-vf17" stroke="#3c6fbf" stroke-width="2" fill="none" marker-end="url(#prefigure-r1p-vf-hyperbolic-arrow-head-end-2_None_24_60-h3c6fbf)" d="M 86.2 63.3 L 92.0 51.7"/>
   <circle id="prefigure-r1p-vf-hyperbolic-pt17" cx="86.2" cy="63.3" r="3" stroke="#8b1a2b" stroke-width="2" fill="none"/>
-  <path id="prefigure-r1p-vf-hyperbolic-vf18" stroke="#3c6fbf" stroke-width="2" fill="none" d="M 86.2 40.5 L 91.1 25.8" marker-end="url(#prefigure-r1p-vf-hyperbolic-arrow-head-end-2_None_24_60-h3c6fbf)"/>
+  <path id="prefigure-r1p-vf-hyperbolic-vf18" stroke="#3c6fbf" stroke-width="2" fill="none" marker-end="url(#prefigure-r1p-vf-hyperbolic-arrow-head-end-2_None_24_60-h3c6fbf)" d="M 86.2 40.5 L 90.3 28.1"/>
   <circle id="prefigure-r1p-vf-hyperbolic-pt18" cx="86.2" cy="40.5" r="3" stroke="#8b1a2b" stroke-width="2" fill="none"/>
-  <path id="prefigure-r1p-vf-hyperbolic-vf19" stroke="#3c6fbf" stroke-width="2" fill="none" d="M 131.8 177.5 L 126.9 192.2" marker-end="url(#prefigure-r1p-vf-hyperbolic-arrow-head-end-2_None_24_60-h3c6fbf)"/>
+  <path id="prefigure-r1p-vf-hyperbolic-vf19" stroke="#3c6fbf" stroke-width="2" fill="none" marker-end="url(#prefigure-r1p-vf-hyperbolic-arrow-head-end-2_None_24_60-h3c6fbf)" d="M 131.8 177.5 L 127.7 189.9"/>
   <circle id="prefigure-r1p-vf-hyperbolic-pt19" cx="131.8" cy="177.5" r="3" stroke="#8b1a2b" stroke-width="2" fill="none"/>
-  <path id="prefigure-r1p-vf-hyperbolic-vf20" stroke="#3c6fbf" stroke-width="2" fill="none" d="M 131.8 154.7 L 124.9 168.5" marker-end="url(#prefigure-r1p-vf-hyperbolic-arrow-head-end-2_None_24_60-h3c6fbf)"/>
+  <path id="prefigure-r1p-vf-hyperbolic-vf20" stroke="#3c6fbf" stroke-width="2" fill="none" marker-end="url(#prefigure-r1p-vf-hyperbolic-arrow-head-end-2_None_24_60-h3c6fbf)" d="M 131.8 154.7 L 126.0 166.3"/>
   <circle id="prefigure-r1p-vf-hyperbolic-pt20" cx="131.8" cy="154.7" r="3" stroke="#8b1a2b" stroke-width="2" fill="none"/>
-  <path id="prefigure-r1p-vf-hyperbolic-vf21" stroke="#3c6fbf" stroke-width="2" fill="none" d="M 131.8 131.8 L 120.9 142.8" marker-end="url(#prefigure-r1p-vf-hyperbolic-arrow-head-end-2_None_24_60-h3c6fbf)"/>
+  <path id="prefigure-r1p-vf-hyperbolic-vf21" stroke="#3c6fbf" stroke-width="2" fill="none" marker-end="url(#prefigure-r1p-vf-hyperbolic-arrow-head-end-2_None_24_60-h3c6fbf)" d="M 131.8 131.8 L 122.6 141.1"/>
   <circle id="prefigure-r1p-vf-hyperbolic-pt21" cx="131.8" cy="131.8" r="3" stroke="#8b1a2b" stroke-width="2" fill="none"/>
-  <path id="prefigure-r1p-vf-hyperbolic-vf22" stroke="#3c6fbf" stroke-width="2" fill="none" d="M 131.8 86.2 L 120.9 75.2" marker-end="url(#prefigure-r1p-vf-hyperbolic-arrow-head-end-2_None_24_60-h3c6fbf)"/>
+  <path id="prefigure-r1p-vf-hyperbolic-vf22" stroke="#3c6fbf" stroke-width="2" fill="none" marker-end="url(#prefigure-r1p-vf-hyperbolic-arrow-head-end-2_None_24_60-h3c6fbf)" d="M 131.8 86.2 L 122.6 76.9"/>
   <circle id="prefigure-r1p-vf-hyperbolic-pt22" cx="131.8" cy="86.2" r="3" stroke="#8b1a2b" stroke-width="2" fill="none"/>
-  <path id="prefigure-r1p-vf-hyperbolic-vf23" stroke="#3c6fbf" stroke-width="2" fill="none" d="M 131.8 63.3 L 124.9 49.5" marker-end="url(#prefigure-r1p-vf-hyperbolic-arrow-head-end-2_None_24_60-h3c6fbf)"/>
+  <path id="prefigure-r1p-vf-hyperbolic-vf23" stroke="#3c6fbf" stroke-width="2" fill="none" marker-end="url(#prefigure-r1p-vf-hyperbolic-arrow-head-end-2_None_24_60-h3c6fbf)" d="M 131.8 63.3 L 126.0 51.7"/>
   <circle id="prefigure-r1p-vf-hyperbolic-pt23" cx="131.8" cy="63.3" r="3" stroke="#8b1a2b" stroke-width="2" fill="none"/>
-  <path id="prefigure-r1p-vf-hyperbolic-vf24" stroke="#3c6fbf" stroke-width="2" fill="none" d="M 131.8 40.5 L 126.9 25.8" marker-end="url(#prefigure-r1p-vf-hyperbolic-arrow-head-end-2_None_24_60-h3c6fbf)"/>
+  <path id="prefigure-r1p-vf-hyperbolic-vf24" stroke="#3c6fbf" stroke-width="2" fill="none" marker-end="url(#prefigure-r1p-vf-hyperbolic-arrow-head-end-2_None_24_60-h3c6fbf)" d="M 131.8 40.5 L 127.7 28.1"/>
   <circle id="prefigure-r1p-vf-hyperbolic-pt24" cx="131.8" cy="40.5" r="3" stroke="#8b1a2b" stroke-width="2" fill="none"/>
-  <path id="prefigure-r1p-vf-hyperbolic-vf25" stroke="#3c6fbf" stroke-width="2" fill="none" d="M 154.7 177.5 L 146.0 190.4" marker-end="url(#prefigure-r1p-vf-hyperbolic-arrow-head-end-2_None_24_60-h3c6fbf)"/>
+  <path id="prefigure-r1p-vf-hyperbolic-vf25" stroke="#3c6fbf" stroke-width="2" fill="none" marker-end="url(#prefigure-r1p-vf-hyperbolic-arrow-head-end-2_None_24_60-h3c6fbf)" d="M 154.7 177.5 L 147.4 188.4"/>
   <circle id="prefigure-r1p-vf-hyperbolic-pt25" cx="154.7" cy="177.5" r="3" stroke="#8b1a2b" stroke-width="2" fill="none"/>
-  <path id="prefigure-r1p-vf-hyperbolic-vf26" stroke="#3c6fbf" stroke-width="2" fill="none" d="M 154.7 154.7 L 143.7 165.6" marker-end="url(#prefigure-r1p-vf-hyperbolic-arrow-head-end-2_None_24_60-h3c6fbf)"/>
+  <path id="prefigure-r1p-vf-hyperbolic-vf26" stroke="#3c6fbf" stroke-width="2" fill="none" marker-end="url(#prefigure-r1p-vf-hyperbolic-arrow-head-end-2_None_24_60-h3c6fbf)" d="M 154.7 154.7 L 145.4 163.9"/>
   <circle id="prefigure-r1p-vf-hyperbolic-pt26" cx="154.7" cy="154.7" r="3" stroke="#8b1a2b" stroke-width="2" fill="none"/>
-  <path id="prefigure-r1p-vf-hyperbolic-vf27" stroke="#3c6fbf" stroke-width="2" fill="none" d="M 154.7 131.8 L 140.8 138.8" marker-end="url(#prefigure-r1p-vf-hyperbolic-arrow-head-end-2_None_24_60-h3c6fbf)"/>
+  <path id="prefigure-r1p-vf-hyperbolic-vf27" stroke="#3c6fbf" stroke-width="2" fill="none" marker-end="url(#prefigure-r1p-vf-hyperbolic-arrow-head-end-2_None_24_60-h3c6fbf)" d="M 154.7 131.8 L 143.0 137.7"/>
   <circle id="prefigure-r1p-vf-hyperbolic-pt27" cx="154.7" cy="131.8" r="3" stroke="#8b1a2b" stroke-width="2" fill="none"/>
-  <path id="prefigure-r1p-vf-hyperbolic-vf28" stroke="#3c6fbf" stroke-width="2" fill="none" d="M 154.7 86.2 L 140.8 79.2" marker-end="url(#prefigure-r1p-vf-hyperbolic-arrow-head-end-2_None_24_60-h3c6fbf)"/>
+  <path id="prefigure-r1p-vf-hyperbolic-vf28" stroke="#3c6fbf" stroke-width="2" fill="none" marker-end="url(#prefigure-r1p-vf-hyperbolic-arrow-head-end-2_None_24_60-h3c6fbf)" d="M 154.7 86.2 L 143.0 80.3"/>
   <circle id="prefigure-r1p-vf-hyperbolic-pt28" cx="154.7" cy="86.2" r="3" stroke="#8b1a2b" stroke-width="2" fill="none"/>
-  <path id="prefigure-r1p-vf-hyperbolic-vf29" stroke="#3c6fbf" stroke-width="2" fill="none" d="M 154.7 63.3 L 143.7 52.4" marker-end="url(#prefigure-r1p-vf-hyperbolic-arrow-head-end-2_None_24_60-h3c6fbf)"/>
+  <path id="prefigure-r1p-vf-hyperbolic-vf29" stroke="#3c6fbf" stroke-width="2" fill="none" marker-end="url(#prefigure-r1p-vf-hyperbolic-arrow-head-end-2_None_24_60-h3c6fbf)" d="M 154.7 63.3 L 145.4 54.1"/>
   <circle id="prefigure-r1p-vf-hyperbolic-pt29" cx="154.7" cy="63.3" r="3" stroke="#8b1a2b" stroke-width="2" fill="none"/>
-  <path id="prefigure-r1p-vf-hyperbolic-vf30" stroke="#3c6fbf" stroke-width="2" fill="none" d="M 154.7 40.5 L 146.0 27.6" marker-end="url(#prefigure-r1p-vf-hyperbolic-arrow-head-end-2_None_24_60-h3c6fbf)"/>
+  <path id="prefigure-r1p-vf-hyperbolic-vf30" stroke="#3c6fbf" stroke-width="2" fill="none" marker-end="url(#prefigure-r1p-vf-hyperbolic-arrow-head-end-2_None_24_60-h3c6fbf)" d="M 154.7 40.5 L 147.4 29.6"/>
   <circle id="prefigure-r1p-vf-hyperbolic-pt30" cx="154.7" cy="40.5" r="3" stroke="#8b1a2b" stroke-width="2" fill="none"/>
-  <path id="prefigure-r1p-vf-hyperbolic-vf31" stroke="#3c6fbf" stroke-width="2" fill="none" d="M 177.5 177.5 L 166.5 188.4" marker-end="url(#prefigure-r1p-vf-hyperbolic-arrow-head-end-2_None_24_60-h3c6fbf)"/>
+  <path id="prefigure-r1p-vf-hyperbolic-vf31" stroke="#3c6fbf" stroke-width="2" fill="none" marker-end="url(#prefigure-r1p-vf-hyperbolic-arrow-head-end-2_None_24_60-h3c6fbf)" d="M 177.5 177.5 L 168.3 186.7"/>
   <circle id="prefigure-r1p-vf-hyperbolic-pt31" cx="177.5" cy="177.5" r="3" stroke="#8b1a2b" stroke-width="2" fill="none"/>
-  <path id="prefigure-r1p-vf-hyperbolic-vf32" stroke="#3c6fbf" stroke-width="2" fill="none" d="M 177.5 154.7 L 164.6 163.3" marker-end="url(#prefigure-r1p-vf-hyperbolic-arrow-head-end-2_None_24_60-h3c6fbf)"/>
+  <path id="prefigure-r1p-vf-hyperbolic-vf32" stroke="#3c6fbf" stroke-width="2" fill="none" marker-end="url(#prefigure-r1p-vf-hyperbolic-arrow-head-end-2_None_24_60-h3c6fbf)" d="M 177.5 154.7 L 166.6 161.9"/>
   <circle id="prefigure-r1p-vf-hyperbolic-pt32" cx="177.5" cy="154.7" r="3" stroke="#8b1a2b" stroke-width="2" fill="none"/>
-  <path id="prefigure-r1p-vf-hyperbolic-vf33" stroke="#3c6fbf" stroke-width="2" fill="none" d="M 177.5 131.8 L 162.7 136.8" marker-end="url(#prefigure-r1p-vf-hyperbolic-arrow-head-end-2_None_24_60-h3c6fbf)"/>
+  <path id="prefigure-r1p-vf-hyperbolic-vf33" stroke="#3c6fbf" stroke-width="2" fill="none" marker-end="url(#prefigure-r1p-vf-hyperbolic-arrow-head-end-2_None_24_60-h3c6fbf)" d="M 177.5 131.8 L 165.1 136.0"/>
   <circle id="prefigure-r1p-vf-hyperbolic-pt33" cx="177.5" cy="131.8" r="3" stroke="#8b1a2b" stroke-width="2" fill="none"/>
-  <path id="prefigure-r1p-vf-hyperbolic-vf34" stroke="#3c6fbf" stroke-width="2" fill="none" d="M 177.5 86.2 L 162.7 81.2" marker-end="url(#prefigure-r1p-vf-hyperbolic-arrow-head-end-2_None_24_60-h3c6fbf)"/>
+  <path id="prefigure-r1p-vf-hyperbolic-vf34" stroke="#3c6fbf" stroke-width="2" fill="none" marker-end="url(#prefigure-r1p-vf-hyperbolic-arrow-head-end-2_None_24_60-h3c6fbf)" d="M 177.5 86.2 L 165.1 82.0"/>
   <circle id="prefigure-r1p-vf-hyperbolic-pt34" cx="177.5" cy="86.2" r="3" stroke="#8b1a2b" stroke-width="2" fill="none"/>
-  <path id="prefigure-r1p-vf-hyperbolic-vf35" stroke="#3c6fbf" stroke-width="2" fill="none" d="M 177.5 63.3 L 164.6 54.7" marker-end="url(#prefigure-r1p-vf-hyperbolic-arrow-head-end-2_None_24_60-h3c6fbf)"/>
+  <path id="prefigure-r1p-vf-hyperbolic-vf35" stroke="#3c6fbf" stroke-width="2" fill="none" marker-end="url(#prefigure-r1p-vf-hyperbolic-arrow-head-end-2_None_24_60-h3c6fbf)" d="M 177.5 63.3 L 166.6 56.1"/>
   <circle id="prefigure-r1p-vf-hyperbolic-pt35" cx="177.5" cy="63.3" r="3" stroke="#8b1a2b" stroke-width="2" fill="none"/>
-  <path id="prefigure-r1p-vf-hyperbolic-vf36" stroke="#3c6fbf" stroke-width="2" fill="none" d="M 177.5 40.5 L 166.5 29.6" marker-end="url(#prefigure-r1p-vf-hyperbolic-arrow-head-end-2_None_24_60-h3c6fbf)"/>
+  <path id="prefigure-r1p-vf-hyperbolic-vf36" stroke="#3c6fbf" stroke-width="2" fill="none" marker-end="url(#prefigure-r1p-vf-hyperbolic-arrow-head-end-2_None_24_60-h3c6fbf)" d="M 177.5 40.5 L 168.3 31.3"/>
   <circle id="prefigure-r1p-vf-hyperbolic-pt36" cx="177.5" cy="40.5" r="3" stroke="#8b1a2b" stroke-width="2" fill="none"/>
 </svg>
