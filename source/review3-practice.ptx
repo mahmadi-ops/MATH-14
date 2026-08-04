@@ -1,17 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- MATH 14 - Review Problems 3, online version: the problems of the       -->
-<!-- "Review Problems #3" set (change of variables and the Jacobian,        -->
-<!-- triple integrals in spherical coordinates, and mass / centre of        -->
-<!-- mass), rebuilt as auto-graded dynamic exercises.  Same pattern as      -->
-<!-- review4-online.ptx: parameters are drawn with <de-random>, every       -->
-<!-- answer box is a <fillin> graded by its own <evaluate>, so each box     -->
-<!-- earns its credit separately and partial credit survives.               -->
-<!--                                                                       -->
-<!-- To include: add                                                       -->
-<!--   <xi:include href="review3-online.ptx" />                            -->
-<!-- inside the Review Problems with Solutions chapter of main.ptx. -->
-<section xml:id="sec-exercises-review3-online" xmlns:xi="http://www.w3.org/2001/XInclude">
-  <title>Review Problems #3</title>
+<!-- MATH 14 - Review Problems #3, practice version: the same problems  -->
+<!-- as review3-online.ptx, but with every <solution> removed and every  -->
+<!-- <feedback> reduced to a neutral right/wrong message, so students     -->
+<!-- can check their answers without seeing anything about the solutions. -->
+<!-- This file is GENERATED-STYLE but maintained by hand: if the problems -->
+<!-- in review3-online.ptx change, regenerate or mirror the change here. -->
+<section xml:id="sec-exercises-review3-practice" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Review Problems #3<mdash/>Practice</title>
 
   <introduction>
     <p>
@@ -27,10 +22,11 @@
       Press <q>Check Me</q> to submit; you may check as often as you like.
     </p>
     <p>
-      Every problem here comes with worked feedback and a complete
-      solution you can open. To test yourself on the same problems
-      without being able to peek, use
-      <xref ref="ch-review-practice" text="title"/>.
+      This chapter is for testing yourself, so it contains the questions
+      only. Checking an answer tells you whether it is right or wrong and
+      nothing more<mdash/>no hints, no worked feedback, and no solutions.
+      The same problems, with complete solutions, are in
+      <xref ref="ch-review-solutions" text="title"/>.
     </p>
     <p>
       <term>How to type your answers.</term>
@@ -68,12 +64,12 @@
     </ul>
   </introduction>
 
-  <exercises xml:id="exercises-review3-online">
+  <exercises xml:id="exercises-review3-practice">
 
   <!-- =================================================================== -->
   <!-- 1.  Area by a non-linear change of variables  (RP3 #1)              -->
   <!-- =================================================================== -->
-  <exercise xml:id="ex-r3o-area-change-of-variables">
+  <exercise xml:id="ex-r3p-area-change-of-variables">
     <title>Area by a Non-Linear Change of Variables</title>
     <setup>
       <de-object name="a" context="number">
@@ -191,20 +187,14 @@
         <test correct="yes">
           <mathcmp use-answer="yes"/>
           <feedback>
-            <p>
-              Correct: from <m>u = xy</m> and <m>v = xy^2</m> we get
-              <m>v/u = y</m>, and then
-              <m>x = u/y = u/(v/u) = u^2/v</m>.
-            </p>
+            <p>Correct.</p>
           </feedback>
         </test>
         <test>
           <numcmp min="-1000000000" max="1000000000"/>
           <feedback>
             <p>
-              Divide the two equations: <m>v/u = xy^2/(xy) = y</m>. Now
-              substitute <m>y = v/u</m> back into <m>u = xy</m> and solve
-              for <m>x</m>.
+              Not correct yet<mdash/>check your work and try again.
             </p>
           </feedback>
         </test>
@@ -213,17 +203,14 @@
         <test correct="yes">
           <mathcmp use-answer="yes"/>
           <feedback>
-            <p>
-              Correct: <m>\dfrac{v}{u} = \dfrac{xy^2}{xy} = y</m>.
-            </p>
+            <p>Correct.</p>
           </feedback>
         </test>
         <test>
           <numcmp min="-1000000000" max="1000000000"/>
           <feedback>
             <p>
-              Dividing <m>v = xy^2</m> by <m>u = xy</m> cancels the
-              <m>x</m> and one factor of <m>y</m>.
+              Not correct yet<mdash/>check your work and try again.
             </p>
           </feedback>
         </test>
@@ -232,19 +219,14 @@
         <test correct="yes">
           <mathcmp use-answer="yes"/>
           <feedback>
-            <p>
-              Correct: differentiating <m>x = u^2/v</m> with respect to
-              <m>u</m>, with <m>v</m> held constant, gives
-              <m>2u/v</m>.
-            </p>
+            <p>Correct.</p>
           </feedback>
         </test>
         <test>
           <numcmp min="-1000000000" max="1000000000"/>
           <feedback>
             <p>
-              Hold <m>v</m> constant and differentiate <m>u^2/v</m> with
-              respect to <m>u</m>.
+              Not correct yet<mdash/>check your work and try again.
             </p>
           </feedback>
         </test>
@@ -253,19 +235,14 @@
         <test correct="yes">
           <mathcmp use-answer="yes"/>
           <feedback>
-            <p>
-              Correct: <m>x = u^2 v^{-1}</m>, so
-              <m>x_v = -u^2 v^{-2} = -u^2/v^2</m>.
-            </p>
+            <p>Correct.</p>
           </feedback>
         </test>
         <test>
           <numcmp min="-1000000000" max="1000000000"/>
           <feedback>
             <p>
-              Write <m>x = u^2 v^{-1}</m> and differentiate with respect to
-              <m>v</m>, holding <m>u</m> constant. Do not lose the minus
-              sign.
+              Not correct yet<mdash/>check your work and try again.
             </p>
           </feedback>
         </test>
@@ -274,18 +251,14 @@
         <test correct="yes">
           <mathcmp use-answer="yes"/>
           <feedback>
-            <p>
-              Correct: <m>y = v u^{-1}</m>, so
-              <m>y_u = -v u^{-2} = -v/u^2</m>.
-            </p>
+            <p>Correct.</p>
           </feedback>
         </test>
         <test>
           <numcmp min="-1000000000" max="1000000000"/>
           <feedback>
             <p>
-              Write <m>y = v u^{-1}</m> and differentiate with respect to
-              <m>u</m>, holding <m>v</m> constant.
+              Not correct yet<mdash/>check your work and try again.
             </p>
           </feedback>
         </test>
@@ -294,18 +267,14 @@
         <test correct="yes">
           <mathcmp use-answer="yes"/>
           <feedback>
-            <p>
-              Correct: <m>y = v/u</m> is linear in <m>v</m>, so
-              <m>y_v = 1/u</m>.
-            </p>
+            <p>Correct.</p>
           </feedback>
         </test>
         <test>
           <numcmp min="-1000000000" max="1000000000"/>
           <feedback>
             <p>
-              With <m>u</m> held constant, <m>v/u</m> is just a constant
-              multiple of <m>v</m>.
+              Not correct yet<mdash/>check your work and try again.
             </p>
           </feedback>
         </test>
@@ -314,21 +283,14 @@
         <test correct="yes">
           <mathcmp use-answer="yes"/>
           <feedback>
-            <p>
-              Correct:
-              <m>\left(\dfrac{2u}{v}\right)\left(\dfrac{1}{u}\right)
-              - \left(-\dfrac{u^2}{v^2}\right)\left(-\dfrac{v}{u^2}\right)
-              = \dfrac{2}{v} - \dfrac{1}{v} = \dfrac{1}{v}</m>.
-            </p>
+            <p>Correct.</p>
           </feedback>
         </test>
         <test>
           <numcmp min="-1000000000" max="1000000000"/>
           <feedback>
             <p>
-              The determinant is <m>x_u y_v - x_v y_u</m>. Both terms
-              simplify to multiples of <m>1/v</m>; watch the two minus
-              signs in the second product.
+              Not correct yet<mdash/>check your work and try again.
             </p>
           </feedback>
         </test>
@@ -337,83 +299,14 @@
         <test correct="yes">
           <mathcmp use-answer="yes"/>
           <feedback>
-            <p>
-              Correct: for an area the integrand is just the absolute value
-              of the Jacobian, <m>1/v</m>.
-            </p>
+            <p>Correct.</p>
           </feedback>
         </test>
         <test>
           <numcmp min="-1000000000" max="1000000000"/>
           <feedback>
             <p>
-              Area <m>= \iint_D dx\,dy
-              = \iint \left|\frac{\partial(x,y)}{\partial(u,v)}\right|
-              du\,dv</m>, so the integrand is the Jacobian determinant.
-            </p>
-          </feedback>
-        </test>
-      </evaluate>
-      <evaluate>
-        <test correct="yes">
-          <mathcmp use-answer="yes"/>
-          <feedback><p>Correct.</p></feedback>
-        </test>
-        <test>
-          <numcmp min="-1000000000" max="1000000000"/>
-          <feedback>
-            <p>
-              The outer integral pairs with <m>dv</m>, and
-              <m>v = xy^2</m> runs between the two curves
-              <m>xy^2 = 1</m> and <m>xy^2 = <eval obj="bb"/></m>.
-            </p>
-          </feedback>
-        </test>
-      </evaluate>
-      <evaluate>
-        <test correct="yes">
-          <mathcmp use-answer="yes"/>
-          <feedback><p>Correct.</p></feedback>
-        </test>
-        <test>
-          <numcmp min="-1000000000" max="1000000000"/>
-          <feedback>
-            <p>
-              In the new variables the region is a rectangle: <m>v</m> runs
-              from <m>1</m> up to <m><eval obj="bb"/></m>.
-            </p>
-          </feedback>
-        </test>
-      </evaluate>
-      <evaluate>
-        <test correct="yes">
-          <mathcmp use-answer="yes"/>
-          <feedback><p>Correct.</p></feedback>
-        </test>
-        <test>
-          <numcmp min="-1000000000" max="1000000000"/>
-          <feedback>
-            <p>
-              The inner integral pairs with <m>du</m>, and <m>u = xy</m>
-              runs between <m>xy = 1</m> and
-              <m>xy = <eval obj="aa"/></m>.
-            </p>
-          </feedback>
-        </test>
-      </evaluate>
-      <evaluate>
-        <test correct="yes">
-          <mathcmp use-answer="yes"/>
-          <feedback><p>Correct.</p></feedback>
-        </test>
-        <test>
-          <numcmp min="-1000000000" max="1000000000"/>
-          <feedback>
-            <p>
-              The four bounding curves become <m>u = 1</m>,
-              <m>u = <eval obj="aa"/></m>, <m>v = 1</m>, and
-              <m>v = <eval obj="bb"/></m>: a rectangle in the
-              <m>uv</m>-plane.
+              Not correct yet<mdash/>check your work and try again.
             </p>
           </feedback>
         </test>
@@ -422,61 +315,89 @@
         <test correct="yes">
           <mathcmp use-answer="yes"/>
           <feedback>
-            <p>
-              Correct:
-              <m>\displaystyle\int_1^{<eval obj="bb"/>}\!\!\int_1^{<eval obj="aa"/>}
-              \frac{1}{v}\,du\,dv
-              = \left(<eval obj="aa"/> - 1\right)\ln\!\left(<eval obj="bb"/>\right)
-              \approx <eval obj="area"/></m>.
-            </p>
+            <p>Correct.</p>
           </feedback>
         </test>
         <test>
           <numcmp min="-1000000000" max="1000000000"/>
           <feedback>
             <p>
-              The integrand <m>1/v</m> does not involve <m>u</m>, so the
-              inner integral just contributes the length
-              <m><eval obj="aa"/> - 1</m>. Then
-              <m>\int_1^{<eval obj="bb"/>} \frac{dv}{v}
-              = \ln\!\left(<eval obj="bb"/>\right)</m>.
+              Not correct yet<mdash/>check your work and try again.
+            </p>
+          </feedback>
+        </test>
+      </evaluate>
+      <evaluate>
+        <test correct="yes">
+          <mathcmp use-answer="yes"/>
+          <feedback>
+            <p>Correct.</p>
+          </feedback>
+        </test>
+        <test>
+          <numcmp min="-1000000000" max="1000000000"/>
+          <feedback>
+            <p>
+              Not correct yet<mdash/>check your work and try again.
+            </p>
+          </feedback>
+        </test>
+      </evaluate>
+      <evaluate>
+        <test correct="yes">
+          <mathcmp use-answer="yes"/>
+          <feedback>
+            <p>Correct.</p>
+          </feedback>
+        </test>
+        <test>
+          <numcmp min="-1000000000" max="1000000000"/>
+          <feedback>
+            <p>
+              Not correct yet<mdash/>check your work and try again.
+            </p>
+          </feedback>
+        </test>
+      </evaluate>
+      <evaluate>
+        <test correct="yes">
+          <mathcmp use-answer="yes"/>
+          <feedback>
+            <p>Correct.</p>
+          </feedback>
+        </test>
+        <test>
+          <numcmp min="-1000000000" max="1000000000"/>
+          <feedback>
+            <p>
+              Not correct yet<mdash/>check your work and try again.
+            </p>
+          </feedback>
+        </test>
+      </evaluate>
+      <evaluate>
+        <test correct="yes">
+          <mathcmp use-answer="yes"/>
+          <feedback>
+            <p>Correct.</p>
+          </feedback>
+        </test>
+        <test>
+          <numcmp min="-1000000000" max="1000000000"/>
+          <feedback>
+            <p>
+              Not correct yet<mdash/>check your work and try again.
             </p>
           </feedback>
         </test>
       </evaluate>
     </evaluation>
-    <solution>
-      <p>
-        Dividing <m>v = xy^2</m> by <m>u = xy</m> gives <m>y = v/u</m>, and
-        then <m>x = u/y = u^2/v</m>. The Jacobian matrix has entries
-        <m>x_u = 2u/v</m>, <m>x_v = -u^2/v^2</m>, <m>y_u = -v/u^2</m>,
-        <m>y_v = 1/u</m>, so
-      </p>
-      <me>
-        \frac{\partial(x,y)}{\partial(u,v)}
-        = \frac{2u}{v}\cdot\frac{1}{u}
-        - \left(-\frac{u^2}{v^2}\right)\left(-\frac{v}{u^2}\right)
-        = \frac{2}{v} - \frac{1}{v} = \frac{1}{v}.
-      </me>
-      <p>
-        The four bounding curves are exactly <m>u = 1</m>,
-        <m>u = <eval obj="aa"/></m>, <m>v = 1</m>, <m>v = <eval obj="bb"/></m>,
-        so <m>D</m> becomes a rectangle and
-      </p>
-      <me>
-        \text{Area}
-        = \int_1^{<eval obj="bb"/>}\!\!\int_1^{<eval obj="aa"/>}
-          \frac{1}{v}\,du\,dv
-        = \left(<eval obj="aa"/> - 1\right)
-          \ln\!\left(<eval obj="bb"/>\right).
-      </me>
-    </solution>
   </exercise>
 
   <!-- =================================================================== -->
   <!-- 2.  Area of a tilted ellipse by a shear  (RP3 #2)                   -->
   <!-- =================================================================== -->
-  <exercise xml:id="ex-r3o-shear-ellipse-area">
+  <exercise xml:id="ex-r3p-shear-ellipse-area">
     <title>Area of a Tilted Ellipse by a Shear</title>
     <setup>
       <de-object name="a" context="number">
@@ -540,34 +461,14 @@
         <test correct="yes">
           <mathcmp use-answer="yes"/>
           <feedback>
-            <p>
-              Correct: from <m>t = y</m> and
-              <m>s = x + <eval obj="a"/>y</m> we get
-              <m>x = s - <eval obj="a"/>t</m>.
-            </p>
+            <p>Correct.</p>
           </feedback>
         </test>
         <test>
           <numcmp min="-1000000000" max="1000000000"/>
           <feedback>
             <p>
-              Substitute <m>y = t</m> into
-              <m>s = x + <eval obj="a"/>y</m> and solve for <m>x</m>.
-            </p>
-          </feedback>
-        </test>
-      </evaluate>
-      <evaluate>
-        <test correct="yes">
-          <mathcmp use-answer="yes"/>
-          <feedback><p>Correct: the second equation already says <m>y = t</m>.</p></feedback>
-        </test>
-        <test>
-          <numcmp min="-1000000000" max="1000000000"/>
-          <feedback>
-            <p>
-              The change of variables sets <m>t = y</m>, so inverting it
-              leaves <m>y</m> unchanged.
+              Not correct yet<mdash/>check your work and try again.
             </p>
           </feedback>
         </test>
@@ -576,20 +477,14 @@
         <test correct="yes">
           <mathcmp use-answer="yes"/>
           <feedback>
-            <p>
-              Correct: the matrix is
-              <m>\begin{pmatrix} 1 &amp; -<eval obj="a"/> \\ 0 &amp; 1
-              \end{pmatrix}</m>, a shear, whose determinant is <m>1</m>.
-            </p>
+            <p>Correct.</p>
           </feedback>
         </test>
         <test>
           <numcmp min="-1000000000" max="1000000000"/>
           <feedback>
             <p>
-              With <m>x = s - <eval obj="a"/>t</m> and <m>y = t</m> the
-              Jacobian matrix is upper triangular with <m>1</m>s on the
-              diagonal, so the determinant is the product of those.
+              Not correct yet<mdash/>check your work and try again.
             </p>
           </feedback>
         </test>
@@ -598,54 +493,41 @@
         <test correct="yes">
           <mathcmp use-answer="yes"/>
           <feedback>
-            <p>
-              Correct: the region becomes the unit disc
-              <m>s^2 + t^2 \le 1</m>, and the Jacobian is <m>1</m>, so the
-              area is <m>\pi \approx <eval obj="area"/></m>.
-            </p>
+            <p>Correct.</p>
           </feedback>
         </test>
         <test>
           <numcmp min="-1000000000" max="1000000000"/>
           <feedback>
             <p>
-              Substitute: <m>x^2 + <eval obj="twoa"/>xy
-              + <eval obj="bcoef"/>y^2
-              = \left(s - <eval obj="a"/>t\right)^2
-              + <eval obj="twoa"/>\left(s - <eval obj="a"/>t\right)t
-              + <eval obj="bcoef"/>t^2 = s^2 + t^2</m>. So the region is
-              the unit disc, and a shear does not change area.
+              Not correct yet<mdash/>check your work and try again.
+            </p>
+          </feedback>
+        </test>
+      </evaluate>
+      <evaluate>
+        <test correct="yes">
+          <mathcmp use-answer="yes"/>
+          <feedback>
+            <p>Correct.</p>
+          </feedback>
+        </test>
+        <test>
+          <numcmp min="-1000000000" max="1000000000"/>
+          <feedback>
+            <p>
+              Not correct yet<mdash/>check your work and try again.
             </p>
           </feedback>
         </test>
       </evaluate>
     </evaluation>
-    <solution>
-      <p>
-        Inverting the shear gives <m>x = s - <eval obj="a"/>t</m>,
-        <m>y = t</m>, so the Jacobian matrix is
-        <m>\begin{pmatrix} 1 &amp; -<eval obj="a"/> \\ 0 &amp; 1
-        \end{pmatrix}</m> with determinant <m>1</m>, and
-        <m>dx\,dy = ds\,dt</m>. Completing the substitution,
-      </p>
-      <me>
-        x^2 + <eval obj="twoa"/>xy + <eval obj="bcoef"/>y^2
-        = \left(s - <eval obj="a"/>t\right)^2
-        + <eval obj="twoa"/>\left(s - <eval obj="a"/>t\right)t
-        + <eval obj="bcoef"/>t^2
-        = s^2 + t^2 ,
-      </me>
-      <p>
-        so the region is the unit disc <m>T</m> and
-        <m>\iint_R dx\,dy = \iint_T ds\,dt = \text{Area}(T) = \pi</m>.
-      </p>
-    </solution>
   </exercise>
 
   <!-- =================================================================== -->
   <!-- 3.  A double integral under s = y, t = y - x^2  (RP3 #3)            -->
   <!-- =================================================================== -->
-  <exercise xml:id="ex-r3o-parabolic-strip">
+  <exercise xml:id="ex-r3p-parabolic-strip">
     <title>A Double Integral Under a Parabolic Change of Variables</title>
     <setup>
       <de-object name="a" context="number">
@@ -737,122 +619,14 @@
         <test correct="yes">
           <mathcmp use-answer="yes"/>
           <feedback>
-            <p>
-              Correct: <m>t = y - x^2 = s - x^2</m>, so
-              <m>x^2 = s - t</m> and <m>x = \sqrt{s-t}</m>.
-            </p>
+            <p>Correct.</p>
           </feedback>
         </test>
         <test>
           <numcmp min="-1000000000" max="1000000000"/>
           <feedback>
             <p>
-              Since <m>s = y</m>, the second equation reads
-              <m>t = s - x^2</m>. Solve that for <m>x</m>, keeping the
-              positive root.
-            </p>
-          </feedback>
-        </test>
-      </evaluate>
-      <evaluate>
-        <test correct="yes">
-          <mathcmp use-answer="yes"/>
-          <feedback><p>Correct: the substitution sets <m>s = y</m> outright.</p></feedback>
-        </test>
-        <test>
-          <numcmp min="-1000000000" max="1000000000"/>
-          <feedback>
-            <p>The first equation of the substitution is <m>s = y</m>.</p>
-          </feedback>
-        </test>
-      </evaluate>
-      <evaluate>
-        <test correct="yes">
-          <mathcmp use-answer="yes"/>
-          <feedback>
-            <p>
-              Correct: with <m>x = (s-t)^{1/2}</m> and <m>y = s</m>,
-              <m>x_s = \tfrac{1}{2}(s-t)^{-1/2}</m>,
-              <m>x_t = -\tfrac{1}{2}(s-t)^{-1/2}</m>, <m>y_s = 1</m>,
-              <m>y_t = 0</m>, so the determinant is
-              <m>0 + \tfrac{1}{2}(s-t)^{-1/2}</m>.
-            </p>
-          </feedback>
-        </test>
-        <test>
-          <numcmp min="-1000000000" max="1000000000"/>
-          <feedback>
-            <p>
-              The determinant is <m>x_s y_t - x_t y_s</m>. Since
-              <m>y_t = 0</m> only the second product survives, and
-              <m>x_t = -\tfrac{1}{2}(s-t)^{-1/2}</m>.
-            </p>
-          </feedback>
-        </test>
-      </evaluate>
-      <evaluate>
-        <test correct="yes">
-          <mathcmp use-answer="yes"/>
-          <feedback><p>Correct: <m>y = 0</m> becomes <m>s = 0</m>.</p></feedback>
-        </test>
-        <test>
-          <numcmp min="-1000000000" max="1000000000"/>
-          <feedback>
-            <p>
-              The bottom and top boundaries of <m>R</m> are <m>y = 0</m>
-              and <m>y = <eval obj="bsq"/></m>; since <m>s = y</m>, these
-              are the <m>s</m>-limits.
-            </p>
-          </feedback>
-        </test>
-      </evaluate>
-      <evaluate>
-        <test correct="yes">
-          <mathcmp use-answer="yes"/>
-          <feedback><p>Correct: <m>y = <eval obj="bsq"/></m> becomes <m>s = <eval obj="bsq"/></m>.</p></feedback>
-        </test>
-        <test>
-          <numcmp min="-1000000000" max="1000000000"/>
-          <feedback>
-            <p>Since <m>s = y</m>, the top boundary <m>y = <eval obj="bsq"/></m>
-            is the upper <m>s</m>-limit.</p>
-          </feedback>
-        </test>
-      </evaluate>
-      <evaluate>
-        <test correct="yes">
-          <mathcmp use-answer="yes"/>
-          <feedback>
-            <p>
-              Correct: <m>y = x^2 - <eval obj="a"/></m> means
-              <m>y - x^2 = -<eval obj="a"/></m>, that is
-              <m>t = -<eval obj="a"/></m>.
-            </p>
-          </feedback>
-        </test>
-        <test>
-          <numcmp min="-1000000000" max="1000000000"/>
-          <feedback>
-            <p>
-              Rewrite the left and right boundaries in terms of
-              <m>t = y - x^2</m>: <m>y = x^2</m> gives <m>t = 0</m>, and
-              <m>y = x^2 - <eval obj="a"/></m> gives
-              <m>t = -<eval obj="a"/></m>.
-            </p>
-          </feedback>
-        </test>
-      </evaluate>
-      <evaluate>
-        <test correct="yes">
-          <mathcmp use-answer="yes"/>
-          <feedback><p>Correct: <m>y = x^2</m> becomes <m>t = 0</m>.</p></feedback>
-        </test>
-        <test>
-          <numcmp min="-1000000000" max="1000000000"/>
-          <feedback>
-            <p>
-              On the curve <m>y = x^2</m> we have <m>y - x^2 = 0</m>, so
-              <m>t = 0</m> there.
+              Not correct yet<mdash/>check your work and try again.
             </p>
           </feedback>
         </test>
@@ -861,20 +635,14 @@
         <test correct="yes">
           <mathcmp use-answer="yes"/>
           <feedback>
-            <p>
-              Correct:
-              <m>\sqrt{s-t}\cdot\dfrac{1}{2\sqrt{s-t}} = \dfrac{1}{2}</m>.
-              This is what makes the problem easy.
-            </p>
+            <p>Correct.</p>
           </feedback>
         </test>
         <test>
           <numcmp min="-1000000000" max="1000000000"/>
           <feedback>
             <p>
-              The integrand is <m>x = \sqrt{s-t}</m> and the Jacobian is
-              <m>1/(2\sqrt{s-t})</m>. Multiply them and watch the square
-              roots cancel.
+              Not correct yet<mdash/>check your work and try again.
             </p>
           </feedback>
         </test>
@@ -883,60 +651,121 @@
         <test correct="yes">
           <mathcmp use-answer="yes"/>
           <feedback>
-            <p>
-              Correct: the rectangle <m>T</m> has area
-              <m>\left(<eval obj="a"/>\right)\left(<eval obj="bsq"/>\right)</m>,
-              so the integral is
-              <m>\tfrac{1}{2}\,\text{Area}(T) = <eval obj="value"/></m>.
-            </p>
+            <p>Correct.</p>
           </feedback>
         </test>
         <test>
           <numcmp min="-1000000000" max="1000000000"/>
           <feedback>
             <p>
-              Integrating the constant <m>\tfrac12</m> over the rectangle
-              <m>0 \le s \le <eval obj="bsq"/></m>,
-              <m>-<eval obj="a"/> \le t \le 0</m> gives half its area.
+              Not correct yet<mdash/>check your work and try again.
+            </p>
+          </feedback>
+        </test>
+      </evaluate>
+      <evaluate>
+        <test correct="yes">
+          <mathcmp use-answer="yes"/>
+          <feedback>
+            <p>Correct.</p>
+          </feedback>
+        </test>
+        <test>
+          <numcmp min="-1000000000" max="1000000000"/>
+          <feedback>
+            <p>
+              Not correct yet<mdash/>check your work and try again.
+            </p>
+          </feedback>
+        </test>
+      </evaluate>
+      <evaluate>
+        <test correct="yes">
+          <mathcmp use-answer="yes"/>
+          <feedback>
+            <p>Correct.</p>
+          </feedback>
+        </test>
+        <test>
+          <numcmp min="-1000000000" max="1000000000"/>
+          <feedback>
+            <p>
+              Not correct yet<mdash/>check your work and try again.
+            </p>
+          </feedback>
+        </test>
+      </evaluate>
+      <evaluate>
+        <test correct="yes">
+          <mathcmp use-answer="yes"/>
+          <feedback>
+            <p>Correct.</p>
+          </feedback>
+        </test>
+        <test>
+          <numcmp min="-1000000000" max="1000000000"/>
+          <feedback>
+            <p>
+              Not correct yet<mdash/>check your work and try again.
+            </p>
+          </feedback>
+        </test>
+      </evaluate>
+      <evaluate>
+        <test correct="yes">
+          <mathcmp use-answer="yes"/>
+          <feedback>
+            <p>Correct.</p>
+          </feedback>
+        </test>
+        <test>
+          <numcmp min="-1000000000" max="1000000000"/>
+          <feedback>
+            <p>
+              Not correct yet<mdash/>check your work and try again.
+            </p>
+          </feedback>
+        </test>
+      </evaluate>
+      <evaluate>
+        <test correct="yes">
+          <mathcmp use-answer="yes"/>
+          <feedback>
+            <p>Correct.</p>
+          </feedback>
+        </test>
+        <test>
+          <numcmp min="-1000000000" max="1000000000"/>
+          <feedback>
+            <p>
+              Not correct yet<mdash/>check your work and try again.
+            </p>
+          </feedback>
+        </test>
+      </evaluate>
+      <evaluate>
+        <test correct="yes">
+          <mathcmp use-answer="yes"/>
+          <feedback>
+            <p>Correct.</p>
+          </feedback>
+        </test>
+        <test>
+          <numcmp min="-1000000000" max="1000000000"/>
+          <feedback>
+            <p>
+              Not correct yet<mdash/>check your work and try again.
             </p>
           </feedback>
         </test>
       </evaluate>
     </evaluation>
-    <solution>
-      <p>
-        Inverting gives <m>x = \sqrt{s-t}</m> and <m>y = s</m>, so
-      </p>
-      <me>
-        \frac{\partial(x,y)}{\partial(s,t)}
-        = \begin{vmatrix}
-          \frac{1}{2\sqrt{s-t}} &amp; -\frac{1}{2\sqrt{s-t}} \\
-          1 &amp; 0
-          \end{vmatrix}
-        = \frac{1}{2\sqrt{s-t}} .
-      </me>
-      <p>
-        The boundaries <m>y = x^2</m> and <m>y = x^2 - <eval obj="a"/></m>
-        become <m>t = 0</m> and <m>t = -<eval obj="a"/></m>, while
-        <m>y = 0</m> and <m>y = <eval obj="bsq"/></m> become <m>s = 0</m>
-        and <m>s = <eval obj="bsq"/></m>. The integrand times the Jacobian
-        collapses to <m>\sqrt{s-t}\cdot\frac{1}{2\sqrt{s-t}}
-        = \frac{1}{2}</m>, so
-      </p>
-      <me>
-        \iint_R x\,dx\,dy
-        = \iint_T \frac{1}{2}\,ds\,dt
-        = \frac{1}{2}\,\text{Area}(T)
-        = \frac{\left(<eval obj="a"/>\right)\left(<eval obj="bsq"/>\right)}{2}
-        = <eval obj="value"/> .
-      </me>
-    </solution>
   </exercise>
 
   <!-- =================================================================== -->
   <!-- 4.  Triple integral over an ellipsoid  (RP3 #4)                     -->
   <!-- =================================================================== -->
-  <exercise xml:id="ex-r3o-ellipsoid-integral">
+  <exercise xml:id="ex-r3p-ellipsoid-integral">
     <title>A Triple Integral Over an Ellipsoid</title>
     <setup>
       <de-object name="a" context="number">
@@ -997,21 +826,14 @@
         <test correct="yes">
           <mathcmp use-answer="yes"/>
           <feedback>
-            <p>
-              Correct: the matrix is diagonal with entries
-              <m><eval obj="a"/></m>, <m><eval obj="b"/></m>,
-              <m><eval obj="c"/></m>, so the determinant is their product,
-              <m><eval obj="jac"/></m>.
-            </p>
+            <p>Correct.</p>
           </feedback>
         </test>
         <test>
           <numcmp min="-1000000000" max="1000000000"/>
           <feedback>
             <p>
-              Each new variable is scaled independently, so the Jacobian
-              matrix is diagonal and its determinant is the product of the
-              three scale factors.
+              Not correct yet<mdash/>check your work and try again.
             </p>
           </feedback>
         </test>
@@ -1020,53 +842,25 @@
         <test correct="yes">
           <mathcmp use-answer="yes"/>
           <feedback>
-            <p>
-              Correct: the integral becomes
-              <m><eval obj="jac"/>\displaystyle\iiint_{u^2+v^2+w^2\le 1}
-              \left(u^2+v^2+w^2\right) dV
-              = <eval obj="jac"/>\cdot\frac{4\pi}{5}
-              \approx <eval obj="value"/></m>.
-            </p>
+            <p>Correct.</p>
           </feedback>
         </test>
         <test>
           <numcmp min="-1000000000" max="1000000000"/>
           <feedback>
             <p>
-              After the substitution the integrand is
-              <m>u^2+v^2+w^2 = \rho^2</m> over the unit ball. In spherical
-              coordinates
-              <m>\int_0^{2\pi}\!\int_0^{\pi}\!\int_0^{1}
-              \rho^2\cdot\rho^2\sin\phi\,d\rho\,d\phi\,d\theta
-              = 2\pi\cdot 2\cdot\tfrac15 = \tfrac{4\pi}{5}</m>. Multiply by
-              the Jacobian.
+              Not correct yet<mdash/>check your work and try again.
             </p>
           </feedback>
         </test>
       </evaluate>
     </evaluation>
-    <solution>
-      <p>
-        Setting <m>x = <eval obj="a"/>u</m>, <m>y = <eval obj="b"/>v</m>,
-        <m>z = <eval obj="c"/>w</m> carries <m>E</m> to the unit ball and
-        has Jacobian <m><eval obj="jac"/></m>, while the integrand becomes
-        <m>u^2+v^2+w^2 = \rho^2</m>. Hence
-      </p>
-      <me>
-        \iiint_E \left(\frac{x^2}{<eval obj="a"/>^2}
-        + \frac{y^2}{<eval obj="b"/>^2}
-        + \frac{z^2}{<eval obj="c"/>^2}\right) dV
-        = <eval obj="jac"/>\int_0^{2\pi}\!\!\int_0^{\pi}\!\!\int_0^{1}
-          \rho^4 \sin\phi \,d\rho\,d\phi\,d\theta
-        = \frac{4\,\pi\,<eval obj="jac"/>}{5} .
-      </me>
-    </solution>
   </exercise>
 
   <!-- =================================================================== -->
   <!-- 5.  Centre of mass of a tetrahedron  (RP3 #5)                       -->
   <!-- =================================================================== -->
-  <exercise xml:id="ex-r3o-tetrahedron-com">
+  <exercise xml:id="ex-r3p-tetrahedron-com">
     <title>Centre of Mass of a Tetrahedron</title>
     <setup>
       <de-object name="k" context="number">
@@ -1116,23 +910,14 @@
         <test correct="yes">
           <mathcmp use-answer="yes"/>
           <feedback>
-            <p>
-              Correct:
-              <m>\displaystyle\int_0^1\!\!\int_0^{1-x}\!\!\int_0^{1-x-y}
-              <eval obj="k"/>\sqrt{z}\,dz\,dy\,dx
-              = \frac{8\left(<eval obj="k"/>\right)}{105}
-              \approx <eval obj="mass"/></m>.
-            </p>
+            <p>Correct.</p>
           </feedback>
         </test>
         <test>
           <numcmp min="-1000000000" max="1000000000"/>
           <feedback>
             <p>
-              Describe <m>W</m> by <m>0 \le x \le 1</m>,
-              <m>0 \le y \le 1-x</m>, <m>0 \le z \le 1-x-y</m>. The inner
-              integral gives <m>\tfrac23(1-x-y)^{3/2}</m>; the next gives
-              <m>\tfrac{4}{15}(1-x)^{5/2}</m>.
+              Not correct yet<mdash/>check your work and try again.
             </p>
           </feedback>
         </test>
@@ -1141,21 +926,14 @@
         <test correct="yes">
           <mathcmp use-answer="yes"/>
           <feedback>
-            <p>
-              Correct: the numerator is
-              <m>\tfrac{16\left(<eval obj="k"/>\right)}{945}</m>, and
-              dividing by the mass gives <m>\tfrac29</m>.
-            </p>
+            <p>Correct.</p>
           </feedback>
         </test>
         <test>
           <numcmp min="-1000000000" max="1000000000"/>
           <feedback>
             <p>
-              <m>x_{\mathrm{CM}}
-              = \frac{\iiint_W x\rho\,dV}{\iiint_W \rho\,dV}</m>. The
-              constant <m><eval obj="k"/></m> cancels, so the answer does
-              not depend on it.
+              Not correct yet<mdash/>check your work and try again.
             </p>
           </feedback>
         </test>
@@ -1164,19 +942,14 @@
         <test correct="yes">
           <mathcmp use-answer="yes"/>
           <feedback>
-            <p>
-              Correct: the density and the solid are symmetric in <m>x</m>
-              and <m>y</m>, so <m>y_{\mathrm{CM}} = x_{\mathrm{CM}}</m>.
-            </p>
+            <p>Correct.</p>
           </feedback>
         </test>
         <test>
           <numcmp min="-1000000000" max="1000000000"/>
           <feedback>
             <p>
-              Swapping <m>x</m> and <m>y</m> leaves both the solid and the
-              density <m><eval obj="k"/>\sqrt{z}</m> unchanged, so this
-              coordinate matches <m>x_{\mathrm{CM}}</m>.
+              Not correct yet<mdash/>check your work and try again.
             </p>
           </feedback>
         </test>
@@ -1185,61 +958,25 @@
         <test correct="yes">
           <mathcmp use-answer="yes"/>
           <feedback>
-            <p>
-              Correct: the numerator is
-              <m>\tfrac{8\left(<eval obj="k"/>\right)}{315}</m>, and
-              dividing by the mass gives <m>\tfrac13</m>.
-            </p>
+            <p>Correct.</p>
           </feedback>
         </test>
         <test>
           <numcmp min="-1000000000" max="1000000000"/>
           <feedback>
             <p>
-              Here <m>z\rho = <eval obj="k"/>z^{3/2}</m>. Integrating over
-              <m>W</m> gives
-              <m>\tfrac{8\left(<eval obj="k"/>\right)}{315}</m>; divide by
-              the mass. The density grows with <m>z</m>, so
-              <m>z_{\mathrm{CM}}</m> sits above the centroid height
-              <m>\tfrac14</m>.
+              Not correct yet<mdash/>check your work and try again.
             </p>
           </feedback>
         </test>
       </evaluate>
     </evaluation>
-    <solution>
-      <p>
-        Describe <m>W</m> by <m>0 \le x \le 1</m>, <m>0 \le y \le 1-x</m>,
-        <m>0 \le z \le 1-x-y</m>. Then
-      </p>
-      <me>
-        \iiint_W <eval obj="k"/>\sqrt{z}\,dV
-        = \frac{8\left(<eval obj="k"/>\right)}{105}, \qquad
-        \iiint_W <eval obj="k"/>x\sqrt{z}\,dV
-        = \frac{16\left(<eval obj="k"/>\right)}{945}, \qquad
-        \iiint_W <eval obj="k"/>z\sqrt{z}\,dV
-        = \frac{8\left(<eval obj="k"/>\right)}{315},
-      </me>
-      <p>
-        and the <m>y</m>-numerator equals the <m>x</m>-numerator by the
-        symmetry of <m>W</m> and of <m>\rho</m> in <m>x</m> and <m>y</m>.
-        Dividing,
-      </p>
-      <me>
-        \left(x_{\mathrm{CM}}, y_{\mathrm{CM}}, z_{\mathrm{CM}}\right)
-        = \left(\frac29, \frac29, \frac13\right),
-      </me>
-      <p>
-        independently of the constant <m><eval obj="k"/></m>, which cancels
-        from every ratio.
-      </p>
-    </solution>
   </exercise>
 
   <!-- =================================================================== -->
   <!-- 6.  Mass and centre of mass of a lamina  (RP3 #6)                   -->
   <!-- =================================================================== -->
-  <exercise xml:id="ex-r3o-lamina-rectangle">
+  <exercise xml:id="ex-r3p-lamina-rectangle">
     <title>Mass and Centre of Mass of a Rectangular Lamina</title>
     <setup>
       <de-object name="A" context="number">
@@ -1303,23 +1040,14 @@
         <test correct="yes">
           <mathcmp use-answer="yes"/>
           <feedback>
-            <p>
-              Correct:
-              <m>\displaystyle\int_0^{<eval obj="A"/>}\!\!\int_0^{<eval obj="B"/>}
-              \left(<eval obj="C"/>x + <eval obj="D"/>y + <eval obj="E"/>\right)
-              dy\,dx = <eval obj="mass"/></m>.
-            </p>
+            <p>Correct.</p>
           </feedback>
         </test>
         <test>
           <numcmp min="-1000000000" max="1000000000"/>
           <feedback>
             <p>
-              Integrate term by term over the rectangle:
-              <m>\iint <eval obj="C"/>x\,dA
-              = <eval obj="C"/>\frac{\left(<eval obj="A"/>\right)^2}{2}
-              \left(<eval obj="B"/>\right)</m>, and similarly for the other
-              two terms.
+              Not correct yet<mdash/>check your work and try again.
             </p>
           </feedback>
         </test>
@@ -1328,20 +1056,14 @@
         <test correct="yes">
           <mathcmp use-answer="yes"/>
           <feedback>
-            <p>
-              Correct:
-              <m>\bar{x} = \dfrac{<eval obj="xmom"/>}{<eval obj="mass"/>}
-              \approx <eval obj="xbar"/></m>.
-            </p>
+            <p>Correct.</p>
           </feedback>
         </test>
         <test>
           <numcmp min="-1000000000" max="1000000000"/>
           <feedback>
             <p>
-              <m>\bar{x} = \frac{1}{m}\iint_R x\,\rho(x,y)\,dA</m>. Compute
-              the moment <m>\iint_R x\rho\,dA = <eval obj="xmom"/></m>
-              first, then divide by the mass.
+              Not correct yet<mdash/>check your work and try again.
             </p>
           </feedback>
         </test>
@@ -1350,47 +1072,25 @@
         <test correct="yes">
           <mathcmp use-answer="yes"/>
           <feedback>
-            <p>
-              Correct:
-              <m>\bar{y} = \dfrac{<eval obj="ymom"/>}{<eval obj="mass"/>}
-              \approx <eval obj="ybar"/></m>.
-            </p>
+            <p>Correct.</p>
           </feedback>
         </test>
         <test>
           <numcmp min="-1000000000" max="1000000000"/>
           <feedback>
             <p>
-              <m>\bar{y} = \frac{1}{m}\iint_R y\,\rho(x,y)\,dA</m>. The
-              moment is <m><eval obj="ymom"/></m>; divide by the mass.
+              Not correct yet<mdash/>check your work and try again.
             </p>
           </feedback>
         </test>
       </evaluate>
     </evaluation>
-    <solution>
-      <p>
-        Over the rectangle <m>R</m>,
-      </p>
-      <me>
-        m = \int_0^{<eval obj="A"/>}\!\!\int_0^{<eval obj="B"/>}
-        \left(<eval obj="C"/>x + <eval obj="D"/>y + <eval obj="E"/>\right)
-        dy\,dx = <eval obj="mass"/> ,
-      </me>
-      <p>
-        and the two moments are
-        <m>\iint_R x\rho\,dA = <eval obj="xmom"/></m> and
-        <m>\iint_R y\rho\,dA = <eval obj="ymom"/></m>. Dividing each by the
-        mass gives <m>\bar{x} \approx <eval obj="xbar"/></m> and
-        <m>\bar{y} \approx <eval obj="ybar"/></m>.
-      </p>
-    </solution>
   </exercise>
 
   <!-- =================================================================== -->
   <!-- 7.  Volume between a sphere and a tangent sphere  (RP3 #7)          -->
   <!-- =================================================================== -->
-  <exercise xml:id="ex-r3o-sphere-minus-sphere">
+  <exercise xml:id="ex-r3p-sphere-minus-sphere">
     <title>Volume Between Two Spheres in Spherical Coordinates</title>
     <setup>
       <de-object name="a" context="number">
@@ -1417,56 +1117,25 @@
         <test correct="yes">
           <mathcmp use-answer="yes"/>
           <feedback>
-            <p>
-              Correct:
-              <m>\displaystyle\int_0^{2\pi}\!\!\int_0^{\pi/2}\!\!
-              \int_{<eval obj="a"/>\cos\phi}^{<eval obj="a"/>}
-              \rho^2\sin\phi\,d\rho\,d\phi\,d\theta
-              = \frac{\pi\left(<eval obj="a"/>\right)^3}{2}
-              \approx <eval obj="volume"/></m>.
-            </p>
+            <p>Correct.</p>
           </feedback>
         </test>
         <test>
           <numcmp min="-1000000000" max="1000000000"/>
           <feedback>
             <p>
-              For each <m>\phi</m>, <m>\rho</m> runs from the inner sphere
-              <m><eval obj="a"/>\cos\phi</m> out to
-              <m><eval obj="a"/></m>. After the <m>\rho</m>-integral you
-              are left with
-              <m>\frac{2\pi\left(<eval obj="a"/>\right)^3}{3}
-              \int_0^{\pi/2}\left(1 - \cos^3\phi\right)\sin\phi\,d\phi</m>;
-              substitute <m>c = \cos\phi</m> to get <m>\tfrac34</m>.
+              Not correct yet<mdash/>check your work and try again.
             </p>
           </feedback>
         </test>
       </evaluate>
     </evaluation>
-    <solution>
-      <p>
-        In spherical coordinates,
-      </p>
-      <me>
-        V = \int_0^{2\pi}\!\!\int_0^{\pi/2}\!\!
-        \int_{<eval obj="a"/>\cos\phi}^{<eval obj="a"/>}
-        \rho^2\sin\phi\,d\rho\,d\phi\,d\theta
-        = \frac{2\pi\left(<eval obj="a"/>\right)^3}{3}
-        \int_0^{\pi/2}\left(1 - \cos^3\phi\right)\sin\phi\,d\phi .
-      </me>
-      <p>
-        With <m>c = \cos\phi</m> the remaining integral is
-        <m>\int_0^1 \left(1 - c^3\right) dc = \tfrac34</m>, so
-        <m>V = \frac{2\pi\left(<eval obj="a"/>\right)^3}{3}\cdot\frac34
-        = \frac{\pi\left(<eval obj="a"/>\right)^3}{2}</m>.
-      </p>
-    </solution>
   </exercise>
 
   <!-- =================================================================== -->
   <!-- 8.  A spherical triple integral over a shell  (RP3 #8)              -->
   <!-- =================================================================== -->
-  <exercise xml:id="ex-r3o-spherical-shell">
+  <exercise xml:id="ex-r3p-spherical-shell">
     <title>A Triple Integral Over a Spherical Shell</title>
     <setup>
       <de-object name="r0" context="number">
@@ -1515,22 +1184,14 @@
         <test correct="yes">
           <mathcmp use-answer="yes"/>
           <feedback>
-            <p>
-              Correct:
-              <m>\frac{\rho^3}{3}\Big|_{<eval obj="r0"/>}^{<eval obj="r1"/>}
-              = \frac{\left(<eval obj="r1"/>\right)^3
-              - \left(<eval obj="r0"/>\right)^3}{3}
-              \approx <eval obj="radial"/></m>.
-            </p>
+            <p>Correct.</p>
           </feedback>
         </test>
         <test>
           <numcmp min="-1000000000" max="1000000000"/>
           <feedback>
             <p>
-              The volume element in spherical coordinates is
-              <m>\rho^2\sin\phi\,d\rho\,d\phi\,d\theta</m>, so the
-              <m>\rho</m>-integral is <m>\int \rho^2 d\rho</m>.
+              Not correct yet<mdash/>check your work and try again.
             </p>
           </feedback>
         </test>
@@ -1539,56 +1200,25 @@
         <test correct="yes">
           <mathcmp use-answer="yes"/>
           <feedback>
-            <p>
-              Correct: the three integrals separate, giving
-              <m>2\pi \cdot \frac{\left(<eval obj="r1"/>\right)^3
-              - \left(<eval obj="r0"/>\right)^3}{3} \cdot \frac12
-              \approx <eval obj="value"/></m>.
-            </p>
+            <p>Correct.</p>
           </feedback>
         </test>
         <test>
           <numcmp min="-1000000000" max="1000000000"/>
           <feedback>
             <p>
-              The integrand times the volume element is
-              <m>\cos\phi \cdot \rho^2\sin\phi</m>, which factors
-              completely: <m>\int_0^{2\pi}d\theta = 2\pi</m>,
-              <m>\int_{<eval obj="r0"/>}^{<eval obj="r1"/>}\rho^2 d\rho</m>,
-              and <m>\int_0^{\pi/2}\cos\phi\sin\phi\,d\phi = \tfrac12</m>.
+              Not correct yet<mdash/>check your work and try again.
             </p>
           </feedback>
         </test>
       </evaluate>
     </evaluation>
-    <solution>
-      <p>
-        Because the integrand and the volume element both factor, the
-        triple integral splits into a product:
-      </p>
-      <me>
-        \int_0^{2\pi}\!\!\int_0^{\pi/2}\!\!
-        \int_{<eval obj="r0"/>}^{<eval obj="r1"/>}
-        \left(\cos\phi\right)\rho^2\sin\phi\,d\rho\,d\phi\,d\theta
-        = \left(\int_0^{2\pi} d\theta\right)
-          \left(\int_{<eval obj="r0"/>}^{<eval obj="r1"/>}\rho^2 d\rho\right)
-          \left(\int_0^{\pi/2}\cos\phi\sin\phi\,d\phi\right).
-      </me>
-      <p>
-        These are <m>2\pi</m>,
-        <m>\frac{\left(<eval obj="r1"/>\right)^3
-        - \left(<eval obj="r0"/>\right)^3}{3}</m>, and <m>\tfrac12</m>,
-        so the integral equals
-        <m>\frac{\pi\left(\left(<eval obj="r1"/>\right)^3
-        - \left(<eval obj="r0"/>\right)^3\right)}{3}</m>.
-      </p>
-    </solution>
   </exercise>
 
   <!-- =================================================================== -->
   <!-- 9.  A Gaussian-type integral between two spheres  (RP3 #9)          -->
   <!-- =================================================================== -->
-  <exercise xml:id="ex-r3o-gaussian-shell">
+  <exercise xml:id="ex-r3p-gaussian-shell">
     <title>An Exponential Integral Between Two Spheres</title>
     <setup>
       <de-object name="a" context="number">
@@ -1633,60 +1263,25 @@
         <test correct="yes">
           <mathcmp use-answer="yes"/>
           <feedback>
-            <p>
-              Correct: the integral is
-              <m>4\pi\displaystyle\int_{<eval obj="a"/>}^{<eval obj="b"/>}
-              \rho\,e^{-\rho^2}\,d\rho
-              = 2\pi\left(e^{-<eval obj="asq"/>}
-              - e^{-<eval obj="bsq"/>}\right)
-              \approx <eval obj="value"/></m>.
-            </p>
+            <p>Correct.</p>
           </feedback>
         </test>
         <test>
           <numcmp min="-1000000000" max="1000000000"/>
           <feedback>
             <p>
-              In spherical coordinates the integrand is
-              <m>e^{-\rho^2}/\rho</m> and <m>dV = \rho^2\sin\phi\,
-              d\rho\,d\phi\,d\theta</m>, so one factor of <m>\rho</m>
-              cancels. The angular integrals give
-              <m>2\pi \cdot 2 = 4\pi</m>, and
-              <m>\int \rho e^{-\rho^2} d\rho
-              = -\tfrac12 e^{-\rho^2}</m>. Note the spheres have radii
-              <m><eval obj="a"/></m> and <m><eval obj="b"/></m>, not
-              <m><eval obj="asq"/></m> and <m><eval obj="bsq"/></m>.
+              Not correct yet<mdash/>check your work and try again.
             </p>
           </feedback>
         </test>
       </evaluate>
     </evaluation>
-    <solution>
-      <p>
-        The spheres have radii <m><eval obj="a"/></m> and
-        <m><eval obj="b"/></m>. In spherical coordinates,
-      </p>
-      <me>
-        \iiint_E \frac{e^{-\rho^2}}{\rho}\,dV
-        = \int_0^{2\pi}\!\!\int_0^{\pi}\!\!
-          \int_{<eval obj="a"/>}^{<eval obj="b"/>}
-          \frac{e^{-\rho^2}}{\rho}\,\rho^2\sin\phi
-          \,d\rho\,d\phi\,d\theta
-        = 4\pi\int_{<eval obj="a"/>}^{<eval obj="b"/>}
-          \rho\,e^{-\rho^2}\,d\rho .
-      </me>
-      <p>
-        With <m>w = \rho^2</m> this is
-        <m>4\pi\left[-\tfrac12 e^{-\rho^2}\right]_{<eval obj="a"/>}^{<eval obj="b"/>}
-        = 2\pi\left(e^{-<eval obj="asq"/>} - e^{-<eval obj="bsq"/>}\right)</m>.
-      </p>
-    </solution>
   </exercise>
 
   <!-- =================================================================== -->
   <!-- 10.  Jacobian of a linear transformation  (RP3 #10)                 -->
   <!-- =================================================================== -->
-  <exercise xml:id="ex-r3o-linear-jacobian">
+  <exercise xml:id="ex-r3p-linear-jacobian">
     <title>The Jacobian of a Linear Transformation</title>
     <setup>
       <de-object name="p" context="number">
@@ -1751,60 +1346,15 @@
       <evaluate>
         <test correct="yes">
           <mathcmp use-answer="yes"/>
-          <feedback><p>Correct.</p></feedback>
-        </test>
-        <test>
-          <numcmp min="-1000000000" max="1000000000"/>
           <feedback>
-            <p>
-              <m>x = <eval obj="p"/>u + <eval obj="q"/>v</m>, so
-              differentiating with respect to <m>u</m> leaves the
-              coefficient of <m>u</m>.
-            </p>
+            <p>Correct.</p>
           </feedback>
         </test>
-      </evaluate>
-      <evaluate>
-        <test correct="yes">
-          <mathcmp use-answer="yes"/>
-          <feedback><p>Correct.</p></feedback>
-        </test>
         <test>
           <numcmp min="-1000000000" max="1000000000"/>
           <feedback>
             <p>
-              Differentiate <m>x = <eval obj="p"/>u + <eval obj="q"/>v</m>
-              with respect to <m>v</m>.
-            </p>
-          </feedback>
-        </test>
-      </evaluate>
-      <evaluate>
-        <test correct="yes">
-          <mathcmp use-answer="yes"/>
-          <feedback><p>Correct.</p></feedback>
-        </test>
-        <test>
-          <numcmp min="-1000000000" max="1000000000"/>
-          <feedback>
-            <p>
-              Differentiate <m>y = <eval obj="r"/>u + <eval obj="s"/>v</m>
-              with respect to <m>u</m>.
-            </p>
-          </feedback>
-        </test>
-      </evaluate>
-      <evaluate>
-        <test correct="yes">
-          <mathcmp use-answer="yes"/>
-          <feedback><p>Correct.</p></feedback>
-        </test>
-        <test>
-          <numcmp min="-1000000000" max="1000000000"/>
-          <feedback>
-            <p>
-              Differentiate <m>y = <eval obj="r"/>u + <eval obj="s"/>v</m>
-              with respect to <m>v</m>.
+              Not correct yet<mdash/>check your work and try again.
             </p>
           </feedback>
         </test>
@@ -1813,52 +1363,73 @@
         <test correct="yes">
           <mathcmp use-answer="yes"/>
           <feedback>
-            <p>
-              Correct:
-              <m>\left(<eval obj="p"/>\right)\left(<eval obj="s"/>\right)
-              - \left(<eval obj="q"/>\right)\left(<eval obj="r"/>\right)
-              = <eval obj="det"/></m>. For a linear map the Jacobian is a
-              constant.
-            </p>
+            <p>Correct.</p>
           </feedback>
         </test>
         <test>
           <numcmp min="-1000000000" max="1000000000"/>
           <feedback>
             <p>
-              The Jacobian is the determinant
-              <m>\begin{vmatrix} x_u &amp; x_v \\ y_u &amp; y_v
-              \end{vmatrix} = x_u y_v - x_v y_u</m>.
+              Not correct yet<mdash/>check your work and try again.
+            </p>
+          </feedback>
+        </test>
+      </evaluate>
+      <evaluate>
+        <test correct="yes">
+          <mathcmp use-answer="yes"/>
+          <feedback>
+            <p>Correct.</p>
+          </feedback>
+        </test>
+        <test>
+          <numcmp min="-1000000000" max="1000000000"/>
+          <feedback>
+            <p>
+              Not correct yet<mdash/>check your work and try again.
+            </p>
+          </feedback>
+        </test>
+      </evaluate>
+      <evaluate>
+        <test correct="yes">
+          <mathcmp use-answer="yes"/>
+          <feedback>
+            <p>Correct.</p>
+          </feedback>
+        </test>
+        <test>
+          <numcmp min="-1000000000" max="1000000000"/>
+          <feedback>
+            <p>
+              Not correct yet<mdash/>check your work and try again.
+            </p>
+          </feedback>
+        </test>
+      </evaluate>
+      <evaluate>
+        <test correct="yes">
+          <mathcmp use-answer="yes"/>
+          <feedback>
+            <p>Correct.</p>
+          </feedback>
+        </test>
+        <test>
+          <numcmp min="-1000000000" max="1000000000"/>
+          <feedback>
+            <p>
+              Not correct yet<mdash/>check your work and try again.
             </p>
           </feedback>
         </test>
       </evaluate>
     </evaluation>
-    <solution>
-      <p>
-        For a linear transformation the partial derivatives are just the
-        coefficients, so
-      </p>
-      <me>
-        \mathrm{Jac}(T) = \frac{\partial(x,y)}{\partial(u,v)}
-        = \begin{vmatrix}
-          <eval obj="p"/> &amp; <eval obj="q"/> \\
-          <eval obj="r"/> &amp; <eval obj="s"/>
-          \end{vmatrix}
-        = \left(<eval obj="p"/>\right)\left(<eval obj="s"/>\right)
-        - \left(<eval obj="q"/>\right)\left(<eval obj="r"/>\right)
-        = <eval obj="det"/> ,
-      </me>
-      <p>
-        a constant: a linear map scales every area by the same factor.
-      </p>
-    </solution>
   </exercise>
 
   <!-- =================================================================== -->
   <!-- 11.  The map T(u,v) = (u^2-v^2, 2uv)  (RP3 #11)                     -->
   <!-- =================================================================== -->
-  <exercise xml:id="ex-r3o-quadratic-map">
+  <exercise xml:id="ex-r3p-quadratic-map">
     <title>A Quadratic Map and the Integral It Simplifies</title>
     <setup>
       <de-object name="a" context="number">
@@ -1914,20 +1485,14 @@
         <test correct="yes">
           <mathcmp use-answer="yes"/>
           <feedback>
-            <p>
-              Correct:
-              <m>\sqrt{\left(u^2-v^2\right)^2 + \left(2uv\right)^2}
-              = \sqrt{\left(u^2+v^2\right)^2} = u^2+v^2</m>.
-            </p>
+            <p>Correct.</p>
           </feedback>
         </test>
         <test>
           <numcmp min="-1000000000" max="1000000000"/>
           <feedback>
             <p>
-              Expand
-              <m>\left(u^2-v^2\right)^2 + 4u^2v^2
-              = u^4 + 2u^2v^2 + v^4</m>, which is a perfect square.
+              Not correct yet<mdash/>check your work and try again.
             </p>
           </feedback>
         </test>
@@ -1936,20 +1501,14 @@
         <test correct="yes">
           <mathcmp use-answer="yes"/>
           <feedback>
-            <p>
-              Correct:
-              <m>\begin{vmatrix} 2u &amp; -2v \\ 2v &amp; 2u
-              \end{vmatrix} = 4u^2 + 4v^2</m>.
-            </p>
+            <p>Correct.</p>
           </feedback>
         </test>
         <test>
           <numcmp min="-1000000000" max="1000000000"/>
           <feedback>
             <p>
-              With <m>x = u^2-v^2</m> and <m>y = 2uv</m>,
-              <m>x_u = 2u</m>, <m>x_v = -2v</m>, <m>y_u = 2v</m>,
-              <m>y_v = 2u</m>. Take <m>x_u y_v - x_v y_u</m>.
+              Not correct yet<mdash/>check your work and try again.
             </p>
           </feedback>
         </test>
@@ -1958,56 +1517,25 @@
         <test correct="yes">
           <mathcmp use-answer="yes"/>
           <feedback>
-            <p>
-              Correct:
-              <m>4\displaystyle\int_0^{<eval obj="a"/>}\!\!\int_0^{u}
-              \left(u^2+v^2\right)^2 dv\,du
-              = \frac{56\left(<eval obj="a"/>\right)^6}{45}
-              \approx <eval obj="value"/></m>.
-            </p>
+            <p>Correct.</p>
           </feedback>
         </test>
         <test>
           <numcmp min="-1000000000" max="1000000000"/>
           <feedback>
             <p>
-              The integrand times the Jacobian is
-              <m>4\left(u^2+v^2\right)^2</m>. Over the triangle
-              <m>0 \le v \le u \le <eval obj="a"/></m>, the inner integral
-              gives <m>\tfrac{28}{15}u^5</m>.
+              Not correct yet<mdash/>check your work and try again.
             </p>
           </feedback>
         </test>
       </evaluate>
     </evaluation>
-    <solution>
-      <p>
-        Since <m>x = u^2-v^2</m> and <m>y = 2uv</m>,
-      </p>
-      <me>
-        \sqrt{x^2+y^2}
-        = \sqrt{\left(u^2+v^2\right)^2} = u^2+v^2, \qquad
-        \frac{\partial(x,y)}{\partial(u,v)}
-        = \begin{vmatrix} 2u &amp; -2v \\ 2v &amp; 2u \end{vmatrix}
-        = 4\left(u^2+v^2\right).
-      </me>
-      <p>
-        Therefore
-      </p>
-      <me>
-        \iint_D \sqrt{x^2+y^2}\,dx\,dy
-        = 4\int_0^{<eval obj="a"/>}\!\!\int_0^{u}
-          \left(u^4 + 2u^2v^2 + v^4\right) dv\,du
-        = 4\int_0^{<eval obj="a"/>} \frac{28}{15}u^5\,du
-        = \frac{56\left(<eval obj="a"/>\right)^6}{45} .
-      </me>
-    </solution>
   </exercise>
 
   <!-- =================================================================== -->
   <!-- 12.  Centre of gravity of a region between two curves  (RP3 #12)    -->
   <!-- =================================================================== -->
-  <exercise xml:id="ex-r3o-centre-of-gravity">
+  <exercise xml:id="ex-r3p-centre-of-gravity">
     <title>Centre of Gravity of a Region Between Two Curves</title>
     <setup>
       <de-object name="m" context="number">
@@ -2098,16 +1626,14 @@
         <test correct="yes">
           <mathcmp use-answer="yes"/>
           <feedback>
-            <p>Correct: the <m>y</m>-axis is the left boundary, so
-            <m>x</m> starts at <m>0</m>.</p>
+            <p>Correct.</p>
           </feedback>
         </test>
         <test>
           <numcmp min="-1000000000" max="1000000000"/>
           <feedback>
             <p>
-              One of the three boundaries is the <m>y</m>-axis, which is
-              the line <m>x = 0</m>.
+              Not correct yet<mdash/>check your work and try again.
             </p>
           </feedback>
         </test>
@@ -2116,24 +1642,14 @@
         <test correct="yes">
           <mathcmp use-answer="yes"/>
           <feedback>
-            <p>
-              Correct: solving
-              <m><eval obj="m"/>x = <eval obj="b"/> - x^2</m> gives
-              <m>x = \frac{-<eval obj="m"/>
-              + \sqrt{\left(<eval obj="m"/>\right)^2
-              + 4\left(<eval obj="b"/>\right)}}{2}
-              \approx <eval obj="xstar"/></m>.
-            </p>
+            <p>Correct.</p>
           </feedback>
         </test>
         <test>
           <numcmp min="-1000000000" max="1000000000"/>
           <feedback>
             <p>
-              The right-hand end of the region is where the line meets the
-              parabola. Solve
-              <m>x^2 + <eval obj="m"/>x - <eval obj="b"/> = 0</m> and keep
-              the positive root.
+              Not correct yet<mdash/>check your work and try again.
             </p>
           </feedback>
         </test>
@@ -2142,16 +1658,14 @@
         <test correct="yes">
           <mathcmp use-answer="yes"/>
           <feedback>
-            <p>Correct: on this interval the line lies below the parabola.</p>
+            <p>Correct.</p>
           </feedback>
         </test>
         <test>
           <numcmp min="-1000000000" max="1000000000"/>
           <feedback>
             <p>
-              For <m>0 &lt; x &lt; <eval obj="xstar"/></m> the line
-              <m>y = <eval obj="m"/>x</m> is the lower boundary and the
-              parabola is the upper one.
+              Not correct yet<mdash/>check your work and try again.
             </p>
           </feedback>
         </test>
@@ -2160,16 +1674,14 @@
         <test correct="yes">
           <mathcmp use-answer="yes"/>
           <feedback>
-            <p>Correct: the downward parabola is the upper boundary.</p>
+            <p>Correct.</p>
           </feedback>
         </test>
         <test>
           <numcmp min="-1000000000" max="1000000000"/>
           <feedback>
             <p>
-              At <m>x = 0</m> the parabola is at height
-              <m><eval obj="b"/></m> while the line is at <m>0</m>, so the
-              parabola is on top.
+              Not correct yet<mdash/>check your work and try again.
             </p>
           </feedback>
         </test>
@@ -2178,18 +1690,14 @@
         <test correct="yes">
           <mathcmp use-answer="yes"/>
           <feedback>
-            <p>Correct: the mass is <m>\approx <eval obj="mass"/></m>.</p>
+            <p>Correct.</p>
           </feedback>
         </test>
         <test>
           <numcmp min="-1000000000" max="1000000000"/>
           <feedback>
             <p>
-              The inner integral is
-              <m>\int_{<eval obj="m"/>x}^{<eval obj="b"/>-x^2} xy\,dy
-              = \frac{x}{2}\left[\left(<eval obj="b"/>-x^2\right)^2
-              - \left(<eval obj="m"/>x\right)^2\right]</m>. Expand and
-              integrate from <m>0</m> to <m><eval obj="xstar"/></m>.
+              Not correct yet<mdash/>check your work and try again.
             </p>
           </feedback>
         </test>
@@ -2198,18 +1706,14 @@
         <test correct="yes">
           <mathcmp use-answer="yes"/>
           <feedback>
-            <p>Correct: the moment about the <m>y</m>-axis is
-            <m>\approx <eval obj="xmom"/></m>.</p>
+            <p>Correct.</p>
           </feedback>
         </test>
         <test>
           <numcmp min="-1000000000" max="1000000000"/>
           <feedback>
             <p>
-              This is the same computation as the mass but with one extra
-              factor of <m>x</m>, so the inner integral is
-              <m>\frac{x^2}{2}\left[\left(<eval obj="b"/>-x^2\right)^2
-              - \left(<eval obj="m"/>x\right)^2\right]</m>.
+              Not correct yet<mdash/>check your work and try again.
             </p>
           </feedback>
         </test>
@@ -2218,18 +1722,14 @@
         <test correct="yes">
           <mathcmp use-answer="yes"/>
           <feedback>
-            <p>Correct: the moment about the <m>x</m>-axis is
-            <m>\approx <eval obj="ymom"/></m>.</p>
+            <p>Correct.</p>
           </feedback>
         </test>
         <test>
           <numcmp min="-1000000000" max="1000000000"/>
           <feedback>
             <p>
-              Here the inner integrand is <m>xy^2</m>, so the inner
-              integral is
-              <m>\frac{x}{3}\left[\left(<eval obj="b"/>-x^2\right)^3
-              - \left(<eval obj="m"/>x\right)^3\right]</m>.
+              Not correct yet<mdash/>check your work and try again.
             </p>
           </feedback>
         </test>
@@ -2238,18 +1738,14 @@
         <test correct="yes">
           <mathcmp use-answer="yes"/>
           <feedback>
-            <p>
-              Correct:
-              <m>\overline{x} = \dfrac{<eval obj="xmom"/>}{<eval obj="mass"/>}
-              \approx <eval obj="xbar"/></m>.
-            </p>
+            <p>Correct.</p>
           </feedback>
         </test>
         <test>
           <numcmp min="-1000000000" max="1000000000"/>
           <feedback>
             <p>
-              Divide the moment about the <m>y</m>-axis by the mass.
+              Not correct yet<mdash/>check your work and try again.
             </p>
           </feedback>
         </test>
@@ -2258,48 +1754,25 @@
         <test correct="yes">
           <mathcmp use-answer="yes"/>
           <feedback>
-            <p>
-              Correct:
-              <m>\overline{y} = \dfrac{<eval obj="ymom"/>}{<eval obj="mass"/>}
-              \approx <eval obj="ybar"/></m>.
-            </p>
+            <p>Correct.</p>
           </feedback>
         </test>
         <test>
           <numcmp min="-1000000000" max="1000000000"/>
           <feedback>
             <p>
-              Divide the moment about the <m>x</m>-axis by the mass.
+              Not correct yet<mdash/>check your work and try again.
             </p>
           </feedback>
         </test>
       </evaluate>
     </evaluation>
-    <solution>
-      <p>
-        The line and the parabola meet where
-        <m>x^2 + <eval obj="m"/>x - <eval obj="b"/> = 0</m>, that is at
-        <m>x = <eval obj="xstar"/></m>, so <m>c = 0</m> and
-        <m>d = <eval obj="xstar"/></m>, with
-        <m>p(x) = <eval obj="m"/>x</m> and
-        <m>q(x) = <eval obj="b"/> - x^2</m>. Carrying out the three
-        integrals of <m>xy</m>, <m>x^2y</m>, and <m>xy^2</m> over that
-        region gives <m><eval obj="mass"/></m>, <m><eval obj="xmom"/></m>,
-        and <m><eval obj="ymom"/></m> respectively, so
-      </p>
-      <me>
-        \overline{x} = \frac{<eval obj="xmom"/>}{<eval obj="mass"/>}
-        \approx <eval obj="xbar"/>, \qquad
-        \overline{y} = \frac{<eval obj="ymom"/>}{<eval obj="mass"/>}
-        \approx <eval obj="ybar"/> .
-      </me>
-    </solution>
   </exercise>
 
   <!-- =================================================================== -->
   <!-- 13.  Centre of mass of a quarter disc  (RP3 #13)                    -->
   <!-- =================================================================== -->
-  <exercise xml:id="ex-r3o-quarter-disc-com">
+  <exercise xml:id="ex-r3p-quarter-disc-com">
     <title>Centre of Mass of a Quarter Disc</title>
     <setup>
       <de-object name="r" context="number">
@@ -2332,23 +1805,14 @@
         <test correct="yes">
           <mathcmp use-answer="yes"/>
           <feedback>
-            <p>
-              Correct:
-              <m>\overline{x} = \frac{4\left(<eval obj="r"/>\right)}{3\pi}
-              \approx <eval obj="coord"/></m>.
-            </p>
+            <p>Correct.</p>
           </feedback>
         </test>
         <test>
           <numcmp min="-1000000000" max="1000000000"/>
           <feedback>
             <p>
-              The area of the quarter disc is
-              <m>\frac{\pi \left(<eval obj="r"/>\right)^2}{4}</m>, and
-              <m>\iint_R x\,dA
-              = \int_0^{<eval obj="r"/>}
-              x\sqrt{\left(<eval obj="r"/>\right)^2-x^2}\,dx
-              = \frac{\left(<eval obj="r"/>\right)^3}{3}</m>. Divide.
+              Not correct yet<mdash/>check your work and try again.
             </p>
           </feedback>
         </test>
@@ -2357,44 +1821,19 @@
         <test correct="yes">
           <mathcmp use-answer="yes"/>
           <feedback>
-            <p>
-              Correct: the quarter disc is symmetric about the line
-              <m>y = x</m>, so <m>\overline{y} = \overline{x}</m>.
-            </p>
+            <p>Correct.</p>
           </feedback>
         </test>
         <test>
           <numcmp min="-1000000000" max="1000000000"/>
           <feedback>
             <p>
-              Reflecting in the line <m>y = x</m> maps the quarter disc to
-              itself and swaps the roles of <m>x</m> and <m>y</m>, so the
-              two coordinates of the centre of mass are equal.
+              Not correct yet<mdash/>check your work and try again.
             </p>
           </feedback>
         </test>
       </evaluate>
     </evaluation>
-    <solution>
-      <p>
-        By symmetry about the line <m>y = x</m>, the centre of mass lies on
-        that line, so <m>\overline{x} = \overline{y}</m>. Computing
-        <m>\overline{x}</m>,
-      </p>
-      <me>
-        \overline{x}
-        = \frac{\displaystyle\int_0^{<eval obj="r"/>}
-          x\sqrt{\left(<eval obj="r"/>\right)^2-x^2}\,dx}
-          {\displaystyle\frac{\pi\left(<eval obj="r"/>\right)^2}{4}}
-        = \frac{\left(<eval obj="r"/>\right)^3/3}
-          {\pi\left(<eval obj="r"/>\right)^2/4}
-        = \frac{4\left(<eval obj="r"/>\right)}{3\pi}
-        \approx <eval obj="coord"/> ,
-      </me>
-      <p>
-        and <m>\overline{y}</m> has the same value.
-      </p>
-    </solution>
   </exercise>
 
   </exercises>

@@ -85,10 +85,34 @@
       <xi:include href="hw9-online.ptx" />
     </chapter>
 
-    <chapter xml:id="ch-review-problems">
-      <title>Review Problems</title>
+    <chapter xml:id="ch-review-solutions">
+      <title>Review Problems with Solutions</title>
+      <introduction>
+        <p>
+          The review problem sets, with full support: every answer is
+          checked automatically, the feedback after each check explains the
+          mathematics, and a complete written solution can be opened for
+          every problem. To try the same problems without being able to see
+          any of that, use <xref ref="ch-review-practice" text="title"/>.
+        </p>
+      </introduction>
       <xi:include href="review3-online.ptx" />
       <xi:include href="review4-online.ptx" />
+    </chapter>
+
+    <chapter xml:id="ch-review-practice">
+      <title>Review Problems for Practice</title>
+      <introduction>
+        <p>
+          The same review problem sets, questions only: answers are still
+          checked automatically, but the only response is right or
+          wrong<mdash/>no hints, no worked feedback, and no solutions
+          anywhere in this chapter. The problems with their complete
+          solutions are in <xref ref="ch-review-solutions" text="title"/>.
+        </p>
+      </introduction>
+      <xi:include href="review3-practice.ptx" />
+      <xi:include href="review4-practice.ptx" />
     </chapter>
 
   </book>
