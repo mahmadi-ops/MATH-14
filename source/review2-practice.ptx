@@ -1,0 +1,605 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- MATH 14 - Review Problems #2, practice version.                          -->
+<!--                                                                         -->
+<!-- Every answer box is graded on its own, so partial credit survives, and   -->
+<!-- the feedback is a bare Correct./Incorrect.  Each <solution> carries      -->
+<!-- component="review2-solutions" so the set can be posted from              -->
+<!-- publication/publication.ptx after the due date.                          -->
+<section xml:id="sec-exercises-review2-practice" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Review Problems #2</title>
+
+  <introduction>
+    <p>
+      Sections: <xref ref="section-double-integrals-rectangles" text="title"/>,
+      <xref ref="section-double-integrals-general-regions" text="title"/>,
+      <xref ref="section-double-integrals-polar-form" text="title"/>,
+      <xref ref="section-triple-integrals-rectangular" text="title"/>,
+      <xref ref="section-triple-integrals-cylindrical" text="title"/>, and
+      <xref ref="section-triple-integrals-spherical" text="title"/>.
+    </p>
+    <p>
+      Every answer box is graded separately, so a box you fill in correctly
+      earns its credit even if another box in the same problem is wrong.
+      Press <q>Check Me</q> to submit; you may check as often as you like.
+    </p>
+    <p>
+      <term>How to type your answers.</term> Give numbers as decimals to at
+      least three places, with no units and no <m>\pi</m>.
+    </p>
+  </introduction>
+
+  <exercises xml:id="exercises-review2-practice">
+
+  <exercise xml:id="ex-r2p-xy-sqrt">
+    <title>A Double Integral Over a Rectangle</title>
+    <setup>
+      <de-object name="a" context="number">
+        <de-random distribution="discrete" min="1" max="5" by="1"/>
+      </de-object>
+      <de-object name="b" context="number">
+        <de-random distribution="discrete" min="1" max="5" by="1"/>
+      </de-object>
+      <de-object name="val" context="number">
+        <de-expression>(1/15)*((a^2+b^2)^(5/2)-a^5-b^5)</de-expression>
+      </de-object>
+    </setup>
+    <statement>
+      <p>
+        Evaluate
+        <m>\displaystyle\int_0^{<eval obj="a"/>}\!\!
+        \int_0^{<eval obj="b"/>} xy\sqrt{x^2+y^2}\,dy\,dx</m>.
+      </p>
+      <p>
+        Answer: <fillin name="b1" mode="number" ansobj="val" width="14"/>
+      </p>
+    </statement>
+    <evaluation>
+      <evaluate>
+        <test correct="yes">
+          <numcmp use-answer="yes" min="val.value({})-Math.max(0.01,1e-4*Math.abs(val.value({})))" max="val.value({})+Math.max(0.01,1e-4*Math.abs(val.value({})))"/>
+          <feedback><p>Correct.</p></feedback>
+        </test>
+        <test><numcmp min="-1000000000" max="1000000000"/><feedback><p>Incorrect.</p></feedback></test>
+      </evaluate>
+    </evaluation>
+    <solution component="review2-solutions">
+      <p>
+        Substituting <m>u = x^2+y^2</m> in the inner integral,
+        <m>\int_0^{b} xy\sqrt{x^2+y^2}\,dy
+        = \tfrac{x}{3}\left[\left(x^2+b^2\right)^{3/2} - x^3\right]</m>,
+        and integrating that in <m>x</m> gives
+      </p>
+      <me>
+        \frac{1}{15}\left[\left(a^2+b^2\right)^{5/2} - a^5 - b^5\right].
+      </me>
+    </solution>
+  </exercise>
+
+  <exercise xml:id="ex-r2p-reverse-order">
+    <title>Reversing the Order of Integration</title>
+    <setup>
+      <de-object name="b" context="number">
+        <de-random distribution="discrete" min="1" max="4" by="1"/>
+      </de-object>
+      <de-object name="c" context="number">
+        <de-random distribution="discrete" min="2" max="9" by="1"/>
+      </de-object>
+      <de-object name="bsq" context="number">
+        <de-expression>b^2</de-expression>
+      </de-object>
+      <de-object name="val" context="number">
+        <de-expression>(2*c/9)*((b^3+1)^(3/2)-1)</de-expression>
+      </de-object>
+    </setup>
+    <statement>
+      <p>
+        Evaluate
+        <m>\displaystyle\int_{0}^{<eval obj="bsq"/>}\!\!
+        \int_{\sqrt{y}}^{<eval obj="b"/>}
+        <eval obj="c"/>\sqrt{x^3+1}\,dx\,dy</m>.
+      </p>
+      <p>
+        Answer: <fillin name="b1" mode="number" ansobj="val" width="14"/>
+      </p>
+    </statement>
+    <evaluation>
+      <evaluate>
+        <test correct="yes">
+          <numcmp use-answer="yes" min="val.value({})-Math.max(0.01,1e-4*Math.abs(val.value({})))" max="val.value({})+Math.max(0.01,1e-4*Math.abs(val.value({})))"/>
+          <feedback><p>Correct.</p></feedback>
+        </test>
+        <test><numcmp min="-1000000000" max="1000000000"/><feedback><p>Incorrect.</p></feedback></test>
+      </evaluate>
+    </evaluation>
+    <solution component="review2-solutions">
+      <p>
+        As written the inner integral cannot be done in closed form, so
+        reverse the order. The region is
+        <m>0 \le x \le b</m>, <m>0 \le y \le x^2</m>, hence
+      </p>
+      <me>
+        \int_0^{b}\!\!\int_0^{x^2} c\sqrt{x^3+1}\,dy\,dx
+        = \int_0^{b} c\,x^2\sqrt{x^3+1}\,dx
+        = \frac{2c}{9}\left[\left(b^3+1\right)^{3/2} - 1\right],
+      </me>
+      <p>
+        using <m>u = x^3+1</m>.
+      </p>
+    </solution>
+  </exercise>
+
+  <exercise xml:id="ex-r2p-to-polar">
+    <title>Converting an Integral to Polar Coordinates</title>
+    <setup>
+      <de-object name="a" context="number">
+        <de-random distribution="discrete" min="3" max="5" by="1"/>
+      </de-object>
+      <de-object name="asq" context="number">
+        <de-expression>a^2</de-expression>
+      </de-object>
+      <de-object name="val" context="number">
+        <de-expression>a^4/16</de-expression>
+      </de-object>
+    </setup>
+    <statement>
+      <p>
+        Convert to polar coordinates and evaluate
+      </p>
+      <me>
+        \int_{0}^{<eval obj="a"/>/\sqrt2}\!\!
+        \int_{y}^{\sqrt{<eval obj="asq"/>-y^2}} xy\,dx\,dy .
+      </me>
+      <p>
+        Answer: <fillin name="b1" mode="number" ansobj="val" width="14"/>
+      </p>
+    </statement>
+    <evaluation>
+      <evaluate>
+        <test correct="yes">
+          <numcmp use-answer="yes" min="val.value({})-Math.max(0.01,1e-4*Math.abs(val.value({})))" max="val.value({})+Math.max(0.01,1e-4*Math.abs(val.value({})))"/>
+          <feedback><p>Correct.</p></feedback>
+        </test>
+        <test><numcmp min="-1000000000" max="1000000000"/><feedback><p>Incorrect.</p></feedback></test>
+      </evaluate>
+    </evaluation>
+    <solution component="review2-solutions">
+      <p>
+        The region is bounded on the left by <m>y = x</m> and on the right
+        by the circle of radius <m>a</m>, so in polar coordinates it is
+        <m>0 \le \theta \le \frac{\pi}{4}</m>, <m>0 \le r \le a</m>.
+        Then
+      </p>
+      <me>
+        \int_0^{\pi/4}\!\!\int_0^{a} \left(r\cos\theta\right)
+        \left(r\sin\theta\right) r\,dr\,d\theta
+        = \left[\frac{r^4}{4}\right]_0^{a}
+          \left[\frac{\sin^2\theta}{2}\right]_0^{\pi/4}
+        = \frac{a^4}{16}.
+      </me>
+    </solution>
+  </exercise>
+
+  <exercise xml:id="ex-r2p-sector">
+    <title>A Sector Integral in Polar Form</title>
+    <setup>
+      <de-object name="k" context="number">
+        <de-random distribution="discrete" min="2" max="9" by="1"/>
+      </de-object>
+      <de-object name="a3" context="number">
+        <de-expression>3*k</de-expression>
+      </de-object>
+      <de-object name="val" context="number">
+        <de-expression>k*(1-sqrt(3)/2)</de-expression>
+      </de-object>
+    </setup>
+    <statement>
+      <p>
+        Sketch the region of integration and evaluate by changing to polar
+        coordinates:
+      </p>
+      <me>
+        \int_0^{1/2}\!\!\int_{\sqrt3 x}^{\sqrt{1-x^2}}
+        <eval obj="a3"/>\,x\,dy\,dx .
+      </me>
+      <p>
+        Answer: <fillin name="b1" mode="number" ansobj="val" width="14"/>
+      </p>
+    </statement>
+    <evaluation>
+      <evaluate>
+        <test correct="yes">
+          <numcmp use-answer="yes" min="val.value({})-Math.max(0.01,1e-4*Math.abs(val.value({})))" max="val.value({})+Math.max(0.01,1e-4*Math.abs(val.value({})))"/>
+          <feedback><p>Correct.</p></feedback>
+        </test>
+        <test><numcmp min="-1000000000" max="1000000000"/><feedback><p>Incorrect.</p></feedback></test>
+      </evaluate>
+    </evaluation>
+    <solution component="review2-solutions">
+      <p>
+        The ray <m>y = \sqrt3\,x</m> is <m>\theta = \frac{\pi}{3}</m> and
+        the circle <m>y = \sqrt{1-x^2}</m> is <m>r = 1</m>, so the region is
+        the sector <m>\frac{\pi}{3} \le \theta \le \frac{\pi}{2}</m>,
+        <m>0 \le r \le 1</m>. With <m>3k</m> the coefficient,
+      </p>
+      <me>
+        \int_{\pi/3}^{\pi/2}\!\!\int_0^{1} 3k\,r^2\cos\theta
+        \,dr\,d\theta
+        = k\left[\sin\theta\right]_{\pi/3}^{\pi/2}
+        = k\left(1 - \frac{\sqrt3}{2}\right).
+      </me>
+    </solution>
+  </exercise>
+
+  <exercise xml:id="ex-r2p-mass-plane">
+    <title>Mass of a Solid Under a Plane</title>
+    <setup>
+      <de-object name="a" context="number">
+        <de-random distribution="discrete" min="2" max="4" by="1"/>
+      </de-object>
+      <de-object name="b" context="number">
+        <de-random distribution="discrete" min="2" max="4" by="1"/>
+      </de-object>
+      <de-object name="m" context="number">
+        <de-random distribution="discrete" min="2" max="4" by="1"/>
+      </de-object>
+      <de-object name="c" context="number">
+        <de-expression>a*b</de-expression>
+      </de-object>
+      <de-object name="mass" context="number">
+        <de-expression>a^2*b^2*(a+b*m)/24</de-expression>
+      </de-object>
+    </setup>
+    <statement>
+      <p>
+        Find the mass of the solid bounded by the coordinate planes and the
+        plane
+        <m>\dfrac{x}{<eval obj="a"/>} + \dfrac{y}{<eval obj="b"/>}
+        + \dfrac{z}{<eval obj="c"/>} = 1</m>, if the density is
+        <m>\delta(x,y,z) = x + <eval obj="m"/>y</m>.
+      </p>
+      <p>
+        mass <m>=</m>
+        <fillin name="b1" mode="number" ansobj="mass" width="14"/>
+      </p>
+    </statement>
+    <evaluation>
+      <evaluate>
+        <test correct="yes">
+          <numcmp use-answer="yes" min="mass.value({})-Math.max(0.01,1e-4*Math.abs(mass.value({})))" max="mass.value({})+Math.max(0.01,1e-4*Math.abs(mass.value({})))"/>
+          <feedback><p>Correct.</p></feedback>
+        </test>
+        <test><numcmp min="-1000000000" max="1000000000"/><feedback><p>Incorrect.</p></feedback></test>
+      </evaluate>
+    </evaluation>
+    <solution component="review2-solutions">
+      <p>
+        The plane meets the axes at <m>a</m>, <m>b</m> and <m>c = ab</m>, so
+        over the triangle <m>0 \le x \le a</m>,
+        <m>0 \le y \le b\left(1-\frac{x}{a}\right)</m> the solid runs
+        from <m>z = 0</m> up to <m>z = c - bx - ay</m>. Carrying out the
+        three integrations,
+      </p>
+      <me>
+        M = \iiint_W \left(x + my\right)dV
+        = \frac{a^2b^2\left(a + bm\right)}{24}.
+      </me>
+    </solution>
+  </exercise>
+
+  <exercise xml:id="ex-r2p-tetra-x2">
+    <title>A Triple Integral Over a Tetrahedron</title>
+    <setup>
+      <de-object name="a" context="number">
+        <de-random distribution="discrete" min="1" max="5" by="1"/>
+      </de-object>
+      <de-object name="val" context="number">
+        <de-expression>a^5/60</de-expression>
+      </de-object>
+    </setup>
+    <statement>
+      <p>
+        Evaluate <m>\displaystyle\iiint_T x^2\,dV</m>, where <m>T</m> is
+        the solid tetrahedron with vertices <m>(0,0,0)</m>,
+        <m>(<eval obj="a"/>,0,0)</m>, <m>(0,<eval obj="a"/>,0)</m> and
+        <m>(0,0,<eval obj="a"/>)</m>.
+      </p>
+      <p>
+        Answer: <fillin name="b1" mode="number" ansobj="val" width="14"/>
+      </p>
+    </statement>
+    <evaluation>
+      <evaluate>
+        <test correct="yes">
+          <numcmp use-answer="yes" min="val.value({})-Math.max(0.01,1e-4*Math.abs(val.value({})))" max="val.value({})+Math.max(0.01,1e-4*Math.abs(val.value({})))"/>
+          <feedback><p>Correct.</p></feedback>
+        </test>
+        <test><numcmp min="-1000000000" max="1000000000"/><feedback><p>Incorrect.</p></feedback></test>
+      </evaluate>
+    </evaluation>
+    <solution component="review2-solutions">
+      <p>
+        The tetrahedron is <m>0 \le x \le a</m>,
+        <m>0 \le y \le a-x</m>, <m>0 \le z \le a-x-y</m>. Integrating in
+        <m>z</m> then <m>y</m>,
+      </p>
+      <me>
+        \iiint_T x^2\,dV = \int_0^{a} x^2\,\frac{(a-x)^2}{2}\,dx
+        = \frac{a^5}{60}.
+      </me>
+    </solution>
+  </exercise>
+
+  <exercise xml:id="ex-r2p-triangle-xy">
+    <title>A Double Integral Over a Triangle</title>
+    <setup>
+      <de-object name="a" context="number">
+        <de-random distribution="discrete" min="2" max="12" by="2"/>
+      </de-object>
+      <de-object name="val" context="number">
+        <de-expression>7*a/8</de-expression>
+      </de-object>
+    </setup>
+    <statement>
+      <p>
+        Evaluate <m>\displaystyle\iint_D <eval obj="a"/>xy\,dA</m>, where
+        <m>D</m> is the triangular region with vertices <m>(0,0)</m>,
+        <m>(1,2)</m> and <m>(0,3)</m>.
+      </p>
+      <p>
+        Answer: <fillin name="b1" mode="number" ansobj="val" width="14"/>
+      </p>
+    </statement>
+    <evaluation>
+      <evaluate>
+        <test correct="yes">
+          <numcmp use-answer="yes" min="val.value({})-Math.max(0.01,1e-4*Math.abs(val.value({})))" max="val.value({})+Math.max(0.01,1e-4*Math.abs(val.value({})))"/>
+          <feedback><p>Correct.</p></feedback>
+        </test>
+        <test><numcmp min="-1000000000" max="1000000000"/><feedback><p>Incorrect.</p></feedback></test>
+      </evaluate>
+    </evaluation>
+    <solution component="review2-solutions">
+      <p>
+        For <m>0 \le x \le 1</m> the triangle runs from the line
+        <m>y = 2x</m> up to the line <m>y = 3-x</m>, so
+      </p>
+      <me>
+        \iint_D a\,xy\,dA
+        = \int_0^1 \frac{a\,x}{2}\left[(3-x)^2 - (2x)^2\right]dx
+        = \frac{7a}{8}.
+      </me>
+    </solution>
+  </exercise>
+
+  <exercise xml:id="ex-r2p-hyperbolic-paraboloid">
+    <title>Volume Under a Hyperbolic Paraboloid</title>
+    <setup>
+      <de-object name="a" context="number">
+        <de-random distribution="discrete" min="2" max="6" by="1"/>
+      </de-object>
+      <de-object name="vol" context="number">
+        <de-expression>40/3+2*a</de-expression>
+      </de-object>
+    </setup>
+    <statement>
+      <p>
+        Find the volume of the solid that lies under the hyperbolic
+        paraboloid <m>z = 3y^2 - x^2 + <eval obj="a"/></m> and above the
+        rectangle <m>-1 \le x \le 1</m>, <m>1 \le y \le 2</m>.
+      </p>
+      <p>
+        Volume <m>=</m>
+        <fillin name="b1" mode="number" ansobj="vol" width="14"/>
+      </p>
+    </statement>
+    <evaluation>
+      <evaluate>
+        <test correct="yes">
+          <numcmp use-answer="yes" min="vol.value({})-Math.max(0.01,1e-4*Math.abs(vol.value({})))" max="vol.value({})+Math.max(0.01,1e-4*Math.abs(vol.value({})))"/>
+          <feedback><p>Correct.</p></feedback>
+        </test>
+        <test><numcmp min="-1000000000" max="1000000000"/><feedback><p>Incorrect.</p></feedback></test>
+      </evaluate>
+    </evaluation>
+    <solution component="review2-solutions">
+      <p>
+        The surface lies above the rectangle throughout, so
+      </p>
+      <me>
+        V = \int_{-1}^{1}\!\!\int_1^2 \left(3y^2 - x^2 + a\right)
+        dy\,dx = \frac{40}{3} + 2a .
+      </me>
+    </solution>
+  </exercise>
+
+  <exercise xml:id="ex-r2p-log-region">
+    <title>A Double Integral Over a Region Under a Logarithm</title>
+    <setup>
+      <de-object name="a" context="number">
+        <de-random distribution="discrete" min="2" max="5" by="1"/>
+      </de-object>
+      <de-object name="val" context="number">
+        <de-expression>(1/(a+1))*((a/(a+1))*exp(a+1)+1/(a+1))</de-expression>
+      </de-object>
+    </setup>
+    <statement>
+      <p>
+        Evaluate <m>\displaystyle\iint_D x^{<eval obj="a"/>}\,dA</m>,
+        where <m>D = \left\{(x,y) : 1 \le x \le e,\
+        0 \le y \le \ln x\right\}</m>.
+      </p>
+      <p>
+        Answer: <fillin name="b1" mode="number" ansobj="val" width="14"/>
+      </p>
+    </statement>
+    <evaluation>
+      <evaluate>
+        <test correct="yes">
+          <numcmp use-answer="yes" min="val.value({})-Math.max(0.01,1e-4*Math.abs(val.value({})))" max="val.value({})+Math.max(0.01,1e-4*Math.abs(val.value({})))"/>
+          <feedback><p>Correct.</p></feedback>
+        </test>
+        <test><numcmp min="-1000000000" max="1000000000"/><feedback><p>Incorrect.</p></feedback></test>
+      </evaluate>
+    </evaluation>
+    <solution component="review2-solutions">
+      <p>
+        Integrating in <m>y</m> first gives
+        <m>\int_1^{e} x^{a}\ln x\,dx</m>, and integrating by parts with
+        <m>u = \ln x</m>,
+      </p>
+      <me>
+        \int_1^{e} x^{a}\ln x\,dx
+        = \frac{1}{a+1}\left(\frac{a}{a+1}e^{\,a+1}
+        + \frac{1}{a+1}\right).
+      </me>
+    </solution>
+  </exercise>
+
+  <exercise xml:id="ex-r2p-cylinder-inverse-r">
+    <title>A Triple Integral in Cylindrical Coordinates</title>
+    <setup>
+      <de-object name="r" context="number">
+        <de-random distribution="discrete" min="3" max="7" by="1"/>
+      </de-object>
+      <de-object name="rr" context="number">
+        <de-expression>r^2</de-expression>
+      </de-object>
+      <de-object name="val" context="number">
+        <de-expression>2*pi*r^2</de-expression>
+      </de-object>
+    </setup>
+    <statement>
+      <p>
+        Evaluate
+      </p>
+      <me>
+        \int_{0}^{<eval obj="r"/>}\!\!
+        \int_{-<eval obj="r"/>}^{<eval obj="r"/>}\!\!
+        \int_{-\sqrt{<eval obj="rr"/>-x^2}}^{\sqrt{<eval obj="rr"/>-x^2}}
+        \frac{1}{\sqrt{x^2+y^2}}\,dy\,dx\,dz .
+      </me>
+      <p>
+        Answer: <fillin name="b1" mode="number" ansobj="val" width="14"/>
+      </p>
+    </statement>
+    <evaluation>
+      <evaluate>
+        <test correct="yes">
+          <numcmp use-answer="yes" min="val.value({})-Math.max(0.01,1e-4*Math.abs(val.value({})))" max="val.value({})+Math.max(0.01,1e-4*Math.abs(val.value({})))"/>
+          <feedback><p>Correct.</p></feedback>
+        </test>
+        <test><numcmp min="-1000000000" max="1000000000"/><feedback><p>Incorrect.</p></feedback></test>
+      </evaluate>
+    </evaluation>
+    <solution component="review2-solutions">
+      <p>
+        The <m>x</m> and <m>y</m> limits describe the full disk of radius
+        <m>r</m>, and <m>z</m> runs from <m>0</m> to <m>r</m>. In
+        cylindrical coordinates the integrand times the volume element is
+        <m>\frac{1}{\rho}\cdot\rho = 1</m>, so
+      </p>
+      <me>
+        \int_0^{r}\!\!\int_0^{2\pi}\!\!\int_0^{r} 1\,d\rho
+        \,d\theta\,dz = 2\pi r^2 .
+      </me>
+    </solution>
+  </exercise>
+
+  <exercise xml:id="ex-r2p-sphere-minus-cone">
+    <title>Volume Inside a Sphere and Outside a Cone</title>
+    <setup>
+      <de-object name="a" context="number">
+        <de-random distribution="discrete" min="1" max="9" by="1"/>
+      </de-object>
+      <de-object name="b" context="number">
+        <de-random distribution="discrete" min="2" max="8" by="1"/>
+      </de-object>
+      <de-object name="aa" context="number">
+        <de-expression>a^2</de-expression>
+      </de-object>
+      <de-object name="vol" context="number">
+        <de-expression>2*pi*a^3*b/(3*sqrt(b^2+1))</de-expression>
+      </de-object>
+    </setup>
+    <statement>
+      <p>
+        Find the volume of the solid that lies within the sphere
+        <m>x^2+y^2+z^2 = <eval obj="aa"/></m>, above the <m>xy</m>-plane,
+        and outside the cone
+        <m>z = <eval obj="b"/>\sqrt{x^2+y^2}</m>.
+      </p>
+      <p>
+        Volume <m>=</m>
+        <fillin name="b1" mode="number" ansobj="vol" width="14"/>
+      </p>
+    </statement>
+    <evaluation>
+      <evaluate>
+        <test correct="yes">
+          <numcmp use-answer="yes" min="vol.value({})-Math.max(0.01,1e-4*Math.abs(vol.value({})))" max="vol.value({})+Math.max(0.01,1e-4*Math.abs(vol.value({})))"/>
+          <feedback><p>Correct.</p></feedback>
+        </test>
+        <test><numcmp min="-1000000000" max="1000000000"/><feedback><p>Incorrect.</p></feedback></test>
+      </evaluate>
+    </evaluation>
+    <solution component="review2-solutions">
+      <p>
+        In spherical coordinates the sphere is <m>\rho = a</m> and the cone
+        is <m>\phi = \arctan\frac{1}{b}</m>, so the solid is
+        <m>\arctan\frac1b \le \phi \le \frac{\pi}{2}</m>,
+        <m>0 \le \rho \le a</m>, and
+      </p>
+      <me>
+        V = 2\pi\,\frac{a^3}{3}\cos\left(\arctan\tfrac1b\right)
+        = \frac{2\pi a^3 b}{3\sqrt{b^2+1}} .
+      </me>
+    </solution>
+  </exercise>
+
+  <exercise xml:id="ex-r2p-wedge">
+    <title>A Triple Integral Over a Wedge</title>
+    <setup>
+      <de-object name="k" context="number">
+        <de-random distribution="discrete" min="1" max="9" by="1"/>
+      </de-object>
+      <de-object name="a" context="number">
+        <de-expression>6*k</de-expression>
+      </de-object>
+      <de-object name="val" context="number">
+        <de-expression>k</de-expression>
+      </de-object>
+    </setup>
+    <statement>
+      <p>
+        Evaluate <m>\displaystyle\iiint_W <eval obj="a"/>\left(x+y\right)
+        dV</m> over the region <m>W</m> given by <m>y \le z \le x</m>,
+        <m>0 \le y \le x</m>, <m>0 \le x \le 1</m>.
+      </p>
+      <p>
+        Answer: <fillin name="b1" mode="number" ansobj="val" width="14"/>
+      </p>
+    </statement>
+    <evaluation>
+      <evaluate>
+        <test correct="yes">
+          <numcmp use-answer="yes" min="val.value({})-Math.max(0.01,1e-4*Math.abs(val.value({})))" max="val.value({})+Math.max(0.01,1e-4*Math.abs(val.value({})))"/>
+          <feedback><p>Correct.</p></feedback>
+        </test>
+        <test><numcmp min="-1000000000" max="1000000000"/><feedback><p>Incorrect.</p></feedback></test>
+      </evaluate>
+    </evaluation>
+    <solution component="review2-solutions">
+      <p>
+        Integrating in <m>z</m> first turns the integrand into
+        <m>a(x+y)(x-y) = a\left(x^2-y^2\right)</m>, so
+      </p>
+      <me>
+        \iiint_W a(x+y)\,dV
+        = \int_0^1\!\!\int_0^{x} a\left(x^2-y^2\right)dy\,dx
+        = \int_0^1 \frac{2a}{3}x^3\,dx = \frac{a}{6}.
+      </me>
+    </solution>
+  </exercise>
+
+  </exercises>
+</section>
