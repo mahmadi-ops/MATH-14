@@ -5,30 +5,34 @@
      Requires assets/brain-map.html (external dir) and the qrcode stub
      generated-assets/qrcode/brain-map-url.xml. -->
 <preface xml:id="subsec-brain-map" xmlns:xi="http://www.w3.org/2001/XInclude">
-  <title>Brain map: the integrals of vector calculus</title>
+  <title>The big picture</title>
 
   <p>
     The map below gathers every integral of this book on one page.
     Parametrization feeds the line integrals; the five theorems act as
     bridges, trading an integral over a boundary for an integral over the
     region, surface, or solid it bounds; and each multiple integral carries
-    its coordinate substitutions. Follow the gold lines.
+    its coordinate substitutions. An arrow between two topics means the
+    second builds on the first, and the gold arrows mark the theorem and
+    substitution bridges between the integral types. Every topic on the map
+    is a link to the part of the book where it is covered.
     For comfortable reading, <url href="external/brain-map.html" visual="">open the map full size in a new tab</url>.
   </p>
 
   <interactive xml:id="brain-map" iframe="brain-map.html" width="100%" aspect="16:9">
     <instructions>
       <p>
-        Each node of the map is a topic of the course, and each line
-        connects a topic to the ones it builds on; the gold lines trace
-        the coordinate substitutions between the integral types. Drag the
-        background to pan and scroll to zoom; drag a node to move it. The
-        map is mouse-driven; the same topics, in the same order, appear
-        in the table of contents of this book.
+        Each node of the map is a topic of the course, and each arrow
+        connects a topic to the ones that build on it; the gold arrows
+        mark the theorem and substitution bridges between the integral
+        types. Hover over a topic to light up its connections, and click
+        it to jump to the part of the book where it is covered. The same
+        topics, in the same order, appear in the table of contents of
+        this book.
       </p>
     </instructions>
     <static>
-      <p>Interactive brain map of the chapter's integrals (view in the HTML version).</p>
+      <p>Interactive map of the book's integrals (view in the HTML version).</p>
     </static>
   </interactive>
 
