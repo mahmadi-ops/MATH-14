@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- MATH 14 - Assignment 5, the version WITH solutions.                        -->
+<!--                                                                        -->
+<!-- Statements come from the written assignment, solutions from the auto-   -->
+<!-- graded version; each problem is a <problem> whose <solution> is printed -->
+<!-- directly beneath it.  The auto-graded version is hw5-online.ptx.        -->
+<!--                                                                        -->
+<!-- HIDING THE SOLUTIONS.  Every <solution> here carries                    -->
+<!--   component="hw5-solutions"                                            -->
+<!-- so this assignment's solutions can be switched off from                 -->
+<!-- publication/publication.ptx; see the comment in <source> there.         -->
+<section xml:id="sec-solutions-hw5" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Assignment 5</title>
+
+    <p>
+    Sections: <xref ref="section-polar-coordinates" text="title"/> and
+    <xref ref="section-double-integrals-polar-form" text="title"/>.
+    </p>
+
+  <p>
+    Work each problem yourself first; the full solution follows immediately
+    below it. The auto-graded version of the same problems is
+    <xref ref="sec-exercises-hw5-online" text="title"/>.
+  </p>
+
+  <problem xml:id="ex-hw5-rose">
+    <statement>
+      <p>
+      Consider the polar equation <m>r(\theta) = 1 + \sin(3\theta)</m>,
+      <m>\frac{\pi}{6} \le \theta \le \frac{5\pi}{6}</m>.
+      </p>
+      <p>
+      (a) Determine the type of symmetry that its graph possesses.
+      </p>
+      <p>
+      (b) Sketch its graph. Use the polar chart of
+      <xref ref="fig-hw5-polar-chart"/>.
+      </p>
+      <p>
+      (c) Set up (do not evaluate) the integral necessary for computing the
+      area bounded by <m>r = 1 + \sin(3\theta)</m>,
+      <m>\frac{\pi}{6} \le \theta \le \frac{5\pi}{6}</m>.
+      </p>
+    </statement>
+    <solution component="hw5-solutions">
+      <p>
+      Replacing <m>\theta</m> by <m>\pi - \theta</m> gives
+      <m>1+\sin(3\pi-3\theta) = 1+\sin(\pi-3\theta)
+      = 1+\sin(3\theta)</m>, so <m>r</m> is unchanged: the graph is
+      symmetric about the <m>y</m>-axis. The area is
+      </p>
+
+      <me>
+      A = \int_{\pi/6}^{5\pi/6}\!\!\int_{0}^{1+\sin(3\theta)}
+      r\,dr\,d\theta ,
+      </me>
+
+      <p>
+      which by the symmetry is also
+      <m>2\int_{\pi/6}^{\pi/2}\int_0^{1+\sin(3\theta)}
+      r\,dr\,d\theta</m>.
+      </p>
+    </solution>
+  </problem>
+
+  <figure xml:id="fig-hw5-polar-chart">
+      <caption>
+        A blank polar chart for part (b) of <xref ref="ex-hw5-rose"/>. The circles are
+        <m>r = 0.5</m>, <m>1</m>, <m>1.5</m>, and <m>2</m>, and the spokes are
+        spaced <m>\pi/6</m> apart.
+      </caption>
+      <image width="70%">
+        <shortdescription>
+        A blank polar grid of four circles and twelve labeled spokes.
+        </shortdescription>
+        <prefigure xmlns="https://prefigure.org" label="prefigure-hw5-chart">
+          <diagram dimensions="(340,340)" margins="10">
+            <definition>c1(t) = (0.5*cos(t), 0.5*sin(t))</definition>
+            <definition>c2(t) = (cos(t), sin(t))</definition>
+            <definition>c3(t) = (1.5*cos(t), 1.5*sin(t))</definition>
+            <definition>c4(t) = (2*cos(t), 2*sin(t))</definition>
+            <coordinates bbox="(-2.55,-2.55,2.55,2.55)">
+              <parametric-curve at="pc-c1" function="c1" domain="(0,2*pi)" stroke="#bbbbbb" thickness="1"/>
+              <parametric-curve at="pc-c2" function="c2" domain="(0,2*pi)" stroke="#bbbbbb" thickness="1"/>
+              <parametric-curve at="pc-c3" function="c3" domain="(0,2*pi)" stroke="#bbbbbb" thickness="1"/>
+              <parametric-curve at="pc-c4" function="c4" domain="(0,2*pi)" stroke="#888888" thickness="1"/>
+              <repeat at="pc-spokes" parameter="k=0..5">
+                <line at="pc-spoke-((k))" endpoints="((2*cos(pi*k/6), 2*sin(pi*k/6)),(-2*cos(pi*k/6), -2*sin(pi*k/6)))" stroke="#cccccc" thickness="1"/>
+              </repeat>
+              <label at="pc-t0" anchor="(2.12,0)" alignment="e"><m>0</m></label>
+              <label at="pc-t1" anchor="(1.84,1.06)" alignment="e">
+                <m>\pi/6</m>
+              </label>
+              <label at="pc-t2" anchor="(1.06,1.84)" alignment="ne">
+                <m>\pi/3</m>
+              </label>
+              <label at="pc-t3" anchor="(0,2.12)" alignment="n">
+                <m>\pi/2</m>
+              </label>
+              <label at="pc-t4" anchor="(-1.06,1.84)" alignment="nw">
+                <m>2\pi/3</m>
+              </label>
+              <label at="pc-t5" anchor="(-1.84,1.06)" alignment="w">
+                <m>5\pi/6</m>
+              </label>
+              <label at="pc-t6" anchor="(-2.12,0)" alignment="w"><m>\pi</m></label>
+              <label at="pc-t7" anchor="(-1.84,-1.06)" alignment="w">
+                <m>7\pi/6</m>
+              </label>
+              <label at="pc-t8" anchor="(-1.06,-1.84)" alignment="sw">
+                <m>4\pi/3</m>
+              </label>
+              <label at="pc-t9" anchor="(0,-2.12)" alignment="s">
+                <m>3\pi/2</m>
+              </label>
+              <label at="pc-t10" anchor="(1.06,-1.84)" alignment="se">
+                <m>5\pi/3</m>
+              </label>
+              <label at="pc-t11" anchor="(1.84,-1.06)" alignment="e">
+                <m>11\pi/6</m>
+              </label>
+              <label at="pc-r1" anchor="(0.08,0.5)" alignment="ne" color="#666666"><m>0.5</m></label>
+              <label at="pc-r2" anchor="(0.08,1)" alignment="ne" color="#666666"><m>1</m></label>
+              <label at="pc-r3" anchor="(0.08,1.5)" alignment="ne" color="#666666"><m>1.5</m></label>
+              <label at="pc-r4" anchor="(0.08,2)" alignment="ne" color="#666666"><m>2</m></label>
+            </coordinates>
+            <annotations>
+              <annotation ref="figure" text="A blank polar grid: four concentric circles of radii one half, one, one and a half and two, crossed by twelve spokes spaced pi over six apart. The spokes are labelled with their angles from zero around to eleven pi over six, and the circles are labelled with their radii along the positive y direction.">
+                <annotation ref="pc-c4" text="The outermost circle, of radius two."/>
+                <annotation ref="pc-spokes" text="The twelve spokes of the chart, spaced pi over six apart."/>
+              </annotation>
+            </annotations>
+          </diagram>
+        </prefigure>
+      </image>
+    </figure>
+
+  <problem xml:id="ex-hw5-combine">
+    <statement>
+      <p>
+      Combine the following sum into one double integral. Do not evaluate
+      the integral.
+      </p>
+
+      <md>
+      <mrow>
+      \amp \int_{1/\sqrt2}^{1}\!\!\int_{\sqrt{1-x^2}}^{x} xy\,dy\,dx
+      + \int_{1}^{\sqrt2}\!\!\int_{0}^{x} xy\,dy\,dx
+      </mrow>
+      <mrow>
+      \amp \qquad + \int_{\sqrt2}^{2}\!\!\int_{0}^{\sqrt{4-x^2}}
+      xy\,dy\,dx
+      </mrow>
+      </md>
+    </statement>
+    <solution component="hw5-solutions">
+      <p>
+      The three pieces together are the part of the annulus
+      <m>1 \le r \le 2</m> lying between the <m>x</m>-axis and the line
+      <m>y = x</m>. Since <m>xy = r^2\sin\theta\cos\theta</m> and
+      <m>dA = r\,dr\,d\theta</m> by
+      <xref ref="eq-polar-area-element"/>,
+      </p>
+
+      <me>
+      \int_0^{\pi/4}\!\!\int_1^2 r^3 \sin\theta\cos\theta
+      \,dr\,d\theta .
+      </me>
+    </solution>
+  </problem>
+
+  <problem xml:id="ex-hw5-two-circles">
+    <statement>
+      <p>
+      Compute the net mass of the planar object that occupies the region
+      bounded by <m>x^2 + y^2 = 2x</m> and <m>x^2 + y^2 = 2y</m>, and
+      whose mass density is given by
+      <m>\rho(x,y) = \dfrac{1}{x}</m>.
+      </p>
+    </statement>
+    <solution component="hw5-solutions">
+      <p>
+      The two circles are <m>r = 2\sin\theta</m> and
+      <m>r = 2\cos\theta</m>, meeting where
+      <m>\theta = \pi/4</m>. With
+      <m>\rho = \frac{1}{r\cos\theta}</m> and
+      <m>dA = r\,dr\,d\theta</m> by
+      <xref ref="eq-polar-area-element"/>,
+      </p>
+
+      <md>
+      <mrow>
+      M \amp = \int_0^{\pi/4}\!\!\int_0^{2\sin\theta}
+      \frac{r\,dr\,d\theta}{r\cos\theta}
+      + \int_{\pi/4}^{\pi/2}\!\!\int_0^{2\cos\theta}
+      \frac{r\,dr\,d\theta}{r\cos\theta}
+      </mrow>
+      <mrow>
+      \amp = 2\int_0^{\pi/4}\tan\theta\,d\theta
+      + 2\int_{\pi/4}^{\pi/2} d\theta
+      = \ln 2 + \frac{\pi}{2} \approx 2.264 .
+      </mrow>
+      </md>
+    </solution>
+  </problem>
+</section>

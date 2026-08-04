@@ -59,6 +59,11 @@
       <xi:include href="divergence-theorem.ptx" />
     </chapter>
 
+    <!-- The written assignments are hidden from the build.  Their problem  -->
+    <!-- statements now live in the "Solutions of the Assignments" chapter, -->
+    <!-- and the same problems are auto-graded in "Assignments".  To bring  -->
+    <!-- this chapter back, delete the two marker lines around it.          -->
+    <!-- HIDDEN-CHAPTER-BEGIN
     <chapter xml:id="ch-assignments">
       <title>Assignments</title>
       <xi:include href="hw1-exercises.ptx" />
@@ -71,9 +76,20 @@
       <xi:include href="hw8-exercises.ptx" />
       <xi:include href="hw9-exercises.ptx" />
     </chapter>
+    HIDDEN-CHAPTER-END -->
 
     <chapter xml:id="ch-online-assignments">
-      <title>Online Assignments</title>
+      <title>Assignments</title>
+      <introduction>
+        <p>
+          The nine assignments, with every answer box checked automatically:
+          type an answer, press <q>Check Me</q>, and check as often as you
+          like. Each box is graded on its own, so a box you get right earns
+          its credit even when another box in the same problem is wrong. The
+          worked solutions are in
+          <xref ref="ch-assignment-solutions" text="title"/>.
+        </p>
+      </introduction>
       <xi:include href="hw1-online.ptx" />
       <xi:include href="hw2-online.ptx" />
       <xi:include href="hw3-online.ptx" />
@@ -85,15 +101,34 @@
       <xi:include href="hw9-online.ptx" />
     </chapter>
 
+    <chapter xml:id="ch-assignment-solutions">
+      <title>Solutions of the Assignments</title>
+      <introduction>
+        <p>
+          The same nine assignments, each problem followed immediately by a
+          complete worked solution. To work them with your answers checked
+          instead, use <xref ref="ch-online-assignments" text="title"/>.
+        </p>
+      </introduction>
+      <xi:include href="hw1-solutions.ptx" />
+      <xi:include href="hw2-solutions.ptx" />
+      <xi:include href="hw3-solutions.ptx" />
+      <xi:include href="hw4-solutions.ptx" />
+      <xi:include href="hw5-solutions.ptx" />
+      <xi:include href="hw6-solutions.ptx" />
+      <xi:include href="hw7-solutions.ptx" />
+      <xi:include href="hw8-solutions.ptx" />
+      <xi:include href="hw9-solutions.ptx" />
+    </chapter>
+
     <chapter xml:id="ch-review-solutions">
       <title>Review Problems with Solutions</title>
       <introduction>
         <p>
-          The review problem sets, with full support: every answer is
-          checked automatically, the feedback after each check explains the
-          mathematics, and a complete written solution can be opened for
-          every problem. To try the same problems without being able to see
-          any of that, use <xref ref="ch-review-practice" text="title"/>.
+          The review problem sets with a complete worked solution printed
+          below every problem. To try the same problems on their own, with
+          your answers checked automatically and no solutions in sight, use
+          <xref ref="ch-review-practice" text="title"/>.
         </p>
       </introduction>
       <xi:include href="review3-online.ptx" />

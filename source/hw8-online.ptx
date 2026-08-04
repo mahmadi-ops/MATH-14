@@ -5,7 +5,7 @@
 <!-- in order by a <var> in <setup>, whose first <condition> is the correct   -->
 <!-- answer.  Every blank is graded on its own, so partial credit survives.   -->
 <section xml:id="sec-exercises-hw8-online" xmlns:xi="http://www.w3.org/2001/XInclude">
-  <title>Assignment 8, Online Version</title>
+  <title>Assignment 8</title>
 
   <introduction>
     <p>
@@ -157,7 +157,7 @@
         </condition>
       </var>
     </setup>
-    <solution>
+    <solution component="assignment-inline-solutions">
       <p>
         By symmetry the cylinder's own centroid is the origin, so only the
         cone moves the answer. The cylinder has volume
@@ -236,7 +236,7 @@
         </condition>
       </var>
     </setup>
-    <solution>
+    <solution component="assignment-inline-solutions">
       <p>
         By symmetry the center of mass lies on the <m>x</m>-axis. From
         <xref ref="ex-hw6o-cone-mass"/>, <m>M = \pi/4</m>, and

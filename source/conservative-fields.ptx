@@ -1432,27 +1432,82 @@ is a continuous field with continuous partial derivatives on an open,
 connected, simply connected region <m>D</m>.
 </p>
 
-<md>
-<mrow>
-\mathbf F \text{ is a conservative field}
-\amp \quad\Longleftrightarrow\quad
-\mathbf F \text{ is a gradient field}
-</mrow>
-<mrow>
-\amp \qquad\qquad\ \ \mathbf F = \nabla f \text{ for some } f
-</mrow>
-<mrow>
-\Big\Updownarrow \amp \qquad\qquad\qquad\ \, \Big\Updownarrow
-</mrow>
-<mrow>
-\oint_C \mathbf F\cdot d\mathbf r = 0 \text{ on every loop}
-\amp \quad\Longleftrightarrow\quad
-\int_C \mathbf F\cdot d\mathbf r \text{ is path independent}
-</mrow>
-<mrow>
-\amp \qquad\qquad\ \ \int_C \mathbf F\cdot d\mathbf r = f(B) - f(A)
-</mrow>
-</md>
+<figure xml:id="fig-equivalence-square-prefigure">
+<caption>
+The four statements are equivalent. Each double arrow joins the middle of
+one box to the middle of the next, and may be read in either direction.
+</caption>
+<image width="100%">
+<shortdescription>
+Four boxed statements at the corners of a square, joined by double arrows.
+</shortdescription>
+<prefigure xmlns="https://prefigure.org" label="prefigure-equivalence-square">
+<diagram dimensions="(580,271)" margins="6">
+<coordinates bbox="(0,0,12,5.6)">
+<!-- Boxes.  Left column centred on x = 2.5, right on x = 9.0; the top   -->
+<!-- row centred on y = 4.45, the bottom row on y = 1.45.  Every arrow   -->
+<!-- below runs between two of those centres, so it meets each box at    -->
+<!-- the middle of an edge.                                              -->
+<rectangle at="eq-box-cons" lower-left="(0.2,3.9)" dimensions="(4.6,1.1)"
+    stroke="#0072B2" fill="#dbeaf7" thickness="2"/>
+<label at="eq-lbl-cons" anchor="(2.5,4.45)" alignment="c">
+<m>\mathbf F \text{ is a conservative field}</m>
+</label>
+
+<rectangle at="eq-box-grad" lower-left="(6.4,3.6)" dimensions="(5.2,1.7)"
+    stroke="#0072B2" fill="#dbeaf7" thickness="2"/>
+<label at="eq-lbl-grad1" anchor="(9.0,4.82)" alignment="c">
+<m>\mathbf F \text{ is a gradient field}</m>
+</label>
+<label at="eq-lbl-grad2" anchor="(9.0,4.08)" alignment="c">
+<m>\mathbf F = \nabla f \text{ for some } f</m>
+</label>
+
+<rectangle at="eq-box-loop" lower-left="(0.2,0.6)" dimensions="(4.6,1.7)"
+    stroke="#0072B2" fill="#dbeaf7" thickness="2"/>
+<label at="eq-lbl-loop1" anchor="(2.5,1.82)" alignment="c">
+<m>\oint_C \mathbf F\cdot d\mathbf r = 0</m>
+</label>
+<label at="eq-lbl-loop2" anchor="(2.5,1.08)" alignment="c">
+<m>\text{on every loop}</m>
+</label>
+
+<rectangle at="eq-box-path" lower-left="(6.4,0.6)" dimensions="(5.2,1.7)"
+    stroke="#0072B2" fill="#dbeaf7" thickness="2"/>
+<label at="eq-lbl-path1" anchor="(9.0,1.82)" alignment="c">
+<m>\int_C \mathbf F\cdot d\mathbf r \text{ is path independent}</m>
+</label>
+<label at="eq-lbl-path2" anchor="(9.0,1.08)" alignment="c">
+<m>\int_C \mathbf F\cdot d\mathbf r = f(B) - f(A)</m>
+</label>
+
+<!-- Double arrows, centre to centre. -->
+<line at="eq-arrow-top" endpoints="((4.8,4.45),(6.4,4.45))"
+    stroke="#333333" thickness="2" arrows="2"/>
+<line at="eq-arrow-bottom" endpoints="((4.8,1.45),(6.4,1.45))"
+    stroke="#333333" thickness="2" arrows="2"/>
+<line at="eq-arrow-left" endpoints="((2.5,3.9),(2.5,2.3))"
+    stroke="#333333" thickness="2" arrows="2"/>
+<line at="eq-arrow-right" endpoints="((9.0,3.6),(9.0,2.3))"
+    stroke="#333333" thickness="2" arrows="2"/>
+</coordinates>
+
+<annotations>
+<annotation ref="figure" text="Four boxed statements at the corners of a square, each joined to its neighbours by a double-headed arrow running from the middle of one box to the middle of the next. Top left: F is a conservative field. Top right: F is a gradient field, that is F equals grad f for some f. Bottom left: the loop integral of F dot d r is zero on every loop. Bottom right: the integral of F dot d r is path independent and equals f of B minus f of A. Because every arrow is double-headed, any one of the four statements implies all of the others.">
+  <annotation ref="eq-box-cons" text="Top left box: F is a conservative field."/>
+  <annotation ref="eq-box-grad" text="Top right box: F is a gradient field, F equals grad f for some potential function f."/>
+  <annotation ref="eq-box-loop" text="Bottom left box: the integral of F dot d r around every loop is zero."/>
+  <annotation ref="eq-box-path" text="Bottom right box: the integral of F dot d r is path independent, and equals f of B minus f of A."/>
+  <annotation ref="eq-arrow-top" text="A double arrow across the top: conservative if and only if gradient field."/>
+  <annotation ref="eq-arrow-bottom" text="A double arrow across the bottom: the loop property if and only if path independence."/>
+  <annotation ref="eq-arrow-left" text="A double arrow down the left side: conservative if and only if the loop property."/>
+  <annotation ref="eq-arrow-right" text="A double arrow down the right side: gradient field if and only if path independence."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
 
 <p>
 Read across the top: a conservative field is exactly a gradient field,
@@ -1639,12 +1694,15 @@ conservative: it is smooth on all of <m>\R^3</m> and
 A potential is found by inspection:
 </p>
 
-<men xml:id="eq-segment-potential">
-f(x,y,z) = \frac{(x+y)z}{3},
-\qquad
-\nabla f = \left\langle \frac{z}{3},\ \frac{z}{3},\
+<md>
+<mrow xml:id="eq-segment-potential" number="yes">
+f(x,y,z) \amp = \frac{(x+y)z}{3},
+</mrow>
+<mrow>
+\nabla f \amp = \left\langle \frac{z}{3},\ \frac{z}{3},\
   \frac{x+y}{3}\right\rangle = \mathbf{F} .
-</men>
+</mrow>
+</md>
 
 <p>
 So there is no need to parametrize the segment at all. By

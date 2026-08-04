@@ -5,7 +5,7 @@
 <!-- in order by a <var> in <setup>, whose first <condition> is the correct   -->
 <!-- answer.  Every blank is graded on its own, so partial credit survives.   -->
 <section xml:id="sec-exercises-hw9-online" xmlns:xi="http://www.w3.org/2001/XInclude">
-  <title>Assignment 9, Online Version</title>
+  <title>Assignment 9</title>
 
   <introduction>
     <p>
@@ -142,7 +142,7 @@
         </condition>
       </var>
     </setup>
-    <solution>
+    <solution component="assignment-inline-solutions">
       <p>
         Closing the path with the segment <m>C_3</m> down the
         <m>y</m>-axis gives a simple closed curve, and
@@ -206,7 +206,7 @@
         </condition>
       </var>
     </setup>
-    <solution>
+    <solution component="assignment-inline-solutions">
       <p>
         Differentiating, <m>\frac{\partial M}{\partial y}
         = \frac{y}{\sqrt{x^2+y^2}}</m> and
@@ -263,7 +263,7 @@
         </condition>
       </var>
     </setup>
-    <solution>
+    <solution component="assignment-inline-solutions">
       <p>
         Here <m>\nabla\cdot\mathbf{F} = 1 - x</m>, so by the flux form
         of Green's theorem, <xref ref="eq-green-normal"/>,
@@ -337,7 +337,7 @@
         </condition>
       </var>
     </setup>
-    <solution>
+    <solution component="assignment-inline-solutions">
       <p>
         With <m>M = y^4-2y</m> and <m>N = -(6x-4xy^3)</m>,
         <m>\frac{\partial N}{\partial x} = -6+4y^3</m> and

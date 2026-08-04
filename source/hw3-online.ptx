@@ -5,7 +5,7 @@
 <!-- in order by a <var> in <setup>, whose first <condition> is the correct   -->
 <!-- answer.  Every blank is graded on its own, so partial credit survives.   -->
 <section xml:id="sec-exercises-hw3-online" xmlns:xi="http://www.w3.org/2001/XInclude">
-  <title>Assignment 3, Online Version</title>
+  <title>Assignment 3</title>
 
   <introduction>
     <p>
@@ -95,7 +95,7 @@
         </condition>
       </var>
     </setup>
-    <solution>
+    <solution component="assignment-inline-solutions">
       <p>
         Along the bottom of <m>C</m> the field and the unit tangent make
         acute angles, so <m>\mathbf{F} \cdot \hat{\mathbf{T}} \gt 0</m>
@@ -147,7 +147,7 @@
         </condition>
       </var>
     </setup>
-    <solution>
+    <solution component="assignment-inline-solutions">
       <p>
         On <m>C_1</m>, <m>\mathbf{r}(t) = \left\langle t, 2t^2-1
         \right\rangle</m> with <m>-1 \le t \le 1</m>, so
@@ -204,7 +204,7 @@
         </condition>
       </var>
     </setup>
-    <solution>
+    <solution component="assignment-inline-solutions">
       <p>
         The integral is <m>\int_C \mathbf{F} \cdot d\mathbf{r}</m> with
         <m>\mathbf{F} = \left\langle -y, x, 1 \right\rangle</m>. Along

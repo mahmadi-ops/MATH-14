@@ -5,7 +5,7 @@
 <!-- in order by a <var> in <setup>, whose first <condition> is the correct   -->
 <!-- answer.  Every blank is graded on its own, so partial credit survives.   -->
 <section xml:id="sec-exercises-hw6-online" xmlns:xi="http://www.w3.org/2001/XInclude">
-  <title>Assignment 6, Online Version</title>
+  <title>Assignment 6</title>
 
   <introduction>
     <p>
@@ -46,7 +46,7 @@
         </condition>
       </var>
     </setup>
-    <solution>
+    <solution component="assignment-inline-solutions">
       <p>
         With <m>dV = r\,dr\,d\theta\,dx</m> (the cylindrical volume element
         <xref ref="eq-dv-cylindrical"/> about the <m>x</m>-axis) and
@@ -139,7 +139,7 @@
         </condition>
       </var>
     </setup>
-    <solution>
+    <solution component="assignment-inline-solutions">
       <p>
         Since <m>r^2\cos(2\theta) = r^2\left(\cos^2\theta -
         \sin^2\theta\right) = x^2 - y^2</m> and
@@ -188,7 +188,7 @@
         </condition>
       </var>
     </setup>
-    <solution>
+    <solution component="assignment-inline-solutions">
       <p>
         On <m>R</m>, <m>x^2+y^2 \le z \le 1-x^2-y^2</m>. The right
         inequality gives <m>z + x^2 + y^2 - 1 \le 0</m>, so the first
@@ -248,7 +248,7 @@
         </condition>
       </var>
     </setup>
-    <solution>
+    <solution component="assignment-inline-solutions">
       <p>
         The surfaces are <m>z = \pm\sqrt{r^2+5}</m> and
         <m>z = 1-r^2</m>. Setting <m>r^2 = z^2-5</m> equal to

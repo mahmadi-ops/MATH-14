@@ -10,7 +10,7 @@
 <!-- plain HTML build; the newer <fillin>/<evaluation> flavour needs the      -->
 <!-- dynamic runtime and shows an empty box without it.)                      -->
 <section xml:id="sec-exercises-hw1-online" xmlns:xi="http://www.w3.org/2001/XInclude">
-  <title>Assignment 1, Online Version</title>
+  <title>Assignment 1</title>
 
   <introduction>
     <p>
@@ -130,7 +130,7 @@
         </condition>
       </var>
     </setup>
-    <solution>
+    <solution component="assignment-inline-solutions">
       <p>
         The shadow of <m>C</m> in the <m>xy</m>-plane is the unit circle, so
         take <m>x=\cos(t)</m>, <m>y=\sin(t)</m> with
@@ -296,7 +296,7 @@ with a double-headed arrow mark each spring's height.
         </condition>
       </var>
     </setup>
-    <solution>
+    <solution component="assignment-inline-solutions">
       <p>
         The height <m>H</m> is gained over <m>N</m> turns, that is, over
         <m>T = 2\pi N</m> units of <m>t</m>, so <m>c = H/(2\pi N)</m>. For
@@ -401,7 +401,7 @@ with a double-headed arrow mark each spring's height.
         </condition>
       </var>
     </setup>
-    <solution>
+    <solution component="assignment-inline-solutions">
       <p>
         The point <m>P</m> is reached when <m>\ln(t)=0</m>, that is, at
         <m>t_0=1</m>; the other two components vanish there as well.
@@ -524,7 +524,7 @@ with a double-headed arrow mark each spring's height.
         </condition>
       </var>
     </setup>
-    <solution>
+    <solution component="assignment-inline-solutions">
       <p>
         Differentiating,
         <m>\mathbf{v}(t)=\left\langle 12,\ 12t^{1/2},\ 6t\right\rangle</m>,

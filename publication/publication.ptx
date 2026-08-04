@@ -5,6 +5,39 @@
        they are resolved relative to the source file, hence the ../ -->
   <source>
     <directories external="../assets" generated="../generated-assets"/>
+
+    <!-- ============================================================== -->
+    <!-- SHOWING AND HIDING SOLUTIONS                                   -->
+    <!--                                                                -->
+    <!-- Every <solution> that can be switched off carries a component  -->
+    <!-- name.  The list in <version include="..."> below is what gets  -->
+    <!-- built: a name in the list means those solutions appear, a name -->
+    <!-- left out means they are dropped.  The problems themselves are  -->
+    <!-- never affected - only the solutions come and go.               -->
+    <!--                                                                -->
+    <!--   hw1-solutions ... hw9-solutions                              -->
+    <!--       the worked solutions in "Solutions of the Assignments",  -->
+    <!--       one name per assignment                                  -->
+    <!--                                                                -->
+    <!--   review3-solutions, review4-solutions                         -->
+    <!--       the worked solutions in "Review Problems with Solutions" -->
+    <!--                                                                -->
+    <!--   assignment-inline-solutions                                  -->
+    <!--       the solutions carried inside the auto-graded exercises of -->
+    <!--       the "Assignments" chapter.  Left out of the list on       -->
+    <!--       purpose, so that chapter stays a place to work rather     -->
+    <!--       than read; add the name to reveal them there too.         -->
+    <!--                                                                -->
+    <!-- To hide EVERY solution, put a name that nothing uses:          -->
+    <!--     <version include="none"/>                                  -->
+    <!-- Do NOT delete the <version> line to hide things: with no list  -->
+    <!-- at all PreTeXt keeps every component, which shows them all.    -->
+    <!-- ============================================================== -->
+    <!-- <version include="hw1-solutions hw2-solutions hw3-solutions
+                      hw4-solutions hw5-solutions hw6-solutions
+                      hw7-solutions hw8-solutions hw9-solutions
+                      review3-solutions review4-solutions"/> -->
+    <version include="none"/>
   </source>
 
   <!-- Table of contents down to subsections, so the sidebar lists every

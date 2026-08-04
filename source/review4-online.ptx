@@ -1,305 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- MATH 14 - Review Problems 4, online version: the sixteen problems of   -->
-<!-- the Edfinity "Review Problems #4" set (Green's theorem, flux and       -->
-<!-- surface integrals, and the Divergence Theorem), rebuilt as             -->
-<!-- auto-graded dynamic exercises.  Same pattern as the randomized         -->
-<!-- exercise in hw2-online.ptx: parameters are drawn with <de-random>,     -->
-<!-- every answer box is a <fillin> graded by its own <evaluate>, so each   -->
-<!-- box earns its credit separately and partial credit survives.          -->
-<!--                                                                       -->
-<!-- To include: add                                                       -->
-<!--   <xi:include href="review4-online.ptx" />                            -->
-<!-- inside the Review Problems with Solutions chapter of main.ptx.                    -->
+<!-- MATH 14 - Review Problems #4, the version WITH solutions.               -->
+<!--                                                                        -->
+<!-- Each problem is a <problem> (an EXAMPLE-LIKE block) whose <solution>    -->
+<!-- is printed immediately below it: no answer boxes, no "Check me" and no  -->
+<!-- "Randomize".  The randomised parameters of the practice version have    -->
+<!-- been fixed at values chosen to keep every answer clean.  The auto-      -->
+<!-- graded version of the same sixteen problems is review4-practice.ptx.    -->
+<!--                                                                        -->
+<!-- HIDING THE SOLUTIONS.  Every <solution> here carries                    -->
+<!--   component="review4-solutions"                                        -->
+<!-- so the whole set can be switched off from publication/publication.ptx   -->
+<!-- without touching this file; see the comment in <source> there.          -->
 <section xml:id="sec-exercises-review4-online" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Review Problems #4</title>
 
-  <introduction>
-    <p>
-      Sections: <xref ref="section-greens-theorem" text="title"/>,
-      <xref ref="section-surface-integrals" text="title"/>, and
-      <xref ref="section-divergence-theorem" text="title"/>. Work each
-      problem, then type your answers into the boxes and have them checked
-      here.
-    </p>
-    <p>
-      Every answer box is graded separately, so a box you fill in correctly
-      earns its credit even if another box in the same problem is wrong.
-      Press <q>Check Me</q> to submit; you may check as often as you like.
-    </p>
-    <p>
-      Every problem here comes with worked feedback and a complete
-      solution you can open. To test yourself on the same problems
-      without being able to peek, use
-      <xref ref="ch-review-practice" text="title"/>.
-    </p>
-    <p>
-      <term>How to type your answers.</term>
-    </p>
-    <ul>
-      <li>
-        <p>
-          <term>Numbers.</term> Type a decimal number and nothing
-          else<mdash/>no units, no <m>=</m> sign, no <m>\pi</m>. Give at
-          least three decimal places (for instance <c>18.850</c>, not
-          <c>6pi</c>). Answers are accepted within a small tolerance, so a
-          little rounding is fine.
-        </p>
-      </li>
-      <li>
-        <p>
-          <term>Expressions.</term> Type only the expression itself. Write
-          products with <c>*</c> and powers with <c>^</c>, and write
-          functions with parentheses: <c>cos(u)</c>, <c>sqrt(x^2+y^2)</c>,
-          <c>e^z</c>. So the expression <m>2x + e^z</m> is typed
-          <c>2*x + e^z</c>. Spaces are ignored.
-        </p>
-      </li>
-      <li>
-        <p>
-          <term>Words.</term> Type just the word or letters asked for, in
-          lower case unless the problem says otherwise.
-        </p>
-      </li>
-    </ul>
-  </introduction>
+  <p>
+    Sections: <xref ref="section-greens-theorem" text="title"/>,
+    <xref ref="section-surface-integrals" text="title"/>, and
+    <xref ref="section-divergence-theorem" text="title"/>.
+  </p>
 
-  <exercises xml:id="exercises-review4-online">
+  <p>
+    Work each problem yourself first; the full solution follows immediately
+    below it. The same sixteen problems, with the numbers randomised and
+    every answer checked automatically, are in
+    <xref ref="sec-exercises-review4-practice" text="title"/>.
+  </p>
 
-  <!-- =================================================================== -->
-  <!-- 1.  Divergence theorem on a box  (Edfinity/RP4 #1)                   -->
-  <!-- =================================================================== -->
-  <exercise xml:id="ex-r4o-box-flux">
+  <problem xml:id="ex-r4o-box-flux">
     <title>Outward Flux Through the Surface of a Box</title>
-    <setup>
-      <de-object name="A" context="number">
-        <de-random distribution="discrete" min="2" max="9" by="1"/>
-      </de-object>
-      <de-object name="p" context="number">
-        <de-random distribution="discrete" min="2" max="5" by="1"/>
-      </de-object>
-      <de-object name="q" context="number">
-        <de-random distribution="discrete" min="2" max="5" by="1"/>
-      </de-object>
-      <de-object name="s" context="number">
-        <de-random distribution="discrete" min="1" max="3" by="1"/>
-      </de-object>
-      <de-object name="zero" context="number">
-        <de-expression>0</de-expression>
-      </de-object>
-      <de-object name="divF" context="formula">
-        <de-expression>2*A*x+e^z</de-expression>
-      </de-object>
-      <de-object name="flux" context="number">
-        <de-expression>A*p^2*q*s+p*q*(e^s-1)</de-expression>
-      </de-object>
-      <de-object name="sumF" context="formula">
-        <de-expression>A*x^2+z^4+e^z</de-expression>
-      </de-object>
-    </setup>
     <statement>
       <p>
-        Evaluate the <alert>outward</alert> flux of the vector field
+      Evaluate the <alert>outward</alert> flux of the vector field
       </p>
       <me>
-        \mathbf{F} = <eval obj="A"/>x^2\,\mathbf{i}
-        + z^4\,\mathbf{j} + e^z\,\mathbf{k}
+      \mathbf{F} = 3x^2\,\mathbf{i} + z^4\,\mathbf{j} + e^z\,\mathbf{k}
       </me>
       <p>
-        through the surface <m>S</m> of the solid box <m>W</m> given by
-        <m>0 \le x \le <eval obj="p"/></m>,
-        <m>0 \le y \le <eval obj="q"/></m>,
-        <m>0 \le z \le <eval obj="s"/></m>.
-      </p>
-      <p>
-        <term>Part A.</term> By the Divergence Theorem the flux equals
-        <m>\displaystyle\int_{a}^{b}\!\int_{c}^{d}\!\int_{e}^{f}</m>
-        <fillin name="b1" mode="math" ansobj="divF" width="14"/>
-        <m>\,dx\,dy\,dz</m>, where
-      </p>
-      <p>
-        <m>a =</m> <fillin name="b2" mode="number" ansobj="zero" width="4"/>,
-        <m>b =</m> <fillin name="b3" mode="number" ansobj="s" width="4"/>,
-        <m>c =</m> <fillin name="b4" mode="number" ansobj="zero" width="4"/>,
-        <m>d =</m> <fillin name="b5" mode="number" ansobj="q" width="4"/>,
-        <m>e =</m> <fillin name="b6" mode="number" ansobj="zero" width="4"/>, and
-        <m>f =</m> <fillin name="b7" mode="number" ansobj="p" width="4"/>.
-      </p>
-      <p>
-        <term>Part B.</term> Evaluate the integral that you set up in the
-        previous part.
-      </p>
-      <p>
-        Flux <m>=</m> <fillin name="b8" mode="number" ansobj="flux" width="12"/>.
+      through the surface <m>S</m> of the solid box <m>W</m> given by
+      <m>0 \le x \le 2</m>, <m>0 \le y \le 3</m>, <m>0 \le z \le 1</m>. Set up
+      the triple integral that the Divergence Theorem provides, and evaluate it.
       </p>
     </statement>
-    <evaluation>
-      <evaluate>
-        <test correct="yes">
-          <mathcmp use-answer="yes"/>
-          <feedback>
-            <p>
-              Correct: the integrand is the divergence,
-              <m>\nabla \cdot \mathbf{F}
-              = \frac{\partial}{\partial x}\left(<eval obj="A"/>x^2\right)
-              + \frac{\partial}{\partial y}\left(z^4\right)
-              + \frac{\partial}{\partial z}\left(e^z\right)
-              = 2\!\left(<eval obj="A"/>\right)x + e^z</m>.
-            </p>
-          </feedback>
-        </test>
-        <test>
-          <mathcmp obj="sumF"/>
-          <feedback>
-            <p>
-              That is <m>M + N + P</m>, the sum of the components of
-              <m>\mathbf{F}</m>. The Divergence Theorem uses
-              <m>\nabla \cdot \mathbf{F} = M_x + N_y + P_z</m>: differentiate
-              each component before adding.
-            </p>
-          </feedback>
-        </test>
-        <test>
-          <numcmp min="-1000000000" max="1000000000"/>
-          <feedback>
-            <p>
-              The integrand is the divergence:
-              <m>\nabla \cdot \mathbf{F}
-              = \frac{\partial}{\partial x}\left(<eval obj="A"/>x^2\right)
-              + \frac{\partial}{\partial y}\left(z^4\right)
-              + \frac{\partial}{\partial z}\left(e^z\right)</m>. Note that
-              the middle term is <m>0</m>, since <m>z^4</m> does not depend
-              on <m>y</m>.
-            </p>
-          </feedback>
-        </test>
-      </evaluate>
-      <evaluate>
-        <test correct="yes">
-          <numcmp use-answer="yes" min="zero.value({})-Math.max(0.01,1e-4*Math.abs(zero.value({})))" max="zero.value({})+Math.max(0.01,1e-4*Math.abs(zero.value({})))"/>
-          <feedback><p>Correct.</p></feedback>
-        </test>
-        <test>
-          <numcmp min="-1000000000" max="1000000000"/>
-          <feedback>
-            <p>
-              In <m>\int_{a}^{b}\int_{c}^{d}\int_{e}^{f}\,dx\,dy\,dz</m> the
-              outermost integral pairs with <m>dz</m>, so <m>a</m> and
-              <m>b</m> are the <m>z</m>-limits of the box.
-            </p>
-          </feedback>
-        </test>
-      </evaluate>
-      <evaluate>
-        <test correct="yes">
-          <numcmp use-answer="yes" min="s.value({})-Math.max(0.01,1e-4*Math.abs(s.value({})))" max="s.value({})+Math.max(0.01,1e-4*Math.abs(s.value({})))"/>
-          <feedback><p>Correct.</p></feedback>
-        </test>
-        <test>
-          <numcmp min="-1000000000" max="1000000000"/>
-          <feedback>
-            <p>
-              The outermost integral pairs with <m>dz</m>, so <m>b</m> is
-              the upper <m>z</m>-limit of the box.
-            </p>
-          </feedback>
-        </test>
-      </evaluate>
-      <evaluate>
-        <test correct="yes">
-          <numcmp use-answer="yes" min="zero.value({})-Math.max(0.01,1e-4*Math.abs(zero.value({})))" max="zero.value({})+Math.max(0.01,1e-4*Math.abs(zero.value({})))"/>
-          <feedback><p>Correct.</p></feedback>
-        </test>
-        <test>
-          <numcmp min="-1000000000" max="1000000000"/>
-          <feedback>
-            <p>
-              The middle integral pairs with <m>dy</m>, so <m>c</m> and
-              <m>d</m> are the <m>y</m>-limits of the box.
-            </p>
-          </feedback>
-        </test>
-      </evaluate>
-      <evaluate>
-        <test correct="yes">
-          <numcmp use-answer="yes" min="q.value({})-Math.max(0.01,1e-4*Math.abs(q.value({})))" max="q.value({})+Math.max(0.01,1e-4*Math.abs(q.value({})))"/>
-          <feedback><p>Correct.</p></feedback>
-        </test>
-        <test>
-          <numcmp min="-1000000000" max="1000000000"/>
-          <feedback>
-            <p>
-              The middle integral pairs with <m>dy</m>, so <m>d</m> is the
-              upper <m>y</m>-limit of the box.
-            </p>
-          </feedback>
-        </test>
-      </evaluate>
-      <evaluate>
-        <test correct="yes">
-          <numcmp use-answer="yes" min="zero.value({})-Math.max(0.01,1e-4*Math.abs(zero.value({})))" max="zero.value({})+Math.max(0.01,1e-4*Math.abs(zero.value({})))"/>
-          <feedback><p>Correct.</p></feedback>
-        </test>
-        <test>
-          <numcmp min="-1000000000" max="1000000000"/>
-          <feedback>
-            <p>
-              The innermost integral pairs with <m>dx</m>, so <m>e</m> and
-              <m>f</m> are the <m>x</m>-limits of the box.
-            </p>
-          </feedback>
-        </test>
-      </evaluate>
-      <evaluate>
-        <test correct="yes">
-          <numcmp use-answer="yes" min="p.value({})-Math.max(0.01,1e-4*Math.abs(p.value({})))" max="p.value({})+Math.max(0.01,1e-4*Math.abs(p.value({})))"/>
-          <feedback><p>Correct.</p></feedback>
-        </test>
-        <test>
-          <numcmp min="-1000000000" max="1000000000"/>
-          <feedback>
-            <p>
-              The innermost integral pairs with <m>dx</m>, so <m>f</m> is
-              the upper <m>x</m>-limit of the box.
-            </p>
-          </feedback>
-        </test>
-      </evaluate>
-      <evaluate>
-        <test correct="yes">
-          <numcmp use-answer="yes" min="flux.value({})-Math.max(0.01,1e-4*Math.abs(flux.value({})))" max="flux.value({})+Math.max(0.01,1e-4*Math.abs(flux.value({})))"/>
-          <feedback>
-            <p>
-              Correct:
-              <m>\displaystyle\int_0^{<eval obj="s"/>}\!\!
-              \int_0^{<eval obj="q"/>}\!\!\int_0^{<eval obj="p"/>}
-              \left(2\!\left(<eval obj="A"/>\right)x + e^z\right)
-              dx\,dy\,dz
-              = <eval obj="A"/>\left(<eval obj="p"/>\right)^2
-              \left(<eval obj="q"/>\right)\left(<eval obj="s"/>\right)
-              + \left(<eval obj="p"/>\right)\left(<eval obj="q"/>\right)
-              \left(e^{<eval obj="s"/>} - 1\right)
-              = <eval obj="flux"/></m>.
-            </p>
-          </feedback>
-        </test>
-        <test>
-          <numcmp min="-1000000000" max="1000000000"/>
-          <feedback>
-            <p>
-              Integrate one term at a time over the box:
-              <m>\int_0^{<eval obj="p"/>} 2\!\left(<eval obj="A"/>\right)
-              x\,dx = <eval obj="A"/>\left(<eval obj="p"/>\right)^2</m>,
-              then multiply by the lengths in <m>y</m> and <m>z</m>; and
-              <m>\int_0^{<eval obj="s"/>} e^z\,dz
-              = e^{<eval obj="s"/>} - 1</m>, then multiply by the lengths
-              in <m>x</m> and <m>y</m>. The flux is
-              <m><eval obj="flux"/></m> (to three decimals).
-            </p>
-          </feedback>
-        </test>
-      </evaluate>
-    </evaluation>
-    <solution>
+    <solution component="review4-solutions">
       <p>
         By the Divergence Theorem,
         <m>\displaystyle\iint_S \mathbf{F}\cdot\hat{\mathbf{n}}\,d\sigma
@@ -316,187 +59,30 @@
         where <m>p, q, s</m> are the <m>x</m>-, <m>y</m>- and
         <m>z</m>-dimensions of the box.
       </p>
+      <p>
+        Here <m>A = 3</m> and the box is <m>2 \times 3 \times 1</m>, so the flux is
+<m>3\left(2^2\right)(3)(1) + (2)(3)\left(e - 1\right) = 30 + 6e \approx 46.31</m>.
+      </p>
     </solution>
-  </exercise>
-
-  <!-- =================================================================== -->
-  <!-- 2.  Maximizing box flux from a given divergence  (RP4 #2)            -->
-  <!-- =================================================================== -->
-  <exercise xml:id="ex-r4o-box-div-max">
+  </problem>
+  <problem xml:id="ex-r4o-box-div-max">
     <title>The Box With the Largest Flux</title>
-    <setup>
-      <de-object name="A" context="number">
-        <de-random distribution="discrete" min="2" max="8" by="1"/>
-      </de-object>
-      <de-object name="k" context="number">
-        <de-random distribution="discrete" min="1" max="3" by="1"/>
-      </de-object>
-      <de-object name="twok" context="number">
-        <de-expression>2*k</de-expression>
-      </de-object>
-      <de-object name="M" context="number">
-        <de-random distribution="discrete" min="10" max="15" by="1"/>
-      </de-object>
-      <de-object name="fluxformula" context="formula">
-        <de-expression>k*(2*A*a-a^2)*b*c</de-expression>
-      </de-object>
-      <de-object name="maxflux" context="number">
-        <de-expression>k*A^2*M^2</de-expression>
-      </de-object>
-    </setup>
     <statement>
       <p>
-        Let <m>\nabla \cdot \mathbf{F}
-        = <eval obj="twok"/>\left(<eval obj="A"/> - x\right)</m> and
-        <m>0 \le a, b, c \le <eval obj="M"/></m>.
+      Let <m>\nabla \cdot \mathbf{F} = 4\left(4 - x\right)</m> and
+      <m>0 \le a, b, c \le 12</m>.
       </p>
       <p>
-        (a) Find the flux of <m>\mathbf{F}</m> out of the rectangular solid
-        <m>0 \le x \le a</m>, <m>0 \le y \le b</m>, <m>0 \le z \le c</m>,
-        as an expression in <m>a</m>, <m>b</m> and <m>c</m>.
+      (a) Find the flux of <m>\mathbf{F}</m> out of the rectangular solid
+      <m>0 \le x \le a</m>, <m>0 \le y \le b</m>, <m>0 \le z \le c</m>, as an
+      expression in <m>a</m>, <m>b</m> and <m>c</m>.
       </p>
       <p>
-        flux <m>=</m> <fillin name="b1" mode="math" ansobj="fluxformula" width="20"/>
-      </p>
-      <p>
-        (b) For what values of <m>a</m>, <m>b</m>, <m>c</m> is the flux
-        largest?
-      </p>
-      <p>
-        <m>a =</m> <fillin name="b2" mode="number" ansobj="A" width="6"/>,
-        <m>b =</m> <fillin name="b3" mode="number" ansobj="M" width="6"/>,
-        <m>c =</m> <fillin name="b4" mode="number" ansobj="M" width="6"/>
-      </p>
-      <p>
-        (c) What is that largest flux?
-      </p>
-      <p>
-        flux <m>=</m> <fillin name="b5" mode="number" ansobj="maxflux" width="10"/>
+      (b) For which values of <m>a</m>, <m>b</m> and <m>c</m> is that flux
+      largest, and what is the largest flux?
       </p>
     </statement>
-    <evaluation>
-      <evaluate>
-        <test correct="yes">
-          <mathcmp use-answer="yes"/>
-          <feedback>
-            <p>
-              Correct: by the Divergence Theorem the flux is
-              <m>\displaystyle\int_0^{c}\!\!\int_0^{b}\!\!\int_0^{a}
-              <eval obj="twok"/>\left(<eval obj="A"/> - x\right)
-              dx\,dy\,dz
-              = <eval obj="k"/>\left(2\cdot<eval obj="A"/>\,a
-              - a^2\right)bc</m>.
-            </p>
-          </feedback>
-        </test>
-        <test>
-          <numcmp min="-1000000000" max="1000000000"/>
-          <feedback>
-            <p>
-              Use the Divergence Theorem: the flux out of the box is the
-              triple integral of <m>\nabla \cdot \mathbf{F}</m> over it.
-              Only <m>x</m> appears in the divergence, so
-              <m>\displaystyle\int_0^{a}
-              <eval obj="twok"/>\left(<eval obj="A"/> - x\right)dx
-              = <eval obj="k"/>\left(2\cdot<eval obj="A"/>\,a
-              - a^2\right)</m>, and the <m>y</m>- and <m>z</m>-integrals
-              contribute the factor <m>bc</m>.
-            </p>
-          </feedback>
-        </test>
-      </evaluate>
-      <evaluate>
-        <test correct="yes">
-          <numcmp use-answer="yes" min="A.value({})-Math.max(0.01,1e-4*Math.abs(A.value({})))" max="A.value({})+Math.max(0.01,1e-4*Math.abs(A.value({})))"/>
-          <feedback>
-            <p>
-              Correct: <m>a</m> should maximize
-              <m>2\cdot<eval obj="A"/>\,a - a^2</m>, whose maximum is at
-              <m>a = <eval obj="A"/></m>, inside the allowed interval.
-            </p>
-          </feedback>
-        </test>
-        <test>
-          <numcmp object="M" min="M.value({})-Math.max(0.01,1e-4*Math.abs(M.value({})))" max="M.value({})+Math.max(0.01,1e-4*Math.abs(M.value({})))"/>
-          <feedback>
-            <p>
-              Careful: unlike <m>b</m> and <m>c</m>, taking <m>a</m> as
-              large as possible does not maximize the flux, because
-              <m>\nabla \cdot \mathbf{F}</m> becomes negative for
-              <m>x \gt <eval obj="A"/></m>: the part of the box beyond
-              <m>x = <eval obj="A"/></m> subtracts flux.
-            </p>
-          </feedback>
-        </test>
-        <test>
-          <numcmp min="-1000000000" max="1000000000"/>
-          <feedback>
-            <p>
-              Maximize <m><eval obj="k"/>\left(2\cdot<eval obj="A"/>\,a
-              - a^2\right)</m> as a function of <m>a</m> on
-              <m>[0, <eval obj="M"/>]</m>.
-            </p>
-          </feedback>
-        </test>
-      </evaluate>
-      <evaluate>
-        <test correct="yes">
-          <numcmp use-answer="yes" min="M.value({})-Math.max(0.01,1e-4*Math.abs(M.value({})))" max="M.value({})+Math.max(0.01,1e-4*Math.abs(M.value({})))"/>
-          <feedback><p>Correct.</p></feedback>
-        </test>
-        <test>
-          <numcmp min="-1000000000" max="1000000000"/>
-          <feedback>
-            <p>
-              The factor <m>b</m> multiplies a positive quantity, so take
-              <m>b</m> as large as allowed.
-            </p>
-          </feedback>
-        </test>
-      </evaluate>
-      <evaluate>
-        <test correct="yes">
-          <numcmp use-answer="yes" min="M.value({})-Math.max(0.01,1e-4*Math.abs(M.value({})))" max="M.value({})+Math.max(0.01,1e-4*Math.abs(M.value({})))"/>
-          <feedback><p>Correct.</p></feedback>
-        </test>
-        <test>
-          <numcmp min="-1000000000" max="1000000000"/>
-          <feedback>
-            <p>
-              The factor <m>c</m> multiplies a positive quantity, so take
-              <m>c</m> as large as allowed.
-            </p>
-          </feedback>
-        </test>
-      </evaluate>
-      <evaluate>
-        <test correct="yes">
-          <numcmp use-answer="yes" min="maxflux.value({})-Math.max(0.01,1e-4*Math.abs(maxflux.value({})))" max="maxflux.value({})+Math.max(0.01,1e-4*Math.abs(maxflux.value({})))"/>
-          <feedback>
-            <p>
-              Correct:
-              <m><eval obj="k"/>\left(2\cdot<eval obj="A"/>\cdot
-              <eval obj="A"/> - \left(<eval obj="A"/>\right)^2\right)
-              \left(<eval obj="M"/>\right)\left(<eval obj="M"/>\right)
-              = <eval obj="maxflux"/></m>.
-            </p>
-          </feedback>
-        </test>
-        <test>
-          <numcmp min="-1000000000" max="1000000000"/>
-          <feedback>
-            <p>
-              Substitute <m>a = <eval obj="A"/></m>,
-              <m>b = c = <eval obj="M"/></m> into
-              <m><eval obj="k"/>\left(2\cdot<eval obj="A"/>\,a
-              - a^2\right)bc</m>; the result is
-              <m><eval obj="maxflux"/></m>.
-            </p>
-          </feedback>
-        </test>
-      </evaluate>
-    </evaluation>
-    <solution>
+    <solution component="review4-solutions">
       <p>
         By the Divergence Theorem the flux out of the box is
         <m>\displaystyle\int_0^{c}\!\!\int_0^{b}\!\!\int_0^{a}
@@ -507,122 +93,31 @@
         <m>2Aa - a^2</m> is maximized at <m>a = A</m>. The largest flux is
         <m>k A^2 M^2</m>.
       </p>
+      <p>
+        Here <m>2k = 4</m>, <m>A = 4</m> and <m>M = 12</m>, so the flux is
+<m>2\left(8a - a^2\right)bc</m>, largest at <m>a = 4</m>, <m>b = c = 12</m>,
+where it equals <m>2\left(4^2\right)\left(12^2\right) = 4608</m>.
+      </p>
     </solution>
-  </exercise>
-
-  <!-- =================================================================== -->
-  <!-- 3.  Verify the Divergence Theorem on a cylinder  (RP4 #3)            -->
-  <!-- =================================================================== -->
-  <exercise xml:id="ex-r4o-verify-cylinder">
+  </problem>
+  <problem xml:id="ex-r4o-verify-cylinder">
     <title>Verifying the Divergence Theorem on a Cylinder</title>
-    <setup>
-      <de-object name="A" context="number">
-        <de-random distribution="discrete" min="2" max="9" by="1"/>
-      </de-object>
-      <de-object name="B" context="number">
-        <de-random distribution="discrete" min="2" max="9" by="1"/>
-      </de-object>
-      <de-object name="C" context="number">
-        <de-random distribution="discrete" min="2" max="9" by="1"/>
-      </de-object>
-      <de-object name="h" context="number">
-        <de-random distribution="discrete" min="2" max="9" by="1"/>
-      </de-object>
-      <de-object name="both" context="number">
-        <de-expression>A*h*pi</de-expression>
-      </de-object>
-    </setup>
     <statement>
       <p>
-        Verify the Divergence Theorem for the vector field and region:
+      Verify the Divergence Theorem for the vector field
       </p>
       <me>
-        \mathbf{F} = \langle <eval obj="A"/>x,\ <eval obj="B"/>z,\
-        <eval obj="C"/>y \rangle
+      \mathbf{F} = \langle 3x,\ 4z,\ 5y \rangle
       </me>
       <p>
-        and the region <m>x^2 + y^2 \le 1</m>,
-        <m>0 \le z \le <eval obj="h"/></m>. Give each side as a decimal
-        number.
-      </p>
-      <p>
-        <m>\displaystyle\iint_{S} \mathbf{F}\cdot\hat{\mathbf{n}}\,d\sigma =</m>
-        <fillin name="b1" mode="number" ansobj="both" width="12"/>
-      </p>
-      <p>
-        <m>\displaystyle\iiint_{W} \nabla \cdot \mathbf{F}\ dV =</m>
-        <fillin name="b2" mode="number" ansobj="both" width="12"/>
+      and the region <m>x^2 + y^2 \le 1</m>, <m>0 \le z \le 2</m>: compute the
+      flux <m>\iint_S \mathbf{F}\cdot\hat{\mathbf{n}}\,d\sigma</m> across the
+      closed surface directly, compute
+      <m>\iiint_W \nabla \cdot \mathbf{F}\,dV</m> over the solid, and check
+      that the two agree.
       </p>
     </statement>
-    <evaluation>
-      <evaluate>
-        <test correct="yes">
-          <numcmp use-answer="yes" min="both.value({})-Math.max(0.01,1e-4*Math.abs(both.value({})))" max="both.value({})+Math.max(0.01,1e-4*Math.abs(both.value({})))"/>
-          <feedback>
-            <p>
-              Correct. On the side of the cylinder,
-              <m>\hat{\mathbf{n}} = \langle \cos\theta, \sin\theta, 0\rangle</m>
-              and <m>\mathbf{F}\cdot\hat{\mathbf{n}}
-              = <eval obj="A"/>\cos^2\theta
-              + <eval obj="B"/>z\sin\theta</m>, which integrates to
-              <m><eval obj="A"/>\left(<eval obj="h"/>\right)\pi</m>; the
-              integrals over the top and bottom disks vanish by symmetry.
-            </p>
-          </feedback>
-        </test>
-        <test>
-          <numcmp min="-1000000000" max="1000000000"/>
-          <feedback>
-            <p>
-              Split <m>S</m> into the side, the top and the bottom. On the
-              side, parametrized by
-              <m>(\cos\theta, \sin\theta, z)</m>, the outward normal is
-              <m>\langle \cos\theta, \sin\theta, 0\rangle</m> and
-              <m>\mathbf{F}\cdot\hat{\mathbf{n}}
-              = <eval obj="A"/>\cos^2\theta
-              + <eval obj="B"/>z\sin\theta</m>. Integrating over
-              <m>0 \le \theta \le 2\pi</m>,
-              <m>0 \le z \le <eval obj="h"/></m> gives
-              <m><eval obj="A"/>\left(<eval obj="h"/>\right)\pi
-              \approx <eval obj="both"/></m>. On the top,
-              <m>\mathbf{F}\cdot\mathbf{k} = <eval obj="C"/>y</m>, whose
-              integral over the disk is <m>0</m> by symmetry; likewise on
-              the bottom.
-            </p>
-          </feedback>
-        </test>
-      </evaluate>
-      <evaluate>
-        <test correct="yes">
-          <numcmp use-answer="yes" min="both.value({})-Math.max(0.01,1e-4*Math.abs(both.value({})))" max="both.value({})+Math.max(0.01,1e-4*Math.abs(both.value({})))"/>
-          <feedback>
-            <p>
-              Correct: <m>\nabla \cdot \mathbf{F}
-              = <eval obj="A"/></m>, a constant, so the triple integral is
-              <m><eval obj="A"/>\cdot
-              \text{Vol}(W) = <eval obj="A"/>\cdot \pi \cdot 1^2 \cdot
-              <eval obj="h"/> \approx <eval obj="both"/></m>, matching the
-              surface integral, as the Divergence Theorem promises.
-            </p>
-          </feedback>
-        </test>
-        <test>
-          <numcmp min="-1000000000" max="1000000000"/>
-          <feedback>
-            <p>
-              Here <m>\nabla \cdot \mathbf{F}
-              = \frac{\partial}{\partial x}\left(<eval obj="A"/>x\right)
-              + \frac{\partial}{\partial y}\left(<eval obj="B"/>z\right)
-              + \frac{\partial}{\partial z}\left(<eval obj="C"/>y\right)
-              = <eval obj="A"/></m>, so the integral is
-              <m><eval obj="A"/></m> times the volume
-              <m>\pi \cdot 1^2 \cdot <eval obj="h"/></m> of the cylinder.
-            </p>
-          </feedback>
-        </test>
-      </evaluate>
-    </evaluation>
-    <solution>
+    <solution component="review4-solutions">
       <p>
         With <m>\mathbf{F} = \langle Ax, Bz, Cy\rangle</m> we get
         <m>\nabla \cdot \mathbf{F} = A</m>, so
@@ -634,113 +129,28 @@
         <m>\mathbf{F}\cdot\hat{\mathbf{n}} = \pm Cy</m>. Both sides equal
         <m>A h \pi</m>, verifying the theorem.
       </p>
+      <p>
+        Here <m>A = 3</m> and <m>h = 2</m>, so both sides equal
+<m>3(2)\pi = 6\pi \approx 18.85</m>.
+      </p>
     </solution>
-  </exercise>
-
-  <!-- =================================================================== -->
-  <!-- 4.  Divergence theorem on a sphere  (RP4 #4)                         -->
-  <!-- =================================================================== -->
-  <exercise xml:id="ex-r4o-sphere">
+  </problem>
+  <problem xml:id="ex-r4o-sphere">
     <title>Flux Through a Sphere</title>
-    <setup>
-      <de-object name="R" context="number">
-        <de-random distribution="discrete" min="2" max="5" by="1"/>
-      </de-object>
-      <de-object name="Rsq" context="number">
-        <de-expression>R^2</de-expression>
-      </de-object>
-      <de-object name="c" context="number">
-        <de-random distribution="discrete" min="1" max="9" by="1"/>
-      </de-object>
-      <de-object name="divF" context="formula">
-        <de-expression>3*x^2+3*z^2</de-expression>
-      </de-object>
-      <de-object name="flux" context="number">
-        <de-expression>8*pi*R^5/5</de-expression>
-      </de-object>
-    </setup>
     <statement>
       <p>
-        Use the Divergence Theorem to evaluate the surface integral
-        <m>\displaystyle\iint_{S} \mathbf{F}\cdot\hat{\mathbf{n}}\,d\sigma</m>, where
+      Use the Divergence Theorem to evaluate the surface integral
+      <m>\displaystyle\iint_{S} \mathbf{F}\cdot\hat{\mathbf{n}}\,d\sigma</m>,
+      where
       </p>
       <me>
-        \mathbf{F} = \langle x^3,\ <eval obj="c"/>,\ z^3 \rangle
+      \mathbf{F} = \langle x^3,\ 4,\ z^3 \rangle
       </me>
       <p>
-        and <m>S</m> is the sphere
-        <m>x^2 + y^2 + z^2 = <eval obj="Rsq"/></m>, oriented outward.
-      </p>
-      <p>
-        <m>\nabla \cdot \mathbf{F} =</m>
-        <fillin name="b1" mode="math" ansobj="divF" width="14"/>
-      </p>
-      <p>
-        <m>\displaystyle\iint_{S} \mathbf{F}\cdot\hat{\mathbf{n}}\,d\sigma =</m>
-        <fillin name="b2" mode="number" ansobj="flux" width="12"/>
+      and <m>S</m> is the sphere <m>x^2 + y^2 + z^2 = 9</m>, oriented outward.
       </p>
     </statement>
-    <evaluation>
-      <evaluate>
-        <test correct="yes">
-          <mathcmp use-answer="yes"/>
-          <feedback>
-            <p>
-              Correct: the constant middle component differentiates to
-              zero, leaving <m>3x^2 + 3z^2</m>.
-            </p>
-          </feedback>
-        </test>
-        <test>
-          <numcmp min="-1000000000" max="1000000000"/>
-          <feedback>
-            <p>
-              <m>\nabla \cdot \mathbf{F}
-              = \frac{\partial}{\partial x}(x^3)
-              + \frac{\partial}{\partial y}\left(<eval obj="c"/>\right)
-              + \frac{\partial}{\partial z}(z^3) = 3x^2 + 3z^2</m>.
-            </p>
-          </feedback>
-        </test>
-      </evaluate>
-      <evaluate>
-        <test correct="yes">
-          <numcmp use-answer="yes" min="flux.value({})-Math.max(0.01,1e-4*Math.abs(flux.value({})))" max="flux.value({})+Math.max(0.01,1e-4*Math.abs(flux.value({})))"/>
-          <feedback>
-            <p>
-              Correct: in spherical coordinates
-              <m>x^2 + z^2 = \rho^2\left(1 -
-              \sin^2\phi\,\sin^2\theta\right)</m>, and the integral over
-              the ball of radius <m><eval obj="R"/></m> works out to
-              <m>\dfrac{8\pi\left(<eval obj="R"/>\right)^5}{5}
-              \approx <eval obj="flux"/></m>.
-            </p>
-          </feedback>
-        </test>
-        <test>
-          <numcmp min="-1000000000" max="1000000000"/>
-          <feedback>
-            <p>
-              Convert
-              <m>\iiint_W 3\left(x^2 + z^2\right)dV</m> to spherical
-              coordinates. Because the integrand omits <m>y^2</m>, use
-              <m>x^2 + z^2 = \rho^2\left(1 -
-              \sin^2\phi\,\sin^2\theta\right)</m>; then
-              <m>\displaystyle 3\int_0^{2\pi}\!\!\int_0^{\pi}\!\!
-              \int_0^{<eval obj="R"/>} \rho^4\left(\sin\phi -
-              \sin^3\phi\,\sin^2\theta\right)d\rho\,d\phi\,d\theta
-              = \frac{8\pi\left(<eval obj="R"/>\right)^5}{5}
-              \approx <eval obj="flux"/></m>. (A slicker route: by
-              symmetry the integrals of <m>x^2</m>, <m>y^2</m>, <m>z^2</m>
-              over the ball are equal, each
-              <m>\tfrac13\int \rho^2\,dV = \tfrac{4\pi R^5}{15}</m>, so the
-              flux is <m>6\cdot\tfrac{4\pi R^5}{15}</m>.)
-            </p>
-          </feedback>
-        </test>
-      </evaluate>
-    </evaluation>
-    <solution>
+    <solution component="review4-solutions">
       <p>
         <m>\nabla \cdot \mathbf{F} = 3x^2 + 3z^2</m>. By symmetry of the
         ball <m>W</m> of radius <m>R</m>, the integrals of <m>x^2</m>,
@@ -755,125 +165,25 @@
         = \iiint_W 3\left(x^2 + z^2\right)dV
         = 6\cdot\frac{4\pi R^5}{15} = \frac{8\pi R^5}{5}.
       </me>
+      <p>
+        Here <m>R = 3</m>, so the flux is
+<m>\dfrac{8\pi\left(3^5\right)}{5} = \dfrac{1944\pi}{5} \approx 1221.45</m>.
+      </p>
     </solution>
-  </exercise>
-
-  <!-- =================================================================== -->
-  <!-- 5.  Flux through a paraboloid cap  (RP4 #5)                          -->
-  <!-- =================================================================== -->
-  <exercise xml:id="ex-r4o-paraboloid-cap">
+  </problem>
+  <problem xml:id="ex-r4o-paraboloid-cap">
     <title>Flux Through a Paraboloid Cap</title>
-    <setup>
-      <de-object name="a" context="number">
-        <de-random distribution="discrete" min="1" max="2" by="1"/>
-      </de-object>
-      <de-object name="u" context="number">
-        <de-random distribution="discrete" min="0" max="1" by="1"/>
-      </de-object>
-      <de-object name="t" context="number">
-        <de-random distribution="discrete" min="1" max="4" by="1"/>
-      </de-object>
-      <de-object name="b" context="number">
-        <de-expression>(2*u-1)*t</de-expression>
-      </de-object>
-      <de-object name="h" context="number">
-        <de-expression>1+a^2</de-expression>
-      </de-object>
-      <de-object name="flux" context="number">
-        <de-expression>b*(a^4/2+a^2)*pi</de-expression>
-      </de-object>
-    </setup>
     <statement>
       <p>
-        Let
-        <m>\mathbf{F}(x,y,z) = z\tan\!\left(y^2\right)\mathbf{i}
-        + z^3\ln\!\left(x^2+1\right)\mathbf{j}
-        + <eval obj="b"/>z\,\mathbf{k}</m>. Use the Divergence Theorem to
-        find the flux of <m>\mathbf{F}</m> across the part of the
-        paraboloid <m>x^2 + y^2 + z = <eval obj="h"/></m> that lies above
-        the plane <m>z = 1</m> and is oriented upward.
-      </p>
-      <p>
-        <m>\nabla \cdot \mathbf{F} =</m>
-        <fillin name="b1" mode="number" ansobj="b" width="6"/>
-        (a number)
-      </p>
-      <p>
-        <m>\displaystyle\iint_{S} \mathbf{F}\cdot\hat{\mathbf{n}}\,d\sigma =</m>
-        <fillin name="b2" mode="number" ansobj="flux" width="12"/>
+      Let
+      <m>\mathbf{F}(x,y,z) = z\tan\!\left(y^2\right)\mathbf{i}
+      + z^3\ln\!\left(x^2+1\right)\mathbf{j} + 3z\,\mathbf{k}</m>. Use the
+      Divergence Theorem to find the flux of <m>\mathbf{F}</m> across the part
+      of the paraboloid <m>x^2 + y^2 + z = 5</m> that lies above the plane
+      <m>z = 1</m> and is oriented upward.
       </p>
     </statement>
-    <evaluation>
-      <evaluate>
-        <test correct="yes">
-          <numcmp use-answer="yes" min="b.value({})-Math.max(0.01,1e-4*Math.abs(b.value({})))" max="b.value({})+Math.max(0.01,1e-4*Math.abs(b.value({})))"/>
-          <feedback>
-            <p>
-              Correct: the first component does not involve <m>x</m> and
-              the second does not involve <m>y</m>, so only the third
-              contributes: <m>\nabla \cdot \mathbf{F}
-              = <eval obj="b"/></m>.
-            </p>
-          </feedback>
-        </test>
-        <test>
-          <numcmp min="-1000000000" max="1000000000"/>
-          <feedback>
-            <p>
-              Differentiate each component with respect to its own
-              variable: <m>\frac{\partial}{\partial x}\left(
-              z\tan\!\left(y^2\right)\right) = 0</m>,
-              <m>\frac{\partial}{\partial y}\left(z^3\ln\!\left(x^2+1
-              \right)\right) = 0</m>, and
-              <m>\frac{\partial}{\partial z}\left(<eval obj="b"/>z\right)
-              = <eval obj="b"/></m>. The scary-looking terms are decoys.
-            </p>
-          </feedback>
-        </test>
-      </evaluate>
-      <evaluate>
-        <test correct="yes">
-          <numcmp use-answer="yes" min="flux.value({})-Math.max(0.01,1e-4*Math.abs(flux.value({})))" max="flux.value({})+Math.max(0.01,1e-4*Math.abs(flux.value({})))"/>
-          <feedback>
-            <p>
-              Correct. Closing the surface with the downward disk
-              <m>x^2 + y^2 \le \left(<eval obj="a"/>\right)^2</m> at
-              <m>z = 1</m> and applying the Divergence Theorem gives flux
-              <m>= <eval obj="b"/>\left(\tfrac{1}{2}
-              \left(<eval obj="a"/>\right)^4 +
-              \left(<eval obj="a"/>\right)^2\right)\pi
-              \approx <eval obj="flux"/></m>.
-            </p>
-          </feedback>
-        </test>
-        <test>
-          <numcmp min="-1000000000" max="1000000000"/>
-          <feedback>
-            <p>
-              The surface is not closed, so first close it: let <m>S_1</m>
-              be the disk <m>x^2 + y^2 \le \left(<eval obj="a"/>\right)^2</m>
-              in the plane <m>z = 1</m>, oriented downward. On <m>S_1</m>,
-              <m>\mathbf{F}\cdot(-\mathbf{k}) = -<eval obj="b"/>z
-              = -<eval obj="b"/></m>, so
-              <m>\iint_{S_1}\mathbf{F}\cdot\hat{\mathbf{n}}\,d\sigma
-              = -<eval obj="b"/>\pi\left(<eval obj="a"/>\right)^2</m>.
-              The closed surface encloses the region between the plane and
-              the paraboloid, whose volume is
-              <m>\tfrac{\pi}{2}\left(<eval obj="a"/>\right)^4</m>, so the
-              total outward flux is <m><eval obj="b"/>\cdot
-              \tfrac{\pi}{2}\left(<eval obj="a"/>\right)^4</m>.
-              Subtracting the disk's share,
-              <m>\iint_{S}\mathbf{F}\cdot\hat{\mathbf{n}}\,d\sigma
-              = <eval obj="b"/>\left(\tfrac{1}{2}
-              \left(<eval obj="a"/>\right)^4
-              + \left(<eval obj="a"/>\right)^2\right)\pi
-              \approx <eval obj="flux"/></m>.
-            </p>
-          </feedback>
-        </test>
-      </evaluate>
-    </evaluation>
-    <solution>
+    <solution component="review4-solutions">
       <p>
         Write <m>b</m> for the coefficient of <m>z\,\mathbf{k}</m> and
         <m>a^2 = h - 1</m>, so the paraboloid meets the plane <m>z=1</m>
@@ -891,95 +201,24 @@
         = b\,\frac{\pi a^4}{2} - \left(-b\pi a^2\right)
         = b\left(\frac{a^4}{2} + a^2\right)\pi.
       </me>
+      <p>
+        Here <m>b = 3</m> and <m>a^2 = 5 - 1 = 4</m>, so the flux is
+<m>3\left(\tfrac{2^4}{2} + 2^2\right)\pi = 36\pi \approx 113.10</m>.
+      </p>
     </solution>
-  </exercise>
-
-  <!-- =================================================================== -->
-  <!-- 6.  Radial field through a cylinder on the x-axis  (RP4 #6)          -->
-  <!-- =================================================================== -->
-  <exercise xml:id="ex-r4o-cylinder-x-axis">
+  </problem>
+  <problem xml:id="ex-r4o-cylinder-x-axis">
     <title>Radial Field Through a Closed Cylinder</title>
-    <setup>
-      <de-object name="R" context="number">
-        <de-random distribution="discrete" min="2" max="6" by="1"/>
-      </de-object>
-      <de-object name="L" context="number">
-        <de-random distribution="discrete" min="1" max="4" by="1"/>
-      </de-object>
-      <de-object name="three" context="number">
-        <de-expression>3</de-expression>
-      </de-object>
-      <de-object name="flux" context="number">
-        <de-expression>6*pi*R^2*L</de-expression>
-      </de-object>
-    </setup>
     <statement>
       <p>
-        Compute the flux of the vector field
-        <m>\mathbf{F} = x\,\mathbf{i} + y\,\mathbf{j} + z\,\mathbf{k}</m>
-        through the surface <m>S</m>, which is a closed cylinder of radius
-        <m><eval obj="R"/></m> centered on the <m>x</m>-axis, with
-        <m>-<eval obj="L"/> \le x \le <eval obj="L"/></m>, and oriented
-        outward.
-      </p>
-      <p>
-        <m>\nabla \cdot \mathbf{F} =</m>
-        <fillin name="b1" mode="number" ansobj="three" width="6"/>
-        (a number)
-      </p>
-      <p>
-        Flux <m>=</m> <fillin name="b2" mode="number" ansobj="flux" width="12"/>
+      Compute the flux of the vector field
+      <m>\mathbf{F} = x\,\mathbf{i} + y\,\mathbf{j} + z\,\mathbf{k}</m>
+      through the surface <m>S</m>, which is a closed cylinder of radius
+      <m>3</m> centered on the <m>x</m>-axis, with <m>-2 \le x \le 2</m>, and
+      oriented outward.
       </p>
     </statement>
-    <evaluation>
-      <evaluate>
-        <test correct="yes">
-          <numcmp use-answer="yes" min="three.value({})-Math.max(0.01,1e-4*Math.abs(three.value({})))" max="three.value({})+Math.max(0.01,1e-4*Math.abs(three.value({})))"/>
-          <feedback><p>Correct: <m>1 + 1 + 1 = 3</m>.</p></feedback>
-        </test>
-        <test>
-          <numcmp min="-1000000000" max="1000000000"/>
-          <feedback>
-            <p>
-              <m>\nabla \cdot \mathbf{F}
-              = \frac{\partial x}{\partial x}
-              + \frac{\partial y}{\partial y}
-              + \frac{\partial z}{\partial z} = 3</m>.
-            </p>
-          </feedback>
-        </test>
-      </evaluate>
-      <evaluate>
-        <test correct="yes">
-          <numcmp use-answer="yes" min="flux.value({})-Math.max(0.01,1e-4*Math.abs(flux.value({})))" max="flux.value({})+Math.max(0.01,1e-4*Math.abs(flux.value({})))"/>
-          <feedback>
-            <p>
-              Correct: the cylinder is a closed surface, so the flux is
-              <m>3\cdot\text{Vol}
-              = 3\,\pi\left(<eval obj="R"/>\right)^2
-              \left(2\cdot<eval obj="L"/>\right)
-              \approx <eval obj="flux"/></m>. It does not matter that the
-              cylinder's axis is the <m>x</m>-axis rather than the
-              <m>z</m>-axis.
-            </p>
-          </feedback>
-        </test>
-        <test>
-          <numcmp min="-1000000000" max="1000000000"/>
-          <feedback>
-            <p>
-              Since <m>S</m> is closed, apply the Divergence Theorem:
-              flux <m>= \iiint_W 3\,dV = 3\cdot\text{Vol}(W)</m>. The
-              cylinder has radius <m><eval obj="R"/></m> and length
-              <m>2\cdot<eval obj="L"/></m> along the <m>x</m>-axis, so its
-              volume is <m>\pi\left(<eval obj="R"/>\right)^2\cdot
-              2\cdot<eval obj="L"/></m>.
-            </p>
-          </feedback>
-        </test>
-      </evaluate>
-    </evaluation>
-    <solution>
+    <solution component="review4-solutions">
       <p>
         The surface is closed, so by the Divergence Theorem with
         <m>\nabla \cdot \mathbf{F} = 3</m>,
@@ -987,129 +226,31 @@
         where <m>R</m> is the radius and <m>2L</m> the length of the
         cylinder.
       </p>
+      <p>
+        Here <m>R = 3</m> and <m>L = 2</m>, so the flux is
+<m>6\pi\left(3^2\right)(2) = 108\pi \approx 339.29</m>.
+      </p>
     </solution>
-  </exercise>
-
-  <!-- =================================================================== -->
-  <!-- 7.  Constant field through a helicoid  (RP4 #7)                      -->
-  <!-- =================================================================== -->
-  <exercise xml:id="ex-r4o-helicoid">
+  </problem>
+  <problem xml:id="ex-r4o-helicoid">
     <title>Flux Through a Helicoid</title>
-    <setup>
-      <de-object name="w" context="number">
-        <de-random distribution="discrete" min="1" max="4" by="1"/>
-      </de-object>
-      <de-object name="c" context="number">
-        <de-expression>w/2</de-expression>
-      </de-object>
-      <de-object name="integrand" context="formula">
-        <de-expression>(w/2)*(sin(u)-cos(u)+v)</de-expression>
-      </de-object>
-      <de-object name="flux" context="number">
-        <de-expression>(w/2)*(2+pi/2)</de-expression>
-      </de-object>
-      <de-object name="wrongsign" context="formula">
-        <de-expression>(w/2)*(cos(u)-sin(u)-v)</de-expression>
-      </de-object>
-    </setup>
     <statement>
       <p>
-        Evaluate
-        <m>\displaystyle\iint_S \mathbf{F}\cdot\hat{\mathbf{n}}\,d\sigma</m>,
-        where the vector field
-        <m>\mathbf{F} = <eval obj="c"/>\,\mathbf{i}
-        + <eval obj="c"/>\,\mathbf{j} + <eval obj="c"/>\,\mathbf{k}</m>
-        and the parametrized surface <m>S</m> is the helicoid
+      Evaluate
+      <m>\displaystyle\iint_S \mathbf{F}\cdot\hat{\mathbf{n}}\,d\sigma</m>,
+      where the vector field is
+      <m>\mathbf{F} = \mathbf{i} + \mathbf{j} + \mathbf{k}</m> and the
+      parametrized surface <m>S</m> is the helicoid
       </p>
       <me>
-        \mathbf{r}(u,v) = \left(v\cos u,\ v\sin u,\ u\right),
-        \qquad 0 \le u \le \pi, \quad 0 \le v \le 1,
+      \mathbf{r}(u,v) = \left(v\cos u,\ v\sin u,\ u\right),
+      \qquad 0 \le u \le \pi, \quad 0 \le v \le 1,
       </me>
       <p>
-        oriented upward.
-      </p>
-      <p>
-        First compute the integrand (as an expression in <m>u</m> and
-        <m>v</m>):
-        <m>\mathbf{F}\cdot\left(\mathbf{r}_v\times\mathbf{r}_u\right) =</m>
-        <fillin name="b1" mode="math" ansobj="integrand" width="20"/>
-      </p>
-      <p>
-        <m>\displaystyle\iint_S \mathbf{F}\cdot\hat{\mathbf{n}}\,d\sigma =</m>
-        <fillin name="b2" mode="number" ansobj="flux" width="12"/>
+      oriented upward.
       </p>
     </statement>
-    <evaluation>
-      <evaluate>
-        <test correct="yes">
-          <mathcmp use-answer="yes"/>
-          <feedback>
-            <p>
-              Correct:
-              <m>\mathbf{r}_v\times\mathbf{r}_u
-              = \sin u\,\mathbf{i} - \cos u\,\mathbf{j} + v\,\mathbf{k}</m>
-              (this is the upward choice, since the
-              <m>\mathbf{k}</m>-component <m>v</m> is nonnegative), and
-              dotting with <m>\mathbf{F}</m> gives
-              <m><eval obj="c"/>\left(\sin u - \cos u + v\right)</m>.
-            </p>
-          </feedback>
-        </test>
-        <test>
-          <mathcmp obj="wrongsign"/>
-          <feedback>
-            <p>
-              That is the opposite sign: you used
-              <m>\mathbf{r}_u\times\mathbf{r}_v</m>, whose
-              <m>\mathbf{k}</m>-component is <m>-v \le 0</m>, the downward
-              orientation. The problem asks for the upward one.
-            </p>
-          </feedback>
-        </test>
-        <test>
-          <numcmp min="-1000000000" max="1000000000"/>
-          <feedback>
-            <p>
-              Compute <m>\mathbf{r}_u = \left(-v\sin u,\ v\cos u,\
-              1\right)</m> and <m>\mathbf{r}_v = \left(\cos u,\ \sin u,\
-              0\right)</m>; then
-              <m>\mathbf{r}_v\times\mathbf{r}_u
-              = \sin u\,\mathbf{i} - \cos u\,\mathbf{j} +
-              v\,\mathbf{k}</m>, and
-              <m>\mathbf{F}\cdot\left(\mathbf{r}_v\times\mathbf{r}_u\right)
-              = <eval obj="c"/>\left(\sin u - \cos u + v\right)</m>.
-            </p>
-          </feedback>
-        </test>
-      </evaluate>
-      <evaluate>
-        <test correct="yes">
-          <numcmp use-answer="yes" min="flux.value({})-Math.max(0.01,1e-4*Math.abs(flux.value({})))" max="flux.value({})+Math.max(0.01,1e-4*Math.abs(flux.value({})))"/>
-          <feedback>
-            <p>
-              Correct:
-              <m><eval obj="c"/>\displaystyle\int_0^1\!\!\int_0^{\pi}
-              \left(\sin u - \cos u + v\right)du\,dv
-              = <eval obj="c"/>\left(2 + \frac{\pi}{2}\right)
-              \approx <eval obj="flux"/></m>.
-            </p>
-          </feedback>
-        </test>
-        <test>
-          <numcmp min="-1000000000" max="1000000000"/>
-          <feedback>
-            <p>
-              Integrate over the parameter rectangle:
-              <m>\int_0^{\pi}\left(\sin u - \cos u\right)du = 2</m> and
-              <m>\int_0^1 \pi v\,dv = \frac{\pi}{2}</m>, so the flux is
-              <m><eval obj="c"/>\left(2 + \frac{\pi}{2}\right)
-              \approx <eval obj="flux"/></m>.
-            </p>
-          </feedback>
-        </test>
-      </evaluate>
-    </evaluation>
-    <solution>
+    <solution component="review4-solutions">
       <p>
         With <m>\mathbf{r}_u = \left(-v\sin u, v\cos u, 1\right)</m> and
         <m>\mathbf{r}_v = \left(\cos u, \sin u, 0\right)</m>, the upward
@@ -1123,113 +264,24 @@
         = c\int_0^1\!\!\int_0^{\pi}\left(\sin u - \cos u + v\right)
         du\,dv = c\left(2 + \frac{\pi}{2}\right).
       </me>
+      <p>
+        Here <m>c = 1</m>, so the flux is
+<m>2 + \dfrac{\pi}{2} \approx 3.57</m>.
+      </p>
     </solution>
-  </exercise>
-
-  <!-- =================================================================== -->
-  <!-- 8.  Flux through a paraboloid over a disk  (RP4 #8)                  -->
-  <!-- =================================================================== -->
-  <exercise xml:id="ex-r4o-paraboloid-updisk">
+  </problem>
+  <problem xml:id="ex-r4o-paraboloid-updisk">
     <title>Flux Through a Paraboloid, Directly</title>
-    <setup>
-      <de-object name="a" context="number">
-        <de-random distribution="discrete" min="1" max="5" by="1"/>
-      </de-object>
-      <de-object name="R" context="number">
-        <de-random distribution="discrete" min="2" max="6" by="1"/>
-      </de-object>
-      <de-object name="Rsq" context="number">
-        <de-expression>R^2</de-expression>
-      </de-object>
-      <de-object name="integrand" context="formula">
-        <de-expression>2*a*(x^2+y^2)</de-expression>
-      </de-object>
-      <de-object name="flux" context="number">
-        <de-expression>pi*a*R^4</de-expression>
-      </de-object>
-    </setup>
     <statement>
       <p>
-        Compute the flux of the vector field
-        <m>\mathbf{F} = <eval obj="a"/>x\,\mathbf{i}
-        + <eval obj="a"/>y\,\mathbf{j}</m> through the surface <m>S</m>,
-        which is the part of the surface
-        <m>z = <eval obj="Rsq"/> - \left(x^2 + y^2\right)</m> above the
-        disk of radius <m><eval obj="R"/></m> centered at the origin,
-        oriented <alert>upward</alert>.
-      </p>
-      <p>
-        Writing <m>z = f(x,y)</m>, we have
-        <m>\hat{\mathbf{n}}\,d\sigma = \left(-f_x\,\mathbf{i} - f_y\,\mathbf{j}
-        + \mathbf{k}\right)dx\,dy</m>, so (as an expression in <m>x</m>
-        and <m>y</m>)
-        <m>\mathbf{F}\cdot\left(-f_x\,\mathbf{i} - f_y\,\mathbf{j}
-        + \mathbf{k}\right) =</m>
-        <fillin name="b1" mode="math" ansobj="integrand" width="16"/>
-      </p>
-      <p>
-        Flux <m>=</m> <fillin name="b2" mode="number" ansobj="flux" width="12"/>
+      Compute the flux of the vector field
+      <m>\mathbf{F} = 2x\,\mathbf{i} + 2y\,\mathbf{j}</m> through the surface
+      <m>S</m>, which is the part of the surface
+      <m>z = 9 - \left(x^2 + y^2\right)</m> above the disk of radius <m>3</m>
+      centered at the origin, oriented <alert>upward</alert>.
       </p>
     </statement>
-    <evaluation>
-      <evaluate>
-        <test correct="yes">
-          <mathcmp use-answer="yes"/>
-          <feedback>
-            <p>
-              Correct: <m>-f_x = 2x</m>, <m>-f_y = 2y</m>, and
-              <m>\mathbf{F}</m> has no <m>\mathbf{k}</m>-component, so the
-              dot product is <m>2\!\left(<eval obj="a"/>\right)
-              \left(x^2 + y^2\right)</m>.
-            </p>
-          </feedback>
-        </test>
-        <test>
-          <numcmp min="-1000000000" max="1000000000"/>
-          <feedback>
-            <p>
-              With <m>f(x,y) = <eval obj="Rsq"/> - x^2 - y^2</m> we get
-              <m>-f_x = 2x</m> and <m>-f_y = 2y</m>, so
-              <m>\mathbf{F}\cdot\left(2x\,\mathbf{i} + 2y\,\mathbf{j} +
-              \mathbf{k}\right)
-              = 2\!\left(<eval obj="a"/>\right)x^2
-              + 2\!\left(<eval obj="a"/>\right)y^2</m>.
-            </p>
-          </feedback>
-        </test>
-      </evaluate>
-      <evaluate>
-        <test correct="yes">
-          <numcmp use-answer="yes" min="flux.value({})-Math.max(0.01,1e-4*Math.abs(flux.value({})))" max="flux.value({})+Math.max(0.01,1e-4*Math.abs(flux.value({})))"/>
-          <feedback>
-            <p>
-              Correct: in polar coordinates,
-              <m>\displaystyle\int_0^{2\pi}\!\!\int_0^{<eval obj="R"/>}
-              2\!\left(<eval obj="a"/>\right)r^2\cdot r\,dr\,d\theta
-              = \pi\left(<eval obj="a"/>\right)
-              \left(<eval obj="R"/>\right)^4 \approx <eval obj="flux"/></m>.
-            </p>
-          </feedback>
-        </test>
-        <test>
-          <numcmp min="-1000000000" max="1000000000"/>
-          <feedback>
-            <p>
-              Convert to polar coordinates:
-              <m>x^2 + y^2 = r^2</m> and <m>dA = r\,dr\,d\theta</m>, so
-              the flux is
-              <m>\int_0^{2\pi}\!\!\int_0^{<eval obj="R"/>}
-              2\!\left(<eval obj="a"/>\right)r^3\,dr\,d\theta
-              = 2\pi\cdot 2\!\left(<eval obj="a"/>\right)
-              \frac{\left(<eval obj="R"/>\right)^4}{4}
-              = \pi\left(<eval obj="a"/>\right)
-              \left(<eval obj="R"/>\right)^4</m>.
-            </p>
-          </feedback>
-        </test>
-      </evaluate>
-    </evaluation>
-    <solution>
+    <solution component="review4-solutions">
       <p>
         Writing the surface as <m>z = f(x,y) = R^2 - x^2 - y^2</m> over
         the disk <m>D</m> of radius <m>R</m>,
@@ -1243,12 +295,12 @@
         \text{Flux} = \int_0^{2\pi}\!\!\int_0^{R} 2a\,r^3\,dr\,d\theta
         = \pi a R^4.
       </me>
+      <p>
+        Here <m>a = 2</m> and <m>R = 3</m>, so the flux is
+<m>\pi(2)\left(3^4\right) = 162\pi \approx 508.94</m>.
+      </p>
     </solution>
-  </exercise>
-
-  <!-- =================================================================== -->
-  <!-- 9.  Green's theorem on a clockwise parallelogram  (RP4 #9)           -->
-  <!-- =================================================================== -->
+  </problem>
   <figure xml:id="fig-r4o-parallelogram">
     <caption>
       The parallelogram of <xref ref="ex-r4o-parallelogram"/>, with its
@@ -1300,151 +352,21 @@
       </prefigure>
     </image>
   </figure>
-
-  <exercise xml:id="ex-r4o-parallelogram">
+  <problem xml:id="ex-r4o-parallelogram">
     <title>Work Around a Parallelogram</title>
-    <setup>
-      <de-object name="n" context="number">
-        <de-random distribution="discrete" min="2" max="6" by="1"/>
-      </de-object>
-      <de-object name="A" context="number">
-        <de-random distribution="discrete" min="2" max="9" by="1"/>
-      </de-object>
-      <de-object name="x0" context="number">
-        <de-random distribution="discrete" min="2" max="5" by="1"/>
-      </de-object>
-      <de-object name="y0" context="number">
-        <de-random distribution="discrete" min="2" max="5" by="1"/>
-      </de-object>
-      <de-object name="curl" context="number">
-        <de-expression>A</de-expression>
-      </de-object>
-      <de-object name="area" context="number">
-        <de-expression>x0*y0</de-expression>
-      </de-object>
-      <de-object name="work" context="number">
-        <de-expression>-A*x0*y0</de-expression>
-      </de-object>
-      <de-object name="poswork" context="number">
-        <de-expression>A*x0*y0</de-expression>
-      </de-object>
-    </setup>
     <statement>
       <p>
-        Use Green's Theorem to evaluate the work done by
-        <m>\mathbf{F} = \langle x^{<eval obj="n"/>},\
-        <eval obj="A"/>x \rangle</m> in moving an object around the
-        boundary of the parallelogram in
-        <xref ref="fig-r4o-parallelogram"/>
-        (<alert>note the orientation</alert>), with
-        <m>x_0 = <eval obj="x0"/></m> and <m>y_0 = <eval obj="y0"/></m>.
-        Assume that the object circulates only once around the boundary
-        and that its motion begins at the origin and ends at the same
-        point.
-      </p>
-      <p>
-        With <m>\mathbf{F} = M\,\mathbf{i} + N\,\mathbf{j}</m>, first
-        compute (a number):
-        <m>\dfrac{\partial N}{\partial x}
-        - \dfrac{\partial M}{\partial y} =</m>
-        <fillin name="b1" mode="number" ansobj="curl" width="6"/>
-      </p>
-      <p>
-        The area of the parallelogram is
-        <fillin name="b2" mode="number" ansobj="area" width="6"/>.
-      </p>
-      <p>
-        Work <m>=</m> <fillin name="b3" mode="number" ansobj="work" width="10"/>
+      Use Green's Theorem to evaluate the work done by
+      <m>\mathbf{F} = \langle x^{3},\ 5x \rangle</m> in moving an object around
+      the boundary of the parallelogram in
+      <xref ref="fig-r4o-parallelogram"/>
+      (<alert>note the orientation</alert>), with <m>x_0 = 3</m> and
+      <m>y_0 = 2</m>. Assume that the object circulates only once around the
+      boundary, and that its motion begins at the origin and ends at the same
+      point.
       </p>
     </statement>
-    <evaluation>
-      <evaluate>
-        <test correct="yes">
-          <numcmp use-answer="yes" min="curl.value({})-Math.max(0.01,1e-4*Math.abs(curl.value({})))" max="curl.value({})+Math.max(0.01,1e-4*Math.abs(curl.value({})))"/>
-          <feedback>
-            <p>
-              Correct:
-              <m>\frac{\partial}{\partial x}\left(<eval obj="A"/>x\right)
-              - \frac{\partial}{\partial y}\left(x^{<eval obj="n"/>}\right)
-              = <eval obj="A"/> - 0</m>.
-            </p>
-          </feedback>
-        </test>
-        <test>
-          <numcmp min="-1000000000" max="1000000000"/>
-          <feedback>
-            <p>
-              Here <m>M = x^{<eval obj="n"/>}</m> depends only on
-              <m>x</m>, so <m>\frac{\partial M}{\partial y} = 0</m>, and
-              <m>\frac{\partial N}{\partial x}
-              = <eval obj="A"/></m>.
-            </p>
-          </feedback>
-        </test>
-      </evaluate>
-      <evaluate>
-        <test correct="yes">
-          <numcmp use-answer="yes" min="area.value({})-Math.max(0.01,1e-4*Math.abs(area.value({})))" max="area.value({})+Math.max(0.01,1e-4*Math.abs(area.value({})))"/>
-          <feedback>
-            <p>
-              Correct: base <m>x_0</m> and height <m>y_0</m>, so the area
-              is <m>x_0 y_0 = <eval obj="area"/></m>.
-            </p>
-          </feedback>
-        </test>
-        <test>
-          <numcmp min="-1000000000" max="1000000000"/>
-          <feedback>
-            <p>
-              A parallelogram's area is base times height. The base along
-              the <m>x</m>-axis runs from <m>(0,0)</m> to
-              <m>\left(x_0, 0\right)</m>, and the height is <m>y_0</m>.
-            </p>
-          </feedback>
-        </test>
-      </evaluate>
-      <evaluate>
-        <test correct="yes">
-          <numcmp use-answer="yes" min="work.value({})-Math.max(0.01,1e-4*Math.abs(work.value({})))" max="work.value({})+Math.max(0.01,1e-4*Math.abs(work.value({})))"/>
-          <feedback>
-            <p>
-              Correct. Green's Theorem gives
-              <m>\oint \mathbf{F}\cdot d\mathbf{r}
-              = <eval obj="A"/>\cdot\text{Area}</m> for the
-              <em>counterclockwise</em> orientation; since the figure's
-              arrows run clockwise, the work is
-              <m>-<eval obj="A"/>\cdot<eval obj="area"/>
-              = <eval obj="work"/></m>.
-            </p>
-          </feedback>
-        </test>
-        <test>
-          <numcmp object="poswork" min="poswork.value({})-Math.max(0.01,1e-4*Math.abs(poswork.value({})))" max="poswork.value({})+Math.max(0.01,1e-4*Math.abs(poswork.value({})))"/>
-          <feedback>
-            <p>
-              Check the orientation: the arrows in the figure run
-              <em>clockwise</em>, and Green's Theorem as stated applies to
-              the counterclockwise orientation. Your answer is off by a
-              sign.
-            </p>
-          </feedback>
-        </test>
-        <test>
-          <numcmp min="-1000000000" max="1000000000"/>
-          <feedback>
-            <p>
-              By Green's Theorem the counterclockwise circulation equals
-              <m>\iint_R\left(N_x - M_y\right)dA
-              = <eval obj="A"/>\cdot\text{Area}
-              = <eval obj="A"/>\cdot<eval obj="area"/></m>. The figure's
-              orientation is clockwise, so flip the sign:
-              Work <m>= <eval obj="work"/></m>.
-            </p>
-          </feedback>
-        </test>
-      </evaluate>
-    </evaluation>
-    <solution>
+    <solution component="review4-solutions">
       <p>
         With <m>M = x^{n}</m> and <m>N = Ax</m>,
         <m>N_x - M_y = A</m>. For the counterclockwise orientation
@@ -1452,304 +374,50 @@
         the boundary in the figure is traversed clockwise, so
         <m>\text{Work} = -A x_0 y_0</m>.
       </p>
+      <p>
+        Here <m>A = 5</m>, <m>x_0 = 3</m> and <m>y_0 = 2</m>, so the work is
+<m>-5(3)(2) = -30</m>.
+      </p>
     </solution>
-  </exercise>
-
-  <!-- =================================================================== -->
-  <!-- 10.  Three gradient fields and the unit circle  (RP4 #10)            -->
-  <!-- =================================================================== -->
-  <exercise xml:id="ex-r4o-three-fields">
+  </problem>
+  <problem xml:id="ex-r4o-three-fields">
     <title>Three Gradient Fields and the Unit Circle</title>
-    <setup>
-      <de-object name="a1" context="number">
-        <de-random distribution="discrete" min="1" max="5" by="1"/>
-      </de-object>
-      <de-object name="a2" context="number">
-        <de-random distribution="discrete" min="1" max="5" by="1"/>
-      </de-object>
-      <de-object name="a3" context="number">
-        <de-random distribution="discrete" min="1" max="5" by="1"/>
-      </de-object>
-      <de-object name="fpot" context="formula">
-        <de-expression>a1*x*y</de-expression>
-      </de-object>
-      <de-object name="hpot" context="formula">
-        <de-expression>a3*sqrt(x^2+y^2)</de-expression>
-      </de-object>
-      <de-object name="zero" context="number">
-        <de-expression>0</de-expression>
-      </de-object>
-      <de-object name="Gint" context="number">
-        <de-expression>-2*pi*a2</de-expression>
-      </de-object>
-      <de-object name="posGint" context="number">
-        <de-expression>2*pi*a2</de-expression>
-      </de-object>
-    </setup>
     <statement>
       <p>
-        (a) Each of the vector fields
+      (a) Each of the vector fields
       </p>
       <md>
-        <mrow>
-          \mathbf{F} \amp = <eval obj="a1"/>y\,\mathbf{i}
-          + <eval obj="a1"/>x\,\mathbf{j},
-        </mrow>
-        <mrow>
-          \mathbf{G} \amp = \frac{<eval obj="a2"/>y}{x^2+y^2}\,\mathbf{i}
-          + \frac{-<eval obj="a2"/>x}{x^2+y^2}\,\mathbf{j},
-        </mrow>
-        <mrow>
-          \mathbf{H} \amp = \frac{<eval obj="a3"/>x}{\sqrt{x^2+y^2}}
-          \,\mathbf{i}
-          + \frac{<eval obj="a3"/>y}{\sqrt{x^2+y^2}}\,\mathbf{j}
-        </mrow>
+      <mrow>
+      \mathbf{F} \amp = 2y\,\mathbf{i} + 2x\,\mathbf{j},
+      </mrow>
+      <mrow>
+      \mathbf{G} \amp = \frac{3y}{x^2+y^2}\,\mathbf{i}
+        + \frac{-3x}{x^2+y^2}\,\mathbf{j},
+      </mrow>
+      <mrow>
+      \mathbf{H} \amp = \frac{4x}{\sqrt{x^2+y^2}}\,\mathbf{i}
+        + \frac{4y}{\sqrt{x^2+y^2}}\,\mathbf{j}
+      </mrow>
       </md>
       <p>
-        is a gradient vector field on some domain (not necessarily the
-        whole plane). Find potential functions for <m>\mathbf{F}</m> and
-        <m>\mathbf{H}</m>, choosing the constant so that the potential is
-        <m>0</m> at the origin; and find the constant <m>C</m> for the
-        potential of <m>\mathbf{G}</m>.
+      is a gradient vector field on some domain (not necessarily the whole
+      plane). Find potential functions for <m>\mathbf{F}</m> and
+      <m>\mathbf{H}</m>, choosing the constant so that the potential is
+      <m>0</m> at the origin, and find the constant <m>C</m> for which
+      <m>g(x,y) = C\arctan\!\left(\dfrac{x}{y}\right)</m> is a potential
+      function for <m>\mathbf{G}</m>.
       </p>
       <p>
-        For <m>\mathbf{F}</m>: <m>f(x,y) =</m>
-        <fillin name="b1" mode="math" ansobj="fpot" width="16"/>
+      (b) Find the line integrals of <m>\mathbf{F}</m>, <m>\mathbf{G}</m> and
+      <m>\mathbf{H}</m> around the curve <m>C</m>, the unit circle in the
+      <m>xy</m>-plane centered at the origin and traversed counterclockwise.
       </p>
       <p>
-        For <m>\mathbf{G}</m>: <m>g(x,y)
-        = C\arctan\!\left(\dfrac{x}{y}\right)</m> with <m>C =</m>
-        <fillin name="b2" mode="number" ansobj="a2" width="6"/>
-      </p>
-      <p>
-        For <m>\mathbf{H}</m>: <m>h(x,y) =</m>
-        <fillin name="b3" mode="math" ansobj="hpot" width="16"/>
-      </p>
-      <p>
-        (b) Find the line integrals of <m>\mathbf{F}</m>,
-        <m>\mathbf{G}</m>, <m>\mathbf{H}</m> around the curve <m>C</m>
-        given to be the unit circle in the <m>xy</m>-plane, centered at
-        the origin, and traversed counterclockwise.
-      </p>
-      <p>
-        <m>\displaystyle\int_C \mathbf{F}\cdot d\mathbf{r} =</m>
-        <fillin name="b4" mode="number" ansobj="zero" width="8"/>,
-        <m>\displaystyle\int_C \mathbf{G}\cdot d\mathbf{r} =</m>
-        <fillin name="b5" mode="number" ansobj="Gint" width="8"/>,
-        <m>\displaystyle\int_C \mathbf{H}\cdot d\mathbf{r} =</m>
-        <fillin name="b6" mode="number" ansobj="zero" width="8"/>
-      </p>
-      <p>
-        (c) For which of the three vector fields can Green's Theorem be
-        used to calculate the line integral in part (b)? Type the letters
-        of all that apply, with no spaces (for example <c>fg</c>):
-        <fillin name="b7" mode="string" answer="f" width="6"/>
-      </p>
-      <p>
-        <em>(Be sure that you are able to explain why or why not.)</em>
+      (c) For which of the three vector fields can Green's Theorem be used to
+      calculate the line integral in part (b), and why?
       </p>
     </statement>
-    <evaluation>
-      <evaluate>
-        <test correct="yes">
-          <mathcmp use-answer="yes"/>
-          <feedback>
-            <p>
-              Correct: <m>\nabla\!\left(<eval obj="a1"/>xy\right)
-              = <eval obj="a1"/>y\,\mathbf{i}
-              + <eval obj="a1"/>x\,\mathbf{j} = \mathbf{F}</m>, for all
-              <m>(x,y)</m>.
-            </p>
-          </feedback>
-        </test>
-        <test>
-          <numcmp min="-1000000000" max="1000000000"/>
-          <feedback>
-            <p>
-              Look for <m>f</m> with <m>f_x = <eval obj="a1"/>y</m> and
-              <m>f_y = <eval obj="a1"/>x</m>; integrating the first with
-              respect to <m>x</m> suggests
-              <m>f = <eval obj="a1"/>xy + g(y)</m>, and the second
-              equation forces <m>g</m> to be constant.
-            </p>
-          </feedback>
-        </test>
-      </evaluate>
-      <evaluate>
-        <test correct="yes">
-          <numcmp use-answer="yes" min="a2.value({})-Math.max(0.01,1e-4*Math.abs(a2.value({})))" max="a2.value({})+Math.max(0.01,1e-4*Math.abs(a2.value({})))"/>
-          <feedback>
-            <p>
-              Correct: <m>\frac{\partial}{\partial x}\left(
-              <eval obj="a2"/>\arctan\!\left(\tfrac{x}{y}\right)\right)
-              = \frac{<eval obj="a2"/>y}{x^2+y^2}</m> and
-              <m>\frac{\partial}{\partial y}\left(
-              <eval obj="a2"/>\arctan\!\left(\tfrac{x}{y}\right)\right)
-              = \frac{-<eval obj="a2"/>x}{x^2+y^2}</m>, wherever
-              <m>y \ne 0</m>.
-            </p>
-          </feedback>
-        </test>
-        <test>
-          <numcmp min="-1000000000" max="1000000000"/>
-          <feedback>
-            <p>
-              Differentiate <m>C\arctan\!\left(\tfrac{x}{y}\right)</m>
-              with respect to <m>x</m>:
-              <m>\frac{C/y}{1 + x^2/y^2} = \frac{Cy}{x^2+y^2}</m>. Match
-              the coefficient with the first component of
-              <m>\mathbf{G}</m>.
-            </p>
-          </feedback>
-        </test>
-      </evaluate>
-      <evaluate>
-        <test correct="yes">
-          <mathcmp use-answer="yes"/>
-          <feedback>
-            <p>
-              Correct:
-              <m>\nabla\!\left(<eval obj="a3"/>\sqrt{x^2+y^2}\right)
-              = \frac{<eval obj="a3"/>x}{\sqrt{x^2+y^2}}\,\mathbf{i}
-              + \frac{<eval obj="a3"/>y}{\sqrt{x^2+y^2}}\,\mathbf{j}
-              = \mathbf{H}</m>, except at the origin.
-            </p>
-          </feedback>
-        </test>
-        <test>
-          <numcmp min="-1000000000" max="1000000000"/>
-          <feedback>
-            <p>
-              <m>\mathbf{H}</m> is a radial field of constant magnitude
-              <m><eval obj="a3"/></m>; try a potential of the form
-              (constant)<m>\cdot\sqrt{x^2+y^2}</m> and differentiate to
-              fix the constant.
-            </p>
-          </feedback>
-        </test>
-      </evaluate>
-      <evaluate>
-        <test correct="yes">
-          <numcmp use-answer="yes" min="zero.value({})-Math.max(0.01,1e-4*Math.abs(zero.value({})))" max="zero.value({})+Math.max(0.01,1e-4*Math.abs(zero.value({})))"/>
-          <feedback>
-            <p>
-              Correct: <m>\mathbf{F}</m> is a gradient field on the whole
-              plane, and <m>C</m> is closed, so the integral is <m>0</m>.
-            </p>
-          </feedback>
-        </test>
-        <test>
-          <numcmp min="-1000000000" max="1000000000"/>
-          <feedback>
-            <p>
-              <m>\mathbf{F} = \nabla f</m> with <m>f</m> defined on all of
-              <m>\mathbb{R}^2</m>, and the circle is a closed curve: the
-              fundamental theorem of line integrals gives <m>0</m>.
-            </p>
-          </feedback>
-        </test>
-      </evaluate>
-      <evaluate>
-        <test correct="yes">
-          <numcmp use-answer="yes" min="Gint.value({})-Math.max(0.01,1e-4*Math.abs(Gint.value({})))" max="Gint.value({})+Math.max(0.01,1e-4*Math.abs(Gint.value({})))"/>
-          <feedback>
-            <p>
-              Correct: on the unit circle <m>\mathbf{G}</m> is tangent to
-              the circle, of length <m><eval obj="a2"/></m>, pointing
-              <em>against</em> the counterclockwise direction, so the
-              integral is <m>-<eval obj="a2"/>\cdot 2\pi</m>. The potential
-              <m>g</m> does not help here: it is not defined on the whole
-              circle (it fails at <m>y = 0</m>).
-            </p>
-          </feedback>
-        </test>
-        <test>
-          <numcmp object="posGint" min="posGint.value({})-Math.max(0.01,1e-4*Math.abs(posGint.value({})))" max="posGint.value({})+Math.max(0.01,1e-4*Math.abs(posGint.value({})))"/>
-          <feedback>
-            <p>
-              Right size, wrong sign: on the unit circle
-              <m>\mathbf{G} = <eval obj="a2"/>\left(y, -x\right)</m>
-              points <em>clockwise</em>, against the direction of travel.
-            </p>
-          </feedback>
-        </test>
-        <test>
-          <numcmp min="-1000000000" max="1000000000"/>
-          <feedback>
-            <p>
-              Parametrize with <m>x = \cos t</m>, <m>y = \sin t</m>: on
-              the circle <m>x^2 + y^2 = 1</m>, so
-              <m>\mathbf{G} = <eval obj="a2"/>\left(\sin t, -\cos t
-              \right)</m> while
-              <m>d\mathbf{r} = \left(-\sin t, \cos t\right)dt</m>; the dot
-              product is <m>-<eval obj="a2"/></m>, and integrating over
-              <m>0 \le t \le 2\pi</m> gives
-              <m>-2\pi\cdot<eval obj="a2"/></m>.
-            </p>
-          </feedback>
-        </test>
-      </evaluate>
-      <evaluate>
-        <test correct="yes">
-          <numcmp use-answer="yes" min="zero.value({})-Math.max(0.01,1e-4*Math.abs(zero.value({})))" max="zero.value({})+Math.max(0.01,1e-4*Math.abs(zero.value({})))"/>
-          <feedback>
-            <p>
-              Correct: <m>\mathbf{H}</m> points radially outward, so it is
-              perpendicular to the circle everywhere, and the integral is
-              <m>0</m>.
-            </p>
-          </feedback>
-        </test>
-        <test>
-          <numcmp min="-1000000000" max="1000000000"/>
-          <feedback>
-            <p>
-              <m>\mathbf{H}</m> is radial and the circle is traversed
-              tangentially, so <m>\mathbf{H}\cdot d\mathbf{r} = 0</m> at
-              every point.
-            </p>
-          </feedback>
-        </test>
-      </evaluate>
-      <evaluate>
-        <test correct="yes">
-          <strcmp case="insensitive">f</strcmp>
-          <feedback>
-            <p>
-              Correct: Green's Theorem needs the field to be defined and
-              differentiable everywhere inside the curve.
-              <m>\mathbf{G}</m> and <m>\mathbf{H}</m> are undefined at
-              the origin, which lies inside the unit circle, so the
-              theorem applies only to <m>\mathbf{F}</m> (and indeed
-              <m>N_x - M_y = <eval obj="a1"/> - <eval obj="a1"/> = 0</m>
-              gives the answer <m>0</m> instantly).
-            </p>
-          </feedback>
-        </test>
-        <test>
-          <strcmp case="insensitive">fgh</strcmp>
-          <feedback>
-            <p>
-              Careful: Green's Theorem requires <m>M</m> and <m>N</m> to
-              have continuous partials on <em>all</em> of the region
-              enclosed by the curve. Two of these fields blow up at the
-              origin, which is inside the unit circle.
-            </p>
-          </feedback>
-        </test>
-        <test>
-          <strcmp strip="no">.*</strcmp>
-          <feedback>
-            <p>
-              Ask: is the field defined, with continuous partial
-              derivatives, at <em>every</em> point of the disk bounded by
-              the circle<mdash/>including the origin?
-            </p>
-          </feedback>
-        </test>
-      </evaluate>
-    </evaluation>
-    <solution>
+    <solution component="review4-solutions">
       <p>
         (a) <m>f(x,y) = a_1 xy</m>,
         <m>g(x,y) = a_2\arctan\!\left(x/y\right)</m> (so <m>C = a_2</m>,
@@ -1772,116 +440,23 @@
         <m>\mathbf{H}</m> do not include the origin, which is inside
         <m>C</m>, so Green's Theorem does not apply to them.
       </p>
+      <p>
+        Here <m>a_1 = 2</m>, <m>a_2 = 3</m> and <m>a_3 = 4</m>, so
+<m>f = 2xy</m>, <m>C = 3</m>, <m>h = 4\sqrt{x^2+y^2}</m>, and the three
+line integrals are <m>0</m>, <m>-6\pi \approx -18.85</m>, and <m>0</m>.
+      </p>
     </solution>
-  </exercise>
-
-  <!-- =================================================================== -->
-  <!-- 11.  Circulation around a rectangle  (RP4 #11)                       -->
-  <!-- =================================================================== -->
-  <exercise xml:id="ex-r4o-rect-circulation">
+  </problem>
+  <problem xml:id="ex-r4o-rect-circulation">
     <title>Circulation Around a Rectangle</title>
-    <setup>
-      <de-object name="a" context="number">
-        <de-random distribution="discrete" min="1" max="5" by="1"/>
-      </de-object>
-      <de-object name="x0" context="number">
-        <de-random distribution="discrete" min="2" max="8" by="1"/>
-      </de-object>
-      <de-object name="y0" context="number">
-        <de-random distribution="discrete" min="1" max="6" by="1"/>
-      </de-object>
-      <de-object name="curlF" context="formula">
-        <de-expression>-a*x</de-expression>
-      </de-object>
-      <de-object name="circ" context="number">
-        <de-expression>-a*x0^2*y0/2</de-expression>
-      </de-object>
-      <de-object name="posax" context="formula">
-        <de-expression>a*x</de-expression>
-      </de-object>
-    </setup>
     <statement>
       <p>
-        Use Green's Theorem to calculate the circulation of
-        <m>\mathbf{F} = <eval obj="a"/>xy\,\mathbf{i}</m> around the
-        rectangle <m>0 \le x \le <eval obj="x0"/></m>,
-        <m>0 \le y \le <eval obj="y0"/></m>, oriented counterclockwise.
-      </p>
-      <p>
-        With <m>\mathbf{F} = M\,\mathbf{i} + N\,\mathbf{j}</m>, first
-        compute (as an expression in <m>x</m> and <m>y</m>):
-        <m>\dfrac{\partial N}{\partial x}
-        - \dfrac{\partial M}{\partial y} =</m>
-        <fillin name="b1" mode="math" ansobj="curlF" width="10"/>
-      </p>
-      <p>
-        circulation <m>=</m>
-        <fillin name="b2" mode="number" ansobj="circ" width="10"/>
+      Use Green's Theorem to calculate the circulation of
+      <m>\mathbf{F} = 2xy\,\mathbf{i}</m> around the rectangle
+      <m>0 \le x \le 4</m>, <m>0 \le y \le 3</m>, oriented counterclockwise.
       </p>
     </statement>
-    <evaluation>
-      <evaluate>
-        <test correct="yes">
-          <mathcmp use-answer="yes"/>
-          <feedback>
-            <p>
-              Correct: <m>N = 0</m>, so the integrand is
-              <m>-\frac{\partial}{\partial y}\left(<eval obj="a"/>xy
-              \right) = -<eval obj="a"/>x</m>.
-            </p>
-          </feedback>
-        </test>
-        <test>
-          <mathcmp obj="posax"/>
-          <feedback>
-            <p>
-              Sign error: the circulation form of Green's Theorem uses
-              <m>N_x - M_y</m>, and here <m>M = <eval obj="a"/>xy</m> is
-              the <m>\mathbf{i}</m>-component, so the integrand is
-              <m>0 - <eval obj="a"/>x</m>.
-            </p>
-          </feedback>
-        </test>
-        <test>
-          <numcmp min="-1000000000" max="1000000000"/>
-          <feedback>
-            <p>
-              Here <m>M = <eval obj="a"/>xy</m> and <m>N = 0</m>, so
-              <m>N_x - M_y = -<eval obj="a"/>x</m>.
-            </p>
-          </feedback>
-        </test>
-      </evaluate>
-      <evaluate>
-        <test correct="yes">
-          <numcmp use-answer="yes" min="circ.value({})-Math.max(0.01,1e-4*Math.abs(circ.value({})))" max="circ.value({})+Math.max(0.01,1e-4*Math.abs(circ.value({})))"/>
-          <feedback>
-            <p>
-              Correct:
-              <m>\displaystyle\int_0^{<eval obj="x0"/>}\!\!
-              \int_0^{<eval obj="y0"/>} \left(-<eval obj="a"/>x\right)
-              dy\,dx
-              = -<eval obj="a"/>\,\frac{\left(<eval obj="x0"/>\right)^2}
-              {2}\left(<eval obj="y0"/>\right) = <eval obj="circ"/></m>.
-            </p>
-          </feedback>
-        </test>
-        <test>
-          <numcmp min="-1000000000" max="1000000000"/>
-          <feedback>
-            <p>
-              By Green's Theorem the circulation is
-              <m>\iint_R\left(-<eval obj="a"/>x\right)dA</m> over the
-              rectangle; integrating,
-              <m>-<eval obj="a"/>\cdot
-              \frac{\left(<eval obj="x0"/>\right)^2}{2}\cdot
-              <eval obj="y0"/> = <eval obj="circ"/></m>.
-            </p>
-          </feedback>
-        </test>
-      </evaluate>
-    </evaluation>
-    <solution>
+    <solution component="review4-solutions">
       <p>
         With <m>M = axy</m> and <m>N = 0</m>,
         <m>N_x - M_y = -ax</m>, so by Green's Theorem
@@ -1891,339 +466,68 @@
         = \int_0^{x_0}\!\!\int_0^{y_0} (-ax)\,dy\,dx
         = -\frac{a\,x_0^2\,y_0}{2}.
       </me>
+      <p>
+        Here <m>a = 2</m>, <m>x_0 = 4</m> and <m>y_0 = 3</m>, so the circulation is
+<m>-\dfrac{2\left(4^2\right)(3)}{2} = -48</m>.
+      </p>
     </solution>
-  </exercise>
-
-  <!-- =================================================================== -->
-  <!-- 12.  Circulation around a circle of radius m  (RP4 #12)              -->
-  <!-- =================================================================== -->
-  <exercise xml:id="ex-r4o-circle-green">
+  </problem>
+  <problem xml:id="ex-r4o-circle-green">
     <title>Circulation Around a Circle</title>
-    <setup>
-      <de-object name="c1" context="number">
-        <de-random distribution="discrete" min="2" max="8" by="1"/>
-      </de-object>
-      <de-object name="c2" context="number">
-        <de-random distribution="discrete" min="2" max="8" by="1"/>
-      </de-object>
-      <de-object name="c4" context="number">
-        <de-random distribution="discrete" min="2" max="8" by="1"/>
-      </de-object>
-      <de-object name="u" context="number">
-        <de-random distribution="discrete" min="0" max="1" by="1"/>
-      </de-object>
-      <de-object name="d0" context="number">
-        <de-random distribution="discrete" min="1" max="5" by="1"/>
-      </de-object>
-      <de-object name="c3" context="number">
-        <de-expression>c2+(2*u-1)*d0</de-expression>
-      </de-object>
-      <de-object name="m" context="number">
-        <de-random distribution="discrete" min="2" max="6" by="1"/>
-      </de-object>
-      <de-object name="diff" context="number">
-        <de-expression>(2*u-1)*d0</de-expression>
-      </de-object>
-      <de-object name="circ" context="number">
-        <de-expression>(2*u-1)*d0*pi*m^2</de-expression>
-      </de-object>
-    </setup>
     <statement>
       <p>
-        Calculate
-        <m>\displaystyle\int_C \left(\left(<eval obj="c1"/>x
-        + <eval obj="c2"/>y\right)\mathbf{i}
-        + \left(<eval obj="c3"/>x + <eval obj="c4"/>y\right)\mathbf{j}
-        \right)\cdot d\mathbf{r}</m>, where <m>C</m> is the circular path
-        with center <m>(a,b)</m> and radius <m><eval obj="m"/></m>,
-        oriented counterclockwise. Use Green's Theorem.
+      Use Green's Theorem to calculate
       </p>
+      <me>
+      \int_C \left(\left(3x + 4y\right)\mathbf{i}
+      + \left(7x + 5y\right)\mathbf{j}\right)\cdot d\mathbf{r},
+      </me>
       <p>
-        With <m>\mathbf{F} = M\,\mathbf{i} + N\,\mathbf{j}</m>, first
-        compute (a number):
-        <m>\dfrac{\partial N}{\partial x}
-        - \dfrac{\partial M}{\partial y} =</m>
-        <fillin name="b1" mode="number" ansobj="diff" width="6"/>
-      </p>
-      <p>
-        <m>\displaystyle\int_C \mathbf{F}\cdot d\mathbf{r} =</m>
-        <fillin name="b2" mode="number" ansobj="circ" width="12"/>
+      where <m>C</m> is the circular path with center <m>(a,b)</m> and radius
+      <m>3</m>, oriented counterclockwise.
       </p>
     </statement>
-    <evaluation>
-      <evaluate>
-        <test correct="yes">
-          <numcmp use-answer="yes" min="diff.value({})-Math.max(0.01,1e-4*Math.abs(diff.value({})))" max="diff.value({})+Math.max(0.01,1e-4*Math.abs(diff.value({})))"/>
-          <feedback>
-            <p>
-              Correct: <m>N_x - M_y = <eval obj="c3"/> -
-              <eval obj="c2"/></m>, a constant.
-            </p>
-          </feedback>
-        </test>
-        <test>
-          <numcmp min="-1000000000" max="1000000000"/>
-          <feedback>
-            <p>
-              <m>N_x = \frac{\partial}{\partial x}\left(<eval obj="c3"/>x
-              + <eval obj="c4"/>y\right) = <eval obj="c3"/></m> and
-              <m>M_y = \frac{\partial}{\partial y}\left(<eval obj="c1"/>x
-              + <eval obj="c2"/>y\right) = <eval obj="c2"/></m>.
-            </p>
-          </feedback>
-        </test>
-      </evaluate>
-      <evaluate>
-        <test correct="yes">
-          <numcmp use-answer="yes" min="circ.value({})-Math.max(0.01,1e-4*Math.abs(circ.value({})))" max="circ.value({})+Math.max(0.01,1e-4*Math.abs(circ.value({})))"/>
-          <feedback>
-            <p>
-              Correct: the integrand is the constant
-              <m><eval obj="diff"/></m>, so the integral is
-              <m><eval obj="diff"/>\cdot\text{Area}
-              = <eval obj="diff"/>\,\pi\left(<eval obj="m"/>\right)^2
-              \approx <eval obj="circ"/></m><mdash/>independent of the
-              center <m>(a,b)</m>.
-            </p>
-          </feedback>
-        </test>
-        <test>
-          <numcmp min="-1000000000" max="1000000000"/>
-          <feedback>
-            <p>
-              By Green's Theorem the integral equals
-              <m>\left(N_x - M_y\right)</m> times the area of the disk,
-              <m>\pi\left(<eval obj="m"/>\right)^2</m>. The center of the
-              circle does not matter, because the integrand is constant.
-            </p>
-          </feedback>
-        </test>
-      </evaluate>
-    </evaluation>
-    <solution>
+    <solution component="review4-solutions">
       <p>
         <m>N_x - M_y</m> is the constant difference of the two cross
         coefficients, so Green's Theorem gives
         <m>\left(N_x - M_y\right)\cdot\pi m^2</m>, where <m>m</m> is the
         radius; the center <m>(a,b)</m> plays no role.
       </p>
+      <p>
+        Here <m>N_x - M_y = 7 - 4 = 3</m> and <m>m = 3</m>, so the integral is
+<m>3\pi\left(3^2\right) = 27\pi \approx 84.82</m>.
+      </p>
     </solution>
-  </exercise>
-
-  <!-- =================================================================== -->
-  <!-- 13.  A family of radial fields r^A (x i + y j)  (RP4 #13)            -->
-  <!-- =================================================================== -->
-  <exercise xml:id="ex-r4o-radial-power">
+  </problem>
+  <problem xml:id="ex-r4o-radial-power">
     <title>Divergence of a Family of Radial Fields</title>
-    <setup>
-      <de-object name="pp" context="number">
-        <de-random distribution="discrete" min="1" max="8" by="1"/>
-      </de-object>
-      <de-object name="qq" context="number">
-        <de-random distribution="discrete" min="1" max="6" by="1"/>
-      </de-object>
-      <de-object name="a1" context="number">
-        <de-expression>-2+pp</de-expression>
-      </de-object>
-      <de-object name="a2" context="number">
-        <de-expression>-2-qq</de-expression>
-      </de-object>
-      <de-object name="coeff" context="formula">
-        <de-expression>2+A</de-expression>
-      </de-object>
-      <de-object name="expo" context="formula">
-        <de-expression>A</de-expression>
-      </de-object>
-      <de-object name="minustwo" context="number">
-        <de-expression>-2</de-expression>
-      </de-object>
-    </setup>
     <statement>
       <p>
-        Let <m>r = \left(x^2+y^2\right)^{1/2}</m> and consider the vector
-        field <m>\mathbf{F} = r^A\!\left(x\,\mathbf{i} +
-        y\,\mathbf{j}\right)</m>, where <m>r \ne 0</m> and <m>A</m> is a
-        constant. <m>\mathbf{F}</m> has no <m>z</m>-component and is
-        independent of <m>z</m>.
+      Let <m>r = \left(x^2+y^2\right)^{1/2}</m> and consider the vector field
+      <m>\mathbf{F} = r^A\!\left(x\,\mathbf{i} + y\,\mathbf{j}\right)</m>,
+      where <m>r \ne 0</m> and <m>A</m> is a constant. Note that
+      <m>\mathbf{F}</m> has no <m>z</m>-component and is independent of
+      <m>z</m>.
       </p>
       <p>
-        (a) Find <m>\nabla \cdot \left(r^A\!\left(x\,\mathbf{i}
-        + y\,\mathbf{j}\right)\right)</m>, and show that it can be written
-        in the form <m>\nabla \cdot \mathbf{F} = c\,r^{a}</m>. As
-        expressions in <m>A</m>:
+      (a) Find
+      <m>\nabla \cdot \left(r^A\!\left(x\,\mathbf{i}
+      + y\,\mathbf{j}\right)\right)</m>, and show that it can be written in the
+      form <m>\nabla \cdot \mathbf{F} = c\,r^{a}</m> for constants <m>c</m> and
+      <m>a</m> depending on <m>A</m>.
       </p>
       <p>
-        <m>c =</m> <fillin name="b1" mode="math" ansobj="coeff" width="8"/>, and
-        <m>a =</m> <fillin name="b2" mode="math" ansobj="expo" width="8"/>.
+      (b) For what values of <m>A</m> is <m>\nabla \cdot \mathbf{F}</m>
+      positive, negative, or zero?
       </p>
       <p>
-        (b) For what values of <m>A</m> is <m>\nabla \cdot \mathbf{F}</m>
-        positive, negative, or zero?
-      </p>
-      <p>
-        <m>\nabla \cdot \mathbf{F}</m> is positive for <m>A \gt</m>
-        <fillin name="b3" mode="number" ansobj="minustwo" width="6"/>,
-        negative for <m>A \lt</m>
-        <fillin name="b4" mode="number" ansobj="minustwo" width="6"/>, and
-        zero for <m>A =</m>
-        <fillin name="b5" mode="number" ansobj="minustwo" width="6"/>.
-      </p>
-      <p>
-        (c) Suppose that <m>A = <eval obj="a1"/></m>. What is the sign of
-        the flux out of a small sphere centered at <m>(1,1,1)</m>? Type
-        <c>positive</c> or <c>negative</c>:
-        <fillin name="b6" mode="string" answer="positive" width="10"/>
-      </p>
-      <p>
-        If instead <m>A = <eval obj="a2"/></m>, what is the sign of the
-        flux out of a small sphere centered at <m>(1,1,1)</m>?
-        <fillin name="b7" mode="string" answer="negative" width="10"/>
-      </p>
-      <p>
-        <em>(Be sure you can say how your answers in part (c) would change
-        if the question were about a small sphere centered at
-        <m>(0,0,0)</m>.)</em>
+      (c) What is the sign of the flux out of a small sphere centered at
+      <m>(1,1,1)</m> when <m>A = 2</m>, and when <m>A = -5</m>? How would your
+      answers change for a small sphere centered at the origin?
       </p>
     </statement>
-    <evaluation>
-      <evaluate>
-        <test correct="yes">
-          <mathcmp use-answer="yes"/>
-          <feedback>
-            <p>
-              Correct: using <m>r_x = x/r</m> and <m>r_y = y/r</m>,
-              <m>\nabla \cdot \mathbf{F}
-              = 2r^A + A r^{A-1}\frac{x^2+y^2}{r} = (2+A)\,r^A</m>.
-            </p>
-          </feedback>
-        </test>
-        <test>
-          <numcmp min="-1000000000" max="1000000000"/>
-          <feedback>
-            <p>
-              Differentiate with the product rule:
-              <m>\frac{\partial}{\partial x}\left(r^A x\right)
-              = r^A + A x r^{A-1} r_x</m>, with <m>r_x = x/r</m>, and
-              similarly in <m>y</m>. Adding, the cross terms combine to
-              <m>A r^{A-1}\cdot\frac{x^2+y^2}{r} = A r^A</m>, so the
-              divergence is <m>(2+A)\,r^A</m>.
-            </p>
-          </feedback>
-        </test>
-      </evaluate>
-      <evaluate>
-        <test correct="yes">
-          <mathcmp use-answer="yes"/>
-          <feedback>
-            <p>
-              Correct: the divergence is <m>(2+A)\,r^{A}</m>, the same
-              power of <m>r</m> as in the field.
-            </p>
-          </feedback>
-        </test>
-        <test>
-          <numcmp min="-1000000000" max="1000000000"/>
-          <feedback>
-            <p>
-              The two terms of the divergence are <m>2r^A</m> and
-              <m>A r^A</m>; both carry the power <m>A</m>.
-            </p>
-          </feedback>
-        </test>
-      </evaluate>
-      <evaluate>
-        <test correct="yes">
-          <numcmp use-answer="yes" min="minustwo.value({})-Math.max(0.01,1e-4*Math.abs(minustwo.value({})))" max="minustwo.value({})+Math.max(0.01,1e-4*Math.abs(minustwo.value({})))"/>
-          <feedback><p>Correct.</p></feedback>
-        </test>
-        <test>
-          <numcmp min="-1000000000" max="1000000000"/>
-          <feedback>
-            <p>
-              Since <m>r^A \gt 0</m> for <m>r \ne 0</m>, the sign of
-              <m>(2+A)\,r^A</m> is the sign of <m>2+A</m>.
-            </p>
-          </feedback>
-        </test>
-      </evaluate>
-      <evaluate>
-        <test correct="yes">
-          <numcmp use-answer="yes" min="minustwo.value({})-Math.max(0.01,1e-4*Math.abs(minustwo.value({})))" max="minustwo.value({})+Math.max(0.01,1e-4*Math.abs(minustwo.value({})))"/>
-          <feedback><p>Correct.</p></feedback>
-        </test>
-        <test>
-          <numcmp min="-1000000000" max="1000000000"/>
-          <feedback>
-            <p>
-              The sign of the divergence is the sign of <m>2+A</m>.
-            </p>
-          </feedback>
-        </test>
-      </evaluate>
-      <evaluate>
-        <test correct="yes">
-          <numcmp use-answer="yes" min="minustwo.value({})-Math.max(0.01,1e-4*Math.abs(minustwo.value({})))" max="minustwo.value({})+Math.max(0.01,1e-4*Math.abs(minustwo.value({})))"/>
-          <feedback><p>Correct.</p></feedback>
-        </test>
-        <test>
-          <numcmp min="-1000000000" max="1000000000"/>
-          <feedback>
-            <p>
-              <m>(2+A)\,r^A = 0</m> for <m>r \ne 0</m> exactly when the
-              coefficient <m>2+A</m> vanishes.
-            </p>
-          </feedback>
-        </test>
-      </evaluate>
-      <evaluate>
-        <test correct="yes">
-          <strcmp case="insensitive">positive</strcmp>
-          <feedback>
-            <p>
-              Correct: with <m>A = <eval obj="a1"/> \gt -2</m> the
-              divergence is positive near <m>(1,1,1)</m>, and the flux out
-              of a small sphere has the sign of the divergence at its
-              center.
-            </p>
-          </feedback>
-        </test>
-        <test>
-          <strcmp strip="no">.*</strcmp>
-          <feedback>
-            <p>
-              Think of the divergence at a point as the flux density out
-              of a small sphere centered there: the flux has the same sign
-              as the divergence. Here <m>A = <eval obj="a1"/></m>, so
-              compare <m>A</m> with <m>-2</m>.
-            </p>
-          </feedback>
-        </test>
-      </evaluate>
-      <evaluate>
-        <test correct="yes">
-          <strcmp case="insensitive">negative</strcmp>
-          <feedback>
-            <p>
-              Correct: <m>A = <eval obj="a2"/> \lt -2</m>, so the
-              divergence<mdash/>and with it the flux out of a small
-              sphere away from the origin<mdash/>is negative. (For a
-              sphere centered at <m>(0,0,0)</m> no conclusion can be
-              drawn this way: the field is not defined at the origin.)
-            </p>
-          </feedback>
-        </test>
-        <test>
-          <strcmp strip="no">.*</strcmp>
-          <feedback>
-            <p>
-              Compare <m>A = <eval obj="a2"/></m> with <m>-2</m>: the
-              divergence has the sign of <m>2+A</m>.
-            </p>
-          </feedback>
-        </test>
-      </evaluate>
-    </evaluation>
-    <solution>
+    <solution component="review4-solutions">
       <p>
         (a) With <m>r_x = x/r</m> and <m>r_y = y/r</m>, the product rule
         gives <m>\nabla \cdot \mathbf{F} = 2r^A + A r^{A-1}
@@ -2243,123 +547,25 @@
         calculation above says nothing, since the divergence is not
         defined there.
       </p>
+      <p>
+        For <m>A = 2 \gt -2</m> the flux out of a small sphere at <m>(1,1,1)</m> is
+positive; for <m>A = -5 \lt -2</m> it is negative.
+      </p>
     </solution>
-  </exercise>
-
-  <!-- =================================================================== -->
-  <!-- 14.  Cylinder between two slanted planes  (RP4 #14)                  -->
-  <!-- =================================================================== -->
-  <exercise xml:id="ex-r4o-cylinder-band">
+  </problem>
+  <problem xml:id="ex-r4o-cylinder-band">
     <title>Flux Through a Slanted Cylinder Band</title>
-    <setup>
-      <de-object name="R" context="number">
-        <de-random distribution="discrete" min="1" max="5" by="1"/>
-      </de-object>
-      <de-object name="Rsq" context="number">
-        <de-expression>R^2</de-expression>
-      </de-object>
-      <de-object name="z0" context="number">
-        <de-random distribution="discrete" min="1" max="3" by="1"/>
-      </de-object>
-      <de-object name="dz" context="number">
-        <de-random distribution="discrete" min="2" max="6" by="1"/>
-      </de-object>
-      <de-object name="z1" context="number">
-        <de-expression>z0+dz</de-expression>
-      </de-object>
-      <de-object name="flux" context="number">
-        <de-expression>2*pi*R^2*dz</de-expression>
-      </de-object>
-    </setup>
     <statement>
       <p>
-        Compute the flux of
-        <m>\mathbf{F} = x\,\mathbf{i} + y\,\mathbf{j} + z\,\mathbf{k}</m>
-        through the surface of the cylinder
-        <m>x^2 + y^2 = <eval obj="Rsq"/></m> bounded below by the plane
-        <m>x + y + z = <eval obj="z0"/></m>, above by the plane
-        <m>x + y + z = <eval obj="z1"/></m>, and
-        <alert>oriented away from the <m>z</m>-axis</alert>. Note that we
-        are only interested in the flux through the curved surface of the
-        cylinder.
-      </p>
-      <p>
-        On the cylinder, <m>\mathbf{F}\cdot\hat{\mathbf{n}} =</m>
-        <fillin name="b1" mode="number" ansobj="R" width="6"/>
-        (a number).
-      </p>
-      <p>
-        Flux <m>=</m> <fillin name="b2" mode="number" ansobj="flux" width="12"/>
+      Compute the flux of
+      <m>\mathbf{F} = x\,\mathbf{i} + y\,\mathbf{j} + z\,\mathbf{k}</m> through
+      the surface of the cylinder <m>x^2 + y^2 = 4</m> bounded below by the
+      plane <m>x + y + z = 1</m>, above by the plane <m>x + y + z = 4</m>, and
+      <alert>oriented away from the <m>z</m>-axis</alert>. Note that we are
+      only interested in the flux through the curved surface of the cylinder.
       </p>
     </statement>
-    <evaluation>
-      <evaluate>
-        <test correct="yes">
-          <numcmp use-answer="yes" min="R.value({})-Math.max(0.01,1e-4*Math.abs(R.value({})))" max="R.value({})+Math.max(0.01,1e-4*Math.abs(R.value({})))"/>
-          <feedback>
-            <p>
-              Correct: the outward normal is
-              <m>\hat{\mathbf{n}} = \frac{1}{<eval obj="R"/>}\langle x, y,
-              0\rangle</m>, so <m>\mathbf{F}\cdot\hat{\mathbf{n}}
-              = \frac{x^2+y^2}{<eval obj="R"/>}
-              = \frac{<eval obj="Rsq"/>}{<eval obj="R"/>}
-              = <eval obj="R"/></m> everywhere on the cylinder.
-            </p>
-          </feedback>
-        </test>
-        <test>
-          <numcmp min="-1000000000" max="1000000000"/>
-          <feedback>
-            <p>
-              The outward unit normal of the cylinder (away from the
-              <m>z</m>-axis) is <m>\hat{\mathbf{n}} = \langle x, y, 0\rangle /
-              <eval obj="R"/></m>; dot it with <m>\mathbf{F}</m> and use
-              <m>x^2 + y^2 = <eval obj="Rsq"/></m>. The <m>z</m>-component
-              of <m>\mathbf{F}</m> contributes nothing.
-            </p>
-          </feedback>
-        </test>
-      </evaluate>
-      <evaluate>
-        <test correct="yes">
-          <numcmp use-answer="yes" min="flux.value({})-Math.max(0.01,1e-4*Math.abs(flux.value({})))" max="flux.value({})+Math.max(0.01,1e-4*Math.abs(flux.value({})))"/>
-          <feedback>
-            <p>
-              Correct: since <m>\mathbf{F}\cdot\hat{\mathbf{n}}</m> is constant,
-              the flux is <m><eval obj="R"/>\cdot\text{Area}</m>. Above
-              each point of the circle the band runs between the two
-              slanted planes, a vertical gap of
-              <m><eval obj="z1"/> - <eval obj="z0"/> = <eval obj="dz"/></m>,
-              so the area is <m>2\pi\left(<eval obj="R"/>\right)
-              \left(<eval obj="dz"/>\right)</m> and the flux is
-              <m>2\pi\left(<eval obj="R"/>\right)^2
-              \left(<eval obj="dz"/>\right) \approx <eval obj="flux"/></m>.
-            </p>
-          </feedback>
-        </test>
-        <test>
-          <numcmp min="-1000000000" max="1000000000"/>
-          <feedback>
-            <p>
-              Parametrize the band by
-              <m>\left(<eval obj="R"/>\cos t, <eval obj="R"/>\sin t,
-              s\right)</m> with
-              <m><eval obj="z0"/> - <eval obj="R"/>\cos t
-              - <eval obj="R"/>\sin t \le s \le
-              <eval obj="z1"/> - <eval obj="R"/>\cos t
-              - <eval obj="R"/>\sin t</m>: for every <m>t</m> the
-              <m>s</m>-interval has the same length
-              <m><eval obj="dz"/></m>. With
-              <m>\mathbf{F}\cdot\hat{\mathbf{n}} = <eval obj="R"/></m> constant,
-              the flux is
-              <m><eval obj="R"/>\cdot 2\pi <eval obj="R"/>\cdot
-              <eval obj="dz"/> \approx <eval obj="flux"/></m>.
-            </p>
-          </feedback>
-        </test>
-      </evaluate>
-    </evaluation>
-    <solution>
+    <solution component="review4-solutions">
       <p>
         On the cylinder of radius <m>R</m> the outward normal is
         <m>\langle x, y, 0\rangle / R</m>, so
@@ -2372,113 +578,23 @@
       <me>
         \text{Flux} = R\cdot 2\pi R\,\Delta z = 2\pi R^2\,\Delta z.
       </me>
+      <p>
+        Here <m>R = 2</m> and <m>\Delta z = 4 - 1 = 3</m>, so the flux is
+<m>2\pi\left(2^2\right)(3) = 24\pi \approx 75.40</m>.
+      </p>
     </solution>
-  </exercise>
-
-  <!-- =================================================================== -->
-  <!-- 15.  Flux out of a closed cone  (RP4 #15)                            -->
-  <!-- =================================================================== -->
-  <exercise xml:id="ex-r4o-cone">
+  </problem>
+  <problem xml:id="ex-r4o-cone">
     <title>Flux Out of a Closed Cone</title>
-    <setup>
-      <de-object name="a" context="number">
-        <de-random distribution="discrete" min="2" max="5" by="1"/>
-      </de-object>
-      <de-object name="B" context="number">
-        <de-random distribution="discrete" min="2" max="5" by="1"/>
-      </de-object>
-      <de-object name="C" context="number">
-        <de-random distribution="discrete" min="2" max="5" by="1"/>
-      </de-object>
-      <de-object name="r" context="number">
-        <de-random distribution="discrete" min="1" max="3" by="1"/>
-      </de-object>
-      <de-object name="divF" context="formula">
-        <de-expression>2*a*y</de-expression>
-      </de-object>
-      <de-object name="flux" context="number">
-        <de-expression>a*r^4*pi/2</de-expression>
-      </de-object>
-    </setup>
     <statement>
       <p>
-        Find the flux of
-        <m>\mathbf{F} = <eval obj="B"/>z\,\mathbf{i}
-        + <eval obj="a"/>y^2\,\mathbf{j} + <eval obj="C"/>x\,\mathbf{k}</m>
-        out of the closed cone <m>y = \sqrt{x^2 + z^2}</m>, with
-        <m>0 \le y \le <eval obj="r"/></m>.
-      </p>
-      <p>
-        <m>\nabla \cdot \mathbf{F} =</m>
-        <fillin name="b1" mode="math" ansobj="divF" width="10"/>
-        (an expression in <m>x</m>, <m>y</m>, <m>z</m>)
-      </p>
-      <p>
-        flux <m>=</m> <fillin name="b2" mode="number" ansobj="flux" width="12"/>
+      Find the flux of
+      <m>\mathbf{F} = 2z\,\mathbf{i} + 3y^2\,\mathbf{j} + 4x\,\mathbf{k}</m>
+      out of the closed cone <m>y = \sqrt{x^2 + z^2}</m>, with
+      <m>0 \le y \le 2</m>.
       </p>
     </statement>
-    <evaluation>
-      <evaluate>
-        <test correct="yes">
-          <mathcmp use-answer="yes"/>
-          <feedback>
-            <p>
-              Correct: only the middle component depends on its own
-              variable, so <m>\nabla \cdot \mathbf{F}
-              = 2\!\left(<eval obj="a"/>\right)y</m>.
-            </p>
-          </feedback>
-        </test>
-        <test>
-          <numcmp min="-1000000000" max="1000000000"/>
-          <feedback>
-            <p>
-              <m>\frac{\partial}{\partial x}\left(<eval obj="B"/>z\right)
-              = 0</m>,
-              <m>\frac{\partial}{\partial y}\left(<eval obj="a"/>y^2
-              \right) = 2\!\left(<eval obj="a"/>\right)y</m>, and
-              <m>\frac{\partial}{\partial z}\left(<eval obj="C"/>x\right)
-              = 0</m>.
-            </p>
-          </feedback>
-        </test>
-      </evaluate>
-      <evaluate>
-        <test correct="yes">
-          <numcmp use-answer="yes" min="flux.value({})-Math.max(0.01,1e-4*Math.abs(flux.value({})))" max="flux.value({})+Math.max(0.01,1e-4*Math.abs(flux.value({})))"/>
-          <feedback>
-            <p>
-              Correct: in cylindrical coordinates around the
-              <m>y</m>-axis the interior of the cone is
-              <m>0 \le \rho \le y \le <eval obj="r"/></m>. Integrating
-              <m>\rho</m> first,
-              <m>\int_0^{y} 2\!\left(<eval obj="a"/>\right)
-              y\,\rho\,d\rho = <eval obj="a"/>y^3</m>, and then
-              <m>2\pi\int_0^{<eval obj="r"/>} <eval obj="a"/>y^3\,dy
-              = \frac{<eval obj="a"/>\left(<eval obj="r"/>\right)^4\pi}
-              {2} \approx <eval obj="flux"/></m>.
-            </p>
-          </feedback>
-        </test>
-        <test>
-          <numcmp min="-1000000000" max="1000000000"/>
-          <feedback>
-            <p>
-              Apply the Divergence Theorem and use cylindrical coordinates
-              with <m>y</m> playing the role of the axis: the interior of
-              the cone is <m>0 \le \theta \le 2\pi</m>,
-              <m>0 \le \rho \le y</m>, <m>0 \le y \le <eval obj="r"/></m>.
-              Then
-              <m>\iiint_W 2\!\left(<eval obj="a"/>\right)y\,dV
-              = 2\pi\int_0^{<eval obj="r"/>} <eval obj="a"/>y^3\,dy
-              = \frac{<eval obj="a"/>\left(<eval obj="r"/>\right)^4\pi}
-              {2}</m>.
-            </p>
-          </feedback>
-        </test>
-      </evaluate>
-    </evaluation>
-    <solution>
+    <solution component="review4-solutions">
       <p>
         <m>\nabla \cdot \mathbf{F} = 2ay</m>, where <m>a</m> is the
         coefficient of <m>y^2</m>. By the Divergence Theorem, using
@@ -2490,128 +606,27 @@
         2ay\,\rho\,d\rho\,dy\,d\theta
         = 2\pi\int_0^{r} a y^3\,dy = \frac{a r^4 \pi}{2}.
       </me>
+      <p>
+        Here <m>a = 3</m> and <m>r = 2</m>, so the flux is
+<m>\dfrac{3\left(2^4\right)\pi}{2} = 24\pi \approx 75.40</m>.
+      </p>
     </solution>
-  </exercise>
-
-  <!-- =================================================================== -->
-  <!-- 16.  Divergence theorem on a tetrahedron  (RP4 #16)                  -->
-  <!-- =================================================================== -->
-  <exercise xml:id="ex-r4o-tetrahedron">
+  </problem>
+  <problem xml:id="ex-r4o-tetrahedron">
     <title>Flux Through the Surface of a Tetrahedron</title>
-    <setup>
-      <de-object name="a" context="number">
-        <de-random distribution="discrete" min="2" max="4" by="1"/>
-      </de-object>
-      <de-object name="b" context="number">
-        <de-random distribution="discrete" min="1" max="5" by="1"/>
-      </de-object>
-      <de-object name="c" context="number">
-        <de-random distribution="discrete" min="1" max="5" by="1"/>
-      </de-object>
-      <de-object name="divF" context="formula">
-        <de-expression>1+x</de-expression>
-      </de-object>
-      <de-object name="flux" context="number">
-        <de-expression>a*b*c*(a+4)/24</de-expression>
-      </de-object>
-      <de-object name="vol" context="number">
-        <de-expression>a*b*c/6</de-expression>
-      </de-object>
-    </setup>
     <statement>
       <p>
-        Use the Divergence Theorem to calculate the flux of
-        <m>\mathbf{F}</m> across <m>S</m>, where
-        <m>\mathbf{F} = z\,\mathbf{i} + y\,\mathbf{j} +
-        zx\,\mathbf{k}</m> and <m>S</m> is the surface of the tetrahedron
-        enclosed by the coordinate planes and the plane
+      Use the Divergence Theorem to calculate the flux of <m>\mathbf{F}</m>
+      across <m>S</m>, where
+      <m>\mathbf{F} = z\,\mathbf{i} + y\,\mathbf{j} + zx\,\mathbf{k}</m> and
+      <m>S</m> is the surface of the tetrahedron enclosed by the coordinate
+      planes and the plane
       </p>
       <me>
-        \frac{x}{<eval obj="a"/>} + \frac{y}{<eval obj="b"/>}
-        + \frac{z}{<eval obj="c"/>} = 1.
+      \frac{x}{3} + \frac{y}{2} + \frac{z}{4} = 1.
       </me>
-      <p>
-        <m>\nabla \cdot \mathbf{F} =</m>
-        <fillin name="b1" mode="math" ansobj="divF" width="10"/>
-        (an expression in <m>x</m>, <m>y</m>, <m>z</m>)
-      </p>
-      <p>
-        <m>\displaystyle\iint_S \mathbf{F}\cdot\hat{\mathbf{n}}\,d\sigma =</m>
-        <fillin name="b2" mode="number" ansobj="flux" width="12"/>
-      </p>
     </statement>
-    <evaluation>
-      <evaluate>
-        <test correct="yes">
-          <mathcmp use-answer="yes"/>
-          <feedback>
-            <p>
-              Correct: <m>\frac{\partial z}{\partial x} = 0</m>,
-              <m>\frac{\partial y}{\partial y} = 1</m>,
-              <m>\frac{\partial (zx)}{\partial z} = x</m>, so
-              <m>\nabla \cdot \mathbf{F} = 1 + x</m>.
-            </p>
-          </feedback>
-        </test>
-        <test>
-          <numcmp min="-1000000000" max="1000000000"/>
-          <feedback>
-            <p>
-              Differentiate each component with respect to its own
-              variable: the first gives <m>0</m>, the second <m>1</m>,
-              and the third <m>x</m>.
-            </p>
-          </feedback>
-        </test>
-      </evaluate>
-      <evaluate>
-        <test correct="yes">
-          <numcmp use-answer="yes" min="flux.value({})-Math.max(0.01,1e-4*Math.abs(flux.value({})))" max="flux.value({})+Math.max(0.01,1e-4*Math.abs(flux.value({})))"/>
-          <feedback>
-            <p>
-              Correct:
-              <m>\displaystyle\iiint_E (1+x)\,dV
-              = \frac{<eval obj="a"/>\cdot<eval obj="b"/>\cdot
-              <eval obj="c"/>\left(<eval obj="a"/>+4\right)}{24}
-              \approx <eval obj="flux"/></m>.
-            </p>
-          </feedback>
-        </test>
-        <test>
-          <numcmp object="vol" min="vol.value({})-Math.max(0.01,1e-4*Math.abs(vol.value({})))" max="vol.value({})+Math.max(0.01,1e-4*Math.abs(vol.value({})))"/>
-          <feedback>
-            <p>
-              That is the volume of the tetrahedron, which is
-              <m>\iiint_E 1\,dV</m><mdash/>but the integrand is
-              <m>1 + x</m>, so the <m>x</m>-term still needs to be
-              integrated.
-            </p>
-          </feedback>
-        </test>
-        <test>
-          <numcmp min="-1000000000" max="1000000000"/>
-          <feedback>
-            <p>
-              Set up the triple integral over the tetrahedron with
-              <m>0 \le x \le <eval obj="a"/></m>,
-              <m>0 \le y \le <eval obj="b"/>\left(1 -
-              \tfrac{x}{<eval obj="a"/>}\right)</m>,
-              <m>0 \le z \le <eval obj="c"/>\left(1 -
-              \tfrac{x}{<eval obj="a"/>} -
-              \tfrac{y}{<eval obj="b"/>}\right)</m>. Integrating
-              <m>1 + x</m> gives
-              <m>\tfrac{1}{2}<eval obj="b"/>\cdot<eval obj="c"/>
-              \int_0^{<eval obj="a"/>} (1+x)\left(1 -
-              \tfrac{x}{<eval obj="a"/>}\right)^2 dx
-              = \frac{<eval obj="a"/>\cdot<eval obj="b"/>\cdot
-              <eval obj="c"/>\left(<eval obj="a"/>+4\right)}{24}
-              \approx <eval obj="flux"/></m>.
-            </p>
-          </feedback>
-        </test>
-      </evaluate>
-    </evaluation>
-    <solution>
+    <solution component="review4-solutions">
       <p>
         <m>\nabla \cdot \mathbf{F} = 0 + 1 + x = 1 + x</m>. The
         tetrahedron <m>E</m> has vertices <m>(0,0,0)</m>,
@@ -2627,8 +642,10 @@
         using <m>\int_0^{a}(1+x)\left(1-\tfrac{x}{a}\right)^2 dx
         = \tfrac{a}{3} + \tfrac{a^2}{12} = \tfrac{a(a+4)}{12}</m>.
       </p>
+      <p>
+        Here <m>a = 3</m>, <m>b = 2</m> and <m>c = 4</m>, so the flux is
+<m>\dfrac{(3)(2)(4)(3+4)}{24} = 7</m>.
+      </p>
     </solution>
-  </exercise>
-
-  </exercises>
+  </problem>
 </section>

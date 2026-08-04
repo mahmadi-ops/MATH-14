@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- MATH 14 - Assignment 6, the version WITH solutions.                        -->
+<!--                                                                        -->
+<!-- Statements come from the written assignment, solutions from the auto-   -->
+<!-- graded version; each problem is a <problem> whose <solution> is printed -->
+<!-- directly beneath it.  The auto-graded version is hw6-online.ptx.        -->
+<!--                                                                        -->
+<!-- HIDING THE SOLUTIONS.  Every <solution> here carries                    -->
+<!--   component="hw6-solutions"                                            -->
+<!-- so this assignment's solutions can be switched off from                 -->
+<!-- publication/publication.ptx; see the comment in <source> there.         -->
+<section xml:id="sec-solutions-hw6" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Assignment 6</title>
+
+    <p>
+    Sections: <xref ref="section-triple-integrals-rectangular" text="title"/>
+    and <xref ref="section-triple-integrals-cylindrical" text="title"/>.
+    </p>
+
+  <p>
+    Work each problem yourself first; the full solution follows immediately
+    below it. The auto-graded version of the same problems is
+    <xref ref="sec-exercises-hw6-online" text="title"/>.
+  </p>
+
+  <problem xml:id="ex-hw6-cone-mass">
+    <statement>
+      <p>
+      Consider an object bounded by <m>x = \sqrt{y^2+z^2}</m> and
+      <m>x = 1</m>. Suppose that the object's mass density function is
+      <m>\rho(x,y,z) = x</m>. Find the mass of the object.
+      </p>
+    </statement>
+    <solution component="hw6-solutions">
+      <p>
+      With <m>dV = r\,dr\,d\theta\,dx</m> (the cylindrical volume element
+      <xref ref="eq-dv-cylindrical"/> about the <m>x</m>-axis) and
+      <m>r \le x \le 1</m>,
+      </p>
+
+      <md>
+      <mrow>
+      M \amp = \int_0^1\!\!\int_0^{2\pi}\!\!\int_r^1
+      x\,r\,dx\,d\theta\,dr
+      = (2\pi)\left(\tfrac12\right)\int_0^1 r\left(1-r^2\right) dr
+      </mrow>
+      <mrow>
+      \amp = \pi\left[\frac{r^2}{2} - \frac{r^4}{4}\right]_0^1
+      = \frac{\pi}{4} \approx 0.785 .
+      </mrow>
+      </md>
+    </solution>
+  </problem>
+
+  <problem xml:id="ex-hw6-convert">
+    <statement>
+      <p>
+      Convert (do not evaluate) the following integral to rectangular
+      coordinates:
+      </p>
+
+      <me>
+      \int_{-\pi/4}^{\pi/4}\!\!\int_{0}^{\sec\theta}\!\!
+      \int_{0}^{r^2\cos(2\theta)} r\,dz\,dr\,d\theta .
+      </me>
+    </statement>
+    <solution component="hw6-solutions">
+      <p>
+      Since <m>r^2\cos(2\theta) = r^2\left(\cos^2\theta -
+      \sin^2\theta\right) = x^2 - y^2</m> and
+      <m>r = \sec\theta</m> is <m>r\cos\theta = 1</m>, that is
+      <m>x = 1</m>, the region in the plane is the triangle bounded by
+      <m>y = x</m>, <m>y = -x</m>, and <m>x = 1</m>. Hence
+      </p>
+
+      <me>
+      \int_0^1\!\!\int_{-x}^{x}\!\!\int_0^{x^2-y^2} dz\,dy\,dx .
+      </me>
+    </solution>
+  </problem>
+
+  <problem xml:id="ex-hw6-signs">
+    <statement>
+      <p>
+      <term>Without calculating the integrals</term>, decide whether each
+      of the integrals below is positive, negative, or zero. Let <m>R</m>
+      be the solid bounded by <m>z = 1-x^2-y^2</m> and
+      <m>z = x^2+y^2</m>. Remember to justify your answers.
+      </p>
+      <p>
+      (a) <m>\displaystyle\iiint_R \left(z + x^2 + y^2 - 1\right) dV</m>
+      </p>
+      <p>
+      (b) <m>\displaystyle\iiint_R \left(z - x^2 - y^2\right) dV</m>
+      </p>
+    </statement>
+    <solution component="hw6-solutions">
+      <p>
+      On <m>R</m>, <m>x^2+y^2 \le z \le 1-x^2-y^2</m>. The right
+      inequality gives <m>z + x^2 + y^2 - 1 \le 0</m>, so the first
+      integral is <term>negative</term>; the left gives
+      <m>z - x^2 - y^2 \ge 0</m>, so the second is <term>positive</term>.
+      Each integrand vanishes only on one of the two bounding surfaces.
+      </p>
+    </solution>
+  </problem>
+
+  <problem xml:id="ex-hw6-volume">
+    <statement>
+      <p>
+      Calculate the volume of the region bounded by
+      <m>x^2 + y^2 - z^2 + 5 = 0</m> and
+      <m>x^2 + y^2 + z - 1 = 0</m>.
+      </p>
+    </statement>
+    <solution component="hw6-solutions">
+      <p>
+      The surfaces are <m>z = \pm\sqrt{r^2+5}</m> and
+      <m>z = 1-r^2</m>. Setting <m>r^2 = z^2-5</m> equal to
+      <m>r^2 = 1-z</m> gives <m>z^2+z-6 = 0</m>, so <m>z = 2</m> or
+      <m>z = -3</m>; only <m>z = -3</m> is possible, and then
+      <m>r^2 = 4</m>. Therefore
+      </p>
+
+      <me>
+      V = \int_0^{2\pi}\!\!\int_0^2\!\!\int_{-\sqrt{r^2+5}}^{1-r^2}
+      r\,dz\,dr\,d\theta \approx 20.566 .
+      </me>
+    </solution>
+  </problem>
+</section>

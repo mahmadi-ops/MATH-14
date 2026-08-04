@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- MATH 14 - Assignment 9, the version WITH solutions.                        -->
+<!--                                                                        -->
+<!-- Statements come from the written assignment, solutions from the auto-   -->
+<!-- graded version; each problem is a <problem> whose <solution> is printed -->
+<!-- directly beneath it.  The auto-graded version is hw9-online.ptx.        -->
+<!--                                                                        -->
+<!-- HIDING THE SOLUTIONS.  Every <solution> here carries                    -->
+<!--   component="hw9-solutions"                                            -->
+<!-- so this assignment's solutions can be switched off from                 -->
+<!-- publication/publication.ptx; see the comment in <source> there.         -->
+<section xml:id="sec-solutions-hw9" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Assignment 9</title>
+
+    <p>
+    Section: <xref ref="section-greens-theorem" text="title"/>.
+    </p>
+
+  <p>
+    Work each problem yourself first; the full solution follows immediately
+    below it. The auto-graded version of the same problems is
+    <xref ref="sec-exercises-hw9-online" text="title"/>.
+  </p>
+
+  <problem xml:id="ex-hw9-staircase">
+    <statement>
+      <p>
+      Compute the work done by the force field
+      </p>
+
+      <me>
+      \mathbf{F} = \left\langle x^3 e^{x^2} + xe^x - y,\
+      y^2 - e^y + x \right\rangle
+      </me>
+
+      <p>
+      along the path <m>C</m>, which is shown in
+      <xref ref="fig-hw9-staircase"/>. Assume that the object moves along
+      the path from <m>(0,0)</m> to <m>(10,10)</m> and then to
+      <m>(0,10)</m>.
+      </p>
+    </statement>
+    <solution component="hw9-solutions">
+      <p>
+      Closing the path with the segment <m>C_3</m> down the
+      <m>y</m>-axis gives a simple closed curve, and
+      <m>\frac{\partial N}{\partial x} -
+      \frac{\partial M}{\partial y} = 1-(-1) = 2</m>, so by Green's
+      theorem, <xref ref="eq-green-tangential"/>, the closed loop
+      integral is <m>2 \times 55 = 110</m>,
+      where <m>55 = 50 + 10\left(\frac12\right)</m> is the enclosed
+      area.
+      </p>
+
+      <p>
+      On <m>C_3</m>, <m>x = 0</m> and <m>dx = 0</m>, so
+      <m>\int_{C_3}\mathbf{F}\cdot d\mathbf{r}
+      = \int_{10}^{0}\left(y^2-e^y\right) dy
+      = -\frac{1000}{3}-1+e^{10}</m>. Therefore
+      </p>
+
+      <me>
+      W = 110 + \frac{1000}{3} + 1 - e^{10}
+      = \frac{1333}{3} - e^{10} \approx -21582.1 .
+      </me>
+    </solution>
+  </problem>
+
+  <figure xml:id="fig-hw9-staircase">
+      <caption>
+        The curve <m>C</m> of <xref ref="ex-hw9-staircase"/>: a staircase of
+        ten unit steps from <m>(0,0)</m> to <m>(10,10)</m>, followed by the
+        horizontal segment back to <m>(0,10)</m>.
+      </caption>
+      <image width="70%">
+        <shortdescription>
+        A staircase of ten unit steps from the origin to (10,10), returning along the top.
+        </shortdescription>
+        <prefigure xmlns="https://prefigure.org" label="prefigure-hw9-staircase">
+          <diagram dimensions="(360,340)" margins="10">
+            <coordinates bbox="(-1.6,-1.6,12.2,11.6)">
+              <axes at="hst-axes" xlabel="x" ylabel="y" decorations="no" arrows="1"/>
+              <polygon at="hst-path" closed="no" stroke="#0072B2" thickness="2" fill="none" points="((0,0),(1,0),(1,1),(2,1),(2,2),(3,2),(3,3),(4,3),(4,4),(5,4),(5,5),(6,5),(6,6),(7,6),(7,7),(8,7),(8,8),(9,8),(9,9),(10,9),(10,10),(0,10))"/>
+              <vector at="hst-a1" v="(0.9,0)" tail="(4.2,4)" stroke="#0072B2" thickness="2"/>
+              <vector at="hst-a2" v="(-1.1,0)" tail="(5.6,10)" stroke="#0072B2" thickness="2"/>
+              <point at="hst-start" p="(0,0)" fill="black" alignment="sw">
+                <m>(0,0)</m>
+              </point>
+              <point at="hst-corner" p="(10,10)" fill="black" alignment="se">
+                <m>(10,10)</m>
+              </point>
+              <point at="hst-end" p="(0,10)" fill="black" alignment="nw">
+                <m>(0,10)</m>
+              </point>
+            </coordinates>
+            <annotations>
+              <annotation ref="figure" text="A staircase path made of ten unit steps climbing from the origin to the point ten comma ten, each step going one unit to the right and then one unit up. From ten comma ten the path returns straight left along the line y equals ten to the point zero comma ten. Arrowheads show the direction of travel: rightward on the staircase and leftward on the top segment.">
+                <annotation ref="hst-path" text="The staircase path from the origin to ten comma ten and then back along y equals ten to zero comma ten."/>
+                <annotation ref="hst-a1" text="An arrowhead on the staircase pointing to the right, the direction of travel."/>
+                <annotation ref="hst-a2" text="An arrowhead on the top segment pointing to the left, the direction of travel back to zero comma ten."/>
+              </annotation>
+            </annotations>
+          </diagram>
+        </prefigure>
+      </image>
+    </figure>
+
+  <problem xml:id="ex-hw9-circle">
+    <statement>
+      <p>
+      Calculate the line integral
+      </p>
+
+      <me>
+      \oint_C \sqrt{x^2+y^2}\,dx
+      + y\left[xy + \ln\left(x + \sqrt{x^2+y^2}\right)\right] dy ,
+      </me>
+
+      <p>
+      where <m>C</m> is the circle <m>x^2 + y^2 = 1</m>, with
+      counterclockwise orientation.
+      </p>
+    </statement>
+    <solution component="hw9-solutions">
+      <p>
+      Differentiating, <m>\frac{\partial M}{\partial y}
+      = \frac{y}{\sqrt{x^2+y^2}}</m> and
+      <m>\frac{\partial N}{\partial x} = y\left(y +
+      \frac{1}{\sqrt{x^2+y^2}}\right)</m>, so their difference is
+      <m>y^2</m>. By Green's theorem,
+      <xref ref="eq-green-tangential"/>,
+      </p>
+
+      <me>
+      \oint_C = \iint_R y^2\,dx\,dy
+      = \int_0^{2\pi}\!\!\int_0^1 r^3\sin^2\theta\,dr\,d\theta
+      = \frac{\pi}{4} .
+      </me>
+    </solution>
+  </problem>
+
+  <problem xml:id="ex-hw9-flux">
+    <statement>
+      <p>
+      Calculate the outward flux of the vector field
+      <m>\mathbf{F} = \left\langle x+y,\ -xy \right\rangle</m>
+      across the unit circle.
+      </p>
+    </statement>
+    <solution component="hw9-solutions">
+      <p>
+      Here <m>\nabla\cdot\mathbf{F} = 1 - x</m>, so by the flux form
+      of Green's theorem, <xref ref="eq-green-normal"/>,
+      </p>
+
+      <me>
+      \oint_C \mathbf{F}\cdot\hat{\mathbf{n}}\,ds
+      = \iint_R (1-x)\,dA
+      = \int_0^1\!\!\int_0^{2\pi}\left(1-r\cos\theta\right)
+      r\,d\theta\,dr = \pi ,
+      </me>
+
+      <p>
+      since the <m>x</m>-term integrates to zero by symmetry and what is
+      left is the area of the disk.
+      </p>
+    </solution>
+  </problem>
+
+  <problem xml:id="ex-hw9-rose">
+    <statement>
+      <p>
+      Consider the line integral
+      <m>\displaystyle\oint_C \left(y^4 - 2y\right) dx
+      - \left(6x - 4xy^3\right) dy</m>, where the curve <m>C</m> is
+      <m>r = \sin(2\theta)</m>, <m>0 \le \theta \le \frac{\pi}{2}</m>,
+      oriented counterclockwise. Note that <m>(r,\theta)</m> are polar
+      coordinates.
+      </p>
+      <p>
+      (a) Use Green's theorem to calculate the line integral.
+      </p>
+      <p>
+      (b) In physics, this line integral can be interpreted in two
+      different ways. Briefly explain.
+      </p>
+    </statement>
+    <solution component="hw9-solutions">
+      <p>
+      With <m>M = y^4-2y</m> and <m>N = -(6x-4xy^3)</m>,
+      <m>\frac{\partial N}{\partial x} = -6+4y^3</m> and
+      <m>\frac{\partial M}{\partial y} = 4y^3-2</m>, so their
+      difference is <m>-4</m>. The petal has area
+      </p>
+
+      <me>
+      \int_0^{\pi/2}\!\!\int_0^{\sin 2\theta} r\,dr\,d\theta
+      = \int_0^{\pi/2}\frac{\sin^2(2\theta)}{2}\,d\theta
+      = \frac{\pi}{8} ,
+      </me>
+
+      <p>
+      so the integral is <m>(-4)\left(\frac{\pi}{8}\right)
+      = -\frac{\pi}{2}</m>. It is both the circulation of
+      <m>\mathbf{F}</m> around the petal and, read the other way, the
+      work done by <m>\mathbf{F}</m> on a particle going once around it.
+      </p>
+    </solution>
+  </problem>
+</section>

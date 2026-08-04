@@ -18,6 +18,32 @@
   <xsl:template match="exercises" mode="serial-number"/>
   <xsl:template match="exercises" mode="number"/>
 
+  <!-- In "Review Problems with Solutions" the solution is printed straight   -->
+  <!-- below its problem instead of being hidden behind a knowl.  PreTeXt     -->
+  <!-- has a publisher switch for this (knowl/@example-solution), but that    -->
+  <!-- is global: it would also unfold the solutions of every worked example  -->
+  <!-- in the text.  These two templates are the core's own "born visible"    -->
+  <!-- branch, restricted to that one chapter.                                -->
+  <!-- The problems themselves are born visible too, so the chapter reads   -->
+  <!-- as a worked-solutions document rather than a page of knowl links.    -->
+  <xsl:template match="problem[ancestor::chapter[@xml:id = 'ch-review-solutions' or
+                                                 @xml:id = 'ch-assignment-solutions']]"
+                mode="is-hidden">
+    <xsl:text>false</xsl:text>
+  </xsl:template>
+
+  <xsl:template match="problem[ancestor::chapter[@xml:id = 'ch-review-solutions' or
+                                                 @xml:id = 'ch-assignment-solutions']]/solution"
+                mode="is-hidden">
+    <xsl:text>false</xsl:text>
+  </xsl:template>
+
+  <xsl:template match="problem[ancestor::chapter[@xml:id = 'ch-review-solutions' or
+                                                 @xml:id = 'ch-assignment-solutions']]/solution"
+                mode="heading-birth">
+    <xsl:apply-templates select="." mode="heading-non-singleton-number"/>
+  </xsl:template>
+
   <!-- A PreFigure diagram carrying <annotations> is not emitted as an     -->
   <!-- <img>: PreTeXt emits an empty <div class="ChemAccess-element"> that -->
   <!-- the diagcess JS library fills in, and that library only scans the   -->

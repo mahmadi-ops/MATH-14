@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- MATH 14 - Assignment 3, the version WITH solutions.                        -->
+<!--                                                                        -->
+<!-- Statements come from the written assignment, solutions from the auto-   -->
+<!-- graded version; each problem is a <problem> whose <solution> is printed -->
+<!-- directly beneath it.  The auto-graded version is hw3-online.ptx.        -->
+<!--                                                                        -->
+<!-- HIDING THE SOLUTIONS.  Every <solution> here carries                    -->
+<!--   component="hw3-solutions"                                            -->
+<!-- so this assignment's solutions can be switched off from                 -->
+<!-- publication/publication.ptx; see the comment in <source> there.         -->
+<section xml:id="sec-solutions-hw3" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Assignment 3</title>
+
+    <p>
+    Section: <xref ref="sec-vector-fields" text="title"/>.
+    </p>
+
+  <p>
+    Work each problem yourself first; the full solution follows immediately
+    below it. The auto-graded version of the same problems is
+    <xref ref="sec-exercises-hw3-online" text="title"/>.
+  </p>
+
+  <problem xml:id="ex-hw3-sign">
+    <statement>
+      <p>
+      Determine whether the line integral of the vector field
+      <m>\mathbf{F}</m> along the curve <m>C</m> is positive, negative,
+      or zero. <m>\mathbf{F}</m> and <m>C</m> are shown in
+      <xref ref="fig-hw3-field"/>. Remember to fully justify your answer.
+      </p>
+    </statement>
+    <solution component="hw3-solutions">
+      <p>
+      Along the bottom of <m>C</m> the field and the unit tangent make
+      acute angles, so <m>\mathbf{F} \cdot \hat{\mathbf{T}} \gt 0</m>
+      there; along the top they make obtuse angles, so
+      <m>\mathbf{F} \cdot \hat{\mathbf{T}} \lt 0</m>. The field is
+      longer<mdash/>stronger<mdash/>over the top half, so the negative
+      contribution wins and the integral is <term>negative</term>.
+      </p>
+    </solution>
+  </problem>
+
+  <figure xml:id="fig-hw3-field">
+      <caption>
+        The vector field <m>\mathbf{F}</m> and the curve <m>C</m> of
+        <xref ref="ex-hw3-sign"/>. The curve is traversed in the direction of
+        the arrowhead.
+      </caption>
+      <image width="70%">
+        <shortdescription>
+        A field over the first quadrant tilting from downward to rightward, with a blue circle.
+        </shortdescription>
+        <prefigure xmlns="https://prefigure.org" label="prefigure-hw3-field">
+          <diagram dimensions="(380,320)" margins="10">
+            <definition>F(x,y) = (0.30*y, -0.30)</definition>
+            <definition>circle(t) = (1.5 + 1.05*cos(t), 1.35 + 1.05*sin(t))</definition>
+            <coordinates bbox="(-0.35,-0.35,3.35,2.95)">
+              <axes at="hf-axes" xlabel="x" ylabel="y" decorations="no" arrows="1"/>
+              <repeat at="hf-cols" parameter="i=0..6">
+                <repeat parameter="j=0..5">
+                  <vector at="hf-v-((i))-((j))" v="F(0.45*i+0.15, 0.5*j+0.1)" tail="(0.45*i+0.15, 0.5*j+0.1)" stroke="#009E73" thickness="2"/>
+                </repeat>
+              </repeat>
+              <parametric-curve at="hf-C" function="circle" domain="(0,2*pi)" stroke="#0072B2" thickness="3"/>
+              <vector at="hf-Cdir" v="(0.02,0.30)" tail="(2.54,1.15)" stroke="#0072B2" thickness="3"/>
+              <label at="hf-Clabel" anchor="(1.5,1.35)" alignment="center" color="#0072B2"><m>C</m></label>
+              <label at="hf-Flabel" anchor="(2.75,2.70)" alignment="e" color="#009E73"><m>\mathbf{F}</m></label>
+            </coordinates>
+            <annotations>
+              <annotation ref="figure" text="A grid of green field vectors over the first quadrant, together with a blue circle. Near the x axis the field vectors point almost straight down and are short. Higher up they tilt to the right and grow longer, so the field is strongest across the top of the circle. The circle is traversed counterclockwise, and its right side carries an arrowhead pointing upward.">
+                <annotation ref="hf-C" text="The closed curve C, a circle, traversed in the direction of the arrowhead on its right side, counterclockwise."/>
+                <annotation ref="hf-Cdir" text="The arrowhead giving the direction of travel along C, pointing upward on the right side of the circle."/>
+                <annotation ref="hf-cols" text="The field vectors. They are short and nearly vertical near the x axis and grow longer and more tilted as y increases."/>
+              </annotation>
+            </annotations>
+          </diagram>
+        </prefigure>
+      </image>
+    </figure>
+
+  <problem xml:id="ex-hw3-two-paths">
+    <statement>
+      <p>
+      Two particles move from <m>(-1,1)</m> to <m>(1,1)</m> under the
+      influence of a force field
+      <m>\mathbf{F} = \left\langle y, x \right\rangle</m>. One moves
+      along the curve <m>C_1</m>, the parabola defined by
+      <m>y = 2x^2 - 1</m>. The other particle moves along the curve
+      <m>C_2</m>, the bottom half of the circle
+      <m>x^2 + (y-1)^2 = 1</m>. Force is measured in pounds and distances
+      are measured in feet. Find the work performed by moving each
+      particle along its path.
+      </p>
+    </statement>
+    <solution component="hw3-solutions">
+      <p>
+      On <m>C_1</m>, <m>\mathbf{r}(t) = \left\langle t, 2t^2-1
+      \right\rangle</m> with <m>-1 \le t \le 1</m>, so
+      <m>\mathbf{F} \cdot \mathbf{v} = 6t^2 - 1</m> and
+      <m>W = \int_{-1}^{1}(6t^2-1)\,dt = 2</m>.
+      </p>
+
+      <p>
+      On <m>C_2</m>, <m>\mathbf{r}(t) = \left\langle \cos t,
+      1+\sin t \right\rangle</m> with <m>\pi \le t \le 2\pi</m>,
+      so <m>\mathbf{F} \cdot \mathbf{v} = \cos(2t) - \sin t</m> and
+      <m>W = 2</m> again.
+      </p>
+
+      <p>
+      The two answers agree because
+      <m>\mathbf{F} = \nabla(xy)</m> is conservative<mdash/>revisit this
+      problem after <xref ref="section-conservative-fields" text="title"/>.
+      </p>
+    </solution>
+  </problem>
+
+  <problem xml:id="ex-hw3-three-forms">
+    <statement>
+      <p>
+      The work done by a force field
+      <m>\mathbf{F} = \left\langle M(x,y,z), N(x,y,z), P(x,y,z)
+      \right\rangle</m> along a curve <m>C</m> is given by
+      <m>\displaystyle\int_C \mathbf{F} \cdot \hat{\mathbf{T}}\,ds</m>,
+      where <m>\hat{\mathbf{T}}</m> is the unit tangent vector to
+      <m>C</m>. Show that
+      <m>\displaystyle\int_C \mathbf{F} \cdot \hat{\mathbf{T}}\,ds</m>
+      can be written in each of the following forms. Remember to fully
+      justify your answers.
+      </p>
+      <p>
+      (a) <m>\displaystyle\int_{t=a}^{t=b} \mathbf{F} \cdot
+      \mathbf{v}\,dt</m>
+      </p>
+      <p>
+      (b) <m>\displaystyle\int_C \mathbf{F} \cdot d\mathbf{r}</m>
+      </p>
+      <p>
+      (c) <m>\displaystyle\int_C M\,dx + N\,dy + P\,dz</m>
+      </p>
+    </statement>
+    <solution component="hw3-solutions">
+      <p>
+        Parametrize <m>C</m> by <m>\mathbf{r}(t)</m>, <m>a \le t \le b</m>,
+        with velocity <m>\mathbf{v} = \mathbf{r}'(t)</m>. Arc length along
+        <m>C</m> satisfies <m>ds = \lVert\mathbf{v}\rVert\,dt</m>, and the
+        unit tangent is
+        <m>\hat{\mathbf{T}} = \dfrac{\mathbf{v}}{\lVert\mathbf{v}\rVert}</m>
+        wherever <m>\mathbf{v} \ne \mathbf{0}</m>.
+      </p>
+      <p>
+        (a) Substituting both of these into the definition, the lengths
+        cancel:
+      </p>
+      <me>
+        \int_C \mathbf{F} \cdot \hat{\mathbf{T}}\,ds
+        = \int_{t=a}^{t=b} \mathbf{F}\bigl(\mathbf{r}(t)\bigr) \cdot
+          \frac{\mathbf{v}}{\lVert\mathbf{v}\rVert}\,
+          \lVert\mathbf{v}\rVert\,dt
+        = \int_{t=a}^{t=b} \mathbf{F} \cdot \mathbf{v}\,dt .
+      </me>
+      <p>
+        (b) Since <m>\mathbf{v} = \dfrac{d\mathbf{r}}{dt}</m>, we have
+        <m>\mathbf{v}\,dt = d\mathbf{r}</m>, so the integral in (a) is
+        exactly
+        <m>\displaystyle\int_C \mathbf{F} \cdot d\mathbf{r}</m>. This form
+        makes no reference to the parameter, which is why it is the one
+        usually quoted: the value depends on <m>C</m> and its direction,
+        not on how <m>C</m> is parametrized.
+      </p>
+      <p>
+        (c) Writing the two vectors in components,
+        <m>\mathbf{F} = \langle M, N, P\rangle</m> and
+        <m>d\mathbf{r} = \langle dx, dy, dz\rangle</m>, the dot product is
+      </p>
+      <me>
+        \mathbf{F} \cdot d\mathbf{r} = M\,dx + N\,dy + P\,dz ,
+      </me>
+      <p>
+        so <m>\displaystyle\int_C \mathbf{F} \cdot d\mathbf{r}
+        = \int_C M\,dx + N\,dy + P\,dz</m>, the differential form. All
+        three expressions are the same number, written three ways.
+      </p>
+    </solution>
+  </problem>
+
+  <problem xml:id="ex-hw3-helix">
+    <statement>
+      <p>
+      Suppose that <m>C</m> is the portion of the helix given by
+      <m>\mathbf{r}(t) = \left\langle \cos(t), \sin(t), t/2\pi
+      \right\rangle</m>, where <m>0 \le t \le 2\pi</m>. Calculate
+      <m>\displaystyle\int_C x\,dy - y\,dx + dz</m>.
+      </p>
+    </statement>
+    <solution component="hw3-solutions">
+      <p>
+      The integral is <m>\int_C \mathbf{F} \cdot d\mathbf{r}</m> with
+      <m>\mathbf{F} = \left\langle -y, x, 1 \right\rangle</m>. Along
+      the helix <m>\mathbf{F} = \left\langle -\sin t, \cos t, 1
+      \right\rangle</m> and
+      <m>\mathbf{v} = \left\langle -\sin t, \cos t, \frac{1}{2\pi}
+      \right\rangle</m>, so
+      <m>\mathbf{F} \cdot \mathbf{v} = 1 + \frac{1}{2\pi}</m> and
+      </p>
+
+      <me>
+      \int_C x\,dy - y\,dx + dz
+      = \int_0^{2\pi}\left(1 + \frac{1}{2\pi}\right) dt
+      = 2\pi + 1 \approx 7.283 .
+      </me>
+    </solution>
+  </problem>
+</section>

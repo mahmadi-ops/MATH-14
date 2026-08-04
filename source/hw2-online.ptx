@@ -5,7 +5,7 @@
 <!-- in order by a <var> in <setup>, whose first <condition> is the correct   -->
 <!-- answer.  Every blank is graded on its own, so partial credit survives.   -->
 <section xml:id="sec-exercises-hw2-online" xmlns:xi="http://www.w3.org/2001/XInclude">
-  <title>Assignment 2, Online Version</title>
+  <title>Assignment 2</title>
 
   <introduction>
     <p>
@@ -56,7 +56,7 @@
     </statement>
     <evaluation>
       <evaluate>
-        <!-- The <solution> below is what the print version uses; in HTML the
+        <!-- The <solution component="assignment-inline-solutions"> below is what the print version uses; in HTML the
              dynamic runtime never shows it, so the worked solution rides
              along with the feedback, where it does appear. -->
         <test correct="yes">
@@ -124,7 +124,7 @@
         </test>
       </evaluate>
     </evaluation>
-    <solution>
+    <solution component="assignment-inline-solutions">
       <p>
         Parametrize the quarter circle by
         <m>\mathbf{r}(t) = \left\langle R\cos t + a,\ R\sin t
@@ -202,7 +202,7 @@
         </condition>
       </var>
     </setup>
-    <solution>
+    <solution component="assignment-inline-solutions">
       <p>
         Here <m>x-y+z-2 = t-(1-t)+1-2 = 2t-2</m> and
         <m>\mathbf{v} = \left\langle 1,-1,0 \right\rangle</m>, so
@@ -321,7 +321,7 @@
         </condition>
       </var>
     </setup>
-    <solution>
+    <solution component="assignment-inline-solutions">
       <p>
         On the side from <m>(0,0)</m> to <m>(1,0)</m>,
         <m>f = 1/(t^2+1)</m> and <m>ds = dt</m>, giving
@@ -425,7 +425,7 @@
         </condition>
       </var>
     </setup>
-    <solution>
+    <solution component="assignment-inline-solutions">
       <p>
         With <m>\mathbf{r}(t) = \left\langle \cos t, \sin t
         \right\rangle</m> the speed is <m>1</m> and
