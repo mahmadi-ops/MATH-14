@@ -56,30 +56,17 @@
     </statement>
     <evaluation>
       <evaluate>
-        <!-- The <solution component="hw2-solutions"> below is what the print version uses; in HTML the
-             dynamic runtime never shows it, so the worked solution rides
-             along with the feedback, where it does appear. -->
+        <!-- The feedback here nudges, it does not solve: the dynamic runtime
+             shows it to anyone who presses Check Me, so a full derivation
+             would hand over the answer no matter how the solutions are
+             switched in publication.ptx.  The worked solution lives in the
+             "Solutions of the Assignments" chapter (hw2-solutions.ptx). -->
         <test correct="yes">
           <numcmp use-answer="yes" min="M.value({})-Math.max(0.01,1e-4*Math.abs(M.value({})))" max="M.value({})+Math.max(0.01,1e-4*Math.abs(M.value({})))"/>
           <feedback>
             <p>
-              Correct. Parametrizing by
-              <m>\mathbf{r}(t) = \left\langle R\cos t + a,\ R\sin t
-              \right\rangle</m>, <m>0 \le t \le \pi/2</m>, gives
-              <m>\lVert\mathbf{v}\rVert = R</m> and
-              <m>(x-a)^2+y^2 = R^2</m>, so the density along the wire is
-              <m>k\cos t\sin t = \frac{k}{2}\sin(2t)</m> and
-            </p>
-            <me>
-              M = \int_0^{\pi/2} \frac{k}{2}\sin(2t)\,R\,dt
-              = \frac{kR}{2}
-              = \frac{\left(<eval obj="k"/>\right)
-                       \left(<eval obj="R"/>\right)}{2}
-              = <eval obj="M"/> .
-            </me>
-            <p>
-              The center <m>a</m> never enters: shifting the wire sideways
-              carries its density with it.
+              Correct. Notice that the center <m>a</m> never enters: shifting
+              the wire sideways carries its density with it.
             </p>
           </feedback>
         </test>
@@ -88,37 +75,23 @@
           <feedback>
             <p>
               That is the coefficient <m>k</m> from the density, not the
-              mass. The wire has radius <m>R = <eval obj="R"/></m>, and the
-              mass works out to <m>kR/2</m>; see the derivation below.
+              mass. Once the density is written in terms of the parameter,
+              the arc-length factor <m>ds = \lVert\mathbf{v}\rVert\,dt</m>
+              still has to be included.
             </p>
-            <me>
-              M = \int_0^{\pi/2} \frac{k}{2}\sin(2t)\,R\,dt
-              = \frac{kR}{2} = <eval obj="M"/> .
-            </me>
           </feedback>
         </test>
         <test>
           <numcmp min="-1000000000" max="1000000000"/>
           <feedback>
             <p>
-              Not quite. Parametrize by
+              Not quite. Parametrize the quarter circle by
               <m>\mathbf{r}(t) = \left\langle R\cos t + a,\ R\sin t
-              \right\rangle</m>, <m>0 \le t \le \pi/2</m>. Then
-              <m>\lVert\mathbf{v}\rVert = R</m> and
-              <m>(x-a)^2+y^2 = R^2</m>, so the density along the wire
-              collapses to <m>k\cos t\sin t = \frac{k}{2}\sin(2t)</m>,
-              and
-            </p>
-            <me>
-              M = \int_0^{\pi/2} \frac{k}{2}\sin(2t)\,R\,dt
-              = \frac{kR}{2}
-              = \frac{\left(<eval obj="k"/>\right)
-                       \left(<eval obj="R"/>\right)}{2}
-              = <eval obj="M"/> .
-            </me>
-            <p>
-              Note that the center <m>a</m> drops out, so the answer does
-              not depend on it.
+              \right\rangle</m>, <m>0 \le t \le \pi/2</m>, and remember
+              that <m>ds = \lVert\mathbf{v}\rVert\,dt</m>. On the wire the
+              density simplifies considerably, and the center <m>a</m> drops
+              out. The complete worked solution is in the
+              <q>Solutions of the Assignments</q> chapter.
             </p>
           </feedback>
         </test>
