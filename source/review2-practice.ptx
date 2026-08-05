@@ -1340,7 +1340,7 @@
     \definecolor{oiblue}{RGB}{0,114,178}
     \definecolor{oigreen}{RGB}{0,158,115}
     \begin{axis}[
-        view={120}{22},
+        view={150}{32},
         width=11.5cm,
         axis lines=center,
         axis line style={-latex, black!70, line width=0.7pt},
@@ -1354,23 +1354,23 @@
       \addplot3[fill=oigreen!25, draw=oigreen, line width=1.3pt, forget plot]
         coordinates {(0,0,0) (2,0,0) (2,2,0) (0,2,0) (0,0,0)};
       % ---- the four vertical walls, so the picture reads as a solid ----
-      \addplot3[surf, shader=interp, opacity=0.55, fill opacity=0.55,
-                colormap={wa}{color=(oiblue!22!white) color=(oiblue!52!white)},
+      \addplot3[surf, shader=interp, opacity=0.35, fill opacity=0.35,
+                colormap={wa}{color=(oiblue!20!white) color=(oiblue!48!white)},
                 domain=0:2, y domain=0:1, samples=26, samples y=2,
                 z buffer=sort, forget plot]
         ({x}, 0, {y*(x^2+2)});
-      \addplot3[surf, shader=interp, opacity=0.55, fill opacity=0.55,
-                colormap={wb}{color=(oiblue!22!white) color=(oiblue!52!white)},
+      \addplot3[surf, shader=interp, opacity=0.35, fill opacity=0.35,
+                colormap={wb}{color=(oiblue!20!white) color=(oiblue!48!white)},
                 domain=0:2, y domain=0:1, samples=26, samples y=2,
                 z buffer=sort, forget plot]
         ({x}, 2, {y*(x^2+4)});
-      \addplot3[surf, shader=interp, opacity=0.55, fill opacity=0.55,
-                colormap={wc}{color=(oiblue!22!white) color=(oiblue!52!white)},
+      \addplot3[surf, shader=interp, opacity=0.35, fill opacity=0.35,
+                colormap={wc}{color=(oiblue!20!white) color=(oiblue!48!white)},
                 domain=0:2, y domain=0:1, samples=26, samples y=2,
                 z buffer=sort, forget plot]
         (0, {x}, {y*(x+2)});
-      \addplot3[surf, shader=interp, opacity=0.55, fill opacity=0.55,
-                colormap={wd}{color=(oiblue!22!white) color=(oiblue!52!white)},
+      \addplot3[surf, shader=interp, opacity=0.35, fill opacity=0.35,
+                colormap={wd}{color=(oiblue!20!white) color=(oiblue!48!white)},
                 domain=0:2, y domain=0:1, samples=26, samples y=2,
                 z buffer=sort, forget plot]
         (2, {x}, {y*(x+6)});
@@ -1390,11 +1390,11 @@
                 domain=0:2, forget plot] (0, {x}, {x+2});
       \addplot3[oiblue, line width=1.5pt, samples=60, samples y=0,
                 domain=0:2, forget plot] (2, {x}, {x+6});
-      % ---- the four vertical corner edges ----
-      \draw[black!60, line width=0.9pt] (axis cs:0,0,0) -- (axis cs:0,0,2);
-      \draw[black!60, line width=0.9pt] (axis cs:2,0,0) -- (axis cs:2,0,6);
-      \draw[black!60, line width=0.9pt] (axis cs:2,2,0) -- (axis cs:2,2,8);
-      \draw[black!60, line width=0.9pt] (axis cs:0,2,0) -- (axis cs:0,2,4);
+      % ---- the vertical edges of the solid, as construction lines.  The     ----
+      % ---- edge over the origin is left out: the z-axis already draws it.   ----
+      \draw[black!55, line width=0.8pt, densely dashed] (axis cs:2,0,0) -- (axis cs:2,0,6);
+      \draw[black!55, line width=0.8pt, densely dashed] (axis cs:2,2,0) -- (axis cs:2,2,8);
+      \draw[black!55, line width=0.8pt, densely dashed] (axis cs:0,2,0) -- (axis cs:0,2,4);
       % ---- tick marks on the base ----
       \node[anchor=north east, font=\small] at (axis cs:2,0,-0.12) {$2$};
       \node[anchor=north west, font=\small] at (axis cs:0,2,-0.12) {$2$};
