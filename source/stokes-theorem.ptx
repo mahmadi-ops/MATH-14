@@ -1411,4 +1411,175 @@ arrow rises from the top of the paraboloid and another from the disk.
 </figure>
 </subsection>
 
+<subsection xml:id="sec-stokes-conceptual">
+<title>A Conceptual Stokes' Theorem Problem</title>
+
+<p>
+The following problem uses no computation at all. It tests whether you
+can see what Stokes' theorem is really saying about circulation, curl,
+and<mdash/>as the extension questions bring out<mdash/>the role played
+by the domain of the vector field.
+</p>
+
+<exercise xml:id="ex-stokes-conceptual">
+<title>Equal Curls, Equal Circulations</title>
+<statement>
+<p>
+Let <m>\mathbf{F}</m> and <m>\mathbf{G}</m> be continuously
+differentiable vector fields defined on all of <m>\R^3</m>. Suppose
+that
+</p>
+<me>
+\nabla \times \mathbf{F} = \nabla \times \mathbf{G}
+</me>
+<p>
+everywhere in <m>\R^3</m>. Without computing any line integrals,
+determine whether the statement
+</p>
+<me>
+\oint_C \mathbf{F} \cdot d\mathbf{r}
+= \oint_C \mathbf{G} \cdot d\mathbf{r}
+</me>
+<p>
+is true for every smooth simple closed curve <m>C</m> in <m>\R^3</m>.
+If the statement is true, prove it using Stokes' theorem,
+<xref ref="thm-stokes"/>. If it is false, provide a counterexample.
+</p>
+</statement>
+<solution>
+<p>
+The statement is true. Define
+</p>
+<me>
+\mathbf{H} = \mathbf{F} - \mathbf{G}.
+</me>
+<p>
+We first verify carefully that curl distributes over subtraction.
+Write
+</p>
+<me>
+\mathbf{F} = M_1\,\mathbf{i} + N_1\,\mathbf{j} + P_1\,\mathbf{k},
+\qquad
+\mathbf{G} = M_2\,\mathbf{i} + N_2\,\mathbf{j} + P_2\,\mathbf{k}.
+</me>
+<p>
+Then
+</p>
+<me>
+\mathbf{F} - \mathbf{G} = (M_1 - M_2)\,\mathbf{i}
++ (N_1 - N_2)\,\mathbf{j} + (P_1 - P_2)\,\mathbf{k}.
+</me>
+<p>
+By the component formula for the curl from
+<xref ref="sec-curl-3d" text="title"/>, the
+<m>\mathbf{i}</m>-component of
+<m>\nabla \times (\mathbf{F} - \mathbf{G})</m> is
+</p>
+<md>
+<mrow>\frac{\partial (P_1 - P_2)}{\partial y}
+- \frac{\partial (N_1 - N_2)}{\partial z}
+\amp = \left( \frac{\partial P_1}{\partial y}
+- \frac{\partial P_2}{\partial y} \right)
+- \left( \frac{\partial N_1}{\partial z}
+- \frac{\partial N_2}{\partial z} \right)</mrow>
+<mrow>\amp = \left( \frac{\partial P_1}{\partial y}
+- \frac{\partial N_1}{\partial z} \right)
+- \left( \frac{\partial P_2}{\partial y}
+- \frac{\partial N_2}{\partial z} \right),</mrow>
+</md>
+<p>
+using the linearity of partial differentiation, and the
+<m>\mathbf{j}</m>- and <m>\mathbf{k}</m>-components behave the same
+way. Therefore
+</p>
+<me>
+\nabla \times (\mathbf{F} - \mathbf{G})
+= \nabla \times \mathbf{F} - \nabla \times \mathbf{G},
+</me>
+<p>
+and since <m>\nabla \times \mathbf{F} = \nabla \times \mathbf{G}</m>,
+it follows that
+</p>
+<me>
+\nabla \times \mathbf{H}
+= \nabla \times (\mathbf{F} - \mathbf{G}) = \mathbf{0}.
+</me>
+<p>
+Now let <m>S</m> be a smooth oriented surface whose boundary is
+<m>C</m>, with the direction of travel along <m>C</m> given by the
+right-hand rule as in <xref ref="thm-stokes"/>. Because the fields are
+defined on all of <m>\R^3</m>, the surface <m>S</m> lies entirely in
+their domain. Stokes' theorem gives
+</p>
+<md>
+<mrow>\oint_C \mathbf{H} \cdot d\mathbf{r}
+\amp = \iint_S (\nabla \times \mathbf{H}) \cdot
+\hat{\mathbf{n}}\, d\sigma</mrow>
+<mrow>\amp = \iint_S \mathbf{0} \cdot \hat{\mathbf{n}}\, d\sigma</mrow>
+<mrow>\amp = 0.</mrow>
+</md>
+<p>
+By linearity of the line integral,
+</p>
+<md>
+<mrow>0 \amp = \oint_C (\mathbf{F} - \mathbf{G}) \cdot d\mathbf{r}</mrow>
+<mrow>\amp = \oint_C \mathbf{F} \cdot d\mathbf{r}
+- \oint_C \mathbf{G} \cdot d\mathbf{r}.</mrow>
+</md>
+<p>
+Hence
+</p>
+<me>
+\oint_C \mathbf{F} \cdot d\mathbf{r}
+= \oint_C \mathbf{G} \cdot d\mathbf{r}.
+</me>
+<p>
+<term>Why the domain matters.</term> The crucial point is not merely
+that the two curls agree. To apply Stokes' theorem, the curve <m>C</m>
+must bound an oriented surface that lies entirely inside the common
+domain of the vector fields. This is automatic here because the domain
+is all of <m>\R^3</m>, but it can fail in a domain with a hole.
+</p>
+<p>
+<term>Equivalent viewpoint.</term> The field
+<m>\mathbf{H} = \mathbf{F} - \mathbf{G}</m> has zero curl on the
+simply connected domain <m>\R^3</m>, so <m>\mathbf{H}</m> is
+conservative. Therefore every closed-loop integral of <m>\mathbf{H}</m>
+is zero by the loop property of
+<xref ref="section-conservative-fields" text="title"/>, which gives the
+same conclusion.
+</p>
+</solution>
+</exercise>
+
+<exercise xml:id="ex-stokes-conceptual-extensions">
+<title>Extension Questions</title>
+<statement>
+<p>
+<ol marker="(a)">
+<li>
+<p>
+Does the conclusion remain valid if the common domain is an arbitrary
+open subset of <m>\R^3</m>?
+</p>
+</li>
+<li>
+<p>
+Which hypothesis of Stokes' theorem is essential in the proof?
+</p>
+</li>
+<li>
+<p>
+How is the result related to conservative vector fields and the
+Fundamental Theorem for line integrals of
+<xref ref="sec-ftli" text="title"/>?
+</p>
+</li>
+</ol>
+</p>
+</statement>
+</exercise>
+
+</subsection>
+
 </section>
