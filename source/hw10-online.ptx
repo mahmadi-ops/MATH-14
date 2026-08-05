@@ -504,5 +504,246 @@
     </solution>
   </exercise>
 
+  <exercise xml:id="ex-hw10o-three-theorems">
+    <title>One Field, Three Theorems</title>
+    <setup>
+      <de-object name="valA" context="number">
+        <de-expression>3*pi/2</de-expression>
+      </de-object>
+      <de-object name="valC" context="number">
+        <de-expression>pi/3</de-expression>
+      </de-object>
+      <de-object name="valZ" context="number">
+        <de-expression>0</de-expression>
+      </de-object>
+    </setup>
+    <statement>
+      <p>
+        Let
+        <m>\mathbf{F} = -y^3\,\mathbf{i} + x^3\,\mathbf{j}
+        + z^2\,\mathbf{k}</m>,
+        let <m>S</m> be the paraboloid <m>z = 1 - x^2 - y^2</m> with
+        <m>z \ge 0</m>, oriented upward, and let <m>C</m> be its boundary
+        curve<mdash/>the unit circle in the <m>xy</m>-plane, traversed
+        counterclockwise as seen from above. Let <m>D</m> be the unit disk
+        in the plane <m>z = 0</m>, and let <m>E</m> be the solid region
+        enclosed between <m>S</m> and <m>D</m>.
+      </p>
+      <p>
+        (a) Explain why the space curve integral
+        <m>\displaystyle\oint_C \mathbf{F} \cdot d\mathbf{r}</m> reduces
+        exactly to a plane integral, and evaluate it using Green's theorem,
+        <xref ref="eq-green-tangential"/>. Its value is
+        <fillin name="b1" mode="number" ansobj="valA" width="16"/>.
+      </p>
+      <p>
+        (b) Verify your answer using Stokes' theorem,
+        <xref ref="thm-stokes"/>, with the surface <m>S</m>: the flux
+        <m>\displaystyle\iint_S (\nabla \times \mathbf{F}) \cdot
+        \hat{\mathbf{n}}\, d\sigma</m> equals
+        <fillin name="b2" mode="number" ansobj="valA" width="16"/>.
+        Then explain, without computing, why any surface having <m>C</m>
+        as its boundary would give the same flux of
+        <m>\nabla \times \mathbf{F}</m>.
+      </p>
+      <p>
+        (c) Use the divergence theorem, <xref ref="thm-divergence"/>, to
+        compute the outward flux of <m>\mathbf{F}</m> itself through the
+        closed surface <m>S \cup D</m>:
+        <fillin name="b3" mode="number" ansobj="valC" width="16"/>.
+        The flux through the disk <m>D</m> alone is
+        <fillin name="b4" mode="number" ansobj="valZ" width="10"/>,
+        so the flux through the paraboloid alone is
+        <fillin name="b5" mode="number" ansobj="valC" width="16"/>.
+      </p>
+      <p>
+        (d) In (b) you were allowed to swap surfaces freely; in (c) you
+        were not<mdash/>the flux of <m>\mathbf{F}</m> through <m>S</m> and
+        through <m>D</m> differ. Reconcile these two facts using the
+        identity <m>\nabla \cdot (\nabla \times \mathbf{F}) =</m>
+        <fillin name="b6" mode="number" ansobj="valZ" width="10"/>
+        together with the divergence theorem.
+      </p>
+    </statement>
+    <evaluation>
+      <evaluate>
+        <test correct="yes">
+          <numcmp use-answer="yes" min="valA.value({})-Math.max(0.01,1e-4*Math.abs(valA.value({})))" max="valA.value({})+Math.max(0.01,1e-4*Math.abs(valA.value({})))"/>
+          <feedback><p>Correct.</p></feedback>
+        </test>
+        <test><numcmp min="-1000000000" max="1000000000"/><feedback><p>Incorrect.</p></feedback></test>
+      </evaluate>
+      <evaluate>
+        <test correct="yes">
+          <numcmp use-answer="yes" min="valA.value({})-Math.max(0.01,1e-4*Math.abs(valA.value({})))" max="valA.value({})+Math.max(0.01,1e-4*Math.abs(valA.value({})))"/>
+          <feedback><p>Correct.</p></feedback>
+        </test>
+        <test><numcmp min="-1000000000" max="1000000000"/><feedback><p>Incorrect.</p></feedback></test>
+      </evaluate>
+      <evaluate>
+        <test correct="yes">
+          <numcmp use-answer="yes" min="valC.value({})-Math.max(0.01,1e-4*Math.abs(valC.value({})))" max="valC.value({})+Math.max(0.01,1e-4*Math.abs(valC.value({})))"/>
+          <feedback><p>Correct.</p></feedback>
+        </test>
+        <test><numcmp min="-1000000000" max="1000000000"/><feedback><p>Incorrect.</p></feedback></test>
+      </evaluate>
+      <evaluate>
+        <test correct="yes">
+          <numcmp use-answer="yes" min="valZ.value({})-0.01" max="valZ.value({})+0.01"/>
+          <feedback><p>Correct.</p></feedback>
+        </test>
+        <test><numcmp min="-1000000000" max="1000000000"/><feedback><p>Incorrect.</p></feedback></test>
+      </evaluate>
+      <evaluate>
+        <test correct="yes">
+          <numcmp use-answer="yes" min="valC.value({})-Math.max(0.01,1e-4*Math.abs(valC.value({})))" max="valC.value({})+Math.max(0.01,1e-4*Math.abs(valC.value({})))"/>
+          <feedback><p>Correct.</p></feedback>
+        </test>
+        <test><numcmp min="-1000000000" max="1000000000"/><feedback><p>Incorrect.</p></feedback></test>
+      </evaluate>
+      <evaluate>
+        <test correct="yes">
+          <numcmp use-answer="yes" min="valZ.value({})-0.01" max="valZ.value({})+0.01"/>
+          <feedback><p>Correct.</p></feedback>
+        </test>
+        <test><numcmp min="-1000000000" max="1000000000"/><feedback><p>Incorrect.</p></feedback></test>
+      </evaluate>
+    </evaluation>
+    <solution include-automatic="no">
+      <p component="hw10-solutions">
+        (a) On the curve <m>C</m> we have <m>z \equiv 0</m>, so the third
+        component of <m>\mathbf{F}</m> contributes <m>z^2\, dz = 0</m>
+        along <m>C</m>. The line integral is therefore genuinely planar:
+      </p>
+      <me component="hw10-solutions">
+        \oint_C \mathbf{F} \cdot d\mathbf{r}
+        = \oint_C -y^3\, dx + x^3\, dy.
+      </me>
+      <p component="hw10-solutions">
+        By Green's theorem, <xref ref="eq-green-tangential"/>, with
+        <m>M = -y^3</m> and <m>N = x^3</m>,
+      </p>
+      <me component="hw10-solutions">
+        \oint_C -y^3\, dx + x^3\, dy
+        = \iint_D \left( \frac{\partial N}{\partial x}
+        - \frac{\partial M}{\partial y} \right) dA
+        = \iint_D 3\left(x^2 + y^2\right) dA.
+      </me>
+      <p component="hw10-solutions">
+        In polar coordinates,
+      </p>
+      <me component="hw10-solutions">
+        \iint_D 3\left(x^2 + y^2\right) dA
+        = \int_0^{2\pi}\!\!\int_0^1 3r^2 \cdot r\, dr\, d\theta
+        = 2\pi \cdot \frac{3}{4} = \frac{3\pi}{2} \approx 4.712.
+      </me>
+      <p component="hw10-solutions">
+        (b) The curl is
+      </p>
+      <me component="hw10-solutions">
+        \nabla \times \mathbf{F} =
+        \begin{vmatrix}
+        \mathbf{i} \amp \mathbf{j} \amp \mathbf{k} \\
+        \dfrac{\partial}{\partial x} \amp \dfrac{\partial}{\partial y}
+        \amp \dfrac{\partial}{\partial z} \\
+        -y^3 \amp x^3 \amp z^2
+        \end{vmatrix}
+        = \left(3x^2 + 3y^2\right) \mathbf{k}.
+      </me>
+      <p component="hw10-solutions">
+        Stokes' theorem asserts
+        <m>\displaystyle\oint_C \mathbf{F} \cdot d\mathbf{r}
+        = \iint_S (\nabla \times \mathbf{F}) \cdot
+        \hat{\mathbf{n}}\, d\sigma</m>. Since <m>C</m> also bounds the
+        flat disk <m>D</m> (with upward normal
+        <m>\hat{\mathbf{n}} = \mathbf{k}</m>), we may evaluate the flux
+        there:
+      </p>
+      <me component="hw10-solutions">
+        \iint_D \left(3x^2 + 3y^2\right) \mathbf{k} \cdot \mathbf{k}\, dA
+        = \iint_D 3\left(x^2 + y^2\right) dA = \frac{3\pi}{2},
+      </me>
+      <p component="hw10-solutions">
+        in agreement with (a). As for surface independence: Stokes'
+        theorem equates the flux of <m>\nabla \times \mathbf{F}</m>
+        through <em>any</em> oriented surface with boundary <m>C</m> to
+        the single number
+        <m>\oint_C \mathbf{F} \cdot d\mathbf{r}</m>. The boundary
+        circulation pins down the answer; the interior of the surface is
+        irrelevant<mdash/>this is the point of
+        <xref ref="sec-stokes-surface-independence" text="title"/>. Hence
+        every surface spanning <m>C</m> carries curl-flux
+        <m>\frac{3\pi}{2}</m>.
+      </p>
+      <p component="hw10-solutions">
+        (c) The divergence is
+        <m>\nabla \cdot \mathbf{F}
+        = \frac{\partial}{\partial x}\left(-y^3\right)
+        + \frac{\partial}{\partial y}\left(x^3\right)
+        + \frac{\partial}{\partial z}\left(z^2\right) = 2z</m>.
+        By the divergence theorem, <xref ref="thm-divergence"/>, the
+        outward flux through the closed surface <m>S \cup D</m> is
+      </p>
+      <me component="hw10-solutions">
+        \iint_{S \cup D} \mathbf{F} \cdot \hat{\mathbf{n}}\, d\sigma
+        = \iiint_E 2z\, dV.
+      </me>
+      <p component="hw10-solutions">
+        Using cylindrical coordinates with <m>0 \le z \le 1 - r^2</m>:
+      </p>
+      <me component="hw10-solutions">
+        \iiint_E 2z\, dV
+        = \int_0^{2\pi}\!\!\int_0^1\!\!\int_0^{1-r^2} 2z\, r\, dz\, dr\,
+        d\theta
+        = 2\pi \int_0^1 \left(1 - r^2\right)^2 r\, dr
+        = 2\pi \cdot \frac{1}{6} = \frac{\pi}{3} \approx 1.047.
+      </me>
+      <p component="hw10-solutions">
+        On the bottom disk <m>D</m> the outward normal is
+        <m>-\mathbf{k}</m> and
+        <m>\mathbf{F} \cdot (-\mathbf{k}) = -z^2 = 0</m> since
+        <m>z = 0</m> there. The bottom contributes nothing, so the
+        paraboloid alone carries the full flux:
+      </p>
+      <me component="hw10-solutions">
+        \iint_S \mathbf{F} \cdot \hat{\mathbf{n}}\, d\sigma
+        = \frac{\pi}{3}.
+      </me>
+      <p component="hw10-solutions">
+        (d) Suppose <m>S_1</m> and <m>S_2</m> are two surfaces sharing
+        the boundary <m>C</m>, oriented consistently. Reversing the
+        orientation of <m>S_2</m> and gluing gives a closed surface
+        enclosing a solid region <m>W</m>. For the curl field, the
+        divergence theorem gives
+      </p>
+      <me component="hw10-solutions">
+        \iint_{S_1} (\nabla \times \mathbf{F}) \cdot
+        \hat{\mathbf{n}}\, d\sigma
+        - \iint_{S_2} (\nabla \times \mathbf{F}) \cdot
+        \hat{\mathbf{n}}\, d\sigma
+        = \iiint_W \nabla \cdot (\nabla \times \mathbf{F})\, dV = 0,
+      </me>
+      <p component="hw10-solutions">
+        because <m>\nabla \cdot (\nabla \times \mathbf{F}) = 0</m>
+        identically. Surface independence in (b) is thus equivalent to
+        the vanishing divergence of a curl. The field <m>\mathbf{F}</m>
+        itself enjoys no such privilege:
+        <m>\nabla \cdot \mathbf{F} = 2z \not\equiv 0</m>, so
+      </p>
+      <me component="hw10-solutions">
+        \iint_S \mathbf{F} \cdot \hat{\mathbf{n}}\, d\sigma
+        - \iint_D \mathbf{F} \cdot \hat{\mathbf{n}}\, d\sigma
+        = \iiint_E 2z\, dV = \frac{\pi}{3} \ne 0,
+      </me>
+      <p component="hw10-solutions">
+        and indeed we found <m>\frac{\pi}{3}</m> through the paraboloid
+        versus <m>0</m> through the disk. The moral: circulation-type
+        quantities (curl-flux) depend only on the boundary curve, while
+        flux-type quantities depend on the surface itself<mdash/>precisely
+        because curls are divergence-free and general fields are not.
+      </p>
+    </solution>
+  </exercise>
+
   </exercises>
 </section>
