@@ -37,6 +37,11 @@
     <eval-subst obj="h">5</eval-subst>
     <eval-subst obj="val">6 \pi\cdot 5^{2}</eval-subst>
   </dynamic-substitution>
+  <dynamic-substitution id="ex-hw10o-three-theorems">
+    <eval-subst obj="valA">\frac{3 \pi}{2}</eval-subst>
+    <eval-subst obj="valC">\frac{\pi}{3}</eval-subst>
+    <eval-subst obj="valZ">0</eval-subst>
+  </dynamic-substitution>
   <dynamic-substitution id="ex-r1p-cycloid-speed">
     <eval-subst obj="a">5</eval-subst>
     <eval-subst obj="speed">10</eval-subst>
