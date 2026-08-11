@@ -9,16 +9,27 @@
                 version="1.0">
   <xsl:import href="./core/pretext-html.xsl"/>
 
-  <!-- Equation-entry palette for the dynamic exercises.  PreTeXt emits   -->
-  <!-- one <script> at the foot of each page from $html.js.extra; the     -->
-  <!-- file lives in assets/ and is copied to output as external/.  It    -->
-  <!-- targets specific exercises by id and is inert on every other page. -->
-  <xsl:param name="html.js.extra" select="'external/math-input-palette.js'"/>
+  <!-- Two extra scripts on every page, both living in assets/ and copied  -->
+  <!-- to output as external/.  $html.js.extra only takes ONE file, so the -->
+  <!-- core's named template that emits it at the foot of each page is     -->
+  <!-- overridden below to emit both:                                      -->
+  <!--   * math-input-palette.js - equation-entry palette for the dynamic  -->
+  <!--     exercises; targets specific exercises by id and is inert on     -->
+  <!--     every other page.                                               -->
+  <!--   * custom.js - the floating Socratic AI tutor of the assignment    -->
+  <!--     pages; inert on every other page.  It must be a parser-blocking -->
+  <!--     script (not deferred) so it can harvest the exercise statements -->
+  <!--     while the DOM still holds raw LaTeX, before MathJax typesets.   -->
+  <xsl:template name="extra-js-footer">
+    <script src="external/math-input-palette.js"></script>
+    <script src="external/custom.js"></script>
+  </xsl:template>
 
-  <!-- The "Assignments and Review Problems" chapter is unnumbered; the    -->
-  <!-- numbers are hidden by this stylesheet (copied from assets/ into     -->
-  <!-- external/ at build time and linked on every page).                  -->
-  <xsl:param name="html.css.extra" select="'external/unnumbered-chapter.css'"/>
+  <!-- Two extra stylesheets on every page ($html.css.extra is a space-    -->
+  <!-- separated list): unnumbered-chapter.css hides the numbers of the    -->
+  <!-- "Assignments and Review Problems" chapter, and custom.css styles    -->
+  <!-- the AI tutor's floating button and panel.                           -->
+  <xsl:param name="html.css.extra" select="'external/unnumbered-chapter.css external/custom.css'"/>
 
   <xsl:template match="exercises" mode="serial-number"/>
   <xsl:template match="exercises" mode="number"/>

@@ -100,6 +100,122 @@
           the due date of its assignment; solutions for the review sets are
           posted the same way.
         </p>
+        <assemblage xml:id="assemblage-tutor-guide">
+          <title>Using the AI Tutor</title>
+          <p>
+            <em>Stuck?</em> A Socratic AI tutor is available on every assignment page. It
+            knows the problems on the page and will coach you with questions and gentle
+            hints <mdash /> but it will never give away an answer. Here is how to use it.
+          </p>
+          <p>
+            <alert>Opening the tutor.</alert> On an assignment page, click the round
+            <q>Tutor</q> button in the lower-right corner. A chat panel opens and stays in
+            place as you scroll, so you can read a problem and talk to the tutor at the
+            same time. The dash button in the panel's title bar minimizes it back to the
+            button.
+          </p>
+          <image source="tutor-button.png" width="93%">
+            <shortdescription>An assignment page with the round Tutor button circled in the lower-right corner</shortdescription>
+          </image>
+          <p>
+            The tutor is available on each of the ten assignment pages. The review
+            problem sets do not have it: those sets are practice for the exams, where
+            you will be entirely on your own.
+          </p>
+          <p>
+            <alert>One-time setup.</alert> The first time you open the tutor it asks for a
+            free Google AI Studio key (this takes about a minute):
+            <ol>
+              <li>
+                <p>
+                  Go to <url href="https://aistudio.google.com/apikey">aistudio.google.com/apikey</url>
+                  and sign in with a <em>personal</em> Google account <mdash /> a regular
+                  Gmail. Do <em>not</em> use your <c>@scu.edu</c> account: the university
+                  has this service turned off, and you will see <q>Your account is managed
+                  by an organization.</q>
+                </p>
+              </li>
+              <li><p>Click <em>Create API key</em> and copy it.</p></li>
+              <li><p>Paste it into the tutor.</p></li>
+            </ol>
+            The key is stored only in your own browser and is sent only to Google; this
+            site never sees it. One caution: on Google's free tier your conversations may
+            be reviewed to improve Google's products, so keep the chat about math and never
+            paste personal information into it.
+          </p>
+          <p>
+            <alert>Working with the tutor.</alert> Choose the problem you are working on
+            from the drop-down at the top of the panel, then tell the tutor what you have
+            tried so far <mdash /> the more of your own thinking you show, the more useful
+            its questions become. The tutor can nudge you toward a starting point, and it
+            can point you to sections and worked examples in these notes to study.
+          </p>
+          <p>
+            If your answer is wrong, the tutor will tell you so and help you understand
+            <em>why</em> it is wrong: which step breaks, what misconception is behind it,
+            and what picture or small example will let you see the failure for yourself.
+            Note that this requires showing your reasoning <mdash /> a bare answer with no
+            work, right or wrong, will simply get asked for the thinking behind it. And
+            what the tutor will not do is tell you how to correct an error <mdash /> no
+            fixed-up step, no <q>instead, you should&#8230;</q> Finding the right path
+            once you understand why the old one fails is your part of the work.
+          </p>
+          <image source="tutor-panel.png" width="55%">
+            <shortdescription>The tutor chat panel showing a problem selected, two of three hints remaining, a Socratic exchange, and a countdown reading five minutes</shortdescription>
+          </image>
+          <p>
+            <alert>Hints are limited on purpose.</alert> The point of the tutor is to get
+            you unstuck, not to walk you to the answer, so hints are deliberately scarce.
+            The exact rules:
+            <ul>
+              <li>
+                <p>
+                  You get at most <em>three hints per problem, total</em> <mdash /> the
+                  budget never resets. The panel always shows how many you have left on
+                  the problem you selected (<q>Hints left: 2/3</q>).
+                </p>
+              </li>
+              <li>
+                <p>
+                  The tutor's first reply on a problem <mdash /> where it asks what you
+                  have tried <mdash /> is free and does not count as a hint.
+                </p>
+              </li>
+              <li>
+                <p>
+                  After each hint the tutor locks for <em>five minutes</em>, with a
+                  countdown shown in the panel. There is one shared timer: the wait
+                  applies across <em>all</em> problems, so switching problems does not
+                  skip it. Use the five minutes to push on the problem yourself
+                  <mdash /> that is what the pause is for.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Restarting the conversation, reloading the page, or switching problems
+                  does not refill hints. Spend them thoughtfully <mdash /> full solutions
+                  will be published after the due date.
+                </p>
+              </li>
+              <li>
+                <p>
+                  When your hints for a problem run out, bring your work to office hours
+                  <mdash /> working through it together is exactly what office hours are
+                  for.
+                </p>
+              </li>
+            </ul>
+          </p>
+          <p>
+            Finally, know what the tutor will and will not do. It will not state answers,
+            complete a solution, or turn a wrong answer into a right one <mdash /> no
+            matter how you ask. There is exactly one way to get an answer confirmed: state
+            your conclusion <em>together with your own justification</em>. If your
+            reasoning is sound and complete, the tutor will tell you that you have it; if
+            there is a gap, it will point at the gap and let you close it. A bare answer,
+            right or wrong, earns nothing.
+          </p>
+        </assemblage>
       </introduction>
       <xi:include href="hw1-online.ptx" />
       <xi:include href="hw2-online.ptx" />
