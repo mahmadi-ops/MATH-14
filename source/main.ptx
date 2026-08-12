@@ -258,6 +258,21 @@
               </li>
             </ul>
           </p>
+          <!-- Uncomment this paragraph at the same time as you set FEEDBACK_URL
+               in assets/gemini-tutor.html: until that constant holds the address
+               of your collector, the "feedback" button it describes stays hidden.
+               The two-minute setup is in ai-tutor/README.md. -->
+          <!--
+          <p>
+            <alert>Tell me how it is going.</alert> The <q>feedback</q> button at the top
+            of the panel sends me a short note about how the tutor is working for you:
+            whether it helped, and <mdash /> in a box you can write as much as you like in
+            <mdash /> what would make it better. It is anonymous, it has nothing to do with
+            your grade, and the tutor itself never sees it. If you want me to see the
+            exchange you just had, there is a box to attach it; it is off unless you tick
+            it. The tutor is new, and what you write is how it gets better.
+          </p>
+          -->
           <p>
             Finally, know what the tutor will and will not do. It will not state answers,
             complete a solution, or turn a wrong answer into a right one <mdash /> no

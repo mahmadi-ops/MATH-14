@@ -45,6 +45,9 @@
     var sectionHeading = document.querySelector("section .heading .title");
     var context = {
         type: "math14-exercises",
+        // The widget lives in an iframe, so its own location is the widget
+        // file; tell it which page of the book it is serving.
+        page: page,
         section: sectionHeading ? sectionHeading.textContent.trim() : document.title,
         exercises: exercises,
     };
