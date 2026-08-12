@@ -96,6 +96,29 @@ MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] }, options: { enable
     border-radius: 8px; background: var(--bg); color: var(--fg); margin-bottom: 10px;
   }
   #setup .note { color: var(--muted); font-size: 12.5px; }
+  /* feedback form */
+  #feedback { flex: 1; overflow-y: auto; padding: 16px; }
+  #feedback h2 { margin: 0 0 8px; font-size: 17px; }
+  #feedback p { margin: 0 0 10px; line-height: 1.5; }
+  #feedback .note { color: var(--muted); font-size: 12.5px; }
+  #fbrating { display: flex; flex-direction: column; gap: 7px; margin: 0 0 14px; }
+  #fbrating label, #fbincl label { cursor: pointer; }
+  #fbincl { display: flex; gap: 8px; align-items: flex-start; margin: 0 0 10px; line-height: 1.4; }
+  #fbtext {
+    width: 100%; min-height: 88px; resize: vertical; padding: 8px 10px; font: inherit;
+    border: 1px solid var(--border); border-radius: 8px; background: var(--bg); color: var(--fg);
+    margin-bottom: 10px;
+  }
+  #fbtext:focus { outline: 2px solid var(--accent); border-color: transparent; }
+  #fbactions { display: flex; gap: 8px; align-items: center; }
+  #fbcancel {
+    background: none; border: 1px solid var(--border); color: var(--muted);
+    border-radius: 8px; padding: 6px 14px; font: inherit; cursor: pointer;
+  }
+  #fbcancel:hover { color: var(--fg); border-color: var(--fg); }
+  #fbstatus { margin-top: 10px; }
+  /* On a narrow phone the tagline crowds out the header buttons. */
+  @media (max-width: 460px) { header .sub { display: none; } }
   .hidden { display: none !important; }
 </style>
 </head>
@@ -107,6 +130,7 @@ MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] }, options: { enable
   <span class="spacer"></span>
   <button id="reset" type="button" title="Start the conversation over">restart</button>
   <button id="changekey" type="button" title="Use a different API key">key</button>
+  <button id="fbopen" type="button" class="hidden" title="Tell your instructor how the tutor is working">feedback</button>
 </header>
 
 <div id="setup" class="hidden">
@@ -130,6 +154,32 @@ MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] }, options: { enable
      read by people at Google. Keep the chat to mathematics: no name, student ID, email,
      phone, or address; nothing about a classmate; nothing sensitive. Check screenshots
      before you send them &#8212; they often carry your name.</p>
+</div>
+
+<div id="feedback" class="hidden">
+  <h2>How is the tutor doing?</h2>
+  <p>This goes to your instructor, not to Google and not into the chat. It is
+     anonymous, and it has nothing to do with your grade.</p>
+  <div id="fbrating">
+    <label><input type="radio" name="fbrate" value="helped a lot"> It helped a lot</label>
+    <label><input type="radio" name="fbrate" value="helped a little"> It helped a little</label>
+    <label><input type="radio" name="fbrate" value="did not help"> It didn't help</label>
+    <label><input type="radio" name="fbrate" value="made things worse"> It made things worse</label>
+  </div>
+  <p><label for="fbtext"><b>How could the tutor be better?</b> <span class="note">(optional)</span></label></p>
+  <textarea id="fbtext" placeholder="What would have helped? What got in the way? Anything you wish it did differently&#8230;"></textarea>
+  <div id="fbincl">
+    <input type="checkbox" id="fbtranscript">
+    <label for="fbtranscript">Include my conversation on this problem, so my instructor can see what happened</label>
+  </div>
+  <p class="note">Sent either way: which assignment and problem you were on, how many hints
+     you had used, and your screen size. Never your name and never your API key. Please
+     don't type personal information in the box above.</p>
+  <div id="fbactions">
+    <button class="send" id="fbsend" type="button">Send feedback</button>
+    <button id="fbcancel" type="button">Cancel</button>
+  </div>
+  <p class="note" id="fbstatus"></p>
 </div>
 
 <p id="privacynote" class="note hidden">Sent to Google &#8212; keep it to math, no personal information.</p>
@@ -170,6 +220,17 @@ let modelIndex = 0;
 // one course is already set up in the other. Hint counters below do NOT
 // share this prefix — those must never collide across books.
 const STORAGE_KEY = "math53-gemini-key";
+
+// Where student feedback goes: a Google Apps Script web app that appends each
+// submission to a spreadsheet the instructor owns. While this is "" the
+// feedback button stays hidden and nothing is ever sent. Setup takes about two
+// minutes — see ai-tutor/README.md in this book's repository.
+const FEEDBACK_URL = "";
+
+// An anonymous per-browser id, so several notes from the same student can be
+// read together without anyone knowing who they are. It is a random string:
+// it identifies a browser, never a person.
+const SESSION_KEY = "math14-tutor-session";
 
 const BASE_INSTRUCTION = `You are a Socratic tutor for MATH 14 (Santa Clara University), embedded on an assignment page of the course's notes, MATH 14: Calculus and Analytic Geometry IV — multivariable and vector calculus. You help students think through any problem on the page — but you never solve one for them.
 
@@ -238,6 +299,12 @@ const els = {
   sendbtn: document.getElementById("sendbtn"),
   probbar: document.getElementById("probbar"),
   privacynote: document.getElementById("privacynote"),
+  feedback: document.getElementById("feedback"),
+  fbtext: document.getElementById("fbtext"),
+  fbtranscript: document.getElementById("fbtranscript"),
+  fbsend: document.getElementById("fbsend"),
+  fbstatus: document.getElementById("fbstatus"),
+  fbopen: document.getElementById("fbopen"),
   probsel: document.getElementById("probsel"),
   hintmeter: document.getElementById("hintmeter"),
   cooldown: document.getElementById("cooldown"),
@@ -371,10 +438,99 @@ function addMessage(cls, text) {
 
 function show(view) {
   els.setup.classList.toggle("hidden", view !== "setup");
+  els.feedback.classList.toggle("hidden", view !== "feedback");
   els.messages.classList.toggle("hidden", view !== "chat");
   els.chat.classList.toggle("hidden", view !== "chat");
   els.probbar.classList.toggle("hidden", view !== "chat");
+  els.privacynote.classList.toggle("hidden", view !== "chat");
   if (view !== "chat") els.cooldown.classList.add("hidden");
+}
+
+/* ===== feedback ========================================================== */
+// Ratings and comments go to the instructor's collector (FEEDBACK_URL), never
+// to Gemini and never into the conversation. The problem context travels with
+// the note so a comment like "the hint was confusing" can be placed; the
+// conversation itself is attached only when the student ticks the box.
+
+function sessionId() {
+  let s = "";
+  try { s = localStorage.getItem(SESSION_KEY) || ""; } catch (e) {}
+  if (!s) {
+    s = "s-" + Math.random().toString(36).slice(2, 10);
+    try { localStorage.setItem(SESSION_KEY, s); } catch (e) {}
+  }
+  return s;
+}
+
+function openFeedback() {
+  els.fbstatus.textContent = "";
+  els.fbsend.disabled = false;
+  show("feedback");
+  els.fbtext.focus();
+}
+
+function closeFeedback() {
+  show(apiKey() ? "chat" : "setup");
+}
+
+async function sendFeedback() {
+  const checked = document.querySelector('input[name="fbrate"]:checked');
+  const comment = els.fbtext.value.trim();
+  if (!checked && !comment) {
+    els.fbstatus.textContent = "Pick one of the four answers, or write a note — then send.";
+    return;
+  }
+  const payload = {
+    sentAt: new Date().toISOString(),
+    session: sessionId(),
+    page: (pageContext && pageContext.page) || "",
+    section: (pageContext && pageContext.section) || "",
+    problem: currentProb || "",
+    hintsUsed: currentProb ? hintsUsed(currentProb) : 0,
+    rating: checked ? checked.value : "",
+    comment: comment,
+    transcript: els.fbtranscript.checked
+      ? curHistory().map(m => (m.role === "user" ? "STUDENT: " : "TUTOR: ") + m.text).join("\n\n")
+      : "",
+    device: (window.innerWidth <= 600 ? "small" : "large") + " " +
+      window.innerWidth + "x" + window.innerHeight,
+  };
+
+  els.fbsend.disabled = true;
+  els.fbstatus.textContent = "Sending…";
+  // text/plain keeps this a "simple" cross-origin request, which Apps Script
+  // accepts without a preflight; it reads the JSON from the request body.
+  const opts = {
+    method: "POST",
+    headers: { "Content-Type": "text/plain;charset=utf-8" },
+    body: JSON.stringify(payload),
+  };
+  try {
+    await fetch(FEEDBACK_URL, opts);
+  } catch (err) {
+    // Apps Script redirects its response to a different host, which some
+    // browsers refuse to expose to us. The POST itself still arrives, so
+    // resend in no-cors mode and trust it rather than losing the student's note.
+    try {
+      await fetch(FEEDBACK_URL, Object.assign({ mode: "no-cors" }, opts));
+    } catch (err2) {
+      els.fbsend.disabled = false;
+      els.fbstatus.textContent = "That didn't send — check your connection and try again.";
+      return;
+    }
+  }
+  els.fbtext.value = "";
+  els.fbtranscript.checked = false;
+  if (checked) checked.checked = false;
+  els.fbstatus.textContent = "Thank you — that's genuinely useful.";
+  setTimeout(() => { if (!els.feedback.classList.contains("hidden")) closeFeedback(); }, 1400);
+}
+
+function maybeInviteFeedback() {
+  if (!FEEDBACK_URL) return;
+  addMessage("error", "Before you go — how did the tutor do on this one? Tap "
+    + "“feedback” at the top to tell your instructor. It's anonymous and takes "
+    + "about thirty seconds.");
 }
 
 /* ===== Gemini API ======================================================== */
@@ -440,6 +596,9 @@ async function send() {
     recordReply(currentProb);
     if (hintsLeft(currentProb) === 0) {
       addMessage("error", OFFICE_HOURS_MSG);
+      // The moment the budget runs out is when a student has the clearest
+      // opinion of the tutor — ask once, here, and not on every revisit.
+      maybeInviteFeedback();
     }
   } catch (err) {
     typing.remove();
@@ -518,6 +677,11 @@ document.getElementById("changekey").addEventListener("click", () => {
   document.getElementById("keyinput").value = "";
   show("setup");
 });
+if (FEEDBACK_URL) els.fbopen.classList.remove("hidden");
+els.fbopen.addEventListener("click", openFeedback);
+document.getElementById("fbcancel").addEventListener("click", closeFeedback);
+els.fbsend.addEventListener("click", sendFeedback);
+
 document.getElementById("savekey").addEventListener("click", () => {
   const k = document.getElementById("keyinput").value.trim();
   if (!k) return;
