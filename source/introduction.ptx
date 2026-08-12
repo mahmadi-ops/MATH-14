@@ -18,7 +18,7 @@
             <ul>
                 <li>
                     <p>
-                        <em>Answer boxes that check your work instantly.</em>
+                        <alert>Answer boxes that check your work instantly.</alert>
                         The assignments and review problems are not just lists
                         of exercises: each problem carries answer boxes that
                         grade themselves the moment you press
@@ -30,7 +30,7 @@
                 </li>
                 <li>
                     <p>
-                        <em>Problems that draw their own numbers.</em> Many
+                        <alert>Problems that draw their own numbers.</alert> Many
                         problems build themselves from randomly chosen
                         constants, so the numbers in front of you are not the
                         numbers in front of the student beside you. Press
@@ -41,8 +41,8 @@
                 </li>
                 <li>
                     <p>
-                        <em>A Socratic tutor that will not tell you the
-                        answer.</em> Every assignment page carries a tutor
+                        <alert>A Socratic tutor that will not tell you the
+                        answer.</alert> Every assignment page carries a tutor
                         button in the corner. It knows the problems on that
                         page and coaches you the way a good office hour
                         does<mdash/>with questions and small hints, never with
@@ -56,7 +56,7 @@
                 </li>
                 <li>
                     <p>
-                        <em>Questions while you read, not only at the end.</em>
+                        <alert>Questions while you read, not only at the end.</alert>
                         Each section closes with a <term>Concept Check</term>,
                         and worked questions sit inside the sections
                         themselves, complete with answers. You find out
@@ -67,7 +67,7 @@
                 </li>
                 <li>
                     <p>
-                        <em>Solutions that arrive where you need them.</em>
+                        <alert>Solutions that arrive where you need them.</alert>
                         After each assignment's due date, a complete worked
                         solution appears directly beneath every one of its
                         problems<mdash/>on the same page where you worked
@@ -78,7 +78,7 @@
                 </li>
                 <li>
                     <p>
-                        <em>A clickable map of the whole course.</em>
+                        <alert>A clickable map of the whole course.</alert>
                         The <q>big picture</q> map in this front matter draws
                         every integral of the course on one page, with arrows
                         showing what builds on what and gold arrows marking
@@ -89,7 +89,7 @@
                 </li>
                 <li>
                     <p>
-                        <em>Figures you can move.</em> Many figures are live
+                        <alert>Figures you can move.</alert> Many figures are live
                         GeoGebra worksheets: you can rotate a solid of
                         integration with your own hands, drag sliders to
                         refine a Riemann sum box by box, and watch a region
@@ -99,7 +99,7 @@
                 </li>
                 <li>
                     <p>
-                        <em>Ideas that move.</em> More than forty short
+                        <alert>Ideas that move.</alert> More than forty short
                         animations run through the book: a curve tracing
                         itself out as its parameter runs, a Riemann partition
                         refining, a region sweeping out in polar coordinates,
@@ -112,7 +112,7 @@
                 </li>
                 <li>
                     <p>
-                        <em>Nothing is a page-flip away.</em> Every reference
+                        <alert>Nothing is a page-flip away.</alert> Every reference
                         to a definition, theorem, equation, or figure opens
                         where you are standing, so checking what a symbol
                         meant never costs you your place. A search box on
@@ -121,7 +121,7 @@
                 </li>
                 <li>
                     <p>
-                        <em>Free, current, and everywhere.</em> The book costs
+                        <alert>Free, current, and everywhere.</alert> The book costs
                         nothing, opens on a phone, a tablet, or a laptop, and
                         can be corrected and improved continuously<mdash/>a
                         fixed typo or a clearer example reaches every reader
@@ -146,7 +146,7 @@
             <ul>
                 <li>
                     <p>
-                        <em>Mathematics a screen reader can speak.</em> Every
+                        <alert>Mathematics a screen reader can speak.</alert> Every
                         formula is real mathematical notation, not a picture
                         of one. Screen readers can read expressions aloud
                         piece by piece, and readers can magnify or explore
@@ -155,7 +155,7 @@
                 </li>
                 <li>
                     <p>
-                        <em>Figures built to be described and touched.</em>
+                        <alert>Figures built to be described and touched.</alert>
                         Diagrams are generated from descriptions of their
                         mathematical content, so the same figure can carry
                         text alternatives for screen readers and can be
@@ -165,7 +165,7 @@
                 </li>
                 <li>
                     <p>
-                        <em>Navigation without a mouse.</em> The book has a
+                        <alert>Navigation without a mouse.</alert> The book has a
                         consistent structure<mdash/>chapters, sections, and a
                         table of contents on every page<mdash/>that can be
                         traversed entirely from the keyboard.
@@ -173,7 +173,7 @@
                 </li>
                 <li>
                     <p>
-                        <em>Type and layout that adapt to the reader.</em>
+                        <alert>Type and layout that adapt to the reader.</alert>
                         Text reflows to fit any screen and any zoom level,
                         so enlarging the type never forces sideways
                         scrolling, and the reading experience is the same on
