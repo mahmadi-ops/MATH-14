@@ -12,7 +12,7 @@
     </p>
 
     <paragraphs>
-        <title>What this book does that other books do not</title>
+        <title>Special features of this book</title>
 
         <p>
             <ul>
@@ -26,6 +26,43 @@
                         is checked on its own, so you learn exactly which part
                         of a long computation went wrong<mdash/>something no
                         printed answer key in the back of a book can tell you.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <em>Problems that draw their own numbers.</em> Many
+                        problems build themselves from randomly chosen
+                        constants, so the numbers in front of you are not the
+                        numbers in front of the student beside you. Press
+                        <q>Randomize</q> and the same problem comes back with
+                        a fresh set of numbers, so you can practise a method
+                        until it is yours rather than memorizing one answer.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <em>A Socratic tutor that will not tell you the
+                        answer.</em> Every assignment page carries a tutor
+                        button in the corner. It knows the problems on that
+                        page and coaches you the way a good office hour
+                        does<mdash/>with questions and small hints, never with
+                        the answer handed over. It stays docked as you scroll,
+                        so you can read a problem and talk about it at the
+                        same time. See <xref ref="assemblage-tutor-guide" text="title"/>
+                        for how to set it up. The review sets deliberately do
+                        not have it: those are rehearsal for exams, where you
+                        are on your own.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <em>Questions while you read, not only at the end.</em>
+                        Each section closes with a <term>Concept Check</term>,
+                        and worked questions sit inside the sections
+                        themselves, complete with answers. You find out
+                        whether you followed an idea while it is still in
+                        front of you, instead of discovering it days later on
+                        the homework.
                     </p>
                 </li>
                 <li>
@@ -62,12 +99,24 @@
                 </li>
                 <li>
                     <p>
-                        <em>Animated proof ideas.</em> The proofs of
+                        <em>Ideas that move.</em> More than forty short
+                        animations run through the book: a curve tracing
+                        itself out as its parameter runs, a Riemann partition
+                        refining, a region sweeping out in polar coordinates,
+                        a change of variables bending a grid. The proofs of
                         Green's theorem, Stokes' theorem, and the divergence
-                        theorem are accompanied by short animations that show
-                        the key idea<mdash/>internal boundaries cancelling,
-                        partitions refining<mdash/>unfolding in time, the way
-                        an instructor would build it up at the board.
+                        theorem get their own, showing internal boundaries
+                        cancelling the way an instructor would build it up at
+                        the board.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <em>Nothing is a page-flip away.</em> Every reference
+                        to a definition, theorem, equation, or figure opens
+                        where you are standing, so checking what a symbol
+                        meant never costs you your place. A search box on
+                        every page finds any word in the book.
                     </p>
                 </li>
                 <li>
