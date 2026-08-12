@@ -123,8 +123,16 @@ MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] }, options: { enable
   <input id="keyinput" type="password" placeholder="Paste your API key (AIza...)" autocomplete="off">
   <button class="send" id="savekey" type="button">Save and start</button>
   <p class="note">The key is stored only in your browser (localStorage) and sent only
-     to Google's Gemini API. It is never shared with this site.</p>
+     to Google's Gemini API. It is never shared with this site. Keep the key to
+     yourself &#8212; anyone who has it can spend your free quota.</p>
+  <p class="note"><b>Privacy.</b> What you type here goes to Google and is handled under
+     Google's terms, not the university's. On the free tier your conversations may be
+     read by people at Google. Keep the chat to mathematics: no name, student ID, email,
+     phone, or address; nothing about a classmate; nothing sensitive. Check screenshots
+     before you send them &#8212; they often carry your name.</p>
 </div>
+
+<p id="privacynote" class="note hidden">Sent to Google &#8212; keep it to math, no personal information.</p>
 
 <div id="probbar" class="hidden">
   <label for="probsel">Problem:</label>
@@ -229,6 +237,7 @@ const els = {
   input: document.getElementById("input"),
   sendbtn: document.getElementById("sendbtn"),
   probbar: document.getElementById("probbar"),
+  privacynote: document.getElementById("privacynote"),
   probsel: document.getElementById("probsel"),
   hintmeter: document.getElementById("hintmeter"),
   cooldown: document.getElementById("cooldown"),
@@ -482,6 +491,7 @@ function selectProblem(label) {
 function startChat() {
   show("chat");
   els.probbar.classList.remove("hidden");
+  els.privacynote.classList.remove("hidden");
   if (els.probsel.options.length <= 1) populateProblems();
   selectProblem(currentProb);
 }

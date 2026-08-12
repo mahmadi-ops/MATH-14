@@ -139,9 +139,60 @@
               <li><p>Paste it into the tutor.</p></li>
             </ol>
             The key is stored only in your own browser and is sent only to Google; this
-            site never sees it. One caution: on Google's free tier your conversations may
-            be reviewed to improve Google's products, so keep the chat about math and never
-            paste personal information into it.
+            site never sees it. Treat the key as yours alone: anyone who has it can spend
+            your free quota, so do not share it or paste it anywhere else.
+          </p>
+          <p>
+            <alert>Privacy: what to keep out of the chat.</alert> Everything you type into
+            the tutor is sent to Google and handled under Google's terms, not the
+            university's. On the free tier your conversations <em>may be read by people at
+            Google</em> and used to improve their products, and they are not covered by
+            the protections your school records have. Nothing you type is private, so
+            treat the panel as a public place and keep it to mathematics.
+            <ul>
+              <li>
+                <p>
+                  Do not type anything that identifies you: your name, student ID, SCU
+                  email, phone number, address, or date of birth. The tutor does not need
+                  to know who you are in order to help with an integral.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Do not type anything about anyone else <mdash /> a classmate's name,
+                  their work, or their grade. That is their information to share, not
+                  yours.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Keep out anything sensitive or unrelated to the course: health,
+                  finances, immigration or visa status, family matters, passwords, or
+                  anything you would not want quoted back to you.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Before you paste or upload, look at what you are sending. A screenshot
+                  or a photo of your work can carry your name, a page header, or a
+                  browser tab in the background.
+                </p>
+              </li>
+              <li>
+                <p>
+                  The tutor is a study aid, not a counselor and not the instructor. If
+                  something personal is affecting your work in this course, bring it to
+                  office hours or to the university's student services instead
+                  <mdash /> those conversations belong with a person, and they stay
+                  confidential.
+                </p>
+              </li>
+            </ul>
+          </p>
+          <p>
+            None of this is a reason to avoid the tutor. Ask it anything about the
+            mathematics <mdash /> what you tried, where you are stuck, why a step feels
+            wrong. Just keep yourself, and everyone else, out of the transcript.
           </p>
           <p>
             <alert>Working with the tutor.</alert> Choose the problem you are working on
