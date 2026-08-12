@@ -191,7 +191,7 @@ What you MAY do — these are your only tools:
 
 If the student hasn't said which problem they're working on, ask. If asked about anything outside the problems on this page or the course material, briefly redirect.
 
-Style: warm, encouraging, brief — one question at a time, at most a short paragraph per reply. Before your first hint on a problem, ask what the student has tried.`;
+Style: warm, encouraging, brief — one question at a time, at most a short paragraph per reply. Every reply you send costs the student one of their few hints, so make every reply carry a real nudge: if you need to know what the student has tried, ask it alongside the nudge, never as a reply of its own.`;
 
 // Problem statements for the student's current page, delivered by the host
 // page via postMessage (see assets/custom.js). Solutions are never included.
@@ -258,9 +258,9 @@ function apiKey() {
 }
 
 /* ===== hint budget ======================================================= */
-// Hard limits enforced by the interface, not the model: per problem, the
-// first tutor reply (asking what you've tried) is free, then at most
-// HINT_LIMIT hints total, with COOLDOWN_MS between hints. Counters live in
+// Hard limits enforced by the interface, not the model: per problem, at
+// most HINT_LIMIT tutor replies in total — EVERY reply counts, there is no
+// free intake reply — with COOLDOWN_MS between replies. Counters live in
 // localStorage, survive restarts and reloads, and never reset — solutions
 // are published after the due date.
 
@@ -281,17 +281,16 @@ function recordReply(label) {
   const p = d.probs[label] || { replies: 0 };
   p.replies += 1;
   d.probs[label] = p;
-  // ONE timer for the whole widget: any counted hint, on any problem,
-  // starts the same global cooldown. The first reply on a problem is
-  // free intake ("what have you tried?") and starts no timer.
-  if (p.replies > 1) d.lastHintAt = Date.now();
+  // ONE timer for the whole widget: every reply, on any problem, starts
+  // the same global cooldown.
+  d.lastHintAt = Date.now();
   try { localStorage.setItem(HINT_STORE, JSON.stringify(d)); } catch (e) {}
   return p;
 }
 
 function hintsUsed(label) {
   const p = loadHints().probs[label] || { replies: 0 };
-  return Math.max(0, p.replies - 1);
+  return p.replies;
 }
 function hintsLeft(label) { return Math.max(0, HINT_LIMIT - hintsUsed(label)); }
 function cooldownLeftMs() {
@@ -438,8 +437,8 @@ async function send() {
     typing.remove();
     addMessage("tutor", reply);
     curHistory().push({ role: "model", text: reply });
-    const p = recordReply(currentProb);
-    if (p.replies > 1 && hintsLeft(currentProb) === 0) {
+    recordReply(currentProb);
+    if (hintsLeft(currentProb) === 0) {
       addMessage("error", OFFICE_HOURS_MSG);
     }
   } catch (err) {
