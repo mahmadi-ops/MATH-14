@@ -68,7 +68,7 @@
       </svg>
     </g>
   </g>
-  <path id="prefigure-potential-steps-ps-arrow1" stroke="#009E73" stroke-width="2" fill="none" marker-end="url(#prefigure-potential-steps-arrow-head-end-2_None_24_60-h009E73)" d="M 226.2 55.8 L 334.2 55.8"/>
+  <path id="prefigure-potential-steps-ps-arrow1" stroke="#009E73" stroke-width="2" fill="none" d="M 226.2 55.8 L 336.6 55.8" marker-end="url(#prefigure-potential-steps-arrow-head-end-2_None_24_60-h009E73)"/>
   <g id="prefigure-potential-steps-ps-arrow1-label" transform="translate(281.4,41.4) translate(-48.1,-13.5)">
     <g id="prefigure-potential-steps-g-1">
       <text font-family="sans-serif" font-size="14" fill="#009E73" x="0.0" y="10.6">integrate in</text>
@@ -211,7 +211,7 @@
       </svg>
     </g>
   </g>
-  <path id="prefigure-potential-steps-ps-arrow2" stroke="#009E73" stroke-width="2" fill="none" marker-end="url(#prefigure-potential-steps-arrow-head-end-2_None_24_60-h009E73)" d="M 226.2 151.7 L 334.2 151.7"/>
+  <path id="prefigure-potential-steps-ps-arrow2" stroke="#009E73" stroke-width="2" fill="none" d="M 226.2 151.7 L 336.6 151.7" marker-end="url(#prefigure-potential-steps-arrow-head-end-2_None_24_60-h009E73)"/>
   <g id="prefigure-potential-steps-ps-arrow2-label" transform="translate(281.4,137.3) translate(-40.1,-18.1)">
     <g id="prefigure-potential-steps-g-4">
       <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -4.528px; color:#009E73" width="80.224px" height="18.096px" role="img" focusable="false" viewBox="0 -750 4432.6 1000" x="0.0" y="0.0">
@@ -393,7 +393,7 @@
       </svg>
     </g>
   </g>
-  <path id="prefigure-potential-steps-ps-arrow3" stroke="#009E73" stroke-width="2" fill="none" marker-end="url(#prefigure-potential-steps-arrow-head-end-2_None_24_60-h009E73)" d="M 226.2 247.5 L 334.2 247.5"/>
+  <path id="prefigure-potential-steps-ps-arrow3" stroke="#009E73" stroke-width="2" fill="none" d="M 226.2 247.5 L 336.6 247.5" marker-end="url(#prefigure-potential-steps-arrow-head-end-2_None_24_60-h009E73)"/>
   <g id="prefigure-potential-steps-ps-arrow3-label" transform="translate(281.4,233.1) translate(-39.8,-18.3)">
     <g id="prefigure-potential-steps-g-7">
       <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -4.528px; color:#009E73" width="79.544px" height="18.264px" role="img" focusable="false" viewBox="0 -759 4395 1009" x="0.0" y="0.0">
