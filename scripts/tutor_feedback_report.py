@@ -20,10 +20,15 @@ import sys
 from collections import Counter, defaultdict
 from datetime import datetime
 
-# Best to worst, which is also the order ratings are reported in.
-RATINGS = ["helped a lot", "helped a little", "did not help", "made things worse"]
-POSITIVE = set(RATINGS[:2])
-NEGATIVE = set(RATINGS[2:])
+# Best to worst, which is also the order ratings are reported in. The two
+# thumbs come from the one-tap rating under a hint and sit beside the form's
+# four: they count towards "helped" and "didn't" like any other rating, but
+# stay listed separately, because a reflex about one hint and a considered
+# verdict on the tutor are not the same evidence.
+RATINGS = ["helped a lot", "helped a little", "thumbs up",
+           "thumbs down", "did not help", "made things worse"]
+POSITIVE = {"helped a lot", "helped a little", "thumbs up"}
+NEGATIVE = {"did not help", "made things worse", "thumbs down"}
 
 
 def parse_date(value):
@@ -134,11 +139,11 @@ def comments(rows):
     Order: made things worse, didn't help, unrated (often the most detailed),
     then the praise; newest first within each group.
     """
-    severity = {"made things worse": 0, "did not help": 1, "": 2,
-                "helped a little": 3, "helped a lot": 4}
+    severity = {"made things worse": 0, "did not help": 1, "thumbs down": 2, "": 3,
+                "helped a little": 4, "thumbs up": 5, "helped a lot": 6}
 
     def order(row):
-        rank = severity.get(row.get("rating", ""), 2)
+        rank = severity.get(row.get("rating", ""), 3)
         when = row.get("when") or datetime.min
         return (rank, -when.timestamp())
 

@@ -36,7 +36,11 @@ var HEADERS = [
 // sheet. A real comment is nowhere near these.
 var LIMITS = { comment: 4000, transcript: 20000, field: 300 };
 
-var RATINGS = ['helped a lot', 'helped a little', 'did not help', 'made things worse'];
+// The four from the written form, plus the two the one-tap rating under a hint
+// sends. Kept distinct on purpose: a thumb is a reflex about one hint, a form
+// answer is a considered verdict on the tutor, and reading them apart matters.
+var RATINGS = ['helped a lot', 'helped a little', 'did not help', 'made things worse',
+               'thumbs up', 'thumbs down'];
 
 function doPost(e) {
   try {
