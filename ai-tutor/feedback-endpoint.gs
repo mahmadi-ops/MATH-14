@@ -20,12 +20,16 @@ var HEADERS = [
   'section',     // e.g. Assignment 3
   'problem',     // the problem selected in the picker
   'hintsUsed',   // hints spent on that problem when the note was written
-  'model',       // which model the student had chosen: pro | flash
-  'modelUsed',   // the concrete model id that answered, e.g. gemini-2.5-pro
   'rating',
   'comment',
   'transcript',  // only when the student ticked the box
   'device',
+  // Appended, not inserted: a sheet that has been collecting since before
+  // these existed keeps every old row aligned under the header it was written
+  // with, and simply gains two more columns from here on. New fields must
+  // always be added at the END for that reason.
+  'model',       // which model the student had chosen: pro | flash
+  'modelUsed',   // the concrete model id that answered, e.g. gemini-2.5-pro
 ];
 
 // Generous ceilings, purely so a runaway or malicious post cannot bloat the
@@ -47,12 +51,12 @@ function doPost(e) {
       clip_(d.section, LIMITS.field),
       clip_(d.problem, LIMITS.field),
       Number(d.hintsUsed) || 0,
-      clip_(d.model, LIMITS.field),
-      clip_(d.modelUsed, LIMITS.field),
       rating_(d.rating),
       clip_(d.comment, LIMITS.comment),
       clip_(d.transcript, LIMITS.transcript),
       clip_(d.device, LIMITS.field),
+      clip_(d.model, LIMITS.field),
+      clip_(d.modelUsed, LIMITS.field),
     ]);
     return json_({ ok: true });
   } catch (err) {
@@ -76,6 +80,16 @@ function getSheet_() {
   if (sheet.getLastRow() === 0) {
     sheet.appendRow(HEADERS);
     sheet.setFrozenRows(1);
+    return sheet;
+  }
+  // A sheet created by an older version of this script has a shorter header
+  // row than we now write. Name the new columns rather than leaving them
+  // blank, so the report can find them; existing rows keep their alignment
+  // because new fields are only ever appended.
+  var width = sheet.getLastColumn();
+  if (width < HEADERS.length) {
+    sheet.getRange(1, width + 1, 1, HEADERS.length - width)
+         .setValues([HEADERS.slice(width)]);
   }
   return sheet;
 }
