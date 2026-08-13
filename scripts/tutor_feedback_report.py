@@ -31,6 +31,25 @@ POSITIVE = {"helped a lot", "helped a little", "thumbs up"}
 NEGATIVE = {"did not help", "made things worse", "thumbs down"}
 
 
+def known_rating(value):
+    """Recover a rating the collector filed as unfamiliar.
+
+    The collector writes anything outside its own list as "other: <value>", so
+    a rating added to the widget before the script was redeployed lands in the
+    sheet under that spelling and keeps it forever. Unwrap those whose value we
+    do recognize; a genuinely unknown one keeps its "other:" prefix, which is
+    the point of the prefix. Without this the row matches no rating we count
+    AND is not blank, so it vanishes from the breakdown entirely rather than
+    showing up as unrated.
+    """
+    text = (value or "").strip()
+    if text.lower().startswith("other:"):
+        inner = text.split(":", 1)[1].strip()
+        if inner in RATINGS:
+            return inner
+    return text
+
+
 def parse_date(value):
     """Accept the several shapes Sheets and the widget produce; else None."""
     text = (value or "").strip()
@@ -82,6 +101,7 @@ def load(path, since=None, assignment=None):
         item = {(k or "").strip().lower(): (v or "").strip() for k, v in row.items()}
         item["when"] = parse_date(item.get("sentat")) or parse_date(item.get("received"))
         item["hintsused"] = int(item["hintsused"]) if item.get("hintsused", "").isdigit() else 0
+        item["rating"] = known_rating(item.get("rating", ""))
         cleaned.append(item)
 
     cleaned = dedupe(cleaned)
@@ -110,8 +130,16 @@ def bar(count, total, width=28):
 
 
 def rating_counts(rows):
+    """Named ratings in report order, then the blanks, then anything else.
+
+    The third number exists so the three cannot silently fail to add up to the
+    submission count: a rating this script has never heard of is reported as
+    unrecognized rather than quietly left out of the table.
+    """
     counts = Counter(r.get("rating", "") for r in rows)
-    return [(name, counts.get(name, 0)) for name in RATINGS], counts.get("", 0)
+    named = [(name, counts.get(name, 0)) for name in RATINGS]
+    unknown = sum(n for value, n in counts.items() if value and value not in RATINGS)
+    return named, counts.get("", 0), unknown
 
 
 def group_scores(rows, key):
@@ -172,7 +200,7 @@ def text_report(rows, show_transcripts=False):
     else:
         add(f"\n{total} submissions")
 
-    counted, unrated = rating_counts(rows)
+    counted, unrated, unknown = rating_counts(rows)
     rated_total = sum(n for _, n in counted)
     add("\nHOW IT LANDED")
     for name, n in counted:
@@ -184,6 +212,9 @@ def text_report(rows, show_transcripts=False):
             f" ({helped} of {rated_total} rated submissions).")
     if unrated:
         add(f"  {unrated} submission(s) had a written comment but no rating.")
+    if unknown:
+        add(f"  {unknown} submission(s) carry a rating this report does not know"
+            f" and are left out of the percentages above.")
 
     models = group_scores(rows, "model")
     if len(models) > 1 or (models and models[0][0] != "(not recorded)"):
@@ -235,7 +266,7 @@ def text_report(rows, show_transcripts=False):
 
 def html_report(rows, show_transcripts=False):
     esc = html.escape
-    counted, unrated = rating_counts(rows)
+    counted, unrated, unknown = rating_counts(rows)
     rated_total = sum(n for _, n in counted)
     dated = [r["when"] for r in rows if r["when"]]
     span = (f"{min(dated):%B %-d} – {max(dated):%B %-d, %Y}" if dated else "")
@@ -290,6 +321,9 @@ details { margin-top:8px; font-size:14px; } pre { white-space:pre-wrap; margin:8
     add("</table>")
     if unrated:
         add(f"<p class='sub'>{unrated} wrote a comment without choosing a rating.</p>")
+    if unknown:
+        add(f"<p class='sub'>{unknown} carry a rating this report does not know,"
+            f" and are left out of the percentages above.</p>")
 
     models = group_scores(rows, "model")
     if len(models) > 1 or (models and models[0][0] != "(not recorded)"):
