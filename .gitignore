@@ -112,3 +112,7 @@ codechat_config.yaml
 # scripts/tutor_feedback_report.py.
 ai-tutor/CSV/
 feedback*.csv
+
+# Python bytecode
+__pycache__/
+*.pyc
