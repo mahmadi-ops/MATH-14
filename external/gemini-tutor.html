@@ -326,8 +326,9 @@ function systemInstruction() {
   if (currentProb && currentProb !== GENERAL) {
     const used = hintsUsed(currentProb);
     s += "\n\nThe student has selected the problem: \"" + currentProb + "\". "
-      + "The interface allows at most " + HINT_LIMIT + " hints per problem IN TOTAL — they never reset — with a "
-      + "5-minute wait between hints, and it enforces this itself — so far you have given "
+      + "The interface allows at most " + HINT_LIMIT + " hints per problem IN TOTAL — they never reset — "
+      + (COOLDOWN_MS > 0 ? "with a " + Math.round(COOLDOWN_MS / 60000) + "-minute wait between hints, " : "")
+      + "and it enforces this itself — so far you have given "
       + used + " of " + HINT_LIMIT + " hints on this problem. Your NEXT reply counts as a hint, so make it count. "
       + (used >= HINT_LIMIT - 1
         ? "This is the LAST hint this student will ever get on this problem: make it your best small nudge, and close by warmly suggesting they bring their work to office hours for more help."
@@ -384,7 +385,11 @@ function apiKey() {
 // are published after the due date.
 
 const HINT_LIMIT = 3;
-const COOLDOWN_MS = 5 * 60 * 1000;
+// TEMPORARY — the wait between hints is switched off for testing. Restore it
+// with  5 * 60 * 1000  (five minutes). Everything else follows this constant:
+// at 0 the countdown never appears and the system prompt stops telling the
+// student a wait exists, so the two can never drift apart.
+const COOLDOWN_MS = 0;
 const HINT_STORE = "math14-hints-v1";
 
 function loadHints() {
