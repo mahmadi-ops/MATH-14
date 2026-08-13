@@ -92,3 +92,15 @@ function rating_(v) {
   if (!s) return '';
   return RATINGS.indexOf(s) >= 0 ? s : 'other: ' + clip_(s, 60);
 }
+
+/**
+ * Every reply is JSON, so a failure reads the same way a success does. The
+ * widget posts cross-origin and cannot read this body back — it is here for
+ * the instructor, who can open the deployment URL and see the collector
+ * answer, and for the doPost catch above.
+ */
+function json_(obj) {
+  return ContentService
+    .createTextOutput(JSON.stringify(obj))
+    .setMimeType(ContentService.MimeType.JSON);
+}

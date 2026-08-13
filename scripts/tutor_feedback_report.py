@@ -44,6 +44,29 @@ def parse_date(value):
     return None
 
 
+def dedupe(rows):
+    """Collapse one submission that reached the sheet more than once.
+
+    Early versions of the widget sent each note twice — a plain POST that the
+    browser reported as failed even though the row was written, then a no-cors
+    retry — so the sheet holds pairs a second or two apart. `sentAt` is stamped
+    once by the browser, to the millisecond, so a repeated (session, sentAt) is
+    the same submission rather than a student who wrote twice in one instant.
+    Rows without a sentAt are always kept: there is nothing to match them on.
+    """
+    seen = set()
+    out = []
+    for row in rows:
+        stamp = row.get("sentat", "")
+        key = (row.get("session", ""), stamp)
+        if stamp and key in seen:
+            continue
+        if stamp:
+            seen.add(key)
+        out.append(row)
+    return out
+
+
 def load(path, since=None, assignment=None):
     with open(path, newline="", encoding="utf-8-sig") as handle:
         rows = list(csv.DictReader(handle))
@@ -55,6 +78,8 @@ def load(path, since=None, assignment=None):
         item["when"] = parse_date(item.get("sentat")) or parse_date(item.get("received"))
         item["hintsused"] = int(item["hintsused"]) if item.get("hintsused", "").isdigit() else 0
         cleaned.append(item)
+
+    cleaned = dedupe(cleaned)
 
     if since:
         cutoff = parse_date(since)
