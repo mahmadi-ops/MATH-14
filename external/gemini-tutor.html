@@ -124,6 +124,22 @@ MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] }, options: { enable
   }
   #fbcancel:hover { color: var(--fg); border-color: var(--fg); }
   #fbstatus { margin-top: 10px; }
+  /* The one-tap rating under each hint. Sized to be noticed and easy to hit
+     on a phone, without competing with the hint above it. */
+  .rateask {
+    display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
+    margin: 0 0 12px; padding: 7px 12px;
+    border: 1px solid var(--border); border-radius: 999px; width: fit-content;
+    max-width: 100%; font-size: 13.5px; color: var(--fg); background: var(--tutor-bg);
+  }
+  .rateask button {
+    font: inherit; font-size: 17px; line-height: 1; cursor: pointer;
+    border: 1px solid var(--border); border-radius: 8px; padding: 4px 12px;
+    background: var(--bg); color: var(--fg);
+  }
+  .rateask button:hover { border-color: var(--accent); transform: scale(1.06); }
+  .rateask.done { color: var(--muted); }
+  .rateask a { color: var(--accent); text-decoration: underline; cursor: pointer; }
   /* On a narrow phone the tagline crowds out the header buttons. */
   @media (max-width: 460px) { header .sub { display: none; } }
   .hidden { display: none !important; }
@@ -530,14 +546,11 @@ function closeFeedback() {
   show(apiKey() ? "chat" : "setup");
 }
 
-async function sendFeedback() {
-  const checked = document.querySelector('input[name="fbrate"]:checked');
-  const comment = els.fbtext.value.trim();
-  if (!checked && !comment) {
-    els.fbstatus.textContent = "Pick one of the four answers, or write a note — then send.";
-    return;
-  }
-  const payload = {
+// Everything a note carries except what the student actually said, so the
+// one-tap rating under a hint and the written form send the same context and
+// land in the same columns.
+function feedbackPayload(extra) {
+  return Object.assign({
     sentAt: new Date().toISOString(),
     session: sessionId(),
     page: (pageContext && pageContext.page) || "",
@@ -546,33 +559,51 @@ async function sendFeedback() {
     hintsUsed: currentProb ? hintsUsed(currentProb) : 0,
     model: currentModel().id,     // which model the student had chosen
     modelUsed: lastModelUsed,     // the model id that actually answered last
+    rating: "",
+    comment: "",
+    transcript: "",
+    device: (window.innerWidth <= 600 ? "small" : "large") + " " +
+      window.innerWidth + "x" + window.innerHeight,
+  }, extra);
+}
+
+function postFeedback(payload) {
+  // text/plain keeps this a "simple" cross-origin request, which Apps Script
+  // accepts without a preflight; it reads the JSON from the request body.
+  //
+  // no-cors from the first try, deliberately. Apps Script answers a POST with
+  // a redirect to a different host, which the browser refuses to expose to
+  // us: a plain fetch REJECTS even though the row was already written. Doing
+  // that and then retrying files every note twice, one second apart. We never
+  // read the response anyway, so send once and let an opaque reply stand.
+  // What still rejects is a genuine network failure.
+  return fetch(FEEDBACK_URL, {
+    method: "POST",
+    mode: "no-cors",
+    headers: { "Content-Type": "text/plain;charset=utf-8" },
+    body: JSON.stringify(payload),
+  });
+}
+
+async function sendFeedback() {
+  const checked = document.querySelector('input[name="fbrate"]:checked');
+  const comment = els.fbtext.value.trim();
+  if (!checked && !comment) {
+    els.fbstatus.textContent = "Pick one of the four answers, or write a note — then send.";
+    return;
+  }
+  const payload = feedbackPayload({
     rating: checked ? checked.value : "",
     comment: comment,
     transcript: els.fbtranscript.checked
       ? curHistory().map(m => (m.role === "user" ? "STUDENT: " : "TUTOR: ") + m.text).join("\n\n")
       : "",
-    device: (window.innerWidth <= 600 ? "small" : "large") + " " +
-      window.innerWidth + "x" + window.innerHeight,
-  };
+  });
 
   els.fbsend.disabled = true;
   els.fbstatus.textContent = "Sending…";
-  // text/plain keeps this a "simple" cross-origin request, which Apps Script
-  // accepts without a preflight; it reads the JSON from the request body.
-  const opts = {
-    method: "POST",
-    headers: { "Content-Type": "text/plain;charset=utf-8" },
-    body: JSON.stringify(payload),
-  };
   try {
-    // no-cors from the first try, deliberately. Apps Script answers a POST with
-    // a redirect to a different host, which the browser refuses to expose to
-    // us: a plain fetch REJECTS even though the row was already written. Doing
-    // that and then retrying files every note twice, one second apart. We never
-    // read the response anyway, so send once and let an opaque reply stand.
-    // What still rejects here is a genuine network failure, which is what the
-    // message below tells the student.
-    await fetch(FEEDBACK_URL, Object.assign({ mode: "no-cors" }, opts));
+    await postFeedback(payload);
   } catch (err) {
     els.fbsend.disabled = false;
     els.fbstatus.textContent = "That didn't send — check your connection and try again.";
@@ -583,6 +614,51 @@ async function sendFeedback() {
   if (checked) checked.checked = false;
   els.fbstatus.textContent = "Thank you — that's genuinely useful.";
   setTimeout(() => { if (!els.feedback.classList.contains("hidden")) closeFeedback(); }, 1400);
+}
+
+// A one-tap rating under a hint, while the student still remembers what it was
+// like to read it. It sends the rating and the problem context only — never the
+// conversation, which stays behind the tick-box on the written form. A thumbs
+// down offers that form, so a student who wants to explain has somewhere to go.
+function attachRating(afterEl) {
+  if (!FEEDBACK_URL) return;
+  const row = document.createElement("div");
+  row.className = "rateask";
+  const question = document.createElement("span");
+  question.textContent = "Was this hint helpful?";
+  const up = document.createElement("button");
+  up.type = "button";
+  up.textContent = "👍";
+  up.title = "Yes, this helped";
+  up.setAttribute("aria-label", "Yes, this hint helped");
+  const down = document.createElement("button");
+  down.type = "button";
+  down.textContent = "👎";
+  down.title = "No, this didn't help";
+  down.setAttribute("aria-label", "No, this hint did not help");
+  row.appendChild(question);
+  row.appendChild(up);
+  row.appendChild(down);
+  afterEl.insertAdjacentElement("afterend", row);
+  els.messages.scrollTop = els.messages.scrollHeight;
+
+  function rate(rating) {
+    row.classList.add("done");
+    row.textContent = "Thanks — noted. ";
+    if (rating === "thumbs down") {
+      const more = document.createElement("a");
+      more.textContent = "Say what went wrong";
+      more.setAttribute("role", "button");
+      more.setAttribute("tabindex", "0");
+      more.addEventListener("click", openFeedback);
+      row.appendChild(more);
+    }
+    // Fire and forget: the student has been thanked already, and a failed
+    // rating should never interrupt them mid-problem.
+    postFeedback(feedbackPayload({ rating: rating })).catch(() => {});
+  }
+  up.addEventListener("click", () => rate("thumbs up"));
+  down.addEventListener("click", () => rate("thumbs down"));
 }
 
 function maybeInviteFeedback() {
@@ -671,9 +747,11 @@ async function send() {
   try {
     const reply = await askGemini();
     typing.remove();
-    addMessage("tutor", reply);
+    const replyEl = addMessage("tutor", reply);
     curHistory().push({ role: "model", text: reply });
     recordReply(currentProb);
+    // Ask about this hint right under it, while it is still fresh.
+    attachRating(replyEl);
     if (hintsLeft(currentProb) === 0) {
       addMessage("error", OFFICE_HOURS_MSG);
       // The moment the budget runs out is when a student has the clearest
