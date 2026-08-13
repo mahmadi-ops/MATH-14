@@ -155,6 +155,15 @@ def text_report(rows, show_transcripts=False):
     if unrated:
         add(f"  {unrated} submission(s) had a written comment but no rating.")
 
+    models = group_scores(rows, "model")
+    if len(models) > 1 or (models and models[0][0] != "(not recorded)"):
+        add("\nBY MODEL" + " " * 13 + "total   helped   didn't   % helped")
+        for name, g in sorted(models, key=lambda kv: kv[0]):
+            rated = g["pos"] + g["neg"]
+            pct = f"{100 * g['pos'] / rated:.0f}%" if rated else "—"
+            add(f"  {name[:20]:<20} {g['n']:>5} {g['pos']:>8} {g['neg']:>8} {pct:>10}")
+        add("  (a model's share of 'helped' is the number to compare, not its raw count)")
+
     add("\nBY ASSIGNMENT" + " " * 8 + "total   helped   didn't   avg hints used")
     for name, g in group_scores(rows, "section"):
         avg = sum(g["hints"]) / len(g["hints"]) if g["hints"] else 0
@@ -251,6 +260,17 @@ details { margin-top:8px; font-size:14px; } pre { white-space:pre-wrap; margin:8
     add("</table>")
     if unrated:
         add(f"<p class='sub'>{unrated} wrote a comment without choosing a rating.</p>")
+
+    models = group_scores(rows, "model")
+    if len(models) > 1 or (models and models[0][0] != "(not recorded)"):
+        add("<h2>By model</h2><table><tr><th>Model</th><th class='n'>Total</th>"
+            "<th class='n'>Helped</th><th class='n'>Didn't</th><th class='n'>% helped</th></tr>")
+        for name, g in sorted(models, key=lambda kv: kv[0]):
+            rated = g["pos"] + g["neg"]
+            pct = f"{100 * g['pos'] / rated:.0f}%" if rated else "&mdash;"
+            add(f"<tr><td>{esc(name)}</td><td class='n'>{g['n']}</td><td class='n'>{g['pos']}</td>"
+                f"<td class='n'>{g['neg']}</td><td class='n'>{pct}</td></tr>")
+        add("</table>")
 
     add("<h2>By assignment</h2><table><tr><th>Assignment</th><th class='n'>Total</th>"
         "<th class='n'>Helped</th><th class='n'>Didn't</th><th class='n'>Avg hints</th></tr>")

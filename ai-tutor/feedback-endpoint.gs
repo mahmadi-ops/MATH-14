@@ -20,6 +20,8 @@ var HEADERS = [
   'section',     // e.g. Assignment 3
   'problem',     // the problem selected in the picker
   'hintsUsed',   // hints spent on that problem when the note was written
+  'model',       // which model the student had chosen: pro | flash
+  'modelUsed',   // the concrete model id that answered, e.g. gemini-2.5-pro
   'rating',
   'comment',
   'transcript',  // only when the student ticked the box
@@ -45,6 +47,8 @@ function doPost(e) {
       clip_(d.section, LIMITS.field),
       clip_(d.problem, LIMITS.field),
       Number(d.hintsUsed) || 0,
+      clip_(d.model, LIMITS.field),
+      clip_(d.modelUsed, LIMITS.field),
       rating_(d.rating),
       clip_(d.comment, LIMITS.comment),
       clip_(d.transcript, LIMITS.transcript),

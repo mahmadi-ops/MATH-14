@@ -58,12 +58,19 @@ MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] }, options: { enable
   .error { background: transparent; border: 1px dashed var(--border); color: var(--muted); font-size: 13px; }
   .typing { color: var(--muted); font-style: italic; }
   #probbar {
-    display: flex; align-items: center; gap: 8px; flex: 0 0 auto;
+    display: flex; align-items: center; gap: 8px; flex: 0 0 auto; flex-wrap: wrap;
     padding: 7px 12px; border-bottom: 1px solid var(--border); font-size: 13px;
   }
   #probbar label { color: var(--muted); }
   #probsel {
-    flex: 1; min-width: 0; font: inherit; padding: 3px 6px;
+    flex: 1 1 130px; min-width: 0; font: inherit; padding: 3px 6px;
+    border: 1px solid var(--border); border-radius: 6px;
+    background: var(--bg); color: var(--fg);
+  }
+  /* The model picker wraps to its own line when the panel is narrow. */
+  #modelpick { display: flex; align-items: center; gap: 6px; margin-left: auto; }
+  #modelsel {
+    font: inherit; font-size: 12.5px; padding: 2px 5px; max-width: 190px;
     border: 1px solid var(--border); border-radius: 6px;
     background: var(--bg); color: var(--fg);
   }
@@ -188,6 +195,10 @@ MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] }, options: { enable
   <label for="probsel">Problem:</label>
   <select id="probsel"><option value="">&#8212; choose a problem &#8212;</option></select>
   <span id="hintmeter"></span>
+  <span id="modelpick">
+    <label for="modelsel">Model:</label>
+    <select id="modelsel" title="Which Gemini model answers you"></select>
+  </span>
 </div>
 
 <div id="messages" class="hidden"></div>
@@ -210,11 +221,41 @@ MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] }, options: { enable
 // at the top of this file before enabling.
 const INSTRUCTOR_API_KEY = "";
 
-// "gemini-flash-latest" is Google's rolling alias for the newest Flash model,
-// so the widget keeps working as models are retired. The rest are concrete
-// fallbacks tried in order if a model is rejected as unavailable.
-const MODEL_CANDIDATES = ["gemini-flash-latest", "gemini-3.6-flash", "gemini-3.5-flash"];
-let modelIndex = 0;
+// Two models the student can choose between, so the two can be compared side
+// by side on real problems. Pro is the default: this widget's job is to hold a
+// long, exception-heavy rule set without leaking an answer, and Flash was
+// measurably slipping at it. Each family carries its own chain of concrete
+// fallbacks, tried in order when a model is rejected as unavailable (a model
+// id that has been retired) or as over quota.
+//
+// "gemini-flash-latest" is Google's rolling alias for the newest Flash model.
+// There is no equivalent "pro-latest" alias, so the Pro entry is pinned and
+// keeps Flash behind it: if 2.5 Pro is ever retired the tutor degrades rather
+// than dying.
+const MODELS = [
+  { id: "pro",   label: "Pro — slower, more careful",
+    candidates: ["gemini-2.5-pro", "gemini-flash-latest"] },
+  { id: "flash", label: "Flash — quicker",
+    candidates: ["gemini-flash-latest", "gemini-3.6-flash", "gemini-3.5-flash"] },
+];
+const MODEL_STORE = "math14-tutor-model";
+// How far down each family's chain we have permanently fallen (retirements
+// only; a quota rejection is temporary and never written here).
+const modelIndex = { pro: 0, flash: 0 };
+// The concrete model id that produced the most recent reply, reported with
+// feedback so a note can be attributed to the model that actually answered.
+let lastModelUsed = "";
+
+function currentModel() {
+  let id = "";
+  try { id = localStorage.getItem(MODEL_STORE) || ""; } catch (e) {}
+  return MODELS.find(m => m.id === id) || MODELS[0];
+}
+
+function setModel(id) {
+  if (!MODELS.some(m => m.id === id)) return;
+  try { localStorage.setItem(MODEL_STORE, id); } catch (e) {}
+}
 // Deliberately the same name the MATH 53 site uses: both books live on the
 // same mahmadi-ops.github.io origin, so a student who set up the tutor in
 // one course is already set up in the other. Hint counters below do NOT
@@ -306,6 +347,7 @@ const els = {
   fbstatus: document.getElementById("fbstatus"),
   fbopen: document.getElementById("fbopen"),
   probsel: document.getElementById("probsel"),
+  modelsel: document.getElementById("modelsel"),
   hintmeter: document.getElementById("hintmeter"),
   cooldown: document.getElementById("cooldown"),
   cdtime: document.getElementById("cdtime"),
@@ -487,6 +529,8 @@ async function sendFeedback() {
     section: (pageContext && pageContext.section) || "",
     problem: currentProb || "",
     hintsUsed: currentProb ? hintsUsed(currentProb) : 0,
+    model: currentModel().id,     // which model the student had chosen
+    modelUsed: lastModelUsed,     // the model id that actually answered last
     rating: checked ? checked.value : "",
     comment: comment,
     transcript: els.fbtranscript.checked
@@ -539,26 +583,47 @@ function modelUnavailable(status, message) {
   return status === 404 || /no longer available|not found|not supported|deprecated/i.test(message || "");
 }
 
+// A free-tier quota rejection. Unlike a retirement this is temporary, so we
+// drop to the next candidate for THIS request only and keep asking for the
+// student's chosen model next time.
+function modelOverQuota(status, message) {
+  return status === 429 || /quota|rate limit|resource_exhausted/i.test(message || "");
+}
+
 async function askGemini() {
   const body = {
     systemInstruction: { parts: [{ text: systemInstruction() }] },
     contents: curHistory().map(m => ({ role: m.role, parts: [{ text: m.text }] })),
-    generationConfig: { temperature: 0.4, maxOutputTokens: 2048 },
+    // Pro is a thinking model and its thinking tokens come out of this same
+    // budget, so a cap sized for Flash can be spent before a single word of
+    // the reply is emitted — the student would then get "the tutor sent an
+    // empty reply". A reply here is one short paragraph, so the answer never
+    // approaches this ceiling; the headroom is for the thinking. Temperature
+    // stays where it was for both models, so that switching models changes
+    // one variable and not two.
+    generationConfig: { temperature: 0.4, maxOutputTokens: 8192 },
   };
+  const family = currentModel();
+  const chain = family.candidates;
   let resp;
+  let idx = modelIndex[family.id];   // per-request cursor, so a quota blip is not permanent
   while (true) {
     const url = "https://generativelanguage.googleapis.com/v1beta/models/"
-      + MODEL_CANDIDATES[modelIndex] + ":generateContent";
+      + chain[idx] + ":generateContent";
     resp = await fetch(url, {
       method: "POST",
       headers: { "Content-Type": "application/json", "x-goog-api-key": apiKey() },
       body: JSON.stringify(body),
     });
-    if (resp.ok) break;
+    if (resp.ok) { lastModelUsed = chain[idx]; break; }
     let detail = "";
     try { detail = (await resp.json()).error.message; } catch (e) {}
-    if (modelUnavailable(resp.status, detail) && modelIndex < MODEL_CANDIDATES.length - 1) {
-      modelIndex++;      // this model was retired; try the next candidate
+    if (modelUnavailable(resp.status, detail) && idx < chain.length - 1) {
+      modelIndex[family.id] = ++idx;  // retired for good; remember for the session
+      continue;
+    }
+    if (modelOverQuota(resp.status, detail) && idx < chain.length - 1) {
+      idx++;                          // quota is temporary; drop down for this request only
       continue;
     }
     const err = new Error(detail || ("Request failed (" + resp.status + ")"));
@@ -606,7 +671,9 @@ async function send() {
     if (err.status === 400 || err.status === 401 || err.status === 403) {
       addMessage("error", "Your API key was rejected (" + err.message + "). Click “key” above to enter a new one.");
     } else if (err.status === 429) {
-      addMessage("error", "Rate limit reached — wait a few seconds and try again.");
+      addMessage("error", "Your key has hit Google's free-tier limit. The per-minute limit "
+        + "clears in about a minute; the daily one resets tomorrow. This didn't use up a hint, "
+        + "and switching the model above may get you going again.");
     } else {
       addMessage("error", "Something went wrong: " + err.message);
     }
@@ -664,6 +731,18 @@ els.input.addEventListener("input", () => {
   els.input.style.height = Math.min(els.input.scrollHeight, 90) + "px";
 });
 els.probsel.addEventListener("change", () => selectProblem(els.probsel.value));
+
+// Model picker: fill it from MODELS, show the stored choice, and remember any
+// change. Switching models does not touch the conversation or the hint budget
+// — the same question can be put to either model, at the usual cost of a hint.
+MODELS.forEach(m => {
+  const o = document.createElement("option");
+  o.value = m.id;
+  o.textContent = m.label;
+  els.modelsel.appendChild(o);
+});
+els.modelsel.value = currentModel().id;
+els.modelsel.addEventListener("change", () => setModel(els.modelsel.value));
 
 document.getElementById("reset").addEventListener("click", () => {
   // Clears the current conversation only — hint counters and the cooldown

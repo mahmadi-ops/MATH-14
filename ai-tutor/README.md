@@ -68,6 +68,7 @@ Deploy** to publish the change at the same URL, so `FEEDBACK_URL` never changes.
 | `session` | random per-browser id (`s-4f2a…`), so several notes from one student group together — it identifies a browser, never a person |
 | `page`, `section` | e.g. `sec-exercises-hw3-online.html`, `Assignment 3` |
 | `problem`, `hintsUsed` | the problem selected in the picker and hints spent on it |
+| `model`, `modelUsed` | which model the student had chosen (`pro` / `flash`) and the concrete id that answered (`gemini-2.5-pro`, `gemini-flash-latest`, …) — the report compares ratings between them |
 | `rating` | one of *helped a lot*, *helped a little*, *did not help*, *made things worse* (blank if they only wrote a comment) |
 | `comment` | the open-ended answer to "How could the tutor be better?" |
 | `transcript` | the conversation, **only** when the student ticked the box |

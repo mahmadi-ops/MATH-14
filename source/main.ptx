@@ -215,6 +215,15 @@
             <shortdescription>The tutor chat panel showing a problem selected, two of three hints remaining, a Socratic exchange, and a countdown reading five minutes</shortdescription>
           </image>
           <p>
+            <alert>Two models.</alert> Next to the problem picker is a <q>Model</q>
+            drop-down offering <em>Pro</em> and <em>Flash</em>. Pro is the default: it
+            thinks before it answers, so it takes a few seconds longer and is better at
+            staying in the role of a tutor rather than a solutions manual. Flash replies
+            almost instantly. Either will coach you and neither will hand you an answer;
+            switching between them costs nothing and does not disturb your conversation
+            or your hint count. Try both <mdash /> and tell me which you prefer.
+          </p>
+          <p>
             <alert>Hints are limited on purpose.</alert> The point of the tutor is to get
             you unstuck, not to walk you to the answer, so hints are deliberately scarce.
             The exact rules:
