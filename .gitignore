@@ -105,3 +105,10 @@ codechat_config.yaml
 # Don't track deprecated workflows
 .github/workflows/deploy.yml
 .github/workflows/test-build.yml
+
+# Don't track feedback exported from the tutor's spreadsheet. Those CSVs are
+# real student submissions, transcripts included, and this repository is
+# public. Keep them on your own machine and hand the path to
+# scripts/tutor_feedback_report.py.
+ai-tutor/CSV/
+feedback*.csv
