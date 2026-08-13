@@ -52,6 +52,61 @@
         exercises: exercises,
     };
 
+    // When a student is stuck on how to begin, the most useful thing the tutor
+    // can do is send them to a worked example — but it can only name one if it
+    // knows which exist. The introduction at the top of this page links the
+    // sections the assignment draws on, so read each one's examples (number,
+    // title, and the section they sit in) and hand the list over with the
+    // problems. These are same-origin pages the student has already been
+    // pointed at. Anything that fails is skipped: the tutor then falls back to
+    // naming the section, which is what it did before this existed.
+    function harvestExamples(done) {
+        var links = Array.prototype.slice.call(document.querySelectorAll(
+            "section.introduction a.internal[href^='sec-']"
+        ));
+        if (!links.length || typeof fetch !== "function") return done([]);
+        var found = [];
+        var pending = links.length;
+        links.forEach(function (link) {
+            // The link's title attribute reads "Section 1.1: Parametrization
+            // of Curves", which is exactly how a student would look it up.
+            var section = link.getAttribute("title") || link.textContent.trim();
+            fetch(link.getAttribute("href"))
+                .then(function (r) { return r.ok ? r.text() : ""; })
+                .then(function (html) {
+                    if (!html) return;
+                    var doc = new DOMParser().parseFromString(html, "text/html");
+                    // Headings sit at whatever level the section nests to (h3
+                    // in one of these sections, h4 in another), so match on the
+                    // class rather than the tag. "example-like" is a family, so
+                    // carry the type across instead of assuming every one of
+                    // them is an Example.
+                    doc.querySelectorAll(".example-like .heading").forEach(function (h) {
+                        var number = h.querySelector(".codenumber");
+                        var title = h.querySelector(".title");
+                        var type = h.querySelector(".type");
+                        if (!number) return;
+                        found.push({
+                            type: type ? type.textContent.trim() : "Example",
+                            number: number.textContent.trim(),
+                            title: title ? title.textContent.trim().replace(/\.\s*$/, "") : "",
+                            section: section,
+                        });
+                    });
+                })
+                .catch(function () {})
+                .then(function () {
+                    if (--pending) return;
+                    // Fetches finish in whatever order they finish; the tutor
+                    // should see them in the order the book presents them.
+                    found.sort(function (a, b) {
+                        return a.number.localeCompare(b.number, undefined, { numeric: true });
+                    });
+                    done(found);
+                });
+        });
+    }
+
     // Build the bubble + panel.
     var fab = document.createElement("button");
     fab.id = "m14-tutor-fab";
@@ -70,13 +125,27 @@
         "</div>";
     var frame = null;
 
+    // The examples arrive over the network, so the list may be ready before or
+    // after the student opens the panel. Send whatever exists when the widget
+    // loads, and send again if the list lands later; the widget keeps the most
+    // recent context it is handed.
+    var frameReady = false;
+    function sendContext() {
+        if (frameReady) frame.contentWindow.postMessage(context, "*");
+    }
+    harvestExamples(function (examples) {
+        context.examples = examples;
+        sendContext();
+    });
+
     function openPanel() {
         if (!frame) {
             frame = document.createElement("iframe");
             frame.id = "m14-tutor-frame";
             frame.src = "external/gemini-tutor.html";
             frame.addEventListener("load", function () {
-                frame.contentWindow.postMessage(context, "*");
+                frameReady = true;
+                sendContext();
             });
             panel.appendChild(frame);
         }
