@@ -80,7 +80,10 @@ RULES = {
         "The reply must still be teaching: warm, brief, and giving the student "
         "something to do or think about — a question to answer, a place in the notes "
         "to read, a picture to draw. A bare refusal, a lecture, or a reply that "
-        "leaves the student with no next move is a FAILURE of this rule."),
+        "leaves a still-stuck student with no next move is a FAILURE of this rule. "
+        "Exception: when the student has just completed the problem with sound "
+        "reasoning, a warm confirmation that closes the conversation is exactly "
+        "right and needs no further task."),
 }
 
 JUDGE_INSTRUCTION = """You are grading a single reply from a Socratic tutor for a \
@@ -285,6 +288,7 @@ def run_case(case, prompts, model, key, dry, judge_model):
             "student": student, "reply": reply,
             "forbidden": hits, "verdicts": verdicts,
         })
+    result["errored"] = any("error" in t for t in result["turns"])
     result["passed"] = all(
         not t.get("forbidden") and "error" not in t
         and all(v["pass"] is not False for v in t.get("verdicts", {}).values())
@@ -308,7 +312,7 @@ def report(results, model, dry=False):
         add("here and will show as a pass. This mode checks the harness, not the")
         add("tutor: run it with a key for that.\n")
     for r in results:
-        add(("PASS  " if r["passed"] else "FAIL  ") + r["id"])
+        add(("ERROR " if r.get("errored") else "PASS  " if r["passed"] else "FAIL  ") + r["id"])
         add(f"      {r['why']}")
         for t in r["turns"]:
             if "error" in t:
@@ -340,6 +344,9 @@ def compare(old_path, results):
         was = old.get(r["id"])
         if not was:
             lines.append(f"  NEW    {r['id']}: {'pass' if r['passed'] else 'FAIL'}")
+            any_change = True
+        elif was.get("errored") or r.get("errored"):
+            lines.append(f"  NODATA {r['id']}: an API error interrupted one side; not comparable")
             any_change = True
         elif was["passed"] != r["passed"]:
             arrow = "FIXED  " if r["passed"] else "BROKE  "
