@@ -81,7 +81,27 @@ MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] }, options: { enable
     background: var(--tutor-bg); border-top: 1px solid var(--border); color: var(--fg);
   }
   #cooldown b { font-variant-numeric: tabular-nums; }
-  form#chat { display: flex; gap: 8px; padding: 10px 12px; border-top: 1px solid var(--border); flex: 0 0 auto; }
+  form#chat { display: flex; flex-wrap: wrap; gap: 8px; padding: 10px 12px; border-top: 1px solid var(--border); flex: 0 0 auto; }
+  button.attach {
+    border: 1px solid var(--border); border-radius: 8px; background: var(--bg);
+    color: var(--fg); font-size: 17px; line-height: 1; padding: 0 11px; cursor: pointer;
+  }
+  button.attach:disabled { opacity: 0.5; cursor: default; }
+  button.attach.has-file { border-color: var(--accent); }
+  /* The strip that shows what is attached: full width, above the input row. */
+  #attached {
+    flex: 0 0 100%; display: flex; align-items: center; gap: 8px;
+    border: 1px solid var(--border); border-radius: 8px; padding: 6px 8px; font-size: 12.5px;
+  }
+  #attached img { height: 34px; width: 34px; object-fit: cover; border-radius: 4px; }
+  #attached .name { flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  #attached button {
+    border: none; background: none; color: var(--muted); font-size: 17px;
+    line-height: 1; cursor: pointer; padding: 0 2px;
+  }
+  /* A photo the student sent, shown inside their own message bubble. */
+  .msg .shot { display: block; max-width: 190px; border-radius: 6px; margin-top: 6px; }
+  .msg .filechip { display: inline-block; margin-top: 6px; font-size: 12px; opacity: 0.85; }
   #input {
     flex: 1; resize: none; border: 1px solid var(--border); border-radius: 8px;
     padding: 8px 10px; font: inherit; background: var(--bg); color: var(--fg); max-height: 90px;
@@ -205,7 +225,7 @@ MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] }, options: { enable
   <p class="note" id="fbstatus"></p>
 </div>
 
-<p id="privacynote" class="note hidden">Sent to Google &#8212; keep it to math, no personal information.</p>
+<p id="privacynote" class="note hidden">Sent to Google &#8212; photos and files too, so keep it to math and don&#8217;t include your name.</p>
 
 <div id="probbar" class="hidden">
   <label for="probsel">Problem:</label>
@@ -224,6 +244,9 @@ MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] }, options: { enable
 </div>
 
 <form id="chat" class="hidden" autocomplete="off">
+  <div id="attached" class="hidden"></div>
+  <input type="file" id="file" accept="image/*,application/pdf" hidden>
+  <button class="attach" id="attachbtn" type="button" title="Attach a photo of your work, or a PDF">&#128206;</button>
   <textarea id="input" rows="1" placeholder="Ask for a hint, or describe what you've tried&#8230;"></textarea>
   <button class="send" id="sendbtn" type="submit">Send</button>
 </form>
@@ -282,7 +305,7 @@ const STORAGE_KEY = "math53-gemini-key";
 // submission to a spreadsheet the instructor owns. While this is "" the
 // feedback button stays hidden and nothing is ever sent. Setup takes about two
 // minutes — see ai-tutor/README.md in this book's repository.
-const FEEDBACK_URL = "";
+const FEEDBACK_URL = "https://script.google.com/macros/s/AKfycbyloxTwB9IJ3INM8J5CfC8IMIdyp2vsnZqGeez_gvNt2rAvwIX_DkcfGPgliaFuwUmxmA/exec";
 
 // An anonymous per-browser id, so several notes from the same student can be
 // read together without anyone knowing who they are. It is a random string:
@@ -308,6 +331,8 @@ What you MAY do — these are your only tools:
 5. Confirm answers the student has JUSTIFIED. When the student states a conclusion AND backs it with their own reasoning, and that reasoning is genuinely sound and complete, tell them warmly and clearly that they have it — and say what makes their justification work, so they know it wasn't luck. This is the one and only path to confirmation. Hold the bar honestly: if the conclusion is right but the justification has a gap, a missing case, or a false step, do NOT confirm yet — point at the gap the way you point at any error, and let them close it. Confirmation is earned by the justification, never by the bare answer, never by elimination whose completeness was not proved, never by your silence.
 
 The check above asks whether a reply hands over a conclusion. Before sending, re-read it once more and ask a second question: "Could the student follow this without deciding anything?" If your reply tells them what to do next, they only execute — the noticing, which is the part worth learning, has already been done for them. Cut it back to the question that would have made them notice it themselves. A student who says "I don't know what to do" is asking you to make that decision for them; the help they need is a smaller question, not the decision.
+
+The student can attach a photo of their handwritten work, or a PDF. Read it as work they have SHOWN you — it is the fullest answer to "let me see your reasoning" that they can give, and everything above applies to it unchanged. So: diagnose it (tool 2), and if what it contains is a conclusion genuinely justified by the working around it, that earns confirmation (tool 5). What an attachment never does is license more than that. Do not transcribe it back to them, do not tidy it into a clean version, do not carry it forward to the next line, and do not fill in a step they left blank — pointing at the first line that goes wrong, and saying why, is the help. If the image is only the printed problem, or a blank page, they have shown you nothing yet: treat it as a student who has not started, and answer as you would have without it. If you cannot read the handwriting, say which part is unclear and ask them to retake it rather than guessing what it says — guessing wrong and diagnosing the guess wastes a hint they have paid for.
 
 HOW YOUR INSTRUCTOR TUTORS — five real exchanges from this course's office hours, on problems from these assignments. Match this voice: the length, the directness, the way each hint is built. Notice, and imitate:
 - Hints are concrete and small. They name the exact spot that breaks ("in the denominator there is a small algebra mistake") or the given fact left unused ("you have not considered the radius is 5") — and stop there. The fix is never performed.
@@ -416,6 +441,9 @@ const els = {
   chat: document.getElementById("chat"),
   input: document.getElementById("input"),
   sendbtn: document.getElementById("sendbtn"),
+  file: document.getElementById("file"),
+  attachbtn: document.getElementById("attachbtn"),
+  attached: document.getElementById("attached"),
   probbar: document.getElementById("probbar"),
   privacynote: document.getElementById("privacynote"),
   feedback: document.getElementById("feedback"),
@@ -496,6 +524,14 @@ const OFFICE_HOURS_MSG = "You've used all " + HINT_LIMIT + " hints for this prob
 
 let cdTimer = null;
 function refreshGate() {
+  gateComposer();
+  // Attaching is only ever useful when something can be sent, and the rules
+  // for that are the several early returns below; follow the send button
+  // rather than repeating each of them.
+  els.attachbtn.disabled = els.sendbtn.disabled;
+}
+
+function gateComposer() {
   // Enable/disable the input based on the selected problem's budget & cooldown.
   if (cdTimer) { clearInterval(cdTimer); cdTimer = null; }
   els.cooldown.classList.add("hidden");
@@ -647,7 +683,11 @@ async function sendFeedback() {
     rating: checked ? checked.value : "",
     comment: comment,
     transcript: els.fbtranscript.checked
-      ? curHistory().map(m => (m.role === "user" ? "STUDENT: " : "TUTOR: ") + m.text).join("\n\n")
+      // The file itself is never sent on — it is the student's own work, and
+      // could carry their name. Note that one was attached, so a transcript
+      // where the tutor answers something not in the text still reads.
+      ? curHistory().map(m => (m.role === "user" ? "STUDENT: " : "TUTOR: ") + m.text
+          + (m.file ? "\n[attached: " + (m.file.preview ? "photo" : "PDF") + "]" : "")).join("\n\n")
       : "",
   });
 
@@ -735,7 +775,14 @@ function modelOverQuota(status, message) {
 async function askGemini() {
   const body = {
     systemInstruction: { parts: [{ text: systemInstruction() }] },
-    contents: curHistory().map(m => ({ role: m.role, parts: [{ text: m.text }] })),
+    // An attachment travels as a second part of the turn it was sent with, so
+    // the tutor sees the work and the question together, and still sees both
+    // when looking back over the conversation.
+    contents: curHistory().map(m => {
+      const parts = [{ text: m.text }];
+      if (m.file) parts.push({ inline_data: { mime_type: m.file.mime, data: m.file.data } });
+      return { role: m.role, parts: parts };
+    }),
     // Pro is a thinking model and its thinking tokens come out of this same
     // budget, so a cap sized for Flash can be spent before a single word of
     // the reply is emitted — the student would then get "the tutor sent an
@@ -780,16 +827,150 @@ async function askGemini() {
   return text;
 }
 
+/* ===== attachments ======================================================= */
+// A student can send a photo of their handwritten work, or a PDF, for the
+// tutor to read. It rides along with the message text as a second part of the
+// same request; the rules about what the tutor may then say are in the system
+// instruction, not here.
+//
+// Photos come off a phone camera at a size no one needs — a 12MP shot is
+// several megabytes, and the request carries it base64-encoded, a third larger
+// again. Long edge 1600px is plenty for reading handwriting, so scale to that
+// before sending. PDFs are sent as they are, since re-encoding one in the
+// browser would need a library; they are just capped.
+const MAX_IMAGE_EDGE = 1600;
+const MAX_UPLOAD_BYTES = 4 * 1024 * 1024;   // after any downscaling
+
+let pendingFile = null;   // { name, mime, data (base64, no prefix), preview }
+
+function readAsDataURL(file) {
+  return new Promise((resolve, reject) => {
+    const r = new FileReader();
+    r.onload = () => resolve(r.result);
+    r.onerror = () => reject(new Error("That file could not be read."));
+    r.readAsDataURL(file);
+  });
+}
+
+function shrinkImage(dataUrl) {
+  return new Promise((resolve) => {
+    const img = new Image();
+    img.onload = () => {
+      const scale = Math.min(1, MAX_IMAGE_EDGE / Math.max(img.width, img.height));
+      if (scale === 1 && dataUrl.length < MAX_UPLOAD_BYTES) return resolve(dataUrl);
+      const canvas = document.createElement("canvas");
+      canvas.width = Math.round(img.width * scale);
+      canvas.height = Math.round(img.height * scale);
+      canvas.getContext("2d").drawImage(img, 0, 0, canvas.width, canvas.height);
+      // JPEG regardless of what came in: a photograph of a page is exactly
+      // what JPEG is for, and a PNG screenshot of one is several times the
+      // size for no gain in legibility.
+      resolve(canvas.toDataURL("image/jpeg", 0.85));
+    };
+    // A browser that cannot decode the format passes it through untouched —
+    // a Chrome on Android handed a HEIC, say. Gemini reads HEIC itself, so
+    // this still works; it just arrives at its original size, which the check
+    // below can then refuse.
+    img.onerror = () => resolve(dataUrl);
+    img.src = dataUrl;
+  });
+}
+
+async function attachFile(file) {
+  if (!file) return;
+  const isImage = file.type.indexOf("image/") === 0;
+  const isPdf = file.type === "application/pdf";
+  if (!isImage && !isPdf) {
+    addMessage("error", "That file type can't be read — send a photo or a PDF.");
+    return;
+  }
+  let dataUrl;
+  try {
+    dataUrl = await readAsDataURL(file);
+  } catch (err) {
+    addMessage("error", err.message);
+    return;
+  }
+  if (isImage) dataUrl = await shrinkImage(dataUrl);
+  const comma = dataUrl.indexOf(",");
+  const base64 = dataUrl.slice(comma + 1);
+  // base64 carries 3 bytes in every 4 characters.
+  if (base64.length * 0.75 > MAX_UPLOAD_BYTES) {
+    addMessage("error", isPdf
+      ? "That PDF is too big to send. Try just the page you want looked at."
+      : "That image is too big to send, even after shrinking it.");
+    return;
+  }
+  pendingFile = {
+    name: file.name || (isImage ? "photo.jpg" : "file.pdf"),
+    mime: isImage ? (dataUrl.slice(5, comma).split(";")[0] || "image/jpeg") : "application/pdf",
+    data: base64,
+    preview: isImage ? dataUrl : "",
+  };
+  showAttached();
+}
+
+function showAttached() {
+  els.attached.innerHTML = "";
+  els.attachbtn.classList.toggle("has-file", !!pendingFile);
+  if (!pendingFile) { els.attached.classList.add("hidden"); return; }
+  if (pendingFile.preview) {
+    const img = document.createElement("img");
+    img.src = pendingFile.preview;
+    img.alt = "";
+    els.attached.appendChild(img);
+  }
+  const name = document.createElement("span");
+  name.className = "name";
+  name.textContent = pendingFile.name;
+  const drop = document.createElement("button");
+  drop.type = "button";
+  drop.setAttribute("aria-label", "Remove attachment");
+  drop.innerHTML = "&times;";
+  drop.addEventListener("click", clearAttachment);
+  els.attached.appendChild(name);
+  els.attached.appendChild(drop);
+  els.attached.classList.remove("hidden");
+}
+
+function clearAttachment() {
+  pendingFile = null;
+  els.file.value = "";
+  showAttached();
+}
+
+/** Show what was sent inside the student's own message bubble. */
+function showAttachmentIn(bubble, file) {
+  if (file.preview) {
+    const img = document.createElement("img");
+    img.className = "shot";
+    img.src = file.preview;
+    img.alt = "The work you attached";
+    bubble.appendChild(img);
+    return;
+  }
+  const chip = document.createElement("span");
+  chip.className = "filechip";
+  chip.textContent = "📎 " + file.name;
+  bubble.appendChild(chip);
+}
+
 /* ===== interactions ====================================================== */
 
 async function send() {
   const text = els.input.value.trim();
-  if (!text || busy || !currentProb) return;
+  // A photo of a page can be the whole message: it is often more than the
+  // student would have typed.
+  if ((!text && !pendingFile) || busy || !currentProb) return;
   if (hintsLeft(currentProb) === 0 || cooldownLeftMs() > 0) { refreshGate(); return; }
+  const file = pendingFile;
+  clearAttachment();
   els.input.value = "";
   els.input.style.height = "";
-  addMessage("student", text);
-  curHistory().push({ role: "user", text: text });
+  const shown = text || (file && file.preview ? "Here is my work." : "Here is my file.");
+  const bubble = addMessage("student", shown);
+  if (file) showAttachmentIn(bubble, file);
+  curHistory().push({ role: "user", text: shown, file: file });
 
   busy = true;
   els.input.disabled = true;
@@ -811,7 +992,10 @@ async function send() {
     }
   } catch (err) {
     typing.remove();
-    curHistory().pop(); // let the student resend the same question
+    // Let the student resend the same question — and hand back the file they
+    // attached, so a failed request does not cost them the photo as well.
+    const dropped = curHistory().pop();
+    if (dropped && dropped.file) { pendingFile = dropped.file; showAttached(); }
     if (err.status === 400 || err.status === 401 || err.status === 403) {
       addMessage("error", "Your API key was rejected (" + err.message + "). Click “key” above to enter a new one.");
     } else if (err.status === 429) {
@@ -852,7 +1036,10 @@ function selectProblem(label) {
   if (curHistory().length === 0) {
     addMessage("tutor", GREETING);
   } else {
-    curHistory().forEach(m => addMessage(m.role === "user" ? "student" : "tutor", m.text));
+    curHistory().forEach(m => {
+      const bubble = addMessage(m.role === "user" ? "student" : "tutor", m.text);
+      if (m.file) showAttachmentIn(bubble, m.file);
+    });
   }
   if (hintsLeft(label) === 0 && label !== GENERAL) addMessage("error", OFFICE_HOURS_MSG);
   refreshGate();
@@ -867,6 +1054,8 @@ function startChat() {
 }
 
 document.getElementById("chat").addEventListener("submit", e => { e.preventDefault(); send(); });
+els.attachbtn.addEventListener("click", () => els.file.click());
+els.file.addEventListener("change", () => attachFile(els.file.files[0]));
 els.input.addEventListener("keydown", e => {
   if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); send(); }
 });
