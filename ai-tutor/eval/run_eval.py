@@ -98,8 +98,17 @@ Answer with JSON and nothing else:
 
 # ---------------------------------------------------------------- API access
 
-def api_call(model, key, system, contents, gen_config, retries=3):
+# Free-tier quotas in 2026 are tight (observed: 20 requests/min for the
+# current Flash). Space calls out, and when the server names a wait, obey it.
+MIN_CALL_GAP = 3.5
+_last_call = [0.0]
+
+
+def api_call(model, key, system, contents, gen_config, retries=8):
     """One generateContent call. Returns the reply text, or raises."""
+    wait = MIN_CALL_GAP - (time.time() - _last_call[0])
+    if wait > 0:
+        time.sleep(wait)
     body = {
         "systemInstruction": {"parts": [{"text": system}]},
         "contents": contents,
@@ -115,6 +124,7 @@ def api_call(model, key, system, contents, gen_config, retries=3):
     last = None
     for attempt in range(retries):
         try:
+            _last_call[0] = time.time()
             with urllib.request.urlopen(req, timeout=120, context=ctx) as r:
                 data = json.load(r)
             parts = (data.get("candidates") or [{}])[0].get("content", {}).get("parts", [])
@@ -125,10 +135,13 @@ def api_call(model, key, system, contents, gen_config, retries=3):
                 raise RuntimeError(f"empty reply (finishReason={reason})")
             return text
         except urllib.error.HTTPError as e:
-            detail = e.read().decode("utf-8", "replace")[:300]
-            last = RuntimeError(f"HTTP {e.code}: {detail}")
+            detail = e.read().decode("utf-8", "replace")[:400]
+            last = RuntimeError(f"HTTP {e.code}: {detail[:300]}")
             if e.code in (429, 500, 503):        # transient: back off and retry
-                time.sleep(5 * (attempt + 1))
+                # The 429 body names the wait it wants ("Please retry in 12.3s");
+                # obeying it beats guessing.
+                m = re.search(r"retry in ([0-9.]+)s", detail)
+                time.sleep(min(float(m.group(1)) + 1.5, 65) if m else 8 * (attempt + 1))
                 continue
             raise last
         except Exception as e:                    # noqa: BLE001 - report and retry
@@ -348,7 +361,9 @@ def main():
                     help="where the built site is being served")
     ap.add_argument("--model", choices=["pro", "flash"], default="pro",
                     help="which of the widget's two models to exercise")
-    ap.add_argument("--judge-model", default="gemini-2.5-pro")
+    ap.add_argument("--judge-model", default="gemini-3.5-flash",
+                    help="a DIFFERENT concrete model than the tutor's, so the "
+                         "judge draws on its own free-tier quota bucket")
     ap.add_argument("--only", help="run only cases whose id contains this")
     ap.add_argument("--save", metavar="FILE", help="write results as JSON")
     ap.add_argument("--compare", metavar="FILE", help="diff verdicts against a saved run")
