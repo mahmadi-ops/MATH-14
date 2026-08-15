@@ -184,7 +184,7 @@ def extract_request(widget, page, problem, hint_levels=(0, 1, 2)):
             raise SystemExit(f"no problem on {page} matching {problem!r}; saw {labels}")
         label = match[0]
         fr.select_option("#probsel", label=label)
-        if widget.get("model"):
+        if widget.get("model") and fr.locator("#modelsel").count():
             fr.select_option("#modelsel", widget["model"])
 
         fr.evaluate("""() => {
@@ -360,11 +360,13 @@ def main():
     ap.add_argument("--base", default="http://localhost:8078",
                     help="where the built site is being served")
     ap.add_argument("--model", choices=["pro", "flash"], default="pro",
-                    help="which of the widget's two models to exercise")
+                    help="which of the widget's two models to exercise. NOTE: "
+                         "gemini-2.5-pro 404s for keys created after mid-2026, "
+                         "so on a new key use --model flash")
     ap.add_argument("--judge-model", default="gemini-3.5-flash",
                     help="a DIFFERENT concrete model than the tutor's, so the "
                          "judge draws on its own free-tier quota bucket")
-    ap.add_argument("--only", help="run only cases whose id contains this")
+    ap.add_argument("--only", help="comma-separated substrings; run cases whose id contains any")
     ap.add_argument("--save", metavar="FILE", help="write results as JSON")
     ap.add_argument("--compare", metavar="FILE", help="diff verdicts against a saved run")
     ap.add_argument("--dry-run", choices=["good", "bad"], nargs="?", const="good",
@@ -377,7 +379,8 @@ def main():
 
     cases = json.loads(Path(args.cases).read_text())["cases"]
     if args.only:
-        cases = [c for c in cases if args.only in c["id"]]
+        wanted = [w.strip() for w in args.only.split(",") if w.strip()]
+        cases = [c for c in cases if any(w in c["id"] for w in wanted)]
     if not cases:
         sys.exit("no cases selected")
 
