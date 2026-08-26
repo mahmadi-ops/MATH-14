@@ -39,7 +39,7 @@ python3 ai-tutor/eval/run_eval.py --dry-run bad      # canned bad replies  -> fa
 # The real thing
 export GEMINI_API_KEY="AIza..."
 python3 ai-tutor/eval/run_eval.py                    # the default model (Pro)
-python3 ai-tutor/eval/run_eval.py --model flash      # the other one
+python3 ai-tutor/eval/run_eval.py --model quick      # the other one
 python3 ai-tutor/eval/run_eval.py --only bare-claim  # one case, while iterating
 ```
 
@@ -61,9 +61,10 @@ either, and that trade is exactly what the comparison surfaces.
 ### Watch the quota
 
 A run is roughly `turns × (1 + rules)` calls: about 60–70 for the current eight
-cases. Google's free tier for 2.5 Pro is around 100 requests a day, so a full
-run costs most of a day's allowance. While iterating use `--only`, and consider
-`--judge-model gemini-flash-latest` to keep the Pro budget for the tutor itself.
+cases. Free-tier daily allowances are of the same order, so a full run costs
+most of a day on one model. The judge already defaults to `gemini-3.5-flash`,
+a model neither tutor setting uses, so grading draws on its own quota bucket
+rather than starving the calls it grades. While iterating, use `--only`.
 
 ### About the key
 

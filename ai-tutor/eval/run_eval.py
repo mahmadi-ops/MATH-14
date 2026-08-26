@@ -14,7 +14,7 @@ instruction and generation settings from that. What is graded is what ships.
 
     export GEMINI_API_KEY="AIza..."          # a personal, throwaway key
     python3 ai-tutor/eval/run_eval.py                       # current build
-    python3 ai-tutor/eval/run_eval.py --model flash         # the other model
+    python3 ai-tutor/eval/run_eval.py --model quick         # the other model
     python3 ai-tutor/eval/run_eval.py --save before.json
     #   ... change the prompt, rebuild ...
     python3 ai-tutor/eval/run_eval.py --compare before.json
@@ -366,10 +366,8 @@ def main():
     ap.add_argument("--cases", default=str(CASES))
     ap.add_argument("--base", default="http://localhost:8078",
                     help="where the built site is being served")
-    ap.add_argument("--model", choices=["pro", "flash"], default="pro",
-                    help="which of the widget's two models to exercise. NOTE: "
-                         "gemini-2.5-pro 404s for keys created after mid-2026, "
-                         "so on a new key use --model flash")
+    ap.add_argument("--model", choices=["careful", "quick"], default="careful",
+                    help="which of the widget's two models to exercise")
     ap.add_argument("--judge-model", default="gemini-3.5-flash",
                     help="a DIFFERENT concrete model than the tutor's, so the "
                          "judge draws on its own free-tier quota bucket")
@@ -391,7 +389,11 @@ def main():
     if not cases:
         sys.exit("no cases selected")
 
-    concrete = {"pro": "gemini-2.5-pro", "flash": "gemini-flash-latest"}[args.model]
+    # The head of each family's chain in the widget. Kept concrete here (the
+    # widget's own fallbacks are what a student gets; an eval that silently
+    # graded a fallback would be grading a different model than it reports).
+    concrete = {"careful": "gemini-3.7-flash",
+                "quick": "gemini-3.5-flash-lite"}[args.model]
 
     results = []
     for case in cases:
