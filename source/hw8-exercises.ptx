@@ -1,112 +1,129 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- MATH 14 - HW8: mass and center of mass -->
+<!-- MATH 14 - HW8: Green's theorem -->
 <section xml:id="sec-exercises-hw8" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Assignment 8</title>
 
   <introduction>
     <p>
-      Section: <xref ref="section-mass-center-of-mass" text="title"/>.
+      Section: <xref ref="section-greens-theorem" text="title"/>.
     </p>
   </introduction>
 
   <exercises xml:id="exercises-hw8">
 
-  <exercise xml:id="ex-hw8-centroid">
+  <exercise xml:id="ex-hw8-staircase">
     <statement>
       <p>
-        Find the centroid of the solid shown in <xref ref="fig-hw8-solid"/>.
-        The cone is bounded by a disk in the <m>z = 2</m> plane and the
-        cylinder is bounded by the <m>y = \pm 1</m> planes. Note that both
-        the cone and the cylinder are assumed to be solid objects, that is,
-        they are not hollow.
+        Compute the work done by the force field
+      </p>
+      <me>
+        \mathbf{F} = \left\langle x^3 e^{x^2} + xe^x - y,\
+        y^2 - e^y + x \right\rangle
+      </me>
+      <p>
+        along the path <m>C</m>, which is shown in
+        <xref ref="fig-hw8-staircase"/>. Assume that the object moves along
+        the path from <m>(0,0)</m> to <m>(10,10)</m> and then to
+        <m>(0,10)</m>.
       </p>
     </statement>
   </exercise>
 
-  <figure xml:id="fig-hw8-solid">
+  <figure xml:id="fig-hw8-staircase">
     <caption>
-      The solid of <xref ref="ex-hw8-centroid"/>: the cone
-      <m>z = 1 + \sqrt{x^2+y^2}</m> capped by the plane <m>z = 2</m>,
-      sitting on the horizontal cylinder <m>x^2 + z^2 = 1</m> cut off by the
-      planes <m>y = \pm 1</m>.
+      The curve <m>C</m> of <xref ref="ex-hw8-staircase"/>: a staircase of
+      ten unit steps from <m>(0,0)</m> to <m>(10,10)</m>, followed by the
+      horizontal segment back to <m>(0,10)</m>.
     </caption>
-    <image xml:id="image-hw8-solid" width="65%">
+    <image width="70%">
       <shortdescription>
-        A cone standing point-down on a horizontal cylinder lying along the
-        y axis.
+      A staircase of ten unit steps from the origin to (10,10), returning along the top.
       </shortdescription>
-      <description>
-        <p>
-          A red cylinder of radius one lies on its side along the y axis,
-          cut off by the planes y equals plus and minus one. Above it, a red
-          cone opens upward from the point at height one on the z axis to a
-          disk of radius one in the plane z equals two.
-        </p>
-      </description>
-      <latex-image>
-        <![CDATA[\begin{tikzpicture}[line join=round, line cap=round]
-  \definecolor{oired}{RGB}{213,40,60}
-  \begin{axis}[
-      view={118}{16},
-      width=11.5cm,
-      axis lines=center,
-      axis line style={-latex, black!70, line width=0.7pt},
-      xlabel={$x$}, ylabel={$y$}, zlabel={$z$},
-      label style={font=\large},
-      ticks=none,
-      xmin=-2.2, xmax=2.2, ymin=-2.2, ymax=2.2, zmin=-1.4, zmax=3.2,
-      clip=false,
-    ]
-    % ---- the horizontal plane, for reference ----
-    \addplot3[surf, shader=flat, draw=black!12, fill=black!10,
-              opacity=0.45, fill opacity=0.45,
-              domain=-2:2, samples=2, y domain=-2:2, samples y=2,
-              forget plot]
-      (x, y, 0);
-    % ---- the cylinder x^2 + z^2 = 1, lying along y, cut at y = pm 1 ----
-    \addplot3[surf, shader=faceted, faceted color=oired!35,
-              colormap={cylr}{color=(oired!45!white) color=(oired!85!black)},
-              opacity=0.9, fill opacity=0.9,
-              domain=0:360, samples=44, y domain=-1:1, samples y=6,
-              z buffer=sort, forget plot]
-      ({cos(x)}, y, {sin(x)});
-    % ---- the cone z = 1 + sqrt(x^2+y^2), capped at z = 2 ----
-    \addplot3[surf, shader=faceted, faceted color=oired!30,
-              colormap={coner}{color=(oired!40!white) color=(oired!80!black)},
-              opacity=0.92, fill opacity=0.92,
-              domain=0:1, samples=16, y domain=0:360, samples y=44,
-              z buffer=sort, forget plot]
-      ({x*cos(y)}, {x*sin(y)}, {1 + x});
-    % ---- the cap of the cone ----
-    \addplot3[surf, shader=flat, draw=oired!55, fill=oired!45,
-              opacity=0.85, fill opacity=0.85,
-              domain=0:1, samples=12, y domain=0:360, samples y=44,
-              forget plot]
-      ({x*cos(y)}, {x*sin(y)}, 2);
-    % ---- labels ----
-    \node[oired, font=\large, anchor=west]
-      at (axis cs:0.55,1.15,2.55) {$z = 1+\sqrt{x^2+y^2}$};
-    \node[oired, font=\large, anchor=west]
-      at (axis cs:0.55,1.15,-1.15) {$x^2+z^2=1$};
-    \draw[black!55, line width=0.6pt] (axis cs:0,0,2) -- (axis cs:0.12,0,2);
-    \node[anchor=east, font=\small] at (axis cs:0,0,2) {$2$};
-    \draw[black!55, line width=0.6pt] (axis cs:0,0,3) -- (axis cs:0.12,0,3);
-    \node[anchor=east, font=\small] at (axis cs:0,0,3) {$3$};
-  \end{axis}
-\end{tikzpicture}]]>
-      </latex-image>
+      <prefigure xmlns="https://prefigure.org" label="prefigure-hw8-staircase">
+        <diagram dimensions="(360,340)" margins="10">
+          <coordinates bbox="(-1.6,-1.6,12.2,11.6)">
+            <axes at="hst-axes" xlabel="x" ylabel="y" decorations="no"
+                arrows="1"/>
+            <polygon at="hst-path" closed="no" stroke="#0072B2" thickness="2"
+                fill="none" points="((0,0),(1,0),(1,1),(2,1),(2,2),(3,2),(3,3),(4,3),(4,4),(5,4),(5,5),(6,5),(6,6),(7,6),(7,7),(8,7),(8,8),(9,8),(9,9),(10,9),(10,10),(0,10))"/>
+            <vector at="hst-a1" v="(0.9,0)" tail="(4.2,4)" stroke="#0072B2"
+                thickness="2"/>
+            <vector at="hst-a2" v="(-1.1,0)" tail="(5.6,10)" stroke="#0072B2"
+                thickness="2"/>
+            <point at="hst-start" p="(0,0)" fill="black" alignment="sw">
+              <m>(0,0)</m>
+            </point>
+            <point at="hst-corner" p="(10,10)" fill="black" alignment="se">
+              <m>(10,10)</m>
+            </point>
+            <point at="hst-end" p="(0,10)" fill="black" alignment="nw">
+              <m>(0,10)</m>
+            </point>
+          </coordinates>
+          <annotations>
+            <annotation ref="figure" text="A staircase path made of ten unit steps climbing from the origin to the point ten comma ten, each step going one unit to the right and then one unit up. From ten comma ten the path returns straight left along the line y equals ten to the point zero comma ten. Arrowheads show the direction of travel: rightward on the staircase and leftward on the top segment.">
+              <annotation ref="hst-path" text="The staircase path from the origin to ten comma ten and then back along y equals ten to zero comma ten."/>
+              <annotation ref="hst-a1" text="An arrowhead on the staircase pointing to the right, the direction of travel."/>
+              <annotation ref="hst-a2" text="An arrowhead on the top segment pointing to the left, the direction of travel back to zero comma ten."/>
+            </annotation>
+          </annotations>
+        </diagram>
+      </prefigure>
     </image>
   </figure>
 
-  <exercise xml:id="ex-hw8-center-of-mass">
+  <exercise xml:id="ex-hw8-circle">
     <statement>
       <p>
-        Consider a solid object bounded by <m>x = \sqrt{y^2+z^2}</m> and
-        <m>x = 1</m>. Suppose that the object's mass density function is
-        <m>\rho(x) = x</m>. Find the location of the center of mass of the
-        object.
+        Calculate the line integral
+      </p>
+      <me>
+        \oint_C \sqrt{x^2+y^2}\,dx
+        + y\left[xy + \ln\left(x + \sqrt{x^2+y^2}\right)\right] dy ,
+      </me>
+      <p>
+        where <m>C</m> is the circle <m>x^2 + y^2 = 1</m>, with
+        counterclockwise orientation.
       </p>
     </statement>
+  </exercise>
+
+  <exercise xml:id="ex-hw8-flux">
+    <statement>
+      <p>
+        Calculate the outward flux of the vector field
+        <m>\mathbf{F} = \left\langle x+y,\ -xy \right\rangle</m>
+        across the unit circle.
+      </p>
+    </statement>
+  </exercise>
+
+  <exercise xml:id="ex-hw8-rose">
+    <introduction>
+      <p>
+        Consider the line integral
+        <m>\displaystyle\oint_C \left(y^4 - 2y\right) dx
+        - \left(6x - 4xy^3\right) dy</m>, where the curve <m>C</m> is
+        <m>r = \sin(2\theta)</m>, <m>0 \le \theta \le \frac{\pi}{2}</m>,
+        oriented counterclockwise. Note that <m>(r,\theta)</m> are polar
+        coordinates.
+      </p>
+    </introduction>
+    <task xml:id="task-hw8-green">
+      <statement>
+        <p>
+          Use Green's theorem to calculate the line integral.
+        </p>
+      </statement>
+    </task>
+    <task xml:id="task-hw8-interpret">
+      <statement>
+        <p>
+          In physics, this line integral can be interpreted in two
+          different ways. Briefly explain.
+        </p>
+      </statement>
+    </task>
   </exercise>
   </exercises>
 </section>

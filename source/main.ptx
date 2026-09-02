@@ -87,7 +87,7 @@
       <title>Assignments and Review Problems</title>
       <introduction>
         <p>
-          The nine assignments and the review problem sets, in one place.
+          The ten assignments and the review problem sets, in one place.
           You can check your work by entering your answers in the provided
           boxes: type an answer, press <q>Check Me</q>, and check as often
           as you like. Each box is graded on its own, so a box you get
@@ -298,16 +298,16 @@
       <xi:include href="hw1-online.ptx" />
       <xi:include href="hw2-online.ptx" />
       <xi:include href="hw3-online.ptx" />
+      <xi:include href="review1-practice.ptx" />
       <xi:include href="hw4-online.ptx" />
       <xi:include href="hw5-online.ptx" />
       <xi:include href="hw6-online.ptx" />
+      <xi:include href="review2-practice.ptx" />
       <xi:include href="hw7-online.ptx" />
       <xi:include href="hw8-online.ptx" />
       <xi:include href="hw9-online.ptx" />
-      <xi:include href="hw10-online.ptx" />
-      <xi:include href="review1-practice.ptx" />
-      <xi:include href="review2-practice.ptx" />
       <xi:include href="review3-practice.ptx" />
+      <xi:include href="hw10-online.ptx" />
       <xi:include href="review4-practice.ptx" />
     </chapter>
 

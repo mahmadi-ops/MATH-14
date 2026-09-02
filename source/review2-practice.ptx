@@ -2233,5 +2233,211 @@
     </solution>
   </exercise>
 
+
+  <exercise xml:id="ex-r2p-sphere-minus-sphere">
+    <title>Volume Between Two Spheres in Spherical Coordinates</title>
+    <setup>
+      <de-object name="a" context="number">
+        <de-random distribution="discrete" min="2" max="8" by="1"/>
+      </de-object>
+      <de-object name="volume" context="number">
+        <de-expression>pi*a^3/2</de-expression>
+      </de-object>
+    </setup>
+    <statement>
+      <p>
+        Find the volume of the region outside the sphere
+        <m>\rho = <eval obj="a"/>\cos\phi</m> and inside the half sphere
+        <m>\rho = <eval obj="a"/></m>, with
+        <m>\phi \in \left[0, \frac{\pi}{2}\right]</m>.
+      </p>
+      <p>
+        Volume <m>=</m>
+        <fillin name="b1" mode="number" ansobj="volume" width="14"/>
+      </p>
+    </statement>
+    <evaluation>
+      <evaluate>
+        <test correct="yes">
+          <numcmp use-answer="yes" min="volume.value({})-Math.max(0.01,1e-4*Math.abs(volume.value({})))" max="volume.value({})+Math.max(0.01,1e-4*Math.abs(volume.value({})))"/>
+          <feedback><p>Correct.</p></feedback>
+        </test>
+        <test><numcmp min="-1000000000" max="1000000000"/><feedback><p>Incorrect.</p></feedback></test>
+      </evaluate>
+    </evaluation>
+    <solution include-automatic="no">
+      <p component="review2-solutions">
+        In spherical coordinates,
+      </p>
+      <me component="review2-solutions">
+        V = \int_0^{2\pi}\!\!\int_0^{\pi/2}\!\!
+        \int_{<eval obj="a"/>\cos\phi}^{<eval obj="a"/>}
+        \rho^2\sin\phi\,d\rho\,d\phi\,d\theta
+        = \frac{2\pi\left(<eval obj="a"/>\right)^3}{3}
+        \int_0^{\pi/2}\left(1 - \cos^3\phi\right)\sin\phi\,d\phi .
+      </me>
+      <p component="review2-solutions">
+        With <m>c = \cos\phi</m> the remaining integral is
+        <m>\int_0^1 \left(1 - c^3\right) dc = \tfrac34</m>, so
+        <m>V = \frac{2\pi\left(<eval obj="a"/>\right)^3}{3}\cdot\frac34
+        = \frac{\pi\left(<eval obj="a"/>\right)^3}{2}</m>.
+      </p>
+    </solution>
+  </exercise>
+
+  <exercise xml:id="ex-r2p-spherical-shell">
+    <title>A Triple Integral Over a Spherical Shell</title>
+    <setup>
+      <de-object name="r0" context="number">
+        <de-random distribution="discrete" min="1" max="3" by="1"/>
+      </de-object>
+      <de-object name="gap" context="number">
+        <de-random distribution="discrete" min="1" max="5" by="1"/>
+      </de-object>
+      <de-object name="r1" context="number">
+        <de-expression>r0+gap</de-expression>
+      </de-object>
+      <de-object name="radial" context="number">
+        <de-expression>(r1^3-r0^3)/3</de-expression>
+      </de-object>
+      <de-object name="value" context="number">
+        <de-expression>pi*(r1^3-r0^3)/3</de-expression>
+      </de-object>
+    </setup>
+    <statement>
+      <p>
+        Evaluate, in spherical coordinates, the triple integral of
+        <m>f(\rho,\theta,\phi) = \cos\phi</m> over the region
+        <m>0 \le \theta \le 2\pi</m>,
+        <m>0 \le \phi \le \frac{\pi}{2}</m>,
+        <m><eval obj="r0"/> \le \rho \le <eval obj="r1"/></m>.
+      </p>
+      <p>
+        <term>Part A.</term> The <m>\rho</m>-integral separates from the
+        rest. Evaluate it.
+      </p>
+      <p>
+        <m>\displaystyle\int_{<eval obj="r0"/>}^{<eval obj="r1"/>}
+        \rho^2\,d\rho =</m>
+        <fillin name="b1" mode="number" ansobj="radial" width="14"/>
+      </p>
+      <p>
+        <term>Part B.</term> Evaluate the whole integral.
+      </p>
+      <p>
+        Integral <m>=</m>
+        <fillin name="b2" mode="number" ansobj="value" width="14"/>
+      </p>
+    </statement>
+    <evaluation>
+      <evaluate>
+        <test correct="yes">
+          <numcmp use-answer="yes" min="radial.value({})-Math.max(0.01,1e-4*Math.abs(radial.value({})))" max="radial.value({})+Math.max(0.01,1e-4*Math.abs(radial.value({})))"/>
+          <feedback><p>Correct.</p></feedback>
+        </test>
+        <test><numcmp min="-1000000000" max="1000000000"/><feedback><p>Incorrect.</p></feedback></test>
+      </evaluate>
+      <evaluate>
+        <test correct="yes">
+          <numcmp use-answer="yes" min="value.value({})-Math.max(0.01,1e-4*Math.abs(value.value({})))" max="value.value({})+Math.max(0.01,1e-4*Math.abs(value.value({})))"/>
+          <feedback><p>Correct.</p></feedback>
+        </test>
+        <test><numcmp min="-1000000000" max="1000000000"/><feedback><p>Incorrect.</p></feedback></test>
+      </evaluate>
+    </evaluation>
+    <solution include-automatic="no">
+      <p component="review2-solutions">
+        Because the integrand and the volume element both factor, the
+        triple integral splits into a product:
+      </p>
+      <me component="review2-solutions">
+        \int_0^{2\pi}\!\!\int_0^{\pi/2}\!\!
+        \int_{<eval obj="r0"/>}^{<eval obj="r1"/>}
+        \left(\cos\phi\right)\rho^2\sin\phi\,d\rho\,d\phi\,d\theta
+        = \left(\int_0^{2\pi} d\theta\right)
+          \left(\int_{<eval obj="r0"/>}^{<eval obj="r1"/>}\rho^2 d\rho\right)
+          \left(\int_0^{\pi/2}\cos\phi\sin\phi\,d\phi\right).
+      </me>
+      <p component="review2-solutions">
+        These are <m>2\pi</m>,
+        <m>\frac{\left(<eval obj="r1"/>\right)^3
+        - \left(<eval obj="r0"/>\right)^3}{3}</m>, and <m>\tfrac12</m>,
+        so the integral equals
+        <m>\frac{\pi\left(\left(<eval obj="r1"/>\right)^3
+        - \left(<eval obj="r0"/>\right)^3\right)}{3}</m>.
+      </p>
+    </solution>
+  </exercise>
+
+  <exercise xml:id="ex-r2p-gaussian-shell">
+    <title>An Exponential Integral Between Two Spheres</title>
+    <setup>
+      <de-object name="a" context="number">
+        <de-random distribution="discrete" min="1" max="2" by="1"/>
+      </de-object>
+      <de-object name="gap" context="number">
+        <de-random distribution="discrete" min="1" max="3" by="1"/>
+      </de-object>
+      <de-object name="b" context="number">
+        <de-expression>a+gap</de-expression>
+      </de-object>
+      <de-object name="asq" context="number">
+        <de-expression>a^2</de-expression>
+      </de-object>
+      <de-object name="bsq" context="number">
+        <de-expression>b^2</de-expression>
+      </de-object>
+      <de-object name="value" context="number">
+        <de-expression>2*pi*(exp(-asq)-exp(-bsq))</de-expression>
+      </de-object>
+    </setup>
+    <statement>
+      <p>
+        Use spherical coordinates to evaluate the triple integral
+      </p>
+      <me>
+        \iiint_E \frac{e^{-\left(x^2+y^2+z^2\right)}}
+        {\sqrt{x^2+y^2+z^2}}\,dV ,
+      </me>
+      <p>
+        where <m>E</m> is the region bounded by the spheres
+        <m>x^2+y^2+z^2 = <eval obj="asq"/></m> and
+        <m>x^2+y^2+z^2 = <eval obj="bsq"/></m>.
+      </p>
+      <p>
+        Answer <m>=</m>
+        <fillin name="b1" mode="number" ansobj="value" width="14"/>
+      </p>
+    </statement>
+    <evaluation>
+      <evaluate>
+        <test correct="yes">
+          <numcmp use-answer="yes" min="value.value({})-Math.max(0.01,1e-4*Math.abs(value.value({})))" max="value.value({})+Math.max(0.01,1e-4*Math.abs(value.value({})))"/>
+          <feedback><p>Correct.</p></feedback>
+        </test>
+        <test><numcmp min="-1000000000" max="1000000000"/><feedback><p>Incorrect.</p></feedback></test>
+      </evaluate>
+    </evaluation>
+    <solution include-automatic="no">
+      <p component="review2-solutions">
+        The spheres have radii <m><eval obj="a"/></m> and
+        <m><eval obj="b"/></m>. In spherical coordinates,
+      </p>
+      <me component="review2-solutions">
+        \iiint_E \frac{e^{-\rho^2}}{\rho}\,dV
+        = \int_0^{2\pi}\!\!\int_0^{\pi}\!\!
+          \int_{<eval obj="a"/>}^{<eval obj="b"/>}
+          \frac{e^{-\rho^2}}{\rho}\,\rho^2\sin\phi
+          \,d\rho\,d\phi\,d\theta
+        = 4\pi\int_{<eval obj="a"/>}^{<eval obj="b"/>}
+          \rho\,e^{-\rho^2}\,d\rho .
+      </me>
+      <p component="review2-solutions">
+        With <m>w = \rho^2</m> this is
+        <m>4\pi\left[-\tfrac12 e^{-\rho^2}\right]_{<eval obj="a"/>}^{<eval obj="b"/>}
+        = 2\pi\left(e^{-<eval obj="asq"/>} - e^{-<eval obj="bsq"/>}\right)</m>.
+      </p>
+    </solution>
+  </exercise>
   </exercises>
 </section>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- MATH 14 - HW10, online version: surface integrals, Stokes' theorem and  -->
-<!-- the divergence theorem.  Auto-graded and randomized: each problem draws  -->
+<!-- MATH 14 - HW10, online version: Stokes' theorem and the divergence      -->
+<!-- theorem.  Auto-graded and randomized: each problem draws                 -->
 <!-- its constants in <setup> and the answer objects are built from them, so  -->
 <!-- every student sees the same problem with different numbers.  Every blank -->
 <!-- is graded on its own, so partial credit survives.                        -->
@@ -19,8 +19,7 @@
 
   <introduction>
     <p>
-      Sections: <xref ref="section-surface-integrals" text="title"/>,
-      <xref ref="section-stokes-theorem" text="title"/>, and
+      Sections: <xref ref="section-stokes-theorem" text="title"/> and
       <xref ref="section-divergence-theorem" text="title"/>.
     </p>
     <p>
@@ -36,118 +35,6 @@
   </introduction>
 
   <exercises xml:id="exercises-hw10-online">
-
-  <exercise xml:id="ex-hw10o-cylinder-flux">
-    <title>Flux Through a Piece of a Cylinder</title>
-    <setup>
-      <de-object name="rad" context="number">
-        <de-random distribution="discrete" min="2" max="5" by="1"/>
-      </de-object>
-      <de-object name="a" context="number">
-        <de-random distribution="discrete" min="2" max="5" by="1"/>
-      </de-object>
-      <de-object name="d" context="number">
-        <de-random distribution="discrete" min="1" max="4" by="1"/>
-      </de-object>
-      <de-object name="m" context="number">
-        <de-random distribution="discrete" min="1" max="4" by="1"/>
-      </de-object>
-      <de-object name="b" context="number">
-        <de-expression>a+d</de-expression>
-      </de-object>
-      <de-object name="c" context="number">
-        <de-expression>rad+m</de-expression>
-      </de-object>
-      <de-object name="rsq" context="number">
-        <de-expression>rad*rad</de-expression>
-      </de-object>
-      <de-object name="coef" context="number">
-        <de-expression>-d*rad^2</de-expression>
-      </de-object>
-      <de-object name="flux" context="number">
-        <de-expression>0</de-expression>
-      </de-object>
-    </setup>
-    <statement>
-      <p>
-        Compute the flux
-        <m>\displaystyle\iint_S \mathbf{F} \cdot \hat{\mathbf{n}}\,
-        d\sigma</m>, where
-      </p>
-      <me>
-        \mathbf{F} = \left\langle x^2,\ <eval obj="a"/>z,\
-        -<eval obj="b"/>y \right\rangle
-      </me>
-      <p>
-        and <m>S</m> is the portion of the cylinder
-        <m>y^2 + z^2 = <eval obj="rsq"/></m> lying between <m>x = 0</m> and
-        <m>x = <eval obj="c"/> - z</m>, with <m>\hat{\mathbf{n}}</m>
-        pointing away from the <m>x</m>-axis.
-      </p>
-      <p>
-        Parametrize the cylinder by <m>y = <eval obj="rad"/>\cos\theta</m>,
-        <m>z = <eval obj="rad"/>\sin\theta</m>. Writing
-        <m>\mathbf{N} = \mathbf{r}_\theta \times \mathbf{r}_x</m> for the
-        outward normal, the integrand collapses to
-        <m>\mathbf{F} \cdot \mathbf{N} = K\sin\theta\cos\theta</m>. The
-        constant <m>K</m> is
-        <fillin name="b1" mode="number" ansobj="coef" width="12"/>.
-      </p>
-      <p>
-        The flux is
-        <fillin name="b2" mode="number" ansobj="flux" width="12"/>.
-      </p>
-    </statement>
-    <evaluation>
-      <evaluate>
-        <test correct="yes">
-          <numcmp use-answer="yes" min="coef.value({})-Math.max(0.01,1e-4*Math.abs(coef.value({})))" max="coef.value({})+Math.max(0.01,1e-4*Math.abs(coef.value({})))"/>
-          <feedback><p>Correct.</p></feedback>
-        </test>
-        <test><numcmp min="-1000000000" max="1000000000"/><feedback><p>Incorrect.</p></feedback></test>
-      </evaluate>
-      <evaluate>
-        <test correct="yes">
-          <numcmp use-answer="yes" min="flux.value({})-Math.max(0.01,1e-4*Math.abs(flux.value({})))" max="flux.value({})+Math.max(0.01,1e-4*Math.abs(flux.value({})))"/>
-          <feedback><p>Correct.</p></feedback>
-        </test>
-        <test><numcmp min="-1000000000" max="1000000000"/><feedback><p>Incorrect.</p></feedback></test>
-      </evaluate>
-    </evaluation>
-    <solution include-automatic="no">
-      <p component="hw10-solutions">
-        With <m>\mathbf{r}(\theta, x) = \left\langle x,\ R\cos\theta,\
-        R\sin\theta \right\rangle</m> the outward normal is
-        <m>\mathbf{N} = \mathbf{r}_\theta \times \mathbf{r}_x
-        = \left\langle 0,\ R\cos\theta,\ R\sin\theta \right\rangle</m>, so
-        only the last two components of <m>\mathbf{F}</m> matter. On the
-        cylinder <m>\mathbf{F} = \left\langle x^2,\ aR\sin\theta,\
-        -bR\cos\theta \right\rangle</m>, hence
-      </p>
-      <me component="hw10-solutions">
-        \mathbf{F} \cdot \mathbf{N}
-        = aR^2\sin\theta\cos\theta - bR^2\cos\theta\sin\theta
-        = R^2(a-b)\sin\theta\cos\theta ,
-      </me>
-      <p component="hw10-solutions">
-        so <m>K = R^2(a-b)</m>. Nothing here depends on <m>x</m>, and the
-        piece of the cylinder at angle <m>\theta</m> has length
-        <m>c - R\sin\theta</m>, so
-      </p>
-      <me component="hw10-solutions">
-        \iint_S \mathbf{F} \cdot \hat{\mathbf{n}}\, d\sigma
-        = K\int_0^{2\pi} \sin\theta\cos\theta
-          \left(c - R\sin\theta\right) d\theta
-        = K\left[c\int_0^{2\pi}\sin\theta\cos\theta\, d\theta
-          - R\int_0^{2\pi}\sin^2\theta\cos\theta\, d\theta\right] = 0 .
-      </me>
-      <p component="hw10-solutions">
-        Both integrals vanish over a full turn, so the flux is <m>0</m> no
-        matter what <m>a</m>, <m>b</m>, <m>R</m> and <m>c</m> are. Reversing
-        the orientation only flips a sign, so that answer is <m>0</m> too.
-      </p>
-    </solution>
-  </exercise>
 
   <exercise xml:id="ex-hw10o-stokes-hemisphere">
     <title>A Curl Integral Over a Hemisphere</title>

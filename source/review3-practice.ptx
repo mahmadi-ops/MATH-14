@@ -10,9 +10,10 @@
 
   <introduction>
     <p>
-      Sections: <xref ref="section-jacobian-substitution" text="title"/>,
-      <xref ref="section-triple-integrals-spherical" text="title"/>, and
-      <xref ref="section-mass-center-of-mass" text="title"/>. Work each
+      Sections: <xref ref="section-triple-integrals-spherical" text="title"/>,
+      <xref ref="section-mass-center-of-mass" text="title"/>, <xref ref="section-jacobian-substitution" text="title"/>,
+      <xref ref="section-surface-integrals" text="title"/>, and
+      <xref ref="section-greens-theorem" text="title"/>. Work each
       problem, then type your answers into the boxes and have them checked
       here.
     </p>
@@ -58,6 +59,12 @@
           <c>2*pi*exp(-1)-2*pi*exp(-4)</c> is accepted just as readily as
           <c>2*pi*(exp(-1)-exp(-4))</c>. Do not simplify on our
           account<mdash/>just do not round.
+        </p>
+      </li>
+      <li>
+        <p>
+          <term>Words.</term> Type just the word or letters asked for, in
+          lower case unless the problem says otherwise.
         </p>
       </li>
     </ul>
@@ -1189,265 +1196,7 @@
   </exercise>
 
   <!-- =================================================================== -->
-  <!-- 7.  Volume between a sphere and a tangent sphere  (RP3 #7)          -->
-  <!-- =================================================================== -->
-  <exercise xml:id="ex-r3p-sphere-minus-sphere">
-    <title>Volume Between Two Spheres in Spherical Coordinates</title>
-    <setup>
-      <de-object name="a" context="number">
-        <de-random distribution="discrete" min="2" max="8" by="1"/>
-      </de-object>
-      <de-object name="volume" context="number">
-        <de-expression>pi*a^3/2</de-expression>
-      </de-object>
-    </setup>
-    <statement>
-      <p>
-        Find the volume of the region outside the sphere
-        <m>\rho = <eval obj="a"/>\cos\phi</m> and inside the half sphere
-        <m>\rho = <eval obj="a"/></m>, with
-        <m>\phi \in \left[0, \frac{\pi}{2}\right]</m>.
-      </p>
-      <p>
-        Volume <m>=</m>
-        <fillin name="b1" mode="math" ansobj="volume" width="12"/>
-      </p>
-    </statement>
-    <evaluation>
-      <evaluate>
-        <test correct="yes">
-          <mathcmp use-answer="yes"/>
-          <feedback>
-          <p>Correct.</p>
-        </feedback>
-        </test>
-        <test>
-          <numcmp min="-1000000000" max="1000000000"/>
-          <feedback>
-          <p>Incorrect.</p>
-        </feedback>
-        </test>
-      </evaluate>
-    </evaluation>
-      <solution component="review3-solutions">
-      <p>
-        In spherical coordinates,
-      </p>
-      <me>
-        V = \int_0^{2\pi}\!\!\int_0^{\pi/2}\!\!
-        \int_{4\cos\phi}^{4}
-        \rho^2\sin\phi\,d\rho\,d\phi\,d\theta
-        = \frac{2\pi\left(4\right)^3}{3}
-        \int_0^{\pi/2}\left(1 - \cos^3\phi\right)\sin\phi\,d\phi .
-      </me>
-      <p>
-        With <m>c = \cos\phi</m> the remaining integral is
-        <m>\int_0^1 \left(1 - c^3\right) dc = \tfrac34</m>, so
-        <m>V = \frac{2\pi\left(4\right)^3}{3}\cdot\frac34
-        = \frac{\pi\left(4\right)^3}{2}</m>.
-      </p>
-      <p>
-        Here <m>a = 4</m>, so the volume is
-<m>\dfrac{\pi\left(4^3\right)}{2} = 32\pi \approx 100.53</m>.
-      </p>
-    </solution>
-
-  </exercise>
-
-  <!-- =================================================================== -->
-  <!-- 8.  A spherical triple integral over a shell  (RP3 #8)              -->
-  <!-- =================================================================== -->
-  <exercise xml:id="ex-r3p-spherical-shell">
-    <title>A Triple Integral Over a Spherical Shell</title>
-    <setup>
-      <de-object name="r0" context="number">
-        <de-random distribution="discrete" min="1" max="3" by="1"/>
-      </de-object>
-      <de-object name="gap" context="number">
-        <de-random distribution="discrete" min="1" max="5" by="1"/>
-      </de-object>
-      <de-object name="r1" context="number">
-        <de-expression>r0+gap</de-expression>
-      </de-object>
-      <de-object name="radial" context="number">
-        <de-expression>(r1^3-r0^3)/3</de-expression>
-      </de-object>
-      <de-object name="value" context="number">
-        <de-expression>pi*(r1^3-r0^3)/3</de-expression>
-      </de-object>
-    </setup>
-    <statement>
-      <p>
-        Evaluate, in spherical coordinates, the triple integral of
-        <m>f(\rho,\theta,\phi) = \cos\phi</m> over the region
-        <m>0 \le \theta \le 2\pi</m>,
-        <m>0 \le \phi \le \frac{\pi}{2}</m>,
-        <m><eval obj="r0"/> \le \rho \le <eval obj="r1"/></m>.
-      </p>
-      <p>
-        <term>Part A.</term> The <m>\rho</m>-integral separates from the
-        rest. Evaluate it.
-      </p>
-      <p>
-        <m>\displaystyle\int_{<eval obj="r0"/>}^{<eval obj="r1"/>}
-        \rho^2\,d\rho =</m>
-        <fillin name="b1" mode="math" ansobj="radial" width="12"/>
-      </p>
-      <p>
-        <term>Part B.</term> Evaluate the whole integral.
-      </p>
-      <p>
-        Integral <m>=</m>
-        <fillin name="b2" mode="math" ansobj="value" width="12"/>
-      </p>
-    </statement>
-    <evaluation>
-      <evaluate>
-        <test correct="yes">
-          <mathcmp use-answer="yes"/>
-          <feedback>
-          <p>Correct.</p>
-        </feedback>
-        </test>
-        <test>
-          <numcmp min="-1000000000" max="1000000000"/>
-          <feedback>
-          <p>Incorrect.</p>
-        </feedback>
-        </test>
-      </evaluate>
-      <evaluate>
-        <test correct="yes">
-          <mathcmp use-answer="yes"/>
-          <feedback>
-          <p>Correct.</p>
-        </feedback>
-        </test>
-        <test>
-          <numcmp min="-1000000000" max="1000000000"/>
-          <feedback>
-          <p>Incorrect.</p>
-        </feedback>
-        </test>
-      </evaluate>
-    </evaluation>
-      <solution component="review3-solutions">
-      <p>
-        Because the integrand and the volume element both factor, the
-        triple integral splits into a product:
-      </p>
-      <me>
-        \int_0^{2\pi}\!\!\int_0^{\pi/2}\!\!
-        \int_{1}^{3}
-        \left(\cos\phi\right)\rho^2\sin\phi\,d\rho\,d\phi\,d\theta
-        = \left(\int_0^{2\pi} d\theta\right)
-          \left(\int_{1}^{3}\rho^2 d\rho\right)
-          \left(\int_0^{\pi/2}\cos\phi\sin\phi\,d\phi\right).
-      </me>
-      <p>
-        These are <m>2\pi</m>,
-        <m>\frac{\left(3\right)^3
-        - \left(1\right)^3}{3}</m>, and <m>\tfrac12</m>,
-        so the integral equals
-        <m>\frac{\pi\left(\left(3\right)^3
-        - \left(1\right)^3\right)}{3}</m>.
-      </p>
-      <p>
-        Here the radial integral is <m>\dfrac{3^3 - 1^3}{3} = \dfrac{26}{3}</m>,
-so the triple integral is <m>\dfrac{26\pi}{3} \approx 27.23</m>.
-      </p>
-    </solution>
-
-  </exercise>
-
-  <!-- =================================================================== -->
-  <!-- 9.  A Gaussian-type integral between two spheres  (RP3 #9)          -->
-  <!-- =================================================================== -->
-  <exercise xml:id="ex-r3p-gaussian-shell">
-    <title>An Exponential Integral Between Two Spheres</title>
-    <setup>
-      <de-object name="a" context="number">
-        <de-random distribution="discrete" min="1" max="2" by="1"/>
-      </de-object>
-      <de-object name="gap" context="number">
-        <de-random distribution="discrete" min="1" max="3" by="1"/>
-      </de-object>
-      <de-object name="b" context="number">
-        <de-expression>a+gap</de-expression>
-      </de-object>
-      <de-object name="asq" context="number">
-        <de-expression>a^2</de-expression>
-      </de-object>
-      <de-object name="bsq" context="number">
-        <de-expression>b^2</de-expression>
-      </de-object>
-      <de-object name="value" context="number">
-        <de-expression>2*pi*(exp(-asq)-exp(-bsq))</de-expression>
-      </de-object>
-    </setup>
-    <statement>
-      <p>
-        Use spherical coordinates to evaluate the triple integral
-      </p>
-      <me>
-        \iiint_E \frac{e^{-\left(x^2+y^2+z^2\right)}}
-        {\sqrt{x^2+y^2+z^2}}\,dV ,
-      </me>
-      <p>
-        where <m>E</m> is the region bounded by the spheres
-        <m>x^2+y^2+z^2 = <eval obj="asq"/></m> and
-        <m>x^2+y^2+z^2 = <eval obj="bsq"/></m>.
-      </p>
-      <p>
-        Answer <m>=</m>
-        <fillin name="b1" mode="math" ansobj="value" width="14"/>
-      </p>
-    </statement>
-    <evaluation>
-      <evaluate>
-        <test correct="yes">
-          <mathcmp use-answer="yes"/>
-          <feedback>
-          <p>Correct.</p>
-        </feedback>
-        </test>
-        <test>
-          <numcmp min="-1000000000" max="1000000000"/>
-          <feedback>
-          <p>Incorrect.</p>
-        </feedback>
-        </test>
-      </evaluate>
-    </evaluation>
-      <solution component="review3-solutions">
-      <p>
-        The spheres have radii <m>1</m> and
-        <m>2</m>. In spherical coordinates,
-      </p>
-      <me>
-        \iiint_E \frac{e^{-\rho^2}}{\rho}\,dV
-        = \int_0^{2\pi}\!\!\int_0^{\pi}\!\!
-          \int_{1}^{2}
-          \frac{e^{-\rho^2}}{\rho}\,\rho^2\sin\phi
-          \,d\rho\,d\phi\,d\theta
-        = 4\pi\int_{1}^{2}
-          \rho\,e^{-\rho^2}\,d\rho .
-      </me>
-      <p>
-        With <m>w = \rho^2</m> this is
-        <m>4\pi\left[-\tfrac12 e^{-\rho^2}\right]_{1}^{2}
-        = 2\pi\left(e^{-1} - e^{-4}\right)</m>.
-      </p>
-      <p>
-        Here the radii are <m>1</m> and <m>2</m>, so the integral is
-<m>2\pi\left(e^{-1} - e^{-4}\right) \approx 2.196</m>.
-      </p>
-    </solution>
-
-  </exercise>
-
-  <!-- =================================================================== -->
-  <!-- 10.  Jacobian of a linear transformation  (RP3 #10)                 -->
+  <!-- 7.  Jacobian of a linear transformation  (RP3 #7)                   -->
   <!-- =================================================================== -->
   <exercise xml:id="ex-r3p-linear-jacobian">
     <title>The Jacobian of a Linear Transformation</title>
@@ -1609,7 +1358,7 @@ so the triple integral is <m>\dfrac{26\pi}{3} \approx 27.23</m>.
   </exercise>
 
   <!-- =================================================================== -->
-  <!-- 11.  The map T(u,v) = (u^2-v^2, 2uv)  (RP3 #11)                     -->
+  <!-- 8.  The map T(u,v) = (u^2-v^2, 2uv)  (RP3 #8)                       -->
   <!-- =================================================================== -->
   <exercise xml:id="ex-r3p-quadratic-map">
     <title>A Quadratic Map and the Integral It Simplifies</title>
@@ -1736,7 +1485,7 @@ so the triple integral is <m>\dfrac{26\pi}{3} \approx 27.23</m>.
   </exercise>
 
   <!-- =================================================================== -->
-  <!-- 12.  Centre of gravity of a region between two curves  (RP3 #12)    -->
+  <!-- 9.  Centre of gravity of a region between two curves  (RP3 #9)      -->
   <!-- =================================================================== -->
   <exercise xml:id="ex-r3p-centre-of-gravity">
     <title>Centre of Gravity of a Region Between Two Curves</title>
@@ -1982,7 +1731,7 @@ three integrals <m>\tfrac{88}{3} \approx 29.33</m>, <m>30.48</m> and
   </exercise>
 
   <!-- =================================================================== -->
-  <!-- 13.  Centre of mass of a quarter disc  (RP3 #13)                    -->
+  <!-- 10.  Centre of mass of a quarter disc  (RP3 #10)                    -->
   <!-- =================================================================== -->
   <exercise xml:id="ex-r3p-quarter-disc-com">
     <title>Centre of Mass of a Quarter Disc</title>
@@ -2065,6 +1814,1022 @@ three integrals <m>\tfrac{88}{3} \approx 29.33</m>, <m>30.48</m> and
         Here <m>r = 3</m>, so
 <m>\overline{x} = \overline{y} = \dfrac{4(3)}{3\pi} = \dfrac{4}{\pi}
 \approx 1.273</m>.
+      </p>
+    </solution>
+
+  </exercise>
+
+  <!-- =================================================================== -->
+  <!-- 11.  Flux through a paraboloid cap  (RP3 #11)                        -->
+  <!-- =================================================================== -->
+  <exercise xml:id="ex-r3p-paraboloid-cap">
+    <title>Flux Through a Paraboloid Cap</title>
+    <setup>
+      <de-object name="a" context="number">
+        <de-random distribution="discrete" min="1" max="2" by="1"/>
+      </de-object>
+      <de-object name="u" context="number">
+        <de-random distribution="discrete" min="0" max="1" by="1"/>
+      </de-object>
+      <de-object name="t" context="number">
+        <de-random distribution="discrete" min="1" max="4" by="1"/>
+      </de-object>
+      <de-object name="b" context="number">
+        <de-expression>(2*u-1)*t</de-expression>
+      </de-object>
+      <de-object name="h" context="number">
+        <de-expression>1+a^2</de-expression>
+      </de-object>
+      <de-object name="flux" context="number">
+        <de-expression>b*(a^4/2+a^2)*pi</de-expression>
+      </de-object>
+    </setup>
+    <statement>
+      <p>
+        Let
+        <m>\mathbf{F}(x,y,z) = z\tan\!\left(y^2\right)\mathbf{i}
+        + z^3\ln\!\left(x^2+1\right)\mathbf{j}
+        + <eval obj="b"/>z\,\mathbf{k}</m>. Use the Divergence Theorem to
+        find the flux of <m>\mathbf{F}</m> across the part of the
+        paraboloid <m>x^2 + y^2 + z = <eval obj="h"/></m> that lies above
+        the plane <m>z = 1</m> and is oriented upward.
+      </p>
+      <p>
+        <m>\nabla \cdot \mathbf{F} =</m>
+        <fillin name="b1" mode="math" ansobj="b" width="6"/>
+        (a number)
+      </p>
+      <p>
+        <m>\displaystyle\iint_{S} \mathbf{F}\cdot\hat{\mathbf{n}}\,d\sigma =</m>
+        <fillin name="b2" mode="math" ansobj="flux" width="12"/>
+      </p>
+    </statement>
+    <evaluation>
+      <evaluate>
+        <test correct="yes">
+          <mathcmp use-answer="yes"/>
+          <feedback>
+          <p>Correct.</p>
+        </feedback>
+        </test>
+        <test>
+          <numcmp min="-1000000000" max="1000000000"/>
+          <feedback>
+          <p>Incorrect.</p>
+        </feedback>
+        </test>
+      </evaluate>
+      <evaluate>
+        <test correct="yes">
+          <mathcmp use-answer="yes"/>
+          <feedback>
+          <p>Correct.</p>
+        </feedback>
+        </test>
+        <test>
+          <numcmp min="-1000000000" max="1000000000"/>
+          <feedback>
+          <p>Incorrect.</p>
+        </feedback>
+        </test>
+      </evaluate>
+    </evaluation>
+      <solution component="review3-solutions">
+      <p>
+        Write <m>b</m> for the coefficient of <m>z\,\mathbf{k}</m> and
+        <m>a^2 = h - 1</m>, so the paraboloid meets the plane <m>z=1</m>
+        in the circle of radius <m>a</m>. Then
+        <m>\nabla \cdot \mathbf{F} = b</m>. Close the surface with the
+        disk <m>S_1</m> of radius <m>a</m> at <m>z = 1</m>, oriented
+        downward; there <m>\mathbf{F}\cdot(-\mathbf{k}) = -b</m>, so
+        <m>\iint_{S_1} = -b\pi a^2</m>. The enclosed volume is
+        <m>\int_0^{2\pi}\!\!\int_0^{a}\left(a^2 - r^2\right)r\,dr\,d\theta
+        = \tfrac{\pi a^4}{2}</m>, so the closed-surface flux is
+        <m>b\,\tfrac{\pi a^4}{2}</m>, and
+      </p>
+      <me>
+        \iint_S \mathbf{F}\cdot\hat{\mathbf{n}}\,d\sigma
+        = b\,\frac{\pi a^4}{2} - \left(-b\pi a^2\right)
+        = b\left(\frac{a^4}{2} + a^2\right)\pi.
+      </me>
+      <p>
+        Here <m>b = 3</m> and <m>a^2 = 5 - 1 = 4</m>, so the flux is
+<m>3\left(\tfrac{2^4}{2} + 2^2\right)\pi = 36\pi \approx 113.10</m>.
+      </p>
+    </solution>
+
+  </exercise>
+
+  <!-- =================================================================== -->
+  <!-- 12.  Constant field through a helicoid  (RP3 #12)                    -->
+  <!-- =================================================================== -->
+  <exercise xml:id="ex-r3p-helicoid">
+    <title>Flux Through a Helicoid</title>
+    <setup>
+      <de-object name="w" context="number">
+        <de-random distribution="discrete" min="1" max="4" by="1"/>
+      </de-object>
+      <de-object name="c" context="number">
+        <de-expression>w/2</de-expression>
+      </de-object>
+      <de-object name="integrand" context="formula">
+        <de-expression>(w/2)*(sin(u)-cos(u)+v)</de-expression>
+      </de-object>
+      <de-object name="flux" context="number">
+        <de-expression>(w/2)*(2+pi/2)</de-expression>
+      </de-object>
+      <de-object name="wrongsign" context="formula">
+        <de-expression>(w/2)*(cos(u)-sin(u)-v)</de-expression>
+      </de-object>
+    </setup>
+    <statement>
+      <p>
+        Evaluate
+        <m>\displaystyle\iint_S \mathbf{F}\cdot\hat{\mathbf{n}}\,d\sigma</m>,
+        where the vector field
+        <m>\mathbf{F} = <eval obj="c"/>\,\mathbf{i}
+        + <eval obj="c"/>\,\mathbf{j} + <eval obj="c"/>\,\mathbf{k}</m>
+        and the parametrized surface <m>S</m> is the helicoid
+      </p>
+      <me>
+        \mathbf{r}(u,v) = \left(v\cos u,\ v\sin u,\ u\right),
+        \qquad 0 \le u \le \pi, \quad 0 \le v \le 1,
+      </me>
+      <p>
+        oriented upward.
+      </p>
+      <p>
+        First compute the integrand (as an expression in <m>u</m> and
+        <m>v</m>):
+        <m>\mathbf{F}\cdot\left(\mathbf{r}_v\times\mathbf{r}_u\right) =</m>
+        <fillin name="b1" mode="math" ansobj="integrand" width="20"/>
+      </p>
+      <p>
+        <m>\displaystyle\iint_S \mathbf{F}\cdot\hat{\mathbf{n}}\,d\sigma =</m>
+        <fillin name="b2" mode="math" ansobj="flux" width="12"/>
+      </p>
+    </statement>
+    <evaluation>
+      <evaluate>
+        <test correct="yes">
+          <mathcmp use-answer="yes"/>
+          <feedback>
+          <p>Correct.</p>
+        </feedback>
+        </test>
+        <test>
+          <mathcmp obj="wrongsign"/>
+          <feedback>
+          <p>Incorrect.</p>
+        </feedback>
+        </test>
+        <test>
+          <numcmp min="-1000000000" max="1000000000"/>
+          <feedback>
+          <p>Incorrect.</p>
+        </feedback>
+        </test>
+      </evaluate>
+      <evaluate>
+        <test correct="yes">
+          <mathcmp use-answer="yes"/>
+          <feedback>
+          <p>Correct.</p>
+        </feedback>
+        </test>
+        <test>
+          <numcmp min="-1000000000" max="1000000000"/>
+          <feedback>
+          <p>Incorrect.</p>
+        </feedback>
+        </test>
+      </evaluate>
+    </evaluation>
+      <solution component="review3-solutions">
+      <p>
+        With <m>\mathbf{r}_u = \left(-v\sin u, v\cos u, 1\right)</m> and
+        <m>\mathbf{r}_v = \left(\cos u, \sin u, 0\right)</m>, the upward
+        normal is
+        <m>\mathbf{r}_v\times\mathbf{r}_u
+        = \sin u\,\mathbf{i} - \cos u\,\mathbf{j} + v\,\mathbf{k}</m>.
+        Writing <m>c</m> for the common component of <m>\mathbf{F}</m>,
+      </p>
+      <me>
+        \iint_S \mathbf{F}\cdot\hat{\mathbf{n}}\,d\sigma
+        = c\int_0^1\!\!\int_0^{\pi}\left(\sin u - \cos u + v\right)
+        du\,dv = c\left(2 + \frac{\pi}{2}\right).
+      </me>
+      <p>
+        Here <m>c = 1</m>, so the flux is
+<m>2 + \dfrac{\pi}{2} \approx 3.57</m>.
+      </p>
+    </solution>
+
+  </exercise>
+
+  <!-- =================================================================== -->
+  <!-- 13.  Flux through a paraboloid over a disk  (RP3 #13)                -->
+  <!-- =================================================================== -->
+  <exercise xml:id="ex-r3p-paraboloid-updisk">
+    <title>Flux Through a Paraboloid, Directly</title>
+    <setup>
+      <de-object name="a" context="number">
+        <de-random distribution="discrete" min="1" max="5" by="1"/>
+      </de-object>
+      <de-object name="R" context="number">
+        <de-random distribution="discrete" min="2" max="6" by="1"/>
+      </de-object>
+      <de-object name="Rsq" context="number">
+        <de-expression>R^2</de-expression>
+      </de-object>
+      <de-object name="integrand" context="formula">
+        <de-expression>2*a*(x^2+y^2)</de-expression>
+      </de-object>
+      <de-object name="flux" context="number">
+        <de-expression>pi*a*R^4</de-expression>
+      </de-object>
+    </setup>
+    <statement>
+      <p>
+        Compute the flux of the vector field
+        <m>\mathbf{F} = <eval obj="a"/>x\,\mathbf{i}
+        + <eval obj="a"/>y\,\mathbf{j}</m> through the surface <m>S</m>,
+        which is the part of the surface
+        <m>z = <eval obj="Rsq"/> - \left(x^2 + y^2\right)</m> above the
+        disk of radius <m><eval obj="R"/></m> centered at the origin,
+        oriented <alert>upward</alert>.
+      </p>
+      <p>
+        Writing <m>z = f(x,y)</m>, we have
+        <m>\hat{\mathbf{n}}\,d\sigma = \left(-f_x\,\mathbf{i} - f_y\,\mathbf{j}
+        + \mathbf{k}\right)dx\,dy</m>, so (as an expression in <m>x</m>
+        and <m>y</m>)
+        <m>\mathbf{F}\cdot\left(-f_x\,\mathbf{i} - f_y\,\mathbf{j}
+        + \mathbf{k}\right) =</m>
+        <fillin name="b1" mode="math" ansobj="integrand" width="16"/>
+      </p>
+      <p>
+        Flux <m>=</m> <fillin name="b2" mode="math" ansobj="flux" width="12"/>
+      </p>
+    </statement>
+    <evaluation>
+      <evaluate>
+        <test correct="yes">
+          <mathcmp use-answer="yes"/>
+          <feedback>
+          <p>Correct.</p>
+        </feedback>
+        </test>
+        <test>
+          <numcmp min="-1000000000" max="1000000000"/>
+          <feedback>
+          <p>Incorrect.</p>
+        </feedback>
+        </test>
+      </evaluate>
+      <evaluate>
+        <test correct="yes">
+          <mathcmp use-answer="yes"/>
+          <feedback>
+          <p>Correct.</p>
+        </feedback>
+        </test>
+        <test>
+          <numcmp min="-1000000000" max="1000000000"/>
+          <feedback>
+          <p>Incorrect.</p>
+        </feedback>
+        </test>
+      </evaluate>
+    </evaluation>
+      <solution component="review3-solutions">
+      <p>
+        Writing the surface as <m>z = f(x,y) = R^2 - x^2 - y^2</m> over
+        the disk <m>D</m> of radius <m>R</m>,
+        <m>\hat{\mathbf{n}}\,d\sigma = \left(2x\,\mathbf{i} + 2y\,\mathbf{j} +
+        \mathbf{k}\right)dx\,dy</m> and
+        <m>\mathbf{F}\cdot\hat{\mathbf{n}}\,d\sigma = 2a\left(x^2+y^2\right)dx\,dy</m>,
+        where <m>a</m> is the coefficient in <m>\mathbf{F}</m>. In polar
+        coordinates,
+      </p>
+      <me>
+        \text{Flux} = \int_0^{2\pi}\!\!\int_0^{R} 2a\,r^3\,dr\,d\theta
+        = \pi a R^4.
+      </me>
+      <p>
+        Here <m>a = 2</m> and <m>R = 3</m>, so the flux is
+<m>\pi(2)\left(3^4\right) = 162\pi \approx 508.94</m>.
+      </p>
+    </solution>
+
+  </exercise>
+
+  <!-- =================================================================== -->
+  <!-- 14.  Green's theorem on a clockwise parallelogram  (RP3 #14)         -->
+  <!-- =================================================================== -->
+  <figure xml:id="fig-r3p-parallelogram">
+    <caption>
+      The parallelogram of <xref ref="ex-r3p-parallelogram"/>, with its
+      orientation. Note the direction of the arrows.
+    </caption>
+    <image width="55%">
+      <shortdescription>
+      A parallelogram anchored at the origin with arrows showing its boundary orientation.
+      </shortdescription>
+      <prefigure xmlns="https://prefigure.org" label="prefigure-r3p-parallelogram">
+        <diagram dimensions="(360,240)" margins="10">
+          <coordinates bbox="(-0.8,-0.55,4.9,2.3)">
+            <axes at="pg-axes" xlabel="x" ylabel="y" decorations="no" arrows="1"/>
+            <polygon at="pg-par" closed="yes" stroke="#CC0079" thickness="3"
+                fill="#CC0079" fill-opacity="0.15"
+                points="((0,0),(2,1.4),(4,1.4),(2,0))"/>
+            <vector at="pg-e1" v="(0.7,0.49)" tail="(0.75,0.525)"
+                stroke="#CC0079" thickness="3"/>
+            <vector at="pg-e2" v="(0.8,0)" tail="(2.7,1.4)"
+                stroke="#CC0079" thickness="3"/>
+            <vector at="pg-e3" v="(-0.7,-0.49)" tail="(3.35,0.945)"
+                stroke="#CC0079" thickness="3"/>
+            <vector at="pg-e4" v="(-0.8,0)" tail="(1.3,0)"
+                stroke="#CC0079" thickness="3"/>
+            <point at="pg-O" p="(0,0)" fill="black" alignment="sw">
+              <m>(0,0)</m>
+            </point>
+            <point at="pg-B" p="(2,0)" fill="black" alignment="se">
+              <m>(x_0,0)</m>
+            </point>
+            <point at="pg-T1" p="(2,1.4)" fill="black" alignment="nw">
+              <m>(x_0,y_0)</m>
+            </point>
+            <point at="pg-T2" p="(4,1.4)" fill="black" alignment="ne">
+              <m>(2x_0,y_0)</m>
+            </point>
+          </coordinates>
+
+          <annotations>
+            <annotation ref="figure" text="A parallelogram with vertices at the origin, at x nought comma zero, at two x nought comma y nought, and at x nought comma y nought. Arrows on the edges show the boundary traversed clockwise: up the left edge from the origin, rightward across the top, down the right edge, and leftward along the bottom back to the origin.">
+              <annotation ref="pg-par" text="The parallelogram with vertices at the origin, x nought comma zero, two x nought comma y nought, and x nought comma y nought."/>
+              <annotation ref="pg-e1" text="An arrow on the left edge pointing up and to the right, from the origin toward x nought comma y nought."/>
+              <annotation ref="pg-e2" text="An arrow on the top edge pointing to the right."/>
+              <annotation ref="pg-e3" text="An arrow on the right edge pointing down and to the left, toward x nought comma zero."/>
+              <annotation ref="pg-e4" text="An arrow on the bottom edge pointing to the left, back toward the origin. Altogether the circulation is clockwise."/>
+            </annotation>
+          </annotations>
+        </diagram>
+      </prefigure>
+    </image>
+  </figure>
+
+  <exercise xml:id="ex-r3p-parallelogram">
+    <title>Work Around a Parallelogram</title>
+    <setup>
+      <de-object name="n" context="number">
+        <de-random distribution="discrete" min="2" max="6" by="1"/>
+      </de-object>
+      <de-object name="A" context="number">
+        <de-random distribution="discrete" min="2" max="9" by="1"/>
+      </de-object>
+      <de-object name="x0" context="number">
+        <de-random distribution="discrete" min="2" max="5" by="1"/>
+      </de-object>
+      <de-object name="y0" context="number">
+        <de-random distribution="discrete" min="2" max="5" by="1"/>
+      </de-object>
+      <de-object name="curl" context="number">
+        <de-expression>A</de-expression>
+      </de-object>
+      <de-object name="area" context="number">
+        <de-expression>x0*y0</de-expression>
+      </de-object>
+      <de-object name="work" context="number">
+        <de-expression>-A*x0*y0</de-expression>
+      </de-object>
+      <de-object name="poswork" context="number">
+        <de-expression>A*x0*y0</de-expression>
+      </de-object>
+    </setup>
+    <statement>
+      <p>
+        Use Green's Theorem to evaluate the work done by
+        <m>\mathbf{F} = \langle x^{<eval obj="n"/>},\
+        <eval obj="A"/>x \rangle</m> in moving an object around the
+        boundary of the parallelogram in
+        <xref ref="fig-r3p-parallelogram"/>
+        (<alert>note the orientation</alert>), with
+        <m>x_0 = <eval obj="x0"/></m> and <m>y_0 = <eval obj="y0"/></m>.
+        Assume that the object circulates only once around the boundary
+        and that its motion begins at the origin and ends at the same
+        point.
+      </p>
+      <p>
+        With <m>\mathbf{F} = M\,\mathbf{i} + N\,\mathbf{j}</m>, first
+        compute (a number):
+        <m>\dfrac{\partial N}{\partial x}
+        - \dfrac{\partial M}{\partial y} =</m>
+        <fillin name="b1" mode="math" ansobj="curl" width="6"/>
+      </p>
+      <p>
+        The area of the parallelogram is
+        <fillin name="b2" mode="math" ansobj="area" width="6"/>.
+      </p>
+      <p>
+        Work <m>=</m> <fillin name="b3" mode="math" ansobj="work" width="10"/>
+      </p>
+    </statement>
+    <evaluation>
+      <evaluate>
+        <test correct="yes">
+          <mathcmp use-answer="yes"/>
+          <feedback>
+          <p>Correct.</p>
+        </feedback>
+        </test>
+        <test>
+          <numcmp min="-1000000000" max="1000000000"/>
+          <feedback>
+          <p>Incorrect.</p>
+        </feedback>
+        </test>
+      </evaluate>
+      <evaluate>
+        <test correct="yes">
+          <mathcmp use-answer="yes"/>
+          <feedback>
+          <p>Correct.</p>
+        </feedback>
+        </test>
+        <test>
+          <numcmp min="-1000000000" max="1000000000"/>
+          <feedback>
+          <p>Incorrect.</p>
+        </feedback>
+        </test>
+      </evaluate>
+      <evaluate>
+        <test correct="yes">
+          <mathcmp use-answer="yes"/>
+          <feedback>
+          <p>Correct.</p>
+        </feedback>
+        </test>
+        <test>
+          <numcmp object="poswork" min="poswork.value({})-Math.max(0.01,1e-4*Math.abs(poswork.value({})))" max="poswork.value({})+Math.max(0.01,1e-4*Math.abs(poswork.value({})))"/>
+          <feedback>
+          <p>Incorrect.</p>
+        </feedback>
+        </test>
+        <test>
+          <numcmp min="-1000000000" max="1000000000"/>
+          <feedback>
+          <p>Incorrect.</p>
+        </feedback>
+        </test>
+      </evaluate>
+    </evaluation>
+      <solution component="review3-solutions">
+      <p>
+        With <m>M = x^{n}</m> and <m>N = Ax</m>,
+        <m>N_x - M_y = A</m>. For the counterclockwise orientation
+        Green's Theorem would give <m>A\cdot\text{Area} = A x_0 y_0</m>;
+        the boundary in the figure is traversed clockwise, so
+        <m>\text{Work} = -A x_0 y_0</m>.
+      </p>
+      <p>
+        Here <m>A = 5</m>, <m>x_0 = 3</m> and <m>y_0 = 2</m>, so the work is
+<m>-5(3)(2) = -30</m>.
+      </p>
+    </solution>
+
+  </exercise>
+
+  <!-- =================================================================== -->
+  <!-- 15.  Three gradient fields and the unit circle  (RP3 #15)            -->
+  <!-- =================================================================== -->
+  <exercise xml:id="ex-r3p-three-fields">
+    <title>Three Gradient Fields and the Unit Circle</title>
+    <setup>
+      <de-object name="a1" context="number">
+        <de-random distribution="discrete" min="1" max="5" by="1"/>
+      </de-object>
+      <de-object name="a2" context="number">
+        <de-random distribution="discrete" min="1" max="5" by="1"/>
+      </de-object>
+      <de-object name="a3" context="number">
+        <de-random distribution="discrete" min="1" max="5" by="1"/>
+      </de-object>
+      <de-object name="fpot" context="formula">
+        <de-expression>a1*x*y</de-expression>
+      </de-object>
+      <de-object name="hpot" context="formula">
+        <de-expression>a3*sqrt(x^2+y^2)</de-expression>
+      </de-object>
+      <de-object name="zero" context="number">
+        <de-expression>0</de-expression>
+      </de-object>
+      <de-object name="Gint" context="number">
+        <de-expression>-2*pi*a2</de-expression>
+      </de-object>
+      <de-object name="posGint" context="number">
+        <de-expression>2*pi*a2</de-expression>
+      </de-object>
+    </setup>
+    <statement>
+      <p>
+        (a) Each of the vector fields
+      </p>
+      <md>
+        <mrow>
+          \mathbf{F} \amp = <eval obj="a1"/>y\,\mathbf{i}
+          + <eval obj="a1"/>x\,\mathbf{j},
+        </mrow>
+        <mrow>
+          \mathbf{G} \amp = \frac{<eval obj="a2"/>y}{x^2+y^2}\,\mathbf{i}
+          + \frac{-<eval obj="a2"/>x}{x^2+y^2}\,\mathbf{j},
+        </mrow>
+        <mrow>
+          \mathbf{H} \amp = \frac{<eval obj="a3"/>x}{\sqrt{x^2+y^2}}
+          \,\mathbf{i}
+          + \frac{<eval obj="a3"/>y}{\sqrt{x^2+y^2}}\,\mathbf{j}
+        </mrow>
+      </md>
+      <p>
+        is a gradient vector field on some domain (not necessarily the
+        whole plane). Find potential functions for <m>\mathbf{F}</m> and
+        <m>\mathbf{H}</m>, choosing the constant so that the potential is
+        <m>0</m> at the origin; and find the constant <m>C</m> for the
+        potential of <m>\mathbf{G}</m>.
+      </p>
+      <p>
+        For <m>\mathbf{F}</m>: <m>f(x,y) =</m>
+        <fillin name="b1" mode="math" ansobj="fpot" width="16"/>
+      </p>
+      <p>
+        For <m>\mathbf{G}</m>: <m>g(x,y)
+        = C\arctan\!\left(\dfrac{x}{y}\right)</m> with <m>C =</m>
+        <fillin name="b2" mode="math" ansobj="a2" width="6"/>
+      </p>
+      <p>
+        For <m>\mathbf{H}</m>: <m>h(x,y) =</m>
+        <fillin name="b3" mode="math" ansobj="hpot" width="16"/>
+      </p>
+      <p>
+        (b) Find the line integrals of <m>\mathbf{F}</m>,
+        <m>\mathbf{G}</m>, <m>\mathbf{H}</m> around the curve <m>C</m>
+        given to be the unit circle in the <m>xy</m>-plane, centered at
+        the origin, and traversed counterclockwise.
+      </p>
+      <p>
+        <m>\displaystyle\int_C \mathbf{F}\cdot d\mathbf{r} =</m>
+        <fillin name="b4" mode="math" ansobj="zero" width="8"/>,
+        <m>\displaystyle\int_C \mathbf{G}\cdot d\mathbf{r} =</m>
+        <fillin name="b5" mode="math" ansobj="Gint" width="8"/>,
+        <m>\displaystyle\int_C \mathbf{H}\cdot d\mathbf{r} =</m>
+        <fillin name="b6" mode="math" ansobj="zero" width="8"/>
+      </p>
+      <p>
+        (c) For which of the three vector fields can Green's Theorem be
+        used to calculate the line integral in part (b)? Type the letters
+        of all that apply, with no spaces (for example <c>fg</c>):
+        <fillin name="b7" mode="string" answer="f" width="6"/>
+      </p>
+      <p>
+        <em>(Be sure that you are able to explain why or why not.)</em>
+      </p>
+    </statement>
+    <evaluation>
+      <evaluate>
+        <test correct="yes">
+          <mathcmp use-answer="yes"/>
+          <feedback>
+          <p>Correct.</p>
+        </feedback>
+        </test>
+        <test>
+          <numcmp min="-1000000000" max="1000000000"/>
+          <feedback>
+          <p>Incorrect.</p>
+        </feedback>
+        </test>
+      </evaluate>
+      <evaluate>
+        <test correct="yes">
+          <mathcmp use-answer="yes"/>
+          <feedback>
+          <p>Correct.</p>
+        </feedback>
+        </test>
+        <test>
+          <numcmp min="-1000000000" max="1000000000"/>
+          <feedback>
+          <p>Incorrect.</p>
+        </feedback>
+        </test>
+      </evaluate>
+      <evaluate>
+        <test correct="yes">
+          <mathcmp use-answer="yes"/>
+          <feedback>
+          <p>Correct.</p>
+        </feedback>
+        </test>
+        <test>
+          <numcmp min="-1000000000" max="1000000000"/>
+          <feedback>
+          <p>Incorrect.</p>
+        </feedback>
+        </test>
+      </evaluate>
+      <evaluate>
+        <test correct="yes">
+          <mathcmp use-answer="yes"/>
+          <feedback>
+          <p>Correct.</p>
+        </feedback>
+        </test>
+        <test>
+          <numcmp min="-1000000000" max="1000000000"/>
+          <feedback>
+          <p>Incorrect.</p>
+        </feedback>
+        </test>
+      </evaluate>
+      <evaluate>
+        <test correct="yes">
+          <mathcmp use-answer="yes"/>
+          <feedback>
+          <p>Correct.</p>
+        </feedback>
+        </test>
+        <test>
+          <numcmp object="posGint" min="posGint.value({})-Math.max(0.01,1e-4*Math.abs(posGint.value({})))" max="posGint.value({})+Math.max(0.01,1e-4*Math.abs(posGint.value({})))"/>
+          <feedback>
+          <p>Incorrect.</p>
+        </feedback>
+        </test>
+        <test>
+          <numcmp min="-1000000000" max="1000000000"/>
+          <feedback>
+          <p>Incorrect.</p>
+        </feedback>
+        </test>
+      </evaluate>
+      <evaluate>
+        <test correct="yes">
+          <mathcmp use-answer="yes"/>
+          <feedback>
+          <p>Correct.</p>
+        </feedback>
+        </test>
+        <test>
+          <numcmp min="-1000000000" max="1000000000"/>
+          <feedback>
+          <p>Incorrect.</p>
+        </feedback>
+        </test>
+      </evaluate>
+      <evaluate>
+        <test correct="yes">
+          <strcmp case="insensitive">f</strcmp>
+          <feedback>
+          <p>Correct.</p>
+        </feedback>
+        </test>
+        <test>
+          <strcmp case="insensitive">fgh</strcmp>
+          <feedback>
+          <p>Incorrect.</p>
+        </feedback>
+        </test>
+        <test>
+          <strcmp strip="no">.*</strcmp>
+          <feedback>
+          <p>Incorrect.</p>
+        </feedback>
+        </test>
+      </evaluate>
+    </evaluation>
+      <solution component="review3-solutions">
+      <p>
+        (a) <m>f(x,y) = a_1 xy</m>,
+        <m>g(x,y) = a_2\arctan\!\left(x/y\right)</m> (so <m>C = a_2</m>,
+        valid where <m>y \ne 0</m>), and
+        <m>h(x,y) = a_3\sqrt{x^2+y^2}</m> (valid except at the origin),
+        where <m>a_1, a_2, a_3</m> are the coefficients in
+        <m>\mathbf{F}</m>, <m>\mathbf{G}</m>, <m>\mathbf{H}</m>.
+      </p>
+      <p>
+        (b) <m>\int_C \mathbf{F}\cdot d\mathbf{r} = 0</m> since
+        <m>\mathbf{F}</m> is a gradient field on the whole plane and
+        <m>C</m> is closed. On the unit circle <m>\mathbf{G}</m> is
+        tangent, of length <m>a_2</m>, pointing clockwise, so
+        <m>\int_C \mathbf{G}\cdot d\mathbf{r} = -2\pi a_2</m>.
+        <m>\mathbf{H}</m> is radial, hence perpendicular to <m>C</m>, so
+        its integral is <m>0</m>.
+      </p>
+      <p>
+        (c) Only <m>\mathbf{F}</m>: the domains of <m>\mathbf{G}</m> and
+        <m>\mathbf{H}</m> do not include the origin, which is inside
+        <m>C</m>, so Green's Theorem does not apply to them.
+      </p>
+      <p>
+        Here <m>a_1 = 2</m>, <m>a_2 = 3</m> and <m>a_3 = 4</m>, so
+<m>f = 2xy</m>, <m>C = 3</m>, <m>h = 4\sqrt{x^2+y^2}</m>, and the three
+line integrals are <m>0</m>, <m>-6\pi \approx -18.85</m>, and <m>0</m>.
+      </p>
+    </solution>
+
+  </exercise>
+
+  <!-- =================================================================== -->
+  <!-- 16.  Circulation around a rectangle  (RP3 #16)                       -->
+  <!-- =================================================================== -->
+  <exercise xml:id="ex-r3p-rect-circulation">
+    <title>Circulation Around a Rectangle</title>
+    <setup>
+      <de-object name="a" context="number">
+        <de-random distribution="discrete" min="1" max="5" by="1"/>
+      </de-object>
+      <de-object name="x0" context="number">
+        <de-random distribution="discrete" min="2" max="8" by="1"/>
+      </de-object>
+      <de-object name="y0" context="number">
+        <de-random distribution="discrete" min="1" max="6" by="1"/>
+      </de-object>
+      <de-object name="curlF" context="formula">
+        <de-expression>-a*x</de-expression>
+      </de-object>
+      <de-object name="circ" context="number">
+        <de-expression>-a*x0^2*y0/2</de-expression>
+      </de-object>
+      <de-object name="posax" context="formula">
+        <de-expression>a*x</de-expression>
+      </de-object>
+    </setup>
+    <statement>
+      <p>
+        Use Green's Theorem to calculate the circulation of
+        <m>\mathbf{F} = <eval obj="a"/>xy\,\mathbf{i}</m> around the
+        rectangle <m>0 \le x \le <eval obj="x0"/></m>,
+        <m>0 \le y \le <eval obj="y0"/></m>, oriented counterclockwise.
+      </p>
+      <p>
+        With <m>\mathbf{F} = M\,\mathbf{i} + N\,\mathbf{j}</m>, first
+        compute (as an expression in <m>x</m> and <m>y</m>):
+        <m>\dfrac{\partial N}{\partial x}
+        - \dfrac{\partial M}{\partial y} =</m>
+        <fillin name="b1" mode="math" ansobj="curlF" width="10"/>
+      </p>
+      <p>
+        circulation <m>=</m>
+        <fillin name="b2" mode="math" ansobj="circ" width="10"/>
+      </p>
+    </statement>
+    <evaluation>
+      <evaluate>
+        <test correct="yes">
+          <mathcmp use-answer="yes"/>
+          <feedback>
+          <p>Correct.</p>
+        </feedback>
+        </test>
+        <test>
+          <mathcmp obj="posax"/>
+          <feedback>
+          <p>Incorrect.</p>
+        </feedback>
+        </test>
+        <test>
+          <numcmp min="-1000000000" max="1000000000"/>
+          <feedback>
+          <p>Incorrect.</p>
+        </feedback>
+        </test>
+      </evaluate>
+      <evaluate>
+        <test correct="yes">
+          <mathcmp use-answer="yes"/>
+          <feedback>
+          <p>Correct.</p>
+        </feedback>
+        </test>
+        <test>
+          <numcmp min="-1000000000" max="1000000000"/>
+          <feedback>
+          <p>Incorrect.</p>
+        </feedback>
+        </test>
+      </evaluate>
+    </evaluation>
+      <solution component="review3-solutions">
+      <p>
+        With <m>M = axy</m> and <m>N = 0</m>,
+        <m>N_x - M_y = -ax</m>, so by Green's Theorem
+      </p>
+      <me>
+        \oint_C \mathbf{F}\cdot d\mathbf{r}
+        = \int_0^{x_0}\!\!\int_0^{y_0} (-ax)\,dy\,dx
+        = -\frac{a\,x_0^2\,y_0}{2}.
+      </me>
+      <p>
+        Here <m>a = 2</m>, <m>x_0 = 4</m> and <m>y_0 = 3</m>, so the circulation is
+<m>-\dfrac{2\left(4^2\right)(3)}{2} = -48</m>.
+      </p>
+    </solution>
+
+  </exercise>
+
+  <!-- =================================================================== -->
+  <!-- 17.  Circulation around a circle of radius m  (RP3 #17)              -->
+  <!-- =================================================================== -->
+  <exercise xml:id="ex-r3p-circle-green">
+    <title>Circulation Around a Circle</title>
+    <setup>
+      <de-object name="c1" context="number">
+        <de-random distribution="discrete" min="2" max="8" by="1"/>
+      </de-object>
+      <de-object name="c2" context="number">
+        <de-random distribution="discrete" min="2" max="8" by="1"/>
+      </de-object>
+      <de-object name="c4" context="number">
+        <de-random distribution="discrete" min="2" max="8" by="1"/>
+      </de-object>
+      <de-object name="u" context="number">
+        <de-random distribution="discrete" min="0" max="1" by="1"/>
+      </de-object>
+      <de-object name="d0" context="number">
+        <de-random distribution="discrete" min="1" max="5" by="1"/>
+      </de-object>
+      <de-object name="c3" context="number">
+        <de-expression>c2+(2*u-1)*d0</de-expression>
+      </de-object>
+      <de-object name="m" context="number">
+        <de-random distribution="discrete" min="2" max="6" by="1"/>
+      </de-object>
+      <de-object name="diff" context="number">
+        <de-expression>(2*u-1)*d0</de-expression>
+      </de-object>
+      <de-object name="circ" context="number">
+        <de-expression>(2*u-1)*d0*pi*m^2</de-expression>
+      </de-object>
+    </setup>
+    <statement>
+      <p>
+        Calculate
+        <m>\displaystyle\int_C \left(\left(<eval obj="c1"/>x
+        + <eval obj="c2"/>y\right)\mathbf{i}
+        + \left(<eval obj="c3"/>x + <eval obj="c4"/>y\right)\mathbf{j}
+        \right)\cdot d\mathbf{r}</m>, where <m>C</m> is the circular path
+        with center <m>(a,b)</m> and radius <m><eval obj="m"/></m>,
+        oriented counterclockwise. Use Green's Theorem.
+      </p>
+      <p>
+        With <m>\mathbf{F} = M\,\mathbf{i} + N\,\mathbf{j}</m>, first
+        compute (a number):
+        <m>\dfrac{\partial N}{\partial x}
+        - \dfrac{\partial M}{\partial y} =</m>
+        <fillin name="b1" mode="math" ansobj="diff" width="6"/>
+      </p>
+      <p>
+        <m>\displaystyle\int_C \mathbf{F}\cdot d\mathbf{r} =</m>
+        <fillin name="b2" mode="math" ansobj="circ" width="12"/>
+      </p>
+    </statement>
+    <evaluation>
+      <evaluate>
+        <test correct="yes">
+          <mathcmp use-answer="yes"/>
+          <feedback>
+          <p>Correct.</p>
+        </feedback>
+        </test>
+        <test>
+          <numcmp min="-1000000000" max="1000000000"/>
+          <feedback>
+          <p>Incorrect.</p>
+        </feedback>
+        </test>
+      </evaluate>
+      <evaluate>
+        <test correct="yes">
+          <mathcmp use-answer="yes"/>
+          <feedback>
+          <p>Correct.</p>
+        </feedback>
+        </test>
+        <test>
+          <numcmp min="-1000000000" max="1000000000"/>
+          <feedback>
+          <p>Incorrect.</p>
+        </feedback>
+        </test>
+      </evaluate>
+    </evaluation>
+      <solution component="review3-solutions">
+      <p>
+        <m>N_x - M_y</m> is the constant difference of the two cross
+        coefficients, so Green's Theorem gives
+        <m>\left(N_x - M_y\right)\cdot\pi m^2</m>, where <m>m</m> is the
+        radius; the center <m>(a,b)</m> plays no role.
+      </p>
+      <p>
+        Here <m>N_x - M_y = 7 - 4 = 3</m> and <m>m = 3</m>, so the integral is
+<m>3\pi\left(3^2\right) = 27\pi \approx 84.82</m>.
+      </p>
+    </solution>
+
+  </exercise>
+
+  <!-- =================================================================== -->
+  <!-- 18.  Cylinder between two slanted planes  (RP3 #18)                  -->
+  <!-- =================================================================== -->
+  <exercise xml:id="ex-r3p-cylinder-band">
+    <title>Flux Through a Slanted Cylinder Band</title>
+    <setup>
+      <de-object name="R" context="number">
+        <de-random distribution="discrete" min="1" max="5" by="1"/>
+      </de-object>
+      <de-object name="Rsq" context="number">
+        <de-expression>R^2</de-expression>
+      </de-object>
+      <de-object name="z0" context="number">
+        <de-random distribution="discrete" min="1" max="3" by="1"/>
+      </de-object>
+      <de-object name="dz" context="number">
+        <de-random distribution="discrete" min="2" max="6" by="1"/>
+      </de-object>
+      <de-object name="z1" context="number">
+        <de-expression>z0+dz</de-expression>
+      </de-object>
+      <de-object name="flux" context="number">
+        <de-expression>2*pi*R^2*dz</de-expression>
+      </de-object>
+    </setup>
+    <statement>
+      <p>
+        Compute the flux of
+        <m>\mathbf{F} = x\,\mathbf{i} + y\,\mathbf{j} + z\,\mathbf{k}</m>
+        through the surface of the cylinder
+        <m>x^2 + y^2 = <eval obj="Rsq"/></m> bounded below by the plane
+        <m>x + y + z = <eval obj="z0"/></m>, above by the plane
+        <m>x + y + z = <eval obj="z1"/></m>, and
+        <alert>oriented away from the <m>z</m>-axis</alert>. Note that we
+        are only interested in the flux through the curved surface of the
+        cylinder.
+      </p>
+      <p>
+        On the cylinder, <m>\mathbf{F}\cdot\hat{\mathbf{n}} =</m>
+        <fillin name="b1" mode="math" ansobj="R" width="6"/>
+        (a number).
+      </p>
+      <p>
+        Flux <m>=</m> <fillin name="b2" mode="math" ansobj="flux" width="12"/>
+      </p>
+    </statement>
+    <evaluation>
+      <evaluate>
+        <test correct="yes">
+          <mathcmp use-answer="yes"/>
+          <feedback>
+          <p>Correct.</p>
+        </feedback>
+        </test>
+        <test>
+          <numcmp min="-1000000000" max="1000000000"/>
+          <feedback>
+          <p>Incorrect.</p>
+        </feedback>
+        </test>
+      </evaluate>
+      <evaluate>
+        <test correct="yes">
+          <mathcmp use-answer="yes"/>
+          <feedback>
+          <p>Correct.</p>
+        </feedback>
+        </test>
+        <test>
+          <numcmp min="-1000000000" max="1000000000"/>
+          <feedback>
+          <p>Incorrect.</p>
+        </feedback>
+        </test>
+      </evaluate>
+    </evaluation>
+      <solution component="review3-solutions">
+      <p>
+        On the cylinder of radius <m>R</m> the outward normal is
+        <m>\langle x, y, 0\rangle / R</m>, so
+        <m>\mathbf{F}\cdot\hat{\mathbf{n}} = \left(x^2+y^2\right)/R = R</m>: the
+        <m>z</m>-component of <m>\mathbf{F}</m> is tangent to the surface.
+        The two slanted planes cut every vertical line on the cylinder in
+        a segment of the same length <m>\Delta z = z_1 - z_0</m>, so the
+        band has area <m>2\pi R\,\Delta z</m>, and
+      </p>
+      <me>
+        \text{Flux} = R\cdot 2\pi R\,\Delta z = 2\pi R^2\,\Delta z.
+      </me>
+      <p>
+        Here <m>R = 2</m> and <m>\Delta z = 4 - 1 = 3</m>, so the flux is
+<m>2\pi\left(2^2\right)(3) = 24\pi \approx 75.40</m>.
       </p>
     </solution>
 

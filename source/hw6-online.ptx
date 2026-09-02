@@ -9,7 +9,7 @@
 
   <introduction>
     <p>
-      Sections: <xref ref="section-triple-integrals-rectangular" text="title"/> and <xref ref="section-triple-integrals-cylindrical" text="title"/>. Work each problem, then type your answers into the boxes and have them checked here.
+      Sections: <xref ref="section-triple-integrals-rectangular" text="title"/>, <xref ref="section-triple-integrals-cylindrical" text="title"/>, and <xref ref="section-triple-integrals-spherical" text="title"/>. Work each problem, then type your answers into the boxes and have them checked here.
     </p>
     <p>
       Every answer box is graded separately, so a box you fill in correctly
@@ -28,7 +28,7 @@
   <exercises xml:id="exercises-hw6-online">
 
   <exercise xml:id="ex-hw6o-cone-mass">
-    <title>Mass of a Cone Along the x-Axis</title>
+    <title>Mass of a Cone Along the <m>x</m>-Axis</title>
     <statement>
       <p>
         An object is bounded by <m>x = \sqrt{y^2+z^2}</m> and
@@ -267,6 +267,70 @@
         V = \int_0^{2\pi}\!\!\int_0^2\!\!\int_{-\sqrt{r^2+5}}^{1-r^2}
         r\,dz\,dr\,d\theta \approx 20.566 .
       </me>
+    </solution>
+  </exercise>
+
+  <exercise xml:id="ex-hw6o-hemisphere">
+    <title>A Hemisphere in Spherical Coordinates</title>
+    <statement>
+      <p>
+        Evaluate
+      </p>
+      <me>
+        \int_{0}^{6}\!\!\int_{-\sqrt{36-x^2}}^{\sqrt{36-x^2}}\!\!
+        \int_{-\sqrt{36-x^2-z^2}}^{\sqrt{36-x^2-z^2}}
+        \frac{dy\,dz\,dx}{\left(x^2+y^2+z^2\right)^{1/2}} .
+      </me>
+      <p>
+        The solid of integration is half of a ball; its radius is
+        <var width="6"/>, and the value of the integral is
+        <var width="12"/>.
+      </p>
+    </statement>
+    <setup>
+      <var>
+        <condition number="6" tolerance="0.01">
+          <feedback>
+   <p>Correct.</p>
+ </feedback>
+        </condition>
+        <condition string=".*">
+          <feedback>
+          <p>Incorrect.</p>
+        </feedback>
+        </condition>
+      </var>
+      <var>
+        <condition number="113.097" tolerance="0.05">
+          <feedback>
+          <p>Correct.</p>
+        </feedback>
+        </condition>
+        <condition number="226.195" tolerance="0.1">
+          <feedback>
+          <p>Incorrect.</p>
+        </feedback>
+        </condition>
+      </var>
+    </setup>
+    <solution component="hw6-solutions">
+      <p>
+        The bounds describe the hemisphere <m>\rho \le 6</m>,
+        <m>x \ge 0</m>. Since <m>dV = \rho^2\sin\phi\,
+        d\rho\,d\phi\,d\theta</m> by <xref ref="eq-dv-spherical"/> and
+        the integrand is
+        <m>1/\rho</m>,
+      </p>
+      <md>
+        <mrow>
+          \int_{-\pi/2}^{\pi/2}\!\!\int_0^{\pi}\!\!\int_0^6
+          \rho \sin\phi \,d\rho\,d\phi\,d\theta
+          \amp = \pi \cdot \frac{6^2}{2}\cdot 2
+        </mrow>
+        <mrow>
+          \amp = 36\pi \approx 113.097 .
+        </mrow>
+      </md>
     </solution>
   </exercise>
   </exercises>

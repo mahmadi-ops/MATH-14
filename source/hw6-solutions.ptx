@@ -13,8 +13,8 @@
   <title>Assignment 6</title>
 
     <p>
-    Sections: <xref ref="section-triple-integrals-rectangular" text="title"/>
-    and <xref ref="section-triple-integrals-cylindrical" text="title"/>.
+    Sections: <xref ref="section-triple-integrals-rectangular" text="title"/>,
+    <xref ref="section-triple-integrals-cylindrical" text="title"/>, and <xref ref="section-triple-integrals-spherical" text="title"/>.
     </p>
 
   <p>
@@ -128,4 +128,101 @@
       </me>
     </solution>
   </problem>
+  <problem xml:id="ex-hw6-hemisphere">
+    <statement>
+      <p>
+      Evaluate the following integral:
+      </p>
+
+      <md>
+      <mrow>
+      \int_{0}^{6}\!\!\int_{-\sqrt{36-x^2}}^{\sqrt{36-x^2}}\!\!
+      \int_{-\sqrt{36-x^2-z^2}}^{\sqrt{36-x^2-z^2}}
+      \frac{1}{\left(x^2+y^2+z^2\right)^{1/2}}\;dy\,dz\,dx .
+      </mrow>
+      </md>
+    </statement>
+    <solution component="hw6-solutions">
+      <p>
+      The bounds describe the hemisphere <m>\rho \le 6</m>,
+      <m>x \ge 0</m>. Since <m>dV = \rho^2\sin\phi\,
+      d\rho\,d\phi\,d\theta</m> by <xref ref="eq-dv-spherical"/> and
+      the integrand is
+      <m>1/\rho</m>,
+      </p>
+
+      <md>
+      <mrow>
+      \int_{-\pi/2}^{\pi/2}\!\!\int_0^{\pi}\!\!\int_0^6
+      \rho \sin\phi \,d\rho\,d\phi\,d\theta
+      \amp = \pi \cdot \frac{6^2}{2}\cdot 2
+      </mrow>
+      <mrow>
+      \amp = 36\pi \approx 113.097 .
+      </mrow>
+      </md>
+    </solution>
+  </problem>
+
+  <problem xml:id="ex-hw6-convert-spherical">
+    <statement>
+      <p>
+      Convert (do not evaluate) the following integral to
+      <term>spherical</term> and <term>cylindrical</term> coordinates.
+      Which set of coordinates is the most efficient for evaluating this
+      integral?
+      </p>
+
+      <me>
+      \int_{0}^{1}\!\!\int_{0}^{\sqrt{1-x^2}}\!\!
+      \int_{-\sqrt{2-x^2-y^2}}^{-\sqrt{x^2+y^2}} dz\,dy\,dx
+      </me>
+    </statement>
+    <solution component="hw6-solutions">
+      <p>
+        First read the region off the limits. The outer two say
+        <m>0 \le x \le 1</m> and <m>0 \le y \le \sqrt{1-x^2}</m>, the
+        quarter of the unit disk in the first quadrant, so
+        <m>0 \le \theta \le \frac{\pi}{2}</m> and <m>0 \le r \le 1</m>. The
+        inner limits run from the lower half of the sphere
+        <m>x^2+y^2+z^2 = 2</m> up to the lower half of the cone
+        <m>z = -\sqrt{x^2+y^2}</m>.
+      </p>
+      <p>
+        <term>Cylindrical.</term> The two surfaces are
+        <m>z = -\sqrt{2-r^2}</m> and <m>z = -r</m>, and
+        <m>dV = r\,dz\,dr\,d\theta</m>, so
+      </p>
+      <me>
+        \int_{0}^{\pi/2}\!\!\int_{0}^{1}\!\!
+        \int_{-\sqrt{2-r^2}}^{-r} r\,dz\,dr\,d\theta .
+      </me>
+      <p>
+        <term>Spherical.</term> The sphere is <m>\rho = \sqrt2</m>. The
+        cone <m>z = -\sqrt{x^2+y^2}</m> makes a <m>45^\circ</m> angle with
+        the negative <m>z</m>-axis, so it is <m>\phi = \frac{3\pi}{4}</m>,
+        and the region is everything between that cone and the negative
+        <m>z</m>-axis, out to the sphere:
+      </p>
+      <me>
+        \int_{0}^{\pi/2}\!\!\int_{3\pi/4}^{\pi}\!\!
+        \int_{0}^{\sqrt2} \rho^2\sin\phi\,d\rho\,d\phi\,d\theta .
+      </me>
+      <p>
+        Note that the condition <m>r \le 1</m> needs no separate limit in
+        spherical coordinates: the sphere meets the cone at
+        <m>r = \sqrt2\,\sin\frac{3\pi}{4} = 1</m>, exactly the edge of the
+        quarter disk.
+      </p>
+      <p>
+        <term>Which is more efficient?</term> Spherical, because all six
+        limits are constants<mdash/>the region is a solid cone of radius
+        <m>\sqrt2</m>, and the integrand <m>\rho^2\sin\phi</m> separates
+        into a product of one-variable factors. In cylindrical coordinates
+        the <m>z</m>-limits still depend on <m>r</m>, and the resulting
+        <m>r</m>-integral needs a substitution.
+      </p>
+    </solution>
+  </problem>
+
 </section>

@@ -13,7 +13,7 @@
   <title>Assignment 8</title>
 
     <p>
-    Section: <xref ref="section-mass-center-of-mass" text="title"/>.
+    Section: <xref ref="section-greens-theorem" text="title"/>.
     </p>
 
   <p>
@@ -22,149 +22,188 @@
     <xref ref="sec-exercises-hw8-online" text="title"/>.
   </p>
 
-  <problem xml:id="ex-hw8-centroid">
+  <problem xml:id="ex-hw8-staircase">
     <statement>
       <p>
-      Find the centroid of the solid shown in <xref ref="fig-hw8-solid"/>.
-      The cone is bounded by a disk in the <m>z = 2</m> plane and the
-      cylinder is bounded by the <m>y = \pm 1</m> planes. Note that both
-      the cone and the cylinder are assumed to be solid objects, that is,
-      they are not hollow.
+      Compute the work done by the force field
+      </p>
+
+      <me>
+      \mathbf{F} = \left\langle x^3 e^{x^2} + xe^x - y,\
+      y^2 - e^y + x \right\rangle
+      </me>
+
+      <p>
+      along the path <m>C</m>, which is shown in
+      <xref ref="fig-hw8-staircase"/>. Assume that the object moves along
+      the path from <m>(0,0)</m> to <m>(10,10)</m> and then to
+      <m>(0,10)</m>.
       </p>
     </statement>
     <solution component="hw8-solutions">
       <p>
-      By symmetry the cylinder's own centroid is the origin, so only the
-      cone moves the answer. The cylinder has volume
-      <m>\pi(1)^2(2) = 2\pi</m> and the cone
+      Closing the path with the segment <m>C_3</m> down the
+      <m>y</m>-axis gives a simple closed curve, and
+      <m>\frac{\partial N}{\partial x} -
+      \frac{\partial M}{\partial y} = 1-(-1) = 2</m>, so by Green's
+      theorem, <xref ref="eq-green-tangential"/>, the closed loop
+      integral is <m>2 \times 55 = 110</m>,
+      where <m>55 = 50 + 10\left(\frac12\right)</m> is the enclosed
+      area.
+      </p>
+
+      <p>
+      On <m>C_3</m>, <m>x = 0</m> and <m>dx = 0</m>, so
+      <m>\int_{C_3}\mathbf{F}\cdot d\mathbf{r}
+      = \int_{10}^{0}\left(y^2-e^y\right) dy
+      = -\frac{1000}{3}-1+e^{10}</m>. Therefore
       </p>
 
       <me>
-      m_2 = \delta\iint_R\left(1-\sqrt{x^2+y^2}\right) dA
-      = \delta\left(\tfrac12 - \tfrac13\right)(2\pi)
-      = \frac{\pi\delta}{3} .
+      W = 110 + \frac{1000}{3} + 1 - e^{10}
+      = \frac{1333}{3} - e^{10} \approx -21582.1 .
       </me>
+    </solution>
+  </problem>
 
+  <figure xml:id="fig-hw8-staircase">
+      <caption>
+        The curve <m>C</m> of <xref ref="ex-hw8-staircase"/>: a staircase of
+        ten unit steps from <m>(0,0)</m> to <m>(10,10)</m>, followed by the
+        horizontal segment back to <m>(0,10)</m>.
+      </caption>
+      <image width="70%">
+        <shortdescription>
+        A staircase of ten unit steps from the origin to (10,10), returning along the top.
+        </shortdescription>
+        <prefigure xmlns="https://prefigure.org" label="prefigure-hw8-staircase">
+          <diagram dimensions="(360,340)" margins="10">
+            <coordinates bbox="(-1.6,-1.6,12.2,11.6)">
+              <axes at="hst-axes" xlabel="x" ylabel="y" decorations="no" arrows="1"/>
+              <polygon at="hst-path" closed="no" stroke="#0072B2" thickness="2" fill="none" points="((0,0),(1,0),(1,1),(2,1),(2,2),(3,2),(3,3),(4,3),(4,4),(5,4),(5,5),(6,5),(6,6),(7,6),(7,7),(8,7),(8,8),(9,8),(9,9),(10,9),(10,10),(0,10))"/>
+              <vector at="hst-a1" v="(0.9,0)" tail="(4.2,4)" stroke="#0072B2" thickness="2"/>
+              <vector at="hst-a2" v="(-1.1,0)" tail="(5.6,10)" stroke="#0072B2" thickness="2"/>
+              <point at="hst-start" p="(0,0)" fill="black" alignment="sw">
+                <m>(0,0)</m>
+              </point>
+              <point at="hst-corner" p="(10,10)" fill="black" alignment="se">
+                <m>(10,10)</m>
+              </point>
+              <point at="hst-end" p="(0,10)" fill="black" alignment="nw">
+                <m>(0,10)</m>
+              </point>
+            </coordinates>
+            <annotations>
+              <annotation ref="figure" text="A staircase path made of ten unit steps climbing from the origin to the point ten comma ten, each step going one unit to the right and then one unit up. From ten comma ten the path returns straight left along the line y equals ten to the point zero comma ten. Arrowheads show the direction of travel: rightward on the staircase and leftward on the top segment.">
+                <annotation ref="hst-path" text="The staircase path from the origin to ten comma ten and then back along y equals ten to zero comma ten."/>
+                <annotation ref="hst-a1" text="An arrowhead on the staircase pointing to the right, the direction of travel."/>
+                <annotation ref="hst-a2" text="An arrowhead on the top segment pointing to the left, the direction of travel back to zero comma ten."/>
+              </annotation>
+            </annotations>
+          </diagram>
+        </prefigure>
+      </image>
+    </figure>
+
+  <problem xml:id="ex-hw8-circle">
+    <statement>
       <p>
-      The cone's own centroid sits at <m>z = 1 + \frac34 =
-      \frac74</m>, so with <m>M = 2\pi\delta + \frac{\pi\delta}{3}
-      = \frac{7\pi\delta}{3}</m>,
+      Calculate the line integral
       </p>
 
       <me>
-      \overline{z} = \frac{m_2}{M}\cdot\frac74
-      = \frac{\pi\delta/3}{7\pi\delta/3}\cdot\frac74
-      = \frac14 ,
+      \oint_C \sqrt{x^2+y^2}\,dx
+      + y\left[xy + \ln\left(x + \sqrt{x^2+y^2}\right)\right] dy ,
       </me>
 
       <p>
-      so the centroid is
-      <m>\left\langle 0, 0, \frac14 \right\rangle</m>.
+      where <m>C</m> is the circle <m>x^2 + y^2 = 1</m>, with
+      counterclockwise orientation.
+      </p>
+    </statement>
+    <solution component="hw8-solutions">
+      <p>
+      Differentiating, <m>\frac{\partial M}{\partial y}
+      = \frac{y}{\sqrt{x^2+y^2}}</m> and
+      <m>\frac{\partial N}{\partial x} = y\left(y +
+      \frac{1}{\sqrt{x^2+y^2}}\right)</m>, so their difference is
+      <m>y^2</m>. By Green's theorem,
+      <xref ref="eq-green-tangential"/>,
+      </p>
+
+      <me>
+      \oint_C = \iint_R y^2\,dx\,dy
+      = \int_0^{2\pi}\!\!\int_0^1 r^3\sin^2\theta\,dr\,d\theta
+      = \frac{\pi}{4} .
+      </me>
+    </solution>
+  </problem>
+
+  <problem xml:id="ex-hw8-flux">
+    <statement>
+      <p>
+      Calculate the outward flux of the vector field
+      <m>\mathbf{F} = \left\langle x+y,\ -xy \right\rangle</m>
+      across the unit circle.
+      </p>
+    </statement>
+    <solution component="hw8-solutions">
+      <p>
+      Here <m>\nabla\cdot\mathbf{F} = 1 - x</m>, so by the flux form
+      of Green's theorem, <xref ref="eq-green-normal"/>,
+      </p>
+
+      <me>
+      \oint_C \mathbf{F}\cdot\hat{\mathbf{n}}\,ds
+      = \iint_R (1-x)\,dA
+      = \int_0^1\!\!\int_0^{2\pi}\left(1-r\cos\theta\right)
+      r\,d\theta\,dr = \pi ,
+      </me>
+
+      <p>
+      since the <m>x</m>-term integrates to zero by symmetry and what is
+      left is the area of the disk.
       </p>
     </solution>
   </problem>
 
-  <figure xml:id="fig-hw8-solid">
-      <caption>
-        The solid of <xref ref="ex-hw8-centroid"/>: the cone
-        <m>z = 1 + \sqrt{x^2+y^2}</m> capped by the plane <m>z = 2</m>,
-        sitting on the horizontal cylinder <m>x^2 + z^2 = 1</m> cut off by the
-        planes <m>y = \pm 1</m>.
-      </caption>
-      <image xml:id="image-hw8-solid" width="65%">
-        <shortdescription>
-          A cone standing point-down on a horizontal cylinder lying along the
-          y axis.
-        </shortdescription>
-        <description>
-          <p>
-            A red cylinder of radius one lies on its side along the y axis,
-            cut off by the planes y equals plus and minus one. Above it, a red
-            cone opens upward from the point at height one on the z axis to a
-            disk of radius one in the plane z equals two.
-          </p>
-        </description>
-        <latex-image>
-          \begin{tikzpicture}[line join=round, line cap=round]
-    \definecolor{oired}{RGB}{213,40,60}
-    \begin{axis}[
-        view={118}{16},
-        width=11.5cm,
-        axis lines=center,
-        axis line style={-latex, black!70, line width=0.7pt},
-        xlabel={$x$}, ylabel={$y$}, zlabel={$z$},
-        label style={font=\large},
-        ticks=none,
-        xmin=-2.2, xmax=2.2, ymin=-2.2, ymax=2.2, zmin=-1.4, zmax=3.2,
-        clip=false,
-      ]
-      % ---- the horizontal plane, for reference ----
-      \addplot3[surf, shader=flat, draw=black!12, fill=black!10,
-                opacity=0.45, fill opacity=0.45,
-                domain=-2:2, samples=2, y domain=-2:2, samples y=2,
-                forget plot]
-        (x, y, 0);
-      % ---- the cylinder x^2 + z^2 = 1, lying along y, cut at y = pm 1 ----
-      \addplot3[surf, shader=faceted, faceted color=oired!35,
-                colormap={cylr}{color=(oired!45!white) color=(oired!85!black)},
-                opacity=0.9, fill opacity=0.9,
-                domain=0:360, samples=44, y domain=-1:1, samples y=6,
-                z buffer=sort, forget plot]
-        ({cos(x)}, y, {sin(x)});
-      % ---- the cone z = 1 + sqrt(x^2+y^2), capped at z = 2 ----
-      \addplot3[surf, shader=faceted, faceted color=oired!30,
-                colormap={coner}{color=(oired!40!white) color=(oired!80!black)},
-                opacity=0.92, fill opacity=0.92,
-                domain=0:1, samples=16, y domain=0:360, samples y=44,
-                z buffer=sort, forget plot]
-        ({x*cos(y)}, {x*sin(y)}, {1 + x});
-      % ---- the cap of the cone ----
-      \addplot3[surf, shader=flat, draw=oired!55, fill=oired!45,
-                opacity=0.85, fill opacity=0.85,
-                domain=0:1, samples=12, y domain=0:360, samples y=44,
-                forget plot]
-        ({x*cos(y)}, {x*sin(y)}, 2);
-      % ---- labels ----
-      \node[oired, font=\large, anchor=west]
-        at (axis cs:0.55,1.15,2.55) {$z = 1+\sqrt{x^2+y^2}$};
-      \node[oired, font=\large, anchor=west]
-        at (axis cs:0.55,1.15,-1.15) {$x^2+z^2=1$};
-      \draw[black!55, line width=0.6pt] (axis cs:0,0,2) -- (axis cs:0.12,0,2);
-      \node[anchor=east, font=\small] at (axis cs:0,0,2) {$2$};
-      \draw[black!55, line width=0.6pt] (axis cs:0,0,3) -- (axis cs:0.12,0,3);
-      \node[anchor=east, font=\small] at (axis cs:0,0,3) {$3$};
-    \end{axis}
-  \end{tikzpicture}
-        </latex-image>
-      </image>
-    </figure>
-
-  <problem xml:id="ex-hw8-center-of-mass">
+  <problem xml:id="ex-hw8-rose">
     <statement>
       <p>
-      Consider a solid object bounded by <m>x = \sqrt{y^2+z^2}</m> and
-      <m>x = 1</m>. Suppose that the object's mass density function is
-      <m>\rho(x) = x</m>. Find the location of the center of mass of the
-      object.
+      Consider the line integral
+      <m>\displaystyle\oint_C \left(y^4 - 2y\right) dx
+      - \left(6x - 4xy^3\right) dy</m>, where the curve <m>C</m> is
+      <m>r = \sin(2\theta)</m>, <m>0 \le \theta \le \frac{\pi}{2}</m>,
+      oriented counterclockwise. Note that <m>(r,\theta)</m> are polar
+      coordinates.
+      </p>
+      <p>
+      (a) Use Green's theorem to calculate the line integral.
+      </p>
+      <p>
+      (b) In physics, this line integral can be interpreted in two
+      different ways. Briefly explain.
       </p>
     </statement>
     <solution component="hw8-solutions">
       <p>
-      By symmetry the center of mass lies on the <m>x</m>-axis. From
-      <xref ref="ex-hw6o-cone-mass"/>, <m>M = \pi/4</m>, and
+      With <m>M = y^4-2y</m> and <m>N = -(6x-4xy^3)</m>,
+      <m>\frac{\partial N}{\partial x} = -6+4y^3</m> and
+      <m>\frac{\partial M}{\partial y} = 4y^3-2</m>, so their
+      difference is <m>-4</m>. The petal has area
       </p>
 
       <me>
-      M_{yz} = \int_0^1\!\!\int_0^{2\pi}\!\!\int_r^1
-      x^2\,r\,dx\,d\theta\,dr
-      = \frac{2\pi}{3}\int_0^1 r\left(1-r^3\right) dr
-      = \frac{\pi}{5} .
+      \int_0^{\pi/2}\!\!\int_0^{\sin 2\theta} r\,dr\,d\theta
+      = \int_0^{\pi/2}\frac{\sin^2(2\theta)}{2}\,d\theta
+      = \frac{\pi}{8} ,
       </me>
 
       <p>
-      Hence <m>\overline{x} = \dfrac{\pi/5}{\pi/4} = \dfrac45</m>,
-      and the center of mass is
-      <m>\left\langle \frac45, 0, 0 \right\rangle</m>.
+      so the integral is <m>(-4)\left(\frac{\pi}{8}\right)
+      = -\frac{\pi}{2}</m>. It is both the circulation of
+      <m>\mathbf{F}</m> around the petal and, read the other way, the
+      work done by <m>\mathbf{F}</m> on a particle going once around it.
       </p>
     </solution>
   </problem>

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- MATH 14 - HW6: triple integrals in rectangular and cylindrical coordinates -->
+<!-- MATH 14 - HW6: triple integrals in rectangular, cylindrical, and spherical coordinates -->
 <section xml:id="sec-exercises-hw6" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Assignment 6</title>
 
   <introduction>
     <p>
-      Sections: <xref ref="section-triple-integrals-rectangular" text="title"/>
-      and <xref ref="section-triple-integrals-cylindrical" text="title"/>.
+      Sections: <xref ref="section-triple-integrals-rectangular" text="title"/>,
+      <xref ref="section-triple-integrals-cylindrical" text="title"/>, and <xref ref="section-triple-integrals-spherical" text="title"/>.
     </p>
   </introduction>
 
@@ -67,6 +67,36 @@
         <m>x^2 + y^2 - z^2 + 5 = 0</m> and
         <m>x^2 + y^2 + z - 1 = 0</m>.
       </p>
+    </statement>
+  </exercise>
+
+  <exercise xml:id="ex-hw6-hemisphere">
+    <statement>
+      <p>
+        Evaluate the following integral:
+      </p>
+      <md>
+        <mrow>
+          \int_{0}^{6}\!\!\int_{-\sqrt{36-x^2}}^{\sqrt{36-x^2}}\!\!
+          \int_{-\sqrt{36-x^2-z^2}}^{\sqrt{36-x^2-z^2}}
+          \frac{1}{\left(x^2+y^2+z^2\right)^{1/2}}\;dy\,dz\,dx .
+        </mrow>
+      </md>
+    </statement>
+  </exercise>
+
+  <exercise xml:id="ex-hw6-convert-spherical">
+    <statement>
+      <p>
+        Convert (do not evaluate) the following integral to
+        <term>spherical</term> and <term>cylindrical</term> coordinates.
+        Which set of coordinates is the most efficient for evaluating this
+        integral?
+      </p>
+      <me>
+        \int_{0}^{1}\!\!\int_{0}^{\sqrt{1-x^2}}\!\!
+        \int_{-\sqrt{2-x^2-y^2}}^{-\sqrt{x^2+y^2}} dz\,dy\,dx
+      </me>
     </statement>
   </exercise>
   </exercises>

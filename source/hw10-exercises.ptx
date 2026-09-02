@@ -1,33 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- MATH 14 - HW10: surface integrals, Stokes' theorem and the divergence   -->
-<!-- theorem.  The auto-graded version of the same problems, with randomized  -->
-<!-- constants, is hw10-online.ptx.                                           -->
+<!-- MATH 14 - HW10: Stokes' theorem and the divergence theorem.  The auto-  -->
+<!-- graded version of the same problems, with randomized constants, is       -->
+<!-- hw10-online.ptx.                                                         -->
 <section xml:id="sec-exercises-hw10" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Assignment 10</title>
 
   <introduction>
     <p>
-      Sections: <xref ref="section-surface-integrals" text="title"/>,
-      <xref ref="section-stokes-theorem" text="title"/>, and
+      Sections: <xref ref="section-stokes-theorem" text="title"/> and
       <xref ref="section-divergence-theorem" text="title"/>.
     </p>
   </introduction>
 
   <exercises xml:id="exercises-hw10">
-
-  <exercise xml:id="ex-hw10-cylinder-flux">
-    <statement>
-      <p>
-        Compute the flux
-        <m>\displaystyle\iint_S \mathbf{F} \cdot \hat{\mathbf{n}}\,
-        d\sigma</m>, where
-        <m>\mathbf{F} = \left\langle x^2,\ 2z,\ -3y \right\rangle</m>
-        and <m>S</m> is the portion of the cylinder <m>y^2 + z^2 = 4</m>
-        lying between <m>x = 0</m> and <m>x = 3 - z</m>, with
-        <m>\hat{\mathbf{n}}</m> pointing away from the <m>x</m>-axis.
-      </p>
-    </statement>
-  </exercise>
 
   <exercise xml:id="ex-hw10-stokes-hemisphere">
     <statement>
