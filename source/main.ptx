@@ -29,6 +29,7 @@
     <title>MATH 14: Calculus and Analytic Geometry IV</title>
     <xi:include href="frontmatter.ptx" />
 
+    <!-- HIDDEN-CHAPTER-BEGIN
     <chapter xml:id="ch-curves-and-fields">
       <title>Line Integrals</title>
       <xi:include href="section-parametrization.ptx" />
@@ -37,7 +38,9 @@
       <xi:include href="section-vector-fields.ptx" />
       <xi:include href="conservative-fields.ptx" />
     </chapter>
+    HIDDEN-CHAPTER-END -->
 
+    <!-- HIDDEN-CHAPTER-BEGIN
     <chapter xml:id="ch-multiple-integrals">
       <title>Multiple Integrals</title>
       <xi:include href="double-integrals-rectangles.ptx" />
@@ -51,13 +54,16 @@
       <xi:include href="jacobian-substitution.ptx" />
       <xi:include href="surface-integrals.ptx" />
     </chapter>
+    HIDDEN-CHAPTER-END -->
 
+    <!-- HIDDEN-CHAPTER-BEGIN
     <chapter xml:id="ch-integral-theorems">
       <title>The Big Theorems</title>
       <xi:include href="greens-theorem.ptx" />
       <xi:include href="stokes-theorem.ptx" />
       <xi:include href="divergence-theorem.ptx" />
     </chapter>
+    HIDDEN-CHAPTER-END -->
 
     <!-- The written assignments are hidden from the build.  The same       -->
     <!-- problems are auto-graded in "Assignments and Review Problems",     -->
@@ -83,6 +89,7 @@
     <!-- headings, and its table-of-contents entries show bare titles.      -->
     <!-- The numbers are hidden by assets/unnumbered-chapter.css, wired in  -->
     <!-- through html.css.extra in xsl/custom-html.xsl.                     -->
+    <!-- HIDDEN-CHAPTER-BEGIN
     <chapter xml:id="ch-problems">
       <title>Assignments and Review Problems</title>
       <introduction>
@@ -310,6 +317,12 @@
       <xi:include href="hw10-online.ptx" />
       <xi:include href="review4-practice.ptx" />
     </chapter>
+    HIDDEN-CHAPTER-END -->
+
+
+    <!-- Placeholder, in the book only while every real chapter is hidden;
+         scripts/desk_action.py toggles it automatically. -->
+    <xi:include href="ch-coming-soon.ptx" />
 
   </book>
 
