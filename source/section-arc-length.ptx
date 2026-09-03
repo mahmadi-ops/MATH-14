@@ -525,8 +525,8 @@
 
       <figure xml:id="fig-quarter-circle-tikz">
         <caption>
-          Snapshot at <m>t=0.9</m>: the arc already swept out (blue) has
-          length <m>s(t)=t=0.9</m>, the part not yet traced is gray, and the
+          Snapshot at <m>t=\pi/4</m>: the arc already swept out (blue) has
+          length <m>s(t)=t=\pi/4</m>, the part not yet traced is gray, and the
           unit velocity vector <m>\mathbf{v}(t)</m> is tangent to the circle
           at the moving point.
         </caption>
@@ -540,7 +540,7 @@
               The first quadrant with a light coordinate grid. A quarter
               circle of radius one runs from the point (1,0) up to the point
               (0,1). The portion already travelled, from (1,0)
-              counterclockwise to the moving point at t equals 0.9, is a
+              counterclockwise to the moving point at t equals pi over four, is a
               thick blue arc ending in an arrowhead; the portion not yet
               travelled is gray. An orange position vector labelled r of t
               reaches from the origin to the moving point, drawn in red. A
@@ -558,20 +558,20 @@
               \draw[-&gt;] (-0.35,0) -- (1.55,0) node[right] {\(x\)};
               \draw[-&gt;] (0,-0.35) -- (0,1.55) node[above] {\(y\)};
               % remaining part of the quarter circle (still to be traced)
-              % (0.9 rad = 51.566 degrees)
-              \draw[gray!60, thick] (51.566:1) arc[start angle=51.566, end angle=90, radius=1];
-              % arc already swept out, from t=0 to t=0.9
-              \draw[blue, very thick, -&gt;] (1,0) arc[start angle=0, end angle=51.566, radius=1];
+              % (pi/4 rad = 45 degrees)
+              \draw[gray!60, thick] (45:1) arc[start angle=45, end angle=90, radius=1];
+              % arc already swept out, from t=0 to t=pi/4
+              \draw[blue, very thick, -&gt;] (1,0) arc[start angle=0, end angle=45, radius=1];
               % endpoints
               \fill (1,0) circle (0.55pt) node[below right=-1pt] {\((1,0)\)};
               \fill (0,1) circle (0.55pt) node[above right=-1pt] {\((0,1)\)};
               % position vector r(t)
-              \draw[-&gt;, orange, thick] (0,0) -- (0.6216,0.7833)
+              \draw[-&gt;, orange, thick] (0,0) -- (0.7071,0.7071)
                   node[pos=0.55, above left=-2pt] {\(\mathbf r(t)\)};
               % moving point
-              \fill[red] (0.6216,0.7833) circle (0.9pt);
+              \fill[red] (0.7071,0.7071) circle (0.9pt);
               % unit velocity vector v(t), components -sin t and cos t
-              \draw[-&gt;, green!55!black, thick] (0.6216,0.7833) -- ++(-0.7833,0.6216)
+              \draw[-&gt;, green!55!black, thick] (0.7071,0.7071) -- ++(-0.7071,0.7071)
                   node[pos=0.6, above right=-2pt] {\(\mathbf v(t)\)};
               % arc-length readout
               \node[blue] at (1.05,1.25) {\(s(t)=t\)};
