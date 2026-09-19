@@ -27,7 +27,7 @@
       </li>
       <li>
         <p>
-          Sketch a parametric curve from a table of values, and indicate the
+          Sketch a parametric curve from its parametric equations, and indicate the
           direction of increasing <m>t</m> in which the curve is traced.
         </p>
       </li>
@@ -487,8 +487,7 @@
           <m>(0,1)</m> and traced <em>clockwise</em>. Taking
           <m>x = \cos(2t)</m> and <m>y = \sin(2t)</m> with
           <m>t \in [0,2\pi)</m> also gives the same circle, traced
-          counterclockwise but <em>twice</em>. A curve has many
-          parametrizations: the picture does not determine the schedule.
+          counterclockwise but <em>twice</em>.
         </p>
       </solution>
     </exercise>
@@ -564,9 +563,9 @@
               </p>
             </description>
             <prefigure xmlns="https://prefigure.org" label="segment-param">
-              <diagram dimensions="(340,340)" margins="5">
+              <diagram dimensions="(400,340)" margins="5">
                 <definition>s(t) = (t, 1-t)</definition>
-                <coordinates bbox="(-0.45,-0.45,1.45,1.45)" aspect-ratio="1">
+                <coordinates bbox="(-0.45,-0.45,1.79,1.45)" aspect-ratio="1">
                   <grid-axes xlabel="x" ylabel="y"/>
 
                   <group at="curve">
@@ -865,50 +864,100 @@
       An intersection point is a statement about the two <em>paths</em>: they
       cross, like two roads on a map. A collision point is a statement about
       the two <em>motions</em>: the cars are at the crossroads at the same
-      instant. Every collision point is automatically an intersection point,
-      but, as the next two examples show, an intersection point need not be a
-      collision point.
+      instant.
     </p>
 
-    <p>
-      In practice this dictates how we set up the equations.
-    </p>
-
-    <ul>
-      <li>
+    <exercise xml:id="check-collision-vs-intersection">
+      <title>True or False</title>
+      <statement>
         <p>
-          To find <term>intersection points</term>, give the two curves
-          different parameter names and solve <m>f_1(t) = f_2(s)</m>,
-          <m>g_1(t) = g_2(s)</m> for the pair <m>(t,s)</m>. Equivalently,
-          eliminate the parameters and intersect the two Cartesian curves.
+          Decide whether each statement is true or false.
         </p>
-      </li>
-      <li>
+        <ol marker="(a)">
+          <li>
+            <p>
+              Every collision point of two particles is an intersection
+              point of their paths.
+            </p>
+          </li>
+          <li>
+            <p>
+              Every intersection point of two paths is a collision point of
+              the particles that travel along them.
+            </p>
+          </li>
+        </ol>
+      </statement>
+      <answer>
         <p>
-          To find <term>collision points</term>, use the same parameter
-          <m>t</m> in both curves and solve <m>f_1(t) = f_2(t)</m>,
-          <m>g_1(t) = g_2(t)</m> for <m>t</m>.
+          (a) True. (b) False.
         </p>
-      </li>
-    </ul>
+      </answer>
+      <solution>
+        <p>
+          (a) True. If the two particles collide at <m>P</m>, then certainly
+          <m>P</m> lies on both paths, so <m>P</m> is an intersection point.
+        </p>
+        <p>
+          (b) False. The paths may cross at a point that the two particles
+          visit at different times, as the next two examples show. Changing
+          the parametrization of a curve does not move the curve, but it can
+          create or destroy collisions.
+        </p>
+      </solution>
+    </exercise>
 
-    <p>
-      In the next two examples the two paths are always the same: the
-      parabola <m>y = x^2</m> and the line <m>y = x+2</m>. Setting
-      <m>x^2 = x+2</m> gives <m>x^2 - x - 2 = (x-2)(x+1) = 0</m>, so the
-      paths meet at the two points
-
-    <men xml:id="eq-parabola-line-intersections">
-      (-1,1) \qquad \text{and} \qquad (2,4).
-    </men>
-    </p>
-
-    <p>
-      Only the schedule of the second particle will change.
-    </p>
+    <exercise xml:id="check-intersection-collision-equations">
+      <title>True or False</title>
+      <statement>
+        <p>
+          In practice the distinction dictates how we set up the equations.
+          Decide whether each statement is true or false.
+        </p>
+        <ol marker="(a)">
+          <li>
+            <p>
+              To find the <term>intersection points</term> of the curves
+              <m>\mathbf{r}_1(t) = \left\langle f_1(t), g_1(t)\right\rangle</m>
+              and
+              <m>\mathbf{r}_2(t) = \left\langle f_2(t), g_2(t)\right\rangle</m>,
+              give the two curves different parameter names and solve
+              <m>f_1(t) = f_2(s)</m>, <m>g_1(t) = g_2(s)</m> for the pair
+              <m>(t,s)</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              To find the <term>collision points</term> of the two
+              particles, eliminate the parameters and intersect the two
+              Cartesian curves.
+            </p>
+          </li>
+        </ol>
+      </statement>
+      <answer>
+        <p>
+          (a) True. (b) False.
+        </p>
+      </answer>
+      <solution>
+        <p>
+          (a) True. An intersection point only has to be visited by both
+          curves, possibly at different times, so the two parameters are
+          independent of each other. Alternatively, eliminate the parameters
+          and intersect the two Cartesian curves.
+        </p>
+        <p>
+          (b) False. Eliminating the parameters forgets the schedules, so it
+          finds the intersection points. A collision requires the same
+          instant <m>t</m> in both curves: use the same parameter <m>t</m>
+          in both and solve <m>f_1(t) = f_2(t)</m>, <m>g_1(t) = g_2(t)</m>
+          for <m>t</m>.
+        </p>
+      </solution>
+    </exercise>
 
     <example xml:id="ex-paths-cross-no-collision">
-      <title>The paths cross, but the particles never meet</title>
       <statement>
         <p>
           Two particles move in the plane with position vectors
@@ -933,10 +982,14 @@
         <p>
           <term>Paths.</term> Eliminating the parameter, the first particle
           traces the parabola <m>y = x^2</m>. For the second, <m>x = -t</m>
-          and <m>y = 2-t = 2+x</m>, so it traces the line <m>y = x+2</m>. As
-          computed in <xref ref="eq-parabola-line-intersections"/>, the
-          two paths intersect at <m>(-1,1)</m> and
-          <m>(2,4)</m>.
+          and <m>y = 2-t = 2+x</m>, so it traces the line <m>y = x+2</m>.
+          Setting <m>x^2 = x+2</m> gives
+          <m>x^2 - x - 2 = (x-2)(x+1) = 0</m>, so the two paths intersect
+          at the two points
+
+        <men xml:id="eq-parabola-line-intersections">
+          (-1,1) \qquad \text{and} \qquad (2,4).
+        </men>
         </p>
         <p>
           <term>Collisions.</term> A collision requires a single <m>t</m>
@@ -1076,7 +1129,6 @@
     </example>
 
     <example xml:id="ex-same-paths-collision">
-      <title>The same paths, a different schedule<mdash/>now they collide</title>
       <statement>
         <p>
           Keep the first particle, but re-schedule the second one:
@@ -1255,17 +1307,6 @@
       </solution>
     </example>
 
-    <remark xml:id="remark-collision-vs-intersection">
-      <title>Every collision is an intersection, but not conversely</title>
-      <p>
-        If two particles collide at <m>P</m>, then certainly <m>P</m> lies on
-        both paths, so every collision point is an intersection point. The
-        converse fails: the paths may cross at a point that the two particles
-        visit at different times. Changing the parametrization of a curve
-        does not move the curve, but it can create or destroy collisions.
-      </p>
-    </remark>
-
     <exercise xml:id="check-collision-both-points">
       <statement>
         <p>
@@ -1274,12 +1315,6 @@
           particles collide at <em>both</em> intersection points.
         </p>
       </statement>
-      <hint>
-        <p>
-          Try to arrange that the second particle has the same
-          <m>x</m>-coordinate as the first one at every time <m>t</m>.
-        </p>
-      </hint>
       <answer>
         <p>
           <m>\mathbf{r}_2(t) = \left\langle t,\; t+2\right\rangle</m>.
@@ -1316,8 +1351,8 @@
     <p>
       Here <m>t</m> is the time parameter, which varies from some initial
       time <m>t_i</m> to some final time <m>t_f</m>, that is,
-      <m>t \in [t_i, t_f]</m>. Nothing has changed except the bookkeeping:
-      where a plane curve needed the two equations
+      <m>t \in [t_i, t_f]</m>. Nothing has changed, except that where a
+      plane curve needed the two equations
       <xref ref="eq-parametric-equations"/>, a space curve needs three.
     </p>
 
@@ -1370,7 +1405,7 @@
     <p>
       The two descriptions carry exactly the same information, but the vector
       form is the more useful one: it lets us differentiate and integrate a
-      whole motion at once, and <m>\mathbf{r}'(t)</m> will turn out to be the
+      whole motion at once, and its derivative will turn out to be the
       velocity of the moving object. The same device works in the plane,
       where <m>\mathbf{r}(t) = \left\langle f(t), g(t)\right\rangle</m>; the
       position vectors <m>\mathbf{r}_1</m> and <m>\mathbf{r}_2</m> of
