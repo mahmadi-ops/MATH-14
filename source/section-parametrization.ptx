@@ -5,8 +5,9 @@
 <!-- Ported from the MATH 13 notes (chapter "Parametrization"), sections    -->
 <!-- "Parametric Equations", "Some Examples of Parametrizing Curves" and    -->
 <!-- "Intersection Points versus Collision Points"; the projectile-motion   -->
-<!-- section is deliberately omitted.  The closing subsection on curves in  -->
-<!-- space is new.                                                         -->
+<!-- section is deliberately omitted.  The subsection on curves in space  -->
+<!-- is new, and the closing subsection on tangent lines comes from the    -->
+<!-- handwritten notes of 01.08.2025.                                      -->
 <!--                                                                       -->
 <!-- Figure conventions: plane curves are drawn with PreFigure (annotated   -->
 <!-- for screen readers); space curves are drawn with TikZ/pgfplots, which  -->
@@ -50,6 +51,13 @@
           Write a space curve as a vector function
           <m>\mathbf{r}(t)</m>, and parametrize the curve in which two
           surfaces meet.
+        </p>
+      </li>
+      <li>
+        <p>
+          Differentiate a vector function to get the tangent vector of a
+          space curve, and write the equation of the tangent line at a
+          point of the curve.
         </p>
       </li>
     </ul>
@@ -1808,6 +1816,215 @@
             </latex-image>
           </image>
         </figure>
+      </solution>
+    </example>
+  </subsection>
+
+  <!-- ================================================================= -->
+  <!-- Tangent lines, from the handwritten notes of 01.08.2025 ("Tangent  -->
+  <!-- lines for Parametric curves in R^3").  The applet is the published -->
+  <!-- material rqrxy7j9, 650 x 570: the helix of the example, the two    -->
+  <!-- position vectors, the difference vector, the difference quotient   -->
+  <!-- and the tangent line at t_0 = pi/4, with a slider for h.           -->
+  <subsection xml:id="subsec-tangent-line-space-curve">
+    <title>Tangent Lines to Curves in Space</title>
+
+    <p>
+      Now that a curve in space is a vector function <m>\mathbf{r}(t)</m>,
+      we can ask the same question we asked about graphs in single-variable
+      calculus: what is the tangent line at a point of the curve? The
+      applet in <xref ref="fig-tangent-vector-geogebra"/> shows how to find
+      its direction. Fix a time <m>t_0</m>, mark the point
+      <m>P</m> that the moving object occupies at that time, and let
+      <m>h</m> be a small change in time.
+    </p>
+
+    <figure xml:id="fig-tangent-vector-geogebra">
+      <caption>
+        The tangent vector as the limit of a difference quotient. The gray
+        curve is the helix
+        <m>\mathbf{r}(t) = \left\langle \cos(t), \sin(t), t
+        \right\rangle</m>, and the two blue arrows are the position vectors
+        <m>\mathbf{r}(t_0)</m> and <m>\mathbf{r}(t_0+h)</m>, with
+        <m>t_0 = \pi/4</m>. The pink arrow is their difference
+        <m>\mathbf{r}(t_0+h) - \mathbf{r}(t_0)</m>, the green arrow is the
+        difference quotient
+        <m>\bigl(\mathbf{r}(t_0+h) - \mathbf{r}(t_0)\bigr)/h</m>, and
+        the green line is the tangent line at <m>t_0</m>.
+      </caption>
+      <!-- the fullscreen button is added to every GeoGebra applet by the
+           slate template in xsl/custom-html.xsl, which also gives the
+           iframe the allowfullscreen permission; shift-drag-zoom lets the
+           reader rotate the 3-D view by dragging -->
+      <interactive geogebra="rqrxy7j9"
+                   width="100%" aspect="650:570"
+                   material-width="650" material-height="570"
+                   shift-drag-zoom="yes">
+        <instructions>
+          <p>
+            Drag the slider <m>h</m> toward <m>0</m> and watch the green
+            arrow: as <m>h</m> shrinks, it turns until it lies along the
+            green tangent line. Rotate the picture by dragging the
+            background, and use the fullscreen button in the corner of the
+            applet for a larger view.
+          </p>
+        </instructions>
+      </interactive>
+    </figure>
+
+    <p>
+      Here is what the applet shows. The pink arrow
+      <m>\mathbf{r}(t_0+h) - \mathbf{r}(t_0)</m> joins the point of the
+      curve at time <m>t_0</m> to the point of the curve at time
+      <m>t_0+h</m>: it is a <em>chord</em> of the curve. Dividing it by
+      <m>h</m> gives the green arrow
+
+    <md>
+      \frac{\mathbf{r}(t_0+h) - \mathbf{r}(t_0)}{h} ,
+    </md>
+    </p>
+    <p>
+      which points along the same chord (or opposite to it, when
+      <m>h \lt 0</m>) but has been rescaled by <m>1/h</m>, so it does not
+      shrink to nothing as <m>h</m> does. As <m>h \to 0</m> the second
+      point slides toward <m>P</m>, the chord swings into the tangent line,
+      and the green arrow becomes parallel to the tangent line at
+      <m>P</m>. Its limit is therefore a vector tangent to the curve at
+      <m>P</m>. We call it the <term>tangent vector</term>, or the
+      <term>velocity</term>, of the path:
+
+    <md>
+      <mrow xml:id="eq-tangent-vector" number="yes">
+        \mathbf{v}(t) = \frac{d\mathbf{r}}{dt}
+          = \lim_{h \to 0}
+            \frac{\mathbf{r}(t+h) - \mathbf{r}(t)}{h} .
+      </mrow>
+    </md>
+    </p>
+
+    <p>
+      The limit in <xref ref="eq-tangent-vector"/> is taken one coordinate
+      at a time, so if
+      <m>\mathbf{r}(t) = \left\langle x(t), y(t), z(t)\right\rangle</m>,
+      then
+      <m>\mathbf{v}(t) = \left\langle x'(t), y'(t), z'(t)\right\rangle</m>:
+      to differentiate a vector function, differentiate each of its
+      coordinates. The tangent vector at the time <m>t_0</m> is
+
+    <md>
+      \mathbf{v}(t_0) = \left.\frac{d\mathbf{r}}{dt}\right|_{t=t_0} .
+    </md>
+    </p>
+
+    <p>
+      The tangent line at <m>P</m> is the line through <m>P</m> in the
+      direction of <m>\mathbf{v}(t_0)</m>. The point
+      <m>P\bigl(x(t_0), y(t_0), z(t_0)\bigr)</m> has position vector
+
+    <md>
+      \mathbf{r}_0 = \left\langle x(t_0), y(t_0), z(t_0)\right\rangle
+                   = \mathbf{r}(t_0) ,
+    </md>
+    </p>
+    <p>
+      so, using the vector equation of a line from MATH 13, the tangent
+      line at <m>t = t_0</m> is
+
+    <md>
+      <mrow xml:id="eq-tangent-line" number="yes">
+        \mathbf{r}(s) = \mathbf{r}_0 + s\,\mathbf{v}(t_0) ,
+        \qquad s \in \R .
+      </mrow>
+    </md>
+    </p>
+
+    <p>
+      Note that the parameter <m>s</m> is used for the tangent line, whereas
+      the parameter <m>t</m> is used for the curve. The two are different
+      motions: <m>\mathbf{r}(t)</m> travels along the curve, while
+      <m>\mathbf{r}(s)</m> travels along the straight line, passing through
+      <m>P</m> at <m>s=0</m>.
+    </p>
+
+    <example xml:id="ex-tangent-line-helix">
+      <title>Tangent line to a helix</title>
+      <statement>
+        <p>
+          Find the tangent line to the path
+          <m>\mathbf{r}(t) = \left\langle \cos(t), \sin(t), t
+          \right\rangle</m> at the point
+          <m>\left( \dfrac{1}{\sqrt{2}}, \dfrac{1}{\sqrt{2}},
+          \dfrac{\pi}{4} \right)</m>.
+        </p>
+      </statement>
+
+      <solution>
+        <p>
+          <term>Step 1.</term> Find the time at which the path passes
+          through the point. The third coordinate gives <m>t = \pi/4</m>,
+          and indeed <m>\cos(\pi/4) = \sin(\pi/4) = 1/\sqrt{2}</m>, so the
+          point corresponds to <m>t_0 = \pi/4</m>.
+        </p>
+        <p>
+          <term>Step 2.</term> The tangent vector to the path is given by
+          differentiating each coordinate:
+
+        <md>
+          \mathbf{v}(t) = \frac{d\mathbf{r}}{dt}
+            = \left\langle -\sin(t),\ \cos(t),\ 1 \right\rangle .
+        </md>
+        </p>
+        <p>
+          <term>Step 3.</term> The tangent vector at <m>t_0 = \pi/4</m> is
+
+        <md>
+          \mathbf{v}\!\left(\tfrac{\pi}{4}\right)
+            = \left\langle -\frac{1}{\sqrt{2}},\ \frac{1}{\sqrt{2}},\ 1
+              \right\rangle .
+        </md>
+        </p>
+        <p>
+          <term>Step 4.</term> By <xref ref="eq-tangent-line"/>, the
+          tangent line in vector form is
+
+        <md>
+          <mrow>
+            \mathbf{r}(s) \amp = \mathbf{r}_0 + s\,\mathbf{v}(t_0)
+          </mrow>
+          <mrow>
+            \amp = \left\langle \frac{1}{\sqrt{2}},\ \frac{1}{\sqrt{2}},\
+                     \frac{\pi}{4} \right\rangle
+              + s \left\langle -\frac{1}{\sqrt{2}},\ \frac{1}{\sqrt{2}},\ 1
+                  \right\rangle
+          </mrow>
+          <mrow>
+            \amp = \left\langle \frac{1}{\sqrt{2}} - \frac{s}{\sqrt{2}},\
+                     \frac{1}{\sqrt{2}} + \frac{s}{\sqrt{2}},\
+                     \frac{\pi}{4} + s \right\rangle ,
+              \qquad s \in \R .
+          </mrow>
+        </md>
+        </p>
+        <p>
+          <term>Step 5.</term> Reading off the coordinates, the equation of
+          the tangent line in parametric form is
+
+        <md>
+          <mrow>
+            x(s) \amp = \frac{1}{\sqrt{2}} - \frac{s}{\sqrt{2}} ,
+          </mrow>
+          <mrow>
+            y(s) \amp = \frac{1}{\sqrt{2}} + \frac{s}{\sqrt{2}} ,
+          </mrow>
+          <mrow>
+            z(s) \amp = \frac{\pi}{4} + s , \qquad s \in \R .
+          </mrow>
+        </md>
+        </p>
+        <p>
+          This is the green line in
+          <xref ref="fig-tangent-vector-geogebra"/>.
+        </p>
       </solution>
     </example>
   </subsection>
