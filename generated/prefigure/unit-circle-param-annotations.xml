@@ -1,0 +1,91 @@
+<diagram>
+  <annotations>
+    <annotation id="unit-circle-param-figure" speech2="The unit circle parametrized by cosine t and                                 sine t, traced counterclockwise as t runs from                                 zero to two pi">
+      <grouped>unit-circle-param-figure</grouped>
+      <position>1</position>
+      <children>
+        <active>unit-circle-param-grid-axes</active>
+        <active>unit-circle-param-grid</active>
+        <active>unit-circle-param-axes</active>
+        <active>unit-circle-param-curve</active>
+        <active>unit-circle-param-quarters</active>
+        <active>unit-circle-param-generic</active>
+      </children>
+      <components>
+        <active>unit-circle-param-grid-axes</active>
+        <active>unit-circle-param-grid</active>
+        <active>unit-circle-param-axes</active>
+        <active>unit-circle-param-curve</active>
+        <active>unit-circle-param-quarters</active>
+        <active>unit-circle-param-generic</active>
+      </components>
+    </annotation>
+    <annotation id="unit-circle-param-grid-axes" speech2="The coordinate grid and axes">
+      <grouped>unit-circle-param-grid-axes</grouped>
+      <position>1</position>
+      <children>
+        <active>unit-circle-param-grid</active>
+        <active>unit-circle-param-axes</active>
+      </children>
+      <components>
+        <active>unit-circle-param-grid</active>
+        <active>unit-circle-param-axes</active>
+      </components>
+      <parents>
+        <grouped>unit-circle-param-figure</grouped>
+      </parents>
+    </annotation>
+    <annotation id="unit-circle-param-grid" speech2="The coordinate grid">
+      <active>unit-circle-param-grid</active>
+      <position>1</position>
+      <parents>
+        <grouped>unit-circle-param-grid-axes</grouped>
+      </parents>
+    </annotation>
+    <annotation id="unit-circle-param-axes" speech2="The coordinate axes">
+      <active>unit-circle-param-axes</active>
+      <position>2</position>
+      <parents>
+        <grouped>unit-circle-param-grid-axes</grouped>
+      </parents>
+    </annotation>
+    <annotation id="unit-circle-param-grid" speech2="The coordinate grid">
+      <active>unit-circle-param-grid</active>
+      <position>2</position>
+      <parents>
+        <grouped>unit-circle-param-figure</grouped>
+      </parents>
+    </annotation>
+    <annotation id="unit-circle-param-axes" speech2="The coordinate axes">
+      <active>unit-circle-param-axes</active>
+      <position>3</position>
+      <parents>
+        <grouped>unit-circle-param-figure</grouped>
+      </parents>
+    </annotation>
+    <annotation id="unit-circle-param-curve" speech2="The unit circle, traced counterclockwise" sonify="yes">
+      <active>unit-circle-param-curve</active>
+      <position>4</position>
+      <parents>
+        <grouped>unit-circle-param-figure</grouped>
+      </parents>
+      <sonification>
+        <ACTIVE>unit-circle-param-curve</ACTIVE>
+      </sonification>
+    </annotation>
+    <annotation id="unit-circle-param-quarters" speech2="The four points reached at t equals zero, pi                                   over two, pi, and three pi over two">
+      <active>unit-circle-param-quarters</active>
+      <position>5</position>
+      <parents>
+        <grouped>unit-circle-param-figure</grouped>
+      </parents>
+    </annotation>
+    <annotation id="unit-circle-param-generic" speech2="A generic point of the circle, at parameter                                   value t nought, joined to the origin">
+      <active>unit-circle-param-generic</active>
+      <position>6</position>
+      <parents>
+        <grouped>unit-circle-param-figure</grouped>
+      </parents>
+    </annotation>
+  </annotations>
+</diagram>

@@ -1,0 +1,103 @@
+<diagram>
+  <annotations>
+    <annotation id="collision-figure" speech2="The same parabola and line, with the                                     crossing at two comma four highlighted as                                     a collision point">
+      <grouped>collision-figure</grouped>
+      <position>1</position>
+      <children>
+        <active>collision-grid-axes</active>
+        <active>collision-grid</active>
+        <active>collision-axes</active>
+        <active>collision-parabola</active>
+        <active>collision-line</active>
+        <active>collision-near-miss</active>
+        <active>collision-collision</active>
+      </children>
+      <components>
+        <active>collision-grid-axes</active>
+        <active>collision-grid</active>
+        <active>collision-axes</active>
+        <active>collision-parabola</active>
+        <active>collision-line</active>
+        <active>collision-near-miss</active>
+        <active>collision-collision</active>
+      </components>
+    </annotation>
+    <annotation id="collision-grid-axes" speech2="The coordinate grid and axes">
+      <grouped>collision-grid-axes</grouped>
+      <position>1</position>
+      <children>
+        <active>collision-grid</active>
+        <active>collision-axes</active>
+      </children>
+      <components>
+        <active>collision-grid</active>
+        <active>collision-axes</active>
+      </components>
+      <parents>
+        <grouped>collision-figure</grouped>
+      </parents>
+    </annotation>
+    <annotation id="collision-grid" speech2="The coordinate grid">
+      <active>collision-grid</active>
+      <position>1</position>
+      <parents>
+        <grouped>collision-grid-axes</grouped>
+      </parents>
+    </annotation>
+    <annotation id="collision-axes" speech2="The coordinate axes">
+      <active>collision-axes</active>
+      <position>2</position>
+      <parents>
+        <grouped>collision-grid-axes</grouped>
+      </parents>
+    </annotation>
+    <annotation id="collision-grid" speech2="The coordinate grid">
+      <active>collision-grid</active>
+      <position>2</position>
+      <parents>
+        <grouped>collision-figure</grouped>
+      </parents>
+    </annotation>
+    <annotation id="collision-axes" speech2="The coordinate axes">
+      <active>collision-axes</active>
+      <position>3</position>
+      <parents>
+        <grouped>collision-figure</grouped>
+      </parents>
+    </annotation>
+    <annotation id="collision-parabola" speech2="The path of the first particle, the                                       parabola y equals x squared" sonify="yes">
+      <active>collision-parabola</active>
+      <position>4</position>
+      <parents>
+        <grouped>collision-figure</grouped>
+      </parents>
+      <sonification>
+        <ACTIVE>collision-parabola</ACTIVE>
+      </sonification>
+    </annotation>
+    <annotation id="collision-line" speech2="The path of the second particle, the                                       line y equals x plus two" sonify="yes">
+      <active>collision-line</active>
+      <position>5</position>
+      <parents>
+        <grouped>collision-figure</grouped>
+      </parents>
+      <sonification>
+        <ACTIVE>collision-line</ACTIVE>
+      </sonification>
+    </annotation>
+    <annotation id="collision-near-miss" speech2="The intersection point minus one comma                                       one, which the particles reach at the                                       different times t equals minus one and t                                       equals one half">
+      <active>collision-near-miss</active>
+      <position>6</position>
+      <parents>
+        <grouped>collision-figure</grouped>
+      </parents>
+    </annotation>
+    <annotation id="collision-collision" speech2="The collision point two comma four,                                       which both particles reach at time t                                       equals two">
+      <active>collision-collision</active>
+      <position>7</position>
+      <parents>
+        <grouped>collision-figure</grouped>
+      </parents>
+    </annotation>
+  </annotations>
+</diagram>

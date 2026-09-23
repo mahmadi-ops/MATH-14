@@ -1,0 +1,82 @@
+<diagram>
+  <annotations>
+    <annotation id="segment-param-figure" speech2="The line segment from the point zero comma                                     one to the point one comma zero, traced as                                     t runs from zero to one">
+      <grouped>segment-param-figure</grouped>
+      <position>1</position>
+      <children>
+        <active>segment-param-grid-axes</active>
+        <active>segment-param-grid</active>
+        <active>segment-param-axes</active>
+        <active>segment-param-curve</active>
+        <active>segment-param-ends</active>
+      </children>
+      <components>
+        <active>segment-param-grid-axes</active>
+        <active>segment-param-grid</active>
+        <active>segment-param-axes</active>
+        <active>segment-param-curve</active>
+        <active>segment-param-ends</active>
+      </components>
+    </annotation>
+    <annotation id="segment-param-grid-axes" speech2="The coordinate grid and axes">
+      <grouped>segment-param-grid-axes</grouped>
+      <position>1</position>
+      <children>
+        <active>segment-param-grid</active>
+        <active>segment-param-axes</active>
+      </children>
+      <components>
+        <active>segment-param-grid</active>
+        <active>segment-param-axes</active>
+      </components>
+      <parents>
+        <grouped>segment-param-figure</grouped>
+      </parents>
+    </annotation>
+    <annotation id="segment-param-grid" speech2="The coordinate grid">
+      <active>segment-param-grid</active>
+      <position>1</position>
+      <parents>
+        <grouped>segment-param-grid-axes</grouped>
+      </parents>
+    </annotation>
+    <annotation id="segment-param-axes" speech2="The coordinate axes">
+      <active>segment-param-axes</active>
+      <position>2</position>
+      <parents>
+        <grouped>segment-param-grid-axes</grouped>
+      </parents>
+    </annotation>
+    <annotation id="segment-param-grid" speech2="The coordinate grid">
+      <active>segment-param-grid</active>
+      <position>2</position>
+      <parents>
+        <grouped>segment-param-figure</grouped>
+      </parents>
+    </annotation>
+    <annotation id="segment-param-axes" speech2="The coordinate axes">
+      <active>segment-param-axes</active>
+      <position>3</position>
+      <parents>
+        <grouped>segment-param-figure</grouped>
+      </parents>
+    </annotation>
+    <annotation id="segment-param-curve" speech2="The segment, traced from zero comma one                                       toward one comma zero" sonify="yes">
+      <active>segment-param-curve</active>
+      <position>4</position>
+      <parents>
+        <grouped>segment-param-figure</grouped>
+      </parents>
+      <sonification>
+        <ACTIVE>segment-param-curve</ACTIVE>
+      </sonification>
+    </annotation>
+    <annotation id="segment-param-ends" speech2="The endpoints of the segment, reached at                                       t equals zero and t equals one">
+      <active>segment-param-ends</active>
+      <position>5</position>
+      <parents>
+        <grouped>segment-param-figure</grouped>
+      </parents>
+    </annotation>
+  </annotations>
+</diagram>
