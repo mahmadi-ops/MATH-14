@@ -7,7 +7,9 @@
 <!-- "Intersection Points versus Collision Points"; the projectile-motion   -->
 <!-- section is deliberately omitted.  The subsection on curves in space  -->
 <!-- is new, and the closing subsection on tangent lines comes from the    -->
-<!-- handwritten notes of 01.08.2025.                                      -->
+<!-- handwritten notes of 01.08.2025.  The example there ends with an     -->
+<!-- animated figure, assets/tangent-line-manim.html (three.js, in the     -->
+<!-- manim style of the MATH 13 book's animated figures).                  -->
 <!--                                                                       -->
 <!-- Figure conventions: plane curves are drawn with PreFigure (annotated   -->
 <!-- for screen readers); space curves are drawn with TikZ/pgfplots, which  -->
@@ -2025,6 +2027,43 @@
           This is the green line in
           <xref ref="fig-tangent-vector-geogebra"/>.
         </p>
+
+        <p>
+          The same construction, animated, is
+          <xref ref="fig-tangent-line-manim"/>. Press <q>Play</q> for a
+          guided tour, or drag <m>h</m> toward <m>0</m> and watch the green
+          difference quotient turn onto the gold tangent line.
+        </p>
+
+        <figure xml:id="fig-tangent-line-manim">
+          <caption>
+            The tangent vector as a limit, animated. The helix
+            <m>\mathbf{r}(t) = \left\langle \cos(t), \sin(t), t \right\rangle</m>
+            for <m>0 \le t \le 3\pi/2</m>, the point
+            <m>P = \mathbf{r}(t_0)</m> with <m>t_0 = \pi/4</m>, the position
+            vectors <m>\mathbf{r}(t_0)</m> and <m>\mathbf{r}(t_0+h)</m>
+            (violet), the chord <m>\mathbf{r}(t_0+h) - \mathbf{r}(t_0)</m>
+            (pink), the difference quotient (green), and the tangent line
+            at <m>P</m> with the tangent vector <m>\mathbf{v}(t_0)</m> (gold).
+          </caption>
+          <interactive xml:id="interactive-tangent-line-manim"
+                       iframe="tangent-line-manim.html"
+                       width="100%" aspect="1:1">
+          <instructions>
+            <p>
+              Drag <m>h</m>, or use the <q>Jump to</q> buttons; <q>h
+              <m>\to</m> 0</q> slides it to the limit. The card reads off
+              the chord, the difference quotient and
+              <m>\mathbf{v}(t_0)</m>, and the readout at the lower left
+              gives the angle between the green arrow and the tangent line.
+              Try a negative <m>h</m>: the chord points backwards, but the
+              quotient still points forward. <q>Close-up</q> zooms in on
+              <m>P</m>, dragging the figure turns it, <q>Spin</q> turns it on
+              its own, and <q>Full screen</q> fills the screen with it.
+            </p>
+          </instructions>
+          </interactive>
+        </figure>
       </solution>
     </example>
   </subsection>

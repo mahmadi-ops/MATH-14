@@ -5,6 +5,8 @@
 <!--     are plain links, not knowls (see the comment below)                -->
 <!--   * every GeoGebra applet, local or by material id, gets a fullscreen -->
 <!--     button                                                            -->
+<!--   * an author-supplied interactive (interactive/@iframe) may go full  -->
+<!--     screen                                                            -->
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                 xmlns:pf="https://prefigure.org"
                 exclude-result-prefixes="pf"
@@ -178,6 +180,32 @@
     </iframe>
     <!-- possibly give a long description -->
     <xsl:apply-templates select="." mode="description"/>
+  </xsl:template>
+
+  <!-- An interactive that is an author-supplied page (interactive/@iframe, -->
+  <!-- such as the animated figure assets/tangent-line-manim.html, whose    -->
+  <!-- own "Full screen" button calls requestFullscreen from inside the     -->
+  <!-- frame) needs the iframe to carry allowfullscreen.  This is the core  -->
+  <!-- template with the two attributes added, before any other content.    -->
+  <xsl:template match="interactive[@iframe]" mode="iframe-interactive">
+    <xsl:variable name="b-network-location"
+                  select="(substring(@iframe, 1, 7) = 'http://') or
+                          (substring(@iframe, 1, 8) = 'https://')"/>
+    <xsl:variable name="location">
+      <xsl:if test="not($b-network-location)">
+        <xsl:value-of select="$external-directory"/>
+      </xsl:if>
+      <xsl:value-of select="@iframe"/>
+    </xsl:variable>
+    <iframe src="{$location}">
+      <xsl:attribute name="allowfullscreen"/>
+      <xsl:attribute name="allow">
+        <xsl:text>fullscreen</xsl:text>
+      </xsl:attribute>
+      <xsl:apply-templates select="." mode="html-id-attribute"/>
+      <xsl:apply-templates select="." mode="interactive-sizing-style-attribute"/>
+      <xsl:apply-templates select="." mode="iframe-dark-mode-attribute"/>
+    </iframe>
   </xsl:template>
 
   <!-- A GeoGebra applet embedded by material id (interactive/@geogebra)   -->
