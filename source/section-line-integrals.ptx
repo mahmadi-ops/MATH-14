@@ -694,9 +694,119 @@
     <title>A Geometric Interpretation</title>
 
     <p>
-      Here we work through an example of a line integral of a scalar
-      function along a path that is confined to a plane. This gives a
-      nice geometric interpretation of the line integral.
+      A line integral of a scalar function along a path that is confined
+      to a plane has a nice geometric interpretation. We describe it first,
+      and then work through two examples.
+    </p>
+
+    <p>
+      Let <m>C</m> be a curve in the <m>xy</m>-plane and let
+      <m>f(x,y) \ge 0</m> on <m>C</m>. The line integral
+      <m>\int_C f(x,y)\,ds</m> is equal to the surface area of the wall
+      whose base is <m>C</m> and whose height above each point
+      <m>(x,y)</m> of <m>C</m> is given by the integrand <m>f(x,y)</m>.
+      To see this, approximate the area by dividing the wall into
+      <m>n</m> slabs, as in <xref ref="fig-wall-slabs"/>.
+    </p>
+
+    <figure xml:id="fig-wall-slabs">
+      <caption>
+        A wall standing on the upper half of the circle
+        <m>x^2+y^2=1</m>, with height <m>f(x,y) = 2 + x^2 y</m> (the wall
+        of <xref ref="ex-wall-half-circle"/>), cut into <m>n</m> slabs.
+        The <m>k</m>th slab stands on a piece of <m>C</m> of length
+        <m>\Delta s</m> and is given the constant height
+        <m>f\left(x(t_k),y(t_k)\right)</m>, so its area is about
+        <m>f\left(x(t_k),y(t_k)\right)\Delta s</m>.
+      </caption>
+      <image xml:id="image-wall-slabs" width="70%">
+        <shortdescription>
+          A wall on the upper half of the unit circle, approximated by thin
+          rectangular slabs with dashed red edges, labelled A one, A two,
+          A three up to A n.
+        </shortdescription>
+        <description>
+          <p>
+            A wall standing on the upper half of the unit circle, its top
+            edge at height 2 plus x squared y, with the half circle cut into
+            short pieces. Over each piece a thin rectangular slab is drawn with
+            dashed red edges; its height is the height of the wall at the first
+            end of the piece, and its top edge, of length delta s, is labelled.
+            The slabs are labelled A one, A two, A three, and, at the far end of
+            the curve, A n. Together they approximate the wall.
+          </p>
+        </description>
+        <latex-image>
+          <![CDATA[\begin{tikzpicture}[line join=round, line cap=round]
+  \definecolor{oiblue}{RGB}{0,114,178}
+  \definecolor{oired}{RGB}{200,30,30}
+  \begin{axis}[
+      view={-35}{22}, width=11cm,
+      xlabel={$x$}, ylabel={$y$}, zlabel={$z$},
+      xmin=-1.3, xmax=1.3, ymin=0, ymax=1.3, zmin=0, zmax=3,
+      grid=major, grid style={gray!20}, clip=false,
+      label style={font=\large}, tick label style={font=\small},
+    ]
+    \addplot3[oiblue!55, line width=1pt, domain=0:180, samples=90,
+              samples y=0] ({cos(x)}, {sin(x)}, 0);
+    \addplot3[oiblue, line width=1.6pt, domain=0:180, samples=120,
+              samples y=0] ({cos(x)}, {sin(x)}, {2+cos(x)^2*sin(x)});
+    % the slabs: over the kth piece of C, a panel of constant height
+    % f(x(t_k), y(t_k)), where t_k is the left end of the piece
+    \pgfplotsinvokeforeach{0,20,...,160}{
+      \draw[oired, dashed, line width=0.9pt]
+        (axis cs:{cos(#1)},{sin(#1)},0) --
+        (axis cs:{cos(#1)},{sin(#1)},{2+cos(#1)^2*sin(#1)}) --
+        (axis cs:{cos(#1+20)},{sin(#1+20)},{2+cos(#1)^2*sin(#1)}) --
+        (axis cs:{cos(#1+20)},{sin(#1+20)},0);
+    }
+    \node[oiblue, font=\large] at (axis cs:{cos(10)},{sin(10)},1) {$A_1$};
+    \node[oiblue, font=\large] at (axis cs:{cos(30)},{sin(30)},1) {$A_2$};
+    \node[oiblue, font=\large] at (axis cs:{cos(50)},{sin(50)},1) {$A_3$};
+    \node[oiblue, font=\large] at (axis cs:{cos(170)},{sin(170)},0.55) {$A_n$};
+    \node[oired, font=\normalsize, anchor=south] at (axis cs:{cos(10)},{sin(10)},2.05) {$\Delta s$};
+    \node[oired, font=\normalsize, anchor=south] at (axis cs:{cos(30)},{sin(30)},2.35) {$\Delta s$};
+    \node[oired, font=\normalsize, anchor=south] at (axis cs:{cos(170)},{sin(170)},2.05) {$\Delta s$};
+    \draw[-latex, oiblue, line width=1.3pt]
+      (axis cs:{cos(104)},{sin(104)},0) -- (axis cs:{cos(112)},{sin(112)},0);
+    \node[oiblue, font=\large] at (axis cs:{1.2*cos(108)},{1.2*sin(108)},0) {$C$};
+    \node[oiblue, font=\large, anchor=south] at (axis description cs:0.5,1.0) {$z = f(x,y) = 2 + x^2 y$};
+  \end{axis}
+\end{tikzpicture}]]>
+        </latex-image>
+      </image>
+    </figure>
+
+    <p>
+      The area of the <m>k</m>th slab is
+
+    <md>
+      A_k \approx f\left(x(t_k),y(t_k)\right)\Delta s ,
+    </md>
+    </p>
+    <p>
+      so the area of the wall is approximately
+
+    <md>
+      A \approx \sum_{k=1}^{n} f\left(x(t_k),y(t_k)\right)\Delta s ,
+    </md>
+    </p>
+    <p>
+      and the exact area is the limit
+
+    <me>
+      A = \lim_{n\to\infty} \sum_{k=1}^{n}
+          f\left(x(t_k),y(t_k)\right)\Delta s ,
+    </me>
+    </p>
+    <p>
+      which is the line integral of <m>f</m> over <m>C</m>:
+
+    <md>
+      <mrow xml:id="eq-wall-area" number="yes">
+        A = \int_C f(x,y)\,ds .
+      </mrow>
+    </md>
     </p>
 
     <example xml:id="ex-wall-half-circle">
@@ -767,109 +877,21 @@
       </statement>
       <solution>
         <p>
-          The line integral in this case is equal to the surface area of
-          the wall whose height is given by the integrand, here
-          <m>2 + x^2 y</m>, and whose base is the upper half of the circle
-          <m>x^2+y^2=1</m>, as shown in <xref ref="fig-wall-half-circle"/>.
-          To see this, approximate the area by dividing the wall into
-          <m>n</m> slabs, as in <xref ref="fig-wall-slabs"/>.
-        </p>
-      <figure xml:id="fig-wall-slabs">
-        <caption>
-          The wall of <xref ref="fig-wall-half-circle"/> cut into <m>n</m>
-          slabs. The <m>k</m>th slab stands on a piece of <m>C</m> of length
-          <m>\Delta s</m> and is given the constant height
-          <m>f\left(x(t_k),y(t_k)\right)</m>, so its area is about
-          <m>f\left(x(t_k),y(t_k)\right)\Delta s</m>.
-        </caption>
-        <image xml:id="image-wall-slabs" width="70%">
-          <shortdescription>
-            The same wall, approximated by thin rectangular slabs with dashed
-            red edges, labelled A one, A two, A three up to A n.
-          </shortdescription>
-          <description>
-            <p>
-              The wall of the previous figure, with the half circle cut into
-              short pieces. Over each piece a thin rectangular slab is drawn with
-              dashed red edges; its height is the height of the wall at the first
-              end of the piece, and its top edge, of length delta s, is labelled.
-              The slabs are labelled A one, A two, A three, and, at the far end of
-              the curve, A n. Together they approximate the wall.
-            </p>
-          </description>
-          <latex-image>
-            <![CDATA[\begin{tikzpicture}[line join=round, line cap=round]
-  \definecolor{oiblue}{RGB}{0,114,178}
-  \definecolor{oired}{RGB}{200,30,30}
-  \begin{axis}[
-      view={-35}{22}, width=11cm,
-      xlabel={$x$}, ylabel={$y$}, zlabel={$z$},
-      xmin=-1.3, xmax=1.3, ymin=0, ymax=1.3, zmin=0, zmax=3,
-      grid=major, grid style={gray!20}, clip=false,
-      label style={font=\large}, tick label style={font=\small},
-    ]
-    \addplot3[oiblue!55, line width=1pt, domain=0:180, samples=90,
-              samples y=0] ({cos(x)}, {sin(x)}, 0);
-    \addplot3[oiblue, line width=1.6pt, domain=0:180, samples=120,
-              samples y=0] ({cos(x)}, {sin(x)}, {2+cos(x)^2*sin(x)});
-    % the slabs: over the kth piece of C, a panel of constant height
-    % f(x(t_k), y(t_k)), where t_k is the left end of the piece
-    \pgfplotsinvokeforeach{0,20,...,160}{
-      \draw[oired, dashed, line width=0.9pt]
-        (axis cs:{cos(#1)},{sin(#1)},0) --
-        (axis cs:{cos(#1)},{sin(#1)},{2+cos(#1)^2*sin(#1)}) --
-        (axis cs:{cos(#1+20)},{sin(#1+20)},{2+cos(#1)^2*sin(#1)}) --
-        (axis cs:{cos(#1+20)},{sin(#1+20)},0);
-    }
-    \node[oiblue, font=\large] at (axis cs:{cos(10)},{sin(10)},1) {$A_1$};
-    \node[oiblue, font=\large] at (axis cs:{cos(30)},{sin(30)},1) {$A_2$};
-    \node[oiblue, font=\large] at (axis cs:{cos(50)},{sin(50)},1) {$A_3$};
-    \node[oiblue, font=\large] at (axis cs:{cos(170)},{sin(170)},0.55) {$A_n$};
-    \node[oired, font=\normalsize, anchor=south] at (axis cs:{cos(10)},{sin(10)},2.05) {$\Delta s$};
-    \node[oired, font=\normalsize, anchor=south] at (axis cs:{cos(30)},{sin(30)},2.35) {$\Delta s$};
-    \node[oired, font=\normalsize, anchor=south] at (axis cs:{cos(170)},{sin(170)},2.05) {$\Delta s$};
-    \draw[-latex, oiblue, line width=1.3pt]
-      (axis cs:{cos(104)},{sin(104)},0) -- (axis cs:{cos(112)},{sin(112)},0);
-    \node[oiblue, font=\large] at (axis cs:{1.2*cos(108)},{1.2*sin(108)},0) {$C$};
-    \node[oiblue, font=\large, anchor=south] at (axis description cs:0.5,1.0) {$z = f(x,y) = 2 + x^2 y$};
-  \end{axis}
-\end{tikzpicture}]]>
-          </latex-image>
-        </image>
-      </figure>
-        <p>
-          The area of the <m>k</m>th slab is
+          By <xref ref="eq-wall-area"/>, this line integral is the surface
+          area of the wall of <xref ref="fig-wall-half-circle"/>, whose
+          height is the integrand <m>2 + x^2 y</m> and whose base is the
+          upper half of the circle <m>x^2+y^2=1</m>. We can parametrize
+          <m>C</m> as <m>x(t) = \cos t</m>, <m>y(t) = \sin t</m>,
+          <m>0 \le t \le \pi</m>. Hence
 
         <md>
-          A_k \approx f\left(x(t_k),y(t_k)\right)\Delta s ,
-        </md>
-        </p>
-        <p>
-          so the area of the wall is approximately
-
-        <md>
-          A \approx \sum_{k=1}^{n} f\left(x(t_k),y(t_k)\right)\Delta s ,
-        </md>
-        </p>
-        <p>
-          and the exact area is the limit
-
-        <md>
-          <mrow xml:id="eq-wall-area" number="yes">
-            A = \lim_{n\to\infty} \sum_{k=1}^{n}
-                f\left(x(t_k),y(t_k)\right)\Delta s
-              = \int_C f(x,y)\,ds .
-          </mrow>
-        </md>
-        </p>
-        <p>
-          We can parametrize <m>C</m> as <m>x(t) = \cos t</m>,
-          <m>y(t) = \sin t</m>, <m>0 \le t \le \pi</m>. Hence
-
-        <md>
-          ds = \sqrt{\left(\frac{dx}{dt}\right)^2
+          <mrow>
+            ds \amp = \sqrt{\left(\frac{dx}{dt}\right)^2
                     + \left(\frac{dy}{dt}\right)^2}\,dt
-             = \sqrt{\sin^2 t + \cos^2 t}\,dt = dt ,
+          </mrow>
+          <mrow>
+            \amp = \sqrt{\sin^2 t + \cos^2 t}\,dt = dt ,
+          </mrow>
         </md>
         </p>
         <p>
@@ -882,7 +904,9 @@
           </mrow>
           <mrow>
             \amp = \left(2t - \frac13\cos^3 t\right)\Big|_0^{\pi}
-              = 2\pi + \frac23 .
+          </mrow>
+          <mrow>
+            \amp = 2\pi + \frac23 .
           </mrow>
         </md>
         </p>
@@ -966,20 +990,24 @@
               \qquad 0 \le t \le \frac{\pi}{2} ,
           </mrow>
           <mrow>
-            \mathbf{r}'(t) \amp = \left\langle -\sin t,\ \cos t \right\rangle
-              \quad\Rightarrow\quad
-              \left\lVert \mathbf{r}'(t) \right\rVert
-              = \sqrt{\sin^2 t + \cos^2 t} = 1
-              \quad\Rightarrow\quad ds = dt ,
+            \mathbf{r}'(t) \amp = \left\langle -\sin t,\ \cos t \right\rangle ,
+          </mrow>
+          <mrow>
+            \left\lVert \mathbf{r}'(t) \right\rVert
+              \amp = \sqrt{\sin^2 t + \cos^2 t} = 1 ,
           </mrow>
         </md>
         </p>
         <p>
-          and hence for the area we have
+          so <m>ds = dt</m>, and hence for the area we have
 
         <md>
-          \int_C y e^x\,ds = \int_0^{\pi/2} \sin t\; e^{\cos t}\,dt
-            = -e^{\cos t}\Big|_0^{\pi/2} = -e^0 + e^1 = e - 1 .
+          <mrow>
+            \int_C y e^x\,ds \amp = \int_0^{\pi/2} \sin t\; e^{\cos t}\,dt
+          </mrow>
+          <mrow>
+            \amp = -e^{\cos t}\Big|_0^{\pi/2} = -e^0 + e^1 = e - 1 .
+          </mrow>
         </md>
         </p>
       </solution>
