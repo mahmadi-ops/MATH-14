@@ -1620,6 +1620,898 @@ x y z u v w\\
         </figure>
       </solution>
     </exercise>
+
+    <!-- ............................................................... -->
+    <!-- Concept Checks 2 and 3: two physics problems supplied by the    -->
+    <!-- instructor (textbook Problems 48 and 94, Figs. 7-25 and 7-34),  -->
+    <!-- restated in the notation of this section.  The skeletal books   -->
+    <!-- carry the statements and figures with a blank box, no hints.    -->
+    <exercise xml:id="q-work-half-circle">
+      <title>A force at a fixed angle to the path</title>
+      <statement>
+        <p>
+          An object moves along a circle of radius <m>R</m> centred at
+          <m>O</m> and is acted upon by a force <m>\mathbf{F}</m> of
+          constant magnitude <m>F=\left\lVert\mathbf{F}\right\rVert</m>. At
+          every moment the force makes a <m>30^\circ</m> angle with the
+          unit tangent vector <m>\mathbf{T}</m>, as shown in
+          <xref ref="fig-half-circle-force"/>. Calculate the work done by
+          <m>\mathbf{F}</m> as the object moves along the half circle
+          <m>C</m> from <m>A</m> to <m>B</m>.
+        </p>
+
+        <figure xml:id="fig-half-circle-force">
+          <caption>
+            The object travels over the top of the circle from <m>A</m> to
+            <m>B</m>. At every point the force <m>\mathbf{F}</m> (red) makes
+            a <m>30^\circ</m> angle with the unit tangent vector
+            <m>\mathbf{T}</m> (green), the direction of travel.
+          </caption>
+          <image xml:id="image-half-circle-force" width="55%">
+            <shortdescription>
+              A half circle traversed from A over the top to B, with a force
+              arrow at thirty degrees to the tangent arrow at one point.
+            </shortdescription>
+            <description>
+              <p>
+                A circle of radius R centred at a point O. Its lower half is
+                dashed; its upper half, the path C, is drawn thick with an
+                arrowhead to the right of the top, so it is traversed
+                clockwise from the point A at the left end of the horizontal
+                diameter to the point B at the right end. A line segment from
+                O to the upper right part of the circle is labelled R. At a
+                point on the upper left of the path two arrows start: a green
+                arrow labelled T, tangent to the circle and pointing up and to
+                the right, and a longer red arrow labelled F that leans thirty
+                degrees further up, away from the centre. A small arc between
+                them is labelled thirty degrees.
+              </p>
+            </description>
+            <prefigure xmlns="https://prefigure.org" label="half-circle-force">
+              <diagram dimensions="(400,370)" margins="5">
+                <definition>h(t) = (-2*cos(t), 2*sin(t))</definition>
+                <definition>P = h(pi/4)</definition>
+                <definition>tv = 1.25*(cos(pi/4), sin(pi/4))</definition>
+                <definition>fv = 1.9*(cos(5*pi/12), sin(5*pi/12))</definition>
+                <coordinates bbox="(-3.4,-2.35,3.4,3.9)" aspect-ratio="1">
+                  <group at="circle">
+                    <circle center="(0,0)" radius="2" stroke="gray" thickness="2"
+                            dash="5 4"/>
+                  </group>
+
+                  <group at="path">
+                    <parametric-curve function="h" domain="(0,pi)" stroke="black"
+                                      thickness="3" arrows="1" arrow-location="2.05"/>
+                    <label anchor="h(2.2)" alignment="ne" offset="(4,4)">
+                      <m>C</m>
+                    </label>
+                  </group>
+
+                  <group at="center">
+                    <point p="(0,0)" size="3.5" stroke="black" fill="black"/>
+                    <label anchor="(0,0)" alignment="s" offset="(0,-6)">
+                      <m>O</m>
+                    </label>
+                    <line endpoints="((0,0), 2*(cos(pi/5), sin(pi/5)))" stroke="black"
+                          thickness="2"/>
+                    <label anchor="(cos(pi/5), sin(pi/5))" alignment="se" offset="(2,-2)">
+                      <m>R</m>
+                    </label>
+                  </group>
+
+                  <group at="endpoints">
+                    <point p="(-2,0)" size="4" stroke="black" fill="black"/>
+                    <label anchor="(-2,0)" alignment="w" offset="(-6,0)">
+                      <m>A</m>
+                    </label>
+                    <point p="(2,0)" size="4" stroke="black" fill="black"/>
+                    <label anchor="(2,0)" alignment="e" offset="(6,0)">
+                      <m>B</m>
+                    </label>
+                  </group>
+
+                  <group at="vectors">
+                    <vector v="fv" tail="P" stroke="red" thickness="3"/>
+                    <label anchor="P+fv" alignment="n" offset="(0,4)" color="red">
+                      <m>\mathbf{F}</m>
+                    </label>
+                    <vector v="tv" tail="P" stroke="#009E73" thickness="3"/>
+                    <label anchor="P+tv" alignment="e" offset="(4,0)" color="#009E73">
+                      <m>\mathbf{T}</m>
+                    </label>
+                    <arc center="P" radius="0.8" range="(45,75)" stroke="black"
+                         thickness="1"/>
+                    <label anchor="P+1.1*(cos(pi/3), sin(pi/3))" alignment="c">
+                      <m>30^\circ</m>
+                    </label>
+                    <point p="P" size="4" stroke="black" fill="black"/>
+                  </group>
+                </coordinates>
+
+                <annotations>
+                  <annotation ref="figure"
+                              text="An object travels over the top of a circle of radius
+                                    R from the point A to the point B, pushed by a force F
+                                    that always makes a thirty degree angle with the
+                                    direction of travel">
+                    <annotation ref="circle"
+                                text="The circle of radius R centred at O, drawn dashed"/>
+                    <annotation ref="path"
+                                text="The path C, the upper half of the circle, traversed
+                                      clockwise from A over the top to B"
+                                sonify="yes"/>
+                    <annotation ref="center"
+                                text="The centre O of the circle and a radius of length
+                                      R"/>
+                    <annotation ref="endpoints"
+                                text="The starting point A at the left end of the
+                                      horizontal diameter and the end point B at the
+                                      right end"/>
+                    <annotation ref="vectors"
+                                text="At a point on the upper left of the path, the unit
+                                      tangent vector T pointing up and to the right in
+                                      the direction of travel, and the force F, which
+                                      leans thirty degrees away from T toward the outside
+                                      of the circle"/>
+                  </annotation>
+                </annotations>
+              </diagram>
+            </prefigure>
+          </image>
+        </figure>
+      </statement>
+      <answer>
+        <p>
+          <m>W=\dfrac{\sqrt{3}}{2}\,\pi RF\approx 2.72\,RF</m>.
+        </p>
+      </answer>
+      <solution>
+        <p>
+          We place the centre <m>O</m> at the origin, so that
+          <m>A=(-R,0)</m> and <m>B=(R,0)</m>. The object goes over the top
+          from <m>A</m> to <m>B</m>, that is, clockwise, and a
+          parametrization of <m>C</m> is
+          <me>\mathbf{r}(t)=\left\langle -R\cos t,\ R\sin t\right\rangle,
+              \qquad 0\le t\le\pi,</me>
+          since <m>\mathbf{r}(0)=\left\langle -R,0\right\rangle</m> is
+          <m>A</m>, <m>\mathbf{r}(\pi/2)=\left\langle 0,R\right\rangle</m> is
+          the top of the circle, and
+          <m>\mathbf{r}(\pi)=\left\langle R,0\right\rangle</m> is <m>B</m>.
+          Its velocity, speed and unit tangent vector are
+          <me>\mathbf{v}(t)=\left\langle R\sin t,\ R\cos t\right\rangle,
+              \qquad
+              \left\lVert\mathbf{v}(t)\right\rVert=R,
+              \qquad
+              \mathbf{T}=\frac{\mathbf{v}}{\left\lVert\mathbf{v}\right\rVert}
+                =\left\langle\sin t,\ \cos t\right\rangle,</me>
+          so <m>ds=\left\lVert\mathbf{v}(t)\right\rVert\,dt=R\,dt</m>. At
+          <m>A</m> the tangent is
+          <m>\mathbf{T}=\left\langle 0,1\right\rangle</m>, straight up, as
+          in <xref ref="fig-half-circle-force"/>.
+        </p>
+        <p>
+          <term>Using <m>\mathbf{F}\cdot\mathbf{T}\,ds</m>.</term> The form
+          <xref ref="eq-work-Tds"/> is the natural one here, because we are
+          told the angle between <m>\mathbf{F}</m> and <m>\mathbf{T}</m>
+          rather than the force itself. By the dot-product formula,
+          <me>\mathbf{F}\cdot\mathbf{T}
+              =\left\lVert\mathbf{F}\right\rVert
+               \left\lVert\mathbf{T}\right\rVert\cos(30^\circ)
+              =F\cos(30^\circ)=\frac{\sqrt{3}}{2}\,F</me>
+          at every point of <m>C</m>. The integrand is constant, so it comes
+          out of the integral, and what is left is the length of the half
+          circle:
+        </p>
+        <md>
+          <mrow>
+            W \amp =\int_C\mathbf{F}\cdot\mathbf{T}\,ds
+                   =\frac{\sqrt{3}}{2}\,F\int_C ds
+          </mrow>
+          <mrow>
+            \amp =\frac{\sqrt{3}}{2}\,F\int_0^{\pi}R\,dt
+                 =\frac{\sqrt{3}}{2}\,\pi RF\approx 2.72\,RF.
+          </mrow>
+        </md>
+        <p>
+          <term>Check with the parametrized form.</term> To use
+          <xref ref="eq-work-parametrized"/> we need <m>\mathbf{F}</m>
+          itself along <m>C</m>. Let
+          <m>\mathbf{u}=\dfrac{\mathbf{r}}{\left\lVert\mathbf{r}\right\rVert}
+          =\left\langle -\cos t,\ \sin t\right\rangle</m> be the outward unit
+          vector along the radius; it is perpendicular to <m>\mathbf{T}</m>,
+          since <m>\mathbf{T}\cdot\mathbf{u}=-\sin t\cos t+\cos t\sin t=0</m>.
+          The force leans <m>30^\circ</m> away from <m>\mathbf{T}</m> toward
+          the outside of the circle (<xref ref="fig-half-circle-components"/>),
+          so
+        </p>
+        <md>
+          <mrow>
+            \mathbf{F}\bigl(\mathbf{r}(t)\bigr)
+              \amp =F\bigl(\cos(30^\circ)\,\mathbf{T}
+                    +\sin(30^\circ)\,\mathbf{u}\bigr)
+          </mrow>
+          <mrow>
+            \amp =F\left\langle \tfrac{\sqrt{3}}{2}\sin t-\tfrac{1}{2}\cos t,\
+                  \tfrac{\sqrt{3}}{2}\cos t+\tfrac{1}{2}\sin t\right\rangle.
+          </mrow>
+        </md>
+        <p>
+          Dotting with the velocity, the mixed terms cancel and
+          <m>\sin^2 t+\cos^2 t=1</m> does the rest:
+          <me>\mathbf{F}\cdot\mathbf{v}
+              =FR\left(\tfrac{\sqrt{3}}{2}\sin^2 t-\tfrac{1}{2}\sin t\cos t
+                +\tfrac{\sqrt{3}}{2}\cos^2 t+\tfrac{1}{2}\sin t\cos t\right)
+              =\frac{\sqrt{3}}{2}\,FR,</me>
+          so
+          <me>W=\int_0^{\pi}\frac{\sqrt{3}}{2}\,FR\,dt
+               =\frac{\sqrt{3}}{2}\,\pi RF,</me>
+          as before.
+        </p>
+
+        <figure xml:id="fig-half-circle-components">
+          <caption>
+            The force at three points of <m>C</m>, split into its tangential
+            component <m>F\cos(30^\circ)\,\mathbf{T}</m> (green) and its
+            radial component <m>F\sin(30^\circ)\,\mathbf{u}</m> (blue). The
+            tangential component has the same length everywhere, and it is
+            the only one that does work.
+          </caption>
+          <image xml:id="image-half-circle-components" width="70%">
+            <shortdescription>
+              The upper half circle with the force drawn at three points,
+              each split into a tangential and a radial component.
+            </shortdescription>
+            <description>
+              <p>
+                Coordinate axes with the upper half of a circle centred at
+                the origin O, from A on the negative x axis over the top to B
+                on the positive x axis, with an arrowhead pointing clockwise.
+                At three points of the half circle, on the upper left, at the
+                top and on the upper right, three arrows start: a red arrow F,
+                a green arrow along the tangent in the direction of travel,
+                and a shorter blue arrow along the radius, pointing away from
+                the centre. Faint dashed lines complete the rectangle whose
+                sides are the green and blue arrows and whose diagonal is the
+                red arrow, and a small square marks the right angle between
+                the green and blue arrows. At the top the arrows are labelled
+                F, F cosine thirty degrees times T, and F sine thirty degrees
+                times u. The green arrows all have the same length.
+              </p>
+            </description>
+            <prefigure xmlns="https://prefigure.org"
+                       label="half-circle-components">
+              <diagram dimensions="(460,300)" margins="5">
+                <definition>h(t) = (-2*cos(t), 2*sin(t))</definition>
+                <definition>tg(t) = (sin(t), cos(t))</definition>
+                <definition>ur(t) = (-cos(t), sin(t))</definition>
+                <definition>a = 1.3*cos(pi/6)</definition>
+                <definition>b = 1.3*sin(pi/6)</definition>
+                <definition>sq = 0.17</definition>
+                <coordinates bbox="(-3.3,-0.75,3.6,3.75)" aspect-ratio="1">
+                  <axes xlabel="x" ylabel="y" decorations="no" stroke="gray"
+                        thickness="1"/>
+
+                  <group at="path">
+                    <parametric-curve function="h" domain="(0,pi)" stroke="black"
+                                      thickness="3" arrows="1" arrow-location="1.05"/>
+                    <point p="(-2,0)" size="4" stroke="black" fill="black"/>
+                    <label anchor="(-2,0)" alignment="sw" offset="(-2,-4)">
+                      <m>A</m>
+                    </label>
+                    <point p="(2,0)" size="4" stroke="black" fill="black"/>
+                    <label anchor="(2,0)" alignment="se" offset="(2,-4)">
+                      <m>B</m>
+                    </label>
+                    <label anchor="(0,0)" alignment="sw" offset="(-2,-4)">
+                      <m>O</m>
+                    </label>
+                  </group>
+
+                  <group at="decompositions">
+                    <repeat parameter="k=1..3">
+                      <line endpoints="(h((2*k-1)*pi/6)+a*tg((2*k-1)*pi/6),
+                                         h((2*k-1)*pi/6)+a*tg((2*k-1)*pi/6)+b*ur((2*k-1)*pi/6))"
+                            stroke="gray" thickness="1" dash="3 3"/>
+                      <line endpoints="(h((2*k-1)*pi/6)+b*ur((2*k-1)*pi/6),
+                                         h((2*k-1)*pi/6)+a*tg((2*k-1)*pi/6)+b*ur((2*k-1)*pi/6))"
+                            stroke="gray" thickness="1" dash="3 3"/>
+                      <polygon points="[h((2*k-1)*pi/6)+sq*tg((2*k-1)*pi/6),
+                                        h((2*k-1)*pi/6)+sq*tg((2*k-1)*pi/6)+sq*ur((2*k-1)*pi/6),
+                                        h((2*k-1)*pi/6)+sq*ur((2*k-1)*pi/6)]"
+                               closed="no" stroke="black" thickness="1"/>
+                      <vector v="b*ur((2*k-1)*pi/6)" tail="h((2*k-1)*pi/6)"
+                              stroke="#0072B2" thickness="2"/>
+                      <vector v="a*tg((2*k-1)*pi/6)" tail="h((2*k-1)*pi/6)"
+                              stroke="#009E73" thickness="3"/>
+                      <vector v="a*tg((2*k-1)*pi/6)+b*ur((2*k-1)*pi/6)"
+                              tail="h((2*k-1)*pi/6)" stroke="red" thickness="3"/>
+                      <point p="h((2*k-1)*pi/6)" size="3.5" stroke="black" fill="black"/>
+                    </repeat>
+                  </group>
+
+                  <group at="labels">
+                    <label anchor="h(pi/2)+a*tg(pi/2)+b*ur(pi/2)" alignment="ne"
+                           offset="(2,2)" color="red">
+                      <m>\mathbf{F}</m>
+                    </label>
+                    <label anchor="h(pi/2)+a*tg(pi/2)" alignment="e" offset="(6,-2)"
+                           color="#009E73">
+                      <m>F\cos(30^\circ)\,\mathbf{T}</m>
+                    </label>
+                    <label anchor="h(pi/2)+b*ur(pi/2)" alignment="w" offset="(-4,2)"
+                           color="#0072B2">
+                      <m>F\sin(30^\circ)\,\mathbf{u}</m>
+                    </label>
+                  </group>
+                </coordinates>
+
+                <annotations>
+                  <annotation ref="figure"
+                              text="The force F at three points of the half circle, split
+                                    into a component along the direction of travel and a
+                                    component along the radius">
+                    <annotation ref="axes" text="The coordinate axes, with the centre of
+                                                 the circle at the origin"/>
+                    <annotation ref="path"
+                                text="The upper half of the circle of radius R, from A at
+                                      minus R, zero, over the top to B at R, zero,
+                                      traversed clockwise"
+                                sonify="yes"/>
+                    <annotation ref="decompositions"
+                                text="At three points of the path, the force F drawn in
+                                      red is the diagonal of a rectangle whose sides are
+                                      its tangential component, F cosine thirty degrees
+                                      times T, in green, and its radial component, F sine
+                                      thirty degrees times u, in blue. A small square
+                                      marks the right angle between the two components.
+                                      The green component has the same length at every
+                                      point"/>
+                    <annotation ref="labels"
+                                text="The labels on the vectors at the top of the circle:
+                                      F, F cosine thirty degrees times T, and F sine
+                                      thirty degrees times u"/>
+                  </annotation>
+                </annotations>
+              </diagram>
+            </prefigure>
+          </image>
+        </figure>
+
+        <p>
+          The radial part <m>F\sin(30^\circ)\,\mathbf{u}</m> is perpendicular
+          to the motion and does no work; only the tangential component
+          counts. Had the force leaned toward the centre instead, the sign of
+          the <m>\mathbf{u}</m> term would flip and the work would be the
+          same. The work is positive because the angle between
+          <m>\mathbf{F}</m> and <m>\mathbf{T}</m> is acute, and it grows
+          with the length of the path: around the whole circle the same
+          argument gives <m>\sqrt{3}\,\pi RF\neq 0</m>. Unlike the radial
+          field of <xref ref="q-work-sign-two-paths"/>, this force keeps
+          pushing the object along its way, so nothing cancels when the
+          object comes back to where it started.
+        </p>
+      </solution>
+    </exercise>
+
+    <!-- ............................................................... -->
+    <exercise xml:id="q-work-pendulum">
+      <title>Pulling a pendulum aside</title>
+      <introduction>
+        <p>
+          A simple pendulum consists of a small bob of mass <m>m</m>
+          hanging from a cord of length <m>\ell</m> whose mass is
+          negligible. A horizontal force
+          <m>\mathbf{F}=F\,\mathbf{i}</m> moves the bob so slowly that its
+          acceleration is essentially zero; its magnitude
+          <m>F=\left\lVert\mathbf{F}\right\rVert</m> must therefore change
+          with the angle <m>\theta</m> that the cord makes with the
+          vertical. Two other forces act on the bob: gravity,
+          <m>\mathbf{F}_{\mathrm{G}}=m\mathbf{g}</m>, and the force
+          <m>\mathbf{F}_{\mathrm{T}}</m> that the cord exerts on it. See
+          <xref ref="fig-pendulum-forces"/>.
+        </p>
+
+        <figure xml:id="fig-pendulum-forces">
+          <caption>
+            The bob moves along the arc <m>C</m> from its lowest point
+            <m>A</m> to the point <m>B</m> where the cord makes the angle
+            <m>\theta_0</m> with the vertical. Three forces act on it: the
+            horizontal pull <m>\mathbf{F}</m>, gravity
+            <m>\mathbf{F}_{\mathrm{G}}</m>, and the force
+            <m>\mathbf{F}_{\mathrm{T}}</m> of the cord.
+          </caption>
+          <image xml:id="image-pendulum-forces" width="55%">
+            <shortdescription>
+              A pendulum hanging from the ceiling, pulled aside along an arc,
+              with the three forces on the bob.
+            </shortdescription>
+            <description>
+              <p>
+                A cord of length ell hangs from a pivot on the ceiling and
+                makes the angle theta with a dashed vertical line through the
+                pivot. An x axis points right and a short y axis points up
+                from the lowest position A of the bob, directly below the
+                pivot. A dashed arc of the circle of radius ell about the
+                pivot passes through A; the part of it from A up and to the
+                right to a point B is drawn thick and labelled C, with an
+                arrowhead showing that the bob moves from A toward B. The bob
+                sits on C between A and B. Three red arrows start at the bob:
+                F pointing horizontally to the right, F G pointing straight
+                down, and F T pointing along the cord toward the pivot.
+              </p>
+            </description>
+            <prefigure xmlns="https://prefigure.org" label="pendulum-forces">
+              <diagram dimensions="(420,400)" margins="5">
+                <definition>L = 4</definition>
+                <definition>pivot = (0, L)</definition>
+                <definition>bob(t) = (L*sin(t), L - L*cos(t))</definition>
+                <definition>th = pi/6</definition>
+                <definition>th0 = 5*pi/18</definition>
+                <definition>P = bob(th)</definition>
+                <coordinates bbox="(-1.5,-1.25,4.6,4.55)" aspect-ratio="1">
+                  <group at="support">
+                    <rectangle lower-left="(-1.2,L)" dimensions="(4.6,0.35)"
+                               stroke="none" fill="#e6d3c3"/>
+                    <line endpoints="((-1.2,L), (3.4,L))" stroke="black" thickness="2"/>
+                    <line endpoints="(pivot, (0,1.1))" stroke="gray" thickness="1"
+                          dash="5 4"/>
+                    <point p="pivot" size="3.5" stroke="black" fill="black"/>
+                  </group>
+
+                  <group at="axes">
+                    <line endpoints="((-1.2,0), (4.3,0))" stroke="gray" thickness="2"
+                          arrows="1"/>
+                    <line endpoints="((0,-0.5), (0,1.1))" stroke="gray" thickness="2"
+                          arrows="1"/>
+                    <label anchor="(4.3,0)" alignment="se" offset="(0,-2)">
+                      <m>x</m>
+                    </label>
+                    <label anchor="(0,1.1)" alignment="w" offset="(-4,0)">
+                      <m>y</m>
+                    </label>
+                  </group>
+
+                  <group at="swing">
+                    <arc center="pivot" radius="L" range="(-108,-30)" stroke="gray"
+                         thickness="1" dash="5 4"/>
+                  </group>
+
+                  <group at="path">
+                    <parametric-curve function="bob" domain="(0,th0)" stroke="black"
+                                      thickness="3" arrows="1" arrow-location="0.3"/>
+                    <label anchor="bob(0.22)" alignment="nw" offset="(-2,4)">
+                      <m>C</m>
+                    </label>
+                    <point p="(0,0)" size="4" stroke="black" fill="black"/>
+                    <label anchor="(0,0)" alignment="sw" offset="(-3,-3)">
+                      <m>A</m>
+                    </label>
+                    <point p="bob(th0)" size="4" stroke="black" fill="black"/>
+                    <label anchor="bob(th0)" alignment="e" offset="(6,0)">
+                      <m>B</m>
+                    </label>
+                  </group>
+
+                  <group at="cord">
+                    <line endpoints="(pivot, P)" stroke="#7f6a55" thickness="3"/>
+                    <label anchor="(pivot+P)/2" alignment="ne" offset="(4,2)">
+                      <m>\ell</m>
+                    </label>
+                    <arc center="pivot" radius="0.9" range="(-90,-60)" stroke="black"
+                         thickness="1"/>
+                    <label anchor="pivot+1.2*(sin(th/2), -cos(th/2))" alignment="c">
+                      <m>\theta</m>
+                    </label>
+                  </group>
+
+                  <group at="forces">
+                    <vector v="(1.4*tan(th), 0)" tail="P" stroke="red" thickness="3"/>
+                    <label anchor="P+(1.4*tan(th), 0)" alignment="e" offset="(4,0)"
+                           color="red">
+                      <m>\mathbf{F}</m>
+                    </label>
+                    <vector v="(0, -1.4)" tail="P" stroke="red" thickness="3"/>
+                    <label anchor="P+(0,-1.4)" alignment="s" offset="(0,-4)" color="red">
+                      <m>\mathbf{F}_{\mathrm{G}}</m>
+                    </label>
+                    <vector v="(1.4/cos(th))*(-sin(th), cos(th))" tail="P" stroke="red"
+                            thickness="3"/>
+                    <label anchor="P+(1.4/cos(th))*(-sin(th), cos(th))" alignment="w"
+                           offset="(-4,0)" color="red">
+                      <m>\mathbf{F}_{\mathrm{T}}</m>
+                    </label>
+                  </group>
+
+                  <group at="bob">
+                    <point p="P" size="6" stroke="black" fill="#e69f00"/>
+                  </group>
+                </coordinates>
+
+                <annotations>
+                  <annotation ref="figure"
+                              text="A pendulum bob of mass m on a cord of length ell,
+                                    pulled aside by a horizontal force. The bob moves
+                                    along a circular arc from its lowest point A to the
+                                    point B where the cord makes the angle theta zero
+                                    with the vertical">
+                    <annotation ref="support"
+                                text="The ceiling, with the pivot of the cord and a dashed
+                                      vertical line hanging from it"/>
+                    <annotation ref="axes"
+                                text="The x axis pointing right and the y axis pointing
+                                      up, with the origin at the lowest position A of the
+                                      bob"/>
+                    <annotation ref="swing"
+                                text="A dashed arc of the circle of radius ell about the
+                                      pivot, on which the bob must stay"/>
+                    <annotation ref="path"
+                                text="The path C, the part of that arc from A, where theta
+                                      is zero, up to B, where theta is theta zero, with an
+                                      arrowhead showing the direction of motion"
+                                sonify="yes"/>
+                    <annotation ref="cord"
+                                text="The cord of length ell from the pivot to the bob,
+                                      making the angle theta with the vertical"/>
+                    <annotation ref="forces"
+                                text="The three forces on the bob: the horizontal force F
+                                      pointing right, the gravitational force F G pointing
+                                      straight down, and the force F T of the cord,
+                                      pointing along the cord toward the pivot"/>
+                    <annotation ref="bob" text="The bob, partway along the path"/>
+                  </annotation>
+                </annotations>
+              </diagram>
+            </prefigure>
+          </image>
+        </figure>
+      </introduction>
+
+      <task xml:id="task-pendulum-force">
+        <statement>
+          <p>
+            Calculate the work done by <m>\mathbf{F}</m> in moving the
+            pendulum from <m>\theta=0</m> to <m>\theta=\theta_0</m>.
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <m>W_{\mathbf{F}}=mg\ell\left(1-\cos\theta_0\right)</m>.
+          </p>
+        </answer>
+        <solution>
+          <p>
+            <term>The path.</term> We put the origin at the lowest position
+            <m>A</m> of the bob, with <m>x</m> to the right and <m>y</m> up,
+            so the pivot is at <m>(0,\ell)</m>. When the cord makes the angle
+            <m>\theta</m> with the vertical, the bob is
+            <m>\ell\sin\theta</m> to the right of the vertical line through
+            the pivot and <m>\ell\cos\theta</m> below the pivot, so its
+            height above <m>A</m> is <m>y=\ell-\ell\cos\theta</m>; see
+            <xref ref="fig-pendulum-balance"/>. We use the angle
+            <m>\theta</m> itself as the parameter, in the role of <m>t</m>:
+            <me>\mathbf{r}(\theta)
+                =\left\langle \ell\sin\theta,\ \ell-\ell\cos\theta\right\rangle,
+                \qquad 0\le\theta\le\theta_0,</me>
+            from <m>A=\mathbf{r}(0)=(0,0)</m> to
+            <m>B=\mathbf{r}(\theta_0)</m>. The velocity is
+            <me>\mathbf{v}(\theta)=\frac{d\mathbf{r}}{d\theta}
+                =\left\langle \ell\cos\theta,\ \ell\sin\theta\right\rangle.</me>
+          </p>
+          <p>
+            <term>The forces.</term> Write <m>F_{\mathrm{T}}</m> for the
+            magnitude <m>\left\lVert\mathbf{F}_{\mathrm{T}}\right\rVert</m>.
+            The force of the cord points along the cord from the bob toward
+            the pivot, so
+            <me>\mathbf{F}=\left\langle F,\ 0\right\rangle,\qquad
+                \mathbf{F}_{\mathrm{G}}=\left\langle 0,\ -mg\right\rangle,\qquad
+                \mathbf{F}_{\mathrm{T}}=\left\langle -F_{\mathrm{T}}\sin\theta,\
+                  F_{\mathrm{T}}\cos\theta\right\rangle.</me>
+            The acceleration is essentially zero, so the three forces
+            balance at every instant,
+            <m>\mathbf{F}+\mathbf{F}_{\mathrm{G}}+\mathbf{F}_{\mathrm{T}}
+            =\mathbf{0}</m>, which in components reads
+          </p>
+          <md>
+            <mrow>
+              \mathbf{i}:\quad \amp F-F_{\mathrm{T}}\sin\theta=0,
+            </mrow>
+            <mrow>
+              \mathbf{j}:\quad \amp F_{\mathrm{T}}\cos\theta-mg=0.
+            </mrow>
+          </md>
+          <p>
+            Hence <m>F_{\mathrm{T}}=\dfrac{mg}{\cos\theta}</m> and
+            <m>F=mg\tan\theta</m>, and along <m>C</m>
+            <me>\mathbf{F}\bigl(\mathbf{r}(\theta)\bigr)
+                =\left\langle mg\tan\theta,\ 0\right\rangle,\qquad
+                \mathbf{F}_{\mathrm{T}}\bigl(\mathbf{r}(\theta)\bigr)
+                =\left\langle -mg\tan\theta,\ mg\right\rangle.</me>
+            In terms of position, <m>\tan\theta=\dfrac{x}{\ell-y}</m>, so
+            <m>\mathbf{F}(x,y)
+            =\left\langle \dfrac{mg\,x}{\ell-y},\ 0\right\rangle</m> is a
+            genuine force field; we only ever need it along <m>C</m>.
+          </p>
+
+          <figure xml:id="fig-pendulum-balance">
+            <caption>
+              The bob at the angle <m>\theta</m>, with its coordinates. The
+              dashed components of <m>\mathbf{F}_{\mathrm{T}}</m> cancel
+              <m>\mathbf{F}</m> and <m>\mathbf{F}_{\mathrm{G}}</m>, and the
+              cord is perpendicular to the direction of travel
+              <m>\mathbf{T}</m>.
+            </caption>
+            <image xml:id="image-pendulum-balance" width="60%">
+              <shortdescription>
+                The pendulum bob with its coordinates, the three forces, the
+                two components of the force of the cord, and the tangent
+                vector at a right angle to the cord.
+              </shortdescription>
+              <description>
+                <p>
+                  The pivot is at the point zero, ell, on a dashed vertical
+                  line, and the lowest point A of the bob is at the origin on
+                  the x axis. The cord runs from the pivot to the bob at the
+                  angle theta with the vertical, and the bob sits on a
+                  circular arc through A. Dotted lines and dimension arrows
+                  show that the bob is ell sine theta to the right of the
+                  vertical line, a height ell minus ell cosine theta above A,
+                  and ell cosine theta below the pivot. Red arrows at the bob
+                  show F pointing right, F G pointing down, and F T pointing
+                  along the cord toward the pivot; two dashed red arrows show
+                  the components of F T, one of size F T sine theta pointing
+                  left and one of size F T cosine theta pointing up. A green
+                  arrow T is tangent to the arc, pointing up and to the right,
+                  and a small square marks the right angle between T and the
+                  cord.
+                </p>
+              </description>
+              <prefigure xmlns="https://prefigure.org" label="pendulum-balance">
+                <diagram dimensions="(440,400)" margins="5">
+                  <definition>L = 4</definition>
+                  <definition>pivot = (0, L)</definition>
+                  <definition>bob(t) = (L*sin(t), L - L*cos(t))</definition>
+                  <definition>th = pi/6</definition>
+                  <definition>P = bob(th)</definition>
+                  <definition>g = 1.4</definition>
+                  <definition>up = (-sin(th), cos(th))</definition>
+                  <definition>tg = (cos(th), sin(th))</definition>
+                  <definition>sq = 0.2</definition>
+                  <coordinates bbox="(-1.7,-1.25,4.6,4.45)" aspect-ratio="1">
+                    <group at="frame">
+                      <line endpoints="((-1.2,0), (4.3,0))" stroke="gray" thickness="2"
+                            arrows="1"/>
+                      <label anchor="(4.3,0)" alignment="se" offset="(0,-2)">
+                        <m>x</m>
+                      </label>
+                      <line endpoints="((0,-0.5), pivot)" stroke="gray" thickness="1"
+                            dash="5 4"/>
+                      <point p="pivot" size="3.5" stroke="black" fill="black"/>
+                      <label anchor="pivot" alignment="e" offset="(6,0)">
+                        <m>(0,\ell)</m>
+                      </label>
+                      <point p="(0,0)" size="4" stroke="black" fill="black"/>
+                      <label anchor="(0,0)" alignment="sw" offset="(-4,-4)">
+                        <m>A(0,0)</m>
+                      </label>
+                      <arc center="pivot" radius="L" range="(-100,-40)" stroke="black"
+                           thickness="2"/>
+                    </group>
+
+                    <group at="coordinates">
+                      <line endpoints="(P, (P[0],0))" stroke="gray" thickness="1"
+                            dash="2 3"/>
+                      <line endpoints="(P, (0,P[1]))" stroke="gray" thickness="1"
+                            dash="2 3"/>
+                      <line endpoints="((-0.35,0), (-0.35,P[1]))" stroke="black"
+                            thickness="1" arrows="2"/>
+                      <label anchor="(-0.35,P[1]/2)" alignment="w" offset="(-4,0)">
+                        <m>\ell-\ell\cos\theta</m>
+                      </label>
+                      <line endpoints="((-0.35,P[1]), (-0.35,L))" stroke="black"
+                            thickness="1" arrows="2"/>
+                      <label anchor="(-0.35,(P[1]+L)/2)" alignment="w" offset="(-4,0)">
+                        <m>\ell\cos\theta</m>
+                      </label>
+                      <label anchor="(P[0]/2, 0)" alignment="s" offset="(0,-4)">
+                        <m>\ell\sin\theta</m>
+                      </label>
+                    </group>
+
+                    <group at="cord">
+                      <line endpoints="(pivot, P)" stroke="#7f6a55" thickness="3"/>
+                      <arc center="pivot" radius="0.9" range="(-90,-60)" stroke="black"
+                           thickness="1"/>
+                      <label anchor="pivot+1.2*(sin(th/2), -cos(th/2))" alignment="c">
+                        <m>\theta</m>
+                      </label>
+                    </group>
+
+                    <group at="components">
+                      <line endpoints="(P, P+(-g*tan(th), 0))" stroke="red" thickness="2"
+                            dash="6 4" arrows="1"/>
+                      <label anchor="P+(-g*tan(th), 0)" alignment="nw" offset="(-2,2)"
+                             color="red">
+                        <m>F_{\mathrm{T}}\sin\theta</m>
+                      </label>
+                      <line endpoints="(P, P+(0, g))" stroke="red" thickness="2"
+                            dash="6 4" arrows="1"/>
+                      <label anchor="P+(0, g)" alignment="n" offset="(0,4)" color="red">
+                        <m>F_{\mathrm{T}}\cos\theta</m>
+                      </label>
+                    </group>
+
+                    <group at="forces">
+                      <vector v="(g*tan(th), 0)" tail="P" stroke="red" thickness="3"/>
+                      <label anchor="P+(g*tan(th), 0)" alignment="e" offset="(4,0)"
+                             color="red">
+                        <m>\mathbf{F}</m>
+                      </label>
+                      <vector v="(0, -g)" tail="P" stroke="red" thickness="3"/>
+                      <label anchor="P+(0,-g)" alignment="s" offset="(0,-4)" color="red">
+                        <m>\mathbf{F}_{\mathrm{G}}</m>
+                      </label>
+                      <vector v="(g/cos(th))*up" tail="P" stroke="red" thickness="3"/>
+                      <label anchor="P+(g/cos(th))*up" alignment="w" offset="(-4,2)"
+                             color="red">
+                        <m>\mathbf{F}_{\mathrm{T}}</m>
+                      </label>
+                    </group>
+
+                    <group at="tangent">
+                      <vector v="1.1*tg" tail="P" stroke="#009E73" thickness="3"/>
+                      <label anchor="P+1.1*tg" alignment="ne" offset="(2,2)"
+                             color="#009E73">
+                        <m>\mathbf{T}</m>
+                      </label>
+                      <polygon points="[P+sq*tg, P+sq*tg+sq*up, P+sq*up]" closed="no"
+                               stroke="black" thickness="1"/>
+                    </group>
+
+                    <group at="bob">
+                      <point p="P" size="6" stroke="black" fill="#e69f00"/>
+                    </group>
+                  </coordinates>
+
+                  <annotations>
+                    <annotation ref="figure"
+                                text="The bob at the angle theta, with its coordinates, the
+                                      three forces acting on it, the two components of the
+                                      force of the cord, and the direction of travel">
+                      <annotation ref="frame"
+                                  text="The x axis, the dashed vertical line through the
+                                        pivot at zero, ell, the lowest point A at the origin,
+                                        and the circular arc on which the bob moves"
+                                  sonify="yes"/>
+                      <annotation ref="coordinates"
+                                  text="Dotted lines from the bob to the axes. The bob is
+                                        ell sine theta to the right of the vertical line, a
+                                        height ell minus ell cosine theta above A, and ell
+                                        cosine theta below the pivot"/>
+                      <annotation ref="cord"
+                                  text="The cord from the pivot to the bob, at the angle
+                                        theta with the vertical"/>
+                      <annotation ref="components"
+                                  text="The two components of the force of the cord, drawn
+                                        dashed: F T sine theta pointing left, and F T cosine
+                                        theta pointing up"/>
+                      <annotation ref="forces"
+                                  text="The three forces on the bob: F pointing right, F G
+                                        pointing down, and F T pointing along the cord
+                                        toward the pivot. The left pointing component of F T
+                                        cancels F and its upward component cancels F G"/>
+                      <annotation ref="tangent"
+                                  text="The unit tangent vector T, pointing along the arc in
+                                        the direction of motion. A small square marks the
+                                        right angle between T and the cord, so the force of
+                                        the cord is perpendicular to the motion"/>
+                      <annotation ref="bob" text="The bob"/>
+                    </annotation>
+                  </annotations>
+                </diagram>
+              </prefigure>
+            </image>
+          </figure>
+
+          <p>
+            <term>The work.</term> By <xref ref="eq-work-parametrized"/>,
+          </p>
+          <md>
+            <mrow>
+              W_{\mathbf{F}} \amp =\int_C\mathbf{F}\cdot d\mathbf{r}
+                =\int_0^{\theta_0}\left\langle mg\tan\theta,\ 0\right\rangle
+                 \cdot\left\langle \ell\cos\theta,\ \ell\sin\theta\right\rangle
+                 d\theta
+            </mrow>
+            <mrow>
+              \amp =mg\ell\int_0^{\theta_0}\frac{\sin\theta}{\cos\theta}\,
+                    \cos\theta\,d\theta
+                   =mg\ell\int_0^{\theta_0}\sin\theta\,d\theta
+            </mrow>
+            <mrow>
+              \amp =mg\ell\Bigl[-\cos\theta\Bigr]_0^{\theta_0}
+                   =mg\ell\left(1-\cos\theta_0\right).
+            </mrow>
+          </md>
+          <p>
+            In the differential form <xref ref="eq-work-differential"/> this
+            is the same computation: <m>M=mg\tan\theta</m>, <m>N=0</m> and
+            <m>dx=\ell\cos\theta\,d\theta</m>, so
+            <m>W_{\mathbf{F}}=\int_C M\,dx
+            =\int_0^{\theta_0}mg\ell\sin\theta\,d\theta</m>.
+          </p>
+        </solution>
+      </task>
+
+      <task xml:id="task-pendulum-gravity-cord">
+        <statement>
+          <p>
+            Calculate the work done by the gravitational force
+            <m>\mathbf{F}_{\mathrm{G}}</m> and the work done by the force
+            <m>\mathbf{F}_{\mathrm{T}}</m> of the cord over the same motion.
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <m>W_{\mathrm{G}}=-mg\ell\left(1-\cos\theta_0\right)</m> and
+            <m>W_{\mathrm{T}}=0</m>.
+          </p>
+        </answer>
+        <solution>
+          <p>
+            We use the parametrization and the forces found in part (a).
+          </p>
+          <p>
+            <term>Gravity.</term> The force
+            <m>\mathbf{F}_{\mathrm{G}}=\left\langle 0,\ -mg\right\rangle</m>
+            is constant, and
+          </p>
+          <md>
+            <mrow>
+              W_{\mathrm{G}} \amp =\int_C\mathbf{F}_{\mathrm{G}}\cdot d\mathbf{r}
+                =\int_0^{\theta_0}\left\langle 0,\ -mg\right\rangle
+                 \cdot\left\langle \ell\cos\theta,\ \ell\sin\theta\right\rangle
+                 d\theta
+            </mrow>
+            <mrow>
+              \amp =-mg\ell\int_0^{\theta_0}\sin\theta\,d\theta
+                   =-mg\ell\left(1-\cos\theta_0\right).
+            </mrow>
+          </md>
+          <p>
+            The answer is <m>-mg</m> times the height
+            <m>\ell\left(1-\cos\theta_0\right)</m> gained by the bob, and the
+            shape of the path played no role beyond that. Gravity is one of
+            the fields, studied in <xref ref="section-conservative-fields"/>,
+            whose line integrals depend only on the endpoints.
+          </p>
+          <p>
+            <term>The cord.</term> Here the integrand vanishes:
+            <me>\mathbf{F}_{\mathrm{T}}\cdot\mathbf{v}
+                =\frac{mg}{\cos\theta}
+                 \left\langle -\sin\theta,\ \cos\theta\right\rangle
+                 \cdot\left\langle \ell\cos\theta,\ \ell\sin\theta\right\rangle
+                =\frac{mg\ell}{\cos\theta}
+                 \left(-\sin\theta\cos\theta+\cos\theta\sin\theta\right)=0,</me>
+            so
+            <me>W_{\mathrm{T}}=\int_C\mathbf{F}_{\mathrm{T}}\cdot d\mathbf{r}
+                =\int_0^{\theta_0}0\,d\theta=0.</me>
+            In the form <xref ref="eq-work-Tds"/> this is immediate: the cord
+            lies along a radius of the circular arc <m>C</m>, so
+            <m>\mathbf{F}_{\mathrm{T}}</m> is perpendicular to
+            <m>\mathbf{T}</m> at every point
+            (<xref ref="fig-pendulum-balance"/>), even though its magnitude
+            <m>mg/\cos\theta</m> keeps changing.
+          </p>
+          <p>
+            <term>A check.</term>
+            <m>W_{\mathbf{F}}+W_{\mathrm{G}}+W_{\mathrm{T}}
+            =mg\ell\left(1-\cos\theta_0\right)-mg\ell\left(1-\cos\theta_0\right)+0
+            =0</m>, as it must be: the net force is the zero vector at every
+            point of <m>C</m>, so its line integral is zero.
+          </p>
+        </solution>
+      </task>
+    </exercise>
   </subsection>
 
 </section>
