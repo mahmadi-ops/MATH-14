@@ -18,40 +18,13 @@
             <ul>
                 <li>
                     <p>
-                        <alert>Answer boxes that check your work instantly.</alert>
-                        The assignments and review problems are not just lists
-                        of exercises: each problem carries answer boxes that
-                        grade themselves the moment you press
-                        <q>Check Me</q>, as many times as you like. Each box
-                        is checked on its own, so you learn exactly which part
-                        of a long computation went wrong<mdash/>something no
-                        printed answer key in the back of a book can tell you.
-                    </p>
-                </li>
-                <li>
-                    <p>
-                        <alert>Problems that draw their own numbers.</alert> Many
-                        problems build themselves from randomly chosen
-                        constants, so the numbers in front of you are not the
-                        numbers in front of the student beside you. Press
-                        <q>Randomize</q> and the same problem comes back with
-                        a fresh set of numbers, so you can practise a method
-                        until it is yours rather than memorizing one answer.
-                    </p>
-                </li>
-                <li>
-                    <p>
-                        <alert>A Socratic tutor that will not tell you the
-                        answer.</alert> Every assignment page carries a tutor
-                        button in the corner. It knows the problems on that
-                        page and coaches you the way a good office hour
-                        does<mdash/>with questions and small hints, never with
-                        the answer handed over. It stays docked as you scroll,
-                        so you can read a problem and talk about it at the
-                        same time. See <q>Using the AI Tutor</q>, at the top of the
-                        Assignments and Review Problems chapter, for how to set it up. The review sets deliberately do
-                        not have it: those are rehearsal for exams, where you
-                        are on your own.
+                        <alert>The problem sets live with the skeletal notes.</alert>
+                        The assignments, the review problem sets, their
+                        auto-graded answer boxes, and the AI tutor are on the
+                        companion site of fill-in notes,
+                        <url href="https://mahmadi-ops.github.io/MATH14-Skeletal/">mahmadi-ops.github.io/MATH14-Skeletal</url>.
+                        This book is the completed notes to read alongside
+                        them.
                     </p>
                 </li>
                 <li>
@@ -63,17 +36,6 @@
                         whether you followed an idea while it is still in
                         front of you, instead of discovering it days later on
                         the homework.
-                    </p>
-                </li>
-                <li>
-                    <p>
-                        <alert>Solutions that arrive where you need them.</alert>
-                        After each assignment's due date, a complete worked
-                        solution appears directly beneath every one of its
-                        problems<mdash/>on the same page where you worked
-                        them<mdash/>rather than in a separate solutions
-                        manual. The review problem sets get their solutions
-                        the same way.
                     </p>
                 </li>
                 <li>
