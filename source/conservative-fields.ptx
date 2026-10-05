@@ -987,10 +987,157 @@ Do it again with <xref ref="thm-ftli"/>.
 </statement>
 
 <solution>
+<title>Method 1 (the three steps of Example III)</title>
+<p>
+The field is defined everywhere except at the origin, and the helix
+never passes through the origin (along it
+<m>x^2 + y^2 = \cos^2 t + \sin^2 t = 1</m>), so we may look for a
+potential function <m>f</m> with <m>\nabla f = \mathbf F</m>. Writing
+<m>\mathbf F = \left\langle \dfrac{\partial f}{\partial x},\,
+\dfrac{\partial f}{\partial y},\, \dfrac{\partial f}{\partial z}
+\right\rangle</m>, we match the components one at a time, exactly as in
+<xref ref="example-potential-function"/>:
+</p>
+
+<md>
+<mrow>
+\frac{\partial f}{\partial x} \amp = \frac{-x}{\left(x^2+y^2+z^2\right)^{3/2}}, \qquad
+\frac{\partial f}{\partial y} = \frac{-y}{\left(x^2+y^2+z^2\right)^{3/2}},
+</mrow>
+<mrow>
+\frac{\partial f}{\partial z} \amp = \frac{-z}{\left(x^2+y^2+z^2\right)^{3/2}} .
+</mrow>
+</md>
+
+<p>
+<em>Step I.</em> Since
+<m>\dfrac{\partial f}{\partial x} = \dfrac{-x}{\left(x^2+y^2+z^2\right)^{3/2}}</m>, we
+integrate with respect to <m>x</m> (here <m>x</m> is the variable and
+<m>y</m> and <m>z</m> are constants). With the substitution
+<m>u = x^2 + y^2 + z^2</m>, <m>du = 2x\,dx</m>,
+</p>
+
+<md>
+<mrow>
+f(x,y,z) \amp = \int \frac{-x}{\left(x^2+y^2+z^2\right)^{3/2}}\,dx
+ = -\frac12 \int u^{-3/2}\,du
+ = -\frac12 \cdot \frac{u^{-1/2}}{-\tfrac12} + g(y,z)
+</mrow>
+<mrow>
+\amp = \frac{1}{\sqrt{x^2+y^2+z^2}} + g(y,z),
+</mrow>
+</md>
+
+<p>
+where the constant of integration <m>g(y,z)</m> is allowed to depend on
+<m>y</m> and <m>z</m>.
+</p>
+
+<p>
+<em>Step II.</em> Since
+<m>\dfrac{\partial f}{\partial y} = \dfrac{-y}{\left(x^2+y^2+z^2\right)^{3/2}}</m>, we
+differentiate the result of Step I with respect to <m>y</m>:
+</p>
+
+<md>
+<mrow>
+\frac{\partial}{\partial y}\Big( \left(x^2+y^2+z^2\right)^{-1/2} + g(y,z) \Big)
+\amp = -\frac12 \left(x^2+y^2+z^2\right)^{-3/2} \cdot 2y + \frac{\partial g}{\partial y}
+</mrow>
+<mrow>
+\amp = \frac{-y}{\left(x^2+y^2+z^2\right)^{3/2}} + \frac{\partial g}{\partial y} .
+</mrow>
+</md>
+
+<p>
+Setting this equal to <m>\dfrac{-y}{\left(x^2+y^2+z^2\right)^{3/2}}</m> gives
+<m>\dfrac{\partial g}{\partial y} = 0</m>, so <m>g</m> does
+<em>not</em> depend on <m>y</m>, and we can write <m>g(y,z) = h(z)</m>;
+that is,
+</p>
+
+<me>
+f(x,y,z) = \frac{1}{\sqrt{x^2+y^2+z^2}} + h(z).
+</me>
+
+<p>
+<em>Step III.</em> Since
+<m>\dfrac{\partial f}{\partial z} = \dfrac{-z}{\left(x^2+y^2+z^2\right)^{3/2}}</m>, we
+differentiate the result of Step II with respect to <m>z</m>:
+</p>
+
+<md>
+<mrow>
+\frac{\partial}{\partial z}\Big( \left(x^2+y^2+z^2\right)^{-1/2} + h(z) \Big)
+\amp = \frac{-z}{\left(x^2+y^2+z^2\right)^{3/2}} + \frac{dh}{dz} = \frac{-z}{\left(x^2+y^2+z^2\right)^{3/2}}
+</mrow>
+<mrow>
+\amp \Rightarrow\quad \frac{dh}{dz} = 0
+\quad\Rightarrow\quad h(z) = C .
+</mrow>
+</md>
+
+<p>
+Putting the three steps together, with
+<m>\rho = \lVert\mathbf r\rVert = \sqrt{x^2+y^2+z^2}</m>, we conclude
+</p>
+
+<me>
+f(x,y,z) = \frac{1}{\sqrt{x^2+y^2+z^2}} + C = \frac{1}{\rho} + C .
+</me>
+
+<sidebyside width="92%">
+<tabular top="minor" bottom="minor">
+<row bottom="minor">
+<cell>Step I</cell>
+<cell><m>\dfrac{\partial f}{\partial x} = -\dfrac{x}{\rho^3}</m></cell>
+<cell>integrate in <m>x</m></cell>
+<cell><m>f = \dfrac{1}{\rho} + g(y,z)</m></cell>
+</row>
+<row bottom="minor">
+<cell>Step II</cell>
+<cell><m>\dfrac{\partial f}{\partial y} = -\dfrac{y}{\rho^3}</m></cell>
+<cell><m>\partial g/\partial y = 0</m></cell>
+<cell><m>f = \dfrac{1}{\rho} + h(z)</m></cell>
+</row>
+<row>
+<cell>Step III</cell>
+<cell><m>\dfrac{\partial f}{\partial z} = -\dfrac{z}{\rho^3}</m></cell>
+<cell><m>h'(z) = 0</m></cell>
+<cell><m>f = \dfrac{1}{\rho} + C</m></cell>
+</row>
+</tabular>
+</sidebyside>
+
+<p>
+Now the work needs only the values of <m>f</m> at the two endpoints. At
+<m>A = (1,0,0)</m> we have <m>\rho = 1</m>, and at
+<m>B = (1,0,2\pi)</m> we have <m>\rho = \sqrt{1 + 4\pi^2}</m>, so
+<xref ref="thm-ftli"/> gives
+</p>
+
+<md>
+<mrow>
+\int_C \mathbf F\cdot d\mathbf r \amp = f(B) - f(A)
+ = \left( \frac{1}{\sqrt{1+4\pi^{2}}} + C \right) - \left( 1 + C \right)
+</mrow>
+<mrow>
+\amp = \frac{1}{\sqrt{1+4\pi^{2}}} - 1 \approx -0.84 .
+</mrow>
+</md>
+
+<p>
+The constant <m>C</m> cancels, as it always does, and the answer is
+<xref ref="eq-helix-gravity-work"/> again.
+</p>
+</solution>
+
+<solution>
+<title>Method 2 (a shortcut)</title>
 <p>
 The field is defined everywhere except at the origin, and the helix
 never passes through the origin, so we may look for a potential
-function. Rather than run the three steps of <xref ref="example-potential-function"/>,
+function. Rather than run the three steps of Method 1,
 notice that <m>\mathbf F</m> depends only on the distance
 <m>\rho = \lVert\mathbf r\rVert = \sqrt{x^2+y^2+z^2}</m>, and recall that
 </p>
