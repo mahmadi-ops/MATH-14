@@ -1021,7 +1021,9 @@ integrate with respect to <m>x</m> (here <m>x</m> is the variable and
 <mrow>
 f(x,y,z) \amp = \int \frac{-x}{\left(x^2+y^2+z^2\right)^{3/2}}\,dx
  = -\frac12 \int u^{-3/2}\,du
- = -\frac12 \cdot \frac{u^{-1/2}}{-\tfrac12} + g(y,z)
+</mrow>
+<mrow>
+\amp = -\frac12 \cdot \frac{u^{-1/2}}{-\tfrac12} + g(y,z)
 </mrow>
 <mrow>
 \amp = \frac{1}{\sqrt{x^2+y^2+z^2}} + g(y,z),
@@ -1041,11 +1043,13 @@ differentiate the result of Step I with respect to <m>y</m>:
 
 <md>
 <mrow>
-\frac{\partial}{\partial y}\Big( \left(x^2+y^2+z^2\right)^{-1/2} + g(y,z) \Big)
-\amp = -\frac12 \left(x^2+y^2+z^2\right)^{-3/2} \cdot 2y + \frac{\partial g}{\partial y}
+\amp \frac{\partial}{\partial y}\Big( \left(x^2+y^2+z^2\right)^{-1/2} + g(y,z) \Big)
 </mrow>
 <mrow>
-\amp = \frac{-y}{\left(x^2+y^2+z^2\right)^{3/2}} + \frac{\partial g}{\partial y} .
+\amp \qquad = -\frac12 \left(x^2+y^2+z^2\right)^{-3/2} \cdot 2y + \frac{\partial g}{\partial y}
+</mrow>
+<mrow>
+\amp \qquad = \frac{-y}{\left(x^2+y^2+z^2\right)^{3/2}} + \frac{\partial g}{\partial y} .
 </mrow>
 </md>
 
@@ -1068,14 +1072,17 @@ differentiate the result of Step II with respect to <m>z</m>:
 
 <md>
 <mrow>
-\frac{\partial}{\partial z}\Big( \left(x^2+y^2+z^2\right)^{-1/2} + h(z) \Big)
-\amp = \frac{-z}{\left(x^2+y^2+z^2\right)^{3/2}} + \frac{dh}{dz} = \frac{-z}{\left(x^2+y^2+z^2\right)^{3/2}}
+\amp \frac{\partial}{\partial z}\Big( \left(x^2+y^2+z^2\right)^{-1/2} + h(z) \Big)
 </mrow>
 <mrow>
-\amp \Rightarrow\quad \frac{dh}{dz} = 0
-\quad\Rightarrow\quad h(z) = C .
+\amp \qquad = \frac{-z}{\left(x^2+y^2+z^2\right)^{3/2}} + \frac{dh}{dz} .
 </mrow>
 </md>
+
+<p>
+Setting this equal to <m>\dfrac{-z}{\left(x^2+y^2+z^2\right)^{3/2}}</m> gives
+<m>\dfrac{dh}{dz} = 0</m>, so <m>h(z) = C</m> is a constant.
+</p>
 
 <p>
 Putting the three steps together, with
