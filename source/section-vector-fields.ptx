@@ -1192,9 +1192,8 @@ x y z u v w\\
         Knowing where a curve starts and ends is therefore <em>not</em>
         enough, in general, to determine the work. Deciding which fields are
         the exception<mdash/>those for which the endpoints <em>are</em>
-        enough<mdash/>is the question taken up in the next section,
-        Path Independence, Conservative Fields, and Potential Functions.
-        <!-- plain text until that section is posted: <xref ref="section-conservative-fields"/> -->
+        enough<mdash/>is the question taken up in
+        <xref ref="section-conservative-fields"/>.
       </p>
     </solution>
   </example>
@@ -2484,9 +2483,8 @@ x y z u v w\\
             The answer is <m>-mg</m> times the height
             <m>\ell\left(1-\cos\theta_0\right)</m> gained by the bob, and the
             shape of the path played no role beyond that. Gravity is one of
-            the fields, studied in the next section, whose line integrals
-            depend only on the endpoints.
-            <!-- plain text until that section is posted: <xref ref="section-conservative-fields"/> -->
+            the fields, studied in <xref ref="section-conservative-fields"/>,
+            whose line integrals depend only on the endpoints.
           </p>
           <p>
             <term>The cord.</term> Here the integrand vanishes:
