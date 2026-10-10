@@ -1,0 +1,78 @@
+<diagram>
+  <annotations>
+    <annotation id="pendulum-balance-figure" speech2="The bob at the angle theta, with its coordinates, the                                       three forces acting on it, the two components of the                                       force of the cord, and the direction of travel">
+      <grouped>pendulum-balance-figure</grouped>
+      <position>1</position>
+      <children>
+        <active>pendulum-balance-frame</active>
+        <active>pendulum-balance-coordinates</active>
+        <active>pendulum-balance-cord</active>
+        <active>pendulum-balance-components</active>
+        <active>pendulum-balance-forces</active>
+        <active>pendulum-balance-tangent</active>
+        <active>pendulum-balance-bob</active>
+      </children>
+      <components>
+        <active>pendulum-balance-frame</active>
+        <active>pendulum-balance-coordinates</active>
+        <active>pendulum-balance-cord</active>
+        <active>pendulum-balance-components</active>
+        <active>pendulum-balance-forces</active>
+        <active>pendulum-balance-tangent</active>
+        <active>pendulum-balance-bob</active>
+      </components>
+    </annotation>
+    <annotation id="pendulum-balance-frame" speech2="The x axis, the dashed vertical line through the                                         pivot at zero, ell, the lowest point A at the origin,                                         and the circular arc on which the bob moves" sonify="yes">
+      <active>pendulum-balance-frame</active>
+      <position>1</position>
+      <parents>
+        <grouped>pendulum-balance-figure</grouped>
+      </parents>
+      <sonification>
+        <ACTIVE>pendulum-balance-frame</ACTIVE>
+      </sonification>
+    </annotation>
+    <annotation id="pendulum-balance-coordinates" speech2="Dotted lines from the bob to the axes. The bob is                                         ell sine theta to the right of the vertical line, a                                         height ell minus ell cosine theta above A, and ell                                         cosine theta below the pivot">
+      <active>pendulum-balance-coordinates</active>
+      <position>2</position>
+      <parents>
+        <grouped>pendulum-balance-figure</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pendulum-balance-cord" speech2="The cord from the pivot to the bob, at the angle                                         theta with the vertical">
+      <active>pendulum-balance-cord</active>
+      <position>3</position>
+      <parents>
+        <grouped>pendulum-balance-figure</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pendulum-balance-components" speech2="The two components of the force of the cord, drawn                                         dashed: F T sine theta pointing left, and F T cosine                                         theta pointing up">
+      <active>pendulum-balance-components</active>
+      <position>4</position>
+      <parents>
+        <grouped>pendulum-balance-figure</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pendulum-balance-forces" speech2="The three forces on the bob: F pointing right, F G                                         pointing down, and F T pointing along the cord                                         toward the pivot. The left pointing component of F T                                         cancels F and its upward component cancels F G">
+      <active>pendulum-balance-forces</active>
+      <position>5</position>
+      <parents>
+        <grouped>pendulum-balance-figure</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pendulum-balance-tangent" speech2="The unit tangent vector T, pointing along the arc in                                         the direction of motion. A small square marks the                                         right angle between T and the cord, so the force of                                         the cord is perpendicular to the motion">
+      <active>pendulum-balance-tangent</active>
+      <position>6</position>
+      <parents>
+        <grouped>pendulum-balance-figure</grouped>
+      </parents>
+    </annotation>
+    <annotation id="pendulum-balance-bob" speech2="The bob">
+      <active>pendulum-balance-bob</active>
+      <position>7</position>
+      <parents>
+        <grouped>pendulum-balance-figure</grouped>
+      </parents>
+    </annotation>
+  </annotations>
+</diagram>
