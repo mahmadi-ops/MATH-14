@@ -390,6 +390,27 @@ r = 1 + 2r\cos\theta
 \amp\Rightarrow y^2 - 3x^2 - 4x - 1 = 0.
 </mrow>
 </md>
+To see which conic this is, complete the square in <m>x</m>:
+<md>
+<mrow>
+y^2 - 3x^2 - 4x - 1 \amp = 0
+</mrow>
+<mrow>
+\Rightarrow\quad 3\left(x^2 + \tfrac43 x\right) - y^2 \amp = -1
+</mrow>
+<mrow>
+\Rightarrow\quad 3\left(x + \tfrac23\right)^2 - \tfrac43 - y^2 \amp = -1
+</mrow>
+<mrow>
+\Rightarrow\quad 3\left(x + \tfrac23\right)^2 - y^2 \amp = \tfrac13
+</mrow>
+<mrow>
+\Rightarrow\quad \frac{\left(x + \tfrac23\right)^2}{1/9} - \frac{y^2}{1/3} \amp = 1 .
+</mrow>
+</md>
+This is a hyperbola centered at <m>\left(-\tfrac23, 0\right)</m> that
+opens left and right, with vertices <m>(-1, 0)</m> and
+<m>\left(-\tfrac13, 0\right)</m>.
 </p>
 </li>
 </ol>
@@ -401,8 +422,9 @@ r = 1 + 2r\cos\theta
 The four curves of <xref ref="example-polar-to-cartesian"/>. From left
 to right: the circle <m>r = 1</m>, i.e., <m>x^2+y^2=1</m>; the line
 <m>\theta = \pi/4</m>, i.e., <m>y = x</m>; the hyperbola
-<m>r^2\cos\theta\sin\theta = 4</m>, i.e., <m>xy = 4</m>; and the conic
-<m>r = 1+2r\cos\theta</m>, i.e., <m>y^2 - 3x^2 - 4x - 1 = 0</m>.
+<m>r^2\cos\theta\sin\theta = 4</m>, i.e., <m>xy = 4</m>; and the hyperbola
+<m>r = 1+2r\cos\theta</m>, i.e., <m>y^2 - 3x^2 - 4x - 1 = 0</m>, which is
+<m>9\left(x+\tfrac23\right)^2 - 3y^2 = 1</m>.
 </caption>
 <sidebyside widths="23% 23% 23% 23%">
 <image>
@@ -496,8 +518,8 @@ A hyperbola opening left and right.
 </coordinates>
 <annotations>
 <annotation ref="figure" text="A hyperbola with two branches opening left and right, the graph of the polar equation r equals one plus two r cosine theta.">
-  <annotation ref="qq-b1" text="One branch of the conic."/>
-  <annotation ref="qq-b2" text="The other branch of the conic."/>
+  <annotation ref="qq-b1" text="One branch of the hyperbola."/>
+  <annotation ref="qq-b2" text="The other branch of the hyperbola."/>
 </annotation>
 </annotations>
 </diagram>
