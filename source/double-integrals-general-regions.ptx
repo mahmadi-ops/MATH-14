@@ -849,16 +849,94 @@ integration is <m>2\sqrt{1-x^2-y^2}</m>.
 The region of integration <m>D</m> is the shadow of the solid: the points
 lying inside both circles <m>x^2+y^2=1</m> and <m>x^2+(y-1)^2=1</m>.
 Those circles cross where <m>\sqrt{1-x^2}=1-\sqrt{1-x^2}</m>, that is at
-<m>x=\pm\frac{\sqrt3}{2}</m>, <m>y=\frac12</m>. Between those values of
-<m>x</m>, the lower boundary of <m>D</m> is the cylinder and the upper
-boundary is the sphere, so
+<m>x=\pm\frac{\sqrt3}{2}</m>, <m>y=\frac12</m>
+(<xref ref="fig-cylinder-sphere-region"/>).
 </p>
-<me>
-V = \iint_D 2\sqrt{1-x^2-y^2}\,dA
-  = \int_{-\sqrt3/2}^{\sqrt3/2}\!\!
+<figure xml:id="fig-cylinder-sphere-region">
+<caption>
+The region of integration <m>D</m>: the points inside both circles.
+Over each <m>x</m> between <m>-\sqrt3/2</m> and <m>\sqrt3/2</m>, the
+vertical segment through <m>D</m> runs from the cylinder,
+<m>y = 1-\sqrt{1-x^2}</m>, up to the sphere, <m>y = \sqrt{1-x^2}</m>.
+</caption>
+<image width="75%">
+<shortdescription>
+Two unit circles, one centered at the origin and one at zero comma one, with the lens where they overlap shaded and a vertical segment through it.
+</shortdescription>
+<prefigure xmlns="https://prefigure.org" label="prefigure-cylinder-sphere-region">
+<diagram dimensions="(530,375)" margins="10">
+<definition>a = sqrt(3)/2</definition>
+<definition>sphere(x) = sqrt(1 - x^2)</definition>
+<definition>cyl(x) = 1 - sqrt(1 - x^2)</definition>
+<definition>unit(t) = (cos(t), sin(t))</definition>
+<definition>shifted(t) = (cos(t), 1 + sin(t))</definition>
+<definition>xs = 0.45</definition>
+<coordinates bbox="(-2.3,-1.4,3.0,2.35)">
+<area-between-curves at="cs-region" function1="cyl" function2="sphere"
+    domain="(-0.8660254, 0.8660254)" fill="#dcecf7" stroke="none"/>
+<axes at="cs-axes" xlabel="x" ylabel="y" hlabels="(-1,1,1)" vlabels="(1,1,2)" arrows="1"/>
+<parametric-curve at="cs-sphere" function="unit" domain="(0, 2*pi)"
+    stroke="#0072B2" thickness="3"/>
+<parametric-curve at="cs-cyl" function="shifted" domain="(0, 2*pi)"
+    stroke="#CC0000" thickness="3"/>
+<line at="cs-strip" endpoints="((xs, cyl(xs)), (xs, sphere(xs)))"
+    stroke="black" thickness="2.5"/>
+<point at="cs-strip-top" p="(xs, sphere(xs))" fill="black" size="3"/>
+<point at="cs-strip-bottom" p="(xs, cyl(xs))" fill="black" size="3"/>
+<line at="cs-leader-top" endpoints="((xs, sphere(xs)), (1.0, 1.42))"
+    stroke="#555555" thickness="1"/>
+<label at="cs-sphere-eq" anchor="(1.05,1.45)" alignment="e" color="#0072B2">
+<m>y=\sqrt{1-x^2}\ \text{(sphere)}</m>
+</label>
+<line at="cs-leader-bottom" endpoints="((xs, cyl(xs)), (0.85, -0.45))"
+    stroke="#555555" thickness="1"/>
+<label at="cs-cyl-eq" anchor="(0.9,-0.5)" alignment="e" color="#CC0000">
+<m>y=1-\sqrt{1-x^2}\ \text{(cylinder)}</m>
+</label>
+<point at="cs-left" p="(-a, 1/2)" fill="black" size="3" alignment="w">
+<m>\left(-\tfrac{\sqrt3}{2},\tfrac12\right)</m>
+</point>
+<point at="cs-right" p="(a, 1/2)" fill="black" size="3" alignment="e">
+<m>\left(\tfrac{\sqrt3}{2},\tfrac12\right)</m>
+</point>
+<label at="cs-cyl-label" anchor="(-0.78,1.78)" alignment="w" color="#CC0000">
+<m>x^2+(y-1)^2=1</m>
+</label>
+<label at="cs-sphere-label" anchor="(-0.62,-0.85)" alignment="w" color="#0072B2">
+<m>x^2+y^2=1</m>
+</label>
+<label at="cs-D" anchor="(-0.12,0.5)" alignment="c"><m>D</m></label>
+</coordinates>
+<annotations>
+<annotation ref="figure" text="Two circles of radius one: the unit circle x squared plus y squared equals one, drawn in blue and centered at the origin, and the circle x squared plus y minus one squared equals one, drawn in red and centered at zero comma one. They cross at the two points minus root three over two comma one half and root three over two comma one half. The lens shaped region inside both circles is shaded light blue and labelled D. A vertical black segment through D at one value of x runs from the lower arc, which belongs to the red circle, up to the upper arc, which belongs to the blue circle.">
+  <annotation ref="cs-region" text="The region of integration D: the points inside both circles, shaded light blue."/>
+  <annotation ref="cs-sphere" text="The blue circle x squared plus y squared equals one, the shadow of the sphere. Its upper arc, y equals the square root of one minus x squared, is the top of D."/>
+  <annotation ref="cs-cyl" text="The red circle x squared plus y minus one squared equals one, the base of the cylinder. Its lower arc, y equals one minus the square root of one minus x squared, is the bottom of D."/>
+  <annotation ref="cs-left" text="The left crossing point of the two circles, at minus root three over two comma one half."/>
+  <annotation ref="cs-right" text="The right crossing point of the two circles, at root three over two comma one half."/>
+  <annotation ref="cs-strip" text="A vertical segment through D at a fixed x between minus root three over two and root three over two. It runs from the red circle, y equals one minus the square root of one minus x squared, up to the blue circle, y equals the square root of one minus x squared: these are the limits of the inner integral in y."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+<p>
+Between those values of <m>x</m>, the lower boundary of <m>D</m> is the
+cylinder and the upper boundary is the sphere, so
+</p>
+<md>
+<mrow>
+V \amp = \iint_D 2\sqrt{1-x^2-y^2}\,dA
+</mrow>
+<mrow>
+\amp = \int_{-\sqrt3/2}^{\sqrt3/2}\!\!
     \int_{1-\sqrt{1-x^2}}^{\sqrt{1-x^2}}
-    2\sqrt{1-x^2-y^2}\;dy\,dx .
-</me>
+</mrow>
+<mrow>
+\amp \qquad 2\sqrt{1-x^2-y^2}\;dy\,dx .
+</mrow>
+</md>
 <p>
 This is a region of the kind this section is about: <m>D</m> is bounded
 above and below by the graphs of functions of <m>x</m>, which is
