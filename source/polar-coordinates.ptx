@@ -410,7 +410,25 @@ y^2 - 3x^2 - 4x - 1 \amp = 0
 </md>
 This is a hyperbola centered at <m>\left(-\tfrac23, 0\right)</m> that
 opens left and right, with vertices <m>(-1, 0)</m> and
-<m>\left(-\tfrac13, 0\right)</m>.
+<m>\left(-\tfrac13, 0\right)</m>. Its asymptotes are found by replacing
+the <m>1</m> on the right-hand side by <m>0</m>:
+<md>
+<mrow>
+3\left(x + \tfrac23\right)^2 - y^2 \amp = 0
+</mrow>
+<mrow>
+\Rightarrow\quad y \amp = \pm\sqrt3\left(x + \tfrac23\right),
+</mrow>
+</md>
+the two lines through the center with slopes <m>\pm\sqrt3</m>, dashed in
+<xref ref="fig-polar-to-cartesian-prefigure"/>. The polar equation says
+the same thing: solving <m>r = 1 + 2r\cos\theta</m> for <m>r</m> gives
+<m>r = \dfrac{1}{1 - 2\cos\theta}</m>, which blows up as
+<m>\cos\theta \to \tfrac12</m>, that is, as
+<m>\theta \to \pm\tfrac{\pi}{3}</m>. So the branches run off to infinity
+in the directions <m>\theta = \pm\tfrac{\pi}{3}</m>, whose slopes
+<m>\tan\left(\pm\tfrac{\pi}{3}\right) = \pm\sqrt3</m> are exactly the
+slopes of the asymptotes.
 </p>
 </li>
 </ol>
@@ -424,7 +442,8 @@ to right: the circle <m>r = 1</m>, i.e., <m>x^2+y^2=1</m>; the line
 <m>\theta = \pi/4</m>, i.e., <m>y = x</m>; the hyperbola
 <m>r^2\cos\theta\sin\theta = 4</m>, i.e., <m>xy = 4</m>; and the hyperbola
 <m>r = 1+2r\cos\theta</m>, i.e., <m>y^2 - 3x^2 - 4x - 1 = 0</m>, which is
-<m>9\left(x+\tfrac23\right)^2 - 3y^2 = 1</m>.
+<m>9\left(x+\tfrac23\right)^2 - 3y^2 = 1</m>; its asymptotes
+<m>y = \pm\sqrt3\left(x+\tfrac23\right)</m> are dashed.
 </caption>
 <sidebyside widths="23% 23% 23% 23%">
 <image>
@@ -508,18 +527,25 @@ A hyperbola opening left and right.
 <definition>br1(t) = (cos(t)/(1-2*cos(t)), sin(t)/(1-2*cos(t)))</definition>
 <coordinates bbox="(-2.6,-3.3,2.6,2.6)">
 <axes at="qq-axes" decorations="no" arrows="1"/>
+<line at="qq-asym1" endpoints="((-2/3,0),(1/3,sqrt(3)))" infinite="yes"
+    stroke="#7f7f7f" thickness="1.5" dash="5 4"/>
+<line at="qq-asym2" endpoints="((-2/3,0),(1/3,-sqrt(3)))" infinite="yes"
+    stroke="#7f7f7f" thickness="1.5" dash="5 4"/>
 <parametric-curve at="qq-b1" function="br1" domain="(1.25,5.03)"
     stroke="#0072B2" thickness="3"/>
 <parametric-curve at="qq-b2" function="br1" domain="(-0.85,0.85)"
     stroke="#0072B2" thickness="3"/>
-<label at="qq-label" anchor="(0,-2.45)" alignment="s">
+<label at="qq-label" anchor="(0,-2.45)" alignment="s"
+    clear-background="yes" background-margin="3">
 <m>y^2-3x^2-4x-1=0</m>
 </label>
 </coordinates>
 <annotations>
-<annotation ref="figure" text="A hyperbola with two branches opening left and right, the graph of the polar equation r equals one plus two r cosine theta.">
+<annotation ref="figure" text="A hyperbola with two branches opening left and right, the graph of the polar equation r equals one plus two r cosine theta, with its two asymptotes drawn as dashed grey lines crossing at the center, minus two thirds comma zero.">
   <annotation ref="qq-b1" text="One branch of the hyperbola."/>
   <annotation ref="qq-b2" text="The other branch of the hyperbola."/>
+  <annotation ref="qq-asym1" text="The asymptote y equals root three times x plus two thirds, a dashed line of slope root three through the center."/>
+  <annotation ref="qq-asym2" text="The asymptote y equals minus root three times x plus two thirds, a dashed line of slope minus root three through the center."/>
 </annotation>
 </annotations>
 </diagram>
