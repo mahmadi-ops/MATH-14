@@ -41,7 +41,7 @@
     <chapter xml:id="ch-multiple-integrals">
       <title>Multiple Integrals</title>
       <xi:include href="double-integrals-rectangles.ptx" />
-      <!-- UNPOSTED <xi:include href="double-integrals-general-regions.ptx" /> UNPOSTED -->
+      <xi:include href="double-integrals-general-regions.ptx" />
       <!-- UNPOSTED <xi:include href="polar-coordinates.ptx" /> UNPOSTED -->
       <!-- UNPOSTED <xi:include href="double-integrals-polar-form.ptx" /> UNPOSTED -->
       <!-- UNPOSTED <xi:include href="triple-integrals-rectangular.ptx" /> UNPOSTED -->
