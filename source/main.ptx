@@ -43,7 +43,7 @@
       <xi:include href="double-integrals-rectangles.ptx" />
       <xi:include href="double-integrals-general-regions.ptx" />
       <xi:include href="polar-coordinates.ptx" />
-      <!-- UNPOSTED <xi:include href="double-integrals-polar-form.ptx" /> UNPOSTED -->
+      <xi:include href="double-integrals-polar-form.ptx" />
       <!-- UNPOSTED <xi:include href="triple-integrals-rectangular.ptx" /> UNPOSTED -->
       <!-- UNPOSTED <xi:include href="triple-integrals-cylindrical.ptx" /> UNPOSTED -->
       <!-- UNPOSTED <xi:include href="triple-integrals-spherical.ptx" /> UNPOSTED -->
