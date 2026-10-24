@@ -1,0 +1,51 @@
+<diagram>
+  <annotations>
+    <annotation id="half-circle-components-figure" speech2="The force F at three points of the half circle, split                                     into a component along the direction of travel and a                                     component along the radius">
+      <grouped>half-circle-components-figure</grouped>
+      <position>1</position>
+      <children>
+        <active>half-circle-components-axes</active>
+        <active>half-circle-components-path</active>
+        <active>half-circle-components-decompositions</active>
+        <active>half-circle-components-labels</active>
+      </children>
+      <components>
+        <active>half-circle-components-axes</active>
+        <active>half-circle-components-path</active>
+        <active>half-circle-components-decompositions</active>
+        <active>half-circle-components-labels</active>
+      </components>
+    </annotation>
+    <annotation id="half-circle-components-axes" speech2="The coordinate axes, with the centre of                                                  the circle at the origin">
+      <active>half-circle-components-axes</active>
+      <position>1</position>
+      <parents>
+        <grouped>half-circle-components-figure</grouped>
+      </parents>
+    </annotation>
+    <annotation id="half-circle-components-path" speech2="The upper half of the circle of radius R, from A at                                       minus R, zero, over the top to B at R, zero,                                       traversed clockwise" sonify="yes">
+      <active>half-circle-components-path</active>
+      <position>2</position>
+      <parents>
+        <grouped>half-circle-components-figure</grouped>
+      </parents>
+      <sonification>
+        <ACTIVE>half-circle-components-path</ACTIVE>
+      </sonification>
+    </annotation>
+    <annotation id="half-circle-components-decompositions" speech2="At three points of the path, the force F drawn in                                       red is the diagonal of a rectangle whose sides are                                       its tangential component, F cosine thirty degrees                                       times T, in green, and its radial component, F sine                                       thirty degrees times u, in blue. A small square                                       marks the right angle between the two components.                                       The green component has the same length at every                                       point">
+      <active>half-circle-components-decompositions</active>
+      <position>3</position>
+      <parents>
+        <grouped>half-circle-components-figure</grouped>
+      </parents>
+    </annotation>
+    <annotation id="half-circle-components-labels" speech2="The labels on the vectors at the top of the circle:                                       F, F cosine thirty degrees times T, and F sine                                       thirty degrees times u">
+      <active>half-circle-components-labels</active>
+      <position>4</position>
+      <parents>
+        <grouped>half-circle-components-figure</grouped>
+      </parents>
+    </annotation>
+  </annotations>
+</diagram>

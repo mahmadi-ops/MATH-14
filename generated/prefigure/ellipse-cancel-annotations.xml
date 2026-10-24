@@ -1,0 +1,121 @@
+<diagram>
+  <annotations>
+    <annotation id="ellipse-cancel-figure" speech2="An ellipse centred at the origin in the                                     radial field, with its quarters coloured                                     according to whether the motion carries                                     the point outward or back inward">
+      <grouped>ellipse-cancel-figure</grouped>
+      <position>1</position>
+      <children>
+        <active>ellipse-cancel-grid-axes</active>
+        <active>ellipse-cancel-grid</active>
+        <active>ellipse-cancel-axes</active>
+        <active>ellipse-cancel-field</active>
+        <active>ellipse-cancel-outward</active>
+        <active>ellipse-cancel-inward</active>
+        <active>ellipse-cancel-turning</active>
+        <active>ellipse-cancel-vectors</active>
+        <active>ellipse-cancel-origin</active>
+      </children>
+      <components>
+        <active>ellipse-cancel-grid-axes</active>
+        <active>ellipse-cancel-grid</active>
+        <active>ellipse-cancel-axes</active>
+        <active>ellipse-cancel-field</active>
+        <active>ellipse-cancel-outward</active>
+        <active>ellipse-cancel-inward</active>
+        <active>ellipse-cancel-turning</active>
+        <active>ellipse-cancel-vectors</active>
+        <active>ellipse-cancel-origin</active>
+      </components>
+    </annotation>
+    <annotation id="ellipse-cancel-grid-axes" speech2="The coordinate grid and axes">
+      <grouped>ellipse-cancel-grid-axes</grouped>
+      <position>1</position>
+      <children>
+        <active>ellipse-cancel-grid</active>
+        <active>ellipse-cancel-axes</active>
+      </children>
+      <components>
+        <active>ellipse-cancel-grid</active>
+        <active>ellipse-cancel-axes</active>
+      </components>
+      <parents>
+        <grouped>ellipse-cancel-figure</grouped>
+      </parents>
+    </annotation>
+    <annotation id="ellipse-cancel-grid" speech2="The coordinate grid">
+      <active>ellipse-cancel-grid</active>
+      <position>1</position>
+      <parents>
+        <grouped>ellipse-cancel-grid-axes</grouped>
+      </parents>
+    </annotation>
+    <annotation id="ellipse-cancel-axes" speech2="The coordinate axes">
+      <active>ellipse-cancel-axes</active>
+      <position>2</position>
+      <parents>
+        <grouped>ellipse-cancel-grid-axes</grouped>
+      </parents>
+    </annotation>
+    <annotation id="ellipse-cancel-grid" speech2="The coordinate grid">
+      <active>ellipse-cancel-grid</active>
+      <position>2</position>
+      <parents>
+        <grouped>ellipse-cancel-figure</grouped>
+      </parents>
+    </annotation>
+    <annotation id="ellipse-cancel-axes" speech2="The coordinate axes">
+      <active>ellipse-cancel-axes</active>
+      <position>3</position>
+      <parents>
+        <grouped>ellipse-cancel-figure</grouped>
+      </parents>
+    </annotation>
+    <annotation id="ellipse-cancel-field" speech2="The radial field, whose arrows point                                       away from the origin">
+      <active>ellipse-cancel-field</active>
+      <position>4</position>
+      <parents>
+        <grouped>ellipse-cancel-figure</grouped>
+      </parents>
+    </annotation>
+    <annotation id="ellipse-cancel-outward" speech2="The two stretches along which the point                                       moves away from the origin, where the                                       dot product of the field with the                                       direction of travel is positive" sonify="yes">
+      <active>ellipse-cancel-outward</active>
+      <position>5</position>
+      <parents>
+        <grouped>ellipse-cancel-figure</grouped>
+      </parents>
+      <sonification>
+        <ACTIVE>ellipse-cancel-outward</ACTIVE>
+      </sonification>
+    </annotation>
+    <annotation id="ellipse-cancel-inward" speech2="The two stretches along which the point                                       moves back toward the origin, where that                                       dot product is negative" sonify="yes">
+      <active>ellipse-cancel-inward</active>
+      <position>6</position>
+      <parents>
+        <grouped>ellipse-cancel-figure</grouped>
+      </parents>
+      <sonification>
+        <ACTIVE>ellipse-cancel-inward</ACTIVE>
+      </sonification>
+    </annotation>
+    <annotation id="ellipse-cancel-turning" speech2="The four points at the ends of the axes,                                       where the distance from the origin stops                                       changing and the integrand is zero">
+      <active>ellipse-cancel-turning</active>
+      <position>7</position>
+      <parents>
+        <grouped>ellipse-cancel-figure</grouped>
+      </parents>
+    </annotation>
+    <annotation id="ellipse-cancel-vectors" speech2="The field vector and the tangent vector                                       at one point of an outward stretch,                                       where they make an acute angle, and at                                       one point of an inward stretch, where                                       they make an obtuse angle">
+      <active>ellipse-cancel-vectors</active>
+      <position>8</position>
+      <parents>
+        <grouped>ellipse-cancel-figure</grouped>
+      </parents>
+    </annotation>
+    <annotation id="ellipse-cancel-origin" speech2="The origin">
+      <active>ellipse-cancel-origin</active>
+      <position>9</position>
+      <parents>
+        <grouped>ellipse-cancel-figure</grouped>
+      </parents>
+    </annotation>
+  </annotations>
+</diagram>
