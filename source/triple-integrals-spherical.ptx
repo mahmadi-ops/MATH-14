@@ -123,15 +123,28 @@ projection.
 <p>
 <md>
 <mrow xml:id="eq-spherical-to-rect" number="yes">
-r = \rho\sin\phi, \qquad
-x = r\cos\theta = \rho\sin\phi\cos\theta,
+r \amp = \rho\sin\phi,
 </mrow>
 <mrow>
-z = \rho\cos\phi, \qquad
-y = r\sin\theta = \rho\sin\phi\sin\theta,
+z \amp = \rho\cos\phi,
 </mrow>
 <mrow>
-\rho = \sqrt{x^2 + y^2 + z^2} = \sqrt{r^2 + z^2}.
+x \amp = r\cos\theta
+</mrow>
+<mrow>
+\amp = \rho\sin\phi\cos\theta,
+</mrow>
+<mrow>
+y \amp = r\sin\theta
+</mrow>
+<mrow>
+\amp = \rho\sin\phi\sin\theta,
+</mrow>
+<mrow>
+\rho \amp = \sqrt{x^2 + y^2 + z^2}
+</mrow>
+<mrow>
+\amp = \sqrt{r^2 + z^2}.
 </mrow>
 </md>
 </p>
@@ -145,20 +158,25 @@ we have
 
 <md>
 <mrow>
-x^2 + y^2 + z^2 = R^2
-\amp\Rightarrow
-(\rho\sin\phi\cos\theta)^2 + (\rho\sin\phi\sin\theta)^2
-+ (\rho\cos\phi)^2 = R^2
+\amp x^2 + y^2 + z^2 = R^2
 </mrow>
 <mrow>
-\amp\Rightarrow
-\rho^2\left(\cos^2\theta + \sin^2\theta\right)\sin^2\phi
-+ \rho^2\cos^2\phi = R^2
+\amp \Rightarrow (\rho\sin\phi\cos\theta)^2 + (\rho\sin\phi\sin\theta)^2
 </mrow>
 <mrow>
-\amp\Rightarrow
-\rho^2\sin^2\phi + \rho^2\cos^2\phi = R^2
-\Rightarrow \rho^2 = R^2 \Rightarrow \rho = R.
+\amp \qquad + (\rho\cos\phi)^2 = R^2
+</mrow>
+<mrow>
+\amp \Rightarrow \rho^2\left(\cos^2\theta + \sin^2\theta\right)\sin^2\phi
+</mrow>
+<mrow>
+\amp \qquad + \rho^2\cos^2\phi = R^2
+</mrow>
+<mrow>
+\amp \Rightarrow \rho^2\sin^2\phi + \rho^2\cos^2\phi = R^2
+</mrow>
+<mrow>
+\amp \Rightarrow \rho^2 = R^2 \Rightarrow \rho = R.
 </mrow>
 </md>
 
@@ -181,24 +199,28 @@ Substituting the spherical expressions
 
 <md>
 <mrow>
-x^2 + y^2 + (z-1)^2 = 1
-\amp\Rightarrow
-(\rho\sin\phi\cos\theta)^2 + (\rho\sin\phi\sin\theta)^2
-+ (\rho\cos\phi - 1)^2 = 1
+\amp x^2 + y^2 + (z-1)^2 = 1
 </mrow>
 <mrow>
-\amp\Rightarrow
-\rho^2\left(\cos^2\theta + \sin^2\theta\right)\sin^2\phi
-+ \rho^2\cos^2\phi - 2\rho\cos\phi + 1 = 1
+\amp \Rightarrow (\rho\sin\phi\cos\theta)^2 + (\rho\sin\phi\sin\theta)^2
 </mrow>
 <mrow>
-\amp\Rightarrow
-\rho^2\sin^2\phi + \rho^2\cos^2\phi - 2\rho\cos\phi = 0
+\amp \qquad + (\rho\cos\phi - 1)^2 = 1
 </mrow>
 <mrow>
-\amp\Rightarrow
-\rho^2 = 2\rho\cos\phi
-\Rightarrow \rho = 2\cos\phi.
+\amp \Rightarrow \rho^2\left(\cos^2\theta + \sin^2\theta\right)\sin^2\phi
+</mrow>
+<mrow>
+\amp \qquad + \rho^2\cos^2\phi - 2\rho\cos\phi + 1 = 1
+</mrow>
+<mrow>
+\amp \Rightarrow \rho^2\sin^2\phi + \rho^2\cos^2\phi
+</mrow>
+<mrow>
+\amp \qquad - 2\rho\cos\phi = 0
+</mrow>
+<mrow>
+\amp \Rightarrow \rho^2 = 2\rho\cos\phi \Rightarrow \rho = 2\cos\phi.
 </mrow>
 </md>
 </solution>
@@ -228,26 +250,37 @@ the lower cone is <m>\phi = 3\pi/4</m>. (Algebraically:
 <p>
 <md>
 <mrow>
-\text{Cylindrical to rectangular:}\quad
-\amp x = r\cos\theta, \quad y = r\sin\theta, \quad z = z
+\amp \text{Cylindrical to rectangular:}
 </mrow>
 <mrow>
-\text{Spherical to rectangular:}\quad
-\amp x = \rho\sin\phi\cos\theta, \quad
-y = \rho\sin\phi\sin\theta, \quad z = \rho\cos\phi
+\amp \quad x = r\cos\theta, \quad y = r\sin\theta, \quad z = z
 </mrow>
 <mrow>
-\text{Spherical to cylindrical:}\quad
-\amp r = \rho\sin\phi, \quad z = \rho\cos\phi, \quad \theta = \theta
+\amp \text{Spherical to rectangular:}
+</mrow>
+<mrow>
+\amp \quad x = \rho\sin\phi\cos\theta, \quad y = \rho\sin\phi\sin\theta,
+</mrow>
+<mrow>
+\amp \quad z = \rho\cos\phi
+</mrow>
+<mrow>
+\amp \text{Spherical to cylindrical:}
+</mrow>
+<mrow>
+\amp \quad r = \rho\sin\phi, \quad z = \rho\cos\phi, \quad \theta = \theta
 </mrow>
 </md>
 The corresponding formulas for <m>dV</m> in triple integrals (see
 <xref ref="eq-dv-cylindrical"/> and <xref ref="eq-dv-spherical"/>):
-<me>
-dV = dx\,dy\,dz
-= dz\ r\,dr\,d\theta
-= \rho^2\sin\phi\ d\rho\,d\phi\,d\theta.
-</me>
+<md>
+<mrow>
+dV \amp = dx\,dy\,dz = dz\ r\,dr\,d\theta
+</mrow>
+<mrow>
+\amp = \rho^2\sin\phi\ d\rho\,d\phi\,d\theta.
+</mrow>
+</md>
 </p>
 </assemblage>
 
@@ -308,13 +341,23 @@ spherical coordinates by
 into spherical coordinates as follows:
 </p>
 
-<men xml:id="eq-triple-spherical">
-\iiint_D f(x,y,z)\,dV
-= \int_{\alpha}^{\beta}\!\!\int_{\phi_{\min}}^{\phi_{\max}}
-\!\!\int_{g_1(\theta,\phi)}^{g_2(\theta,\phi)}
-f\!\left(\rho\sin\phi\cos\theta,\ \rho\sin\phi\sin\theta,\
-\rho\cos\phi\right)\rho^2\sin\phi\ d\rho\,d\phi\,d\theta.
-</men>
+<md>
+<mrow>
+\amp \iiint_D f(x,y,z)\,dV
+</mrow>
+<mrow>
+\amp \quad = \int_{\alpha}^{\beta}\!\!\int_{\phi_{\min}}^{\phi_{\max}}\!\!\int_{g_1(\theta,\phi)}^{g_2(\theta,\phi)}
+</mrow>
+<mrow>
+\amp \qquad f\big(\rho\sin\phi\cos\theta,
+</mrow>
+<mrow>
+\amp \qquad \rho\sin\phi\sin\theta,\ \rho\cos\phi\big)
+</mrow>
+<mrow xml:id="eq-triple-spherical" number="yes">
+\amp \qquad \rho^2\sin\phi\ d\rho\,d\phi\,d\theta.
+</mrow>
+</md>
 
 </subsection>
 
@@ -339,10 +382,17 @@ We begin by plotting the ice cream cone
 integration, which will provide us with the integration limits:
 </p>
 
-<me>
-D = \left\{(\rho,\theta,\phi) : 0\le\theta\le 2\pi,\
-0\le\phi\le\frac{\pi}{3},\ 0\le\rho\le 1\right\}.
-</me>
+<md>
+<mrow>
+D = \{(\rho,\theta,\phi) : \amp 0\le\theta\le 2\pi,
+</mrow>
+<mrow>
+\amp 0\le\phi\le\frac{\pi}{3},
+</mrow>
+<mrow>
+\amp 0\le\rho\le 1\}.
+</mrow>
+</md>
 
 <p>
 Thus, by <xref ref="eq-volume-triple"/> and
@@ -352,20 +402,27 @@ be evaluated as follows:
 
 <md>
 <mrow>
-V = \iiint_D \rho^2\sin\phi\ d\rho\,d\phi\,d\theta
+V \amp= \iiint_D \rho^2\sin\phi\ d\rho\,d\phi\,d\theta
+</mrow>
+<mrow>
 \amp= \int_0^{2\pi}\!\!\int_0^{\pi/3}\!\!\int_0^1
 \rho^2\sin\phi\ d\rho\,d\phi\,d\theta
 </mrow>
 <mrow>
 \amp= \int_0^{2\pi}\!\!\int_0^{\pi/3}
 \left[\frac{\rho^3}{3}\right]_0^1 \sin\phi\ d\phi\,d\theta
-= \int_0^{2\pi}\!\!\int_0^{\pi/3}
-\frac13\sin\phi\ d\phi\,d\theta
+</mrow>
+<mrow>
+\amp= \int_0^{2\pi}\!\!\int_0^{\pi/3} \frac13\sin\phi\ d\phi\,d\theta
 </mrow>
 <mrow>
 \amp= \int_0^{2\pi}\left[-\frac13\cos\phi\right]_0^{\pi/3} d\theta
-= \int_0^{2\pi}\left(-\frac16 + \frac13\right)d\theta
-= \frac16(2\pi) = \frac{\pi}{3}.
+</mrow>
+<mrow>
+\amp= \int_0^{2\pi}\left(-\frac16 + \frac13\right)d\theta
+</mrow>
+<mrow>
+\amp= \frac16(2\pi) = \frac{\pi}{3}.
 </mrow>
 </md>
 </solution>
@@ -438,6 +495,44 @@ circle where the cone meets the sphere is drawn.
 </figure>
 
 <p>
+The limits of integration can be read as three nested sweeps, and
+<xref ref="fig-icecream-limits-manim"/> builds <m>D</m> from them,
+innermost first.
+</p>
+
+<figure xml:id="fig-icecream-limits-manim">
+<caption>
+The limits of integration of <xref ref="example-spherical-icecream"/>,
+animated: the ice cream cone built the way the iterated integral
+<m>\int_0^{2\pi}\int_0^{\pi/3}\int_0^1 \rho^2\sin\phi\ d\rho\,d\phi\,d\theta</m>
+sweeps it. A ray at fixed <m>\theta</m> and <m>\phi</m> runs from
+<m>\rho = 0</m> at the origin to <m>\rho = 1</m> on the sphere (yellow);
+tilting it from <m>\phi = 0</m> on the <m>z</m>-axis to
+<m>\phi = \pi/3</m> on the cone fills a flat fan (red); and turning the
+fan from <m>\theta = 0</m> to <m>\theta = 2\pi</m> about the
+<m>z</m>-axis sweeps out the solid (blue).
+</caption>
+<interactive xml:id="interactive-icecream-limits-manim"
+             iframe="icecream-limits-manim.html"
+             width="100%" aspect="1:1">
+<instructions>
+<p>
+The <m>\rho</m>, <m>\phi</m> and <m>\theta</m> sliders run the three
+sweeps: the solid is drawn for the values of <m>\theta</m> already swept,
+the fan at the current <m>\theta</m> for the values of <m>\phi</m>
+already swept, and the ray at the current <m>\theta</m> and <m>\phi</m>
+out to the current <m>\rho</m>. The card shows the integral with each
+pair of limits in its sweep's color. <q>Surfaces</q> shows the sphere
+and the cone that bound the solid, <q>Angles</q> marks <m>\phi</m> and
+<m>\theta</m>, <q>Play</q> runs a guided tour, <q>Spin</q> turns the
+figure (dragging turns it by hand), and <q>Full screen</q> fills the
+screen with it.
+</p>
+</instructions>
+</interactive>
+</figure>
+
+<p>
 How the spherical description of the ice cream cone
 works<mdash/>the angle <m>\phi</m> sweeping from the <m>z</m>-axis
 down to the cone while <m>\rho</m> reaches out to the
@@ -473,11 +568,15 @@ Calculate the triple integral below by converting it to spherical
 coordinates:
 </p>
 
-<me>
-\int_{-2}^{2}\!\!\int_{-\sqrt{4-x^2}}^{\sqrt{4-x^2}}
+<md>
+<mrow>
+\amp \int_{-2}^{2}\!\!\int_{-\sqrt{4-x^2}}^{\sqrt{4-x^2}}
 \!\!\int_{2-\sqrt{4-x^2-y^2}}^{2+\sqrt{4-x^2-y^2}}
-\left(x^2+y^2+z^2\right)^{3/2} dz\,dy\,dx.
-</me>
+</mrow>
+<mrow>
+\amp \qquad \left(x^2+y^2+z^2\right)^{3/2} dz\,dy\,dx.
+</mrow>
+</md>
 </statement>
 </example>
 
@@ -491,18 +590,16 @@ spherical coordinates. The limits describe the solid sphere
 
 <md>
 <mrow>
-z = 2 \pm\sqrt{4-x^2-y^2}
-\amp\Rightarrow
-\rho\cos\phi = 2 \pm\sqrt{4 - \rho^2\sin^2\phi}
+\amp z = 2 \pm\sqrt{4-x^2-y^2}
 </mrow>
 <mrow>
-\amp\Rightarrow
-(\rho\cos\phi - 2)^2 = 4 - \rho^2\sin^2\phi
+\amp \Rightarrow \rho\cos\phi = 2 \pm\sqrt{4 - \rho^2\sin^2\phi}
 </mrow>
 <mrow>
-\amp\Rightarrow
-\rho^2 = 4\rho\cos\phi
-\Rightarrow \rho = 4\cos\phi.
+\amp \Rightarrow (\rho\cos\phi - 2)^2 = 4 - \rho^2\sin^2\phi
+</mrow>
+<mrow>
+\amp \Rightarrow \rho^2 = 4\rho\cos\phi \Rightarrow \rho = 4\cos\phi.
 </mrow>
 </md>
 
@@ -518,19 +615,25 @@ integrand is
 
 <md>
 <mrow>
-\int_0^{2\pi}\!\!\int_0^{\pi/2}\!\!\int_0^{4\cos\phi}
-\left(\rho^2\right)^{3/2}\rho^2\sin\phi\ d\rho\,d\phi\,d\theta
-\amp= \int_0^{2\pi}\!\!\int_0^{\pi/2}\!\!\int_0^{4\cos\phi}
+\amp \int_0^{2\pi}\!\!\int_0^{\pi/2}\!\!\int_0^{4\cos\phi}
+</mrow>
+<mrow>
+\amp \qquad \left(\rho^2\right)^{3/2}\rho^2\sin\phi\ d\rho\,d\phi\,d\theta
+</mrow>
+<mrow>
+\amp \quad = \int_0^{2\pi}\!\!\int_0^{\pi/2}\!\!\int_0^{4\cos\phi}
 \rho^5\sin\phi\ d\rho\,d\phi\,d\theta
 </mrow>
 <mrow>
-\amp= \frac{4^6}{6}\int_0^{2\pi}\!\!\int_0^{\pi/2}
+\amp \quad = \frac{4^6}{6}\int_0^{2\pi}\!\!\int_0^{\pi/2}
 \cos^6\phi\,\sin\phi\ d\phi\,d\theta
 </mrow>
 <mrow>
-\amp= -\frac{4^6}{42}\int_0^{2\pi}
+\amp \quad = -\frac{4^6}{42}\int_0^{2\pi}
 \Big[\cos^7\phi\Big]_0^{\pi/2}\,d\theta
-= \frac{4096\pi}{21}.
+</mrow>
+<mrow>
+\amp \quad = \frac{4096\pi}{21}.
 </mrow>
 </md>
 </solution>
@@ -618,7 +721,7 @@ Re-write (do not evaluate) the following integral in
 <me>
 \int_{-1}^{1}\!\!\int_{-\sqrt{1-x^2}}^{0}
 \!\!\int_{\sqrt{x^2+y^2}}^{1}
-\left(x^2+y^2\right) dz\,dy\,dx.
+(x^2+y^2)\, dz\,dy\,dx.
 </me>
 </statement>
 </example>
@@ -648,11 +751,14 @@ plane <m>z = 1</m> becomes <m>\rho\cos\phi = 1</m>, that is,
 <xref ref="eq-triple-spherical"/> gives
 </p>
 
-<me>
-\int_{\pi}^{2\pi}\!\!\int_0^{\pi/4}\!\!\int_0^{\sec\phi}
-\left(\rho^2\sin^2\phi\right)\rho^2\sin\phi\
-d\rho\,d\phi\,d\theta.
-</me>
+<md>
+<mrow>
+\amp \int_{\pi}^{2\pi}\!\!\int_0^{\pi/4}\!\!\int_0^{\sec\phi}
+</mrow>
+<mrow>
+\amp \qquad \left(\rho^2\sin^2\phi\right)\rho^2\sin\phi\ d\rho\,d\phi\,d\theta.
+</mrow>
+</md>
 </solution>
 
 <figure xml:id="fig-halfdisk-prefigure">
