@@ -3,8 +3,8 @@
 
 Usage: desk_action.py post-notes|unpost-notes <topic-xml-id> [<topic-xml-id> ...]
 
-A topic is a lecture section, an assignment, or a review set; the key is
-its xml:id (also the page name on the site).  Several keys make one change,
+A topic is a lecture section; the key is its xml:id (also the page name
+on the site).  Several keys make one change,
 checked as a whole, which is how a set of topics that cite each other comes
 down together.  Posting unwraps the topic's
 <xi:include>; unposting wraps it in the UNPOSTED comment described in
@@ -13,9 +13,8 @@ CLAUDE.md.  Every root file that includes the topic is treated alike
 
 The chapters of this book are written inline in the root files, so a
 chapter whose every section is unposted cannot simply lose an include: the
-whole <chapter> block is wrapped in the HIDDEN-CHAPTER markers that the
-written-assignments chapter already uses, with its includes left bare
-inside (a comment may not nest a comment).  Posting a section into a
+whole <chapter> block is wrapped in HIDDEN-CHAPTER markers, with its
+includes left bare inside (a comment may not nest a comment).  Posting a section into a
 hidden chapter reverses that: the chapter comes back with every other
 section wrapped.  While no real chapter is visible at all, the placeholder
 chapter ch-coming-soon.ptx keeps the book valid.
@@ -35,16 +34,15 @@ import sys
 SRC = "source"
 ROOTS = [p for p in ("source/main.ptx", "source/main-print.ptx") if os.path.exists(p)]
 
-# The chapters the desk manages.  The written-assignments chapter is hidden
-# by hand with the same markers and is deliberately not listed here.
-CHAPTERS = ("ch-curves-and-fields", "ch-multiple-integrals", "ch-integral-theorems", "ch-problems")
+# The chapters the desk manages.
+CHAPTERS = ("ch-curves-and-fields", "ch-multiple-integrals", "ch-integral-theorems")
 
 # A book needs a chapter, so this placeholder stands in while every real
 # chapter is hidden, and goes away again as soon as one is visible.
 PLACEHOLDER = "ch-coming-soon.ptx"
 
 # topic key (xml:id) -> include href.  The same file is included by every
-# root that carries the topic; assignments and review sets are web-only.
+# root that carries the topic.
 TOPICS = {
     # Chapter 1: Line Integrals
     "sec-parametrization": "section-parametrization.ptx",
@@ -67,21 +65,6 @@ TOPICS = {
     "section-greens-theorem": "greens-theorem.ptx",
     "section-stokes-theorem": "stokes-theorem.ptx",
     "section-divergence-theorem": "divergence-theorem.ptx",
-    # Assignments and Review Problems (web root only)
-    "sec-exercises-hw1-online": "hw1-online.ptx",
-    "sec-exercises-hw2-online": "hw2-online.ptx",
-    "sec-exercises-hw3-online": "hw3-online.ptx",
-    "sec-exercises-hw4-online": "hw4-online.ptx",
-    "sec-exercises-hw5-online": "hw5-online.ptx",
-    "sec-exercises-hw6-online": "hw6-online.ptx",
-    "sec-exercises-hw7-online": "hw7-online.ptx",
-    "sec-exercises-hw8-online": "hw8-online.ptx",
-    "sec-exercises-hw9-online": "hw9-online.ptx",
-    "sec-exercises-hw10-online": "hw10-online.ptx",
-    "sec-exercises-review1-practice": "review1-practice.ptx",
-    "sec-exercises-review2-practice": "review2-practice.ptx",
-    "sec-exercises-review3-practice": "review3-practice.ptx",
-    "sec-exercises-review4-practice": "review4-practice.ptx",
 }
 
 

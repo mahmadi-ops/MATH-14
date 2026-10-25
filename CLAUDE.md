@@ -44,10 +44,16 @@ of its current version afterwards. Facts specific to this book:
   guide in plain text for that reason).
 - `.github/workflows/desk-requests.yml` applies `desk-requests/*.json`
   committed by the panel's instant path and redeploys.
-- The assignments here are the same auto-graded sets as the skeletal
-  book's, with solutions hidden by `<version include="none"/>` in
-  `publication/publication.ptx`. The desk releases solutions on the
-  skeletal site; if a set is ever posted here too, the same switch applies.
+- This book carries **no assignments or review sets** (removed Oct 2026
+  at the instructor's request): the Assignments and Review Problems
+  chapter and the hidden written-assignments chapter are gone from
+  `source/main.ptx`, and `scripts/desk_action.py` has no topics for them,
+  so a desk click cannot bring them back. The `hw*-*.ptx` and
+  `review*-*.ptx` files stay in `source/`, unbuilt, as an archive only;
+  the skeletal book is where the sets are posted and where the desk
+  releases solutions. Do not re-include them unless the instructor asks.
+  `<version include="none"/>` in `publication/publication.ptx` stays as it
+  is (its comment explains why the line must not be deleted).
 
 ## Validating a change
 
