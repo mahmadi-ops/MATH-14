@@ -454,7 +454,7 @@ circle where the cone meets the sphere is drawn.
       axis lines=center,
       axis line style={-latex, black!75, line width=0.7pt},
       xlabel={$x$}, ylabel={$y$}, zlabel={$z$},
-      label style={font=\large},
+      label style={font=\LARGE},
       ticks=none,
       xmin=-1.15, xmax=1.35, ymin=-1.15, ymax=1.45, zmin=0, zmax=1.5,
       clip=false,
@@ -481,11 +481,11 @@ circle where the cone meets the sphere is drawn.
         samples y=0, forget plot]
       ({0.8660254*cos(x)}, {0.8660254*sin(x)}, {0.5});
     % labels
-    \node[oiblue, anchor=south west, font=\small]
-      at (axis cs:0.45,0.72,0.95) {Sphere $\rho = 1$};
-    \node[oigreen!60!black, anchor=west, font=\small]
-      at (axis cs:0.72,0.72,0.22) {Cone $\phi = \tfrac{\pi}{3}$};
-    \node[font=\large] at (axis cs:-0.35,-0.5,1.02) {$D$};
+    \node[oiblue, anchor=south west, font=\Large]
+      at (axis cs:0,0.62,0.82) {Sphere $\rho = 1$};
+    \node[oigreen!60!black, anchor=west, font=\Large]
+      at (axis cs:0,0.62,0.33) {Cone $\phi = \frac{\pi}{3}$};
+    \node[font=\LARGE] at (axis cs:0.25,-0.3,0.66) {$D$};
   \end{axis}
 \end{tikzpicture}]]>
 </latex-image>
@@ -643,7 +643,7 @@ The sphere <m>x^2 + y^2 + (z-2)^2 = 4</m> of
 coordinates is <m>\rho = 4\cos\phi</m>. It sits on the
 <m>xy</m>-plane, touching the origin.
 </caption>
-<image width="55%">
+<image width="65%">
 <shortdescription>
 A sphere resting on the origin, centered on the vertical axis.
 </shortdescription>
@@ -664,7 +664,7 @@ height four.
       axis lines=center,
       axis line style={-latex, black!75, line width=0.7pt},
       xlabel={$x$}, ylabel={$y$}, zlabel={$z$},
-      label style={font=\large},
+      label style={font=\LARGE},
       ticks=none,
       xmin=-2.3, xmax=2.6, ymin=-2.3, ymax=2.7, zmin=0, zmax=4.6,
       clip=false,
@@ -688,14 +688,14 @@ height four.
     \addplot3[only marks, mark=*, mark size=1.5pt, color=black,
         forget plot] coordinates {(0,0,0) (0,0,2) (0,0,4)};
     % labels
-    \node[font=\large, anchor=north west] at (axis description cs:0.0,0.98)
-      {$x^2 + y^2 + (z-2)^2 = 4$};
-    \node[oivermillion, font=\large, anchor=north west]
-      at (axis description cs:0.0,0.88) {$\rho = 4\cos\phi$};
-    \node[anchor=west, font=\small] at (axis cs:0.12,0.12,4.12)
-      {$(0,0,4)$};
-    \node[anchor=west, font=\small] at (axis cs:0.15,0.18,2.08)
-      {$(0,0,2)$};
+    \node[font=\Large, anchor=north west, xshift=36pt, yshift=10pt]
+      (eq) at (axis cs:0,0,4.6) {$x^2 + y^2 + (z-2)^2 = 4$};
+    \node[oivermillion, font=\Large, anchor=north west]
+      at (eq.south west) {$\rho = 4\cos\phi$};
+    \node[anchor=south east, font=\large, xshift=-2pt, yshift=1pt]
+      at (axis cs:0,0,4) {$(0,0,4)$};
+    \node[anchor=west, font=\large, xshift=3pt]
+      at (axis cs:0,0,2) {$(0,0,2)$};
   \end{axis}
 \end{tikzpicture}]]>
 </latex-image>
@@ -765,14 +765,14 @@ The <m>xy</m>-projection of the solid in
 <xref ref="example-spherical-rewrite"/>: the lower half of the unit
 disk, described by <m>\pi\le\theta\le 2\pi</m>, <m>0\le r\le 1</m>.
 </caption>
-<image width="45%">
+<image width="55%">
 <shortdescription>
 The lower half of the unit disk, shaded.
 </shortdescription>
 <prefigure xmlns="https://prefigure.org" label="prefigure-halfdisk">
-<diagram dimensions="(320,215)" margins="10">
+<diagram dimensions="(405,215)" margins="10">
 <definition>arc(t) = (cos(t), sin(t))</definition>
-<coordinates bbox="(-1.5,-1.35,1.5,0.65)">
+<coordinates bbox="(-1.5,-1.35,2.3,0.65)">
 <axes at="hd-axes" xlabel="x" ylabel="y" decorations="no" arrows="1"/>
 <polygon at="hd-region" fill="#f5c6bc" stroke="none" closed="yes"
     points="((1,0),(0.9877,-0.1564),(0.9511,-0.309),(0.891,-0.454),(0.809,-0.5878),(0.7071,-0.7071),(0.5878,-0.809),(0.454,-0.891),(0.309,-0.9511),(0.1564,-0.9877),(0,-1),(-0.1564,-0.9877),(-0.309,-0.9511),(-0.454,-0.891),(-0.5878,-0.809),(-0.7071,-0.7071),(-0.809,-0.5878),(-0.891,-0.454),(-0.9511,-0.309),(-0.9877,-0.1564),(-1,0))"/>
@@ -780,7 +780,7 @@ The lower half of the unit disk, shaded.
     stroke="#D55E00" thickness="3"/>
 <line at="hd-diam" endpoints="((-1,0),(1,0))" stroke="#555555"
     thickness="2"/>
-<label at="hd-eq" anchor="(0.72,-0.85)" alignment="se"
+<label at="hd-eq" anchor="(0.85,-0.53)" alignment="se"
     color="#D55E00"><m>y = -\sqrt{1-x^2}</m></label>
 <point at="hd-1" p="(1,0)" fill="black" alignment="ne">
 <m>1</m>
@@ -807,7 +807,7 @@ half disk, between the cone <m>z = \sqrt{x^2+y^2}</m> (spherical
 <m>\phi = \pi/4</m>) and the plane <m>z = 1</m> (spherical
 <m>\rho = \sec\phi</m>).
 </caption>
-<image width="60%">
+<image width="75%">
 <shortdescription>
 A half cone over the negative y half plane, capped by a flat half disk.
 </shortdescription>
@@ -829,9 +829,9 @@ one. The straight edge of the cap lies over the x axis.
       axis lines=center,
       axis line style={-latex, black!75, line width=0.7pt},
       xlabel={$x$}, ylabel={$y$}, zlabel={$z$},
-      label style={font=\large},
+      label style={font=\LARGE},
       ticks=none,
-      xmin=-1.3, xmax=1.5, ymin=-1.5, ymax=1.3, zmin=0, zmax=1.6,
+      xmin=-1.3, xmax=1.5, ymin=-1.5, ymax=1.5, zmin=0, zmax=1.6,
       clip=false,
     ]
     % half cone z = r over theta in [180,360]
@@ -861,12 +861,12 @@ one. The straight edge of the cap lies over the x axis.
       \foreach \a in {350,340,...,180} { -- (axis cs:{cos(\a)},{sin(\a)},0) }
       -- cycle;
     % labels
-    \node[oiblue, anchor=west, font=\small]
-      at (axis cs:0.42,-0.95,1.22) {$z = 1$};
-    \node[oigreen!60!black, anchor=west, font=\small]
-      at (axis cs:0.35,-0.75,0.35) {$z = \sqrt{x^2+y^2}$};
-    \node[oivermillion, anchor=north, font=\small]
-      at (axis cs:0.1,-1.15,-0.12) {projection};
+    \node[oiblue, anchor=west, font=\Large, xshift=5pt]
+      at (axis cs:1,0,1) {$z = 1$};
+    \node[oigreen!60!black, anchor=east, font=\Large, xshift=-6pt]
+      at (axis cs:-0.41,-0.285,0.5) {$z = \sqrt{x^2+y^2}$};
+    \node[oivermillion, anchor=north, font=\Large, yshift=-3pt]
+      at (axis cs:0.578,-0.816,0) {projection};
   \end{axis}
 \end{tikzpicture}]]>
 </latex-image>
