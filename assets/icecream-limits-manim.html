@@ -25,9 +25,10 @@
      card shows the integral with each pair of limits in its sweep's
      colour.  Faint lines show the two bounding surfaces throughout.
 
-     Only in the completed notes: the skeletal notes leave the ice cream
-     cone for the student to draw (fig-icecream-tikz was taken out of
-     them).
+     SKELETAL (below) is false in the completed books and true in the
+     skeletal ones, where Example III's solution is the student's: there
+     the card shows the integral with empty boxes for the limits and
+     describes each sweep in words, and the tour never states a limit.
 
      Same three.js stage, palette and controls as sphere-patch-manim.html,
      tetrahedron-manim.html and wall-area-manim.html. -->
@@ -72,6 +73,9 @@
   .math sup { font-size: 72%; vertical-align: 0.5em; line-height: 0; }
   #eqcard .line { white-space: nowrap; }
   #eqcard .note { font-family: var(--sans); font-size: 12.5px; color: var(--dim); }
+  /* skeletal: an empty box where a limit goes */
+  .blank { display: inline-block; width: 1.5em; height: 0.95em; border: 1px dashed currentColor; border-radius: 2px;
+           vertical-align: middle; opacity: 0.85; margin: 1px 0; }
   /* an integral sign with its limits stacked on it */
   .int { display: inline-flex; flex-direction: column; align-items: center; vertical-align: middle;
          margin: 0 1px; padding: 0 2px; border-radius: 4px; transition: background .3s, opacity .3s; }
@@ -159,6 +163,10 @@
 <script>
 (function () {
   "use strict";
+
+  // false in the completed notes; true in the skeletal notes, where the limits are left for the
+  // student (see the top)
+  var SKELETAL = false;
 
   var BLUE_C = 0x58c4dd, RED_C = 0xfc6255, GREEN_C = 0x83c167, YELLOW_C = 0xffe14d, GREY = 0x8a8f9c, INK_C = 0xece6e2;
   var PHI_MAX = Math.PI / 3, TAU = 2 * Math.PI;
@@ -469,6 +477,7 @@
   // ---------- the card ----------
   var V = function (s) { return "<i>" + s + "</i>"; };
   function INT(id, lo, hi, col) {
+    if (SKELETAL) lo = hi = '<span class="blank"></span>';
     return '<span class="int" id="' + id + '" style="color:' + col + '"><span class="lim">' + hi + '</span><span class="sym">∫</span><span class="lim">' + lo + "</span></span>";
   }
   var card = document.getElementById("eqcard");
@@ -477,9 +486,14 @@
     '<div class="line">' + V("V") + " = " + INT("iT", "0", "2π", "#58c4dd") + INT("iP", "0", "π/3", "#fc6255") + INT("iR", "0", "1", "#ffe14d") +
       " " + V("ρ") + "<sup>2</sup> sin " + V("φ") + " &thinsp;" +
       '<span style="color:#ffe14d">d' + V("ρ") + '</span> <span style="color:#fc6255">d' + V("φ") + '</span> <span style="color:#58c4dd">d' + V("θ") + "</span></div>" +
-    '<div class="line sweep" id="wR" style="color:#ffe14d">' + V("ρ") + ": 0 to 1, &nbsp;the origin out to the sphere</div>" +
-    '<div class="line sweep" id="wP" style="color:#fc6255">' + V("φ") + ": 0 to π/3, &nbsp;the <i>z</i>-axis down to the cone</div>" +
-    '<div class="line sweep" id="wT" style="color:#58c4dd">' + V("θ") + ": 0 to 2π, &nbsp;once around the <i>z</i>-axis</div>";
+    (SKELETAL
+      ? '<div class="line sweep" id="wR" style="color:#ffe14d">' + V("ρ") + ": from the origin out to the sphere</div>" +
+        '<div class="line sweep" id="wP" style="color:#fc6255">' + V("φ") + ": from the <i>z</i>-axis down to the cone</div>" +
+        '<div class="line sweep" id="wT" style="color:#58c4dd">' + V("θ") + ": once around the <i>z</i>-axis</div>" +
+        '<div class="note">Each sweep gives one pair of limits: fill in the boxes.</div>'
+      : '<div class="line sweep" id="wR" style="color:#ffe14d">' + V("ρ") + ": 0 to 1, &nbsp;the origin out to the sphere</div>" +
+        '<div class="line sweep" id="wP" style="color:#fc6255">' + V("φ") + ": 0 to π/3, &nbsp;the <i>z</i>-axis down to the cone</div>" +
+        '<div class="line sweep" id="wT" style="color:#58c4dd">' + V("θ") + ": 0 to 2π, &nbsp;once around the <i>z</i>-axis</div>");
   var HL = { rho: ["iR", "wR"], phi: ["iP", "wP"], theta: ["iT", "wT"] };
   function highlight(which) {          // which: "rho", "phi", "theta", or null for all
     Object.keys(HL).forEach(function (k) {
@@ -578,17 +592,20 @@
            C("#83c167", M(V("φ") + " = π/3")) + ". The limits of integration describe it as a sweep, from the inside out.",
       st: { solid: 0, fan: 0, ray: 0, bounds: 1, angles: 1 }, jump: { theta: 0.35, phi: 0.62, rho: 0 }, hl: null, hold: 5.6 },
     { say: "Innermost, " + C("#ffe14d", M("d" + V("ρ"))) + ": hold " + M(V("θ")) + " and " + M(V("φ")) + " fixed. Along the ray, " +
-           C("#ffe14d", M(V("ρ"))) + " runs from 0 at the origin out to 1 on the sphere.",
+           C("#ffe14d", M(V("ρ"))) + (SKELETAL ? " runs from the origin out to the sphere." : " runs from 0 at the origin out to 1 on the sphere."),
       st: { ray: 1 }, go: { rho: 1 }, hl: "rho", hold: 5.6 },
-    { say: "Next, " + C("#fc6255", M("d" + V("φ"))) + ": let " + C("#fc6255", M(V("φ"))) + " run from 0 on the " + M(V("z")) +
-           "-axis down to π/3 on the cone. Each ray still reaches the sphere, and together they fill a flat fan.",
+    { say: "Next, " + C("#fc6255", M("d" + V("φ"))) + ": let " + C("#fc6255", M(V("φ"))) + (SKELETAL ? " run from the " : " run from 0 on the ") + M(V("z")) +
+           (SKELETAL ? "-axis down to the cone." : "-axis down to π/3 on the cone.") + " Each ray still reaches the sphere, and together they fill a flat fan.",
       st: { fan: 1 }, jump: { phi: 0 }, go: { phi: PHI_MAX }, hl: "phi", hold: 6.2 },
-    { say: "Outermost, " + C("#58c4dd", M("d" + V("θ"))) + ": " + C("#58c4dd", M(V("θ"))) + " runs from 0 to 2π. The fan turns once " +
+    { say: "Outermost, " + C("#58c4dd", M("d" + V("θ"))) + ": " + (SKELETAL ? "the fan turns once " : C("#58c4dd", M(V("θ"))) + " runs from 0 to 2π. The fan turns once ") +
            "around the " + M(V("z")) + "-axis and sweeps out all of " + M(V("D")) + ".",
       st: { solid: 1 }, jump: { theta: 0 }, go: { theta: TAU }, hl: "theta", hold: 7.4 },
-    { say: "So " + M("0 ≤ " + V("ρ") + " ≤ 1") + ", " + M("0 ≤ " + V("φ") + " ≤ π/3") + ", " + M("0 ≤ " + V("θ") + " ≤ 2π") +
-           ": constant limits, because " + M(V("D")) + " is a box in spherical coordinates. The card shows the volume integral.",
-      go: { theta: 1.25 * Math.PI }, hl: null, hold: 6.0 },
+    SKELETAL
+      ? { say: "Each sweep gives one pair of limits, from the inside out. Write them in the boxes on the card: that is the blank in the notes.",
+          go: { theta: 1.25 * Math.PI }, hl: null, hold: 6.0 }
+      : { say: "So " + M("0 ≤ " + V("ρ") + " ≤ 1") + ", " + M("0 ≤ " + V("φ") + " ≤ π/3") + ", " + M("0 ≤ " + V("θ") + " ≤ 2π") +
+               ": constant limits, because " + M(V("D")) + " is a box in spherical coordinates. The card shows the volume integral.",
+          go: { theta: 1.25 * Math.PI }, hl: null, hold: 6.0 },
     { say: "Your turn: drag the sliders to rebuild " + M(V("D")) + ", sweep by sweep, or drag the figure to look from anywhere.", hold: 2.0 }
   ];
   var tour = { running: false, i: 0, timer: null };

@@ -33,8 +33,15 @@
      already swept, and the segment or ray out to the inner slider.  Faint
      lines show the cone, the plane and the half disk in the xy-plane.
 
-     Only in the completed notes, like icecream-limits-manim.html, whose
-     stage, palette, controls and on-screen label placement this shares. -->
+     SKELETAL (below) is false in the completed books and true in the
+     skeletal ones, where Example V's solution is the student's: there the
+     surfaces are named only as the problem gives them (z = sqrt(x^2 + y^2)
+     and z = 1), the card shows the integral with empty boxes for the
+     limits and the integrand and describes each sweep in words, and the
+     tour never states a limit.
+
+     Stage, palette, controls and on-screen label placement as in
+     icecream-limits-manim.html. -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap">
@@ -75,6 +82,11 @@
   .math i { font-style: italic; }
   .math sup { font-size: 72%; vertical-align: 0.5em; line-height: 0; }
   #eqcard .line { white-space: nowrap; }
+  #eqcard .note { font-family: var(--sans); font-size: 12.5px; color: var(--dim); }
+  /* skeletal: an empty box where a limit or the integrand goes */
+  .blank { display: inline-block; width: 1.5em; height: 0.95em; border: 1px dashed currentColor; border-radius: 2px;
+           vertical-align: middle; opacity: 0.85; margin: 1px 0; }
+  .blank.wide { width: 4.2em; height: 1.2em; margin: 0 4px; }
   /* an integral sign with its limits stacked on it */
   .int { display: inline-flex; flex-direction: column; align-items: center; vertical-align: middle;
          margin: 0 1px; padding: 0 2px; border-radius: 4px; transition: background .3s, opacity .3s; }
@@ -122,6 +134,7 @@
     #eqcard { position: static; padding: 6px 12px 7px 12px; border: none; border-bottom: 1px solid var(--edge);
               border-radius: 0; background: var(--panel); line-height: 1.3; }
     .math { font-size: 15px; }
+    #eqcard .note { display: none; }
     .int .lim { font-size: 11.5px; }
     .int .sym { font-size: 22px; }
     #panel { padding: 7px 10px 8px 10px; }
@@ -165,6 +178,9 @@
   // "cyl": the cylindrical form, dz dr dtheta; "sph": the spherical form, drho dphi dtheta
   var MODE = "sph";
   var CYL = MODE === "cyl";
+  // false in the completed notes; true in the skeletal notes, where the limits are left for the
+  // student (see the top)
+  var SKELETAL = false;
 
   var BLUE_C = 0x58c4dd, RED_C = 0xfc6255, GREEN_C = 0x83c167, YELLOW_C = 0xffe14d, GREY = 0x8a8f9c, INK_C = 0xece6e2;
   var PI = Math.PI, TAU = 2 * Math.PI, PHI_MAX = PI / 4;
@@ -282,8 +298,9 @@
       side: THREE.DoubleSide, depthWrite: false })), 0.13);
     var rim = []; for (k = 0; k <= 60; k++) rim.push(C(1, PI + PI * k / 60, 0)); ghostLine(rim, 0x9aa0ad, 0.5);
   })();
-  var lPlane = makeLabel(CYL ? [it("z"), rm(" = 1")] : [it("ρ"), rm(" = sec "), it("φ")], "#58c4dd", 0.19);
-  var lCone = makeLabel(CYL ? [it("z"), rm(" = "), it("r")] : [it("φ"), rm(" = π/4")], "#83c167", 0.19);
+  var lPlane = makeLabel(CYL || SKELETAL ? [it("z"), rm(" = 1")] : [it("ρ"), rm(" = sec "), it("φ")], "#58c4dd", 0.19);
+  var lCone = makeLabel(SKELETAL ? [it("z"), rm(" = √("), it("x"), rm("² + "), it("y"), rm("²)")]
+                        : CYL ? [it("z"), rm(" = "), it("r")] : [it("φ"), rm(" = π/4")], "#83c167", 0.19);
 
   // ---------- the swept solid, the triangle and the segment ----------
   var SOLID_OP = { cone: 0.6, top: 0.5, cut: 0.5 };
@@ -497,11 +514,25 @@
   // ---------- the card ----------
   var V = function (s) { return "<i>" + s + "</i>"; };
   function INT(id, lo, hi, col) {
+    if (SKELETAL) lo = hi = '<span class="blank"></span>';
     return '<span class="int" id="' + id + '" style="color:' + col + '"><span class="lim">' + hi + '</span><span class="sym">∫</span><span class="lim">' + lo + "</span></span>";
   }
   var YC = "#ffe14d", RC = "#fc6255", BC = "#58c4dd";
   var card = document.getElementById("eqcard");
-  card.innerHTML = CYL
+  var dI = CYL ? V("z") : V("ρ"), dM = CYL ? V("r") : V("φ");
+  card.innerHTML = SKELETAL
+    ? '<div class="line">' + V("E") + ": above " + V("z") + " = √(" + V("x") + "<sup>2</sup> + " + V("y") + "<sup>2</sup>), below " + V("z") + " = 1, where " + V("y") + " ≤ 0</div>" +
+      '<div class="line">' + INT("iT", "", "", BC) + INT("iM", "", "", RC) + INT("iI", "", "", YC) + '<span class="blank wide"></span>' +
+        '<span style="color:' + YC + '">d' + dI + '</span> <span style="color:' + RC + '">d' + dM + '</span> <span style="color:' + BC + '">d' + V("θ") + "</span></div>" +
+      (CYL
+        ? '<div class="line sweep" id="wI" style="color:' + YC + '">' + V("z") + ": from the cone up to the plane</div>" +
+          '<div class="line sweep" id="wM" style="color:' + RC + '">' + V("r") + ": from the " + V("z") + "-axis out to the rim</div>" +
+          '<div class="line sweep" id="wT" style="color:' + BC + '">' + V("θ") + ": across the half disk " + V("y") + " ≤ 0</div>"
+        : '<div class="line sweep" id="wI" style="color:' + YC + '">' + V("ρ") + ": from the origin out to the plane</div>" +
+          '<div class="line sweep" id="wM" style="color:' + RC + '">' + V("φ") + ": from the " + V("z") + "-axis down to the cone</div>" +
+          '<div class="line sweep" id="wT" style="color:' + BC + '">' + V("θ") + ": across the half " + V("y") + " ≤ 0</div>") +
+      '<div class="note">Each sweep gives one pair of limits: fill in the boxes, and the integrand.</div>'
+    : CYL
     ? '<div class="line">' + V("E") + ": above the cone " + V("z") + " = " + V("r") + ", below " + V("z") + " = 1, where " + V("y") + " ≤ 0</div>" +
       '<div class="line">' + INT("iT", "π", "2π", BC) + INT("iM", "0", "1", RC) + INT("iI", V("r"), "1", YC) +
         " " + V("r") + "<sup>2</sup> · " + V("r") + " &thinsp;" +
@@ -616,7 +647,38 @@
   var M = function (s) { return '<span class="m">' + s + "</span>"; };
   var K = function (col, s) { return '<span style="color:' + col + '">' + s + "</span>"; };
   var START = { theta: 1.25 * PI };
-  var STORY = CYL ? [
+  var CONE_RECT = K("#83c167", M(V("z") + " = √(" + V("x") + "<sup>2</sup> + " + V("y") + "<sup>2</sup>)"));
+  var LAST = { say: "Each sweep gives one pair of limits, from the inside out. Write them, and the integrand, in the boxes on the card: " +
+                    "that is the blank in the notes.", go: { theta: 1.8 * PI }, hl: null, hold: 6.4 };
+  var YOURS = { say: "Your turn: drag the sliders to rebuild " + M(V("E")) + ", sweep by sweep, or drag the figure to look from anywhere.", hold: 2.0 };
+  var STORY = SKELETAL ? (CYL ? [
+    { say: "The solid " + M(V("E")) + " lies above the cone " + CONE_RECT + " and below the plane " + K(BC, M(V("z") + " = 1")) +
+           ", on the side " + M(V("y") + " ≤ 0") + ". In cylindrical coordinates its limits are a sweep, from the inside out.",
+      st: { solid: 0, fan: 0, seg: 0, bounds: 1, coords: 1 }, jump: { theta: START.theta, mid: 0.55, inner: 0 }, hl: null, hold: 6.0 },
+    { say: "Innermost, " + K(YC, M("d" + V("z"))) + ": hold " + M(V("r")) + " and " + M(V("θ")) + " fixed. The vertical segment runs from the cone up to the plane.",
+      st: { seg: 1 }, go: { inner: 1 }, hl: "inner", hold: 5.8 },
+    { say: "Next, " + K(RC, M("d" + V("r"))) + ": let " + K(RC, M(V("r"))) + " run out from the " + M(V("z")) +
+           "-axis to where the cone meets the plane. The segments fill a flat triangle.",
+      st: { fan: 1 }, jump: { mid: 0 }, go: { mid: 1 }, hl: "mid", hold: 6.0 },
+    { say: "Outermost, " + K(BC, M("d" + V("θ"))) + ": " + K(BC, M(V("θ"))) + " runs across the half disk " + M(V("y") + " ≤ 0") +
+           " under the solid, and the triangle turns half way around the " + M(V("z")) + "-axis, sweeping out " + M(V("E")) + ".",
+      st: { solid: 1 }, jump: { theta: PI }, go: { theta: TAU }, hl: "theta", hold: 6.8 },
+    LAST, YOURS
+  ] : [
+    { say: "The same solid " + M(V("E")) + ": above the cone " + CONE_RECT + ", below the plane " + K(BC, M(V("z") + " = 1")) +
+           ", on the side " + M(V("y") + " ≤ 0") + ". In spherical coordinates its limits are a different sweep.",
+      st: { solid: 0, fan: 0, seg: 0, bounds: 1, coords: 1 }, jump: { theta: START.theta, mid: 0.48, inner: 0 }, hl: null, hold: 6.0 },
+    { say: "Innermost, " + K(YC, M("d" + V("ρ"))) + ": hold " + M(V("θ")) + " and " + M(V("φ")) + " fixed. Along the ray, " + K(YC, M(V("ρ"))) +
+           " runs from the origin out to the plane " + M(V("z") + " = 1") + ".",
+      st: { seg: 1 }, go: { inner: 1 }, hl: "inner", hold: 6.0 },
+    { say: "Next, " + K(RC, M("d" + V("φ"))) + ": " + K(RC, M(V("φ"))) + " runs from the " + M(V("z")) + "-axis down to the cone. " +
+           "The rays, each ending on the plane, fill the same flat triangle.",
+      st: { fan: 1 }, jump: { mid: 0 }, go: { mid: PHI_MAX }, hl: "mid", hold: 6.0 },
+    { say: "Outermost, " + K(BC, M("d" + V("θ"))) + ": " + K(BC, M(V("θ"))) + " runs across the half " + M(V("y") + " ≤ 0") +
+           ", and the triangle turns half way around the " + M(V("z")) + "-axis, sweeping out " + M(V("E")) + ".",
+      st: { solid: 1 }, jump: { theta: PI }, go: { theta: TAU }, hl: "theta", hold: 6.8 },
+    LAST, YOURS
+  ]) : CYL ? [
     { say: "The solid " + M(V("E")) + " lies above the cone " + K("#83c167", M(V("z") + " = √(" + V("x") + "<sup>2</sup> + " + V("y") + "<sup>2</sup>) = " + V("r"))) +
            " and below the plane " + K(BC, M(V("z") + " = 1")) + ", over the half disk " + M(V("y") + " ≤ 0") +
            ". In cylindrical coordinates its limits are a sweep, from the inside out.",
