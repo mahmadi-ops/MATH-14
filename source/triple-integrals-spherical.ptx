@@ -873,6 +873,76 @@ one. The straight edge of the cap lies over the x axis.
 </image>
 </figure>
 
+<p>
+<xref ref="fig-cone-plane-cyl-manim"/> and
+<xref ref="fig-cone-plane-sph-manim"/> build the solid from each set of
+limits in turn, innermost first: the two descriptions fill the same flat
+triangle in different ways before turning it about the <m>z</m>-axis.
+</p>
+
+<figure xml:id="fig-cone-plane-cyl-manim">
+<caption>
+The cylindrical limits of <xref ref="example-spherical-rewrite"/>,
+animated: the solid built the way
+<m>\int_{\pi}^{2\pi}\int_0^1\int_r^1 r^2\, r\,dz\,dr\,d\theta</m>
+sweeps it. A vertical segment at fixed <m>r</m> and <m>\theta</m> runs
+from the cone <m>z = r</m> up to the plane <m>z = 1</m> (yellow); letting
+<m>r</m> run from <m>0</m> to <m>1</m> fills a flat triangle (red); and
+turning the triangle from <m>\theta = \pi</m> to <m>\theta = 2\pi</m>,
+over the lower half disk, sweeps out the solid (blue).
+</caption>
+<interactive xml:id="interactive-cone-plane-cyl-manim"
+             iframe="cone-plane-cyl-manim.html"
+             width="100%" aspect="1:1">
+<instructions>
+<p>
+The <m>z</m>, <m>r</m> and <m>\theta</m> sliders run the three sweeps:
+the solid is drawn for the values of <m>\theta</m> already swept, the
+triangle at the current <m>\theta</m> for the values of <m>r</m> already
+swept, and the segment at the current <m>r</m> and <m>\theta</m> up to
+the current <m>z</m>. The card shows the integral with each pair of
+limits in its sweep's color. <q>Surfaces</q> shows the cone, the plane
+and the half disk below them, <q>Coordinates</q> marks <m>r</m> and
+<m>\theta</m>, <q>Play</q> runs a guided tour, <q>Spin</q> turns the
+figure (dragging turns it by hand), and <q>Full screen</q> fills the
+screen with it.
+</p>
+</instructions>
+</interactive>
+</figure>
+
+<figure xml:id="fig-cone-plane-sph-manim">
+<caption>
+The spherical limits of <xref ref="example-spherical-rewrite"/>,
+animated: the same solid built the way
+<m>\int_{\pi}^{2\pi}\int_0^{\pi/4}\int_0^{\sec\phi}
+\left(\rho^2\sin^2\phi\right)\rho^2\sin\phi\ d\rho\,d\phi\,d\theta</m>
+sweeps it. A ray at fixed <m>\theta</m> and <m>\phi</m> runs from the
+origin to the plane <m>z = 1</m>, where <m>\rho = \sec\phi</m> (yellow);
+letting <m>\phi</m> run from <m>0</m> to <m>\pi/4</m> fills the same
+triangle (red); and turning it from <m>\theta = \pi</m> to
+<m>\theta = 2\pi</m> sweeps out the solid (blue).
+</caption>
+<interactive xml:id="interactive-cone-plane-sph-manim"
+             iframe="cone-plane-sph-manim.html"
+             width="100%" aspect="1:1">
+<instructions>
+<p>
+The <m>\rho</m>, <m>\phi</m> and <m>\theta</m> sliders run the three
+sweeps: the solid is drawn for the values of <m>\theta</m> already
+swept, the triangle at the current <m>\theta</m> for the values of
+<m>\phi</m> already swept, and the ray at the current <m>\theta</m> and
+<m>\phi</m> out to the current <m>\rho</m>. The card shows the integral
+with each pair of limits in its sweep's color. <q>Surfaces</q> shows the
+cone, the plane and the half disk below them, <q>Coordinates</q> marks
+<m>\phi</m> and <m>\theta</m>, <q>Play</q> runs a guided tour,
+<q>Spin</q> turns the figure (dragging turns it by hand), and <q>Full
+screen</q> fills the screen with it.
+</p>
+</instructions>
+</interactive>
+</figure>
+
 <exercise xml:id="exercise-spherical-volume">
 <statement>
 <p>
