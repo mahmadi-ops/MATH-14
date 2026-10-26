@@ -46,7 +46,7 @@
       <xi:include href="double-integrals-polar-form.ptx" />
       <xi:include href="triple-integrals-rectangular.ptx" />
       <xi:include href="triple-integrals-cylindrical.ptx" />
-      <!-- UNPOSTED <xi:include href="triple-integrals-spherical.ptx" /> UNPOSTED -->
+      <xi:include href="triple-integrals-spherical.ptx" />
       <!-- UNPOSTED <xi:include href="mass-center-of-mass.ptx" /> UNPOSTED -->
       <!-- UNPOSTED <xi:include href="jacobian-substitution.ptx" /> UNPOSTED -->
       <!-- UNPOSTED <xi:include href="surface-integrals.ptx" /> UNPOSTED -->
