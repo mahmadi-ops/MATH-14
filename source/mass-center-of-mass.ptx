@@ -990,11 +990,47 @@ mass.
 <title>Concept Check</title>
 
 <p>
-The first problem revisits the region of
+The first problem is about point masses, where everything can be done by
+hand in a line or two; the second revisits the region of
 <xref ref="example-centroid-between-curves"/> with two densities that are
-not constant; the second is about point masses, where everything can be
-done by hand in a line or two.
+not constant.
 </p>
+
+<exercise xml:id="q-mass-three-points">
+<title>Three point masses</title>
+<statement>
+<p>
+Masses of <m>1</m>, <m>2</m>, and <m>3</m> kilograms sit at the points
+<m>(0,0)</m>, <m>(4,0)</m>, and <m>(0,4)</m>, respectively. Find the
+center of mass of the system. Where would it be if the three masses were
+equal?
+</p>
+</statement>
+<answer>
+<p>
+By <xref ref="eq-first-moments-points"/> and
+<xref ref="eq-com-points"/>, with <m>M = 1 + 2 + 3 = 6</m>,
+</p>
+<me>
+M_y = 1\cdot 0 + 2\cdot 4 + 3\cdot 0 = 8, \qquad
+M_x = 1\cdot 0 + 2\cdot 0 + 3\cdot 4 = 12,
+\qquad\text{so}\qquad
+\bar{x} = \frac{8}{6} = \frac{4}{3}, \quad \bar{y} = \frac{12}{6} = 2 .
+</me>
+<p>
+The center of mass <m>\left(\tfrac{4}{3}, 2\right)</m> lies inside the
+triangle with the masses at its vertices, pulled toward the heaviest
+mass at <m>(0,4)</m>: <m>\bar{y} = 2</m> exceeds <m>\bar{x} = 4/3</m>
+because the mass at <m>(0,4)</m> is heavier than the one at
+<m>(4,0)</m>. With three equal masses <m>m</m>, every weight
+<m>m_i/M</m> in <xref ref="eq-com-points-vector"/> is <m>1/3</m>, and the
+center of mass is the average of the three positions,
+<m>\left( \tfrac{0+4+0}{3}, \tfrac{0+0+4}{3} \right)
+= \left( \tfrac{4}{3}, \tfrac{4}{3} \right)</m>: the centroid of the
+triangle, where its three medians meet.
+</p>
+</answer>
+</exercise>
 
 <exercise xml:id="q-mass-two-densities">
 <title>The same plate, two densities</title>
@@ -1066,42 +1102,6 @@ density <m>y</m> treats <m>x</m> and <m>y</m> differently, so nothing
 forces the balance point onto that line. (<m>\bar{x}</m> rises as well,
 from <m>9/20</m> to <m>5/9</m>, because the heavier upper part of this
 region is also its right part.)
-</p>
-</answer>
-</exercise>
-
-<exercise xml:id="q-mass-three-points">
-<title>Three point masses</title>
-<statement>
-<p>
-Masses of <m>1</m>, <m>2</m>, and <m>3</m> kilograms sit at the points
-<m>(0,0)</m>, <m>(4,0)</m>, and <m>(0,4)</m>, respectively. Find the
-center of mass of the system. Where would it be if the three masses were
-equal?
-</p>
-</statement>
-<answer>
-<p>
-By <xref ref="eq-first-moments-points"/> and
-<xref ref="eq-com-points"/>, with <m>M = 1 + 2 + 3 = 6</m>,
-</p>
-<me>
-M_y = 1\cdot 0 + 2\cdot 4 + 3\cdot 0 = 8, \qquad
-M_x = 1\cdot 0 + 2\cdot 0 + 3\cdot 4 = 12,
-\qquad\text{so}\qquad
-\bar{x} = \frac{8}{6} = \frac{4}{3}, \quad \bar{y} = \frac{12}{6} = 2 .
-</me>
-<p>
-The center of mass <m>\left(\tfrac{4}{3}, 2\right)</m> lies inside the
-triangle with the masses at its vertices, pulled toward the heaviest
-mass at <m>(0,4)</m>: <m>\bar{y} = 2</m> exceeds <m>\bar{x} = 4/3</m>
-because the mass at <m>(0,4)</m> is heavier than the one at
-<m>(4,0)</m>. With three equal masses <m>m</m>, every weight
-<m>m_i/M</m> in <xref ref="eq-com-points-vector"/> is <m>1/3</m>, and the
-center of mass is the average of the three positions,
-<m>\left( \tfrac{0+4+0}{3}, \tfrac{0+0+4}{3} \right)
-= \left( \tfrac{4}{3}, \tfrac{4}{3} \right)</m>: the centroid of the
-triangle, where its three medians meet.
 </p>
 </answer>
 </exercise>
