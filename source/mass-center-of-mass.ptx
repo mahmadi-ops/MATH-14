@@ -8,360 +8,338 @@ Multiple integrals let us compute physical quantities of solid objects
 and flat plates whose <term>density</term> varies from point to point.
 In this section we use double and triple integrals to compute the total
 mass of an object and to locate its <term>center of mass</term><mdash/>the
-point at which the object would balance perfectly.
+point at which the object would balance perfectly. Before we study
+continuous objects, we review what the center of mass of a system of
+point masses is and why it deserves its name: first for two masses, then
+for any number of them. A flat plate and a solid are then handled in the
+same way, by cutting them into many small pieces and treating each piece
+as a point mass.
 </p>
 </introduction>
 
 <!-- ================================================================ -->
-<subsection xml:id="sec-mass-3d-object">
-<title>Finding the Center of Mass of a 3D Object</title>
+<subsection xml:id="sec-com-two-masses">
+<title>The Center of Mass of Two Point Masses</title>
 
 <p>
-Suppose a solid object occupies a region <m>D</m> in space and its
-density (mass per unit volume) at each point is given by a continuous
-function <m>\delta(x,y,z)</m>. To measure the total mass, we partition
-<m>D</m> into small boxes. If the <m>k</m>-th box contains the point
-<m>(x_k, y_k, z_k)</m> and has volume <m>\Delta V_k</m>, then the density
-is nearly constant on this small box, so its mass is approximately
+Consider two masses <m>m_1</m> and <m>m_2</m> located at the points
+<m>\mathbf{r}_1 = (x_1, y_1)</m> and <m>\mathbf{r}_2 = (x_2, y_2)</m>, as
+in <xref ref="fig-two-masses"/>, and let <m>\mathbf{F}_1</m> and
+<m>\mathbf{F}_2</m> be the net forces acting on them. By Newton's second
+law, each force is the mass times the acceleration,
+<m>\mathbf{F}_1 = m_1\, \dfrac{d^2\mathbf{r}_1}{dt^2}</m> and
+<m>\mathbf{F}_2 = m_2\, \dfrac{d^2\mathbf{r}_2}{dt^2}</m>, so the total
+force on the system of the two masses is
 </p>
 
 <me>
-\Delta m_k = \delta(x_k, y_k, z_k)\, \Delta V_k,
+\mathbf{F} = \mathbf{F}_1 + \mathbf{F}_2
+= m_1 \frac{d^2\mathbf{r}_1}{dt^2} + m_2 \frac{d^2\mathbf{r}_2}{dt^2}
+= \frac{d^2}{dt^2}\left( \sum_{i=1}^{2} m_i\, \mathbf{r}_i \right).
 </me>
 
 <p>
-as illustrated in <xref ref="fig-mass-element-tikz"/>. Summing over all
-the boxes gives a Riemann sum for the total mass, and letting the size
-of the boxes shrink to zero turns the sum into a triple integral:
-</p>
-
-<men xml:id="eq-mass-3d">
-M = \lim_{n \to \infty} \sum_{k=1}^{n} \delta(x_k, y_k, z_k)\, \Delta V_k
-  = \iiint_D \delta(x,y,z)\, dV.
-</men>
-
-<p>
-Watch the construction unfold in <xref ref="fig-mass-element-video"/>.
-</p>
-
-<figure xml:id="fig-mass-element-video">
-<caption>
-Partitioning a solid <m>D</m> into small boxes: each box carries the
-mass <m>\Delta m_k = \delta(x_k,y_k,z_k)\,\Delta V_k</m>, and the
-Riemann sum of these masses converges to the triple integral of the
-density.
-</caption>
-<video xml:id="video-mass-element"
-       source="videos/mass_element_1080p.mp4"
-       width="70%" aspect="16:9"/>
-</figure>
-
-<figure xml:id="fig-mass-element-tikz">
-<caption>
-A solid region <m>D</m> with a small box around the point
-<m>(x_k, y_k, z_k)</m>. The box has volume <m>\Delta V_k</m> and mass
-<m>\Delta m_k = \delta(x_k, y_k, z_k)\, \Delta V_k</m>.
-</caption>
-<image xml:id="image-mass-element-tikz" width="75%">
-<shortdescription>
-A potato-shaped solid in space with a small highlighted box inside it.
-</shortdescription>
-<description>
-<p>
-A translucent potato-shaped solid labeled <m>D</m> floats above the
-<m>xy</m>-plane in a three-dimensional coordinate system. A small
-purple box inside the solid marks the point <m>(x_k, y_k, z_k)</m>,
-and a leader line labels its mass
-<m>\Delta m_k = \delta(x_k, y_k, z_k)\, \Delta V_k</m>.
-</p>
-</description>
-<latex-image>
-<![CDATA[\begin{tikzpicture}[line join=round, line cap=round]
-  \tikzset{lbl/.style={fill=white, fill opacity=0.82, text opacity=1, inner sep=2.5pt, rounded corners=2pt}}
-  % Okabe-Ito colorblind-safe palette
-  \definecolor{oigreen}{RGB}{0,158,115}
-  \definecolor{oipurple}{RGB}{204,121,167}
-  \begin{axis}[
-      view={115}{18},
-      width=12cm,
-      axis lines=center,
-      axis equal image,
-      axis line style={-latex, black!75, line width=0.7pt},
-      xlabel={$x$}, ylabel={$y$}, zlabel={$z$},
-      label style={font=\large},
-      ticks=none,
-      xmin=-2.9, xmax=2.9, ymin=-2.9, ymax=2.9, zmin=0, zmax=4.1,
-      clip=false,
-    ]
-    % ---- the solid D: a deformed (potato-like) ellipsoid ----
-    \addplot3[surf, shader=interp,
-              point meta={z},
-              colormap={softg}{color=(oigreen!14!white) color=(oigreen!48!white)},
-              opacity=0.55, fill opacity=0.55,
-              domain=0:360, samples=49,
-              y domain=0:180, samples y=25,
-              z buffer=sort, forget plot]
-      ({(2+0.35*sin(2*x))*cos(x)*sin(y)},
-       {(1.35+0.2*cos(2*x))*sin(x)*sin(y)},
-       {0.95*cos(y)+2.3});
-    % ---- small box (mass element) inside the solid ----
-    % cube centered near (1.05, 0.55, 2.6) with half-side 0.21
-    \def\cx{1.05}\def\cy{0.55}\def\cz{2.60}\def\hs{0.21}
-    % top face
-    \fill[oipurple!70, draw=oipurple!35!black, line width=0.5pt]
-      (axis cs:{\cx-\hs},{\cy-\hs},{\cz+\hs}) --
-      (axis cs:{\cx+\hs},{\cy-\hs},{\cz+\hs}) --
-      (axis cs:{\cx+\hs},{\cy+\hs},{\cz+\hs}) --
-      (axis cs:{\cx-\hs},{\cy+\hs},{\cz+\hs}) -- cycle;
-    % front face (toward viewer, +x side)
-    \fill[oipurple!45, draw=oipurple!35!black, line width=0.5pt]
-      (axis cs:{\cx+\hs},{\cy-\hs},{\cz-\hs}) --
-      (axis cs:{\cx+\hs},{\cy+\hs},{\cz-\hs}) --
-      (axis cs:{\cx+\hs},{\cy+\hs},{\cz+\hs}) --
-      (axis cs:{\cx+\hs},{\cy-\hs},{\cz+\hs}) -- cycle;
-    % side face (+y side)
-    \fill[oipurple!30, draw=oipurple!35!black, line width=0.5pt]
-      (axis cs:{\cx-\hs},{\cy+\hs},{\cz-\hs}) --
-      (axis cs:{\cx+\hs},{\cy+\hs},{\cz-\hs}) --
-      (axis cs:{\cx+\hs},{\cy+\hs},{\cz+\hs}) --
-      (axis cs:{\cx-\hs},{\cy+\hs},{\cz+\hs}) -- cycle;
-    % ---- labels ----
-    \node[lbl, font=\large] at (axis cs:-1.7,-0.4,3.1) {$D$};
-    \draw[black!70, line width=0.5pt]
-      (axis cs:{\cx},{\cy+\hs},{\cz+\hs}) -- (axis cs:1.6,2.0,3.7);
-    \node[lbl, font=\normalsize, anchor=west] at (axis cs:1.6,2.0,3.7)
-      {$\Delta m_k = \delta(x_k,y_k,z_k)\,\Delta V_k$};
-    \draw[black!70, line width=0.5pt]
-      (axis cs:{\cx},{\cy+\hs},{\cz-\hs}) -- (axis cs:1.2,2.3,1.9);
-    \node[lbl, font=\normalsize, anchor=west] at (axis cs:1.2,2.3,1.9)
-      {$(x_k, y_k, z_k)$};
-  \end{axis}
-\end{tikzpicture}]]>
-</latex-image>
-</image>
-</figure>
-
-<p>
-The same idea locates the balance point of the object. Each small box
-contributes a <term>moment</term> about each coordinate plane<mdash/>its
-mass times its (signed) distance from that plane. Adding these
-contributions and passing to the limit gives the
-<term>first moments</term>
-</p>
-
-<men xml:id="eq-first-moments-3d">
-M_{yz} = \iiint_D x\, \delta\, dV, \qquad
-M_{xz} = \iiint_D y\, \delta\, dV, \qquad
-M_{xy} = \iiint_D z\, \delta\, dV.
-</men>
-
-<p>
-The <term>center of mass</term> <m>(\bar{x}, \bar{y}, \bar{z})</m> is
-the point whose coordinates are the moments divided by the total mass:
-</p>
-
-<men xml:id="eq-com-3d">
-\bar{x} = \frac{M_{yz}}{M}, \qquad
-\bar{y} = \frac{M_{xz}}{M}, \qquad
-\bar{z} = \frac{M_{xy}}{M}.
-</men>
-
-<example xml:id="example-paraboloid-com">
-<title>Center of Mass of a Solid Bounded by a Paraboloid</title>
-<statement>
-<p>
-Find the center of mass of a solid of constant density <m>\delta</m>,
-which is bounded by the disk <m>x^2 + y^2 \le 4</m> (in the plane
-<m>z = 0</m>) and the paraboloid <m>z = 4 - x^2 - y^2</m>.
-</p>
-</statement>
-</example>
-
-<solution xml:id="solution-paraboloid-com">
-<p>
-The solid is shown in <xref ref="fig-paraboloid-com-tikz"/>. Both the
-region and the density are symmetric about the <m>z</m>-axis, so the
-center of mass lies on that axis: <m>\bar{x} = \bar{y} = 0</m>. It
-remains to find <m>\bar{z} = M_{xy}/M</m> from
-<xref ref="eq-com-3d"/>.
-</p>
-
-<p>
-Because of the circular symmetry, we work in cylindrical coordinates,
-where <xref ref="eq-dv-cylindrical"/> applies and the region is
-described by
-<m>0 \le z \le 4 - r^2</m>, <m>0 \le r \le 2</m>, and
-<m>0 \le \theta \le 2\pi</m>. By <xref ref="eq-mass-3d"/>, the mass is
-</p>
-
-<md>
-<mrow>M \amp= \iiint_D \delta\, dV
-= \delta \int_0^{2\pi} \int_0^2 \int_0^{4-r^2} dz\, r\, dr\, d\theta</mrow>
-<mrow>\amp= \delta \int_0^{2\pi} \int_0^2 (4 - r^2)\, r\, dr\, d\theta
-= \delta \int_0^{2\pi} \left[ 2r^2 - \frac{r^4}{4} \right]_0^2 d\theta</mrow>
-<mrow>\amp= \delta \int_0^{2\pi} 4\, d\theta = 8\pi\delta.</mrow>
-</md>
-
-<p>
-Using <xref ref="eq-first-moments-3d"/>, the first moment about the
-<m>xy</m>-plane is
-</p>
-
-<md>
-<mrow>M_{xy} \amp= \iiint_D z\, \delta\, dV
-= \delta \int_0^{2\pi} \int_0^2 \int_0^{4-r^2} z\, dz\, r\, dr\, d\theta</mrow>
-<mrow>\amp= \delta \int_0^{2\pi} \int_0^2 \frac{(4 - r^2)^2}{2}\, r\, dr\, d\theta
-= \delta \int_0^{2\pi} \left[ -\frac{(4-r^2)^3}{12} \right]_0^2 d\theta</mrow>
-<mrow>\amp= \delta \int_0^{2\pi} \frac{16}{3}\, d\theta = \frac{32\pi\delta}{3}.</mrow>
-</md>
-
-<p>
-Therefore
+It would be nice to rewrite this in the familiar form
+<m>\mathbf{F} = M\mathbf{a}</m> of Newton's second law. To this end, we
+multiply and divide the right-hand side by the total mass
+<m>M = m_1 + m_2</m> of the system:
 </p>
 
 <me>
-\bar{z} = \frac{M_{xy}}{M} = \frac{32\pi\delta/3}{8\pi\delta} = \frac{4}{3},
+\mathbf{F} = M\, \frac{d^2}{dt^2}\left( \sum_{i=1}^{2} \frac{m_i}{M}\, \mathbf{r}_i \right)
+= M\, \frac{d^2\bar{\mathbf{r}}}{dt^2},
 </me>
 
 <p>
-and the center of mass is <m>\left(0, 0, \tfrac{4}{3}\right)</m>. Notice
-that the answer does not depend on <m>\delta</m>: for an object of
-constant density, the location of the balance point is determined by the
-shape alone. Watch the computation come together in
-<xref ref="fig-paraboloid-com-video"/>.
+where we have defined the <term>center of mass</term> of the system as
+the point
 </p>
-</solution>
 
-<figure xml:id="fig-paraboloid-com-video">
-<caption>
-The solid bounded above by <m>z = 4 - x^2 - y^2</m> and below by the
-disk <m>x^2 + y^2 \le 4</m>. By symmetry the center of mass lies on the
-<m>z</m>-axis, at height <m>\bar{z} = 4/3</m>.
-</caption>
-<video xml:id="video-paraboloid-com"
-       source="videos/paraboloid_com_1080p.mp4"
-       width="70%" aspect="16:9"/>
-</figure>
+<men xml:id="eq-com-two-masses">
+\bar{\mathbf{r}} = \frac{1}{M} \sum_{i=1}^{2} m_i\, \mathbf{r}_i
+= \left( \frac{m_1 x_1 + m_2 x_2}{m_1 + m_2},\
+         \frac{m_1 y_1 + m_2 y_2}{m_1 + m_2} \right).
+</men>
 
-<figure xml:id="fig-paraboloid-com-tikz">
-<caption>
-The solid of constant density bounded by the paraboloid
-<m>z = 4 - x^2 - y^2</m> and the disk <m>R</m>: <m>x^2 + y^2 \le 4</m>
-in the plane <m>z = 0</m>. The center of mass sits on the axis of
-symmetry at <m>(0, 0, 4/3)</m>.
-</caption>
-<image xml:id="image-paraboloid-com-tikz" width="80%">
-<shortdescription>
-A dome-shaped solid over a disk with its center of mass marked on the
-vertical axis.
-</shortdescription>
-<description>
 <p>
-The paraboloid <m>z = 4 - x^2 - y^2</m> forms a translucent green dome
-over the disk <m>x^2 + y^2 \le 4</m> in the <m>xy</m>-plane, labeled
-<m>R</m>. The dashed <m>z</m>-axis passes through the apex at height 4,
-and a magenta dot on the axis at height <m>4/3</m> marks the center of
-mass.
+Thus the total force equals the total mass times the acceleration of a
+virtual mass <m>M</m> located at <m>\bar{\mathbf{r}}</m>: as far as the
+net force is concerned, the pair of masses moves like a single particle
+of mass <m>M</m> sitting at the center of mass. The formula is a weighted
+average of the two positions, with the masses as the weights. If
+<m>m_1 = m_2</m>, the center of mass is the midpoint of the segment
+joining the two masses; otherwise it lies on that segment, closer to the
+heavier mass.
 </p>
-</description>
-<latex-image>
-<![CDATA[\begin{tikzpicture}[line join=round, line cap=round]
-  \tikzset{lbl/.style={fill=white, fill opacity=0.82, text opacity=1, inner sep=2.5pt, rounded corners=2pt}}
-  % Okabe-Ito colorblind-safe palette
-  \definecolor{oigreen}{RGB}{0,158,115}
-  \definecolor{oiblue}{RGB}{0,114,178}
-  \definecolor{oimagenta}{RGB}{204,0,119}
-  \begin{axis}[
-      view={115}{18},
-      width=12.5cm,
-      axis lines=center,
-      axis equal image,
-      axis line style={-latex, black!75, line width=0.7pt},
-      xlabel={$x$}, ylabel={$y$}, zlabel={$z$},
-      label style={font=\large},
-      ticks=none,
-      xmin=-3, xmax=3, ymin=-3, ymax=3, zmin=0, zmax=4.6,
-      clip=false,
-    ]
-    % ---- base disk R ----
-    \addplot3[surf, shader=flat,
-              color=black!12, opacity=0.4, fill opacity=0.4,
-              domain=0:360, samples=37,
-              y domain=0:2, samples y=2,
-              z buffer=sort, forget plot]
-      ({y*cos(x)}, {y*sin(x)}, {0});
-    % ---- paraboloid surface ----
-    \addplot3[surf, shader=interp,
-              point meta={z},
-              colormap={softg}{color=(oigreen!14!white) color=(oigreen!48!white)},
-              opacity=0.55, fill opacity=0.55,
-              domain=0:360, samples=61,
-              y domain=0:2, samples y=25,
-              z buffer=sort, forget plot]
-      ({y*cos(x)}, {y*sin(x)}, {4 - y^2});
-    % light parallels for shape cues
-    \foreach \rr in {0.5,1,1.5}{
-      \edef\tmp{\noexpand\addplot3[black!22, line width=0.35pt, domain=0:360,
-          samples=73, samples y=0, forget plot]
-        ({\rr*cos(x)}, {\rr*sin(x)}, {4 - \rr*\rr});}\tmp}
-    % light meridians for shape cues
-    \foreach \uu in {0,45,...,315}{
-      \edef\tmp{\noexpand\addplot3[black!22, line width=0.35pt, domain=0:2,
-          samples=25, samples y=0, forget plot]
-        ({x*cos(\uu)}, {x*sin(\uu)}, {4 - x^2});}\tmp}
-    % ---- boundary circle x^2 + y^2 = 4 ----
-    \addplot3[line width=1.6pt, oiblue, domain=0:360, samples=121,
-        samples y=0, forget plot]
-      ({2*cos(x)}, {2*sin(x)}, {0});
-    % ---- dashed axis of symmetry through the solid ----
-    \draw[dashed, black!60, line width=0.7pt]
-      (axis cs:0,0,0) -- (axis cs:0,0,4);
-    % ---- center of mass ----
-    \fill[oimagenta] (axis cs:0,0,1.3333) circle (2.6pt);
-    \node[lbl, font=\normalsize, anchor=west, text=oimagenta]
-      at (axis cs:0.15,0.55,1.55) {c.m. $\left(0,0,\tfrac{4}{3}\right)$};
-    % ---- labels ----
-    \draw[black!70, line width=0.5pt]
-      (axis cs:{1.35*cos(35)},{1.35*sin(35)},{4-1.35^2}) -- (axis cs:1.9,2.5,3.4);
-    \node[lbl, font=\normalsize, anchor=west] at (axis cs:1.9,2.5,3.4)
-      {$z = 4 - x^2 - y^2$};
-    \draw[black!70, line width=0.5pt]
-      (axis cs:{2*cos(320)},{2*sin(320)},0) -- (axis cs:1.4,-2.75,0.75);
-    \node[lbl, font=\normalsize, anchor=east] at (axis cs:1.4,-2.75,0.75)
-      {$x^2 + y^2 = 4$};
-    \node[lbl, font=\large] at (axis cs:1.15,1.5,0) {$R$};
-    \node[lbl, font=\normalsize] at (axis cs:-0.3,-0.25,0) {$0$};
-  \end{axis}
-\end{tikzpicture}]]>
-</latex-image>
+
+<figure xml:id="fig-two-masses">
+<caption>
+Two point masses <m>m_1</m> and <m>m_2</m> at the points
+<m>\mathbf{r}_1</m> and <m>\mathbf{r}_2</m>, with the net forces
+<m>\mathbf{F}_1</m> and <m>\mathbf{F}_2</m> acting on them. Their center
+of mass <m>\bar{\mathbf{r}}</m> lies on the segment joining them, closer
+to the heavier mass (here <m>m_2 = 2m_1</m>).
+</caption>
+<image width="60%">
+<shortdescription>
+Two masses in the plane with their position vectors, downward force
+arrows, and the center of mass on the segment between them.
+</shortdescription>
+<prefigure xmlns="https://prefigure.org" label="prefigure-two-masses">
+<diagram dimensions="(360,280)" margins="10">
+<coordinates bbox="(-0.6,-1.2,4.6,3.0)">
+<axes at="tm-axes" xlabel="x" ylabel="y" decorations="no" arrows="1"/>
+<line at="tm-seg" endpoints="((1.2,2.2),(3.4,1.2))" stroke="#999999"
+      thickness="1" dash="4 3"/>
+<vector at="tm-r1" v="(1.2,2.2)" tail="(0,0)" stroke="#D55E00"
+        thickness="2" dash="2 3"/>
+<vector at="tm-r2" v="(3.4,1.2)" tail="(0,0)" stroke="#0072B2"
+        thickness="2" dash="2 3"/>
+<vector at="tm-F1" v="(0,-0.8)" tail="(1.2,2.2)" stroke="#D55E00"
+        thickness="3"/>
+<vector at="tm-F2" v="(0,-0.8)" tail="(3.4,1.2)" stroke="#0072B2"
+        thickness="3"/>
+<point at="tm-m1" p="(1.2,2.2)" fill="#D55E00" size="5"/>
+<point at="tm-m2" p="(3.4,1.2)" fill="#0072B2" size="6.5"/>
+<point at="tm-cm" p="(2.667,1.533)" fill="maroon" size="4"/>
+<label at="tm-m1-lab" anchor="(1.2,2.38)" alignment="n" color="#D55E00">
+<m>m_1</m>
+</label>
+<label at="tm-m2-lab" anchor="(3.4,1.4)" alignment="n" color="#0072B2">
+<m>m_2</m>
+</label>
+<label at="tm-r1-lab" anchor="(0.5,1.2)" alignment="w" color="#D55E00">
+<m>\mathbf{r}_1</m>
+</label>
+<label at="tm-r2-lab" anchor="(1.8,0.52)" alignment="s" color="#0072B2">
+<m>\mathbf{r}_2</m>
+</label>
+<label at="tm-F1-lab" anchor="(1.32,1.75)" alignment="e" color="#D55E00">
+<m>\mathbf{F}_1</m>
+</label>
+<label at="tm-F2-lab" anchor="(3.52,0.75)" alignment="e" color="#0072B2">
+<m>\mathbf{F}_2</m>
+</label>
+<label at="tm-cm-lab" anchor="(2.72,1.65)" alignment="ne" color="maroon">
+<m>\bar{\mathbf{r}}</m>
+</label>
+</coordinates>
+
+<annotations>
+<annotation ref="figure" text="Coordinate axes with two masses: m one, a vermillion dot in the upper left, and m two, a larger blue dot to its lower right. Dotted arrows from the origin to each mass are the position vectors r one and r two, and a thick arrow pointing straight down from each mass is the net force on it, F one and F two. A maroon dot on the dashed segment joining the two masses, closer to m two, is the center of mass.">
+  <annotation ref="tm-m1" text="The mass m one at the point r one."/>
+  <annotation ref="tm-m2" text="The mass m two, twice as heavy as m one, at the point r two."/>
+  <annotation ref="tm-r1" text="The position vector r one, drawn dotted from the origin to m one."/>
+  <annotation ref="tm-r2" text="The position vector r two, drawn dotted from the origin to m two."/>
+  <annotation ref="tm-F1" text="The net force F one on m one, an arrow pointing straight down."/>
+  <annotation ref="tm-F2" text="The net force F two on m two, an arrow pointing straight down."/>
+  <annotation ref="tm-cm" text="The center of mass, a maroon dot on the segment between the two masses, two thirds of the way from m one to m two."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
 </image>
 </figure>
 
 </subsection>
 
 <!-- ================================================================ -->
-<subsection xml:id="sec-centroid">
-<title>Centroids</title>
+<subsection xml:id="sec-com-n-masses">
+<title>The Center of Mass of <m>n</m> Point Masses and the First Moments</title>
 
-<definition xml:id="def-centroid">
-<statement>
 <p>
-When the density of a solid object (as in the previous example) or plate
-(as in the next example) is constant, the center of mass is called the
-<term>centroid</term> of the object.
+Nothing in the computation above depended on there being only two
+masses. For a system of <m>n</m> point masses <m>m_1, \dots, m_n</m> at
+the points <m>\mathbf{r}_1, \dots, \mathbf{r}_n</m>, adding Newton's
+second law for each mass and multiplying and dividing by the total mass
+<m>M = m_1 + \cdots + m_n</m> gives, exactly as before,
+<m>\mathbf{F} = M\, \dfrac{d^2\bar{\mathbf{r}}}{dt^2}</m> with
 </p>
-</statement>
-</definition>
+
+<men xml:id="eq-com-points-vector">
+\bar{\mathbf{r}} = \frac{1}{M} \sum_{i=1}^{n} m_i\, \mathbf{r}_i,
+\qquad M = \sum_{i=1}^{n} m_i .
+</men>
 
 <p>
-As we saw in <xref ref="example-paraboloid-com"/>, a constant density
-<m>\delta</m> cancels in the quotients of
-<xref ref="eq-com-3d"/>, so the centroid depends only on the shape of
-the object. For a flat plate occupying a region <m>R</m> in the plane
-with density <m>\delta(x,y)</m> (mass per unit area), the same
-reasoning that gave <xref ref="eq-mass-3d"/> and
-<xref ref="eq-first-moments-3d"/><mdash/>with double integrals in place
-of triple integrals<mdash/>gives the mass and first moments
+The sums in the coordinates of <m>\bar{\mathbf{r}}</m> have names of
+their own. For masses in the plane, with <m>\mathbf{r}_i = (x_i, y_i)</m>,
+the <term>first moments</term> of the system are
+</p>
+
+<men xml:id="eq-first-moments-points">
+M_y = \sum_{i=1}^{n} m_i\, x_i, \qquad
+M_x = \sum_{i=1}^{n} m_i\, y_i .
+</men>
+
+<p>
+<m>M_y</m> is the <term>moment about the <m>y</m>-axis</term>: each mass
+is multiplied by its signed distance <m>x_i</m> from the <m>y</m>-axis,
+so <m>M_y</m> measures the tendency of the system to tip about that axis
+(masses to the right of the axis, with <m>x_i \gt 0</m>, count
+positively, and masses to its left count negatively). Likewise
+<m>M_x</m> is the <term>moment about the <m>x</m>-axis</term>, computed
+with the signed distances <m>y_i</m> from the <m>x</m>-axis. In this
+notation, <xref ref="eq-com-points-vector"/> says that the center of
+mass <m>\bar{\mathbf{r}} = (\bar{x}, \bar{y})</m> has the coordinates
+</p>
+
+<men xml:id="eq-com-points">
+\bar{x} = \frac{M_y}{M}, \qquad
+\bar{y} = \frac{M_x}{M}.
+</men>
+
+<p>
+For masses in space, with <m>\mathbf{r}_i = (x_i, y_i, z_i)</m>, the
+distances are measured from the coordinate planes instead. The
+<term>first moments about the coordinate planes</term> are
+</p>
+
+<men xml:id="eq-first-moments-points-3d">
+M_{yz} = \sum_{i=1}^{n} m_i\, x_i, \qquad
+M_{xz} = \sum_{i=1}^{n} m_i\, y_i, \qquad
+M_{xy} = \sum_{i=1}^{n} m_i\, z_i
+</men>
+
+<p>
+(<m>M_{yz}</m> uses the signed distance <m>x_i</m> from the
+<m>yz</m>-plane, and so on), and the center of mass
+<m>\bar{\mathbf{r}} = (\bar{x}, \bar{y}, \bar{z})</m> is
+</p>
+
+<men xml:id="eq-com-points-3d">
+\bar{x} = \frac{M_{yz}}{M}, \qquad
+\bar{y} = \frac{M_{xz}}{M}, \qquad
+\bar{z} = \frac{M_{xy}}{M}.
+</men>
+
+<p>
+Every formula in the rest of this section is one of these, with the sum
+over point masses replaced by an integral over a continuous object.
+</p>
+
+</subsection>
+
+<!-- ================================================================ -->
+<subsection xml:id="sec-mass-2d-object">
+<title>Finding the Center of Mass of a 2D Object</title>
+
+<p>
+Now let the mass be spread continuously over a flat plate that occupies a
+region <m>R</m> in the plane, with <term>density</term>
+<m>\delta(x,y)</m> (mass per unit area) at the point <m>(x,y)</m>. To
+bring the formulas of the previous subsection to bear, we cut the plate
+into small pieces and treat each piece as a point mass. Partition the
+plane into small rectangles by the lines <m>x = x_0, x_1, \dots, x_n</m>
+and <m>y = y_0, y_1, \dots, y_m</m>, as in
+<xref ref="fig-plate-element"/>. The rectangle in column <m>i</m> and
+row <m>j</m> has width <m>\Delta x_i</m>, height <m>\Delta y_j</m>, and
+area <m>\Delta A_{ij} = \Delta x_i\, \Delta y_j</m>; if it meets
+<m>R</m>, we pick a point <m>(x_i, y_j)</m> in it. The density is nearly
+constant on such a small piece, so the mass of the piece is approximately
+</p>
+
+<me>
+\Delta m_{ij} = \delta(x_i, y_j)\, \Delta A_{ij}
+= \delta(x_i, y_j)\, \Delta x_i\, \Delta y_j .
+</me>
+
+<figure xml:id="fig-plate-element">
+<caption>
+A flat plate <m>R</m> cut into small rectangles. The rectangle in column
+<m>i</m> and row <m>j</m> has the area <m>\Delta A_{ij} = \Delta x_i\,
+\Delta y_j</m>, contains the point <m>(x_i, y_j)</m>, and carries the
+mass <m>\Delta m_{ij} = \delta(x_i, y_j)\, \Delta A_{ij}</m>.
+</caption>
+<image width="60%">
+<shortdescription>
+A blob-shaped region over a grid of small rectangles, with one rectangle
+inside it highlighted.
+</shortdescription>
+<prefigure xmlns="https://prefigure.org" label="prefigure-plate-element">
+<diagram dimensions="(360,300)" margins="10">
+<definition>blob(t) = (5.2 + 3.1*cos(t) + 0.45*cos(2*t), 4.4 + 2.2*sin(t) - 0.35*sin(2*t) + 0.25*cos(3*t))</definition>
+<coordinates bbox="(-0.8,-0.8,10.4,8.6)">
+<parametric-curve at="pe-region" function="blob" domain="(0,2*pi)"
+                  closed="yes" fill="#cfe0f5" stroke="#0072B2"
+                  thickness="2.5"/>
+<grid at="pe-grid" spacings="((0,1,10),(0,1,8))" stroke="#9aa6b2" thickness="0.6"/>
+<axes at="pe-axes" xlabel="x" ylabel="y" decorations="no" arrows="1"/>
+<rectangle at="pe-cell" lower-left="(6,4)" dimensions="(1,1)"
+           fill="#cc79a7" stroke="#7a3e62" thickness="1"/>
+<point at="pe-pt" p="(6.5,4.5)" fill="black" size="3"/>
+<label at="pe-R" anchor="(3.0,5.8)" alignment="c" clear-background="yes"
+       background-margin="3">
+<m>R</m>
+</label>
+<label at="pe-dx" anchor="(6.5,3.9)" alignment="s" clear-background="yes"
+       background-margin="2">
+<m>\Delta x_i</m>
+</label>
+<label at="pe-dy" anchor="(5.9,4.5)" alignment="w" clear-background="yes"
+       background-margin="2">
+<m>\Delta y_j</m>
+</label>
+<line at="pe-lead1" endpoints="((6.5,4.5),(8.2,2.3))" stroke="#555555"
+      thickness="0.8"/>
+<label at="pe-pt-lab" anchor="(8.25,2.25)" alignment="se"
+       clear-background="yes" background-margin="3">
+<m>(x_i, y_j)</m>
+</label>
+<line at="pe-lead2" endpoints="((6.5,5),(6.2,7.5))" stroke="#555555"
+      thickness="0.8"/>
+<label at="pe-mass-lab" anchor="(6.2,7.6)" alignment="n"
+       clear-background="yes" background-margin="3">
+<m>\Delta m_{ij} = \delta(x_i, y_j)\,\Delta A_{ij}</m>
+</label>
+</coordinates>
+
+<annotations>
+<annotation ref="figure" text="A blob-shaped region R, shaded light blue, lying over a grid of small squares in the first quadrant. One square inside the region is highlighted in purple; a dot at its center is the point x sub i comma y sub j, and a leader line labels the mass of the square, delta m sub i j equals delta of x sub i comma y sub j times delta A sub i j. Its width and height are labeled delta x sub i and delta y sub j.">
+  <annotation ref="pe-region" text="The plate, a blob-shaped region R shaded light blue."/>
+  <annotation ref="pe-grid" text="The grid of lines x equals x sub i and y equals y sub j that cuts the plane, and the plate, into small rectangles."/>
+  <annotation ref="pe-cell" text="One small rectangle inside R, highlighted in purple, with width delta x sub i and height delta y sub j."/>
+  <annotation ref="pe-pt" text="The point x sub i comma y sub j chosen inside the highlighted rectangle."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+
+<p>
+The plate is now approximated by a system of point masses
+<m>\Delta m_{ij}</m> located at the points <m>(x_i, y_j)</m>, one for
+each rectangle that meets <m>R</m>. By <xref ref="eq-com-points-vector"/>
+and <xref ref="eq-first-moments-points"/>, the total mass and the first
+moments of this system are the double sums
+</p>
+
+<md>
+<mrow>M \amp\approx \sum_{j=1}^{m}\sum_{i=1}^{n}
+  \delta(x_i, y_j)\, \Delta x_i\, \Delta y_j,</mrow>
+<mrow>M_y \amp\approx \sum_{j=1}^{m}\sum_{i=1}^{n}
+  x_i\, \delta(x_i, y_j)\, \Delta x_i\, \Delta y_j, \qquad
+M_x \approx \sum_{j=1}^{m}\sum_{i=1}^{n}
+  y_j\, \delta(x_i, y_j)\, \Delta x_i\, \Delta y_j,</mrow>
+</md>
+
+<p>
+where the sums run over the rectangles that meet <m>R</m>. These are
+Riemann sums. Letting the rectangles shrink, that is, letting
+<m>m, n \to \infty</m>, turns each double sum into a double integral over
+<m>R</m>. For the mass,
+</p>
+
+<men xml:id="eq-mass-2d">
+M = \lim_{m,n \to \infty} \sum_{j=1}^{m}\sum_{i=1}^{n}
+  \delta(x_i, y_j)\, \Delta x_i\, \Delta y_j
+  = \iint_R \delta(x,y)\, dA,
+</men>
+
+<p>
+and the first moments become double integrals in the same way. So the
+mass and the first moments of the plate are
 </p>
 
 <men xml:id="eq-first-moments-2d">
@@ -371,14 +349,31 @@ M_x = \iint_R y\, \delta\, dA,
 </men>
 
 <p>
-where <m>M_y</m> is the moment about the <m>y</m>-axis and <m>M_x</m>
-the moment about the <m>x</m>-axis, and the center of mass is
+where, as before, <m>M_y</m> is the moment about the <m>y</m>-axis and
+<m>M_x</m> the moment about the <m>x</m>-axis, and the center of mass
+is
 </p>
 
 <men xml:id="eq-com-2d">
 \bar{x} = \frac{M_y}{M}, \qquad
 \bar{y} = \frac{M_x}{M}.
 </men>
+
+<definition xml:id="def-centroid">
+<statement>
+<p>
+When the density of a plate or of a solid object is constant, the center
+of mass is called the <term>centroid</term> of the object.
+</p>
+</statement>
+</definition>
+
+<p>
+A constant density <m>\delta</m> cancels in the quotients of
+<xref ref="eq-com-2d"/>, so the centroid depends only on the shape of the
+object: to find a centroid we may as well take <m>\delta = 1</m>, and
+then the mass <m>M</m> is simply the area of the plate.
+</p>
 
 <example xml:id="example-centroid-between-curves">
 <title>Centroid of the Region Between Two Curves</title>
@@ -635,6 +630,481 @@ A cardioid symmetric about the x axis with shaded interior.
 </prefigure>
 </image>
 </figure>
+
+</subsection>
+
+<!-- ================================================================ -->
+<subsection xml:id="sec-mass-3d-object">
+<title>Finding the Center of Mass of a 3D Object</title>
+
+<p>
+Finally, let a solid object occupy a region <m>D</m> in space, with
+density <m>\delta(x,y,z)</m> (mass per unit volume) at the point
+<m>(x,y,z)</m>. The plan is the same, one dimension up: we cut the solid
+into small boxes and treat each box as a point mass. Partition space into
+boxes by the planes <m>x = x_0, \dots, x_n</m>,
+<m>y = y_0, \dots, y_m</m>, and <m>z = z_0, \dots, z_p</m>. The box in
+position <m>i</m> along the <m>x</m>-direction, <m>j</m> along the
+<m>y</m>-direction, and <m>k</m> along the <m>z</m>-direction has the
+dimensions <m>\Delta x_i</m>, <m>\Delta y_j</m>, <m>\Delta z_k</m> and the
+volume <m>\Delta V_{ijk} = \Delta x_i\, \Delta y_j\, \Delta z_k</m>; if
+it meets <m>D</m>, we pick a point <m>(x_i, y_j, z_k)</m> in it, as in
+<xref ref="fig-mass-element-tikz"/>. The density is nearly constant on so
+small a box, so its mass is approximately
+</p>
+
+<me>
+\Delta m_{ijk} = \delta(x_i, y_j, z_k)\, \Delta V_{ijk}
+= \delta(x_i, y_j, z_k)\, \Delta x_i\, \Delta y_j\, \Delta z_k .
+</me>
+
+<p>
+The solid is approximated by the system of point masses
+<m>\Delta m_{ijk}</m> at the points <m>(x_i, y_j, z_k)</m>, one for each
+box that meets <m>D</m>, so <xref ref="eq-com-points-vector"/> and
+<xref ref="eq-first-moments-points-3d"/> give its mass and its first
+moments as triple sums; for instance,
+</p>
+
+<md>
+<mrow>M \amp\approx \sum_{k=1}^{p}\sum_{j=1}^{m}\sum_{i=1}^{n}
+  \delta(x_i, y_j, z_k)\, \Delta x_i\, \Delta y_j\, \Delta z_k ,</mrow>
+<mrow>M_{xy} \amp\approx \sum_{k=1}^{p}\sum_{j=1}^{m}\sum_{i=1}^{n}
+  z_k\, \delta(x_i, y_j, z_k)\, \Delta x_i\, \Delta y_j\, \Delta z_k ,</mrow>
+</md>
+
+<p>
+the sums running over the boxes that meet <m>D</m>. (Newton's second law
+for this system of boxes reads
+<m>\mathbf{F} = M\, \dfrac{d^2\bar{\mathbf{r}}}{dt^2}</m>, as in the
+previous subsections: the solid moves as if its whole mass were
+concentrated at its center of mass.) These are Riemann sums, and letting
+the boxes shrink, <m>n, m, p \to \infty</m>, turns each triple sum into a
+triple integral over <m>D</m>. For the mass,
+</p>
+
+<men xml:id="eq-mass-3d">
+M = \lim_{n,m,p \to \infty} \sum_{k=1}^{p}\sum_{j=1}^{m}\sum_{i=1}^{n}
+  \delta(x_i, y_j, z_k)\, \Delta x_i\, \Delta y_j\, \Delta z_k
+  = \iiint_D \delta(x,y,z)\, dV.
+</men>
+
+<p>
+Watch the construction unfold in <xref ref="fig-mass-element-video"/>.
+</p>
+
+<figure xml:id="fig-mass-element-video">
+<caption>
+Partitioning a solid <m>D</m> into small boxes: each box carries the
+mass <q>density times volume</q>, and the Riemann sum of these masses
+converges to the triple integral of the density.
+</caption>
+<video xml:id="video-mass-element"
+       source="videos/mass_element_1080p.mp4"
+       width="70%" aspect="16:9"/>
+</figure>
+
+<figure xml:id="fig-mass-element-tikz">
+<caption>
+A solid region <m>D</m> with a small box around the point
+<m>(x_i, y_j, z_k)</m>. The box has the volume <m>\Delta V_{ijk}</m> and
+the mass <m>\Delta m_{ijk} = \delta(x_i, y_j, z_k)\, \Delta V_{ijk}</m>.
+</caption>
+<image xml:id="image-mass-element-tikz" width="75%">
+<shortdescription>
+A potato-shaped solid in space with a small highlighted box inside it.
+</shortdescription>
+<description>
+<p>
+A translucent potato-shaped solid labeled <m>D</m> floats above the
+<m>xy</m>-plane in a three-dimensional coordinate system. A small
+purple box inside the solid marks the point <m>(x_i, y_j, z_k)</m>,
+and a leader line labels its mass
+<m>\Delta m_{ijk} = \delta(x_i, y_j, z_k)\, \Delta V_{ijk}</m>.
+</p>
+</description>
+<latex-image>
+<![CDATA[\begin{tikzpicture}[line join=round, line cap=round]
+  \tikzset{lbl/.style={fill=white, fill opacity=0.82, text opacity=1, inner sep=2.5pt, rounded corners=2pt}}
+  % Okabe-Ito colorblind-safe palette
+  \definecolor{oigreen}{RGB}{0,158,115}
+  \definecolor{oipurple}{RGB}{204,121,167}
+  \begin{axis}[
+      view={115}{18},
+      width=12cm,
+      axis lines=center,
+      axis equal image,
+      axis line style={-latex, black!75, line width=0.7pt},
+      xlabel={$x$}, ylabel={$y$}, zlabel={$z$},
+      label style={font=\large},
+      ticks=none,
+      xmin=-2.9, xmax=2.9, ymin=-2.9, ymax=2.9, zmin=0, zmax=4.1,
+      clip=false,
+    ]
+    % ---- the solid D: a deformed (potato-like) ellipsoid ----
+    \addplot3[surf, shader=interp,
+              point meta={z},
+              colormap={softg}{color=(oigreen!14!white) color=(oigreen!48!white)},
+              opacity=0.55, fill opacity=0.55,
+              domain=0:360, samples=49,
+              y domain=0:180, samples y=25,
+              z buffer=sort, forget plot]
+      ({(2+0.35*sin(2*x))*cos(x)*sin(y)},
+       {(1.35+0.2*cos(2*x))*sin(x)*sin(y)},
+       {0.95*cos(y)+2.3});
+    % ---- small box (mass element) inside the solid ----
+    % cube centered near (1.05, 0.55, 2.6) with half-side 0.21
+    \def\cx{1.05}\def\cy{0.55}\def\cz{2.60}\def\hs{0.21}
+    % top face
+    \fill[oipurple!70, draw=oipurple!35!black, line width=0.5pt]
+      (axis cs:{\cx-\hs},{\cy-\hs},{\cz+\hs}) --
+      (axis cs:{\cx+\hs},{\cy-\hs},{\cz+\hs}) --
+      (axis cs:{\cx+\hs},{\cy+\hs},{\cz+\hs}) --
+      (axis cs:{\cx-\hs},{\cy+\hs},{\cz+\hs}) -- cycle;
+    % front face (toward viewer, +x side)
+    \fill[oipurple!45, draw=oipurple!35!black, line width=0.5pt]
+      (axis cs:{\cx+\hs},{\cy-\hs},{\cz-\hs}) --
+      (axis cs:{\cx+\hs},{\cy+\hs},{\cz-\hs}) --
+      (axis cs:{\cx+\hs},{\cy+\hs},{\cz+\hs}) --
+      (axis cs:{\cx+\hs},{\cy-\hs},{\cz+\hs}) -- cycle;
+    % side face (+y side)
+    \fill[oipurple!30, draw=oipurple!35!black, line width=0.5pt]
+      (axis cs:{\cx-\hs},{\cy+\hs},{\cz-\hs}) --
+      (axis cs:{\cx+\hs},{\cy+\hs},{\cz-\hs}) --
+      (axis cs:{\cx+\hs},{\cy+\hs},{\cz+\hs}) --
+      (axis cs:{\cx-\hs},{\cy+\hs},{\cz+\hs}) -- cycle;
+    % ---- labels ----
+    \node[lbl, font=\large] at (axis cs:-1.7,-0.4,3.1) {$D$};
+    \draw[black!70, line width=0.5pt]
+      (axis cs:{\cx},{\cy+\hs},{\cz+\hs}) -- (axis cs:1.6,2.0,3.7);
+    \node[lbl, font=\normalsize, anchor=west] at (axis cs:1.6,2.0,3.7)
+      {$\Delta m_{ijk} = \delta(x_i,y_j,z_k)\,\Delta V_{ijk}$};
+    \draw[black!70, line width=0.5pt]
+      (axis cs:{\cx},{\cy+\hs},{\cz-\hs}) -- (axis cs:1.2,2.3,1.9);
+    \node[lbl, font=\normalsize, anchor=west] at (axis cs:1.2,2.3,1.9)
+      {$(x_i, y_j, z_k)$};
+  \end{axis}
+\end{tikzpicture}]]>
+</latex-image>
+</image>
+</figure>
+
+<p>
+In the same way, the first moments become the triple integrals
+</p>
+
+<men xml:id="eq-first-moments-3d">
+M_{yz} = \iiint_D x\, \delta\, dV, \qquad
+M_{xz} = \iiint_D y\, \delta\, dV, \qquad
+M_{xy} = \iiint_D z\, \delta\, dV,
+</men>
+
+<p>
+the moments about the <m>yz</m>-, <m>xz</m>-, and <m>xy</m>-planes, and
+the center of mass <m>(\bar{x}, \bar{y}, \bar{z})</m> of the solid is
+the point whose coordinates are the moments divided by the total mass:
+</p>
+
+<men xml:id="eq-com-3d">
+\bar{x} = \frac{M_{yz}}{M}, \qquad
+\bar{y} = \frac{M_{xz}}{M}, \qquad
+\bar{z} = \frac{M_{xy}}{M}.
+</men>
+
+<example xml:id="example-paraboloid-com">
+<title>Center of Mass of a Solid Bounded by a Paraboloid</title>
+<statement>
+<p>
+Find the center of mass of a solid of constant density <m>\delta</m>,
+which is bounded by the disk <m>x^2 + y^2 \le 4</m> (in the plane
+<m>z = 0</m>) and the paraboloid <m>z = 4 - x^2 - y^2</m>.
+</p>
+</statement>
+</example>
+
+<solution xml:id="solution-paraboloid-com">
+<p>
+The solid is shown in <xref ref="fig-paraboloid-com-tikz"/>. Both the
+region and the density are symmetric about the <m>z</m>-axis, so the
+center of mass lies on that axis: <m>\bar{x} = \bar{y} = 0</m>. It
+remains to find <m>\bar{z} = M_{xy}/M</m> from
+<xref ref="eq-com-3d"/>.
+</p>
+
+<p>
+Because of the circular symmetry, we work in cylindrical coordinates,
+where <xref ref="eq-dv-cylindrical"/> applies and the region is
+described by
+<m>0 \le z \le 4 - r^2</m>, <m>0 \le r \le 2</m>, and
+<m>0 \le \theta \le 2\pi</m>. By <xref ref="eq-mass-3d"/>, the mass is
+</p>
+
+<md>
+<mrow>M \amp= \iiint_D \delta\, dV
+= \delta \int_0^{2\pi} \int_0^2 \int_0^{4-r^2} dz\, r\, dr\, d\theta</mrow>
+<mrow>\amp= \delta \int_0^{2\pi} \int_0^2 (4 - r^2)\, r\, dr\, d\theta
+= \delta \int_0^{2\pi} \left[ 2r^2 - \frac{r^4}{4} \right]_0^2 d\theta</mrow>
+<mrow>\amp= \delta \int_0^{2\pi} 4\, d\theta = 8\pi\delta.</mrow>
+</md>
+
+<p>
+Using <xref ref="eq-first-moments-3d"/>, the first moment about the
+<m>xy</m>-plane is
+</p>
+
+<md>
+<mrow>M_{xy} \amp= \iiint_D z\, \delta\, dV
+= \delta \int_0^{2\pi} \int_0^2 \int_0^{4-r^2} z\, dz\, r\, dr\, d\theta</mrow>
+<mrow>\amp= \delta \int_0^{2\pi} \int_0^2 \frac{(4 - r^2)^2}{2}\, r\, dr\, d\theta
+= \delta \int_0^{2\pi} \left[ -\frac{(4-r^2)^3}{12} \right]_0^2 d\theta</mrow>
+<mrow>\amp= \delta \int_0^{2\pi} \frac{16}{3}\, d\theta = \frac{32\pi\delta}{3}.</mrow>
+</md>
+
+<p>
+Therefore
+</p>
+
+<me>
+\bar{z} = \frac{M_{xy}}{M} = \frac{32\pi\delta/3}{8\pi\delta} = \frac{4}{3},
+</me>
+
+<p>
+and the center of mass is <m>\left(0, 0, \tfrac{4}{3}\right)</m>: since
+the density is constant, this point is the centroid of the solid. Notice
+that the answer does not depend on <m>\delta</m>, as a centroid never
+does: for an object of constant density, the location of the balance
+point is determined by the shape alone. Watch the computation come
+together in <xref ref="fig-paraboloid-com-video"/>.
+</p>
+</solution>
+
+<figure xml:id="fig-paraboloid-com-video">
+<caption>
+The solid bounded above by <m>z = 4 - x^2 - y^2</m> and below by the
+disk <m>x^2 + y^2 \le 4</m>. By symmetry the center of mass lies on the
+<m>z</m>-axis, at height <m>\bar{z} = 4/3</m>.
+</caption>
+<video xml:id="video-paraboloid-com"
+       source="videos/paraboloid_com_1080p.mp4"
+       width="70%" aspect="16:9"/>
+</figure>
+
+<figure xml:id="fig-paraboloid-com-tikz">
+<caption>
+The solid of constant density bounded by the paraboloid
+<m>z = 4 - x^2 - y^2</m> and the disk <m>R</m>: <m>x^2 + y^2 \le 4</m>
+in the plane <m>z = 0</m>. The center of mass sits on the axis of
+symmetry at <m>(0, 0, 4/3)</m>.
+</caption>
+<image xml:id="image-paraboloid-com-tikz" width="80%">
+<shortdescription>
+A dome-shaped solid over a disk with its center of mass marked on the
+vertical axis.
+</shortdescription>
+<description>
+<p>
+The paraboloid <m>z = 4 - x^2 - y^2</m> forms a translucent green dome
+over the disk <m>x^2 + y^2 \le 4</m> in the <m>xy</m>-plane, labeled
+<m>R</m>. The dashed <m>z</m>-axis passes through the apex at height 4,
+and a magenta dot on the axis at height <m>4/3</m> marks the center of
+mass.
+</p>
+</description>
+<latex-image>
+<![CDATA[\begin{tikzpicture}[line join=round, line cap=round]
+  \tikzset{lbl/.style={fill=white, fill opacity=0.82, text opacity=1, inner sep=2.5pt, rounded corners=2pt}}
+  % Okabe-Ito colorblind-safe palette
+  \definecolor{oigreen}{RGB}{0,158,115}
+  \definecolor{oiblue}{RGB}{0,114,178}
+  \definecolor{oimagenta}{RGB}{204,0,119}
+  \begin{axis}[
+      view={115}{18},
+      width=12.5cm,
+      axis lines=center,
+      axis equal image,
+      axis line style={-latex, black!75, line width=0.7pt},
+      xlabel={$x$}, ylabel={$y$}, zlabel={$z$},
+      label style={font=\large},
+      ticks=none,
+      xmin=-3, xmax=3, ymin=-3, ymax=3, zmin=0, zmax=4.6,
+      clip=false,
+    ]
+    % ---- base disk R ----
+    \addplot3[surf, shader=flat,
+              color=black!12, opacity=0.4, fill opacity=0.4,
+              domain=0:360, samples=37,
+              y domain=0:2, samples y=2,
+              z buffer=sort, forget plot]
+      ({y*cos(x)}, {y*sin(x)}, {0});
+    % ---- paraboloid surface ----
+    \addplot3[surf, shader=interp,
+              point meta={z},
+              colormap={softg}{color=(oigreen!14!white) color=(oigreen!48!white)},
+              opacity=0.55, fill opacity=0.55,
+              domain=0:360, samples=61,
+              y domain=0:2, samples y=25,
+              z buffer=sort, forget plot]
+      ({y*cos(x)}, {y*sin(x)}, {4 - y^2});
+    % light parallels for shape cues
+    \foreach \rr in {0.5,1,1.5}{
+      \edef\tmp{\noexpand\addplot3[black!22, line width=0.35pt, domain=0:360,
+          samples=73, samples y=0, forget plot]
+        ({\rr*cos(x)}, {\rr*sin(x)}, {4 - \rr*\rr});}\tmp}
+    % light meridians for shape cues
+    \foreach \uu in {0,45,...,315}{
+      \edef\tmp{\noexpand\addplot3[black!22, line width=0.35pt, domain=0:2,
+          samples=25, samples y=0, forget plot]
+        ({x*cos(\uu)}, {x*sin(\uu)}, {4 - x^2});}\tmp}
+    % ---- boundary circle x^2 + y^2 = 4 ----
+    \addplot3[line width=1.6pt, oiblue, domain=0:360, samples=121,
+        samples y=0, forget plot]
+      ({2*cos(x)}, {2*sin(x)}, {0});
+    % ---- dashed axis of symmetry through the solid ----
+    \draw[dashed, black!60, line width=0.7pt]
+      (axis cs:0,0,0) -- (axis cs:0,0,4);
+    % ---- center of mass ----
+    \fill[oimagenta] (axis cs:0,0,1.3333) circle (2.6pt);
+    \node[lbl, font=\normalsize, anchor=west, text=oimagenta]
+      at (axis cs:0.15,0.55,1.55) {c.m. $\left(0,0,\tfrac{4}{3}\right)$};
+    % ---- labels ----
+    \draw[black!70, line width=0.5pt]
+      (axis cs:{1.35*cos(35)},{1.35*sin(35)},{4-1.35^2}) -- (axis cs:1.9,2.5,3.4);
+    \node[lbl, font=\normalsize, anchor=west] at (axis cs:1.9,2.5,3.4)
+      {$z = 4 - x^2 - y^2$};
+    \draw[black!70, line width=0.5pt]
+      (axis cs:{2*cos(320)},{2*sin(320)},0) -- (axis cs:1.4,-2.75,0.75);
+    \node[lbl, font=\normalsize, anchor=east] at (axis cs:1.4,-2.75,0.75)
+      {$x^2 + y^2 = 4$};
+    \node[lbl, font=\large] at (axis cs:1.15,1.5,0) {$R$};
+    \node[lbl, font=\normalsize] at (axis cs:-0.3,-0.25,0) {$0$};
+  \end{axis}
+\end{tikzpicture}]]>
+</latex-image>
+</image>
+</figure>
+
+</subsection>
+
+<!-- ================================================================ -->
+<subsection xml:id="subsec-mass-questions">
+<title>Concept Check</title>
+
+<p>
+The first problem revisits the region of
+<xref ref="example-centroid-between-curves"/> with two densities that are
+not constant; the second is about point masses, where everything can be
+done by hand in a line or two.
+</p>
+
+<exercise xml:id="q-mass-two-densities">
+<title>The same plate, two densities</title>
+<statement>
+<p>
+Find the center of mass of the region between <m>y = \sqrt{x}</m> and
+<m>y = x^2</m>, assuming that the density function is
+</p>
+<p>
+<ol marker="A.">
+<li><p><m>\delta_1(x,y) = xy</m>;</p></li>
+<li><p><m>\delta_2(x,y) = y</m>.</p></li>
+</ol>
+</p>
+<p>
+<em>Question:</em> Do your answers in parts A and B match your intuition?
+If so, justify your answer in each case. (For comparison, the centroid of
+this region is <m>\left(\tfrac{9}{20}, \tfrac{9}{20}\right)</m>, by
+<xref ref="example-centroid-between-curves"/>.)
+</p>
+</statement>
+<answer>
+<p>
+The region is <m>0 \le x \le 1</m>, <m>x^2 \le y \le \sqrt{x}</m>, and
+we use <xref ref="eq-first-moments-2d"/> and <xref ref="eq-com-2d"/>.
+</p>
+<p>
+<em>A.</em> With <m>\delta_1 = xy</m>,
+</p>
+<md>
+<mrow>M \amp= \int_0^1 \int_{x^2}^{\sqrt{x}} xy\, dy\, dx
+= \int_0^1 \frac{x\,(x - x^4)}{2}\, dx
+= \frac{1}{2}\left( \frac{1}{3} - \frac{1}{6} \right) = \frac{1}{12},</mrow>
+<mrow>M_y \amp= \int_0^1 \int_{x^2}^{\sqrt{x}} x^2 y\, dy\, dx
+= \int_0^1 \frac{x^2\,(x - x^4)}{2}\, dx
+= \frac{1}{2}\left( \frac{1}{4} - \frac{1}{7} \right) = \frac{3}{56},</mrow>
+<mrow>M_x \amp= \int_0^1 \int_{x^2}^{\sqrt{x}} x y^2\, dy\, dx
+= \int_0^1 \frac{x\,(x^{3/2} - x^6)}{3}\, dx
+= \frac{1}{3}\left( \frac{2}{7} - \frac{1}{8} \right) = \frac{3}{56},</mrow>
+</md>
+<p>
+so <m>\bar{x} = \bar{y} = \dfrac{3/56}{1/12} = \dfrac{9}{14} \approx 0.64</m>.
+This fits: the density <m>xy</m> is largest near the corner <m>(1,1)</m>
+of the region and vanishes at the origin, so the balance point moves
+from the centroid <m>(9/20, 9/20)</m> toward <m>(1,1)</m>; and it stays
+on the line <m>y = x</m>, because swapping <m>x</m> and <m>y</m> changes
+neither the region nor the density <m>xy</m>.
+</p>
+<p>
+<em>B.</em> With <m>\delta_2 = y</m>,
+</p>
+<md>
+<mrow>M \amp= \int_0^1 \int_{x^2}^{\sqrt{x}} y\, dy\, dx
+= \int_0^1 \frac{x - x^4}{2}\, dx
+= \frac{1}{2}\left( \frac{1}{2} - \frac{1}{5} \right) = \frac{3}{20},</mrow>
+<mrow>M_y \amp= \int_0^1 \int_{x^2}^{\sqrt{x}} xy\, dy\, dx
+= \frac{1}{12} \quad\text{(the mass of part A)},</mrow>
+<mrow>M_x \amp= \int_0^1 \int_{x^2}^{\sqrt{x}} y^2\, dy\, dx
+= \int_0^1 \frac{x^{3/2} - x^6}{3}\, dx
+= \frac{1}{3}\left( \frac{2}{5} - \frac{1}{7} \right) = \frac{3}{35},</mrow>
+</md>
+<p>
+so <m>\bar{x} = \dfrac{1/12}{3/20} = \dfrac{5}{9} \approx 0.56</m> and
+<m>\bar{y} = \dfrac{3/35}{3/20} = \dfrac{4}{7} \approx 0.57</m>. This fits
+too: the density grows with <m>y</m>, so the mass sits higher than in a
+uniform plate, and <m>\bar{y}</m> rises from <m>9/20</m> to <m>4/7</m>.
+The center of mass now lies slightly above the line <m>y = x</m>: the
+density <m>y</m> treats <m>x</m> and <m>y</m> differently, so nothing
+forces the balance point onto that line. (<m>\bar{x}</m> rises as well,
+from <m>9/20</m> to <m>5/9</m>, because the heavier upper part of this
+region is also its right part.)
+</p>
+</answer>
+</exercise>
+
+<exercise xml:id="q-mass-three-points">
+<title>Three point masses</title>
+<statement>
+<p>
+Masses of <m>1</m>, <m>2</m>, and <m>3</m> kilograms sit at the points
+<m>(0,0)</m>, <m>(4,0)</m>, and <m>(0,4)</m>, respectively. Find the
+center of mass of the system. Where would it be if the three masses were
+equal?
+</p>
+</statement>
+<answer>
+<p>
+By <xref ref="eq-first-moments-points"/> and
+<xref ref="eq-com-points"/>, with <m>M = 1 + 2 + 3 = 6</m>,
+</p>
+<me>
+M_y = 1\cdot 0 + 2\cdot 4 + 3\cdot 0 = 8, \qquad
+M_x = 1\cdot 0 + 2\cdot 0 + 3\cdot 4 = 12,
+\qquad\text{so}\qquad
+\bar{x} = \frac{8}{6} = \frac{4}{3}, \quad \bar{y} = \frac{12}{6} = 2 .
+</me>
+<p>
+The center of mass <m>\left(\tfrac{4}{3}, 2\right)</m> lies inside the
+triangle with the masses at its vertices, pulled toward the heaviest
+mass at <m>(0,4)</m>: <m>\bar{y} = 2</m> exceeds <m>\bar{x} = 4/3</m>
+because the mass at <m>(0,4)</m> is heavier than the one at
+<m>(4,0)</m>. With three equal masses <m>m</m>, every weight
+<m>m_i/M</m> in <xref ref="eq-com-points-vector"/> is <m>1/3</m>, and the
+center of mass is the average of the three positions,
+<m>\left( \tfrac{0+4+0}{3}, \tfrac{0+0+4}{3} \right)
+= \left( \tfrac{4}{3}, \tfrac{4}{3} \right)</m>: the centroid of the
+triangle, where its three medians meet.
+</p>
+</answer>
+</exercise>
 
 </subsection>
 
