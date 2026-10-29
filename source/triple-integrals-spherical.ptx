@@ -471,7 +471,7 @@ currentlight.background = white;
 // Okabe-Ito colorblind-safe palette, as in the TikZ figures
 pen oiblue       = rgb(0/255, 114/255, 178/255);
 pen oivermillion = rgb(213/255, 94/255, 0/255);
-pen oigreen      = rgb(0/255, 158/255, 115/255);
+pen oiorange     = rgb(230/255, 159/255, 0/255);
 
 real phi0 = pi/3;
 
@@ -488,10 +488,10 @@ triple cappt(pair t) {
 surface Scone = surface(conept, (0, 0), (2pi, 1), 16, 1, Spline);
 surface Scap  = surface(cappt, (0, 0), (phi0, 2pi), 6, 24, Spline);
 
-draw(Scone, surfacepen=material(0.5*oigreen + 0.5*white + opacity(0.55),
-                                emissivepen=0.3*oigreen, specularpen=gray(0.05)),
-     meshpen=0.6*oigreen + linewidth(0.3pt) + opacity(0.35));
-draw(Scap,  surfacepen=material(0.5*oiblue + 0.5*white + opacity(0.5),
+draw(Scone, surfacepen=material(0.5*oiorange + 0.5*white + opacity(0.55),
+                                emissivepen=0.45*oiorange, specularpen=gray(0.05)),
+     meshpen=0.7*oiorange + linewidth(0.3pt) + opacity(0.35));
+draw(Scap,  surfacepen=material(0.5*oiblue + 0.5*white + opacity(0.8),
                                 emissivepen=0.3*oiblue, specularpen=gray(0.05)),
      meshpen=gray(0.3) + linewidth(0.3pt) + opacity(0.35));
 
@@ -509,8 +509,9 @@ draw(Label("$z$", EndPoint, fontsize(20pt)), O--1.5Z,  axispen, Arrow3(size=8));
 // labels
 label("Sphere $\rho = 1$", (0, 0.9, 0.86), E, oiblue + fontsize(17pt));
 label("Cone $\phi = \frac{\pi}{3}$", (0, 0.75, 0.25), E,
-      oigreen*0.6 + fontsize(17pt));
-label("$D$", (0.55, -0.15, 0.62), fontsize(20pt));
+      0.7*oiorange + fontsize(17pt));
+// D sits in front of the cap: the old spot moved toward the viewer
+label("$D$", (0.55, -0.15, 0.62) + 0.6*(0.7791, 0.5455, 0.309), fontsize(20pt));
 
 // keep the axis labels inside the frame
 dot((1.55, 0, 0), invisible); dot((0, 1.65, 0), invisible);
@@ -864,7 +865,7 @@ currentlight.background = white;
 // Okabe-Ito colorblind-safe palette
 pen oiblue       = rgb(0/255, 114/255, 178/255);
 pen oivermillion = rgb(213/255, 94/255, 0/255);
-pen oigreen      = rgb(0/255, 158/255, 115/255);
+pen oiorange     = rgb(230/255, 159/255, 0/255);
 
 // half cone z = r over theta in [pi, 2pi] (param: theta, r)
 triple conept(pair t) { return t.y*(cos(t.x), sin(t.x), 1); }
@@ -872,11 +873,11 @@ triple conept(pair t) { return t.y*(cos(t.x), sin(t.x), 1); }
 triple diskpt(pair t) { return (t.x*cos(t.y), t.x*sin(t.y), 1); }
 
 draw(surface(conept, (pi, 0), (2pi, 1), 12, 1, Spline),
-     surfacepen=material(0.5*oigreen + 0.5*white + opacity(0.5),
-                         emissivepen=0.3*oigreen, specularpen=gray(0.05)),
-     meshpen=0.6*oigreen + linewidth(0.3pt) + opacity(0.35));
+     surfacepen=material(0.5*oiorange + 0.5*white + opacity(0.5),
+                         emissivepen=0.45*oiorange, specularpen=gray(0.05)),
+     meshpen=0.7*oiorange + linewidth(0.3pt) + opacity(0.35));
 draw(surface(diskpt, (0, pi), (1, 2pi), 1, 12, Spline),
-     surfacepen=material(0.5*oiblue + 0.5*white + opacity(0.45),
+     surfacepen=material(0.5*oiblue + 0.5*white + opacity(0.8),
                          emissivepen=0.3*oiblue, specularpen=gray(0.05)));
 
 // boundary of the top half disk
@@ -884,8 +885,8 @@ path3 halfcircle(real h) { return arc((0, 0, h), (1, 0, h), (-1, 0, h), -Z); }
 draw(halfcircle(1)--cycle, oiblue + linewidth(1.2pt));
 
 // cone edge lines
-draw(O--(1, 0, 1), 0.6*oigreen + linewidth(1.0pt));
-draw(O--(-1, 0, 1), 0.6*oigreen + linewidth(1.0pt));
+draw(O--(1, 0, 1), 0.7*oiorange + linewidth(1.0pt));
+draw(O--(-1, 0, 1), 0.7*oiorange + linewidth(1.0pt));
 
 // projection half disk (dashed)
 draw(halfcircle(0)--cycle, oivermillion + linewidth(1.0pt) + dashed);
@@ -902,7 +903,7 @@ draw(Label("$z$", EndPoint, fontsize(20pt)), O--(0, 0, 1.6), axispen, Arrow3(siz
 dot((-1.75, 0.6, 0.5), invisible);  // room for the cone label
 dot((0, 0, 1.85), invisible);       // and for the z label
 label("$z = 1$", (1, 0, 1), 2E, oiblue + fontsize(17pt));
-label("$z = \sqrt{x^2+y^2}$", (-0.41, -0.285, 0.5), 3W, 0.6*oigreen + fontsize(17pt));
+label("$z = \sqrt{x^2+y^2}$", (-0.41, -0.285, 0.5), 3W, 0.7*oiorange + fontsize(17pt));
 label("projection", (0.578, -0.816, 0), 2S, oivermillion + fontsize(17pt));
 ]]>
 </asymptote>
