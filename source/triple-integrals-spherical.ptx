@@ -59,12 +59,14 @@ positive <m>z</m>-axis.
 A point in space located by a distance from the origin and two angles.
 </shortdescription>
 <description>
+<p>
 Three coordinate axes in space. A segment of length rho runs from the
 origin to a point P above the x y plane. The angle phi is marked
 between the positive z axis and the segment, and the angle theta is
 marked in the x y plane between the positive x axis and the dashed
 projection of the segment. A dashed vertical line connects P to its
 projection.
+</p>
 </description>
 <asymptote>
 <![CDATA[// A point P(rho, theta, phi) in spherical coordinates.
@@ -118,9 +120,9 @@ draw(O--P, oivermillion + linewidth(1.8pt));
 dot(P, oivermillion + linewidth(6pt));
 
 // labels
-label("$P(\rho,\theta,\phi)$", P, 2NE, oivermillion + fontsize(20pt));
-label("$\rho$", 0.4*P, 1.5E, oivermillion + fontsize(20pt));
-label("$\theta$", 0.9*(cos(theta0/2), sin(theta0/2), 0), oipurple + fontsize(20pt));
+label("$P(\rho,\theta,\phi)$", P, 2NE, 0.85*oivermillion + fontsize(20pt));
+label("$\rho$", 0.4*P, 1.5E, 0.85*oivermillion + fontsize(20pt));
+label("$\theta$", 0.9*(cos(theta0/2), sin(theta0/2), 0), 0.75*oipurple + fontsize(20pt));
 label("$\phi$", 0.88*(sin(phi0/2)*cos(theta0), sin(phi0/2)*sin(theta0), cos(phi0/2)),
       oiblue + fontsize(20pt));
 label("$O$", O, NW, fontsize(20pt));
@@ -453,10 +455,12 @@ volume is <m>\frac{\pi}{3}</m>.
 An ice cream cone shape: a cone from the origin capped by a piece of a sphere.
 </shortdescription>
 <description>
+<p>
 Three coordinate axes in space with an ice cream cone shaped solid: a
 cone with vertex at the origin opening upward at sixty degrees from
 the z axis, capped by a dome which is part of the unit sphere. The
 circle where the cone meets the sphere is drawn.
+</p>
 </description>
 <asymptote>
 <![CDATA[// The "ice cream cone" D: inside the sphere rho = 1, above the cone phi = pi/3.
@@ -509,7 +513,7 @@ draw(Label("$z$", EndPoint, fontsize(20pt)), O--1.5Z,  axispen, Arrow3(size=8));
 // labels
 label("Sphere $\rho = 1$", (0, 0.9, 0.86), E, oiblue + fontsize(17pt));
 label("Cone $\phi = \frac{\pi}{3}$", (0, 0.75, 0.25), E,
-      0.7*oiorange + fontsize(17pt));
+      0.65*oiorange + fontsize(17pt));
 // D sits in front of the cap: the old spot moved toward the viewer
 label("$D$", (0.55, -0.15, 0.62) + 0.6*(0.7791, 0.5455, 0.309), fontsize(20pt));
 
@@ -677,10 +681,12 @@ coordinates is <m>\rho = 4\cos\phi</m>. It sits on the
 A sphere resting on the origin, centered on the vertical axis.
 </shortdescription>
 <description>
+<p>
 Three coordinate axes in space with a sphere of radius two centered on
 the z axis at height two, so it touches the origin from above. A
 dashed vertical diameter runs from the origin to the north pole at
 height four.
+</p>
 </description>
 <asymptote>
 <![CDATA[// The sphere x^2 + y^2 + (z-2)^2 = 4, that is rho = 4 cos(phi).
@@ -725,7 +731,7 @@ dot((0, 0, 4), linewidth(4pt));
 
 // labels
 label("$x^2 + y^2 + (z-2)^2 = 4$", (0, 1.7, 4.55), E, fontsize(17pt));
-label("$\rho = 4\cos\phi$", (0, 1.7, 4.05), E, oivermillion + fontsize(17pt));
+label("$\rho = 4\cos\phi$", (0, 1.7, 4.05), E, 0.85*oivermillion + fontsize(17pt));
 label("$(0,0,4)$", (0, 0, 4), 1.5W + N, fontsize(14pt));
 label("$(0,0,2)$", (0, 0, 2), E, fontsize(14pt));
 
@@ -846,10 +852,12 @@ half disk, between the cone <m>z = \sqrt{x^2+y^2}</m> (spherical
 A half cone over the negative y half plane, capped by a flat half disk.
 </shortdescription>
 <description>
+<p>
 Three coordinate axes in space with a half cone opening upward from
 the origin at forty five degrees, over the half of the plane with y
 negative, capped above by the flat half disk in the plane z equals
 one. The straight edge of the cap lies over the x axis.
+</p>
 </description>
 <asymptote>
 <![CDATA[// The solid over the lower half disk, between the cone z = sqrt(x^2+y^2)
@@ -903,8 +911,8 @@ draw(Label("$z$", EndPoint, fontsize(20pt)), O--(0, 0, 1.6), axispen, Arrow3(siz
 dot((-1.75, 0.6, 0.5), invisible);  // room for the cone label
 dot((0, 0, 1.85), invisible);       // and for the z label
 label("$z = 1$", (1, 0, 1), 2E, oiblue + fontsize(17pt));
-label("$z = \sqrt{x^2+y^2}$", (-0.41, -0.285, 0.5), 3W, 0.7*oiorange + fontsize(17pt));
-label("projection", (0.578, -0.816, 0), 2S, oivermillion + fontsize(17pt));
+label("$z = \sqrt{x^2+y^2}$", (-0.41, -0.285, 0.5), 3W, 0.65*oiorange + fontsize(17pt));
+label("projection", (0.578, -0.816, 0), 2S, 0.85*oivermillion + fontsize(17pt));
 ]]>
 </asymptote>
 </image>
