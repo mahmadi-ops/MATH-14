@@ -66,53 +66,69 @@ marked in the x y plane between the positive x axis and the dashed
 projection of the segment. A dashed vertical line connects P to its
 projection.
 </description>
-<latex-image>
-<![CDATA[\begin{tikzpicture}[line join=round, line cap=round]
-  % Okabe-Ito colorblind-safe palette
-  \definecolor{oiblue}{RGB}{0,114,178}
-  \definecolor{oivermillion}{RGB}{213,94,0}
-  \definecolor{oipurple}{RGB}{204,121,167}
-  % P = (1.15, 1.2, 1.5): theta0 = atan(1.2/1.15) = 46.2 deg, phi0 = acos(1.5/|OP|) = 47.9 deg
-  \begin{axis}[
-      view={125}{20},
-      width=11cm,
-      axis lines=center,
-      axis line style={-latex, black!75, line width=0.8pt},
-      xlabel={$x$}, ylabel={$y$}, zlabel={$z$},
-      label style={font=\LARGE},
-      ticks=none,
-      xmin=0, xmax=1.6, ymin=0, ymax=1.75, zmin=0, zmax=1.95,
-      clip=false,
-    ]
-    % rho segment
-    \draw[oivermillion, line width=1.8pt]
-      (axis cs:0,0,0) -- (axis cs:1.15,1.2,1.5);
-    % projection
-    \draw[black!60, dashed, line width=0.9pt]
-      (axis cs:0,0,0) -- (axis cs:1.15,1.2,0)
-      (axis cs:1.15,1.2,0) -- (axis cs:1.15,1.2,1.5);
-    % angle theta in the xy-plane: a circular arc of radius 0.62 from the x-axis to the projection
-    \addplot3[oipurple, line width=1.3pt, -{Latex[length=2.4mm]}, domain=0:1, samples=30, samples y=0]
-      ({0.62*cos(46.2*x)}, {0.62*sin(46.2*x)}, {0});
-    % angle phi from the z-axis: a circular arc of radius 1.25 from the z-axis to the segment
-    \addplot3[oiblue, line width=1.3pt, -{Latex[length=2.4mm]}, domain=0:1, samples=30, samples y=0]
-      ({1.25*sin(47.9*x)*cos(46.2)}, {1.25*sin(47.9*x)*sin(46.2)}, {1.25*cos(47.9*x)});
-    % point
-    \addplot3[only marks, mark=*, mark size=2.2pt, color=oivermillion,
-        forget plot] coordinates {(1.15,1.2,1.5)};
-    % labels
-    \node[oivermillion, anchor=south west, font=\LARGE, xshift=2pt]
-      at (axis cs:1.15,1.2,1.5) {$P(\rho,\theta,\phi)$};
-    \node[oivermillion, anchor=north west, font=\LARGE]
-      at (axis cs:0.75,0.78,0.95) {$\rho$};
-    \node[oipurple, font=\LARGE]
-      at (axis cs:{0.9*cos(23.1)},{0.9*sin(23.1)},0) {$\theta$};
-    \node[oiblue, font=\LARGE, xshift=1pt]
-      at (axis cs:{0.88*sin(25)*cos(46.2)},{0.88*sin(25)*sin(46.2)},{0.88*cos(25)}) {$\phi$};
-    \node[anchor=south east, font=\LARGE, xshift=-1pt] at (axis cs:0,0,0) {$O$};
-  \end{axis}
-\end{tikzpicture}]]>
-</latex-image>
+<asymptote>
+<![CDATA[// A point P(rho, theta, phi) in spherical coordinates.
+// P = (1.15, 1.2, 1.5): theta0 = atan(1.2/1.15) = 46.2 deg, phi0 = acos(1.5/|OP|) = 47.9 deg
+import graph3;
+
+size(11cm);
+// Same viewpoint as the pgfplots figure (view={125}{20}).
+currentprojection = orthographic((0.7698, 0.539, 0.342));
+currentlight = Headlamp;
+currentlight.background = white;
+
+// Okabe-Ito colorblind-safe palette
+pen oiblue       = rgb(0/255, 114/255, 178/255);
+pen oivermillion = rgb(213/255, 94/255, 0/255);
+pen oipurple     = rgb(204/255, 121/255, 167/255);
+
+triple P = (1.15, 1.2, 1.5);
+triple Pxy = (P.x, P.y, 0);
+real theta0 = atan2(P.y, P.x);
+real phi0 = acos(P.z/abs(P));
+
+// axes
+pen axispen = gray(0.25) + linewidth(0.8pt);
+draw(Label("$x$", EndPoint, fontsize(20pt)), O--1.6X,  axispen, Arrow3(size=8));
+draw(Label("$y$", EndPoint, fontsize(20pt)), O--1.75Y, axispen, Arrow3(size=8));
+draw(Label("$z$", EndPoint, fontsize(20pt)), O--1.95Z, axispen, Arrow3(size=8));
+
+// the planes of the two angles, lightly shaded
+triple thetapt(pair t) { return t.y*(cos(t.x), sin(t.x), 0); }
+triple phipt(pair t) {
+  return t.y*(sin(t.x)*cos(theta0), sin(t.x)*sin(theta0), cos(t.x));
+}
+draw(surface(thetapt, (0, 0), (theta0, 0.62), 8, 1, Spline),
+     0.3*oipurple + 0.7*white + opacity(0.5), light=nolight);
+draw(surface(phipt, (0, 0), (phi0, 1.25), 8, 1, Spline),
+     0.25*oiblue + 0.75*white + opacity(0.5), light=nolight);
+
+// projection
+pen dashpen = gray(0.4) + linewidth(0.9pt) + dashed;
+draw(O--Pxy, dashpen);
+draw(Pxy--P, dashpen);
+
+// angle theta in the xy-plane: an arc of radius 0.62 from the x-axis to the projection
+draw(arc(O, 0.62X, 0.62*unit(Pxy)), oipurple + linewidth(1.3pt), Arrow3(size=7));
+// angle phi from the z-axis: an arc of radius 1.25 from the z-axis to the segment
+draw(arc(O, 1.25Z, 1.25*unit(P)), oiblue + linewidth(1.3pt), Arrow3(size=7));
+
+// rho segment and the point
+draw(O--P, oivermillion + linewidth(1.8pt));
+dot(P, oivermillion + linewidth(6pt));
+
+// labels
+label("$P(\rho,\theta,\phi)$", P, 2NE, oivermillion + fontsize(20pt));
+label("$\rho$", 0.4*P, 1.5E, oivermillion + fontsize(20pt));
+label("$\theta$", 0.9*(cos(theta0/2), sin(theta0/2), 0), oipurple + fontsize(20pt));
+label("$\phi$", 0.88*(sin(phi0/2)*cos(theta0), sin(phi0/2)*sin(theta0), cos(phi0/2)),
+      oiblue + fontsize(20pt));
+label("$O$", O, NW, fontsize(20pt));
+
+// keep the z label inside the frame
+dot((0, 0, 2.2), invisible);
+]]>
+</asymptote>
 </image>
 </figure>
 
@@ -442,53 +458,65 @@ cone with vertex at the origin opening upward at sixty degrees from
 the z axis, capped by a dome which is part of the unit sphere. The
 circle where the cone meets the sphere is drawn.
 </description>
-<latex-image>
-<![CDATA[\begin{tikzpicture}[line join=round, line cap=round]
-  % Okabe-Ito colorblind-safe palette
-  \definecolor{oiblue}{RGB}{0,114,178}
-  \definecolor{oivermillion}{RGB}{213,94,0}
-  \definecolor{oigreen}{RGB}{0,158,115}
-  \begin{axis}[
-      view={125}{18},
-      width=11cm,
-      axis lines=center,
-      axis line style={-latex, black!75, line width=0.7pt},
-      xlabel={$x$}, ylabel={$y$}, zlabel={$z$},
-      label style={font=\LARGE},
-      ticks=none,
-      xmin=-1.15, xmax=1.35, ymin=-1.15, ymax=1.45, zmin=0, zmax=1.5,
-      clip=false,
-    ]
-    % cone: phi = pi/3, rho from 0 to 1: r = z tan(60), z up to cos(60)=0.5
-    \addplot3[surf, shader=interp,
-              colormap={softk}{color=(oigreen!12!white) color=(oigreen!42!white)},
-              opacity=0.45, fill opacity=0.45,
-              domain=0:360, samples=37,
-              y domain=0:0.5, samples y=7,
-              z buffer=sort, forget plot]
-      ({y*1.7320508*cos(x)}, {y*1.7320508*sin(x)}, {y});
-    % spherical cap: rho=1, phi from 0 to 60
-    \addplot3[surf, shader=faceted, faceted color=black!35,
-              point meta={z},
-              colormap={softz}{color=(oiblue!12!white) color=(oiblue!42!white)},
-              opacity=0.55, fill opacity=0.55,
-              domain=0:360, samples=37,
-              y domain=0:60, samples y=9,
-              z buffer=sort, forget plot]
-      ({sin(y)*cos(x)}, {sin(y)*sin(x)}, {cos(y)});
-    % rim circle: phi = 60 on the sphere (radius sin60, height cos60)
-    \addplot3[oivermillion, line width=1.3pt, domain=0:360, samples=73,
-        samples y=0, forget plot]
-      ({0.8660254*cos(x)}, {0.8660254*sin(x)}, {0.5});
-    % labels
-    \node[oiblue, anchor=south west, font=\Large]
-      at (axis cs:0,0.62,0.82) {Sphere $\rho = 1$};
-    \node[oigreen!60!black, anchor=west, font=\Large]
-      at (axis cs:0,0.62,0.33) {Cone $\phi = \frac{\pi}{3}$};
-    \node[font=\LARGE] at (axis cs:0.25,-0.3,0.66) {$D$};
-  \end{axis}
-\end{tikzpicture}]]>
-</latex-image>
+<asymptote>
+<![CDATA[// The "ice cream cone" D: inside the sphere rho = 1, above the cone phi = pi/3.
+import graph3;
+
+size(11cm);
+// Same viewpoint as the pgfplots figure (view={125}{18}).
+currentprojection = orthographic((0.779, 0.545, 0.309));
+currentlight = Headlamp;
+currentlight.background = white;
+
+// Okabe-Ito colorblind-safe palette, as in the TikZ figures
+pen oiblue       = rgb(0/255, 114/255, 178/255);
+pen oivermillion = rgb(213/255, 94/255, 0/255);
+pen oigreen      = rgb(0/255, 158/255, 115/255);
+
+real phi0 = pi/3;
+
+// cone phi = pi/3, rho from 0 to 1 (param: theta, rho)
+triple conept(pair t) {
+  return t.y*(sin(phi0)*cos(t.x), sin(phi0)*sin(t.x), cos(phi0));
+}
+// spherical cap rho = 1, phi from 0 to pi/3 (param: phi, theta, so that the
+// normal points out of D)
+triple cappt(pair t) {
+  return (sin(t.x)*cos(t.y), sin(t.x)*sin(t.y), cos(t.x));
+}
+
+surface Scone = surface(conept, (0, 0), (2pi, 1), 16, 1, Spline);
+surface Scap  = surface(cappt, (0, 0), (phi0, 2pi), 6, 24, Spline);
+
+draw(Scone, surfacepen=material(0.5*oigreen + 0.5*white + opacity(0.55),
+                                emissivepen=0.3*oigreen, specularpen=gray(0.05)),
+     meshpen=0.6*oigreen + linewidth(0.3pt) + opacity(0.35));
+draw(Scap,  surfacepen=material(0.5*oiblue + 0.5*white + opacity(0.5),
+                                emissivepen=0.3*oiblue, specularpen=gray(0.05)),
+     meshpen=gray(0.3) + linewidth(0.3pt) + opacity(0.35));
+
+// rim: where the cone meets the sphere (radius sin(pi/3), height cos(pi/3))
+draw(circle((0, 0, cos(phi0)), sin(phi0)), oivermillion + linewidth(1.6pt));
+
+// axes; the parts inside D are seen through its translucent surfaces
+pen axispen = gray(0.25) + linewidth(0.7pt);
+draw(Label("$x$", EndPoint, fontsize(20pt)), (-1.15, 0, 0)--(1.35, 0, 0), axispen,
+     Arrow3(size=8));
+draw(Label("$y$", EndPoint, fontsize(20pt)), (0, -1.15, 0)--(0, 1.45, 0), axispen,
+     Arrow3(size=8));
+draw(Label("$z$", EndPoint, fontsize(20pt)), O--1.5Z,  axispen, Arrow3(size=8));
+
+// labels
+label("Sphere $\rho = 1$", (0, 0.9, 0.86), E, oiblue + fontsize(17pt));
+label("Cone $\phi = \frac{\pi}{3}$", (0, 0.75, 0.25), E,
+      oigreen*0.6 + fontsize(17pt));
+label("$D$", (0.55, -0.15, 0.62), fontsize(20pt));
+
+// keep the axis labels inside the frame
+dot((1.55, 0, 0), invisible); dot((0, 1.65, 0), invisible);
+dot((0, 0, 1.75), invisible);
+]]>
+</asymptote>
 </image>
 </figure>
 
@@ -653,52 +681,57 @@ the z axis at height two, so it touches the origin from above. A
 dashed vertical diameter runs from the origin to the north pole at
 height four.
 </description>
-<latex-image>
-<![CDATA[\begin{tikzpicture}[line join=round, line cap=round]
-  % Okabe-Ito colorblind-safe palette
-  \definecolor{oiblue}{RGB}{0,114,178}
-  \definecolor{oivermillion}{RGB}{213,94,0}
-  \begin{axis}[
-      view={125}{15},
-      width=10cm,
-      axis lines=center,
-      axis line style={-latex, black!75, line width=0.7pt},
-      xlabel={$x$}, ylabel={$y$}, zlabel={$z$},
-      label style={font=\LARGE},
-      ticks=none,
-      xmin=-2.3, xmax=2.6, ymin=-2.3, ymax=2.7, zmin=0, zmax=4.6,
-      clip=false,
-    ]
-    % sphere rho = 4 cos(phi): center (0,0,2), radius 2
-    \addplot3[surf, shader=faceted, faceted color=black!30,
-              point meta={z},
-              colormap={softz}{color=(oiblue!12!white) color=(oiblue!45!white)},
-              opacity=0.5, fill opacity=0.5,
-              domain=0:360, samples=31,
-              y domain=0:180, samples y=17,
-              z buffer=sort, forget plot]
-      ({2*sin(y)*cos(x)}, {2*sin(y)*sin(x)}, {2 + 2*cos(y)});
-    % equator
-    \addplot3[oiblue, line width=1.0pt, domain=0:360, samples=73,
-        samples y=0, forget plot]
-      ({2*cos(x)}, {2*sin(x)}, 2);
-    % dashed diameter
-    \draw[black!60, dashed, line width=0.8pt]
-      (axis cs:0,0,0) -- (axis cs:0,0,4);
-    \addplot3[only marks, mark=*, mark size=1.5pt, color=black,
-        forget plot] coordinates {(0,0,0) (0,0,2) (0,0,4)};
-    % labels
-    \node[font=\Large, anchor=north west, xshift=36pt, yshift=10pt]
-      (eq) at (axis cs:0,0,4.6) {$x^2 + y^2 + (z-2)^2 = 4$};
-    \node[oivermillion, font=\Large, anchor=north west]
-      at (eq.south west) {$\rho = 4\cos\phi$};
-    \node[anchor=south east, font=\large, xshift=-2pt, yshift=1pt]
-      at (axis cs:0,0,4) {$(0,0,4)$};
-    \node[anchor=west, font=\large, xshift=3pt]
-      at (axis cs:0,0,2) {$(0,0,2)$};
-  \end{axis}
-\end{tikzpicture}]]>
-</latex-image>
+<asymptote>
+<![CDATA[// The sphere x^2 + y^2 + (z-2)^2 = 4, that is rho = 4 cos(phi).
+import graph3;
+
+size(10cm);
+// Same viewpoint as the pgfplots figure (view={125}{15}).
+currentprojection = orthographic((0.7912, 0.554, 0.2588));
+currentlight = Headlamp;
+currentlight.background = white;
+
+// Okabe-Ito colorblind-safe palette
+pen oiblue       = rgb(0/255, 114/255, 178/255);
+pen oivermillion = rgb(213/255, 94/255, 0/255);
+
+// sphere rho = 4 cos(phi): center (0,0,2), radius 2 (param: phi, theta, so
+// that the normal points outward)
+triple spherept(pair t) {
+  return (2*sin(t.x)*cos(t.y), 2*sin(t.x)*sin(t.y), 2 + 2*cos(t.x));
+}
+surface S = surface(spherept, (0, 0), (pi, 2pi), 12, 24, Spline);
+draw(S, surfacepen=material(0.5*oiblue + 0.5*white + opacity(0.35),
+                            emissivepen=0.3*oiblue, specularpen=gray(0.05)),
+     meshpen=gray(0.3) + linewidth(0.3pt) + opacity(0.35));
+
+// equator
+draw(circle((0, 0, 2), 2), oiblue + linewidth(1.0pt));
+
+// axes; the parts inside the sphere are seen through it
+pen axispen = gray(0.25) + linewidth(0.7pt);
+draw(Label("$x$", EndPoint, fontsize(20pt)), (-2.3, 0, 0)--(2.6, 0, 0), axispen,
+     Arrow3(size=8));
+draw(Label("$y$", EndPoint, fontsize(20pt)), (0, -2.3, 0)--(0, 2.7, 0), axispen,
+     Arrow3(size=8));
+draw(Label("$z$", EndPoint, fontsize(20pt)), O--(0, 0, 4.6), axispen, Arrow3(size=8));
+
+// dashed vertical diameter
+draw(O--(0, 0, 4), gray(0.4) + linewidth(0.8pt) + dashed);
+dot(O, linewidth(4pt));
+dot((0, 0, 2), linewidth(4pt));
+dot((0, 0, 4), linewidth(4pt));
+
+// labels
+label("$x^2 + y^2 + (z-2)^2 = 4$", (0, 1.7, 4.55), E, fontsize(17pt));
+label("$\rho = 4\cos\phi$", (0, 1.7, 4.05), E, oivermillion + fontsize(17pt));
+label("$(0,0,4)$", (0, 0, 4), 1.5W + N, fontsize(14pt));
+label("$(0,0,2)$", (0, 0, 2), E, fontsize(14pt));
+
+// keep the z label inside the frame
+dot((0, 0, 4.9), invisible);
+]]>
+</asymptote>
 </image>
 </figure>
 
@@ -817,59 +850,62 @@ the origin at forty five degrees, over the half of the plane with y
 negative, capped above by the flat half disk in the plane z equals
 one. The straight edge of the cap lies over the x axis.
 </description>
-<latex-image>
-<![CDATA[\begin{tikzpicture}[line join=round, line cap=round]
-  % Okabe-Ito colorblind-safe palette
-  \definecolor{oiblue}{RGB}{0,114,178}
-  \definecolor{oivermillion}{RGB}{213,94,0}
-  \definecolor{oigreen}{RGB}{0,158,115}
-  \begin{axis}[
-      view={35}{18},
-      width=11cm,
-      axis lines=center,
-      axis line style={-latex, black!75, line width=0.7pt},
-      xlabel={$x$}, ylabel={$y$}, zlabel={$z$},
-      label style={font=\LARGE},
-      ticks=none,
-      xmin=-1.3, xmax=1.5, ymin=-1.5, ymax=1.5, zmin=0, zmax=1.6,
-      clip=false,
-    ]
-    % half cone z = r over theta in [180,360]
-    \addplot3[surf, shader=interp,
-              colormap={softk}{color=(oigreen!12!white) color=(oigreen!42!white)},
-              opacity=0.45, fill opacity=0.45,
-              domain=180:360, samples=25,
-              y domain=0:1, samples y=7,
-              z buffer=sort, forget plot]
-      ({y*cos(x)}, {y*sin(x)}, {y});
-    % top half disk z = 1
-    \fill[oiblue, opacity=0.35]
-      (axis cs:1,0,1)
-      \foreach \a in {350,340,...,180} { -- (axis cs:{cos(\a)},{sin(\a)},1) }
-      -- cycle;
-    \draw[oiblue, line width=1.2pt]
-      (axis cs:1,0,1)
-      \foreach \a in {350,340,...,180} { -- (axis cs:{cos(\a)},{sin(\a)},1) }
-      -- cycle;
-    % cone edge lines
-    \draw[oigreen!60!black, line width=1.0pt]
-      (axis cs:0,0,0) -- (axis cs:1,0,1)
-      (axis cs:0,0,0) -- (axis cs:-1,0,1);
-    % projection half disk (dashed)
-    \draw[oivermillion, line width=1.0pt, dashed]
-      (axis cs:1,0,0)
-      \foreach \a in {350,340,...,180} { -- (axis cs:{cos(\a)},{sin(\a)},0) }
-      -- cycle;
-    % labels
-    \node[oiblue, anchor=west, font=\Large, xshift=5pt]
-      at (axis cs:1,0,1) {$z = 1$};
-    \node[oigreen!60!black, anchor=east, font=\Large, xshift=-6pt]
-      at (axis cs:-0.41,-0.285,0.5) {$z = \sqrt{x^2+y^2}$};
-    \node[oivermillion, anchor=north, font=\Large, yshift=-3pt]
-      at (axis cs:0.578,-0.816,0) {projection};
-  \end{axis}
-\end{tikzpicture}]]>
-</latex-image>
+<asymptote>
+<![CDATA[// The solid over the lower half disk, between the cone z = sqrt(x^2+y^2)
+// (phi = pi/4) and the plane z = 1 (rho = sec(phi)).
+import graph3;
+
+size(11cm);
+// Same viewpoint as the pgfplots figure (view={35}{18}).
+currentprojection = orthographic((0.5455, -0.7791, 0.309));
+currentlight = Headlamp;
+currentlight.background = white;
+
+// Okabe-Ito colorblind-safe palette
+pen oiblue       = rgb(0/255, 114/255, 178/255);
+pen oivermillion = rgb(213/255, 94/255, 0/255);
+pen oigreen      = rgb(0/255, 158/255, 115/255);
+
+// half cone z = r over theta in [pi, 2pi] (param: theta, r)
+triple conept(pair t) { return t.y*(cos(t.x), sin(t.x), 1); }
+// top half disk z = 1 (param: r, theta, so that the normal points up)
+triple diskpt(pair t) { return (t.x*cos(t.y), t.x*sin(t.y), 1); }
+
+draw(surface(conept, (pi, 0), (2pi, 1), 12, 1, Spline),
+     surfacepen=material(0.5*oigreen + 0.5*white + opacity(0.5),
+                         emissivepen=0.3*oigreen, specularpen=gray(0.05)),
+     meshpen=0.6*oigreen + linewidth(0.3pt) + opacity(0.35));
+draw(surface(diskpt, (0, pi), (1, 2pi), 1, 12, Spline),
+     surfacepen=material(0.5*oiblue + 0.5*white + opacity(0.45),
+                         emissivepen=0.3*oiblue, specularpen=gray(0.05)));
+
+// boundary of the top half disk
+path3 halfcircle(real h) { return arc((0, 0, h), (1, 0, h), (-1, 0, h), -Z); }
+draw(halfcircle(1)--cycle, oiblue + linewidth(1.2pt));
+
+// cone edge lines
+draw(O--(1, 0, 1), 0.6*oigreen + linewidth(1.0pt));
+draw(O--(-1, 0, 1), 0.6*oigreen + linewidth(1.0pt));
+
+// projection half disk (dashed)
+draw(halfcircle(0)--cycle, oivermillion + linewidth(1.0pt) + dashed);
+
+// axes
+pen axispen = gray(0.25) + linewidth(0.7pt);
+draw(Label("$x$", EndPoint, fontsize(20pt)), (-1.3, 0, 0)--(1.5, 0, 0), axispen,
+     Arrow3(size=8));
+draw(Label("$y$", EndPoint, fontsize(20pt)), (0, -1.5, 0)--(0, 1.5, 0), axispen,
+     Arrow3(size=8));
+draw(Label("$z$", EndPoint, fontsize(20pt)), O--(0, 0, 1.6), axispen, Arrow3(size=8));
+
+// labels
+dot((-1.75, 0.6, 0.5), invisible);  // room for the cone label
+dot((0, 0, 1.85), invisible);       // and for the z label
+label("$z = 1$", (1, 0, 1), 2E, oiblue + fontsize(17pt));
+label("$z = \sqrt{x^2+y^2}$", (-0.41, -0.285, 0.5), 3W, 0.6*oigreen + fontsize(17pt));
+label("projection", (0.578, -0.816, 0), 2S, oivermillion + fontsize(17pt));
+]]>
+</asymptote>
 </image>
 </figure>
 
