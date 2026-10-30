@@ -1,0 +1,263 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="prefigure-tetrahedron-base-figure" viewBox="0 0 480 320">
+  <defs>
+    <clipPath id="prefigure-tetrahedron-base-clipPath-0">
+      <rect x="10.0" y="10.0" width="460.0" height="300.0"/>
+    </clipPath>
+    <clipPath id="prefigure-tetrahedron-base-clipPath-1">
+      <rect x="10.0" y="10.0" width="460.0" height="300.0"/>
+    </clipPath>
+    <marker id="prefigure-tetrahedron-base-arrow-head-end-2_None_24_60-black" markerWidth="9.0" markerHeight="8.0" markerUnits="userSpaceOnUse" orient="auto-start-reverse" refX="6.5" refY="4.0">
+      <path d="M 9.0 4.0L 0.0 8.0L 1.7 5.0L 1.7 3.0L 0.0 0.0Z" fill="black" stroke="none"/>
+    </marker>
+    <marker id="prefigure-tetrahedron-base-arrow-head-end-2_None_24_60-black-outline" markerWidth="13.0" markerHeight="12.0" markerUnits="userSpaceOnUse" orient="auto-start-reverse" refX="8.5" refY="6.0">
+      <path d="M 11.8 7.8 L 2.8 11.8 A 2 2 0 0 1 0.0 10.0 L 0.0 2.0 A 2 2 0 0 1 2.8 0.2 L 11.8 4.2 A 2 2 0 0 1 11.8 7.8 Z" fill="white" stroke="none"/>
+    </marker>
+    <marker id="prefigure-tetrahedron-base-arrow-head-end-3_None_24_60-hD55E00" markerWidth="13.5" markerHeight="12.0" markerUnits="userSpaceOnUse" orient="auto-start-reverse" refX="9.8" refY="6.0">
+      <path d="M 13.5 6.0L 0.0 12.0L 2.6 7.5L 2.6 4.5L 0.0 0.0Z" fill="#D55E00" stroke="none"/>
+    </marker>
+    <marker id="prefigure-tetrahedron-base-arrow-head-end-3_None_24_60-hD55E00-outline" markerWidth="17.5" markerHeight="16.0" markerUnits="userSpaceOnUse" orient="auto-start-reverse" refX="11.8" refY="8.0">
+      <path d="M 16.3 9.8 L 2.8 15.8 A 2 2 0 0 1 0.0 14.0 L 0.0 2.0 A 2 2 0 0 1 2.8 0.2 L 16.3 6.2 A 2 2 0 0 1 16.3 9.8 Z" fill="white" stroke="none"/>
+    </marker>
+  </defs>
+  <g id="tb-axes" stroke="black" stroke-width="2">
+    <line id="prefigure-tetrahedron-base-line-0" x1="10.0" y1="231.4" x2="470.0" y2="231.4" stroke="black" stroke-width="2" marker-end="url(#prefigure-tetrahedron-base-arrow-head-end-2_None_24_60-black)"/>
+    <line id="prefigure-tetrahedron-base-line-1" x1="61.9" y1="310.0" x2="61.9" y2="10.0" stroke="black" stroke-width="2" marker-end="url(#prefigure-tetrahedron-base-arrow-head-end-2_None_24_60-black)"/>
+  </g>
+  <g id="prefigure-tetrahedron-base-label-0" transform="translate(464.0,225.4) translate(-10.4,-8.2)">
+    <g id="prefigure-tetrahedron-base-g-0">
+      <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -0.200px" width="10.352px" height="8.200px" role="img" focusable="false" viewBox="0 -442 572 453" x="0.0" y="0.0">
+        <defs>
+          <path id="prefigure-tetrahedron-base-MJX-2-TEX-I-1D465" d="M52 289Q59 331 106 386T222 442Q257 442 286 424T329 379Q371 442 430 442Q467 442 494 420T522 361Q522 332 508 314T481 292T458 288Q439 288 427 299T415 328Q415 374 465 391Q454 404 425 404Q412 404 406 402Q368 386 350 336Q290 115 290 78Q290 50 306 38T341 26Q378 26 414 59T463 140Q466 150 469 151T485 153H489Q504 153 504 145Q504 144 502 134Q486 77 440 33T333 -11Q263 -11 227 52Q186 -10 133 -10H127Q78 -10 57 16T35 71Q35 103 54 123T99 143Q142 143 142 101Q142 81 130 66T107 46T94 41L91 40Q91 39 97 36T113 29T132 26Q168 26 194 71Q203 87 217 139T245 247T261 313Q266 340 266 352Q266 380 251 392T217 404Q177 404 142 372T93 290Q91 281 88 280T72 278H58Q52 284 52 289Z"/>
+        </defs>
+        <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+          <g data-mml-node="math">
+            <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple" data-semantic-id="0" data-semantic-speech="x">
+              <use data-c="1D465" xlink:href="#prefigure-tetrahedron-base-MJX-2-TEX-I-1D465"/>
+            </g>
+          </g>
+        </g>
+      </svg>
+    </g>
+  </g>
+  <g id="prefigure-tetrahedron-base-label-1" transform="translate(67.9,16.0) translate(0.0,-0.0)">
+    <g id="prefigure-tetrahedron-base-g-1">
+      <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -3.712px" width="8.872px" height="11.712px" role="img" focusable="false" viewBox="0 -442 490 647" x="0.0" y="0.0">
+        <defs>
+          <path id="prefigure-tetrahedron-base-MJX-3-TEX-I-1D466" d="M21 287Q21 301 36 335T84 406T158 442Q199 442 224 419T250 355Q248 336 247 334Q247 331 231 288T198 191T182 105Q182 62 196 45T238 27Q261 27 281 38T312 61T339 94Q339 95 344 114T358 173T377 247Q415 397 419 404Q432 431 462 431Q475 431 483 424T494 412T496 403Q496 390 447 193T391 -23Q363 -106 294 -155T156 -205Q111 -205 77 -183T43 -117Q43 -95 50 -80T69 -58T89 -48T106 -45Q150 -45 150 -87Q150 -107 138 -122T115 -142T102 -147L99 -148Q101 -153 118 -160T152 -167H160Q177 -167 186 -165Q219 -156 247 -127T290 -65T313 -9T321 21L315 17Q309 13 296 6T270 -6Q250 -11 231 -11Q185 -11 150 11T104 82Q103 89 103 113Q103 170 138 262T173 379Q173 380 173 381Q173 390 173 393T169 400T158 404H154Q131 404 112 385T82 344T65 302T57 280Q55 278 41 278H27Q21 284 21 287Z"/>
+        </defs>
+        <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+          <g data-mml-node="math">
+            <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple" data-semantic-id="0" data-semantic-speech="y">
+              <use data-c="1D466" xlink:href="#prefigure-tetrahedron-base-MJX-3-TEX-I-1D466"/>
+            </g>
+          </g>
+        </g>
+      </svg>
+    </g>
+  </g>
+  <path id="prefigure-tetrahedron-base-tb-region" d="M 61.9 231.4 L 61.9 231.4 L 63.4 230.7 L 64.9 230.0 L 66.4 229.3 L 67.9 228.6 L 69.4 227.9 L 70.8 227.1 L 72.3 226.4 L 73.8 225.7 L 75.3 225.0 L 76.8 224.3 L 78.3 223.6 L 79.7 222.9 L 81.2 222.1 L 82.7 221.4 L 84.2 220.7 L 85.7 220.0 L 87.2 219.3 L 88.6 218.6 L 90.1 217.9 L 91.6 217.1 L 93.1 216.4 L 94.6 215.7 L 96.1 215.0 L 97.5 214.3 L 99.0 213.6 L 100.5 212.9 L 102.0 212.1 L 103.5 211.4 L 105.0 210.7 L 106.5 210.0 L 107.9 209.3 L 109.4 208.6 L 110.9 207.9 L 112.4 207.1 L 113.9 206.4 L 115.4 205.7 L 116.8 205.0 L 118.3 204.3 L 119.8 203.6 L 121.3 202.9 L 122.8 202.1 L 124.3 201.4 L 125.7 200.7 L 127.2 200.0 L 128.7 199.3 L 130.2 198.6 L 131.7 197.9 L 133.2 197.1 L 134.6 196.4 L 136.1 195.7 L 137.6 195.0 L 139.1 194.3 L 140.6 193.6 L 142.1 192.9 L 143.5 192.1 L 145.0 191.4 L 146.5 190.7 L 148.0 190.0 L 149.5 189.3 L 151.0 188.6 L 152.5 187.9 L 153.9 187.1 L 155.4 186.4 L 156.9 185.7 L 158.4 185.0 L 159.9 184.3 L 161.4 183.6 L 162.8 182.9 L 164.3 182.1 L 165.8 181.4 L 167.3 180.7 L 168.8 180.0 L 170.3 179.3 L 171.7 178.6 L 173.2 177.9 L 174.7 177.1 L 176.2 176.4 L 177.7 175.7 L 179.2 175.0 L 180.6 174.3 L 182.1 173.6 L 183.6 172.9 L 185.1 172.1 L 186.6 171.4 L 188.1 170.7 L 189.5 170.0 L 191.0 169.3 L 192.5 168.6 L 194.0 167.9 L 195.5 167.1 L 197.0 166.4 L 198.5 165.7 L 199.9 165.0 L 201.4 164.3 L 202.9 163.6 L 204.4 162.9 L 205.9 162.1 L 207.4 161.4 L 208.8 160.7 L 210.3 160.0 L 210.3 160.0 L 208.8 159.3 L 207.4 158.6 L 205.9 157.9 L 204.4 157.1 L 202.9 156.4 L 201.4 155.7 L 199.9 155.0 L 198.5 154.3 L 197.0 153.6 L 195.5 152.9 L 194.0 152.1 L 192.5 151.4 L 191.0 150.7 L 189.5 150.0 L 188.1 149.3 L 186.6 148.6 L 185.1 147.9 L 183.6 147.1 L 182.1 146.4 L 180.6 145.7 L 179.2 145.0 L 177.7 144.3 L 176.2 143.6 L 174.7 142.9 L 173.2 142.1 L 171.7 141.4 L 170.3 140.7 L 168.8 140.0 L 167.3 139.3 L 165.8 138.6 L 164.3 137.9 L 162.8 137.1 L 161.4 136.4 L 159.9 135.7 L 158.4 135.0 L 156.9 134.3 L 155.4 133.6 L 153.9 132.9 L 152.5 132.1 L 151.0 131.4 L 149.5 130.7 L 148.0 130.0 L 146.5 129.3 L 145.0 128.6 L 143.5 127.9 L 142.1 127.1 L 140.6 126.4 L 139.1 125.7 L 137.6 125.0 L 136.1 124.3 L 134.6 123.6 L 133.2 122.9 L 131.7 122.1 L 130.2 121.4 L 128.7 120.7 L 127.2 120.0 L 125.7 119.3 L 124.3 118.6 L 122.8 117.9 L 121.3 117.1 L 119.8 116.4 L 118.3 115.7 L 116.8 115.0 L 115.4 114.3 L 113.9 113.6 L 112.4 112.9 L 110.9 112.1 L 109.4 111.4 L 107.9 110.7 L 106.5 110.0 L 105.0 109.3 L 103.5 108.6 L 102.0 107.9 L 100.5 107.1 L 99.0 106.4 L 97.5 105.7 L 96.1 105.0 L 94.6 104.3 L 93.1 103.6 L 91.6 102.9 L 90.1 102.1 L 88.6 101.4 L 87.2 100.7 L 85.7 100.0 L 84.2 99.3 L 82.7 98.6 L 81.2 97.9 L 79.7 97.1 L 78.3 96.4 L 76.8 95.7 L 75.3 95.0 L 73.8 94.3 L 72.3 93.6 L 70.8 92.9 L 69.4 92.1 L 67.9 91.4 L 66.4 90.7 L 64.9 90.0 L 63.4 89.3 L 61.9 88.6 Z" stroke="none" stroke-width="2" fill="#fbe3d0"/>
+  <path id="prefigure-tetrahedron-base-tb-strip" stroke="#D55E00" stroke-width="3" fill="none" d="M 121.3 295.7 L 121.3 31.4" marker-end="url(#prefigure-tetrahedron-base-arrow-head-end-3_None_24_60-hD55E00)"/>
+  <path id="prefigure-tetrahedron-base-tb-top" d="M 61.9 88.6 L 63.4 89.3 L 64.9 90.0 L 66.4 90.7 L 67.9 91.4 L 69.4 92.1 L 70.8 92.9 L 72.3 93.6 L 73.8 94.3 L 75.3 95.0 L 76.8 95.7 L 78.3 96.4 L 79.7 97.1 L 81.2 97.9 L 82.7 98.6 L 84.2 99.3 L 85.7 100.0 L 87.2 100.7 L 88.6 101.4 L 90.1 102.1 L 91.6 102.9 L 93.1 103.6 L 94.6 104.3 L 96.1 105.0 L 97.5 105.7 L 99.0 106.4 L 100.5 107.1 L 102.0 107.9 L 103.5 108.6 L 105.0 109.3 L 106.5 110.0 L 107.9 110.7 L 109.4 111.4 L 110.9 112.1 L 112.4 112.9 L 113.9 113.6 L 115.4 114.3 L 116.8 115.0 L 118.3 115.7 L 119.8 116.4 L 121.3 117.1 L 122.8 117.9 L 124.3 118.6 L 125.7 119.3 L 127.2 120.0 L 128.7 120.7 L 130.2 121.4 L 131.7 122.1 L 133.2 122.9 L 134.6 123.6 L 136.1 124.3 L 137.6 125.0 L 139.1 125.7 L 140.6 126.4 L 142.1 127.1 L 143.5 127.9 L 145.0 128.6 L 146.5 129.3 L 148.0 130.0 L 149.5 130.7 L 151.0 131.4 L 152.5 132.1 L 153.9 132.9 L 155.4 133.6 L 156.9 134.3 L 158.4 135.0 L 159.9 135.7 L 161.4 136.4 L 162.8 137.1 L 164.3 137.9 L 165.8 138.6 L 167.3 139.3 L 168.8 140.0 L 170.3 140.7 L 171.7 141.4 L 173.2 142.1 L 174.7 142.9 L 176.2 143.6 L 177.7 144.3 L 179.2 145.0 L 180.6 145.7 L 182.1 146.4 L 183.6 147.1 L 185.1 147.9 L 186.6 148.6 L 188.1 149.3 L 189.5 150.0 L 191.0 150.7 L 192.5 151.4 L 194.0 152.1 L 195.5 152.9 L 197.0 153.6 L 198.5 154.3 L 199.9 155.0 L 201.4 155.7 L 202.9 156.4 L 204.4 157.1 L 205.9 157.9 L 207.4 158.6 L 208.8 159.3 L 210.3 160.0" stroke="#0072B2" stroke-width="3" fill="none" clip-path="url(#prefigure-tetrahedron-base-clipPath-1)"/>
+  <path id="prefigure-tetrahedron-base-tb-bot" d="M 61.9 231.4 L 63.4 230.7 L 64.9 230.0 L 66.4 229.3 L 67.9 228.6 L 69.4 227.9 L 70.8 227.1 L 72.3 226.4 L 73.8 225.7 L 75.3 225.0 L 76.8 224.3 L 78.3 223.6 L 79.7 222.9 L 81.2 222.1 L 82.7 221.4 L 84.2 220.7 L 85.7 220.0 L 87.2 219.3 L 88.6 218.6 L 90.1 217.9 L 91.6 217.1 L 93.1 216.4 L 94.6 215.7 L 96.1 215.0 L 97.5 214.3 L 99.0 213.6 L 100.5 212.9 L 102.0 212.1 L 103.5 211.4 L 105.0 210.7 L 106.5 210.0 L 107.9 209.3 L 109.4 208.6 L 110.9 207.9 L 112.4 207.1 L 113.9 206.4 L 115.4 205.7 L 116.8 205.0 L 118.3 204.3 L 119.8 203.6 L 121.3 202.9 L 122.8 202.1 L 124.3 201.4 L 125.7 200.7 L 127.2 200.0 L 128.7 199.3 L 130.2 198.6 L 131.7 197.9 L 133.2 197.1 L 134.6 196.4 L 136.1 195.7 L 137.6 195.0 L 139.1 194.3 L 140.6 193.6 L 142.1 192.9 L 143.5 192.1 L 145.0 191.4 L 146.5 190.7 L 148.0 190.0 L 149.5 189.3 L 151.0 188.6 L 152.5 187.9 L 153.9 187.1 L 155.4 186.4 L 156.9 185.7 L 158.4 185.0 L 159.9 184.3 L 161.4 183.6 L 162.8 182.9 L 164.3 182.1 L 165.8 181.4 L 167.3 180.7 L 168.8 180.0 L 170.3 179.3 L 171.7 178.6 L 173.2 177.9 L 174.7 177.1 L 176.2 176.4 L 177.7 175.7 L 179.2 175.0 L 180.6 174.3 L 182.1 173.6 L 183.6 172.9 L 185.1 172.1 L 186.6 171.4 L 188.1 170.7 L 189.5 170.0 L 191.0 169.3 L 192.5 168.6 L 194.0 167.9 L 195.5 167.1 L 197.0 166.4 L 198.5 165.7 L 199.9 165.0 L 201.4 164.3 L 202.9 163.6 L 204.4 162.9 L 205.9 162.1 L 207.4 161.4 L 208.8 160.7 L 210.3 160.0" stroke="#009E73" stroke-width="3" fill="none" clip-path="url(#prefigure-tetrahedron-base-clipPath-1)"/>
+  <line id="prefigure-tetrahedron-base-tb-left" x1="61.9" y1="231.4" x2="61.9" y2="88.6" stroke="#555555" stroke-width="3" fill="none"/>
+  <circle id="prefigure-tetrahedron-base-tb-upper" cx="121.3" cy="117.1" r="4" stroke="black" stroke-width="2" fill="#0072B2"/>
+  <circle id="prefigure-tetrahedron-base-tb-lower" cx="121.3" cy="202.9" r="4" stroke="black" stroke-width="2" fill="#009E73"/>
+  <g id="prefigure-tetrahedron-base-tb-corner">
+    <g transform="translate(218.3,160.0) translate(0.0,-11.0)">
+      <g id="prefigure-tetrahedron-base-g-2">
+        <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -6.328px" width="48.040px" height="21.984px" role="img" focusable="false" viewBox="0 -864.9 2654.2 1214.4" x="0.0" y="0.0">
+          <defs>
+            <path id="prefigure-tetrahedron-base-MJX-4-TEX-SO-28" d="M152 251Q152 646 388 850H416Q422 844 422 841Q422 837 403 816T357 753T302 649T255 482T236 250Q236 124 255 19T301 -147T356 -251T403 -315T422 -340Q422 -343 416 -349H388Q359 -325 332 -296T271 -213T212 -97T170 56T152 251Z"/>
+            <path id="prefigure-tetrahedron-base-MJX-4-TEX-N-31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"/>
+            <path id="prefigure-tetrahedron-base-MJX-4-TEX-N-2C" d="M78 35T78 60T94 103T137 121Q165 121 187 96T210 8Q210 -27 201 -60T180 -117T154 -158T130 -185T117 -194Q113 -194 104 -185T95 -172Q95 -168 106 -156T131 -126T157 -76T173 -3V9L172 8Q170 7 167 6T161 3T152 1T140 0Q113 0 96 17Z"/>
+            <path id="prefigure-tetrahedron-base-MJX-4-TEX-N-32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"/>
+            <path id="prefigure-tetrahedron-base-MJX-4-TEX-SO-29" d="M305 251Q305 -145 69 -349H56Q43 -349 39 -347T35 -338Q37 -333 60 -307T108 -239T160 -136T204 27T221 250T204 473T160 636T108 740T60 807T35 839Q35 850 50 850H56H69Q197 743 256 566Q305 425 305 251Z"/>
+          </defs>
+          <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+            <g data-mml-node="math">
+              <g data-mml-node="TeXAtom" data-semantic-type="fenced" data-semantic-role="leftright" data-semantic-id="8" data-semantic-children="7" data-semantic-content="0,6" data-semantic-attributes="texclass:INNER" data-semantic-speech="left parenthesis 1 comma one half right parenthesis" data-mjx-texclass="INNER">
+                <g data-mml-node="mo" data-semantic-type="fence" data-semantic-role="open" data-semantic-id="0" data-semantic-parent="8" data-semantic-attributes="texclass:OPEN" data-semantic-operator="fenced" data-semantic-speech="left parenthesis" transform="translate(0 -0.5)">
+                  <use data-c="28" xlink:href="#prefigure-tetrahedron-base-MJX-4-TEX-SO-28"/>
+                </g>
+                <g data-mml-node="mrow" data-semantic-type="punctuated" data-semantic-role="sequence" data-semantic-id="7" data-semantic-children="1,2,5" data-semantic-content="2" data-semantic-parent="8" data-semantic-speech="1 comma one half" transform="translate(458,0)">
+                  <g data-mml-node="mn" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple" data-semantic-id="1" data-semantic-parent="7" data-semantic-speech="1">
+                    <use data-c="31" xlink:href="#prefigure-tetrahedron-base-MJX-4-TEX-N-31"/>
+                  </g>
+                  <g data-mml-node="mo" data-semantic-type="punctuation" data-semantic-role="comma" data-semantic-id="2" data-semantic-parent="7" data-semantic-operator="punctuated" data-semantic-speech="comma" transform="translate(500,0)">
+                    <use data-c="2C" xlink:href="#prefigure-tetrahedron-base-MJX-4-TEX-N-2C"/>
+                  </g>
+                  <g data-mml-node="mstyle" transform="translate(944.7,0)">
+                    <g data-mml-node="mfrac" data-semantic-type="fraction" data-semantic-role="vulgar" data-semantic-annotation="clearspeak:simple" data-semantic-id="5" data-semantic-children="3,4" data-semantic-parent="7" data-semantic-speech="one half">
+                      <g data-mml-node="mn" transform="translate(220,394) scale(0.707)" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple" data-semantic-id="3" data-semantic-parent="5" data-semantic-speech="1" data-semantic-prefix="Numerator">
+                        <use data-c="31" xlink:href="#prefigure-tetrahedron-base-MJX-4-TEX-N-31"/>
+                      </g>
+                      <g data-mml-node="mn" transform="translate(220,-345) scale(0.707)" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple" data-semantic-id="4" data-semantic-parent="5" data-semantic-speech="2" data-semantic-prefix="Denominator">
+                        <use data-c="32" xlink:href="#prefigure-tetrahedron-base-MJX-4-TEX-N-32"/>
+                      </g>
+                      <rect width="553.6" height="60" x="120" y="220"/>
+                    </g>
+                  </g>
+                </g>
+                <g data-mml-node="mo" data-semantic-type="fence" data-semantic-role="close" data-semantic-id="6" data-semantic-parent="8" data-semantic-attributes="texclass:CLOSE" data-semantic-operator="fenced" data-semantic-speech="right parenthesis" transform="translate(2196.2,0) translate(0 -0.5)">
+                  <use data-c="29" xlink:href="#prefigure-tetrahedron-base-MJX-4-TEX-SO-29"/>
+                </g>
+              </g>
+            </g>
+          </g>
+        </svg>
+      </g>
+    </g>
+    <circle cx="210.3" cy="160.0" r="4" stroke="black" stroke-width="2" fill="black"/>
+  </g>
+  <g id="prefigure-tetrahedron-base-tb-one">
+    <g transform="translate(53.9,88.6) translate(-9.0,-6.0)">
+      <g id="prefigure-tetrahedron-base-g-3">
+        <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: 0.000px" width="9.048px" height="12.056px" role="img" focusable="false" viewBox="0 -666 500 666" x="0.0" y="0.0">
+          <defs>
+            <path id="prefigure-tetrahedron-base-MJX-5-TEX-N-31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"/>
+          </defs>
+          <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+            <g data-mml-node="math">
+              <g data-mml-node="mn" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple" data-semantic-id="0" data-semantic-speech="1">
+                <use data-c="31" xlink:href="#prefigure-tetrahedron-base-MJX-5-TEX-N-31"/>
+              </g>
+            </g>
+          </g>
+        </svg>
+      </g>
+    </g>
+    <circle cx="61.9" cy="88.6" r="4" stroke="black" stroke-width="2" fill="black"/>
+  </g>
+  <g id="prefigure-tetrahedron-base-tb-top-label" transform="translate(68.9,58.9) translate(0.0,-15.8)">
+    <g id="prefigure-tetrahedron-base-g-4">
+      <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -3.712px; color:#0072B2" width="83.584px" height="15.768px" role="img" focusable="false" viewBox="0 -666 4618 871" x="0.0" y="0.0">
+        <defs>
+          <path id="prefigure-tetrahedron-base-MJX-6-TEX-I-1D465" d="M52 289Q59 331 106 386T222 442Q257 442 286 424T329 379Q371 442 430 442Q467 442 494 420T522 361Q522 332 508 314T481 292T458 288Q439 288 427 299T415 328Q415 374 465 391Q454 404 425 404Q412 404 406 402Q368 386 350 336Q290 115 290 78Q290 50 306 38T341 26Q378 26 414 59T463 140Q466 150 469 151T485 153H489Q504 153 504 145Q504 144 502 134Q486 77 440 33T333 -11Q263 -11 227 52Q186 -10 133 -10H127Q78 -10 57 16T35 71Q35 103 54 123T99 143Q142 143 142 101Q142 81 130 66T107 46T94 41L91 40Q91 39 97 36T113 29T132 26Q168 26 194 71Q203 87 217 139T245 247T261 313Q266 340 266 352Q266 380 251 392T217 404Q177 404 142 372T93 290Q91 281 88 280T72 278H58Q52 284 52 289Z"/>
+          <path id="prefigure-tetrahedron-base-MJX-6-TEX-N-2B" d="M56 237T56 250T70 270H369V420L370 570Q380 583 389 583Q402 583 409 568V270H707Q722 262 722 250T707 230H409V-68Q401 -82 391 -82H389H387Q375 -82 369 -68V230H70Q56 237 56 250Z"/>
+          <path id="prefigure-tetrahedron-base-MJX-6-TEX-N-32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"/>
+          <path id="prefigure-tetrahedron-base-MJX-6-TEX-N-2062" d=""/>
+          <path id="prefigure-tetrahedron-base-MJX-6-TEX-I-1D466" d="M21 287Q21 301 36 335T84 406T158 442Q199 442 224 419T250 355Q248 336 247 334Q247 331 231 288T198 191T182 105Q182 62 196 45T238 27Q261 27 281 38T312 61T339 94Q339 95 344 114T358 173T377 247Q415 397 419 404Q432 431 462 431Q475 431 483 424T494 412T496 403Q496 390 447 193T391 -23Q363 -106 294 -155T156 -205Q111 -205 77 -183T43 -117Q43 -95 50 -80T69 -58T89 -48T106 -45Q150 -45 150 -87Q150 -107 138 -122T115 -142T102 -147L99 -148Q101 -153 118 -160T152 -167H160Q177 -167 186 -165Q219 -156 247 -127T290 -65T313 -9T321 21L315 17Q309 13 296 6T270 -6Q250 -11 231 -11Q185 -11 150 11T104 82Q103 89 103 113Q103 170 138 262T173 379Q173 380 173 381Q173 390 173 393T169 400T158 404H154Q131 404 112 385T82 344T65 302T57 280Q55 278 41 278H27Q21 284 21 287Z"/>
+          <path id="prefigure-tetrahedron-base-MJX-6-TEX-N-3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"/>
+        </defs>
+        <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+          <g data-mml-node="math" data-semantic-type="relseq" data-semantic-role="equality" data-semantic-id="9" data-semantic-children="8,5" data-semantic-content="4" data-semantic-speech="x plus 2 y equals 2">
+            <g data-mml-node="mrow" data-semantic-type="infixop" data-semantic-role="addition" data-semantic-id="8" data-semantic-children="0,7" data-semantic-content="1" data-semantic-parent="9" data-semantic-speech="x plus 2 y">
+              <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple" data-semantic-id="0" data-semantic-parent="8" data-semantic-speech="x">
+                <use data-c="1D465" xlink:href="#prefigure-tetrahedron-base-MJX-6-TEX-I-1D465"/>
+              </g>
+              <g data-mml-node="mo" data-semantic-type="operator" data-semantic-role="addition" data-semantic-id="1" data-semantic-parent="8" data-semantic-operator="infixop,+" data-semantic-speech="plus" transform="translate(794.2,0)">
+                <use data-c="2B" xlink:href="#prefigure-tetrahedron-base-MJX-6-TEX-N-2B"/>
+              </g>
+              <g data-mml-node="mrow" data-semantic-type="infixop" data-semantic-role="implicit" data-semantic-annotation="clearspeak:simple;clearspeak:unit" data-semantic-id="7" data-semantic-children="2,3" data-semantic-content="6" data-semantic-parent="8" data-semantic-speech="2 y" transform="translate(1794.4,0)">
+                <g data-mml-node="mn" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple" data-semantic-id="2" data-semantic-parent="7" data-semantic-speech="2">
+                  <use data-c="32" xlink:href="#prefigure-tetrahedron-base-MJX-6-TEX-N-32"/>
+                </g>
+                <g data-mml-node="mo" data-semantic-type="operator" data-semantic-role="multiplication" data-semantic-id="6" data-semantic-parent="7" data-semantic-added="true" data-semantic-operator="infixop,⁢" data-semantic-speech="times" transform="translate(500,0)">
+                  <use data-c="2062" xlink:href="#prefigure-tetrahedron-base-MJX-6-TEX-N-2062"/>
+                </g>
+                <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple" data-semantic-id="3" data-semantic-parent="7" data-semantic-speech="y" transform="translate(500,0)">
+                  <use data-c="1D466" xlink:href="#prefigure-tetrahedron-base-MJX-6-TEX-I-1D466"/>
+                </g>
+              </g>
+            </g>
+            <g data-mml-node="mo" data-semantic-type="relation" data-semantic-role="equality" data-semantic-id="4" data-semantic-parent="9" data-semantic-operator="relseq,=" data-semantic-speech="equals" transform="translate(3062.2,0)">
+              <use data-c="3D" xlink:href="#prefigure-tetrahedron-base-MJX-6-TEX-N-3D"/>
+            </g>
+            <g data-mml-node="mn" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple" data-semantic-id="5" data-semantic-parent="9" data-semantic-speech="2" transform="translate(4118,0)">
+              <use data-c="32" xlink:href="#prefigure-tetrahedron-base-MJX-6-TEX-N-32"/>
+            </g>
+          </g>
+        </g>
+      </svg>
+    </g>
+  </g>
+  <g id="prefigure-tetrahedron-base-tb-bot-label" transform="translate(181.7,201.1) translate(0.0,-0.0)">
+    <g id="prefigure-tetrahedron-base-g-5">
+      <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -4.528px; color:#009E73" width="61.456px" height="18.096px" role="img" focusable="false" viewBox="0 -750 3395.6 1000" x="0.0" y="0.0">
+        <defs>
+          <path id="prefigure-tetrahedron-base-MJX-7-TEX-I-1D466" d="M21 287Q21 301 36 335T84 406T158 442Q199 442 224 419T250 355Q248 336 247 334Q247 331 231 288T198 191T182 105Q182 62 196 45T238 27Q261 27 281 38T312 61T339 94Q339 95 344 114T358 173T377 247Q415 397 419 404Q432 431 462 431Q475 431 483 424T494 412T496 403Q496 390 447 193T391 -23Q363 -106 294 -155T156 -205Q111 -205 77 -183T43 -117Q43 -95 50 -80T69 -58T89 -48T106 -45Q150 -45 150 -87Q150 -107 138 -122T115 -142T102 -147L99 -148Q101 -153 118 -160T152 -167H160Q177 -167 186 -165Q219 -156 247 -127T290 -65T313 -9T321 21L315 17Q309 13 296 6T270 -6Q250 -11 231 -11Q185 -11 150 11T104 82Q103 89 103 113Q103 170 138 262T173 379Q173 380 173 381Q173 390 173 393T169 400T158 404H154Q131 404 112 385T82 344T65 302T57 280Q55 278 41 278H27Q21 284 21 287Z"/>
+          <path id="prefigure-tetrahedron-base-MJX-7-TEX-N-3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"/>
+          <path id="prefigure-tetrahedron-base-MJX-7-TEX-I-1D465" d="M52 289Q59 331 106 386T222 442Q257 442 286 424T329 379Q371 442 430 442Q467 442 494 420T522 361Q522 332 508 314T481 292T458 288Q439 288 427 299T415 328Q415 374 465 391Q454 404 425 404Q412 404 406 402Q368 386 350 336Q290 115 290 78Q290 50 306 38T341 26Q378 26 414 59T463 140Q466 150 469 151T485 153H489Q504 153 504 145Q504 144 502 134Q486 77 440 33T333 -11Q263 -11 227 52Q186 -10 133 -10H127Q78 -10 57 16T35 71Q35 103 54 123T99 143Q142 143 142 101Q142 81 130 66T107 46T94 41L91 40Q91 39 97 36T113 29T132 26Q168 26 194 71Q203 87 217 139T245 247T261 313Q266 340 266 352Q266 380 251 392T217 404Q177 404 142 372T93 290Q91 281 88 280T72 278H58Q52 284 52 289Z"/>
+          <path id="prefigure-tetrahedron-base-MJX-7-TEX-N-2F" d="M423 750Q432 750 438 744T444 730Q444 725 271 248T92 -240Q85 -250 75 -250Q68 -250 62 -245T56 -231Q56 -221 230 257T407 740Q411 750 423 750Z"/>
+          <path id="prefigure-tetrahedron-base-MJX-7-TEX-N-32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"/>
+        </defs>
+        <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+          <g data-mml-node="math" data-semantic-type="relseq" data-semantic-role="equality" data-semantic-id="6" data-semantic-children="0,5" data-semantic-content="1" data-semantic-speech="y equals x divided by 2">
+            <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple" data-semantic-id="0" data-semantic-parent="6" data-semantic-speech="y">
+              <use data-c="1D466" xlink:href="#prefigure-tetrahedron-base-MJX-7-TEX-I-1D466"/>
+            </g>
+            <g data-mml-node="mo" data-semantic-type="relation" data-semantic-role="equality" data-semantic-id="1" data-semantic-parent="6" data-semantic-operator="relseq,=" data-semantic-speech="equals" transform="translate(767.8,0)">
+              <use data-c="3D" xlink:href="#prefigure-tetrahedron-base-MJX-7-TEX-N-3D"/>
+            </g>
+            <g data-mml-node="mrow" data-semantic-type="infixop" data-semantic-role="division" data-semantic-id="5" data-semantic-children="2,4" data-semantic-content="3" data-semantic-parent="6" data-semantic-speech="x divided by 2" transform="translate(1823.6,0)">
+              <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple" data-semantic-id="2" data-semantic-parent="5" data-semantic-speech="x">
+                <use data-c="1D465" xlink:href="#prefigure-tetrahedron-base-MJX-7-TEX-I-1D465"/>
+              </g>
+              <g data-mml-node="TeXAtom" data-mjx-texclass="ORD" transform="translate(572,0)">
+                <g data-mml-node="mo" data-semantic-type="operator" data-semantic-role="division" data-semantic-id="3" data-semantic-parent="5" data-semantic-attributes="texclass:ORD" data-semantic-operator="infixop,/" data-semantic-speech="slash">
+                  <use data-c="2F" xlink:href="#prefigure-tetrahedron-base-MJX-7-TEX-N-2F"/>
+                </g>
+              </g>
+              <g data-mml-node="mn" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple" data-semantic-id="4" data-semantic-parent="5" data-semantic-speech="2" transform="translate(1072,0)">
+                <use data-c="32" xlink:href="#prefigure-tetrahedron-base-MJX-7-TEX-N-32"/>
+              </g>
+            </g>
+          </g>
+        </g>
+      </svg>
+    </g>
+  </g>
+  <g id="prefigure-tetrahedron-base-tb-origin" transform="translate(49.0,244.0) translate(-9.0,-0.0)">
+    <g id="prefigure-tetrahedron-base-g-6">
+      <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -0.400px" width="9.048px" height="12.456px" role="img" focusable="false" viewBox="0 -666 500 688" x="0.0" y="0.0">
+        <defs>
+          <path id="prefigure-tetrahedron-base-MJX-8-TEX-N-30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z"/>
+        </defs>
+        <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+          <g data-mml-node="math">
+            <g data-mml-node="mn" data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-annotation="clearspeak:simple" data-semantic-id="0" data-semantic-speech="0">
+              <use data-c="30" xlink:href="#prefigure-tetrahedron-base-MJX-8-TEX-N-30"/>
+            </g>
+          </g>
+        </g>
+      </svg>
+    </g>
+  </g>
+  <path id="prefigure-tetrahedron-base-tb-legend" d="M 266.7 152.9 L 462.6 152.9 L 462.6 45.7 L 266.7 45.7 Z" stroke="black" stroke-width="1" fill="white"/>
+  <circle id="prefigure-tetrahedron-base-tb-leg-upper" cx="284.5" cy="74.3" r="4" stroke="black" stroke-width="2" fill="#0072B2"/>
+  <g id="prefigure-tetrahedron-base-tb-leg-upper-label" transform="translate(300.4,74.3) translate(0.0,-7.2)">
+    <g id="prefigure-tetrahedron-base-g-7">
+      <text font-family="sans-serif" font-size="14" fill="#0072B2" x="0.0" y="10.6">upper bound for</text>
+      <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -3.712px; color:#0072B2" width="8.872px" height="11.712px" role="img" focusable="false" viewBox="0 -442 490 647" x="117.7" y="2.6">
+        <defs>
+          <path id="prefigure-tetrahedron-base-MJX-9-TEX-I-1D466" d="M21 287Q21 301 36 335T84 406T158 442Q199 442 224 419T250 355Q248 336 247 334Q247 331 231 288T198 191T182 105Q182 62 196 45T238 27Q261 27 281 38T312 61T339 94Q339 95 344 114T358 173T377 247Q415 397 419 404Q432 431 462 431Q475 431 483 424T494 412T496 403Q496 390 447 193T391 -23Q363 -106 294 -155T156 -205Q111 -205 77 -183T43 -117Q43 -95 50 -80T69 -58T89 -48T106 -45Q150 -45 150 -87Q150 -107 138 -122T115 -142T102 -147L99 -148Q101 -153 118 -160T152 -167H160Q177 -167 186 -165Q219 -156 247 -127T290 -65T313 -9T321 21L315 17Q309 13 296 6T270 -6Q250 -11 231 -11Q185 -11 150 11T104 82Q103 89 103 113Q103 170 138 262T173 379Q173 380 173 381Q173 390 173 393T169 400T158 404H154Q131 404 112 385T82 344T65 302T57 280Q55 278 41 278H27Q21 284 21 287Z"/>
+        </defs>
+        <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+          <g data-mml-node="math">
+            <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple" data-semantic-id="0" data-semantic-speech="y">
+              <use data-c="1D466" xlink:href="#prefigure-tetrahedron-base-MJX-9-TEX-I-1D466"/>
+            </g>
+          </g>
+        </g>
+      </svg>
+    </g>
+  </g>
+  <circle id="prefigure-tetrahedron-base-tb-leg-lower" cx="284.5" cy="124.3" r="4" stroke="black" stroke-width="2" fill="#009E73"/>
+  <g id="prefigure-tetrahedron-base-tb-leg-lower-label" transform="translate(300.4,124.3) translate(0.0,-7.2)">
+    <g id="prefigure-tetrahedron-base-g-8">
+      <text font-family="sans-serif" font-size="14" fill="#009E73" x="0.0" y="10.6">lower bound for</text>
+      <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -3.712px; color:#009E73" width="8.872px" height="11.712px" role="img" focusable="false" viewBox="0 -442 490 647" x="115.0" y="2.6">
+        <defs>
+          <path id="prefigure-tetrahedron-base-MJX-10-TEX-I-1D466" d="M21 287Q21 301 36 335T84 406T158 442Q199 442 224 419T250 355Q248 336 247 334Q247 331 231 288T198 191T182 105Q182 62 196 45T238 27Q261 27 281 38T312 61T339 94Q339 95 344 114T358 173T377 247Q415 397 419 404Q432 431 462 431Q475 431 483 424T494 412T496 403Q496 390 447 193T391 -23Q363 -106 294 -155T156 -205Q111 -205 77 -183T43 -117Q43 -95 50 -80T69 -58T89 -48T106 -45Q150 -45 150 -87Q150 -107 138 -122T115 -142T102 -147L99 -148Q101 -153 118 -160T152 -167H160Q177 -167 186 -165Q219 -156 247 -127T290 -65T313 -9T321 21L315 17Q309 13 296 6T270 -6Q250 -11 231 -11Q185 -11 150 11T104 82Q103 89 103 113Q103 170 138 262T173 379Q173 380 173 381Q173 390 173 393T169 400T158 404H154Q131 404 112 385T82 344T65 302T57 280Q55 278 41 278H27Q21 284 21 287Z"/>
+        </defs>
+        <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+          <g data-mml-node="math">
+            <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple" data-semantic-id="0" data-semantic-speech="y">
+              <use data-c="1D466" xlink:href="#prefigure-tetrahedron-base-MJX-10-TEX-I-1D466"/>
+            </g>
+          </g>
+        </g>
+      </svg>
+    </g>
+  </g>
+</svg>

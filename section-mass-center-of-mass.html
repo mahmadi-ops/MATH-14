@@ -1,0 +1,1101 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Applications: Mass and Center of Mass</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/ol-markers.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="external/unnumbered-chapter.css">
+<link rel="stylesheet" type="text/css" href="external/custom.css">
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math"
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "_static/pretext/js"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="MATH 14: Calculus and Analytic Geometry IV">
+<meta property="book:author" content="Mehdi Ahmadi">
+<script src="_static/pretext/js/jquery.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '8.3.6';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.4beca1fdeed766a2.bundle.js"></script><script src="_static/prefix-926.5c7038c8ef173faf.bundle.js"></script><script src="_static/prefix-runestone.ebd33f6a21eed414.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-926.229729d09512acc9.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.9963089870a016c8.css">
+<script src="_static/pretext/js/diagcess/diagcess.js"></script><script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script>
+</head>
+<body class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner"><div class="title-container">
+<h1 class="heading"><a href="math14.html"><span class="title">MATH 14: Calculus and Analytic Geometry IV</span></a></h1>
+<p class="byline">Mehdi Ahmadi</p>
+</div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
+</div>
+<h2 class="search-results-heading">Search Results: </h2>
+<div id="searchempty" class="searchempty"><span>No results.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div>
+<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="section-triple-integrals-spherical.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-multiple-integrals.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><span class="next-button button disabled"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></span></span>
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\deriv}[2]{\displaystyle \frac{d#1}{d#2}}
+\newcommand{\real}{\Bbb R}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth3 focused" data-preexpanded-levels="0" data-max-levels="3"><ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-frontmatter">
+<div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-preface"><div class="toc-title-box"><a href="intro.html" class="internal"><span class="title">Preface</span></a></div></li>
+<li class="toc-item toc-preface"><div class="toc-title-box"><a href="subsec-brain-map.html" class="internal"><span class="title">The big picture</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-curves-and-fields.html" class="internal"><span class="codenumber">1</span> <span class="title">Line Integrals</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-parametrization.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Parametrization of Curves</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-parametrization.html#subsec-parametric-equations" class="internal"><span class="codenumber">1.1.1</span> <span class="title">Parametric Equations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-parametrization.html#subsec-parametrizing-examples" class="internal"><span class="codenumber">1.1.2</span> <span class="title">Some Examples of Parametrizing Curves</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-parametrization.html#subsec-intersection-collision" class="internal"><span class="codenumber">1.1.3</span> <span class="title">Intersection Points versus Collision Points</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-parametrization.html#subsec-curves-in-space" class="internal"><span class="codenumber">1.1.4</span> <span class="title">Curves in Space and Vector Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-parametrization.html#subsec-tangent-line-space-curve" class="internal"><span class="codenumber">1.1.5</span> <span class="title">Tangent Lines to Curves in Space</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-arc-length.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Arc Length of a Curve</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-arc-length.html#subsec-arc-length-2d" class="internal"><span class="codenumber">1.2.1</span> <span class="title">Arc Length in 2D</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-arc-length.html#subsec-arc-length-3d" class="internal"><span class="codenumber">1.2.2</span> <span class="title">Arc Length in 3D</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-arc-length.html#subsec-cone-plane-activity" class="internal"><span class="codenumber">1.2.3</span> <span class="title">Activity: Where a Plane Slices a Cone</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-line-integrals.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Line Integrals</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-line-integrals.html#subsec-scalar-line-integrals" class="internal"><span class="codenumber">1.3.1</span> <span class="title">Line Integrals of Scalar Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-line-integrals.html#subsec-line-integral-walls" class="internal"><span class="codenumber">1.3.2</span> <span class="title">A Geometric Interpretation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-line-integrals.html#subsec-line-integral-questions" class="internal"><span class="codenumber">1.3.3</span> <span class="title">Concept Check</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-vector-fields.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Vector Fields and Line Integrals</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-vector-fields.html#subsec-vector-fields" class="internal"><span class="codenumber">1.4.1</span> <span class="title">Vector Fields</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-vector-fields.html#subsec-work-reminder" class="internal"><span class="codenumber">1.4.2</span> <span class="title">Work (Reminder)</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-vector-fields.html#subsec-work-force-field" class="internal"><span class="codenumber">1.4.3</span> <span class="title">Work of a Force Field</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-vector-fields.html#subsec-work-exploration" class="internal"><span class="codenumber">1.4.4</span> <span class="title">Concept Check</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="section-conservative-fields.html" class="internal"><span class="codenumber">1.5</span> <span class="title">Path Independence, Conservative Fields, and Potential Functions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-conservative-fields.html#sec-gradient-fields" class="internal"><span class="codenumber">1.5.1</span> <span class="title">A Brief Reminder (Gradient Fields)</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-conservative-fields.html#sec-conservative-definitions" class="internal"><span class="codenumber">1.5.2</span> <span class="title">Path Independence and Some Basic Definitions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-conservative-fields.html#sec-ftli" class="internal"><span class="codenumber">1.5.3</span> <span class="title">Line Integrals in Conservative Fields</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-conservative-fields.html#sec-potential-function" class="internal"><span class="codenumber">1.5.4</span> <span class="title">Finding a Potential Function</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-conservative-fields.html#sec-conservative-gradient" class="internal"><span class="codenumber">1.5.5</span> <span class="title">Conservative Fields are Gradient Fields</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-conservative-fields.html#sec-loop-property" class="internal"><span class="codenumber">1.5.6</span> <span class="title">The Loop Property of Conservative Fields</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-conservative-fields.html#sec-conservative-concept-check" class="internal"><span class="codenumber">1.5.7</span> <span class="title">Concept Check</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="ch-multiple-integrals.html" class="internal"><span class="codenumber">2</span> <span class="title">Multiple Integrals</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="section-double-integrals-rectangles.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Double and Iterated Integrals Over Rectangles</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-double-integrals-rectangles.html#sec-area-under-curve-reminder" class="internal"><span class="codenumber">2.1.1</span> <span class="title">Reminder: Area Under <span class="process-math">\(y = f(x)\)</span> from <span class="process-math">\(x = a\)</span> to <span class="process-math">\(x = b\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-double-integrals-rectangles.html#sec-double-integrals-rectangles" class="internal"><span class="codenumber">2.1.2</span> <span class="title">Double Integrals Over Rectangles</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-double-integrals-rectangles.html#sec-iterated-integrals" class="internal"><span class="codenumber">2.1.3</span> <span class="title">Calculating Double Integrals as Iterated Integrals</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-double-integrals-rectangles.html#sec-iterated-integral-substitution" class="internal"><span class="codenumber">2.1.4</span> <span class="title">An Iterated Integral Requiring Substitution and Integration by Parts</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-double-integrals-rectangles.html#subsec-double-integral-questions" class="internal"><span class="codenumber">2.1.5</span> <span class="title">Concept Check</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="section-double-integrals-general-regions.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Double Integrals Over General Regions and Area by Double Integration</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-double-integrals-general-regions.html#sec-general-regions-case1" class="internal"><span class="codenumber">2.2.1</span> <span class="title">Case I: Regions of the Form <span class="process-math">\(R = \{(x,y) : a \le x \le b,\ f_2(x) \le y \le f_1(x)\}\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-double-integrals-general-regions.html#sec-general-regions-case2" class="internal"><span class="codenumber">2.2.2</span> <span class="title">Case II: Regions of the Form <span class="process-math">\(R = \{(x,y) : c \le y \le d,\ g_1(y) \le x \le g_2(y)\}\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-double-integrals-general-regions.html#sec-tetrahedron-volume" class="internal"><span class="codenumber">2.2.3</span> <span class="title">Volume of a Tetrahedron</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-double-integrals-general-regions.html#sec-area-by-double-integration" class="internal"><span class="codenumber">2.2.4</span> <span class="title">Area by Double Integration</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-double-integrals-general-regions.html#subsec-general-regions-questions" class="internal"><span class="codenumber">2.2.5</span> <span class="title">Concept Check</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="section-polar-coordinates.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Polar Coordinates and Graphing Polar Equations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-polar-coordinates.html#sec-polar-definition" class="internal"><span class="codenumber">2.3.1</span> <span class="title">The Polar Coordinate System</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-polar-coordinates.html#sec-polar-cartesian-relation" class="internal"><span class="codenumber">2.3.2</span> <span class="title">Relation Between Polar and Cartesian Coordinates</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-polar-coordinates.html#sec-polar-nonuniqueness" class="internal"><span class="codenumber">2.3.3</span> <span class="title">Non-Uniqueness of Polar Coordinates</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-polar-coordinates.html#sec-polar-to-cartesian-example" class="internal"><span class="codenumber">2.3.4</span> <span class="title">Replacing Polar Equations by Cartesian Equations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-polar-coordinates.html#sec-polar-symmetries" class="internal"><span class="codenumber">2.3.5</span> <span class="title">Symmetries</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="section-double-integrals-polar-form.html" class="internal"><span class="codenumber">2.4</span> <span class="title">Double Integrals in Polar Form</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-double-integrals-polar-form.html#sec-polar-double-integral" class="internal"><span class="codenumber">2.4.1</span> <span class="title">How Does a Double Integral Look in Polar Coordinates?</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-double-integrals-polar-form.html#sec-polar-annulus-example" class="internal"><span class="codenumber">2.4.2</span> <span class="title">Integrating Over a Half Annulus</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-double-integrals-polar-form.html#sec-polar-rose-example" class="internal"><span class="codenumber">2.4.3</span> <span class="title">Area Enclosed by One Loop of a Rose</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-double-integrals-polar-form.html#sec-polar-volume-example" class="internal"><span class="codenumber">2.4.4</span> <span class="title">A Volume Computed in Polar Coordinates</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-double-integrals-polar-form.html#sec-polar-gaussian-example" class="internal"><span class="codenumber">2.4.5</span> <span class="title">An Integral That Needs Polar Coordinates</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-double-integrals-polar-form.html#subsec-polar-questions" class="internal"><span class="codenumber">2.4.6</span> <span class="title">Concept Check</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="section-triple-integrals-rectangular.html" class="internal"><span class="codenumber">2.5</span> <span class="title">Triple Integrals in Rectangular Coordinates</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-triple-integrals-rectangular.html#sec-triple-integral-meaning" class="internal"><span class="codenumber">2.5.1</span> <span class="title">What Does a Triple Integral Mean?</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-triple-integrals-rectangular.html#sec-triple-case1" class="internal"><span class="codenumber">2.5.2</span> <span class="title">Case I: <span class="process-math">\(E = \{(x,y,z) : a \le x \le b,\)</span> <span class="process-math">\(g_1(x) \le y \le g_2(x),\)</span> <span class="process-math">\(u_1(x,y) \le z \le u_2(x,y)\}\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-triple-integrals-rectangular.html#sec-triple-case2" class="internal"><span class="codenumber">2.5.3</span> <span class="title">Case II: <span class="process-math">\(E = \{(x,y,z) : h_1(y) \le x \le h_2(y),\)</span> <span class="process-math">\(c \le y \le d,\)</span> <span class="process-math">\(u_1(x,y) \le z \le u_2(x,y)\}\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-triple-integrals-rectangular.html#sec-triple-mass" class="internal"><span class="codenumber">2.5.4</span> <span class="title">Mass With Variable Density</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-triple-integrals-rectangular.html#subsec-triple-questions" class="internal"><span class="codenumber">2.5.5</span> <span class="title">Concept Check</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="section-triple-integrals-cylindrical.html" class="internal"><span class="codenumber">2.6</span> <span class="title">Triple Integrals in Cylindrical Coordinates</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-triple-integrals-cylindrical.html#sec-cylindrical-coordinates" class="internal"><span class="codenumber">2.6.1</span> <span class="title">Cylindrical Coordinates</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-triple-integrals-cylindrical.html#sec-cylindrical-mass-example" class="internal"><span class="codenumber">2.6.2</span> <span class="title">The Mass of a Solid With Axial Symmetry</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-triple-integrals-cylindrical.html#subsec-cylindrical-questions" class="internal"><span class="codenumber">2.6.3</span> <span class="title">Concept Check</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="section-triple-integrals-spherical.html" class="internal"><span class="codenumber">2.7</span> <span class="title">Triple Integrals in Spherical Coordinates</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-triple-integrals-spherical.html#sec-spherical-coordinates" class="internal"><span class="codenumber">2.7.1</span> <span class="title">Spherical Coordinates</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-triple-integrals-spherical.html#sec-spherical-integration" class="internal"><span class="codenumber">2.7.2</span> <span class="title">Integration in Spherical Coordinates</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-triple-integrals-spherical.html#sec-spherical-icecream" class="internal"><span class="codenumber">2.7.3</span> <span class="title">The Ice Cream Cone</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-triple-integrals-spherical.html#sec-spherical-shifted-example" class="internal"><span class="codenumber">2.7.4</span> <span class="title">Converting a Triple Integral to Spherical Coordinates</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-triple-integrals-spherical.html#sec-spherical-rewrite" class="internal"><span class="codenumber">2.7.5</span> <span class="title">Re-Writing an Integral in Spherical and Cylindrical Coordinates</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section contains-active">
+<div class="toc-title-box"><a href="section-mass-center-of-mass.html" class="internal"><span class="codenumber">2.8</span> <span class="title">Applications: Mass and Center of Mass</span></a></div>
+<ul class="structural toc-item-list active">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-mass-center-of-mass.html#sec-com-two-masses" class="internal"><span class="codenumber">2.8.1</span> <span class="title">The Center of Mass of Two Point Masses</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-mass-center-of-mass.html#sec-com-n-masses" class="internal"><span class="codenumber">2.8.2</span> <span class="title">The Center of Mass of <span class="process-math">\(n\)</span> Point Masses and the First Moments</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-mass-center-of-mass.html#sec-mass-2d-object" class="internal"><span class="codenumber">2.8.3</span> <span class="title">Finding the Center of Mass of a 2D Object</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-mass-center-of-mass.html#sec-mass-3d-object" class="internal"><span class="codenumber">2.8.4</span> <span class="title">Finding the Center of Mass of a 3D Object*</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="section-mass-center-of-mass.html#subsec-mass-questions" class="internal"><span class="codenumber">2.8.5</span> <span class="title">Concept Check</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="section-mass-center-of-mass"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.8</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Applications: Mass and Center of Mass</span>
+</h2>
+<section class="introduction" id="section-mass-center-of-mass-2"><div class="para" id="section-mass-center-of-mass-2-1">Multiple integrals let us compute physical quantities of solid objects and flat plates whose <dfn class="terminology">density</dfn> varies from point to point. In this section we use double and triple integrals to compute the total mass of an object and to locate its <dfn class="terminology">center of mass</dfn>—the point at which the object would balance perfectly. Before we study continuous objects, we review what the center of mass of a system of point masses is and why it deserves its name: first for two masses, then for any number of them. A flat plate and a solid are then handled in the same way, by cutting them into many small pieces and treating each piece as a point mass.<div class="autopermalink" data-description="Paragraph"><a href="#section-mass-center-of-mass-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="section-mass-center-of-mass-2-2">Starred material is optional. In this section that is <a href="section-mass-center-of-mass.html#sec-mass-3d-object" class="internal" title="Subsection 2.8.4: Finding the Center of Mass of a 3D Object*">Subsection 2.8.4</a>, on point masses in space and solid objects.<div class="autopermalink" data-description="Paragraph"><a href="#section-mass-center-of-mass-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></section><section class="subsection" id="sec-com-two-masses"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.8.1</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">The Center of Mass of Two Point Masses</span>
+</h3>
+<div class="para" id="sec-com-two-masses-2">Consider two masses <span class="process-math">\(m_1\)</span> and <span class="process-math">\(m_2\)</span> located at the points <span class="process-math">\(\mathbf{r}_1 = (x_1, y_1)\)</span> and <span class="process-math">\(\mathbf{r}_2 = (x_2, y_2)\text{,}\)</span> as in <a href="section-mass-center-of-mass.html#fig-two-masses" class="internal" title="Figure 2.8.1">Figure 2.8.1</a>, and let <span class="process-math">\(\mathbf{F}_1\)</span> and <span class="process-math">\(\mathbf{F}_2\)</span> be the net forces acting on them. By Newton’s second law, each force is the mass times the acceleration, <span class="process-math">\(\mathbf{F}_1 = m_1\, \dfrac{d^2\mathbf{r}_1}{dt^2}\)</span> and <span class="process-math">\(\mathbf{F}_2 = m_2\, \dfrac{d^2\mathbf{r}_2}{dt^2}\text{,}\)</span> so the total force on the system of the two masses is<div class="autopermalink" data-description="Paragraph"><a href="#sec-com-two-masses-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig-two-masses.html" id="sec-com-two-masses-3">
+\begin{equation*}
+\mathbf{F} = \mathbf{F}_1 + \mathbf{F}_2
+= m_1 \frac{d^2\mathbf{r}_1}{dt^2} + m_2 \frac{d^2\mathbf{r}_2}{dt^2}
+= \frac{d^2}{dt^2}\left( \sum_{i=1}^{2} m_i\, \mathbf{r}_i \right).
+\end{equation*}
+</div>
+<div class="para" id="sec-com-two-masses-4">It would be nice to rewrite this in the familiar form <span class="process-math">\(\mathbf{F} = M\mathbf{a}\)</span> of Newton’s second law. To this end, we multiply and divide the right-hand side by the total mass <span class="process-math">\(M = m_1 + m_2\)</span> of the system:<div class="autopermalink" data-description="Paragraph"><a href="#sec-com-two-masses-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig-two-masses.html" id="sec-com-two-masses-5">
+\begin{equation*}
+\mathbf{F} = M\, \frac{d^2}{dt^2}\left( \sum_{i=1}^{2} \frac{m_i}{M}\, \mathbf{r}_i \right)
+= M\, \frac{d^2\bar{\mathbf{r}}}{dt^2},
+\end{equation*}
+</div>
+<div class="para" id="sec-com-two-masses-6">where we have defined the <dfn class="terminology">center of mass</dfn> of the system as the point<div class="autopermalink" data-description="Paragraph"><a href="#sec-com-two-masses-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig-two-masses.html" id="eq-com-two-masses">
+\begin{equation}
+\bar{\mathbf{r}} = \frac{1}{M} \sum_{i=1}^{2} m_i\, \mathbf{r}_i
+= \left( \frac{m_1 x_1 + m_2 x_2}{m_1 + m_2},\
+\frac{m_1 y_1 + m_2 y_2}{m_1 + m_2} \right).\tag{2.8.1}
+\end{equation}
+</div>
+<div class="para" id="sec-com-two-masses-8">Thus the total force equals the total mass times the acceleration of a virtual mass <span class="process-math">\(M\)</span> located at <span class="process-math">\(\bar{\mathbf{r}}\text{:}\)</span> as far as the net force is concerned, the pair of masses moves like a single particle of mass <span class="process-math">\(M\)</span> sitting at the center of mass. The formula is a weighted average of the two positions, with the masses as the weights. If <span class="process-math">\(m_1 = m_2\text{,}\)</span> the center of mass is the midpoint of the segment joining the two masses; otherwise it lies on that segment, closer to the heavier mass.<div class="autopermalink" data-description="Paragraph"><a href="#sec-com-two-masses-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<figure class="figure figure-like" id="fig-two-masses"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;">
+<div class="ChemAccess-element" data-src="generated/prefigure/prefigure-two-masses-diagcess.svg" data-cml="generated/prefigure/prefigure-two-masses-annotations.xml"></div>
+<details><summary>Diagram Exploration Keyboard Controls</summary><div class="diagcess-navigation-controls"><table>
+<thead><tr>
+<th>Key</th>
+<th>Action</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Enter, A</td>
+<td>Activate keyboard driven exploration</td>
+</tr>
+<tr>
+<td>B</td>
+<td>Activate menu driven exploration</td>
+</tr>
+<tr>
+<td>Escape</td>
+<td>Leave exploration mode</td>
+</tr>
+<tr>
+<td>Cursor down</td>
+<td>Explore next lower level</td>
+</tr>
+<tr>
+<td>Cursor up</td>
+<td>Explore next upper level</td>
+</tr>
+<tr>
+<td>Cursor right</td>
+<td>Explore next element on level</td>
+</tr>
+<tr>
+<td>Cursor left</td>
+<td>Explore previous element on level</td>
+</tr>
+<tr>
+<td>X</td>
+<td>Toggle expert mode</td>
+</tr>
+<tr>
+<td>W</td>
+<td>Extra details if available</td>
+</tr>
+<tr>
+<td>Space</td>
+<td>Repeat speech</td>
+</tr>
+<tr>
+<td>M</td>
+<td>Activate step magnification</td>
+</tr>
+<tr>
+<td>Comma</td>
+<td>Activate direct magnification</td>
+</tr>
+<tr>
+<td>N</td>
+<td>Deactivate magnification</td>
+</tr>
+<tr>
+<td>Z</td>
+<td>Toggle subtitles</td>
+</tr>
+<tr>
+<td>C</td>
+<td>Cycle contrast settings</td>
+</tr>
+<tr>
+<td>T</td>
+<td>Monochrome colours</td>
+</tr>
+<tr>
+<td>L</td>
+<td>Toggle language (if available)</td>
+</tr>
+<tr>
+<td>K</td>
+<td>Kill current sound</td>
+</tr>
+<tr>
+<td>Y</td>
+<td>Stop sound output</td>
+</tr>
+<tr>
+<td>O</td>
+<td>Start and stop sonification</td>
+</tr>
+<tr>
+<td>P</td>
+<td>Repeat sonification output</td>
+</tr>
+</tbody>
+</table></div></details>
+</div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.8.1<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Two point masses <span class="process-math">\(m_1\)</span> and <span class="process-math">\(m_2\)</span> at the points <span class="process-math">\(\mathbf{r}_1\)</span> and <span class="process-math">\(\mathbf{r}_2\text{,}\)</span> with the net forces <span class="process-math">\(\mathbf{F}_1\)</span> and <span class="process-math">\(\mathbf{F}_2\)</span> acting on them. Their center of mass <span class="process-math">\(\bar{\mathbf{r}}\)</span> lies on the segment joining them, closer to the heavier mass (here <span class="process-math">\(m_2 = 2m_1\)</span>).<div class="autopermalink" data-description="Figure 2.8.1"><a href="#fig-two-masses" title="Copy heading and permalink for Figure 2.8.1" aria-label="Copy heading and permalink for Figure 2.8.1">🔗</a></div></figcaption></figure><div class="autopermalink" data-description="Subsection 2.8.1: The Center of Mass of Two Point Masses"><a href="#sec-com-two-masses" title="Copy heading and permalink for Subsection 2.8.1: The Center of Mass of Two Point Masses" aria-label="Copy heading and permalink for Subsection 2.8.1: The Center of Mass of Two Point Masses">🔗</a></div></section><section class="subsection" id="sec-com-n-masses"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.8.2</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">The Center of Mass of <span class="process-math">\(n\)</span> Point Masses and the First Moments</span>
+</h3>
+<div class="para" id="sec-com-n-masses-2">Nothing in the computation above depended on there being only two masses. For a system of <span class="process-math">\(n\)</span> point masses <span class="process-math">\(m_1, \dots, m_n\)</span> at the points <span class="process-math">\(\mathbf{r}_1, \dots, \mathbf{r}_n\text{,}\)</span> adding Newton’s second law for each mass and multiplying and dividing by the total mass <span class="process-math">\(M = m_1 + \cdots + m_n\)</span> gives, exactly as before, <span class="process-math">\(\mathbf{F} = M\, \dfrac{d^2\bar{\mathbf{r}}}{dt^2}\)</span> with<div class="autopermalink" data-description="Paragraph"><a href="#sec-com-n-masses-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-com-points-vector.html ./knowl/xref/sec-mass-3d-object.html" id="eq-com-points-vector">
+\begin{equation}
+\bar{\mathbf{r}} = \frac{1}{M} \sum_{i=1}^{n} m_i\, \mathbf{r}_i,
+\qquad M = \sum_{i=1}^{n} m_i .\tag{2.8.2}
+\end{equation}
+</div>
+<div class="para" id="sec-com-n-masses-4">The sums in the coordinates of <span class="process-math">\(\bar{\mathbf{r}}\)</span> have names of their own. For masses in the plane, with <span class="process-math">\(\mathbf{r}_i = (x_i, y_i)\text{,}\)</span> the <dfn class="terminology">first moments</dfn> of the system are<div class="autopermalink" data-description="Paragraph"><a href="#sec-com-n-masses-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-com-points-vector.html ./knowl/xref/sec-mass-3d-object.html" id="eq-first-moments-points">
+\begin{equation}
+M_y = \sum_{i=1}^{n} m_i\, x_i, \qquad
+M_x = \sum_{i=1}^{n} m_i\, y_i .\tag{2.8.3}
+\end{equation}
+</div>
+<div class="para" id="sec-com-n-masses-6">
+<span class="process-math">\(M_y\)</span> is the <dfn class="terminology">moment about the <span class="process-math">\(y\)</span>-axis</dfn>: each mass is multiplied by its signed distance <span class="process-math">\(x_i\)</span> from the <span class="process-math">\(y\)</span>-axis, so <span class="process-math">\(M_y\)</span> measures the tendency of the system to tip about that axis (masses to the right of the axis, with <span class="process-math">\(x_i \gt 0\text{,}\)</span> count positively, and masses to its left count negatively). Likewise <span class="process-math">\(M_x\)</span> is the <dfn class="terminology">moment about the <span class="process-math">\(x\)</span>-axis</dfn>, computed with the signed distances <span class="process-math">\(y_i\)</span> from the <span class="process-math">\(x\)</span>-axis. In this notation, <a href="section-mass-center-of-mass.html#eq-com-points-vector" class="xref" data-knowl="./knowl/xref/eq-com-points-vector.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 2.8.2">(2.8.2)</a> says that the center of mass <span class="process-math">\(\bar{\mathbf{r}} = (\bar{x}, \bar{y})\)</span> has the coordinates<div class="autopermalink" data-description="Paragraph"><a href="#sec-com-n-masses-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-com-points-vector.html ./knowl/xref/sec-mass-3d-object.html" id="eq-com-points">
+\begin{equation}
+\bar{x} = \frac{M_y}{M}, \qquad
+\bar{y} = \frac{M_x}{M}.\tag{2.8.4}
+\end{equation}
+</div>
+<div class="para" id="sec-com-n-masses-8">Every formula for a flat plate in the next subsection is one of these, with the sum over point masses replaced by an integral over the plate. Masses in space, and solid objects, are treated in <a href="section-mass-center-of-mass.html#sec-mass-3d-object" class="internal" title="Subsection 2.8.4: Finding the Center of Mass of a 3D Object*">Subsection 2.8.4</a>.<div class="autopermalink" data-description="Paragraph"><a href="#sec-com-n-masses-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Subsection 2.8.2: The Center of Mass of n Point Masses and the First Moments"><a href="#sec-com-n-masses" title="Copy heading and permalink for Subsection 2.8.2: The Center of Mass of n Point Masses and the First Moments" aria-label="Copy heading and permalink for Subsection 2.8.2: The Center of Mass of n Point Masses and the First Moments">🔗</a></div></section><section class="subsection" id="sec-mass-2d-object"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.8.3</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Finding the Center of Mass of a 2D Object</span>
+</h3>
+<div class="para" id="sec-mass-2d-object-2">Now let the mass be spread continuously over a flat plate that occupies a region <span class="process-math">\(R\)</span> in the plane, with <dfn class="terminology">density</dfn> <span class="process-math">\(\delta(x,y)\)</span> (mass per unit area) at the point <span class="process-math">\((x,y)\text{.}\)</span> To bring the formulas of the previous subsection to bear, we cut the plate into small pieces and treat each piece as a point mass. Partition the plane into small rectangles by the lines <span class="process-math">\(x = x_0, x_1, \dots, x_n\)</span> and <span class="process-math">\(y = y_0, y_1, \dots, y_m\text{,}\)</span> as in <a href="section-mass-center-of-mass.html#fig-plate-element" class="internal" title="Figure 2.8.2">Figure 2.8.2</a>. The rectangle in column <span class="process-math">\(i\)</span> and row <span class="process-math">\(j\)</span> has width <span class="process-math">\(\Delta x_i\text{,}\)</span> height <span class="process-math">\(\Delta y_j\text{,}\)</span> and area <span class="process-math">\(\Delta A_{ij} = \Delta x_i\, \Delta y_j\text{;}\)</span> if it meets <span class="process-math">\(R\text{,}\)</span> we pick a point <span class="process-math">\((x_i, y_j)\)</span> in it. The density is nearly constant on such a small piece, so the mass of the piece is approximately<div class="autopermalink" data-description="Paragraph"><a href="#sec-mass-2d-object-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig-plate-element.html ./knowl/xref/eq-com-points-vector.html ./knowl/xref/eq-first-moments-points.html ./knowl/xref/eq-com-2d.html ./knowl/xref/fig-centroid-between-curves.html ./knowl/xref/eq-first-moments-2d.html ./knowl/xref/eq-first-moments-2d.html ./knowl/xref/eq-com-2d.html ./knowl/xref/fig-centroid-between-curves-video.html ./knowl/xref/fig-cardioid-centroid.html ./knowl/xref/eq-polar-area-element.html ./knowl/xref/eq-first-moments-2d.html ./knowl/xref/eq-polar-cartesian.html ./knowl/xref/eq-com-2d.html ./knowl/xref/fig-cardioid-centroid-video.html" id="sec-mass-2d-object-3">
+\begin{equation*}
+\Delta m_{ij} = \delta(x_i, y_j)\, \Delta A_{ij}
+= \delta(x_i, y_j)\, \Delta x_i\, \Delta y_j .
+\end{equation*}
+</div>
+<figure class="figure figure-like" id="fig-plate-element"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;">
+<div class="ChemAccess-element" data-src="generated/prefigure/prefigure-plate-element-diagcess.svg" data-cml="generated/prefigure/prefigure-plate-element-annotations.xml"></div>
+<details><summary>Diagram Exploration Keyboard Controls</summary><div class="diagcess-navigation-controls"><table>
+<thead><tr>
+<th>Key</th>
+<th>Action</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Enter, A</td>
+<td>Activate keyboard driven exploration</td>
+</tr>
+<tr>
+<td>B</td>
+<td>Activate menu driven exploration</td>
+</tr>
+<tr>
+<td>Escape</td>
+<td>Leave exploration mode</td>
+</tr>
+<tr>
+<td>Cursor down</td>
+<td>Explore next lower level</td>
+</tr>
+<tr>
+<td>Cursor up</td>
+<td>Explore next upper level</td>
+</tr>
+<tr>
+<td>Cursor right</td>
+<td>Explore next element on level</td>
+</tr>
+<tr>
+<td>Cursor left</td>
+<td>Explore previous element on level</td>
+</tr>
+<tr>
+<td>X</td>
+<td>Toggle expert mode</td>
+</tr>
+<tr>
+<td>W</td>
+<td>Extra details if available</td>
+</tr>
+<tr>
+<td>Space</td>
+<td>Repeat speech</td>
+</tr>
+<tr>
+<td>M</td>
+<td>Activate step magnification</td>
+</tr>
+<tr>
+<td>Comma</td>
+<td>Activate direct magnification</td>
+</tr>
+<tr>
+<td>N</td>
+<td>Deactivate magnification</td>
+</tr>
+<tr>
+<td>Z</td>
+<td>Toggle subtitles</td>
+</tr>
+<tr>
+<td>C</td>
+<td>Cycle contrast settings</td>
+</tr>
+<tr>
+<td>T</td>
+<td>Monochrome colours</td>
+</tr>
+<tr>
+<td>L</td>
+<td>Toggle language (if available)</td>
+</tr>
+<tr>
+<td>K</td>
+<td>Kill current sound</td>
+</tr>
+<tr>
+<td>Y</td>
+<td>Stop sound output</td>
+</tr>
+<tr>
+<td>O</td>
+<td>Start and stop sonification</td>
+</tr>
+<tr>
+<td>P</td>
+<td>Repeat sonification output</td>
+</tr>
+</tbody>
+</table></div></details>
+</div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.8.2<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>A flat plate <span class="process-math">\(R\)</span> cut into small rectangles. The rectangle in column <span class="process-math">\(i\)</span> and row <span class="process-math">\(j\)</span> has the area <span class="process-math">\(\Delta A_{ij} = \Delta x_i\,
+\Delta y_j\text{,}\)</span> contains the point <span class="process-math">\((x_i, y_j)\text{,}\)</span> and carries the mass <span class="process-math">\(\Delta m_{ij} = \delta(x_i, y_j)\, \Delta A_{ij}\text{.}\)</span><div class="autopermalink" data-description="Figure 2.8.2"><a href="#fig-plate-element" title="Copy heading and permalink for Figure 2.8.2" aria-label="Copy heading and permalink for Figure 2.8.2">🔗</a></div></figcaption></figure><div class="para" id="sec-mass-2d-object-5">The plate is now approximated by a system of point masses <span class="process-math">\(\Delta m_{ij}\)</span> located at the points <span class="process-math">\((x_i, y_j)\text{,}\)</span> one for each rectangle that meets <span class="process-math">\(R\text{.}\)</span> By <a href="section-mass-center-of-mass.html#eq-com-points-vector" class="xref" data-knowl="./knowl/xref/eq-com-points-vector.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 2.8.2">(2.8.2)</a> and <a href="section-mass-center-of-mass.html#eq-first-moments-points" class="xref" data-knowl="./knowl/xref/eq-first-moments-points.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 2.8.3">(2.8.3)</a>, the total mass and the first moments of this system are the double sums<div class="autopermalink" data-description="Paragraph"><a href="#sec-mass-2d-object-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig-plate-element.html ./knowl/xref/eq-com-points-vector.html ./knowl/xref/eq-first-moments-points.html ./knowl/xref/eq-com-2d.html ./knowl/xref/fig-centroid-between-curves.html ./knowl/xref/eq-first-moments-2d.html ./knowl/xref/eq-first-moments-2d.html ./knowl/xref/eq-com-2d.html ./knowl/xref/fig-centroid-between-curves-video.html ./knowl/xref/fig-cardioid-centroid.html ./knowl/xref/eq-polar-area-element.html ./knowl/xref/eq-first-moments-2d.html ./knowl/xref/eq-polar-cartesian.html ./knowl/xref/eq-com-2d.html ./knowl/xref/fig-cardioid-centroid-video.html" id="sec-mass-2d-object-6">
+\begin{align*}
+M \amp\approx \sum_{j=1}^{m}\sum_{i=1}^{n}
+\delta(x_i, y_j)\, \Delta x_i\, \Delta y_j,\\
+M_y \amp\approx \sum_{j=1}^{m}\sum_{i=1}^{n}
+x_i\, \delta(x_i, y_j)\, \Delta x_i\, \Delta y_j, \qquad
+M_x \approx \sum_{j=1}^{m}\sum_{i=1}^{n}
+y_j\, \delta(x_i, y_j)\, \Delta x_i\, \Delta y_j,
+\end{align*}
+</div>
+<div class="para" id="sec-mass-2d-object-7">where the sums run over the rectangles that meet <span class="process-math">\(R\text{.}\)</span> These are Riemann sums. Letting the rectangles shrink, that is, letting <span class="process-math">\(m, n \to \infty\text{,}\)</span> turns each double sum into a double integral over <span class="process-math">\(R\text{.}\)</span> For the mass,<div class="autopermalink" data-description="Paragraph"><a href="#sec-mass-2d-object-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig-plate-element.html ./knowl/xref/eq-com-points-vector.html ./knowl/xref/eq-first-moments-points.html ./knowl/xref/eq-com-2d.html ./knowl/xref/fig-centroid-between-curves.html ./knowl/xref/eq-first-moments-2d.html ./knowl/xref/eq-first-moments-2d.html ./knowl/xref/eq-com-2d.html ./knowl/xref/fig-centroid-between-curves-video.html ./knowl/xref/fig-cardioid-centroid.html ./knowl/xref/eq-polar-area-element.html ./knowl/xref/eq-first-moments-2d.html ./knowl/xref/eq-polar-cartesian.html ./knowl/xref/eq-com-2d.html ./knowl/xref/fig-cardioid-centroid-video.html" id="eq-mass-2d">
+\begin{equation}
+M = \lim_{m,n \to \infty} \sum_{j=1}^{m}\sum_{i=1}^{n}
+\delta(x_i, y_j)\, \Delta x_i\, \Delta y_j
+= \iint_R \delta(x,y)\, dA,\tag{2.8.5}
+\end{equation}
+</div>
+<div class="para" id="sec-mass-2d-object-9">and the first moments become double integrals in the same way. So the mass and the first moments of the plate are<div class="autopermalink" data-description="Paragraph"><a href="#sec-mass-2d-object-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig-plate-element.html ./knowl/xref/eq-com-points-vector.html ./knowl/xref/eq-first-moments-points.html ./knowl/xref/eq-com-2d.html ./knowl/xref/fig-centroid-between-curves.html ./knowl/xref/eq-first-moments-2d.html ./knowl/xref/eq-first-moments-2d.html ./knowl/xref/eq-com-2d.html ./knowl/xref/fig-centroid-between-curves-video.html ./knowl/xref/fig-cardioid-centroid.html ./knowl/xref/eq-polar-area-element.html ./knowl/xref/eq-first-moments-2d.html ./knowl/xref/eq-polar-cartesian.html ./knowl/xref/eq-com-2d.html ./knowl/xref/fig-cardioid-centroid-video.html" id="eq-first-moments-2d">
+\begin{equation}
+M = \iint_R \delta\, dA, \qquad
+M_y = \iint_R x\, \delta\, dA, \qquad
+M_x = \iint_R y\, \delta\, dA,\tag{2.8.6}
+\end{equation}
+</div>
+<div class="para" id="sec-mass-2d-object-11">where, as before, <span class="process-math">\(M_y\)</span> is the moment about the <span class="process-math">\(y\)</span>-axis and <span class="process-math">\(M_x\)</span> the moment about the <span class="process-math">\(x\)</span>-axis, and the center of mass is<div class="autopermalink" data-description="Paragraph"><a href="#sec-mass-2d-object-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig-plate-element.html ./knowl/xref/eq-com-points-vector.html ./knowl/xref/eq-first-moments-points.html ./knowl/xref/eq-com-2d.html ./knowl/xref/fig-centroid-between-curves.html ./knowl/xref/eq-first-moments-2d.html ./knowl/xref/eq-first-moments-2d.html ./knowl/xref/eq-com-2d.html ./knowl/xref/fig-centroid-between-curves-video.html ./knowl/xref/fig-cardioid-centroid.html ./knowl/xref/eq-polar-area-element.html ./knowl/xref/eq-first-moments-2d.html ./knowl/xref/eq-polar-cartesian.html ./knowl/xref/eq-com-2d.html ./knowl/xref/fig-cardioid-centroid-video.html" id="eq-com-2d">
+\begin{equation}
+\bar{x} = \frac{M_y}{M}, \qquad
+\bar{y} = \frac{M_x}{M}.\tag{2.8.7}
+\end{equation}
+</div>
+<article class="definition definition-like" id="def-centroid"><h4 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.8.3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para" id="def-centroid-1-1">When the density of a plate or of a solid object is constant, the center of mass is called the <dfn class="terminology">centroid</dfn> of the object.<div class="autopermalink" data-description="Paragraph"><a href="#def-centroid-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Definition 2.8.3"><a href="#def-centroid" title="Copy heading and permalink for Definition 2.8.3" aria-label="Copy heading and permalink for Definition 2.8.3">🔗</a></div></article><div class="para" id="sec-mass-2d-object-14">A constant density <span class="process-math">\(\delta\)</span> cancels in the quotients of <a href="section-mass-center-of-mass.html#eq-com-2d" class="xref" data-knowl="./knowl/xref/eq-com-2d.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 2.8.7">(2.8.7)</a>, so the centroid depends only on the shape of the object: to find a centroid we may as well take <span class="process-math">\(\delta = 1\text{,}\)</span> and then the mass <span class="process-math">\(M\)</span> is simply the area of the plate.<div class="autopermalink" data-description="Paragraph"><a href="#sec-mass-2d-object-14" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<details id="example-centroid-between-curves" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.8.4</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Centroid of the Region Between Two Curves.</span>
+</h4></summary><article class="example example-like knowl__content"><div class="para" id="example-centroid-between-curves-2-1">Find the centroid of the region between <span class="process-math">\(y = \sqrt{x}\)</span> and <span class="process-math">\(y = x^2\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#example-centroid-between-curves-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 2.8.4: Centroid of the Region Between Two Curves"><a href="#example-centroid-between-curves" title="Copy heading and permalink for Example 2.8.4: Centroid of the Region Between Two Curves" aria-label="Copy heading and permalink for Example 2.8.4: Centroid of the Region Between Two Curves">🔗</a></div></article></details><details id="solution-centroid-between-curves" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="solution-centroid-between-curves-1">The two curves intersect where <span class="process-math">\(\sqrt{x} = x^2\text{,}\)</span> that is, at <span class="process-math">\(x = 0\)</span> and <span class="process-math">\(x = 1\text{,}\)</span> so the region lies over the interval <span class="process-math">\(0 \le x \le 1\)</span> with <span class="process-math">\(x^2 \le y \le \sqrt{x}\text{,}\)</span> as shown in <a href="section-mass-center-of-mass.html#fig-centroid-between-curves" class="internal" title="Figure 2.8.6">Figure 2.8.6</a>. Since we are finding the centroid, we may take the constant density to be <span class="process-math">\(\delta = 1\text{,}\)</span> in which case, by <a href="section-mass-center-of-mass.html#eq-first-moments-2d" class="xref" data-knowl="./knowl/xref/eq-first-moments-2d.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 2.8.6">(2.8.6)</a>, the mass is simply the area:<div class="autopermalink" data-description="Paragraph"><a href="#solution-centroid-between-curves-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig-centroid-between-curves.html ./knowl/xref/eq-first-moments-2d.html ./knowl/xref/eq-first-moments-2d.html ./knowl/xref/eq-com-2d.html ./knowl/xref/fig-centroid-between-curves-video.html" id="solution-centroid-between-curves-2">
+\begin{equation*}
+M = \int_0^1 \int_{x^2}^{\sqrt{x}} dy\, dx
+= \int_0^1 \left( \sqrt{x} - x^2 \right) dx
+= \left[ \frac{2}{3}x^{3/2} - \frac{x^3}{3} \right]_0^1
+= \frac{1}{3}.
+\end{equation*}
+</div>
+<div class="para" id="solution-centroid-between-curves-3">By <a href="section-mass-center-of-mass.html#eq-first-moments-2d" class="xref" data-knowl="./knowl/xref/eq-first-moments-2d.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 2.8.6">(2.8.6)</a>, the moment about the <span class="process-math">\(y\)</span>-axis is<div class="autopermalink" data-description="Paragraph"><a href="#solution-centroid-between-curves-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig-centroid-between-curves.html ./knowl/xref/eq-first-moments-2d.html ./knowl/xref/eq-first-moments-2d.html ./knowl/xref/eq-com-2d.html ./knowl/xref/fig-centroid-between-curves-video.html" id="solution-centroid-between-curves-4">
+\begin{equation*}
+M_y = \int_0^1 \int_{x^2}^{\sqrt{x}} x\, dy\, dx
+= \int_0^1 x \left( \sqrt{x} - x^2 \right) dx
+= \int_0^1 \left( x^{3/2} - x^3 \right) dx
+= \frac{2}{5} - \frac{1}{4}
+= \frac{3}{20},
+\end{equation*}
+</div>
+<div class="para" id="solution-centroid-between-curves-5">and the moment about the <span class="process-math">\(x\)</span>-axis is<div class="autopermalink" data-description="Paragraph"><a href="#solution-centroid-between-curves-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig-centroid-between-curves.html ./knowl/xref/eq-first-moments-2d.html ./knowl/xref/eq-first-moments-2d.html ./knowl/xref/eq-com-2d.html ./knowl/xref/fig-centroid-between-curves-video.html" id="solution-centroid-between-curves-6">
+\begin{equation*}
+M_x = \int_0^1 \int_{x^2}^{\sqrt{x}} y\, dy\, dx
+= \int_0^1 \frac{(\sqrt{x})^2 - (x^2)^2}{2}\, dx
+= \frac{1}{2} \int_0^1 \left( x - x^4 \right) dx
+= \frac{1}{2}\left( \frac{1}{2} - \frac{1}{5} \right)
+= \frac{3}{20}.
+\end{equation*}
+</div>
+<div class="para" id="solution-centroid-between-curves-7">By <a href="section-mass-center-of-mass.html#eq-com-2d" class="xref" data-knowl="./knowl/xref/eq-com-2d.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 2.8.7">(2.8.7)</a>,<div class="autopermalink" data-description="Paragraph"><a href="#solution-centroid-between-curves-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig-centroid-between-curves.html ./knowl/xref/eq-first-moments-2d.html ./knowl/xref/eq-first-moments-2d.html ./knowl/xref/eq-com-2d.html ./knowl/xref/fig-centroid-between-curves-video.html" id="solution-centroid-between-curves-8">
+\begin{equation*}
+\bar{x} = \frac{M_y}{M} = \frac{3/20}{1/3} = \frac{9}{20},
+\qquad
+\bar{y} = \frac{M_x}{M} = \frac{3/20}{1/3} = \frac{9}{20},
+\end{equation*}
+</div>
+<div class="para" id="solution-centroid-between-curves-9">so the centroid is <span class="process-math">\(\left( \tfrac{9}{20}, \tfrac{9}{20} \right)\text{.}\)</span> It is no accident that <span class="process-math">\(\bar{x} = \bar{y}\text{:}\)</span> the region is symmetric about the line <span class="process-math">\(y = x\text{,}\)</span> so its centroid must lie on that line. See <a href="section-mass-center-of-mass.html#fig-centroid-between-curves-video" class="xref" data-knowl="./knowl/xref/fig-centroid-between-curves-video.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 2.8.5">Figure 2.8.5</a> for an animated walkthrough.<div class="autopermalink" data-description="Paragraph"><a href="#solution-centroid-between-curves-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 2.8.3.1"><a href="#solution-centroid-between-curves" title="Copy heading and permalink for Solution 2.8.3.1" aria-label="Copy heading and permalink for Solution 2.8.3.1">🔗</a></div>
+</div></details><figure class="figure figure-like" id="fig-centroid-between-curves-video"><div class="video-box" style="width: 70%;padding-top: 39.375%; margin-left: 15%; margin-right: 15%;"><video id="video-centroid-between-curves" class="video" controls=""><source src="external/videos/centroid_between_curves_1080p.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.8.5<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The region between <span class="process-math">\(y = \sqrt{x}\)</span> and <span class="process-math">\(y = x^2\)</span> is symmetric about the line <span class="process-math">\(y = x\text{,}\)</span> and its centroid <span class="process-math">\(\left( \tfrac{9}{20}, \tfrac{9}{20} \right)\)</span> lies on that line.<div class="autopermalink" data-description="Figure 2.8.5"><a href="#fig-centroid-between-curves-video" title="Copy heading and permalink for Figure 2.8.5" aria-label="Copy heading and permalink for Figure 2.8.5">🔗</a></div></figcaption></figure><figure class="figure figure-like" id="fig-centroid-between-curves"><div class="image-box" style="width: 55%; margin-left: 22.5%; margin-right: 22.5%;">
+<div class="ChemAccess-element" data-src="generated/prefigure/prefigure-centroid-between-curves-diagcess.svg" data-cml="generated/prefigure/prefigure-centroid-between-curves-annotations.xml"></div>
+<details><summary>Diagram Exploration Keyboard Controls</summary><div class="diagcess-navigation-controls"><table>
+<thead><tr>
+<th>Key</th>
+<th>Action</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Enter, A</td>
+<td>Activate keyboard driven exploration</td>
+</tr>
+<tr>
+<td>B</td>
+<td>Activate menu driven exploration</td>
+</tr>
+<tr>
+<td>Escape</td>
+<td>Leave exploration mode</td>
+</tr>
+<tr>
+<td>Cursor down</td>
+<td>Explore next lower level</td>
+</tr>
+<tr>
+<td>Cursor up</td>
+<td>Explore next upper level</td>
+</tr>
+<tr>
+<td>Cursor right</td>
+<td>Explore next element on level</td>
+</tr>
+<tr>
+<td>Cursor left</td>
+<td>Explore previous element on level</td>
+</tr>
+<tr>
+<td>X</td>
+<td>Toggle expert mode</td>
+</tr>
+<tr>
+<td>W</td>
+<td>Extra details if available</td>
+</tr>
+<tr>
+<td>Space</td>
+<td>Repeat speech</td>
+</tr>
+<tr>
+<td>M</td>
+<td>Activate step magnification</td>
+</tr>
+<tr>
+<td>Comma</td>
+<td>Activate direct magnification</td>
+</tr>
+<tr>
+<td>N</td>
+<td>Deactivate magnification</td>
+</tr>
+<tr>
+<td>Z</td>
+<td>Toggle subtitles</td>
+</tr>
+<tr>
+<td>C</td>
+<td>Cycle contrast settings</td>
+</tr>
+<tr>
+<td>T</td>
+<td>Monochrome colours</td>
+</tr>
+<tr>
+<td>L</td>
+<td>Toggle language (if available)</td>
+</tr>
+<tr>
+<td>K</td>
+<td>Kill current sound</td>
+</tr>
+<tr>
+<td>Y</td>
+<td>Stop sound output</td>
+</tr>
+<tr>
+<td>O</td>
+<td>Start and stop sonification</td>
+</tr>
+<tr>
+<td>P</td>
+<td>Repeat sonification output</td>
+</tr>
+</tbody>
+</table></div></details>
+</div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.8.6<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The region between <span class="process-math">\(y = \sqrt{x}\)</span> (blue) and <span class="process-math">\(y = x^2\)</span> (red) over <span class="process-math">\(0 \le x \le 1\text{,}\)</span> with its centroid at <span class="process-math">\(\left( \tfrac{9}{20}, \tfrac{9}{20} \right)\text{.}\)</span><div class="autopermalink" data-description="Figure 2.8.6"><a href="#fig-centroid-between-curves" title="Copy heading and permalink for Figure 2.8.6" aria-label="Copy heading and permalink for Figure 2.8.6">🔗</a></div></figcaption></figure><details id="example-cardioid-centroid" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.8.7</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Centroid of a Cardioid.</span>
+</h4></summary><article class="example example-like knowl__content"><div class="para" id="example-cardioid-centroid-2-1">Find the centroid of the object that has the shape <span class="process-math">\(r = 1 + \cos(\theta)\)</span> and density <span class="process-math">\(\delta = 2\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#example-cardioid-centroid-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 2.8.7: Centroid of a Cardioid"><a href="#example-cardioid-centroid" title="Copy heading and permalink for Example 2.8.7: Centroid of a Cardioid" aria-label="Copy heading and permalink for Example 2.8.7: Centroid of a Cardioid">🔗</a></div></article></details><details id="solution-cardioid-centroid" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="solution-cardioid-centroid-1">The cardioid <span class="process-math">\(r = 1 + \cos(\theta)\)</span> is shown in <a href="section-mass-center-of-mass.html#fig-cardioid-centroid" class="internal" title="Figure 2.8.9">Figure 2.8.9</a>. The density is constant, so we are indeed finding a centroid, and the answer will not depend on the value <span class="process-math">\(\delta = 2\text{.}\)</span> The region is symmetric about the <span class="process-math">\(x\)</span>-axis (replacing <span class="process-math">\(\theta\)</span> by <span class="process-math">\(-\theta\)</span> does not change <span class="process-math">\(r\)</span>), so <span class="process-math">\(\bar{y} = 0\)</span> and we only need <span class="process-math">\(\bar{x}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#solution-cardioid-centroid-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="solution-cardioid-centroid-2">Working in polar coordinates with <span class="process-math">\(dA = r\, dr\, d\theta\)</span> from <a href="section-double-integrals-polar-form.html#sec-polar-double-integral-7" class="xref" data-knowl="./knowl/xref/eq-polar-area-element.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 2.4.1">(2.4.1)</a>, the mass <a href="section-mass-center-of-mass.html#eq-first-moments-2d" class="xref" data-knowl="./knowl/xref/eq-first-moments-2d.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 2.8.6">(2.8.6)</a> is<div class="autopermalink" data-description="Paragraph"><a href="#solution-cardioid-centroid-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig-cardioid-centroid.html ./knowl/xref/eq-polar-area-element.html ./knowl/xref/eq-first-moments-2d.html ./knowl/xref/eq-polar-cartesian.html ./knowl/xref/eq-com-2d.html ./knowl/xref/fig-cardioid-centroid-video.html" id="solution-cardioid-centroid-3">
+\begin{align*}
+M \amp= \iint_R \delta\, dA
+= 2 \int_0^{2\pi} \int_0^{1+\cos\theta} r\, dr\, d\theta
+= \int_0^{2\pi} (1 + \cos\theta)^2\, d\theta\\
+\amp= \int_0^{2\pi} \left( 1 + 2\cos\theta + \cos^2\theta \right) d\theta
+= 2\pi + 0 + \pi = 3\pi.
+\end{align*}
+</div>
+<div class="para" id="solution-cardioid-centroid-4">Since <span class="process-math">\(x = r\cos\theta\)</span> by <a href="section-polar-coordinates.html#eq-polar-cartesian" class="xref" data-knowl="./knowl/xref/eq-polar-cartesian.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 2.3.1">(2.3.1)</a>, the moment about the <span class="process-math">\(y\)</span>-axis is<div class="autopermalink" data-description="Paragraph"><a href="#solution-cardioid-centroid-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig-cardioid-centroid.html ./knowl/xref/eq-polar-area-element.html ./knowl/xref/eq-first-moments-2d.html ./knowl/xref/eq-polar-cartesian.html ./knowl/xref/eq-com-2d.html ./knowl/xref/fig-cardioid-centroid-video.html" id="solution-cardioid-centroid-5">
+\begin{align*}
+M_y \amp= \iint_R x\, \delta\, dA
+= 2 \int_0^{2\pi} \int_0^{1+\cos\theta} (r\cos\theta)\, r\, dr\, d\theta
+= \frac{2}{3} \int_0^{2\pi} \cos\theta\, (1 + \cos\theta)^3\, d\theta\\
+\amp= \frac{2}{3} \int_0^{2\pi} \left( \cos\theta + 3\cos^2\theta
++ 3\cos^3\theta + \cos^4\theta \right) d\theta
+= \frac{2}{3} \left( 0 + 3\pi + 0 + \frac{3\pi}{4} \right)
+= \frac{5\pi}{2},
+\end{align*}
+</div>
+<div class="para" id="solution-cardioid-centroid-6">where the odd powers of cosine integrate to zero over a full period, <span class="process-math">\(\int_0^{2\pi} \cos^2\theta\, d\theta = \pi\text{,}\)</span> and <span class="process-math">\(\int_0^{2\pi} \cos^4\theta\, d\theta = \tfrac{3\pi}{4}\text{.}\)</span> By <a href="section-mass-center-of-mass.html#eq-com-2d" class="xref" data-knowl="./knowl/xref/eq-com-2d.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 2.8.7">(2.8.7)</a>,<div class="autopermalink" data-description="Paragraph"><a href="#solution-cardioid-centroid-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig-cardioid-centroid.html ./knowl/xref/eq-polar-area-element.html ./knowl/xref/eq-first-moments-2d.html ./knowl/xref/eq-polar-cartesian.html ./knowl/xref/eq-com-2d.html ./knowl/xref/fig-cardioid-centroid-video.html" id="solution-cardioid-centroid-7">
+\begin{equation*}
+\bar{x} = \frac{M_y}{M} = \frac{5\pi/2}{3\pi} = \frac{5}{6},
+\end{equation*}
+</div>
+<div class="para" id="solution-cardioid-centroid-8">so the centroid is <span class="process-math">\(\left( \tfrac{5}{6}, 0 \right)\text{.}\)</span> As promised, the constant density <span class="process-math">\(\delta = 2\)</span> canceled out. The animation in <a href="section-mass-center-of-mass.html#fig-cardioid-centroid-video" class="xref" data-knowl="./knowl/xref/fig-cardioid-centroid-video.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 2.8.8">Figure 2.8.8</a> shows how symmetry and the polar integrals combine to locate this point.<div class="autopermalink" data-description="Paragraph"><a href="#solution-cardioid-centroid-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 2.8.3.2"><a href="#solution-cardioid-centroid" title="Copy heading and permalink for Solution 2.8.3.2" aria-label="Copy heading and permalink for Solution 2.8.3.2">🔗</a></div>
+</div></details><figure class="figure figure-like" id="fig-cardioid-centroid-video"><div class="video-box" style="width: 70%;padding-top: 39.375%; margin-left: 15%; margin-right: 15%;"><video id="video-cardioid-centroid" class="video" controls=""><source src="external/videos/cardioid_centroid_1080p.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.8.8<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The cardioid <span class="process-math">\(r = 1 + \cos(\theta)\)</span> with constant density: symmetry places the centroid on the <span class="process-math">\(x\)</span>-axis, and the polar moment integrals put it at <span class="process-math">\(\left( \tfrac{5}{6}, 0 \right)\text{.}\)</span><div class="autopermalink" data-description="Figure 2.8.8"><a href="#fig-cardioid-centroid-video" title="Copy heading and permalink for Figure 2.8.8" aria-label="Copy heading and permalink for Figure 2.8.8">🔗</a></div></figcaption></figure><figure class="figure figure-like" id="fig-cardioid-centroid"><div class="image-box" style="width: 55%; margin-left: 22.5%; margin-right: 22.5%;">
+<div class="ChemAccess-element" data-src="generated/prefigure/prefigure-cardioid-centroid-diagcess.svg" data-cml="generated/prefigure/prefigure-cardioid-centroid-annotations.xml"></div>
+<details><summary>Diagram Exploration Keyboard Controls</summary><div class="diagcess-navigation-controls"><table>
+<thead><tr>
+<th>Key</th>
+<th>Action</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Enter, A</td>
+<td>Activate keyboard driven exploration</td>
+</tr>
+<tr>
+<td>B</td>
+<td>Activate menu driven exploration</td>
+</tr>
+<tr>
+<td>Escape</td>
+<td>Leave exploration mode</td>
+</tr>
+<tr>
+<td>Cursor down</td>
+<td>Explore next lower level</td>
+</tr>
+<tr>
+<td>Cursor up</td>
+<td>Explore next upper level</td>
+</tr>
+<tr>
+<td>Cursor right</td>
+<td>Explore next element on level</td>
+</tr>
+<tr>
+<td>Cursor left</td>
+<td>Explore previous element on level</td>
+</tr>
+<tr>
+<td>X</td>
+<td>Toggle expert mode</td>
+</tr>
+<tr>
+<td>W</td>
+<td>Extra details if available</td>
+</tr>
+<tr>
+<td>Space</td>
+<td>Repeat speech</td>
+</tr>
+<tr>
+<td>M</td>
+<td>Activate step magnification</td>
+</tr>
+<tr>
+<td>Comma</td>
+<td>Activate direct magnification</td>
+</tr>
+<tr>
+<td>N</td>
+<td>Deactivate magnification</td>
+</tr>
+<tr>
+<td>Z</td>
+<td>Toggle subtitles</td>
+</tr>
+<tr>
+<td>C</td>
+<td>Cycle contrast settings</td>
+</tr>
+<tr>
+<td>T</td>
+<td>Monochrome colours</td>
+</tr>
+<tr>
+<td>L</td>
+<td>Toggle language (if available)</td>
+</tr>
+<tr>
+<td>K</td>
+<td>Kill current sound</td>
+</tr>
+<tr>
+<td>Y</td>
+<td>Stop sound output</td>
+</tr>
+<tr>
+<td>O</td>
+<td>Start and stop sonification</td>
+</tr>
+<tr>
+<td>P</td>
+<td>Repeat sonification output</td>
+</tr>
+</tbody>
+</table></div></details>
+</div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.8.9<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The cardioid <span class="process-math">\(r = 1 + \cos(\theta)\text{.}\)</span> The region is symmetric about the <span class="process-math">\(x\)</span>-axis and its centroid <span class="process-math">\(\left( \tfrac{5}{6}, 0 \right)\)</span> is marked in maroon.<div class="autopermalink" data-description="Figure 2.8.9"><a href="#fig-cardioid-centroid" title="Copy heading and permalink for Figure 2.8.9" aria-label="Copy heading and permalink for Figure 2.8.9">🔗</a></div></figcaption></figure><div class="autopermalink" data-description="Subsection 2.8.3: Finding the Center of Mass of a 2D Object"><a href="#sec-mass-2d-object" title="Copy heading and permalink for Subsection 2.8.3: Finding the Center of Mass of a 2D Object" aria-label="Copy heading and permalink for Subsection 2.8.3: Finding the Center of Mass of a 2D Object">🔗</a></div></section><section class="subsection" id="sec-mass-3d-object"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.8.4</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Finding the Center of Mass of a 3D Object*</span>
+</h3>
+<div class="para" id="sec-mass-3d-object-2">Everything so far took place in the plane. For point masses in space, with <span class="process-math">\(\mathbf{r}_i = (x_i, y_i, z_i)\)</span> in <a href="section-mass-center-of-mass.html#eq-com-points-vector" class="xref" data-knowl="./knowl/xref/eq-com-points-vector.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 2.8.2">(2.8.2)</a>, the distances are measured from the coordinate planes instead of the coordinate axes. The <dfn class="terminology">first moments about the coordinate planes</dfn> are<div class="autopermalink" data-description="Paragraph"><a href="#sec-mass-3d-object-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-com-points-vector.html ./knowl/xref/fig-mass-element-tikz.html ./knowl/xref/eq-com-points-vector.html ./knowl/xref/eq-first-moments-points-3d.html ./knowl/xref/fig-mass-element-video.html ./knowl/xref/fig-paraboloid-com-tikz.html ./knowl/xref/eq-com-3d.html ./knowl/xref/eq-dv-cylindrical.html ./knowl/xref/eq-mass-3d.html ./knowl/xref/eq-first-moments-3d.html ./knowl/xref/fig-paraboloid-com-video.html" id="eq-first-moments-points-3d">
+\begin{equation}
+M_{yz} = \sum_{i=1}^{n} m_i\, x_i, \qquad
+M_{xz} = \sum_{i=1}^{n} m_i\, y_i, \qquad
+M_{xy} = \sum_{i=1}^{n} m_i\, z_i\tag{2.8.8}
+\end{equation}
+</div>
+<div class="para" id="sec-mass-3d-object-4">(<span class="process-math">\(M_{yz}\)</span> uses the signed distance <span class="process-math">\(x_i\)</span> from the <span class="process-math">\(yz\)</span>-plane, and so on), and the center of mass <span class="process-math">\(\bar{\mathbf{r}} = (\bar{x}, \bar{y}, \bar{z})\)</span> is<div class="autopermalink" data-description="Paragraph"><a href="#sec-mass-3d-object-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-com-points-vector.html ./knowl/xref/fig-mass-element-tikz.html ./knowl/xref/eq-com-points-vector.html ./knowl/xref/eq-first-moments-points-3d.html ./knowl/xref/fig-mass-element-video.html ./knowl/xref/fig-paraboloid-com-tikz.html ./knowl/xref/eq-com-3d.html ./knowl/xref/eq-dv-cylindrical.html ./knowl/xref/eq-mass-3d.html ./knowl/xref/eq-first-moments-3d.html ./knowl/xref/fig-paraboloid-com-video.html" id="eq-com-points-3d">
+\begin{equation}
+\bar{x} = \frac{M_{yz}}{M}, \qquad
+\bar{y} = \frac{M_{xz}}{M}, \qquad
+\bar{z} = \frac{M_{xy}}{M}.\tag{2.8.9}
+\end{equation}
+</div>
+<div class="para" id="sec-mass-3d-object-6">Now let a solid object occupy a region <span class="process-math">\(D\)</span> in space, with density <span class="process-math">\(\delta(x,y,z)\)</span> (mass per unit volume) at the point <span class="process-math">\((x,y,z)\text{.}\)</span> The plan is the same as for a plate, one dimension up: we cut the solid into small boxes and treat each box as a point mass. Partition space into boxes by the planes <span class="process-math">\(x = x_0, \dots, x_n\text{,}\)</span> <span class="process-math">\(y = y_0, \dots, y_m\text{,}\)</span> and <span class="process-math">\(z = z_0, \dots, z_p\text{.}\)</span> The box in position <span class="process-math">\(i\)</span> along the <span class="process-math">\(x\)</span>-direction, <span class="process-math">\(j\)</span> along the <span class="process-math">\(y\)</span>-direction, and <span class="process-math">\(k\)</span> along the <span class="process-math">\(z\)</span>-direction has the dimensions <span class="process-math">\(\Delta x_i\text{,}\)</span> <span class="process-math">\(\Delta y_j\text{,}\)</span> <span class="process-math">\(\Delta z_k\)</span> and the volume <span class="process-math">\(\Delta V_{ijk} = \Delta x_i\, \Delta y_j\, \Delta z_k\text{;}\)</span> if it meets <span class="process-math">\(D\text{,}\)</span> we pick a point <span class="process-math">\((x_i, y_j, z_k)\)</span> in it, as in <a href="section-mass-center-of-mass.html#fig-mass-element-tikz" class="xref" data-knowl="./knowl/xref/fig-mass-element-tikz.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 2.8.11">Figure 2.8.11</a>. The density is nearly constant on so small a box, so its mass is approximately<div class="autopermalink" data-description="Paragraph"><a href="#sec-mass-3d-object-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-com-points-vector.html ./knowl/xref/fig-mass-element-tikz.html ./knowl/xref/eq-com-points-vector.html ./knowl/xref/eq-first-moments-points-3d.html ./knowl/xref/fig-mass-element-video.html ./knowl/xref/fig-paraboloid-com-tikz.html ./knowl/xref/eq-com-3d.html ./knowl/xref/eq-dv-cylindrical.html ./knowl/xref/eq-mass-3d.html ./knowl/xref/eq-first-moments-3d.html ./knowl/xref/fig-paraboloid-com-video.html" id="sec-mass-3d-object-7">
+\begin{equation*}
+\Delta m_{ijk} = \delta(x_i, y_j, z_k)\, \Delta V_{ijk}
+= \delta(x_i, y_j, z_k)\, \Delta x_i\, \Delta y_j\, \Delta z_k .
+\end{equation*}
+</div>
+<div class="para" id="sec-mass-3d-object-8">The solid is approximated by the system of point masses <span class="process-math">\(\Delta m_{ijk}\)</span> at the points <span class="process-math">\((x_i, y_j, z_k)\text{,}\)</span> one for each box that meets <span class="process-math">\(D\text{,}\)</span> so <a href="section-mass-center-of-mass.html#eq-com-points-vector" class="xref" data-knowl="./knowl/xref/eq-com-points-vector.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 2.8.2">(2.8.2)</a> and <a href="section-mass-center-of-mass.html#eq-first-moments-points-3d" class="xref" data-knowl="./knowl/xref/eq-first-moments-points-3d.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 2.8.8">(2.8.8)</a> give its mass and its first moments as triple sums; for instance,<div class="autopermalink" data-description="Paragraph"><a href="#sec-mass-3d-object-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-com-points-vector.html ./knowl/xref/fig-mass-element-tikz.html ./knowl/xref/eq-com-points-vector.html ./knowl/xref/eq-first-moments-points-3d.html ./knowl/xref/fig-mass-element-video.html ./knowl/xref/fig-paraboloid-com-tikz.html ./knowl/xref/eq-com-3d.html ./knowl/xref/eq-dv-cylindrical.html ./knowl/xref/eq-mass-3d.html ./knowl/xref/eq-first-moments-3d.html ./knowl/xref/fig-paraboloid-com-video.html" id="sec-mass-3d-object-9">
+\begin{align*}
+M \amp\approx \sum_{k=1}^{p}\sum_{j=1}^{m}\sum_{i=1}^{n}
+\delta(x_i, y_j, z_k)\, \Delta x_i\, \Delta y_j\, \Delta z_k ,\\
+M_{xy} \amp\approx \sum_{k=1}^{p}\sum_{j=1}^{m}\sum_{i=1}^{n}
+z_k\, \delta(x_i, y_j, z_k)\, \Delta x_i\, \Delta y_j\, \Delta z_k ,
+\end{align*}
+</div>
+<div class="para" id="sec-mass-3d-object-10">the sums running over the boxes that meet <span class="process-math">\(D\text{.}\)</span> (Newton’s second law for this system of boxes reads <span class="process-math">\(\mathbf{F} = M\, \dfrac{d^2\bar{\mathbf{r}}}{dt^2}\text{,}\)</span> as in the previous subsections: the solid moves as if its whole mass were concentrated at its center of mass.) These are Riemann sums, and letting the boxes shrink, <span class="process-math">\(n, m, p \to \infty\text{,}\)</span> turns each triple sum into a triple integral over <span class="process-math">\(D\text{.}\)</span> For the mass,<div class="autopermalink" data-description="Paragraph"><a href="#sec-mass-3d-object-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-com-points-vector.html ./knowl/xref/fig-mass-element-tikz.html ./knowl/xref/eq-com-points-vector.html ./knowl/xref/eq-first-moments-points-3d.html ./knowl/xref/fig-mass-element-video.html ./knowl/xref/fig-paraboloid-com-tikz.html ./knowl/xref/eq-com-3d.html ./knowl/xref/eq-dv-cylindrical.html ./knowl/xref/eq-mass-3d.html ./knowl/xref/eq-first-moments-3d.html ./knowl/xref/fig-paraboloid-com-video.html" id="eq-mass-3d">
+\begin{equation}
+M = \lim_{n,m,p \to \infty} \sum_{k=1}^{p}\sum_{j=1}^{m}\sum_{i=1}^{n}
+\delta(x_i, y_j, z_k)\, \Delta x_i\, \Delta y_j\, \Delta z_k
+= \iiint_D \delta(x,y,z)\, dV.\tag{2.8.10}
+\end{equation}
+</div>
+<div class="para" id="sec-mass-3d-object-12">Watch the construction unfold in <a href="section-mass-center-of-mass.html#fig-mass-element-video" class="xref" data-knowl="./knowl/xref/fig-mass-element-video.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 2.8.10">Figure 2.8.10</a>.<div class="autopermalink" data-description="Paragraph"><a href="#sec-mass-3d-object-12" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<figure class="figure figure-like" id="fig-mass-element-video"><div class="video-box" style="width: 70%;padding-top: 39.375%; margin-left: 15%; margin-right: 15%;"><video id="video-mass-element" class="video" controls=""><source src="external/videos/mass_element_1080p.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.8.10<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Partitioning a solid <span class="process-math">\(D\)</span> into small boxes: each box carries the mass “density times volume”, and the Riemann sum of these masses converges to the triple integral of the density.<div class="autopermalink" data-description="Figure 2.8.10"><a href="#fig-mass-element-video" title="Copy heading and permalink for Figure 2.8.10" aria-label="Copy heading and permalink for Figure 2.8.10">🔗</a></div></figcaption></figure><figure class="figure figure-like" id="fig-mass-element-tikz"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;">
+<img src="generated/latex-image/image-mass-element-tikz.svg" role="img" class="contained" alt="A potato-shaped solid in space with a small highlighted box inside it."><details class="image-description" aria-live="polite"><summary title="details"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span></summary><div id="image-mass-element-tikz-description"><div class="para" id="image-mass-element-tikz-2-1">A translucent potato-shaped solid labeled <span class="process-math">\(D\)</span> floats above the <span class="process-math">\(xy\)</span>-plane in a three-dimensional coordinate system. A small purple box inside the solid marks the point <span class="process-math">\((x_i, y_j, z_k)\text{,}\)</span> and a leader line labels its mass <span class="process-math">\(\Delta m_{ijk} = \delta(x_i, y_j, z_k)\, \Delta V_{ijk}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#image-mass-element-tikz-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></div></details>
+</div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.8.11<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>A solid region <span class="process-math">\(D\)</span> with a small box around the point <span class="process-math">\((x_i, y_j, z_k)\text{.}\)</span> The box has the volume <span class="process-math">\(\Delta V_{ijk}\)</span> and the mass <span class="process-math">\(\Delta m_{ijk} = \delta(x_i, y_j, z_k)\, \Delta V_{ijk}\text{.}\)</span><div class="autopermalink" data-description="Figure 2.8.11"><a href="#fig-mass-element-tikz" title="Copy heading and permalink for Figure 2.8.11" aria-label="Copy heading and permalink for Figure 2.8.11">🔗</a></div></figcaption></figure><div class="para" id="sec-mass-3d-object-15">In the same way, the first moments become the triple integrals<div class="autopermalink" data-description="Paragraph"><a href="#sec-mass-3d-object-15" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-com-points-vector.html ./knowl/xref/fig-mass-element-tikz.html ./knowl/xref/eq-com-points-vector.html ./knowl/xref/eq-first-moments-points-3d.html ./knowl/xref/fig-mass-element-video.html ./knowl/xref/fig-paraboloid-com-tikz.html ./knowl/xref/eq-com-3d.html ./knowl/xref/eq-dv-cylindrical.html ./knowl/xref/eq-mass-3d.html ./knowl/xref/eq-first-moments-3d.html ./knowl/xref/fig-paraboloid-com-video.html" id="eq-first-moments-3d">
+\begin{equation}
+M_{yz} = \iiint_D x\, \delta\, dV, \qquad
+M_{xz} = \iiint_D y\, \delta\, dV, \qquad
+M_{xy} = \iiint_D z\, \delta\, dV,\tag{2.8.11}
+\end{equation}
+</div>
+<div class="para" id="sec-mass-3d-object-17">the moments about the <span class="process-math">\(yz\)</span>-, <span class="process-math">\(xz\)</span>-, and <span class="process-math">\(xy\)</span>-planes, and the center of mass <span class="process-math">\((\bar{x}, \bar{y}, \bar{z})\)</span> of the solid is the point whose coordinates are the moments divided by the total mass:<div class="autopermalink" data-description="Paragraph"><a href="#sec-mass-3d-object-17" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-com-points-vector.html ./knowl/xref/fig-mass-element-tikz.html ./knowl/xref/eq-com-points-vector.html ./knowl/xref/eq-first-moments-points-3d.html ./knowl/xref/fig-mass-element-video.html ./knowl/xref/fig-paraboloid-com-tikz.html ./knowl/xref/eq-com-3d.html ./knowl/xref/eq-dv-cylindrical.html ./knowl/xref/eq-mass-3d.html ./knowl/xref/eq-first-moments-3d.html ./knowl/xref/fig-paraboloid-com-video.html" id="eq-com-3d">
+\begin{equation}
+\bar{x} = \frac{M_{yz}}{M}, \qquad
+\bar{y} = \frac{M_{xz}}{M}, \qquad
+\bar{z} = \frac{M_{xy}}{M}.\tag{2.8.12}
+\end{equation}
+</div>
+<details id="example-paraboloid-com" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.8.12</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Center of Mass of a Solid Bounded by a Paraboloid.</span>
+</h4></summary><article class="example example-like knowl__content"><div class="para" id="example-paraboloid-com-2-1">Find the center of mass of a solid of constant density <span class="process-math">\(\delta\text{,}\)</span> which is bounded by the disk <span class="process-math">\(x^2 + y^2 \le 4\)</span> (in the plane <span class="process-math">\(z = 0\)</span>) and the paraboloid <span class="process-math">\(z = 4 - x^2 - y^2\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#example-paraboloid-com-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 2.8.12: Center of Mass of a Solid Bounded by a Paraboloid"><a href="#example-paraboloid-com" title="Copy heading and permalink for Example 2.8.12: Center of Mass of a Solid Bounded by a Paraboloid" aria-label="Copy heading and permalink for Example 2.8.12: Center of Mass of a Solid Bounded by a Paraboloid">🔗</a></div></article></details><details id="solution-paraboloid-com" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="solution-paraboloid-com-1">The solid is shown in <a href="section-mass-center-of-mass.html#fig-paraboloid-com-tikz" class="xref" data-knowl="./knowl/xref/fig-paraboloid-com-tikz.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 2.8.14">Figure 2.8.14</a>. Both the region and the density are symmetric about the <span class="process-math">\(z\)</span>-axis, so the center of mass lies on that axis: <span class="process-math">\(\bar{x} = \bar{y} = 0\text{.}\)</span> It remains to find <span class="process-math">\(\bar{z} = M_{xy}/M\)</span> from <a href="section-mass-center-of-mass.html#eq-com-3d" class="xref" data-knowl="./knowl/xref/eq-com-3d.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 2.8.12">(2.8.12)</a>.<div class="autopermalink" data-description="Paragraph"><a href="#solution-paraboloid-com-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="solution-paraboloid-com-2">Because of the circular symmetry, we work in cylindrical coordinates, where <a href="section-triple-integrals-cylindrical.html#eq-dv-cylindrical" class="xref" data-knowl="./knowl/xref/eq-dv-cylindrical.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 2.6.2">(2.6.2)</a> applies and the region is described by <span class="process-math">\(0 \le z \le 4 - r^2\text{,}\)</span> <span class="process-math">\(0 \le r \le 2\text{,}\)</span> and <span class="process-math">\(0 \le \theta \le 2\pi\text{.}\)</span> By <a href="section-mass-center-of-mass.html#eq-mass-3d" class="xref" data-knowl="./knowl/xref/eq-mass-3d.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 2.8.10">(2.8.10)</a>, the mass is<div class="autopermalink" data-description="Paragraph"><a href="#solution-paraboloid-com-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig-paraboloid-com-tikz.html ./knowl/xref/eq-com-3d.html ./knowl/xref/eq-dv-cylindrical.html ./knowl/xref/eq-mass-3d.html ./knowl/xref/eq-first-moments-3d.html ./knowl/xref/fig-paraboloid-com-video.html" id="solution-paraboloid-com-3">
+\begin{align*}
+M \amp= \iiint_D \delta\, dV
+= \delta \int_0^{2\pi} \int_0^2 \int_0^{4-r^2} dz\, r\, dr\, d\theta\\
+\amp= \delta \int_0^{2\pi} \int_0^2 (4 - r^2)\, r\, dr\, d\theta
+= \delta \int_0^{2\pi} \left[ 2r^2 - \frac{r^4}{4} \right]_0^2 d\theta\\
+\amp= \delta \int_0^{2\pi} 4\, d\theta = 8\pi\delta.
+\end{align*}
+</div>
+<div class="para" id="solution-paraboloid-com-4">Using <a href="section-mass-center-of-mass.html#eq-first-moments-3d" class="xref" data-knowl="./knowl/xref/eq-first-moments-3d.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 2.8.11">(2.8.11)</a>, the first moment about the <span class="process-math">\(xy\)</span>-plane is<div class="autopermalink" data-description="Paragraph"><a href="#solution-paraboloid-com-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig-paraboloid-com-tikz.html ./knowl/xref/eq-com-3d.html ./knowl/xref/eq-dv-cylindrical.html ./knowl/xref/eq-mass-3d.html ./knowl/xref/eq-first-moments-3d.html ./knowl/xref/fig-paraboloid-com-video.html" id="solution-paraboloid-com-5">
+\begin{align*}
+M_{xy} \amp= \iiint_D z\, \delta\, dV
+= \delta \int_0^{2\pi} \int_0^2 \int_0^{4-r^2} z\, dz\, r\, dr\, d\theta\\
+\amp= \delta \int_0^{2\pi} \int_0^2 \frac{(4 - r^2)^2}{2}\, r\, dr\, d\theta
+= \delta \int_0^{2\pi} \left[ -\frac{(4-r^2)^3}{12} \right]_0^2 d\theta\\
+\amp= \delta \int_0^{2\pi} \frac{16}{3}\, d\theta = \frac{32\pi\delta}{3}.
+\end{align*}
+</div>
+<div class="para" id="solution-paraboloid-com-6">Therefore<div class="autopermalink" data-description="Paragraph"><a href="#solution-paraboloid-com-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig-paraboloid-com-tikz.html ./knowl/xref/eq-com-3d.html ./knowl/xref/eq-dv-cylindrical.html ./knowl/xref/eq-mass-3d.html ./knowl/xref/eq-first-moments-3d.html ./knowl/xref/fig-paraboloid-com-video.html" id="solution-paraboloid-com-7">
+\begin{equation*}
+\bar{z} = \frac{M_{xy}}{M} = \frac{32\pi\delta/3}{8\pi\delta} = \frac{4}{3},
+\end{equation*}
+</div>
+<div class="para" id="solution-paraboloid-com-8">and the center of mass is <span class="process-math">\(\left(0, 0, \tfrac{4}{3}\right)\text{:}\)</span> since the density is constant, this point is the centroid of the solid. Notice that the answer does not depend on <span class="process-math">\(\delta\text{,}\)</span> as a centroid never does: for an object of constant density, the location of the balance point is determined by the shape alone. Watch the computation come together in <a href="section-mass-center-of-mass.html#fig-paraboloid-com-video" class="xref" data-knowl="./knowl/xref/fig-paraboloid-com-video.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 2.8.13">Figure 2.8.13</a>.<div class="autopermalink" data-description="Paragraph"><a href="#solution-paraboloid-com-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 2.8.4.1"><a href="#solution-paraboloid-com" title="Copy heading and permalink for Solution 2.8.4.1" aria-label="Copy heading and permalink for Solution 2.8.4.1">🔗</a></div>
+</div></details><figure class="figure figure-like" id="fig-paraboloid-com-video"><div class="video-box" style="width: 70%;padding-top: 39.375%; margin-left: 15%; margin-right: 15%;"><video id="video-paraboloid-com" class="video" controls=""><source src="external/videos/paraboloid_com_1080p.mp4" type="video/mp4"></source>Your browser does not support the &lt;video&gt; tag.</video></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.8.13<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The solid bounded above by <span class="process-math">\(z = 4 - x^2 - y^2\)</span> and below by the disk <span class="process-math">\(x^2 + y^2 \le 4\text{.}\)</span> By symmetry the center of mass lies on the <span class="process-math">\(z\)</span>-axis, at height <span class="process-math">\(\bar{z} = 4/3\text{.}\)</span><div class="autopermalink" data-description="Figure 2.8.13"><a href="#fig-paraboloid-com-video" title="Copy heading and permalink for Figure 2.8.13" aria-label="Copy heading and permalink for Figure 2.8.13">🔗</a></div></figcaption></figure><figure class="figure figure-like" id="fig-paraboloid-com-tikz"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;">
+<img src="generated/latex-image/image-paraboloid-com-tikz.svg" role="img" class="contained" alt="A dome-shaped solid over a disk with its center of mass marked on the vertical axis."><details class="image-description" aria-live="polite"><summary title="details"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span></summary><div id="image-paraboloid-com-tikz-description"><div class="para" id="image-paraboloid-com-tikz-2-1">The paraboloid <span class="process-math">\(z = 4 - x^2 - y^2\)</span> forms a translucent green dome over the disk <span class="process-math">\(x^2 + y^2 \le 4\)</span> in the <span class="process-math">\(xy\)</span>-plane, labeled <span class="process-math">\(R\text{.}\)</span> The dashed <span class="process-math">\(z\)</span>-axis passes through the apex at height 4, and a magenta dot on the axis at height <span class="process-math">\(4/3\)</span> marks the center of mass.<div class="autopermalink" data-description="Paragraph"><a href="#image-paraboloid-com-tikz-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></div></details>
+</div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.8.14<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The solid of constant density bounded by the paraboloid <span class="process-math">\(z = 4 - x^2 - y^2\)</span> and the disk <span class="process-math">\(R\text{:}\)</span> <span class="process-math">\(x^2 + y^2 \le 4\)</span> in the plane <span class="process-math">\(z = 0\text{.}\)</span> The center of mass sits on the axis of symmetry at <span class="process-math">\((0, 0, 4/3)\text{.}\)</span><div class="autopermalink" data-description="Figure 2.8.14"><a href="#fig-paraboloid-com-tikz" title="Copy heading and permalink for Figure 2.8.14" aria-label="Copy heading and permalink for Figure 2.8.14">🔗</a></div></figcaption></figure><div class="autopermalink" data-description="Subsection 2.8.4: Finding the Center of Mass of a 3D Object*"><a href="#sec-mass-3d-object" title="Copy heading and permalink for Subsection 2.8.4: Finding the Center of Mass of a 3D Object*" aria-label="Copy heading and permalink for Subsection 2.8.4: Finding the Center of Mass of a 3D Object*">🔗</a></div></section><section class="subsection" id="subsec-mass-questions"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.8.5</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Concept Check</span>
+</h3>
+<div class="para" id="subsec-mass-questions-2">The first problem is about point masses, where everything can be done by hand in a line or two; the second revisits the region of <a href="section-mass-center-of-mass.html#example-centroid-between-curves" class="xref" data-knowl="./knowl/xref/example-centroid-between-curves.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 2.8.4: Centroid of the Region Between Two Curves">Example 2.8.4</a> with two densities that are not constant.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-mass-questions-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<details id="q-mass-three-points" class="exercise exercise-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.8.15</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Three point masses.</span>
+</h4></summary><article class="exercise exercise-like knowl__content"><div class="para" id="q-mass-three-points-2-1">Masses of <span class="process-math">\(1\text{,}\)</span> <span class="process-math">\(2\text{,}\)</span> and <span class="process-math">\(3\)</span> kilograms sit at the points <span class="process-math">\((0,0)\text{,}\)</span> <span class="process-math">\((4,0)\text{,}\)</span> and <span class="process-math">\((0,4)\text{,}\)</span> respectively. Find the center of mass of the system. Where would it be if the three masses were equal?<div class="autopermalink" data-description="Paragraph"><a href="#q-mass-three-points-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="q-mass-three-points-3" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="answer solution-like knowl__content">
+<div class="para" id="q-mass-three-points-3-1">By <a href="section-mass-center-of-mass.html#eq-first-moments-points" class="xref" data-knowl="./knowl/xref/eq-first-moments-points.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 2.8.3">(2.8.3)</a> and <a href="section-mass-center-of-mass.html#eq-com-points" class="xref" data-knowl="./knowl/xref/eq-com-points.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 2.8.4">(2.8.4)</a>, with <span class="process-math">\(M = 1 + 2 + 3 = 6\text{,}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#q-mass-three-points-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-first-moments-points.html ./knowl/xref/eq-com-points.html ./knowl/xref/eq-com-points-vector.html" id="q-mass-three-points-3-2">
+\begin{equation*}
+M_y = 1\cdot 0 + 2\cdot 4 + 3\cdot 0 = 8, \qquad
+M_x = 1\cdot 0 + 2\cdot 0 + 3\cdot 4 = 12,
+\qquad\text{so}\qquad
+\bar{x} = \frac{8}{6} = \frac{4}{3}, \quad \bar{y} = \frac{12}{6} = 2 .
+\end{equation*}
+</div>
+<div class="para" id="q-mass-three-points-3-3">The center of mass <span class="process-math">\(\left(\tfrac{4}{3}, 2\right)\)</span> lies inside the triangle with the masses at its vertices, pulled toward the heaviest mass at <span class="process-math">\((0,4)\text{:}\)</span> <span class="process-math">\(\bar{y} = 2\)</span> exceeds <span class="process-math">\(\bar{x} = 4/3\)</span> because the mass at <span class="process-math">\((0,4)\)</span> is heavier than the one at <span class="process-math">\((4,0)\text{.}\)</span> With three equal masses <span class="process-math">\(m\text{,}\)</span> every weight <span class="process-math">\(m_i/M\)</span> in <a href="section-mass-center-of-mass.html#eq-com-points-vector" class="xref" data-knowl="./knowl/xref/eq-com-points-vector.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 2.8.2">(2.8.2)</a> is <span class="process-math">\(1/3\text{,}\)</span> and the center of mass is the average of the three positions, <span class="process-math">\(\left( \tfrac{0+4+0}{3}, \tfrac{0+0+4}{3} \right)
+= \left( \tfrac{4}{3}, \tfrac{4}{3} \right)\text{:}\)</span> the centroid of the triangle, where its three medians meet.<div class="autopermalink" data-description="Paragraph"><a href="#q-mass-three-points-3-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Answer 2.8.15.1"><a href="#q-mass-three-points-3" title="Copy heading and permalink for Answer 2.8.15.1" aria-label="Copy heading and permalink for Answer 2.8.15.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Checkpoint 2.8.15: Three point masses"><a href="#q-mass-three-points" title="Copy heading and permalink for Checkpoint 2.8.15: Three point masses" aria-label="Copy heading and permalink for Checkpoint 2.8.15: Three point masses">🔗</a></div></article></details><details id="q-mass-two-densities" class="exercise exercise-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.8.16</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">The same plate, two densities.</span>
+</h4></summary><article class="exercise exercise-like knowl__content"><div class="para" id="q-mass-two-densities-2-1">Find the center of mass of the region between <span class="process-math">\(y = \sqrt{x}\)</span> and <span class="process-math">\(y = x^2\text{,}\)</span> assuming that the density function is<div class="autopermalink" data-description="Paragraph"><a href="#q-mass-two-densities-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para logical" id="q-mass-two-densities-2-2">
+<ol class="upper-alpha ol-marker-2" id="q-mass-two-densities-2-2-1">
+<li id="q-mass-two-densities-2-2-1-1">
+<div class="para" id="q-mass-two-densities-2-2-1-1-1">
+<span class="process-math">\(\delta_1(x,y) = xy\text{;}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#q-mass-two-densities-2-2-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2.8.16.A"><a href="#q-mass-two-densities-2-2-1-1" title="Copy heading and permalink for Item 2.8.16.A" aria-label="Copy heading and permalink for Item 2.8.16.A">🔗</a></div>
+</li>
+<li id="q-mass-two-densities-2-2-1-2">
+<div class="para" id="q-mass-two-densities-2-2-1-2-1">
+<span class="process-math">\(\delta_2(x,y) = y\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#q-mass-two-densities-2-2-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2.8.16.B"><a href="#q-mass-two-densities-2-2-1-2" title="Copy heading and permalink for Item 2.8.16.B" aria-label="Copy heading and permalink for Item 2.8.16.B">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Paragraph"><a href="#q-mass-two-densities-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para" id="q-mass-two-densities-2-3">
+<em class="emphasis">Question:</em> Do your answers in parts A and B match your intuition? If so, justify your answer in each case. (For comparison, the centroid of this region is <span class="process-math">\(\left(\tfrac{9}{20}, \tfrac{9}{20}\right)\text{,}\)</span> by <a href="section-mass-center-of-mass.html#example-centroid-between-curves" class="xref" data-knowl="./knowl/xref/example-centroid-between-curves.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 2.8.4: Centroid of the Region Between Two Curves">Example 2.8.4</a>.)<div class="autopermalink" data-description="Paragraph"><a href="#q-mass-two-densities-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="q-mass-two-densities-3" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="answer solution-like knowl__content">
+<div class="para" id="q-mass-two-densities-3-1">The region is <span class="process-math">\(0 \le x \le 1\text{,}\)</span> <span class="process-math">\(x^2 \le y \le \sqrt{x}\text{,}\)</span> and we use <a href="section-mass-center-of-mass.html#eq-first-moments-2d" class="xref" data-knowl="./knowl/xref/eq-first-moments-2d.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 2.8.6">(2.8.6)</a> and <a href="section-mass-center-of-mass.html#eq-com-2d" class="xref" data-knowl="./knowl/xref/eq-com-2d.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 2.8.7">(2.8.7)</a>.<div class="autopermalink" data-description="Paragraph"><a href="#q-mass-two-densities-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="q-mass-two-densities-3-2">
+<em class="emphasis">A.</em> With <span class="process-math">\(\delta_1 = xy\text{,}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#q-mass-two-densities-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-first-moments-2d.html ./knowl/xref/eq-com-2d.html" id="q-mass-two-densities-3-3">
+\begin{align*}
+M \amp= \int_0^1 \int_{x^2}^{\sqrt{x}} xy\, dy\, dx
+= \int_0^1 \frac{x\,(x - x^4)}{2}\, dx
+= \frac{1}{2}\left( \frac{1}{3} - \frac{1}{6} \right) = \frac{1}{12},\\
+M_y \amp= \int_0^1 \int_{x^2}^{\sqrt{x}} x^2 y\, dy\, dx
+= \int_0^1 \frac{x^2\,(x - x^4)}{2}\, dx
+= \frac{1}{2}\left( \frac{1}{4} - \frac{1}{7} \right) = \frac{3}{56},\\
+M_x \amp= \int_0^1 \int_{x^2}^{\sqrt{x}} x y^2\, dy\, dx
+= \int_0^1 \frac{x\,(x^{3/2} - x^6)}{3}\, dx
+= \frac{1}{3}\left( \frac{2}{7} - \frac{1}{8} \right) = \frac{3}{56},
+\end{align*}
+</div>
+<div class="para" id="q-mass-two-densities-3-4">so <span class="process-math">\(\bar{x} = \bar{y} = \dfrac{3/56}{1/12} = \dfrac{9}{14} \approx 0.64\text{.}\)</span> This fits: the density <span class="process-math">\(xy\)</span> is largest near the corner <span class="process-math">\((1,1)\)</span> of the region and vanishes at the origin, so the balance point moves from the centroid <span class="process-math">\((9/20, 9/20)\)</span> toward <span class="process-math">\((1,1)\text{;}\)</span> and it stays on the line <span class="process-math">\(y = x\text{,}\)</span> because swapping <span class="process-math">\(x\)</span> and <span class="process-math">\(y\)</span> changes neither the region nor the density <span class="process-math">\(xy\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#q-mass-two-densities-3-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="q-mass-two-densities-3-5">
+<em class="emphasis">B.</em> With <span class="process-math">\(\delta_2 = y\text{,}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#q-mass-two-densities-3-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-first-moments-2d.html ./knowl/xref/eq-com-2d.html" id="q-mass-two-densities-3-6">
+\begin{align*}
+M \amp= \int_0^1 \int_{x^2}^{\sqrt{x}} y\, dy\, dx
+= \int_0^1 \frac{x - x^4}{2}\, dx
+= \frac{1}{2}\left( \frac{1}{2} - \frac{1}{5} \right) = \frac{3}{20},\\
+M_y \amp= \int_0^1 \int_{x^2}^{\sqrt{x}} xy\, dy\, dx
+= \frac{1}{12} \quad\text{(the mass of part A)},\\
+M_x \amp= \int_0^1 \int_{x^2}^{\sqrt{x}} y^2\, dy\, dx
+= \int_0^1 \frac{x^{3/2} - x^6}{3}\, dx
+= \frac{1}{3}\left( \frac{2}{5} - \frac{1}{7} \right) = \frac{3}{35},
+\end{align*}
+</div>
+<div class="para" id="q-mass-two-densities-3-7">so <span class="process-math">\(\bar{x} = \dfrac{1/12}{3/20} = \dfrac{5}{9} \approx 0.56\)</span> and <span class="process-math">\(\bar{y} = \dfrac{3/35}{3/20} = \dfrac{4}{7} \approx 0.57\text{.}\)</span> This fits too: the density grows with <span class="process-math">\(y\text{,}\)</span> so the mass sits higher than in a uniform plate, and <span class="process-math">\(\bar{y}\)</span> rises from <span class="process-math">\(9/20\)</span> to <span class="process-math">\(4/7\text{.}\)</span> The center of mass now lies slightly above the line <span class="process-math">\(y = x\text{:}\)</span> the density <span class="process-math">\(y\)</span> treats <span class="process-math">\(x\)</span> and <span class="process-math">\(y\)</span> differently, so nothing forces the balance point onto that line. (<span class="process-math">\(\bar{x}\)</span> rises as well, from <span class="process-math">\(9/20\)</span> to <span class="process-math">\(5/9\text{,}\)</span> because the heavier upper part of this region is also its right part.)<div class="autopermalink" data-description="Paragraph"><a href="#q-mass-two-densities-3-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Answer 2.8.16.1"><a href="#q-mass-two-densities-3" title="Copy heading and permalink for Answer 2.8.16.1" aria-label="Copy heading and permalink for Answer 2.8.16.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Checkpoint 2.8.16: The same plate, two densities"><a href="#q-mass-two-densities" title="Copy heading and permalink for Checkpoint 2.8.16: The same plate, two densities" aria-label="Copy heading and permalink for Checkpoint 2.8.16: The same plate, two densities">🔗</a></div></article></details><div class="autopermalink" data-description="Subsection 2.8.5: Concept Check"><a href="#subsec-mass-questions" title="Copy heading and permalink for Subsection 2.8.5: Concept Check" aria-label="Copy heading and permalink for Subsection 2.8.5: Concept Check">🔗</a></div></section><div class="autopermalink" data-description="Section 2.8: Applications: Mass and Center of Mass"><a href="#section-mass-center-of-mass" title="Copy heading and permalink for Section 2.8: Applications: Mass and Center of Mass" aria-label="Copy heading and permalink for Section 2.8: Applications: Mass and Center of Mass">🔗</a></div></section></div>
+<div id="ptx-content-footer" class="ptx-content-footer">
+<a class="previous-button button" href="section-triple-integrals-spherical.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><span class="next-button button disabled"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></span>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
+</div>
+<script>diagcess.Base.init()</script><script src="external/math-input-palette.js"></script><script src="external/custom.js"></script>
+</body>
+</html>

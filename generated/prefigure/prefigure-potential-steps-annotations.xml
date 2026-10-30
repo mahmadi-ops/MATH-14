@@ -1,0 +1,66 @@
+<diagram>
+  <annotations>
+    <annotation id="prefigure-potential-steps-figure" speech2="A flow diagram with three rows, one for each component of the vector field. Each row starts with a partial derivative condition in a blue box and ends with an updated formula for f. Row one: partial f partial x equals y z leads, by integrating in x, to x y z plus g of y and z. Row two: partial f partial y equals x z forces partial g partial y equals zero, giving x y z plus h of z. Row three: partial f partial z equals x y plus 2 z forces h prime of z equals 2 z, giving the final answer x y z plus z squared plus C in a vermillion box.">
+      <grouped>prefigure-potential-steps-figure</grouped>
+      <position>1</position>
+      <children>
+        <active>prefigure-potential-steps-ps-box1</active>
+        <active>prefigure-potential-steps-ps-box1b</active>
+        <active>prefigure-potential-steps-ps-box2</active>
+        <active>prefigure-potential-steps-ps-box2b</active>
+        <active>prefigure-potential-steps-ps-box3</active>
+        <active>prefigure-potential-steps-ps-box3b</active>
+      </children>
+      <components>
+        <active>prefigure-potential-steps-ps-box1</active>
+        <active>prefigure-potential-steps-ps-box1b</active>
+        <active>prefigure-potential-steps-ps-box2</active>
+        <active>prefigure-potential-steps-ps-box2b</active>
+        <active>prefigure-potential-steps-ps-box3</active>
+        <active>prefigure-potential-steps-ps-box3b</active>
+      </components>
+    </annotation>
+    <annotation id="prefigure-potential-steps-ps-box1" speech2="Step one. The x component of F says partial f partial x equals y z.">
+      <active>prefigure-potential-steps-ps-box1</active>
+      <position>1</position>
+      <parents>
+        <grouped>prefigure-potential-steps-figure</grouped>
+      </parents>
+    </annotation>
+    <annotation id="prefigure-potential-steps-ps-box1b" speech2="Integrating in x gives f equals x y z plus g of y and z, where the constant of integration may depend on y and z.">
+      <active>prefigure-potential-steps-ps-box1b</active>
+      <position>2</position>
+      <parents>
+        <grouped>prefigure-potential-steps-figure</grouped>
+      </parents>
+    </annotation>
+    <annotation id="prefigure-potential-steps-ps-box2" speech2="Step two. The y component of F says partial f partial y equals x z.">
+      <active>prefigure-potential-steps-ps-box2</active>
+      <position>3</position>
+      <parents>
+        <grouped>prefigure-potential-steps-figure</grouped>
+      </parents>
+    </annotation>
+    <annotation id="prefigure-potential-steps-ps-box2b" speech2="Differentiating in y shows g does not depend on y, so f equals x y z plus h of z.">
+      <active>prefigure-potential-steps-ps-box2b</active>
+      <position>4</position>
+      <parents>
+        <grouped>prefigure-potential-steps-figure</grouped>
+      </parents>
+    </annotation>
+    <annotation id="prefigure-potential-steps-ps-box3" speech2="Step three. The z component of F says partial f partial z equals x y plus 2 z.">
+      <active>prefigure-potential-steps-ps-box3</active>
+      <position>5</position>
+      <parents>
+        <grouped>prefigure-potential-steps-figure</grouped>
+      </parents>
+    </annotation>
+    <annotation id="prefigure-potential-steps-ps-box3b" speech2="Solving h prime of z equals 2 z gives h equals z squared plus C, so f equals x y z plus z squared plus C.">
+      <active>prefigure-potential-steps-ps-box3b</active>
+      <position>6</position>
+      <parents>
+        <grouped>prefigure-potential-steps-figure</grouped>
+      </parents>
+    </annotation>
+  </annotations>
+</diagram>

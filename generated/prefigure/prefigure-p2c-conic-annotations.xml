@@ -1,0 +1,48 @@
+<diagram>
+  <annotations>
+    <annotation id="prefigure-p2c-conic-figure" speech2="A hyperbola with two branches opening left and right, the graph of the polar equation r equals one plus two r cosine theta, with its two asymptotes drawn as dashed grey lines crossing at the center, minus two thirds comma zero.">
+      <grouped>prefigure-p2c-conic-figure</grouped>
+      <position>1</position>
+      <children>
+        <active>prefigure-p2c-conic-qq-b1</active>
+        <active>prefigure-p2c-conic-qq-b2</active>
+        <active>prefigure-p2c-conic-qq-asym1</active>
+        <active>prefigure-p2c-conic-qq-asym2</active>
+      </children>
+      <components>
+        <active>prefigure-p2c-conic-qq-b1</active>
+        <active>prefigure-p2c-conic-qq-b2</active>
+        <active>prefigure-p2c-conic-qq-asym1</active>
+        <active>prefigure-p2c-conic-qq-asym2</active>
+      </components>
+    </annotation>
+    <annotation id="prefigure-p2c-conic-qq-b1" speech2="One branch of the hyperbola.">
+      <active>prefigure-p2c-conic-qq-b1</active>
+      <position>1</position>
+      <parents>
+        <grouped>prefigure-p2c-conic-figure</grouped>
+      </parents>
+    </annotation>
+    <annotation id="prefigure-p2c-conic-qq-b2" speech2="The other branch of the hyperbola.">
+      <active>prefigure-p2c-conic-qq-b2</active>
+      <position>2</position>
+      <parents>
+        <grouped>prefigure-p2c-conic-figure</grouped>
+      </parents>
+    </annotation>
+    <annotation id="prefigure-p2c-conic-qq-asym1" speech2="The asymptote y equals root three times x plus two thirds, a dashed line of slope root three through the center.">
+      <active>prefigure-p2c-conic-qq-asym1</active>
+      <position>3</position>
+      <parents>
+        <grouped>prefigure-p2c-conic-figure</grouped>
+      </parents>
+    </annotation>
+    <annotation id="prefigure-p2c-conic-qq-asym2" speech2="The asymptote y equals minus root three times x plus two thirds, a dashed line of slope minus root three through the center.">
+      <active>prefigure-p2c-conic-qq-asym2</active>
+      <position>4</position>
+      <parents>
+        <grouped>prefigure-p2c-conic-figure</grouped>
+      </parents>
+    </annotation>
+  </annotations>
+</diagram>
