@@ -49,7 +49,7 @@
       <xi:include href="triple-integrals-spherical.ptx" />
       <xi:include href="mass-center-of-mass.ptx" />
       <xi:include href="jacobian-substitution.ptx" />
-      <!-- UNPOSTED <xi:include href="surface-integrals.ptx" /> UNPOSTED -->
+      <xi:include href="surface-integrals.ptx" />
     </chapter>
 
     <!-- HIDDEN-CHAPTER-BEGIN
