@@ -1,17 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- Layout (Nov 2026, at the instructor's request): two subsections,    -->
+<!-- Flux and Divergence and Circulation and Curl, each running from its   -->
+<!-- operator through its line integral to its form of Green's theorem;    -->
+<!-- what uses both (the div/curl animation, the video of both forms, the  -->
+<!-- normal form derived from the tangential one) is in the Concept Check. -->
+<!-- The old subsection ids are kept, now on subsubsections, so every      -->
+<!-- citation still holds.  Same layout as section 3.1 of                  -->
+<!-- MATH14-Skeletal-Instructor.                                           -->
 <section xml:id="section-greens-theorem" xmlns:xi="http://www.w3.org/2001/XInclude">
 <title>Green's Theorem in the Plane</title>
 
+
 <introduction>
 <p>
-Before we learn about Green's theorem, we will need to learn about two
-operations on vector fields: <term>curl</term> and
-<term>divergence</term>. We begin by studying divergence.
+Green's theorem comes in two forms: one about how much of a vector field
+flows <em>across</em> a closed curve, and one about how much flows
+<em>along</em> it. Each needs an operation on vector fields of its own,
+<term>divergence</term> for the first and <term>curl</term> for the
+second. So the section has two halves. Each builds its operation, then
+the line integral it goes with, and then the form of Green's theorem that
+connects the two when the curve is closed; the Concept Check at the end
+uses both.
 </p>
 </introduction>
 
 <!-- ================================================================ -->
-<subsection xml:id="sec-divergence">
+<subsection xml:id="sec-green-flux">
+<title>Flux and Divergence</title>
+
+<subsubsection xml:id="sec-divergence">
 <title>Divergence</title>
 
 <p>
@@ -126,18 +143,30 @@ nearly constant along each side:
 </p>
 
 <md>
-<mrow>\text{Top:} \amp\quad
-\mathbf{F}(x, y+\Delta y) \cdot \mathbf{j}\, \Delta x
-= N(x, y+\Delta y)\, \Delta x</mrow>
-<mrow>\text{Bottom:} \amp\quad
-\mathbf{F}(x, y) \cdot (-\mathbf{j})\, \Delta x
-= -N(x, y)\, \Delta x</mrow>
-<mrow>\text{Right:} \amp\quad
-\mathbf{F}(x+\Delta x, y) \cdot \mathbf{i}\, \Delta y
-= M(x+\Delta x, y)\, \Delta y</mrow>
-<mrow>\text{Left:} \amp\quad
-\mathbf{F}(x, y) \cdot (-\mathbf{i})\, \Delta y
-= -M(x, y)\, \Delta y.</mrow>
+<mrow>
+\text{Top:} \amp\quad \mathbf{F}(x, y+\Delta y) \cdot \mathbf{j}\, \Delta x
+</mrow>
+<mrow>
+\amp\qquad = N(x, y+\Delta y)\, \Delta x
+</mrow>
+<mrow>
+\text{Bottom:} \amp\quad \mathbf{F}(x, y) \cdot (-\mathbf{j})\, \Delta x
+</mrow>
+<mrow>
+\amp\qquad = -N(x, y)\, \Delta x
+</mrow>
+<mrow>
+\text{Right:} \amp\quad \mathbf{F}(x+\Delta x, y) \cdot \mathbf{i}\, \Delta y
+</mrow>
+<mrow>
+\amp\qquad = M(x+\Delta x, y)\, \Delta y
+</mrow>
+<mrow>
+\text{Left:} \amp\quad \mathbf{F}(x, y) \cdot (-\mathbf{i})\, \Delta y
+</mrow>
+<mrow>
+\amp\qquad = -M(x, y)\, \Delta y.
+</mrow>
 </md>
 
 <p>
@@ -155,15 +184,20 @@ field has a constant value along each side of the rectangle. The
 <term>flux density</term> can be calculated as follows:
 </p>
 
-<men xml:id="eq-flux-density">
-\text{Flux density}
-= \frac{\text{net flux through the rectangle}}
-{\text{area of the rectangle}}
-= \frac{\left( \frac{\partial M}{\partial x}
-+ \frac{\partial N}{\partial y} \right) \Delta x \Delta y}
-{\Delta x \Delta y}
-= \frac{\partial M}{\partial x} + \frac{\partial N}{\partial y}.
-</men>
+<md>
+<mrow>
+\amp \text{Flux density}
+</mrow>
+<mrow>
+\amp = \frac{\text{net flux through the rectangle}}{\text{area of the rectangle}}
+</mrow>
+<mrow>
+\amp = \frac{\left( \frac{\partial M}{\partial x} + \frac{\partial N}{\partial y} \right) \Delta x \Delta y}{\Delta x \Delta y}
+</mrow>
+<mrow xml:id="eq-flux-density" number="yes">
+\amp = \frac{\partial M}{\partial x} + \frac{\partial N}{\partial y}.
+</mrow>
+</md>
 
 <p>
 Note that, in the limit that <m>\Delta x</m> and <m>\Delta y</m>
@@ -239,13 +273,17 @@ physically.
 <em>Part A.</em> Using <xref ref="eq-div-def"/>,
 </p>
 
-<me>
-\nabla \cdot \mathbf{F}
-= \left( \frac{\partial}{\partial x}\,\mathbf{i}
-+ \frac{\partial}{\partial y}\,\mathbf{j} \right)
-\cdot \left( 2x\,\mathbf{i} + 2y\,\mathbf{j} \right)
-= 2 + 2 = 4 \gt 0.
-</me>
+<md>
+<mrow>
+\amp \nabla \cdot \mathbf{F}
+</mrow>
+<mrow>
+\amp \quad = \left( \frac{\partial}{\partial x}\,\mathbf{i} + \frac{\partial}{\partial y}\,\mathbf{j} \right) \cdot \left( 2x\,\mathbf{i} + 2y\,\mathbf{j} \right)
+</mrow>
+<mrow>
+\amp \quad = 2 + 2 = 4 \gt 0.
+</mrow>
+</md>
 
 <p>
 Note that for every point on the <m>xy</m>-plane we have found that
@@ -259,12 +297,17 @@ expanding, since there is a positive flux density at every point
 <em>Part B.</em> Again by <xref ref="eq-div-def"/>,
 </p>
 
-<me>
-\nabla \cdot \mathbf{F}
-= \frac{\partial}{\partial x} \left( \frac{-y}{x^2+y^2} \right)
-+ \frac{\partial}{\partial y} \left( \frac{x}{x^2+y^2} \right)
-= \frac{2xy}{(x^2+y^2)^2} - \frac{2xy}{(x^2+y^2)^2} = 0.
-</me>
+<md>
+<mrow>
+\amp \nabla \cdot \mathbf{F}
+</mrow>
+<mrow>
+\amp \quad = \frac{\partial}{\partial x} \left( \frac{-y}{x^2+y^2} \right) + \frac{\partial}{\partial y} \left( \frac{x}{x^2+y^2} \right)
+</mrow>
+<mrow>
+\amp \quad = \frac{2xy}{(x^2+y^2)^2} - \frac{2xy}{(x^2+y^2)^2} = 0.
+</mrow>
+</md>
 
 <p>
 Note that for every point on the <m>xy</m>-plane we have found that
@@ -326,10 +369,469 @@ A rotational field circulating counterclockwise around the origin.
 </sidebyside>
 </figure>
 
+</subsubsection>
+
+<subsubsection xml:id="sec-green-outward-normal">
+<title>The Flux Across a Plane Curve</title>
+
+<p>
+The first form of Green's theorem, in <xref ref="sec-greens-theorem-forms"/>,
+measures how much of a field flows <em>across</em> a closed curve
+<m>C</m>: its <term>outward flux</term>
+<m>\oint_C \mathbf{F}\cdot\mathbf{n}\,ds</m>, the line integral of the
+component of <m>\mathbf{F}</m> along the <term>outward unit normal</term>
+<m>\mathbf{n}</m> of the curve. So it uses <m>\mathbf{n}</m> rather than
+the unit tangent <m>\mathbf{T}</m> of <xref ref="eq-unit-tangent"/>,
+introduced in <xref ref="sec-vector-fields"/>. Suppose <m>C</m> is
+traversed counterclockwise and parametrized by
+<m>\mathbf{r}(t) = x(t)\,\mathbf{i} + y(t)\,\mathbf{j}</m>. Its velocity,
+the tangent vector of <xref ref="eq-tangent-vector"/>, is
+<me>
+\mathbf{v} = \frac{d\mathbf{r}}{dt}
+= \left\langle \frac{dx}{dt},\ \frac{dy}{dt} \right\rangle.
+</me>
+</p>
+
+<p>
+Since <m>\mathbf{n}</m> is a unit normal to the curve, it is
+perpendicular to the tangent vector <m>\mathbf{v}</m>, so
+<m>\mathbf{n} \cdot \mathbf{v} = 0</m>.
+</p>
+
+<p>
+The vector
+<m>\left\langle \frac{dy}{dt},\ -\frac{dx}{dt} \right\rangle</m> has
+this property, because
+<md>
+<mrow>
+\amp \left\langle \frac{dy}{dt},\ -\frac{dx}{dt} \right\rangle \cdot \left\langle \frac{dx}{dt},\ \frac{dy}{dt} \right\rangle
+</mrow>
+<mrow>
+\amp \quad = \frac{dy}{dt}\,\frac{dx}{dt} - \frac{dx}{dt}\,\frac{dy}{dt} = 0.
+</mrow>
+</md>
+It is <m>\mathbf{v}</m> turned a quarter turn clockwise. Of the two
+directions perpendicular to <m>\mathbf{v}</m>, this is the one that
+points out of the region: as <m>C</m> is traversed counterclockwise, the
+region <m>R</m> it encloses stays on the left, so turning
+<m>\mathbf{v}</m> clockwise makes it point to the right, out of
+<m>R</m>. (The opposite vector,
+<m>\left\langle -\frac{dy}{dt},\ \frac{dx}{dt} \right\rangle</m>, points
+into <m>R</m>.) Therefore the outward normal is
+<me>
+\left\langle \frac{dy}{dt},\ -\frac{dx}{dt} \right\rangle.
+</me>
+</p>
+
+<p>
+To find the unit normal we divide this vector by its length. Its length
+is
+<m>\sqrt{\left(\frac{dy}{dt}\right)^2 + \left(\frac{dx}{dt}\right)^2}
+= \left\lVert\mathbf{v}\right\rVert</m>, the same as the length of
+<m>\mathbf{v}</m>, so
+<men xml:id="eq-outward-unit-normal">
+\mathbf{n} = \frac{1}{\left\lVert\mathbf{v}\right\rVert}
+\left\langle \frac{dy}{dt},\ -\frac{dx}{dt} \right\rangle.
+</men>
+Compare it with the unit tangent
+<m>\mathbf{T} = \frac{1}{\left\lVert\mathbf{v}\right\rVert}
+\left\langle \frac{dx}{dt},\ \frac{dy}{dt} \right\rangle</m> of
+<xref ref="eq-unit-tangent"/>: the two have the same components,
+swapped, with one sign changed.
+</p>
+
+<example xml:id="example-unit-normal-circle">
+<title>The Unit Normal to the Unit Circle</title>
+<statement>
+<p>
+Find the outward unit normal <m>\mathbf{n}</m> and the unit tangent
+<m>\mathbf{T}</m> of the unit circle <m>x^2 + y^2 = 1</m>, traversed
+counterclockwise.
+</p>
+</statement>
+</example>
+
+<solution xml:id="solution-unit-normal-circle">
+<p>
+Parametrize the circle as in <xref ref="eq-unit-circle-param"/>:
+<me>
+\mathbf{r}(t) = (\cos t)\,\mathbf{i} + (\sin t)\,\mathbf{j},
+\quad 0 \le t \le 2\pi,
+</me>
+which traverses it counterclockwise. Then
+<m>\frac{dx}{dt} = -\sin t</m> and <m>\frac{dy}{dt} = \cos t</m>, so
+<md>
+<mrow>
+\mathbf{v} \amp = \left\langle -\sin t,\ \cos t \right\rangle,
+</mrow>
+<mrow>
+\left\lVert\mathbf{v}\right\rVert \amp = \sqrt{\sin^2 t + \cos^2 t} = 1.
+</mrow>
+</md>
+</p>
+
+<p>
+By <xref ref="eq-outward-unit-normal"/> and
+<xref ref="eq-unit-tangent"/>,
+<md>
+<mrow>
+\mathbf{n} \amp= \frac{1}{1} \left\langle \cos t,\ -(-\sin t) \right\rangle
+</mrow>
+<mrow>
+\amp= \left\langle \cos t,\ \sin t \right\rangle,
+</mrow>
+<mrow>
+\mathbf{T} \amp= \frac{1}{1} \left\langle -\sin t,\ \cos t \right\rangle
+</mrow>
+<mrow>
+\amp= \left\langle -\sin t,\ \cos t \right\rangle.
+</mrow>
+</md>
+</p>
+
+<p>
+On the unit circle the outward unit normal is the position vector
+<m>\mathbf{r}(t)</m> itself: it points straight away from the center,
+as it should. As a check,
+<m>\mathbf{n}\cdot\mathbf{T} = -\cos t\sin t + \sin t\cos t = 0</m> and
+<m>\left\lVert\mathbf{n}\right\rVert = 1</m>. For instance, at
+<m>t = \pi/6</m> we get
+<m>\mathbf{n} = \left\langle \frac{\sqrt{3}}{2},\ \frac{1}{2} \right\rangle</m>
+and
+<m>\mathbf{T} = \left\langle -\frac{1}{2},\ \frac{\sqrt{3}}{2} \right\rangle</m>.
+Both vectors are drawn at three points of the circle in
+<xref ref="fig-unit-normal-circle"/>.
+</p>
+</solution>
+
+<figure xml:id="fig-unit-normal-circle">
+<caption>
+The unit tangent <m>\mathbf{T}</m> (pink) and the outward unit normal
+<m>\mathbf{n}</m> (green) at three points of the unit circle <m>C</m>;
+the arrowheads on <m>C</m> show the direction of the path,
+counterclockwise. At every point the two vectors are perpendicular, and
+<m>\mathbf{n}</m> is on the right as we move along <m>C</m> in the
+direction of the path, so it points out of the disk <m>R</m>.
+</caption>
+<image width="55%">
+<shortdescription>
+The unit circle with a unit tangent vector and an outward unit normal vector drawn at three of its points.
+</shortdescription>
+<prefigure xmlns="https://prefigure.org" label="prefigure-unit-normal-circle">
+<diagram dimensions="(300,300)" margins="10">
+<definition>r(t) = (cos(t), sin(t))</definition>
+<definition>T(t) = (-sin(t), cos(t))</definition>
+<definition>nn(t) = (cos(t), sin(t))</definition>
+<definition>tipT(t) = (cos(t) - sin(t), sin(t) + cos(t))</definition>
+<definition>tipN(t) = (2*cos(t), 2*sin(t))</definition>
+<coordinates bbox="(-2.3,-2.3,2.3,2.3)">
+<circle at="un-disk" center="(0,0)" radius="1" fill="#dff4f6"
+        stroke="#00b0c0" thickness="3"/>
+<axes at="un-axes" xlabel="x" ylabel="y" decorations="no" arrows="1"/>
+<!-- arrowheads on C showing the direction of the path -->
+<parametric-curve at="un-dir-1" function="r" domain="(1.5,1.745)"
+                  stroke="#00b0c0" thickness="3" arrows="1" arrow-width="5"/>
+<parametric-curve at="un-dir-2" function="r" domain="(3.6,3.84)"
+                  stroke="#00b0c0" thickness="3" arrows="1" arrow-width="5"/>
+<parametric-curve at="un-dir-3" function="r" domain="(5.78,6.021)"
+                  stroke="#00b0c0" thickness="3" arrows="1" arrow-width="5"/>
+<!-- t = pi/6 -->
+<angle-marker at="un-right-1" p="r(pi/6)" p1="tipN(pi/6)" p2="tipT(pi/6)"
+              radius="9" stroke="#555555" thickness="1"/>
+<vector at="un-T-1" tail="r(pi/6)" v="T(pi/6)" stroke="#d02090" thickness="3"/>
+<vector at="un-n-1" tail="r(pi/6)" v="nn(pi/6)" stroke="#009E73" thickness="3"/>
+<point at="un-P-1" p="r(pi/6)" size="3" fill="black"/>
+<label at="un-T-1-label" anchor="tipT(pi/6)" alignment="n" color="#d02090"
+       clear-background="yes" background-margin="2">
+<m>\mathbf{T}</m>
+</label>
+<label at="un-n-1-label" anchor="tipN(pi/6)" alignment="e" color="#009E73"
+       clear-background="yes" background-margin="2">
+<m>\mathbf{n}</m>
+</label>
+<!-- t = 5 pi/6 -->
+<angle-marker at="un-right-2" p="r(5*pi/6)" p1="tipN(5*pi/6)" p2="tipT(5*pi/6)"
+              radius="9" stroke="#555555" thickness="1"/>
+<vector at="un-T-2" tail="r(5*pi/6)" v="T(5*pi/6)" stroke="#d02090" thickness="3"/>
+<vector at="un-n-2" tail="r(5*pi/6)" v="nn(5*pi/6)" stroke="#009E73" thickness="3"/>
+<point at="un-P-2" p="r(5*pi/6)" size="3" fill="black"/>
+<label at="un-T-2-label" anchor="tipT(5*pi/6)" alignment="s" color="#d02090"
+       clear-background="yes" background-margin="2">
+<m>\mathbf{T}</m>
+</label>
+<label at="un-n-2-label" anchor="tipN(5*pi/6)" alignment="w" color="#009E73"
+       clear-background="yes" background-margin="2">
+<m>\mathbf{n}</m>
+</label>
+<!-- t = 5 pi/3 -->
+<angle-marker at="un-right-3" p="r(5*pi/3)" p1="tipN(5*pi/3)" p2="tipT(5*pi/3)"
+              radius="9" stroke="#555555" thickness="1"/>
+<vector at="un-T-3" tail="r(5*pi/3)" v="T(5*pi/3)" stroke="#d02090" thickness="3"/>
+<vector at="un-n-3" tail="r(5*pi/3)" v="nn(5*pi/3)" stroke="#009E73" thickness="3"/>
+<point at="un-P-3" p="r(5*pi/3)" size="3" fill="black"/>
+<label at="un-T-3-label" anchor="tipT(5*pi/3)" alignment="e" color="#d02090"
+       clear-background="yes" background-margin="2">
+<m>\mathbf{T}</m>
+</label>
+<label at="un-n-3-label" anchor="tipN(5*pi/3)" alignment="se" color="#009E73"
+       clear-background="yes" background-margin="2">
+<m>\mathbf{n}</m>
+</label>
+<label at="un-C-label" anchor="(-0.36,-1.02)" alignment="sw" color="#00a0b0"
+       clear-background="yes" background-margin="2">
+<m>C</m>
+</label>
+<label at="un-R-label" anchor="(-0.42,-0.36)" alignment="c"
+       clear-background="yes" background-margin="2">
+<m>R</m>
+</label>
+</coordinates>
+<annotations>
+<annotation ref="figure" text="The unit circle C drawn in teal around the shaded disk R, with three arrowheads on it showing that the path runs counterclockwise. At three points of the circle a pink unit tangent vector T and a green unit normal vector n start from the same point; a small square marks the right angle between them. Every T points in the direction of travel, and every n is on the right of the direction of travel, pointing straight away from the center, out of the disk.">
+  <annotation ref="un-disk" text="The unit circle C, traversed counterclockwise, enclosing the disk R."/>
+  <annotation ref="un-dir-1" text="An arrowhead on the circle near the top, pointing to the left: the path runs counterclockwise."/>
+  <annotation ref="un-T-1" text="At the point at angle pi over 6, the unit tangent T points up and to the left, along the direction of travel."/>
+  <annotation ref="un-n-1" text="At the same point, the outward unit normal n points away from the center, up and to the right."/>
+  <annotation ref="un-T-2" text="At the point at angle 5 pi over 6, the unit tangent T points down and to the left."/>
+  <annotation ref="un-n-2" text="At the same point, the outward unit normal n points away from the center, up and to the left."/>
+  <annotation ref="un-T-3" text="At the point at angle 5 pi over 3, the unit tangent T points up and to the right."/>
+  <annotation ref="un-n-3" text="At the same point, the outward unit normal n points away from the center, down and to the right."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+
+<p>
+This is where the line integral <m>\oint_C M\,dy - N\,dx</m> in the
+normal form of Green's theorem, <xref ref="eq-green-normal"/>, comes
+from. For <m>\mathbf{F} = M\,\mathbf{i} + N\,\mathbf{j}</m>, the line
+element <m>ds = \left\lVert\mathbf{v}\right\rVert\,dt</m> of
+<xref ref="eq-line-element-2d"/> cancels the length in
+<xref ref="eq-outward-unit-normal"/>:
+<md>
+<mrow>
+\amp \mathbf{F}\cdot\mathbf{n}\,ds
+</mrow>
+<mrow>
+\amp \quad = \frac{1}{\left\lVert\mathbf{v}\right\rVert} \left( M\,\frac{dy}{dt} - N\,\frac{dx}{dt} \right) \left\lVert\mathbf{v}\right\rVert\,dt
+</mrow>
+<mrow>
+\amp \quad = M\,dy - N\,dx.
+</mrow>
+</md>
+</p>
+
+</subsubsection>
+
+<subsubsection xml:id="sec-greens-theorem-forms">
+<title>Green's Theorem: The Flux-Divergence (Normal) Form</title>
+
+<p>
+We can now state Green's theorem in 2D<fn>Note that we only cover Green's
+theorem in 2D; however, you should know that this theorem can be
+generalized to 3D, and in that case it is known as Stokes' theorem,
+which is <xref ref="section-stokes-theorem"/>.</fn>. It comes in two
+forms, and the first, the flux form, relates the outward flux
+across a simple<fn>A curve in the <m>xy</m>-plane is
+<term>simple</term> if it does not cross itself.</fn> closed curve
+<m>C</m> and the double integral of the divergence over the region
+<m>R</m> bounded by the curve <m>C</m>.
+</p>
+
+<theorem xml:id="thm-green-normal">
+<title>Green's Theorem (Flux-Divergence or Normal Form)</title>
+<statement>
+<p>
+Let <m>C</m> be a piecewise smooth, simple closed curve enclosing a
+region <m>R</m> in the plane. Let
+<m>\mathbf{F} = M\,\mathbf{i} + N\,\mathbf{j}</m> be a vector field
+with <m>M</m> and <m>N</m> having continuous first partial derivatives
+in an open region containing <m>R</m>. Then the outward flux of
+<m>\mathbf{F}</m> across <m>C</m> equals the double integral of
+<m>\operatorname{div} \mathbf{F}</m> over the region <m>R</m> enclosed
+by <m>C</m>:
+</p>
+
+<md>
+<mrow>
+\amp \underbrace{\oint_C \mathbf{F} \cdot \mathbf{n}\, ds}_{\text{outward flux}} = \oint_C M\, dy - N\, dx
+</mrow>
+<mrow xml:id="eq-green-normal" number="yes">
+\amp \quad = \underbrace{\iint_R \left( \frac{\partial M}{\partial x} + \frac{\partial N}{\partial y} \right) dx\, dy}_{\substack{\text{integral of} \\ \operatorname{div}\mathbf{F} \text{ over } R}}.
+</mrow>
+</md>
+</statement>
+</theorem>
+
+<example xml:id="example-green-circle-normal">
+<title>Verifying the Normal Form on the Unit Circle</title>
+<statement>
+<p>
+Assume that the vector field
+<m>\mathbf{F}(x,y) = (x - y)\,\mathbf{i} + x\,\mathbf{j}</m> and the
+closed curve <m>C</m> is the unit circle centered at the origin, drawn
+in <xref ref="fig-green-circle-normal"/>. Convince yourself of the normal
+form of Green's theorem,
+<xref ref="eq-green-normal"/>, by applying it to this example.
+</p>
+</statement>
+</example>
+
+<solution xml:id="solution-green-circle-normal">
+<p>
+We begin by noticing that the unit circle can be parametrized as
+</p>
+
+<md>
+<mrow>
+\amp C: \quad \mathbf{r}(t) = (\cos t)\,\mathbf{i} + (\sin t)\,\mathbf{j},
+</mrow>
+<mrow>
+\amp \qquad 0 \le t \le 2\pi.
+</mrow>
+</md>
+
+<p>
+After substituting the parametrized equations <m>x(t) = \cos t</m> and
+<m>y(t) = \sin t</m> into the vector field, we get
+<m>\mathbf{F} = (\cos t - \sin t)\,\mathbf{i} + (\cos t)\,\mathbf{j}</m>,
+and thus
+</p>
+
+<md>
+<mrow>
+M \amp = \cos t - \sin t,
+</mrow>
+<mrow>
+N \amp = \cos t,
+</mrow>
+<mrow>
+dx \amp = d(\cos t) = -\sin t\, dt,
+</mrow>
+<mrow>
+dy \amp = d(\sin t) = \cos t\, dt,
+</mrow>
+</md>
+
+<p>
+with the partial derivatives
+</p>
+
+<me>
+\frac{\partial M}{\partial x} = 1, \qquad
+\frac{\partial N}{\partial y} = 0.
+</me>
+
+<p>
+For the line integral in <xref ref="eq-green-normal"/> we have
+</p>
+
+<md>
+<mrow>
+\amp \oint_C M\, dy - N\, dx
+</mrow>
+<mrow>
+\amp \quad = \int_0^{2\pi} (\cos t - \sin t)(\cos t\, dt)
+</mrow>
+<mrow>
+\amp \qquad {} - (\cos t)(-\sin t\, dt)
+</mrow>
+<mrow>
+\amp \quad = \int_0^{2\pi} \cos^2 t\, dt = \pi,
+</mrow>
+</md>
+
+<p>
+which is the same integral we get from the outward unit normal of
+<xref ref="example-unit-normal-circle"/>: there
+<m>\mathbf{n} = (\cos t)\,\mathbf{i} + (\sin t)\,\mathbf{j}</m> and
+<m>ds = dt</m>, so
+<m>\mathbf{F}\cdot\mathbf{n}\,ds
+= \big((\cos t - \sin t)\cos t + \cos t \sin t\big)\,dt
+= \cos^2 t\, dt</m>. The double integral gives the same value:
+</p>
+
+<md>
+<mrow>
+\amp \iint_R \left( \frac{\partial M}{\partial x} + \frac{\partial N}{\partial y} \right) dx\, dy
+</mrow>
+<mrow>
+\amp \quad = \iint_R (1 + 0)\, dx\, dy
+</mrow>
+<mrow>
+\amp \quad = \text{area inside the unit circle} = \pi.
+</mrow>
+</md>
+
+<p>
+So the outward flux of <m>\mathbf{F}</m> across the unit circle is
+<m>\pi</m>, computed either way.
+</p>
+</solution>
+
+<figure xml:id="fig-green-circle-normal">
+<caption>
+The vector field <m>\mathbf{F}(x,y) = (x-y)\,\mathbf{i} +
+x\,\mathbf{j}</m> and the unit circle <m>C</m>, with the outward unit
+normal <m>\mathbf{n}</m> at two of its points. At every point of <m>C</m> the field has a component along
+<m>\mathbf{n}</m> that is positive or zero, so its outward flux across
+<m>C</m> is positive.
+</caption>
+<image width="55%">
+<shortdescription>
+A swirling field with the unit circle and two outward unit normal vectors.
+</shortdescription>
+<prefigure xmlns="https://prefigure.org" label="prefigure-green-circle-normal">
+<diagram dimensions="(300,300)" margins="10">
+<definition>field(x,y) = (x - y, x)</definition>
+<definition>circ(t) = (cos(t), sin(t))</definition>
+<coordinates bbox="(-2.3,-2.3,2.3,2.3)">
+<axes at="gn-axes" xlabel="x" ylabel="y" decorations="no" arrows="1"/>
+<vector-field at="gn-field" function="field"
+              spacings="((-2,0.8,2),(-2,0.8,2))" stroke="#2b6cb0"/>
+<parametric-curve at="gn-circle" function="circ" domain="(0,2*pi)"
+                  closed="yes" stroke="#00b0c0" thickness="3"/>
+<line at="gn-n1" p1="(0.9,0.436)" p2="(1.53,0.741)" arrows="1"
+      stroke="#009E73" thickness="3"/>
+<line at="gn-n2" p1="(-0.9,-0.436)" p2="(-1.53,-0.741)" arrows="1"
+      stroke="#009E73" thickness="3"/>
+<label at="gn-n1-label" clear-background="yes" background-margin="4" anchor="(1.58,0.76)" alignment="ne"
+       color="#009E73">
+<m>\mathbf{n}</m>
+</label>
+<label at="gn-n2-label" clear-background="yes" background-margin="4" anchor="(-1.58,-0.76)" alignment="sw"
+       color="#009E73">
+<m>\mathbf{n}</m>
+</label>
+<label at="gn-C-label" clear-background="yes" background-margin="4" anchor="(0.62,-0.95)" alignment="se"
+       color="#00b0c0">
+<m>C</m>
+</label>
+</coordinates>
+<annotations>
+<annotation ref="figure" text="The vector field x minus y comma x drawn as blue arrows swirling counterclockwise, with the unit circle C drawn in teal. Two green outward unit normal vectors n start on the circle and point straight away from the center.">
+  <annotation ref="gn-field" text="The vector field x minus y comma x, which swirls counterclockwise around the plane."/>
+  <annotation ref="gn-circle" text="The unit circle C, traversed counterclockwise."/>
+  <annotation ref="gn-n1" text="An outward unit normal vector n on the circle, pointing away from the center."/>
+  <annotation ref="gn-n2" text="The outward unit normal at the opposite point of the circle."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+
+</subsubsection>
+
 </subsection>
 
 <!-- ================================================================ -->
-<subsection xml:id="sec-curl">
+<subsection xml:id="sec-green-circulation">
+<title>Circulation and Curl</title>
+
+<subsubsection xml:id="sec-curl">
 <title>Curl</title>
 
 <p>
@@ -453,18 +955,30 @@ left, and right:
 </p>
 
 <md>
-<mrow>\text{Top:} \amp\quad
-\mathbf{F}(x, y+\Delta y) \cdot (-\mathbf{i})\, \Delta x
-= -M(x, y+\Delta y)\, \Delta x</mrow>
-<mrow>\text{Bottom:} \amp\quad
-\mathbf{F}(x, y) \cdot \mathbf{i}\, \Delta x
-= M(x, y)\, \Delta x</mrow>
-<mrow>\text{Right:} \amp\quad
-\mathbf{F}(x+\Delta x, y) \cdot \mathbf{j}\, \Delta y
-= N(x+\Delta x, y)\, \Delta y</mrow>
-<mrow>\text{Left:} \amp\quad
-\mathbf{F}(x, y) \cdot (-\mathbf{j})\, \Delta y
-= -N(x, y)\, \Delta y.</mrow>
+<mrow>
+\text{Top:} \amp\quad \mathbf{F}(x, y+\Delta y) \cdot (-\mathbf{i})\, \Delta x
+</mrow>
+<mrow>
+\amp\qquad = -M(x, y+\Delta y)\, \Delta x
+</mrow>
+<mrow>
+\text{Bottom:} \amp\quad \mathbf{F}(x, y) \cdot \mathbf{i}\, \Delta x
+</mrow>
+<mrow>
+\amp\qquad = M(x, y)\, \Delta x
+</mrow>
+<mrow>
+\text{Right:} \amp\quad \mathbf{F}(x+\Delta x, y) \cdot \mathbf{j}\, \Delta y
+</mrow>
+<mrow>
+\amp\qquad = N(x+\Delta x, y)\, \Delta y
+</mrow>
+<mrow>
+\text{Left:} \amp\quad \mathbf{F}(x, y) \cdot (-\mathbf{j})\, \Delta y
+</mrow>
+<mrow>
+\amp\qquad = -N(x, y)\, \Delta y.
+</mrow>
 </md>
 
 <p>
@@ -472,14 +986,24 @@ Then we sum up the flow across the parallel edges:
 </p>
 
 <md>
-<mrow>\text{Top and bottom:} \amp\quad
--\big( M(x, y+\Delta y) - M(x,y) \big) \Delta x
-\approx -\left( \frac{\partial M}{\partial y}\, \Delta y \right)
-\Delta x</mrow>
-<mrow>\text{Right and left:} \amp\quad
-\big( N(x+\Delta x, y) - N(x,y) \big) \Delta y
-\approx \left( \frac{\partial N}{\partial x}\, \Delta x \right)
-\Delta y.</mrow>
+<mrow>
+\amp \text{Top and bottom:}
+</mrow>
+<mrow>
+\amp \quad -\big( M(x, y+\Delta y) - M(x,y) \big) \Delta x
+</mrow>
+<mrow>
+\amp \qquad \approx -\left( \frac{\partial M}{\partial y}\, \Delta y \right) \Delta x
+</mrow>
+<mrow>
+\amp \text{Right and left:}
+</mrow>
+<mrow>
+\amp \quad \big( N(x+\Delta x, y) - N(x,y) \big) \Delta y
+</mrow>
+<mrow>
+\amp \qquad \approx \left( \frac{\partial N}{\partial x}\, \Delta x \right) \Delta y.
+</mrow>
 </md>
 
 <p>
@@ -487,10 +1011,14 @@ Finally, after summing the flow rates above and taking the limit as
 <m>\Delta x, \Delta y \to 0</m>, for the circulation density we get
 </p>
 
-<me>
-\frac{\text{circulation around rectangle}}{\text{rectangle area}}
-\approx \frac{\partial N}{\partial x} - \frac{\partial M}{\partial y}.
-</me>
+<md>
+<mrow>
+\amp \frac{\text{circulation around rectangle}}{\text{rectangle area}}
+</mrow>
+<mrow>
+\amp \quad \approx \frac{\partial N}{\partial x} - \frac{\partial M}{\partial y}.
+</mrow>
+</md>
 
 <p>
 This quantity is denoted by
@@ -648,363 +1176,38 @@ A rotational field circulating counterclockwise, arrows longer farther out.
 </sidebyside>
 </figure>
 
-</subsection>
+</subsubsection>
 
-<!-- ================================================================ -->
-<subsection xml:id="sec-green-outward-normal">
-<title>The Outward Unit Normal of a Plane Curve</title>
-
-<p>
-The first form of Green's theorem in the next subsection measures how
-much of a field flows <em>across</em> a closed curve <m>C</m>, so it uses
-the <term>outward unit normal</term> <m>\mathbf{n}</m> of the curve
-rather than its unit tangent <m>\mathbf{T}</m>. Suppose <m>C</m> is
-traversed counterclockwise and parametrized by
-<m>\mathbf{r}(t) = x(t)\,\mathbf{i} + y(t)\,\mathbf{j}</m>. Its velocity,
-the tangent vector of <xref ref="eq-tangent-vector"/>, is
-<me>
-\mathbf{v} = \frac{d\mathbf{r}}{dt}
-= \left\langle \frac{dx}{dt},\ \frac{dy}{dt} \right\rangle.
-</me>
-</p>
+<subsubsection xml:id="sec-green-circulation-integral">
+<title>The Circulation Around a Plane Curve</title>
 
 <p>
-Since <m>\mathbf{n}</m> is a unit normal to the curve, it is
-perpendicular to the tangent vector <m>\mathbf{v}</m>, so
-<m>\mathbf{n} \cdot \mathbf{v} = 0</m>.
-</p>
-
-<p>
-The vector
-<m>\left\langle \frac{dy}{dt},\ -\frac{dx}{dt} \right\rangle</m> has
-this property, because
-<me>
-\left\langle \frac{dy}{dt},\ -\frac{dx}{dt} \right\rangle \cdot
-\left\langle \frac{dx}{dt},\ \frac{dy}{dt} \right\rangle
-= \frac{dy}{dt}\,\frac{dx}{dt} - \frac{dx}{dt}\,\frac{dy}{dt} = 0.
-</me>
-It is <m>\mathbf{v}</m> turned a quarter turn clockwise. Of the two
-directions perpendicular to <m>\mathbf{v}</m>, this is the one that
-points out of the region: as <m>C</m> is traversed counterclockwise, the
-region <m>R</m> it encloses stays on the left, so turning
-<m>\mathbf{v}</m> clockwise makes it point to the right, out of
-<m>R</m>. (The opposite vector,
-<m>\left\langle -\frac{dy}{dt},\ \frac{dx}{dt} \right\rangle</m>, points
-into <m>R</m>.) Therefore the outward normal is
-<me>
-\left\langle \frac{dy}{dt},\ -\frac{dx}{dt} \right\rangle.
-</me>
-</p>
-
-<p>
-To find the unit normal we divide this vector by its length. Its length
-is
-<m>\sqrt{\left(\frac{dy}{dt}\right)^2 + \left(\frac{dx}{dt}\right)^2}
-= \left\lVert\mathbf{v}\right\rVert</m>, the same as the length of
-<m>\mathbf{v}</m>, so
-<men xml:id="eq-outward-unit-normal">
-\mathbf{n} = \frac{1}{\left\lVert\mathbf{v}\right\rVert}
-\left\langle \frac{dy}{dt},\ -\frac{dx}{dt} \right\rangle.
-</men>
-Compare it with the unit tangent
-<m>\mathbf{T} = \frac{1}{\left\lVert\mathbf{v}\right\rVert}
-\left\langle \frac{dx}{dt},\ \frac{dy}{dt} \right\rangle</m> of
-<xref ref="eq-unit-tangent"/>: the two have the same components,
-swapped, with one sign changed.
-</p>
-
-<example xml:id="example-unit-normal-circle">
-<title>The Unit Normal to the Unit Circle</title>
-<statement>
-<p>
-Find the outward unit normal <m>\mathbf{n}</m> and the unit tangent
-<m>\mathbf{T}</m> of the unit circle <m>x^2 + y^2 = 1</m>, traversed
-counterclockwise.
-</p>
-</statement>
-</example>
-
-<solution xml:id="solution-unit-normal-circle">
-<p>
-Parametrize the circle as in <xref ref="eq-unit-circle-param"/>:
-<me>
-\mathbf{r}(t) = (\cos t)\,\mathbf{i} + (\sin t)\,\mathbf{j},
-\qquad 0 \le t \le 2\pi,
-</me>
-which traverses it counterclockwise. Then
-<m>\frac{dx}{dt} = -\sin t</m> and <m>\frac{dy}{dt} = \cos t</m>, so
-<me>
-\mathbf{v} = \left\langle -\sin t,\ \cos t \right\rangle, \qquad
-\left\lVert\mathbf{v}\right\rVert = \sqrt{\sin^2 t + \cos^2 t} = 1.
-</me>
-</p>
-
-<p>
-By <xref ref="eq-outward-unit-normal"/> and
-<xref ref="eq-unit-tangent"/>,
-<md>
-<mrow>\mathbf{n} \amp= \frac{1}{1}
-\left\langle \cos t,\ -(-\sin t) \right\rangle
-= \left\langle \cos t,\ \sin t \right\rangle,</mrow>
-<mrow>\mathbf{T} \amp= \frac{1}{1}
-\left\langle -\sin t,\ \cos t \right\rangle
-= \left\langle -\sin t,\ \cos t \right\rangle.</mrow>
-</md>
-</p>
-
-<p>
-On the unit circle the outward unit normal is the position vector
-<m>\mathbf{r}(t)</m> itself: it points straight away from the center,
-as it should. As a check,
-<m>\mathbf{n}\cdot\mathbf{T} = -\cos t\sin t + \sin t\cos t = 0</m> and
-<m>\left\lVert\mathbf{n}\right\rVert = 1</m>. For instance, at
-<m>t = \pi/6</m> we get
-<m>\mathbf{n} = \left\langle \frac{\sqrt{3}}{2},\ \frac{1}{2} \right\rangle</m>
-and
-<m>\mathbf{T} = \left\langle -\frac{1}{2},\ \frac{\sqrt{3}}{2} \right\rangle</m>.
-Both vectors are drawn at three points of the circle in
-<xref ref="fig-unit-normal-circle"/>.
-</p>
-</solution>
-
-<figure xml:id="fig-unit-normal-circle">
-<caption>
-The unit tangent <m>\mathbf{T}</m> (pink) and the outward unit normal
-<m>\mathbf{n}</m> (green) at three points of the unit circle <m>C</m>;
-the arrowheads on <m>C</m> show the direction of the path,
-counterclockwise. At every point the two vectors are perpendicular, and
-<m>\mathbf{n}</m> is on the right as we move along <m>C</m> in the
-direction of the path, so it points out of the disk <m>R</m>.
-</caption>
-<image width="55%">
-<shortdescription>
-The unit circle with a unit tangent vector and an outward unit normal vector drawn at three of its points.
-</shortdescription>
-<prefigure xmlns="https://prefigure.org" label="prefigure-unit-normal-circle">
-<diagram dimensions="(300,300)" margins="10">
-<definition>r(t) = (cos(t), sin(t))</definition>
-<definition>T(t) = (-sin(t), cos(t))</definition>
-<definition>nn(t) = (cos(t), sin(t))</definition>
-<definition>tipT(t) = (cos(t) - sin(t), sin(t) + cos(t))</definition>
-<definition>tipN(t) = (2*cos(t), 2*sin(t))</definition>
-<coordinates bbox="(-2.3,-2.3,2.3,2.3)">
-<circle at="un-disk" center="(0,0)" radius="1" fill="#dff4f6"
-        stroke="#00b0c0" thickness="3"/>
-<axes at="un-axes" xlabel="x" ylabel="y" decorations="no" arrows="1"/>
-<!-- arrowheads on C showing the direction of the path -->
-<parametric-curve at="un-dir-1" function="r" domain="(1.5,1.745)"
-                  stroke="#00b0c0" thickness="3" arrows="1" arrow-width="5"/>
-<parametric-curve at="un-dir-2" function="r" domain="(3.6,3.84)"
-                  stroke="#00b0c0" thickness="3" arrows="1" arrow-width="5"/>
-<parametric-curve at="un-dir-3" function="r" domain="(5.78,6.021)"
-                  stroke="#00b0c0" thickness="3" arrows="1" arrow-width="5"/>
-<!-- t = pi/6 -->
-<angle-marker at="un-right-1" p="r(pi/6)" p1="tipN(pi/6)" p2="tipT(pi/6)"
-              radius="9" stroke="#555555" thickness="1"/>
-<vector at="un-T-1" tail="r(pi/6)" v="T(pi/6)" stroke="#d02090" thickness="3"/>
-<vector at="un-n-1" tail="r(pi/6)" v="nn(pi/6)" stroke="#009E73" thickness="3"/>
-<point at="un-P-1" p="r(pi/6)" size="3" fill="black"/>
-<label at="un-T-1-label" anchor="tipT(pi/6)" alignment="n" color="#d02090"
-       clear-background="yes" background-margin="2">
-<m>\mathbf{T}</m>
-</label>
-<label at="un-n-1-label" anchor="tipN(pi/6)" alignment="e" color="#009E73"
-       clear-background="yes" background-margin="2">
-<m>\mathbf{n}</m>
-</label>
-<!-- t = 5 pi/6 -->
-<angle-marker at="un-right-2" p="r(5*pi/6)" p1="tipN(5*pi/6)" p2="tipT(5*pi/6)"
-              radius="9" stroke="#555555" thickness="1"/>
-<vector at="un-T-2" tail="r(5*pi/6)" v="T(5*pi/6)" stroke="#d02090" thickness="3"/>
-<vector at="un-n-2" tail="r(5*pi/6)" v="nn(5*pi/6)" stroke="#009E73" thickness="3"/>
-<point at="un-P-2" p="r(5*pi/6)" size="3" fill="black"/>
-<label at="un-T-2-label" anchor="tipT(5*pi/6)" alignment="s" color="#d02090"
-       clear-background="yes" background-margin="2">
-<m>\mathbf{T}</m>
-</label>
-<label at="un-n-2-label" anchor="tipN(5*pi/6)" alignment="w" color="#009E73"
-       clear-background="yes" background-margin="2">
-<m>\mathbf{n}</m>
-</label>
-<!-- t = 5 pi/3 -->
-<angle-marker at="un-right-3" p="r(5*pi/3)" p1="tipN(5*pi/3)" p2="tipT(5*pi/3)"
-              radius="9" stroke="#555555" thickness="1"/>
-<vector at="un-T-3" tail="r(5*pi/3)" v="T(5*pi/3)" stroke="#d02090" thickness="3"/>
-<vector at="un-n-3" tail="r(5*pi/3)" v="nn(5*pi/3)" stroke="#009E73" thickness="3"/>
-<point at="un-P-3" p="r(5*pi/3)" size="3" fill="black"/>
-<label at="un-T-3-label" anchor="tipT(5*pi/3)" alignment="e" color="#d02090"
-       clear-background="yes" background-margin="2">
-<m>\mathbf{T}</m>
-</label>
-<label at="un-n-3-label" anchor="tipN(5*pi/3)" alignment="se" color="#009E73"
-       clear-background="yes" background-margin="2">
-<m>\mathbf{n}</m>
-</label>
-<label at="un-C-label" anchor="(-0.36,-1.02)" alignment="sw" color="#00a0b0"
-       clear-background="yes" background-margin="2">
-<m>C</m>
-</label>
-<label at="un-R-label" anchor="(-0.42,-0.36)" alignment="c"
-       clear-background="yes" background-margin="2">
-<m>R</m>
-</label>
-</coordinates>
-<annotations>
-<annotation ref="figure" text="The unit circle C drawn in teal around the shaded disk R, with three arrowheads on it showing that the path runs counterclockwise. At three points of the circle a pink unit tangent vector T and a green unit normal vector n start from the same point; a small square marks the right angle between them. Every T points in the direction of travel, and every n is on the right of the direction of travel, pointing straight away from the center, out of the disk.">
-  <annotation ref="un-disk" text="The unit circle C, traversed counterclockwise, enclosing the disk R."/>
-  <annotation ref="un-dir-1" text="An arrowhead on the circle near the top, pointing to the left: the path runs counterclockwise."/>
-  <annotation ref="un-T-1" text="At the point at angle pi over 6, the unit tangent T points up and to the left, along the direction of travel."/>
-  <annotation ref="un-n-1" text="At the same point, the outward unit normal n points away from the center, up and to the right."/>
-  <annotation ref="un-T-2" text="At the point at angle 5 pi over 6, the unit tangent T points down and to the left."/>
-  <annotation ref="un-n-2" text="At the same point, the outward unit normal n points away from the center, up and to the left."/>
-  <annotation ref="un-T-3" text="At the point at angle 5 pi over 3, the unit tangent T points up and to the right."/>
-  <annotation ref="un-n-3" text="At the same point, the outward unit normal n points away from the center, down and to the right."/>
-</annotation>
-</annotations>
-</diagram>
-</prefigure>
-</image>
-</figure>
-
-<p>
-This is where the line integral <m>\oint_C M\,dy - N\,dx</m> in the
-normal form of Green's theorem, <xref ref="eq-green-normal"/>, comes
-from. For <m>\mathbf{F} = M\,\mathbf{i} + N\,\mathbf{j}</m>, the line
-element <m>ds = \left\lVert\mathbf{v}\right\rVert\,dt</m> of
-<xref ref="eq-line-element-2d"/> cancels the length in
-<xref ref="eq-outward-unit-normal"/>:
-<me>
-\mathbf{F}\cdot\mathbf{n}\,ds
-= \frac{1}{\left\lVert\mathbf{v}\right\rVert}
-\left( M\,\frac{dy}{dt} - N\,\frac{dx}{dt} \right)
-\left\lVert\mathbf{v}\right\rVert\,dt
-= M\,dy - N\,dx.
-</me>
-</p>
-
-</subsection>
-
-<!-- ================================================================ -->
-<subsection xml:id="sec-greens-theorem-forms">
-<title>Green's Theorem: The Flux-Divergence (Normal) Form</title>
-
-<p>
-Next we state Green's theorem in 2D<fn>Note that we only cover Green's
-theorem in 2D; however, you should know that this theorem can be
-generalized to 3D, and in that case it is known as Stokes' theorem,
-which is <xref ref="section-stokes-theorem"/>.</fn>, in two forms. The first form relates the outward flux
-across a simple<fn>A curve in the <m>xy</m>-plane is
-<term>simple</term> if it does not cross itself.</fn> closed curve
-<m>C</m> and the double integral of the divergence over the region
-<m>R</m> bounded by the curve <m>C</m>.
-</p>
-
-<theorem xml:id="thm-green-normal">
-<title>Green's Theorem (Flux-Divergence or Normal Form)</title>
-<statement>
-<p>
-Let <m>C</m> be a piecewise smooth, simple closed curve enclosing a
-region <m>R</m> in the plane. Let
-<m>\mathbf{F} = M\,\mathbf{i} + N\,\mathbf{j}</m> be a vector field
-with <m>M</m> and <m>N</m> having continuous first partial derivatives
-in an open region containing <m>R</m>. Then the outward flux of
-<m>\mathbf{F}</m> across <m>C</m> equals the double integral of
-<m>\operatorname{div} \mathbf{F}</m> over the region <m>R</m> enclosed
-by <m>C</m>:
-</p>
-
-<men xml:id="eq-green-normal">
-\underbrace{\oint_C \mathbf{F} \cdot \mathbf{n}\, ds
-= \oint_C M\, dy - N\, dx}_{\text{outward flux through the boundary}}
-= \underbrace{\iint_R \left( \frac{\partial M}{\partial x}
-+ \frac{\partial N}{\partial y} \right) dx\, dy}_{\text{double integral
-of divergence over } R}.
-</men>
-</statement>
-</theorem>
-
-<example xml:id="example-green-circle-normal">
-<title>Verifying the Normal Form on the Unit Circle</title>
-<statement>
-<p>
-Assume that the vector field
-<m>\mathbf{F}(x,y) = (x - y)\,\mathbf{i} + x\,\mathbf{j}</m> and the
-closed curve <m>C</m> is the unit circle centered at the origin.
-Convince yourself of the normal form of Green's theorem,
-<xref ref="eq-green-normal"/>, by applying it to this example.
-</p>
-</statement>
-</example>
-
-<solution xml:id="solution-green-circle-normal">
-<p>
-We begin by noticing that the unit circle can be parametrized as
-</p>
-
-<me>
-C: \quad \mathbf{r}(t) = (\cos t)\,\mathbf{i} + (\sin t)\,\mathbf{j},
-\qquad 0 \le t \le 2\pi.
-</me>
-
-<p>
-After substituting the parametrized equations <m>x(t) = \cos t</m> and
-<m>y(t) = \sin t</m> into the vector field, we get
-<m>\mathbf{F} = (\cos t - \sin t)\,\mathbf{i} + (\cos t)\,\mathbf{j}</m>,
-and thus
+The second form of Green's theorem, in <xref ref="sec-green-tangential-form"/>,
+measures how much of a field flows <em>along</em> a closed curve
+<m>C</m>, traversed counterclockwise. That is the line integral of a
+vector field from <xref ref="subsec-work-force-field"/>: the component of
+<m>\mathbf{F}</m> along the unit tangent <m>\mathbf{T}</m> of
+<xref ref="eq-unit-tangent"/>, integrated with respect to arc length.
+Around a closed curve it is called the <term>circulation</term> of
+<m>\mathbf{F}</m> around <m>C</m>. Since <m>\mathbf{T}\,ds = d\mathbf{r}</m>,
+for <m>\mathbf{F} = M\,\mathbf{i} + N\,\mathbf{j}</m> it is
 </p>
 
 <md>
-<mrow>M = \cos t - \sin t, \amp\qquad dx = d(\cos t) = -\sin t\, dt,</mrow>
-<mrow>N = \cos t, \amp\qquad dy = d(\sin t) = \cos t\, dt,</mrow>
+<mrow>
+\oint_C \mathbf{F}\cdot\mathbf{T}\,ds \amp = \oint_C \mathbf{F}\cdot d\mathbf{r}
+</mrow>
+<mrow>
+\amp = \oint_C M\,dx + N\,dy,
+</mrow>
 </md>
 
 <p>
-with the partial derivatives
+the differential form of <xref ref="eq-work-differential"/>.
 </p>
+</subsubsection>
 
-<me>
-\frac{\partial M}{\partial x} = 1, \qquad
-\frac{\partial N}{\partial y} = 0.
-</me>
-
-<p>
-For the line integral in <xref ref="eq-green-normal"/> we have
-</p>
-
-<md>
-<mrow>\oint_C M\, dy - N\, dx
-\amp= \int_0^{2\pi} (\cos t - \sin t)(\cos t\, dt)
-- (\cos t)(-\sin t\, dt)</mrow>
-<mrow>\amp= \int_0^{2\pi} \cos^2 t\, dt = \pi,</mrow>
-</md>
-
-<p>
-which is the same integral we get from the outward unit normal of
-<xref ref="example-unit-normal-circle"/>: there
-<m>\mathbf{n} = (\cos t)\,\mathbf{i} + (\sin t)\,\mathbf{j}</m> and
-<m>ds = dt</m>, so
-<m>\mathbf{F}\cdot\mathbf{n}\,ds
-= \big((\cos t - \sin t)\cos t + \cos t \sin t\big)\,dt
-= \cos^2 t\, dt</m>. The double integral gives the same value:
-</p>
-
-<me>
-\iint_R \left( \frac{\partial M}{\partial x}
-+ \frac{\partial N}{\partial y} \right) dx\, dy
-= \iint_R (1 + 0)\, dx\, dy
-= \text{area inside the unit circle} = \pi.
-</me>
-
-<p>
-So the outward flux of <m>\mathbf{F}</m> across the unit circle is
-<m>\pi</m>, computed either way.
-</p>
-</solution>
-
-</subsection>
-
-<!-- ================================================================ -->
-<subsection xml:id="sec-green-tangential-form">
+<subsubsection xml:id="sec-green-tangential-form">
 <title>Green's Theorem: The Circulation-Curl (Tangential) Form</title>
 
 <p>
@@ -1028,13 +1231,14 @@ integral of <m>(\operatorname{curl} \mathbf{F}) \cdot \mathbf{k}</m>
 over <m>R</m>:
 </p>
 
-<men xml:id="eq-green-tangential">
-\underbrace{\oint_C \mathbf{F} \cdot \mathbf{T}\, ds
-= \oint_C M\, dx + N\, dy}_{\text{counterclockwise circulation}}
-= \underbrace{\iint_R \left( \frac{\partial N}{\partial x}
-- \frac{\partial M}{\partial y} \right) dx\, dy}_{\text{double integral
-of curl} \,\cdot\, \mathbf{k} \text{ over } R}.
-</men>
+<md>
+<mrow>
+\amp \underbrace{\oint_C \mathbf{F} \cdot \mathbf{T}\, ds}_{\text{circulation}} = \oint_C M\, dx + N\, dy
+</mrow>
+<mrow xml:id="eq-green-tangential" number="yes">
+\amp \quad = \underbrace{\iint_R \left( \frac{\partial N}{\partial x} - \frac{\partial M}{\partial y} \right) dx\, dy}_{\substack{\text{integral of} \\ \operatorname{curl}\mathbf{F}\cdot\mathbf{k} \text{ over } R}}.
+</mrow>
+</md>
 </statement>
 
 <proof xml:id="proof-green-tangential">
@@ -1065,9 +1269,14 @@ Suppose first that <m>R</m> is a region of the kind studied in
 <xref ref="sec-general-regions-case1"/>,
 </p>
 
-<me>
-R = \left\{(x,y) : a \le x \le b,\ f_2(x) \le y \le f_1(x)\right\} ,
-</me>
+<md>
+<mrow>
+R = \bigl\{ (x,y) : \amp\ a \le x \le b,
+</mrow>
+<mrow>
+\amp\ f_2(x) \le y \le f_1(x) \bigr\} ,
+</mrow>
+</md>
 
 <p>
 so that <m>C</m> is made of the bottom curve <m>y = f_2(x)</m> travelled
@@ -1080,13 +1289,19 @@ nothing to <m>\oint_C M\,dx</m>. What is left is
 
 <md>
 <mrow>
-\oint_C M\,dx
+\amp \oint_C M\,dx
+</mrow>
+<mrow>
 \amp = \int_a^b M\bigl(x,f_2(x)\bigr)\,dx
-+ \int_b^a M\bigl(x,f_1(x)\bigr)\,dx
+</mrow>
+<mrow>
+\amp \quad {} + \int_b^a M\bigl(x,f_1(x)\bigr)\,dx
 </mrow>
 <mrow>
 \amp = -\int_a^b \Bigl[M\bigl(x,f_1(x)\bigr)
-- M\bigl(x,f_2(x)\bigr)\Bigr] dx ,
+</mrow>
+<mrow>
+\amp \qquad {} - M\bigl(x,f_2(x)\bigr)\Bigr] dx ,
 </mrow>
 </md>
 
@@ -1098,13 +1313,13 @@ Fundamental Theorem of Calculus to the inner integral,
 
 <md>
 <mrow>
-\iint_R \frac{\partial M}{\partial y}\,dA
-\amp = \int_a^b\left[\int_{f_2(x)}^{f_1(x)}
-\frac{\partial M}{\partial y}\,dy\right] dx
+\amp \iint_R \frac{\partial M}{\partial y}\,dA
 </mrow>
 <mrow>
-\amp = \int_a^b \Bigl[M\bigl(x,f_1(x)\bigr)
-- M\bigl(x,f_2(x)\bigr)\Bigr] dx .
+\amp = \int_a^b\left[\int_{f_2(x)}^{f_1(x)} \frac{\partial M}{\partial y}\,dy\right] dx
+</mrow>
+<mrow>
+\amp = \int_a^b \Bigl[M\bigl(x,f_1(x)\bigr) - M\bigl(x,f_2(x)\bigr)\Bigr] dx .
 </mrow>
 </md>
 
@@ -1135,13 +1350,6 @@ is the integral around the original curve <m>C</m>, while the double
 integrals add up to the integral over <m>R</m>.
 </p>
 
-<p>
-Finally, <xref ref="thm-green-normal"/> is the same theorem in disguise:
-applying <xref ref="eq-green-tangential"/> to the rotated field
-<m>\left\langle -N, M \right\rangle</m> turns the circulation into the
-outward flux and the <m>\mathbf{k}</m>-component of the curl into the
-divergence.
-</p>
 </proof>
 </theorem>
 
@@ -1269,22 +1477,35 @@ The tangential form of Green's theorem,
 </p>
 
 <md>
-<mrow>\oint_C M\, dx + N\, dy
-\amp= \int_0^{2\pi} (\cos t - \sin t)(-\sin t\, dt)
-+ (\cos t)(\cos t\, dt)</mrow>
-<mrow>\amp= \int_0^{2\pi} (-\sin t \cos t + 1)\, dt = 2\pi,</mrow>
+<mrow>
+\amp \oint_C M\, dx + N\, dy
+</mrow>
+<mrow>
+\amp \quad = \int_0^{2\pi} (\cos t - \sin t)(-\sin t\, dt)
+</mrow>
+<mrow>
+\amp \qquad {} + (\cos t)(\cos t\, dt)
+</mrow>
+<mrow>
+\amp \quad = \int_0^{2\pi} (-\sin t \cos t + 1)\, dt = 2\pi,
+</mrow>
 </md>
 
 <p>
 and
 </p>
 
-<me>
-\iint_R \left( \frac{\partial N}{\partial x}
-- \frac{\partial M}{\partial y} \right) dx\, dy
-= \iint_R \big( 1 - (-1) \big)\, dx\, dy
-= 2 \iint_R dx\, dy = 2\pi.
-</me>
+<md>
+<mrow>
+\amp \iint_R \left( \frac{\partial N}{\partial x} - \frac{\partial M}{\partial y} \right) dx\, dy
+</mrow>
+<mrow>
+\amp \quad = \iint_R \big( 1 - (-1) \big)\, dx\, dy
+</mrow>
+<mrow>
+\amp \quad = 2 \iint_R dx\, dy = 2\pi.
+</mrow>
+</md>
 
 <p>
 The field and the curve are shown in <xref ref="fig-green-circle"/>;
@@ -1295,17 +1516,6 @@ circulation, side by side in <xref ref="fig-green-circle-video"/>.
 </p>
 </solution>
 
-<figure xml:id="fig-green-circle-video">
-<caption>
-Both forms of Green's theorem verified for
-<m>\mathbf{F} = (x-y)\,\mathbf{i} + x\,\mathbf{j}</m> on the unit
-circle: the outward flux equals <m>\pi</m> and the counterclockwise
-circulation equals <m>2\pi</m>.
-</caption>
-<video xml:id="video-green-circle"
-       source="videos/green_unit_circle_1080p.mp4"
-       width="70%" aspect="16:9"/>
-</figure>
 
 <figure xml:id="fig-green-circle">
 <caption>
@@ -1383,30 +1593,41 @@ In this example we have
 </p>
 
 <me>
-M(x,y) = \frac{1}{x+y}, \qquad N(x,y) = \frac{-1}{x+y},
+M(x,y) = \frac{1}{x+y}, \quad N(x,y) = \frac{-1}{x+y},
 </me>
 
 <p>
 and thus
 </p>
 
-<me>
-\frac{\partial N}{\partial x} - \frac{\partial M}{\partial y}
-= \frac{1}{(x+y)^2} - \frac{-1}{(x+y)^2}
-= \frac{2}{(x+y)^2}.
-</me>
+<md>
+<mrow>
+\amp \frac{\partial N}{\partial x} - \frac{\partial M}{\partial y}
+</mrow>
+<mrow>
+\amp \quad = \frac{1}{(x+y)^2} - \frac{-1}{(x+y)^2}
+</mrow>
+<mrow>
+\amp \quad = \frac{2}{(x+y)^2}.
+</mrow>
+</md>
 
 <p>
 Then we can use the tangential form of Green's theorem,
 <xref ref="eq-green-tangential"/>, to evaluate the line integral:
 </p>
 
-<me>
-\oint_C M\, dx + N\, dy
-= \iint_R \left( \frac{\partial N}{\partial x}
-- \frac{\partial M}{\partial y} \right) dx\, dy
-= \iint_R \frac{2}{(x+y)^2}\, dx\, dy.
-</me>
+<md>
+<mrow>
+\amp \oint_C M\, dx + N\, dy
+</mrow>
+<mrow>
+\amp \quad = \iint_R \left( \frac{\partial N}{\partial x} - \frac{\partial M}{\partial y} \right) dx\, dy
+</mrow>
+<mrow>
+\amp \quad = \iint_R \frac{2}{(x+y)^2}\, dx\, dy.
+</mrow>
+</md>
 
 <p>
 The region <m>R</m> is the square bounded by the four lines
@@ -1440,11 +1661,18 @@ Therefore
 </p>
 
 <md>
-<mrow>\iint_R \frac{2}{(x+y)^2}\, dx\, dy
-\amp= \int_{-1}^{1} \int_1^3 \frac{2}{u^2} \cdot \frac{1}{2}\,
-du\, dv
-= \int_{-1}^{1} \left[ -\frac{1}{u} \right]_1^3 dv</mrow>
-<mrow>\amp= \int_{-1}^{1} \frac{2}{3}\, dv = \frac{4}{3}.</mrow>
+<mrow>
+\amp \iint_R \frac{2}{(x+y)^2}\, dx\, dy
+</mrow>
+<mrow>
+\amp \quad = \int_{-1}^{1} \int_1^3 \frac{2}{u^2} \cdot \frac{1}{2}\, du\, dv
+</mrow>
+<mrow>
+\amp \quad = \int_{-1}^{1} \left[ -\frac{1}{u} \right]_1^3 dv
+</mrow>
+<mrow>
+\amp \quad = \int_{-1}^{1} \frac{2}{3}\, dv = \frac{4}{3}.
+</mrow>
 </md>
 
 <p>
@@ -1537,10 +1765,9 @@ The rectangle in the u v plane that is the image of the tilted square.
 </sidebyside>
 </figure>
 
-</subsection>
+</subsubsection>
 
-<!-- ================================================================ -->
-<subsection xml:id="sec-component-test-alternative">
+<subsubsection xml:id="sec-component-test-alternative">
 <title>An Alternative Form of the Component Test for Conservative Fields</title>
 
 <p>
@@ -1557,12 +1784,17 @@ partial derivatives. Then <m>\mathbf{F}</m> is conservative if and only
 if
 </p>
 
-<men xml:id="eq-component-test-3d">
-\frac{\partial P}{\partial y} = \frac{\partial N}{\partial z}, \qquad
-\frac{\partial M}{\partial z} = \frac{\partial P}{\partial x},
-\qquad \text{and} \qquad
-\frac{\partial N}{\partial x} = \frac{\partial M}{\partial y}.
-</men>
+<md>
+<mrow>
+\frac{\partial P}{\partial y} \amp = \frac{\partial N}{\partial z},
+</mrow>
+<mrow>
+\frac{\partial M}{\partial z} \amp = \frac{\partial P}{\partial x}, \quad \text{and}
+</mrow>
+<mrow xml:id="eq-component-test-3d" number="yes">
+\frac{\partial N}{\partial x} \amp = \frac{\partial M}{\partial y}.
+</mrow>
+</md>
 </assemblage>
 
 <p>
@@ -1571,21 +1803,26 @@ equivalent to
 <m>\nabla \times \mathbf{F} = \mathbf{0}</m>, since
 </p>
 
-<men xml:id="eq-curl-cross-product">
-\nabla \times \mathbf{F} =
+<md>
+<mrow>
+\nabla \times \mathbf{F} \amp =
 \begin{vmatrix}
 \mathbf{i} \amp \mathbf{j} \amp \mathbf{k} \\
 \dfrac{\partial}{\partial x} \amp \dfrac{\partial}{\partial y} \amp
 \dfrac{\partial}{\partial z} \\
 M \amp N \amp P
 \end{vmatrix}
-= \left( \frac{\partial P}{\partial y} - \frac{\partial N}{\partial z}
-\right) \mathbf{i}
-+ \left( \frac{\partial M}{\partial z} - \frac{\partial P}{\partial x}
-\right) \mathbf{j}
-+ \left( \frac{\partial N}{\partial x} - \frac{\partial M}{\partial y}
-\right) \mathbf{k}.
-</men>
+</mrow>
+<mrow>
+\amp = \left( \frac{\partial P}{\partial y} - \frac{\partial N}{\partial z} \right) \mathbf{i}
+</mrow>
+<mrow>
+\amp \quad {} + \left( \frac{\partial M}{\partial z} - \frac{\partial P}{\partial x} \right) \mathbf{j}
+</mrow>
+<mrow xml:id="eq-curl-cross-product" number="yes">
+\amp \quad {} + \left( \frac{\partial N}{\partial x} - \frac{\partial M}{\partial y} \right) \mathbf{k}.
+</mrow>
+</md>
 
 <p>
 So to check whether a vector field is conservative or not, we can check
@@ -1630,30 +1867,40 @@ Using Green's theorem, confirm your answer to part B.
 <em>Part A.</em> The vector field is
 </p>
 
-<me>
-\mathbf{F}(x,y) = M(x,y)\,\mathbf{i} + N(x,y)\,\mathbf{j}
-= 4x^3 y\,\mathbf{i} + x^4\,\mathbf{j}.
-</me>
+<md>
+<mrow>
+\mathbf{F}(x,y) \amp = M(x,y)\,\mathbf{i} + N(x,y)\,\mathbf{j}
+</mrow>
+<mrow>
+\amp = 4x^3 y\,\mathbf{i} + x^4\,\mathbf{j}.
+</mrow>
+</md>
 
 <p>
 <em>Part B.</em> Treating <m>\mathbf{F}</m> as a field in space with
 <m>P = 0</m> in <xref ref="eq-curl-cross-product"/>,
 </p>
 
-<me>
-\nabla \times \mathbf{F} =
+<md>
+<mrow>
+\nabla \times \mathbf{F} \amp =
 \begin{vmatrix}
 \mathbf{i} \amp \mathbf{j} \amp \mathbf{k} \\
 \dfrac{\partial}{\partial x} \amp \dfrac{\partial}{\partial y} \amp
 \dfrac{\partial}{\partial z} \\
 M \amp N \amp 0
 \end{vmatrix}
-= \left( \frac{\partial N}{\partial x}
-- \frac{\partial M}{\partial y} \right) \mathbf{k}
-= \left( \frac{\partial}{\partial x}(x^4)
-- \frac{\partial}{\partial y}(4x^3 y) \right) \mathbf{k}
-= \left( 4x^3 - 4x^3 \right)\mathbf{k} = \mathbf{0},
-</me>
+</mrow>
+<mrow>
+\amp = \left( \frac{\partial N}{\partial x} - \frac{\partial M}{\partial y} \right) \mathbf{k}
+</mrow>
+<mrow>
+\amp = \left( \frac{\partial}{\partial x}(x^4) - \frac{\partial}{\partial y}(4x^3 y) \right) \mathbf{k}
+</mrow>
+<mrow>
+\amp = \left( 4x^3 - 4x^3 \right)\mathbf{k} = \mathbf{0},
+</mrow>
+</md>
 
 <p>
 and hence the vector field is conservative.
@@ -1666,11 +1913,18 @@ and hence the vector field is conservative.
 </p>
 
 <md>
-<mrow>\oint_C 4x^3 y\, dx + x^4\, dy
-\amp= \iint_D \left( \frac{\partial N}{\partial x}
-- \frac{\partial M}{\partial y} \right) dx\, dy</mrow>
-<mrow>\amp= \iint_D \left( \frac{\partial}{\partial x}(x^4)
-- \frac{\partial}{\partial y}(4x^3 y) \right) dx\, dy = 0.</mrow>
+<mrow>
+\amp \oint_C 4x^3 y\, dx + x^4\, dy
+</mrow>
+<mrow>
+\amp \quad = \iint_D \left( \frac{\partial N}{\partial x} - \frac{\partial M}{\partial y} \right) dx\, dy
+</mrow>
+<mrow>
+\amp \quad = \iint_D \left( \frac{\partial}{\partial x}(x^4) - \frac{\partial}{\partial y}(4x^3 y) \right) dx\, dy
+</mrow>
+<mrow>
+\amp \quad = 0.
+</mrow>
 </md>
 
 <p>
@@ -1692,6 +1946,8 @@ around every closed curve is zero.
        width="70%" aspect="16:9"/>
 </figure>
 
+</subsubsection>
+
 </subsection>
 
 <!-- ================================================================ -->
@@ -1699,7 +1955,88 @@ around every closed curve is zero.
 <title>Concept Check</title>
 
 <p>
-Both problems use Green's theorem in reverse: a line integral around the
+<xref ref="fig-div-curl-manim"/> puts the two halves of this section side
+by side, for fields of its own: a small circle around a point <m>P</m>, the flow of a
+fluid across it and along it, and a paddle wheel at <m>P</m>.
+</p>
+
+<figure xml:id="fig-div-curl-manim">
+<caption>
+Divergence and curl in a moving fluid, animated. The arrows are the
+field <m>\mathbf{F}</m> and the moving dots a fluid carried by it. On the
+circle around <m>P</m>, green arrows show fluid leaving and red arrows
+fluid entering; blue and orange arrows show the flow along the circle,
+with and against the counterclockwise direction, and the paddle wheel at
+<m>P</m> turns with the fluid. The card divides the outward flux and the
+circulation by the area of the circle: as the circle shrinks, the two
+ratios close in on <m>\operatorname{div}\mathbf{F}</m> and
+<m>\operatorname{curl}\mathbf{F}\cdot\mathbf{k}</m> at <m>P</m>, which the
+card also shows.
+</caption>
+<interactive xml:id="interactive-div-curl-manim"
+             iframe="div-curl-manim.html"
+             width="100%" aspect="1:1">
+<instructions>
+<p>
+Pick a field from the menu, and click or drag on the plane to move
+<m>P</m>; the <q>circle</q> slider shrinks or grows the circle.
+<q>Flow</q>, <q>Flux</q>, <q>Circulation</q> and <q>Paddle wheel</q>
+switch those layers off and on, <q>Play</q> runs a guided tour, and
+<q>Full screen</q> fills the screen with the figure.
+</p>
+</instructions>
+</interactive>
+</figure>
+
+<p>
+<xref ref="fig-green-circle-video"/> computes both forms of Green's
+theorem for the field and the circle of
+<xref ref="example-green-circle-normal"/> and
+<xref ref="example-green-circle-tangential"/>.
+</p>
+
+<figure xml:id="fig-green-circle-video">
+<caption>
+Both forms of Green's theorem verified for
+<m>\mathbf{F} = (x-y)\,\mathbf{i} + x\,\mathbf{j}</m> on the unit
+circle: the outward flux equals <m>\pi</m> and the counterclockwise
+circulation equals <m>2\pi</m>.
+</caption>
+<video xml:id="video-green-circle"
+       source="videos/green_unit_circle_1080p.mp4"
+       width="70%" aspect="16:9"/>
+</figure>
+
+<exercise xml:id="q-green-normal-from-tangential">
+<title>One form from the other</title>
+<statement>
+<p>
+Derive the normal form of Green's theorem, <xref ref="thm-green-normal"/>,
+from the tangential form, <xref ref="thm-green-tangential"/>.
+</p>
+</statement>
+<answer>
+<p>
+<xref ref="thm-green-normal"/> is the same theorem in disguise:
+applying <xref ref="eq-green-tangential"/> to the rotated field
+<m>\left\langle -N, M \right\rangle</m> turns the circulation into the
+outward flux and the <m>\mathbf{k}</m>-component of the curl into the
+divergence. Indeed, for this field the circulation is
+<m>\oint_C (-N)\,dx + M\,dy = \oint_C M\,dy - N\,dx</m>, and its
+<m>\mathbf{k}</m>-component of curl is
+<me>
+\frac{\partial M}{\partial x} - \frac{\partial (-N)}{\partial y}
+= \frac{\partial M}{\partial x} + \frac{\partial N}{\partial y},
+</me>
+so the two sides of the tangential form for
+<m>\left\langle -N, M \right\rangle</m> are the two sides of the normal
+form for <m>\mathbf{F}</m>.
+</p>
+</answer>
+</exercise>
+
+<p>
+The last two problems use Green's theorem in reverse: a line integral around the
 boundary of a region computes a double integral over the region, here
 its area and its first moments.
 </p>
@@ -1768,12 +2105,17 @@ If <m>\mathbf{F} = \langle -y,\ 0 \rangle</m>, that is <m>M = -y</m> and
 <m>\frac{\partial N}{\partial x} - \frac{\partial M}{\partial y}
 = 0 - (-1) = 1</m>, and the tangential form of Green's theorem,
 <xref ref="eq-green-tangential"/>, gives
-<me>
-\oint_C \mathbf{F} \cdot \mathbf{T}\, ds
-= \iint_E \left( \frac{\partial N}{\partial x}
-- \frac{\partial M}{\partial y} \right) dA
-= \iint_E 1\, dA = \text{area of } E.
-</me>
+<md>
+<mrow>
+\amp \oint_C \mathbf{F} \cdot \mathbf{T}\, ds
+</mrow>
+<mrow>
+\amp \quad = \iint_E \left( \frac{\partial N}{\partial x} - \frac{\partial M}{\partial y} \right) dA
+</mrow>
+<mrow>
+\amp \quad = \iint_E 1\, dA = \text{area of } E.
+</mrow>
+</md>
 </p>
 <p>
 Parametrize <m>C</m> counterclockwise as
@@ -1789,11 +2131,17 @@ so
 \mathbf{F} \cdot \mathbf{v} = ab\sin^2 t = \frac{ab}{2}\big(1 - \cos(2t)\big).
 </me>
 Since <m>\mathbf{T}\,ds = d\mathbf{r} = \mathbf{v}\,dt</m>,
-<me>
-\oint_C \mathbf{F} \cdot \mathbf{T}\, ds
-= \int_{t=0}^{t=2\pi} \frac{ab}{2}\big(1 - \cos(2t)\big)\, dt
-= \left(\frac{ab}{2}\right)(2\pi) = \pi ab .
-</me>
+<md>
+<mrow>
+\amp \oint_C \mathbf{F} \cdot \mathbf{T}\, ds
+</mrow>
+<mrow>
+\amp \quad = \int_{t=0}^{t=2\pi} \frac{ab}{2}\big(1 - \cos(2t)\big)\, dt
+</mrow>
+<mrow>
+\amp \quad = \left(\frac{ab}{2}\right)(2\pi) = \pi ab .
+</mrow>
+</md>
 The area of the ellipse is <m>\pi ab</m>; when <m>a = b = r</m> it is a
 circle, and this is the familiar <m>\pi r^2</m>.
 </p>
@@ -1807,11 +2155,14 @@ circle, and this is the familiar <m>\pi r^2</m>.
 A lamina of constant density <m>\delta</m> occupies a region <m>R</m> in
 the <m>xy</m>-plane with boundary <m>C</m>, oriented counterclockwise.
 Show that its centroid (<xref ref="def-centroid"/>) has the coordinates
-<me>
-\bar{x} = \frac{1}{2A} \oint_C x^2\, dy
-\qquad \text{and} \qquad
-\bar{y} = -\frac{1}{2A} \oint_C y^2\, dx,
-</me>
+<md>
+<mrow>
+\bar{x} \amp = \frac{1}{2A} \oint_C x^2\, dy \quad \text{and}
+</mrow>
+<mrow>
+\bar{y} \amp = -\frac{1}{2A} \oint_C y^2\, dx,
+</mrow>
+</md>
 where <m>A</m> is the area of the region bounded by <m>C</m>.
 </p>
 </statement>
@@ -1821,13 +2172,15 @@ Take <m>\mathbf{F} = \langle x^2,\ 0 \rangle</m>, so <m>M = x^2</m> and
 <m>N = 0</m>. The normal form of Green's theorem,
 <xref ref="eq-green-normal"/>, gives
 <md>
-<mrow>\oint_C \mathbf{F} \cdot \mathbf{n}\, ds
-= \oint_C M\, dy - N\, dx
-\amp= \iint_R \left( \frac{\partial M}{\partial x}
-+ \frac{\partial N}{\partial y} \right) dA,</mrow>
-<mrow>\oint_C x^2\, dy
-\amp= \iint_R 2x\, dA = \frac{2M_y}{\delta}
-\qquad \text{(I)}</mrow>
+<mrow>
+\amp \oint_C \mathbf{F} \cdot \mathbf{n}\, ds = \oint_C M\, dy - N\, dx
+</mrow>
+<mrow>
+\amp \quad = \iint_R \left( \frac{\partial M}{\partial x} + \frac{\partial N}{\partial y} \right) dA,
+</mrow>
+<mrow>
+\amp \oint_C x^2\, dy = \iint_R 2x\, dA = \frac{2M_y}{\delta} \qquad \text{(I)}
+</mrow>
 </md>
 because <m>M_y = \iint_R x\,\delta\, dA</m> by
 <xref ref="eq-first-moments-2d"/> and <m>\delta</m> is constant.
@@ -1837,13 +2190,18 @@ If <m>\mathbf{F} = \langle -y^2,\ 0 \rangle</m>, so <m>M = -y^2</m> and
 <m>N = 0</m>, the tangential form, <xref ref="eq-green-tangential"/>,
 gives
 <md>
-<mrow>\oint_C \mathbf{F} \cdot \mathbf{T}\, ds
-= \oint_C M\, dx + N\, dy
-\amp= \iint_R \left( \frac{\partial N}{\partial x}
-- \frac{\partial M}{\partial y} \right) dA,</mrow>
-<mrow>\oint_C -y^2\, dx
-\amp= \iint_R -(-2y)\, dA = \frac{2M_x}{\delta}
-\qquad \text{(II)}</mrow>
+<mrow>
+\amp \oint_C \mathbf{F} \cdot \mathbf{T}\, ds = \oint_C M\, dx + N\, dy
+</mrow>
+<mrow>
+\amp \quad = \iint_R \left( \frac{\partial N}{\partial x} - \frac{\partial M}{\partial y} \right) dA,
+</mrow>
+<mrow>
+\amp \oint_C -y^2\, dx = \iint_R -(-2y)\, dA
+</mrow>
+<mrow>
+\amp \quad = \frac{2M_x}{\delta} \qquad \text{(II)}
+</mrow>
 </md>
 since <m>M_x = \iint_R y\,\delta\, dA</m>.
 </p>
@@ -1859,11 +2217,14 @@ By <xref ref="eq-com-2d"/>, (I) and (III) give
 = \frac{1}{2A}\oint_C x^2\, dy,
 </me>
 and (II) and (III) give
-<me>
-\bar{y} = \frac{M_x}{M}
-= \frac{-\frac{\delta}{2}\oint_C y^2\, dx}{A\delta}
-= -\frac{1}{2A}\oint_C y^2\, dx.
-</me>
+<md>
+<mrow>
+\bar{y} \amp = \frac{M_x}{M} = \frac{-\frac{\delta}{2}\oint_C y^2\, dx}{A\delta}
+</mrow>
+<mrow>
+\amp = -\frac{1}{2A}\oint_C y^2\, dx.
+</mrow>
+</md>
 </p>
 </answer>
 </exercise>
