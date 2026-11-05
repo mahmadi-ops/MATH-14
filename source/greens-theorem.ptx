@@ -770,9 +770,11 @@ Both vectors are drawn at three points of the circle in
 <figure xml:id="fig-unit-normal-circle">
 <caption>
 The unit tangent <m>\mathbf{T}</m> (pink) and the outward unit normal
-<m>\mathbf{n}</m> (green) at three points of the unit circle <m>C</m>,
-traversed counterclockwise. At every point the two vectors are
-perpendicular, and <m>\mathbf{n}</m> points out of the disk <m>R</m>.
+<m>\mathbf{n}</m> (green) at three points of the unit circle <m>C</m>;
+the arrowheads on <m>C</m> show the direction of the path,
+counterclockwise. At every point the two vectors are perpendicular, and
+<m>\mathbf{n}</m> is on the right as we move along <m>C</m> in the
+direction of the path, so it points out of the disk <m>R</m>.
 </caption>
 <image width="55%">
 <shortdescription>
@@ -789,6 +791,13 @@ The unit circle with a unit tangent vector and an outward unit normal vector dra
 <circle at="un-disk" center="(0,0)" radius="1" fill="#dff4f6"
         stroke="#00b0c0" thickness="3"/>
 <axes at="un-axes" xlabel="x" ylabel="y" decorations="no" arrows="1"/>
+<!-- arrowheads on C showing the direction of the path -->
+<parametric-curve at="un-dir-1" function="r" domain="(1.5,1.745)"
+                  stroke="#00b0c0" thickness="3" arrows="1" arrow-width="5"/>
+<parametric-curve at="un-dir-2" function="r" domain="(3.6,3.84)"
+                  stroke="#00b0c0" thickness="3" arrows="1" arrow-width="5"/>
+<parametric-curve at="un-dir-3" function="r" domain="(5.78,6.021)"
+                  stroke="#00b0c0" thickness="3" arrows="1" arrow-width="5"/>
 <!-- t = pi/6 -->
 <angle-marker at="un-right-1" p="r(pi/6)" p1="tipN(pi/6)" p2="tipT(pi/6)"
               radius="9" stroke="#555555" thickness="1"/>
@@ -831,7 +840,7 @@ The unit circle with a unit tangent vector and an outward unit normal vector dra
        clear-background="yes" background-margin="2">
 <m>\mathbf{n}</m>
 </label>
-<label at="un-C-label" anchor="(-0.74,-0.74)" alignment="sw" color="#00a0b0"
+<label at="un-C-label" anchor="(-0.36,-1.02)" alignment="sw" color="#00a0b0"
        clear-background="yes" background-margin="2">
 <m>C</m>
 </label>
@@ -841,8 +850,9 @@ The unit circle with a unit tangent vector and an outward unit normal vector dra
 </label>
 </coordinates>
 <annotations>
-<annotation ref="figure" text="The unit circle C drawn in teal around the shaded disk R. At three points of the circle a pink unit tangent vector T and a green unit normal vector n start from the same point; a small square marks the right angle between them. Every T points in the counterclockwise direction of travel, and every n points straight away from the center, out of the disk.">
+<annotation ref="figure" text="The unit circle C drawn in teal around the shaded disk R, with three arrowheads on it showing that the path runs counterclockwise. At three points of the circle a pink unit tangent vector T and a green unit normal vector n start from the same point; a small square marks the right angle between them. Every T points in the direction of travel, and every n is on the right of the direction of travel, pointing straight away from the center, out of the disk.">
   <annotation ref="un-disk" text="The unit circle C, traversed counterclockwise, enclosing the disk R."/>
+  <annotation ref="un-dir-1" text="An arrowhead on the circle near the top, pointing to the left: the path runs counterclockwise."/>
   <annotation ref="un-T-1" text="At the point at angle pi over 6, the unit tangent T points up and to the left, along the direction of travel."/>
   <annotation ref="un-n-1" text="At the same point, the outward unit normal n points away from the center, up and to the right."/>
   <annotation ref="un-T-2" text="At the point at angle 5 pi over 6, the unit tangent T points down and to the left."/>
@@ -876,7 +886,7 @@ element <m>ds = \left\lVert\mathbf{v}\right\rVert\,dt</m> of
 
 <!-- ================================================================ -->
 <subsection xml:id="sec-greens-theorem-forms">
-<title>The Two Forms of Green's Theorem</title>
+<title>Green's Theorem: The Flux-Divergence (Normal) Form</title>
 
 <p>
 Next we state Green's theorem in 2D<fn>Note that we only cover Green's
@@ -912,6 +922,90 @@ of divergence over } R}.
 </men>
 </statement>
 </theorem>
+
+<example xml:id="example-green-circle-normal">
+<title>Verifying the Normal Form on the Unit Circle</title>
+<statement>
+<p>
+Assume that the vector field
+<m>\mathbf{F}(x,y) = (x - y)\,\mathbf{i} + x\,\mathbf{j}</m> and the
+closed curve <m>C</m> is the unit circle centered at the origin.
+Convince yourself of the normal form of Green's theorem,
+<xref ref="eq-green-normal"/>, by applying it to this example.
+</p>
+</statement>
+</example>
+
+<solution xml:id="solution-green-circle-normal">
+<p>
+We begin by noticing that the unit circle can be parametrized as
+</p>
+
+<me>
+C: \quad \mathbf{r}(t) = (\cos t)\,\mathbf{i} + (\sin t)\,\mathbf{j},
+\qquad 0 \le t \le 2\pi.
+</me>
+
+<p>
+After substituting the parametrized equations <m>x(t) = \cos t</m> and
+<m>y(t) = \sin t</m> into the vector field, we get
+<m>\mathbf{F} = (\cos t - \sin t)\,\mathbf{i} + (\cos t)\,\mathbf{j}</m>,
+and thus
+</p>
+
+<md>
+<mrow>M = \cos t - \sin t, \amp\qquad dx = d(\cos t) = -\sin t\, dt,</mrow>
+<mrow>N = \cos t, \amp\qquad dy = d(\sin t) = \cos t\, dt,</mrow>
+</md>
+
+<p>
+with the partial derivatives
+</p>
+
+<me>
+\frac{\partial M}{\partial x} = 1, \qquad
+\frac{\partial N}{\partial y} = 0.
+</me>
+
+<p>
+For the line integral in <xref ref="eq-green-normal"/> we have
+</p>
+
+<md>
+<mrow>\oint_C M\, dy - N\, dx
+\amp= \int_0^{2\pi} (\cos t - \sin t)(\cos t\, dt)
+- (\cos t)(-\sin t\, dt)</mrow>
+<mrow>\amp= \int_0^{2\pi} \cos^2 t\, dt = \pi,</mrow>
+</md>
+
+<p>
+which is the same integral we get from the outward unit normal of
+<xref ref="example-unit-normal-circle"/>: there
+<m>\mathbf{n} = (\cos t)\,\mathbf{i} + (\sin t)\,\mathbf{j}</m> and
+<m>ds = dt</m>, so
+<m>\mathbf{F}\cdot\mathbf{n}\,ds
+= \big((\cos t - \sin t)\cos t + \cos t \sin t\big)\,dt
+= \cos^2 t\, dt</m>. The double integral gives the same value:
+</p>
+
+<me>
+\iint_R \left( \frac{\partial M}{\partial x}
++ \frac{\partial N}{\partial y} \right) dx\, dy
+= \iint_R (1 + 0)\, dx\, dy
+= \text{area inside the unit circle} = \pi.
+</me>
+
+<p>
+So the outward flux of <m>\mathbf{F}</m> across the unit circle is
+<m>\pi</m>, computed either way.
+</p>
+</solution>
+
+</subsection>
+
+<!-- ================================================================ -->
+<subsection xml:id="sec-green-tangential-form">
+<title>Green's Theorem: The Circulation-Curl (Tangential) Form</title>
 
 <p>
 The second form of Green's theorem connects the counterclockwise
@@ -1133,78 +1227,45 @@ the sum becomes the double integral.
        width="70%" aspect="16:9"/>
 </figure>
 
-<example xml:id="example-green-circle">
-<title>Verifying Both Forms on the Unit Circle</title>
+<example xml:id="example-green-circle-tangential">
+<title>Verifying the Tangential Form on the Unit Circle</title>
 <statement>
 <p>
-Assume that the vector field
+For the same vector field
 <m>\mathbf{F}(x,y) = (x - y)\,\mathbf{i} + x\,\mathbf{j}</m> and the
-closed curve <m>C</m> is the unit circle centered at the origin.
-Convince yourself of the two forms of Green's theorem by applying them
-to this example.
+same unit circle <m>C</m> as in
+<xref ref="example-green-circle-normal"/>, convince yourself of the
+tangential form of Green's theorem, <xref ref="eq-green-tangential"/>,
+by applying it to this example.
 </p>
 </statement>
 </example>
 
-<solution xml:id="solution-green-circle">
+<solution xml:id="solution-green-circle-tangential">
 <p>
-We begin by noticing that the unit circle can be parametrized as
-</p>
-
-<me>
-C: \quad \mathbf{r}(t) = (\cos t)\,\mathbf{i} + (\sin t)\,\mathbf{j},
-\qquad 0 \le t \le 2\pi.
-</me>
-
-<p>
-After substituting the parametrized equations <m>x(t) = \cos t</m> and
-<m>y(t) = \sin t</m> into the vector field, we get
-<m>\mathbf{F} = (\cos t - \sin t)\,\mathbf{i} + (\cos t)\,\mathbf{j}</m>,
-and thus
+With the parametrization
+<m>\mathbf{r}(t) = (\cos t)\,\mathbf{i} + (\sin t)\,\mathbf{j}</m>,
+<m>0 \le t \le 2\pi</m>, of <xref ref="example-green-circle-normal"/> we
+again have
 </p>
 
 <md>
-<mrow>M = \cos t - \sin t, \amp\qquad dx = d(\cos t) = -\sin t\, dt,</mrow>
-<mrow>N = \cos t, \amp\qquad dy = d(\sin t) = \cos t\, dt,</mrow>
+<mrow>M = \cos t - \sin t, \amp\qquad dx = -\sin t\, dt,</mrow>
+<mrow>N = \cos t, \amp\qquad dy = \cos t\, dt,</mrow>
 </md>
 
 <p>
-with the partial derivatives
+and this time we need the other two partial derivatives,
 </p>
 
 <me>
-\frac{\partial M}{\partial x} = 1, \qquad
 \frac{\partial M}{\partial y} = -1, \qquad
-\frac{\partial N}{\partial x} = 1, \qquad
-\frac{\partial N}{\partial y} = 0.
+\frac{\partial N}{\partial x} = 1.
 </me>
 
 <p>
-For the first form of Green's theorem,
-<xref ref="eq-green-normal"/>, we have
-</p>
-
-<md>
-<mrow>\oint_C M\, dy - N\, dx
-\amp= \int_0^{2\pi} (\cos t - \sin t)(\cos t\, dt)
-- (\cos t)(-\sin t\, dt)</mrow>
-<mrow>\amp= \int_0^{2\pi} \cos^2 t\, dt = \pi,</mrow>
-</md>
-
-<p>
-while the double integral gives the same value:
-</p>
-
-<me>
-\iint_R \left( \frac{\partial M}{\partial x}
-+ \frac{\partial N}{\partial y} \right) dx\, dy
-= \iint_R (1 + 0)\, dx\, dy
-= \text{area inside the unit circle} = \pi.
-</me>
-
-<p>
-Whereas the second form of Green's theorem,
-<xref ref="eq-green-tangential"/>, can be verified as follows:
+The tangential form of Green's theorem,
+<xref ref="eq-green-tangential"/>, can then be verified as follows:
 </p>
 
 <md>
@@ -1228,8 +1289,9 @@ and
 <p>
 The field and the curve are shown in <xref ref="fig-green-circle"/>;
 note that the field has a positive (counterclockwise) circulation,
-which we calculated above to be <m>2\pi</m>. Watch both computations
-side by side in <xref ref="fig-green-circle-video"/>.
+which we calculated above to be <m>2\pi</m>. Watch both computations,
+the flux of <xref ref="example-green-circle-normal"/> and this
+circulation, side by side in <xref ref="fig-green-circle-video"/>.
 </p>
 </solution>
 
