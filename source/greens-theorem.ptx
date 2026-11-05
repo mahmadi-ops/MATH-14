@@ -1694,4 +1694,180 @@ around every closed curve is zero.
 
 </subsection>
 
+<!-- ================================================================ -->
+<subsection xml:id="subsec-green-questions">
+<title>Concept Check</title>
+
+<p>
+Both problems use Green's theorem in reverse: a line integral around the
+boundary of a region computes a double integral over the region, here
+its area and its first moments.
+</p>
+
+<figure xml:id="fig-green-ellipse-area">
+<caption>
+The region <m>E</m> inside the ellipse
+<m>\frac{x^2}{a^2} + \frac{y^2}{b^2} = 1</m>, with its boundary <m>C</m>
+traversed counterclockwise.
+</caption>
+<image width="55%">
+<shortdescription>
+A shaded ellipse labeled E, with semi-axes a and b, and arrowheads on its boundary C pointing counterclockwise.
+</shortdescription>
+<prefigure xmlns="https://prefigure.org" label="prefigure-green-ellipse-area">
+<diagram dimensions="(340,240)" margins="10">
+<definition>ell(t) = (2*cos(t), 1.2*sin(t))</definition>
+<coordinates bbox="(-2.8,-1.75,2.8,1.75)">
+<parametric-curve at="ge-E" function="ell" domain="(0,2*pi)" closed="yes"
+                  fill="#d9d9d9" stroke="#3c6fbf" thickness="3"/>
+<axes at="ge-axes" xlabel="x" ylabel="y" decorations="no" arrows="1"/>
+<!-- arrowheads on C showing the counterclockwise direction -->
+<parametric-curve at="ge-dir-1" function="ell" domain="(1.75,2.0)"
+                  stroke="#3c6fbf" thickness="3" arrows="1" arrow-width="5"/>
+<parametric-curve at="ge-dir-2" function="ell" domain="(4.9,5.15)"
+                  stroke="#3c6fbf" thickness="3" arrows="1" arrow-width="5"/>
+<point at="ge-a" p="(2,0)" size="3" fill="black" alignment="se">
+<m>a</m>
+</point>
+<point at="ge-b" p="(0,1.2)" size="3" fill="black" alignment="ne">
+<m>b</m>
+</point>
+<label at="ge-E-label" anchor="(-0.9,0.4)" alignment="c">
+<m>E</m>
+</label>
+<label at="ge-C-label" anchor="(1.72,0.72)" alignment="ne" color="#3c6fbf"
+       clear-background="yes" background-margin="2">
+<m>C</m>
+</label>
+</coordinates>
+<annotations>
+<annotation ref="figure" text="An ellipse centered at the origin, wider than it is tall, crossing the positive x-axis at a and the positive y-axis at b. The region E inside it is shaded gray, and two arrowheads on its boundary C show that C is traversed counterclockwise.">
+  <annotation ref="ge-E" text="The ellipse x squared over a squared plus y squared over b squared equals 1, enclosing the shaded region E."/>
+  <annotation ref="ge-dir-1" text="An arrowhead near the top of the ellipse, pointing to the left: C is traversed counterclockwise."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+
+<exercise xml:id="q-green-ellipse-area">
+<title>The area of an ellipse from a line integral</title>
+<statement>
+<p>
+Compute the area of the region <m>E</m> enclosed by the ellipse
+<m>\frac{x^2}{a^2} + \frac{y^2}{b^2} = 1</m>, shown in
+<xref ref="fig-green-ellipse-area"/>, using the line integral of a
+vector field around its boundary <m>C</m>, traversed counterclockwise.
+</p>
+</statement>
+<answer>
+<p>
+If <m>\mathbf{F} = \langle -y,\ 0 \rangle</m>, that is <m>M = -y</m> and
+<m>N = 0</m>, then
+<m>\frac{\partial N}{\partial x} - \frac{\partial M}{\partial y}
+= 0 - (-1) = 1</m>, and the tangential form of Green's theorem,
+<xref ref="eq-green-tangential"/>, gives
+<me>
+\oint_C \mathbf{F} \cdot \mathbf{T}\, ds
+= \iint_E \left( \frac{\partial N}{\partial x}
+- \frac{\partial M}{\partial y} \right) dA
+= \iint_E 1\, dA = \text{area of } E.
+</me>
+</p>
+<p>
+Parametrize <m>C</m> counterclockwise as
+<me>
+\mathbf{r}(t) = \langle a\cos t,\ b\sin t \rangle,
+\qquad 0 \le t \le 2\pi .
+</me>
+Then <m>\mathbf{v}(t) = \langle -a\sin t,\ b\cos t \rangle</m>, and on
+<m>C</m> the field is
+<m>\mathbf{F} = \langle -y,\ 0 \rangle = \langle -b\sin t,\ 0 \rangle</m>,
+so
+<me>
+\mathbf{F} \cdot \mathbf{v} = ab\sin^2 t = \frac{ab}{2}\big(1 - \cos(2t)\big).
+</me>
+Since <m>\mathbf{T}\,ds = d\mathbf{r} = \mathbf{v}\,dt</m>,
+<me>
+\oint_C \mathbf{F} \cdot \mathbf{T}\, ds
+= \int_{t=0}^{t=2\pi} \frac{ab}{2}\big(1 - \cos(2t)\big)\, dt
+= \left(\frac{ab}{2}\right)(2\pi) = \pi ab .
+</me>
+The area of the ellipse is <m>\pi ab</m>; when <m>a = b = r</m> it is a
+circle, and this is the familiar <m>\pi r^2</m>.
+</p>
+</answer>
+</exercise>
+
+<exercise xml:id="q-green-centroid">
+<title>The centroid from a line integral around the boundary</title>
+<statement>
+<p>
+A lamina of constant density <m>\delta</m> occupies a region <m>R</m> in
+the <m>xy</m>-plane with boundary <m>C</m>, oriented counterclockwise.
+Show that its centroid (<xref ref="def-centroid"/>) has the coordinates
+<me>
+\bar{x} = \frac{1}{2A} \oint_C x^2\, dy
+\qquad \text{and} \qquad
+\bar{y} = -\frac{1}{2A} \oint_C y^2\, dx,
+</me>
+where <m>A</m> is the area of the region bounded by <m>C</m>.
+</p>
+</statement>
+<answer>
+<p>
+Take <m>\mathbf{F} = \langle x^2,\ 0 \rangle</m>, so <m>M = x^2</m> and
+<m>N = 0</m>. The normal form of Green's theorem,
+<xref ref="eq-green-normal"/>, gives
+<md>
+<mrow>\oint_C \mathbf{F} \cdot \mathbf{n}\, ds
+= \oint_C M\, dy - N\, dx
+\amp= \iint_R \left( \frac{\partial M}{\partial x}
++ \frac{\partial N}{\partial y} \right) dA,</mrow>
+<mrow>\oint_C x^2\, dy
+\amp= \iint_R 2x\, dA = \frac{2M_y}{\delta}
+\qquad \text{(I)}</mrow>
+</md>
+because <m>M_y = \iint_R x\,\delta\, dA</m> by
+<xref ref="eq-first-moments-2d"/> and <m>\delta</m> is constant.
+</p>
+<p>
+If <m>\mathbf{F} = \langle -y^2,\ 0 \rangle</m>, so <m>M = -y^2</m> and
+<m>N = 0</m>, the tangential form, <xref ref="eq-green-tangential"/>,
+gives
+<md>
+<mrow>\oint_C \mathbf{F} \cdot \mathbf{T}\, ds
+= \oint_C M\, dx + N\, dy
+\amp= \iint_R \left( \frac{\partial N}{\partial x}
+- \frac{\partial M}{\partial y} \right) dA,</mrow>
+<mrow>\oint_C -y^2\, dx
+\amp= \iint_R -(-2y)\, dA = \frac{2M_x}{\delta}
+\qquad \text{(II)}</mrow>
+</md>
+since <m>M_x = \iint_R y\,\delta\, dA</m>.
+</p>
+<p>
+Finally,
+<me>
+\iint_R dA = A = \frac{M}{\delta}. \qquad \text{(III)}
+</me>
+By <xref ref="eq-com-2d"/>, (I) and (III) give
+<me>
+\bar{x} = \frac{M_y}{M}
+= \frac{\frac{\delta}{2}\oint_C x^2\, dy}{A\delta}
+= \frac{1}{2A}\oint_C x^2\, dy,
+</me>
+and (II) and (III) give
+<me>
+\bar{y} = \frac{M_x}{M}
+= \frac{-\frac{\delta}{2}\oint_C y^2\, dx}{A\delta}
+= -\frac{1}{2A}\oint_C y^2\, dx.
+</me>
+</p>
+</answer>
+</exercise>
+
+</subsection>
+
 </section>
