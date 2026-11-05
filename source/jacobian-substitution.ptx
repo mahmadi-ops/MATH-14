@@ -1107,6 +1107,86 @@ label("$E$", C - 2.0*right + (0, 0, -0.8), fontsize(17pt));
 </image>
 </figure>
 
+<example xml:id="example-paraboloid-plane-volume">
+<title>Volume Between a Paraboloid and a Plane</title>
+<statement>
+<p>
+Find the volume of the solid enclosed by <m>z = 9 - x^2 - 9y^2</m> and
+<m>z = 5</m>. Do so by converting the integral
+<m>\displaystyle\iiint dz\, dy\, dx</m> to another triple integral such
+that the limits of two of the variables are constants.
+</p>
+</statement>
+</example>
+
+<solution xml:id="solution-paraboloid-plane-volume">
+<p>
+The two surfaces meet where <m>9 - x^2 - 9y^2 = 5</m>, that is, on the
+ellipse <m>x^2 + 9y^2 = 4</m>. So the projection of the solid onto the
+<m>xy</m>-plane is the region inside this ellipse, and above each of its
+points <m>5 \le z \le 9 - x^2 - 9y^2</m>. The ellipse becomes a circle
+under the transformation
+</p>
+
+<me>
+T_1: \quad x = 3u, \qquad y = v, \qquad z = w,
+</me>
+
+<p>
+whose Jacobian, by <xref ref="eq-jacobian-3d"/>, is
+</p>
+
+<me>
+\frac{\partial(x,y,z)}{\partial(u,v,w)}
+= \begin{vmatrix}
+3 \amp 0 \amp 0 \\
+0 \amp 1 \amp 0 \\
+0 \amp 0 \amp 1
+\end{vmatrix}
+= 3.
+</me>
+
+<p>
+Under <m>T_1</m> the boundary <m>x^2 + 9y^2 = 4</m> of the
+<m>xy</m>-projection becomes <m>9u^2 + 9v^2 = 4</m>, so the
+<m>uv</m>-projection is the disk <m>u^2 + v^2 \le \frac{4}{9}</m>, and the
+bounds <m>5 \le z \le 9 - x^2 - 9y^2</m> become
+<m>5 \le w \le 9\left(1 - u^2 - v^2\right)</m>. By
+<xref ref="eq-sub-3d"/>,
+</p>
+
+<me>
+\iint_{xy\text{-proj}} \int_{z=5}^{z=9-x^2-9y^2} dz\, dy\, dx
+= \iint_{uv\text{-proj}} \int_{w=5}^{w=9(1-u^2-v^2)} 3\, dw\, dv\, du .
+</me>
+
+<p>
+The <m>uv</m>-projection is a disk, so a second transformation, to
+cylindrical coordinates,
+</p>
+
+<me>
+T_2: \quad u = r\cos\theta, \qquad v = r\sin\theta, \qquad w = z,
+\qquad\qquad \frac{\partial(u,v,w)}{\partial(r,\theta,z)} = r,
+</me>
+
+<p>
+turns the disk <m>u^2 + v^2 \le \frac{4}{9}</m> into
+<m>0 \le r \le \frac{2}{3}</m>, <m>0 \le \theta \le 2\pi</m>, with
+<m>5 \le z \le 9\left(1 - r^2\right)</m>: the limits of <m>r</m> and
+<m>\theta</m> are now constants. Therefore
+</p>
+
+<md>
+<mrow>V \amp= 3 \int_{r=0}^{r=2/3} \int_{\theta=0}^{\theta=2\pi}
+\int_{z=5}^{z=9(1-r^2)} r\, dz\, d\theta\, dr
+= (6\pi) \int_{r=0}^{r=2/3} \left(4r - 9r^3\right) dr</mrow>
+<mrow>\amp= (6\pi) \left(2r^2 - \frac{9}{4} r^4\right)\Bigg|_{r=0}^{r=2/3}
+= (6\pi)\left(\frac{8}{9} - \frac{4}{9}\right)
+= (6\pi)\left(\frac{4}{9}\right) = \frac{8\pi}{3}.</mrow>
+</md>
+</solution>
+
 </subsection>
 
 <!-- ================================================================ -->
