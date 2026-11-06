@@ -885,6 +885,7 @@ and the top face, at height <m>z = 1</m>, is shifted one unit in
 <![CDATA[// The parallelepiped bounded by x = 0, x = 1, z = 0, z = 1, y - z = 0
 // and y - z = 3.
 import graph3;
+if(settings.outformat != "html") settings.render=0;  // vector PDF, no OpenGL
 
 size(13.5cm);
 // Same viewpoint as the pgfplots figure (view={115}{18}).
@@ -1044,6 +1045,7 @@ and orange.
 // c = 1.05).  One scene: S at the origin and E beside it, to the right
 // as seen from the viewpoint.
 import graph3;
+if(settings.outformat != "html") settings.render=0;  // vector PDF, no OpenGL
 usepackage("amsmath");
 
 size(16cm);
