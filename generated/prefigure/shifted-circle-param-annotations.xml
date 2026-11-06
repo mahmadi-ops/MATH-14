@@ -1,0 +1,82 @@
+<diagram>
+  <annotations>
+    <annotation id="shifted-circle-param-figure" speech2="The circle of radius two centered at the                                     point two comma zero, parametrized by two                                     cosine t plus two and two sine t">
+      <grouped>shifted-circle-param-figure</grouped>
+      <position>1</position>
+      <children>
+        <active>shifted-circle-param-grid-axes</active>
+        <active>shifted-circle-param-grid</active>
+        <active>shifted-circle-param-axes</active>
+        <active>shifted-circle-param-curve</active>
+        <active>shifted-circle-param-marks</active>
+      </children>
+      <components>
+        <active>shifted-circle-param-grid-axes</active>
+        <active>shifted-circle-param-grid</active>
+        <active>shifted-circle-param-axes</active>
+        <active>shifted-circle-param-curve</active>
+        <active>shifted-circle-param-marks</active>
+      </components>
+    </annotation>
+    <annotation id="shifted-circle-param-grid-axes" speech2="The coordinate grid and axes">
+      <grouped>shifted-circle-param-grid-axes</grouped>
+      <position>1</position>
+      <children>
+        <active>shifted-circle-param-grid</active>
+        <active>shifted-circle-param-axes</active>
+      </children>
+      <components>
+        <active>shifted-circle-param-grid</active>
+        <active>shifted-circle-param-axes</active>
+      </components>
+      <parents>
+        <grouped>shifted-circle-param-figure</grouped>
+      </parents>
+    </annotation>
+    <annotation id="shifted-circle-param-grid" speech2="The coordinate grid">
+      <active>shifted-circle-param-grid</active>
+      <position>1</position>
+      <parents>
+        <grouped>shifted-circle-param-grid-axes</grouped>
+      </parents>
+    </annotation>
+    <annotation id="shifted-circle-param-axes" speech2="The coordinate axes">
+      <active>shifted-circle-param-axes</active>
+      <position>2</position>
+      <parents>
+        <grouped>shifted-circle-param-grid-axes</grouped>
+      </parents>
+    </annotation>
+    <annotation id="shifted-circle-param-grid" speech2="The coordinate grid">
+      <active>shifted-circle-param-grid</active>
+      <position>2</position>
+      <parents>
+        <grouped>shifted-circle-param-figure</grouped>
+      </parents>
+    </annotation>
+    <annotation id="shifted-circle-param-axes" speech2="The coordinate axes">
+      <active>shifted-circle-param-axes</active>
+      <position>3</position>
+      <parents>
+        <grouped>shifted-circle-param-figure</grouped>
+      </parents>
+    </annotation>
+    <annotation id="shifted-circle-param-curve" speech2="The circle, traced counterclockwise" sonify="yes">
+      <active>shifted-circle-param-curve</active>
+      <position>4</position>
+      <parents>
+        <grouped>shifted-circle-param-figure</grouped>
+      </parents>
+      <sonification>
+        <ACTIVE>shifted-circle-param-curve</ACTIVE>
+      </sonification>
+    </annotation>
+    <annotation id="shifted-circle-param-marks" speech2="The center of the circle and its                                       starting point, reached at t equals                                       zero">
+      <active>shifted-circle-param-marks</active>
+      <position>5</position>
+      <parents>
+        <grouped>shifted-circle-param-figure</grouped>
+      </parents>
+    </annotation>
+  </annotations>
+</diagram>

@@ -1,0 +1,100 @@
+<diagram>
+  <annotations>
+    <annotation id="circle-perp-figure" speech2="A circle centred at the origin in the                                     radial field. At four points of the circle                                     the field vector points straight out while                                     the direction of travel runs around the                                     circle, and a right angle is marked                                     between them">
+      <grouped>circle-perp-figure</grouped>
+      <position>1</position>
+      <children>
+        <active>circle-perp-grid-axes</active>
+        <active>circle-perp-grid</active>
+        <active>circle-perp-axes</active>
+        <active>circle-perp-field</active>
+        <active>circle-perp-circle</active>
+        <active>circle-perp-vectors</active>
+        <active>circle-perp-origin</active>
+      </children>
+      <components>
+        <active>circle-perp-grid-axes</active>
+        <active>circle-perp-grid</active>
+        <active>circle-perp-axes</active>
+        <active>circle-perp-field</active>
+        <active>circle-perp-circle</active>
+        <active>circle-perp-vectors</active>
+        <active>circle-perp-origin</active>
+      </components>
+    </annotation>
+    <annotation id="circle-perp-grid-axes" speech2="The coordinate grid and axes">
+      <grouped>circle-perp-grid-axes</grouped>
+      <position>1</position>
+      <children>
+        <active>circle-perp-grid</active>
+        <active>circle-perp-axes</active>
+      </children>
+      <components>
+        <active>circle-perp-grid</active>
+        <active>circle-perp-axes</active>
+      </components>
+      <parents>
+        <grouped>circle-perp-figure</grouped>
+      </parents>
+    </annotation>
+    <annotation id="circle-perp-grid" speech2="The coordinate grid">
+      <active>circle-perp-grid</active>
+      <position>1</position>
+      <parents>
+        <grouped>circle-perp-grid-axes</grouped>
+      </parents>
+    </annotation>
+    <annotation id="circle-perp-axes" speech2="The coordinate axes">
+      <active>circle-perp-axes</active>
+      <position>2</position>
+      <parents>
+        <grouped>circle-perp-grid-axes</grouped>
+      </parents>
+    </annotation>
+    <annotation id="circle-perp-grid" speech2="The coordinate grid">
+      <active>circle-perp-grid</active>
+      <position>2</position>
+      <parents>
+        <grouped>circle-perp-figure</grouped>
+      </parents>
+    </annotation>
+    <annotation id="circle-perp-axes" speech2="The coordinate axes">
+      <active>circle-perp-axes</active>
+      <position>3</position>
+      <parents>
+        <grouped>circle-perp-figure</grouped>
+      </parents>
+    </annotation>
+    <annotation id="circle-perp-field" speech2="The radial field, whose arrows point                                       away from the origin">
+      <active>circle-perp-field</active>
+      <position>4</position>
+      <parents>
+        <grouped>circle-perp-figure</grouped>
+      </parents>
+    </annotation>
+    <annotation id="circle-perp-circle" speech2="The circle of radius two, traversed                                       counterclockwise" sonify="yes">
+      <active>circle-perp-circle</active>
+      <position>5</position>
+      <parents>
+        <grouped>circle-perp-figure</grouped>
+      </parents>
+      <sonification>
+        <ACTIVE>circle-perp-circle</ACTIVE>
+      </sonification>
+    </annotation>
+    <annotation id="circle-perp-vectors" speech2="At four points of the circle, the                                       outward field vector F and the tangent                                       vector T, meeting at a right angle, so                                       that their dot product is zero">
+      <active>circle-perp-vectors</active>
+      <position>6</position>
+      <parents>
+        <grouped>circle-perp-figure</grouped>
+      </parents>
+    </annotation>
+    <annotation id="circle-perp-origin" speech2="The origin">
+      <active>circle-perp-origin</active>
+      <position>7</position>
+      <parents>
+        <grouped>circle-perp-figure</grouped>
+      </parents>
+    </annotation>
+  </annotations>
+</diagram>

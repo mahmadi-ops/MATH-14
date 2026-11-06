@@ -1,0 +1,66 @@
+<diagram>
+  <annotations>
+    <annotation id="prefigure-cylinder-sphere-region-figure" speech2="Two circles of radius one: the unit circle x squared plus y squared equals one, drawn in blue and centered at the origin, and the circle x squared plus y minus one squared equals one, drawn in red and centered at zero comma one. They cross at the two points minus root three over two comma one half and root three over two comma one half. The lens shaped region inside both circles is shaded light blue and labelled D. A vertical black segment through D at one value of x runs from the lower arc, which belongs to the red circle, up to the upper arc, which belongs to the blue circle.">
+      <grouped>prefigure-cylinder-sphere-region-figure</grouped>
+      <position>1</position>
+      <children>
+        <active>prefigure-cylinder-sphere-region-cs-region</active>
+        <active>prefigure-cylinder-sphere-region-cs-sphere</active>
+        <active>prefigure-cylinder-sphere-region-cs-cyl</active>
+        <active>prefigure-cylinder-sphere-region-cs-left</active>
+        <active>prefigure-cylinder-sphere-region-cs-right</active>
+        <active>prefigure-cylinder-sphere-region-cs-strip</active>
+      </children>
+      <components>
+        <active>prefigure-cylinder-sphere-region-cs-region</active>
+        <active>prefigure-cylinder-sphere-region-cs-sphere</active>
+        <active>prefigure-cylinder-sphere-region-cs-cyl</active>
+        <active>prefigure-cylinder-sphere-region-cs-left</active>
+        <active>prefigure-cylinder-sphere-region-cs-right</active>
+        <active>prefigure-cylinder-sphere-region-cs-strip</active>
+      </components>
+    </annotation>
+    <annotation id="prefigure-cylinder-sphere-region-cs-region" speech2="The region of integration D: the points inside both circles, shaded light blue.">
+      <active>prefigure-cylinder-sphere-region-cs-region</active>
+      <position>1</position>
+      <parents>
+        <grouped>prefigure-cylinder-sphere-region-figure</grouped>
+      </parents>
+    </annotation>
+    <annotation id="prefigure-cylinder-sphere-region-cs-sphere" speech2="The blue circle x squared plus y squared equals one, the shadow of the sphere. Its upper arc, y equals the square root of one minus x squared, is the top of D.">
+      <active>prefigure-cylinder-sphere-region-cs-sphere</active>
+      <position>2</position>
+      <parents>
+        <grouped>prefigure-cylinder-sphere-region-figure</grouped>
+      </parents>
+    </annotation>
+    <annotation id="prefigure-cylinder-sphere-region-cs-cyl" speech2="The red circle x squared plus y minus one squared equals one, the base of the cylinder. Its lower arc, y equals one minus the square root of one minus x squared, is the bottom of D.">
+      <active>prefigure-cylinder-sphere-region-cs-cyl</active>
+      <position>3</position>
+      <parents>
+        <grouped>prefigure-cylinder-sphere-region-figure</grouped>
+      </parents>
+    </annotation>
+    <annotation id="prefigure-cylinder-sphere-region-cs-left" speech2="The left crossing point of the two circles, at minus root three over two comma one half.">
+      <active>prefigure-cylinder-sphere-region-cs-left</active>
+      <position>4</position>
+      <parents>
+        <grouped>prefigure-cylinder-sphere-region-figure</grouped>
+      </parents>
+    </annotation>
+    <annotation id="prefigure-cylinder-sphere-region-cs-right" speech2="The right crossing point of the two circles, at root three over two comma one half.">
+      <active>prefigure-cylinder-sphere-region-cs-right</active>
+      <position>5</position>
+      <parents>
+        <grouped>prefigure-cylinder-sphere-region-figure</grouped>
+      </parents>
+    </annotation>
+    <annotation id="prefigure-cylinder-sphere-region-cs-strip" speech2="A vertical segment through D at a fixed x between minus root three over two and root three over two. It runs from the red circle, y equals one minus the square root of one minus x squared, up to the blue circle, y equals the square root of one minus x squared: these are the limits of the inner integral in y.">
+      <active>prefigure-cylinder-sphere-region-cs-strip</active>
+      <position>6</position>
+      <parents>
+        <grouped>prefigure-cylinder-sphere-region-figure</grouped>
+      </parents>
+    </annotation>
+  </annotations>
+</diagram>

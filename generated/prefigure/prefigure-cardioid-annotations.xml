@@ -1,0 +1,48 @@
+<diagram>
+  <annotations>
+    <annotation id="prefigure-cardioid-figure" speech2="A polar grid with concentric gray circles of radii one half, one, three halves and two. The cardioid r equals one plus cosine theta is drawn in blue: a heart shaped curve, widest at the point two comma zero on the positive x axis, closing to a cusp at the origin on the negative x axis side. Five vermillion points mark the table values at theta equal to zero, pi over three, pi over two, two pi over three, and pi.">
+      <grouped>prefigure-cardioid-figure</grouped>
+      <position>1</position>
+      <children>
+        <active>prefigure-cardioid-cd-curve</active>
+        <active>prefigure-cardioid-cd-p0</active>
+        <active>prefigure-cardioid-cd-p90</active>
+        <active>prefigure-cardioid-cd-p180</active>
+      </children>
+      <components>
+        <active>prefigure-cardioid-cd-curve</active>
+        <active>prefigure-cardioid-cd-p0</active>
+        <active>prefigure-cardioid-cd-p90</active>
+        <active>prefigure-cardioid-cd-p180</active>
+      </components>
+    </annotation>
+    <annotation id="prefigure-cardioid-cd-curve" speech2="The cardioid r equals one plus cosine theta, symmetric about the x axis.">
+      <active>prefigure-cardioid-cd-curve</active>
+      <position>1</position>
+      <parents>
+        <grouped>prefigure-cardioid-figure</grouped>
+      </parents>
+    </annotation>
+    <annotation id="prefigure-cardioid-cd-p0" speech2="The point at theta equals zero, where r equals two.">
+      <active>prefigure-cardioid-cd-p0</active>
+      <position>2</position>
+      <parents>
+        <grouped>prefigure-cardioid-figure</grouped>
+      </parents>
+    </annotation>
+    <annotation id="prefigure-cardioid-cd-p90" speech2="The point at theta equals pi over two, where r equals one.">
+      <active>prefigure-cardioid-cd-p90</active>
+      <position>3</position>
+      <parents>
+        <grouped>prefigure-cardioid-figure</grouped>
+      </parents>
+    </annotation>
+    <annotation id="prefigure-cardioid-cd-p180" speech2="The point at theta equals pi, where r equals zero: the cusp at the origin.">
+      <active>prefigure-cardioid-cd-p180</active>
+      <position>4</position>
+      <parents>
+        <grouped>prefigure-cardioid-figure</grouped>
+      </parents>
+    </annotation>
+  </annotations>
+</diagram>
