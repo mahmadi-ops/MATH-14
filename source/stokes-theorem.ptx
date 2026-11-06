@@ -187,18 +187,6 @@ arrow, with an arrowhead showing which way it turns.
 </latex-image>
 </image>
 </figure>
-
-<p>
-Two facts about the curl are worth recording, both of which we have
-already met in disguise. First, a field is conservative exactly when its
-curl vanishes: if <m>\mathbf{F} = \nabla f</m> then
-<m>\nabla \times \mathbf{F} = \mathbf{0}</m>, which is the component
-test <xref ref="eq-component-test-3d"/> for the conservative fields of
-<xref ref="section-conservative-fields"/>. Second,
-<m>\nabla \cdot (\nabla \times \mathbf{F}) = 0</m>: a curl field has no
-divergence, so by <xref ref="thm-divergence"/> its flux through any closed
-surface is zero. We will use that second fact at the end of this section.
-</p>
 </subsection>
 
 <!-- ================================================================ -->
@@ -1277,8 +1265,8 @@ d\sigma .
 This is the surface analogue of the path independence of
 <xref ref="section-conservative-fields"/>, and it has the same practical
 use: when a surface is unpleasant, trade it for any other surface with
-the same boundary. It also explains the identity
-<m>\nabla \cdot (\nabla \times \mathbf{F}) = 0</m> noted earlier. Gluing
+the same boundary. It also shows that a curl field has no net flux through a closed
+surface. Gluing
 <m>S_1</m> and <m>S_2</m> along <m>C</m> makes a closed surface; the two
 flux integrals appear with opposite signs once both normals point
 outward, so the total flux of <m>\nabla \times \mathbf{F}</m> through any
@@ -1417,8 +1405,7 @@ arrow rises from the top of the paraboloid and another from the disk.
 <p>
 The following problem uses no computation at all. It tests whether you
 can see what Stokes' theorem is really saying about circulation, curl,
-and<mdash/>as the extension questions bring out<mdash/>the role played
-by the domain of the vector field.
+and the role played by the domain of the vector field.
 </p>
 
 <exercise xml:id="ex-stokes-conceptual">
@@ -1552,32 +1539,101 @@ same conclusion.
 </solution>
 </exercise>
 
-<exercise xml:id="ex-stokes-conceptual-extensions">
-<title>Extension Questions</title>
+</subsection>
+
+<!-- ================================================================ -->
+<subsection xml:id="sec-stokes-concept-check">
+<title>Concept Check</title>
+
+<exercise xml:id="check-stokes-curl-conservative">
+<title>True or False</title>
 <statement>
 <p>
-<ol marker="(a)">
-<li>
-<p>
-Does the conclusion remain valid if the common domain is an arbitrary
-open subset of <m>\R^3</m>?
+Decide whether the statement is true or false, and justify your answer.
 </p>
-</li>
-<li>
 <p>
-Which hypothesis of Stokes' theorem is essential in the proof?
-</p>
-</li>
-<li>
-<p>
-How is the result related to conservative vector fields and the
-Fundamental Theorem for line integrals of
-<xref ref="sec-ftli" text="title"/>?
-</p>
-</li>
-</ol>
+A vector field <m>\mathbf{F}</m> whose components have continuous first
+partial derivatives on all of <m>\R^3</m> is conservative exactly when
+<m>\nabla \times \mathbf{F} = \mathbf{0}</m> everywhere.
 </p>
 </statement>
+<answer>
+<p>
+True.
+</p>
+</answer>
+<solution>
+<p>
+Write <m>\mathbf{F} = M\,\mathbf{i} + N\,\mathbf{j} + P\,\mathbf{k}</m>.
+The three components of <m>\nabla \times \mathbf{F}</m> are
+<m>P_y - N_z</m>, <m>M_z - P_x</m> and <m>N_x - M_y</m>, so
+<m>\nabla \times \mathbf{F} = \mathbf{0}</m> says exactly that the
+three equations of the component test hold, the last of them being
+<xref ref="eq-component-test-3d"/>. Since <m>\R^3</m> is open and simply
+connected, that test says <m>\mathbf{F}</m> is conservative if and only
+if they hold. In particular, if <m>\mathbf{F} = \nabla f</m> then
+<m>\nabla \times \mathbf{F} = \mathbf{0}</m>: the curl of a gradient
+is zero, by the equality of the mixed partial derivatives of <m>f</m>.
+</p>
+<p>
+The domain matters. On <m>\R^3</m> with the <m>z</m>-axis removed, which
+is not simply connected, the field
+<m>\mathbf{F} = \dfrac{-y\,\mathbf{i} + x\,\mathbf{j}}{x^2+y^2}</m>
+has zero curl but circulation <m>2\pi</m> around the unit circle in the
+<m>xy</m>-plane, so it is not conservative there
+(<xref ref="section-conservative-fields"/>).
+</p>
+</solution>
+</exercise>
+
+<exercise xml:id="check-stokes-curl-flux">
+<title>True or False</title>
+<statement>
+<p>
+Decide whether the statement is true or false, and justify your answer.
+</p>
+<p>
+There is a vector field <m>\mathbf{F}</m>, whose components have
+continuous second partial derivatives on all of <m>\R^3</m>, such that
+the flux of <m>\nabla \times \mathbf{F}</m> outward through the unit
+sphere is not zero.
+</p>
+</statement>
+<answer>
+<p>
+False.
+</p>
+</answer>
+<solution>
+<p>
+With <m>\mathbf{F} = M\,\mathbf{i} + N\,\mathbf{j} + P\,\mathbf{k}</m>,
+</p>
+<md>
+<mrow>
+\amp \nabla \cdot (\nabla \times \mathbf{F})
+</mrow>
+<mrow>
+\amp \quad = (P_y - N_z)_x + (M_z - P_x)_y + (N_x - M_y)_z
+</mrow>
+<mrow>
+\amp \quad = 0,
+</mrow>
+</md>
+<p>
+because the mixed partial derivatives of each component are equal and
+the six terms cancel in pairs. A curl field has no divergence, so by
+<xref ref="thm-divergence"/> its flux outward through the unit sphere,
+and through any closed surface, is the triple integral of <m>0</m> over
+the solid inside, which is <m>0</m>.
+</p>
+<p>
+Stokes' theorem gives the same answer. Cut the sphere along the equator
+<m>C</m> into two hemispheres. With both normals pointing outward, the
+right-hand rule sends <m>C</m> in opposite directions as the boundary of
+the two hemispheres, so by <xref ref="thm-stokes"/> their two fluxes are
+circulations around <m>C</m> of opposite sign, and they cancel.
+</p>
+</solution>
 </exercise>
 
 </subsection>
