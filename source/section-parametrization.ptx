@@ -738,11 +738,14 @@
 
         <md>
           <mrow>
-            \bigl(\left(2\cos t + 2\right) - 2\bigr)^2
-            + \left(2\sin t\right)^2 \amp = 4\cos^2 t + 4\sin^2 t
+            \amp \bigl(\left(2\cos t + 2\right) - 2\bigr)^2
+            + \left(2\sin t\right)^2
           </mrow>
           <mrow>
-            \amp = 4 .
+            \amp \quad = 4\cos^2 t + 4\sin^2 t
+          </mrow>
+          <mrow>
+            \amp \quad = 4 .
           </mrow>
         </md>
         </p>
@@ -1381,7 +1384,9 @@
       </mrow>
       <mrow xml:id="eq-vector-function" number="yes">
         \amp = f(t)\,\mathbf{i} + g(t)\,\mathbf{j} + h(t)\,\mathbf{k},
-               \qquad t \in [t_i,t_f].
+      </mrow>
+      <mrow>
+        \amp \qquad t \in [t_i,t_f].
       </mrow>
     </md>
     </p>
@@ -1431,7 +1436,10 @@
 
         <md>
           <mrow>
-            x \amp = \cos(2t), \qquad y = \sin(2t),
+            x \amp = \cos(2t),
+          </mrow>
+          <mrow>
+            y \amp = \sin(2t),
           </mrow>
           <mrow xml:id="eq-helix-param-space" number="yes">
             z \amp = t, \qquad t \in [0,\pi].
@@ -1687,15 +1695,12 @@
         </p>
         <p>
           gives <m>1 + x^2 + y^2 = 4 - 4x^2 - y^2</m>, that is,
+          <m>5x^2 + 2y^2 = 3</m>, or
 
         <md>
-          <mrow>
-            5x^2 + 2y^2 \amp = 3,
-          </mrow>
           <mrow xml:id="eq-two-surfaces-shadow" number="yes">
-            \text{or} \quad
             \left(\frac{x}{\sqrt{3/5}}\right)^{2}
-            + \left(\frac{y}{\sqrt{3/2}}\right)^{2} \amp = 1 .
+            + \left(\frac{y}{\sqrt{3/2}}\right)^{2} = 1 .
           </mrow>
         </md>
         </p>
@@ -1731,13 +1736,14 @@
 
         <md>
           <mrow>
-            \mathbf{r}(t) \amp = \Bigl\langle
-              \sqrt{\tfrac{3}{5}}\,\cos(t),\ \
-              \sqrt{\tfrac{3}{2}}\,\sin(t),
+            \mathbf{r}(t) = \Bigl\langle
+              \amp \sqrt{\tfrac{3}{5}}\,\cos(t),
+          </mrow>
+          <mrow>
+            \amp \sqrt{\tfrac{3}{2}}\,\sin(t),
           </mrow>
           <mrow xml:id="eq-two-surfaces-param" number="yes">
-            \amp \qquad\quad
-              \sqrt{1 + \tfrac{3}{5}\cos^2(t) + \tfrac{3}{2}\sin^2(t)}
+            \amp \sqrt{1 + \tfrac{3}{5}\cos^2(t) + \tfrac{3}{2}\sin^2(t)}\,
               \Bigr\rangle ,
           </mrow>
         </md>
@@ -1996,14 +2002,20 @@
           <mrow>
             \amp = \left\langle \frac{1}{\sqrt{2}},\ \frac{1}{\sqrt{2}},\
                      \frac{\pi}{4} \right\rangle
-              + s \left\langle -\frac{1}{\sqrt{2}},\ \frac{1}{\sqrt{2}},\ 1
+          </mrow>
+          <mrow>
+            \amp \quad + s \left\langle -\frac{1}{\sqrt{2}},\ \frac{1}{\sqrt{2}},\ 1
                   \right\rangle
           </mrow>
           <mrow>
-            \amp = \left\langle \frac{1}{\sqrt{2}} - \frac{s}{\sqrt{2}},\
-                     \frac{1}{\sqrt{2}} + \frac{s}{\sqrt{2}},\
-                     \frac{\pi}{4} + s \right\rangle ,
-              \qquad s \in \R .
+            \amp = \Bigl\langle \frac{1}{\sqrt{2}} - \frac{s}{\sqrt{2}},
+          </mrow>
+          <mrow>
+            \amp \qquad \frac{1}{\sqrt{2}} + \frac{s}{\sqrt{2}},\
+                     \frac{\pi}{4} + s \Bigr\rangle ,
+          </mrow>
+          <mrow>
+            \amp \qquad s \in \R .
           </mrow>
         </md>
         </p>
