@@ -665,6 +665,26 @@ by <m>C</m>:
 </statement>
 </theorem>
 
+<figure xml:id="fig-green-flux-proof-video">
+<caption>
+The idea of the proof, without the algebra: compute the flux out of one
+tiny rectangle with the outward normal, side by side (<m>\mathbf{n} = \pm\mathbf{i}</m>
+on the vertical sides, <m>\pm\mathbf{j}</m> on the horizontal ones), to get
+about <m>\left(\frac{\partial M}{\partial x} + \frac{\partial N}{\partial y}\right)\Delta A</m>,
+so the divergence is flux per unit area. Cover <m>R</m> with tiny rectangles
+and add the flux out of each one. On every interior edge the two rectangles'
+outward normals are opposite, so what flows out of one flows into the other:
+the inside cancels in pairs and only a staircase hugging <m>C</m> is left.
+As the number of rectangles increases, less of their area sticks out of
+<m>R</m>; in the limit the staircase becomes <m>C</m>, the sum becomes the
+double integral, and writing <m>\mathbf{n}\,ds = \langle dy, -dx\rangle</m>
+gives the normal form.
+</caption>
+<video xml:id="video-green-flux-proof-idea"
+       source="videos/green_flux_proof_1080p.mp4"
+       width="70%" aspect="16:9"/>
+</figure>
+
 <example xml:id="example-green-circle-normal">
 <title>Verifying the Normal Form on the Unit Circle</title>
 <statement>
@@ -1421,14 +1441,18 @@ A region between an upper and a lower curve with a counterclockwise boundary.
 
 <figure xml:id="fig-green-proof-video">
 <caption>
-The idea of the proof, without the algebra: the <m>\mathbf{k}</m>-component
-of the curl is circulation per unit area, so cover <m>R</m> with tiny
-rectangles and add the circulation around each one. Every interior edge is
-travelled twice, once in each direction, so the inside cancels in pairs and
-only a staircase hugging <m>C</m> is left. As the number of rectangles
-increases, less of their area sticks out of <m>R</m> and the
-approximation improves; in the limit the staircase becomes <m>C</m> and
-the sum becomes the double integral.
+The idea of the proof, without the algebra: compute the circulation around
+one tiny rectangle with the unit tangent, side by side (<m>\mathbf{T} = \pm\mathbf{i}</m>
+along the horizontal sides, <m>\pm\mathbf{j}</m> along the vertical ones), to
+get about <m>\left(\frac{\partial N}{\partial x} - \frac{\partial M}{\partial y}\right)\Delta A</m>,
+so the <m>\mathbf{k}</m>-component of the curl is circulation per unit area.
+Cover <m>R</m> with tiny rectangles and add the circulation around each one.
+Every interior edge is travelled twice, once in each direction, so the
+inside cancels in pairs and only a staircase hugging <m>C</m> is left. As
+the number of rectangles increases, less of their area sticks out of
+<m>R</m> and the approximation improves; in the limit the staircase becomes
+<m>C</m>, the sum becomes the double integral, and writing
+<m>\mathbf{T}\,ds = \langle dx, dy\rangle</m> gives the tangential form.
 </caption>
 <video xml:id="video-green-proof-idea"
        source="videos/green_circulation_proof_1080p.mp4"
