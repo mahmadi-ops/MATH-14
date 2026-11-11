@@ -52,14 +52,12 @@
       <xi:include href="surface-integrals.ptx" />
     </chapter>
 
-    <!-- HIDDEN-CHAPTER-BEGIN
     <chapter xml:id="ch-integral-theorems">
       <title>The Big Theorems</title>
       <xi:include href="greens-theorem.ptx" />
-      <xi:include href="stokes-theorem.ptx" />
-      <xi:include href="divergence-theorem.ptx" />
+      <!-- UNPOSTED <xi:include href="stokes-theorem.ptx" /> UNPOSTED -->
+      <!-- UNPOSTED <xi:include href="divergence-theorem.ptx" /> UNPOSTED -->
     </chapter>
-    HIDDEN-CHAPTER-END -->
 
     <!-- Placeholder, in the book only while every real chapter is hidden;
          scripts/desk_action.py toggles it automatically. -->
