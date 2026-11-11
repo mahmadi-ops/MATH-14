@@ -1865,19 +1865,18 @@ The rectangle in the u v plane that is the image of the tilted square.
 <title>An Alternative Form of the Component Test for Conservative Fields</title>
 
 <p>
-Recall the component test for conservative fields:
+The component test tells whether a field is conservative from its
+partial derivatives alone:
 </p>
 
 <assemblage xml:id="reminder-component-test">
-<title>Reminder: Component Test for Conservative Fields</title>
+<title>Component Test for Conservative Fields</title>
 <p>
 Let <m>\mathbf{F} = M(x,y,z)\,\mathbf{i} + N(x,y,z)\,\mathbf{j}
 + P(x,y,z)\,\mathbf{k}</m> be a field on a connected and simply
 connected domain whose component functions have continuous first
 partial derivatives. Then <m>\mathbf{F}</m> is conservative if and only
 if
-</p>
-
 <md>
 <mrow>
 \frac{\partial P}{\partial y} \amp = \frac{\partial N}{\partial z},
@@ -1889,6 +1888,7 @@ if
 \frac{\partial N}{\partial x} \amp = \frac{\partial M}{\partial y}.
 </mrow>
 </md>
+</p>
 </assemblage>
 
 <p>
