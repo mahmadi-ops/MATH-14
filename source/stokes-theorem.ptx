@@ -529,7 +529,13 @@ unpleasant. Instead take <m>S</m> to be the flat elliptical region that
 <m>C</m> bounds in the plane <m>y + z = 2</m>, that is the graph of
 <m>z = 2 - y</m> over the unit disk <m>R</m> in the
 <m>xy</m>-plane. For a graph <m>z = g(x,y)</m> with an upward normal,
-<xref ref="eq-flux-param"/> with <m>\mathbf{r}(x,y)</m> gives
+<xref ref="eq-flux-param"/> with
+<m>\mathbf{r}(x,y) = \left\langle x,\ y,\ g(x,y) \right\rangle</m> and
+the cross product
+<m>\mathbf{r}_x \times \mathbf{r}_y
+= \left\langle -g_x,\ -g_y,\ 1 \right\rangle</m>, worked out in
+<xref ref="check-graph-area-element-tf"/> (there with <m>f</m> in place
+of <m>g</m>), gives
 </p>
 
 <me>
