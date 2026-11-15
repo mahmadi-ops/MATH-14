@@ -128,8 +128,7 @@ computation with the quotient rule gives
 
 <me>
 \nabla \cdot \mathbf{F}
-= \frac{3\,(x^2+y^2+z^2)^{3/2} - 3\,(x^2+y^2+z^2)^{3/2}}
-{(x^2+y^2+z^2)^3} = 0.
+= \frac{3\rho^3 - 3\rho^3}{\rho^6} = 0.
 </me>
 
 <p>
@@ -260,9 +259,9 @@ the surface:
 
 <men xml:id="eq-divergence-theorem">
 \underbrace{\iint_S \mathbf{F} \cdot \hat{\mathbf{n}}\,
-d\sigma}_{\text{outward flux through the boundary } S}
+d\sigma}_{\substack{\text{outward flux through}\\ \text{the boundary } S}}
 = \underbrace{\iiint_D \nabla \cdot \mathbf{F}\,
-dV}_{\text{triple integral of the divergence over } D}.
+dV}_{\substack{\text{triple integral of the}\\ \text{divergence over } D}}.
 </men>
 </statement>
 
@@ -279,20 +278,16 @@ sum of the fluxes of <m>M\,\mathbf{i}</m>, <m>N\,\mathbf{j}</m> and
 statements
 </p>
 
-<md>
-<mrow xml:id="eq-divthm-three" number="yes">
-\iint_S M\,\mathbf{i} \cdot \hat{\mathbf{n}}\, d\sigma
-\amp = \iiint_D \frac{\partial M}{\partial x}\, dV ,
-</mrow>
-<mrow>
-\iint_S N\,\mathbf{j} \cdot \hat{\mathbf{n}}\, d\sigma
-\amp = \iiint_D \frac{\partial N}{\partial y}\, dV ,
-</mrow>
-<mrow>
-\iint_S P\,\mathbf{k} \cdot \hat{\mathbf{n}}\, d\sigma
-\amp = \iiint_D \frac{\partial P}{\partial z}\, dV ,
-</mrow>
-</md>
+<men xml:id="eq-divthm-three">
+\begin{aligned}
+\amp \iint_S M\,\mathbf{i} \cdot \hat{\mathbf{n}}\, d\sigma
+\\ \amp \quad = \iiint_D \frac{\partial M}{\partial x}\, dV ,\\
+\amp \iint_S N\,\mathbf{j} \cdot \hat{\mathbf{n}}\, d\sigma
+\\ \amp \quad = \iiint_D \frac{\partial N}{\partial y}\, dV ,\\
+\amp \iint_S P\,\mathbf{k} \cdot \hat{\mathbf{n}}\, d\sigma
+\\ \amp \quad = \iiint_D \frac{\partial P}{\partial z}\, dV ,
+\end{aligned}
+</men>
 
 <p>
 and add them. We prove the third; the other two are the same argument
@@ -334,15 +329,19 @@ the outward normal points downward, which flips the sign, and
 
 <md>
 <mrow>
-\iint_S P\,\mathbf{k} \cdot \hat{\mathbf{n}}\, d\sigma
-\amp = \iint_{S_2} P\,\mathbf{k} \cdot \hat{\mathbf{n}}\, d\sigma
-+ \iint_{S_1} P\,\mathbf{k} \cdot \hat{\mathbf{n}}\, d\sigma
+\amp \iint_S P\,\mathbf{k} \cdot \hat{\mathbf{n}}\, d\sigma
 </mrow>
 <mrow>
-\amp = \iint_R P\bigl(x,y,u_2(x,y)\bigr) dx\, dy
+\amp \quad = \iint_{S_2} P\,\mathbf{k} \cdot \hat{\mathbf{n}}\, d\sigma
 </mrow>
 <mrow>
-\amp \qquad - \iint_R P\bigl(x,y,u_1(x,y)\bigr) dx\, dy .
+\amp \quad\enspace + \iint_{S_1} P\,\mathbf{k} \cdot \hat{\mathbf{n}}\, d\sigma
+</mrow>
+<mrow>
+\amp \quad = \iint_R P\bigl(x,y,u_2(x,y)\bigr) dx\, dy
+</mrow>
+<mrow>
+\amp \quad\enspace - \iint_R P\bigl(x,y,u_1(x,y)\bigr) dx\, dy .
 </mrow>
 </md>
 
@@ -354,13 +353,17 @@ Calculus on the inner integral,
 
 <md>
 <mrow>
-\iiint_D \frac{\partial P}{\partial z}\, dV
-\amp = \iint_R \left[\int_{u_1(x,y)}^{u_2(x,y)}
+\amp \iiint_D \frac{\partial P}{\partial z}\, dV
+</mrow>
+<mrow>
+\amp \quad = \iint_R \left[\int_{u_1(x,y)}^{u_2(x,y)}
 \frac{\partial P}{\partial z}\, dz\right] dx\, dy
 </mrow>
 <mrow>
-\amp = \iint_R \Bigl[P\bigl(x,y,u_2(x,y)\bigr)
-- P\bigl(x,y,u_1(x,y)\bigr)\Bigr] dx\, dy ,
+\amp \quad = \iint_R \Bigl[P\bigl(x,y,u_2(x,y)\bigr)
+</mrow>
+<mrow>
+\amp \qquad - P\bigl(x,y,u_1(x,y)\bigr)\Bigr] dx\, dy ,
 </mrow>
 </md>
 
@@ -511,12 +514,20 @@ We calculate the right-hand side of the divergence theorem,
 <m>\nabla \cdot \mathbf{F} = 3</m>,
 </p>
 
-<me>
-\iiint_D \nabla \cdot \mathbf{F}\, dV
-= 3 \iiint_D dV
-= 3\, (\text{volume of the sphere})
-= 3 \left( \frac{4}{3}\pi \right) = 4\pi.
-</me>
+<md>
+<mrow>
+\amp \iiint_D \nabla \cdot \mathbf{F}\, dV
+</mrow>
+<mrow>
+\amp \quad = 3 \iiint_D dV
+</mrow>
+<mrow>
+\amp \quad = 3\, (\text{volume of the sphere})
+</mrow>
+<mrow>
+\amp \quad = 3 \left( \frac{4}{3}\pi \right) = 4\pi.
+</mrow>
+</md>
 
 <p>
 Therefore,
@@ -618,24 +629,37 @@ theorem.
 The divergence is
 </p>
 
-<me>
+<md>
+<mrow>
 \nabla \cdot \mathbf{F}
-= \frac{\partial z}{\partial x} + \frac{\partial y}{\partial y}
-+ \frac{\partial x}{\partial z} = 0 + 1 + 0 = 1,
-</me>
+\amp = \frac{\partial z}{\partial x} + \frac{\partial y}{\partial y}
++ \frac{\partial x}{\partial z}
+</mrow>
+<mrow>
+\amp = 0 + 1 + 0 = 1,
+</mrow>
+</md>
 
 <p>
 so by <xref ref="eq-divergence-theorem"/>, with <m>S</m> the unit
 sphere and <m>D</m> the unit ball <m>x^2 + y^2 + z^2 \le 1</m>,
 </p>
 
-<me>
-\iint_S \mathbf{F} \cdot \hat{\mathbf{n}}\, d\sigma
-= \iiint_D \nabla \cdot \mathbf{F}\, dV
+<md>
+<mrow>
+\amp \iint_S \mathbf{F} \cdot \hat{\mathbf{n}}\, d\sigma
+</mrow>
+<mrow>
+\amp \quad = \iiint_D \nabla \cdot \mathbf{F}\, dV
 = \iiint_D dV
-= \text{volume of the sphere}
-= \frac{4\pi}{3}(1)^3 = \frac{4\pi}{3},
-</me>
+</mrow>
+<mrow>
+\amp \quad = \text{volume of the sphere}
+</mrow>
+<mrow>
+\amp \quad = \frac{4\pi}{3}(1)^3 = \frac{4\pi}{3},
+</mrow>
+</md>
 
 <p>
 in agreement with the long computation<mdash/>in one line. Watch the
@@ -682,11 +706,16 @@ integrals. With the divergence theorem the whole computation collapses.
 The divergence is
 </p>
 
-<me>
+<md>
+<mrow>
 \nabla \cdot \mathbf{F}
-= \frac{\partial y}{\partial x} + \frac{\partial x}{\partial y}
-+ \frac{\partial z}{\partial z} = 0 + 0 + 1 = 1,
-</me>
+\amp = \frac{\partial y}{\partial x} + \frac{\partial x}{\partial y}
++ \frac{\partial z}{\partial z}
+</mrow>
+<mrow>
+\amp = 0 + 0 + 1 = 1,
+</mrow>
+</md>
 
 <p>
 so by <xref ref="eq-divergence-theorem"/>, using cylindrical
@@ -695,14 +724,24 @@ coordinates for the solid <m>E</m>
 </p>
 
 <md>
-<mrow>\iint_S \mathbf{F} \cdot \hat{\mathbf{n}}\, d\sigma
-\amp= \iiint_E \nabla \cdot \mathbf{F}\, dV
+<mrow>
+\amp \iint_S \mathbf{F} \cdot \hat{\mathbf{n}}\, d\sigma
+</mrow>
+<mrow>
+\amp \quad = \iiint_E \nabla \cdot \mathbf{F}\, dV
 = \iiint_E dV
-= \int_0^{2\pi}\!\! \int_0^1\!\! \int_0^{1-r^2} r\, dz\, dr\,
-d\theta</mrow>
-<mrow>\amp= 2\pi \int_0^1 (1 - r^2)\, r\, dr
-= 2\pi \left( \frac{1}{2} - \frac{1}{4} \right)
-= \frac{\pi}{2},</mrow>
+</mrow>
+<mrow>
+\amp \quad = \int_0^{2\pi}\!\! \int_0^1\!\! \int_0^{1-r^2} r\, dz\, dr\,
+d\theta
+</mrow>
+<mrow>
+\amp \quad = 2\pi \int_0^1 (1 - r^2)\, r\, dr
+</mrow>
+<mrow>
+\amp \quad = 2\pi \left( \frac{1}{2} - \frac{1}{4} \right)
+= \frac{\pi}{2},
+</mrow>
 </md>
 
 <p>
