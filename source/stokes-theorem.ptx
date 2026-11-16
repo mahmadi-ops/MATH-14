@@ -18,7 +18,7 @@ the flux of the curl of <m>\mathbf{F}</m> through <m>S</m>. That is
 </p>
 
 <p>
-It completes the family. <xref ref="section-divergence-theorem"/> turned a
+It completes the family. Section 3.3, The Divergence Theorem, turns a
 flux integral over a <em>closed</em> surface into a triple integral of the
 divergence; Stokes' theorem turns a line integral around the
 <em>boundary</em> of an open surface into a surface integral of the curl.
@@ -1628,7 +1628,7 @@ With <m>\mathbf{F} = M\,\mathbf{i} + N\,\mathbf{j} + P\,\mathbf{k}</m>,
 <p>
 because the mixed partial derivatives of each component are equal and
 the six terms cancel in pairs. A curl field has no divergence, so by
-<xref ref="thm-divergence"/> its flux outward through the unit sphere,
+the Divergence Theorem (Section 3.3), its flux outward through the unit sphere,
 and through any closed surface, is the triple integral of <m>0</m> over
 the solid inside, which is <m>0</m>.
 </p>
