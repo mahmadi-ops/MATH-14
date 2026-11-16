@@ -1,0 +1,57 @@
+<diagram>
+  <annotations>
+    <annotation id="prefigure-tetrahedron-base-figure" speech2="A triangle in the x y plane with vertices at the origin, at zero comma one on the y axis, and at one comma one half. The upper edge, in blue, is the line x plus two y equals two; the lower edge, in green, is the line y equals x over two; the left edge lies on the y axis. A vermillion vertical arrow at x equals zero point four runs from the very bottom of the graph to near the top, crossing the lower edge at a green point and the upper edge at a blue point. A legend box explains that the blue point is the upper bound for y and the green point is the lower bound for y.">
+      <grouped>prefigure-tetrahedron-base-figure</grouped>
+      <position>1</position>
+      <children>
+        <active>prefigure-tetrahedron-base-tb-region</active>
+        <active>prefigure-tetrahedron-base-tb-strip</active>
+        <active>prefigure-tetrahedron-base-tb-lower</active>
+        <active>prefigure-tetrahedron-base-tb-upper</active>
+        <active>prefigure-tetrahedron-base-tb-legend</active>
+      </children>
+      <components>
+        <active>prefigure-tetrahedron-base-tb-region</active>
+        <active>prefigure-tetrahedron-base-tb-strip</active>
+        <active>prefigure-tetrahedron-base-tb-lower</active>
+        <active>prefigure-tetrahedron-base-tb-upper</active>
+        <active>prefigure-tetrahedron-base-tb-legend</active>
+      </components>
+    </annotation>
+    <annotation id="prefigure-tetrahedron-base-tb-region" speech2="The base of the tetrahedron: the region of integration R, shaded tan.">
+      <active>prefigure-tetrahedron-base-tb-region</active>
+      <position>1</position>
+      <parents>
+        <grouped>prefigure-tetrahedron-base-figure</grouped>
+      </parents>
+    </annotation>
+    <annotation id="prefigure-tetrahedron-base-tb-strip" speech2="A vertical arrow at a fixed x, running from below the region to above it. It enters the region at the lower bound and leaves it at the upper bound.">
+      <active>prefigure-tetrahedron-base-tb-strip</active>
+      <position>2</position>
+      <parents>
+        <grouped>prefigure-tetrahedron-base-figure</grouped>
+      </parents>
+    </annotation>
+    <annotation id="prefigure-tetrahedron-base-tb-lower" speech2="The green intersection point with the line y equals x over 2: the lower bound for y.">
+      <active>prefigure-tetrahedron-base-tb-lower</active>
+      <position>3</position>
+      <parents>
+        <grouped>prefigure-tetrahedron-base-figure</grouped>
+      </parents>
+    </annotation>
+    <annotation id="prefigure-tetrahedron-base-tb-upper" speech2="The blue intersection point with the line x plus 2 y equals 2: the upper bound for y.">
+      <active>prefigure-tetrahedron-base-tb-upper</active>
+      <position>4</position>
+      <parents>
+        <grouped>prefigure-tetrahedron-base-figure</grouped>
+      </parents>
+    </annotation>
+    <annotation id="prefigure-tetrahedron-base-tb-legend" speech2="Legend: the blue point marks the upper bound for y and the green point marks the lower bound for y.">
+      <active>prefigure-tetrahedron-base-tb-legend</active>
+      <position>5</position>
+      <parents>
+        <grouped>prefigure-tetrahedron-base-figure</grouped>
+      </parents>
+    </annotation>
+  </annotations>
+</diagram>

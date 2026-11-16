@@ -1,0 +1,30 @@
+<diagram>
+  <annotations>
+    <annotation id="prefigure-proj-yz-figure" speech2="The y z projection: the unit square split by the curve z equals one minus the square of one minus y into a lower region R 1 and an upper region R 2.">
+      <grouped>prefigure-proj-yz-figure</grouped>
+      <position>1</position>
+      <children>
+        <active>prefigure-proj-yz-pyz-D</active>
+        <active>prefigure-proj-yz-pyz-cur</active>
+      </children>
+      <components>
+        <active>prefigure-proj-yz-pyz-D</active>
+        <active>prefigure-proj-yz-pyz-cur</active>
+      </components>
+    </annotation>
+    <annotation id="prefigure-proj-yz-pyz-D" speech2="The unit square projection into the y z plane.">
+      <active>prefigure-proj-yz-pyz-D</active>
+      <position>1</position>
+      <parents>
+        <grouped>prefigure-proj-yz-figure</grouped>
+      </parents>
+    </annotation>
+    <annotation id="prefigure-proj-yz-pyz-cur" speech2="The curve z equals one minus the square of one minus y, which separates R 1 from R 2 and forces the split into two integrals.">
+      <active>prefigure-proj-yz-pyz-cur</active>
+      <position>2</position>
+      <parents>
+        <grouped>prefigure-proj-yz-figure</grouped>
+      </parents>
+    </annotation>
+  </annotations>
+</diagram>

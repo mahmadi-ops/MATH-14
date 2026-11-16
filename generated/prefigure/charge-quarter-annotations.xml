@@ -1,0 +1,100 @@
+<diagram>
+  <annotations>
+    <annotation id="charge-quarter-figure" speech2="The first-quadrant quarter of the circular                                     and square wires, split by the line y                                     equals x into a positive and a negative                                     part">
+      <grouped>charge-quarter-figure</grouped>
+      <position>1</position>
+      <children>
+        <active>charge-quarter-grid-axes</active>
+        <active>charge-quarter-grid</active>
+        <active>charge-quarter-axes</active>
+        <active>charge-quarter-circle-wire</active>
+        <active>charge-quarter-square-wire</active>
+        <active>charge-quarter-split</active>
+        <active>charge-quarter-signs</active>
+      </children>
+      <components>
+        <active>charge-quarter-grid-axes</active>
+        <active>charge-quarter-grid</active>
+        <active>charge-quarter-axes</active>
+        <active>charge-quarter-circle-wire</active>
+        <active>charge-quarter-square-wire</active>
+        <active>charge-quarter-split</active>
+        <active>charge-quarter-signs</active>
+      </components>
+    </annotation>
+    <annotation id="charge-quarter-grid-axes" speech2="The coordinate grid and axes">
+      <grouped>charge-quarter-grid-axes</grouped>
+      <position>1</position>
+      <children>
+        <active>charge-quarter-grid</active>
+        <active>charge-quarter-axes</active>
+      </children>
+      <components>
+        <active>charge-quarter-grid</active>
+        <active>charge-quarter-axes</active>
+      </components>
+      <parents>
+        <grouped>charge-quarter-figure</grouped>
+      </parents>
+    </annotation>
+    <annotation id="charge-quarter-grid" speech2="The coordinate grid">
+      <active>charge-quarter-grid</active>
+      <position>1</position>
+      <parents>
+        <grouped>charge-quarter-grid-axes</grouped>
+      </parents>
+    </annotation>
+    <annotation id="charge-quarter-axes" speech2="The coordinate axes">
+      <active>charge-quarter-axes</active>
+      <position>2</position>
+      <parents>
+        <grouped>charge-quarter-grid-axes</grouped>
+      </parents>
+    </annotation>
+    <annotation id="charge-quarter-grid" speech2="The coordinate grid">
+      <active>charge-quarter-grid</active>
+      <position>2</position>
+      <parents>
+        <grouped>charge-quarter-figure</grouped>
+      </parents>
+    </annotation>
+    <annotation id="charge-quarter-axes" speech2="The coordinate axes">
+      <active>charge-quarter-axes</active>
+      <position>3</position>
+      <parents>
+        <grouped>charge-quarter-figure</grouped>
+      </parents>
+    </annotation>
+    <annotation id="charge-quarter-circle-wire" speech2="The quarter of the circular wire of                                       radius two" sonify="yes">
+      <active>charge-quarter-circle-wire</active>
+      <position>4</position>
+      <parents>
+        <grouped>charge-quarter-figure</grouped>
+      </parents>
+      <sonification>
+        <ACTIVE>charge-quarter-circle-wire</ACTIVE>
+      </sonification>
+    </annotation>
+    <annotation id="charge-quarter-square-wire" speech2="The corner of the square wire, two                                       straight sides meeting at the vertex                                       root two comma root two">
+      <active>charge-quarter-square-wire</active>
+      <position>5</position>
+      <parents>
+        <grouped>charge-quarter-figure</grouped>
+      </parents>
+    </annotation>
+    <annotation id="charge-quarter-split" speech2="The line y equals x, which splits each                                       wire into a half where the density is                                       positive and a half where it is                                       negative">
+      <active>charge-quarter-split</active>
+      <position>6</position>
+      <parents>
+        <grouped>charge-quarter-figure</grouped>
+      </parents>
+    </annotation>
+    <annotation id="charge-quarter-signs" speech2="The labels marking where the density is                                       positive and where it is negative">
+      <active>charge-quarter-signs</active>
+      <position>7</position>
+      <parents>
+        <grouped>charge-quarter-figure</grouped>
+      </parents>
+    </annotation>
+  </annotations>
+</diagram>

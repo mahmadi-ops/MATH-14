@@ -1,0 +1,30 @@
+<diagram>
+  <annotations>
+    <annotation id="prefigure-triple-tetra-base-figure" speech2="A right triangle in the x y plane with legs along the axes from zero to one and hypotenuse y equals one minus x, drawn in blue. The triangle is shaded tan and labeled D.">
+      <grouped>prefigure-triple-tetra-base-figure</grouped>
+      <position>1</position>
+      <children>
+        <active>prefigure-triple-tetra-base-tt-D</active>
+        <active>prefigure-triple-tetra-base-tt-hyp</active>
+      </children>
+      <components>
+        <active>prefigure-triple-tetra-base-tt-D</active>
+        <active>prefigure-triple-tetra-base-tt-hyp</active>
+      </components>
+    </annotation>
+    <annotation id="prefigure-triple-tetra-base-tt-D" speech2="The projection D of the tetrahedron: the triangle with vertices at the origin, one comma zero, and zero comma one.">
+      <active>prefigure-triple-tetra-base-tt-D</active>
+      <position>1</position>
+      <parents>
+        <grouped>prefigure-triple-tetra-base-figure</grouped>
+      </parents>
+    </annotation>
+    <annotation id="prefigure-triple-tetra-base-tt-hyp" speech2="The hypotenuse y equals one minus x.">
+      <active>prefigure-triple-tetra-base-tt-hyp</active>
+      <position>2</position>
+      <parents>
+        <grouped>prefigure-triple-tetra-base-figure</grouped>
+      </parents>
+    </annotation>
+  </annotations>
+</diagram>
